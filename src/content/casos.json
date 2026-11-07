@@ -1,0 +1,334 @@
+{
+  "fuente": "Yahoo Finance",
+  "fecha": "07/11/2026",
+  "ex": {
+    "f1a": [
+      {
+        "t": "num",
+        "caso": "Broadcom (AVGO)",
+        "q": "Ventas de Broadcom en el trimestre cerrado el 31/07/2026: 29.591 M$. Mismo trimestre del año anterior: 15.952 M$. ¿Crecimiento interanual? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 85.5,
+        "tol": 0.06,
+        "why": "29.591 ÷ 15.952 − 1 = 85,5 %. Ese ritmo supera el 25 % que pide O'Neil a las ventas."
+      },
+      {
+        "t": "num",
+        "caso": "Broadcom (AVGO)",
+        "q": "BPA diluido contable de Broadcom en el trimestre cerrado el 31/07/2026: 2,68 $. Mismo trimestre del año anterior: 0,85 $. ¿Crecimiento interanual? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 215.3,
+        "tol": 0.06,
+        "why": "2,68 ÷ 0,85 − 1 = 215,3 %. Es el BPA contable: antes de concluir, revisa si incluye partidas puntuales."
+      },
+      {
+        "t": "num",
+        "caso": "Alphabet (GOOGL)",
+        "q": "Ventas de Alphabet en el trimestre cerrado el 30/09/2026: 127.577 M$. Mismo trimestre del año anterior: 102.346 M$. ¿Crecimiento interanual? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 24.7,
+        "tol": 0.06,
+        "why": "127.577 ÷ 102.346 − 1 = 24,7 %. Ese ritmo queda por debajo del 25 % que pide O'Neil a las ventas."
+      },
+      {
+        "t": "num",
+        "caso": "Alphabet (GOOGL)",
+        "q": "BPA diluido contable de Alphabet en el trimestre cerrado el 30/09/2026: 2,12 $. Mismo trimestre del año anterior: 2,87 $. ¿Cuánto cae interanualmente? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 26.1,
+        "tol": 0.06,
+        "why": "2,12 ÷ 2,87 − 1 = −26,1 %: cae un 26,1 %. Es el BPA contable: antes de concluir, revisa si incluye partidas puntuales."
+      },
+      {
+        "t": "num",
+        "caso": "MercadoLibre (MELI)",
+        "q": "Ventas de MercadoLibre en el trimestre cerrado el 30/09/2026: 10.750 M$. Mismo trimestre del año anterior: 7.409 M$. ¿Crecimiento interanual? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 45.1,
+        "tol": 0.06,
+        "why": "10.750 ÷ 7.409 − 1 = 45,1 %. Ese ritmo supera el 25 % que pide O'Neil a las ventas."
+      },
+      {
+        "t": "num",
+        "caso": "MercadoLibre (MELI)",
+        "q": "BPA diluido contable de MercadoLibre en el trimestre cerrado el 30/09/2026: 8,83 $. Mismo trimestre del año anterior: 8,32 $. ¿Crecimiento interanual? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 6.1,
+        "tol": 0.06,
+        "why": "8,83 ÷ 8,32 − 1 = 6,1 %. Es el BPA contable: antes de concluir, revisa si incluye partidas puntuales."
+      },
+      {
+        "t": "num",
+        "caso": "Microsoft (MSFT)",
+        "q": "Ventas de Microsoft en el trimestre cerrado el 30/09/2026: 92.279 M$. Mismo trimestre del año anterior: 77.673 M$. ¿Crecimiento interanual? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 18.8,
+        "tol": 0.06,
+        "why": "92.279 ÷ 77.673 − 1 = 18,8 %. Ese ritmo queda por debajo del 25 % que pide O'Neil a las ventas."
+      },
+      {
+        "t": "num",
+        "caso": "Microsoft (MSFT)",
+        "q": "BPA diluido contable de Microsoft en el trimestre cerrado el 30/09/2026: 4,92 $. Mismo trimestre del año anterior: 3,72 $. ¿Crecimiento interanual? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 32.3,
+        "tol": 0.06,
+        "why": "4,92 ÷ 3,72 − 1 = 32,3 %. Es el BPA contable: antes de concluir, revisa si incluye partidas puntuales."
+      },
+      {
+        "t": "num",
+        "caso": "Eli Lilly and Company (LLY)",
+        "q": "Ventas de Eli Lilly and Company en el trimestre cerrado el 30/09/2026: 24.397 M$. Mismo trimestre del año anterior: 17.601 M$. ¿Crecimiento interanual? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 38.6,
+        "tol": 0.06,
+        "why": "24.397 ÷ 17.601 − 1 = 38,6 %. Ese ritmo supera el 25 % que pide O'Neil a las ventas."
+      },
+      {
+        "t": "num",
+        "caso": "Eli Lilly and Company (LLY)",
+        "q": "BPA diluido contable de Eli Lilly and Company en el trimestre cerrado el 30/09/2026: 7,22 $. Mismo trimestre del año anterior: 6,21 $. ¿Crecimiento interanual? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 16.3,
+        "tol": 0.06,
+        "why": "7,22 ÷ 6,21 − 1 = 16,3 %. Es el BPA contable: antes de concluir, revisa si incluye partidas puntuales."
+      },
+      {
+        "t": "num",
+        "caso": "CrowdStrike Holdings (CRWD)",
+        "q": "Ventas de CrowdStrike Holdings en el trimestre cerrado el 31/07/2026: 1.471 M$. Mismo trimestre del año anterior: 1.169 M$. ¿Crecimiento interanual? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 25.8,
+        "tol": 0.06,
+        "why": "1.471 ÷ 1.169 − 1 = 25,8 %. Ese ritmo supera el 25 % que pide O'Neil a las ventas."
+      },
+      {
+        "t": "num",
+        "caso": "Nu Holdings (NU)",
+        "q": "Ventas de Nu Holdings en el trimestre cerrado el 30/06/2026: 3.769 M$. Mismo trimestre del año anterior: 2.510 M$. ¿Crecimiento interanual? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 50.2,
+        "tol": 0.06,
+        "why": "3.769 ÷ 2.510 − 1 = 50,2 %. Ese ritmo supera el 25 % que pide O'Neil a las ventas."
+      },
+      {
+        "t": "num",
+        "caso": "Nu Holdings (NU)",
+        "q": "BPA diluido contable de Nu Holdings en el trimestre cerrado el 30/06/2026: 0,22 $. Mismo trimestre del año anterior: 0,13 $. ¿Crecimiento interanual? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 69.2,
+        "tol": 0.06,
+        "why": "0,22 ÷ 0,13 − 1 = 69,2 %. Es el BPA contable: antes de concluir, revisa si incluye partidas puntuales."
+      },
+      {
+        "t": "num",
+        "caso": "Axon Enterprise (AXON)",
+        "q": "Ventas de Axon Enterprise en el trimestre cerrado el 30/06/2026: 904,4 M$. Mismo trimestre del año anterior: 668,5 M$. ¿Crecimiento interanual? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 35.3,
+        "tol": 0.06,
+        "why": "904,4 ÷ 668,5 − 1 = 35,3 %. Ese ritmo supera el 25 % que pide O'Neil a las ventas."
+      },
+      {
+        "t": "num",
+        "caso": "Axon Enterprise (AXON)",
+        "q": "BPA diluido contable de Axon Enterprise en el trimestre cerrado el 30/06/2026: 0,36 $. Mismo trimestre del año anterior: 0,44 $. ¿Cuánto cae interanualmente? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 18.2,
+        "tol": 0.06,
+        "why": "0,36 ÷ 0,44 − 1 = −18,2 %: cae un 18,2 %. Es el BPA contable: antes de concluir, revisa si incluye partidas puntuales."
+      },
+      {
+        "t": "num",
+        "caso": "Meta Platforms (META)",
+        "q": "Ventas de Meta Platforms en el trimestre cerrado el 30/09/2026: 64.601 M$. Mismo trimestre del año anterior: 51.242 M$. ¿Crecimiento interanual? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 26.1,
+        "tol": 0.06,
+        "why": "64.601 ÷ 51.242 − 1 = 26,1 %. Ese ritmo supera el 25 % que pide O'Neil a las ventas."
+      },
+      {
+        "t": "num",
+        "caso": "Meta Platforms (META)",
+        "q": "BPA diluido contable de Meta Platforms en el trimestre cerrado el 30/09/2026: 3,83 $. Mismo trimestre del año anterior: 1,05 $. ¿Crecimiento interanual? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 264.8,
+        "tol": 0.06,
+        "why": "3,83 ÷ 1,05 − 1 = 264,8 %. Es el BPA contable: antes de concluir, revisa si incluye partidas puntuales."
+      },
+      {
+        "t": "num",
+        "caso": "NVIDIA (NVDA)",
+        "q": "Ventas de NVIDIA en el trimestre cerrado el 31/07/2026: 96.221 M$. Mismo trimestre del año anterior: 46.743 M$. ¿Crecimiento interanual? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 105.9,
+        "tol": 0.06,
+        "why": "96.221 ÷ 46.743 − 1 = 105,9 %. Ese ritmo supera el 25 % que pide O'Neil a las ventas."
+      },
+      {
+        "t": "num",
+        "caso": "NVIDIA (NVDA)",
+        "q": "BPA diluido contable de NVIDIA en el trimestre cerrado el 31/07/2026: 2,46 $. Mismo trimestre del año anterior: 1,08 $. ¿Crecimiento interanual? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 127.8,
+        "tol": 0.06,
+        "why": "2,46 ÷ 1,08 − 1 = 127,8 %. Es el BPA contable: antes de concluir, revisa si incluye partidas puntuales."
+      }
+    ],
+    "f1b": [
+      {
+        "t": "num",
+        "caso": "Broadcom (AVGO)",
+        "q": "Broadcom, trimestre cerrado el 31/07/2026: ventas de 29.591 M$ y beneficio bruto de 20.456 M$. ¿Margen bruto? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 69.1,
+        "tol": 0.06,
+        "why": "20.456 ÷ 29.591 = 69,1 %. En el trimestre anterior fue del 69,5 %: el margen baja."
+      },
+      {
+        "t": "num",
+        "caso": "Broadcom (AVGO)",
+        "q": "Broadcom, trimestre cerrado el 31/07/2026: ventas de 29.591 M$ y beneficio operativo de 16.058 M$. ¿Margen operativo? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 54.3,
+        "tol": 0.06,
+        "why": "16.058 ÷ 29.591 = 54,3 %. En el trimestre anterior fue del 48,9 %: el margen sube."
+      },
+      {
+        "t": "num",
+        "caso": "Alphabet (GOOGL)",
+        "q": "Alphabet, trimestre cerrado el 30/09/2026: ventas de 127.577 M$ y beneficio bruto de 76.158 M$. ¿Margen bruto? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 59.7,
+        "tol": 0.06,
+        "why": "76.158 ÷ 127.577 = 59,7 %. En el trimestre anterior fue del 61,6 %: el margen baja."
+      },
+      {
+        "t": "num",
+        "caso": "Alphabet (GOOGL)",
+        "q": "Alphabet, trimestre cerrado el 30/09/2026: ventas de 127.577 M$ y beneficio operativo de 40.576 M$. ¿Margen operativo? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 31.8,
+        "tol": 0.06,
+        "why": "40.576 ÷ 127.577 = 31,8 %. En el trimestre anterior fue del 34,0 %: el margen baja."
+      },
+      {
+        "t": "num",
+        "caso": "MercadoLibre (MELI)",
+        "q": "MercadoLibre, trimestre cerrado el 30/09/2026: ventas de 10.750 M$ y beneficio bruto de 4.384 M$. ¿Margen bruto? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 40.8,
+        "tol": 0.06,
+        "why": "4.384 ÷ 10.750 = 40,8 %. En el trimestre anterior fue del 40,9 %: el margen baja."
+      },
+      {
+        "t": "num",
+        "caso": "MercadoLibre (MELI)",
+        "q": "MercadoLibre, trimestre cerrado el 30/09/2026: ventas de 10.750 M$ y beneficio operativo de 676,0 M$. ¿Margen operativo? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 6.3,
+        "tol": 0.06,
+        "why": "676,0 ÷ 10.750 = 6,3 %. En el trimestre anterior fue del 6,7 %: el margen baja."
+      },
+      {
+        "t": "num",
+        "caso": "Microsoft (MSFT)",
+        "q": "Microsoft, trimestre cerrado el 30/09/2026: ventas de 92.279 M$ y beneficio bruto de 62.559 M$. ¿Margen bruto? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 67.8,
+        "tol": 0.06,
+        "why": "62.559 ÷ 92.279 = 67,8 %. En el trimestre anterior fue del 67,2 %: el margen sube."
+      },
+      {
+        "t": "num",
+        "caso": "Microsoft (MSFT)",
+        "q": "Microsoft, trimestre cerrado el 30/09/2026: ventas de 92.279 M$ y beneficio operativo de 45.915 M$. ¿Margen operativo? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 49.8,
+        "tol": 0.06,
+        "why": "45.915 ÷ 92.279 = 49,8 %. En el trimestre anterior fue del 45,1 %: el margen sube."
+      },
+      {
+        "t": "num",
+        "caso": "Eli Lilly and Company (LLY)",
+        "q": "Eli Lilly and Company, trimestre cerrado el 30/09/2026: ventas de 24.397 M$ y beneficio bruto de 20.464 M$. ¿Margen bruto? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 83.9,
+        "tol": 0.06,
+        "why": "20.464 ÷ 24.397 = 83,9 %. En el trimestre anterior fue del 85,8 %: el margen baja."
+      },
+      {
+        "t": "num",
+        "caso": "Eli Lilly and Company (LLY)",
+        "q": "Eli Lilly and Company, trimestre cerrado el 30/09/2026: ventas de 24.397 M$ y beneficio operativo de 13.092 M$. ¿Margen operativo? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 53.7,
+        "tol": 0.06,
+        "why": "13.092 ÷ 24.397 = 53,7 %. En el trimestre anterior fue del 54,2 %: el margen baja."
+      },
+      {
+        "t": "num",
+        "caso": "CrowdStrike Holdings (CRWD)",
+        "q": "CrowdStrike Holdings, trimestre cerrado el 31/07/2026: ventas de 1.471 M$ y beneficio bruto de 1.097 M$. ¿Margen bruto? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 74.6,
+        "tol": 0.06,
+        "why": "1.097 ÷ 1.471 = 74,6 %. En el trimestre anterior fue del 75,3 %: el margen baja."
+      },
+      {
+        "t": "num",
+        "caso": "Axon Enterprise (AXON)",
+        "q": "Axon Enterprise, trimestre cerrado el 30/06/2026: ventas de 904,4 M$ y beneficio bruto de 546,4 M$. ¿Margen bruto? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 60.4,
+        "tol": 0.06,
+        "why": "546,4 ÷ 904,4 = 60,4 %. En el trimestre anterior fue del 59,1 %: el margen sube."
+      },
+      {
+        "t": "num",
+        "caso": "Axon Enterprise (AXON)",
+        "q": "Axon Enterprise, trimestre cerrado el 30/06/2026: ventas de 904,4 M$ y beneficio operativo de 46,8 M$. ¿Margen operativo? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 5.2,
+        "tol": 0.06,
+        "why": "46,8 ÷ 904,4 = 5,2 %. En el trimestre anterior fue del 3,6 %: el margen sube."
+      },
+      {
+        "t": "num",
+        "caso": "Meta Platforms (META)",
+        "q": "Meta Platforms, trimestre cerrado el 30/09/2026: ventas de 64.601 M$ y beneficio bruto de 51.232 M$. ¿Margen bruto? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 79.3,
+        "tol": 0.06,
+        "why": "51.232 ÷ 64.601 = 79,3 %. En el trimestre anterior fue del 81,4 %: el margen baja."
+      },
+      {
+        "t": "num",
+        "caso": "Meta Platforms (META)",
+        "q": "Meta Platforms, trimestre cerrado el 30/09/2026: ventas de 64.601 M$ y beneficio operativo de 12.988 M$. ¿Margen operativo? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 20.1,
+        "tol": 0.06,
+        "why": "12.988 ÷ 64.601 = 20,1 %. En el trimestre anterior fue del 30,9 %: el margen baja."
+      },
+      {
+        "t": "num",
+        "caso": "NVIDIA (NVDA)",
+        "q": "NVIDIA, trimestre cerrado el 31/07/2026: ventas de 96.221 M$ y beneficio bruto de 72.142 M$. ¿Margen bruto? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 75.0,
+        "tol": 0.06,
+        "why": "72.142 ÷ 96.221 = 75,0 %. En el trimestre anterior fue del 74,9 %: el margen sube."
+      },
+      {
+        "t": "num",
+        "caso": "NVIDIA (NVDA)",
+        "q": "NVIDIA, trimestre cerrado el 31/07/2026: ventas de 96.221 M$ y beneficio operativo de 63.734 M$. ¿Margen operativo? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 66.2,
+        "tol": 0.06,
+        "why": "63.734 ÷ 96.221 = 66,2 %. En el trimestre anterior fue del 65,6 %: el margen sube."
+      }
+    ]
+  }
+}

@@ -2,9 +2,9 @@
 import {KEY,GOAL,RH,OFFS,fmt,esc,today,yest,shuffle,parseNum} from './util.js';
 import {P,ico,icoX,icoOk,LOGO} from './icons.js';
 import {candlesSVG,lineSVG,glyph} from './charts.js';
-import {UNITS,FLAT,exCount} from './content.js';
+import {UNITS,FLAT,CASOS,TRACKS,trackOf,exCount} from './content.js';
 
-const DEF=()=>({xp:0,streak:0,last:null,day:null,dayXp:0,done:{},all:false});
+const DEF=()=>({xp:0,streak:0,last:null,day:null,dayXp:0,done:{},all:false,track:'tecnico'});
 function load(){
   try{const j=JSON.parse(localStorage.getItem(KEY));if(j&&typeof j==='object')return Object.assign(DEF(),j)}catch(e){}
   return DEF();
@@ -15,9 +15,15 @@ const $app=document.getElementById('app'), $toast=document.getElementById('toast
 const streakNow=()=>(S.last===today()||S.last===yest())?S.streak:0;
 const dayXpNow=()=>S.day===today()?S.dayXp:0;
 
+// Estado de cada lección por id. Cada ruta (técnica/fundamental) tiene su propia lección actual.
 function statuses(){
-  let cur=-1;
-  const st=FLAT.map((l,i)=>{if(S.done[l.id])return'done';if(cur<0){cur=i;return'current'}return S.all?'open':'locked'});
+  const st={},cur={};
+  FLAT.forEach(l=>{
+    const t=trackOf(l.unit);
+    if(S.done[l.id])st[l.id]='done';
+    else if(!cur[t]){cur[t]=1;st[l.id]='current'}
+    else st[l.id]=S.all?'open':'locked';
+  });
   return st;
 }
 function toast(msg){
@@ -32,12 +38,23 @@ function chartHTML(ex){
   if(ex.t==='tap'||ex.t==='level')st={mode:ex.t,sel:run.sel,checked:run.checked,a:ex.a};
   return `<figure class="chart">${sp.type==='line'?lineSVG(sp):candlesSVG(sp,st)}</figure>`;
 }
+// Tabla de datos (resultados trimestrales, márgenes…): {cols:[...], rows:[[...]], note?}
+function tableHTML(ex){
+  const tb=ex.table;if(!tb)return'';
+  let h='<figure class="chart tbl"><table><thead><tr>'+tb.cols.map(c=>`<th scope="col">${esc(c)}</th>`).join('')+'</tr></thead><tbody>';
+  tb.rows.forEach(r=>{h+='<tr>'+r.map((c,i)=>i===0?`<th scope="row">${esc(c)}</th>`:`<td>${esc(c)}</td>`).join('')+'</tr>'});
+  h+='</tbody></table>';
+  if(tb.note)h+=`<figcaption>${esc(tb.note)}</figcaption>`;
+  return h+'</figure>';
+}
 
 function homeHTML(){
   const st=statuses(),sk=streakNow(),dx=dayXpNow();
   let h=`<header class="top"><div class="brand">${LOGO}<span>Rango</span></div><div class="stats"><span class="chip fire" aria-label="Racha de ${sk} ${sk===1?'día':'días'}">${ico('flame')}<b>${sk}</b></span><span class="chip xp" aria-label="${S.xp} XP en total">${ico('bolt')}<b>${S.xp}</b></span></div></header><main>`;
   h+=`<section class="goal" aria-label="Meta diaria"><div class="goal-h"><span>Meta de hoy</span><span>${Math.min(dx,GOAL)} / ${GOAL} XP</span></div><div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="${GOAL}" aria-valuenow="${Math.min(dx,GOAL)}"><i style="width:${Math.min(100,dx/GOAL*100)}%"></i></div></section>`;
-  UNITS.forEach(u=>{
+  h+=`<nav class="tracks" aria-label="Ruta">${TRACKS.map(t=>`<button data-act="track" data-track="${t.id}" aria-pressed="${S.track===t.id}">${t.title}</button>`).join('')}</nav>`;
+  const TF=FLAT.filter(l=>trackOf(l.unit)===S.track);
+  UNITS.filter(u=>trackOf(u)===S.track).forEach(u=>{
     if(!u.lessons){
       h+=`<section class="unit soon"><div class="ban"><div><div class="u">Unidad ${u.n}</div><h2>${u.title}</h2><p>${u.blurb}</p></div><span class="cnt">Próximamente</span></div></section>`;
       return;
@@ -46,19 +63,20 @@ function homeHTML(){
     h+=`<section class="unit" aria-label="Unidad ${u.n}: ${u.title}"><div class="ban"><div><div class="u">Unidad ${u.n}</div><h2>${u.title}</h2><p>${u.blurb}</p></div><span class="cnt">${doneN} / ${items.length}</span></div>`;
     h+=`<div class="path" style="--n:${items.length}"><svg class="route" viewBox="0 0 100 ${items.length*RH}" preserveAspectRatio="none" aria-hidden="true">`;
     for(let k=0;k<items.length-1;k++){
-      const gi=FLAT.indexOf(items[k]),x1=50+OFFS[gi%OFFS.length],x2=50+OFFS[(gi+1)%OFFS.length];
+      const gi=TF.indexOf(items[k]),x1=50+OFFS[gi%OFFS.length],x2=50+OFFS[(gi+1)%OFFS.length];
       const y1=k*RH+44,y2=(k+1)*RH+44,ym=(y1+y2)/2;
-      h+=`<path class="${st[gi]==='done'?'done':''}" d="M${x1} ${y1} C${x1} ${ym} ${x2} ${ym} ${x2} ${y2}"/>`;
+      h+=`<path class="${st[items[k].id]==='done'?'done':''}" d="M${x1} ${y1} C${x1} ${ym} ${x2} ${ym} ${x2} ${y2}"/>`;
     }
     h+='</svg>';
     items.forEach((l,k)=>{
-      const gi=FLAT.indexOf(l),s=st[gi],rec=S.done[l.id],off=OFFS[gi%OFFS.length];
+      const gi=TF.indexOf(l),s=st[l.id],rec=S.done[l.id],off=OFFS[gi%OFFS.length];
       const sub=s==='done'?`Precisión ${Math.round(rec.acc*100)} %`:s==='locked'?'Bloqueada':`${exCount(l)} ejercicios`;
       const stx=s==='done'?'completada':s==='locked'?'bloqueada':'disponible';
       h+=`<button class="node ${s}" style="--i:${k};--off:${off}" data-act="open" data-id="${l.id}" aria-label="${esc(l.title)}, ${stx}"${s==='locked'?' aria-disabled="true"':''}><span class="g">${glyph(s,rec?rec.acc:null)}</span><span class="nt">${esc(l.title)}</span><span class="ns">${sub}</span></button>`;
     });
     h+='</div></section>';
   });
+  if(S.track==='fundamental'&&CASOS)h+=`<p class="src">Casos reales con datos de ${esc(CASOS.fuente)} a ${esc(CASOS.fecha)}. Es formación, no una recomendación de inversión.</p>`;
   h+=`</main><footer class="foot-home"><p>Prototipo. El progreso se guarda solo en este navegador.</p><div class="row"><button class="btn ghost" data-act="unlock">${S.all?'Volver a bloquear':'Desbloquear todo'}</button><button class="btn ghost" data-act="reset">${resetArm?'Pulsa de nuevo para borrar':'Reiniciar progreso'}</button></div></footer>`;
   return h;
 }
@@ -74,7 +92,7 @@ function lessonHTML(){
   const ex=run.queue[0],pct=Math.round(run.done/run.total*100);
   let hearts='';for(let i=0;i<3;i++)hearts+=`<svg class="heart ${i<run.lives?'on':'off'}" viewBox="0 0 24 24" aria-hidden="true"><path d="${P.heart}" fill="currentColor"/></svg>`;
   let h=`<div class="lesson"><div class="lbar"><button class="x" data-act="quit" aria-label="Salir de la lección">${icoX}</button><div class="prog" role="progressbar" aria-valuemin="0" aria-valuemax="${run.total}" aria-valuenow="${run.done}"><i style="width:${pct}%"></i></div><div class="lives" role="img" aria-label="${run.lives} vidas">${hearts}</div></div>`;
-  h+=`<div class="qwrap"><p class="kind">${KIND[ex.t]}</p><h2 class="q">${esc(ex.q)}</h2>${chartHTML(ex)}`;
+  h+=`<div class="qwrap"><p class="kind">${ex.caso?`Caso real: ${esc(ex.caso)} · `:''}${KIND[ex.t]}</p><h2 class="q">${esc(ex.q)}</h2>${chartHTML(ex)}${tableHTML(ex)}`;
   if(ex.t==='choice'){
     h+='<div class="opts">';
     ex.opts.forEach((o,i)=>{
@@ -119,7 +137,8 @@ function render(){
 
 
 function startRun(L){
-  const ex=L.kind==='review'?shuffle(L.unit.lessons.flatMap(l=>l.ex)).slice(0,5):shuffle(L.ex);
+  // Lección: ejercicios fijos barajados y, al final, un caso real al azar (si hay datos).
+  const ex=L.kind==='review'?shuffle(L.unit.lessons.flatMap(l=>l.ex)).slice(0,5):shuffle(L.ex).concat(shuffle(L.casos).slice(0,1));
   run={L,queue:ex.slice(),total:ex.length,done:0,lives:3,firstWrong:0,seen:new Set(),sel:null,val:'',checked:false,ok:null};
   view='lesson';render();
 }
@@ -169,7 +188,7 @@ $app.addEventListener('click',e=>{
   const b=e.target.closest('[data-act]');if(!b)return;
   const a=b.dataset.act;
   if(a==='open'){
-    const L=FLAT.find(l=>l.id===b.dataset.id),s=statuses()[FLAT.indexOf(L)];
+    const L=FLAT.find(l=>l.id===b.dataset.id),s=statuses()[L.id];
     if(s==='locked'){toast('Completa antes la lección anterior.');return}
     homeY=window.scrollY;startRun(L);
   }
@@ -178,6 +197,7 @@ $app.addEventListener('click',e=>{
   else if(a==='next')next();
   else if(a==='quit'||a==='home'){view='home';goCur=(a==='home');render()}
   else if(a==='retry')startRun(run.L);
+  else if(a==='track'){S.track=b.dataset.track;save();homeY=0;render()}
   else if(a==='unlock'){S.all=!S.all;save();homeY=window.scrollY;render()}
   else if(a==='reset'){
     if(!resetArm){resetArm=true;homeY=window.scrollY;render();setTimeout(()=>{if(resetArm){resetArm=false;if(view==='home'){homeY=window.scrollY;render()}}},4000)}
@@ -203,4 +223,4 @@ render();
 
 
 // API mínima para tests (test/smoke.mjs)
-export const api={FLAT,homeHTML,startRun,lessonHTML,check,next,resultHTML,failHTML,render,getRun:()=>run,setSel:v=>{run.sel=v},setVal:v=>{run.val=v},getState:()=>S};
+export const api={FLAT,CASOS,setTrack:t=>{S.track=t},homeHTML,startRun,lessonHTML,check,next,resultHTML,failHTML,render,getRun:()=>run,setSel:v=>{run.sel=v},setVal:v=>{run.val=v},getState:()=>S};

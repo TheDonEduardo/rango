@@ -63,6 +63,10 @@ button{font:inherit;color:inherit;cursor:pointer}
 .goal{margin:18px 0 0;display:grid;gap:8px}
 .goal-h{display:flex;justify-content:space-between;align-items:baseline;font-weight:600}
 .goal-h span:last-child{font-variant-numeric:tabular-nums;color:var(--ink-2);font-weight:500}
+.tracks{margin:16px 0 0;display:flex;gap:4px;padding:4px;background:var(--surface);border:1px solid var(--line);border-radius:999px}
+.tracks button{flex:1;background:none;border:0;padding:9px 12px;border-radius:999px;font-weight:600;color:var(--ink-2)}
+.tracks button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.src{margin:24px 0 0;font-size:13px;color:var(--ink-2)}
 .bar{height:10px;border-radius:99px;background:var(--line);overflow:hidden}
 .bar>i{display:block;height:100%;background:var(--up);border-radius:99px;transition:width .4s}
 
@@ -142,6 +146,14 @@ button{font:inherit;color:inherit;cursor:pointer}
 
 /* Gráficos */
 .chart{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:8px 6px}
+.tbl{padding:4px 14px 10px;overflow-x:auto}
+.tbl table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;font-size:15px}
+.tbl th,.tbl td{padding:9px 6px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
+.tbl thead th{font-weight:600;color:var(--ink-2);font-size:13px}
+.tbl tbody th,.tbl thead th:first-child{text-align:left}
+.tbl tbody th{font-weight:600}
+.tbl tbody tr:last-child>*{border-bottom:0}
+.tbl figcaption{font-size:12px;color:var(--ink-2);padding-top:4px}
 .svg{display:block;width:100%;height:auto;max-width:100%}
 .svg text{font-family:var(--font-body);font-size:11px;fill:var(--ink-2);font-variant-numeric:tabular-nums}
 .svg .grid{stroke:var(--line);stroke-width:1;stroke-dasharray:3 4}
