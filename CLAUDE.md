@@ -72,12 +72,35 @@ Sistema de tokens en `src/styles.css` (`:root`, con variante oscura por `prefers
 
 ## Siguiente trabajo sugerido (por orden)
 
-1. Ampliar contenido: unidades 4 (catalizadores binarios) y 5 (Wyckoff/VSA) hechas. Siguiente: VCP, salidas escalonadas, riesgo de cartera. Mínimo 6 lecciones nuevas.
+1. Ampliar contenido técnico: unidades 4 (catalizadores binarios), 5 (Wyckoff/VSA) y 6 (VCP) hechas. Siguiente: salidas escalonadas y riesgo de cartera.
+1b. Ruta fundamental: ver «Ruta fundamental (borrador)». Validar temario y decisiones abiertas antes de escribir contenido.
 2. Nuevos tipos de ejercicio: ordenar pasos (fases de Weinstein), arrastrar entrada/stop/objetivo sobre el gráfico, emparejar patrón con descripción.
 3. Repaso espaciado: guardar ejercicios fallados y reintroducirlos días después.
 4. Persistencia real (cuentas, sincronización) y decidir stack: vanilla actual frente a Vite + TypeScript. Migrar solo cuando el contenido y los tipos de ejercicio se estabilicen.
 5. PWA instalable y avisos de racha.
 6. Pantalla de aviso legal (formación, no asesoramiento financiero).
+
+## Ruta fundamental (borrador, pendiente de validar)
+
+Principio: el análisis fundamental decide **qué** comprar; el técnico, **cuándo** y **cuánto**. Una tesis sin criterio de invalidación es como una entrada sin stop. Marco: O'Neil (CAN SLIM: C y A), Minervini (aceleración de BPA, ventas y márgenes), valoración por múltiplos y caja, y tesis escrita con catalizador e invalidación.
+
+Unidades propuestas (2 lecciones × 4 ejercicios cada una, como la ruta técnica):
+
+| Unidad | Lección 1 | Lección 2 |
+|---|---|---|
+| F1 Crecimiento del beneficio | BPA y ventas: crecimiento interanual y aceleración trimestral | Calidad del beneficio: márgenes, partidas no recurrentes, sorpresas y revisiones de estimaciones |
+| F2 Valoración | PER, PER adelantado y PEG: cuánto pagas por el crecimiento | EV/EBITDA, rentabilidad por flujo de caja libre y qué expectativas descuenta el precio |
+| F3 Balance y caja | Deuda neta/EBITDA y cobertura de intereses | Caja, meses de autonomía y riesgo de dilución (enlaza con la lección b3) |
+| F4 Tesis de inversión | Escribir la tesis: motor de beneficio, catalizador, horizonte y qué espera el mercado | Invalidación y seguimiento: qué dato rompe la tesis, revisión tras resultados y cómo convive con el stop técnico |
+
+Necesidades técnicas previstas:
+- Ejercicios sobre tablas de resultados trimestrales: campo opcional `table: {cols:[...], rows:[[...]]}` en el ejercicio, renderizado como el `chart`.
+- La tesis encaja con el tipo de ejercicio «ordenar pasos» (ya en la lista de pendientes).
+
+Decisiones abiertas:
+- ¿Ruta separada (selector Técnico / Fundamental en el inicio) o unidades a continuación de la técnica?
+- ¿Empresas reales (datos que caducan y riesgo de parecer recomendación) o ficticias con cifras realistas?
+- La regla «datos reales» de arriba se pensó para gráficos; para fundamental habrá que concretarla.
 
 ## Convenciones de trabajo
 
