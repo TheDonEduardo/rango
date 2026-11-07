@@ -1,6 +1,6 @@
 # Rango
 
-App web gamificada tipo Duolingo para **inversores que ya operan** (bolsa, análisis técnico, gestión de riesgo). Todo el producto está en español de España. Estado actual: prototipo jugable, sin backend ni framework.
+App web gamificada tipo Duolingo para **inversores que ya operan** (bolsa, análisis técnico, gestión de riesgo) y, con la ruta Básico, para quien empieza desde cero. Todo el producto está en español de España. Estado actual: prototipo jugable, sin backend ni framework.
 
 ## Comandos
 
@@ -28,7 +28,7 @@ test/smoke.mjs        lint de contenido + test de humo sin navegador
 
 ## Esquema del contenido (`units.json`)
 
-Unidad: `{n, id, track?, title, blurb, lessons: [...] | null}` (`null` = "Próximamente"). `track`: `"tecnico"` (por defecto) o `"fundamental"`; cada ruta tiene su selector en el inicio, su numeración `n` y su propia lección actual. Cada unidad genera automáticamente un nodo "Repaso de la unidad" con 5 ejercicios al azar de sus lecciones.
+Unidad: `{n, id, track?, title, blurb, lessons: [...] | null}` (`null` = "Próximamente"). `track`: `"basico"`, `"tecnico"` (por defecto) o `"fundamental"`; cada ruta tiene su selector en el inicio, su numeración `n` y su propia lección actual. Básico es el primer nivel: Técnico y Fundamental se abren al completarlo, al pulsar «Ya opero: saltar los básicos» (`S.skipBasics`) o si ya hay progreso en ellas. Un usuario nuevo empieza en Básico. Cada unidad genera automáticamente un nodo "Repaso de la unidad" con 5 ejercicios al azar de sus lecciones.
 
 Lección: `{id, title, ex: [...]}`. Los `id` deben ser únicos (se guardan en localStorage).
 
@@ -50,7 +50,7 @@ Gráficos (`chart`):
 ## Reglas para escribir lecciones
 
 - Datos reales y cálculos verificados: recalcula cada cifra de `a` y de `why` antes de guardar. Una cuenta mal hecha rompe la confianza del producto.
-- Nivel de usuario: ya conoce los conceptos básicos; se enseña criterio operativo (qué hacer, a qué nivel, con qué riesgo), no definiciones de manual.
+- Nivel de usuario: en Técnico y Fundamental ya conoce los conceptos básicos; se enseña criterio operativo (qué hacer, a qué nivel, con qué riesgo), no definiciones de manual. En Básico se permiten definiciones, pero siempre con un ejemplo numérico o práctico, y cada concepto apunta a dónde se usará después (ATR, R, velas).
 - Marco de referencia: Weinstein (fases, MA 30 semanas), Minervini (Trend Template, VCP), Wyckoff/VSA, ATR para stops y tamaño, múltiplos R, salidas escalonadas.
 - Cada ejercicio enseña una sola cosa. `why` explica el porqué con las cifras del enunciado, en 1-2 frases.
 - Varía la posición de la respuesta correcta en los `choice`.
@@ -76,8 +76,9 @@ Sistema de tokens en `src/styles.css` (`:root`, con variante oscura por `prefers
 - Sin cuentas, sin sincronización, sin ligas, sin repaso espaciado.
 - Botones "Desbloquear todo" y "Reiniciar progreso" al final del inicio: solo para desarrollo, retirar antes de publicar.
 
-## Siguiente trabajo sugerido (por orden)
+## Tareas pendientes (por orden sugerido)
 
+0. Ruta Básico: 3 unidades hechas (acciones y órdenes, rentabilidad y riesgo, leer un gráfico). Posibles ampliaciones: fiscalidad básica en España, tipos de cuenta y bróker, ETF e índices.
 1. Ampliar contenido técnico: unidades 4 (catalizadores binarios), 5 (Wyckoff/VSA) y 6 (VCP) hechas. Siguiente: salidas escalonadas y riesgo de cartera.
 1b. Ruta fundamental: F1-F4 hechas (F1-F3 con casos reales). Ideas siguientes: sectores, lectura de un informe de resultados real.
 2. Nuevos tipos de ejercicio: «ordenar pasos» hecho (`order`). Faltan: arrastrar entrada/stop/objetivo sobre el gráfico y emparejar patrón con descripción.
@@ -85,6 +86,7 @@ Sistema de tokens en `src/styles.css` (`:root`, con variante oscura por `prefers
 4. Persistencia real (cuentas, sincronización) y decidir stack: vanilla actual frente a Vite + TypeScript. Migrar solo cuando el contenido y los tipos de ejercicio se estabilicen.
 5. PWA instalable y avisos de racha.
 6. Pantalla de aviso legal (formación, no asesoramiento financiero).
+7. Fuera de Rango, en el bot del repo: `portfolio_manager.py` lleva la clave de Gemini escrita en el código. Revocarla, crear otra, guardarla como secreto de GitHub y leerla del entorno.
 
 ## Ruta fundamental
 

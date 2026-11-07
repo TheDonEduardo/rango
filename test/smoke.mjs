@@ -33,7 +33,7 @@ const lint = (ex, w) => {
       if (!['choice', 'num', 'tap', 'level', 'order'].includes(ex.t)) errs.push(w + ': tipo desconocido ' + ex.t);
 };
 for (const u of units) {
-  if (!['tecnico', 'fundamental', undefined].includes(u.track)) errs.push('ruta desconocida en ' + u.id);
+  if (!['basico', 'tecnico', 'fundamental', undefined].includes(u.track)) errs.push('ruta desconocida en ' + u.id);
   for (const l of u.lessons || []) {
     if (ids.has(l.id)) errs.push('id duplicado ' + l.id);
     ids.add(l.id);
@@ -56,6 +56,12 @@ const right = ex => ex.t === 'num' ? String(ex.a).replace('.', ',') : ex.t === '
 const give = (ex, v) => ex.t === 'num' ? T.setVal(v) : T.setSel(v);
 
 if (!T.homeHTML().includes('Rango')) errs.push('home no renderiza');
+// Usuario nuevo: empieza en Básico y las otras rutas están bloqueadas hasta completarlo o saltarlo.
+if (!T.homeHTML().includes('Acciones y órdenes')) errs.push('un usuario nuevo no empieza en la ruta básica');
+T.setTrack('tecnico');
+if (!T.homeHTML().includes('data-act="skipbasics"') || T.homeHTML().includes('node current')) errs.push('la ruta técnica no está bloqueada para un usuario nuevo');
+T.skipBasics();
+if (T.homeHTML().includes('data-act="skipbasics"') || !T.homeHTML().includes('node current')) errs.push('saltar los básicos no abre la ruta técnica');
 T.setTrack('fundamental');
 if (!T.homeHTML().includes('Crecimiento del beneficio')) errs.push('la ruta fundamental no renderiza');
 T.setTrack('tecnico');

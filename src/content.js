@@ -3,7 +3,8 @@ const get=async f=>(await fetch(new URL('./content/'+f,import.meta.url))).json()
 export const UNITS=await get('units.json');
 // Casos reales generados por tools/casos.py (opcional: si falta, las lecciones funcionan igual).
 export const CASOS=await get('casos.json').catch(()=>null);
-export const TRACKS=[{id:'tecnico',title:'Técnico'},{id:'fundamental',title:'Fundamental'}];
+// La ruta «basico» es el primer nivel: desbloquea las otras dos (o se salta desde el inicio).
+export const TRACKS=[{id:'basico',title:'Básico'},{id:'tecnico',title:'Técnico'},{id:'fundamental',title:'Fundamental'}];
 export const trackOf=u=>u.track||'tecnico';
 export const FLAT=[];
 UNITS.forEach(u=>{

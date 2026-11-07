@@ -4,7 +4,7 @@ import {P,ico,icoX,icoOk,LOGO} from './icons.js';
 import {candlesSVG,lineSVG,glyph} from './charts.js';
 import {UNITS,FLAT,CASOS,TRACKS,trackOf,exCount} from './content.js';
 
-const DEF=()=>({xp:0,streak:0,last:null,day:null,dayXp:0,done:{},all:false,track:'tecnico'});
+const DEF=()=>({xp:0,streak:0,last:null,day:null,dayXp:0,done:{},all:false,track:'basico',skipBasics:false});
 function load(){
   try{const j=JSON.parse(localStorage.getItem(KEY));if(j&&typeof j==='object')return Object.assign(DEF(),j)}catch(e){}
   return DEF();
@@ -15,13 +15,20 @@ const $app=document.getElementById('app'), $toast=document.getElementById('toast
 const streakNow=()=>(S.last===today()||S.last===yest())?S.streak:0;
 const dayXpNow=()=>S.day===today()?S.dayXp:0;
 
-// Estado de cada lección por id. Cada ruta (técnica/fundamental) tiene su propia lección actual.
+// Las rutas técnica y fundamental se abren al completar los básicos, al saltarlos o si ya hay progreso en ellas.
+function advancedOpen(){
+  if(S.all||S.skipBasics)return true;
+  const basic=FLAT.filter(l=>trackOf(l.unit)==='basico');
+  if(basic.every(l=>S.done[l.id]))return true;
+  return FLAT.some(l=>trackOf(l.unit)!=='basico'&&S.done[l.id]);
+}
+// Estado de cada lección por id. Cada ruta tiene su propia lección actual.
 function statuses(){
-  const st={},cur={};
+  const st={},cur={},adv=advancedOpen();
   FLAT.forEach(l=>{
     const t=trackOf(l.unit);
     if(S.done[l.id])st[l.id]='done';
-    else if(!cur[t]){cur[t]=1;st[l.id]='current'}
+    else if(!cur[t]){cur[t]=1;st[l.id]=(t==='basico'||adv)?'current':'locked'}
     else st[l.id]=S.all?'open':'locked';
   });
   return st;
@@ -54,6 +61,7 @@ function homeHTML(){
   h+=`<section class="goal" aria-label="Meta diaria"><div class="goal-h"><span>Meta de hoy</span><span>${Math.min(dx,GOAL)} / ${GOAL} XP</span></div><div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="${GOAL}" aria-valuenow="${Math.min(dx,GOAL)}"><i style="width:${Math.min(100,dx/GOAL*100)}%"></i></div></section>`;
   h+=`<nav class="tracks" aria-label="Ruta">${TRACKS.map(t=>`<button data-act="track" data-track="${t.id}" aria-pressed="${S.track===t.id}">${t.title}</button>`).join('')}</nav>`;
   const TF=FLAT.filter(l=>trackOf(l.unit)===S.track);
+  if(S.track!=='basico'&&!advancedOpen())h+=`<section class="gate"><p>Esta ruta se abre al completar <b>Conceptos básicos</b>.</p><div class="row"><button class="btn line" data-act="track" data-track="basico">Ir a los básicos</button><button class="btn ghost" data-act="skipbasics">Ya opero: saltar los básicos</button></div></section>`;
   UNITS.filter(u=>trackOf(u)===S.track).forEach(u=>{
     if(!u.lessons){
       h+=`<section class="unit soon"><div class="ban"><div><div class="u">Unidad ${u.n}</div><h2>${u.title}</h2><p>${u.blurb}</p></div><span class="cnt">Próximamente</span></div></section>`;
@@ -221,7 +229,7 @@ $app.addEventListener('click',e=>{
   const a=b.dataset.act;
   if(a==='open'){
     const L=FLAT.find(l=>l.id===b.dataset.id),s=statuses()[L.id];
-    if(s==='locked'){toast('Completa antes la lección anterior.');return}
+    if(s==='locked'){toast(trackOf(L.unit)!=='basico'&&!advancedOpen()?'Completa antes los Conceptos básicos.':'Completa antes la lección anterior.');return}
     homeY=window.scrollY;startRun(L);
   }
   else if(a==='pick'&&!run.checked)pickChoice(+b.dataset.i);
@@ -232,6 +240,7 @@ $app.addEventListener('click',e=>{
   else if(a==='quit'||a==='home'){view='home';goCur=(a==='home');render()}
   else if(a==='retry')startRun(run.L);
   else if(a==='track'){S.track=b.dataset.track;save();homeY=0;render()}
+  else if(a==='skipbasics'){S.skipBasics=true;save();homeY=0;render();toast('Rutas Técnico y Fundamental abiertas.')}
   else if(a==='unlock'){S.all=!S.all;save();homeY=window.scrollY;render()}
   else if(a==='reset'){
     if(!resetArm){resetArm=true;homeY=window.scrollY;render();setTimeout(()=>{if(resetArm){resetArm=false;if(view==='home'){homeY=window.scrollY;render()}}},4000)}
@@ -257,4 +266,4 @@ render();
 
 
 // API mínima para tests (test/smoke.mjs)
-export const api={FLAT,CASOS,setTrack:t=>{S.track=t},homeHTML,startRun,lessonHTML,check,next,resultHTML,failHTML,render,getRun:()=>run,setSel:v=>{run.sel=v},setVal:v=>{run.val=v},getState:()=>S};
+export const api={FLAT,CASOS,setTrack:t=>{S.track=t},skipBasics:()=>{S.skipBasics=true},homeHTML,startRun,lessonHTML,check,next,resultHTML,failHTML,render,getRun:()=>run,setSel:v=>{run.sel=v},setVal:v=>{run.val=v},getState:()=>S};
