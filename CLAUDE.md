@@ -78,7 +78,7 @@ Sistema de tokens en `src/styles.css` (`:root`, con variante oscura por `prefers
 ## Siguiente trabajo sugerido (por orden)
 
 1. Ampliar contenido técnico: unidades 4 (catalizadores binarios), 5 (Wyckoff/VSA) y 6 (VCP) hechas. Siguiente: salidas escalonadas y riesgo de cartera.
-1b. Ruta fundamental: F1 hecha. Siguiente: F2 Valoración, con plantillas de casos reales en tools/casos.py (PER y PER adelantado desde precio y BPA).
+1b. Ruta fundamental: F1 y F2 hechas, con casos reales (crecimiento, márgenes, PER, PER adelantado, EV/EBITDA, rentabilidad por flujo de caja libre). Siguiente: F3 Balance y caja (deuda neta/EBITDA, cobertura de intereses, meses de autonomía).
 2. Nuevos tipos de ejercicio: ordenar pasos (fases de Weinstein), arrastrar entrada/stop/objetivo sobre el gráfico, emparejar patrón con descripción.
 3. Repaso espaciado: guardar ejercicios fallados y reintroducirlos días después.
 4. Persistencia real (cuentas, sincronización) y decidir stack: vanilla actual frente a Vite + TypeScript. Migrar solo cuando el contenido y los tipos de ejercicio se estabilicen.
@@ -103,6 +103,7 @@ Decisiones tomadas:
 - Dos capas por lección: ejercicios fijos con números limpios para enseñar el concepto (en `units.json`) y, al final, un caso real de los valores de la cartera del bot (en `casos.json`).
 - Los casos reales son solo de cálculo y se generan con código: la respuesta se calcula con las mismas cifras redondeadas que ve el usuario y el `why` solo afirma hechos verificables con los datos (comparaciones con umbrales del marco o con el trimestre anterior). Nada de valoraciones ni de «compra/vende»: cada caso indica fuente y fecha y el inicio lo marca como formación.
 - Si una plantilla puede dar un resultado negativo, se reformula o se descarta el caso (ver regla de `num`).
+- Filtra los datos absurdos o distorsionados en vez de explicarlos: PER mayor de 200 (BPA casi nulo), EV/EBITDA de 100 o más, rentabilidad por flujo de caja libre de 8 % o más (en negocios financieros el flujo operativo incluye fondos de clientes). El flujo de caja libre se suma de 4 trimestres consecutivos del estado de flujos, no del campo `freeCashflow` de Yahoo, que no es fiable.
 - La tesis encaja con el tipo de ejercicio «ordenar pasos» (ya en la lista de pendientes).
 
 ## Convenciones de trabajo

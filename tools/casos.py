@@ -17,6 +17,7 @@ import yfinance as yf
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "src" / "content" / "casos.json"
 BOT = ROOT.parent / "portfolio_manager.py"
+HOY = dt.date.today().strftime("%d/%m/%Y")
 FALLBACK = ["AVGO", "GOOGL", "MELI", "MSFT", "LLY", "CRWD", "NU", "AXON", "META", "NVDA"]
 CUR = {"USD": "$", "EUR": "€"}
 O_NEIL = 25  # crecimiento mínimo de ventas que pide O'Neil (CAN SLIM)
@@ -73,7 +74,7 @@ def casos_de(tk):
         return {}
     q = q[sorted(q.columns, reverse=True)]  # columna 0 = trimestre más reciente
     cols = list(q.columns)
-    out = {"f1a": [], "f1b": []}
+    out = {"f1a": [], "f1b": [], "f2a": [], "f2b": []}
     rev, eps = row(q, "Total Revenue"), row(q, "Diluted EPS")
     gp, op = row(q, "Gross Profit"), row(q, "Operating Income")
 
@@ -132,11 +133,74 @@ def casos_de(tk):
             "unit": "%", "a": m, "tol": 0.06,
             "why": f"{es(b, db)} ÷ {es(r, dr)} = {es(m)} %. En el trimestre anterior fue del {es(m_prev)} %: el margen {tend}.",
         })
+
+    # f2a · PER y PER adelantado (precio y BPA en la misma moneda)
+    price = info.get("currentPrice")
+    psym = CUR.get(info.get("currency") or "")
+    if ok(price) and price > 0 and psym == sym:
+        p2 = round(float(price), 2)
+        for campo, desc, nota in (
+            ("trailingEps", "BPA contable de los últimos 12 meses", "Es el beneficio contable del último año."),
+            ("forwardEps", "BPA estimado por los analistas para los próximos 12 meses",
+             "Ojo: el BPA estimado suele ser «ajustado» y el pasado, contable; no compares ambos PER sin saberlo."),
+        ):
+            e = info.get(campo)
+            if not ok(e) or e <= 0:
+                continue
+            e2 = round(float(e), 2)
+            per = round(p2 / e2, 1)
+            if not (0 < per < 200):  # BPA casi nulo: PER sin sentido
+                continue
+            nombre_per = "PER" if campo == "trailingEps" else "PER adelantado"
+            out["f2a"].append({
+                "t": "num", "caso": caso,
+                "q": f"Precio de {nombre} el {HOY}: {es(p2, 2)} {sym}. {desc}: {es(e2, 2)} {sym}. "
+                     f"¿{nombre_per}? Redondea a 1 decimal.",
+                "unit": "", "a": per, "tol": 0.06,
+                "why": f"{es(p2, 2)} ÷ {es(e2, 2)} = {es(per)} veces. {nota}",
+            })
+
+    # f2b · EV/EBITDA (EV calculado: capitalización + deuda − caja)
+    cap, debt, cash, ebitda = (info.get(k) for k in ("marketCap", "totalDebt", "totalCash", "ebitda"))
+    if psym == sym and all(ok(x) for x in (cap, debt, cash, ebitda)) and ebitda > 0:
+        (c, dc), (d, dd), (k, dk), (eb, de) = mill(cap), mill(debt), mill(cash), mill(ebitda)
+        ev = round(c + d - k, 1)
+        mult = round(ev / eb, 1)
+        if 0 < mult < 100:
+            out["f2b"].append({
+                "t": "num", "caso": caso,
+                "q": f"{nombre} el {HOY}: capitalización de {es(c, dc)} M{sym}, deuda de {es(d, dd)} M{sym}, "
+                     f"caja de {es(k, dk)} M{sym} y EBITDA de los últimos 12 meses de {es(eb, de)} M{sym}. "
+                     f"¿EV/EBITDA? Redondea a 1 decimal.",
+                "unit": "", "a": mult, "tol": 0.06,
+                "why": f"EV = {es(c, dc)} + {es(d, dd)} − {es(k, dk)} = {es(ev, 0 if abs(ev) >= 1000 else 1)} M{sym}; "
+                       f"÷ {es(eb, de)} = {es(mult)} veces.",
+            })
+
+    # f2b · rentabilidad por flujo de caja libre (suma de 4 trimestres consecutivos)
+    cf = t.quarterly_cashflow
+    if psym == sym and ok(cap) and cap > 0 and cf is not None and not cf.empty and "Free Cash Flow" in cf.index:
+        cf = cf[sorted(cf.columns, reverse=True)]
+        cc = list(cf.columns[:4])
+        fcf = cf.loc["Free Cash Flow"]
+        seguidos = len(cc) == 4 and 250 <= (cc[0] - cc[3]).days <= 290
+        if seguidos and all(ok(fcf[x]) for x in cc):
+            (f, df), (c, dc) = mill(sum(float(fcf[x]) for x in cc)), mill(cap)
+            y = round(f / c * 100, 1)
+            # Por encima de ~8 % suele ser una distorsión (p. ej. fondos de clientes en negocios financieros).
+            if 0.1 <= y < 8:
+                out["f2b"].append({
+                    "t": "num", "caso": caso,
+                    "q": f"{nombre}: flujo de caja libre de los 4 trimestres hasta el {fecha(cc[0])}: {es(f, df)} M{sym}. "
+                         f"Capitalización el {HOY}: {es(c, dc)} M{sym}. ¿Rentabilidad por flujo de caja libre? Redondea a 1 decimal.",
+                    "unit": "%", "a": y, "tol": 0.06,
+                    "why": f"{es(f, df)} ÷ {es(c, dc)} = {es(y)} %: la caja que genera el negocio por cada 100 {sym} de capitalización.",
+                })
     return out
 
 
 def main():
-    ex = {"f1a": [], "f1b": []}
+    ex = {"f1a": [], "f1b": [], "f2a": [], "f2b": []}
     fallos = []
     for tk in tickers():
         try:

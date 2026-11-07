@@ -960,7 +960,89 @@
     "track": "fundamental",
     "title": "Valoración",
     "blurb": "PER, PEG, EV/EBITDA y qué expectativas descuenta el precio.",
-    "lessons": null
+    "lessons": [
+      {
+        "id": "f2a",
+        "title": "PER y PEG",
+        "ex": [
+          {
+            "t": "num",
+            "q": "Una acción cotiza a 90,00 $ y su BPA de los últimos 12 meses es de 3,00 $. ¿PER?",
+            "unit": "",
+            "a": 30,
+            "why": "90,00 ÷ 3,00 = 30: pagas 30 veces el beneficio de un año. Solo, no dice si es caro o barato; falta saber cuánto crecerá."
+          },
+          {
+            "t": "num",
+            "q": "Misma acción a 90,00 $. Los analistas estiman un BPA de 4,50 $ para los próximos 12 meses. ¿PER adelantado?",
+            "unit": "",
+            "a": 20,
+            "why": "90,00 ÷ 4,50 = 20 veces, frente a 30 con el BPA pasado. Si el beneficio crece un 50 % como se espera, la misma acción pasa a ser bastante más barata."
+          },
+          {
+            "t": "num",
+            "q": "PER de 30 y crecimiento esperado del BPA del 25 % anual. ¿PEG?",
+            "unit": "",
+            "a": 1.2,
+            "why": "PEG = PER ÷ crecimiento = 30 ÷ 25 = 1,2. Cerca de 1, el precio va en línea con el crecimiento; muy por encima, pagas crecimiento que todavía no existe."
+          },
+          {
+            "t": "choice",
+            "q": "¿Qué empresa es más barata en relación con su crecimiento?",
+            "table": {
+              "cols": ["Empresa", "PER", "Crecimiento BPA"],
+              "rows": [
+                ["A", "40", "50 %"],
+                ["B", "15", "5 %"],
+                ["C", "25", "10 %"]
+              ]
+            },
+            "opts": ["A", "B", "C", "Las tres por igual"],
+            "a": 0,
+            "why": "PEG: A 40 ÷ 50 = 0,8; B 15 ÷ 5 = 3; C 25 ÷ 10 = 2,5. El PER más alto es el más barato por unidad de crecimiento: por eso los líderes de Minervini rara vez tienen PER bajo."
+          }
+        ]
+      },
+      {
+        "id": "f2b",
+        "title": "EV, caja y expectativas",
+        "ex": [
+          {
+            "t": "num",
+            "q": "Capitalización: 50.000 M$. Deuda: 8.000 M$. Caja: 3.000 M$. EBITDA anual: 5.000 M$. ¿EV/EBITDA?",
+            "unit": "",
+            "a": 11,
+            "why": "EV = 50.000 + 8.000 − 3.000 = 55.000 M$, y 55.000 ÷ 5.000 = 11 veces. El EV incluye la deuda: a igual capitalización, la empresa endeudada es más cara."
+          },
+          {
+            "t": "num",
+            "q": "Flujo de caja libre de los últimos 12 meses: 2.500 M$. Capitalización: 50.000 M$. ¿Rentabilidad por flujo de caja libre?",
+            "unit": "%",
+            "a": 5,
+            "why": "2.500 ÷ 50.000 = 5 %: la caja que genera el negocio por cada 100 $ invertidos. A diferencia del BPA, es difícil de maquillar con contabilidad."
+          },
+          {
+            "t": "num",
+            "q": "Cotiza a 100 $ con un BPA estimado de 4,00 $ (PER 25). Si dentro de un año el mercado solo paga un PER de 20, ¿cuánto tiene que crecer el BPA para que el precio no baje?",
+            "unit": "%",
+            "a": 25,
+            "why": "100 ÷ 20 = 5,00 $ de BPA, un 25 % más que 4,00 $. Si el PER se contrae, el beneficio tiene que crecer solo para que el precio se mantenga."
+          },
+          {
+            "t": "choice",
+            "q": "Una empresa con PER 60 publica un BPA un 30 % superior al del año anterior, justo lo esperado, y cae un 8 %. ¿Por qué?",
+            "opts": [
+              "Los resultados fueron malos",
+              "Es un error del mercado: hay que comprar más",
+              "El precio ya descontaba ese crecimiento y el mercado quería más",
+              "El volumen de la sesión fue bajo"
+            ],
+            "a": 2,
+            "why": "Con PER 60, el precio ya descuenta años de crecimiento alto: cumplir no basta, hay que superar. Mueve el precio la diferencia con lo esperado, no el dato en sí."
+          }
+        ]
+      }
+    ]
   },
   {
     "n": 3,
