@@ -327,6 +327,104 @@
     ]
   },
   {
+    "n": 4,
+    "id": "etf",
+    "track": "basico",
+    "title": "ETF e índices",
+    "blurb": "Comprar todo un mercado de una vez y saber con qué compararte.",
+    "lessons": [
+      {
+        "id": "bd1",
+        "title": "Índices",
+        "ex": [
+          {
+            "t": "choice",
+            "q": "¿Qué es un índice bursátil como el IBEX 35 o el S&P 500?",
+            "opts": [
+              "Una empresa que cotiza en bolsa",
+              "Una cesta de acciones que resume cómo se mueve un mercado",
+              "Un fondo que compras directamente en el bróker",
+              "El precio medio de todas las acciones del mundo"
+            ],
+            "a": 1,
+            "why": "El IBEX 35 agrupa 35 valores españoles y el S&P 500, unas 500 grandes empresas de EE. UU. Un índice no se compra directamente: se replica con fondos indexados o ETF."
+          },
+          {
+            "t": "num",
+            "q": "Un índice ponderado por capitalización tiene tres empresas: A vale 600 M€, B 300 M€ y C 100 M€. ¿Cuánto pesa A en el índice?",
+            "unit": "%",
+            "a": 60,
+            "why": "600 ÷ (600 + 300 + 100) = 600 ÷ 1.000 = 60 %. En los índices ponderados por capitalización, como el S&P 500, las mayores empresas mueven buena parte del índice."
+          },
+          {
+            "t": "num",
+            "q": "Mismo índice: A (60 % del peso) sube un 10 % y B y C no se mueven. ¿Cuánto sube el índice?",
+            "unit": "%",
+            "a": 6,
+            "why": "60 % × 10 % = 6 %. Por eso unas pocas empresas grandes pueden hacer subir el índice aunque la mayoría de sus valores no suba."
+          },
+          {
+            "t": "choice",
+            "q": "Tu cartera ha ganado un 8 % este año y el S&P 500, un 15 %. ¿Qué conclusión sacas?",
+            "opts": [
+              "Lo has hecho bien: has ganado dinero",
+              "El índice no es comparable con una cartera",
+              "Lo has hecho peor que comprar el índice, con más trabajo",
+              "Debes doblar el riesgo el año que viene"
+            ],
+            "a": 2,
+            "why": "El índice es tu referencia: si no lo superas a largo plazo, un fondo indexado te habría dado más con menos esfuerzo. Compárate siempre con el índice de tu mercado."
+          }
+        ]
+      },
+      {
+        "id": "bd2",
+        "title": "ETF",
+        "ex": [
+          {
+            "t": "choice",
+            "q": "¿Qué es un ETF?",
+            "opts": [
+              "Un fondo que replica un índice y cotiza en bolsa como una acción",
+              "Una acción de una sola empresa",
+              "Un depósito bancario con interés fijo",
+              "Un derivado que caduca cada mes"
+            ],
+            "a": 0,
+            "why": "Con una sola compra tienes todas las empresas del índice. Se compra y se vende durante la sesión, como una acción, con su precio y su spread."
+          },
+          {
+            "t": "num",
+            "q": "Inviertes 10.000 € en un ETF con un coste anual (TER) del 0,07 %. ¿Cuántos € te cuesta al año?",
+            "unit": "€",
+            "a": 7,
+            "why": "10.000 × 0,07 % = 7 € al año. Un fondo de gestión activa con un 1,5 % costaría 150 €, y esa diferencia se acumula año tras año."
+          },
+          {
+            "t": "num",
+            "q": "El índice que replica un ETF sube un 12 % en el año y el ETF tiene un TER del 0,20 %. ¿Qué rentabilidad aproximada obtienes? Redondea a 1 decimal.",
+            "unit": "%",
+            "a": 11.8,
+            "tol": 0.06,
+            "why": "12 % − 0,20 % ≈ 11,8 %. El coste se descuenta del valor del fondo a diario; además puede haber una pequeña diferencia de seguimiento con el índice."
+          },
+          {
+            "t": "choice",
+            "q": "¿Qué hace un ETF de acumulación con los dividendos de sus empresas?",
+            "opts": [
+              "Te los ingresa en la cuenta cada trimestre",
+              "Los reinvierte dentro del fondo",
+              "Los usa para pagar las comisiones del bróker",
+              "Los reparte entre los gestores"
+            ],
+            "a": 1,
+            "why": "Los reinvierte y el valor de cada participación crece. Uno de distribución te los paga, y en España cada cobro tributa en tu declaración de ese año."
+          }
+        ]
+      }
+    ]
+  },
+  {
     "n": 1,
     "id": "velas",
     "title": "Velas japonesas",

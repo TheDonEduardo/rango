@@ -78,7 +78,7 @@ Sistema de tokens en `src/styles.css` (`:root`, con variante oscura por `prefers
 
 ## Tareas pendientes (por orden sugerido)
 
-0. Ruta Básico: 3 unidades hechas (acciones y órdenes, rentabilidad y riesgo, leer un gráfico). Posibles ampliaciones: fiscalidad básica en España, tipos de cuenta y bróker, ETF e índices.
+0. Ruta Básico: 4 unidades hechas (acciones y órdenes, rentabilidad y riesgo, leer un gráfico, ETF e índices). Posibles ampliaciones: fiscalidad básica en España, tipos de cuenta y bróker.
 1. Ampliar contenido técnico: unidades 4 (catalizadores binarios), 5 (Wyckoff/VSA) y 6 (VCP) hechas. Siguiente: salidas escalonadas y riesgo de cartera.
 1b. Ruta fundamental: F1-F4 hechas (F1-F3 con casos reales). Ideas siguientes: sectores, lectura de un informe de resultados real.
 2. Nuevos tipos de ejercicio: «ordenar pasos» hecho (`order`). Faltan: arrastrar entrada/stop/objetivo sobre el gráfico y emparejar patrón con descripción.
