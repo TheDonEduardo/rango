@@ -67,6 +67,14 @@ button{font:inherit;color:inherit;cursor:pointer}
 .tracks button{flex:1;background:none;border:0;padding:9px 12px;border-radius:999px;font-weight:600;color:var(--ink-2)}
 .tracks button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
 .src{margin:24px 0 0;font-size:13px;color:var(--ink-2)}
+.srs{margin:16px 0 0;padding:14px 16px;border-radius:16px;border:2px solid var(--accent);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.srs div{display:grid;gap:2px}
+.srs span{color:var(--ink-2);font-size:14px}
+.srs .btn{width:auto;padding:10px 18px}
+.link{background:none;border:0;padding:0;color:inherit;text-decoration:underline;text-underline-offset:2px;font-size:inherit}
+.legal .res-main{gap:12px;justify-content:flex-start;padding-top:24px}
+.legal .res-main p{margin:0;line-height:1.5}
+.legal h1{margin:0 0 16px}
 .gate{margin:16px 0 0;padding:16px;border-radius:16px;border:2px dashed var(--line);display:grid;gap:12px}
 .gate p{margin:0}
 .gate .row{display:flex;gap:10px;flex-wrap:wrap}

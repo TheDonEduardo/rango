@@ -6,6 +6,9 @@ export const CASOS=await get('casos.json').catch(()=>null);
 // La ruta «basico» es el primer nivel: desbloquea las otras dos (o se salta desde el inicio).
 export const TRACKS=[{id:'basico',title:'Básico'},{id:'tecnico',title:'Técnico'},{id:'fundamental',title:'Fundamental'}];
 export const trackOf=u=>u.track||'tecnico';
+// uid = «idLección#índice»: identifica cada ejercicio fijo en el repaso espaciado (los casos reales no tienen).
+export const EXBYID=new Map();
+UNITS.forEach(u=>(u.lessons||[]).forEach(l=>l.ex.forEach((e,i)=>{e.uid=l.id+'#'+i;EXBYID.set(e.uid,e)})));
 export const FLAT=[];
 UNITS.forEach(u=>{
   if(!u.lessons) return;

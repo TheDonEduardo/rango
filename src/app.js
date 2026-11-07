@@ -1,10 +1,16 @@
 // Estado, vistas, lógica de lección y eventos.
-import {KEY,GOAL,RH,OFFS,fmt,esc,today,yest,shuffle,parseNum} from './util.js';
+import {KEY,GOAL,RH,OFFS,fmt,esc,today,yest,addDays,shuffle,parseNum} from './util.js';
 import {P,ico,icoX,icoOk,LOGO} from './icons.js';
 import {candlesSVG,lineSVG,glyph} from './charts.js';
-import {UNITS,FLAT,CASOS,TRACKS,trackOf,exCount} from './content.js';
+import {UNITS,FLAT,CASOS,TRACKS,EXBYID,trackOf,exCount} from './content.js';
 
-const DEF=()=>({xp:0,streak:0,last:null,day:null,dayXp:0,done:{},all:false,track:'basico',skipBasics:false});
+const DEF=()=>({xp:0,streak:0,last:null,day:null,dayXp:0,done:{},all:false,track:'basico',skipBasics:false,legal:0,srs:{}});
+// Sube LEGAL_V si cambia el texto del aviso: se vuelve a pedir la aceptación.
+const LEGAL_V=1;
+// Repaso espaciado: días hasta la siguiente aparición tras cada acierto. Tras el último, sale de la lista.
+const SRS_STEPS=[1,3,7,14];
+const SRS_MAX=10;
+const SRS_L={id:'srs',title:'Repaso del día',kind:'srs'};
 function load(){
   try{const j=JSON.parse(localStorage.getItem(KEY));if(j&&typeof j==='object')return Object.assign(DEF(),j)}catch(e){}
   return DEF();
@@ -32,6 +38,19 @@ function statuses(){
     else st[l.id]=S.all?'open':'locked';
   });
   return st;
+}
+function srsDue(){
+  const t=today();
+  return Object.keys(S.srs).filter(u=>S.srs[u].due<=t&&EXBYID.has(u)).map(u=>EXBYID.get(u));
+}
+function srsRecord(ex,ok){
+  if(!ex.uid)return;
+  if(!ok){S.srs[ex.uid]={step:0,due:addDays(SRS_STEPS[0])};return}
+  const r=S.srs[ex.uid];
+  if(!r||run.L.kind!=='srs')return;
+  const st=r.step+1;
+  if(st>=SRS_STEPS.length)delete S.srs[ex.uid];
+  else S.srs[ex.uid]={step:st,due:addDays(SRS_STEPS[st])};
 }
 function toast(msg){
   $toast.textContent=msg;$toast.hidden=false;clearTimeout(toastT);
@@ -64,6 +83,8 @@ function homeHTML(){
   h+=`<nav class="tracks" aria-label="Ruta">${TRACKS.map(t=>`<button data-act="track" data-track="${t.id}" aria-pressed="${S.track===t.id}">${t.title}</button>`).join('')}</nav>`;
   const TF=FLAT.filter(l=>trackOf(l.unit)===S.track);
   if(S.track!=='basico'&&!advancedOpen())h+=`<section class="gate"><p>Esta ruta se abre al completar <b>Conceptos básicos</b>.</p><div class="row"><button class="btn line" data-act="track" data-track="basico">Ir a los básicos</button><button class="btn ghost" data-act="skipbasics">Ya opero: saltar los básicos</button></div></section>`;
+  const due=srsDue().length;
+  if(due)h+=`<section class="srs" aria-label="Repaso del día"><div><b>Repaso del día</b><span>${due} ${due===1?'ejercicio que fallaste':'ejercicios que fallaste'}</span></div><button class="btn primary" data-act="srs">Repasar</button></section>`;
   UNITS.filter(u=>trackOf(u)===S.track).forEach(u=>{
     if(!u.lessons){
       h+=`<section class="unit soon"><div class="ban"><div><div class="u">Unidad ${u.n}</div><h2>${u.title}</h2><p>${u.blurb}</p></div><span class="cnt">Próximamente</span></div></section>`;
@@ -87,7 +108,7 @@ function homeHTML(){
     h+='</div></section>';
   });
   if(S.track==='fundamental'&&CASOS)h+=`<p class="src">Casos reales con datos de ${esc(CASOS.fuente)} a ${esc(CASOS.fecha)}. Es formación, no una recomendación de inversión.</p>`;
-  h+=`</main><footer class="foot-home"><p>Prototipo. El progreso se guarda solo en este navegador.</p><div class="row"><button class="btn ghost" data-act="unlock">${S.all?'Volver a bloquear':'Desbloquear todo'}</button><button class="btn ghost" data-act="reset">${resetArm?'Pulsa de nuevo para borrar':'Reiniciar progreso'}</button></div></footer>`;
+  h+=`</main><footer class="foot-home"><p>Prototipo. El progreso se guarda solo en este navegador. <button class="link" data-act="legal">Aviso legal</button></p><div class="row"><button class="btn ghost" data-act="unlock">${S.all?'Volver a bloquear':'Desbloquear todo'}</button><button class="btn ghost" data-act="reset">${resetArm?'Pulsa de nuevo para borrar':'Reiniciar progreso'}</button></div></footer>`;
   return h;
 }
 
@@ -156,11 +177,20 @@ function updateOrd(){
   const c=$app.querySelector('[data-act=check]');if(c)c.disabled=!canCheck(ex);
   const f=$app.querySelector('.ord-pool .opt')||c;if(f&&f.focus)f.focus({preventScroll:true});
 }
+function legalHTML(first){
+  return `<div class="res legal"><div class="res-main"><h1>${first?'Antes de empezar':'Aviso legal'}</h1>
+  <p>Rango es una herramienta de formación. Nada de lo que ves es asesoramiento financiero ni una recomendación de comprar o vender ningún valor.</p>
+  <p>Los casos con empresas reales usan datos públicos de Yahoo Finance, con su fecha. Pueden contener errores o estar desactualizados, y que una empresa aparezca no implica ninguna opinión sobre ella.</p>
+  <p>Invertir en bolsa conlleva riesgo de perder parte o todo el capital. Las rentabilidades pasadas no garantizan las futuras.</p>
+  <p>La información fiscal es general y simplificada: las normas cambian y dependen de tu situación. Consulta con un profesional antes de decidir.</p>
+  <p>Las decisiones de inversión son tuyas y bajo tu responsabilidad.</p></div>
+  <div><button class="btn primary" data-act="${first?'legalok':'home'}">${first?'Entendido, empezar':'Volver'}</button></div></div>`;
+}
 function resultHTML(){
   const r=lastRes,sk=streakNow();
-  return `<div class="res"><div class="res-main"><div class="res-top">${glyph('done',r.acc,84,108)}<div><h1>Lección completada</h1><p>${esc(r.title)}</p></div></div>
+  return `<div class="res"><div class="res-main"><div class="res-top">${glyph('done',r.acc,84,108)}<div><h1>${r.srs?'Repaso completado':'Lección completada'}</h1><p>${esc(r.title)}</p></div></div>
   <div class="metrics"><div><b>+${r.xp}</b><span>XP ganados</span></div><div><b>${Math.round(r.acc*100)} %</b><span>Precisión</span></div><div><b>${sk}</b><span>${sk===1?'día de racha':'días de racha'}</span></div></div>
-  <p class="note">El cuerpo de tu vela es proporcional a tu precisión. ${r.acc===1?'Vela llena: sin un solo fallo.':'Repite la lección para llenarla.'}</p></div>
+  <p class="note">${r.srs?'Los que has acertado volverán dentro de unos días; los que has fallado, mañana.':`El cuerpo de tu vela es proporcional a tu precisión. ${r.acc===1?'Vela llena: sin un solo fallo.':'Repite la lección para llenarla.'}`}</p></div>
   <div><button class="btn primary" data-act="home">Continuar</button></div></div>`;
 }
 function failHTML(){
@@ -168,18 +198,23 @@ function failHTML(){
 }
 
 function render(){
-  $app.innerHTML=view==='home'?homeHTML():view==='lesson'?lessonHTML():view==='result'?resultHTML():failHTML();
+  const needLegal=S.legal<LEGAL_V;
+  if(view==='home'&&needLegal){$app.innerHTML=legalHTML(true);window.scrollTo(0,0);return}
+  $app.innerHTML=view==='home'?homeHTML():view==='legal'?legalHTML(false):view==='lesson'?lessonHTML():view==='result'?resultHTML():failHTML();
   if(view==='home'){
     if(goCur){const n=$app.querySelector('.node.current');if(n)n.scrollIntoView({block:'center'});goCur=false}
     else window.scrollTo(0,homeY);
   }else window.scrollTo(0,0);
+  if(view==='legal')return;
   if(view==='lesson'&&!run.checked&&run.queue[0].t==='num'){const i=document.getElementById('numIn');if(i)i.focus({preventScroll:true})}
 }
 
 
 function startRun(L){
   // Lección: ejercicios fijos barajados y, al final, un caso real al azar (si hay datos).
-  const ex=L.kind==='review'?shuffle(L.unit.lessons.flatMap(l=>l.ex)).slice(0,5):shuffle(L.ex).concat(shuffle(L.casos).slice(0,1));
+  // Repaso de unidad: 5 al azar de sus lecciones. Repaso del día: los fallos que tocan hoy.
+  const ex=L.kind==='srs'?shuffle(srsDue()).slice(0,SRS_MAX):L.kind==='review'?shuffle(L.unit.lessons.flatMap(l=>l.ex)).slice(0,5):shuffle(L.ex).concat(shuffle(L.casos).slice(0,1));
+  if(!ex.length){view='home';render();return}
   run={L,queue:ex.slice(),total:ex.length,done:0,lives:3,firstWrong:0,seen:new Set(),perm:new Map(),sel:null,val:'',checked:false,ok:null};
   view='lesson';render();
 }
@@ -189,7 +224,7 @@ function check(){
   else if(ex.t==='order')ok=!!run.sel&&run.sel.length===ex.items.length&&run.sel.every((v,k)=>v===k);
   else ok=run.sel===ex.a;
   run.ok=ok;run.checked=true;
-  if(!run.seen.has(ex)){run.seen.add(ex);if(!ok)run.firstWrong++}
+  if(!run.seen.has(ex)){run.seen.add(ex);if(!ok)run.firstWrong++;srsRecord(ex,ok);save()}
   if(!ok)run.lives--;
   render();
 }
@@ -205,10 +240,9 @@ function finish(){
   if(S.last!==t){S.streak=(S.last===yest())?S.streak+1:1;S.last=t}
   if(S.day!==t){S.day=t;S.dayXp=0}
   S.xp+=xp;S.dayXp+=xp;
-  const prev=S.done[run.L.id];
-  S.done[run.L.id]={acc:Math.max(acc,prev?prev.acc:0)};
+  if(run.L.kind!=='srs'){const prev=S.done[run.L.id];S.done[run.L.id]={acc:Math.max(acc,prev?prev.acc:0)}}
   save();
-  lastRes={xp,acc,title:run.L.title};
+  lastRes={xp,acc,title:run.L.title,srs:run.L.kind==='srs'};
   view='result';render();
 }
 
@@ -241,6 +275,9 @@ $app.addEventListener('click',e=>{
   else if(a==='next')next();
   else if(a==='quit'||a==='home'){view='home';goCur=(a==='home');render()}
   else if(a==='retry')startRun(run.L);
+  else if(a==='legal'){homeY=window.scrollY;view='legal';render()}
+  else if(a==='legalok'){S.legal=LEGAL_V;save();homeY=0;render()}
+  else if(a==='srs'){homeY=window.scrollY;startRun(SRS_L)}
   else if(a==='track'){S.track=b.dataset.track;save();homeY=0;render()}
   else if(a==='skipbasics'){S.skipBasics=true;save();homeY=0;render();toast('Rutas Técnico y Fundamental abiertas.')}
   else if(a==='unlock'){S.all=!S.all;save();homeY=window.scrollY;render()}
@@ -268,4 +305,4 @@ render();
 
 
 // API mínima para tests (test/smoke.mjs)
-export const api={FLAT,CASOS,setTrack:t=>{S.track=t},skipBasics:()=>{S.skipBasics=true},homeHTML,startRun,lessonHTML,check,next,resultHTML,failHTML,render,getRun:()=>run,setSel:v=>{run.sel=v},setVal:v=>{run.val=v},getState:()=>S};
+export const api={FLAT,CASOS,srsDue,acceptLegal:()=>{S.legal=LEGAL_V},startSrs:()=>startRun(SRS_L),setTrack:t=>{S.track=t},skipBasics:()=>{S.skipBasics=true},homeHTML,startRun,lessonHTML,check,next,resultHTML,failHTML,render,getRun:()=>run,setSel:v=>{run.sel=v},setVal:v=>{run.val=v},getState:()=>S};

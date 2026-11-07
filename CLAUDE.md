@@ -74,7 +74,9 @@ Sistema de tokens en `src/styles.css` (`:root`, con variante oscura por `prefers
 - Un fallo reencola el ejercicio al final; la lección solo termina con todos acertados.
 - XP: 10 por acierto a la primera + 10 de bonus sin fallos.
 - La racha cuenta días naturales en la zona horaria del navegador.
-- Sin cuentas, sin sincronización, sin ligas, sin repaso espaciado.
+- Sin cuentas, sin sincronización, sin ligas.
+- Aviso legal: se acepta en el primer uso (`S.legal`, versión `LEGAL_V` en app.js; súbela si cambia el texto) y queda enlazado en el pie del inicio.
+- Repaso espaciado (`S.srs`): cada ejercicio fallado a la primera vuelve al día siguiente; cada acierto en el «Repaso del día» lo aplaza 3, 7 y 14 días y luego sale de la lista; un fallo lo reinicia. Máximo 10 por sesión; no suma lección completada. Los ejercicios se identifican por `idLección#índice` (`uid`, en content.js): no reordenes ni borres ejercicios de lecciones publicadas, añade al final. Los casos reales no entran en el repaso.
 - Botones "Desbloquear todo" y "Reiniciar progreso" al final del inicio: solo para desarrollo, retirar antes de publicar.
 
 ## Tareas pendientes (por orden sugerido)
@@ -83,10 +85,10 @@ Sistema de tokens en `src/styles.css` (`:root`, con variante oscura por `prefers
 1. Contenido técnico: unidades 1-10 hechas (velas, tendencia, riesgo, catalizadores binarios, Wyckoff/VSA, VCP, salidas escalonadas, riesgo de cartera, cortos y Fase 4, mercado general). Ideas siguientes: fuerza relativa (RS de O'Neil), distribución de Wyckoff, temporalidades múltiples.
 1b. Ruta fundamental: F1-F4 hechas (F1-F3 con casos reales). Ideas siguientes: sectores, lectura de un informe de resultados real.
 2. Nuevos tipos de ejercicio: «ordenar pasos» hecho (`order`). Faltan: arrastrar entrada/stop/objetivo sobre el gráfico y emparejar patrón con descripción.
-3. Repaso espaciado: guardar ejercicios fallados y reintroducirlos días después.
+3. Repaso espaciado: hecho. Posible mejora: avisar de la racha de repaso y mostrar cuántos ejercicios están «aprendidos».
 4. Persistencia real (cuentas, sincronización) y decidir stack: vanilla actual frente a Vite + TypeScript. Migrar solo cuando el contenido y los tipos de ejercicio se estabilicen.
 5. PWA instalable y avisos de racha.
-6. Pantalla de aviso legal (formación, no asesoramiento financiero).
+6. Aviso legal: hecho. Revisarlo con un profesional antes de publicar.
 7. Fuera de Rango, en el bot del repo: `portfolio_manager.py` lleva la clave de Gemini escrita en el código. Revocarla, crear otra, guardarla como secreto de GitHub y leerla del entorno.
 
 ## Ruta fundamental

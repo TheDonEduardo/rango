@@ -60,6 +60,11 @@ const wrong = ex => ex.t === 'num' ? '999' : ex.t === 'tap' ? 0 : ex.t === 'leve
 const right = ex => ex.t === 'num' ? String(ex.a).replace('.', ',') : ex.t === 'order' ? ident(ex) : ex.a;
 const give = (ex, v) => ex.t === 'num' ? T.setVal(v) : T.setSel(v);
 
+// Aviso legal: aparece en el primer uso y desaparece al aceptarlo.
+if (!app.innerHTML.includes('Antes de empezar')) errs.push('no aparece el aviso legal en el primer uso');
+T.acceptLegal(); T.render();
+if (app.innerHTML.includes('Antes de empezar') || !app.innerHTML.includes('Rango')) errs.push('aceptar el aviso legal no lleva al inicio');
+if (!T.homeHTML().includes('data-act="legal"')) errs.push('falta el enlace al aviso legal en el inicio');
 if (!T.homeHTML().includes('Rango')) errs.push('home no renderiza');
 // Usuario nuevo: empieza en Básico y las otras rutas están bloqueadas hasta completarlo o saltarlo.
 if (!T.homeHTML().includes('Acciones y órdenes')) errs.push('un usuario nuevo no empieza en la ruta básica');
@@ -90,7 +95,24 @@ T.startRun(T.FLAT[0]);
 for (let i = 0; i < 3; i++) { const ex = T.getRun().queue[0]; give(ex, wrong(ex)); T.check(); T.next(); }
 if (!app.innerHTML.includes('Sin vidas')) errs.push('no aparece la pantalla de sin vidas');
 
-// 4) Todos los casos reales con respuesta correcta
+// 4) Repaso espaciado: los fallos a la primera quedan para mañana; al acertarlos en el repaso, pasan al siguiente intervalo.
+const srs = T.getState().srs, nFallos = Object.keys(srs).length;
+// Cada lección normal falla su primer ejercicio y sus ejercicios no se repiten entre lecciones (los repasos de unidad sí pueden repetir).
+const nLecciones = T.FLAT.filter(l => l.kind === 'lesson').length;
+if (nFallos < nLecciones) errs.push(`repaso espaciado: ${nFallos} fallos registrados para ${nLecciones} lecciones`);
+if (T.srsDue().length) errs.push('repaso espaciado: hay ejercicios para hoy que deberían ser para mañana');
+const hoy = new Date(), dk = d => d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+for (const u in srs) srs[u].due = dk(hoy);
+if (!T.homeHTML().includes('Repaso del día')) errs.push('el inicio no muestra el repaso del día');
+T.startSrs();
+const enRepaso = T.getRun().queue.slice();
+if (enRepaso.length !== 10) errs.push('el repaso del día no limita a 10 ejercicios');
+let g = 0;
+while (g++ < 40 && !app.innerHTML.includes('Repaso completado')) { const ex = T.getRun().queue[0]; give(ex, right(ex)); T.check(); T.next(); }
+for (const ex of enRepaso) { const r = srs[ex.uid]; if (!r || r.step !== 1 || r.due <= dk(hoy)) errs.push('repaso espaciado no avanza ' + ex.uid); }
+if (T.getState().done.srs) errs.push('el repaso del día se guarda como lección completada');
+
+// 5) Todos los casos reales con respuesta correcta
 if (casos) for (const L of T.FLAT.filter(l => l.casos && l.casos.length)) for (const ex of L.casos) {
   T.startRun(Object.assign({}, L, {ex: [], casos: [ex]}));
   give(ex, right(ex)); T.check();
