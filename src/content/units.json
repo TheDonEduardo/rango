@@ -1,0 +1,500 @@
+[
+  {
+    "n": 1,
+    "id": "velas",
+    "title": "Velas japonesas",
+    "blurb": "Lee la psicología del precio en una sola barra.",
+    "lessons": [
+      {
+        "id": "v1",
+        "title": "Anatomía de una vela",
+        "ex": [
+          {
+            "t": "choice",
+            "q": "Una vela alcista (verde) es aquella que…",
+            "opts": [
+              "Cierra por debajo de su apertura",
+              "Cierra por encima de su apertura",
+              "Abre con gap al alza",
+              "Tiene la mecha inferior más larga"
+            ],
+            "a": 1,
+            "why": "El color depende solo de cierre frente a apertura. El cuerpo mide esa diferencia; las mechas marcan los extremos que el precio visitó y rechazó."
+          },
+          {
+            "t": "num",
+            "q": "Calcula el rango de esta vela (máximo − mínimo).",
+            "chart": {
+              "type": "candles",
+              "data": [
+                [100,108,97,105]
+              ],
+              "annot": true,
+              "h": 210,
+              "alt": "Una vela con sus valores de apertura, máximo, mínimo y cierre"
+            },
+            "unit": "€",
+            "a": 11,
+            "why": "Rango = 108 − 97 = 11 €. Cuerpo = 105 − 100 = 5; mecha superior = 3 e inferior = 3."
+          },
+          {
+            "t": "tap",
+            "q": "Toca la vela con mayor rechazo de máximos.",
+            "chart": {
+              "type": "candles",
+              "data": [
+                [40,41.2,39.8,41],
+                [41,42.6,40.8,42.3],
+                [42.3,42.9,41.9,42],
+                [42,43.8,41.8,43.5],
+                [43.5,44.9,43.3,44.6],
+                [44.6,48.2,44.4,45],
+                [45,45.8,44.2,45.5]
+              ],
+              "alt": "Gráfico de siete velas"
+            },
+            "a": 5,
+            "why": "Vela 6: máximo 48,20 y cierre 45,00. Mecha superior de 3,20 frente a un cuerpo de 0,40: los compradores no sostuvieron el máximo."
+          },
+          {
+            "t": "choice",
+            "q": "Cuerpo pequeño y mechas largas a ambos lados. ¿Qué indica?",
+            "opts": [
+              "Tendencia alcista fuerte",
+              "Cierre anticipado del mercado",
+              "Indecisión: ni compradores ni vendedores imponen el precio",
+              "Caída garantizada"
+            ],
+            "a": 2,
+            "why": "Es una peonza. Tras un tramo fuerte avisa de agotamiento; dentro de un rango lateral no aporta información."
+          }
+        ]
+      },
+      {
+        "id": "v2",
+        "title": "Patrones de reversión",
+        "ex": [
+          {
+            "t": "choice",
+            "q": "Tras una caída sostenida, ¿qué patrón forma la última vela?",
+            "chart": {
+              "type": "candles",
+              "data": [
+                [50,51,48.5,49],
+                [49,49.8,47.2,47.8],
+                [47.8,48.3,45.9,46.4],
+                [46.4,47,44.8,45.2],
+                [45.2,45.7,43.4,43.9],
+                [43.9,44.3,42,42.5],
+                [41.9,42.6,38.8,42.4]
+              ],
+              "alt": "Gráfico de siete velas"
+            },
+            "opts": [
+              "Estrella fugaz",
+              "Martillo",
+              "Doji",
+              "Envolvente alcista"
+            ],
+            "a": 1,
+            "why": "Mecha inferior de 3,10 frente a un cuerpo de 0,50 y casi sin mecha superior: el precio bajó, fue comprado y cerró cerca del máximo."
+          },
+          {
+            "t": "choice",
+            "q": "¿Cuándo es más fiable un martillo?",
+            "opts": [
+              "Tras una caída, sobre un soporte y con volumen creciente",
+              "En mitad de un rango lateral, sin tendencia previa",
+              "Tras una subida, bajo una resistencia",
+              "Con volumen mínimo y sin contexto"
+            ],
+            "a": 0,
+            "why": "El patrón solo vale en contexto: tendencia previa que revertir, un nivel que lo respalde y volumen que confirme el rechazo."
+          },
+          {
+            "t": "tap",
+            "q": "Toca la vela envolvente alcista.",
+            "chart": {
+              "type": "candles",
+              "data": [
+                [50,50.6,48.9,49.2],
+                [49.2,49.8,47.6,48],
+                [48,48.5,46.4,46.9],
+                [46.9,47.3,45.2,45.6],
+                [45.6,46,44.1,44.5],
+                [44.5,44.9,43.7,44],
+                [43.8,46.6,43.5,46.3]
+              ],
+              "alt": "Gráfico de siete velas"
+            },
+            "a": 6,
+            "why": "Vela 7: abre bajo el cierre previo (43,80 < 44,00) y cierra sobre su apertura (46,30 > 44,50). El cuerpo verde engloba al rojo tras una caída."
+          },
+          {
+            "t": "num",
+            "q": "Un martillo tiene máximo 42,60 y mínimo 38,80. Entras a 42,70 (máximo + 0,10) con stop en 38,70 (mínimo − 0,10). ¿Riesgo por acción?",
+            "unit": "€",
+            "a": 4,
+            "why": "42,70 − 38,70 = 4,00 € por acción. Esa distancia es 1R y fija el tamaño de la posición y el objetivo."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "id": "tendencia",
+    "title": "Tendencia y fases",
+    "blurb": "Weinstein y Minervini: opera solo a favor de la fase correcta.",
+    "lessons": [
+      {
+        "id": "t1",
+        "title": "Fases de Weinstein",
+        "ex": [
+          {
+            "t": "choice",
+            "q": "¿Qué media usa Weinstein para definir las fases?",
+            "opts": [
+              "Media de 10 días",
+              "Bandas de Bollinger",
+              "Media de 30 semanas",
+              "Media de 5 semanas"
+            ],
+            "a": 2,
+            "why": "La media de 30 semanas (unas 150 sesiones) filtra el ruido. Importan su pendiente y si el precio está por encima o por debajo."
+          },
+          {
+            "t": "choice",
+            "q": "¿En qué fase está esta acción?",
+            "chart": {
+              "type": "line",
+              "data": [20,20.5,20.2,21,22,23.4,23,24.6,26,25.4,27.2,28.8,28.1,30],
+              "ma": [20.4,20.5,20.6,20.8,21.1,21.5,21.9,22.4,22.9,23.5,24.1,24.7,25.4,26],
+              "alt": "Gráfico de precio y media de 30 semanas"
+            },
+            "opts": [
+              "Fase 1 (base)",
+              "Fase 2 (avance)",
+              "Fase 3 (techo)",
+              "Fase 4 (declive)"
+            ],
+            "a": 1,
+            "why": "Precio sobre una media de 30 semanas con pendiente ascendente: Fase 2. Es la única fase donde Weinstein compra."
+          },
+          {
+            "t": "choice",
+            "q": "¿Y esta?",
+            "chart": {
+              "type": "line",
+              "data": [60,58,59,56,54,55,52,50,51,48,46,47,44,42],
+              "ma": [62,61.6,61,60.3,59.5,58.7,57.8,56.8,55.8,54.7,53.6,52.5,51.3,50.1],
+              "alt": "Gráfico de precio y media de 30 semanas"
+            },
+            "opts": [
+              "Fase 1 (base)",
+              "Fase 2 (avance)",
+              "Fase 3 (techo)",
+              "Fase 4 (declive)"
+            ],
+            "a": 3,
+            "why": "Precio bajo una media descendente: Fase 4. Se evita o se opera corto; nunca se promedia a la baja."
+          },
+          {
+            "t": "choice",
+            "q": "¿Cuál es el punto de compra clave según Weinstein?",
+            "opts": [
+              "Ruptura de la base de Fase 1 con volumen, entrando en Fase 2",
+              "Rebote a mitad de la Fase 4",
+              "Cualquier retroceso durante la Fase 3",
+              "Mínimo de la Fase 4 sin confirmación"
+            ],
+            "a": 0,
+            "why": "Se compra la ruptura de la resistencia de la base con volumen claramente superior a la media. Anticiparla es adivinar."
+          }
+        ]
+      },
+      {
+        "id": "t2",
+        "title": "Trend Template",
+        "ex": [
+          {
+            "t": "choice",
+            "q": "¿Cuál NO es un criterio del Trend Template de Minervini?",
+            "opts": [
+              "El precio cotiza sobre la media de 200 sesiones",
+              "La media de 200 sube al menos un mes",
+              "El precio está al menos un 30 % sobre su mínimo de 52 semanas",
+              "El precio cotiza en mínimos de 52 semanas"
+            ],
+            "a": 3,
+            "why": "Se busca lo contrario: precio a menos de un 25 % de su máximo de 52 semanas, no en mínimos."
+          },
+          {
+            "t": "num",
+            "q": "Máximo de 52 semanas: 80 €. El precio debe estar a menos del 25 % del máximo. ¿Precio mínimo aceptable?",
+            "unit": "€",
+            "a": 60,
+            "why": "80 × (1 − 0,25) = 60 €. Por debajo, el valor está demasiado lejos de sus máximos."
+          },
+          {
+            "t": "num",
+            "q": "Mínimo de 52 semanas: 20 €. El precio debe estar al menos un 30 % por encima del mínimo. ¿Precio mínimo aceptable?",
+            "unit": "€",
+            "a": 26,
+            "why": "20 × 1,30 = 26 €. Asegura que el valor ya salió de su zona de suelo."
+          },
+          {
+            "t": "choice",
+            "q": "¿Qué orden de medias exige una tendencia sana?",
+            "opts": [
+              "200 > 150 > 50 > precio",
+              "Precio > 50 > 150 > 200, con la de 200 al alza",
+              "Precio < 50 < 150, con la de 200 a la baja",
+              "50 < 200 < 150, con la de 200 plana"
+            ],
+            "a": 1,
+            "why": "Precio sobre la de 50, la de 50 sobre la de 150 y esta sobre la de 200, que además debe subir. Es la Fase 2 de Weinstein en medias."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "id": "riesgo",
+    "title": "Riesgo y tamaño",
+    "blurb": "ATR, stop y posición: sobrevive para operar mañana.",
+    "lessons": [
+      {
+        "id": "r1",
+        "title": "Stop con ATR",
+        "ex": [
+          {
+            "t": "choice",
+            "q": "¿Qué mide el ATR(14)?",
+            "opts": [
+              "El rango verdadero medio de las últimas 14 velas",
+              "La dirección de la tendencia",
+              "El volumen medio de 14 sesiones",
+              "La distancia al máximo de 52 semanas"
+            ],
+            "a": 0,
+            "why": "El ATR promedia el rango verdadero (incluye gaps). Mide volatilidad, no dirección; sirve para que el stop respete el ruido normal del valor."
+          },
+          {
+            "t": "num",
+            "q": "Entrada a 35,00 €. ATR(14) = 1,80 €. Stop a 1,5×ATR. ¿En qué precio colocas el stop?",
+            "unit": "€",
+            "a": 32.3,
+            "why": "35,00 − 1,5 × 1,80 = 32,30 €. Riesgo por acción: 2,70 €."
+          },
+          {
+            "t": "level",
+            "q": "Entrada a 20,00 €, ATR(14) = 1,20 €. Toca el stop a 2×ATR.",
+            "chart": {
+              "type": "candles",
+              "data": [
+                [18.9,19.6,18.7,19.4],
+                [19.4,20.1,19.2,19.9],
+                [19.9,20.4,19.5,19.7],
+                [19.7,20.3,19.6,20.2],
+                [20.2,20.6,19.8,20]
+              ],
+              "h": 250,
+              "lines": [
+                {
+                  "y": 20,
+                  "label": "Entrada 20,00"
+                }
+              ],
+              "levels": [
+                {
+                  "id": "A",
+                  "y": 19.4
+                },
+                {
+                  "id": "B",
+                  "y": 17.6
+                },
+                {
+                  "id": "C",
+                  "y": 15.2
+                }
+              ],
+              "alt": "Gráfico de velas con tres niveles de stop"
+            },
+            "a": "B",
+            "why": "20,00 − 2 × 1,20 = 17,60 €. El nivel A (0,5×ATR) cae dentro del ruido diario; el C (4×ATR) arriesga el doble de lo previsto."
+          },
+          {
+            "t": "choice",
+            "q": "Con riesgo fijo en € por operación, si el ATR se duplica, el número de acciones…",
+            "opts": [
+              "Se duplica",
+              "Se reduce a la mitad",
+              "No cambia",
+              "Depende del precio de entrada"
+            ],
+            "a": 1,
+            "why": "Acciones = riesgo € ÷ distancia al stop. Si la distancia se duplica, compras la mitad: mismo riesgo, menos exposición."
+          }
+        ]
+      },
+      {
+        "id": "r2",
+        "title": "Tamaño de posición",
+        "ex": [
+          {
+            "t": "num",
+            "q": "Capital: 25.000 €. Arriesgas el 1 % por operación. ¿Cuántos euros pierdes si salta el stop?",
+            "unit": "€",
+            "a": 250,
+            "why": "25.000 × 1 % = 250 €. Ese importe es 1R."
+          },
+          {
+            "t": "num",
+            "q": "Riesgo 250 €. Entrada 18,40 €, ATR 1,25 €, stop a 2×ATR. ¿Cuántas acciones compras?",
+            "unit": "",
+            "a": 100,
+            "why": "Distancia = 2 × 1,25 = 2,50 €. Acciones = 250 ÷ 2,50 = 100. El stop queda en 15,90 €."
+          },
+          {
+            "t": "num",
+            "q": "100 acciones a 18,40 € con 25.000 € de capital. ¿Qué porcentaje del capital ocupa la posición?",
+            "unit": "%",
+            "a": 7.36,
+            "tol": 0.05,
+            "why": "1.840 ÷ 25.000 = 7,36 %. Riesgo y tamaño son cosas distintas: arriesgas el 1 %, pero la posición pesa un 7,36 %."
+          },
+          {
+            "t": "num",
+            "q": "Entrada 20,00 €, stop 17,60 €, objetivo 26,40 €. ¿Qué ratio beneficio/riesgo tiene? Redondea a 2 decimales.",
+            "unit": "R",
+            "a": 2.67,
+            "tol": 0.02,
+            "why": "Beneficio 6,40 ÷ riesgo 2,40 = 2,67R. Con ese ratio basta acertar el 27 % de las veces para no perder (1 ÷ (1 + 2,67))."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "id": "binarios",
+    "title": "Catalizadores binarios",
+    "blurb": "Small caps, biotecnología y gaps de resultados.",
+    "lessons": [
+      {
+        "id": "b1",
+        "title": "Gaps de resultados",
+        "ex": [
+          {
+            "t": "num",
+            "q": "Cierre previo a resultados: 42,00 €. Al día siguiente abre a 47,04 €. ¿De qué tamaño es el gap?",
+            "unit": "%",
+            "a": 12,
+            "why": "(47,04 − 42,00) ÷ 42,00 = 5,04 ÷ 42,00 = 12 %. El gap se mide siempre desde el cierre previo."
+          },
+          {
+            "t": "choice",
+            "q": "Gap del +12 % tras resultados. ¿Qué comportamiento del día del gap indica demanda institucional?",
+            "opts": [
+              "Abre arriba y rellena medio gap antes del cierre",
+              "Volumen por debajo de su media de 50 sesiones",
+              "Cierra en el tercio superior del rango con 3× su volumen medio",
+              "Cierra por debajo del cierre previo"
+            ],
+            "a": 2,
+            "why": "Cerrar cerca del máximo con el triple de volumen indica compra durante toda la sesión, no solo en la apertura. Si rellena medio gap el mismo día, la oferta ya absorbió la noticia."
+          },
+          {
+            "t": "level",
+            "q": "Compras a 49,30 € la ruptura del máximo del día del gap. Toca el stop que invalida la operación sin arriesgar de más.",
+            "chart": {
+              "type": "candles",
+              "data": [
+                [40.2,40.9,39.8,40.6],
+                [40.6,41.5,40.3,41.2],
+                [41.2,41.6,40.7,40.9],
+                [40.9,42.1,40.8,41.8],
+                [41.8,42.4,41.5,42],
+                [47.04,49.2,46.5,48.9]
+              ],
+              "h": 250,
+              "lines": [
+                {
+                  "y": 49.3,
+                  "label": "Entrada 49,30"
+                }
+              ],
+              "levels": [
+                {
+                  "id": "A",
+                  "y": 48.4
+                },
+                {
+                  "id": "B",
+                  "y": 46.4
+                },
+                {
+                  "id": "C",
+                  "y": 42
+                }
+              ],
+              "alt": "Gráfico de velas con un gap al alza y tres niveles de stop"
+            },
+            "a": "B",
+            "why": "B queda 0,10 € bajo el mínimo del día del gap (46,50): si lo pierde, el gap ha fallado, y arriesgas 2,90 €. A está dentro del rango de esa misma vela y C (relleno del gap en 42,00) arriesga 7,30 €, unas 2,5 veces más."
+          },
+          {
+            "t": "num",
+            "q": "Compras 150 acciones a 40,00 € con stop en 38,00 € (1R = 300 €) y mantienes en resultados. Abre a 34,00 € y el stop se ejecuta en la apertura. ¿Cuántos R pierdes?",
+            "unit": "R",
+            "a": 3,
+            "why": "(40,00 − 34,00) × 150 = 900 €: 3R en lugar de 1R. La orden stop se convierte en orden a mercado y se ejecuta al primer precio disponible."
+          }
+        ]
+      },
+      {
+        "id": "b2",
+        "title": "Sizing con riesgo binario",
+        "ex": [
+          {
+            "t": "choice",
+            "q": "Mantienes una posición durante un catalizador binario (resultados, decisión de la FDA). ¿Qué distancia usas para calcular el tamaño?",
+            "opts": [
+              "La distancia al stop",
+              "2×ATR(14)",
+              "El 1 % del precio de entrada",
+              "La caída plausible si el evento sale mal"
+            ],
+            "a": 3,
+            "why": "El precio puede abrir muy por debajo del stop, así que la pérdida real la fija el gap, no la orden. Dimensiona como si el stop no existiera."
+          },
+          {
+            "t": "num",
+            "q": "Capital 25.000 €, riesgo máximo 1 % (250 €). Una biotecnológica cotiza a 12,00 € antes de la decisión de la FDA y, si la rechazan, estimas una caída del 70 %. ¿Cuántas acciones compras como máximo? Redondea a la baja.",
+            "unit": "",
+            "a": 29,
+            "why": "Pérdida plausible = 12,00 × 70 % = 8,40 € por acción. 250 ÷ 8,40 = 29,76, así que 29 acciones (243,60 € en riesgo)."
+          },
+          {
+            "t": "num",
+            "q": "Mismo valor (12,00 €, ATR 0,60 €), pero dimensionas por stop a 2×ATR: 250 ÷ 1,20 = 208 acciones. La FDA rechaza y abre un 70 % abajo. ¿Cuántos R pierdes? Redondea a 1 decimal.",
+            "unit": "R",
+            "a": 7,
+            "tol": 0.05,
+            "why": "208 × 8,40 = 1.747,20 €, y 1.747,20 ÷ 250 = 7,0R. Un solo evento equivale a siete stops normales."
+          },
+          {
+            "t": "num",
+            "q": "Estimas un 60 % de probabilidad de aprobación. Si aprueban, +40 %; si rechazan, −70 %. ¿Cuánto pierdes de media por apuesta?",
+            "unit": "%",
+            "a": 4,
+            "why": "Esperanza = 0,60 × 40 % − 0,40 × 70 % = 24 % − 28 % = −4 %: pierdes un 4 % de media. Acertar el 60 % de las veces no basta si la pérdida es mayor que la ganancia."
+          }
+        ]
+      }
+    ]
+  }
+]

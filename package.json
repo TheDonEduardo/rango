@@ -1,0 +1,11 @@
+{
+  "name": "rango",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Prototipo de app gamificada (tipo Duolingo) para inversores: análisis técnico y gestión de riesgo.",
+  "type": "module",
+  "scripts": {
+    "dev": "npx --yes serve . -l 5173",
+    "test": "node test/smoke.mjs"
+  }
+}

@@ -1,0 +1,206 @@
+// Estado, vistas, lógica de lección y eventos.
+import {KEY,GOAL,RH,OFFS,fmt,esc,today,yest,shuffle,parseNum} from './util.js';
+import {P,ico,icoX,icoOk,LOGO} from './icons.js';
+import {candlesSVG,lineSVG,glyph} from './charts.js';
+import {UNITS,FLAT,exCount} from './content.js';
+
+const DEF=()=>({xp:0,streak:0,last:null,day:null,dayXp:0,done:{},all:false});
+function load(){
+  try{const j=JSON.parse(localStorage.getItem(KEY));if(j&&typeof j==='object')return Object.assign(DEF(),j)}catch(e){}
+  return DEF();
+}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+let S=load(), view='home', run=null, lastRes=null, homeY=0, goCur=false, resetArm=false, toastT=0;
+const $app=document.getElementById('app'), $toast=document.getElementById('toast');
+const streakNow=()=>(S.last===today()||S.last===yest())?S.streak:0;
+const dayXpNow=()=>S.day===today()?S.dayXp:0;
+
+function statuses(){
+  let cur=-1;
+  const st=FLAT.map((l,i)=>{if(S.done[l.id])return'done';if(cur<0){cur=i;return'current'}return S.all?'open':'locked'});
+  return st;
+}
+function toast(msg){
+  $toast.textContent=msg;$toast.hidden=false;clearTimeout(toastT);
+  toastT=setTimeout(()=>{$toast.hidden=true},2400);
+}
+
+
+function chartHTML(ex){
+  const sp=ex.chart;if(!sp)return'';
+  let st=null;
+  if(ex.t==='tap'||ex.t==='level')st={mode:ex.t,sel:run.sel,checked:run.checked,a:ex.a};
+  return `<figure class="chart">${sp.type==='line'?lineSVG(sp):candlesSVG(sp,st)}</figure>`;
+}
+
+function homeHTML(){
+  const st=statuses(),sk=streakNow(),dx=dayXpNow();
+  let h=`<header class="top"><div class="brand">${LOGO}<span>Rango</span></div><div class="stats"><span class="chip fire" aria-label="Racha de ${sk} ${sk===1?'día':'días'}">${ico('flame')}<b>${sk}</b></span><span class="chip xp" aria-label="${S.xp} XP en total">${ico('bolt')}<b>${S.xp}</b></span></div></header><main>`;
+  h+=`<section class="goal" aria-label="Meta diaria"><div class="goal-h"><span>Meta de hoy</span><span>${Math.min(dx,GOAL)} / ${GOAL} XP</span></div><div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="${GOAL}" aria-valuenow="${Math.min(dx,GOAL)}"><i style="width:${Math.min(100,dx/GOAL*100)}%"></i></div></section>`;
+  UNITS.forEach(u=>{
+    if(!u.lessons){
+      h+=`<section class="unit soon"><div class="ban"><div><div class="u">Unidad ${u.n}</div><h2>${u.title}</h2><p>${u.blurb}</p></div><span class="cnt">Próximamente</span></div></section>`;
+      return;
+    }
+    const items=FLAT.filter(l=>l.unit===u),doneN=items.filter(l=>S.done[l.id]).length;
+    h+=`<section class="unit" aria-label="Unidad ${u.n}: ${u.title}"><div class="ban"><div><div class="u">Unidad ${u.n}</div><h2>${u.title}</h2><p>${u.blurb}</p></div><span class="cnt">${doneN} / ${items.length}</span></div>`;
+    h+=`<div class="path" style="--n:${items.length}"><svg class="route" viewBox="0 0 100 ${items.length*RH}" preserveAspectRatio="none" aria-hidden="true">`;
+    for(let k=0;k<items.length-1;k++){
+      const gi=FLAT.indexOf(items[k]),x1=50+OFFS[gi%OFFS.length],x2=50+OFFS[(gi+1)%OFFS.length];
+      const y1=k*RH+44,y2=(k+1)*RH+44,ym=(y1+y2)/2;
+      h+=`<path class="${st[gi]==='done'?'done':''}" d="M${x1} ${y1} C${x1} ${ym} ${x2} ${ym} ${x2} ${y2}"/>`;
+    }
+    h+='</svg>';
+    items.forEach((l,k)=>{
+      const gi=FLAT.indexOf(l),s=st[gi],rec=S.done[l.id],off=OFFS[gi%OFFS.length];
+      const sub=s==='done'?`Precisión ${Math.round(rec.acc*100)} %`:s==='locked'?'Bloqueada':`${exCount(l)} ejercicios`;
+      const stx=s==='done'?'completada':s==='locked'?'bloqueada':'disponible';
+      h+=`<button class="node ${s}" style="--i:${k};--off:${off}" data-act="open" data-id="${l.id}" aria-label="${esc(l.title)}, ${stx}"${s==='locked'?' aria-disabled="true"':''}><span class="g">${glyph(s,rec?rec.acc:null)}</span><span class="nt">${esc(l.title)}</span><span class="ns">${sub}</span></button>`;
+    });
+    h+='</div></section>';
+  });
+  h+=`</main><footer class="foot-home"><p>Prototipo. El progreso se guarda solo en este navegador.</p><div class="row"><button class="btn ghost" data-act="unlock">${S.all?'Volver a bloquear':'Desbloquear todo'}</button><button class="btn ghost" data-act="reset">${resetArm?'Pulsa de nuevo para borrar':'Reiniciar progreso'}</button></div></footer>`;
+  return h;
+}
+
+const KIND={choice:'Elige una respuesta',num:'Escribe el resultado',tap:'Toca una vela del gráfico',level:'Toca una línea del gráfico'};
+function answerText(ex){
+  if(ex.t==='choice')return ex.opts[ex.a];
+  if(ex.t==='num')return fmt(ex.a,Number.isInteger(ex.a)?0:2)+(ex.unit?' '+ex.unit:'');
+  if(ex.t==='tap')return 'Vela '+(ex.a+1);
+  return 'Nivel '+ex.a;
+}
+function lessonHTML(){
+  const ex=run.queue[0],pct=Math.round(run.done/run.total*100);
+  let hearts='';for(let i=0;i<3;i++)hearts+=`<svg class="heart ${i<run.lives?'on':'off'}" viewBox="0 0 24 24" aria-hidden="true"><path d="${P.heart}" fill="currentColor"/></svg>`;
+  let h=`<div class="lesson"><div class="lbar"><button class="x" data-act="quit" aria-label="Salir de la lección">${icoX}</button><div class="prog" role="progressbar" aria-valuemin="0" aria-valuemax="${run.total}" aria-valuenow="${run.done}"><i style="width:${pct}%"></i></div><div class="lives" role="img" aria-label="${run.lives} vidas">${hearts}</div></div>`;
+  h+=`<div class="qwrap"><p class="kind">${KIND[ex.t]}</p><h2 class="q">${esc(ex.q)}</h2>${chartHTML(ex)}`;
+  if(ex.t==='choice'){
+    h+='<div class="opts">';
+    ex.opts.forEach((o,i)=>{
+      let c='';
+      if(run.checked){if(i===ex.a)c='good';else if(i===run.sel)c='bad'}else if(i===run.sel)c='sel';
+      h+=`<button class="opt ${c}" data-act="pick" data-i="${i}"${run.checked?' disabled':''}>${esc(o)}</button>`;
+    });
+    h+='</div>';
+  }
+  if(ex.t==='num'){
+    const c=run.checked?(run.ok?'good':'bad'):'';
+    h+=`<div class="numrow"><input id="numIn" class="num ${c}" type="text" inputmode="decimal" autocomplete="off" aria-label="Tu respuesta" value="${esc(run.val)}"${run.checked?' disabled':''}>${ex.unit?`<span class="suffix">${ex.unit}</span>`:''}</div>`;
+  }
+  h+='</div>';
+  const can=ex.t==='num'?run.val.trim()!=='':run.sel!==null;
+  if(!run.checked){
+    h+=`<div><button class="btn primary" data-act="check"${can?'':' disabled'}>Comprobar</button></div>`;
+  }else{
+    h+=`<div class="fb ${run.ok?'good':'bad'}" role="status"><div class="fb-h">${run.ok?icoOk:icoX}<span>${run.ok?'Correcto':'Incorrecto'}</span></div><p>${esc(ex.why)}</p>${run.ok?'':`<p class="ans">Respuesta: ${esc(answerText(ex))}</p>`}<button class="btn primary" data-act="next">Continuar</button></div>`;
+  }
+  return h+'</div>';
+}
+function resultHTML(){
+  const r=lastRes,sk=streakNow();
+  return `<div class="res"><div class="res-main"><div class="res-top">${glyph('done',r.acc,84,108)}<div><h1>Lección completada</h1><p>${esc(r.title)}</p></div></div>
+  <div class="metrics"><div><b>+${r.xp}</b><span>XP ganados</span></div><div><b>${Math.round(r.acc*100)} %</b><span>Precisión</span></div><div><b>${sk}</b><span>${sk===1?'día de racha':'días de racha'}</span></div></div>
+  <p class="note">El cuerpo de tu vela es proporcional a tu precisión. ${r.acc===1?'Vela llena: sin un solo fallo.':'Repite la lección para llenarla.'}</p></div>
+  <div><button class="btn primary" data-act="home">Continuar</button></div></div>`;
+}
+function failHTML(){
+  return `<div class="res"><div class="res-main"><div class="res-top">${glyph('locked',null,84,108)}<div><h1>Sin vidas</h1><p>Has agotado los 3 fallos de esta lección.</p></div></div><p class="note">Repasa las explicaciones y vuelve a intentarlo. Las preguntas se barajan de nuevo.</p></div><div class="stack"><button class="btn primary" data-act="retry">Reintentar lección</button><button class="btn line" data-act="home">Volver al inicio</button></div></div>`;
+}
+
+function render(){
+  $app.innerHTML=view==='home'?homeHTML():view==='lesson'?lessonHTML():view==='result'?resultHTML():failHTML();
+  if(view==='home'){
+    if(goCur){const n=$app.querySelector('.node.current');if(n)n.scrollIntoView({block:'center'});goCur=false}
+    else window.scrollTo(0,homeY);
+  }else window.scrollTo(0,0);
+  if(view==='lesson'&&!run.checked&&run.queue[0].t==='num'){const i=document.getElementById('numIn');if(i)i.focus({preventScroll:true})}
+}
+
+
+function startRun(L){
+  const ex=L.kind==='review'?shuffle(L.unit.lessons.flatMap(l=>l.ex)).slice(0,5):shuffle(L.ex);
+  run={L,queue:ex.slice(),total:ex.length,done:0,lives:3,firstWrong:0,seen:new Set(),sel:null,val:'',checked:false,ok:null};
+  view='lesson';render();
+}
+function check(){
+  const ex=run.queue[0];let ok=false;
+  if(ex.t==='num'){const v=parseNum(run.val);ok=v!==null&&Math.abs(v-ex.a)<=(ex.tol==null?0.005:ex.tol)}
+  else ok=run.sel===ex.a;
+  run.ok=ok;run.checked=true;
+  if(!run.seen.has(ex)){run.seen.add(ex);if(!ok)run.firstWrong++}
+  if(!ok)run.lives--;
+  render();
+}
+function next(){
+  const ex=run.queue.shift();
+  if(run.ok)run.done++;else run.queue.push(ex);
+  if(!run.ok&&run.lives<=0){view='fail';render();return}
+  if(run.queue.length===0){finish();return}
+  run.sel=null;run.val='';run.checked=false;run.ok=null;render();
+}
+function finish(){
+  const right=run.total-run.firstWrong,acc=right/run.total,xp=right*10+(run.firstWrong===0?10:0),t=today();
+  if(S.last!==t){S.streak=(S.last===yest())?S.streak+1:1;S.last=t}
+  if(S.day!==t){S.day=t;S.dayXp=0}
+  S.xp+=xp;S.dayXp+=xp;
+  const prev=S.done[run.L.id];
+  S.done[run.L.id]={acc:Math.max(acc,prev?prev.acc:0)};
+  save();
+  lastRes={xp,acc,title:run.L.title};
+  view='result';render();
+}
+
+
+function pickChoice(i){
+  run.sel=i;
+  $app.querySelectorAll('.opt').forEach((b,k)=>b.classList.toggle('sel',k===i));
+  const c=$app.querySelector('[data-act=check]');if(c)c.disabled=false;
+}
+function pickSvg(el){
+  const ex=run.queue[0];
+  if(ex.t==='tap'){run.sel=+el.dataset.i;$app.querySelectorAll('.cd').forEach(g=>g.classList.toggle('sel',g===el))}
+  else{run.sel=el.dataset.id;$app.querySelectorAll('.lv').forEach(g=>g.classList.toggle('sel',g===el))}
+  const c=$app.querySelector('[data-act=check]');if(c)c.disabled=false;
+}
+$app.addEventListener('click',e=>{
+  const svgEl=e.target.closest('.cd[tabindex],.lv');
+  if(svgEl&&view==='lesson'&&!run.checked){pickSvg(svgEl);return}
+  const b=e.target.closest('[data-act]');if(!b)return;
+  const a=b.dataset.act;
+  if(a==='open'){
+    const L=FLAT.find(l=>l.id===b.dataset.id),s=statuses()[FLAT.indexOf(L)];
+    if(s==='locked'){toast('Completa antes la lección anterior.');return}
+    homeY=window.scrollY;startRun(L);
+  }
+  else if(a==='pick'&&!run.checked)pickChoice(+b.dataset.i);
+  else if(a==='check'&&!b.disabled)check();
+  else if(a==='next')next();
+  else if(a==='quit'||a==='home'){view='home';goCur=(a==='home');render()}
+  else if(a==='retry')startRun(run.L);
+  else if(a==='unlock'){S.all=!S.all;save();homeY=window.scrollY;render()}
+  else if(a==='reset'){
+    if(!resetArm){resetArm=true;homeY=window.scrollY;render();setTimeout(()=>{if(resetArm){resetArm=false;if(view==='home'){homeY=window.scrollY;render()}}},4000)}
+    else{S=DEF();save();resetArm=false;homeY=0;render()}
+  }
+});
+$app.addEventListener('input',e=>{
+  if(e.target.id!=='numIn'||!run)return;
+  run.val=e.target.value;
+  const c=$app.querySelector('[data-act=check]');if(c)c.disabled=run.val.trim()==='';
+});
+document.addEventListener('keydown',e=>{
+  if(view!=='lesson')return;
+  const t=e.target;
+  if((e.key==='Enter'||e.key===' ')&&t.closest&&t.closest('.cd[tabindex],.lv')&&!run.checked){e.preventDefault();pickSvg(t.closest('.cd,.lv'));return}
+  if(e.key==='Enter'&&(!t.closest||!t.closest('button'))){
+    if(run.checked){e.preventDefault();next()}
+    else if(t.id==='numIn'&&run.val.trim()!==''){e.preventDefault();check()}
+  }
+});
+
+render();
+
+
+// API mínima para tests (test/smoke.mjs)
+export const api={FLAT,homeHTML,startRun,lessonHTML,check,next,resultHTML,failHTML,render,getRun:()=>run,setSel:v=>{run.sel=v},setVal:v=>{run.val=v},getState:()=>S};
