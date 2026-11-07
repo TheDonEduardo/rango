@@ -326,6 +326,58 @@
               "Subir el stop a medida que el precio avanza, nunca bajarlo"
             ],
             "why": "Primero qué y dónde, luego cuánto, y solo entonces la orden, siempre con su stop. Después, el stop solo se mueve a favor."
+          },
+          {
+            "t": "plan",
+            "q": "Compras a 22,50 € en un rango con soporte en 20,00 €. Coloca el stop 0,20 € por debajo del soporte.",
+            "chart": {
+              "type": "candles",
+              "data": [
+                [22,22.8,21.4,21.6],
+                [21.6,21.9,20,21.3],
+                [21.3,22.9,21.1,22.6],
+                [22.6,22.8,20,20.5],
+                [20.5,22.4,20.4,22.2],
+                [22.2,22.5,20,21],
+                [21,22.7,20.8,22.5]
+              ],
+              "h": 260,
+              "lines": [
+                {
+                  "y": 22.5,
+                  "label": "Entrada 22,50"
+                }
+              ],
+              "alt": "Gráfico de velas con la entrada marcada y una línea para colocar"
+            },
+            "place": [
+              {
+                "id": "stop",
+                "label": "Stop",
+                "a": 19.8,
+                "start": 21.4
+              }
+            ],
+            "why": "20,00 − 0,20 = 19,80 €. Si el precio pierde el soporte, el motivo para estar dentro ha desaparecido. Riesgo por acción: 22,50 − 19,80 = 2,70 €."
+          },
+          {
+            "t": "match",
+            "q": "Empareja cada tipo de orden con lo que hace.",
+            "pairs": [
+              [
+                "Orden a mercado",
+                "Se ejecuta ya, al precio que haya"
+              ],
+              [
+                "Orden limitada",
+                "Solo se ejecuta a tu precio o mejor"
+              ],
+              [
+                "Orden stop",
+                "Se activa al tocar un precio y entonces se ejecuta a mercado"
+              ]
+            ],
+            "why": "La de mercado prioriza ejecutarse; la limitada, el precio; la stop espera a que el precio llegue a un nivel. El stop de protección es una orden stop de venta."
           }
         ]
       }
@@ -783,6 +835,62 @@
             "unit": "€",
             "a": 4,
             "why": "42,70 − 38,70 = 4,00 € por acción. Esa distancia es 1R y fija el tamaño de la posición y el objetivo."
+          },
+          {
+            "t": "plan",
+            "q": "El martillo tiene máximo 42,60 € y mínimo 38,80 €. Coloca la entrada 0,10 € por encima del máximo y el stop 0,10 € por debajo del mínimo.",
+            "chart": {
+              "type": "candles",
+              "data": [
+                [50,51,48.5,49],
+                [49,49.8,47.2,47.8],
+                [47.8,48.3,45.9,46.4],
+                [46.4,47,44.8,45.2],
+                [45.2,45.7,43.4,43.9],
+                [43.9,44.3,42,42.5],
+                [41.9,42.6,38.8,42.4]
+              ],
+              "h": 260,
+              "alt": "Gráfico de siete velas con dos líneas para colocar"
+            },
+            "place": [
+              {
+                "id": "entry",
+                "label": "Entrada",
+                "a": 42.7,
+                "start": 47
+              },
+              {
+                "id": "stop",
+                "label": "Stop",
+                "a": 38.7,
+                "start": 44
+              }
+            ],
+            "why": "Entrada: 42,60 + 0,10 = 42,70 €. Stop: 38,80 − 0,10 = 38,70 €. Arriesgas 4,00 € por acción: esa distancia es 1R."
+          },
+          {
+            "t": "match",
+            "q": "Empareja cada patrón con su descripción.",
+            "pairs": [
+              [
+                "Martillo",
+                "Mecha inferior larga tras una caída"
+              ],
+              [
+                "Estrella fugaz",
+                "Mecha superior larga tras una subida"
+              ],
+              [
+                "Doji",
+                "Apertura y cierre casi iguales"
+              ],
+              [
+                "Envolvente alcista",
+                "Cuerpo verde que engloba al rojo anterior"
+              ]
+            ],
+            "why": "El martillo y la estrella fugaz son el mismo rechazo en sentidos opuestos; el doji marca indecisión; la envolvente, un giro en el que los compradores anulan la sesión anterior."
           }
         ]
       }
@@ -857,6 +965,29 @@
             ],
             "a": 0,
             "why": "Se compra la ruptura de la resistencia de la base con volumen claramente superior a la media. Anticiparla es adivinar."
+          },
+          {
+            "t": "match",
+            "q": "Empareja cada fase de Weinstein con su gráfico.",
+            "pairs": [
+              [
+                "Fase 1",
+                "Precio lateral alrededor de una media plana"
+              ],
+              [
+                "Fase 2",
+                "Precio por encima de una media que sube"
+              ],
+              [
+                "Fase 3",
+                "Lateral en máximos con la media aplanándose"
+              ],
+              [
+                "Fase 4",
+                "Precio por debajo de una media que baja"
+              ]
+            ],
+            "why": "Lo que define cada fase es la pendiente de la media de 30 semanas y de qué lado está el precio. Las fases 1 y 3 son laterales: las distingue lo que vino antes."
           }
         ]
       },
@@ -1294,6 +1425,47 @@
               "Signo de fuerza (SOS)"
             ],
             "why": "El clímax frena la caída, el rebote automático marca el techo del rango y la prueba secundaria confirma el suelo. El spring sacude el soporte, su prueba confirma que no queda oferta y el signo de fuerza rompe hacia arriba."
+          },
+          {
+            "t": "plan",
+            "q": "Monta la operación: entrada 0,10 € sobre el máximo de la prueba (21,70 €), stop 0,10 € bajo el mínimo del spring (19,20 €) y objetivo en la altura del rango (20,20 a 23,00 €) proyectada sobre la resistencia.",
+            "chart": {
+              "type": "candles",
+              "data": [
+                [21,22.6,20.8,22.2],
+                [22.2,23,21.6,21.8],
+                [21.8,22.1,20.3,20.5],
+                [20.5,21.9,20.2,21.6],
+                [21.6,22.9,21.3,22.6],
+                [22.6,22.8,20.6,20.9],
+                [20.6,21,19.2,20.8],
+                [20.8,21.7,20.5,21.5]
+              ],
+              "vol": [90,80,110,95,85,100,140,60],
+              "h": 290,
+              "alt": "Gráfico de velas con volumen y tres líneas para colocar"
+            },
+            "place": [
+              {
+                "id": "entry",
+                "label": "Entrada",
+                "a": 21.8,
+                "start": 23.5
+              },
+              {
+                "id": "stop",
+                "label": "Stop",
+                "a": 19.1,
+                "start": 20.5
+              },
+              {
+                "id": "target",
+                "label": "Objetivo",
+                "a": 25.8,
+                "start": 24.6
+              }
+            ],
+            "why": "Entrada: 21,70 + 0,10 = 21,80 €. Stop: 19,20 − 0,10 = 19,10 €. Objetivo: 23,00 + (23,00 − 20,20) = 25,80 €. Arriesgas 2,70 € para ganar 4,00 €: 1,48R."
           }
         ]
       },
@@ -1701,12 +1873,27 @@
             "t": "choice",
             "q": "Así está repartida tu cartera. ¿Qué riesgo destaca?",
             "table": {
-              "cols": ["Sector", "Peso"],
+              "cols": [
+                "Sector",
+                "Peso"
+              ],
               "rows": [
-                ["Semiconductores", "45 %"],
-                ["Software", "30 %"],
-                ["Salud", "15 %"],
-                ["Liquidez", "10 %"]
+                [
+                  "Semiconductores",
+                  "45 %"
+                ],
+                [
+                  "Software",
+                  "30 %"
+                ],
+                [
+                  "Salud",
+                  "15 %"
+                ],
+                [
+                  "Liquidez",
+                  "10 %"
+                ]
               ]
             },
             "opts": [
@@ -1785,7 +1972,12 @@
               "ma": [46,47,47.6,48,48.2,48.3,48.3,48.2,48,47.6,47,46.4,45.6,44.6],
               "alt": "Gráfico de precio y media de 30 semanas"
             },
-            "opts": ["Fase 1 (base)", "Fase 2 (avance)", "Fase 3 (techo)", "Fase 4 (declive)"],
+            "opts": [
+              "Fase 1 (base)",
+              "Fase 2 (avance)",
+              "Fase 3 (techo)",
+              "Fase 4 (declive)"
+            ],
             "a": 3,
             "why": "Tras un techo lateral alrededor de una media que se aplana (Fase 3), el precio rompe hacia abajo y queda bajo una media que ya gira a la baja: Fase 4."
           },
@@ -1850,13 +2042,37 @@
             "t": "num",
             "q": "Esta es la semana del índice. ¿Cuántos días de distribución hay?",
             "table": {
-              "cols": ["Día", "Cambio", "Volumen frente al día anterior"],
+              "cols": [
+                "Día",
+                "Cambio",
+                "Volumen frente al día anterior"
+              ],
               "rows": [
-                ["Lunes", "−0,5 %", "Mayor"],
-                ["Martes", "+0,8 %", "Mayor"],
-                ["Miércoles", "−0,1 %", "Mayor"],
-                ["Jueves", "−0,9 %", "Menor"],
-                ["Viernes", "−0,4 %", "Mayor"]
+                [
+                  "Lunes",
+                  "−0,5 %",
+                  "Mayor"
+                ],
+                [
+                  "Martes",
+                  "+0,8 %",
+                  "Mayor"
+                ],
+                [
+                  "Miércoles",
+                  "−0,1 %",
+                  "Mayor"
+                ],
+                [
+                  "Jueves",
+                  "−0,9 %",
+                  "Menor"
+                ],
+                [
+                  "Viernes",
+                  "−0,4 %",
+                  "Mayor"
+                ]
               ]
             },
             "unit": "",
@@ -2208,6 +2424,29 @@
             ],
             "a": 2,
             "why": "Con PER 60, el precio ya descuenta años de crecimiento alto: cumplir no basta, hay que superar. Mueve el precio la diferencia con lo esperado, no el dato en sí."
+          },
+          {
+            "t": "match",
+            "q": "Empareja cada medida de valoración con su fórmula.",
+            "pairs": [
+              [
+                "PER",
+                "Precio ÷ BPA"
+              ],
+              [
+                "PEG",
+                "PER ÷ crecimiento del BPA"
+              ],
+              [
+                "EV/EBITDA",
+                "(Capitalización + deuda − caja) ÷ EBITDA"
+              ],
+              [
+                "Rentabilidad por flujo de caja libre",
+                "Flujo de caja libre ÷ capitalización"
+              ]
+            ],
+            "why": "El PER y el PEG miran el beneficio por acción; el EV/EBITDA incluye la deuda; la rentabilidad por flujo de caja mira la caja, más difícil de maquillar."
           }
         ]
       }

@@ -49,6 +49,8 @@ Ejercicios (`why` es obligatorio y se muestra como explicación tras responder):
 - Casos reales (`casos.json`): `{fuente, fecha, ex: {idLección: [ejercicios con "caso": "Empresa (TICKER)"]}}`. Cada lección añade al final un caso al azar de su lista.
 - `tap`: `{t, q, chart: {type:"candles", data}, a: índice de vela (0-based), why}`
 - `level`: `{t, q, chart: {type:"candles", data, levels:[{id,y}], lines?:[{y,label}]}, a: "B", why}`
+- `match`: `{t, q, pairs: [[término, descripción], ...], why}` (3 o más parejas). Cada término tiene un hueco; el usuario toca descripciones y llenan el primer hueco libre. Mismo mecanismo que `order`.
+- `plan`: `{t, q, chart: {type:"candles", data, ...}, place: [{id: "entry"|"stop"|"target", label, a, start, tol?: 0.1}], step?: 0.1, why}`. Líneas que se arrastran (ratón, dedo, flechas o botones − / +). `start` debe estar a más de `tol` de `a` (el test lo comprueba). El enunciado da las cifras necesarias: se evalúa calcular y colocar, no adivinar un precio a ojo.
 - `order`: `{t, q, items: [...en el orden correcto], why}`. Se muestran barajados; el usuario los toca en orden y puede devolver uno a la lista tocándolo. Solo para secuencias con un orden defendible (causa-efecto, proceso o esquema canónico), nunca para listas cuyo orden sea opinable.
 
 Gráficos (`chart`):
@@ -93,7 +95,7 @@ Sistema de tokens en `src/styles.css` (`:root`, con variante oscura por `prefers
 0. Ruta Básico: 6 unidades hechas (acciones y órdenes, rentabilidad y riesgo, leer un gráfico, ETF e índices, impuestos en España, cuenta y bróker). Revisar cada año los tramos y normas fiscales de la unidad «Impuestos en España» y «Cuenta y bróker».
 1. Contenido técnico: unidades 1-10 hechas (velas, tendencia, riesgo, catalizadores binarios, Wyckoff/VSA, VCP, salidas escalonadas, riesgo de cartera, cortos y Fase 4, mercado general). Ideas siguientes: fuerza relativa (RS de O'Neil), distribución de Wyckoff, temporalidades múltiples.
 1b. Ruta fundamental: F1-F4 hechas (F1-F3 con casos reales). Ideas siguientes: sectores, lectura de un informe de resultados real.
-2. Nuevos tipos de ejercicio: «ordenar pasos» hecho (`order`). Faltan: arrastrar entrada/stop/objetivo sobre el gráfico y emparejar patrón con descripción.
+2. Tipos de ejercicio: `order`, `match` y `plan` hechos. Ideas: marcar una zona (rango, base) arrastrando dos líneas, o elegir el tamaño de posición con un deslizador.
 3. Repaso espaciado: hecho. Posible mejora: avisar de la racha de repaso y mostrar cuántos ejercicios están «aprendidos».
 4. Persistencia real (cuentas, sincronización) y decidir stack: vanilla actual frente a Vite + TypeScript. Migrar solo cuando el contenido y los tipos de ejercicio se estabilicen.
 5. PWA instalable: hecho (manifiesto, iconos, uso sin conexión, botón de instalar). Avisos de racha: necesitan notificaciones push con servidor; van con el punto 4.

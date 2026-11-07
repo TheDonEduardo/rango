@@ -1,5 +1,5 @@
 // Estado, vistas, lógica de lección y eventos.
-import {KEY,GOAL,RH,OFFS,fmt,esc,today,yest,addDays,shuffle,parseNum} from './util.js';
+import {KEY,GOAL,RH,OFFS,fmt,esc,today,yest,addDays,shuffle,parseNum,planTol,planStep} from './util.js';
 import {P,ico,icoX,icoOk,LOGO} from './icons.js';
 import {candlesSVG,lineSVG,glyph} from './charts.js';
 import {UNITS,FLAT,CASOS,TRACKS,EXBYID,trackOf,exCount} from './content.js';
@@ -63,7 +63,9 @@ function chartHTML(ex){
   const sp=ex.chart;if(!sp)return'';
   let st=null;
   if(ex.t==='tap'||ex.t==='level')st={mode:ex.t,sel:run.sel,checked:run.checked,a:ex.a};
-  return `<figure class="chart">${sp.type==='line'?lineSVG(sp):candlesSVG(sp,st)}</figure>`;
+  if(ex.t==='plan'){if(!run.sel)run.sel=Object.fromEntries(ex.place.map(p=>[p.id,p.start]));st={mode:'plan',vals:run.sel,checked:run.checked,place:ex.place}}
+  const fine=ex.t==='plan'&&!run.checked?`<div class="pfine">${ex.place.map(p=>`<div class="pf pl-${p.id}"><span>${esc(p.label)}</span><button data-act="pstep" data-id="${p.id}" data-d="-1" aria-label="Bajar ${esc(p.label)}">−</button><button data-act="pstep" data-id="${p.id}" data-d="1" aria-label="Subir ${esc(p.label)}">+</button></div>`).join('')}</div>`:'';
+  return `<figure class="chart">${sp.type==='line'?lineSVG(sp):candlesSVG(sp,st)}</figure>${fine}`;
 }
 // Texto de ejercicio: escapa y une cada número con su unidad (26,00 €, 12 %, 3R…) para que no se separen al saltar de línea.
 const tx=s=>esc(s).replace(/(\d) (?=(?:M?[€$]|%|R\b|veces\b))/g,'$1\u00a0');
@@ -113,12 +115,14 @@ function homeHTML(){
   return h;
 }
 
-const KIND={choice:'Elige una respuesta',num:'Escribe el resultado',tap:'Toca una vela del gráfico',level:'Toca una línea del gráfico',order:'Ordena los pasos'};
+const KIND={choice:'Elige una respuesta',num:'Escribe el resultado',tap:'Toca una vela del gráfico',level:'Toca una línea del gráfico',order:'Ordena los pasos',match:'Empareja cada uno con su descripción',plan:'Arrastra las líneas del gráfico'};
 function answerText(ex){
   if(ex.t==='choice')return ex.opts[ex.a];
   if(ex.t==='num')return fmt(ex.a,Number.isInteger(ex.a)?0:2)+(ex.unit?' '+ex.unit:'');
   if(ex.t==='tap')return 'Vela '+(ex.a+1);
   if(ex.t==='order')return ex.items.map((t,i)=>(i+1)+'. '+t).join('  ');
+  if(ex.t==='match')return ex.pairs.map(p=>p[0]+': '+p[1]).join('  ');
+  if(ex.t==='plan')return ex.place.map(p=>p.label+' '+fmt(p.a)).join(' · ');
   return 'Nivel '+ex.a;
 }
 function lessonHTML(){
@@ -135,7 +139,7 @@ function lessonHTML(){
     });
     h+='</div>';
   }
-  if(ex.t==='order')h+=`<div class="ord">${ordHTML(ex)}</div>`;
+  if(ex.t==='order'||ex.t==='match')h+=`<div class="ord${ex.t==='match'?' match':''}">${ordHTML(ex)}</div>`;
   if(ex.t==='num'){
     const c=run.checked?(run.ok?'good':'bad'):'';
     h+=`<div class="numrow"><input id="numIn" class="num ${c}" type="text" inputmode="decimal" autocomplete="off" aria-label="Tu respuesta" value="${esc(run.val)}"${run.checked?' disabled':''}>${ex.unit?`<span class="suffix">${ex.unit}</span>`:''}</div>`;
@@ -145,31 +149,35 @@ function lessonHTML(){
   if(!run.checked){
     h+=`<div><button class="btn primary" data-act="check"${can?'':' disabled'}>Comprobar</button></div>`;
   }else{
-    h+=`<div class="fb ${run.ok?'good':'bad'}" role="status"><div class="fb-h">${run.ok?icoOk:icoX}<span>${run.ok?'Correcto':'Incorrecto'}</span></div><p>${tx(ex.why)}</p>${run.ok?'':ex.t==='order'?`<div class="ans">Orden correcto:<ol>${ex.items.map(t=>`<li>${tx(t)}</li>`).join('')}</ol></div>`:`<p class="ans">Respuesta: ${tx(answerText(ex))}</p>`}<button class="btn primary" data-act="next">Continuar</button></div>`;
+    h+=`<div class="fb ${run.ok?'good':'bad'}" role="status"><div class="fb-h">${run.ok?icoOk:icoX}<span>${run.ok?'Correcto':'Incorrecto'}</span></div><p>${tx(ex.why)}</p>${run.ok?'':ex.t==='order'?`<div class="ans">Orden correcto:<ol>${ex.items.map(t=>`<li>${tx(t)}</li>`).join('')}</ol></div>`:ex.t==='match'?`<div class="ans">Parejas correctas:<ul>${ex.pairs.map(p=>`<li>${tx(p[0])}: ${tx(p[1])}</li>`).join('')}</ul></div>`:`<p class="ans">Respuesta: ${tx(answerText(ex))}</p>`}<button class="btn primary" data-act="next">Continuar</button></div>`;
   }
   return h+'</div>';
 }
-// Ordenar pasos: el usuario toca los elementos en orden; run.sel = índices de ex.items en el orden elegido.
+// Ordenar (order) y emparejar (match) comparten mecánica: el usuario toca elementos de la lista y llenan
+// los huecos en orden; run.sel = índices de los elementos elegidos. En match, cada hueco lleva su término.
+const ordItems=ex=>ex.t==='match'?ex.pairs.map(p=>p[1]):ex.items;
 function ordHTML(ex){
-  const sel=run.sel||[],n=ex.items.length;
-  if(!run.perm.has(ex)){let p;do{p=shuffle(ex.items.map((_,i)=>i))}while(p.every((v,i)=>v===i));run.perm.set(ex,p)}
-  let h='<ol class="ord-ans" aria-label="Tu orden">';
+  const items=ordItems(ex),labels=ex.t==='match'?ex.pairs.map(p=>p[0]):null,sel=run.sel||[],n=items.length;
+  if(!run.perm.has(ex)){let p;do{p=shuffle(items.map((_,i)=>i))}while(p.every((v,i)=>v===i));run.perm.set(ex,p)}
+  let h=`<ol class="ord-ans" aria-label="${labels?'Tus parejas':'Tu orden'}">`;
   for(let k=0;k<n;k++){
+    const mark=labels?`<span class="mt">${tx(labels[k])}</span>`:`<span class="n">${k+1}</span>`;
     if(k<sel.length){
       const c=run.checked?(sel[k]===k?'good':'bad'):'filled';
-      h+=`<li><button class="opt ${c}" data-act="ounpick" data-k="${k}"${run.checked?' disabled':` aria-label="Quitar: ${esc(ex.items[sel[k]])}"`}><span class="n">${k+1}</span>${tx(ex.items[sel[k]])}</button></li>`;
-    }else h+=`<li class="slot" aria-hidden="true"><span class="n">${k+1}</span></li>`;
+      h+=`<li>${labels?mark:''}<button class="opt ${c}" data-act="ounpick" data-k="${k}"${run.checked?' disabled':` aria-label="Quitar: ${esc(items[sel[k]])}"`}>${labels?'':mark}${tx(items[sel[k]])}</button></li>`;
+    }else h+=`<li>${labels?mark:''}<div class="slot${k===sel.length?' next':''}" aria-hidden="true">${labels?(k===sel.length?'Toca su descripción':''):mark}</div></li>`;
   }
   h+='</ol>';
   if(!run.checked){
     const rest=run.perm.get(ex).filter(i=>!sel.includes(i));
-    if(rest.length)h+='<div class="opts ord-pool">'+rest.map(i=>`<button class="opt" data-act="opick" data-i="${i}">${tx(ex.items[i])}</button>`).join('')+'</div>';
+    if(rest.length)h+='<div class="opts ord-pool">'+rest.map(i=>`<button class="opt" data-act="opick" data-i="${i}">${tx(items[i])}</button>`).join('')+'</div>';
   }
   return h;
 }
 function canCheck(ex){
   if(ex.t==='num')return run.val.trim()!=='';
-  if(ex.t==='order')return !!run.sel&&run.sel.length===ex.items.length;
+  if(ex.t==='order'||ex.t==='match')return !!run.sel&&run.sel.length===ordItems(ex).length;
+  if(ex.t==='plan')return true;
   return run.sel!==null;
 }
 function updateOrd(){
@@ -229,7 +237,8 @@ function startRun(L){
 function check(){
   const ex=run.queue[0];let ok=false;
   if(ex.t==='num'){const v=parseNum(run.val);ok=v!==null&&Math.abs(v-ex.a)<=(ex.tol==null?0.005:ex.tol)}
-  else if(ex.t==='order')ok=!!run.sel&&run.sel.length===ex.items.length&&run.sel.every((v,k)=>v===k);
+  else if(ex.t==='order'||ex.t==='match')ok=!!run.sel&&run.sel.length===ordItems(ex).length&&run.sel.every((v,k)=>v===k);
+  else if(ex.t==='plan')ok=ex.place.every(p=>Math.abs(run.sel[p.id]-p.a)<=planTol(p)+1e-9);
   else ok=run.sel===ex.a;
   run.ok=ok;run.checked=true;
   if(!run.seen.has(ex)){run.seen.add(ex);if(!ok)run.firstWrong++;srsRecord(ex,ok);save()}
@@ -260,6 +269,33 @@ function pickChoice(i){
   $app.querySelectorAll('.opt').forEach((b,k)=>b.classList.toggle('sel',k===i));
   const c=$app.querySelector('[data-act=check]');if(c)c.disabled=false;
 }
+// Ejercicio «plan»: arrastrar líneas (ratón, dedo) o moverlas con las flechas del teclado.
+let drag=null;
+function planSet(g,v){
+  const ex=run.queue[0],svg=g.ownerSVGElement,d=svg.dataset,lo=+d.lo,hi=+d.hi;
+  const st=planStep(ex);v=Math.round(Math.min(hi,Math.max(lo,v))/st)*st;v=Math.round(v*100)/100;
+  const id=g.dataset.id,p=ex.place.find(q=>q.id===id);
+  run.sel[id]=v;
+  g.setAttribute('transform',`translate(0 ${(+d.top+(hi-v)/(hi-lo)*+d.ph).toFixed(1)})`);
+  g.querySelector('.pt').textContent=p.label+' '+fmt(v);
+  g.setAttribute('aria-valuenow',v);g.setAttribute('aria-valuetext',p.label+' '+fmt(v));
+}
+function planMove(e){
+  const g=drag.g,svg=g.ownerSVGElement,d=svg.dataset,pt=svg.createSVGPoint();
+  pt.x=e.clientX;pt.y=e.clientY;
+  const sy=pt.matrixTransform(svg.getScreenCTM().inverse()).y;
+  planSet(g,+d.hi-(sy-+d.top)/+d.ph*(+d.hi-+d.lo));
+}
+$app.addEventListener('pointerdown',e=>{
+  const g=e.target.closest&&e.target.closest('.pl');
+  if(!g||view!=='lesson'||run.checked||run.queue[0].t!=='plan')return;
+  e.preventDefault();drag={g};g.classList.add('drag');
+  try{g.setPointerCapture(e.pointerId)}catch(_){}
+  planMove(e);
+});
+$app.addEventListener('pointermove',e=>{if(drag){e.preventDefault();planMove(e)}});
+const endDrag=()=>{if(drag){drag.g.classList.remove('drag');drag=null}};
+$app.addEventListener('pointerup',endDrag);$app.addEventListener('pointercancel',endDrag);
 function pickSvg(el){
   const ex=run.queue[0];
   if(ex.t==='tap'){run.sel=+el.dataset.i;$app.querySelectorAll('.cd').forEach(g=>g.classList.toggle('sel',g===el))}
@@ -277,6 +313,7 @@ $app.addEventListener('click',e=>{
     homeY=window.scrollY;startRun(L);
   }
   else if(a==='pick'&&!run.checked)pickChoice(+b.dataset.i);
+  else if(a==='pstep'&&!run.checked){const g=$app.querySelector(`.pl[data-id="${b.dataset.id}"]`);if(g)planSet(g,run.sel[b.dataset.id]+(+b.dataset.d)*planStep(run.queue[0]))}
   else if(a==='opick'&&!run.checked){run.sel=(run.sel||[]).concat(+b.dataset.i);updateOrd()}
   else if(a==='ounpick'&&!run.checked){run.sel.splice(+b.dataset.k,1);updateOrd()}
   else if(a==='check'&&!b.disabled)check();
@@ -304,6 +341,11 @@ document.addEventListener('keydown',e=>{
   if(view!=='lesson')return;
   const t=e.target;
   if((e.key==='Enter'||e.key===' ')&&t.closest&&t.closest('.cd[tabindex],.lv')&&!run.checked){e.preventDefault();pickSvg(t.closest('.cd,.lv'));return}
+  const pg=t.closest&&t.closest('.pl');
+  if(pg&&!run.checked&&run.queue[0].t==='plan'){
+    const k={ArrowUp:1,ArrowRight:1,ArrowDown:-1,ArrowLeft:-1,PageUp:10,PageDown:-10}[e.key];
+    if(k){e.preventDefault();planSet(pg,run.sel[pg.dataset.id]+k*planStep(run.queue[0]));return}
+  }
   if(e.key==='Enter'&&(!t.closest||!t.closest('button'))){
     if(run.checked){e.preventDefault();next()}
     else if(t.id==='numIn'&&run.val.trim()!==''){e.preventDefault();check()}

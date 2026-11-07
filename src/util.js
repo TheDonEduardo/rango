@@ -12,3 +12,6 @@ export function parseNum(s){
   const t=String(s).trim().replace(/[€$%R\s]/gi,'').replace(',','.');
   return /^-?\d+(\.\d+)?$/.test(t)?parseFloat(t):null;
 }
+// Ejercicio «plan»: tolerancia de cada línea y paso al arrastrar (por defecto 0,10).
+export const planTol=p=>p.tol==null?0.1:p.tol;
+export const planStep=ex=>ex.step||0.1;

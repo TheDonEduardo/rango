@@ -35,7 +35,16 @@ const lint = (ex, w) => {
       if (ex.t === 'tap' && !(ex.chart && ex.a >= 0 && ex.a < ex.chart.data.length)) errs.push(w + ': vela fuera de rango');
       if (ex.t === 'level' && !(ex.chart?.levels || []).some(v => v.id === ex.a)) errs.push(w + ': nivel inexistente');
       if (ex.t === 'order' && !(Array.isArray(ex.items) && ex.items.length >= 3 && new Set(ex.items).size === ex.items.length)) errs.push(w + ': order necesita 3+ elementos distintos');
-      if (!['choice', 'num', 'tap', 'level', 'order'].includes(ex.t)) errs.push(w + ': tipo desconocido ' + ex.t);
+      if (ex.t === 'match' && !(Array.isArray(ex.pairs) && ex.pairs.length >= 3 && new Set(ex.pairs.map(p => p[0])).size === ex.pairs.length && new Set(ex.pairs.map(p => p[1])).size === ex.pairs.length)) errs.push(w + ': match necesita 3+ parejas distintas');
+      if (ex.t === 'plan') {
+        if (ex.chart?.type !== 'candles' || !Array.isArray(ex.place) || !ex.place.length) errs.push(w + ': plan necesita gráfico de velas y place');
+        for (const p of ex.place || []) {
+          const tol = p.tol == null ? 0.1 : p.tol;
+          if (!p.id || !p.label || typeof p.a !== 'number' || typeof p.start !== 'number') errs.push(w + ': línea de plan incompleta');
+          else if (Math.abs(p.start - p.a) <= tol + 1e-9) errs.push(w + ': la línea ' + p.id + ' empieza ya en la respuesta');
+        }
+      }
+      if (!['choice', 'num', 'tap', 'level', 'order', 'match', 'plan'].includes(ex.t)) errs.push(w + ': tipo desconocido ' + ex.t);
 };
 for (const u of units) {
   if (!['basico', 'tecnico', 'fundamental', undefined].includes(u.track)) errs.push('ruta desconocida en ' + u.id);
@@ -66,9 +75,10 @@ if (!fs.readFileSync(path.join(root, 'index.html'), 'utf8').includes(fontsSw)) e
 
 // 2) Recorrido completo de cada lección
 const {api: T} = await import(pathToFileURL(path.join(root, 'src/app.js')));
-const ident = ex => ex.items.map((_, i) => i);
-const wrong = ex => ex.t === 'num' ? '999' : ex.t === 'tap' ? 0 : ex.t === 'level' ? 'Z' : ex.t === 'order' ? ident(ex).reverse() : (ex.a + 1) % ex.opts.length;
-const right = ex => ex.t === 'num' ? String(ex.a).replace('.', ',') : ex.t === 'order' ? ident(ex) : ex.a;
+const ident = ex => (ex.items || ex.pairs).map((_, i) => i);
+const planOf = (ex, k) => Object.fromEntries(ex.place.map(p => [p.id, p[k]]));
+const wrong = ex => ex.t === 'num' ? '999' : ex.t === 'tap' ? 0 : ex.t === 'level' ? 'Z' : ex.t === 'order' || ex.t === 'match' ? ident(ex).reverse() : ex.t === 'plan' ? planOf(ex, 'start') : (ex.a + 1) % ex.opts.length;
+const right = ex => ex.t === 'num' ? String(ex.a).replace('.', ',') : ex.t === 'order' || ex.t === 'match' ? ident(ex) : ex.t === 'plan' ? planOf(ex, 'a') : ex.a;
 const give = (ex, v) => ex.t === 'num' ? T.setVal(v) : T.setSel(v);
 
 // Aviso legal: aparece en el primer uso y desaparece al aceptarlo.

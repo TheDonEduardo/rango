@@ -1,5 +1,5 @@
 // Gráficos SVG: velas, línea con media y glifo de vela para la ruta.
-import {fmt,esc} from './util.js';
+import {fmt,esc,planTol} from './util.js';
 export function scaleOf(vals,H,pt,pb){
   let lo=Math.min(...vals),hi=Math.max(...vals);
   const pad=(hi-lo)*0.1||1;lo-=pad;hi+=pad;
@@ -9,7 +9,7 @@ export function scaleOf(vals,H,pt,pb){
   const ticks=[];
   for(let k=Math.ceil(lo/step);k*step<=hi;k++)ticks.push(+(k*step).toFixed(6));
   const dec=Math.abs(Math.round(step)-step)<1e-9?0:(Math.abs(Math.round(step*10)-step*10)<1e-9?1:2);
-  return {y,ticks,dec};
+  return {y,ticks,dec,lo,hi};
 }
 export function candlesSVG(sp,st){
   const W=360,H=sp.h||230,pt=12,pb=12,pr=46,pl=sp.levels?36:10;
@@ -17,12 +17,16 @@ export function candlesSVG(sp,st){
   d.forEach(c=>vals.push(c[1],c[2]));
   (sp.levels||[]).forEach(l=>vals.push(l.y));
   (sp.lines||[]).forEach(l=>vals.push(l.y));
+  const planMode=st&&st.mode==='plan';
+  if(planMode)st.place.forEach(p=>vals.push(p.a,p.start));
   const VH=sp.vol?48:0,pbP=pb+(VH?VH+14:0),vmax=VH?Math.max(...sp.vol):1;
   const sc=scaleOf(vals,H,pt,pbP),y=sc.y;
   const n=d.length,cw=(W-pl-pr)/n,bw=Math.min(24,cw*0.56);
   const tapMode=st&&st.mode==='tap', lvMode=st&&st.mode==='level';
   const cls=k=>{if(!st)return'';if(st.checked){if(k===st.a)return'good';if(k===st.sel)return'bad';return''}return k===st.sel?'sel':''};
-  let s=`<svg class="svg ${tapMode?'tap':''}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(sp.alt||'Gráfico de velas')}">`;
+  // En modo plan, la escala viaja en atributos para que app.js convierta la posición del dedo en precio.
+  const scaleAttrs=planMode?` data-lo="${sc.lo}" data-hi="${sc.hi}" data-top="${pt}" data-ph="${H-pt-pbP}"`:'';
+  let s=`<svg class="svg ${tapMode?'tap':''}${planMode?' plan':''}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(sp.alt||'Gráfico de velas')}"${scaleAttrs}>`;
   sc.ticks.forEach(t=>{s+=`<line class="grid" x1="${pl}" x2="${W-pr}" y1="${y(t).toFixed(1)}" y2="${y(t).toFixed(1)}"/><text x="${W-pr+6}" y="${(y(t)+3.5).toFixed(1)}">${fmt(t,sc.dec)}</text>`});
   if(VH)s+=`<line class="grid" x1="${pl}" x2="${W-pr}" y1="${H-pb}" y2="${H-pb}"/><text x="${W-pr+6}" y="${(H-pb-VH/2+3.5).toFixed(1)}">Vol.</text>`;
   (sp.lines||[]).forEach(l=>{s+=`<line class="ref" x1="${pl}" x2="${W-pr}" y1="${y(l.y).toFixed(1)}" y2="${y(l.y).toFixed(1)}"/>`});
@@ -46,6 +50,14 @@ export function candlesSVG(sp,st){
   (sp.levels||[]).forEach(l=>{
     const yy=y(l.y).toFixed(1);
     s+=`<g class="lv ${lvMode?cls(l.id):''}" data-id="${l.id}" tabindex="0" role="button" aria-label="Nivel ${l.id}"><line class="lvl" x1="${pl}" x2="${W-pr}" y1="${yy}" y2="${yy}"/><rect class="hit" x="0" y="${(y(l.y)-13).toFixed(1)}" width="${W-pr}" height="26"/><g class="tag"><circle cx="18" cy="${yy}" r="11"/><text x="18" y="${(y(l.y)+4).toFixed(1)}">${l.id}</text></g></g>`;
+  });
+  if(planMode)st.place.forEach(p=>{
+    const v=st.vals[p.id],ok=Math.abs(v-p.a)<=planTol(p)+1e-9;
+    if(st.checked&&!ok){const ya=y(p.a).toFixed(1);s+=`<g class="pl-ans"><line x1="${pl}" x2="${W-pr}" y1="${ya}" y2="${ya}"/><text class="reft" x="${W-pr-4}" y="${(y(p.a)-5).toFixed(1)}">${esc(p.label)} correcto: ${fmt(p.a)}</text></g>`}
+    s+=`<g class="pl pl-${p.id}${st.checked?(ok?' good':' bad'):''}" data-id="${p.id}" transform="translate(0 ${y(v).toFixed(1)})"${st.checked?'':` tabindex="0" role="slider" aria-label="${esc(p.label)}" aria-valuenow="${v}" aria-valuetext="${esc(p.label)} ${fmt(v)}"`}>`
+      +`<rect class="hit" x="0" y="-16" width="${W}" height="32"/><line x1="${pl}" x2="${W-pr}" y1="0" y2="0"/>`
+      +`<rect class="pill" x="${pl}" y="-11" width="104" height="22" rx="11"/><text class="pt" x="${pl+52}" y="4">${esc(p.label)} ${fmt(v)}</text>`
+      +`<path class="grip" d="M${W-pr-16} -4h12M${W-pr-16} 0h12M${W-pr-16} 4h12"/></g>`;
   });
   return s+'</svg>';
 }

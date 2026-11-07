@@ -1,6 +1,6 @@
 // Service worker de Rango: permite usar la app sin conexión.
 // Sube CACHE al cambiar el código (src/*.js, styles.css, index.html) para que todos los usuarios reciban la versión nueva.
-const CACHE = 'rango-v1';
+const CACHE = 'rango-v2';
 const FONTS_CSS = 'https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=IBM+Plex+Sans:wght@400;500;600&display=swap';
 const PRECACHE = [
   './',
