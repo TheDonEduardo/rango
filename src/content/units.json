@@ -1499,6 +1499,230 @@
     ]
   },
   {
+    "n": 7,
+    "id": "salidas",
+    "title": "Salidas escalonadas",
+    "blurb": "Vende por partes: asegura pronto y deja correr el resto.",
+    "lessons": [
+      {
+        "id": "s1",
+        "title": "Vender por partes",
+        "ex": [
+          {
+            "t": "num",
+            "q": "Vendes un tercio en 2R, otro tercio en 4R y el último salta en el stop, que habías subido a la entrada (0R). ¿Resultado medio de la operación?",
+            "unit": "R",
+            "a": 2,
+            "why": "(2 + 4 + 0) ÷ 3 = 2R. Aunque el último tramo salga sin ganancia, la operación cierra con el doble de lo arriesgado."
+          },
+          {
+            "t": "num",
+            "q": "Vendes la mitad en 2R y el precio se gira: la otra mitad sale en el stop original (−1R). ¿Resultado de la operación?",
+            "unit": "R",
+            "a": 0.5,
+            "why": "0,5 × 2 + 0,5 × (−1) = 0,5R. Sin la venta parcial habrías perdido 1R: vender una parte en 2R convierte esa operación en ganadora."
+          },
+          {
+            "t": "level",
+            "q": "Entraste a 40,00 € con stop en 38,00 €. El precio llega a 44,00 € (2R) y vendes un tercio. Toca dónde subes el stop del resto.",
+            "chart": {
+              "type": "candles",
+              "data": [
+                [39.8,40.4,39.5,40.2],
+                [40.2,41.1,40,40.9],
+                [40.9,41.5,40.6,41.2],
+                [41.2,42.4,41,42.2],
+                [42.2,43,41.8,42.6],
+                [42.6,44.2,42.4,44]
+              ],
+              "h": 250,
+              "lines": [
+                {
+                  "y": 44,
+                  "label": "Venta parcial 44,00"
+                }
+              ],
+              "levels": [
+                {
+                  "id": "A",
+                  "y": 38
+                },
+                {
+                  "id": "B",
+                  "y": 40
+                },
+                {
+                  "id": "C",
+                  "y": 43.5
+                }
+              ],
+              "alt": "Gráfico de velas al alza con tres niveles de stop"
+            },
+            "a": "B",
+            "why": "En la entrada (40,00 €) el resto ya no puede perder: la operación queda sin riesgo. A mantiene 1R en juego y C, a 0,50 € del precio, saltaría con el ruido normal."
+          },
+          {
+            "t": "choice",
+            "q": "Ya has vendido dos tercios y la tendencia sigue fuerte. ¿Cómo gestionas el último tercio?",
+            "opts": [
+              "Lo vendes al día siguiente para asegurar",
+              "Le pones un stop bajo la media de 50 sesiones",
+              "Le bajas el stop si el precio retrocede",
+              "Lo mantienes sin stop hasta fin de año"
+            ],
+            "a": 1,
+            "why": "El último tramo es el que captura las grandes subidas: un stop que sigue al precio evita vender demasiado pronto. Minervini acompaña a sus mayores ganadores con la media de 50 sesiones."
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "Vender en fuerza",
+        "ex": [
+          {
+            "t": "choice",
+            "q": "Tras meses de subida, la acción sube un 25 % en una semana, con el mayor volumen de toda la tendencia y un gap al alza. ¿Qué indica?",
+            "opts": [
+              "Que la tendencia empieza de verdad ahora",
+              "Que conviene comprar más con todo el capital",
+              "Posible subida clímax: vende una parte en fuerza",
+              "Nada relevante: es una semana más"
+            ],
+            "a": 2,
+            "why": "Las subidas más rápidas y con más volumen suelen llegar al final de una tendencia, cuando compran los últimos. Vender una parte ahí asegura la ganancia sin intentar adivinar el techo."
+          },
+          {
+            "t": "num",
+            "q": "La acción cotiza a 66,00 € y su media de 50 sesiones está en 50,00 €. ¿Cuánto está por encima de la media?",
+            "unit": "%",
+            "a": 32,
+            "why": "(66,00 − 50,00) ÷ 50,00 = 32 %. Tan alejado de su media, el precio tiende a volver a ella: es sitio para vender una parte, no para comprar."
+          },
+          {
+            "t": "num",
+            "q": "Compraste 150 acciones a 40,00 €. Vendes 50 a 44,00 €, otras 50 a 48,00 € y las últimas 50 salen en el stop, subido a 40,00 €. ¿Ganancia total?",
+            "unit": "€",
+            "a": 600,
+            "why": "50 × 4,00 + 50 × 8,00 + 50 × 0 = 600 €. Las ventas parciales aseguraron la ganancia aunque el último tramo saliera sin beneficio."
+          },
+          {
+            "t": "order",
+            "q": "Ordena un plan de salida escalonada.",
+            "items": [
+              "Colocar el stop inicial bajo el soporte",
+              "Vender un tercio en 2R y subir el stop a la entrada",
+              "Vender otro tercio en 4R o en una subida clímax",
+              "Seguir el último tercio con la media de 50 sesiones"
+            ],
+            "why": "Primero limitas la pérdida, luego aseguras y eliminas el riesgo, y al final dejas correr lo que queda. Cada paso depende de que el anterior se haya cumplido."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "id": "cartera",
+    "title": "Riesgo de cartera",
+    "blurb": "No es cada operación: es todo lo que tienes abierto a la vez.",
+    "lessons": [
+      {
+        "id": "c1",
+        "title": "Riesgo abierto",
+        "ex": [
+          {
+            "t": "num",
+            "q": "Tienes 5 posiciones abiertas y cada una arriesga un 1 % del capital hasta su stop. Si saltan todos los stops, ¿qué porcentaje del capital pierdes?",
+            "unit": "%",
+            "a": 5,
+            "why": "5 × 1 % = 5 %. Es tu riesgo abierto: lo que cuesta el peor día si todo sale mal a la vez."
+          },
+          {
+            "t": "num",
+            "q": "Capital de 15.000 € y esas 5 posiciones son todas de semiconductores. Si el sector cae y saltan los cinco stops, ¿cuántos € pierdes?",
+            "unit": "€",
+            "a": 750,
+            "why": "15.000 × 5 % = 750 €. Cinco posiciones del mismo sector se mueven como una sola posición grande: en una caída del sector saltan juntas."
+          },
+          {
+            "t": "choice",
+            "q": "Tu límite de riesgo abierto es un 6 % y ya lo has alcanzado. Aparece una compra nueva. ¿Qué haces?",
+            "opts": [
+              "La compras igualmente: es buena",
+              "Liberas riesgo subiendo stops a la entrada, o renuncias",
+              "Compras el doble para compensar",
+              "Quitas los stops de las demás posiciones"
+            ],
+            "a": 1,
+            "why": "Una posición con el stop en la entrada ya no suma riesgo: así haces hueco sin superar tu límite. Si no puedes, la nueva operación espera."
+          },
+          {
+            "t": "num",
+            "q": "Arriesgas un 2 % por operación y encadenas 10 pérdidas seguidas. Cada pérdida es el 2 % del capital que te queda. ¿Cuánto has perdido en total? Redondea a 1 decimal.",
+            "unit": "%",
+            "a": 18.3,
+            "tol": 0.06,
+            "why": "1 − 0,98¹⁰ = 18,3 %. Con un 1 % por operación serían un 9,6 %: rachas así ocurren incluso con buenos sistemas, y el riesgo por operación decide cuánto duelen."
+          }
+        ]
+      },
+      {
+        "id": "c2",
+        "title": "Exposición y mercado",
+        "ex": [
+          {
+            "t": "num",
+            "q": "Capital de 15.000 €. Tus posiciones valen 3.000, 2.500, 4.000 y 1.500 €. ¿Qué porcentaje del capital está invertido? Redondea a 1 decimal.",
+            "unit": "%",
+            "a": 73.3,
+            "tol": 0.06,
+            "why": "(3.000 + 2.500 + 4.000 + 1.500) ÷ 15.000 = 11.000 ÷ 15.000 = 73,3 %. La exposición dice cuánto te mueve el mercado; el riesgo abierto, cuánto pierdes si saltan los stops."
+          },
+          {
+            "t": "choice",
+            "q": "El S&P 500 pierde su media de 200 sesiones y la mayoría de tus rupturas fallan. ¿Qué haces?",
+            "opts": [
+              "Reducir exposición y tamaño",
+              "Aumentar el tamaño para recuperar",
+              "Operar igual: el mercado no importa",
+              "Comprar las acciones que más caen"
+            ],
+            "a": 0,
+            "why": "Según O'Neil, tres de cada cuatro acciones siguen la dirección del mercado. Cuando las rupturas fallan seguidas, el mercado te está diciendo que reduzcas y esperes."
+          },
+          {
+            "t": "num",
+            "q": "Capital de 15.000 € y ninguna posición puede pasar del 25 %. Arriesgas 150 €, con entrada a 50,00 € y stop en 49,00 €. ¿Cuántas acciones compras?",
+            "unit": "",
+            "a": 75,
+            "why": "Por riesgo saldrían 150 ÷ 1,00 = 150 acciones (7.500 €, la mitad del capital). El límite del 25 % son 3.750 €, es decir, 75 acciones: con stops muy ajustados manda el límite de tamaño."
+          },
+          {
+            "t": "choice",
+            "q": "Así está repartida tu cartera. ¿Qué riesgo destaca?",
+            "table": {
+              "cols": ["Sector", "Peso"],
+              "rows": [
+                ["Semiconductores", "45 %"],
+                ["Software", "30 %"],
+                ["Salud", "15 %"],
+                ["Liquidez", "10 %"]
+              ]
+            },
+            "opts": [
+              "Demasiada liquidez sin invertir",
+              "Exceso de diversificación",
+              "Concentración en tecnología",
+              "Ninguno: está equilibrada"
+            ],
+            "a": 2,
+            "why": "45 % + 30 % = 75 % en tecnología: un mal día del sector golpea casi toda la cartera a la vez. Limita el peso o el riesgo abierto por sector."
+          }
+        ]
+      }
+    ]
+  },
+  {
     "n": 1,
     "id": "crecimiento",
     "track": "fundamental",
