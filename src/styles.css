@@ -130,6 +130,13 @@ button{font:inherit;color:inherit;cursor:pointer}
 .opt.good{border-color:var(--up);background:var(--up-bg);color:var(--up-ink)}
 .opt.bad{border-color:var(--down);background:var(--down-bg);color:var(--down-ink)}
 .opt[disabled]{cursor:default}
+.ord{display:grid;gap:18px}
+.fb .ans ol{margin:4px 0 0;padding-left:22px}
+.ord-ans{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.ord-ans .opt{width:100%;display:flex;align-items:center;gap:12px}
+.ord-ans .opt.filled{border-color:var(--sel);background:var(--sel-bg)}
+.ord-ans .slot{display:flex;align-items:center;gap:12px;min-height:54px;padding:0 16px;border:2px dashed var(--line);border-radius:14px;color:var(--ink-2)}
+.ord .n{flex:none;display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;border:2px solid currentColor;font-size:13px;font-weight:700;font-variant-numeric:tabular-nums;opacity:.8}
 .numrow{display:flex;align-items:center;gap:10px}
 .num{flex:1;min-width:0;font:600 28px var(--font-body);font-variant-numeric:tabular-nums;padding:12px 16px;border-radius:14px;border:2px solid var(--line);border-bottom-width:4px;background:var(--surface);color:var(--ink)}
 .num:focus{outline:none;border-color:var(--sel)}

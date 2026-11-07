@@ -81,11 +81,12 @@ function homeHTML(){
   return h;
 }
 
-const KIND={choice:'Elige una respuesta',num:'Escribe el resultado',tap:'Toca una vela del gráfico',level:'Toca una línea del gráfico'};
+const KIND={choice:'Elige una respuesta',num:'Escribe el resultado',tap:'Toca una vela del gráfico',level:'Toca una línea del gráfico',order:'Ordena los pasos'};
 function answerText(ex){
   if(ex.t==='choice')return ex.opts[ex.a];
   if(ex.t==='num')return fmt(ex.a,Number.isInteger(ex.a)?0:2)+(ex.unit?' '+ex.unit:'');
   if(ex.t==='tap')return 'Vela '+(ex.a+1);
+  if(ex.t==='order')return ex.items.map((t,i)=>(i+1)+'. '+t).join('  ');
   return 'Nivel '+ex.a;
 }
 function lessonHTML(){
@@ -102,18 +103,48 @@ function lessonHTML(){
     });
     h+='</div>';
   }
+  if(ex.t==='order')h+=`<div class="ord">${ordHTML(ex)}</div>`;
   if(ex.t==='num'){
     const c=run.checked?(run.ok?'good':'bad'):'';
     h+=`<div class="numrow"><input id="numIn" class="num ${c}" type="text" inputmode="decimal" autocomplete="off" aria-label="Tu respuesta" value="${esc(run.val)}"${run.checked?' disabled':''}>${ex.unit?`<span class="suffix">${ex.unit}</span>`:''}</div>`;
   }
   h+='</div>';
-  const can=ex.t==='num'?run.val.trim()!=='':run.sel!==null;
+  const can=canCheck(ex);
   if(!run.checked){
     h+=`<div><button class="btn primary" data-act="check"${can?'':' disabled'}>Comprobar</button></div>`;
   }else{
-    h+=`<div class="fb ${run.ok?'good':'bad'}" role="status"><div class="fb-h">${run.ok?icoOk:icoX}<span>${run.ok?'Correcto':'Incorrecto'}</span></div><p>${esc(ex.why)}</p>${run.ok?'':`<p class="ans">Respuesta: ${esc(answerText(ex))}</p>`}<button class="btn primary" data-act="next">Continuar</button></div>`;
+    h+=`<div class="fb ${run.ok?'good':'bad'}" role="status"><div class="fb-h">${run.ok?icoOk:icoX}<span>${run.ok?'Correcto':'Incorrecto'}</span></div><p>${esc(ex.why)}</p>${run.ok?'':ex.t==='order'?`<div class="ans">Orden correcto:<ol>${ex.items.map(t=>`<li>${esc(t)}</li>`).join('')}</ol></div>`:`<p class="ans">Respuesta: ${esc(answerText(ex))}</p>`}<button class="btn primary" data-act="next">Continuar</button></div>`;
   }
   return h+'</div>';
+}
+// Ordenar pasos: el usuario toca los elementos en orden; run.sel = índices de ex.items en el orden elegido.
+function ordHTML(ex){
+  const sel=run.sel||[],n=ex.items.length;
+  if(!run.perm.has(ex)){let p;do{p=shuffle(ex.items.map((_,i)=>i))}while(p.every((v,i)=>v===i));run.perm.set(ex,p)}
+  let h='<ol class="ord-ans" aria-label="Tu orden">';
+  for(let k=0;k<n;k++){
+    if(k<sel.length){
+      const c=run.checked?(sel[k]===k?'good':'bad'):'filled';
+      h+=`<li><button class="opt ${c}" data-act="ounpick" data-k="${k}"${run.checked?' disabled':` aria-label="Quitar: ${esc(ex.items[sel[k]])}"`}><span class="n">${k+1}</span>${esc(ex.items[sel[k]])}</button></li>`;
+    }else h+=`<li class="slot" aria-hidden="true"><span class="n">${k+1}</span></li>`;
+  }
+  h+='</ol>';
+  if(!run.checked){
+    const rest=run.perm.get(ex).filter(i=>!sel.includes(i));
+    if(rest.length)h+='<div class="opts ord-pool">'+rest.map(i=>`<button class="opt" data-act="opick" data-i="${i}">${esc(ex.items[i])}</button>`).join('')+'</div>';
+  }
+  return h;
+}
+function canCheck(ex){
+  if(ex.t==='num')return run.val.trim()!=='';
+  if(ex.t==='order')return !!run.sel&&run.sel.length===ex.items.length;
+  return run.sel!==null;
+}
+function updateOrd(){
+  const ex=run.queue[0];
+  $app.querySelector('.ord').innerHTML=ordHTML(ex);
+  const c=$app.querySelector('[data-act=check]');if(c)c.disabled=!canCheck(ex);
+  const f=$app.querySelector('.ord-pool .opt')||c;if(f&&f.focus)f.focus({preventScroll:true});
 }
 function resultHTML(){
   const r=lastRes,sk=streakNow();
@@ -139,12 +170,13 @@ function render(){
 function startRun(L){
   // Lección: ejercicios fijos barajados y, al final, un caso real al azar (si hay datos).
   const ex=L.kind==='review'?shuffle(L.unit.lessons.flatMap(l=>l.ex)).slice(0,5):shuffle(L.ex).concat(shuffle(L.casos).slice(0,1));
-  run={L,queue:ex.slice(),total:ex.length,done:0,lives:3,firstWrong:0,seen:new Set(),sel:null,val:'',checked:false,ok:null};
+  run={L,queue:ex.slice(),total:ex.length,done:0,lives:3,firstWrong:0,seen:new Set(),perm:new Map(),sel:null,val:'',checked:false,ok:null};
   view='lesson';render();
 }
 function check(){
   const ex=run.queue[0];let ok=false;
   if(ex.t==='num'){const v=parseNum(run.val);ok=v!==null&&Math.abs(v-ex.a)<=(ex.tol==null?0.005:ex.tol)}
+  else if(ex.t==='order')ok=!!run.sel&&run.sel.length===ex.items.length&&run.sel.every((v,k)=>v===k);
   else ok=run.sel===ex.a;
   run.ok=ok;run.checked=true;
   if(!run.seen.has(ex)){run.seen.add(ex);if(!ok)run.firstWrong++}
@@ -193,6 +225,8 @@ $app.addEventListener('click',e=>{
     homeY=window.scrollY;startRun(L);
   }
   else if(a==='pick'&&!run.checked)pickChoice(+b.dataset.i);
+  else if(a==='opick'&&!run.checked){run.sel=(run.sel||[]).concat(+b.dataset.i);updateOrd()}
+  else if(a==='ounpick'&&!run.checked){run.sel.splice(+b.dataset.k,1);updateOrd()}
   else if(a==='check'&&!b.disabled)check();
   else if(a==='next')next();
   else if(a==='quit'||a==='home'){view='home';goCur=(a==='home');render()}

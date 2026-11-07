@@ -29,7 +29,8 @@ const lint = (ex, w) => {
       if (ex.t === 'num' && typeof ex.a !== 'number') errs.push(w + ': a no numérico');
       if (ex.t === 'tap' && !(ex.chart && ex.a >= 0 && ex.a < ex.chart.data.length)) errs.push(w + ': vela fuera de rango');
       if (ex.t === 'level' && !(ex.chart?.levels || []).some(v => v.id === ex.a)) errs.push(w + ': nivel inexistente');
-      if (!['choice', 'num', 'tap', 'level'].includes(ex.t)) errs.push(w + ': tipo desconocido ' + ex.t);
+      if (ex.t === 'order' && !(Array.isArray(ex.items) && ex.items.length >= 3 && new Set(ex.items).size === ex.items.length)) errs.push(w + ': order necesita 3+ elementos distintos');
+      if (!['choice', 'num', 'tap', 'level', 'order'].includes(ex.t)) errs.push(w + ': tipo desconocido ' + ex.t);
 };
 for (const u of units) {
   if (!['tecnico', 'fundamental', undefined].includes(u.track)) errs.push('ruta desconocida en ' + u.id);
@@ -49,8 +50,9 @@ if (casos) {
 
 // 2) Recorrido completo de cada lección
 const {api: T} = await import(pathToFileURL(path.join(root, 'src/app.js')));
-const wrong = ex => ex.t === 'num' ? '999' : ex.t === 'tap' ? 0 : ex.t === 'level' ? 'Z' : (ex.a + 1) % ex.opts.length;
-const right = ex => ex.t === 'num' ? String(ex.a).replace('.', ',') : ex.a;
+const ident = ex => ex.items.map((_, i) => i);
+const wrong = ex => ex.t === 'num' ? '999' : ex.t === 'tap' ? 0 : ex.t === 'level' ? 'Z' : ex.t === 'order' ? ident(ex).reverse() : (ex.a + 1) % ex.opts.length;
+const right = ex => ex.t === 'num' ? String(ex.a).replace('.', ',') : ex.t === 'order' ? ident(ex) : ex.a;
 const give = (ex, v) => ex.t === 'num' ? T.setVal(v) : T.setSel(v);
 
 if (!T.homeHTML().includes('Rango')) errs.push('home no renderiza');

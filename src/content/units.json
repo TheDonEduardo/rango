@@ -634,6 +634,19 @@
             "unit": "€",
             "a": 25.8,
             "why": "Altura = 23,00 − 20,20 = 2,80 €; objetivo = 23,00 + 2,80 = 25,80 €. Entrando a 21,80 € con stop en 19,10 €, ofrece 4,00 ÷ 2,70 = 1,48R hasta ahí."
+          },
+          {
+            "t": "order",
+            "q": "Ordena los eventos de una acumulación de Wyckoff.",
+            "items": [
+              "Clímax vendedor (SC)",
+              "Rebote automático (AR)",
+              "Prueba secundaria (ST)",
+              "Spring",
+              "Prueba del spring",
+              "Signo de fuerza (SOS)"
+            ],
+            "why": "El clímax frena la caída, el rebote automático marca el techo del rango y la prueba secundaria confirma el suelo. El spring sacude el soporte, su prueba confirma que no queda oferta y el signo de fuerza rompe hacia arriba."
           }
         ]
       },
@@ -1146,6 +1159,105 @@
     "track": "fundamental",
     "title": "Tesis de inversión",
     "blurb": "Motor, catalizador e invalidación: un stop para la tesis.",
-    "lessons": null
+    "lessons": [
+      {
+        "id": "f4a",
+        "title": "Construir la tesis",
+        "ex": [
+          {
+            "t": "choice",
+            "q": "¿Cuál es una tesis bien formulada?",
+            "opts": [
+              "La IA es el futuro y esta empresa está en IA",
+              "Es barata: cotiza a un PER de 12",
+              "Las ventas de centros de datos crecen un 40 % y la planta que abre en el 2T subirá el margen bruto del 55 % al 60 %; si el margen del 2T no supera el 56 %, la tesis falla",
+              "El gráfico está en Fase 2"
+            ],
+            "a": 2,
+            "why": "Tiene motor medible (ventas +40 %), catalizador con fecha (la planta en el 2T) e invalidación concreta (margen por debajo del 56 %). Las demás son narrativas o datos sueltos: no dicen cuándo te equivocas."
+          },
+          {
+            "t": "order",
+            "q": "Ordena la cadena por la que un negocio que mejora llega al precio.",
+            "items": [
+              "Las ventas aceleran",
+              "El margen operativo se expande",
+              "El BPA crece más rápido que las ventas",
+              "Los analistas suben sus estimaciones",
+              "Con el precio quieto, el PER adelantado baja y atrae compradores"
+            ],
+            "why": "Primero mejora el negocio, luego el beneficio y después las estimaciones. Si detectas los dos primeros pasos antes que el consenso, tu tesis va por delante del precio."
+          },
+          {
+            "t": "num",
+            "q": "El consenso espera un BPA de 2,00 $ y cotiza a un PER adelantado de 25. Tu tesis estima 2,40 $. Si el PER se mantiene, ¿qué potencial tiene si aciertas?",
+            "unit": "%",
+            "a": 20,
+            "why": "Hoy: 25 × 2,00 = 50 $. Si aciertas: 25 × 2,40 = 60 $, un 20 % más. Tu ventaja está solo en la diferencia con el consenso, no en que la empresa crezca."
+          },
+          {
+            "t": "choice",
+            "q": "Tu tesis depende de un contrato que se decide dentro de 18 meses y operas a 2-8 semanas. ¿Qué haces?",
+            "opts": [
+              "Comprar ya: el catalizador llegará",
+              "Esperar a que el precio confirme o a que el catalizador se acerque",
+              "Comprar opciones a un mes",
+              "Comprar ahora y promediar a la baja mientras tanto"
+            ],
+            "a": 1,
+            "why": "Un catalizador lejano no mueve el precio en tu horizonte y te inmoviliza el capital. Espera a que el precio confirme (Fase 2, ruptura de un VCP) antes de entrar."
+          }
+        ]
+      },
+      {
+        "id": "f4b",
+        "title": "Invalidación y seguimiento",
+        "ex": [
+          {
+            "t": "order",
+            "q": "Ordena el proceso completo de una operación.",
+            "items": [
+              "Filtrar empresas con ventas y BPA que aceleran",
+              "Escribir la tesis con su criterio de invalidación",
+              "Esperar la configuración técnica (Fase 2, VCP)",
+              "Calcular el tamaño con el stop y el riesgo por operación",
+              "Revisar la tesis en cada publicación de resultados"
+            ],
+            "why": "El fundamental decide qué comprar, el técnico cuándo y la gestión del riesgo cuánto. La revisión tras cada resultado decide si sigues dentro."
+          },
+          {
+            "t": "choice",
+            "q": "Tu tesis exige un margen bruto superior al 60 %. Publica un 57 % y el precio sube un 6 %. ¿Qué haces?",
+            "opts": [
+              "Mantienes: el precio te da la razón",
+              "Compras más aprovechando la subida",
+              "Esperas al siguiente trimestre para decidir",
+              "Sales o reduces: la tesis está invalidada aunque el precio suba"
+            ],
+            "a": 3,
+            "why": "Fijaste la invalidación antes de comprar precisamente para no reinterpretarla después. Si te quedas, ya no operas tu tesis sino el precio, y sin criterio de salida."
+          },
+          {
+            "t": "choice",
+            "q": "La tesis sigue intacta, pero el precio pierde tu stop técnico. ¿Qué haces?",
+            "opts": [
+              "Ejecutas el stop: la tesis no te protege del precio",
+              "Bajas el stop para darle más margen",
+              "Compras más porque la tesis sigue viva",
+              "Esperas a los próximos resultados"
+            ],
+            "a": 0,
+            "why": "El stop limita la pérdida a 1R pase lo que pase con la tesis. Si la tesis sigue viva, puedes volver a comprar cuando el precio confirme otra vez."
+          },
+          {
+            "t": "num",
+            "q": "Compraste a 50,00 $ con stop en 46,00 $. La tesis falla en resultados y la acción abre a 44,00 $. ¿Cuántos R pierdes?",
+            "unit": "R",
+            "a": 1.5,
+            "why": "(50,00 − 44,00) ÷ (50,00 − 46,00) = 6 ÷ 4 = 1,5R. Por eso, antes de resultados, el tamaño se calcula con el gap posible y no con el stop."
+          }
+        ]
+      }
+    ]
   }
 ]

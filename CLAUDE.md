@@ -40,6 +40,7 @@ Ejercicios (`why` es obligatorio y se muestra como explicación tras responder):
 - Casos reales (`casos.json`): `{fuente, fecha, ex: {idLección: [ejercicios con "caso": "Empresa (TICKER)"]}}`. Cada lección añade al final un caso al azar de su lista.
 - `tap`: `{t, q, chart: {type:"candles", data}, a: índice de vela (0-based), why}`
 - `level`: `{t, q, chart: {type:"candles", data, levels:[{id,y}], lines?:[{y,label}]}, a: "B", why}`
+- `order`: `{t, q, items: [...en el orden correcto], why}`. Se muestran barajados; el usuario los toca en orden y puede devolver uno a la lista tocándolo. Solo para secuencias con un orden defendible (causa-efecto, proceso o esquema canónico), nunca para listas cuyo orden sea opinable.
 
 Gráficos (`chart`):
 - `{type:"candles", data:[[apertura,máximo,mínimo,cierre],...], vol?:[...], h?, annot?, lines?, levels?, alt}`; `annot:true` solo para una vela suelta. `vol` (mismo largo que `data`, unidades relativas) dibuja barras de volumen bajo el precio; súbele `h` a ~270.
@@ -78,8 +79,8 @@ Sistema de tokens en `src/styles.css` (`:root`, con variante oscura por `prefers
 ## Siguiente trabajo sugerido (por orden)
 
 1. Ampliar contenido técnico: unidades 4 (catalizadores binarios), 5 (Wyckoff/VSA) y 6 (VCP) hechas. Siguiente: salidas escalonadas y riesgo de cartera.
-1b. Ruta fundamental: F1, F2 y F3 hechas, con casos reales (crecimiento, márgenes, PER, PER adelantado, EV/EBITDA, flujo de caja libre, deuda neta/EBITDA o caja neta, cobertura de intereses, conversión en caja). Siguiente: F4 Tesis, que necesita el tipo de ejercicio «ordenar pasos».
-2. Nuevos tipos de ejercicio: ordenar pasos (fases de Weinstein), arrastrar entrada/stop/objetivo sobre el gráfico, emparejar patrón con descripción.
+1b. Ruta fundamental: F1-F4 hechas (F1-F3 con casos reales). Ideas siguientes: sectores, lectura de un informe de resultados real.
+2. Nuevos tipos de ejercicio: «ordenar pasos» hecho (`order`). Faltan: arrastrar entrada/stop/objetivo sobre el gráfico y emparejar patrón con descripción.
 3. Repaso espaciado: guardar ejercicios fallados y reintroducirlos días después.
 4. Persistencia real (cuentas, sincronización) y decidir stack: vanilla actual frente a Vite + TypeScript. Migrar solo cuando el contenido y los tipos de ejercicio se estabilicen.
 5. PWA instalable y avisos de racha.
