@@ -17,22 +17,26 @@ export function candlesSVG(sp,st){
   d.forEach(c=>vals.push(c[1],c[2]));
   (sp.levels||[]).forEach(l=>vals.push(l.y));
   (sp.lines||[]).forEach(l=>vals.push(l.y));
-  const sc=scaleOf(vals,H,pt,pb),y=sc.y;
+  const VH=sp.vol?48:0,pbP=pb+(VH?VH+14:0),vmax=VH?Math.max(...sp.vol):1;
+  const sc=scaleOf(vals,H,pt,pbP),y=sc.y;
   const n=d.length,cw=(W-pl-pr)/n,bw=Math.min(24,cw*0.56);
   const tapMode=st&&st.mode==='tap', lvMode=st&&st.mode==='level';
   const cls=k=>{if(!st)return'';if(st.checked){if(k===st.a)return'good';if(k===st.sel)return'bad';return''}return k===st.sel?'sel':''};
   let s=`<svg class="svg ${tapMode?'tap':''}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(sp.alt||'Gráfico de velas')}">`;
   sc.ticks.forEach(t=>{s+=`<line class="grid" x1="${pl}" x2="${W-pr}" y1="${y(t).toFixed(1)}" y2="${y(t).toFixed(1)}"/><text x="${W-pr+6}" y="${(y(t)+3.5).toFixed(1)}">${fmt(t,sc.dec)}</text>`});
-  (sp.lines||[]).forEach(l=>{s+=`<line class="ref" x1="${pl}" x2="${W-pr}" y1="${y(l.y).toFixed(1)}" y2="${y(l.y).toFixed(1)}"/><text class="reft" x="${W-pr-4}" y="${(y(l.y)-5).toFixed(1)}">${esc(l.label)}</text>`});
+  if(VH)s+=`<line class="grid" x1="${pl}" x2="${W-pr}" y1="${H-pb}" y2="${H-pb}"/><text x="${W-pr+6}" y="${(H-pb-VH/2+3.5).toFixed(1)}">Vol.</text>`;
+  (sp.lines||[]).forEach(l=>{s+=`<line class="ref" x1="${pl}" x2="${W-pr}" y1="${y(l.y).toFixed(1)}" y2="${y(l.y).toFixed(1)}"/>`});
   d.forEach((c,i)=>{
     const [op,hi,lo,cl]=c,cx=pl+cw*i+cw/2,up=cl>=op;
     const top=y(Math.max(op,cl)),bot=y(Math.min(op,cl)),bh=Math.max(1.6,bot-top);
     s+=`<g class="cd ${up?'up':'dn'} ${tapMode?cls(i):''}" data-i="${i}"${tapMode?` tabindex="0" role="button" aria-label="Vela ${i+1}"`:''}>`;
     if(tapMode)s+=`<rect class="hl" x="${(cx-cw/2+1).toFixed(1)}" y="${pt-4}" width="${(cw-2).toFixed(1)}" height="${H-pt-pb+8}" rx="6"/>`;
+    if(VH){const vh=Math.max(1.5,sp.vol[i]/vmax*VH);s+=`<rect class="vol" x="${(cx-bw/2).toFixed(1)}" y="${(H-pb-vh).toFixed(1)}" width="${bw.toFixed(1)}" height="${vh.toFixed(1)}" rx="1.5"/>`}
     s+=`<line class="wick" x1="${cx.toFixed(1)}" x2="${cx.toFixed(1)}" y1="${y(hi).toFixed(1)}" y2="${y(lo).toFixed(1)}"/><rect class="body" x="${(cx-bw/2).toFixed(1)}" y="${top.toFixed(1)}" width="${bw.toFixed(1)}" height="${bh.toFixed(1)}" rx="2"/>`;
     if(tapMode)s+=`<rect class="hit" x="${(cx-cw/2).toFixed(1)}" y="0" width="${cw.toFixed(1)}" height="${H}"/>`;
     s+='</g>';
   });
+  (sp.lines||[]).forEach(l=>{if(l.label)s+=`<text class="reft" x="${W-pr-4}" y="${(y(l.y)-5).toFixed(1)}">${esc(l.label)}</text>`});
   if(sp.annot){
     const c=d[0],xr=pl+cw/2+bw/2;
     [['H',c[1]],['C',c[3]],['O',c[0]],['L',c[2]]].forEach(([k,v])=>{

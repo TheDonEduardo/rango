@@ -149,6 +149,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 .cd.up .wick{stroke:var(--up)} .cd.up .body{fill:var(--up)}
 .cd.dn .wick{stroke:var(--down)} .cd.dn .body{fill:var(--down)}
 .cd .hl{fill:transparent;stroke:transparent;stroke-width:1.5}
+.cd .vol{opacity:.45} .cd.up .vol{fill:var(--up)} .cd.dn .vol{fill:var(--down)}
 .cd .hit,.lv .hit{fill:transparent}
 .tap .cd{cursor:pointer}
 .tap .cd:hover .hl{fill:var(--sel-bg)}
@@ -158,7 +159,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 .svg .lead{stroke:var(--ink-2);stroke-width:1;stroke-dasharray:2 2}
 .svg .lab{fill:var(--ink);font-weight:600;font-size:12px}
 .svg .ref{stroke:var(--ink);stroke-width:1.5;stroke-dasharray:5 3}
-.svg .reft{fill:var(--ink);font-weight:600;text-anchor:end}
+.svg .reft{fill:var(--ink);font-weight:600;text-anchor:end;paint-order:stroke;stroke:var(--surface);stroke-width:4px;stroke-linejoin:round}
 .svg .px{fill:none;stroke:var(--ink);stroke-width:2.2;stroke-linejoin:round;stroke-linecap:round}
 .svg .ma{fill:none;stroke:var(--ma);stroke-width:2.4;stroke-linejoin:round}
 .svg .lg{fill:var(--ink);font-weight:500;font-size:12px}

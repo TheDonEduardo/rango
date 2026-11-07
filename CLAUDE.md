@@ -37,7 +37,7 @@ Ejercicios (`why` es obligatorio y se muestra como explicación tras responder):
 - `level`: `{t, q, chart: {type:"candles", data, levels:[{id,y}], lines?:[{y,label}]}, a: "B", why}`
 
 Gráficos (`chart`):
-- `{type:"candles", data:[[apertura,máximo,mínimo,cierre],...], h?, annot?, lines?, levels?, alt}`; `annot:true` solo para una vela suelta.
+- `{type:"candles", data:[[apertura,máximo,mínimo,cierre],...], vol?:[...], h?, annot?, lines?, levels?, alt}`; `annot:true` solo para una vela suelta. `vol` (mismo largo que `data`, unidades relativas) dibuja barras de volumen bajo el precio; súbele `h` a ~270.
 - `{type:"line", data:[...], ma:[...], alt}` (precio + media de 30 semanas).
 - El `alt` nunca debe revelar la respuesta.
 
@@ -72,7 +72,7 @@ Sistema de tokens en `src/styles.css` (`:root`, con variante oscura por `prefers
 
 ## Siguiente trabajo sugerido (por orden)
 
-1. Ampliar contenido: unidad 4 completa (gaps de resultados, sizing con riesgo binario, small caps). Siguiente: Wyckoff/VSA, VCP, salidas escalonadas, riesgo de cartera. Mínimo 6 lecciones nuevas.
+1. Ampliar contenido: unidades 4 (catalizadores binarios) y 5 (Wyckoff/VSA) hechas. Siguiente: VCP, salidas escalonadas, riesgo de cartera. Mínimo 6 lecciones nuevas.
 2. Nuevos tipos de ejercicio: ordenar pasos (fases de Weinstein), arrastrar entrada/stop/objetivo sobre el gráfico, emparejar patrón con descripción.
 3. Repaso espaciado: guardar ejercicios fallados y reintroducirlos días después.
 4. Persistencia real (cuentas, sincronización) y decidir stack: vanilla actual frente a Vite + TypeScript. Migrar solo cuando el contenido y los tipos de ejercicio se estabilicen.
