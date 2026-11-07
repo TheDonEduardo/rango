@@ -149,7 +149,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 .tbl{padding:4px 14px 10px;overflow-x:auto}
 .tbl table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;font-size:15px}
 .tbl th,.tbl td{padding:9px 6px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
-.tbl thead th{font-weight:600;color:var(--ink-2);font-size:13px}
+.tbl thead th{font-weight:600;color:var(--ink-2);font-size:13px;white-space:normal;vertical-align:bottom;line-height:1.25}
 .tbl tbody th,.tbl thead th:first-child{text-align:left}
 .tbl tbody th{font-weight:600}
 .tbl tbody tr:last-child>*{border-bottom:0}

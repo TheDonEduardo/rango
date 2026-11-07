@@ -61,6 +61,20 @@ def ok(v):
     return v is not None and not (isinstance(v, float) and math.isnan(v))
 
 
+def ultimos4(df, fila):
+    """Suma de los 4 últimos trimestres consecutivos de una fila, o None."""
+    if df is None or df.empty or fila not in df.index:
+        return None, None
+    df = df[sorted(df.columns, reverse=True)]
+    cc = list(df.columns[:4])
+    if len(cc) < 4 or not (250 <= (cc[0] - cc[3]).days <= 290):
+        return None, None
+    vals = [df.loc[fila][c] for c in cc]
+    if not all(ok(v) for v in vals):
+        return None, None
+    return float(sum(vals)), cc[0]
+
+
 def casos_de(tk):
     t = yf.Ticker(tk)
     info = t.info or {}
@@ -74,7 +88,7 @@ def casos_de(tk):
         return {}
     q = q[sorted(q.columns, reverse=True)]  # columna 0 = trimestre más reciente
     cols = list(q.columns)
-    out = {"f1a": [], "f1b": [], "f2a": [], "f2b": []}
+    out = {"f1a": [], "f1b": [], "f2a": [], "f2b": [], "f3a": [], "f3b": []}
     rev, eps = row(q, "Total Revenue"), row(q, "Diluted EPS")
     gp, op = row(q, "Gross Profit"), row(q, "Operating Income")
 
@@ -179,28 +193,90 @@ def casos_de(tk):
 
     # f2b · rentabilidad por flujo de caja libre (suma de 4 trimestres consecutivos)
     cf = t.quarterly_cashflow
-    if psym == sym and ok(cap) and cap > 0 and cf is not None and not cf.empty and "Free Cash Flow" in cf.index:
-        cf = cf[sorted(cf.columns, reverse=True)]
-        cc = list(cf.columns[:4])
-        fcf = cf.loc["Free Cash Flow"]
-        seguidos = len(cc) == 4 and 250 <= (cc[0] - cc[3]).days <= 290
-        if seguidos and all(ok(fcf[x]) for x in cc):
-            (f, df), (c, dc) = mill(sum(float(fcf[x]) for x in cc)), mill(cap)
-            y = round(f / c * 100, 1)
-            # Por encima de ~8 % suele ser una distorsión (p. ej. fondos de clientes en negocios financieros).
-            if 0.1 <= y < 8:
-                out["f2b"].append({
+    fcf4, fcf_hasta = ultimos4(cf, "Free Cash Flow")
+    if psym == sym and ok(cap) and cap > 0 and fcf4 is not None:
+        (f, df), (c, dc) = mill(fcf4), mill(cap)
+        y = round(f / c * 100, 1)
+        # Por encima de ~8 % suele ser una distorsión (p. ej. fondos de clientes en negocios financieros).
+        if 0.1 <= y < 8:
+            out["f2b"].append({
+                "t": "num", "caso": caso,
+                "q": f"{nombre}: flujo de caja libre de los 4 trimestres hasta el {fecha(fcf_hasta)}: {es(f, df)} M{sym}. "
+                     f"Capitalización el {HOY}: {es(c, dc)} M{sym}. ¿Rentabilidad por flujo de caja libre? Redondea a 1 decimal.",
+                "unit": "%", "a": y, "tol": 0.06,
+                "why": f"{es(f, df)} ÷ {es(c, dc)} = {es(y)} %: la caja que genera el negocio por cada 100 {sym} de capitalización.",
+            })
+
+    # F3: en bancos y aseguradoras la deuda y la caja son la materia prima del negocio; estas ratios no aplican.
+    if info.get("sector") == "Financial Services":
+        return out
+
+    # f3a · deuda neta/EBITDA o, si tiene más caja que deuda, caja neta
+    if all(ok(x) for x in (debt, cash)):
+        (d, dd), (k, dk) = mill(debt), mill(cash)
+        neta = round(d - k, 1)
+        nd = 0 if abs(neta) >= 1000 else 1
+        if neta < 0:
+            out["f3a"].append({
+                "t": "choice", "caso": caso,
+                "q": f"{nombre} el {HOY}: deuda de {es(d, dd)} M{sym} y caja de {es(k, dk)} M{sym}. ¿Qué tiene?",
+                # Alterna la posición de la respuesta según el ticker (estable entre ejecuciones).
+                "opts": ["Deuda neta", "Caja neta"] if sum(map(ord, tk)) % 2 else ["Caja neta", "Deuda neta"],
+                "a": 1 if sum(map(ord, tk)) % 2 else 0,
+                "why": f"{es(d, dd)} − {es(k, dk)} = {es(neta, nd)} M{sym}: tiene más caja que deuda "
+                       f"y podría devolverla entera con lo que tiene en caja.",
+            })
+        elif ok(ebitda) and ebitda > 0:
+            eb, de = mill(ebitda)
+            r = round(neta / eb, 1)
+            if 0 < r < 20:
+                out["f3a"].append({
                     "t": "num", "caso": caso,
-                    "q": f"{nombre}: flujo de caja libre de los 4 trimestres hasta el {fecha(cc[0])}: {es(f, df)} M{sym}. "
-                         f"Capitalización el {HOY}: {es(c, dc)} M{sym}. ¿Rentabilidad por flujo de caja libre? Redondea a 1 decimal.",
-                    "unit": "%", "a": y, "tol": 0.06,
-                    "why": f"{es(f, df)} ÷ {es(c, dc)} = {es(y)} %: la caja que genera el negocio por cada 100 {sym} de capitalización.",
+                    "q": f"{nombre} el {HOY}: deuda de {es(d, dd)} M{sym}, caja de {es(k, dk)} M{sym} y EBITDA de los últimos "
+                         f"12 meses de {es(eb, de)} M{sym}. ¿Deuda neta/EBITDA? Redondea a 1 decimal.",
+                    "unit": "", "a": r, "tol": 0.06,
+                    "why": f"({es(d, dd)} − {es(k, dk)}) ÷ {es(eb, de)} = {es(neta, nd)} ÷ {es(eb, de)} = {es(r)} veces "
+                           f"el EBITDA anual.",
                 })
+
+    # f3a · cobertura de intereses con el beneficio operativo (no con el «EBIT» de Yahoo, que incluye plusvalías)
+    op4, hasta = ultimos4(q, "Operating Income")
+    int4, _ = ultimos4(q, "Interest Expense")
+    if op4 is not None and int4 is not None and op4 > 0 and int4 > 0:
+        (o, do), (i, di) = mill(op4), mill(int4)
+        cov = round(o / i, 1)
+        if 0 < cov < 200:
+            out["f3a"].append({
+                "t": "num", "caso": caso,
+                "q": f"{nombre}, 4 trimestres hasta el {fecha(hasta)}: beneficio operativo de {es(o, do)} M{sym} y gastos por "
+                     f"intereses de {es(i, di)} M{sym}. ¿Cobertura de intereses? Redondea a 1 decimal.",
+                "unit": "", "a": cov, "tol": 0.06,
+                "why": f"{es(o, do)} ÷ {es(i, di)} = {es(cov)} veces"
+                       + (": el beneficio operativo no alcanza para pagar los intereses del año." if cov < 1
+                          else f": el beneficio operativo cubre {es(cov)} veces los intereses del año."),
+            })
+
+    # f3b · conversión del beneficio en caja (flujo de caja libre ÷ beneficio neto, 4 trimestres)
+    ni4, hasta = ultimos4(q, "Net Income")
+    if fcf4 is not None and ni4 is not None and ni4 > 0 and fcf_hasta == hasta:
+        (f, df), (n, dn) = mill(fcf4), mill(ni4)
+        conv = round(f / n * 100, 1)
+        if 0 < conv < 300:
+            lect = ("genera más caja que beneficio contable" if conv >= 100 else
+                    "parte del beneficio no llega a caja. Revisa si la diferencia viene de inversiones (capex), "
+                    "de cobros pendientes o de beneficios contables sin caja, como plusvalías de participadas")
+            out["f3b"].append({
+                "t": "num", "caso": caso,
+                "q": f"{nombre}, 4 trimestres hasta el {fecha(hasta)}: beneficio neto de {es(n, dn)} M{sym} y flujo de caja "
+                     f"libre de {es(f, df)} M{sym}. ¿Qué porcentaje del beneficio convierte en caja? Redondea a 1 decimal.",
+                "unit": "%", "a": conv, "tol": 0.06,
+                "why": f"{es(f, df)} ÷ {es(n, dn)} = {es(conv)} %: {lect}.",
+            })
     return out
 
 
 def main():
-    ex = {"f1a": [], "f1b": [], "f2a": [], "f2b": []}
+    ex = {"f1a": [], "f1b": [], "f2a": [], "f2b": [], "f3a": [], "f3b": []}
     fallos = []
     for tk in tickers():
         try:
