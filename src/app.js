@@ -16,6 +16,7 @@ function load(){
   return DEF();
 }
 function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+let installEvt=null;
 let S=load(), view='home', run=null, lastRes=null, homeY=0, goCur=false, resetArm=false, toastT=0;
 const $app=document.getElementById('app'), $toast=document.getElementById('toast');
 const streakNow=()=>(S.last===today()||S.last===yest())?S.streak:0;
@@ -108,7 +109,7 @@ function homeHTML(){
     h+='</div></section>';
   });
   if(S.track==='fundamental'&&CASOS)h+=`<p class="src">Casos reales con datos de ${esc(CASOS.fuente)} a ${esc(CASOS.fecha)}. Es formación, no una recomendación de inversión.</p>`;
-  h+=`</main><footer class="foot-home"><p>Prototipo. El progreso se guarda solo en este navegador. <button class="link" data-act="legal">Aviso legal</button></p><div class="row"><button class="btn ghost" data-act="unlock">${S.all?'Volver a bloquear':'Desbloquear todo'}</button><button class="btn ghost" data-act="reset">${resetArm?'Pulsa de nuevo para borrar':'Reiniciar progreso'}</button></div></footer>`;
+  h+=`</main><footer class="foot-home"><p>Prototipo. El progreso se guarda solo en este navegador. <button class="link" data-act="legal">Aviso legal</button></p>${installHTML()}<div class="row"><button class="btn ghost" data-act="unlock">${S.all?'Volver a bloquear':'Desbloquear todo'}</button><button class="btn ghost" data-act="reset">${resetArm?'Pulsa de nuevo para borrar':'Reiniciar progreso'}</button></div></footer>`;
   return h;
 }
 
@@ -176,6 +177,13 @@ function updateOrd(){
   $app.querySelector('.ord').innerHTML=ordHTML(ex);
   const c=$app.querySelector('[data-act=check]');if(c)c.disabled=!canCheck(ex);
   const f=$app.querySelector('.ord-pool .opt')||c;if(f&&f.focus)f.focus({preventScroll:true});
+}
+// Instalar como app: botón cuando el navegador lo ofrece (Android, Chrome); en iPhone/iPad, indicación manual.
+function installHTML(){
+  if(installEvt)return '<button class="btn line install" data-act="install">Instalar Rango en este dispositivo</button>';
+  const nav=typeof navigator!=='undefined'?navigator:null;
+  if(nav&&/iP(hone|ad|od)/.test(nav.userAgent||'')&&!nav.standalone)return '<p>Para instalar Rango en tu iPhone: botón Compartir y «Añadir a pantalla de inicio».</p>';
+  return '';
 }
 function legalHTML(first){
   return `<div class="res legal"><div class="res-main"><h1>${first?'Antes de empezar':'Aviso legal'}</h1>
@@ -278,6 +286,7 @@ $app.addEventListener('click',e=>{
   else if(a==='legal'){homeY=window.scrollY;view='legal';render()}
   else if(a==='legalok'){S.legal=LEGAL_V;save();homeY=0;render()}
   else if(a==='srs'){homeY=window.scrollY;startRun(SRS_L)}
+  else if(a==='install'&&installEvt){installEvt.prompt();installEvt.userChoice.finally(()=>{installEvt=null;homeY=window.scrollY;render()})}
   else if(a==='track'){S.track=b.dataset.track;save();homeY=0;render()}
   else if(a==='skipbasics'){S.skipBasics=true;save();homeY=0;render();toast('Rutas Técnico y Fundamental abiertas.')}
   else if(a==='unlock'){S.all=!S.all;save();homeY=window.scrollY;render()}
@@ -302,6 +311,15 @@ document.addEventListener('keydown',e=>{
 });
 
 render();
+
+// PWA: el service worker solo se registra servido por http(s) (no en file:// ni en los tests).
+if(typeof window.addEventListener==='function'){
+  window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installEvt=e;if(view==='home'){homeY=window.scrollY;render()}});
+  window.addEventListener('appinstalled',()=>{installEvt=null;toast('Rango instalado.')});
+}
+if(typeof navigator!=='undefined'&&'serviceWorker' in navigator&&typeof location!=='undefined'&&/^https?:$/.test(location.protocol)){
+  navigator.serviceWorker.register('sw.js').catch(()=>{});
+}
 
 
 // API mínima para tests (test/smoke.mjs)

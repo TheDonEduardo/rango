@@ -22,9 +22,18 @@ src/util.js           fmt (es-ES), esc, fechas, parseNum, constantes (KEY, GOAL,
 src/icons.js          iconos SVG inline
 src/styles.css        tokens y estilos (claro/oscuro)
 test/smoke.mjs        lint de contenido + test de humo sin navegador
+manifest.webmanifest  manifiesto de la PWA (nombre, colores, iconos)
+sw.js                 service worker: uso sin conexión (precarga, fuentes incluidas)
+icons/                iconos de la PWA, generados con tools/iconos.cjs a partir del logo
 ```
 
 `app.js` re-renderiza con `innerHTML` por vista y usa delegación de eventos en `#app`. Las selecciones (opción, vela, nivel) y el input numérico mutan clases/valores sin re-render para no perder el foco. Si `app.js` crece, el siguiente paso natural es separar `state.js` y `views.js`.
+
+## PWA y caché
+
+- `sw.js` precarga la app y las fuentes. El contenido (`*.json`) y la página van red primero (los casos semanales llegan enseguida); el código, caché primero con actualización en segundo plano.
+- **Al cambiar código (src/*.js, styles.css, index.html), sube `CACHE` en sw.js** para que todos reciban la versión nueva. En local, recarga dos veces o activa «Update on reload» en las herramientas del navegador.
+- Si añades un archivo a `src/`, añádelo a `PRECACHE` (el test lo comprueba).
 
 ## Esquema del contenido (`units.json`)
 
@@ -87,7 +96,7 @@ Sistema de tokens en `src/styles.css` (`:root`, con variante oscura por `prefers
 2. Nuevos tipos de ejercicio: «ordenar pasos» hecho (`order`). Faltan: arrastrar entrada/stop/objetivo sobre el gráfico y emparejar patrón con descripción.
 3. Repaso espaciado: hecho. Posible mejora: avisar de la racha de repaso y mostrar cuántos ejercicios están «aprendidos».
 4. Persistencia real (cuentas, sincronización) y decidir stack: vanilla actual frente a Vite + TypeScript. Migrar solo cuando el contenido y los tipos de ejercicio se estabilicen.
-5. PWA instalable y avisos de racha.
+5. PWA instalable: hecho (manifiesto, iconos, uso sin conexión, botón de instalar). Avisos de racha: necesitan notificaciones push con servidor; van con el punto 4.
 6. Aviso legal: hecho. Revisarlo con un profesional antes de publicar.
 7. Fuera de Rango, en el bot del repo: `portfolio_manager.py` lleva la clave de Gemini escrita en el código. Revocarla, crear otra, guardarla como secreto de GitHub y leerla del entorno.
 

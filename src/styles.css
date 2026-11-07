@@ -74,7 +74,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 .link{background:none;border:0;padding:0;color:inherit;text-decoration:underline;text-underline-offset:2px;font-size:inherit}
 .legal .res-main{gap:12px;justify-content:flex-start;padding-top:24px}
 .legal .res-main p{margin:0;line-height:1.5}
-.legal h1{margin:0 0 16px}
+.legal h1{margin:0 0 4px;font:800 32px/1.05 var(--font-display);letter-spacing:-.02em}
 .gate{margin:16px 0 0;padding:16px;border-radius:16px;border:2px dashed var(--line);display:grid;gap:12px}
 .gate p{margin:0}
 .gate .row{display:flex;gap:10px;flex-wrap:wrap}

@@ -9,6 +9,8 @@ npm run dev     # http://localhost:5173
 npm test        # valida contenido y recorre todas las lecciones
 ```
 
+Es una PWA: desde el móvil se puede instalar («Añadir a pantalla de inicio») y funciona sin conexión.
+
 Necesita Node 18+ (solo para el servidor estático y los tests; la app no tiene dependencias).
 
 ## Trabajar con Claude Code

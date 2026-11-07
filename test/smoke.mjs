@@ -53,6 +53,17 @@ if (casos) {
   }
 }
 
+// PWA: todo lo que precarga el service worker y los iconos del manifiesto deben existir.
+const sw = fs.readFileSync(path.join(root, 'sw.js'), 'utf8');
+const pre = JSON.parse(sw.match(/const PRECACHE = (\[[\s\S]*?\]);/)[1].replace(/'/g, '"'));
+for (const f of pre) if (f !== './' && !fs.existsSync(path.join(root, f))) errs.push('sw.js precarga un archivo que no existe: ' + f);
+for (const f of fs.readdirSync(path.join(root, 'src')).filter(f => /\.(js|css)$/.test(f))) if (!pre.includes('src/' + f)) errs.push('sw.js no precarga src/' + f);
+const man = JSON.parse(fs.readFileSync(path.join(root, 'manifest.webmanifest'), 'utf8'));
+for (const ic of man.icons) if (!fs.existsSync(path.join(root, ic.src))) errs.push('icono del manifiesto inexistente: ' + ic.src);
+if (!man.icons.some(i => i.purpose === 'maskable')) errs.push('falta icono maskable en el manifiesto');
+const fontsSw = sw.match(/const FONTS_CSS = '([^']+)'/)[1];
+if (!fs.readFileSync(path.join(root, 'index.html'), 'utf8').includes(fontsSw)) errs.push('FONTS_CSS de sw.js no coincide con la hoja de fuentes de index.html');
+
 // 2) Recorrido completo de cada lección
 const {api: T} = await import(pathToFileURL(path.join(root, 'src/app.js')));
 const ident = ex => ex.items.map((_, i) => i);
