@@ -72,7 +72,7 @@ Sistema de tokens en `src/styles.css` (`:root`, con variante oscura por `prefers
 
 ## Siguiente trabajo sugerido (por orden)
 
-1. Ampliar contenido: unidad 4 ya tiene gaps de resultados y sizing con riesgo binario; faltan small caps (dilución, float). Después Wyckoff/VSA, VCP, salidas escalonadas, riesgo de cartera. Mínimo 6 lecciones nuevas.
+1. Ampliar contenido: unidad 4 completa (gaps de resultados, sizing con riesgo binario, small caps). Siguiente: Wyckoff/VSA, VCP, salidas escalonadas, riesgo de cartera. Mínimo 6 lecciones nuevas.
 2. Nuevos tipos de ejercicio: ordenar pasos (fases de Weinstein), arrastrar entrada/stop/objetivo sobre el gráfico, emparejar patrón con descripción.
 3. Repaso espaciado: guardar ejercicios fallados y reintroducirlos días después.
 4. Persistencia real (cuentas, sincronización) y decidir stack: vanilla actual frente a Vite + TypeScript. Migrar solo cuando el contenido y los tipos de ejercicio se estabilicen.

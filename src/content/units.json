@@ -494,6 +494,45 @@
             "why": "Esperanza = 0,60 × 40 % − 0,40 × 70 % = 24 % − 28 % = −4 %: pierdes un 4 % de media. Acertar el 60 % de las veces no basta si la pérdida es mayor que la ganancia."
           }
         ]
+      },
+      {
+        "id": "b3",
+        "title": "Small caps: dilución y float",
+        "ex": [
+          {
+            "t": "num",
+            "q": "Una small cap tiene 20 millones de acciones y emite 5 millones nuevas. Si no acudes a la ampliación, ¿cuánto se reduce tu participación?",
+            "unit": "%",
+            "a": 20,
+            "why": "Pasas de x ÷ 20 a x ÷ 25 millones: 20 ÷ 25 = 0,80, una dilución del 20 %. Cada acción representa ahora una quinta parte menos de la empresa."
+          },
+          {
+            "t": "num",
+            "q": "Cotiza a 3,00 € con 20 millones de acciones y coloca 5 millones nuevas a 2,40 € (20 % de descuento). ¿Precio teórico tras la ampliación?",
+            "unit": "€",
+            "a": 2.88,
+            "why": "(20 × 3,00 + 5 × 2,40) ÷ 25 = 72 ÷ 25 = 2,88 € (en millones). Una colocación con descuento arrastra el precio hacia el de emisión."
+          },
+          {
+            "t": "num",
+            "q": "Float de 4 millones de acciones. Tras una noticia negocia 12 millones en una sesión. ¿Cuántas veces ha rotado el float?",
+            "unit": "",
+            "a": 3,
+            "why": "12 ÷ 4 = 3 rotaciones: todo el float cambió de manos tres veces. Es momentum especulativo y el giro llega igual de rápido: tamaño reducido y stop estricto."
+          },
+          {
+            "t": "choice",
+            "q": "Una small cap con caja para 3 meses sube un 80 % con una noticia. ¿Qué riesgo es más probable en los próximos días?",
+            "opts": [
+              "Exclusión de un índice",
+              "Ampliación de capital o ATM aprovechando la subida",
+              "Recompra de acciones",
+              "Dividendo extraordinario"
+            ],
+            "a": 1,
+            "why": "Sin caja, la empresa necesita financiarse y la subida le permite emitir más caro: ampliaciones y ATM (ventas directas en mercado) suelen llegar tras los picos. Revisa caja trimestral y registros de emisión (S-1, S-3) antes de entrar."
+          }
+        ]
       }
     ]
   }
