@@ -45,11 +45,13 @@ function chartHTML(ex){
   if(ex.t==='tap'||ex.t==='level')st={mode:ex.t,sel:run.sel,checked:run.checked,a:ex.a};
   return `<figure class="chart">${sp.type==='line'?lineSVG(sp):candlesSVG(sp,st)}</figure>`;
 }
+// Texto de ejercicio: escapa y une cada número con su unidad (26,00 €, 12 %, 3R…) para que no se separen al saltar de línea.
+const tx=s=>esc(s).replace(/(\d) (?=(?:M?[€$]|%|R\b|veces\b))/g,'$1\u00a0');
 // Tabla de datos (resultados trimestrales, márgenes…): {cols:[...], rows:[[...]], note?}
 function tableHTML(ex){
   const tb=ex.table;if(!tb)return'';
   let h='<figure class="chart tbl"><table><thead><tr>'+tb.cols.map(c=>`<th scope="col">${esc(c)}</th>`).join('')+'</tr></thead><tbody>';
-  tb.rows.forEach(r=>{h+='<tr>'+r.map((c,i)=>i===0?`<th scope="row">${esc(c)}</th>`:`<td>${esc(c)}</td>`).join('')+'</tr>'});
+  tb.rows.forEach(r=>{h+='<tr>'+r.map((c,i)=>i===0?`<th scope="row">${tx(c)}</th>`:`<td>${tx(c)}</td>`).join('')+'</tr>'});
   h+='</tbody></table>';
   if(tb.note)h+=`<figcaption>${esc(tb.note)}</figcaption>`;
   return h+'</figure>';
@@ -101,13 +103,13 @@ function lessonHTML(){
   const ex=run.queue[0],pct=Math.round(run.done/run.total*100);
   let hearts='';for(let i=0;i<3;i++)hearts+=`<svg class="heart ${i<run.lives?'on':'off'}" viewBox="0 0 24 24" aria-hidden="true"><path d="${P.heart}" fill="currentColor"/></svg>`;
   let h=`<div class="lesson"><div class="lbar"><button class="x" data-act="quit" aria-label="Salir de la lección">${icoX}</button><div class="prog" role="progressbar" aria-valuemin="0" aria-valuemax="${run.total}" aria-valuenow="${run.done}"><i style="width:${pct}%"></i></div><div class="lives" role="img" aria-label="${run.lives} vidas">${hearts}</div></div>`;
-  h+=`<div class="qwrap"><p class="kind">${ex.caso?`Caso real: ${esc(ex.caso)} · `:''}${KIND[ex.t]}</p><h2 class="q">${esc(ex.q)}</h2>${chartHTML(ex)}${tableHTML(ex)}`;
+  h+=`<div class="qwrap"><p class="kind">${ex.caso?`Caso real: ${esc(ex.caso)} · `:''}${KIND[ex.t]}</p><h2 class="q">${tx(ex.q)}</h2>${chartHTML(ex)}${tableHTML(ex)}`;
   if(ex.t==='choice'){
     h+='<div class="opts">';
     ex.opts.forEach((o,i)=>{
       let c='';
       if(run.checked){if(i===ex.a)c='good';else if(i===run.sel)c='bad'}else if(i===run.sel)c='sel';
-      h+=`<button class="opt ${c}" data-act="pick" data-i="${i}"${run.checked?' disabled':''}>${esc(o)}</button>`;
+      h+=`<button class="opt ${c}" data-act="pick" data-i="${i}"${run.checked?' disabled':''}>${tx(o)}</button>`;
     });
     h+='</div>';
   }
@@ -121,7 +123,7 @@ function lessonHTML(){
   if(!run.checked){
     h+=`<div><button class="btn primary" data-act="check"${can?'':' disabled'}>Comprobar</button></div>`;
   }else{
-    h+=`<div class="fb ${run.ok?'good':'bad'}" role="status"><div class="fb-h">${run.ok?icoOk:icoX}<span>${run.ok?'Correcto':'Incorrecto'}</span></div><p>${esc(ex.why)}</p>${run.ok?'':ex.t==='order'?`<div class="ans">Orden correcto:<ol>${ex.items.map(t=>`<li>${esc(t)}</li>`).join('')}</ol></div>`:`<p class="ans">Respuesta: ${esc(answerText(ex))}</p>`}<button class="btn primary" data-act="next">Continuar</button></div>`;
+    h+=`<div class="fb ${run.ok?'good':'bad'}" role="status"><div class="fb-h">${run.ok?icoOk:icoX}<span>${run.ok?'Correcto':'Incorrecto'}</span></div><p>${tx(ex.why)}</p>${run.ok?'':ex.t==='order'?`<div class="ans">Orden correcto:<ol>${ex.items.map(t=>`<li>${tx(t)}</li>`).join('')}</ol></div>`:`<p class="ans">Respuesta: ${tx(answerText(ex))}</p>`}<button class="btn primary" data-act="next">Continuar</button></div>`;
   }
   return h+'</div>';
 }
@@ -133,13 +135,13 @@ function ordHTML(ex){
   for(let k=0;k<n;k++){
     if(k<sel.length){
       const c=run.checked?(sel[k]===k?'good':'bad'):'filled';
-      h+=`<li><button class="opt ${c}" data-act="ounpick" data-k="${k}"${run.checked?' disabled':` aria-label="Quitar: ${esc(ex.items[sel[k]])}"`}><span class="n">${k+1}</span>${esc(ex.items[sel[k]])}</button></li>`;
+      h+=`<li><button class="opt ${c}" data-act="ounpick" data-k="${k}"${run.checked?' disabled':` aria-label="Quitar: ${esc(ex.items[sel[k]])}"`}><span class="n">${k+1}</span>${tx(ex.items[sel[k]])}</button></li>`;
     }else h+=`<li class="slot" aria-hidden="true"><span class="n">${k+1}</span></li>`;
   }
   h+='</ol>';
   if(!run.checked){
     const rest=run.perm.get(ex).filter(i=>!sel.includes(i));
-    if(rest.length)h+='<div class="opts ord-pool">'+rest.map(i=>`<button class="opt" data-act="opick" data-i="${i}">${esc(ex.items[i])}</button>`).join('')+'</div>';
+    if(rest.length)h+='<div class="opts ord-pool">'+rest.map(i=>`<button class="opt" data-act="opick" data-i="${i}">${tx(ex.items[i])}</button>`).join('')+'</div>';
   }
   return h;
 }

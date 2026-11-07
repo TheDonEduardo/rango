@@ -53,8 +53,9 @@ Gráficos (`chart`):
 - Nivel de usuario: en Técnico y Fundamental ya conoce los conceptos básicos; se enseña criterio operativo (qué hacer, a qué nivel, con qué riesgo), no definiciones de manual. En Básico se permiten definiciones, pero siempre con un ejemplo numérico o práctico, y cada concepto apunta a dónde se usará después (ATR, R, velas).
 - Marco de referencia: Weinstein (fases, MA 30 semanas), Minervini (Trend Template, VCP), Wyckoff/VSA, ATR para stops y tamaño, múltiplos R, salidas escalonadas.
 - Cada ejercicio enseña una sola cosa. `why` explica el porqué con las cifras del enunciado, en 1-2 frases.
-- Varía la posición de la respuesta correcta en los `choice`.
+- Varía la posición de la respuesta correcta en los `choice` y que no sea la más larga: los distractores deben ser igual de creíbles y de largos (el test falla si la correcta supera 1,5 veces a la más larga del resto). La justificación va en `why`, no en la opción.
 - Formato numérico en texto: coma decimal y símbolo tras espacio (`17,60 €`, `7,36 %`).
+- Contenido fiscal o normativo: solo reglas estables y bien establecidas, sin casos límite; las tablas de tramos llevan «Compruébalos cada año».
 - Tono directo, sin relleno ni advertencias legales dentro de los ejercicios. Es formación, no recomendación de inversión; el aviso va en una pantalla aparte (pendiente).
 
 ## Diseño
@@ -78,7 +79,7 @@ Sistema de tokens en `src/styles.css` (`:root`, con variante oscura por `prefers
 
 ## Tareas pendientes (por orden sugerido)
 
-0. Ruta Básico: 4 unidades hechas (acciones y órdenes, rentabilidad y riesgo, leer un gráfico, ETF e índices). Posibles ampliaciones: fiscalidad básica en España, tipos de cuenta y bróker.
+0. Ruta Básico: 6 unidades hechas (acciones y órdenes, rentabilidad y riesgo, leer un gráfico, ETF e índices, impuestos en España, cuenta y bróker). Revisar cada año los tramos y normas fiscales de la unidad «Impuestos en España» y «Cuenta y bróker».
 1. Ampliar contenido técnico: unidades 4 (catalizadores binarios), 5 (Wyckoff/VSA) y 6 (VCP) hechas. Siguiente: salidas escalonadas y riesgo de cartera.
 1b. Ruta fundamental: F1-F4 hechas (F1-F3 con casos reales). Ideas siguientes: sectores, lectura de un informe de resultados real.
 2. Nuevos tipos de ejercicio: «ordenar pasos» hecho (`order`). Faltan: arrastrar entrada/stop/objetivo sobre el gráfico y emparejar patrón con descripción.

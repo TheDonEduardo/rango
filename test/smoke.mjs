@@ -26,6 +26,11 @@ const lint = (ex, w) => {
       if (ex.t === 'num' && ex.a < 0) errs.push(w + ': respuesta negativa (el teclado decimal del móvil no tiene signo menos)');
       if (!ex.q || !ex.why) errs.push(w + ': falta q o why');
       if (ex.t === 'choice' && !(Number.isInteger(ex.a) && ex.a >= 0 && ex.a < ex.opts.length)) errs.push(w + ': a fuera de rango');
+      if (ex.t === 'choice' && ex.opts.length > 2) {
+        // La correcta no puede delatarse por ser mucho más larga que todas las demás.
+        const c = ex.opts[ex.a].length, o = Math.max(...ex.opts.filter((_, k) => k !== ex.a).map(t => t.length));
+        if (c > 1.5 * o) errs.push(`${w}: la opción correcta (${c} caracteres) es mucho más larga que las demás (${o})`);
+      }
       if (ex.t === 'num' && typeof ex.a !== 'number') errs.push(w + ': a no numérico');
       if (ex.t === 'tap' && !(ex.chart && ex.a >= 0 && ex.a < ex.chart.data.length)) errs.push(w + ': vela fuera de rango');
       if (ex.t === 'level' && !(ex.chart?.levels || []).some(v => v.id === ex.a)) errs.push(w + ': nivel inexistente');

@@ -150,10 +150,10 @@
             "t": "choice",
             "q": "Tienes 10.000 € en una sola acción. ¿Qué riesgo corres?",
             "opts": [
-              "Ninguno, si la empresa es buena",
-              "Que el bróker se quede tus acciones",
-              "Que suban las comisiones",
-              "Que un mal resultado de esa empresa te cueste gran parte del capital"
+              "Ninguno, si la empresa tiene buenos resultados",
+              "Que el bróker se quede con tus acciones",
+              "Que te suban las comisiones de custodia",
+              "Perder gran parte del capital por un mal resultado"
             ],
             "a": 3,
             "why": "Una sola empresa puede caer un 30-50 % en un día por unos malos resultados. Repartir entre varias empresas y sectores limita el daño de cada una."
@@ -216,7 +216,12 @@
               ],
               "alt": "Gráfico de ocho velas"
             },
-            "opts": ["Alcista", "Bajista", "Lateral", "No se puede saber"],
+            "opts": [
+              "Alcista",
+              "Bajista",
+              "Lateral",
+              "No se puede saber"
+            ],
             "a": 0,
             "why": "Los retrocesos se detienen cada vez más arriba (10,50 y luego 11,30) y cada máximo supera al anterior: máximos y mínimos crecientes son una tendencia alcista."
           },
@@ -288,10 +293,10 @@
             "t": "choice",
             "q": "¿Qué tienes que decidir antes de comprar?",
             "opts": [
-              "Solo el precio de entrada",
+              "Solo el precio al que vas a entrar",
               "Nada: se decide sobre la marcha",
-              "A quién contárselo",
-              "Entrada, stop (dónde sales si te equivocas) y cuántas acciones"
+              "Cuánto quieres ganar con la operación",
+              "Entrada, stop y número de acciones"
             ],
             "a": 3,
             "why": "Con la operación abierta, las emociones deciden por ti. Si fijas antes dónde sales, sabes cuánto puedes perder y eliges el tamaño con calma."
@@ -385,10 +390,10 @@
             "t": "choice",
             "q": "¿Qué es un ETF?",
             "opts": [
-              "Un fondo que replica un índice y cotiza en bolsa como una acción",
-              "Una acción de una sola empresa",
-              "Un depósito bancario con interés fijo",
-              "Un derivado que caduca cada mes"
+              "Un fondo que replica un índice y cotiza como una acción",
+              "Una acción de una sola empresa de gran tamaño",
+              "Un depósito bancario con un interés fijo anual",
+              "Un derivado que caduca cada mes y se renueva"
             ],
             "a": 0,
             "why": "Con una sola compra tienes todas las empresas del índice. Se compra y se vende durante la sesión, como una acción, con su precio y su spread."
@@ -419,6 +424,223 @@
             ],
             "a": 1,
             "why": "Los reinvierte y el valor de cada participación crece. Uno de distribución te los paga, y en España cada cobro tributa en tu declaración de ese año."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "id": "fiscalidad",
+    "track": "basico",
+    "title": "Impuestos en España",
+    "blurb": "Qué tributa, cuánto y cómo aprovechar las pérdidas.",
+    "lessons": [
+      {
+        "id": "be1",
+        "title": "Plusvalías y dividendos",
+        "ex": [
+          {
+            "t": "num",
+            "q": "Compras 100 acciones a 20,00 € y las vendes a 26,00 €. Entre compra y venta pagaste 10 € de comisiones. ¿Qué ganancia declaras?",
+            "unit": "€",
+            "a": 590,
+            "why": "Venta 2.600 € − compra 2.000 € − 10 € de gastos = 590 €. Las comisiones de compra y venta reducen la ganancia que declaras."
+          },
+          {
+            "t": "num",
+            "q": "Tu única renta del ahorro del año es una ganancia de 8.000 €. Con estos tramos, ¿qué tipo medio pagas? Redondea a 1 decimal.",
+            "table": {
+              "cols": [
+                "Base del ahorro",
+                "Tipo"
+              ],
+              "rows": [
+                [
+                  "Hasta 6.000 €",
+                  "19 %"
+                ],
+                [
+                  "De 6.000 a 50.000 €",
+                  "21 %"
+                ],
+                [
+                  "De 50.000 a 200.000 €",
+                  "23 %"
+                ]
+              ],
+              "note": "Tramos del IRPF (base del ahorro). Compruébalos cada año."
+            },
+            "unit": "%",
+            "a": 19.5,
+            "tol": 0.06,
+            "why": "6.000 × 19 % = 1.140 € y 2.000 × 21 % = 420 €: 1.560 € en total, un 19,5 % de media. Cada tipo solo grava la parte que cae dentro de su tramo."
+          },
+          {
+            "t": "choice",
+            "q": "Cobras 100 € de dividendo de una empresa española. ¿Qué ocurre?",
+            "opts": [
+              "Recibes 100 € y no tributa",
+              "Recibes 81 €: se retiene un 19 %",
+              "No tributa hasta que vendas",
+              "Recibes 50 €: Hacienda se queda la mitad"
+            ],
+            "a": 1,
+            "why": "Se retienen 19 € a cuenta y los descuentas en tu declaración. El dividendo va a la base del ahorro, igual que las ganancias por venta."
+          },
+          {
+            "t": "choice",
+            "q": "Cobras dividendos de una empresa de EE. UU. y tienes firmado el formulario W-8BEN en tu bróker. ¿Qué retiene EE. UU.?",
+            "opts": [
+              "Un 15 %, deducible en tu IRPF",
+              "Nada: solo tributas en España",
+              "Un 30 %, firmes lo que firmes",
+              "Un 50 %, sin poder deducirlo"
+            ],
+            "a": 0,
+            "why": "El convenio entre España y EE. UU. limita la retención al 15 % si firmas el W-8BEN; sin él, es del 30 %. En tu declaración puedes deducir esa retención por doble imposición internacional."
+          }
+        ]
+      },
+      {
+        "id": "be2",
+        "title": "Pérdidas y reglas",
+        "ex": [
+          {
+            "t": "num",
+            "q": "Este año ganas 900 € al vender unas acciones y pierdes 400 € con otras. ¿Por qué ganancia tributas?",
+            "unit": "€",
+            "a": 500,
+            "why": "900 − 400 = 500 €. Las pérdidas por venta compensan las ganancias del mismo año."
+          },
+          {
+            "t": "choice",
+            "q": "Cierras el año con pérdidas por venta de acciones y ninguna ganancia. ¿Qué pasa con ellas?",
+            "opts": [
+              "Se pierden",
+              "Las compensas con ganancias de los 4 años siguientes",
+              "Hacienda te las devuelve en efectivo",
+              "Solo cuentan si compras más acciones"
+            ],
+            "a": 1,
+            "why": "Se declaran igualmente y se arrastran a los cuatro años siguientes. Además, pueden compensar hasta un 25 % del saldo de dividendos e intereses."
+          },
+          {
+            "t": "choice",
+            "q": "Vendes con pérdidas unas acciones el 10 de diciembre y vuelves a comprar las mismas el 20 de diciembre. ¿Puedes compensar esa pérdida este año?",
+            "opts": [
+              "Sí, sin ningún límite",
+              "Sí, si recompras en otro bróker",
+              "No: se aplaza hasta que vendas las nuevas",
+              "Sí, pero solo la mitad de la pérdida"
+            ],
+            "a": 2,
+            "why": "Regla de los dos meses en valores cotizados: si compras valores iguales en los dos meses anteriores o posteriores a la venta con pérdidas, no la imputas hasta que vendas esos valores."
+          },
+          {
+            "t": "num",
+            "q": "Ganancia de 500 €, toda dentro del primer tramo (19 %). ¿Cuánto te queda después de impuestos?",
+            "unit": "€",
+            "a": 405,
+            "why": "500 × (1 − 0,19) = 405 €. Calcula siempre tu rentabilidad después de impuestos: es la que de verdad se queda en tu bolsillo."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "id": "broker",
+    "track": "basico",
+    "title": "Cuenta y bróker",
+    "blurb": "Dónde guardas tus acciones y lo que cuesta de verdad.",
+    "lessons": [
+      {
+        "id": "bf1",
+        "title": "Elegir bróker",
+        "ex": [
+          {
+            "t": "choice",
+            "q": "¿Qué protege tus acciones si quiebra el bróker?",
+            "opts": [
+              "Nada: pasan al patrimonio del bróker",
+              "El Banco de España te lo devuelve todo",
+              "El bróker debe venderlas antes de quebrar",
+              "Están a tu nombre, separadas de las del bróker"
+            ],
+            "a": 3,
+            "why": "Las acciones de los clientes no son del bróker y deben estar separadas de su patrimonio. Si aun así no te las devuelven, en España un fondo de garantía cubre hasta 100.000 € por cliente."
+          },
+          {
+            "t": "num",
+            "q": "El bróker cobra un 0,1 % por operación, con un mínimo de 4 €. Compras 2.000 € de acciones. ¿Cuánto pagas de comisión?",
+            "unit": "€",
+            "a": 4,
+            "why": "2.000 × 0,1 % = 2 €, pero el mínimo es 4 €: pagas 4 €, un 0,2 % de la compra. Con órdenes pequeñas manda el mínimo."
+          },
+          {
+            "t": "num",
+            "q": "Tu bróker cobra una custodia del 0,2 % anual y tu cartera vale 20.000 €. ¿Cuánto pagas al año?",
+            "unit": "€",
+            "a": 40,
+            "why": "20.000 × 0,2 % = 40 € al año, aunque no operes. Muchos brókeres ya no cobran custodia: compáralo antes de abrir la cuenta."
+          },
+          {
+            "t": "choice",
+            "q": "Compras acciones de EE. UU. con euros. ¿Qué coste se suele pasar por alto?",
+            "opts": [
+              "El cambio de divisa en cada compra y venta",
+              "Ninguno: el precio en euros es el mismo",
+              "El IVA que se aplica a las acciones",
+              "Una tasa fija por entrar en el mercado"
+            ],
+            "a": 0,
+            "why": "Cada compra y cada venta convierten euros y dólares, y el bróker cobra por ello: según el bróker, de casi nada a más de un 0,5 % por operación. Míralo tanto como la comisión de compraventa."
+          }
+        ]
+      },
+      {
+        "id": "bf2",
+        "title": "Bróker extranjero y divisa",
+        "ex": [
+          {
+            "t": "choice",
+            "q": "Tienes 60.000 € en acciones depositadas en un bróker extranjero. ¿Qué obligación informativa tienes ante Hacienda?",
+            "opts": [
+              "Ninguna obligación adicional",
+              "Pagar un impuesto extra del 10 %",
+              "Presentar el Modelo 720",
+              "Cerrar la cuenta antes de fin de año"
+            ],
+            "a": 2,
+            "why": "El Modelo 720 es informativo: declara los valores depositados fuera de España cuando superan 50.000 €. No es un impuesto, pero no presentarlo puede acarrear sanciones."
+          },
+          {
+            "t": "choice",
+            "q": "Tu bróker es extranjero. ¿Qué cambia en tu declaración de la renta?",
+            "opts": [
+              "Declaras tú cada operación con sus informes",
+              "Nada: Hacienda lo rellena todo",
+              "No tributas en España por esa cuenta",
+              "Tributa solo en el país del bróker"
+            ],
+            "a": 0,
+            "why": "Como residente en España tributas aquí por todo, esté donde esté el bróker. Las operaciones de un bróker extranjero no suelen aparecer en los datos fiscales de Hacienda: las declaras tú con sus informes."
+          },
+          {
+            "t": "num",
+            "q": "Compras una acción de EE. UU. a 100 $ con el euro a 1,10 $ y la vendes a 100 $ con el euro a 1,20 $. ¿Cuánto pierdes en euros? Redondea a 2 decimales.",
+            "unit": "%",
+            "a": 8.33,
+            "tol": 0.02,
+            "why": "Compra: 100 ÷ 1,10 = 90,91 €. Venta: 100 ÷ 1,20 = 83,33 €. Pierdes un 8,33 % aunque la acción no se haya movido: el dólar ha perdido valor frente al euro."
+          },
+          {
+            "t": "num",
+            "q": "Compras 1.000 € de acciones de EE. UU. con una comisión de 2 € y un 0,5 % por el cambio de divisa, y pagas lo mismo al vender. ¿Cuánto pagas en total?",
+            "unit": "€",
+            "a": 14,
+            "why": "Compra: 2 + 1.000 × 0,5 % = 7 €. Venta: otros 7 €. En total 14 €, un 1,4 % de la operación: la divisa cuesta más que la comisión."
           }
         ]
       }
@@ -485,10 +707,10 @@
             "t": "choice",
             "q": "Cuerpo pequeño y mechas largas a ambos lados. ¿Qué indica?",
             "opts": [
-              "Tendencia alcista fuerte",
-              "Cierre anticipado del mercado",
-              "Indecisión: ni compradores ni vendedores imponen el precio",
-              "Caída garantizada"
+              "Que la tendencia alcista se acelera",
+              "Que el mercado cerró antes de hora",
+              "Indecisión entre compradores y vendedores",
+              "Que la caída siguiente está garantizada"
             ],
             "a": 2,
             "why": "Es una peonza. Tras un tramo fuerte avisa de agotamiento; dentro de un rango lateral no aporta información."
@@ -628,10 +850,10 @@
             "t": "choice",
             "q": "¿Cuál es el punto de compra clave según Weinstein?",
             "opts": [
-              "Ruptura de la base de Fase 1 con volumen, entrando en Fase 2",
-              "Rebote a mitad de la Fase 4",
+              "Ruptura de la base con volumen, al entrar en Fase 2",
+              "Un rebote a mitad de la Fase 4 bajista",
               "Cualquier retroceso durante la Fase 3",
-              "Mínimo de la Fase 4 sin confirmación"
+              "El mínimo de la Fase 4, sin esperar confirmación"
             ],
             "a": 0,
             "why": "Se compra la ruptura de la resistencia de la base con volumen claramente superior a la media. Anticiparla es adivinar."
@@ -949,10 +1171,10 @@
             "t": "choice",
             "q": "Una small cap con caja para 3 meses sube un 80 % con una noticia. ¿Qué riesgo es más probable en los próximos días?",
             "opts": [
-              "Exclusión de un índice",
-              "Ampliación de capital o ATM aprovechando la subida",
-              "Recompra de acciones",
-              "Dividendo extraordinario"
+              "Exclusión de un índice bursátil",
+              "Ampliación de capital o ATM",
+              "Recompra de acciones propias",
+              "Dividendo extraordinario a los accionistas"
             ],
             "a": 1,
             "why": "Sin caja, la empresa necesita financiarse y la subida le permite emitir más caro: ampliaciones y ATM (ventas directas en mercado) suelen llegar tras los picos. Revisa caja trimestral y registros de emisión (S-1, S-3) antes de entrar."
@@ -1265,8 +1487,8 @@
             "q": "Compraste la ruptura a 55,70 € (stop 52,20 €). Dos sesiones después cierra de nuevo dentro de la base, a 53,80 €, con volumen alto. ¿Qué haces?",
             "opts": [
               "Esperas a que salte el stop en 52,20 €",
-              "Promedias a la baja",
-              "Sales o reduces: una ruptura que falla con volumen es señal de venta",
+              "Promedias a la baja para mejorar el precio",
+              "Sales o reduces: la ruptura ha fallado",
               "Bajas el stop a 50,00 € para darle aire"
             ],
             "a": 2,
@@ -1299,14 +1521,39 @@
             "t": "choice",
             "q": "Crecimiento interanual del BPA en los tres últimos trimestres. ¿Qué empresa acelera?",
             "table": {
-              "cols": ["Empresa", "1T", "2T", "3T"],
+              "cols": [
+                "Empresa",
+                "1T",
+                "2T",
+                "3T"
+              ],
               "rows": [
-                ["A", "40 %", "30 %", "22 %"],
-                ["B", "12 %", "25 %", "41 %"],
-                ["C", "35 %", "36 %", "34 %"]
+                [
+                  "A",
+                  "40 %",
+                  "30 %",
+                  "22 %"
+                ],
+                [
+                  "B",
+                  "12 %",
+                  "25 %",
+                  "41 %"
+                ],
+                [
+                  "C",
+                  "35 %",
+                  "36 %",
+                  "34 %"
+                ]
               ]
             },
-            "opts": ["A", "B", "C", "Ninguna"],
+            "opts": [
+              "A",
+              "B",
+              "C",
+              "Ninguna"
+            ],
             "a": 1,
             "why": "B pasa del 12 % al 25 % y al 41 %: cada trimestre crece más rápido que el anterior. A crece más hoy, pero desacelera; O'Neil y Minervini buscan la aceleración, que suele preceder a las grandes subidas."
           },
@@ -1314,11 +1561,27 @@
             "t": "num",
             "q": "Ventas trimestrales en millones de $. ¿Crecimiento interanual del 3T 2026?",
             "table": {
-              "cols": ["Trimestre", "2025", "2026"],
+              "cols": [
+                "Trimestre",
+                "2025",
+                "2026"
+              ],
               "rows": [
-                ["1T", "200", "226"],
-                ["2T", "210", "248"],
-                ["3T", "220", "275"]
+                [
+                  "1T",
+                  "200",
+                  "226"
+                ],
+                [
+                  "2T",
+                  "210",
+                  "248"
+                ],
+                [
+                  "3T",
+                  "220",
+                  "275"
+                ]
               ],
               "note": "Ventas en millones de $"
             },
@@ -1331,9 +1594,9 @@
             "q": "El BPA crece un 40 % interanual, pero las ventas solo un 3 %. ¿Qué compruebas primero?",
             "opts": [
               "Nada: el BPA es lo único que importa",
-              "El PER medio del sector",
-              "Si paga dividendo",
-              "Si el BPA crece por recompras, recortes de costes o partidas puntuales"
+              "El PER medio de su sector",
+              "Si paga un dividendo creciente",
+              "De dónde sale el crecimiento del BPA"
             ],
             "a": 3,
             "why": "Sin ventas, el BPA solo crece por márgenes, recompras o partidas puntuales, y eso tiene límite. O'Neil pide que las ventas acompañen con al menos un 25 % de crecimiento."
@@ -1355,16 +1618,26 @@
             "t": "choice",
             "q": "Las ventas crecen un 25 % y el margen operativo evoluciona así. ¿Qué indica?",
             "table": {
-              "cols": ["", "1T", "2T", "3T"],
+              "cols": [
+                "",
+                "1T",
+                "2T",
+                "3T"
+              ],
               "rows": [
-                ["Margen operativo", "14 %", "16 %", "19 %"]
+                [
+                  "Margen operativo",
+                  "14 %",
+                  "16 %",
+                  "19 %"
+                ]
               ]
             },
             "opts": [
-              "Apalancamiento operativo: el beneficio crece más rápido que las ventas",
+              "Apalancamiento operativo",
               "Deterioro del negocio",
-              "Que la empresa recompra acciones",
-              "Nada: los márgenes no afectan al beneficio"
+              "Que recompra acciones propias",
+              "Que suben sus costes fijos"
             ],
             "a": 0,
             "why": "Los costes fijos se reparten entre más ventas y cada dólar adicional deja más margen. Minervini busca que BPA, ventas y márgenes aceleren a la vez durante tres trimestres."
@@ -1381,8 +1654,8 @@
             "q": "La empresa bate en un 15 % el BPA esperado del trimestre, pero rebaja su previsión para el año. ¿Qué pesa más en el precio?",
             "opts": [
               "La sorpresa positiva del trimestre",
-              "La rebaja de previsiones: el precio descuenta el futuro",
-              "Ninguna de las dos",
+              "La rebaja de las previsiones del año",
+              "Ninguna: se compensan entre sí",
               "El volumen de la sesión"
             ],
             "a": 1,
@@ -1428,14 +1701,35 @@
             "t": "choice",
             "q": "¿Qué empresa es más barata en relación con su crecimiento?",
             "table": {
-              "cols": ["Empresa", "PER", "Crecimiento BPA"],
+              "cols": [
+                "Empresa",
+                "PER",
+                "Crecimiento BPA"
+              ],
               "rows": [
-                ["A", "40", "50 %"],
-                ["B", "15", "5 %"],
-                ["C", "25", "10 %"]
+                [
+                  "A",
+                  "40",
+                  "50 %"
+                ],
+                [
+                  "B",
+                  "15",
+                  "5 %"
+                ],
+                [
+                  "C",
+                  "25",
+                  "10 %"
+                ]
               ]
             },
-            "opts": ["A", "B", "C", "Las tres por igual"],
+            "opts": [
+              "A",
+              "B",
+              "C",
+              "Las tres por igual"
+            ],
             "a": 0,
             "why": "PEG: A 40 ÷ 50 = 0,8; B 15 ÷ 5 = 3; C 25 ÷ 10 = 2,5. El PER más alto es el más barato por unidad de crecimiento: por eso los líderes de Minervini rara vez tienen PER bajo."
           }
@@ -1511,14 +1805,35 @@
             "t": "choice",
             "q": "Si llega una recesión, ¿qué empresa tiene más riesgo financiero?",
             "table": {
-              "cols": ["Empresa", "Deuda neta/EBITDA", "Cobertura de intereses"],
+              "cols": [
+                "Empresa",
+                "Deuda neta/EBITDA",
+                "Cobertura de intereses"
+              ],
               "rows": [
-                ["A", "0,5", "20"],
-                ["B", "4,5", "2"],
-                ["C", "Caja neta", "Sin deuda"]
+                [
+                  "A",
+                  "0,5",
+                  "20"
+                ],
+                [
+                  "B",
+                  "4,5",
+                  "2"
+                ],
+                [
+                  "C",
+                  "Caja neta",
+                  "Sin deuda"
+                ]
               ]
             },
-            "opts": ["A", "B", "C", "Las tres por igual"],
+            "opts": [
+              "A",
+              "B",
+              "C",
+              "Las tres por igual"
+            ],
             "a": 1,
             "why": "B debe 4,5 años de EBITDA y su beneficio operativo cubre solo 2 veces los intereses: si cae a la mitad, los cubre justo. C no debe nada y A tiene margen de sobra."
           },
@@ -1561,11 +1876,11 @@
             "opts": [
               "Que el negocio es excelente",
               "Que la empresa está reduciendo deuda",
-              "Que las ventas no se están cobrando: el beneficio no se convierte en caja",
+              "Que no está cobrando sus ventas",
               "Que repartirá más dividendo"
             ],
             "a": 2,
-            "why": "Si los clientes no pagan, el beneficio contable crece pero la caja no. Puede ser ventas forzadas con plazos de cobro largos: vigila si se repite el trimestre siguiente."
+            "why": "Si los clientes no pagan, el beneficio contable crece pero la caja no: el beneficio no se convierte en caja. Puede ser ventas forzadas con plazos de cobro largos; vigila si se repite el trimestre siguiente."
           },
           {
             "t": "num",
@@ -1593,13 +1908,13 @@
             "t": "choice",
             "q": "¿Cuál es una tesis bien formulada?",
             "opts": [
-              "La IA es el futuro y esta empresa está en IA",
-              "Es barata: cotiza a un PER de 12",
-              "Las ventas de centros de datos crecen un 40 % y la planta que abre en el 2T subirá el margen bruto del 55 % al 60 %; si el margen del 2T no supera el 56 %, la tesis falla",
-              "El gráfico está en Fase 2"
+              "La IA es el futuro y esta empresa vende chips para IA, así que sus ventas crecerán durante años y el precio lo acabará reflejando",
+              "Cotiza a un PER de 12 frente a 20 de su sector, así que está barata y tarde o temprano el mercado corregirá ese descuento",
+              "Las ventas de centros de datos crecen un 40 % y la planta del 2T subirá el margen bruto del 55 % al 60 %; si en el 2T no supera el 56 %, la tesis falla",
+              "El gráfico está en Fase 2 con volumen creciente y medias alineadas, así que el mercado ya reconoce que el negocio va bien"
             ],
             "a": 2,
-            "why": "Tiene motor medible (ventas +40 %), catalizador con fecha (la planta en el 2T) e invalidación concreta (margen por debajo del 56 %). Las demás son narrativas o datos sueltos: no dicen cuándo te equivocas."
+            "why": "Solo la C tiene motor medible (ventas +40 %), catalizador con fecha (la planta en el 2T) e invalidación concreta (margen por debajo del 56 %). Las demás son relatos razonables, pero no dicen cuándo te equivocas."
           },
           {
             "t": "order",
