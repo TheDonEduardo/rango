@@ -80,7 +80,7 @@ Sistema de tokens en `src/styles.css` (`:root`, con variante oscura por `prefers
 ## Tareas pendientes (por orden sugerido)
 
 0. Ruta Básico: 6 unidades hechas (acciones y órdenes, rentabilidad y riesgo, leer un gráfico, ETF e índices, impuestos en España, cuenta y bróker). Revisar cada año los tramos y normas fiscales de la unidad «Impuestos en España» y «Cuenta y bróker».
-1. Contenido técnico: unidades 1-8 hechas (velas, tendencia, riesgo, catalizadores binarios, Wyckoff/VSA, VCP, salidas escalonadas, riesgo de cartera). Ideas siguientes: ventas en corto y Fase 4, lectura del mercado general (distribución, días de distribución de O'Neil).
+1. Contenido técnico: unidades 1-10 hechas (velas, tendencia, riesgo, catalizadores binarios, Wyckoff/VSA, VCP, salidas escalonadas, riesgo de cartera, cortos y Fase 4, mercado general). Ideas siguientes: fuerza relativa (RS de O'Neil), distribución de Wyckoff, temporalidades múltiples.
 1b. Ruta fundamental: F1-F4 hechas (F1-F3 con casos reales). Ideas siguientes: sectores, lectura de un informe de resultados real.
 2. Nuevos tipos de ejercicio: «ordenar pasos» hecho (`order`). Faltan: arrastrar entrada/stop/objetivo sobre el gráfico y emparejar patrón con descripción.
 3. Repaso espaciado: guardar ejercicios fallados y reintroducirlos días después.
