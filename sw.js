@@ -1,6 +1,7 @@
 // Service worker de Rango: permite usar la app sin conexión.
-// Sube CACHE al cambiar el código (src/*.js, styles.css, index.html) para que todos los usuarios reciban la versión nueva.
-const CACHE = 'rango-v2';
+// Todo lo propio va red primero (código y contenido llegan siempre de la misma versión); sin conexión, la caché.
+// Subir CACHE ya no es necesario para publicar código nuevo; solo sirve para vaciar la caché antigua.
+const CACHE = 'rango-v3';
 const FONTS_CSS = 'https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=IBM+Plex+Sans:wght@400;500;600&display=swap';
 const PRECACHE = [
   './',
@@ -34,8 +35,9 @@ async function guardarFuentes(c) {
 }
 
 self.addEventListener('install', e => {
+  // cache: 'reload' salta la caché HTTP del navegador: la precarga guarda siempre la versión del servidor.
   e.waitUntil(caches.open(CACHE)
-    .then(c => c.addAll(PRECACHE).then(() => guardarFuentes(c)))
+    .then(c => c.addAll(PRECACHE.map(u => new Request(u, {cache: 'reload'}))).then(() => guardarFuentes(c)))
     .then(() => self.skipWaiting()));
 });
 
@@ -53,24 +55,15 @@ self.addEventListener('fetch', e => {
   // Fuentes de Google: no cambian; caché primero.
   if (url.hostname.endsWith('googleapis.com') || url.hostname.endsWith('gstatic.com')) {
     e.respondWith(caches.open(CACHE).then(async c => (await c.match(req)) ||
-      fetch(req).then(res => { c.put(req, res.clone()); return res; })));
+      fetch(req).then(res => { if (res.ok || res.type === 'opaque') c.put(req, res.clone()); return res; })
+        .catch(() => Response.error())));
     return;
   }
   if (url.origin !== location.origin) return;
 
-  // Página y contenido (units.json, casos.json): red primero para recibir los casos de cada semana;
-  // sin conexión, la última copia guardada.
-  if (req.mode === 'navigate' || url.pathname.endsWith('.json')) {
-    e.respondWith(fetch(req)
-      .then(res => { if (res.ok) { const copia = res.clone(); caches.open(CACHE).then(c => c.put(req, copia)); } return res; })
-      .catch(() => caches.match(req, {ignoreSearch: true}).then(m => m || caches.match('./'))));
-    return;
-  }
-
-  // Código, estilos e iconos: caché primero y actualización en segundo plano.
-  e.respondWith(caches.open(CACHE).then(async c => {
-    const enCache = await c.match(req);
-    const red = fetch(req).then(res => { if (res.ok) c.put(req, res.clone()); return res; }).catch(() => enCache);
-    return enCache || red;
-  }));
+  // Página, código y contenido: red primero (siempre la misma versión de todo); sin conexión, la copia guardada.
+  e.respondWith(fetch(req)
+    .then(res => { if (res.ok) { const copia = res.clone(); caches.open(CACHE).then(c => c.put(req, copia)); } return res; })
+    .catch(() => caches.match(req, {ignoreSearch: true})
+      .then(m => m || (req.mode === 'navigate' ? caches.match('./') : Response.error()))));
 });

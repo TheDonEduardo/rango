@@ -6,6 +6,7 @@ App web gamificada tipo Duolingo para **inversores que ya operan** (bolsa, anál
 
 - `npm run dev`: servidor estático en http://localhost:5173 (hace falta servidor: los módulos ES y el `fetch` del JSON no funcionan desde `file://`).
 - `npm test`: valida el contenido (`units.json` y `casos.json`), las dos rutas y recorre todas las lecciones (y los repasos) simulando respuestas correctas, incorrectas y la pantalla "Sin vidas"; comprueba además cada caso real. Ejecútalo tras cualquier cambio en `src/` o en el contenido.
+- `python -I tools/test_casos.py`: prueba el generador de casos con datos simulados (sin red).
 - `python tools/casos.py` (requiere `pip install yfinance`): regenera los casos reales. GitHub Actions lo hace cada sábado (`.github/workflows/rango_casos.yml` en la raíz del repo) y sube el resultado solo si `npm test` pasa.
 
 ## Estructura
@@ -31,8 +32,8 @@ icons/                iconos de la PWA, generados con tools/iconos.cjs a partir 
 
 ## PWA y caché
 
-- `sw.js` precarga la app y las fuentes. El contenido (`*.json`) y la página van red primero (los casos semanales llegan enseguida); el código, caché primero con actualización en segundo plano.
-- **Al cambiar código (src/*.js, styles.css, index.html), sube `CACHE` en sw.js** para que todos reciban la versión nueva. En local, recarga dos veces o activa «Update on reload» en las herramientas del navegador.
+- `sw.js` precarga la app y las fuentes. Todo lo propio (página, código y contenido) va red primero: con conexión siempre llega la misma versión de todo; sin conexión, la última copia guardada. Las fuentes de Google, caché primero.
+- No hace falta subir `CACHE` para publicar código nuevo; súbelo solo para vaciar la caché antigua o cambiar la lista de precarga.
 - Si añades un archivo a `src/`, añádelo a `PRECACHE` (el test lo comprueba).
 
 ## Esquema del contenido (`units.json`)
@@ -49,9 +50,9 @@ Ejercicios (`why` es obligatorio y se muestra como explicación tras responder):
 - Casos reales (`casos.json`): `{fuente, fecha, ex: {idLección: [ejercicios con "caso": "Empresa (TICKER)"]}}`. Cada lección añade al final un caso al azar de su lista.
 - `tap`: `{t, q, chart: {type:"candles", data}, a: índice de vela (0-based), why}`
 - `level`: `{t, q, chart: {type:"candles", data, levels:[{id,y}], lines?:[{y,label}]}, a: "B", why}`
-- `match`: `{t, q, pairs: [[término, descripción], ...], why}` (3 o más parejas). Cada término tiene un hueco; el usuario toca descripciones y llenan el primer hueco libre. Mismo mecanismo que `order`.
+- `match`: `{t, q, pairs: [[término, descripción], ...], why}` (3 o más parejas). Cada término tiene un hueco; el usuario toca descripciones y llenan el primer hueco libre; tocar una colocada la devuelve y deja su hueco vacío sin mover las demás. Mismo mecanismo que `order`.
 - `plan`: `{t, q, chart: {type:"candles", data, ...}, place: [{id: "entry"|"stop"|"target", label, a, start, tol?: 0.1}], step?: 0.1, why}`. Líneas que se arrastran (ratón, dedo, flechas o botones − / +). `start` debe estar a más de `tol` de `a` (el test lo comprueba). El enunciado da las cifras necesarias: se evalúa calcular y colocar, no adivinar un precio a ojo.
-- `order`: `{t, q, items: [...en el orden correcto], why}`. Se muestran barajados; el usuario los toca en orden y puede devolver uno a la lista tocándolo. Solo para secuencias con un orden defendible (causa-efecto, proceso o esquema canónico), nunca para listas cuyo orden sea opinable.
+- `order`: `{t, q, items: [...en el orden correcto], why}`. Se muestran barajados; el usuario los toca en orden y puede devolver uno a la lista tocándolo (su hueco queda libre y lo llena el siguiente que toque). Solo para secuencias con un orden defendible (causa-efecto, proceso o esquema canónico), nunca para listas cuyo orden sea opinable.
 
 Gráficos (`chart`):
 - `{type:"candles", data:[[apertura,máximo,mínimo,cierre],...], vol?:[...], h?, annot?, lines?, levels?, alt}`; `annot:true` solo para una vela suelta. `vol` (mismo largo que `data`, unidades relativas) dibuja barras de volumen bajo el precio; súbele `h` a ~270.

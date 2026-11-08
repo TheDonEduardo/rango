@@ -18,6 +18,8 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "src" / "content" / "casos.json"
 BOT = ROOT.parent / "portfolio_manager.py"
 HOY = dt.date.today().strftime("%d/%m/%Y")
+# Lecciones que reciben casos reales (una sola definición para casos_de y main).
+LECCIONES_CASOS = ("f1a", "f1b", "f2a", "f2b", "f3a", "f3b", "f5a", "f6a")
 FALLBACK = ["AVGO", "GOOGL", "MELI", "MSFT", "LLY", "CRWD", "NU", "AXON", "META", "NVDA"]
 CUR = {"USD": "$", "EUR": "€"}
 O_NEIL = 25  # crecimiento mínimo de ventas que pide O'Neil (CAN SLIM)
@@ -100,7 +102,10 @@ def casos_de(tk):
         return {}
     q = q[sorted(q.columns, reverse=True)]  # columna 0 = trimestre más reciente
     cols = list(q.columns)
-    out = {"f1a": [], "f1b": [], "f2a": [], "f2b": [], "f3a": [], "f3b": [], "f5a": [], "f6a": []}
+    out = {k: [] for k in LECCIONES_CASOS}
+    # Fecha del último cierre del mercado (el script corre en sábado: el precio es el del viernes, no el de hoy).
+    t_mercado = info.get("regularMarketTime")
+    cierre = fecha(dt.datetime.fromtimestamp(t_mercado)) if isinstance(t_mercado, (int, float)) else HOY
     rev, eps = row(q, "Total Revenue"), row(q, "Diluted EPS")
     gp, op = row(q, "Gross Profit"), row(q, "Operating Income")
 
@@ -180,7 +185,7 @@ def casos_de(tk):
             nombre_per = "PER" if campo == "trailingEps" else "PER adelantado"
             out["f2a"].append({
                 "t": "num", "caso": caso,
-                "q": f"Precio de {nombre} el {HOY}: {es(p2, 2)} {sym}. {desc}: {es(e2, 2)} {sym}. "
+                "q": f"Precio de {nombre} al cierre del {cierre}: {es(p2, 2)} {sym}. {desc}: {es(e2, 2)} {sym}. "
                      f"¿{nombre_per}? Redondea a 1 decimal.",
                 "unit": "", "a": per, "tol": 0.06,
                 "why": f"{es(p2, 2)} ÷ {es(e2, 2)} = {es(per)} veces. {nota}",
@@ -195,7 +200,7 @@ def casos_de(tk):
         if 0 < mult < 100:
             out["f2b"].append({
                 "t": "num", "caso": caso,
-                "q": f"{nombre} el {HOY}: capitalización de {es(c, dc)} M{sym}, deuda de {es(d, dd)} M{sym}, "
+                "q": f"{nombre} al cierre del {cierre}: capitalización de {es(c, dc)} M{sym}, deuda de {es(d, dd)} M{sym}, "
                      f"caja de {es(k, dk)} M{sym} y EBITDA de los últimos 12 meses de {es(eb, de)} M{sym}. "
                      f"¿EV/EBITDA? Redondea a 1 decimal.",
                 "unit": "", "a": mult, "tol": 0.06,
@@ -214,7 +219,7 @@ def casos_de(tk):
             out["f2b"].append({
                 "t": "num", "caso": caso,
                 "q": f"{nombre}: flujo de caja libre de los 4 trimestres hasta el {fecha(fcf_hasta)}: {es(f, df)} M{sym}. "
-                     f"Capitalización el {HOY}: {es(c, dc)} M{sym}. ¿Rentabilidad por flujo de caja libre? Redondea a 1 decimal.",
+                     f"Capitalización al cierre del {cierre}: {es(c, dc)} M{sym}. ¿Rentabilidad por flujo de caja libre? Redondea a 1 decimal.",
                 "unit": "%", "a": y, "tol": 0.06,
                 "why": f"{es(f, df)} ÷ {es(c, dc)} = {es(y)} %: la caja que genera el negocio por cada 100 {sym} de capitalización.",
             })
@@ -228,27 +233,32 @@ def casos_de(tk):
         eh = eh.sort_index().dropna(subset=["epsActual", "epsEstimate"]).tail(4)
         # Solo BPA ajustado («normalized»): en el contable, Yahoo compara a veces el dato publicado con un consenso
         # que no es comparable y salen «sorpresas» enormes que enseñarían algo falso.
-        ajustado = [str(m).lower() == "normalized" for m in eh.get("methodology", [])]
-        tipo = "ajustado"
         filas = [(ix, round(float(r.epsActual), 2), round(float(r.epsEstimate), 2)) for ix, r in eh.iterrows()]
+        # Sin la columna methodology no hay forma de saber si es ajustado: entonces no se genera nada.
+        metodo = list(eh["methodology"]) if "methodology" in eh.columns else []
+        ajustado = len(metodo) == len(filas) and len(filas) > 0 and all(str(m).lower() == "normalized" for m in metodo)
+        ultimo_ajustado = len(metodo) == len(filas) and len(filas) > 0 and str(metodo[-1]).lower() == "normalized"
+    else:
+        filas, ajustado, ultimo_ajustado = [], False, False
+    if filas:
         ix, real, est = filas[-1]
-        if ajustado and ajustado[-1] and est > 0 and real != est:
+        if ultimo_ajustado and est > 0 and real != est:
             sp = round((real - est) / est * 100, 1)
             if 0 < abs(sp) < 100:
                 pide = "¿De cuánto es la sorpresa?" if sp > 0 else "¿Cuánto se queda por debajo del consenso?"
                 out["f5a"].append({
                     "t": "num", "caso": caso,
-                    "q": f"{nombre}, trimestre cerrado el {fecha(ix)}: el consenso esperaba un BPA {tipo} de {es(est, 2)} {sym} "
+                    "q": f"{nombre}, trimestre cerrado el {fecha(ix)}: el consenso esperaba un BPA ajustado de {es(est, 2)} {sym} "
                          f"y publicó {es(real, 2)} {sym}. {pide} Redondea a 1 decimal.",
                     "unit": "%", "a": abs(sp), "tol": 0.06,
                     "why": f"({es(real, 2)} − {es(est, 2)}) ÷ {es(est, 2)} = {es(sp)} %: "
                            + ("batió al consenso." if sp > 0 else "se quedó por debajo del consenso."),
                 })
-        if len(filas) == 4 and all(ajustado):
+        if len(filas) == 4 and ajustado:
             bates = sum(1 for _, r_, e_ in filas if r_ > e_)
             out["f5a"].append({
                 "t": "num", "caso": caso,
-                "q": f"Resultados de {nombre} en sus últimos 4 trimestres (BPA {tipo}, {sym}). ¿Cuántas veces batió al consenso?",
+                "q": f"Resultados de {nombre} en sus últimos 4 trimestres (BPA ajustado, {sym}). ¿Cuántas veces batió al consenso?",
                 "table": {"cols": ["Trimestre", "Consenso", "Publicado"],
                           "rows": [[fecha(i_), es(e_, 2), es(r_, 2)] for i_, r_, e_ in filas]},
                 "unit": "", "a": bates,
@@ -279,7 +289,7 @@ def casos_de(tk):
         if neta < 0:
             out["f3a"].append({
                 "t": "choice", "caso": caso,
-                "q": f"{nombre} el {HOY}: deuda de {es(d, dd)} M{sym} y caja de {es(k, dk)} M{sym}. ¿Qué tiene?",
+                "q": f"{nombre}, último balance publicado: deuda de {es(d, dd)} M{sym} y caja de {es(k, dk)} M{sym}. ¿Qué tiene?",
                 # Alterna la posición de la respuesta según el ticker (estable entre ejecuciones).
                 "opts": ["Deuda neta", "Caja neta"] if sum(map(ord, tk)) % 2 else ["Caja neta", "Deuda neta"],
                 "a": 1 if sum(map(ord, tk)) % 2 else 0,
@@ -292,7 +302,7 @@ def casos_de(tk):
             if 0 < r < 20:
                 out["f3a"].append({
                     "t": "num", "caso": caso,
-                    "q": f"{nombre} el {HOY}: deuda de {es(d, dd)} M{sym}, caja de {es(k, dk)} M{sym} y EBITDA de los últimos "
+                    "q": f"{nombre}, último balance publicado: deuda de {es(d, dd)} M{sym}, caja de {es(k, dk)} M{sym} y EBITDA de los últimos "
                          f"12 meses de {es(eb, de)} M{sym}. ¿Deuda neta/EBITDA? Redondea a 1 decimal.",
                     "unit": "", "a": r, "tol": 0.06,
                     "why": f"({es(d, dd)} − {es(k, dk)}) ÷ {es(eb, de)} = {es(neta, nd)} ÷ {es(eb, de)} = {es(r)} veces "
@@ -336,7 +346,7 @@ def casos_de(tk):
 
 
 def main():
-    ex = {"f1a": [], "f1b": [], "f2a": [], "f2b": [], "f3a": [], "f3b": [], "f5a": [], "f6a": []}
+    ex = {k: [] for k in LECCIONES_CASOS}
     fallos = []
     for tk in tickers():
         try:

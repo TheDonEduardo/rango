@@ -154,18 +154,20 @@ function lessonHTML(){
   return h+'</div>';
 }
 // Ordenar (order) y emparejar (match) comparten mecánica: el usuario toca elementos de la lista y llenan
-// los huecos en orden; run.sel = índices de los elementos elegidos. En match, cada hueco lleva su término.
+// el primer hueco libre; run.sel[k] = índice del elemento en el hueco k, o null si está vacío. Quitar uno
+// deja su hueco libre sin mover los demás (en match, cada hueco es de un término).
 const ordItems=ex=>ex.t==='match'?ex.pairs.map(p=>p[1]):ex.items;
 function ordHTML(ex){
-  const items=ordItems(ex),labels=ex.t==='match'?ex.pairs.map(p=>p[0]):null,sel=run.sel||[],n=items.length;
+  const items=ordItems(ex),labels=ex.t==='match'?ex.pairs.map(p=>p[0]):null,n=items.length,sel=run.sel||Array(n).fill(null);
+  const next=sel.indexOf(null);
   if(!run.perm.has(ex)){let p;do{p=shuffle(items.map((_,i)=>i))}while(p.every((v,i)=>v===i));run.perm.set(ex,p)}
   let h=`<ol class="ord-ans" aria-label="${labels?'Tus parejas':'Tu orden'}">`;
   for(let k=0;k<n;k++){
     const mark=labels?`<span class="mt">${tx(labels[k])}</span>`:`<span class="n">${k+1}</span>`;
-    if(k<sel.length){
+    if(sel[k]!=null){
       const c=run.checked?(sel[k]===k?'good':'bad'):'filled';
       h+=`<li>${labels?mark:''}<button class="opt ${c}" data-act="ounpick" data-k="${k}"${run.checked?' disabled':` aria-label="Quitar: ${esc(items[sel[k]])}"`}>${labels?'':mark}${tx(items[sel[k]])}</button></li>`;
-    }else h+=`<li>${labels?mark:''}<div class="slot${k===sel.length?' next':''}" aria-hidden="true">${labels?(k===sel.length?'Toca su descripción':''):mark}</div></li>`;
+    }else h+=`<li>${labels?mark:''}<div class="slot${k===next?' next':''}" aria-hidden="true">${labels?(k===next?'Toca su descripción':''):mark}</div></li>`;
   }
   h+='</ol>';
   if(!run.checked){
@@ -176,7 +178,7 @@ function ordHTML(ex){
 }
 function canCheck(ex){
   if(ex.t==='num')return run.val.trim()!=='';
-  if(ex.t==='order'||ex.t==='match')return !!run.sel&&run.sel.length===ordItems(ex).length;
+  if(ex.t==='order'||ex.t==='match')return !!run.sel&&run.sel.length===ordItems(ex).length&&run.sel.every(v=>v!=null);
   if(ex.t==='plan')return true;
   return run.sel!==null;
 }
@@ -314,8 +316,11 @@ $app.addEventListener('click',e=>{
   }
   else if(a==='pick'&&!run.checked)pickChoice(+b.dataset.i);
   else if(a==='pstep'&&!run.checked){const g=$app.querySelector(`.pl[data-id="${b.dataset.id}"]`);if(g)planSet(g,run.sel[b.dataset.id]+(+b.dataset.d)*planStep(run.queue[0]))}
-  else if(a==='opick'&&!run.checked){run.sel=(run.sel||[]).concat(+b.dataset.i);updateOrd()}
-  else if(a==='ounpick'&&!run.checked){run.sel.splice(+b.dataset.k,1);updateOrd()}
+  else if(a==='opick'&&!run.checked){
+    const n=ordItems(run.queue[0]).length;if(!run.sel)run.sel=Array(n).fill(null);
+    const k=run.sel.indexOf(null);if(k>=0){run.sel[k]=+b.dataset.i;updateOrd()}
+  }
+  else if(a==='ounpick'&&!run.checked){run.sel[+b.dataset.k]=null;updateOrd()}
   else if(a==='check'&&!b.disabled)check();
   else if(a==='next')next();
   else if(a==='quit'||a==='home'){view='home';goCur=(a==='home');render()}
@@ -346,6 +351,8 @@ document.addEventListener('keydown',e=>{
     const k={ArrowUp:1,ArrowRight:1,ArrowDown:-1,ArrowLeft:-1,PageUp:10,PageDown:-10}[e.key];
     if(k){e.preventDefault();planSet(pg,run.sel[pg.dataset.id]+k*planStep(run.queue[0]));return}
   }
+  // Enter mantenido (auto-repetición) no debe comprobar y saltar la explicación de un golpe.
+  if(e.key==='Enter'&&e.repeat)return;
   if(e.key==='Enter'&&(!t.closest||!t.closest('button'))){
     if(run.checked){e.preventDefault();next()}
     else if(t.id==='numIn'&&run.val.trim()!==''){e.preventDefault();check()}
