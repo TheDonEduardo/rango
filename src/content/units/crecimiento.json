@@ -1,0 +1,175 @@
+{
+  "n": 1,
+  "id": "crecimiento",
+  "track": "fundamental",
+  "title": "Crecimiento del beneficio",
+  "blurb": "Qué comprar: ventas y beneficios que aceleran.",
+  "lessons": [
+    {
+      "id": "f1a",
+      "title": "Crecimiento y aceleración",
+      "ex": [
+        {
+          "id": "f1a-1",
+          "t": "num",
+          "q": "BPA del 2T 2025: 0,80 $. BPA del 2T 2026: 1,10 $. ¿Crecimiento interanual del BPA?",
+          "unit": "%",
+          "a": 37.5,
+          "tol": 0.05,
+          "why": "1,10 ÷ 0,80 − 1 = 37,5 %. Se compara con el mismo trimestre del año anterior para eliminar la estacionalidad."
+        },
+        {
+          "id": "f1a-2",
+          "t": "choice",
+          "q": "Crecimiento interanual del BPA en los tres últimos trimestres. ¿Qué empresa acelera?",
+          "table": {
+            "cols": [
+              "Empresa",
+              "1T",
+              "2T",
+              "3T"
+            ],
+            "rows": [
+              [
+                "A",
+                "40 %",
+                "30 %",
+                "22 %"
+              ],
+              [
+                "B",
+                "12 %",
+                "25 %",
+                "41 %"
+              ],
+              [
+                "C",
+                "35 %",
+                "36 %",
+                "34 %"
+              ]
+            ]
+          },
+          "opts": [
+            "A",
+            "B",
+            "C",
+            "Ninguna"
+          ],
+          "a": 1,
+          "why": "B pasa del 12 % al 25 % y al 41 %: cada trimestre crece más rápido que el anterior. A crece más hoy, pero desacelera; O'Neil y Minervini buscan la aceleración, que suele preceder a las grandes subidas."
+        },
+        {
+          "id": "f1a-3",
+          "t": "num",
+          "q": "Ventas trimestrales en millones de $. ¿Crecimiento interanual del 3T 2026?",
+          "table": {
+            "cols": [
+              "Trimestre",
+              "2025",
+              "2026"
+            ],
+            "rows": [
+              [
+                "1T",
+                "200",
+                "226"
+              ],
+              [
+                "2T",
+                "210",
+                "248"
+              ],
+              [
+                "3T",
+                "220",
+                "275"
+              ]
+            ],
+            "note": "Ventas en millones de $"
+          },
+          "unit": "%",
+          "a": 25,
+          "why": "275 ÷ 220 − 1 = 25 %. El 1T creció un 13 % (226 ÷ 200) y el 2T un 18,1 % (248 ÷ 210): las ventas aceleran trimestre a trimestre."
+        },
+        {
+          "id": "f1a-4",
+          "t": "choice",
+          "q": "El BPA crece un 40 % interanual, pero las ventas solo un 3 %. ¿Qué compruebas primero?",
+          "opts": [
+            "Nada: el BPA es lo único que importa",
+            "El PER medio de su sector",
+            "Si paga un dividendo creciente",
+            "De dónde sale el crecimiento del BPA"
+          ],
+          "a": 3,
+          "why": "Sin ventas, el BPA solo crece por márgenes, recompras o partidas puntuales, y eso tiene límite. O'Neil pide que las ventas acompañen con al menos un 25 % de crecimiento."
+        }
+      ]
+    },
+    {
+      "id": "f1b",
+      "title": "Calidad del beneficio",
+      "ex": [
+        {
+          "id": "f1b-1",
+          "t": "num",
+          "q": "Ventas del trimestre: 900 M$. Coste de las ventas: 360 M$. ¿Margen bruto?",
+          "unit": "%",
+          "a": 60,
+          "why": "(900 − 360) ÷ 900 = 540 ÷ 900 = 60 %. Es lo que queda de cada dólar vendido para pagar gastos operativos y generar beneficio."
+        },
+        {
+          "id": "f1b-2",
+          "t": "choice",
+          "q": "Las ventas crecen un 25 % y el margen operativo evoluciona así. ¿Qué indica?",
+          "table": {
+            "cols": [
+              "",
+              "1T",
+              "2T",
+              "3T"
+            ],
+            "rows": [
+              [
+                "Margen operativo",
+                "14 %",
+                "16 %",
+                "19 %"
+              ]
+            ]
+          },
+          "opts": [
+            "Apalancamiento operativo",
+            "Deterioro del negocio",
+            "Que recompra acciones propias",
+            "Que suben sus costes fijos"
+          ],
+          "a": 0,
+          "why": "Los costes fijos se reparten entre más ventas y cada dólar adicional deja más margen. Minervini busca que BPA, ventas y márgenes aceleren a la vez durante tres trimestres."
+        },
+        {
+          "id": "f1b-3",
+          "t": "num",
+          "q": "Beneficio neto: 150 M$, que incluye una plusvalía puntual de 60 M$ (neta de impuestos) por vender un activo. Hay 100 M de acciones. ¿BPA recurrente?",
+          "unit": "$",
+          "a": 0.9,
+          "why": "(150 − 60) ÷ 100 = 0,90 $ por acción, frente a 1,50 $ publicados. Valora siempre el BPA sin partidas puntuales: el mercado lo hará."
+        },
+        {
+          "id": "f1b-4",
+          "t": "choice",
+          "q": "La empresa bate en un 15 % el BPA esperado del trimestre, pero rebaja su previsión para el año. ¿Qué pesa más en el precio?",
+          "opts": [
+            "La sorpresa positiva del trimestre",
+            "La rebaja de las previsiones del año",
+            "Ninguna: se compensan entre sí",
+            "El volumen de la sesión"
+          ],
+          "a": 1,
+          "why": "El precio descuenta beneficios futuros, y una rebaja de previsiones obliga a los analistas a recortar estimaciones. Una sorpresa positiva con previsión rebajada suele acabar en gap bajista."
+        }
+      ]
+    }
+  ]
+}

@@ -13,7 +13,7 @@ const PRECACHE = [
   'src/icons.js',
   'src/util.js',
   'src/styles.css',
-  'src/content/units.json',
+  'src/content/units/index.json',
   'src/content/casos.json',
   'src/content/semana.json',
   'icons/icon-192.png',
@@ -21,6 +21,12 @@ const PRECACHE = [
   'icons/maskable-512.png',
   'icons/apple-touch-icon.png'
 ];
+
+// El contenido va en un archivo por unidad: se guardan todas las del índice para poder usar la app sin conexión.
+async function guardarUnidades(c) {
+  const ids = await (await fetch('src/content/units/index.json', {cache: 'reload'})).json();
+  await c.addAll(ids.map(id => new Request(`src/content/units/${id}.json`, {cache: 'reload'})));
+}
 
 // Guarda la hoja de Google Fonts y todas sus fuentes para que la tipografía funcione sin conexión
 // aunque esa pantalla no se haya visto nunca. Si falla (sin red), la app sigue funcionando con la letra del sistema.
@@ -38,7 +44,8 @@ async function guardarFuentes(c) {
 self.addEventListener('install', e => {
   // cache: 'reload' salta la caché HTTP del navegador: la precarga guarda siempre la versión del servidor.
   e.waitUntil(caches.open(CACHE)
-    .then(c => c.addAll(PRECACHE.map(u => new Request(u, {cache: 'reload'}))).then(() => guardarFuentes(c)))
+    .then(c => c.addAll(PRECACHE.map(u => new Request(u, {cache: 'reload'})))
+      .then(() => guardarUnidades(c)).then(() => guardarFuentes(c)))
     .then(() => self.skipWaiting()));
 });
 

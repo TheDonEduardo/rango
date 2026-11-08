@@ -1,0 +1,116 @@
+{
+  "n": 16,
+  "id": "revision",
+  "track": "pasiva",
+  "title": "Revisar la cartera",
+  "blurb": "El mantenimiento anual: qué mirar, qué ajustar y qué no tocar.",
+  "lessons": [
+    {
+      "id": "rv1",
+      "title": "La revisión anual",
+      "ex": [
+        {
+          "id": "rv1-1",
+          "t": "choice",
+          "q": "¿Cada cuánto tiempo conviene revisar una cartera indexada?",
+          "opts": [
+            "Una vez al año, con una lista fija",
+            "Cada día al cierre",
+            "Cada vez que salen noticias",
+            "Nunca, ni para rebalancear"
+          ],
+          "a": 0,
+          "why": "Una vez al año basta para rebalancear y revisar costes y objetivos; mirarla a diario solo aumenta la tentación de tocarla."
+        },
+        {
+          "id": "rv1-2",
+          "t": "match",
+          "q": "Empareja cada punto de la revisión con lo que compruebas.",
+          "pairs": [
+            [
+              "Desviación del reparto",
+              "Si algún activo se ha alejado de su peso"
+            ],
+            [
+              "Costes",
+              "Si hay un fondo equivalente más barato"
+            ],
+            [
+              "Objetivo y plazo",
+              "Si toca bajar riesgo porque la meta se acerca"
+            ],
+            [
+              "Aportación",
+              "Si puedes subirla porque ganas más"
+            ]
+          ],
+          "why": "Son cuatro preguntas que no dependen de lo que haya hecho la bolsa este año."
+        },
+        {
+          "id": "rv1-3",
+          "t": "num",
+          "q": "Tu reparto objetivo es 70/30 y hoy tienes 78.000 € en acciones y 22.000 € en bonos. ¿Cuántos puntos se ha desviado la parte de acciones?",
+          "unit": "",
+          "a": 8,
+          "why": "78.000 / 100.000 = 78 %: 78 − 70 = 8 puntos por encima."
+        },
+        {
+          "id": "rv1-4",
+          "t": "num",
+          "q": "Mismo caso: ¿cuántos miles de euros de acciones pasas a bonos para volver al 70/30?",
+          "unit": "",
+          "a": 8,
+          "why": "El 70 % de 100.000 € son 70.000 €: pasas 78.000 − 70.000 = 8.000 € a bonos."
+        }
+      ]
+    },
+    {
+      "id": "rv2",
+      "title": "Ajustes con el tiempo",
+      "ex": [
+        {
+          "id": "rv2-1",
+          "t": "num",
+          "q": "Regla orientativa: % de renta fija = edad − 20. ¿Cuánta renta fija tendría alguien de 50 años?",
+          "unit": "%",
+          "a": 30,
+          "why": "50 − 20 = 30 %: el resto, un 70 %, en acciones. Es una guía, no una ley."
+        },
+        {
+          "id": "rv2-2",
+          "t": "choice",
+          "q": "Encuentras un ETF del mismo índice con un 0,10 % menos de comisión, pero tienes plusvalías en el actual. ¿Qué haces?",
+          "opts": [
+            "Calcular antes lo que te costará tributar",
+            "Venderlo ya: siempre compensa el cambio",
+            "No mirar nunca otros fondos",
+            "Comprar los dos a medias"
+          ],
+          "a": 0,
+          "why": "Vender un ETF tributa la plusvalía; en fondos de inversión el traspaso no tributa. Compara el impuesto con el ahorro anual."
+        },
+        {
+          "id": "rv2-3",
+          "t": "num",
+          "q": "Con 50.000 € invertidos, el cambio ahorra un 0,10 % al año, pero vender tributa 950 € hoy. ¿Cuántos años tardas en recuperarlo?",
+          "unit": "",
+          "a": 19,
+          "why": "50.000 × 0,10 % = 50 € al año; 950 / 50 = 19 años. Mejor dirigir solo las aportaciones nuevas al fondo barato."
+        },
+        {
+          "id": "rv2-4",
+          "t": "choice",
+          "q": "La bolsa cae un 25 % y tu plan dice 70/30. ¿Qué haces en la revisión?",
+          "opts": [
+            "Rebalancear: comprar acciones hasta el 70 %",
+            "Vender acciones para evitar más caídas",
+            "Parar las aportaciones",
+            "Cambiar a 30/70 hasta que pase"
+          ],
+          "a": 0,
+          "why": "Tras la caída las acciones pesan menos del 70 %: rebalancear te obliga a comprar barato, que es justo lo que cuesta hacer."
+        }
+      ]
+    }
+  ]
+}

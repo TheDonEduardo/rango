@@ -1,0 +1,117 @@
+{
+  "n": 10,
+  "id": "guia",
+  "track": "fundamental",
+  "title": "Guía y expectativas",
+  "blurb": "Lo que la empresa promete y lo que los analistas esperan.",
+  "lessons": [
+    {
+      "id": "f10a",
+      "title": "Leer la guía",
+      "ex": [
+        {
+          "id": "f10a-1",
+          "t": "num",
+          "q": "La empresa prevé ventas de 1.180 a 1.220 M$ el próximo trimestre y el consenso espera 1.230 M$. ¿Cuánto queda el punto medio de la guía por debajo del consenso? Redondea a 2 decimales.",
+          "unit": "%",
+          "a": 2.44,
+          "why": "Punto medio: (1.180 + 1.220) ÷ 2 = 1.200 M$. (1.230 − 1.200) ÷ 1.230 = 2,44 % por debajo: aunque el trimestre haya sido bueno, esta guía suele castigar el precio.",
+          "tol": 0.02
+        },
+        {
+          "id": "f10a-2",
+          "t": "choice",
+          "q": "Bate al consenso en el trimestre y sube su previsión del año por encima de lo esperado. ¿Cómo se llama y qué suele provocar?",
+          "opts": [
+            "«Beat and raise»: revisiones al alza",
+            "«Miss»: recortes de previsiones",
+            "Un ajuste contable sin efecto",
+            "Una ampliación de capital"
+          ],
+          "a": 0,
+          "why": "Es la combinación que más mueve el precio: el pasado y el futuro mejoran a la vez, y los analistas tienen que subir sus estimaciones."
+        },
+        {
+          "id": "f10a-3",
+          "t": "num",
+          "q": "Las ventas del año pasado fueron 800 M$ y la guía para este año es de 920 M$. ¿Qué crecimiento implica?",
+          "unit": "%",
+          "a": 15,
+          "why": "920 ÷ 800 − 1 = 15 %. Compáralo con el crecimiento de años anteriores: una guía que desacelera pesa aunque el número parezca alto."
+        },
+        {
+          "id": "f10a-4",
+          "t": "choice",
+          "q": "Una empresa lleva 8 trimestres dando una guía que luego supera siempre en un 3-5 %. ¿Cómo lees su nueva guía?",
+          "opts": [
+            "Como exagerada: hay que restarle un 5 %",
+            "Como irrelevante para el precio",
+            "Como un suelo prudente",
+            "Como una garantía de resultados"
+          ],
+          "a": 2,
+          "why": "Muchas empresas guían por debajo de lo que esperan para poder batir. Con ese historial, el mercado ya descuenta que superará su guía: lo que sorprendería es que no lo hiciera."
+        }
+      ]
+    },
+    {
+      "id": "f10b",
+      "title": "Revisiones de estimaciones",
+      "ex": [
+        {
+          "id": "f10b-1",
+          "t": "num",
+          "q": "Hace tres meses el consenso de BPA para el año era de 4,00 $ y hoy es de 4,40 $. ¿Cuánto se ha revisado al alza?",
+          "unit": "%",
+          "a": 10,
+          "why": "4,40 ÷ 4,00 − 1 = 10 %. Las revisiones al alza seguidas son una de las señales que más acompañan a las acciones líderes."
+        },
+        {
+          "id": "f10b-2",
+          "t": "num",
+          "q": "La acción sigue cotizando a 88 $. ¿Cuál es su PER adelantado con la nueva estimación de 4,40 $?",
+          "unit": "",
+          "a": 20,
+          "why": "88 ÷ 4,40 = 20, frente a 88 ÷ 4,00 = 22 hace tres meses. Sin moverse el precio, la acción se ha abaratado."
+        },
+        {
+          "id": "f10b-3",
+          "t": "choice",
+          "q": "Las estimaciones de beneficio suben un 10 % y el precio no se mueve. ¿Qué ha pasado con la valoración?",
+          "opts": [
+            "Se ha abaratado",
+            "Se ha encarecido",
+            "No ha cambiado",
+            "Ya no se puede valorar"
+          ],
+          "a": 0,
+          "why": "Mismo precio con más beneficio esperado: el PER adelantado baja. Si las revisiones son fiables, el precio suele acabar ajustándose."
+        },
+        {
+          "id": "f10b-4",
+          "t": "match",
+          "q": "Empareja cada término de las estimaciones con su significado.",
+          "pairs": [
+            [
+              "Revisión al alza",
+              "Los analistas suben su estimación de beneficio"
+            ],
+            [
+              "Guía conservadora",
+              "Previsión que la empresa suele superar"
+            ],
+            [
+              "Consenso",
+              "Media de las estimaciones de los analistas"
+            ],
+            [
+              "Sorpresa",
+              "Diferencia entre lo publicado y lo esperado"
+            ]
+          ],
+          "why": "El precio se mueve con lo que cambia frente a lo esperado: por eso importan tanto la guía, el consenso y sus revisiones."
+        }
+      ]
+    }
+  ]
+}

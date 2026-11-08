@@ -1,0 +1,116 @@
+{
+  "n": 12,
+  "id": "alertas",
+  "track": "fundamental",
+  "title": "Señales de alerta contables",
+  "blurb": "Cuando el beneficio dice una cosa y la caja otra.",
+  "lessons": [
+    {
+      "id": "fa1",
+      "title": "Cobros, inventario y caja",
+      "ex": [
+        {
+          "id": "fa1-1",
+          "t": "num",
+          "q": "Ventas anuales: 730 M$. Cuentas por cobrar: 120 M$. ¿Cuántos días tarda de media en cobrar (cobros ÷ ventas × 365)?",
+          "unit": "",
+          "a": 60,
+          "why": "120 ÷ 730 × 365 = 60 días. El dato importa por su evolución: compáralo con años anteriores y con la competencia."
+        },
+        {
+          "id": "fa1-2",
+          "t": "num",
+          "q": "Un año después, las ventas son 803 M$ (+10 %) y las cuentas por cobrar, 176 M$. ¿Cuántos días tarda ahora en cobrar?",
+          "unit": "",
+          "a": 80,
+          "why": "176 ÷ 803 × 365 = 80 días, frente a 60. Si los cobros crecen mucho más que las ventas, puede estar vendiendo con plazos más largos para inflar ingresos."
+        },
+        {
+          "id": "fa1-3",
+          "t": "choice",
+          "q": "El inventario crece un 40 % y las ventas, un 5 %. ¿Qué puede indicar?",
+          "opts": [
+            "Que el negocio va mejor que nunca",
+            "Que bajará su deuda este año",
+            "Producto que no se vende: posible ajuste",
+            "Nada relevante para el inversor"
+          ],
+          "a": 2,
+          "why": "Si fabrica mucho más de lo que vende, tarde o temprano tendrá que bajar precios o anotar pérdidas por ese inventario, y el margen lo sufrirá."
+        },
+        {
+          "id": "fa1-4",
+          "t": "num",
+          "q": "Beneficio neto anual: 300 M$. Flujo de caja operativo: 90 M$. ¿Qué porcentaje del beneficio llega a caja operativa?",
+          "unit": "%",
+          "a": 30,
+          "why": "90 ÷ 300 = 30 %. Si se repite varios años, el beneficio contable no se está convirtiendo en dinero: revisa cobros, inventarios y ajustes."
+        }
+      ]
+    },
+    {
+      "id": "fa2",
+      "title": "Ajustes y otras señales",
+      "ex": [
+        {
+          "id": "fa2-1",
+          "t": "num",
+          "q": "El BPA ajustado es de 2,00 $ y excluye 0,50 $ por acción de pagos en acciones a empleados. ¿Qué porcentaje del BPA ajustado supone ese coste?",
+          "unit": "%",
+          "a": 25,
+          "why": "0,50 ÷ 2,00 = 25 %. Pagar con acciones es un coste real (diluye al accionista) aunque el BPA ajustado lo excluya."
+        },
+        {
+          "id": "fa2-2",
+          "t": "choice",
+          "q": "Tras muchas compras de empresas, el fondo de comercio supone el 60 % de los activos. ¿Qué riesgo tiene?",
+          "opts": [
+            "Deterioros que hundan el beneficio",
+            "Ninguno: es dinero en caja",
+            "Que tenga que subir el dividendo",
+            "Que le bajen los impuestos"
+          ],
+          "a": 0,
+          "why": "El fondo de comercio es lo que pagó de más por las empresas compradas. Si no rinden lo esperado, se anota un deterioro de golpe y el beneficio se hunde ese año."
+        },
+        {
+          "id": "fa2-3",
+          "t": "match",
+          "q": "Empareja cada señal de alerta con lo que puede esconder.",
+          "pairs": [
+            [
+              "Cambio de auditor sin explicación",
+              "Desacuerdo sobre las cuentas"
+            ],
+            [
+              "Ajustes «extraordinarios» todos los años",
+              "Costes recurrentes presentados como puntuales"
+            ],
+            [
+              "Ventas disparadas al cierre del trimestre",
+              "Adelantar ingresos para cumplir objetivos"
+            ],
+            [
+              "Retraso en publicar resultados",
+              "Problemas para cerrar las cuentas"
+            ]
+          ],
+          "why": "Ninguna demuestra un fraude por sí sola, pero cada una merece una explicación antes de invertir."
+        },
+        {
+          "id": "fa2-4",
+          "t": "choice",
+          "q": "Detectas dos señales de alerta en una empresa que encaja en tu tesis. ¿Qué haces?",
+          "opts": [
+            "Comprar más: nadie lo ha visto",
+            "Ignorarlas si el gráfico es bueno",
+            "Investigar antes, o reducir el tamaño",
+            "Esperar a que lo publique la prensa"
+          ],
+          "a": 2,
+          "why": "Una tesis debe sobrevivir a las cuentas. Si no encuentras una explicación convincente, el riesgo de un desplome no compensa: menos tamaño o ninguna posición."
+        }
+      ]
+    }
+  ]
+}

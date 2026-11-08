@@ -15,7 +15,19 @@ def('localStorage', {getItem: k => store[k] ?? null, setItem: (k, v) => { store[
 def('fetch', async u => ({json: async () => JSON.parse(fs.readFileSync(fileURLToPath(u), 'utf8'))}));
 
 const errs = [];
-const units = JSON.parse(fs.readFileSync(path.join(root, 'src/content/units.json'), 'utf8'));
+const udir = path.join(root, 'src/content/units');
+const indice = JSON.parse(fs.readFileSync(path.join(udir, 'index.json'), 'utf8'));
+const units = indice.map(id => JSON.parse(fs.readFileSync(path.join(udir, id + '.json'), 'utf8')));
+// Cada archivo de unidad está en el índice y se llama como su unidad.
+for (const f of fs.readdirSync(udir).filter(f => f !== 'index.json')) if (!indice.includes(f.replace(/\.json$/, ''))) errs.push('unidad fuera del índice: ' + f);
+units.forEach((u, i) => { if (u.id !== indice[i]) errs.push(`el archivo ${indice[i]}.json contiene la unidad ${u.id}`); });
+// Ids de ejercicio: presentes, únicos y con el formato «lección-n».
+const exIds = new Set();
+for (const u of units) for (const l of u.lessons || []) for (const ex of l.ex) {
+  if (!ex.id || !ex.id.startsWith(l.id + '-') || !/^\d+$/.test(ex.id.slice(l.id.length + 1))) errs.push(`${l.id}: id de ejercicio ausente o mal formado: ${ex.id}`);
+  if (exIds.has(ex.id)) errs.push('id de ejercicio repetido: ' + ex.id);
+  exIds.add(ex.id);
+}
 const casosPath = path.join(root, 'src/content/casos.json');
 const casos = fs.existsSync(casosPath) ? JSON.parse(fs.readFileSync(casosPath, 'utf8')) : null;
 
@@ -104,12 +116,8 @@ if (!T.homeHTML().includes('data-act="legal"')) errs.push('falta el enlace al av
 if (!T.homeHTML().includes('Rango')) errs.push('home no renderiza');
 // Test de nivel: se ofrece a un usuario nuevo y sus preguntas existen (dos por unidad obligatoria de Básico).
 if (!T.homeHTML().includes('data-act="test"')) errs.push('no se ofrece el test de nivel a un usuario nuevo');
-const lecDe = uid => uid.split('#')[0];
-for (const uid of T.PLACEMENT) {
-  const [lid, i] = uid.split('#');
-  const l = units.flatMap(u => u.lessons || []).find(x => x.id === lid);
-  if (!l || !l.ex[+i]) errs.push('el test de nivel usa un ejercicio inexistente: ' + uid);
-}
+const lecDe = id => id.slice(0, id.lastIndexOf('-'));
+for (const id of T.PLACEMENT) if (!exIds.has(id)) errs.push('el test de nivel usa un ejercicio inexistente: ' + id);
 for (const u of units.filter(u => u.track === 'basico' && u.gate !== false && u.lessons))
   if (T.PLACEMENT.filter(x => u.lessons.some(l => l.id === lecDe(x))).length !== 2) errs.push('el test de nivel no tiene dos preguntas de ' + u.id);
 // Usuario nuevo: empieza en Básico y las otras rutas están bloqueadas hasta completarlo o saltarlo.
@@ -163,8 +171,16 @@ const enRepaso = T.getRun().queue.slice();
 if (enRepaso.length !== 10) errs.push('el repaso del día no limita a 10 ejercicios');
 let g = 0;
 while (g++ < 40 && !app.innerHTML.includes('Repaso completado')) { const ex = T.getRun().queue[0]; give(ex, right(ex)); T.check(); T.next(); }
-for (const ex of enRepaso) { const r = srs[ex.uid]; if (!r || r.step !== 1 || r.due <= dk(hoy)) errs.push('repaso espaciado no avanza ' + ex.uid); }
+for (const ex of enRepaso) { const r = srs[ex.id]; if (!r || r.step !== 1 || r.due <= dk(hoy)) errs.push('repaso espaciado no avanza ' + ex.id); }
 if (T.getState().done.srs) errs.push('el repaso del día se guarda como lección completada');
+
+// Migración del estado guardado: la versión 1 (repaso por posición) pasa a ids estables.
+{
+  const m = T.migrar({xp: 50, srs: {'ba1#0': {step: 1, due: '2026-01-01'}, 'r2#4': {step: 0, due: '2026-01-02'}}});
+  if (m.v !== 2 || !m.srs['ba1-1'] || m.srs['ba1-1'].step !== 1 || !m.srs['r2-5'] || m.srs['ba1#0'] || m.xp !== 50) errs.push('la migración del estado 1 → 2 falla: ' + JSON.stringify(m));
+  if (Object.keys(m.srs).some(k => !exIds.has(k))) errs.push('la migración deja ids de repaso inexistentes');
+  if (T.migrar({v: 2, srs: {'ba1-1': {}}}).srs['ba1-1'] === undefined) errs.push('la migración toca un estado ya actualizado');
+}
 
 // 6) Operación de la semana: reglas de la simulación y vistas.
 const plan = {entry: 10, stop: 9, target: 12};
@@ -254,7 +270,7 @@ hacerTest(() => true);
 const obligatorias = T.FLAT.filter(l => l.unit.track === 'basico' && l.unit.gate !== false);
 if (!st.skipBasics || !obligatorias.every(l => st.done[l.id])) errs.push('test perfecto: no abre las rutas o no marca Básico');
 if (T.FLAT.some(l => l.unit.gate === false && st.done[l.id])) errs.push('el test marca unidades complementarias');
-hacerTest(ex => ['ba1', 'ba2'].includes(lecDe(ex.uid)));
+hacerTest(ex => ['ba1', 'ba2'].includes(lecDe(ex.id)));
 const marcadas = Object.keys(st.done);
 if (st.skipBasics || !marcadas.length || marcadas.some(id => !T.FLAT.find(l => l.id === id && l.unit.id === 'acciones'))) errs.push('test parcial: marca de más o abre las rutas: ' + marcadas.join(','));
 if (st.placement?.score !== 2) errs.push('test parcial: puntuación mal guardada');

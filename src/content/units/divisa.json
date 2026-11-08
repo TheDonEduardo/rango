@@ -1,0 +1,116 @@
+{
+  "n": 15,
+  "id": "divisa",
+  "track": "pasiva",
+  "title": "La divisa en la cartera",
+  "blurb": "Cuándo te afecta el dólar y cuándo merece la pena cubrirlo.",
+  "lessons": [
+    {
+      "id": "dv1",
+      "title": "Riesgo de divisa",
+      "ex": [
+        {
+          "id": "dv1-1",
+          "t": "num",
+          "q": "Un ETF de EE. UU. sube un 10 % en dólares, pero el dólar cae un 5 % frente al euro. ¿Cuánto ganas en euros?",
+          "unit": "%",
+          "a": 4.5,
+          "why": "1,10 × 0,95 = 1,045: un 4,5 % en euros."
+        },
+        {
+          "id": "dv1-2",
+          "t": "num",
+          "q": "Ahora el ETF sube un 10 % en dólares y el dólar sube un 5 % frente al euro. ¿Cuánto ganas en euros?",
+          "unit": "%",
+          "a": 15.5,
+          "why": "1,10 × 1,05 = 1,155: un 15,5 % en euros."
+        },
+        {
+          "id": "dv1-3",
+          "t": "choice",
+          "q": "Un ETF cotiza en euros pero compra acciones de EE. UU. ¿Tienes riesgo de dólar?",
+          "opts": [
+            "Sí, el de las acciones que tiene dentro",
+            "No, porque el ETF cotiza en euros",
+            "Solo si lo vendes en EE. UU.",
+            "Solo en años de elecciones"
+          ],
+          "a": 0,
+          "why": "Lo que cuenta es la divisa de los activos: si el dólar cae un 10 %, el ETF cae en euros aunque cotice en euros."
+        },
+        {
+          "id": "dv1-4",
+          "t": "match",
+          "q": "Empareja cada término de divisa con su significado.",
+          "pairs": [
+            [
+              "Clase cubierta (hedged)",
+              "Neutraliza casi todo el efecto de la divisa"
+            ],
+            [
+              "Clase no cubierta",
+              "Sube y baja también con la divisa"
+            ],
+            [
+              "Coste de cobertura",
+              "Depende de la diferencia de tipos de interés"
+            ],
+            [
+              "Divisa de cotización",
+              "Moneda en la que compras el ETF en bolsa"
+            ]
+          ],
+          "why": "Cubrir el dólar cuesta aproximadamente la diferencia entre los tipos de EE. UU. y los del euro, a veces más de 1 punto al año."
+        }
+      ]
+    },
+    {
+      "id": "dv2",
+      "title": "¿Cubrir o no?",
+      "ex": [
+        {
+          "id": "dv2-1",
+          "t": "choice",
+          "q": "En la parte de acciones a largo plazo, ¿qué suelen hacer muchos inversores europeos?",
+          "opts": [
+            "No cubrir: a 20 años la divisa pesa poco",
+            "Cubrir siempre el 100 %",
+            "Cambiar de clase según el dólar",
+            "Vender cuando el dólar cae"
+          ],
+          "a": 0,
+          "why": "Las acciones se mueven un 15-20 % al año y las divisas tienden a compensarse a largo plazo; cubrir añade coste sin reducir mucho el riesgo."
+        },
+        {
+          "id": "dv2-2",
+          "t": "choice",
+          "q": "¿Qué se suele hacer con la renta fija global en una cartera en euros?",
+          "opts": [
+            "Cubrirla: la divisa movería más que el bono",
+            "No cubrirla nunca",
+            "La divisa no afecta a los bonos",
+            "Comprar solo bonos emitidos en dólares"
+          ],
+          "a": 0,
+          "why": "Un bono puede moverse un 3-5 % al año y el dólar, un 10 %: sin cubrir, la parte estable de la cartera deja de serlo."
+        },
+        {
+          "id": "dv2-3",
+          "t": "num",
+          "q": "Un bono en dólares rinde un 4 % y el dólar cae un 8 % frente al euro. ¿Cuánto pierdes en euros? (dos decimales)",
+          "unit": "%",
+          "a": 4.32,
+          "why": "1,04 × 0,92 = 0,9568: pierdes un 4,32 % pese a que el bono ganó un 4 %."
+        },
+        {
+          "id": "dv2-4",
+          "t": "num",
+          "q": "Cartera: 60 % acciones globales, de las que un 70 % está en dólares, y 40 % renta fija cubierta. ¿Qué porcentaje de la cartera está expuesto al dólar?",
+          "unit": "%",
+          "a": 42,
+          "why": "0,60 × 0,70 = 0,42: un 42 % de la cartera; la renta fija cubierta no suma."
+        }
+      ]
+    }
+  ]
+}

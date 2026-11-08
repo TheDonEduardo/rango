@@ -1,0 +1,105 @@
+{
+  "n": 1,
+  "id": "acciones",
+  "track": "basico",
+  "title": "Acciones y órdenes",
+  "blurb": "Qué compras, cómo se compra y cuánto cuesta.",
+  "lessons": [
+    {
+      "id": "ba1",
+      "title": "Qué es una acción",
+      "ex": [
+        {
+          "id": "ba1-1",
+          "t": "choice",
+          "q": "Al comprar una acción de una empresa, ¿qué tienes?",
+          "opts": [
+            "Un préstamo a la empresa, que te lo devolverá con intereses",
+            "Una parte de la propiedad de la empresa",
+            "El derecho a comprar más acciones más adelante",
+            "Un depósito con el capital garantizado"
+          ],
+          "a": 1,
+          "why": "Una acción es una fracción de la empresa: participas en sus beneficios y en su valor, pero nada está garantizado. Prestar dinero a una empresa es comprar un bono."
+        },
+        {
+          "id": "ba1-2",
+          "t": "num",
+          "q": "Una empresa tiene 50 millones de acciones y cada una cotiza a 12,00 €. ¿Cuántos millones de € vale en bolsa?",
+          "unit": "",
+          "a": 600,
+          "why": "50 millones × 12,00 € = 600 millones de €. Es la capitalización: lo que el mercado paga hoy por toda la empresa."
+        },
+        {
+          "id": "ba1-3",
+          "t": "num",
+          "q": "Compras 40 acciones a 25,00 € y suben a 28,00 €. ¿Qué rentabilidad llevas?",
+          "unit": "%",
+          "a": 12,
+          "why": "(28,00 − 25,00) ÷ 25,00 = 12 %. En euros: 3,00 € × 40 = 120 € sobre 1.000 € invertidos."
+        },
+        {
+          "id": "ba1-4",
+          "t": "choice",
+          "q": "¿De dónde sale la rentabilidad de una acción?",
+          "opts": [
+            "De la subida del precio y de los dividendos",
+            "Solo de los dividendos",
+            "De los intereses que paga la empresa cada mes",
+            "De la comisión que cobra el bróker"
+          ],
+          "a": 0,
+          "why": "Ganas si vendes por encima de lo que pagaste y, si la empresa reparte, con los dividendos. Las empresas que crecen rápido suelen reinvertir y no pagar dividendo."
+        }
+      ]
+    },
+    {
+      "id": "ba2",
+      "title": "Órdenes y costes",
+      "ex": [
+        {
+          "id": "ba2-1",
+          "t": "choice",
+          "q": "Quieres comprar, pero solo si el precio no supera los 20,00 €. ¿Qué orden usas?",
+          "opts": [
+            "Orden a mercado",
+            "Orden stop a 20,00 €",
+            "Orden limitada a 20,00 €",
+            "Cualquiera: todas hacen lo mismo"
+          ],
+          "a": 2,
+          "why": "La limitada fija tu precio máximo: compra a 20,00 € o menos, o no compra. La de mercado se ejecuta al momento, al precio que haya."
+        },
+        {
+          "id": "ba2-2",
+          "t": "num",
+          "q": "Precio de compra (bid): 9,95 €. Precio de venta (ask): 10,05 €. ¿Cuál es el spread?",
+          "unit": "€",
+          "a": 0.1,
+          "why": "10,05 − 9,95 = 0,10 €. Si compras a mercado y vendes al instante, pierdes esos 0,10 € por acción; en valores poco negociados el spread es mayor."
+        },
+        {
+          "id": "ba2-3",
+          "t": "num",
+          "q": "Compras 100 acciones a 15,00 € y pagas 5 € de comisión al comprar y otros 5 € al vender. ¿A qué precio tienes que vender para no perder?",
+          "unit": "€",
+          "a": 15.1,
+          "why": "Coste total: 1.500 + 5 + 5 = 1.510 €; 1.510 ÷ 100 = 15,10 € por acción. Con posiciones pequeñas, las comisiones pesan mucho."
+        },
+        {
+          "id": "ba2-4",
+          "t": "choice",
+          "q": "Compraste a 30,00 € y quieres vender automáticamente si el precio cae a 27,00 €. ¿Qué orden usas?",
+          "opts": [
+            "Orden stop de venta a 27,00 €",
+            "Orden limitada de venta a 27,00 €",
+            "Orden de compra a 27,00 €",
+            "Ninguna: hay que vigilar la pantalla"
+          ],
+          "a": 0,
+          "why": "La stop se activa al tocar 27,00 € y vende a mercado: limita la pérdida sin vigilar. Una limitada de venta a 27,00 € se ejecutaría ya, porque el precio actual es mejor."
+        }
+      ]
+    }
+  ]
+}

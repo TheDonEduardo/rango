@@ -1,0 +1,121 @@
+{
+  "n": 15,
+  "id": "gobierno",
+  "track": "fundamental",
+  "title": "Gestión y gobierno corporativo",
+  "blurb": "Quién manda, cómo cobra y qué hace con tu dinero.",
+  "lessons": [
+    {
+      "id": "fga",
+      "title": "Directivos y accionistas",
+      "ex": [
+        {
+          "id": "fga-1",
+          "t": "choice",
+          "q": "El consejero delegado compra 5 M$ en acciones de su empresa, con su propio dinero, en el mercado. ¿Qué suele indicar?",
+          "opts": [
+            "Confianza en el negocio",
+            "Que va a dimitir pronto",
+            "Que habrá una ampliación",
+            "Nada: es obligatorio"
+          ],
+          "a": 0,
+          "why": "Hay muchos motivos para vender acciones, pero solo uno para comprarlas con tu dinero: creer que van a subir. Las compras de directivos son una de las señales más útiles."
+        },
+        {
+          "id": "fga-2",
+          "t": "choice",
+          "q": "Los directivos venden acciones de forma escalonada cada trimestre. ¿Cómo lo interpretas?",
+          "opts": [
+            "Señal grave: todos saben algo",
+            "Normal: suelen ser planes programados",
+            "Una señal clara de compra",
+            "Está prohibido por ley"
+          ],
+          "a": 1,
+          "why": "Muchos directivos cobran en acciones y venden con planes fijados de antemano para diversificar. Preocupan las ventas grandes, repentinas o de varios a la vez."
+        },
+        {
+          "id": "fga-3",
+          "t": "num",
+          "q": "Los fundadores tienen 120 M de las 400 M de acciones. ¿Qué porcentaje de la empresa controlan?",
+          "unit": "%",
+          "a": 30,
+          "why": "120 ÷ 400 = 30 %. Que los fundadores sigan dentro alinea sus intereses con los tuyos, aunque también les da mucho poder en las votaciones."
+        },
+        {
+          "id": "fga-4",
+          "t": "match",
+          "q": "Empareja cada concepto de gobierno corporativo con su significado.",
+          "pairs": [
+            [
+              "Asignación de capital",
+              "Decidir entre reinvertir, comprar, recomprar o repartir"
+            ],
+            [
+              "Consejeros independientes",
+              "Supervisan a la dirección sin depender de ella"
+            ],
+            [
+              "Acciones con doble voto",
+              "Dan control con menos capital"
+            ],
+            [
+              "Remuneración variable",
+              "Liga el sueldo a objetivos del negocio"
+            ]
+          ],
+          "why": "Un buen gobierno corporativo hace que la dirección trabaje para los accionistas y rinda cuentas cuando se equivoca."
+        }
+      ]
+    },
+    {
+      "id": "fgb",
+      "title": "Incentivos y decisiones",
+      "ex": [
+        {
+          "id": "fgb-1",
+          "t": "num",
+          "q": "El consejero delegado cobra 30 M$ al año y el beneficio neto es de 600 M$. ¿Qué porcentaje del beneficio supone su remuneración?",
+          "unit": "%",
+          "a": 5,
+          "why": "30 ÷ 600 = 5 %. No es el importe lo que importa, sino si está ligado a crear valor para el accionista a largo plazo."
+        },
+        {
+          "id": "fgb-2",
+          "t": "choice",
+          "q": "El bono del consejero delegado depende solo de que suba el BPA. ¿Qué riesgo crea?",
+          "opts": [
+            "Ninguno: el BPA es lo que importa",
+            "Inflar el BPA a costa del futuro",
+            "Que la deuda neta llegue a cero",
+            "Que pague más impuestos"
+          ],
+          "a": 1,
+          "why": "Puede recomprar acciones con deuda o recortar inversión para subir el BPA del año. Los mejores incentivos miran el ROIC o el flujo de caja a varios años."
+        },
+        {
+          "id": "fgb-3",
+          "t": "num",
+          "q": "La empresa compra otra por 1.300 M$ cuando esta cotizaba a 1.000 M$. ¿Qué prima paga?",
+          "unit": "%",
+          "a": 30,
+          "why": "(1.300 − 1.000) ÷ 1.000 = 30 %. Para que la compra cree valor, las mejoras que consiga tienen que valer más que esa prima, y muchas compras no lo logran."
+        },
+        {
+          "id": "fgb-4",
+          "t": "choice",
+          "q": "¿Qué dice más de un equipo directivo?",
+          "opts": [
+            "Sus apariciones en televisión",
+            "Lo optimista que es su guía",
+            "Lo que rindió lo que invirtió (ROIC)",
+            "El tamaño de su sede"
+          ],
+          "a": 2,
+          "why": "Lo que una dirección hace con el capital deja huella en el ROIC durante años. Es la medida más objetiva de si sabe invertir el dinero de los accionistas."
+        }
+      ]
+    }
+  ]
+}

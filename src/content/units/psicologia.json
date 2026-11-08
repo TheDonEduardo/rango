@@ -1,0 +1,216 @@
+{
+  "n": 14,
+  "id": "psicologia",
+  "title": "Psicología y diario",
+  "blurb": "El sistema funciona si tú lo sigues: mide cómo operas.",
+  "lessons": [
+    {
+      "id": "p1",
+      "title": "Sesgos del operador",
+      "ex": [
+        {
+          "id": "p1-1",
+          "t": "choice",
+          "q": "Vendes enseguida las acciones que ganan y mantienes las que pierden esperando a recuperar. ¿Cómo se llama ese sesgo?",
+          "opts": [
+            "Sesgo de confirmación",
+            "Efecto disposición",
+            "Efecto manada",
+            "Sesgo de recencia"
+          ],
+          "a": 1,
+          "why": "Corta las ganancias y deja correr las pérdidas, justo al revés de lo que funciona. El stop y las salidas escalonadas existen para evitarlo."
+        },
+        {
+          "id": "p1-2",
+          "t": "match",
+          "q": "Empareja cada sesgo con su descripción.",
+          "pairs": [
+            [
+              "Sesgo de confirmación",
+              "Buscar solo datos que te dan la razón"
+            ],
+            [
+              "Efecto manada (FOMO)",
+              "Comprar porque todos compran"
+            ],
+            [
+              "Sesgo de recencia",
+              "Dar más peso a lo último que ha pasado"
+            ],
+            [
+              "Aversión a la pérdida",
+              "Perder duele más de lo que alegra ganar lo mismo"
+            ]
+          ],
+          "why": "Ninguno se elimina por conocerlo, pero un plan escrito antes de operar los neutraliza: decide cuando no hay dinero en juego."
+        },
+        {
+          "id": "p1-3",
+          "t": "choice",
+          "q": "Tras tres pérdidas seguidas, te apetece doblar el tamaño para recuperar. ¿Qué haces?",
+          "opts": [
+            "Doblar: la siguiente toca ganar",
+            "Triplicar para recuperar antes",
+            "Mantener o reducir tamaño y revisar",
+            "Quitar los stops por un tiempo"
+          ],
+          "a": 2,
+          "why": "Las operaciones son independientes: perder tres no hace más probable ganar la cuarta. Tras una racha, reducir el tamaño protege el capital mientras revisas si falla el sistema o el mercado."
+        },
+        {
+          "id": "p1-4",
+          "t": "num",
+          "q": "Planeaste perder como mucho 1R (100 €), pero bajaste el stop y acabaste perdiendo 250 €. ¿Cuántos R perdiste?",
+          "unit": "R",
+          "a": 2.5,
+          "why": "250 ÷ 100 = 2,5R. Mover el stop convirtió una pérdida pequeña y prevista en una grande: la disciplina se mide en R."
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Diario de operaciones",
+      "ex": [
+        {
+          "id": "p2-1",
+          "t": "num",
+          "q": "Estas son tus últimas 10 operaciones. ¿Cuál es el resultado medio por operación? Redondea a 2 decimales.",
+          "table": {
+            "cols": [
+              "Operación",
+              "Resultado"
+            ],
+            "rows": [
+              [
+                "1",
+                "+2R"
+              ],
+              [
+                "2",
+                "−1R"
+              ],
+              [
+                "3",
+                "−1R"
+              ],
+              [
+                "4",
+                "+3R"
+              ],
+              [
+                "5",
+                "−1R"
+              ],
+              [
+                "6",
+                "+1,5R"
+              ],
+              [
+                "7",
+                "−1R"
+              ],
+              [
+                "8",
+                "−0,5R"
+              ],
+              [
+                "9",
+                "+2,5R"
+              ],
+              [
+                "10",
+                "−1R"
+              ]
+            ]
+          },
+          "unit": "R",
+          "a": 0.35,
+          "why": "Suma: +2 − 1 − 1 + 3 − 1 + 1,5 − 1 − 0,5 + 2,5 − 1 = +3,5R en 10 operaciones, es decir, 0,35R de media. Es tu esperanza: positiva aunque solo ganes 4 de cada 10."
+        },
+        {
+          "id": "p2-2",
+          "t": "num",
+          "q": "Con las mismas 10 operaciones, ¿cuál es la ganancia media de las ganadoras? Redondea a 2 decimales.",
+          "table": {
+            "cols": [
+              "Operación",
+              "Resultado"
+            ],
+            "rows": [
+              [
+                "1",
+                "+2R"
+              ],
+              [
+                "2",
+                "−1R"
+              ],
+              [
+                "3",
+                "−1R"
+              ],
+              [
+                "4",
+                "+3R"
+              ],
+              [
+                "5",
+                "−1R"
+              ],
+              [
+                "6",
+                "+1,5R"
+              ],
+              [
+                "7",
+                "−1R"
+              ],
+              [
+                "8",
+                "−0,5R"
+              ],
+              [
+                "9",
+                "+2,5R"
+              ],
+              [
+                "10",
+                "−1R"
+              ]
+            ]
+          },
+          "unit": "R",
+          "a": 2.25,
+          "why": "Ganadoras: +2, +3, +1,5 y +2,5 = 9R en 4 operaciones, 2,25R de media. Las perdedoras quedan en torno a 0,92R: ganas más del doble de lo que pierdes."
+        },
+        {
+          "id": "p2-3",
+          "t": "choice",
+          "q": "¿Qué debe recoger tu diario además del resultado?",
+          "opts": [
+            "Solo el resultado en euros",
+            "Por qué entraste y si seguiste el plan",
+            "Lo que se opinaba en redes",
+            "Nada más: el resultado basta"
+          ],
+          "a": 1,
+          "why": "El resultado de una operación tiene mucho de azar; el proceso, no. El diario sirve para saber si pierdes por el sistema o por no seguirlo."
+        },
+        {
+          "id": "p2-4",
+          "t": "choice",
+          "q": "Una operación siguió el plan al pie de la letra y perdió 1R. ¿Cómo la valoras?",
+          "opts": [
+            "Mala: perdió dinero",
+            "Buena: el proceso fue correcto",
+            "Hay que cambiar el sistema ya",
+            "Hay que recuperarla mañana"
+          ],
+          "a": 1,
+          "why": "Con una esperanza positiva, las pérdidas de 1R son parte del sistema. Una mala operación es la que rompe el plan, gane o pierda."
+        }
+      ]
+    }
+  ]
+}

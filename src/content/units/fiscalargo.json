@@ -1,0 +1,117 @@
+{
+  "n": 7,
+  "id": "fiscalargo",
+  "track": "pasiva",
+  "title": "Fiscalidad a largo plazo",
+  "blurb": "Diferir impuestos también es rentabilidad.",
+  "lessons": [
+    {
+      "id": "pf1",
+      "title": "Diferir impuestos",
+      "ex": [
+        {
+          "id": "pf1-1",
+          "t": "num",
+          "q": "Al 7 % anual durante 20 años, 10.000 € se convierten en 38.697 €. Pagando un 20 % de la ganancia solo al final te quedan 32.957 €; pagándolo cada año, tu rentabilidad neta baja al 5,6 % y acabas con 29.736 €. ¿Cuánto más tienes difiriendo? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 10.8,
+          "why": "32.957 ÷ 29.736 − 1 = 10,8 % más, con la misma rentabilidad y el mismo tipo. El impuesto que no pagas cada año sigue generando rentabilidad.",
+          "tol": 0.06
+        },
+        {
+          "id": "pf1-2",
+          "t": "choice",
+          "q": "Con un ETF de distribución, los dividendos tributan cada año. ¿Y con uno de acumulación?",
+          "opts": [
+            "Se difiere el impuesto hasta vender",
+            "No se paga nunca ningún impuesto",
+            "Se paga el doble al final",
+            "Se paga cada mes, por adelantado"
+          ],
+          "a": 0,
+          "why": "El fondo reinvierte los dividendos y tú no tributas hasta que vendes. A largo plazo, ese diferimiento suma rentabilidad."
+        },
+        {
+          "id": "pf1-3",
+          "t": "num",
+          "q": "Compraste 100 participaciones a 10 € y después otras 100 a 15 €. Vendes 100 a 18 €. Con el método FIFO que aplica Hacienda, ¿qué ganancia declaras?",
+          "unit": "€",
+          "a": 800,
+          "why": "FIFO: se venden primero las más antiguas, las de 10 €. (18 − 10) × 100 = 800 €, no 300 € como si fueran las de 15 €."
+        },
+        {
+          "id": "pf1-4",
+          "t": "choice",
+          "q": "Tienes una ganancia latente en un fondo y quieres cambiar a otro de otra gestora. ¿Qué haces?",
+          "opts": [
+            "Reembolsar y volver a comprar",
+            "Traspasar, sin tributar aún",
+            "Esperar a perder dinero",
+            "Venderlo y comprar un ETF"
+          ],
+          "a": 1,
+          "why": "El traspaso entre fondos no tributa hasta el reembolso final. Reembolsar y comprar después adelanta el impuesto sin necesidad."
+        }
+      ]
+    },
+    {
+      "id": "pf2",
+      "title": "Pensiones y rescate",
+      "ex": [
+        {
+          "id": "pf2-1",
+          "t": "num",
+          "q": "Aportas 1.500 € a tu plan de pensiones y tu tipo marginal del IRPF es del 37 %. ¿Cuánto te ahorras este año en la declaración?",
+          "unit": "€",
+          "a": 555,
+          "why": "1.500 × 37 % = 555 €. Cuanto más alto tu tipo marginal hoy, más rinde la deducción."
+        },
+        {
+          "id": "pf2-2",
+          "t": "num",
+          "q": "Rescatas 6.000 € de un plan de pensiones de golpe y eso te sube al 45 %; repartido en varios años, tributaría al 30 %. Para simplificar, aplica cada tipo a todo el importe. ¿Cuántos euros más pagas rescatándolo de golpe?",
+          "unit": "€",
+          "a": 900,
+          "why": "6.000 × (45 % − 30 %) = 900 € más. El rescate tributa como rendimiento del trabajo: repartirlo en varios años suele pagar menos."
+        },
+        {
+          "id": "pf2-3",
+          "t": "choice",
+          "q": "¿Cuál es la principal desventaja de un plan de pensiones frente a un fondo indexado?",
+          "opts": [
+            "No puede invertir en acciones",
+            "Tributa cada año aunque no rescates",
+            "Liquidez limitada hasta la jubilación",
+            "No admite aportaciones periódicas"
+          ],
+          "a": 2,
+          "why": "El dinero queda inmovilizado salvo supuestos concretos, como desempleo de larga duración, enfermedad grave o aportaciones con más de 10 años de antigüedad. Comprueba las condiciones cada año."
+        },
+        {
+          "id": "pf2-4",
+          "t": "match",
+          "q": "Empareja cada producto con su característica fiscal principal.",
+          "pairs": [
+            [
+              "Plan de pensiones individual",
+              "Lo contratas tú y reduce la base imponible"
+            ],
+            [
+              "Plan de empleo",
+              "Lo promueve la empresa para sus trabajadores"
+            ],
+            [
+              "Fondo de inversión",
+              "Admite traspasos sin tributar"
+            ],
+            [
+              "ETF",
+              "Cotiza en bolsa y vender tributa la ganancia"
+            ]
+          ],
+          "why": "Cada uno tiene su sitio: pensiones para reducir impuestos hoy, fondos para mover dinero sin tributar y ETF para comprar en bolsa con costes bajos."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "n": 9,
+  "id": "pordentro",
+  "track": "pasiva",
+  "title": "Fondos y ETF por dentro",
+  "blurb": "Qué hay detrás del índice y qué mirar antes de elegir.",
+  "lessons": [
+    {
+      "id": "pd1",
+      "title": "Cómo replican",
+      "ex": [
+        {
+          "id": "pd1-1",
+          "t": "match",
+          "q": "Empareja cada forma de replicar un índice con su significado.",
+          "pairs": [
+            [
+              "Réplica física completa",
+              "Compra todas las acciones del índice"
+            ],
+            [
+              "Réplica por muestreo",
+              "Compra una selección representativa"
+            ],
+            [
+              "Réplica sintética",
+              "Obtiene la rentabilidad con un swap con un banco"
+            ],
+            [
+              "Diferencia de seguimiento",
+              "Lo que se separa el fondo de su índice"
+            ]
+          ],
+          "why": "Las tres formas de réplica buscan el mismo resultado; lo que importa al final es cuánto se separa el fondo de su índice."
+        },
+        {
+          "id": "pd1-2",
+          "t": "num",
+          "q": "El índice sube un 10,00 % en el año y el fondo, un 9,75 %. ¿Cuál es la diferencia de seguimiento, en puntos?",
+          "unit": "",
+          "a": 0.25,
+          "why": "10,00 − 9,75 = 0,25 puntos. Incluye la comisión y otros costes; a veces el préstamo de valores la compensa en parte."
+        },
+        {
+          "id": "pd1-3",
+          "t": "choice",
+          "q": "¿Por qué muchos ETF europeos de acciones de EE. UU. están domiciliados en Irlanda?",
+          "opts": [
+            "Porque es obligatorio por ley europea",
+            "Porque así no cobran comisiones",
+            "Pagan menos retención por dividendos de EE. UU.",
+            "Porque cotizan siempre en dólares"
+          ],
+          "a": 2,
+          "why": "El convenio entre Irlanda y EE. UU. deja la retención sobre los dividendos en el 15 %, frente al 30 % general. Ese coste lo paga el fondo, aunque tú no lo veas."
+        },
+        {
+          "id": "pd1-4",
+          "t": "num",
+          "q": "Un fondo recibe un 2 % anual en dividendos de empresas de EE. UU. ¿Cuántos puntos de rentabilidad al año ahorra con una retención del 15 % frente a una del 30 %?",
+          "unit": "",
+          "a": 0.3,
+          "why": "2 % × 30 % = 0,60 puntos frente a 2 % × 15 % = 0,30 puntos: ahorra 0,30 al año, más que la comisión de muchos ETF."
+        }
+      ]
+    },
+    {
+      "id": "pd2",
+      "title": "Elegir un fondo",
+      "ex": [
+        {
+          "id": "pd2-1",
+          "t": "choice",
+          "q": "Dos ETF del mismo índice: A tiene un TER del 0,07 % y una diferencia de seguimiento de −0,30 %; B, un TER del 0,20 % y −0,10 %. ¿Cuál ha rendido mejor para ti?",
+          "opts": [
+            "B: se separa menos del índice",
+            "A: tiene la comisión más baja",
+            "Ninguno: es el mismo índice",
+            "No se puede saber con esto"
+          ],
+          "a": 0,
+          "why": "El TER es solo una parte del coste. Lo que recibes es la rentabilidad del índice menos la diferencia de seguimiento, y ahí B pierde 0,20 puntos menos al año."
+        },
+        {
+          "id": "pd2-2",
+          "t": "num",
+          "q": "Un ETF tiene una horquilla de compraventa del 0,30 %. Si lo compras y lo vendes una vez, ¿cuánto pierdes aproximadamente por la horquilla?",
+          "unit": "%",
+          "a": 0.3,
+          "why": "Compras al precio de venta y vendes al de compra: pierdes la horquilla completa, un 0,30 %. Con ETF grandes y líquidos es mucho menor."
+        },
+        {
+          "id": "pd2-3",
+          "t": "choice",
+          "q": "¿Por qué conviene evitar los ETF muy pequeños, de pocos millones de patrimonio?",
+          "opts": [
+            "Pueden cerrarse y forzarte a vender",
+            "Siempre rinden menos que los grandes",
+            "No se pueden comprar desde España",
+            "Tienen más riesgo de mercado"
+          ],
+          "a": 0,
+          "why": "Si el fondo cierra, te devuelven el dinero y tributas la ganancia aunque no quisieras vender. Además, suelen tener horquillas más amplias."
+        },
+        {
+          "id": "pd2-4",
+          "t": "num",
+          "q": "Si las 10 mayores empresas pesan un 25 % del índice y tienes 3.600 € en ese fondo, ¿cuántos euros tienes en esas 10 empresas?",
+          "unit": "€",
+          "a": 900,
+          "why": "3.600 × 25 % = 900 €. Un índice mundial también puede estar concentrado: conviene saber qué hay dentro."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "n": 12,
+  "id": "inflacion",
+  "track": "pasiva",
+  "title": "Inflación y rentabilidad real",
+  "blurb": "Lo que importa es cuánto puedes comprar, no cuántos euros tienes.",
+  "lessons": [
+    {
+      "id": "in1",
+      "title": "Rentabilidad real",
+      "ex": [
+        {
+          "id": "in1-1",
+          "t": "num",
+          "q": "Tu cartera rinde un 7 % y la inflación es del 3 %. ¿Cuál es la rentabilidad real aproximada?",
+          "unit": "%",
+          "a": 4,
+          "why": "7 − 3 = 4 %: es lo que crece de verdad tu poder de compra."
+        },
+        {
+          "id": "in1-2",
+          "t": "num",
+          "q": "Calcula la rentabilidad real exacta de ese caso: 1,07 / 1,03 − 1. (dos decimales)",
+          "unit": "%",
+          "a": 3.88,
+          "why": "1,07 / 1,03 = 1,0388: un 3,88 %, algo menos que la resta rápida."
+        },
+        {
+          "id": "in1-3",
+          "t": "num",
+          "q": "Con una inflación del 3 % anual, ¿cuántos euros de hoy valen 100 € dentro de 20 años? (redondea a entero)",
+          "unit": "€",
+          "a": 55,
+          "why": "100 / 1,03²⁰ ≈ 55,37 €: el dinero parado pierde casi la mitad de su poder de compra.",
+          "tol": 0.5
+        },
+        {
+          "id": "in1-4",
+          "t": "choice",
+          "q": "Un depósito paga un 2 % con una inflación del 3 %. ¿Qué pasa con tu poder de compra?",
+          "opts": [
+            "Pierde alrededor de un 1 % al año",
+            "Gana un 2 % cada año",
+            "Se mantiene igual que hoy",
+            "Gana un 5 % cada año"
+          ],
+          "a": 0,
+          "why": "2 − 3 = −1 %: tienes más euros, pero compran menos que antes."
+        }
+      ]
+    },
+    {
+      "id": "in2",
+      "title": "Qué protege de la inflación",
+      "ex": [
+        {
+          "id": "in2-1",
+          "t": "match",
+          "q": "Empareja cada activo con cómo le afecta la inflación.",
+          "pairs": [
+            [
+              "Efectivo",
+              "Pierde poder de compra"
+            ],
+            [
+              "Bonos ligados a la inflación",
+              "Su principal se ajusta al IPC"
+            ],
+            [
+              "Acciones",
+              "Las empresas suben precios a largo plazo"
+            ],
+            [
+              "Bonos de tipo fijo",
+              "Sufren si la inflación sube por sorpresa"
+            ]
+          ],
+          "why": "Un cupón fijo del 4 % con un 6 % de inflación pierde 2 puntos al año; los bonos ligados a la inflación ajustan el principal al IPC."
+        },
+        {
+          "id": "in2-2",
+          "t": "num",
+          "q": "Un bono paga un 4 % fijo y la inflación sube al 6 %. ¿Cuántos puntos pierde al año en términos reales, aproximadamente?",
+          "unit": "",
+          "a": 2,
+          "why": "4 − 6 = −2: pierde unos 2 puntos de poder de compra al año."
+        },
+        {
+          "id": "in2-3",
+          "t": "num",
+          "q": "Regla rápida: años para que los precios se dupliquen = 72 / inflación. Con un 4 %, ¿cuántos años?",
+          "unit": "",
+          "a": 18,
+          "why": "72 / 4 = 18 años: con un 4 % de inflación, los precios se duplican en 18 años."
+        },
+        {
+          "id": "in2-4",
+          "t": "choice",
+          "q": "¿Por qué una cartera de largo plazo suele tener mayoría de acciones pese a su volatilidad?",
+          "opts": [
+            "Es el activo que más ha batido a la inflación",
+            "No pueden caer nunca",
+            "Pagan cada año más que los bonos",
+            "Están garantizadas por el Estado"
+          ],
+          "a": 0,
+          "why": "Desde 1900, las acciones mundiales han rendido en torno a un 5 % real anual, frente a cerca de un 2 % de los bonos."
+        }
+      ]
+    }
+  ]
+}

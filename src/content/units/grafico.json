@@ -1,0 +1,205 @@
+{
+  "n": 3,
+  "id": "grafico",
+  "track": "basico",
+  "title": "Leer un gráfico",
+  "blurb": "Tendencia, soportes, volumen y tu primer plan.",
+  "lessons": [
+    {
+      "id": "bc1",
+      "title": "Precio y tendencia",
+      "ex": [
+        {
+          "id": "bc1-1",
+          "t": "choice",
+          "q": "Gráfico diario. ¿Qué tendencia tiene esta acción?",
+          "chart": {
+            "type": "candles",
+            "data": [
+              [10,10.6,9.8,10.5],
+              [10.5,11.2,10.4,11],
+              [11,11.1,10.5,10.7],
+              [10.7,11.6,10.6,11.5],
+              [11.5,12.2,11.4,12],
+              [12,12.1,11.3,11.5],
+              [11.5,12.6,11.4,12.5],
+              [12.5,13.1,12.3,12.9]
+            ],
+            "alt": "Gráfico de ocho velas"
+          },
+          "opts": [
+            "Alcista",
+            "Bajista",
+            "Lateral",
+            "No se puede saber"
+          ],
+          "a": 0,
+          "why": "Los retrocesos se detienen cada vez más arriba (10,50 y luego 11,30) y cada máximo supera al anterior: máximos y mínimos crecientes son una tendencia alcista."
+        },
+        {
+          "id": "bc1-2",
+          "t": "level",
+          "q": "El precio ha rebotado tres veces en el mismo nivel. Toca el soporte.",
+          "chart": {
+            "type": "candles",
+            "data": [
+              [22,22.8,21.4,21.6],
+              [21.6,21.9,20,21.3],
+              [21.3,22.9,21.1,22.6],
+              [22.6,22.8,20,20.5],
+              [20.5,22.4,20.4,22.2],
+              [22.2,22.5,20,21],
+              [21,22.7,20.8,22.5]
+            ],
+            "h": 250,
+            "levels": [
+              {
+                "id": "A",
+                "y": 23
+              },
+              {
+                "id": "B",
+                "y": 20
+              },
+              {
+                "id": "C",
+                "y": 21.5
+              }
+            ],
+            "alt": "Gráfico de velas con tres niveles marcados"
+          },
+          "a": "B",
+          "why": "Los mínimos de las velas 2, 4 y 6 se detienen en 20,00 €: ahí aparecen compradores una y otra vez. El nivel A, junto a los máximos, es la resistencia, donde aparecen vendedores."
+        },
+        {
+          "id": "bc1-3",
+          "t": "choice",
+          "q": "El precio sube un 5 % con el triple del volumen habitual. ¿Qué te dice el volumen?",
+          "opts": [
+            "Nada: el volumen no importa",
+            "Que la subida es falsa",
+            "Que hay mucha participación detrás de la subida y la respalda",
+            "Que la empresa ha emitido acciones nuevas"
+          ],
+          "a": 2,
+          "why": "El volumen mide cuántas acciones cambian de manos. Una subida con mucho volumen indica que hay compradores grandes detrás; con poco volumen es más frágil."
+        },
+        {
+          "id": "bc1-4",
+          "t": "choice",
+          "q": "¿Qué representa cada vela de un gráfico diario?",
+          "opts": [
+            "Una hora de cotización",
+            "Solo el precio de cierre del día",
+            "Una sesión: su apertura, máximo, mínimo y cierre",
+            "Una semana de cotización"
+          ],
+          "a": 2,
+          "why": "En el gráfico diario cada vela resume una sesión con cuatro precios; en el semanal, una semana. Los patrones se leen igual en cualquier escala."
+        }
+      ]
+    },
+    {
+      "id": "bc2",
+      "title": "Tu primer plan",
+      "ex": [
+        {
+          "id": "bc2-1",
+          "t": "choice",
+          "q": "¿Qué tienes que decidir antes de comprar?",
+          "opts": [
+            "Solo el precio al que vas a entrar",
+            "Nada: se decide sobre la marcha",
+            "Cuánto quieres ganar con la operación",
+            "Entrada, stop y número de acciones"
+          ],
+          "a": 3,
+          "why": "Con la operación abierta, las emociones deciden por ti. Si fijas antes dónde sales, sabes cuánto puedes perder y eliges el tamaño con calma."
+        },
+        {
+          "id": "bc2-2",
+          "t": "num",
+          "q": "Compras 50 acciones a 20,00 € con el stop en 18,00 €. Si salta, ¿cuánto pierdes?",
+          "unit": "€",
+          "a": 100,
+          "why": "(20,00 − 18,00) × 50 = 100 €. Conocer esa cifra antes de entrar es lo que te permite elegir el tamaño."
+        },
+        {
+          "id": "bc2-3",
+          "t": "num",
+          "q": "Entrada a 20,00 €, stop en 18,00 € y objetivo en 26,00 €. ¿Cuántas veces lo que arriesgas es lo que puedes ganar?",
+          "unit": "",
+          "a": 3,
+          "why": "(26,00 − 20,00) ÷ (20,00 − 18,00) = 6 ÷ 2 = 3: arriesgas 1 para ganar 3. En la ruta técnica lo llamarás 3R."
+        },
+        {
+          "id": "bc2-4",
+          "t": "order",
+          "q": "Ordena los pasos de una operación.",
+          "items": [
+            "Elegir una acción en tendencia alcista",
+            "Decidir la entrada y el stop",
+            "Calcular cuántas acciones comprar",
+            "Enviar la orden de compra junto con la orden stop",
+            "Subir el stop a medida que el precio avanza, nunca bajarlo"
+          ],
+          "why": "Primero qué y dónde, luego cuánto, y solo entonces la orden, siempre con su stop. Después, el stop solo se mueve a favor."
+        },
+        {
+          "id": "bc2-5",
+          "t": "plan",
+          "q": "Compras a 22,50 € en un rango con soporte en 20,00 €. Coloca el stop 0,20 € por debajo del soporte.",
+          "chart": {
+            "type": "candles",
+            "data": [
+              [22,22.8,21.4,21.6],
+              [21.6,21.9,20,21.3],
+              [21.3,22.9,21.1,22.6],
+              [22.6,22.8,20,20.5],
+              [20.5,22.4,20.4,22.2],
+              [22.2,22.5,20,21],
+              [21,22.7,20.8,22.5]
+            ],
+            "h": 260,
+            "lines": [
+              {
+                "y": 22.5,
+                "label": "Entrada 22,50"
+              }
+            ],
+            "alt": "Gráfico de velas con la entrada marcada y una línea para colocar"
+          },
+          "place": [
+            {
+              "id": "stop",
+              "label": "Stop",
+              "a": 19.8,
+              "start": 21.4
+            }
+          ],
+          "why": "20,00 − 0,20 = 19,80 €. Si el precio pierde el soporte, el motivo para estar dentro ha desaparecido. Riesgo por acción: 22,50 − 19,80 = 2,70 €."
+        },
+        {
+          "id": "bc2-6",
+          "t": "match",
+          "q": "Empareja cada tipo de orden con lo que hace.",
+          "pairs": [
+            [
+              "Orden a mercado",
+              "Se ejecuta ya, al precio que haya"
+            ],
+            [
+              "Orden limitada",
+              "Solo se ejecuta a tu precio o mejor"
+            ],
+            [
+              "Orden stop",
+              "Se activa al tocar un precio y entonces se ejecuta a mercado"
+            ]
+          ],
+          "why": "La de mercado prioriza ejecutarse; la limitada, el precio; la stop espera a que el precio llegue a un nivel. El stop de protección es una orden stop de venta."
+        }
+      ]
+    }
+  ]
+}

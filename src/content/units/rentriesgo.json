@@ -1,0 +1,125 @@
+{
+  "n": 2,
+  "id": "rentriesgo",
+  "track": "basico",
+  "title": "Rentabilidad y riesgo",
+  "blurb": "Por qué perder poco importa más que acertar mucho.",
+  "lessons": [
+    {
+      "id": "bb1",
+      "title": "Ganar y perder",
+      "ex": [
+        {
+          "id": "bb1-1",
+          "t": "num",
+          "q": "Una acción cae un 50 %. ¿Cuánto tiene que subir para volver al precio inicial?",
+          "unit": "%",
+          "a": 100,
+          "why": "De 100 € a 50 €, recuperar 50 € sobre 50 € es un 100 %. Cuanto mayor es la pérdida, más cuesta recuperarla: por eso se corta pronto."
+        },
+        {
+          "id": "bb1-2",
+          "t": "num",
+          "q": "Pierdes un 20 %. ¿Cuánto necesitas ganar para recuperarte?",
+          "unit": "%",
+          "a": 25,
+          "why": "De 100 € a 80 €, recuperar 20 € sobre 80 € es un 25 %. La pérdida y la ganancia necesaria no son simétricas."
+        },
+        {
+          "id": "bb1-3",
+          "t": "num",
+          "q": "Inviertes 1.000 € al 10 % anual durante 2 años y reinviertes lo ganado. ¿Cuántos € has ganado en total?",
+          "unit": "€",
+          "a": 210,
+          "why": "Año 1: 1.000 × 1,10 = 1.100 €. Año 2: 1.100 × 1,10 = 1.210 €. Ganas 210 €, no 200: los beneficios también generan beneficios."
+        },
+        {
+          "id": "bb1-4",
+          "t": "choice",
+          "q": "Aciertas 6 de cada 10 operaciones y ganas un 5 % en cada acierto, pero en los fallos pierdes un 10 %. ¿Cuál es el resultado medio por operación?",
+          "opts": [
+            "Ganas, porque aciertas más de la mitad",
+            "Pierdes un 1 % de media",
+            "Quedas a cero",
+            "Ganas un 1 % de media"
+          ],
+          "a": 1,
+          "why": "0,6 × 5 % − 0,4 × 10 % = 3 % − 4 % = −1 %. Acertar más no basta si tus pérdidas son mayores que tus ganancias."
+        }
+      ]
+    },
+    {
+      "id": "bb2",
+      "title": "Repartir y limitar el riesgo",
+      "ex": [
+        {
+          "id": "bb2-1",
+          "t": "choice",
+          "q": "Tienes 10.000 € en una sola acción. ¿Qué riesgo corres?",
+          "opts": [
+            "Ninguno, si la empresa tiene buenos resultados",
+            "Que el bróker se quede con tus acciones",
+            "Que te suban las comisiones de custodia",
+            "Perder gran parte del capital por un mal resultado"
+          ],
+          "a": 3,
+          "why": "Una sola empresa puede caer un 30-50 % en un día por unos malos resultados. Repartir entre varias empresas y sectores limita el daño de cada una."
+        },
+        {
+          "id": "bb2-2",
+          "t": "num",
+          "q": "Repartes 6.000 € a partes iguales entre 8 acciones. ¿Cuántos € pones en cada una?",
+          "unit": "€",
+          "a": 750,
+          "why": "6.000 ÷ 8 = 750 €, un 12,5 % del capital en cada una. Si una cae a la mitad, pierdes 375 €: solo un 6,25 % del total."
+        },
+        {
+          "id": "bb2-3",
+          "t": "num",
+          "q": "Tu capital es de 5.000 € y decides no perder más del 1 % en una operación. ¿Cuál es tu pérdida máxima?",
+          "unit": "€",
+          "a": 50,
+          "why": "5.000 × 1 % = 50 €. Con ese límite, ni diez pérdidas seguidas te quitan un 10 % del capital."
+        },
+        {
+          "id": "bb2-4",
+          "t": "choice",
+          "q": "La acción A se mueve un 1 % al día y la B un 5 %. Si arriesgas los mismos euros en cada una, ¿en cuál compras menos acciones?",
+          "opts": [
+            "En la A",
+            "En la B",
+            "En las dos igual",
+            "En ninguna: no hace falta stop"
+          ],
+          "a": 1,
+          "why": "B se mueve 5 veces más: un stop cercano saltaría con el ruido normal, así que va más lejos y, con el mismo riesgo en €, compras menos acciones. En la ruta técnica lo medirás con el ATR."
+        },
+        {
+          "id": "bb2-5",
+          "t": "slide",
+          "q": "Tienes 5.000 € y no quieres que una sola acción te haga perder más de 250 € si cae a la mitad. Elige lo máximo que pones en ella.",
+          "label": "Inversión en la acción",
+          "min": 0,
+          "max": 2000,
+          "step": 50,
+          "start": 1500,
+          "a": 500,
+          "unit": "€",
+          "why": "Si cae un 50 %, pierdes la mitad de lo invertido: 500 € × 50 % = 250 €. Son 500 € de 5.000 €, un 10 % de la cartera.",
+          "show": [
+            {
+              "label": "Pérdida si cae un 50 %",
+              "k": 0.5,
+              "unit": "€"
+            },
+            {
+              "label": "Peso en la cartera",
+              "k": 0.02,
+              "unit": "%"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

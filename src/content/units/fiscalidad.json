@@ -1,0 +1,127 @@
+{
+  "n": 5,
+  "id": "fiscalidad",
+  "track": "basico",
+  "title": "Impuestos en España",
+  "blurb": "Qué tributa, cuánto y cómo aprovechar las pérdidas.",
+  "lessons": [
+    {
+      "id": "be1",
+      "title": "Plusvalías y dividendos",
+      "ex": [
+        {
+          "id": "be1-1",
+          "t": "num",
+          "q": "Compras 100 acciones a 20,00 € y las vendes a 26,00 €. Entre compra y venta pagaste 10 € de comisiones. ¿Qué ganancia declaras?",
+          "unit": "€",
+          "a": 590,
+          "why": "Venta 2.600 € − compra 2.000 € − 10 € de gastos = 590 €. Las comisiones de compra y venta reducen la ganancia que declaras."
+        },
+        {
+          "id": "be1-2",
+          "t": "num",
+          "q": "Tu única renta del ahorro del año es una ganancia de 8.000 €. Con estos tramos, ¿qué tipo medio pagas? Redondea a 1 decimal.",
+          "table": {
+            "cols": [
+              "Base del ahorro",
+              "Tipo"
+            ],
+            "rows": [
+              [
+                "Hasta 6.000 €",
+                "19 %"
+              ],
+              [
+                "De 6.000 a 50.000 €",
+                "21 %"
+              ],
+              [
+                "De 50.000 a 200.000 €",
+                "23 %"
+              ]
+            ],
+            "note": "Tramos del IRPF (base del ahorro). Compruébalos cada año."
+          },
+          "unit": "%",
+          "a": 19.5,
+          "tol": 0.06,
+          "why": "6.000 × 19 % = 1.140 € y 2.000 × 21 % = 420 €: 1.560 € en total, un 19,5 % de media. Cada tipo solo grava la parte que cae dentro de su tramo."
+        },
+        {
+          "id": "be1-3",
+          "t": "choice",
+          "q": "Cobras 100 € de dividendo de una empresa española. ¿Qué ocurre?",
+          "opts": [
+            "Recibes 100 € y no tributa",
+            "Recibes 81 €: se retiene un 19 %",
+            "No tributa hasta que vendas",
+            "Recibes 50 €: Hacienda se queda la mitad"
+          ],
+          "a": 1,
+          "why": "Se retienen 19 € a cuenta y los descuentas en tu declaración. El dividendo va a la base del ahorro, igual que las ganancias por venta."
+        },
+        {
+          "id": "be1-4",
+          "t": "choice",
+          "q": "Cobras dividendos de una empresa de EE. UU. y tienes firmado el formulario W-8BEN en tu bróker. ¿Qué retiene EE. UU.?",
+          "opts": [
+            "Un 15 %, deducible en tu IRPF",
+            "Nada: solo tributas en España",
+            "Un 30 %, firmes lo que firmes",
+            "Un 50 %, sin poder deducirlo"
+          ],
+          "a": 0,
+          "why": "El convenio entre España y EE. UU. limita la retención al 15 % si firmas el W-8BEN; sin él, es del 30 %. En tu declaración puedes deducir esa retención por doble imposición internacional."
+        }
+      ]
+    },
+    {
+      "id": "be2",
+      "title": "Pérdidas y reglas",
+      "ex": [
+        {
+          "id": "be2-1",
+          "t": "num",
+          "q": "Este año ganas 900 € al vender unas acciones y pierdes 400 € con otras. ¿Por qué ganancia tributas?",
+          "unit": "€",
+          "a": 500,
+          "why": "900 − 400 = 500 €. Las pérdidas por venta compensan las ganancias del mismo año."
+        },
+        {
+          "id": "be2-2",
+          "t": "choice",
+          "q": "Cierras el año con pérdidas por venta de acciones y ninguna ganancia. ¿Qué pasa con ellas?",
+          "opts": [
+            "Se pierden",
+            "Las compensas con ganancias de los 4 años siguientes",
+            "Hacienda te las devuelve en efectivo",
+            "Solo cuentan si compras más acciones"
+          ],
+          "a": 1,
+          "why": "Se declaran igualmente y se arrastran a los cuatro años siguientes. Además, pueden compensar hasta un 25 % del saldo de dividendos e intereses."
+        },
+        {
+          "id": "be2-3",
+          "t": "choice",
+          "q": "Vendes con pérdidas unas acciones el 10 de diciembre y vuelves a comprar las mismas el 20 de diciembre. ¿Puedes compensar esa pérdida este año?",
+          "opts": [
+            "Sí, sin ningún límite",
+            "Sí, si recompras en otro bróker",
+            "No: se aplaza hasta que vendas las nuevas",
+            "Sí, pero solo la mitad de la pérdida"
+          ],
+          "a": 2,
+          "why": "Regla de los dos meses en valores cotizados: si compras valores iguales en los dos meses anteriores o posteriores a la venta con pérdidas, no la imputas hasta que vendas esos valores."
+        },
+        {
+          "id": "be2-4",
+          "t": "num",
+          "q": "Ganancia de 500 €, toda dentro del primer tramo (19 %). ¿Cuánto te queda después de impuestos?",
+          "unit": "€",
+          "a": 405,
+          "why": "500 × (1 − 0,19) = 405 €. Calcula siempre tu rentabilidad después de impuestos: es la que de verdad se queda en tu bolsillo."
+        }
+      ]
+    }
+  ]
+}

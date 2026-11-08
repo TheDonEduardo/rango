@@ -1,0 +1,172 @@
+{
+  "n": 13,
+  "id": "grupos",
+  "title": "Grupos y gaps",
+  "blurb": "Las acciones suben en manada, y los huecos cuentan una historia.",
+  "lessons": [
+    {
+      "id": "g1",
+      "title": "Sectores y grupos líderes",
+      "ex": [
+        {
+          "id": "g1-1",
+          "t": "choice",
+          "q": "Tienes dos rupturas igual de buenas: una en un grupo que lidera el mercado y otra en un grupo rezagado. ¿Cuál eliges?",
+          "opts": [
+            "La del grupo líder",
+            "La del grupo rezagado: tiene más recorrido",
+            "Cualquiera: el grupo no influye",
+            "Ninguna: hay que repartir entre los débiles"
+          ],
+          "a": 0,
+          "why": "Las acciones suben en manada: cuando el dinero entra en un grupo, empuja a sus mejores valores. O'Neil insistía en comprar los líderes de los grupos líderes."
+        },
+        {
+          "id": "g1-2",
+          "t": "num",
+          "q": "El índice ha subido un 5 % en tres meses. ¿Cuántos de estos grupos lo baten?",
+          "table": {
+            "cols": [
+              "Grupo",
+              "Tres meses"
+            ],
+            "rows": [
+              [
+                "Semiconductores",
+                "+18 %"
+              ],
+              [
+                "Software",
+                "+9 %"
+              ],
+              [
+                "Bancos",
+                "+2 %"
+              ],
+              [
+                "Energía",
+                "−4 %"
+              ],
+              [
+                "Salud",
+                "+6 %"
+              ]
+            ]
+          },
+          "unit": "",
+          "a": 3,
+          "why": "Semiconductores (+18 %), software (+9 %) y salud (+6 %) superan el +5 % del índice. Busca tus compras en los primeros de la lista, empezando por semiconductores."
+        },
+        {
+          "id": "g1-3",
+          "t": "choice",
+          "q": "Tu acción rompe al alza, pero las demás de su grupo caen a mínimos. ¿Qué indica?",
+          "opts": [
+            "Que es aún más fuerte, sin matices",
+            "Nada: el grupo no importa",
+            "Menos respaldo: la ruptura es más frágil",
+            "Que el grupo romperá mañana"
+          ],
+          "a": 2,
+          "why": "Una ruptura acompañada por su grupo tiene detrás dinero entrando en el sector. Si va sola, el riesgo de fallo es mayor: reduce el tamaño o espera."
+        },
+        {
+          "id": "g1-4",
+          "t": "match",
+          "q": "Empareja cada término con su significado.",
+          "pairs": [
+            [
+              "Grupo líder",
+              "Sube más que el índice y marca máximos"
+            ],
+            [
+              "Grupo rezagado",
+              "Sube menos que el índice o cae"
+            ],
+            [
+              "Rotación sectorial",
+              "El dinero pasa de unos sectores a otros"
+            ]
+          ],
+          "why": "El mercado no sube todo a la vez: el dinero rota. Detectar a tiempo qué grupos pasan a liderar es tan importante como elegir la acción."
+        }
+      ]
+    },
+    {
+      "id": "g2",
+      "title": "Tipos de gap",
+      "ex": [
+        {
+          "id": "g2-1",
+          "t": "match",
+          "q": "Empareja cada tipo de gap con su descripción.",
+          "pairs": [
+            [
+              "Gap común",
+              "Dentro de un rango, sin volumen, y suele cerrarse"
+            ],
+            [
+              "Gap de ruptura",
+              "Sale de una base con mucho volumen"
+            ],
+            [
+              "Gap de continuación",
+              "A mitad de una tendencia fuerte"
+            ],
+            [
+              "Gap de agotamiento",
+              "Al final de una subida larga, con volumen clímax"
+            ]
+          ],
+          "why": "El mismo hueco significa cosas distintas según dónde aparece: al salir de una base, en mitad del camino o tras una subida larga."
+        },
+        {
+          "id": "g2-2",
+          "t": "tap",
+          "q": "Toca el gap de agotamiento.",
+          "chart": {
+            "type": "candles",
+            "data": [
+              [20,20.5,19.6,20.2],
+              [20.2,20.6,19.8,20.1],
+              [20.1,20.5,19.7,20.3],
+              [21.5,22.4,21.3,22.2],
+              [22.2,23,22,22.8],
+              [22.8,23.9,22.6,23.6],
+              [23.6,24.6,23.4,24.4],
+              [24.4,25.1,24,24.9],
+              [26.2,27,25.9,26.1],
+              [26.1,26.2,24.6,24.8]
+            ],
+            "vol": [50,45,55,160,90,85,95,100,190,150],
+            "h": 270,
+            "alt": "Gráfico de diez velas con volumen y dos gaps al alza"
+          },
+          "a": 8,
+          "why": "Vela 9: abre con gap tras una subida larga, con el mayor volumen, y cierra cerca de su mínimo; al día siguiente el precio vuelve dentro del hueco. El gap de la vela 4, que sale de la base, es el de ruptura."
+        },
+        {
+          "id": "g2-3",
+          "t": "num",
+          "q": "La ruptura de la base fue en 20,00 € y aparece un gap de continuación en 24,00 €. Si ese gap marca la mitad del movimiento, ¿cuál es el objetivo?",
+          "unit": "€",
+          "a": 28,
+          "why": "24,00 − 20,00 = 4,00 €; 24,00 + 4,00 = 28,00 €. Es una estimación clásica (gap de medición), no una garantía: úsala para planificar ventas parciales."
+        },
+        {
+          "id": "g2-4",
+          "t": "choice",
+          "q": "Un gap de ruptura con mucho volumen se cierra por completo dos días después. ¿Qué indica?",
+          "opts": [
+            "Ruptura fallida: reduce o sal",
+            "Nada: todos los gaps se cierran",
+            "Una señal de compra aún mejor",
+            "Que el volumen no era real"
+          ],
+          "a": 0,
+          "why": "Un gap de ruptura sano no suele cerrarse: la demanda que lo creó sostiene el precio. Si se cierra entero, quienes compraron en el gap pierden dinero y la ruptura ha fallado."
+        }
+      ]
+    }
+  ]
+}

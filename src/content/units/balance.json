@@ -1,0 +1,125 @@
+{
+  "n": 3,
+  "id": "balance",
+  "track": "fundamental",
+  "title": "Balance y caja",
+  "blurb": "Deuda, autonomía de caja y riesgo de dilución.",
+  "lessons": [
+    {
+      "id": "f3a",
+      "title": "Deuda y solvencia",
+      "ex": [
+        {
+          "id": "f3a-1",
+          "t": "num",
+          "q": "Deuda: 6.000 M$. Caja: 1.500 M$. EBITDA anual: 1.500 M$. ¿Deuda neta/EBITDA?",
+          "unit": "",
+          "a": 3,
+          "why": "(6.000 − 1.500) ÷ 1.500 = 3 veces: necesitaría tres años de EBITDA íntegro para pagar la deuda neta. Cuanto más alto, menos margen tiene si el negocio se frena."
+        },
+        {
+          "id": "f3a-2",
+          "t": "num",
+          "q": "Beneficio operativo (EBIT) anual: 800 M$. Gastos por intereses: 200 M$. ¿Cobertura de intereses?",
+          "unit": "",
+          "a": 4,
+          "why": "800 ÷ 200 = 4 veces: el beneficio operativo podría caer un 75 %, hasta 200 M$, y aún cubriría los intereses."
+        },
+        {
+          "id": "f3a-3",
+          "t": "choice",
+          "q": "Si llega una recesión, ¿qué empresa tiene más riesgo financiero?",
+          "table": {
+            "cols": [
+              "Empresa",
+              "Deuda neta/EBITDA",
+              "Cobertura de intereses"
+            ],
+            "rows": [
+              [
+                "A",
+                "0,5",
+                "20"
+              ],
+              [
+                "B",
+                "4,5",
+                "2"
+              ],
+              [
+                "C",
+                "Caja neta",
+                "Sin deuda"
+              ]
+            ]
+          },
+          "opts": [
+            "A",
+            "B",
+            "C",
+            "Las tres por igual"
+          ],
+          "a": 1,
+          "why": "B debe 4,5 años de EBITDA y su beneficio operativo cubre solo 2 veces los intereses: si cae a la mitad, los cubre justo. C no debe nada y A tiene margen de sobra."
+        },
+        {
+          "id": "f3a-4",
+          "t": "choice",
+          "q": "Vencen 2.000 M$ de deuda en 12 meses, la empresa tiene 300 M$ de caja y el tipo de interés para refinanciar ha pasado del 3 % al 7 %. ¿Qué riesgo es inmediato?",
+          "opts": [
+            "Refinanciar mucho más caro o ampliar capital, con dilución",
+            "Ninguno: la deuda no vence hasta dentro de un año",
+            "Que tenga que subir el dividendo",
+            "Que salga de su índice de referencia"
+          ],
+          "a": 0,
+          "why": "Con 300 M$ no puede devolver 2.000 M$: al 7 %, los intereses de esa deuda pasan de 60 a 140 M$ al año, o tendrá que emitir acciones."
+        }
+      ]
+    },
+    {
+      "id": "f3b",
+      "title": "Caja y autonomía",
+      "ex": [
+        {
+          "id": "f3b-1",
+          "t": "num",
+          "q": "Caja: 120 M$. La empresa quema 30 M$ por trimestre. ¿Cuántos meses de autonomía tiene?",
+          "unit": "",
+          "a": 12,
+          "why": "120 ÷ 30 = 4 trimestres, es decir, 12 meses. Con menos de un año de caja, la próxima ampliación de capital es cuestión de tiempo."
+        },
+        {
+          "id": "f3b-2",
+          "t": "num",
+          "q": "Necesita 90 M$. Tiene 100 M de acciones a 3,00 $ y colocaría las nuevas con un 10 % de descuento. ¿Cuántos millones de acciones nuevas emite? Redondea a 1 decimal.",
+          "unit": "",
+          "a": 33.3,
+          "tol": 0.06,
+          "why": "Precio de colocación 3,00 × 0,90 = 2,70 $; 90 ÷ 2,70 = 33,3 M de acciones nuevas, un 33 % más sobre los 100 M actuales."
+        },
+        {
+          "id": "f3b-3",
+          "t": "choice",
+          "q": "Beneficio neto anual de 200 M$, pero flujo de caja operativo de −50 M$ y las cuentas por cobrar se han duplicado. ¿Qué indica?",
+          "opts": [
+            "Que el negocio es excelente",
+            "Que la empresa está reduciendo deuda",
+            "Que no está cobrando sus ventas",
+            "Que repartirá más dividendo"
+          ],
+          "a": 2,
+          "why": "Si los clientes no pagan, el beneficio contable crece pero la caja no: el beneficio no se convierte en caja. Puede ser ventas forzadas con plazos de cobro largos; vigila si se repite el trimestre siguiente."
+        },
+        {
+          "id": "f3b-4",
+          "t": "num",
+          "q": "Beneficio neto anual: 400 M$. Flujo de caja libre: 340 M$. ¿Qué porcentaje del beneficio convierte en caja?",
+          "unit": "%",
+          "a": 85,
+          "why": "340 ÷ 400 = 85 %: convierte en caja 85 de cada 100 $ de beneficio. Si la conversión cae trimestre tras trimestre, revisa cobros, inventarios e inversiones."
+        }
+      ]
+    }
+  ]
+}

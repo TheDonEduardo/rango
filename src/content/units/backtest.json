@@ -1,0 +1,111 @@
+{
+  "n": 16,
+  "id": "backtest",
+  "title": "Backtesting",
+  "blurb": "Comprobar un sistema con el pasado sin engañarte.",
+  "lessons": [
+    {
+      "id": "bt1",
+      "title": "Medir un sistema",
+      "ex": [
+        {
+          "id": "bt1-1",
+          "t": "num",
+          "q": "En la prueba, las operaciones ganadoras suman 12.000 € y las perdedoras, 8.000 €. ¿Cuál es el factor de beneficio (ganancias ÷ pérdidas)?",
+          "unit": "",
+          "a": 1.5,
+          "why": "12.000 ÷ 8.000 = 1,5: por cada euro perdido se ganan 1,50 €. Por debajo de 1 el sistema pierde dinero; con costes reales, conviene que quede bastante por encima."
+        },
+        {
+          "id": "bt1-2",
+          "t": "num",
+          "q": "Un sistema acierta el 40 % de las veces ganando 2,5R y falla el 60 % perdiendo 1R. ¿Cuál es su esperanza por operación?",
+          "unit": "R",
+          "a": 0.4,
+          "why": "0,40 × 2,5 − 0,60 × 1 = 1,0 − 0,6 = 0,4R por operación. Se puede ganar acertando menos de la mitad si las ganancias son mayores que las pérdidas."
+        },
+        {
+          "id": "bt1-3",
+          "t": "num",
+          "q": "En la prueba, la cuenta llega a un máximo de 15.000 € y después cae hasta 12.000 € antes de recuperarse. ¿Cuál es la máxima caída?",
+          "unit": "%",
+          "a": 20,
+          "why": "(15.000 − 12.000) ÷ 15.000 = 20 %. Pregúntate si seguirías operando el sistema en mitad de esa caída: si no, en la práctica no te sirve."
+        },
+        {
+          "id": "bt1-4",
+          "t": "choice",
+          "q": "Un sistema tiene 12 operaciones en la prueba, con un 75 % de aciertos. ¿Qué concluyes?",
+          "opts": [
+            "Es un sistema excelente y ya fiable",
+            "Muestra pequeña: puede ser suerte",
+            "Hay que doblar el riesgo por operación",
+            "Hay que operarlo con todo el capital"
+          ],
+          "a": 1,
+          "why": "Con 12 operaciones, unas pocas buenas o malas cambian el resultado por completo. Hacen falta decenas o cientos de operaciones, en mercados distintos, para fiarse."
+        }
+      ]
+    },
+    {
+      "id": "bt2",
+      "title": "Trampas del backtest",
+      "ex": [
+        {
+          "id": "bt2-1",
+          "t": "match",
+          "q": "Empareja cada trampa del backtest con su descripción.",
+          "pairs": [
+            [
+              "Sobreajuste",
+              "Afinar tantos parámetros que solo funciona en el pasado"
+            ],
+            [
+              "Sesgo de supervivencia",
+              "Probar solo con empresas que siguen cotizando hoy"
+            ],
+            [
+              "Sesgo de anticipación",
+              "Usar datos que no se conocían al operar"
+            ],
+            [
+              "Ignorar costes",
+              "Olvidar comisiones, horquilla y deslizamiento"
+            ]
+          ],
+          "why": "Las cuatro hacen que el pasado parezca mejor de lo que fue. Un backtest honesto las evita a propósito antes de mirar el resultado."
+        },
+        {
+          "id": "bt2-2",
+          "t": "choice",
+          "q": "Ajustas un sistema con datos de 2010 a 2020 y obtienes un 30 % anual. ¿Qué haces antes de operarlo?",
+          "opts": [
+            "Operarlo ya con todo el capital",
+            "Probarlo en 2021-2025 sin tocar nada",
+            "Afinarlo más con 2010-2020",
+            "Subir el riesgo por operación"
+          ],
+          "a": 1,
+          "why": "Los datos con los que ajustas no sirven para validar. Si en un periodo nuevo, sin retocar nada, el resultado se hunde, el sistema estaba sobreajustado."
+        },
+        {
+          "id": "bt2-3",
+          "t": "num",
+          "q": "Un sistema gana un 0,30 % por operación antes de costes y hace 200 operaciones al año. Cada operación cuesta un 0,20 % entre comisiones y deslizamiento. Sumando sin componer, ¿qué rentabilidad anual neta le queda?",
+          "unit": "%",
+          "a": 20,
+          "why": "(0,30 − 0,20) × 200 = 20 %, frente al 60 % bruto. Cuantas más operaciones, más pesan los costes: dos terceras partes se han ido en ellos."
+        },
+        {
+          "id": "bt2-4",
+          "t": "num",
+          "q": "Pruebas un sistema con las 500 empresas que forman hoy el S&P 500. Supón que en esos 15 años salieron del índice otras 150. ¿Qué porcentaje del universo real quedó fuera de tu prueba? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 23.1,
+          "why": "150 ÷ (500 + 150) = 23,1 %. Muchas de esas empresas salieron por caer: dejarlas fuera hace que el sistema parezca mejor de lo que habría sido.",
+          "tol": 0.06
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "n": 11,
+  "id": "fuerza",
+  "title": "Fuerza relativa",
+  "blurb": "Compra lo que sube más que el mercado, no lo que sube.",
+  "lessons": [
+    {
+      "id": "rs1",
+      "title": "Medir la fuerza relativa",
+      "ex": [
+        {
+          "id": "rs1-1",
+          "t": "choice",
+          "q": "La acción sube de 50 a 55 € (+10 %) mientras el índice pasa de 4.000 a 4.600 (+15 %). ¿Qué hace su línea de fuerza relativa (precio ÷ índice)?",
+          "opts": [
+            "Sube, porque la acción sube",
+            "Baja: sube menos que el mercado",
+            "Se queda plana",
+            "No se puede saber sin el volumen"
+          ],
+          "a": 1,
+          "why": "(55 ÷ 4.600) ÷ (50 ÷ 4.000) = 0,957: la línea RS cae un 4,3 %. La acción gana dinero, pero menos que el mercado: no es un líder."
+        },
+        {
+          "id": "rs1-2",
+          "t": "num",
+          "q": "La acción sube de 40 a 52 € (+30 %) y el índice de 5.000 a 5.500 (+10 %). ¿Cuánto sube su línea RS? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 18.2,
+          "tol": 0.06,
+          "why": "(52 ÷ 5.500) ÷ (40 ÷ 5.000) = 1,182: la línea RS sube un 18,2 %. No es 30 − 10 = 20: la fuerza relativa es un cociente, no una resta."
+        },
+        {
+          "id": "rs1-3",
+          "t": "choice",
+          "q": "¿Qué significa un RS Rating de 90 (Investor's Business Daily)?",
+          "opts": [
+            "Que ha subido un 90 % en el año",
+            "Que ha ido mejor que el 90 % de las acciones",
+            "Que cotiza al 90 % de su máximo",
+            "Que tiene un 90 % de opciones de subir"
+          ],
+          "a": 1,
+          "why": "Es un percentil de 1 a 99 sobre el comportamiento de los últimos 12 meses, con más peso en el último trimestre. O'Neil buscaba líderes con RS de 80 o más."
+        },
+        {
+          "id": "rs1-4",
+          "t": "match",
+          "q": "Empareja cada concepto con su significado.",
+          "pairs": [
+            [
+              "Línea RS",
+              "Precio de la acción ÷ índice"
+            ],
+            [
+              "RS Rating",
+              "Percentil frente a todas las acciones"
+            ],
+            [
+              "Línea RS en máximos antes que el precio",
+              "Señal de liderazgo"
+            ],
+            [
+              "Línea RS cayendo mientras el precio sube",
+              "Sube menos que el mercado"
+            ]
+          ],
+          "why": "La línea RS compara con el índice y el RS Rating con todas las demás acciones. Que la línea RS marque máximos antes que el precio es de las señales de liderazgo que más valoraba O'Neil."
+        }
+      ]
+    },
+    {
+      "id": "rs2",
+      "title": "Comprar líderes",
+      "ex": [
+        {
+          "id": "rs2-1",
+          "t": "choice",
+          "q": "Según el Trend Template de Minervini, ¿cuál puedes comprar?",
+          "table": {
+            "cols": [
+              "Acción",
+              "RS Rating",
+              "Distancia al máximo de 52 semanas"
+            ],
+            "rows": [
+              [
+                "A",
+                "95",
+                "−35 %"
+              ],
+              [
+                "B",
+                "88",
+                "−5 %"
+              ],
+              [
+                "C",
+                "60",
+                "0 %"
+              ]
+            ]
+          },
+          "opts": [
+            "A",
+            "B",
+            "C",
+            "Ninguna"
+          ],
+          "a": 1,
+          "why": "B cumple las dos condiciones: RS de 88 (Minervini pide 70 o más) y a un 5 % de máximos (menos del 25 %). A está demasiado lejos de máximos y C tiene poca fuerza relativa."
+        },
+        {
+          "id": "rs2-2",
+          "t": "choice",
+          "q": "El índice cae un 10 % y una acción solo un 3 %, sin alejarse de sus máximos. ¿Qué indica?",
+          "opts": [
+            "Debilidad: no acompaña al mercado en nada",
+            "Fuerza relativa: candidata a liderar el rebote",
+            "Que caerá más tarde, sin ninguna duda",
+            "Nada: en una corrección todo da igual"
+          ],
+          "a": 1,
+          "why": "Las acciones que aguantan una corrección suelen ser las primeras en romper al alza tras el día de confirmación. O'Neil preparaba así su lista de candidatas."
+        },
+        {
+          "id": "rs2-3",
+          "t": "num",
+          "q": "Hay 4.000 acciones en el universo de comparación y una tiene un RS Rating de 90. ¿Cuántas, aproximadamente, lo han hecho mejor que ella?",
+          "unit": "",
+          "a": 400,
+          "why": "RS 90 significa mejor que el 90 %: cerca de un 10 % lo hizo mejor. 4.000 × 10 % = 400 acciones."
+        },
+        {
+          "id": "rs2-4",
+          "t": "choice",
+          "q": "Una acción en Fase 2 sigue subiendo, pero su línea RS lleva meses bajando. ¿Qué haces?",
+          "opts": [
+            "Buscar otra con la línea RS al alza",
+            "Comprarla: estar en Fase 2 basta",
+            "Venderla en corto de inmediato",
+            "Esperar a que caiga un 50 %"
+          ],
+          "a": 0,
+          "why": "Weinstein pedía las dos cosas: Fase 2 y fuerza relativa mejorando. Si sube menos que el mercado, tu capital rinde más en un líder."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "n": 4,
+  "id": "tesis",
+  "track": "fundamental",
+  "title": "Tesis de inversión",
+  "blurb": "Motor, catalizador e invalidación: un stop para la tesis.",
+  "lessons": [
+    {
+      "id": "f4a",
+      "title": "Construir la tesis",
+      "ex": [
+        {
+          "id": "f4a-1",
+          "t": "choice",
+          "q": "¿Cuál es una tesis bien formulada?",
+          "opts": [
+            "La IA es el futuro y esta empresa vende chips para IA, así que sus ventas crecerán durante años y el precio lo acabará reflejando",
+            "Cotiza a un PER de 12 frente a 20 de su sector, así que está barata y tarde o temprano el mercado corregirá ese descuento",
+            "Las ventas de centros de datos crecen un 40 % y la planta del 2T subirá el margen bruto del 55 % al 60 %; si en el 2T no supera el 56 %, la tesis falla",
+            "El gráfico está en Fase 2 con volumen creciente y medias alineadas, así que el mercado ya reconoce que el negocio va bien"
+          ],
+          "a": 2,
+          "why": "Solo la C tiene motor medible (ventas +40 %), catalizador con fecha (la planta en el 2T) e invalidación concreta (margen por debajo del 56 %). Las demás son relatos razonables, pero no dicen cuándo te equivocas."
+        },
+        {
+          "id": "f4a-2",
+          "t": "order",
+          "q": "Ordena la cadena por la que un negocio que mejora llega al precio.",
+          "items": [
+            "Las ventas aceleran",
+            "El margen operativo se expande",
+            "El BPA crece más rápido que las ventas",
+            "Los analistas suben sus estimaciones",
+            "Con el precio quieto, el PER adelantado baja y atrae compradores"
+          ],
+          "why": "Primero mejora el negocio, luego el beneficio y después las estimaciones. Si detectas los dos primeros pasos antes que el consenso, tu tesis va por delante del precio."
+        },
+        {
+          "id": "f4a-3",
+          "t": "num",
+          "q": "El consenso espera un BPA de 2,00 $ y cotiza a un PER adelantado de 25. Tu tesis estima 2,40 $. Si el PER se mantiene, ¿qué potencial tiene si aciertas?",
+          "unit": "%",
+          "a": 20,
+          "why": "Hoy: 25 × 2,00 = 50 $. Si aciertas: 25 × 2,40 = 60 $, un 20 % más. Tu ventaja está solo en la diferencia con el consenso, no en que la empresa crezca."
+        },
+        {
+          "id": "f4a-4",
+          "t": "choice",
+          "q": "Tu tesis depende de un contrato que se decide dentro de 18 meses y operas a 2-8 semanas. ¿Qué haces?",
+          "opts": [
+            "Comprar ya: el catalizador llegará",
+            "Esperar a que el precio confirme o a que el catalizador se acerque",
+            "Comprar opciones a un mes",
+            "Comprar ahora y promediar a la baja mientras tanto"
+          ],
+          "a": 1,
+          "why": "Un catalizador lejano no mueve el precio en tu horizonte y te inmoviliza el capital. Espera a que el precio confirme (Fase 2, ruptura de un VCP) antes de entrar."
+        }
+      ]
+    },
+    {
+      "id": "f4b",
+      "title": "Invalidación y seguimiento",
+      "ex": [
+        {
+          "id": "f4b-1",
+          "t": "order",
+          "q": "Ordena el proceso completo de una operación.",
+          "items": [
+            "Filtrar empresas con ventas y BPA que aceleran",
+            "Escribir la tesis con su criterio de invalidación",
+            "Esperar la configuración técnica (Fase 2, VCP)",
+            "Calcular el tamaño con el stop y el riesgo por operación",
+            "Revisar la tesis en cada publicación de resultados"
+          ],
+          "why": "El fundamental decide qué comprar, el técnico cuándo y la gestión del riesgo cuánto. La revisión tras cada resultado decide si sigues dentro."
+        },
+        {
+          "id": "f4b-2",
+          "t": "choice",
+          "q": "Tu tesis exige un margen bruto superior al 60 %. Publica un 57 % y el precio sube un 6 %. ¿Qué haces?",
+          "opts": [
+            "Mantienes: el precio te da la razón",
+            "Compras más aprovechando la subida",
+            "Esperas al siguiente trimestre para decidir",
+            "Sales o reduces: la tesis está invalidada aunque el precio suba"
+          ],
+          "a": 3,
+          "why": "Fijaste la invalidación antes de comprar precisamente para no reinterpretarla después. Si te quedas, ya no operas tu tesis sino el precio, y sin criterio de salida."
+        },
+        {
+          "id": "f4b-3",
+          "t": "choice",
+          "q": "La tesis sigue intacta, pero el precio pierde tu stop técnico. ¿Qué haces?",
+          "opts": [
+            "Ejecutas el stop: la tesis no te protege del precio",
+            "Bajas el stop para darle más margen",
+            "Compras más porque la tesis sigue viva",
+            "Esperas a los próximos resultados"
+          ],
+          "a": 0,
+          "why": "El stop limita la pérdida a 1R pase lo que pase con la tesis. Si la tesis sigue viva, puedes volver a comprar cuando el precio confirme otra vez."
+        },
+        {
+          "id": "f4b-4",
+          "t": "num",
+          "q": "Compraste a 50,00 $ con stop en 46,00 $. La tesis falla en resultados y la acción abre a 44,00 $. ¿Cuántos R pierdes?",
+          "unit": "R",
+          "a": 1.5,
+          "why": "(50,00 − 44,00) ÷ (50,00 − 46,00) = 6 ÷ 4 = 1,5R. Por eso, antes de resultados, el tamaño se calcula con el gap posible y no con el stop."
+        }
+      ]
+    }
+  ]
+}

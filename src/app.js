@@ -4,7 +4,7 @@ import {P,ico,icoX,icoOk,LOGO} from './icons.js';
 import {candlesSVG,lineSVG,glyph} from './charts.js';
 import {UNITS,FLAT,CASOS,SEMANA,TRACKS,EXBYID,PLACEMENT,trackOf,exCount} from './content.js';
 
-const DEF=()=>({xp:0,streak:0,last:null,day:null,dayXp:0,done:{},all:false,track:'basico',skipBasics:false,legal:0,srs:{},sim:{},calc:null});
+const DEF=()=>({v:STATE_V,xp:0,streak:0,last:null,day:null,dayXp:0,done:{},all:false,track:'basico',skipBasics:false,legal:0,srs:{},sim:{},calc:null});
 // Sube LEGAL_V si cambia el texto del aviso: se vuelve a pedir la aceptación.
 const LEGAL_V=1;
 // Repaso espaciado: días hasta la siguiente aparición tras cada acierto. Tras el último, sale de la lista.
@@ -18,8 +18,21 @@ const TEST_PASS=10;
 // Operación de la semana (simulador con velas reales de semana.json).
 const SIM_PLACE=[{id:'entry',label:'Entrada'},{id:'stop',label:'Stop'},{id:'target',label:'Objetivo'}];
 let simDraft=null;
+// Versión del formato guardado. Cada cambio de formato añade un paso a MIGRAR (de la versión n a la n+1),
+// así el progreso de quien ya usa la app se convierte en vez de perderse.
+const STATE_V=2;
+const MIGRAR={
+  // 1 → 2: el repaso espaciado identificaba los ejercicios por posición («lección#índice», desde 0);
+  // ahora cada ejercicio tiene un id estable («lección-n», desde 1).
+  1:j=>{const srs={};for(const k in j.srs||{}){const m=/^(.+)#(\d+)$/.exec(k);srs[m?m[1]+'-'+(+m[2]+1):k]=j.srs[k]}j.srs=srs;return j},
+};
+export function migrar(j){
+  let v=j.v||1;
+  while(v<STATE_V){j=MIGRAR[v](j);v++}
+  j.v=STATE_V;return j;
+}
 function load(){
-  try{const j=JSON.parse(localStorage.getItem(KEY));if(j&&typeof j==='object')return Object.assign(DEF(),j)}catch(e){}
+  try{const j=JSON.parse(localStorage.getItem(KEY));if(j&&typeof j==='object')return Object.assign(DEF(),migrar(j))}catch(e){}
   return DEF();
 }
 function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
@@ -55,13 +68,13 @@ function srsDue(){
   return Object.keys(S.srs).filter(u=>S.srs[u].due<=t&&EXBYID.has(u)).map(u=>EXBYID.get(u));
 }
 function srsRecord(ex,ok){
-  if(!ex.uid)return;
-  if(!ok){S.srs[ex.uid]={step:0,due:addDays(SRS_STEPS[0])};return}
-  const r=S.srs[ex.uid];
+  if(!ex.id)return;
+  if(!ok){S.srs[ex.id]={step:0,due:addDays(SRS_STEPS[0])};return}
+  const r=S.srs[ex.id];
   if(!r||run.L.kind!=='srs')return;
   const st=r.step+1;
-  if(st>=SRS_STEPS.length)delete S.srs[ex.uid];
-  else S.srs[ex.uid]={step:st,due:addDays(SRS_STEPS[st])};
+  if(st>=SRS_STEPS.length)delete S.srs[ex.id];
+  else S.srs[ex.id]={step:st,due:addDays(SRS_STEPS[st])};
 }
 function toast(msg){
   $toast.textContent=msg;$toast.hidden=false;clearTimeout(toastT);
@@ -438,7 +451,7 @@ function check(){
   else ok=run.sel===ex.a;
   run.ok=ok;run.checked=true;
   // En el test de nivel no hay vidas ni repaso: solo se anota el resultado de cada pregunta.
-  if(!run.seen.has(ex)){run.seen.add(ex);if(!ok)run.firstWrong++;if(run.L.kind==='test')run.res[ex.uid]=ok;else srsRecord(ex,ok);save()}
+  if(!run.seen.has(ex)){run.seen.add(ex);if(!ok)run.firstWrong++;if(run.L.kind==='test')run.res[ex.id]=ok;else srsRecord(ex,ok);save()}
   if(!ok&&run.L.kind!=='test')run.lives--;
   render();
 }
@@ -452,7 +465,7 @@ function next(){
 function finishTest(){
   const res=run.res,score=Object.values(res).filter(Boolean).length,total=PLACEMENT.length,dominadas=[];
   UNITS.filter(u=>trackOf(u)==='basico'&&u.gate!==false&&u.lessons).forEach(u=>{
-    const ids=PLACEMENT.filter(x=>u.lessons.some(l=>x.startsWith(l.id+'#')));
+    const ids=PLACEMENT.filter(x=>u.lessons.some(l=>l.id===EXBYID.get(x).lesson));
     if(ids.length&&ids.every(x=>res[x])){
       dominadas.push(u.title);
       FLAT.filter(l=>l.unit===u).forEach(l=>{if(!S.done[l.id])S.done[l.id]={acc:1,test:true}});
@@ -611,4 +624,4 @@ if(typeof navigator!=='undefined'&&'serviceWorker' in navigator&&typeof location
 
 
 // API mínima para tests (test/smoke.mjs)
-export const api={FLAT,CASOS,SEMANA,PLACEMENT,simulate,simRecord,simHist,aportaciones,openCalc:()=>{view='calc';render()},openSim:()=>{simDraft=null;view='sim';render()},openSimRes:()=>{view='simres';render()},simDraftSet:p=>{simDraft=p},simSave:()=>{S.sim[SEMANA.semana]={ticker:SEMANA.ticker,plan:Object.assign({},simDraft),fecha:today()}},goHome:()=>{view='home';render()},startTest:()=>startRun(TEST_L),srsDue,acceptLegal:()=>{S.legal=LEGAL_V},startSrs:()=>startRun(SRS_L),setTrack:t=>{S.track=t},skipBasics:()=>{S.skipBasics=true},homeHTML,startRun,lessonHTML,check,next,resultHTML,failHTML,render,getRun:()=>run,setSel:v=>{run.sel=v},setVal:v=>{run.val=v},getState:()=>S};
+export const api={migrar,FLAT,CASOS,SEMANA,PLACEMENT,simulate,simRecord,simHist,aportaciones,openCalc:()=>{view='calc';render()},openSim:()=>{simDraft=null;view='sim';render()},openSimRes:()=>{view='simres';render()},simDraftSet:p=>{simDraft=p},simSave:()=>{S.sim[SEMANA.semana]={ticker:SEMANA.ticker,plan:Object.assign({},simDraft),fecha:today()}},goHome:()=>{view='home';render()},startTest:()=>startRun(TEST_L),srsDue,acceptLegal:()=>{S.legal=LEGAL_V},startSrs:()=>startRun(SRS_L),setTrack:t=>{S.track=t},skipBasics:()=>{S.skipBasics=true},homeHTML,startRun,lessonHTML,check,next,resultHTML,failHTML,render,getRun:()=>run,setSel:v=>{run.sel=v},setVal:v=>{run.val=v},getState:()=>S};

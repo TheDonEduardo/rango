@@ -1,0 +1,142 @@
+{
+  "n": 12,
+  "id": "techos",
+  "title": "Techos y temporalidades",
+  "blurb": "Detecta la distribución y mira el gráfico desde arriba.",
+  "lessons": [
+    {
+      "id": "wd1",
+      "title": "Distribución de Wyckoff",
+      "ex": [
+        {
+          "id": "wd1-1",
+          "t": "order",
+          "q": "Ordena los eventos de una distribución de Wyckoff.",
+          "items": [
+            "Clímax comprador (BC)",
+            "Reacción automática (AR)",
+            "Prueba secundaria (ST)",
+            "Upthrust tras la distribución (UTAD)",
+            "Signo de debilidad (SOW)",
+            "Último punto de oferta (LPSY)"
+          ],
+          "why": "Es el espejo de la acumulación: el clímax comprador frena la subida, la reacción marca el suelo del rango y la prueba lo confirma. El upthrust atrapa a los últimos compradores, el signo de debilidad rompe el soporte y el último punto de oferta es el rebote fallido."
+        },
+        {
+          "id": "wd1-2",
+          "t": "tap",
+          "q": "Rango lateral con resistencia en 30,00 €. Toca el upthrust.",
+          "chart": {
+            "type": "candles",
+            "data": [
+              [28,29.6,27.8,29.3],
+              [29.3,30,28.9,29.1],
+              [29.1,29.4,27.6,27.9],
+              [27.9,29.2,27.7,29],
+              [29,29.9,28.8,29.7],
+              [29.7,31.2,29.4,29.6],
+              [29.6,29.8,28.3,28.5],
+              [28.5,28.9,27.4,27.6]
+            ],
+            "vol": [100,120,110,90,95,180,140,150],
+            "h": 270,
+            "lines": [
+              {
+                "y": 30,
+                "label": ""
+              }
+            ],
+            "alt": "Gráfico de ocho velas con volumen y una línea de resistencia"
+          },
+          "a": 5,
+          "why": "Vela 6: supera la resistencia hasta 31,20 y cierra dentro del rango, en 29,60, con el mayor volumen. Es la trampa contraria al spring: atrae compradores en la ruptura y los deja atrapados."
+        },
+        {
+          "id": "wd1-3",
+          "t": "choice",
+          "q": "Tienes la acción comprada. Tras un upthrust fallido, rompe el soporte del rango con volumen creciente. ¿Qué haces?",
+          "opts": [
+            "Vender o reducir: es un signo de debilidad",
+            "Comprar más: viene de máximos",
+            "Esperar a que recupere el máximo del upthrust",
+            "Promediar a la baja si sigue cayendo"
+          ],
+          "a": 0,
+          "why": "Upthrust y ruptura del soporte con volumen completan la distribución: la oferta ha tomado el control. Lo que sigue suele ser la Fase 4."
+        },
+        {
+          "id": "wd1-4",
+          "t": "num",
+          "q": "El rango de distribución va de 27,40 € a 30,00 €. Proyecta su altura por debajo del soporte. ¿Objetivo mínimo de caída?",
+          "unit": "€",
+          "a": 24.8,
+          "why": "Altura = 30,00 − 27,40 = 2,60 €; objetivo = 27,40 − 2,60 = 24,80 €. Es la misma proyección de la acumulación, pero hacia abajo."
+        }
+      ]
+    },
+    {
+      "id": "tf1",
+      "title": "Semanal y diario",
+      "ex": [
+        {
+          "id": "tf1-1",
+          "t": "choice",
+          "q": "¿Qué gráfico usa Weinstein para decidir en qué fase está una acción?",
+          "opts": [
+            "Semanal, con la media de 30 semanas",
+            "Diario, con la media de 10 sesiones",
+            "De 5 minutos, con el volumen",
+            "Mensual, sin ninguna media"
+          ],
+          "a": 0,
+          "why": "El semanal filtra el ruido diario y muestra la tendencia de fondo. El diario sirve después para afinar la entrada y el stop."
+        },
+        {
+          "id": "tf1-2",
+          "t": "choice",
+          "q": "En el gráfico semanal la acción está en Fase 4, pero en el diario acaba de romper una pequeña resistencia. ¿Qué haces?",
+          "opts": [
+            "Comprar: manda el gráfico diario",
+            "No comprar: la tendencia de fondo es bajista",
+            "Comprar el doble para aprovecharlo",
+            "Vender en corto justo en la ruptura"
+          ],
+          "a": 1,
+          "why": "La temporalidad mayor marca la dirección y la menor, el momento. Una ruptura diaria dentro de una Fase 4 semanal suele ser solo un rebote."
+        },
+        {
+          "id": "tf1-3",
+          "t": "num",
+          "q": "¿A cuántas sesiones diarias equivale, aproximadamente, la media de 30 semanas?",
+          "unit": "",
+          "a": 150,
+          "why": "30 semanas × 5 sesiones = 150 sesiones. Por eso el Trend Template de Minervini usa en diario las medias de 150 y 200 sesiones."
+        },
+        {
+          "id": "tf1-4",
+          "t": "match",
+          "q": "Empareja cada temporalidad con su uso.",
+          "pairs": [
+            [
+              "Mensual",
+              "Contexto de años y grandes ciclos"
+            ],
+            [
+              "Semanal",
+              "Fase de Weinstein y tendencia de fondo"
+            ],
+            [
+              "Diario",
+              "Bases, rupturas y stops"
+            ],
+            [
+              "Intradía",
+              "Afinar la entrada el día de la ruptura"
+            ]
+          ],
+          "why": "De arriba abajo: cuanto mayor es la temporalidad, más pesa en la decisión de si operar; cuanto menor, más precisa es la entrada."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "n": 13,
+  "id": "semis",
+  "track": "fundamental",
+  "title": "Análisis de un sector: chips",
+  "blurb": "Semiconductores: un sector cíclico que hay que saber leer.",
+  "lessons": [
+    {
+      "id": "fsa",
+      "title": "El ciclo de los chips",
+      "ex": [
+        {
+          "id": "fsa-1",
+          "t": "choice",
+          "q": "¿Cómo se comporta la industria de semiconductores?",
+          "opts": [
+            "Cíclica: alterna exceso y escasez",
+            "Defensiva: vende igual en las crisis",
+            "Estable: crece igual cada año",
+            "Regulada: los precios los fija el Estado"
+          ],
+          "a": 0,
+          "why": "Las fábricas tardan años en construirse: cuando la demanda sube falta oferta y los precios se disparan, y cuando la nueva capacidad llega sobra. Ese ciclo mueve márgenes y acciones."
+        },
+        {
+          "id": "fsa-2",
+          "t": "num",
+          "q": "Una empresa de chips tiene 6.000 M$ de inventario y un coste de ventas anual de 24.000 M$. ¿Cuántos días de inventario tiene (inventario ÷ coste de ventas × 365)? Redondea a unidades.",
+          "unit": "",
+          "a": 91,
+          "why": "6.000 ÷ 24.000 × 365 = 91 días. En chips, un inventario que crece más rápido que las ventas suele anticipar recortes de precios.",
+          "tol": 0.5
+        },
+        {
+          "id": "fsa-3",
+          "t": "choice",
+          "q": "Recibe pedidos por 1.100 M$ y factura 1.000 M$ en el trimestre (book-to-bill de 1,1). ¿Qué indica?",
+          "opts": [
+            "Que la empresa pierde clientes",
+            "Entran más pedidos de los que factura",
+            "Que las ventas caerán con seguridad",
+            "Nada sobre su demanda"
+          ],
+          "a": 1,
+          "why": "Por encima de 1, la cartera de pedidos crece y las ventas futuras tienen respaldo. Por debajo de 1 durante varios trimestres suele marcar el inicio de la fase baja."
+        },
+        {
+          "id": "fsa-4",
+          "t": "num",
+          "q": "Un fabricante vende 50.000 M$ al año y dedica 15.000 M$ a inversión en fábricas (capex). ¿Qué porcentaje de sus ventas reinvierte?",
+          "unit": "%",
+          "a": 30,
+          "why": "15.000 ÷ 50.000 = 30 %. Es un negocio muy intensivo en capital: el flujo de caja libre depende tanto de la inversión como del beneficio."
+        }
+      ]
+    },
+    {
+      "id": "fsb",
+      "title": "Leer el ciclo",
+      "ex": [
+        {
+          "id": "fsb-1",
+          "t": "choice",
+          "q": "¿Cuándo suelen tocar fondo las acciones de chips en un ciclo bajista?",
+          "opts": [
+            "Cuando los beneficios marcan récord",
+            "Con beneficios cayendo e inventario bajando",
+            "Cuando todos los analistas son optimistas",
+            "Cuando los pedidos están en máximos"
+          ],
+          "a": 1,
+          "why": "El precio se adelanta: empieza a subir cuando el inventario se ha limpiado aunque los beneficios aún no hayan tocado suelo. Esperar a ver buenos beneficios suele ser llegar tarde."
+        },
+        {
+          "id": "fsb-2",
+          "t": "num",
+          "q": "Con ventas de 4.000 M$, el margen bruto pasa del 60 % en el pico al 45 % en el valle. ¿Cuántos millones de beneficio bruto pierde solo por el margen?",
+          "unit": "",
+          "a": 600,
+          "why": "4.000 × (60 % − 45 %) = 600 M$. En los sectores cíclicos los márgenes amplifican el ciclo: el beneficio cae mucho más que las ventas."
+        },
+        {
+          "id": "fsb-3",
+          "t": "match",
+          "q": "Empareja cada tipo de empresa de chips con su rasgo principal.",
+          "pairs": [
+            [
+              "Memoria",
+              "Precios muy cíclicos según oferta y demanda"
+            ],
+            [
+              "Diseño sin fábrica",
+              "Margen bruto alto y poco capex"
+            ],
+            [
+              "Fabricación por encargo",
+              "Capex enorme y economías de escala"
+            ],
+            [
+              "Equipos para fábricas",
+              "Dependen del capex de sus clientes"
+            ]
+          ],
+          "why": "No todo el sector se mueve igual: el diseño sin fábrica tiene márgenes más estables, y los equipos dependen de cuánto inviertan los fabricantes."
+        },
+        {
+          "id": "fsb-4",
+          "t": "num",
+          "q": "El mayor cliente de una empresa supone el 25 % de sus ventas. Si reduce sus compras a la mitad, ¿cuánto caen las ventas totales?",
+          "unit": "%",
+          "a": 12.5,
+          "why": "25 % × 50 % = 12,5 %. La concentración de clientes es un riesgo propio del sector: un solo cambio de proveedor puede costar un trimestre."
+        }
+      ]
+    }
+  ]
+}

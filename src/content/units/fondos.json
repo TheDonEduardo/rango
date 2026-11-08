@@ -1,0 +1,128 @@
+{
+  "n": 12,
+  "id": "fondos",
+  "track": "basico",
+  "title": "Fondos de inversión",
+  "blurb": "Participaciones, valor liquidativo, comisiones y traspasos.",
+  "gate": false,
+  "lessons": [
+    {
+      "id": "bn1",
+      "title": "Cómo funciona un fondo",
+      "ex": [
+        {
+          "id": "bn1-1",
+          "t": "match",
+          "q": "Empareja cada término de un fondo con su significado.",
+          "pairs": [
+            [
+              "Valor liquidativo",
+              "Precio de cada participación"
+            ],
+            [
+              "Partícipe",
+              "Inversor que tiene participaciones"
+            ],
+            [
+              "Gestora",
+              "Empresa que gestiona el fondo"
+            ],
+            [
+              "Depositario",
+              "Entidad que custodia los activos"
+            ]
+          ],
+          "why": "Gestora y depositario son entidades distintas: una decide qué comprar y la otra guarda los activos."
+        },
+        {
+          "id": "bn1-2",
+          "t": "num",
+          "q": "Inviertes 1.500 € en un fondo con un valor liquidativo de 15 €. ¿Cuántas participaciones recibes?",
+          "unit": "",
+          "a": 100,
+          "why": "1.500 / 15 = 100 participaciones."
+        },
+        {
+          "id": "bn1-3",
+          "t": "num",
+          "q": "Un año después, el valor liquidativo es de 16,50 €. ¿Cuánto has ganado, en %?",
+          "unit": "%",
+          "a": 10,
+          "why": "(16,50 − 15) / 15 = 10 %: tus 100 participaciones valen 1.650 €."
+        },
+        {
+          "id": "bn1-4",
+          "t": "choice",
+          "q": "Si la gestora quiebra, ¿qué pasa con el dinero del fondo?",
+          "opts": [
+            "Sigue siendo de los partícipes",
+            "Se pierde todo",
+            "Lo cubre la gestora con su capital",
+            "Pasa a ser del depositario"
+          ],
+          "a": 0,
+          "why": "El patrimonio del fondo está separado del de la gestora y lo custodia el depositario: los activos siguen siendo de los partícipes."
+        }
+      ]
+    },
+    {
+      "id": "bn2",
+      "title": "Comisiones y tipos de fondo",
+      "ex": [
+        {
+          "id": "bn2-1",
+          "t": "num",
+          "q": "Tienes 10.000 € en un fondo que cobra un 1,5 % de gestión. ¿Cuántos euros pagas al año?",
+          "unit": "€",
+          "a": 150,
+          "why": "10.000 × 1,5 % = 150 € al año, suba o baje el fondo."
+        },
+        {
+          "id": "bn2-2",
+          "t": "num",
+          "q": "Un indexado cobra un 0,2 % sobre esos 10.000 €. ¿Cuántos euros ahorras al año?",
+          "unit": "€",
+          "a": 130,
+          "why": "10.000 × 0,2 % = 20 €; 150 − 20 = 130 € al año."
+        },
+        {
+          "id": "bn2-3",
+          "t": "choice",
+          "q": "En España, ¿qué ventaja fiscal tienen los fondos de inversión frente a los ETF?",
+          "opts": [
+            "Puedes traspasar sin tributar",
+            "No tributan nunca",
+            "No tienen comisiones",
+            "Están garantizados"
+          ],
+          "a": 0,
+          "why": "Al traspasar de un fondo a otro no pagas impuestos hasta que retiras el dinero; vender un ETF tributa la ganancia en ese momento."
+        },
+        {
+          "id": "bn2-4",
+          "t": "match",
+          "q": "Empareja cada tipo de fondo con lo que compra.",
+          "pairs": [
+            [
+              "Fondo monetario",
+              "Deuda a muy corto plazo"
+            ],
+            [
+              "Fondo de renta fija",
+              "Bonos"
+            ],
+            [
+              "Fondo de renta variable",
+              "Acciones"
+            ],
+            [
+              "Fondo mixto",
+              "Bonos y acciones a la vez"
+            ]
+          ],
+          "why": "De arriba abajo suele crecer el riesgo y la rentabilidad esperada; el mixto queda en medio según su reparto."
+        }
+      ]
+    }
+  ]
+}

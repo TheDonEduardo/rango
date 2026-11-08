@@ -1,0 +1,113 @@
+{
+  "n": 16,
+  "id": "unidad",
+  "track": "fundamental",
+  "title": "Economía de la unidad",
+  "blurb": "Cuánto cuesta un cliente y cuánto deja.",
+  "lessons": [
+    {
+      "id": "fua",
+      "title": "Captar y retener",
+      "ex": [
+        {
+          "id": "fua-1",
+          "t": "num",
+          "q": "Una empresa gasta 600.000 € en marketing y ventas y consigue 2.000 clientes nuevos. ¿Cuánto le cuesta captar cada uno?",
+          "unit": "€",
+          "a": 300,
+          "why": "600.000 ÷ 2.000 = 300 € por cliente (CAC). Por sí solo no dice nada: hay que compararlo con lo que deja cada cliente."
+        },
+        {
+          "id": "fua-2",
+          "t": "num",
+          "q": "Cada cliente paga 20 € al mes, con un margen bruto del 80 %, y se queda de media 30 meses. ¿Cuánto margen deja en total (LTV)?",
+          "unit": "€",
+          "a": 480,
+          "why": "20 × 80 % × 30 = 480 €. Es el valor del cliente durante toda su relación con la empresa."
+        },
+        {
+          "id": "fua-3",
+          "t": "num",
+          "q": "Con ese LTV de 480 € y un coste de captación de 300 €, ¿cuál es la relación LTV/CAC?",
+          "unit": "",
+          "a": 1.6,
+          "why": "480 ÷ 300 = 1,6: cada euro gastado en captar devuelve 1,60 € de margen, antes de cubrir el resto de gastos."
+        },
+        {
+          "id": "fua-4",
+          "t": "choice",
+          "q": "Una relación LTV/CAC de 1,6. ¿Qué indica?",
+          "opts": [
+            "Un negocio excelente y escalable",
+            "Captar clientes apenas compensa",
+            "Que el producto es gratuito",
+            "Nada sobre la rentabilidad"
+          ],
+          "a": 1,
+          "why": "La referencia habitual es 3 o más. Con 1,6, crecer más deprisa puede destruir dinero: primero hay que mejorar retención, precio o coste de captación."
+        }
+      ]
+    },
+    {
+      "id": "fub",
+      "title": "Recuperar la inversión",
+      "ex": [
+        {
+          "id": "fub-1",
+          "t": "num",
+          "q": "Captar un cliente cuesta 300 € y deja 16 € de margen al mes. ¿En cuántos meses se recupera la captación? Redondea a 1 decimal.",
+          "unit": "",
+          "a": 18.8,
+          "why": "300 ÷ 16 = 18,75 meses. Cuanto más tarda, más caja necesita la empresa para crecer.",
+          "tol": 0.06
+        },
+        {
+          "id": "fub-2",
+          "t": "num",
+          "q": "Una empresa pierde cada mes el 3 % de sus clientes. ¿Cuántos meses dura de media un cliente (1 ÷ tasa de bajas)? Redondea a 1 decimal.",
+          "unit": "",
+          "a": 33.3,
+          "why": "1 ÷ 0,03 = 33,3 meses. Bajar las bajas del 3 % al 2 % alargaría la vida media a 50 meses: la retención es la palanca más potente del LTV.",
+          "tol": 0.06
+        },
+        {
+          "id": "fub-3",
+          "t": "choice",
+          "q": "Los clientes de cada año gastan más en su segundo año que en el primero. ¿Qué indica?",
+          "opts": [
+            "Que la empresa pierde clientes",
+            "Que el precio baja cada año",
+            "Que crece sin captar clientes nuevos",
+            "Nada útil para el inversor"
+          ],
+          "a": 2,
+          "why": "Si los clientes existentes gastan cada vez más, la empresa crece aunque deje de captar: es la retención neta por encima del 100 % que viste en F6."
+        },
+        {
+          "id": "fub-4",
+          "t": "match",
+          "q": "Empareja cada métrica con su significado.",
+          "pairs": [
+            [
+              "CAC",
+              "Coste de captar un cliente"
+            ],
+            [
+              "LTV",
+              "Margen total que deja un cliente"
+            ],
+            [
+              "Churn",
+              "Porcentaje de clientes que se van"
+            ],
+            [
+              "Payback",
+              "Meses para recuperar la captación"
+            ]
+          ],
+          "why": "Las cuatro juntas dicen si crecer crea o destruye valor, algo que la cuenta de resultados de una empresa joven no muestra."
+        }
+      ]
+    }
+  ]
+}

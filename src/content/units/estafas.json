@@ -1,0 +1,123 @@
+{
+  "n": 15,
+  "id": "estafas",
+  "track": "basico",
+  "title": "Estafas y chiringuitos",
+  "blurb": "Cómo reconocer un fraude antes de perder dinero.",
+  "gate": false,
+  "lessons": [
+    {
+      "id": "bq1",
+      "title": "Señales de alarma",
+      "ex": [
+        {
+          "id": "bq1-1",
+          "t": "match",
+          "q": "Empareja cada término del fraude con su significado.",
+          "pairs": [
+            [
+              "Chiringuito financiero",
+              "Ofrece inversiones sin autorización"
+            ],
+            [
+              "Esquema Ponzi",
+              "Paga a los antiguos con dinero de los nuevos"
+            ],
+            [
+              "Phishing",
+              "Suplanta a tu banco para robar tus claves"
+            ],
+            [
+              "Registros de la CNMV",
+              "Donde compruebas si una entidad está autorizada"
+            ]
+          ],
+          "why": "La CNMV publica la lista de entidades autorizadas y una lista de advertencias sobre chiringuitos: mírala antes de invertir."
+        },
+        {
+          "id": "bq1-2",
+          "t": "choice",
+          "q": "Te prometen un 3 % mensual garantizado. ¿Qué piensas?",
+          "opts": [
+            "Que es casi seguro una estafa",
+            "Que es una buena oportunidad",
+            "Que es normal en criptomonedas",
+            "Que hay que invertir rápido"
+          ],
+          "a": 0,
+          "why": "Rentabilidad alta y garantizada a la vez no existe: a más rentabilidad esperada, más riesgo."
+        },
+        {
+          "id": "bq1-3",
+          "t": "num",
+          "q": "Un 3 % mensual compuesto durante 12 meses, ¿qué rentabilidad anual es? (redondea a entero)",
+          "unit": "%",
+          "a": 43,
+          "why": "1,03¹² = 1,426: un 43 % anual garantizado, algo que ningún producto legítimo promete.",
+          "tol": 0.5
+        },
+        {
+          "id": "bq1-4",
+          "t": "choice",
+          "q": "Una «empresa de inversión» te llama sin que lo hayas pedido. ¿Qué haces?",
+          "opts": [
+            "Colgar y buscarla en la web de la CNMV",
+            "Dar tus datos para informarte",
+            "Hacer una prueba con poco dinero",
+            "Instalar el programa que te piden"
+          ],
+          "a": 0,
+          "why": "Las llamadas no solicitadas son la vía típica de los chiringuitos; instalar programas de acceso remoto les da tu cuenta."
+        }
+      ]
+    },
+    {
+      "id": "bq2",
+      "title": "Cómo cae un Ponzi",
+      "ex": [
+        {
+          "id": "bq2-1",
+          "t": "num",
+          "q": "Un Ponzi promete un 10 % mensual y ha captado 100.000 €. ¿Cuántos miles de euros debe pagar cada mes en «intereses»?",
+          "unit": "",
+          "a": 10,
+          "why": "100.000 × 10 % = 10.000 € al mes, sin ningún negocio real que los genere."
+        },
+        {
+          "id": "bq2-2",
+          "t": "num",
+          "q": "Si cada mes solo entran 8.000 € nuevos, ¿cuántos miles de euros le faltan al mes?",
+          "unit": "",
+          "a": 2,
+          "why": "10.000 − 8.000 = 2.000 € de agujero cada mes, y crece con cada nuevo partícipe."
+        },
+        {
+          "id": "bq2-3",
+          "t": "choice",
+          "q": "¿Qué ocurre cuando dejan de entrar inversores nuevos en un esquema Ponzi?",
+          "opts": [
+            "No puede pagar y se hunde",
+            "Sigue pagando con beneficios reales",
+            "Lo rescata la CNMV",
+            "Pasa a ser un fondo legal"
+          ],
+          "a": 0,
+          "why": "Como los pagos salen del dinero nuevo, en cuanto las entradas bajan de los pagos prometidos el esquema quiebra."
+        },
+        {
+          "id": "bq2-4",
+          "t": "choice",
+          "q": "¿Qué cubre el Fondo de Garantía de Inversiones (FOGAIN)?",
+          "opts": [
+            "Tus valores si el bróker quiebra, con límites",
+            "Las pérdidas por caídas de la bolsa",
+            "Cualquier estafa que sufras",
+            "Todo lo que inviertas"
+          ],
+          "a": 0,
+          "why": "Cubre hasta 100.000 € por inversor si una empresa de inversión autorizada no puede devolverte tus valores o efectivo; nunca cubre que la inversión pierda valor."
+        }
+      ]
+    }
+  ]
+}

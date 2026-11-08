@@ -1,0 +1,129 @@
+{
+  "n": 13,
+  "id": "activos",
+  "track": "basico",
+  "title": "Tipos de activos",
+  "blurb": "Acciones, bonos, materias primas y liquidez.",
+  "gate": false,
+  "lessons": [
+    {
+      "id": "bo1",
+      "title": "Qué puedes comprar",
+      "ex": [
+        {
+          "id": "bo1-1",
+          "t": "match",
+          "q": "Empareja cada tipo de activo con lo que es.",
+          "pairs": [
+            [
+              "Acción",
+              "Parte de la propiedad de una empresa"
+            ],
+            [
+              "Bono",
+              "Préstamo a una empresa o a un Estado"
+            ],
+            [
+              "Materia prima",
+              "Oro, petróleo o trigo"
+            ],
+            [
+              "Liquidez",
+              "Dinero en cuenta o en depósito"
+            ]
+          ],
+          "why": "Con una acción eres dueño; con un bono, acreedor: cobras intereses pero no participas en los beneficios."
+        },
+        {
+          "id": "bo1-2",
+          "t": "choice",
+          "q": "¿Cuál de estos activos suele tener menos riesgo?",
+          "opts": [
+            "Una letra del Tesoro",
+            "Una acción tecnológica",
+            "Una criptomoneda",
+            "Una acción de pequeña empresa"
+          ],
+          "a": 0,
+          "why": "Una letra del Tesoro es un préstamo a corto plazo al Estado: su precio apenas se mueve y el riesgo de impago es muy bajo."
+        },
+        {
+          "id": "bo1-3",
+          "t": "num",
+          "q": "Una letra del Tesoro a 12 meses se compra por 970 € y devuelve 1.000 €. ¿Cuántos euros ganas?",
+          "unit": "€",
+          "a": 30,
+          "why": "1.000 − 970 = 30 €: las letras no pagan cupón, ganas la diferencia."
+        },
+        {
+          "id": "bo1-4",
+          "t": "num",
+          "q": "¿Y qué rentabilidad es esa ganancia sobre lo invertido? (dos decimales)",
+          "unit": "%",
+          "a": 3.09,
+          "why": "30 / 970 = 3,09 %, algo más que el 3 % porque inviertes menos de 1.000 €."
+        }
+      ]
+    },
+    {
+      "id": "bo2",
+      "title": "Riesgo y rentabilidad",
+      "ex": [
+        {
+          "id": "bo2-1",
+          "t": "choice",
+          "q": "¿Por qué las acciones han rendido históricamente más que los depósitos?",
+          "opts": [
+            "Compensan por asumir más riesgo",
+            "Porque están garantizadas",
+            "Porque no pagan impuestos",
+            "Porque nunca bajan"
+          ],
+          "a": 0,
+          "why": "Las acciones mundiales han rendido en torno a un 5 % real anual desde 1900, pero con caídas de más del 50 %; esa prima es el pago por aguantarlas."
+        },
+        {
+          "id": "bo2-2",
+          "t": "num",
+          "q": "Una acción cae un 25 %. ¿Cuánto tiene que subir después para recuperarse? (dos decimales)",
+          "unit": "%",
+          "a": 33.33,
+          "why": "Queda en 0,75: 1 / 0,75 = 1,3333, una subida del 33,33 %.",
+          "tol": 0.01
+        },
+        {
+          "id": "bo2-3",
+          "t": "match",
+          "q": "Empareja cada característica de una inversión con su significado.",
+          "pairs": [
+            [
+              "Liquidez de un activo",
+              "Facilidad para venderlo sin perder valor"
+            ],
+            [
+              "Volatilidad",
+              "Cuánto oscila el precio"
+            ],
+            [
+              "Diversificación",
+              "Repartir entre muchos activos"
+            ],
+            [
+              "Horizonte",
+              "Tiempo que piensas mantener la inversión"
+            ]
+          ],
+          "why": "Un activo puede ser rentable pero poco líquido, como un piso: venderlo lleva meses."
+        },
+        {
+          "id": "bo2-4",
+          "t": "num",
+          "q": "Repartes 10.000 €: 60 % en acciones que suben un 10 % y 40 % en bonos que suben un 2 %. ¿Cuántos euros ganas?",
+          "unit": "€",
+          "a": 680,
+          "why": "6.000 × 10 % = 600 € y 4.000 × 2 % = 80 €: 680 € en total, un 6,8 %."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "n": 8,
+  "id": "macro",
+  "track": "fundamental",
+  "title": "Macro para inversores",
+  "blurb": "Tipos, inflación y ciclo: el viento a favor o en contra.",
+  "lessons": [
+    {
+      "id": "f8a",
+      "title": "Tipos e inflación",
+      "ex": [
+        {
+          "id": "f8a-1",
+          "t": "num",
+          "q": "Una cuenta paga un 3 % y la inflación es del 4 %. ¿Cuánto poder adquisitivo pierdes al año, aproximadamente?",
+          "unit": "%",
+          "a": 1,
+          "tol": 0.05,
+          "why": "3 % − 4 % = −1 %: aunque el saldo crece, compras menos con él. La cuenta exacta es 1,03 ÷ 1,04 − 1 = −0,96 %."
+        },
+        {
+          "id": "f8a-2",
+          "t": "choice",
+          "q": "El banco central sube los tipos con fuerza. ¿Qué acciones suelen sufrir más?",
+          "opts": [
+            "Supermercados y alimentación",
+            "Bancos con margen de intereses",
+            "Crecimiento con beneficios lejanos",
+            "Empresas con mucha caja neta"
+          ],
+          "a": 2,
+          "why": "Su valor depende de beneficios de dentro de muchos años, y con tipos más altos esos beneficios futuros valen menos hoy. Los bancos, en cambio, suelen mejorar su margen."
+        },
+        {
+          "id": "f8a-3",
+          "t": "num",
+          "q": "Un beneficio de 100 € dentro de 10 años vale hoy 74 € descontado al 3 %, y 56 € descontado al 6 %. ¿Cuánto cae su valor actual? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 24.3,
+          "tol": 0.06,
+          "why": "1 − 56 ÷ 74 = 24,3 %. Duplicar el tipo de descuento recorta casi una cuarta parte del valor de un beneficio lejano: así golpean los tipos a las empresas de crecimiento."
+        },
+        {
+          "id": "f8a-4",
+          "t": "choice",
+          "q": "Suben los costes por la inflación y una empresa no puede subir sus precios. ¿Qué le pasa?",
+          "opts": [
+            "Se le estrecha el margen",
+            "Se le amplía el margen",
+            "Sus ventas caen a cero",
+            "Nada: la inflación no le afecta"
+          ],
+          "a": 0,
+          "why": "Si los costes suben y el precio no, cada venta deja menos. Poder subir precios sin perder clientes es una de las huellas de una ventaja competitiva (F7)."
+        }
+      ]
+    },
+    {
+      "id": "f8b",
+      "title": "Curva de tipos y ciclo",
+      "ex": [
+        {
+          "id": "f8b-1",
+          "t": "choice",
+          "q": "El bono a 2 años paga más que el de 10 años. ¿Cómo se llama esa situación y qué ha anticipado a menudo?",
+          "opts": [
+            "Curva invertida: muchas recesiones",
+            "Curva normal: crecimiento fuerte",
+            "Curva plana: inflación disparada",
+            "Curva invertida: bolsa al alza segura"
+          ],
+          "a": 0,
+          "why": "Normalmente los plazos largos pagan más. Cuando la curva se invierte, el mercado espera bajadas de tipos por debilidad; en EE. UU. ha precedido a la mayoría de recesiones desde los años setenta, aunque con meses o años de retraso."
+        },
+        {
+          "id": "f8b-2",
+          "t": "num",
+          "q": "El bono a 10 años paga un 4,10 % y el de 2 años, un 4,60 %. ¿De cuántos puntos básicos es la inversión de la curva? (1 % = 100 puntos básicos)",
+          "unit": "",
+          "a": 50,
+          "why": "4,60 − 4,10 = 0,50 puntos porcentuales, es decir, 50 puntos básicos. Se sigue de cerca cuándo vuelve a ser positiva, porque suele coincidir con el inicio de las bajadas de tipos."
+        },
+        {
+          "id": "f8b-3",
+          "t": "match",
+          "q": "Según el modelo clásico de rotación sectorial, empareja cada fase del ciclo con lo que suele ir mejor.",
+          "pairs": [
+            [
+              "Inicio de la recuperación",
+              "Cíclicos y financieras"
+            ],
+            [
+              "Expansión madura",
+              "Tecnología e industria"
+            ],
+            [
+              "Desaceleración",
+              "Defensivos: salud y consumo básico"
+            ],
+            [
+              "Recesión",
+              "Liquidez y bonos de calidad"
+            ]
+          ],
+          "why": "Es un modelo, no una regla: sirve para saber qué grupos vigilar, y la fuerza relativa de cada grupo te dice si se está cumpliendo."
+        },
+        {
+          "id": "f8b-4",
+          "t": "choice",
+          "q": "Los datos macro empeoran, pero tu acción está en Fase 2 con los beneficios acelerando. ¿Qué haces?",
+          "opts": [
+            "Vender todo por la macro",
+            "Mantener con su stop y vigilar",
+            "Doblar la posición",
+            "Quitar también el stop"
+          ],
+          "a": 1,
+          "why": "El stop te protege si el mercado arrastra a la acción; vender solo por un dato macro es intentar adivinar. Como en O'Neil, manda el mercado general cuando empieza a distribuir."
+        }
+      ]
+    }
+  ]
+}

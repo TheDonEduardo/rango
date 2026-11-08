@@ -1,0 +1,116 @@
+{
+  "n": 14,
+  "id": "relativa",
+  "track": "fundamental",
+  "title": "Valoración relativa",
+  "blurb": "Barata o cara frente a sus comparables.",
+  "lessons": [
+    {
+      "id": "fra",
+      "title": "Múltiplos frente a comparables",
+      "ex": [
+        {
+          "id": "fra-1",
+          "t": "num",
+          "q": "Sus comparables cotizan a un PER medio de 24 y tu empresa tiene un BPA de 3,50 $. ¿Qué precio implica ese múltiplo?",
+          "unit": "$",
+          "a": 84,
+          "why": "24 × 3,50 = 84 $. Es el precio si el mercado la valorase como a la media de su grupo, no una garantía de que llegue ahí."
+        },
+        {
+          "id": "fra-2",
+          "t": "num",
+          "q": "Una empresa sin beneficios vende 150 M$ al año y su sector cotiza a 6 veces ventas (EV/ventas). ¿Qué valor de empresa implica, en millones?",
+          "unit": "",
+          "a": 900,
+          "why": "150 × 6 = 900 M$. Sin beneficios, se usan las ventas; el riesgo es pagar por ventas que quizá nunca den beneficio."
+        },
+        {
+          "id": "fra-3",
+          "t": "choice",
+          "q": "¿Por qué una empresa puede merecer un PER mayor que sus comparables?",
+          "opts": [
+            "Porque su acción ya ha subido más",
+            "Crece más y con mejor rentabilidad",
+            "Porque tiene más empleados",
+            "Porque este año paga menos impuestos"
+          ],
+          "a": 1,
+          "why": "Un múltiplo mayor se justifica con más crecimiento, más ROIC o menos riesgo. Si no hay nada de eso, la prima es solo entusiasmo."
+        },
+        {
+          "id": "fra-4",
+          "t": "num",
+          "q": "Cotiza a un PER de 18 y sus comparables, a 24. ¿Con qué descuento cotiza?",
+          "unit": "%",
+          "a": 25,
+          "why": "(24 − 18) ÷ 24 = 25 %. Antes de verlo como oportunidad, busca la razón del descuento: suele haberla."
+        }
+      ]
+    },
+    {
+      "id": "frb",
+      "title": "Elegir el múltiplo",
+      "ex": [
+        {
+          "id": "frb-1",
+          "t": "choice",
+          "q": "Comparas una empresa con mucha caja con otra muy endeudada. ¿Qué múltiplo es más justo?",
+          "opts": [
+            "EV/EBITDA, que incluye la deuda",
+            "El PER, en todos los casos",
+            "La rentabilidad por dividendo",
+            "El precio frente al valor contable"
+          ],
+          "a": 0,
+          "why": "El PER solo mira el capital; el EV suma la deuda y resta la caja, así que compara negocios con financiaciones distintas."
+        },
+        {
+          "id": "frb-2",
+          "t": "num",
+          "q": "Capitalización de 1.000 M$, deuda neta de 200 M$ y EBITDA de 100 M$. ¿A cuántas veces EBITDA cotiza?",
+          "unit": "",
+          "a": 12,
+          "why": "EV = 1.000 + 200 = 1.200 M$; 1.200 ÷ 100 = 12 veces."
+        },
+        {
+          "id": "frb-3",
+          "t": "match",
+          "q": "Empareja cada tipo de empresa con el múltiplo que más se usa para valorarla.",
+          "pairs": [
+            [
+              "Bancos",
+              "Precio frente al valor contable"
+            ],
+            [
+              "Software sin beneficios",
+              "EV/ventas"
+            ],
+            [
+              "Industria madura",
+              "EV/EBITDA o PER"
+            ],
+            [
+              "SOCIMI inmobiliaria",
+              "Precio frente al valor de sus inmuebles"
+            ]
+          ],
+          "why": "Cada sector se valora por lo que mueve su negocio: el capital en los bancos, las ventas en el software temprano y los activos en el inmobiliario."
+        },
+        {
+          "id": "frb-4",
+          "t": "choice",
+          "q": "Todo el sector cotiza caro frente a su historia y tu empresa es la más barata del grupo. ¿Qué riesgo tiene la valoración relativa?",
+          "opts": [
+            "Que lo barato entre caros siga siendo caro",
+            "Ninguno: la más barata es buena compra",
+            "Que suban los tipos de interés",
+            "Que no tenga comparables"
+          ],
+          "a": 0,
+          "why": "Comparar solo dice si es cara o barata frente a otros. Si todo el grupo está inflado, conviene contrastarlo con un descuento de flujos o con su propia historia."
+        }
+      ]
+    }
+  ]
+}

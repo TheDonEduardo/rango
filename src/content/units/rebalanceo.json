@@ -1,0 +1,133 @@
+{
+  "n": 4,
+  "id": "rebalanceo",
+  "track": "pasiva",
+  "title": "Rebalanceo",
+  "blurb": "Volver al reparto elegido: vender caro y comprar barato sin opinar.",
+  "lessons": [
+    {
+      "id": "rb1",
+      "title": "Volver al objetivo",
+      "ex": [
+        {
+          "id": "rb1-1",
+          "t": "num",
+          "q": "Empiezas con 10.000 € al 60/40. Las acciones suben un 30 % y los bonos no se mueven. ¿Qué peso tienen ahora las acciones? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 66.1,
+          "why": "Acciones: 6.000 × 1,30 = 7.800 €; total 7.800 + 4.000 = 11.800 €. 7.800 ÷ 11.800 = 66,1 %: la cartera es ahora más arriesgada de lo que elegiste.",
+          "tol": 0.06
+        },
+        {
+          "id": "rb1-2",
+          "t": "num",
+          "q": "Con esa cartera de 11.800 €, ¿cuántos euros de acciones vendes para volver al 60 %?",
+          "unit": "€",
+          "a": 720,
+          "why": "Objetivo: 11.800 × 60 % = 7.080 € en acciones. Tienes 7.800 €: vendes 720 € y los pasas a bonos."
+        },
+        {
+          "id": "rb1-3",
+          "t": "choice",
+          "q": "¿Qué consigue el rebalanceo de forma automática?",
+          "opts": [
+            "Compra más de lo que más sube",
+            "Vende caro y compra barato, sin opinar",
+            "Elimina por completo las caídas",
+            "Cambia el objetivo cada año"
+          ],
+          "a": 1,
+          "why": "Al vender lo que ha subido y comprar lo que ha bajado para volver al objetivo, compras barato y vendes caro sin tener que adivinar el mercado."
+        },
+        {
+          "id": "rb1-4",
+          "t": "choice",
+          "q": "Tu regla es rebalancear cuando un activo se desvía más de 5 puntos. Objetivo: 60 % en acciones; ahora tienen un 63 %. ¿Qué haces?",
+          "opts": [
+            "Rebalancear ya, sin esperar",
+            "Nada: está dentro del margen",
+            "Vender todas las acciones",
+            "Cambiar el objetivo al 63 %"
+          ],
+          "a": 1,
+          "why": "63 − 60 = 3 puntos, por debajo de 5. El margen evita operar por movimientos pequeños y pagar costes de más."
+        },
+        {
+          "id": "rb1-5",
+          "t": "slide",
+          "q": "Cartera de 10.000 €: 7.800 € en acciones y 2.200 € en bonos. Tu objetivo es 70/30. Elige cuántos euros de acciones vendes para pasarlos a bonos.",
+          "label": "Venta de acciones",
+          "min": 0,
+          "max": 2000,
+          "step": 100,
+          "start": 0,
+          "a": 800,
+          "unit": "€",
+          "why": "El 70 % de 10.000 € son 7.000 €: vendes 7.800 − 7.000 = 800 € y los bonos quedan en 2.200 + 800 = 3.000 €, el 30 %.",
+          "show": [
+            {
+              "label": "Acciones tras vender",
+              "b": 7800,
+              "k": -1,
+              "unit": "€"
+            },
+            {
+              "label": "Peso de las acciones",
+              "b": 78,
+              "k": -0.01,
+              "unit": "%"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rb2",
+      "title": "Rebalancear en España",
+      "ex": [
+        {
+          "id": "rb2-1",
+          "t": "choice",
+          "q": "Rebalanceas moviendo dinero entre dos fondos de inversión. ¿Pagas impuestos?",
+          "opts": [
+            "Sí, siempre, por la ganancia",
+            "Solo si mueves más de 1.000 €",
+            "No, si lo haces por traspaso",
+            "Solo si es en otro banco"
+          ],
+          "a": 2,
+          "why": "Los traspasos entre fondos no tributan hasta que reembolsas. Por eso los fondos indexados son tan cómodos para rebalancear en España."
+        },
+        {
+          "id": "rb2-2",
+          "t": "num",
+          "q": "Para rebalancear vendes 2.000 € de un ETF con una ganancia acumulada de 500 €, a un tipo del 19 %. ¿Cuántos euros pagas de impuestos?",
+          "unit": "€",
+          "a": 95,
+          "why": "Tributa solo la ganancia: 500 × 19 % = 95 €. Con ETF, rebalancear vendiendo tiene un coste fiscal."
+        },
+        {
+          "id": "rb2-3",
+          "t": "num",
+          "q": "Tienes 7.000 € en acciones y 3.000 € en bonos, con objetivo 60/40, y vas a aportar 600 €. ¿Cuántos euros pones en bonos?",
+          "unit": "€",
+          "a": 600,
+          "why": "Con 10.600 € el objetivo en bonos es 4.240 €; tienes 3.000 € y te faltan 1.240 €, así que los 600 € van a bonos. Aportando al activo que se ha quedado atrás rebalanceas sin vender ni pagar impuestos."
+        },
+        {
+          "id": "rb2-4",
+          "t": "choice",
+          "q": "¿Con qué frecuencia suele bastar rebalancear?",
+          "opts": [
+            "Cada día, al cierre del mercado",
+            "Una vez al año o al superar un margen",
+            "Cada vez que la bolsa cae un poco",
+            "Nunca: la cartera se equilibra sola"
+          ],
+          "a": 1,
+          "why": "Rebalancear muy a menudo multiplica costes e impuestos; no hacerlo nunca deja que el riesgo crezca sin que lo decidas. Una vez al año o al pasar un margen suele bastar."
+        }
+      ]
+    }
+  ]
+}

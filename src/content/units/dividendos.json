@@ -1,0 +1,96 @@
+{
+  "n": 9,
+  "id": "dividendos",
+  "track": "fundamental",
+  "title": "Dividendos y recompras",
+  "blurb": "Cómo devuelve el dinero una empresa, y cuándo eso crea valor.",
+  "lessons": [
+    {
+      "id": "f9a",
+      "title": "Dividendos",
+      "ex": [
+        {
+          "id": "f9a-1",
+          "t": "num",
+          "q": "Una acción cotiza a 60,00 $ y paga 2,40 $ de dividendo al año. ¿Cuál es su rentabilidad por dividendo?",
+          "unit": "%",
+          "a": 4,
+          "why": "2,40 ÷ 60,00 = 4 %. Si el precio cae y el dividendo se mantiene, la rentabilidad sube: mira siempre si ese dividendo es sostenible."
+        },
+        {
+          "id": "f9a-2",
+          "t": "num",
+          "q": "Su BPA es de 3,00 $ y reparte 2,40 $ por acción. ¿Qué porcentaje del beneficio reparte (payout)?",
+          "unit": "%",
+          "a": 80,
+          "why": "2,40 ÷ 3,00 = 80 %. Le queda solo un 20 % para reinvertir o reducir deuda: con payouts altos, el dividendo crece poco."
+        },
+        {
+          "id": "f9a-3",
+          "t": "choice",
+          "q": "Una empresa lleva dos años repartiendo en dividendos el 120 % de su beneficio. ¿Qué indica?",
+          "opts": [
+            "Que su dividendo corre riesgo de recorte",
+            "Que es la mejor acción de dividendo",
+            "Que su beneficio crecerá con seguridad",
+            "Que la empresa no tiene ninguna deuda"
+          ],
+          "a": 0,
+          "why": "Reparte más de lo que gana: lo paga con caja o con deuda, y eso no dura. Una rentabilidad por dividendo muy alta suele ser una advertencia, no una oportunidad."
+        },
+        {
+          "id": "f9a-4",
+          "t": "num",
+          "q": "Cotiza a 50,00 € y paga un dividendo de 1,50 € por acción. Si nada más cambia, ¿a qué precio teórico abre el día ex-dividendo?",
+          "unit": "€",
+          "a": 48.5,
+          "why": "50,00 − 1,50 = 48,50 €. El dividendo sale del valor de la empresa: no es dinero gratis, y además tributa."
+        }
+      ]
+    },
+    {
+      "id": "f9b",
+      "title": "Recompras",
+      "ex": [
+        {
+          "id": "f9b-1",
+          "t": "num",
+          "q": "Una empresa gana 1.000 M$ y tiene 500 M de acciones. Recompra 25 M de acciones y el beneficio no cambia. ¿Cuánto sube el BPA? Redondea a 2 decimales.",
+          "unit": "%",
+          "a": 5.26,
+          "why": "BPA antes: 1.000 ÷ 500 = 2,00 $; después: 1.000 ÷ 475 = 2,11 $, un 5,26 % más sin ganar un dólar más. Por eso conviene separar el crecimiento del negocio del de la recompra.",
+          "tol": 0.02
+        },
+        {
+          "id": "f9b-2",
+          "t": "num",
+          "q": "Tenía 400 M de acciones. Recompra 20 M, pero emite 15 M nuevas para pagar a sus empleados. ¿En qué porcentaje baja de verdad el número de acciones?",
+          "unit": "%",
+          "a": 1.25,
+          "why": "(20 − 15) ÷ 400 = 1,25 %. La recompra anunciada es de 20 M, pero la reducción real, neta de las acciones emitidas, es de solo 5 M."
+        },
+        {
+          "id": "f9b-3",
+          "t": "num",
+          "q": "Su rentabilidad por dividendo es del 2 % y la recompra neta de acciones equivale a otro 3 % de su capitalización. ¿Cuánto devuelve en total al accionista cada año?",
+          "unit": "%",
+          "a": 5,
+          "why": "2 % + 3 % = 5 %. Dividendos y recompras son dos formas de devolver caja; sumadas dan una idea más completa que el dividendo solo."
+        },
+        {
+          "id": "f9b-4",
+          "t": "choice",
+          "q": "Una empresa con PER 60 dedica toda su caja libre a recomprar acciones. ¿Qué riesgo tiene?",
+          "opts": [
+            "Ninguno: recomprar siempre crea valor",
+            "Recomprar caro, con poco rendimiento",
+            "Que tenga que subir el dividendo",
+            "Que acabe saliendo de bolsa"
+          ],
+          "a": 1,
+          "why": "Con PER 60, cada 100 $ de recompra compran solo 1,67 $ de beneficio anual (100 ÷ 60). Recomprar crea valor cuando la acción está barata, no a cualquier precio."
+        }
+      ]
+    }
+  ]
+}

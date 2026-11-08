@@ -1,0 +1,152 @@
+{
+  "n": 3,
+  "id": "riesgo",
+  "title": "Riesgo y tamaño",
+  "blurb": "ATR, stop y posición: sobrevive para operar mañana.",
+  "lessons": [
+    {
+      "id": "r1",
+      "title": "Stop con ATR",
+      "ex": [
+        {
+          "id": "r1-1",
+          "t": "choice",
+          "q": "¿Qué mide el ATR(14)?",
+          "opts": [
+            "El rango verdadero medio de las últimas 14 velas",
+            "La dirección de la tendencia",
+            "El volumen medio de 14 sesiones",
+            "La distancia al máximo de 52 semanas"
+          ],
+          "a": 0,
+          "why": "El ATR promedia el rango verdadero (incluye gaps). Mide volatilidad, no dirección; sirve para que el stop respete el ruido normal del valor."
+        },
+        {
+          "id": "r1-2",
+          "t": "num",
+          "q": "Entrada a 35,00 €. ATR(14) = 1,80 €. Stop a 1,5×ATR. ¿En qué precio colocas el stop?",
+          "unit": "€",
+          "a": 32.3,
+          "why": "35,00 − 1,5 × 1,80 = 32,30 €. Riesgo por acción: 2,70 €."
+        },
+        {
+          "id": "r1-3",
+          "t": "level",
+          "q": "Entrada a 20,00 €, ATR(14) = 1,20 €. Toca el stop a 2×ATR.",
+          "chart": {
+            "type": "candles",
+            "data": [
+              [18.9,19.6,18.7,19.4],
+              [19.4,20.1,19.2,19.9],
+              [19.9,20.4,19.5,19.7],
+              [19.7,20.3,19.6,20.2],
+              [20.2,20.6,19.8,20]
+            ],
+            "h": 250,
+            "lines": [
+              {
+                "y": 20,
+                "label": "Entrada 20,00"
+              }
+            ],
+            "levels": [
+              {
+                "id": "A",
+                "y": 19.4
+              },
+              {
+                "id": "B",
+                "y": 17.6
+              },
+              {
+                "id": "C",
+                "y": 15.2
+              }
+            ],
+            "alt": "Gráfico de velas con tres niveles de stop"
+          },
+          "a": "B",
+          "why": "20,00 − 2 × 1,20 = 17,60 €. El nivel A (0,5×ATR) cae dentro del ruido diario; el C (4×ATR) arriesga el doble de lo previsto."
+        },
+        {
+          "id": "r1-4",
+          "t": "choice",
+          "q": "Con riesgo fijo en € por operación, si el ATR se duplica, el número de acciones…",
+          "opts": [
+            "Se duplica",
+            "Se reduce a la mitad",
+            "No cambia",
+            "Depende del precio de entrada"
+          ],
+          "a": 1,
+          "why": "Acciones = riesgo € ÷ distancia al stop. Si la distancia se duplica, compras la mitad: mismo riesgo, menos exposición."
+        }
+      ]
+    },
+    {
+      "id": "r2",
+      "title": "Tamaño de posición",
+      "ex": [
+        {
+          "id": "r2-1",
+          "t": "num",
+          "q": "Capital: 25.000 €. Arriesgas el 1 % por operación. ¿Cuántos euros pierdes si salta el stop?",
+          "unit": "€",
+          "a": 250,
+          "why": "25.000 × 1 % = 250 €. Ese importe es 1R."
+        },
+        {
+          "id": "r2-2",
+          "t": "num",
+          "q": "Riesgo 250 €. Entrada 18,40 €, ATR 1,25 €, stop a 2×ATR. ¿Cuántas acciones compras?",
+          "unit": "",
+          "a": 100,
+          "why": "Distancia = 2 × 1,25 = 2,50 €. Acciones = 250 ÷ 2,50 = 100. El stop queda en 15,90 €."
+        },
+        {
+          "id": "r2-3",
+          "t": "num",
+          "q": "100 acciones a 18,40 € con 25.000 € de capital. ¿Qué porcentaje del capital ocupa la posición?",
+          "unit": "%",
+          "a": 7.36,
+          "tol": 0.05,
+          "why": "1.840 ÷ 25.000 = 7,36 %. Riesgo y tamaño son cosas distintas: arriesgas el 1 %, pero la posición pesa un 7,36 %."
+        },
+        {
+          "id": "r2-4",
+          "t": "num",
+          "q": "Entrada 20,00 €, stop 17,60 €, objetivo 26,40 €. ¿Qué ratio beneficio/riesgo tiene? Redondea a 2 decimales.",
+          "unit": "R",
+          "a": 2.67,
+          "tol": 0.02,
+          "why": "Beneficio 6,40 ÷ riesgo 2,40 = 2,67R. Con ese ratio basta acertar el 27 % de las veces para no perder (1 ÷ (1 + 2,67))."
+        },
+        {
+          "id": "r2-5",
+          "t": "slide",
+          "q": "Cuenta de 20.000 € y arriesgas un 1 % por operación. Entrada a 50 € y stop a 47 €. Elige cuántas acciones compras sin pasar del riesgo máximo.",
+          "label": "Acciones",
+          "min": 0,
+          "max": 150,
+          "step": 1,
+          "start": 20,
+          "a": 66,
+          "unit": "",
+          "why": "Riesgo máximo: 20.000 × 1 % = 200 €; por acción, 50 − 47 = 3 €. 200 / 3 = 66,7: compras 66 (198 €), porque 67 ya arriesgan 201 €.",
+          "show": [
+            {
+              "label": "Riesgo total",
+              "k": 3,
+              "unit": "€"
+            },
+            {
+              "label": "Tamaño de la posición",
+              "k": 50,
+              "unit": "€"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

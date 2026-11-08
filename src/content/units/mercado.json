@@ -1,0 +1,143 @@
+{
+  "n": 10,
+  "id": "mercado",
+  "title": "Mercado general",
+  "blurb": "O'Neil: lee si el mercado acompaña antes de comprar.",
+  "lessons": [
+    {
+      "id": "m1",
+      "title": "Días de distribución",
+      "ex": [
+        {
+          "id": "m1-1",
+          "t": "choice",
+          "q": "¿Qué es un día de distribución según O'Neil?",
+          "opts": [
+            "Una caída del índice con más volumen que el día anterior",
+            "Una subida del índice con muy poco volumen",
+            "El día en que las empresas pagan dividendos",
+            "Una caída del índice de más de un 5 % en un día"
+          ],
+          "a": 0,
+          "why": "El índice cae al menos un 0,2 % con más volumen que la sesión anterior: grandes inversores están vendiendo. Un día suelto no dice nada; importa cuántos se acumulan."
+        },
+        {
+          "id": "m1-2",
+          "t": "num",
+          "q": "Esta es la semana del índice. ¿Cuántos días de distribución hay?",
+          "table": {
+            "cols": [
+              "Día",
+              "Cambio",
+              "Volumen frente al día anterior"
+            ],
+            "rows": [
+              [
+                "Lunes",
+                "−0,5 %",
+                "Mayor"
+              ],
+              [
+                "Martes",
+                "+0,8 %",
+                "Mayor"
+              ],
+              [
+                "Miércoles",
+                "−0,1 %",
+                "Mayor"
+              ],
+              [
+                "Jueves",
+                "−0,9 %",
+                "Menor"
+              ],
+              [
+                "Viernes",
+                "−0,4 %",
+                "Mayor"
+              ]
+            ]
+          },
+          "unit": "",
+          "a": 2,
+          "why": "Lunes y viernes: caen más de un 0,2 % con más volumen. El miércoles cae menos de un 0,2 % y el jueves, aunque cae más, lo hace con menos volumen."
+        },
+        {
+          "id": "m1-3",
+          "t": "choice",
+          "q": "El índice acumula 6 días de distribución en las últimas 25 sesiones, aunque sigue cerca de máximos. ¿Qué haces?",
+          "opts": [
+            "Comprar más: está en máximos",
+            "Reducir exposición y subir stops",
+            "Nada: solo importa el precio",
+            "Vender en corto todo el mercado"
+          ],
+          "a": 1,
+          "why": "Los grandes inversores están vendiendo de forma repetida aunque el índice aguante. Para O'Neil, cuatro o cinco días de distribución en pocas semanas suelen preceder a una corrección."
+        },
+        {
+          "id": "m1-4",
+          "t": "num",
+          "q": "El índice cerró ayer en 5.000 puntos y hoy cierra en 4.985, con más volumen que ayer. ¿Cuánto ha caído?",
+          "unit": "%",
+          "a": 0.3,
+          "why": "(5.000 − 4.985) ÷ 5.000 = 0,3 %. Supera el 0,2 % y con más volumen, así que cuenta como día de distribución."
+        }
+      ]
+    },
+    {
+      "id": "m2",
+      "title": "Día de confirmación",
+      "ex": [
+        {
+          "id": "m2-1",
+          "t": "order",
+          "q": "Ordena cómo vuelve a ser comprable el mercado tras una corrección, según O'Neil.",
+          "items": [
+            "El índice marca un mínimo tras la corrección",
+            "Primer día de subida: empieza el intento de rebote",
+            "En los días siguientes no pierde ese mínimo",
+            "Día de confirmación: subida fuerte con más volumen, del 4.º día en adelante",
+            "Vuelves a comprar rupturas de forma gradual"
+          ],
+          "why": "El mínimo y el primer día de subida abren el intento de rebote, y respetar el mínimo lo mantiene vivo. La confirmación con volumen da permiso para volver a comprar, pero poco a poco."
+        },
+        {
+          "id": "m2-2",
+          "t": "choice",
+          "q": "Segundo día del intento de rebote: el índice sube un 2 % con mucho volumen. ¿Es día de confirmación?",
+          "opts": [
+            "Sí: la subida es fuerte",
+            "No: hay que esperar al 4.º día",
+            "Sí, si el volumen dobla el anterior",
+            "No: hace falta subir un 10 %"
+          ],
+          "a": 1,
+          "why": "Los primeros días de un rebote pueden ser simples rebotes técnicos. O'Neil esperaba como mínimo al 4.º día del intento para darle valor a la confirmación."
+        },
+        {
+          "id": "m2-3",
+          "t": "choice",
+          "q": "En el tercer día del intento de rebote, el índice cae por debajo del mínimo de la corrección. ¿Qué ocurre?",
+          "opts": [
+            "El intento se anula y hay que esperar otro",
+            "Pasa a ser un día de confirmación",
+            "Nada: el recuento continúa",
+            "Es momento de comprar más fuerte"
+          ],
+          "a": 0,
+          "why": "Si pierde el mínimo, el intento de rebote ha fallado. El recuento empieza de nuevo con el próximo primer día de subida."
+        },
+        {
+          "id": "m2-4",
+          "t": "num",
+          "q": "Tras el día de confirmación inviertes el 25 % del capital, y añades otro 25 % cada vez que tus compras ganen un 5 %. Tras dos ampliaciones, ¿qué porcentaje tienes invertido?",
+          "unit": "%",
+          "a": 75,
+          "why": "25 % + 25 % + 25 % = 75 %. Aumentar la exposición solo cuando las primeras compras funcionan limita el daño si la confirmación resulta falsa."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "n": 7,
+  "id": "salidas",
+  "title": "Salidas escalonadas",
+  "blurb": "Vende por partes: asegura pronto y deja correr el resto.",
+  "lessons": [
+    {
+      "id": "s1",
+      "title": "Vender por partes",
+      "ex": [
+        {
+          "id": "s1-1",
+          "t": "num",
+          "q": "Vendes un tercio en 2R, otro tercio en 4R y el último salta en el stop, que habías subido a la entrada (0R). ¿Resultado medio de la operación?",
+          "unit": "R",
+          "a": 2,
+          "why": "(2 + 4 + 0) ÷ 3 = 2R. Aunque el último tramo salga sin ganancia, la operación cierra con el doble de lo arriesgado."
+        },
+        {
+          "id": "s1-2",
+          "t": "num",
+          "q": "Vendes la mitad en 2R y el precio se gira: la otra mitad sale en el stop original (−1R). ¿Resultado de la operación?",
+          "unit": "R",
+          "a": 0.5,
+          "why": "0,5 × 2 + 0,5 × (−1) = 0,5R. Sin la venta parcial habrías perdido 1R: vender una parte en 2R convierte esa operación en ganadora."
+        },
+        {
+          "id": "s1-3",
+          "t": "level",
+          "q": "Entraste a 40,00 € con stop en 38,00 €. El precio llega a 44,00 € (2R) y vendes un tercio. Toca dónde subes el stop del resto.",
+          "chart": {
+            "type": "candles",
+            "data": [
+              [39.8,40.4,39.5,40.2],
+              [40.2,41.1,40,40.9],
+              [40.9,41.5,40.6,41.2],
+              [41.2,42.4,41,42.2],
+              [42.2,43,41.8,42.6],
+              [42.6,44.2,42.4,44]
+            ],
+            "h": 250,
+            "lines": [
+              {
+                "y": 44,
+                "label": "Venta parcial 44,00"
+              }
+            ],
+            "levels": [
+              {
+                "id": "A",
+                "y": 38
+              },
+              {
+                "id": "B",
+                "y": 40
+              },
+              {
+                "id": "C",
+                "y": 43.5
+              }
+            ],
+            "alt": "Gráfico de velas al alza con tres niveles de stop"
+          },
+          "a": "B",
+          "why": "En la entrada (40,00 €) el resto ya no puede perder: la operación queda sin riesgo. A mantiene 1R en juego y C, a 0,50 € del precio, saltaría con el ruido normal."
+        },
+        {
+          "id": "s1-4",
+          "t": "choice",
+          "q": "Ya has vendido dos tercios y la tendencia sigue fuerte. ¿Cómo gestionas el último tercio?",
+          "opts": [
+            "Lo vendes al día siguiente para asegurar",
+            "Le pones un stop bajo la media de 50 sesiones",
+            "Le bajas el stop si el precio retrocede",
+            "Lo mantienes sin stop hasta fin de año"
+          ],
+          "a": 1,
+          "why": "El último tramo es el que captura las grandes subidas: un stop que sigue al precio evita vender demasiado pronto. Minervini acompaña a sus mayores ganadores con la media de 50 sesiones."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Vender en fuerza",
+      "ex": [
+        {
+          "id": "s2-1",
+          "t": "choice",
+          "q": "Tras meses de subida, la acción sube un 25 % en una semana, con el mayor volumen de toda la tendencia y un gap al alza. ¿Qué indica?",
+          "opts": [
+            "Que la tendencia empieza de verdad ahora",
+            "Que conviene comprar más con todo el capital",
+            "Posible subida clímax: vende una parte en fuerza",
+            "Nada relevante: es una semana más"
+          ],
+          "a": 2,
+          "why": "Las subidas más rápidas y con más volumen suelen llegar al final de una tendencia, cuando compran los últimos. Vender una parte ahí asegura la ganancia sin intentar adivinar el techo."
+        },
+        {
+          "id": "s2-2",
+          "t": "num",
+          "q": "La acción cotiza a 66,00 € y su media de 50 sesiones está en 50,00 €. ¿Cuánto está por encima de la media?",
+          "unit": "%",
+          "a": 32,
+          "why": "(66,00 − 50,00) ÷ 50,00 = 32 %. Tan alejado de su media, el precio tiende a volver a ella: es sitio para vender una parte, no para comprar."
+        },
+        {
+          "id": "s2-3",
+          "t": "num",
+          "q": "Compraste 150 acciones a 40,00 €. Vendes 50 a 44,00 €, otras 50 a 48,00 € y las últimas 50 salen en el stop, subido a 40,00 €. ¿Ganancia total?",
+          "unit": "€",
+          "a": 600,
+          "why": "50 × 4,00 + 50 × 8,00 + 50 × 0 = 600 €. Las ventas parciales aseguraron la ganancia aunque el último tramo saliera sin beneficio."
+        },
+        {
+          "id": "s2-4",
+          "t": "order",
+          "q": "Ordena un plan de salida escalonada.",
+          "items": [
+            "Colocar el stop inicial bajo el soporte",
+            "Vender un tercio en 2R y subir el stop a la entrada",
+            "Vender otro tercio en 4R o en una subida clímax",
+            "Seguir el último tercio con la media de 50 sesiones"
+          ],
+          "why": "Primero limitas la pérdida, luego aseguras y eliminas el riesgo, y al final dejas correr lo que queda. Cada paso depende de que el anterior se haya cumplido."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "n": 3,
+  "id": "reparto",
+  "track": "pasiva",
+  "title": "Reparto de activos",
+  "blurb": "Cuánto en acciones y cuánto en bonos: la decisión que más pesa.",
+  "lessons": [
+    {
+      "id": "pr1",
+      "title": "Acciones, bonos y horizonte",
+      "ex": [
+        {
+          "id": "pr1-1",
+          "t": "num",
+          "q": "Tu cartera es 70 % acciones y 30 % bonos. Las acciones caen un 40 % y los bonos suben un 5 %. ¿Cuánto cae la cartera completa? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 26.5,
+          "why": "0,70 × (−40 %) + 0,30 × 5 % = −28 % + 1,5 % = −26,5 %. Los bonos amortiguan, pero con un 70 % en acciones la caída sigue siendo fuerte.",
+          "tol": 0.06
+        },
+        {
+          "id": "pr1-2",
+          "t": "num",
+          "q": "Con el mismo escenario (acciones −40 %, bonos +5 %), ¿cuánto cae una cartera 40 % acciones y 60 % bonos?",
+          "unit": "%",
+          "a": 13,
+          "why": "0,40 × (−40 %) + 0,60 × 5 % = −16 % + 3 % = −13 %: la mitad que la 70/30. A cambio, a largo plazo crece menos."
+        },
+        {
+          "id": "pr1-3",
+          "t": "choice",
+          "q": "Necesitas el dinero para la entrada de un piso dentro de 2 años. ¿Dónde lo pones?",
+          "opts": [
+            "Un fondo de acciones global",
+            "Liquidez o renta fija a corto plazo",
+            "Acciones de una sola empresa",
+            "Un ETF apalancado al Nasdaq"
+          ],
+          "a": 1,
+          "why": "Las acciones pueden tardar años en recuperarse de una caída del 40-50 %. Lo que vas a necesitar en menos de 3-5 años no debería depender de la bolsa."
+        },
+        {
+          "id": "pr1-4",
+          "t": "num",
+          "q": "Según la regla orientativa «110 menos tu edad», ¿qué porcentaje en acciones tendría alguien de 40 años?",
+          "unit": "%",
+          "a": 70,
+          "why": "110 − 40 = 70 % en acciones y 30 % en bonos. Es solo un punto de partida: tu horizonte y cuánto aguantas ver caer la cartera pesan más que la edad."
+        }
+      ]
+    },
+    {
+      "id": "pr2",
+      "title": "Tolerancia y diversificación",
+      "ex": [
+        {
+          "id": "pr2-1",
+          "t": "num",
+          "q": "Tienes 20.000 € con un 80 % en acciones. Si las acciones caen un 50 %, ¿cuántos miles de euros pierdes?",
+          "unit": "",
+          "a": 8,
+          "why": "20.000 × 80 % = 16.000 € en acciones, y la mitad son 8.000 €. Pregúntate antes si venderías en pánico viendo esa cifra: si es así, el reparto es demasiado agresivo para ti."
+        },
+        {
+          "id": "pr2-2",
+          "t": "choice",
+          "q": "Toda tu cartera está en empresas del IBEX 35. ¿Qué riesgo corres?",
+          "opts": [
+            "Depender de un país y pocos sectores",
+            "Ninguno: es el índice de tu país",
+            "Pagar demasiadas comisiones",
+            "No poder vender cuando quieras"
+          ],
+          "a": 0,
+          "why": "El IBEX pesa mucho en bancos y en unas pocas empresas, y España es una parte pequeña de la economía mundial. Un índice global reparte el riesgo entre miles de empresas."
+        },
+        {
+          "id": "pr2-3",
+          "t": "match",
+          "q": "Empareja cada activo con su papel en la cartera.",
+          "pairs": [
+            [
+              "Acciones",
+              "Crecimiento a largo plazo, con caídas fuertes"
+            ],
+            [
+              "Bonos de calidad",
+              "Estabilidad y amortiguar las caídas"
+            ],
+            [
+              "Liquidez",
+              "Disponible al momento para imprevistos"
+            ],
+            [
+              "Oro",
+              "Refugio en crisis, sin rentas"
+            ]
+          ],
+          "why": "Cada activo cumple una función distinta; combinarlos busca que la cartera entera sea más estable que cualquiera de sus partes."
+        },
+        {
+          "id": "pr2-4",
+          "t": "choice",
+          "q": "¿Por qué conviene combinar activos que no se mueven a la vez?",
+          "opts": [
+            "Porque garantiza ganar todos los años",
+            "Porque elimina el riesgo de inflación",
+            "Porque reduce las caídas de la cartera",
+            "Porque así se pagan menos impuestos"
+          ],
+          "a": 2,
+          "why": "Cuando unos caen, otros aguantan o suben, y la cartera completa cae menos. No elimina el riesgo ni garantiza nada, pero hace más fácil mantenerse invertido."
+        }
+      ]
+    }
+  ]
+}

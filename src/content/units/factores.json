@@ -1,0 +1,116 @@
+{
+  "n": 13,
+  "id": "factores",
+  "track": "pasiva",
+  "title": "Factores",
+  "blurb": "Valor, tamaño, momentum y calidad: primas con letra pequeña.",
+  "lessons": [
+    {
+      "id": "fc1",
+      "title": "Qué es un factor",
+      "ex": [
+        {
+          "id": "fc1-1",
+          "t": "match",
+          "q": "Empareja cada factor con las empresas que favorece.",
+          "pairs": [
+            [
+              "Valor",
+              "Baratas por beneficios o valor contable"
+            ],
+            [
+              "Tamaño",
+              "Empresas pequeñas"
+            ],
+            [
+              "Momentum",
+              "Las que más han subido en los últimos meses"
+            ],
+            [
+              "Calidad",
+              "Rentables y con poca deuda"
+            ]
+          ],
+          "why": "Cada factor ha dado una prima histórica sobre el mercado, pero solo en promedio y con años muy malos por medio."
+        },
+        {
+          "id": "fc1-2",
+          "t": "choice",
+          "q": "¿Qué es un ETF «smart beta» o de factores?",
+          "opts": [
+            "Un índice que no pondera por capitalización",
+            "Un fondo con gestor que elige valores a diario",
+            "Un ETF apalancado que duplica el índice",
+            "Un fondo garantizado"
+          ],
+          "a": 0,
+          "why": "Sigue reglas fijas, como un índice, pero elige o pondera los valores por un criterio como el valor o el tamaño."
+        },
+        {
+          "id": "fc1-3",
+          "t": "num",
+          "q": "Un ETF del MSCI World cobra un 0,20 % y uno de factor valor, un 0,30 %. ¿Cuántos puntos de prima anual necesita el factor solo para cubrir la diferencia?",
+          "unit": "",
+          "a": 0.1,
+          "why": "0,30 − 0,20 = 0,10 puntos al año."
+        },
+        {
+          "id": "fc1-4",
+          "t": "choice",
+          "q": "El factor valor quedó por detrás del mercado gran parte de 2010-2020. ¿Qué enseña?",
+          "opts": [
+            "Las primas pueden tardar una década en aparecer",
+            "Los factores ya no funcionan nunca",
+            "Hay que cambiar de factor cada año",
+            "El valor siempre gana al año siguiente"
+          ],
+          "a": 0,
+          "why": "Una prima que llega solo en promedio exige aguantar rachas de 10 años; quien abandona en el peor momento se queda con la parte mala."
+        }
+      ]
+    },
+    {
+      "id": "fc2",
+      "title": "Factores en cartera",
+      "ex": [
+        {
+          "id": "fc2-1",
+          "t": "num",
+          "q": "Cartera: 80 % MSCI World y 20 % ETF de pequeñas de valor. El World rinde un 6 % y el ETF, un 8 %. ¿Cuánto rinde la cartera?",
+          "unit": "%",
+          "a": 6.4,
+          "why": "0,8 × 6 + 0,2 × 8 = 4,8 + 1,6 = 6,4 %."
+        },
+        {
+          "id": "fc2-2",
+          "t": "num",
+          "q": "Mismo reparto, pero el ETF de valor rinde un 2 % y el World, un 6 %. ¿Cuánto rinde la cartera?",
+          "unit": "%",
+          "a": 5.2,
+          "why": "0,8 × 6 + 0,2 × 2 = 4,8 + 0,4 = 5,2 %: el factor resta 0,8 puntos ese año."
+        },
+        {
+          "id": "fc2-3",
+          "t": "choice",
+          "q": "¿Qué sesgo tiene ya un fondo indexado ponderado por capitalización?",
+          "opts": [
+            "Hacia las empresas más grandes",
+            "Hacia las empresas más baratas",
+            "Hacia las empresas pequeñas",
+            "Ninguno: todas pesan igual"
+          ],
+          "a": 0,
+          "why": "Cada empresa pesa según su valor en bolsa: en el MSCI World, las 10 mayores superan el 20 % del índice."
+        },
+        {
+          "id": "fc2-4",
+          "t": "num",
+          "q": "Un índice de igual ponderación tiene 500 empresas. ¿Qué peso tiene cada una?",
+          "unit": "%",
+          "a": 0.2,
+          "why": "100 / 500 = 0,2 % cada una, se rebalancea periódicamente para mantenerlo."
+        }
+      ]
+    }
+  ]
+}

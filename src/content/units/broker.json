@@ -1,0 +1,106 @@
+{
+  "n": 6,
+  "id": "broker",
+  "track": "basico",
+  "title": "Cuenta y bróker",
+  "blurb": "Dónde guardas tus acciones y lo que cuesta de verdad.",
+  "lessons": [
+    {
+      "id": "bf1",
+      "title": "Elegir bróker",
+      "ex": [
+        {
+          "id": "bf1-1",
+          "t": "choice",
+          "q": "¿Qué protege tus acciones si quiebra el bróker?",
+          "opts": [
+            "Nada: pasan al patrimonio del bróker",
+            "El Banco de España te lo devuelve todo",
+            "El bróker debe venderlas antes de quebrar",
+            "Están a tu nombre, separadas de las del bróker"
+          ],
+          "a": 3,
+          "why": "Las acciones de los clientes no son del bróker y deben estar separadas de su patrimonio. Si aun así no te las devuelven, en España un fondo de garantía cubre hasta 100.000 € por cliente."
+        },
+        {
+          "id": "bf1-2",
+          "t": "num",
+          "q": "El bróker cobra un 0,1 % por operación, con un mínimo de 4 €. Compras 2.000 € de acciones. ¿Cuánto pagas de comisión?",
+          "unit": "€",
+          "a": 4,
+          "why": "2.000 × 0,1 % = 2 €, pero el mínimo es 4 €: pagas 4 €, un 0,2 % de la compra. Con órdenes pequeñas manda el mínimo."
+        },
+        {
+          "id": "bf1-3",
+          "t": "num",
+          "q": "Tu bróker cobra una custodia del 0,2 % anual y tu cartera vale 20.000 €. ¿Cuánto pagas al año?",
+          "unit": "€",
+          "a": 40,
+          "why": "20.000 × 0,2 % = 40 € al año, aunque no operes. Muchos brókeres ya no cobran custodia: compáralo antes de abrir la cuenta."
+        },
+        {
+          "id": "bf1-4",
+          "t": "choice",
+          "q": "Compras acciones de EE. UU. con euros. ¿Qué coste se suele pasar por alto?",
+          "opts": [
+            "El cambio de divisa en cada compra y venta",
+            "Ninguno: el precio en euros es el mismo",
+            "El IVA que se aplica a las acciones",
+            "Una tasa fija por entrar en el mercado"
+          ],
+          "a": 0,
+          "why": "Cada compra y cada venta convierten euros y dólares, y el bróker cobra por ello: según el bróker, de casi nada a más de un 0,5 % por operación. Míralo tanto como la comisión de compraventa."
+        }
+      ]
+    },
+    {
+      "id": "bf2",
+      "title": "Bróker extranjero y divisa",
+      "ex": [
+        {
+          "id": "bf2-1",
+          "t": "choice",
+          "q": "Tienes 60.000 € en acciones depositadas en un bróker extranjero. ¿Qué obligación informativa tienes ante Hacienda?",
+          "opts": [
+            "Ninguna obligación adicional",
+            "Pagar un impuesto extra del 10 %",
+            "Presentar el Modelo 720",
+            "Cerrar la cuenta antes de fin de año"
+          ],
+          "a": 2,
+          "why": "El Modelo 720 es informativo: declara los valores depositados fuera de España cuando superan 50.000 €. No es un impuesto, pero no presentarlo puede acarrear sanciones."
+        },
+        {
+          "id": "bf2-2",
+          "t": "choice",
+          "q": "Tu bróker es extranjero. ¿Qué cambia en tu declaración de la renta?",
+          "opts": [
+            "Declaras tú cada operación con sus informes",
+            "Nada: Hacienda lo rellena todo",
+            "No tributas en España por esa cuenta",
+            "Tributa solo en el país del bróker"
+          ],
+          "a": 0,
+          "why": "Como residente en España tributas aquí por todo, esté donde esté el bróker. Las operaciones de un bróker extranjero no suelen aparecer en los datos fiscales de Hacienda: las declaras tú con sus informes."
+        },
+        {
+          "id": "bf2-3",
+          "t": "num",
+          "q": "Compras una acción de EE. UU. a 100 $ con el euro a 1,10 $ y la vendes a 100 $ con el euro a 1,20 $. ¿Cuánto pierdes en euros? Redondea a 2 decimales.",
+          "unit": "%",
+          "a": 8.33,
+          "tol": 0.02,
+          "why": "Compra: 100 ÷ 1,10 = 90,91 €. Venta: 100 ÷ 1,20 = 83,33 €. Pierdes un 8,33 % aunque la acción no se haya movido: el dólar ha perdido valor frente al euro."
+        },
+        {
+          "id": "bf2-4",
+          "t": "num",
+          "q": "Compras 1.000 € de acciones de EE. UU. con una comisión de 2 € y un 0,5 % por el cambio de divisa, y pagas lo mismo al vender. ¿Cuánto pagas en total?",
+          "unit": "€",
+          "a": 14,
+          "why": "Compra: 2 + 1.000 × 0,5 % = 7 €. Venta: otros 7 €. En total 14 €, un 1,4 % de la operación: la divisa cuesta más que la comisión."
+        }
+      ]
+    }
+  ]
+}

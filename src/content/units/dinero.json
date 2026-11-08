@@ -1,0 +1,113 @@
+{
+  "n": 9,
+  "id": "dinero",
+  "track": "basico",
+  "title": "El dinero y el interés",
+  "blurb": "Interés simple y compuesto, TIN, TAE e IPC.",
+  "gate": false,
+  "lessons": [
+    {
+      "id": "bk1",
+      "title": "Interés simple y compuesto",
+      "ex": [
+        {
+          "id": "bk1-1",
+          "t": "num",
+          "q": "Depositas 1.000 € al 5 % de interés simple durante 3 años. ¿Cuántos euros de intereses cobras?",
+          "unit": "€",
+          "a": 150,
+          "why": "1.000 × 5 % = 50 € cada año; 50 × 3 = 150 €."
+        },
+        {
+          "id": "bk1-2",
+          "t": "num",
+          "q": "Ahora al 5 % compuesto durante 3 años. ¿Cuántos euros de intereses cobras? (dos decimales)",
+          "unit": "€",
+          "a": 157.63,
+          "why": "1.000 × 1,05³ = 1.157,63 €: 7,63 € más que con interés simple, porque los intereses también rinden.",
+          "tol": 0.01
+        },
+        {
+          "id": "bk1-3",
+          "t": "num",
+          "q": "Regla del 72: ¿en cuántos años se duplica tu dinero al 6 % anual?",
+          "unit": "",
+          "a": 12,
+          "why": "72 / 6 = 12 años. Al 3 % tardaría el doble, 24 años."
+        },
+        {
+          "id": "bk1-4",
+          "t": "choice",
+          "q": "¿Por qué se dice que el interés compuesto es «interés sobre interés»?",
+          "opts": [
+            "Los intereses ganados también generan intereses",
+            "El banco te cobra comisión dos veces",
+            "Se pagan impuestos dos veces al año",
+            "Solo funciona con las hipotecas"
+          ],
+          "a": 0,
+          "why": "Al 5 %, el primer año ganas 50 € sobre 1.000 €; el segundo, 52,50 € sobre 1.050 €. La diferencia crece cada año."
+        }
+      ]
+    },
+    {
+      "id": "bk2",
+      "title": "TIN, TAE e IPC",
+      "ex": [
+        {
+          "id": "bk2-1",
+          "t": "match",
+          "q": "Empareja cada sigla o institución con su significado.",
+          "pairs": [
+            [
+              "TIN",
+              "Tipo de interés nominal, sin gastos"
+            ],
+            [
+              "TAE",
+              "Rendimiento anual con gastos y frecuencia de pago"
+            ],
+            [
+              "IPC",
+              "Índice que mide la subida de los precios"
+            ],
+            [
+              "Banco central",
+              "Fija los tipos de interés oficiales"
+            ]
+          ],
+          "why": "Para comparar productos se usa la TAE, porque incluye comisiones y cada cuánto se pagan los intereses."
+        },
+        {
+          "id": "bk2-2",
+          "t": "num",
+          "q": "Una cuenta paga un 3 % TIN con liquidación mensual. ¿Cuál es su TAE? (dos decimales)",
+          "unit": "%",
+          "a": 3.04,
+          "why": "Cada mes paga un 0,25 %: 1,0025¹² − 1 = 3,04 %. Cobrar antes hace que los intereses también rindan."
+        },
+        {
+          "id": "bk2-3",
+          "t": "choice",
+          "q": "Sobre 1.000 €, el depósito A paga un 2,9 % TAE y el B, un 3 % TIN anual con 20 € de comisión al año. ¿Cuál rinde más?",
+          "opts": [
+            "El A",
+            "El B",
+            "Rinden igual",
+            "No se puede saber"
+          ],
+          "a": 0,
+          "why": "B paga 30 € y cobra 20 €: 10 € netos, un 1 %; A paga 29 €. Por eso hay que comparar la TAE."
+        },
+        {
+          "id": "bk2-4",
+          "t": "num",
+          "q": "La cesta de la compra costaba 100 € y un año después cuesta 104 €. ¿Cuál ha sido la inflación?",
+          "unit": "%",
+          "a": 4,
+          "why": "(104 − 100) / 100 = 4 %: con los mismos euros compras un 4 % menos."
+        }
+      ]
+    }
+  ]
+}

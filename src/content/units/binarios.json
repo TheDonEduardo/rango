@@ -1,0 +1,170 @@
+{
+  "n": 4,
+  "id": "binarios",
+  "title": "Catalizadores binarios",
+  "blurb": "Small caps, biotecnología y gaps de resultados.",
+  "lessons": [
+    {
+      "id": "b1",
+      "title": "Gaps de resultados",
+      "ex": [
+        {
+          "id": "b1-1",
+          "t": "num",
+          "q": "Cierre previo a resultados: 42,00 €. Al día siguiente abre a 47,04 €. ¿De qué tamaño es el gap?",
+          "unit": "%",
+          "a": 12,
+          "why": "(47,04 − 42,00) ÷ 42,00 = 5,04 ÷ 42,00 = 12 %. El gap se mide siempre desde el cierre previo."
+        },
+        {
+          "id": "b1-2",
+          "t": "choice",
+          "q": "Gap del +12 % tras resultados. ¿Qué comportamiento del día del gap indica demanda institucional?",
+          "opts": [
+            "Abre arriba y rellena medio gap antes del cierre",
+            "Volumen por debajo de su media de 50 sesiones",
+            "Cierra en el tercio superior del rango con 3× su volumen medio",
+            "Cierra por debajo del cierre previo"
+          ],
+          "a": 2,
+          "why": "Cerrar cerca del máximo con el triple de volumen indica compra durante toda la sesión, no solo en la apertura. Si rellena medio gap el mismo día, la oferta ya absorbió la noticia."
+        },
+        {
+          "id": "b1-3",
+          "t": "level",
+          "q": "Compras a 49,30 € la ruptura del máximo del día del gap. Toca el stop que invalida la operación sin arriesgar de más.",
+          "chart": {
+            "type": "candles",
+            "data": [
+              [40.2,40.9,39.8,40.6],
+              [40.6,41.5,40.3,41.2],
+              [41.2,41.6,40.7,40.9],
+              [40.9,42.1,40.8,41.8],
+              [41.8,42.4,41.5,42],
+              [47.04,49.2,46.5,48.9]
+            ],
+            "h": 250,
+            "lines": [
+              {
+                "y": 49.3,
+                "label": "Entrada 49,30"
+              }
+            ],
+            "levels": [
+              {
+                "id": "A",
+                "y": 48.4
+              },
+              {
+                "id": "B",
+                "y": 46.4
+              },
+              {
+                "id": "C",
+                "y": 42
+              }
+            ],
+            "alt": "Gráfico de velas con un gap al alza y tres niveles de stop"
+          },
+          "a": "B",
+          "why": "B queda 0,10 € bajo el mínimo del día del gap (46,50): si lo pierde, el gap ha fallado, y arriesgas 2,90 €. A está dentro del rango de esa misma vela y C (relleno del gap en 42,00) arriesga 7,30 €, unas 2,5 veces más."
+        },
+        {
+          "id": "b1-4",
+          "t": "num",
+          "q": "Compras 150 acciones a 40,00 € con stop en 38,00 € (1R = 300 €) y mantienes en resultados. Abre a 34,00 € y el stop se ejecuta en la apertura. ¿Cuántos R pierdes?",
+          "unit": "R",
+          "a": 3,
+          "why": "(40,00 − 34,00) × 150 = 900 €: 3R en lugar de 1R. La orden stop se convierte en orden a mercado y se ejecuta al primer precio disponible."
+        }
+      ]
+    },
+    {
+      "id": "b2",
+      "title": "Sizing con riesgo binario",
+      "ex": [
+        {
+          "id": "b2-1",
+          "t": "choice",
+          "q": "Mantienes una posición durante un catalizador binario (resultados, decisión de la FDA). ¿Qué distancia usas para calcular el tamaño?",
+          "opts": [
+            "La distancia al stop",
+            "2×ATR(14)",
+            "El 1 % del precio de entrada",
+            "La caída plausible si el evento sale mal"
+          ],
+          "a": 3,
+          "why": "El precio puede abrir muy por debajo del stop, así que la pérdida real la fija el gap, no la orden. Dimensiona como si el stop no existiera."
+        },
+        {
+          "id": "b2-2",
+          "t": "num",
+          "q": "Capital 25.000 €, riesgo máximo 1 % (250 €). Una biotecnológica cotiza a 12,00 € antes de la decisión de la FDA y, si la rechazan, estimas una caída del 70 %. ¿Cuántas acciones compras como máximo? Redondea a la baja.",
+          "unit": "",
+          "a": 29,
+          "why": "Pérdida plausible = 12,00 × 70 % = 8,40 € por acción. 250 ÷ 8,40 = 29,76, así que 29 acciones (243,60 € en riesgo)."
+        },
+        {
+          "id": "b2-3",
+          "t": "num",
+          "q": "Mismo valor (12,00 €, ATR 0,60 €), pero dimensionas por stop a 2×ATR: 250 ÷ 1,20 = 208 acciones. La FDA rechaza y abre un 70 % abajo. ¿Cuántos R pierdes? Redondea a 1 decimal.",
+          "unit": "R",
+          "a": 7,
+          "tol": 0.05,
+          "why": "208 × 8,40 = 1.747,20 €, y 1.747,20 ÷ 250 = 7,0R. Un solo evento equivale a siete stops normales."
+        },
+        {
+          "id": "b2-4",
+          "t": "num",
+          "q": "Estimas un 60 % de probabilidad de aprobación. Si aprueban, +40 %; si rechazan, −70 %. ¿Cuánto pierdes de media por apuesta?",
+          "unit": "%",
+          "a": 4,
+          "why": "Esperanza = 0,60 × 40 % − 0,40 × 70 % = 24 % − 28 % = −4 %: pierdes un 4 % de media. Acertar el 60 % de las veces no basta si la pérdida es mayor que la ganancia."
+        }
+      ]
+    },
+    {
+      "id": "b3",
+      "title": "Small caps: dilución y float",
+      "ex": [
+        {
+          "id": "b3-1",
+          "t": "num",
+          "q": "Una small cap tiene 20 millones de acciones y emite 5 millones nuevas. Si no acudes a la ampliación, ¿cuánto se reduce tu participación?",
+          "unit": "%",
+          "a": 20,
+          "why": "Pasas de x ÷ 20 a x ÷ 25 millones: 20 ÷ 25 = 0,80, una dilución del 20 %. Cada acción representa ahora una quinta parte menos de la empresa."
+        },
+        {
+          "id": "b3-2",
+          "t": "num",
+          "q": "Cotiza a 3,00 € con 20 millones de acciones y coloca 5 millones nuevas a 2,40 € (20 % de descuento). ¿Precio teórico tras la ampliación?",
+          "unit": "€",
+          "a": 2.88,
+          "why": "(20 × 3,00 + 5 × 2,40) ÷ 25 = 72 ÷ 25 = 2,88 € (en millones). Una colocación con descuento arrastra el precio hacia el de emisión."
+        },
+        {
+          "id": "b3-3",
+          "t": "num",
+          "q": "Float de 4 millones de acciones. Tras una noticia negocia 12 millones en una sesión. ¿Cuántas veces ha rotado el float?",
+          "unit": "",
+          "a": 3,
+          "why": "12 ÷ 4 = 3 rotaciones: todo el float cambió de manos tres veces. Es momentum especulativo y el giro llega igual de rápido: tamaño reducido y stop estricto."
+        },
+        {
+          "id": "b3-4",
+          "t": "choice",
+          "q": "Una small cap con caja para 3 meses sube un 80 % con una noticia. ¿Qué riesgo es más probable en los próximos días?",
+          "opts": [
+            "Exclusión de un índice bursátil",
+            "Ampliación de capital o ATM",
+            "Recompra de acciones propias",
+            "Dividendo extraordinario a los accionistas"
+          ],
+          "a": 1,
+          "why": "Sin caja, la empresa necesita financiarse y la subida le permite emitir más caro: ampliaciones y ATM (ventas directas en mercado) suelen llegar tras los picos. Revisa caja trimestral y registros de emisión (S-1, S-3) antes de entrar."
+        }
+      ]
+    }
+  ]
+}

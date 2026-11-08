@@ -1,0 +1,122 @@
+{
+  "n": 14,
+  "id": "noticias",
+  "track": "basico",
+  "title": "Leer noticias financieras",
+  "blurb": "Entender titulares y separar el ruido de la información.",
+  "gate": false,
+  "lessons": [
+    {
+      "id": "bp1",
+      "title": "Titulares y cifras",
+      "ex": [
+        {
+          "id": "bp1-1",
+          "t": "choice",
+          "q": "Titular: «El IBEX se desploma un 1,2 %». ¿Cómo lo lees?",
+          "opts": [
+            "Un día normal: no es ningún desplome",
+            "El fin del mercado alcista",
+            "Una señal para venderlo todo",
+            "Una caída que nunca se recupera"
+          ],
+          "a": 0,
+          "why": "Movimientos diarios de más del 1 % ocurren decenas de veces al año; un desplome real es una caída del 20 % o más."
+        },
+        {
+          "id": "bp1-2",
+          "t": "num",
+          "q": "El IBEX está en 11.000 puntos y cae un 1,2 %. ¿Cuántos puntos pierde?",
+          "unit": "",
+          "a": 132,
+          "why": "11.000 × 1,2 % = 132 puntos."
+        },
+        {
+          "id": "bp1-3",
+          "t": "match",
+          "q": "Empareja cada término de las noticias con su significado.",
+          "pairs": [
+            [
+              "Puntos básicos",
+              "Centésimas de punto porcentual"
+            ],
+            [
+              "Interanual",
+              "Frente al mismo mes del año anterior"
+            ],
+            [
+              "Trimestral",
+              "De un periodo de 3 meses"
+            ],
+            [
+              "Consenso",
+              "Media de las previsiones de los analistas"
+            ]
+          ],
+          "why": "25 puntos básicos son 0,25 puntos porcentuales: el tamaño habitual de una subida o bajada de tipos."
+        },
+        {
+          "id": "bp1-4",
+          "t": "num",
+          "q": "El BCE sube los tipos 25 puntos básicos desde el 2,00 %. ¿En qué tipo quedan?",
+          "unit": "%",
+          "a": 2.25,
+          "why": "25 puntos básicos = 0,25 puntos: 2,00 + 0,25 = 2,25 %."
+        }
+      ]
+    },
+    {
+      "id": "bp2",
+      "title": "Ruido y señal",
+      "ex": [
+        {
+          "id": "bp2-1",
+          "t": "choice",
+          "q": "Una empresa gana 500 millones, un 20 % menos que el año pasado, pero bate el consenso y sube. ¿Por qué?",
+          "opts": [
+            "El mercado esperaba un resultado aún peor",
+            "Los mercados son siempre irracionales",
+            "Porque ganar menos es positivo",
+            "Por un error en la noticia"
+          ],
+          "a": 0,
+          "why": "El precio ya descontaba una caída mayor: lo que mueve la acción es la diferencia con lo esperado, no con el año pasado."
+        },
+        {
+          "id": "bp2-2",
+          "t": "num",
+          "q": "Esa empresa gana 500 millones, un 20 % menos que el año anterior. ¿Cuántos millones ganó el año anterior?",
+          "unit": "",
+          "a": 625,
+          "why": "500 / 0,80 = 625 millones; comprobación: 625 × 0,8 = 500."
+        },
+        {
+          "id": "bp2-3",
+          "t": "choice",
+          "q": "¿Qué haces con las noticias diarias si inviertes a largo plazo con fondos indexados?",
+          "opts": [
+            "Ignorarlas casi siempre",
+            "Operar con cada titular",
+            "Vender en cada mala noticia",
+            "Comprar con cada buena noticia"
+          ],
+          "a": 0,
+          "why": "Tu plan está pensado para 20 años o más: un titular de hoy no cambia el reparto ni el plazo."
+        },
+        {
+          "id": "bp2-4",
+          "t": "choice",
+          "q": "Un artículo dice «esta acción puede multiplicar por 10». ¿Qué te preguntas primero?",
+          "opts": [
+            "Quién lo escribe y qué gana con ello",
+            "Cuánto dinero meto ya",
+            "Si pido un préstamo para comprar",
+            "Cuándo venderé con el beneficio"
+          ],
+          "a": 0,
+          "why": "Para multiplicar por 10 hace falta subir un 900 %; quien lo promete a menudo tiene acciones o cobra por publicarlo."
+        }
+      ]
+    }
+  ]
+}

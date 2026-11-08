@@ -1,0 +1,117 @@
+{
+  "n": 5,
+  "id": "carteras",
+  "track": "pasiva",
+  "title": "Carteras modelo",
+  "blurb": "Repartos clásicos que se pueden mantener durante décadas.",
+  "lessons": [
+    {
+      "id": "cm1",
+      "title": "Carteras clásicas",
+      "ex": [
+        {
+          "id": "cm1-1",
+          "t": "match",
+          "q": "Empareja cada cartera modelo con su composición.",
+          "pairs": [
+            [
+              "60/40",
+              "60 % acciones y 40 % bonos"
+            ],
+            [
+              "Cartera permanente",
+              "Un 25 % en cada uno: acciones, bonos largos, oro y liquidez"
+            ],
+            [
+              "Tres fondos",
+              "Acciones nacionales, internacionales y bonos"
+            ],
+            [
+              "100 % acciones",
+              "Máximo crecimiento y máximas caídas"
+            ]
+          ],
+          "why": "Todas son sencillas a propósito: pocos fondos, reglas claras y nada que decidir cada mes."
+        },
+        {
+          "id": "cm1-2",
+          "t": "num",
+          "q": "En la cartera permanente con 3.600 €, ¿cuántos euros van a oro?",
+          "unit": "€",
+          "a": 900,
+          "why": "Son cuatro partes iguales: 3.600 × 25 % = 900 € en acciones, en bonos largos, en oro y en liquidez."
+        },
+        {
+          "id": "cm1-3",
+          "t": "num",
+          "q": "Un año, las acciones suben un 20 % y los bonos un 2 %. ¿Qué rentabilidad tiene una cartera 60/40? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 12.8,
+          "why": "0,60 × 20 % + 0,40 × 2 % = 12 % + 0,8 % = 12,8 %. En los años buenos la 60/40 gana menos que el 100 % acciones, y en los malos cae menos.",
+          "tol": 0.06
+        },
+        {
+          "id": "cm1-4",
+          "t": "choice",
+          "q": "¿Qué busca la cartera permanente con el oro y la liquidez?",
+          "opts": [
+            "Aguantar bien en cualquier escenario",
+            "Batir al S&P 500 todos los años",
+            "Maximizar el crecimiento",
+            "Evitar pagar comisiones"
+          ],
+          "a": 0,
+          "why": "Harry Browne la diseñó para cuatro escenarios: crecimiento (acciones), deflación (bonos largos), inflación (oro) y recesión (liquidez). Sacrifica rentabilidad a cambio de caídas pequeñas."
+        }
+      ]
+    },
+    {
+      "id": "cm2",
+      "title": "Elegir y mantener",
+      "ex": [
+        {
+          "id": "cm2-1",
+          "t": "choice",
+          "q": "¿Qué hace que una cartera modelo funcione en la práctica?",
+          "opts": [
+            "Cambiarla según las noticias",
+            "Elegir la que más ganó el último año",
+            "Mantenerla años, aportando y rebalanceando",
+            "Tener muchos fondos parecidos"
+          ],
+          "a": 2,
+          "why": "La mayor parte del resultado viene de mantener el plan. Cambiar de cartera tras un mal año suele vender lo que acaba de caer."
+        },
+        {
+          "id": "cm2-2",
+          "t": "num",
+          "q": "La cartera A ganó un 25 % el año pasado y la B un 8 %. Te cambias a A justo cuando A cae un 10 % y B sube un 6 %. ¿Cuántos puntos pierdes frente a haberte quedado en B?",
+          "unit": "",
+          "a": 16,
+          "why": "6 − (−10) = 16 puntos en un año. Perseguir lo que más ganó suele llevar a comprar tarde."
+        },
+        {
+          "id": "cm2-3",
+          "t": "num",
+          "q": "Tienes la mitad en un fondo del S&P 500 y la otra mitad en un MSCI World en el que EE. UU. pesa un 70 %. ¿Qué porcentaje de tu cartera está en EE. UU.?",
+          "unit": "%",
+          "a": 85,
+          "why": "0,5 × 100 % + 0,5 × 70 % = 85 %. Dos fondos no siempre son dos apuestas distintas: mira qué hay dentro de cada uno."
+        },
+        {
+          "id": "cm2-4",
+          "t": "choice",
+          "q": "Para alguien que empieza, ¿qué cartera es más fácil de mantener?",
+          "opts": [
+            "Doce fondos temáticos distintos",
+            "Un fondo indexado global y uno de bonos",
+            "Acciones elegidas por noticias",
+            "Un ETF apalancado al Nasdaq"
+          ],
+          "a": 1,
+          "why": "Dos fondos baratos y diversificados se entienden, se rebalancean en minutos y no tientan a cambiar. La sencillez es lo que permite aguantar décadas."
+        }
+      ]
+    }
+  ]
+}

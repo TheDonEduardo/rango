@@ -1,0 +1,125 @@
+{
+  "n": 8,
+  "id": "cartera",
+  "title": "Riesgo de cartera",
+  "blurb": "No es cada operación: es todo lo que tienes abierto a la vez.",
+  "lessons": [
+    {
+      "id": "c1",
+      "title": "Riesgo abierto",
+      "ex": [
+        {
+          "id": "c1-1",
+          "t": "num",
+          "q": "Tienes 5 posiciones abiertas y cada una arriesga un 1 % del capital hasta su stop. Si saltan todos los stops, ¿qué porcentaje del capital pierdes?",
+          "unit": "%",
+          "a": 5,
+          "why": "5 × 1 % = 5 %. Es tu riesgo abierto: lo que cuesta el peor día si todo sale mal a la vez."
+        },
+        {
+          "id": "c1-2",
+          "t": "num",
+          "q": "Capital de 15.000 € y esas 5 posiciones son todas de semiconductores. Si el sector cae y saltan los cinco stops, ¿cuántos € pierdes?",
+          "unit": "€",
+          "a": 750,
+          "why": "15.000 × 5 % = 750 €. Cinco posiciones del mismo sector se mueven como una sola posición grande: en una caída del sector saltan juntas."
+        },
+        {
+          "id": "c1-3",
+          "t": "choice",
+          "q": "Tu límite de riesgo abierto es un 6 % y ya lo has alcanzado. Aparece una compra nueva. ¿Qué haces?",
+          "opts": [
+            "La compras igualmente: es buena",
+            "Liberas riesgo subiendo stops a la entrada, o renuncias",
+            "Compras el doble para compensar",
+            "Quitas los stops de las demás posiciones"
+          ],
+          "a": 1,
+          "why": "Una posición con el stop en la entrada ya no suma riesgo: así haces hueco sin superar tu límite. Si no puedes, la nueva operación espera."
+        },
+        {
+          "id": "c1-4",
+          "t": "num",
+          "q": "Arriesgas un 2 % por operación y encadenas 10 pérdidas seguidas. Cada pérdida es el 2 % del capital que te queda. ¿Cuánto has perdido en total? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 18.3,
+          "tol": 0.06,
+          "why": "1 − 0,98¹⁰ = 18,3 %. Con un 1 % por operación serían un 9,6 %: rachas así ocurren incluso con buenos sistemas, y el riesgo por operación decide cuánto duelen."
+        }
+      ]
+    },
+    {
+      "id": "c2",
+      "title": "Exposición y mercado",
+      "ex": [
+        {
+          "id": "c2-1",
+          "t": "num",
+          "q": "Capital de 15.000 €. Tus posiciones valen 3.000, 2.500, 4.000 y 1.500 €. ¿Qué porcentaje del capital está invertido? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 73.3,
+          "tol": 0.06,
+          "why": "(3.000 + 2.500 + 4.000 + 1.500) ÷ 15.000 = 11.000 ÷ 15.000 = 73,3 %. La exposición dice cuánto te mueve el mercado; el riesgo abierto, cuánto pierdes si saltan los stops."
+        },
+        {
+          "id": "c2-2",
+          "t": "choice",
+          "q": "El S&P 500 pierde su media de 200 sesiones y la mayoría de tus rupturas fallan. ¿Qué haces?",
+          "opts": [
+            "Reducir exposición y tamaño",
+            "Aumentar el tamaño para recuperar",
+            "Operar igual: el mercado no importa",
+            "Comprar las acciones que más caen"
+          ],
+          "a": 0,
+          "why": "Según O'Neil, tres de cada cuatro acciones siguen la dirección del mercado. Cuando las rupturas fallan seguidas, el mercado te está diciendo que reduzcas y esperes."
+        },
+        {
+          "id": "c2-3",
+          "t": "num",
+          "q": "Capital de 15.000 € y ninguna posición puede pasar del 25 %. Arriesgas 150 €, con entrada a 50,00 € y stop en 49,00 €. ¿Cuántas acciones compras?",
+          "unit": "",
+          "a": 75,
+          "why": "Por riesgo saldrían 150 ÷ 1,00 = 150 acciones (7.500 €, la mitad del capital). El límite del 25 % son 3.750 €, es decir, 75 acciones: con stops muy ajustados manda el límite de tamaño."
+        },
+        {
+          "id": "c2-4",
+          "t": "choice",
+          "q": "Así está repartida tu cartera. ¿Qué riesgo destaca?",
+          "table": {
+            "cols": [
+              "Sector",
+              "Peso"
+            ],
+            "rows": [
+              [
+                "Semiconductores",
+                "45 %"
+              ],
+              [
+                "Software",
+                "30 %"
+              ],
+              [
+                "Salud",
+                "15 %"
+              ],
+              [
+                "Liquidez",
+                "10 %"
+              ]
+            ]
+          },
+          "opts": [
+            "Demasiada liquidez sin invertir",
+            "Exceso de diversificación",
+            "Concentración en tecnología",
+            "Ninguno: está equilibrada"
+          ],
+          "a": 2,
+          "why": "45 % + 30 % = 75 % en tecnología: un mal día del sector golpea casi toda la cartera a la vez. Limita el peso o el riesgo abierto por sector."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "n": 11,
+  "id": "deudas",
+  "track": "basico",
+  "title": "Deudas y tarjetas",
+  "blurb": "Qué cuesta deber dinero y qué deuda pagar antes.",
+  "gate": false,
+  "lessons": [
+    {
+      "id": "bm1",
+      "title": "El coste de deber",
+      "ex": [
+        {
+          "id": "bm1-1",
+          "t": "choice",
+          "q": "Tienes varias deudas y dinero extra. ¿Cuál conviene pagar antes?",
+          "opts": [
+            "La de mayor tipo de interés",
+            "La de menor importe siempre",
+            "La hipoteca, siempre",
+            "La más reciente"
+          ],
+          "a": 0,
+          "why": "Cada euro que devuelves de una tarjeta al 20 % «rinde» un 20 % seguro, más de lo que suele dar la bolsa."
+        },
+        {
+          "id": "bm1-2",
+          "t": "num",
+          "q": "Debes 2.000 € en una tarjeta al 20 % anual. ¿Cuántos euros de intereses pagas en un año si no devuelves nada?",
+          "unit": "€",
+          "a": 400,
+          "why": "2.000 × 20 % = 400 € al año."
+        },
+        {
+          "id": "bm1-3",
+          "t": "num",
+          "q": "Un préstamo de 6.000 € a 3 años tiene cuotas de 190 € al mes. ¿Cuántos euros pagas de intereses en total?",
+          "unit": "€",
+          "a": 840,
+          "why": "190 × 36 = 6.840 €; 6.840 − 6.000 = 840 € de intereses."
+        },
+        {
+          "id": "bm1-4",
+          "t": "match",
+          "q": "Empareja cada producto con cómo funciona.",
+          "pairs": [
+            [
+              "Tarjeta de débito",
+              "Cobra directamente de tu cuenta"
+            ],
+            [
+              "Tarjeta de crédito",
+              "Te presta y lo pagas a fin de mes"
+            ],
+            [
+              "Pago revolving",
+              "Cuota fija que alarga la deuda con intereses altos"
+            ],
+            [
+              "Préstamo personal",
+              "Importe fijo devuelto en cuotas"
+            ]
+          ],
+          "why": "La tarjeta de crédito pagada a fin de mes no suele cobrar intereses; la modalidad revolving puede superar el 20 % anual."
+        }
+      ]
+    },
+    {
+      "id": "bm2",
+      "title": "Revolving y prioridades",
+      "ex": [
+        {
+          "id": "bm2-1",
+          "t": "num",
+          "q": "Una tarjeta revolving cobra un 2 % al mes y debes 3.000 €. ¿Cuántos euros de intereses genera el primer mes?",
+          "unit": "€",
+          "a": 60,
+          "why": "3.000 × 2 % = 60 € solo de intereses."
+        },
+        {
+          "id": "bm2-2",
+          "t": "num",
+          "q": "Si pagas una cuota de 70 € ese mes, ¿cuántos euros de deuda reduces?",
+          "unit": "€",
+          "a": 10,
+          "why": "70 − 60 = 10 €: casi toda la cuota se va en intereses."
+        },
+        {
+          "id": "bm2-3",
+          "t": "choice",
+          "q": "¿Por qué la tarjeta revolving es tan peligrosa?",
+          "opts": [
+            "La cuota baja apenas cubre los intereses",
+            "Porque no se puede usar en internet",
+            "Porque cobra siempre en dólares",
+            "Porque caduca cada mes"
+          ],
+          "a": 0,
+          "why": "Con 10 € de amortización al mes, devolver 3.000 € llevaría años y costaría varias veces la deuda inicial."
+        },
+        {
+          "id": "bm2-4",
+          "t": "choice",
+          "q": "¿Tiene sentido invertir en bolsa mientras debes dinero en una tarjeta al 20 %?",
+          "opts": [
+            "No: pagar la tarjeta rinde un 20 % seguro",
+            "Sí, porque la bolsa siempre da más",
+            "Sí, si inviertes en ETF",
+            "Da igual una cosa que otra"
+          ],
+          "a": 0,
+          "why": "La bolsa mundial ha dado en torno a un 7 % anual a largo plazo, con años de pérdidas; la tarjeta cobra un 20 % todos los años."
+        }
+      ]
+    }
+  ]
+}

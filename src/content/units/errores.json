@@ -1,0 +1,102 @@
+{
+  "n": 7,
+  "id": "errores",
+  "track": "basico",
+  "gate": false,
+  "title": "Errores del principiante",
+  "blurb": "Lo que más dinero cuesta al empezar, y cómo evitarlo.",
+  "lessons": [
+    {
+      "id": "bi1",
+      "title": "Errores con el dinero",
+      "ex": [
+        {
+          "id": "bi1-1",
+          "t": "num",
+          "q": "Inviertes 1.000 € y pagas 9,95 € de comisión al comprar y otros 9,95 € al vender. ¿Cuánto tiene que subir solo para cubrir las comisiones? Redondea a 2 decimales.",
+          "unit": "%",
+          "a": 1.99,
+          "why": "(9,95 + 9,95) ÷ 1.000 = 1,99 %. Con importes pequeños, las comisiones fijas se comen buena parte de la ganancia: busca un bróker barato o aporta menos veces y más cantidad.",
+          "tol": 0.02
+        },
+        {
+          "id": "bi1-2",
+          "t": "choice",
+          "q": "Un conocido te recomienda una acción que «se va a multiplicar por 10». ¿Qué haces?",
+          "opts": [
+            "Meter todos tus ahorros en ella",
+            "Investigar y arriesgar poco",
+            "Pedir un préstamo para comprar más",
+            "Comprar ya, antes de que suba"
+          ],
+          "a": 1,
+          "why": "Nadie sabe qué acción se multiplicará. Si te interesa, investígala tú y pon solo lo que podrías perder sin que te cambie la vida."
+        },
+        {
+          "id": "bi1-3",
+          "t": "num",
+          "q": "Tienes 5.000 € para invertir y pones 4.000 € en una sola acción. ¿Qué porcentaje de tu capital depende de esa empresa?",
+          "unit": "%",
+          "a": 80,
+          "why": "4.000 ÷ 5.000 = 80 %. Si esa empresa cae a la mitad, pierdes un 40 % de todo tu capital: por eso se reparte entre muchas."
+        },
+        {
+          "id": "bi1-4",
+          "t": "choice",
+          "q": "¿Qué dinero no deberías invertir en bolsa?",
+          "opts": [
+            "El que necesitarás en menos de 2 años",
+            "El que no necesitarás en 10 años",
+            "Tus aportaciones mensuales planificadas",
+            "Lo que sobra tras el fondo de emergencia"
+          ],
+          "a": 0,
+          "why": "En 2 años la bolsa puede estar un 30 % por debajo. Lo que vas a necesitar pronto va en liquidez o renta fija a corto plazo."
+        }
+      ]
+    },
+    {
+      "id": "bi2",
+      "title": "Errores al operar",
+      "ex": [
+        {
+          "id": "bi2-1",
+          "t": "num",
+          "q": "Compras acciones a 20 € y caen a 10 €. Compras la misma cantidad de acciones otra vez. ¿Cuál es tu precio medio?",
+          "unit": "€",
+          "a": 15,
+          "why": "(20 + 10) ÷ 2 = 15 €. Promediar a la baja dobla la apuesta en algo que va mal; hacerlo para «recuperar antes» es uno de los errores que más cuestan."
+        },
+        {
+          "id": "bi2-2",
+          "t": "num",
+          "q": "Operas con un apalancamiento de 10 veces y el precio cae un 8 %. ¿Qué porcentaje de tu dinero pierdes?",
+          "unit": "%",
+          "a": 80,
+          "why": "10 × 8 % = 80 %. Con apalancamiento, un movimiento normal del mercado puede borrar casi todo tu dinero en días."
+        },
+        {
+          "id": "bi2-3",
+          "t": "choice",
+          "q": "Una acción tuya ha caído un 30 % y piensas «no vendo hasta recuperar lo que pagué». ¿Qué sesgo es?",
+          "opts": [
+            "Anclaje al precio de compra",
+            "Diversificación excesiva",
+            "Rebalanceo automático",
+            "Interés compuesto"
+          ],
+          "a": 0,
+          "why": "Al mercado no le importa a qué precio compraste. La pregunta útil es si hoy la comprarías: si la respuesta es no, mantenerla es otra decisión de inversión."
+        },
+        {
+          "id": "bi2-4",
+          "t": "num",
+          "q": "Haces 10 operaciones al mes y pagas 5 € por cada una. ¿Cuántos euros pagas al año en comisiones?",
+          "unit": "€",
+          "a": 600,
+          "why": "10 × 12 × 5 = 600 € al año. Con una cartera de 6.000 €, eso es un 10 % que tienes que ganar solo para quedarte igual."
+        }
+      ]
+    }
+  ]
+}

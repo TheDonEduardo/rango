@@ -1,0 +1,113 @@
+{
+  "n": 1,
+  "id": "pasiva",
+  "track": "pasiva",
+  "title": "Inversión pasiva",
+  "blurb": "Aportar cada mes, pagar poco y dejar trabajar al tiempo.",
+  "lessons": [
+    {
+      "id": "bg1",
+      "title": "Aportar cada mes",
+      "ex": [
+        {
+          "id": "bg1-1",
+          "t": "num",
+          "q": "Al 7 % anual, 10.000 € invertidos de una vez se convierten en 19.672 € en 10 años. ¿Cuánto has ganado sobre lo invertido? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 96.7,
+          "tol": 0.06,
+          "why": "19.672 ÷ 10.000 − 1 = 96,7 %: casi el doble, frente al 70 % que darían 10 años al 7 % sin reinvertir. Es el interés compuesto: los beneficios generan beneficios."
+        },
+        {
+          "id": "bg1-2",
+          "t": "num",
+          "q": "Con la regla del 72, ¿en cuántos años se duplica el dinero al 8 % anual?",
+          "unit": "",
+          "a": 9,
+          "why": "72 ÷ 8 = 9 años. Es una aproximación que funciona bien con rentabilidades normales: 1,08 elevado a 9 da 2,0."
+        },
+        {
+          "id": "bg1-3",
+          "t": "choice",
+          "q": "Aportas la misma cantidad cada mes, suba o baje el mercado. ¿Qué ventaja tiene?",
+          "opts": [
+            "Compras más participaciones cuando está barato",
+            "Garantiza que nunca pierdas dinero",
+            "Te libra de pagar impuestos por la ganancia",
+            "Asegura batir siempre al índice de referencia"
+          ],
+          "a": 0,
+          "why": "Con la misma cantidad compras más participaciones cuando el precio cae y menos cuando sube, y te quita la tentación de adivinar el momento. No garantiza ganar."
+        },
+        {
+          "id": "bg1-4",
+          "t": "num",
+          "q": "Tienes 4.800 € de ahorro líquido y unos gastos fijos de 1.200 € al mes. ¿Cuántos meses cubre tu fondo de emergencia?",
+          "unit": "",
+          "a": 4,
+          "why": "4.800 ÷ 1.200 = 4 meses. La referencia habitual es tener de 3 a 6 meses de gastos en liquidez antes de invertir: así nunca vendes en una caída para pagar un imprevisto."
+        }
+      ]
+    },
+    {
+      "id": "bg2",
+      "title": "Fondos, ETF y pensiones",
+      "ex": [
+        {
+          "id": "bg2-1",
+          "t": "choice",
+          "q": "En España, ¿qué puedes mover a otro producto sin pagar impuestos por la ganancia acumulada?",
+          "opts": [
+            "Un fondo de inversión, por traspaso",
+            "Un ETF, vendiéndolo en bolsa",
+            "Acciones de una empresa",
+            "Cualquier producto del mismo banco"
+          ],
+          "a": 0,
+          "why": "Los traspasos entre fondos de inversión no tributan hasta que reembolsas. Los ETF, en general, no admiten traspaso: venderlos tributa la ganancia."
+        },
+        {
+          "id": "bg2-2",
+          "t": "num",
+          "q": "Dos fondos ganan un 7 % bruto al año durante 20 años. El indexado cuesta un 0,20 % anual y el activo, un 1,80 %. ¿Cuánto más capital acumula el indexado al final? Redondea a unidades.",
+          "unit": "%",
+          "a": 35,
+          "tol": 0.5,
+          "why": "Netos: 6,8 % y 5,2 %. 1,068²⁰ = 3,73 y 1,052²⁰ = 2,76 veces lo invertido: el indexado acaba con un 35 % más. Las comisiones también se acumulan con el interés compuesto."
+        },
+        {
+          "id": "bg2-3",
+          "t": "num",
+          "q": "Aportas 1.500 € a un plan de pensiones y tu tipo marginal del IRPF es del 30 %. ¿Cuánto te ahorras este año en la declaración?",
+          "unit": "€",
+          "a": 450,
+          "why": "La aportación reduce tu base imponible: 1.500 × 30 % = 450 €. Al rescatarlo tributa como rendimiento del trabajo, así que es un aplazamiento, no un regalo. Comprueba cada año el límite de aportación."
+        },
+        {
+          "id": "bg2-4",
+          "t": "match",
+          "q": "Empareja cada producto con lo que lo caracteriza.",
+          "pairs": [
+            [
+              "Fondo indexado",
+              "Replica un índice y admite traspasos sin tributar"
+            ],
+            [
+              "ETF",
+              "Replica un índice y cotiza en bolsa como una acción"
+            ],
+            [
+              "Plan de pensiones",
+              "Reduce la base imponible hoy y tributa al rescatar"
+            ],
+            [
+              "Cuenta remunerada",
+              "Liquidez con interés, sin riesgo de mercado"
+            ]
+          ],
+          "why": "Los cuatro sirven a un inversor pasivo, pero para cosas distintas: crecer a largo plazo, flexibilidad, ahorro fiscal o tener el colchón disponible."
+        }
+      ]
+    }
+  ]
+}

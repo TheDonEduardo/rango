@@ -1,0 +1,157 @@
+{
+  "n": 7,
+  "id": "calidad",
+  "track": "fundamental",
+  "title": "Calidad del negocio",
+  "blurb": "ROIC y ventajas competitivas: negocios que se defienden solos.",
+  "lessons": [
+    {
+      "id": "f7a",
+      "title": "ROIC",
+      "ex": [
+        {
+          "id": "f7a-1",
+          "t": "num",
+          "q": "Beneficio operativo después de impuestos: 150 M$. Capital invertido en el negocio: 1.000 M$. ¿ROIC?",
+          "unit": "%",
+          "a": 15,
+          "why": "150 ÷ 1.000 = 15 %: cada 100 $ invertidos en el negocio generan 15 $ al año. Es la rentabilidad del negocio en sí, se financie como se financie."
+        },
+        {
+          "id": "f7a-2",
+          "t": "num",
+          "q": "Beneficio operativo de 200 M$, impuesto del 25 % y capital invertido (deuda + patrimonio − caja) de 750 M$. ¿ROIC?",
+          "unit": "%",
+          "a": 20,
+          "why": "200 × (1 − 0,25) = 150 M$ después de impuestos; 150 ÷ 750 = 20 %."
+        },
+        {
+          "id": "f7a-3",
+          "t": "choice",
+          "q": "El ROIC de una empresa es del 6 % y su coste del capital, del 9 %. Si crece invirtiendo más, ¿qué ocurre?",
+          "opts": [
+            "Crea valor: crecer siempre es bueno",
+            "Destruye valor: rinde menos de lo que cuesta",
+            "No cambia nada para el accionista",
+            "Depende solo del PER al que cotice"
+          ],
+          "a": 1,
+          "why": "Cada 100 $ invertidos rinden 6 $ pero cuestan 9 $: cuanto más crece, más valor destruye. Crecer solo crea valor con un ROIC por encima del coste del capital."
+        },
+        {
+          "id": "f7a-4",
+          "t": "num",
+          "q": "Una empresa tiene un ROIC del 20 % y reinvierte la mitad de su beneficio. ¿A qué ritmo anual puede crecer su beneficio sin endeudarse?",
+          "unit": "%",
+          "a": 10,
+          "why": "20 % × 50 % = 10 % anual, sin pedir prestado ni emitir acciones. Un ROIC alto permite crecer rápido reinvirtiendo poco."
+        }
+      ]
+    },
+    {
+      "id": "f7b",
+      "title": "Ventajas competitivas",
+      "ex": [
+        {
+          "id": "f7b-1",
+          "t": "match",
+          "q": "Empareja cada ventaja competitiva con su descripción.",
+          "pairs": [
+            [
+              "Efecto red",
+              "Cada usuario nuevo hace el servicio más valioso"
+            ],
+            [
+              "Costes de cambio",
+              "Al cliente le cuesta mucho irse a la competencia"
+            ],
+            [
+              "Ventaja en costes",
+              "Produce más barato que nadie"
+            ],
+            [
+              "Activos intangibles",
+              "Marcas, patentes o licencias difíciles de copiar"
+            ]
+          ],
+          "why": "Son las fuentes clásicas de foso económico: lo que impide que la competencia copie el negocio y se lleve sus márgenes."
+        },
+        {
+          "id": "f7b-2",
+          "t": "choice",
+          "q": "¿Qué dato apoya mejor que una empresa tiene una ventaja competitiva?",
+          "opts": [
+            "Un ROIC alto y estable durante años",
+            "Una subida fuerte de la acción este año",
+            "Un presidente muy conocido en los medios",
+            "Mucha publicidad en televisión"
+          ],
+          "a": 0,
+          "why": "Si la competencia pudiera copiar el negocio, los márgenes y el ROIC caerían. Mantenerlos altos durante muchos años es la huella de un foso real."
+        },
+        {
+          "id": "f7b-3",
+          "t": "choice",
+          "q": "ROIC de los últimos cinco años. ¿Qué empresa muestra una ventaja competitiva?",
+          "table": {
+            "cols": [
+              "Empresa",
+              "Año 1",
+              "Año 2",
+              "Año 3",
+              "Año 4",
+              "Año 5"
+            ],
+            "rows": [
+              [
+                "A",
+                "30 %",
+                "8 %",
+                "22 %",
+                "5 %",
+                "18 %"
+              ],
+              [
+                "B",
+                "25 %",
+                "24 %",
+                "26 %",
+                "25 %",
+                "27 %"
+              ],
+              [
+                "C",
+                "6 %",
+                "7 %",
+                "6 %",
+                "7 %",
+                "6 %"
+              ]
+            ]
+          },
+          "opts": [
+            "A",
+            "B",
+            "C",
+            "Ninguna"
+          ],
+          "a": 1,
+          "why": "B mantiene un ROIC del 24-27 % año tras año: la competencia no consigue erosionarlo. A alterna años buenos y malos (negocio cíclico) y C es estable, pero bajo."
+        },
+        {
+          "id": "f7b-4",
+          "t": "choice",
+          "q": "Una empresa con ventaja competitiva ve caer su margen bruto del 70 % al 55 % en dos años porque entran competidores más baratos. ¿Qué indica?",
+          "opts": [
+            "Nada: es ruido de dos años",
+            "Que es buen momento para comprar más",
+            "Que la ventaja se erosiona: revisa la tesis",
+            "Que el margen bruto no es importante"
+          ],
+          "a": 2,
+          "why": "Un foso real protege los márgenes; si se hunden al llegar competidores, el foso era menor de lo que parecía. Es un criterio de invalidación de la tesis, como viste en F4."
+        }
+      ]
+    }
+  ]
+}

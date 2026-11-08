@@ -1,0 +1,113 @@
+{
+  "n": 11,
+  "id": "dcf",
+  "track": "fundamental",
+  "title": "Descuento de flujos",
+  "blurb": "Cuánto vale hoy el dinero que la empresa generará mañana.",
+  "lessons": [
+    {
+      "id": "f11a",
+      "title": "Valor actual",
+      "ex": [
+        {
+          "id": "f11a-1",
+          "t": "num",
+          "q": "Recibirás 110 € dentro de un año. Si exiges un 10 % de rentabilidad, ¿cuánto vale ese dinero hoy?",
+          "unit": "€",
+          "a": 100,
+          "why": "110 ÷ 1,10 = 100 €. Descontar es el interés compuesto al revés: dinero futuro vale menos que dinero de hoy."
+        },
+        {
+          "id": "f11a-2",
+          "t": "num",
+          "q": "¿Cuánto valen hoy 100 € que recibirás dentro de 5 años, si exiges un 8 % anual? Redondea a 2 decimales.",
+          "unit": "€",
+          "a": 68.06,
+          "why": "100 ÷ 1,08⁵ = 100 ÷ 1,4693 = 68,06 €. Cuanto más lejano el flujo, más pesa el tipo de descuento.",
+          "tol": 0.02
+        },
+        {
+          "id": "f11a-3",
+          "t": "num",
+          "q": "El flujo de caja libre del próximo año será de 40 M$ y crecerá un 3 % anual para siempre. Exiges un 8 %. ¿Cuántos millones vale la empresa?",
+          "unit": "",
+          "a": 800,
+          "why": "Perpetuidad con crecimiento: 40 ÷ (0,08 − 0,03) = 40 ÷ 0,05 = 800 M$."
+        },
+        {
+          "id": "f11a-4",
+          "t": "num",
+          "q": "Ese valor de 800 M$, menos 200 M$ de deuda neta, entre 50 M de acciones. ¿Valor por acción?",
+          "unit": "$",
+          "a": 12,
+          "why": "(800 − 200) ÷ 50 = 12 $. La deuda es de los acreedores: el accionista solo se queda con lo que sobra."
+        }
+      ]
+    },
+    {
+      "id": "f11b",
+      "title": "Sensibilidad y margen",
+      "ex": [
+        {
+          "id": "f11b-1",
+          "t": "num",
+          "q": "Con el mismo flujo (40 M$, crecimiento del 3 %), ¿cuánto cae el valor de la empresa si exiges un 9 % en lugar de un 8 %? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 16.7,
+          "why": "40 ÷ (0,09 − 0,03) = 666,7 M$ frente a 800 M$: un 16,7 % menos por un solo punto de tipo exigido.",
+          "tol": 0.06
+        },
+        {
+          "id": "f11b-2",
+          "t": "num",
+          "q": "Y si en lugar de eso supones un crecimiento del 4 % (con el 8 % exigido), ¿cuánto sube el valor frente a los 800 M$?",
+          "unit": "%",
+          "a": 25,
+          "why": "40 ÷ (0,08 − 0,04) = 1.000 M$: un 25 % más por un punto de crecimiento. Pequeños cambios en los supuestos mueven mucho el resultado."
+        },
+        {
+          "id": "f11b-3",
+          "t": "num",
+          "q": "Estimas un valor de 12 $ por acción y cotiza a 9 $. ¿Qué margen de seguridad tienes?",
+          "unit": "%",
+          "a": 25,
+          "why": "(12 − 9) ÷ 12 = 25 %. Es el colchón por si tus supuestos son demasiado optimistas, que es lo habitual."
+        },
+        {
+          "id": "f11b-4",
+          "t": "choice",
+          "q": "¿Cuál es el principal punto débil de un descuento de flujos?",
+          "opts": [
+            "Solo sirve para valorar bancos",
+            "No tiene en cuenta la deuda",
+            "Ignora el flujo de caja libre",
+            "Es muy sensible a los supuestos"
+          ],
+          "a": 3,
+          "why": "Un punto más de tipo o de crecimiento cambia el valor un 17-25 %. Úsalo para entender qué tiene que pasar para justificar el precio, no como una cifra exacta."
+        },
+        {
+          "id": "f11b-5",
+          "t": "slide",
+          "q": "Estimas un valor de 80 € por acción y exiges un margen de seguridad del 25 %. Elige el precio máximo que pagarías.",
+          "label": "Precio máximo",
+          "min": 40,
+          "max": 100,
+          "step": 1,
+          "start": 75,
+          "a": 60,
+          "unit": "€",
+          "why": "80 × (1 − 0,25) = 60 €: pagando 60 € tienes un 25 % de colchón por si tu estimación del valor es demasiado optimista.",
+          "show": [
+            {
+              "label": "Descuento sobre el valor",
+              "b": 100,
+              "k": -1.25,
+              "unit": "%"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

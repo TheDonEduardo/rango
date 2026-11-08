@@ -1,0 +1,133 @@
+{
+  "n": 8,
+  "id": "bolsa",
+  "track": "basico",
+  "title": "Cómo funciona la bolsa",
+  "blurb": "Quién compra, quién vende y cómo se forma el precio.",
+  "gate": false,
+  "lessons": [
+    {
+      "id": "bj1",
+      "title": "Mercado primario y secundario",
+      "ex": [
+        {
+          "id": "bj1-1",
+          "t": "match",
+          "q": "Empareja cada pieza del mercado con lo que es.",
+          "pairs": [
+            [
+              "Salida a bolsa (OPV)",
+              "La empresa vende acciones por primera vez"
+            ],
+            [
+              "Mercado secundario",
+              "Los inversores compran y venden entre sí"
+            ],
+            [
+              "Bróker",
+              "Intermediario que lleva tu orden al mercado"
+            ],
+            [
+              "Índice bursátil",
+              "Media de un grupo de acciones, como el IBEX 35"
+            ]
+          ],
+          "why": "La empresa solo recibe dinero en la salida a bolsa o al emitir acciones nuevas; el resto del tiempo, el dinero pasa de un inversor a otro."
+        },
+        {
+          "id": "bj1-2",
+          "t": "choice",
+          "q": "Compras acciones de una empresa en bolsa un martes cualquiera. ¿A quién le pagas?",
+          "opts": [
+            "A otro inversor que las vende",
+            "A la propia empresa emisora",
+            "Al Banco de España",
+            "A la CNMV"
+          ],
+          "a": 0,
+          "why": "En el mercado secundario el dinero va al vendedor; la empresa solo lo recibe cuando emite acciones nuevas, como en una OPV."
+        },
+        {
+          "id": "bj1-3",
+          "t": "num",
+          "q": "Una empresa tiene 50 millones de acciones a 12 €. ¿Cuál es su capitalización, en millones de euros?",
+          "unit": "",
+          "a": 600,
+          "why": "50 millones × 12 € = 600 millones de euros: lo que vale toda la empresa en bolsa."
+        },
+        {
+          "id": "bj1-4",
+          "t": "choice",
+          "q": "¿Qué determina el precio de una acción en cada momento?",
+          "opts": [
+            "El acuerdo entre compradores y vendedores",
+            "Lo fija la empresa cada mañana",
+            "Lo fija la CNMV cada día",
+            "El valor contable de la empresa"
+          ],
+          "a": 0,
+          "why": "El precio es el último al que alguien compró y otro vendió: si hay más compradores dispuestos a pagar más, sube."
+        }
+      ]
+    },
+    {
+      "id": "bj2",
+      "title": "Órdenes y horquilla",
+      "ex": [
+        {
+          "id": "bj2-1",
+          "t": "match",
+          "q": "Empareja cada término de la operativa con su significado.",
+          "pairs": [
+            [
+              "Orden a mercado",
+              "Se ejecuta ya al mejor precio disponible"
+            ],
+            [
+              "Orden limitada",
+              "Solo se ejecuta a tu precio o mejor"
+            ],
+            [
+              "Horquilla (spread)",
+              "Diferencia entre precio de compra y de venta"
+            ],
+            [
+              "Subasta de apertura",
+              "Fija el primer precio del día"
+            ]
+          ],
+          "why": "La orden a mercado asegura que compras pero no el precio; la limitada asegura el precio pero no que compres."
+        },
+        {
+          "id": "bj2-2",
+          "t": "num",
+          "q": "La mejor oferta de venta está a 10,05 € y la mejor de compra, a 10,00 €. ¿Cuántos céntimos de horquilla hay?",
+          "unit": "",
+          "a": 5,
+          "why": "10,05 − 10,00 = 0,05 €: 5 céntimos por acción."
+        },
+        {
+          "id": "bj2-3",
+          "t": "num",
+          "q": "Con esa horquilla, compras y vendes al instante 1.000 acciones. ¿Cuántos euros pierdes solo por la horquilla?",
+          "unit": "€",
+          "a": 50,
+          "why": "1.000 × 0,05 € = 50 €, aunque el precio no se haya movido."
+        },
+        {
+          "id": "bj2-4",
+          "t": "choice",
+          "q": "Una acción poco negociada tiene una horquilla de 10,00 € / 10,40 €. ¿Qué orden usas?",
+          "opts": [
+            "Una limitada al precio que aceptes",
+            "A mercado, para ir más rápido",
+            "Da igual el tipo de orden",
+            "Ninguna: no se puede comprar"
+          ],
+          "a": 0,
+          "why": "A mercado pagarías 10,40 €, un 4 % por encima del precio de compra; con una limitada controlas lo que pagas."
+        }
+      ]
+    }
+  ]
+}

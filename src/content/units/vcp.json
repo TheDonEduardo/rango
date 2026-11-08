@@ -1,0 +1,135 @@
+{
+  "n": 6,
+  "id": "vcp",
+  "title": "VCP de Minervini",
+  "blurb": "Contracciones de volatilidad: compra donde el riesgo es mínimo.",
+  "lessons": [
+    {
+      "id": "vcp1",
+      "title": "Contracciones de volatilidad",
+      "ex": [
+        {
+          "id": "vcp1-1",
+          "t": "choice",
+          "q": "¿Qué define un VCP de Minervini?",
+          "opts": [
+            "Contracciones sucesivas cada vez más pequeñas con volumen decreciente",
+            "Una caída en V seguida de un rebote con volumen",
+            "Un rango lateral con volatilidad creciente",
+            "Tres máximos crecientes con volumen creciente"
+          ],
+          "a": 0,
+          "why": "Cada retroceso es menor que el anterior y el volumen se seca: la oferta se agota y basta poca demanda para romper el pivote."
+        },
+        {
+          "id": "vcp1-2",
+          "t": "num",
+          "q": "Primera contracción de la base: del máximo de 60,00 € al mínimo de 45,00 €. ¿Qué profundidad tiene?",
+          "unit": "%",
+          "a": 25,
+          "why": "(60,00 − 45,00) ÷ 60,00 = 15 ÷ 60 = 25 %. Se mide del máximo de cada contracción a su mínimo."
+        },
+        {
+          "id": "vcp1-3",
+          "t": "choice",
+          "q": "¿Qué secuencia de contracciones encaja con un VCP?",
+          "opts": [
+            "10 % → 18 % → 30 %",
+            "30 % → 28 % → 31 %",
+            "25 % → 12 % → 6 %",
+            "6 % → 6 % → 25 %"
+          ],
+          "a": 2,
+          "why": "Cada contracción es más o menos la mitad de la anterior: los vendedores se agotan y el rango se estrecha hacia el pivote. Si las caídas crecen, la oferta está ganando."
+        },
+        {
+          "id": "vcp1-4",
+          "t": "num",
+          "q": "La última contracción va de 58,40 € a 55,20 €. Compras la ruptura a 58,50 € con stop 0,10 € bajo el mínimo. ¿Qué porcentaje arriesgas? Redondea a 2 decimales.",
+          "unit": "%",
+          "a": 5.81,
+          "tol": 0.02,
+          "why": "Stop en 55,10 €: 58,50 − 55,10 = 3,40 €, y 3,40 ÷ 58,50 = 5,81 %. La contracción final estrecha es lo que permite un stop tan cercano."
+        }
+      ]
+    },
+    {
+      "id": "vcp2",
+      "title": "Pivote y ruptura",
+      "ex": [
+        {
+          "id": "vcp2-1",
+          "t": "level",
+          "q": "Base con tres contracciones. Toca el pivote de compra.",
+          "chart": {
+            "type": "candles",
+            "data": [
+              [56,60,55.5,59.5],
+              [59.5,59.8,52,53],
+              [53,54,45,46],
+              [46,52.5,45.8,52],
+              [52,56.6,51.8,56.2],
+              [56.2,56.4,50.4,50.8],
+              [50.8,55.6,50.6,55.2],
+              [55.2,55.5,52.3,52.6],
+              [52.6,55.4,52.5,55.1]
+            ],
+            "vol": [150,170,200,140,110,100,80,60,55],
+            "h": 270,
+            "levels": [
+              {
+                "id": "A",
+                "y": 60
+              },
+              {
+                "id": "B",
+                "y": 55.6
+              },
+              {
+                "id": "C",
+                "y": 52.3
+              }
+            ],
+            "alt": "Gráfico de velas con volumen y tres niveles marcados"
+          },
+          "a": "B",
+          "why": "El pivote es el máximo de la última contracción, 55,60 €: comprando a 55,70 € con stop en 52,20 € (0,10 € bajo su mínimo) arriesgas 3,50 €. Esperar al máximo de la base (A, 60,00 €) obliga a arriesgar 7,80 € con el mismo stop."
+        },
+        {
+          "id": "vcp2-2",
+          "t": "choice",
+          "q": "El precio supera el pivote con un volumen un 20 % inferior a su media de 50 sesiones. ¿Qué haces?",
+          "opts": [
+            "Compras igual: el precio manda",
+            "Compras el doble para aprovechar la ruptura",
+            "Vendes corto la ruptura",
+            "No compras o reduces el tamaño: falta demanda que la confirme"
+          ],
+          "a": 3,
+          "why": "O'Neil y Minervini piden en la ruptura un volumen al menos un 40-50 % superior a la media. Sin él, la ruptura suele fallar y volver a la base."
+        },
+        {
+          "id": "vcp2-3",
+          "t": "num",
+          "q": "Entrada a 55,70 €, stop en 52,20 €. Vendes un tercio de la posición en 3R. ¿A qué precio?",
+          "unit": "€",
+          "a": 66.2,
+          "why": "1R = 55,70 − 52,20 = 3,50 €; 55,70 + 3 × 3,50 = 66,20 €. Asegurar una parte y subir el stop a la entrada deja el resto sin riesgo."
+        },
+        {
+          "id": "vcp2-4",
+          "t": "choice",
+          "q": "Compraste la ruptura a 55,70 € (stop 52,20 €). Dos sesiones después cierra de nuevo dentro de la base, a 53,80 €, con volumen alto. ¿Qué haces?",
+          "opts": [
+            "Esperas a que salte el stop en 52,20 €",
+            "Promedias a la baja para mejorar el precio",
+            "Sales o reduces: la ruptura ha fallado",
+            "Bajas el stop a 50,00 € para darle aire"
+          ],
+          "a": 2,
+          "why": "Las buenas rupturas funcionan casi de inmediato; volver a la base con volumen alto indica distribución. Salir a 53,80 € cuesta 1,90 € (0,54R) en vez de 3,50 € (1R)."
+        }
+      ]
+    }
+  ]
+}

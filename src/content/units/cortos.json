@@ -1,0 +1,115 @@
+{
+  "n": 9,
+  "id": "cortos",
+  "title": "Cortos y Fase 4",
+  "blurb": "Ganar con las caídas, con un riesgo que no tiene techo.",
+  "lessons": [
+    {
+      "id": "k1",
+      "title": "Vender en corto",
+      "ex": [
+        {
+          "id": "k1-1",
+          "t": "num",
+          "q": "Vendes en corto 100 acciones a 50,00 € y las recompras a 42,00 €. ¿Cuánto ganas?",
+          "unit": "€",
+          "a": 800,
+          "why": "(50,00 − 42,00) × 100 = 800 €. En un corto vendes primero, con acciones prestadas, y ganas si recompras más barato."
+        },
+        {
+          "id": "k1-2",
+          "t": "choice",
+          "q": "¿Cuál es la pérdida máxima teórica de un corto?",
+          "opts": [
+            "Lo invertido, como en una compra",
+            "Ilimitada: el precio no tiene techo",
+            "La mitad del precio de venta",
+            "Ninguna, si el bróker lo cubre"
+          ],
+          "a": 1,
+          "why": "Una acción comprada solo puede caer a cero, pero una vendida en corto puede subir sin límite. Por eso en un corto el stop no es opcional."
+        },
+        {
+          "id": "k1-3",
+          "t": "num",
+          "q": "Vendes en corto a 50,00 € con el stop en 53,00 € y quieres arriesgar 300 €. ¿Cuántas acciones vendes?",
+          "unit": "",
+          "a": 100,
+          "why": "Riesgo por acción: 53,00 − 50,00 = 3,00 €; 300 ÷ 3,00 = 100 acciones. En un corto, el stop va por encima de la entrada."
+        },
+        {
+          "id": "k1-4",
+          "t": "choice",
+          "q": "Mantienes un corto y la empresa paga un dividendo. ¿Qué ocurre?",
+          "opts": [
+            "No afecta en nada al corto",
+            "Lo cobras tú, como accionista",
+            "Lo paga el bróker en tu nombre",
+            "Lo pagas tú a quien te prestó las acciones"
+          ],
+          "a": 3,
+          "why": "Has vendido acciones prestadas, y su dueño tiene derecho al dividendo: lo pagas tú. Súmale lo que cuesta el préstamo de las acciones mientras dure el corto."
+        }
+      ]
+    },
+    {
+      "id": "k2",
+      "title": "Fase 4",
+      "ex": [
+        {
+          "id": "k2-1",
+          "t": "choice",
+          "q": "¿En qué fase entra esta acción?",
+          "chart": {
+            "type": "line",
+            "data": [50,52,49,51,48,50,47,49,46,44,42,43,40,38],
+            "ma": [46,47,47.6,48,48.2,48.3,48.3,48.2,48,47.6,47,46.4,45.6,44.6],
+            "alt": "Gráfico de precio y media de 30 semanas"
+          },
+          "opts": [
+            "Fase 1 (base)",
+            "Fase 2 (avance)",
+            "Fase 3 (techo)",
+            "Fase 4 (declive)"
+          ],
+          "a": 3,
+          "why": "Tras un techo lateral alrededor de una media que se aplana (Fase 3), el precio rompe hacia abajo y queda bajo una media que ya gira a la baja: Fase 4."
+        },
+        {
+          "id": "k2-2",
+          "t": "choice",
+          "q": "Según Weinstein, ¿dónde está la mejor entrada en corto?",
+          "opts": [
+            "En la ruptura del soporte de la Fase 3",
+            "En el rebote desde el soporte de la Fase 3",
+            "En una Fase 2 que ha subido mucho",
+            "En cualquier sesión con vela roja"
+          ],
+          "a": 0,
+          "why": "Es el espejo de la compra: si en largo se compra la ruptura de la base de Fase 1, en corto se vende la ruptura del soporte de Fase 3. Weinstein no exige volumen alto en la ruptura bajista, aunque lo prefiere."
+        },
+        {
+          "id": "k2-3",
+          "t": "num",
+          "q": "La acción rompe el soporte de 40,00 € y rebota hasta 39,60 € sin recuperarlo. Vendes en corto a 39,50 € con el stop en 41,00 €. ¿Riesgo por acción?",
+          "unit": "€",
+          "a": 1.5,
+          "why": "41,00 − 39,50 = 1,50 €. El soporte roto se convierte en resistencia, y el rebote hacia él ofrece una entrada con el stop más cerca que en la propia ruptura."
+        },
+        {
+          "id": "k2-4",
+          "t": "choice",
+          "q": "Una acción en Fase 4 tiene vendido en corto el 35 % de sus acciones en circulación libre. ¿Qué riesgo añade eso?",
+          "opts": [
+            "Ninguno: confirma que seguirá cayendo",
+            "Que deje de pagar dividendos este año",
+            "Un short squeeze: una subida brusca",
+            "Que salga de su índice de referencia"
+          ],
+          "a": 2,
+          "why": "Con tantos cortos abiertos, una buena noticia obliga a muchos a recomprar a la vez, y esas recompras en cadena disparan el precio. Weinstein evitaba vender en corto valores con mucho interés bajista."
+        }
+      ]
+    }
+  ]
+}

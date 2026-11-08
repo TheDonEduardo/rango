@@ -1,0 +1,116 @@
+{
+  "n": 14,
+  "id": "realoro",
+  "track": "pasiva",
+  "title": "Inmobiliario y oro",
+  "blurb": "SOCIMI, REIT y oro: qué aportan y qué no a una cartera.",
+  "lessons": [
+    {
+      "id": "io1",
+      "title": "SOCIMI y REIT",
+      "ex": [
+        {
+          "id": "io1-1",
+          "t": "choice",
+          "q": "¿Qué es una SOCIMI?",
+          "opts": [
+            "Una sociedad cotizada de inmuebles en alquiler",
+            "Un fondo garantizado de vivienda",
+            "Una hipoteca a tipo fijo",
+            "Un depósito ligado a la vivienda"
+          ],
+          "a": 0,
+          "why": "Es la versión española de los REIT: cotiza en bolsa y debe repartir como dividendo al menos el 80 % del beneficio del alquiler."
+        },
+        {
+          "id": "io1-2",
+          "t": "num",
+          "q": "Una SOCIMI cotiza a 8 € y reparte 0,40 € de dividendo anual. ¿Cuál es su rentabilidad por dividendo?",
+          "unit": "%",
+          "a": 5,
+          "why": "0,40 / 8 = 0,05: un 5 %."
+        },
+        {
+          "id": "io1-3",
+          "t": "num",
+          "q": "Un piso de 200.000 € se alquila por 900 € al mes y tiene 2.400 € de gastos anuales. ¿Cuál es su rentabilidad neta anual?",
+          "unit": "%",
+          "a": 4.2,
+          "why": "900 × 12 = 10.800 €; 10.800 − 2.400 = 8.400 €; 8.400 / 200.000 = 4,2 %."
+        },
+        {
+          "id": "io1-4",
+          "t": "choice",
+          "q": "¿Por qué un ETF del MSCI World ya incluye algo de inmobiliario?",
+          "opts": [
+            "Los REIT cotizados forman parte del índice",
+            "Porque compra pisos directamente",
+            "Porque lo exige la CNMV",
+            "No incluye nada de inmobiliario"
+          ],
+          "a": 0,
+          "why": "Los REIT cotizados son empresas del índice como las demás; añadir más inmobiliario es una apuesta extra, no diversificación nueva."
+        }
+      ]
+    },
+    {
+      "id": "io2",
+      "title": "Oro",
+      "ex": [
+        {
+          "id": "io2-1",
+          "t": "choice",
+          "q": "¿Cuál es una desventaja del oro frente a las acciones?",
+          "opts": [
+            "No genera dividendos ni intereses",
+            "No se puede comprar con un ETC",
+            "No cotiza nunca en bolsa",
+            "No puede subir de precio"
+          ],
+          "a": 0,
+          "why": "Su rentabilidad depende solo de que otro pague más por él; una acción reparte beneficios que crecen con el tiempo."
+        },
+        {
+          "id": "io2-2",
+          "t": "num",
+          "q": "Cartera de 50.000 € con un 10 % en oro. El oro sube un 20 % y el resto queda igual. ¿Cuánto pesa ahora el oro? (dos decimales)",
+          "unit": "%",
+          "a": 11.76,
+          "why": "El oro pasa de 5.000 a 6.000 € y la cartera, a 51.000 €: 6.000 / 51.000 = 11,76 %."
+        },
+        {
+          "id": "io2-3",
+          "t": "num",
+          "q": "Mismo caso: para volver al 10 % de oro, ¿cuántos euros de oro vendes?",
+          "unit": "€",
+          "a": 900,
+          "why": "El 10 % de 51.000 € son 5.100 €: vendes 6.000 − 5.100 = 900 €."
+        },
+        {
+          "id": "io2-4",
+          "t": "match",
+          "q": "Empareja cada forma de invertir con lo que es.",
+          "pairs": [
+            [
+              "ETC de oro",
+              "Título cotizado respaldado por oro físico"
+            ],
+            [
+              "Oro físico",
+              "Lingotes o monedas que guardas tú"
+            ],
+            [
+              "Mineras de oro",
+              "Acciones de empresas que extraen oro"
+            ],
+            [
+              "REIT",
+              "Empresa cotizada de inmuebles en alquiler"
+            ]
+          ],
+          "why": "Las mineras amplifican los movimientos del oro porque sus costes son fijos: tenerlas no es lo mismo que tener oro."
+        }
+      ]
+    }
+  ]
+}
