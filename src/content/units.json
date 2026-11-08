@@ -1307,6 +1307,337 @@
     ]
   },
   {
+    "n": 7,
+    "id": "fiscalargo",
+    "track": "pasiva",
+    "title": "Fiscalidad a largo plazo",
+    "blurb": "Diferir impuestos también es rentabilidad.",
+    "lessons": [
+      {
+        "id": "pf1",
+        "title": "Diferir impuestos",
+        "ex": [
+          {
+            "t": "num",
+            "q": "Al 7 % anual durante 20 años, 10.000 € se convierten en 38.697 €. Pagando un 20 % de la ganancia solo al final te quedan 32.957 €; pagándolo cada año, tu rentabilidad neta baja al 5,6 % y acabas con 29.736 €. ¿Cuánto más tienes difiriendo? Redondea a 1 decimal.",
+            "unit": "%",
+            "a": 10.8,
+            "why": "32.957 ÷ 29.736 − 1 = 10,8 % más, con la misma rentabilidad y el mismo tipo. El impuesto que no pagas cada año sigue generando rentabilidad.",
+            "tol": 0.06
+          },
+          {
+            "t": "choice",
+            "q": "Con un ETF de distribución, los dividendos tributan cada año. ¿Y con uno de acumulación?",
+            "opts": [
+              "Se difiere el impuesto hasta vender",
+              "No se paga nunca ningún impuesto",
+              "Se paga el doble al final",
+              "Se paga cada mes, por adelantado"
+            ],
+            "a": 0,
+            "why": "El fondo reinvierte los dividendos y tú no tributas hasta que vendes. A largo plazo, ese diferimiento suma rentabilidad."
+          },
+          {
+            "t": "num",
+            "q": "Compraste 100 participaciones a 10 € y después otras 100 a 15 €. Vendes 100 a 18 €. Con el método FIFO que aplica Hacienda, ¿qué ganancia declaras?",
+            "unit": "€",
+            "a": 800,
+            "why": "FIFO: se venden primero las más antiguas, las de 10 €. (18 − 10) × 100 = 800 €, no 300 € como si fueran las de 15 €."
+          },
+          {
+            "t": "choice",
+            "q": "Tienes una ganancia latente en un fondo y quieres cambiar a otro de otra gestora. ¿Qué haces?",
+            "opts": [
+              "Reembolsar y volver a comprar",
+              "Traspasar, sin tributar aún",
+              "Esperar a perder dinero",
+              "Venderlo y comprar un ETF"
+            ],
+            "a": 1,
+            "why": "El traspaso entre fondos no tributa hasta el reembolso final. Reembolsar y comprar después adelanta el impuesto sin necesidad."
+          }
+        ]
+      },
+      {
+        "id": "pf2",
+        "title": "Pensiones y rescate",
+        "ex": [
+          {
+            "t": "num",
+            "q": "Aportas 1.500 € a tu plan de pensiones y tu tipo marginal del IRPF es del 37 %. ¿Cuánto te ahorras este año en la declaración?",
+            "unit": "€",
+            "a": 555,
+            "why": "1.500 × 37 % = 555 €. Cuanto más alto tu tipo marginal hoy, más rinde la deducción."
+          },
+          {
+            "t": "num",
+            "q": "Rescatas 6.000 € de un plan de pensiones de golpe y eso te sube al 45 %; repartido en varios años, tributaría al 30 %. Para simplificar, aplica cada tipo a todo el importe. ¿Cuántos euros más pagas rescatándolo de golpe?",
+            "unit": "€",
+            "a": 900,
+            "why": "6.000 × (45 % − 30 %) = 900 € más. El rescate tributa como rendimiento del trabajo: repartirlo en varios años suele pagar menos."
+          },
+          {
+            "t": "choice",
+            "q": "¿Cuál es la principal desventaja de un plan de pensiones frente a un fondo indexado?",
+            "opts": [
+              "No puede invertir en acciones",
+              "Tributa cada año aunque no rescates",
+              "Liquidez limitada hasta la jubilación",
+              "No admite aportaciones periódicas"
+            ],
+            "a": 2,
+            "why": "El dinero queda inmovilizado salvo supuestos concretos, como desempleo de larga duración, enfermedad grave o aportaciones con más de 10 años de antigüedad. Comprueba las condiciones cada año."
+          },
+          {
+            "t": "match",
+            "q": "Empareja cada producto con su característica fiscal principal.",
+            "pairs": [
+              [
+                "Plan de pensiones individual",
+                "Lo contratas tú y reduce la base imponible"
+              ],
+              [
+                "Plan de empleo",
+                "Lo promueve la empresa para sus trabajadores"
+              ],
+              [
+                "Fondo de inversión",
+                "Admite traspasos sin tributar"
+              ],
+              [
+                "ETF",
+                "Cotiza en bolsa y vender tributa la ganancia"
+              ]
+            ],
+            "why": "Cada uno tiene su sitio: pensiones para reducir impuestos hoy, fondos para mover dinero sin tributar y ETF para comprar en bolsa con costes bajos."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "id": "psicopasiva",
+    "track": "pasiva",
+    "title": "Psicología del inversor pasivo",
+    "blurb": "El plan es sencillo; lo difícil es seguirlo cuando cae la bolsa.",
+    "lessons": [
+      {
+        "id": "pp1",
+        "title": "Quedarse invertido",
+        "ex": [
+          {
+            "t": "num",
+            "q": "Una cartera rinde un 7 % anual durante 20 años. Supón que, por salir y entrar del mercado, te pierdes los mejores días y tu rentabilidad baja al 4 %. Con 10.000 €, ¿cuántos miles de euros menos tienes al final? Redondea a 1 decimal.",
+            "unit": "",
+            "a": 16.8,
+            "why": "10.000 × (1,07²⁰ − 1,04²⁰) = 38.697 − 21.911 = 16.786 €. Los mejores días suelen llegar justo después de los peores, cuando quien ha salido aún no ha vuelto.",
+            "tol": 0.06
+          },
+          {
+            "t": "choice",
+            "q": "La bolsa cae un 25 % y las noticias son terribles. Tu plan es aportar cada mes y rebalancear una vez al año. ¿Qué haces?",
+            "opts": [
+              "Seguir el plan, y rebalancear si toca",
+              "Venderlo todo hasta que pase",
+              "Dejar de aportar unos meses",
+              "Pasar la cartera a oro"
+            ],
+            "a": 0,
+            "why": "El plan se escribió para este momento. Aportar en las caídas compra más barato, y rebalancear obliga a comprar acciones cuando nadie quiere."
+          },
+          {
+            "t": "num",
+            "q": "Tu 60/40 de 10.000 € queda tras una caída en 4.500 € de acciones y 4.000 € de bonos. ¿Cuántos euros de acciones compras para volver al 60 %?",
+            "unit": "€",
+            "a": 600,
+            "why": "Total: 8.500 €; objetivo en acciones: 8.500 × 60 % = 5.100 €. Tienes 4.500 €: compras 600 € con dinero de los bonos."
+          },
+          {
+            "t": "choice",
+            "q": "¿Por qué conviene no mirar la cartera cada día?",
+            "opts": [
+              "Cada consulta tiene un coste en el bróker",
+              "El precio cambia al mirarlo",
+              "Mirar a menudo empuja a actuar sin motivo",
+              "Está prohibido por la normativa"
+            ],
+            "a": 2,
+            "why": "Día a día, la bolsa baja casi tantas veces como sube, y las pérdidas pesan más que las ganancias. Mirar poco reduce la tentación de tocar un plan que funciona."
+          }
+        ]
+      },
+      {
+        "id": "pp2",
+        "title": "Decisiones del inversor pasivo",
+        "ex": [
+          {
+            "t": "choice",
+            "q": "Tienes 30.000 € de una herencia. Según un estudio de Vanguard con datos históricos, ¿qué funcionó mejor la mayoría de las veces?",
+            "opts": [
+              "Repartirlo en 12 meses",
+              "Invertirlo todo de golpe",
+              "Esperar a una caída",
+              "Dejarlo en el banco"
+            ],
+            "a": 1,
+            "why": "Invertir de golpe ganó en torno a dos de cada tres veces, porque el mercado sube más a menudo de lo que baja. Repartir la entrada reduce el arrepentimiento si cae justo después: es una opción emocional razonable."
+          },
+          {
+            "t": "num",
+            "q": "Decides repartir 6.000 € en 12 aportaciones mensuales iguales. ¿Cuánto inviertes cada mes?",
+            "unit": "€",
+            "a": 500,
+            "why": "6.000 ÷ 12 = 500 €. Fija las fechas de antemano y automatízalo: así no decides cada mes según las noticias."
+          },
+          {
+            "t": "match",
+            "q": "Empareja cada sesgo con cómo se manifiesta en un inversor pasivo.",
+            "pairs": [
+              [
+                "Sesgo de casa",
+                "Invertir casi todo en tu propio país"
+              ],
+              [
+                "Persecución de rentabilidad",
+                "Comprar el fondo que más subió el año pasado"
+              ],
+              [
+                "Aversión a la pérdida",
+                "Vender en pánico tras una caída"
+              ],
+              [
+                "Exceso de confianza",
+                "Creer que sabrás cuándo salir y volver a entrar"
+              ]
+            ],
+            "why": "La inversión pasiva funciona sola; lo que la rompe son estas decisiones. Un plan escrito y automatizado las deja sin margen."
+          },
+          {
+            "t": "choice",
+            "q": "¿Qué debes tener antes de invertir el primer euro?",
+            "opts": [
+              "El fondo que más ha rendido este año",
+              "Un fondo de emergencia",
+              "Cuentas en varios brókeres",
+              "Las noticias del día leídas"
+            ],
+            "a": 1,
+            "why": "Sin colchón, el primer imprevisto te obliga a vender, quizá en plena caída. Con él, la cartera puede quedarse quieta los años que haga falta."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "id": "pordentro",
+    "track": "pasiva",
+    "title": "Fondos y ETF por dentro",
+    "blurb": "Qué hay detrás del índice y qué mirar antes de elegir.",
+    "lessons": [
+      {
+        "id": "pd1",
+        "title": "Cómo replican",
+        "ex": [
+          {
+            "t": "match",
+            "q": "Empareja cada forma de replicar un índice con su significado.",
+            "pairs": [
+              [
+                "Réplica física completa",
+                "Compra todas las acciones del índice"
+              ],
+              [
+                "Réplica por muestreo",
+                "Compra una selección representativa"
+              ],
+              [
+                "Réplica sintética",
+                "Obtiene la rentabilidad con un swap con un banco"
+              ],
+              [
+                "Diferencia de seguimiento",
+                "Lo que se separa el fondo de su índice"
+              ]
+            ],
+            "why": "Las tres formas de réplica buscan el mismo resultado; lo que importa al final es cuánto se separa el fondo de su índice."
+          },
+          {
+            "t": "num",
+            "q": "El índice sube un 10,00 % en el año y el fondo, un 9,75 %. ¿Cuál es la diferencia de seguimiento, en puntos?",
+            "unit": "",
+            "a": 0.25,
+            "why": "10,00 − 9,75 = 0,25 puntos. Incluye la comisión y otros costes; a veces el préstamo de valores la compensa en parte."
+          },
+          {
+            "t": "choice",
+            "q": "¿Por qué muchos ETF europeos de acciones de EE. UU. están domiciliados en Irlanda?",
+            "opts": [
+              "Porque es obligatorio por ley europea",
+              "Porque así no cobran comisiones",
+              "Pagan menos retención por dividendos de EE. UU.",
+              "Porque cotizan siempre en dólares"
+            ],
+            "a": 2,
+            "why": "El convenio entre Irlanda y EE. UU. deja la retención sobre los dividendos en el 15 %, frente al 30 % general. Ese coste lo paga el fondo, aunque tú no lo veas."
+          },
+          {
+            "t": "num",
+            "q": "Un fondo recibe un 2 % anual en dividendos de empresas de EE. UU. ¿Cuántos puntos de rentabilidad al año ahorra con una retención del 15 % frente a una del 30 %?",
+            "unit": "",
+            "a": 0.3,
+            "why": "2 % × 30 % = 0,60 puntos frente a 2 % × 15 % = 0,30 puntos: ahorra 0,30 al año, más que la comisión de muchos ETF."
+          }
+        ]
+      },
+      {
+        "id": "pd2",
+        "title": "Elegir un fondo",
+        "ex": [
+          {
+            "t": "choice",
+            "q": "Dos ETF del mismo índice: A tiene un TER del 0,07 % y una diferencia de seguimiento de −0,30 %; B, un TER del 0,20 % y −0,10 %. ¿Cuál ha rendido mejor para ti?",
+            "opts": [
+              "B: se separa menos del índice",
+              "A: tiene la comisión más baja",
+              "Ninguno: es el mismo índice",
+              "No se puede saber con esto"
+            ],
+            "a": 0,
+            "why": "El TER es solo una parte del coste. Lo que recibes es la rentabilidad del índice menos la diferencia de seguimiento, y ahí B pierde 0,20 puntos menos al año."
+          },
+          {
+            "t": "num",
+            "q": "Un ETF tiene una horquilla de compraventa del 0,30 %. Si lo compras y lo vendes una vez, ¿cuánto pierdes aproximadamente por la horquilla?",
+            "unit": "%",
+            "a": 0.3,
+            "why": "Compras al precio de venta y vendes al de compra: pierdes la horquilla completa, un 0,30 %. Con ETF grandes y líquidos es mucho menor."
+          },
+          {
+            "t": "choice",
+            "q": "¿Por qué conviene evitar los ETF muy pequeños, de pocos millones de patrimonio?",
+            "opts": [
+              "Pueden cerrarse y forzarte a vender",
+              "Siempre rinden menos que los grandes",
+              "No se pueden comprar desde España",
+              "Tienen más riesgo de mercado"
+            ],
+            "a": 0,
+            "why": "Si el fondo cierra, te devuelven el dinero y tributas la ganancia aunque no quisieras vender. Además, suelen tener horquillas más amplias."
+          },
+          {
+            "t": "num",
+            "q": "Si las 10 mayores empresas pesan un 25 % del índice y tienes 3.600 € en ese fondo, ¿cuántos euros tienes en esas 10 empresas?",
+            "unit": "€",
+            "a": 900,
+            "why": "3.600 × 25 % = 900 €. Un índice mundial también puede estar concentrado: conviene saber qué hay dentro."
+          }
+        ]
+      }
+    ]
+  },
+  {
     "n": 1,
     "id": "velas",
     "title": "Velas japonesas",
@@ -4543,6 +4874,287 @@
             ],
             "a": 1,
             "why": "El stop te protege si el mercado arrastra a la acción; vender solo por un dato macro es intentar adivinar. Como en O'Neil, manda el mercado general cuando empieza a distribuir."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "id": "dividendos",
+    "track": "fundamental",
+    "title": "Dividendos y recompras",
+    "blurb": "Cómo devuelve el dinero una empresa, y cuándo eso crea valor.",
+    "lessons": [
+      {
+        "id": "f9a",
+        "title": "Dividendos",
+        "ex": [
+          {
+            "t": "num",
+            "q": "Una acción cotiza a 60,00 $ y paga 2,40 $ de dividendo al año. ¿Cuál es su rentabilidad por dividendo?",
+            "unit": "%",
+            "a": 4,
+            "why": "2,40 ÷ 60,00 = 4 %. Si el precio cae y el dividendo se mantiene, la rentabilidad sube: mira siempre si ese dividendo es sostenible."
+          },
+          {
+            "t": "num",
+            "q": "Su BPA es de 3,00 $ y reparte 2,40 $ por acción. ¿Qué porcentaje del beneficio reparte (payout)?",
+            "unit": "%",
+            "a": 80,
+            "why": "2,40 ÷ 3,00 = 80 %. Le queda solo un 20 % para reinvertir o reducir deuda: con payouts altos, el dividendo crece poco."
+          },
+          {
+            "t": "choice",
+            "q": "Una empresa lleva dos años repartiendo en dividendos el 120 % de su beneficio. ¿Qué indica?",
+            "opts": [
+              "Que su dividendo corre riesgo de recorte",
+              "Que es la mejor acción de dividendo",
+              "Que su beneficio crecerá con seguridad",
+              "Que la empresa no tiene ninguna deuda"
+            ],
+            "a": 0,
+            "why": "Reparte más de lo que gana: lo paga con caja o con deuda, y eso no dura. Una rentabilidad por dividendo muy alta suele ser una advertencia, no una oportunidad."
+          },
+          {
+            "t": "num",
+            "q": "Cotiza a 50,00 € y paga un dividendo de 1,50 € por acción. Si nada más cambia, ¿a qué precio teórico abre el día ex-dividendo?",
+            "unit": "€",
+            "a": 48.5,
+            "why": "50,00 − 1,50 = 48,50 €. El dividendo sale del valor de la empresa: no es dinero gratis, y además tributa."
+          }
+        ]
+      },
+      {
+        "id": "f9b",
+        "title": "Recompras",
+        "ex": [
+          {
+            "t": "num",
+            "q": "Una empresa gana 1.000 M$ y tiene 500 M de acciones. Recompra 25 M de acciones y el beneficio no cambia. ¿Cuánto sube el BPA? Redondea a 2 decimales.",
+            "unit": "%",
+            "a": 5.26,
+            "why": "BPA antes: 1.000 ÷ 500 = 2,00 $; después: 1.000 ÷ 475 = 2,11 $, un 5,26 % más sin ganar un dólar más. Por eso conviene separar el crecimiento del negocio del de la recompra.",
+            "tol": 0.02
+          },
+          {
+            "t": "num",
+            "q": "Tenía 400 M de acciones. Recompra 20 M, pero emite 15 M nuevas para pagar a sus empleados. ¿En qué porcentaje baja de verdad el número de acciones?",
+            "unit": "%",
+            "a": 1.25,
+            "why": "(20 − 15) ÷ 400 = 1,25 %. La recompra anunciada es de 20 M, pero la reducción real, neta de las acciones emitidas, es de solo 5 M."
+          },
+          {
+            "t": "num",
+            "q": "Su rentabilidad por dividendo es del 2 % y la recompra neta de acciones equivale a otro 3 % de su capitalización. ¿Cuánto devuelve en total al accionista cada año?",
+            "unit": "%",
+            "a": 5,
+            "why": "2 % + 3 % = 5 %. Dividendos y recompras son dos formas de devolver caja; sumadas dan una idea más completa que el dividendo solo."
+          },
+          {
+            "t": "choice",
+            "q": "Una empresa con PER 60 dedica toda su caja libre a recomprar acciones. ¿Qué riesgo tiene?",
+            "opts": [
+              "Ninguno: recomprar siempre crea valor",
+              "Recomprar caro, con poco rendimiento",
+              "Que tenga que subir el dividendo",
+              "Que acabe saliendo de bolsa"
+            ],
+            "a": 1,
+            "why": "Con PER 60, cada 100 $ de recompra compran solo 1,67 $ de beneficio anual (100 ÷ 60). Recomprar crea valor cuando la acción está barata, no a cualquier precio."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "n": 10,
+    "id": "guia",
+    "track": "fundamental",
+    "title": "Guía y expectativas",
+    "blurb": "Lo que la empresa promete y lo que los analistas esperan.",
+    "lessons": [
+      {
+        "id": "f10a",
+        "title": "Leer la guía",
+        "ex": [
+          {
+            "t": "num",
+            "q": "La empresa prevé ventas de 1.180 a 1.220 M$ el próximo trimestre y el consenso espera 1.230 M$. ¿Cuánto queda el punto medio de la guía por debajo del consenso? Redondea a 2 decimales.",
+            "unit": "%",
+            "a": 2.44,
+            "why": "Punto medio: (1.180 + 1.220) ÷ 2 = 1.200 M$. (1.230 − 1.200) ÷ 1.230 = 2,44 % por debajo: aunque el trimestre haya sido bueno, esta guía suele castigar el precio.",
+            "tol": 0.02
+          },
+          {
+            "t": "choice",
+            "q": "Bate al consenso en el trimestre y sube su previsión del año por encima de lo esperado. ¿Cómo se llama y qué suele provocar?",
+            "opts": [
+              "«Beat and raise»: revisiones al alza",
+              "«Miss»: recortes de previsiones",
+              "Un ajuste contable sin efecto",
+              "Una ampliación de capital"
+            ],
+            "a": 0,
+            "why": "Es la combinación que más mueve el precio: el pasado y el futuro mejoran a la vez, y los analistas tienen que subir sus estimaciones."
+          },
+          {
+            "t": "num",
+            "q": "Las ventas del año pasado fueron 800 M$ y la guía para este año es de 920 M$. ¿Qué crecimiento implica?",
+            "unit": "%",
+            "a": 15,
+            "why": "920 ÷ 800 − 1 = 15 %. Compáralo con el crecimiento de años anteriores: una guía que desacelera pesa aunque el número parezca alto."
+          },
+          {
+            "t": "choice",
+            "q": "Una empresa lleva 8 trimestres dando una guía que luego supera siempre en un 3-5 %. ¿Cómo lees su nueva guía?",
+            "opts": [
+              "Como exagerada: hay que restarle un 5 %",
+              "Como irrelevante para el precio",
+              "Como un suelo prudente",
+              "Como una garantía de resultados"
+            ],
+            "a": 2,
+            "why": "Muchas empresas guían por debajo de lo que esperan para poder batir. Con ese historial, el mercado ya descuenta que superará su guía: lo que sorprendería es que no lo hiciera."
+          }
+        ]
+      },
+      {
+        "id": "f10b",
+        "title": "Revisiones de estimaciones",
+        "ex": [
+          {
+            "t": "num",
+            "q": "Hace tres meses el consenso de BPA para el año era de 4,00 $ y hoy es de 4,40 $. ¿Cuánto se ha revisado al alza?",
+            "unit": "%",
+            "a": 10,
+            "why": "4,40 ÷ 4,00 − 1 = 10 %. Las revisiones al alza seguidas son una de las señales que más acompañan a las acciones líderes."
+          },
+          {
+            "t": "num",
+            "q": "La acción sigue cotizando a 88 $. ¿Cuál es su PER adelantado con la nueva estimación de 4,40 $?",
+            "unit": "",
+            "a": 20,
+            "why": "88 ÷ 4,40 = 20, frente a 88 ÷ 4,00 = 22 hace tres meses. Sin moverse el precio, la acción se ha abaratado."
+          },
+          {
+            "t": "choice",
+            "q": "Las estimaciones de beneficio suben un 10 % y el precio no se mueve. ¿Qué ha pasado con la valoración?",
+            "opts": [
+              "Se ha abaratado",
+              "Se ha encarecido",
+              "No ha cambiado",
+              "Ya no se puede valorar"
+            ],
+            "a": 0,
+            "why": "Mismo precio con más beneficio esperado: el PER adelantado baja. Si las revisiones son fiables, el precio suele acabar ajustándose."
+          },
+          {
+            "t": "match",
+            "q": "Empareja cada término de las estimaciones con su significado.",
+            "pairs": [
+              [
+                "Revisión al alza",
+                "Los analistas suben su estimación de beneficio"
+              ],
+              [
+                "Guía conservadora",
+                "Previsión que la empresa suele superar"
+              ],
+              [
+                "Consenso",
+                "Media de las estimaciones de los analistas"
+              ],
+              [
+                "Sorpresa",
+                "Diferencia entre lo publicado y lo esperado"
+              ]
+            ],
+            "why": "El precio se mueve con lo que cambia frente a lo esperado: por eso importan tanto la guía, el consenso y sus revisiones."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "n": 11,
+    "id": "dcf",
+    "track": "fundamental",
+    "title": "Descuento de flujos",
+    "blurb": "Cuánto vale hoy el dinero que la empresa generará mañana.",
+    "lessons": [
+      {
+        "id": "f11a",
+        "title": "Valor actual",
+        "ex": [
+          {
+            "t": "num",
+            "q": "Recibirás 110 € dentro de un año. Si exiges un 10 % de rentabilidad, ¿cuánto vale ese dinero hoy?",
+            "unit": "€",
+            "a": 100,
+            "why": "110 ÷ 1,10 = 100 €. Descontar es el interés compuesto al revés: dinero futuro vale menos que dinero de hoy."
+          },
+          {
+            "t": "num",
+            "q": "¿Cuánto valen hoy 100 € que recibirás dentro de 5 años, si exiges un 8 % anual? Redondea a 2 decimales.",
+            "unit": "€",
+            "a": 68.06,
+            "why": "100 ÷ 1,08⁵ = 100 ÷ 1,4693 = 68,06 €. Cuanto más lejano el flujo, más pesa el tipo de descuento.",
+            "tol": 0.02
+          },
+          {
+            "t": "num",
+            "q": "El flujo de caja libre del próximo año será de 40 M$ y crecerá un 3 % anual para siempre. Exiges un 8 %. ¿Cuántos millones vale la empresa?",
+            "unit": "",
+            "a": 800,
+            "why": "Perpetuidad con crecimiento: 40 ÷ (0,08 − 0,03) = 40 ÷ 0,05 = 800 M$."
+          },
+          {
+            "t": "num",
+            "q": "Ese valor de 800 M$, menos 200 M$ de deuda neta, entre 50 M de acciones. ¿Valor por acción?",
+            "unit": "$",
+            "a": 12,
+            "why": "(800 − 200) ÷ 50 = 12 $. La deuda es de los acreedores: el accionista solo se queda con lo que sobra."
+          }
+        ]
+      },
+      {
+        "id": "f11b",
+        "title": "Sensibilidad y margen",
+        "ex": [
+          {
+            "t": "num",
+            "q": "Con el mismo flujo (40 M$, crecimiento del 3 %), ¿cuánto cae el valor de la empresa si exiges un 9 % en lugar de un 8 %? Redondea a 1 decimal.",
+            "unit": "%",
+            "a": 16.7,
+            "why": "40 ÷ (0,09 − 0,03) = 666,7 M$ frente a 800 M$: un 16,7 % menos por un solo punto de tipo exigido.",
+            "tol": 0.06
+          },
+          {
+            "t": "num",
+            "q": "Y si en lugar de eso supones un crecimiento del 4 % (con el 8 % exigido), ¿cuánto sube el valor frente a los 800 M$?",
+            "unit": "%",
+            "a": 25,
+            "why": "40 ÷ (0,08 − 0,04) = 1.000 M$: un 25 % más por un punto de crecimiento. Pequeños cambios en los supuestos mueven mucho el resultado."
+          },
+          {
+            "t": "num",
+            "q": "Estimas un valor de 12 $ por acción y cotiza a 9 $. ¿Qué margen de seguridad tienes?",
+            "unit": "%",
+            "a": 25,
+            "why": "(12 − 9) ÷ 12 = 25 %. Es el colchón por si tus supuestos son demasiado optimistas, que es lo habitual."
+          },
+          {
+            "t": "choice",
+            "q": "¿Cuál es el principal punto débil de un descuento de flujos?",
+            "opts": [
+              "Solo sirve para valorar bancos",
+              "No tiene en cuenta la deuda",
+              "Ignora el flujo de caja libre",
+              "Es muy sensible a los supuestos"
+            ],
+            "a": 3,
+            "why": "Un punto más de tipo o de crecimiento cambia el valor un 17-25 %. Úsalo para entender qué tiene que pasar para justificar el precio, no como una cifra exacta."
           }
         ]
       }
