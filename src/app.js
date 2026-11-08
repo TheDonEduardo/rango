@@ -24,6 +24,8 @@ function load(){
 }
 function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
 let installEvt=null;
+// Unidades completadas que el usuario ha desplegado en el inicio (por defecto se muestran plegadas).
+const abiertas=new Set();
 let S=load(), view='home', run=null, lastRes=null, homeY=0, goCur=false, resetArm=false, toastT=0;
 const $app=document.getElementById('app'), $toast=document.getElementById('toast');
 const streakNow=()=>(S.last===today()||S.last===yest())?S.streak:0;
@@ -100,6 +102,9 @@ function homeHTML(){
   if(S.track==='basico'&&!S.placement&&!Object.keys(S.done).length)h+=`<section class="test" aria-label="Test de nivel"><div><b>¿Ya sabes de bolsa?</b><span>Haz el test de nivel: ${PLACEMENT.length} preguntas, unos 5 minutos. Marcaremos lo que ya dominas y, si aciertas casi todo, se abren las demás rutas.</span></div><div class="row"><button class="btn primary" data-act="test">Hacer el test</button><button class="btn ghost" data-act="notest">Empezar desde cero</button></div></section>`;
   if(S.track==='tecnico'&&SEMANA&&advancedOpen())h+=simCardHTML();
   if(S.track==='pasiva'&&advancedOpen())h+=`<section class="sim" aria-label="Simulador de aportaciones"><b>Simulador de aportaciones</b><div class="simrow"><span>Mira cómo crece una cartera aportando cada mes, y cuánto se llevan las comisiones.</span><button class="btn primary" data-act="calc">Abrir</button></div></section>`;
+  // Atajo a la siguiente lección cuando ya no está en la primera unidad (el camino se hace largo).
+  const cur=TF.find(l=>st[l.id]==='current'),primera=UNITS.find(u=>trackOf(u)===S.track);
+  if(cur&&cur.unit!==primera)h+=`<section class="cont" aria-label="Siguiente lección"><div><span>Unidad ${cur.unit.n} · ${esc(cur.unit.title)}</span><b>${esc(cur.title)}</b></div><button class="btn primary" data-act="open" data-id="${cur.id}">Continuar</button></section>`;
   const due=srsDue().length;
   if(due)h+=`<section class="srs" aria-label="Repaso del día"><div><b>Repaso del día</b><span>${due} ${due===1?'ejercicio que fallaste':'ejercicios que fallaste'}</span></div><button class="btn primary" data-act="srs">Repasar</button></section>`;
   UNITS.filter(u=>trackOf(u)===S.track).forEach(u=>{
@@ -107,8 +112,10 @@ function homeHTML(){
       h+=`<section class="unit soon"><div class="ban"><div><div class="u">Unidad ${u.n}</div><h2>${u.title}</h2><p>${u.blurb}</p></div><span class="cnt">Próximamente</span></div></section>`;
       return;
     }
-    const items=FLAT.filter(l=>l.unit===u),doneN=items.filter(l=>S.done[l.id]).length;
-    h+=`<section class="unit" aria-label="Unidad ${u.n}: ${u.title}"><div class="ban"><div><div class="u">Unidad ${u.n}</div><h2>${u.title}</h2><p>${u.blurb}</p></div><span class="cnt">${doneN} / ${items.length}</span></div>`;
+    const items=FLAT.filter(l=>l.unit===u),doneN=items.filter(l=>S.done[l.id]).length,completa=doneN===items.length,abierta=abiertas.has(u.id);
+    const pliegue=completa?`<button class="btn ghost unfold" data-act="unfold" data-id="${u.id}" aria-expanded="${abierta}">${abierta?'Plegar':'Ver lecciones'}</button>`:'';
+    h+=`<section class="unit${completa?' hecha':''}" aria-label="Unidad ${u.n}: ${u.title}"><div class="ban"><div><div class="u">Unidad ${u.n}</div><h2>${u.title}</h2><p>${u.blurb}</p>${pliegue}</div><span class="cnt">${completa?'Completada':`${doneN} / ${items.length}`}</span></div>`;
+    if(completa&&!abierta){h+='</section>';return}
     h+=`<div class="path" style="--n:${items.length}"><svg class="route" viewBox="0 0 100 ${items.length*RH}" preserveAspectRatio="none" aria-hidden="true">`;
     for(let k=0;k<items.length-1;k++){
       const gi=TF.indexOf(items[k]),x1=50+OFFS[gi%OFFS.length],x2=50+OFFS[(gi+1)%OFFS.length];
@@ -493,6 +500,7 @@ $app.addEventListener('click',e=>{
   else if(a==='pick'&&!run.checked)pickChoice(+b.dataset.i);
   else if(a==='pstep'){const c=planCtx(),g=$app.querySelector(`.pl[data-id="${b.dataset.id}"]`);if(c&&g)planSet(g,c.vals[b.dataset.id]+(+b.dataset.d)*c.step)}
   else if(a==='sim'){homeY=window.scrollY;simDraft=null;view='sim';render()}
+  else if(a==='unfold'){const id=b.dataset.id;abiertas.has(id)?abiertas.delete(id):abiertas.add(id);homeY=window.scrollY;render();const nb=$app.querySelector(`[data-act=unfold][data-id="${id}"]`);if(nb)nb.focus({preventScroll:true})}
   else if(a==='simres'){homeY=window.scrollY;view='simres';render()}
   else if(a==='calc'){homeY=window.scrollY;view='calc';render()}
   else if(a==='simsave'&&simDraft&&simValid(simDraft)){S.sim[SEMANA.semana]={ticker:SEMANA.ticker,plan:Object.assign({},simDraft),fecha:today()};save();simDraft=null;view='home';render();toast('Plan guardado. El sábado que viene verás el resultado.')}

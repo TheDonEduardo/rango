@@ -190,6 +190,17 @@ if (fs.existsSync(semPath)) {
   T.goHome();
 }
 
+// 8) Inicio con progreso: atajo «Continuar» y unidades completadas plegadas.
+{
+  const st = T.getState(); const antes = st.done; st.done = {}; st.skipBasics = true; T.setTrack('tecnico');
+  for (const l of T.FLAT.filter(l => l.unit.id === 'velas')) st.done[l.id] = {acc: 1};
+  const h = T.homeHTML();
+  if (!h.includes('data-act="unfold"') || !h.includes('Completada')) errs.push('la unidad completada no se pliega');
+  if (!/class="cont"[\s\S]*data-id="t1"/.test(h)) errs.push('falta el atajo «Continuar» a la siguiente lección');
+  if (h.includes('data-id="v1"')) errs.push('las lecciones de la unidad completada siguen visibles');
+  st.done = antes;
+}
+
 // 7) Simulador de aportaciones: valores de referencia calculados aparte.
 const cerca = (x, y) => Math.abs(x - y) < 0.05;
 const r1 = T.aportaciones({inicial: 0, mensual: 200, anos: 20, rent: 6, ter: 0});
