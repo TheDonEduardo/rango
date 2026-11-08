@@ -1732,6 +1732,756 @@
     ]
   },
   {
+    "n": 10,
+    "id": "indexarse",
+    "track": "pasiva",
+    "title": "Por qué indexarse",
+    "blurb": "La suma cero, los costes y lo que dicen los datos.",
+    "lessons": [
+      {
+        "id": "ix1",
+        "title": "El juego de suma cero",
+        "ex": [
+          {
+            "t": "choice",
+            "q": "Antes de costes, ¿qué rentabilidad media obtienen en conjunto los inversores activos?",
+            "opts": [
+              "La del mercado: juntos son el mercado",
+              "Más que el mercado, porque saben elegir",
+              "Menos que el mercado, siempre",
+              "Depende solo de cada año"
+            ],
+            "a": 0,
+            "why": "Todos los inversores juntos poseen el mercado: si unos ganan más que la media, otros ganan menos. Antes de costes, la media activa es la del mercado."
+          },
+          {
+            "t": "num",
+            "q": "El mercado sube un 8 % y el fondo activo medio lo iguala antes de costes, pero cobra un 1,5 % de comisión. ¿Qué rentabilidad neta obtiene su partícipe?",
+            "unit": "%",
+            "a": 6.5,
+            "why": "8 − 1,5 = 6,5 %. Tras costes, el gestor activo medio queda por detrás del índice justo en lo que cobra."
+          },
+          {
+            "t": "num",
+            "q": "Inviertes 10.000 € durante 30 años. Un fondo rinde un 6,8 % neto al año y otro, un 5,3 %. ¿Cuántos miles de euros más acumula el primero? (redondea a miles)",
+            "unit": "",
+            "a": 25,
+            "why": "10.000 × 1,068³⁰ ≈ 71.968 € frente a 10.000 × 1,053³⁰ ≈ 47.082 €: unos 25.000 € de diferencia por 1,5 puntos de coste.",
+            "tol": 0.5
+          },
+          {
+            "t": "choice",
+            "q": "¿Qué suelen mostrar los informes SPIVA sobre los fondos activos de acciones a 15 años?",
+            "opts": [
+              "La gran mayoría queda por detrás de su índice",
+              "Casi todos baten a su índice",
+              "La mitad bate al índice cada año",
+              "Los fondos más caros lo hacen mejor"
+            ],
+            "a": 0,
+            "why": "Según los informes SPIVA de S&P, en torno al 85-90 % de los fondos activos de acciones de EE. UU. y Europa quedan por detrás de su índice a 15 años."
+          }
+        ]
+      },
+      {
+        "id": "ix2",
+        "title": "Persistencia y costes",
+        "ex": [
+          {
+            "t": "choice",
+            "q": "Un fondo activo ha batido al índice los últimos 3 años. ¿Qué dicen los estudios de persistencia?",
+            "opts": [
+              "Pocos ganadores repiten en los años siguientes",
+              "Lo seguirá batiendo casi seguro",
+              "Es la mejor señal para invertir",
+              "Que vendas el indexado y lo compres"
+            ],
+            "a": 0,
+            "why": "Muy pocos fondos del 25 % mejor siguen ahí 3-5 años después: el pasado reciente predice poco el futuro."
+          },
+          {
+            "t": "num",
+            "q": "Un fondo activo cobra un 1,8 % anual y el indexado, un 0,2 %. ¿Cuántos puntos extra al año necesita el activo solo para empatar?",
+            "unit": "",
+            "a": 1.6,
+            "why": "1,8 − 0,2 = 1,6 puntos cada año, antes de tener en cuenta que además debe acertar."
+          },
+          {
+            "t": "num",
+            "q": "Pagas un 1,5 % del capital cada año durante 20 años. ¿Qué porcentaje del capital final pierdes frente a no pagar nada? (redondea a entero)",
+            "unit": "%",
+            "a": 26,
+            "why": "Te queda 0,985²⁰ ≈ 0,739 del capital: pierdes un 26 % del resultado final.",
+            "tol": 0.5
+          },
+          {
+            "t": "match",
+            "q": "Empareja cada término de gestión con su significado.",
+            "pairs": [
+              [
+                "Gestión activa",
+                "Intenta batir al índice eligiendo valores"
+              ],
+              [
+                "Gestión indexada",
+                "Copia el índice a bajo coste"
+              ],
+              [
+                "SPIVA",
+                "Informe que compara fondos activos e índices"
+              ],
+              [
+                "Sesgo de supervivencia",
+                "Los fondos cerrados salen de las estadísticas"
+              ]
+            ],
+            "why": "Al cerrar o fusionar los peores fondos, las clasificaciones parecen mejores de lo que fueron; SPIVA los cuenta para evitarlo."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "n": 11,
+    "id": "objetivos",
+    "track": "pasiva",
+    "title": "Invertir por objetivos",
+    "blurb": "Cada meta con su plazo, su activo y su aportación.",
+    "lessons": [
+      {
+        "id": "ob1",
+        "title": "Plazo y activo",
+        "ex": [
+          {
+            "t": "match",
+            "q": "Empareja cada plazo u objetivo con dónde suele guardarse el dinero.",
+            "pairs": [
+              [
+                "Menos de 2 años",
+                "Depósito o cuenta remunerada"
+              ],
+              [
+                "De 2 a 5 años",
+                "Sobre todo renta fija a corto plazo"
+              ],
+              [
+                "Más de 10 años",
+                "Sobre todo acciones"
+              ],
+              [
+                "Colchón de emergencia",
+                "Liquidez disponible al momento"
+              ]
+            ],
+            "why": "Cuanto más cerca está el gasto, menos tiempo hay para recuperar una caída: el dinero de corto plazo no va a bolsa."
+          },
+          {
+            "t": "choice",
+            "q": "Necesitas 20.000 € para la entrada de un piso dentro de 18 meses. ¿Dónde los guardas?",
+            "opts": [
+              "En un depósito o fondo monetario",
+              "En un ETF del MSCI World",
+              "En acciones de pequeñas empresas",
+              "En un ETF de mercados emergentes"
+            ],
+            "a": 0,
+            "why": "La bolsa ha caído más de un 30 % en algunos años y tarda en recuperarse; con 18 meses no hay margen para esperar."
+          },
+          {
+            "t": "num",
+            "q": "Quieres reunir 30.000 € en 5 años sin contar rentabilidad. ¿Cuánto debes ahorrar al mes?",
+            "unit": "€",
+            "a": 500,
+            "why": "30.000 / 60 meses = 500 € al mes."
+          },
+          {
+            "t": "num",
+            "q": "Mismo objetivo de 30.000 € en 5 años, pero ya tienes 6.000 € ahorrados. ¿Cuánto al mes?",
+            "unit": "€",
+            "a": 400,
+            "why": "Faltan 24.000 €: 24.000 / 60 = 400 € al mes."
+          }
+        ]
+      },
+      {
+        "id": "ob2",
+        "title": "Cuánto aportar",
+        "ex": [
+          {
+            "t": "num",
+            "q": "Para jubilarte quieres retirar 24.000 € al año con la regla del 4 %. ¿Cuántos miles de euros de cartera necesitas?",
+            "unit": "",
+            "a": 600,
+            "why": "24.000 / 0,04 = 600.000 €, es decir, 25 veces el gasto anual."
+          },
+          {
+            "t": "num",
+            "q": "Aportas 300 € al mes al 0,5 % mensual durante 30 años. ¿Cuántos miles de euros reúnes? (redondea a miles)",
+            "unit": "",
+            "a": 301,
+            "why": "300 × (1,005³⁶⁰ − 1) / 0,005 ≈ 301.355 €, de los que solo 108.000 € son aportaciones.",
+            "tol": 0.5
+          },
+          {
+            "t": "choice",
+            "q": "Tienes dos objetivos: un colchón de 6 meses de gastos y la jubilación a 30 años. ¿Qué es más sensato?",
+            "opts": [
+              "Colchón en liquidez y jubilación indexada",
+              "Todo en la misma cartera indexada",
+              "Todo en un depósito a plazo",
+              "Todo en acciones y vender si hace falta"
+            ],
+            "a": 0,
+            "why": "Cada objetivo tiene su plazo: el colchón debe estar disponible ya, sin depender de que la bolsa no haya caído un 30 % ese mes."
+          },
+          {
+            "t": "num",
+            "q": "Gastas 1.800 € al mes. ¿Cuántos miles de euros debe tener un colchón de 6 meses?",
+            "unit": "",
+            "a": 10.8,
+            "why": "1.800 × 6 = 10.800 €."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "n": 12,
+    "id": "inflacion",
+    "track": "pasiva",
+    "title": "Inflación y rentabilidad real",
+    "blurb": "Lo que importa es cuánto puedes comprar, no cuántos euros tienes.",
+    "lessons": [
+      {
+        "id": "in1",
+        "title": "Rentabilidad real",
+        "ex": [
+          {
+            "t": "num",
+            "q": "Tu cartera rinde un 7 % y la inflación es del 3 %. ¿Cuál es la rentabilidad real aproximada?",
+            "unit": "%",
+            "a": 4,
+            "why": "7 − 3 = 4 %: es lo que crece de verdad tu poder de compra."
+          },
+          {
+            "t": "num",
+            "q": "Calcula la rentabilidad real exacta de ese caso: 1,07 / 1,03 − 1. (dos decimales)",
+            "unit": "%",
+            "a": 3.88,
+            "why": "1,07 / 1,03 = 1,0388: un 3,88 %, algo menos que la resta rápida."
+          },
+          {
+            "t": "num",
+            "q": "Con una inflación del 3 % anual, ¿cuántos euros de hoy valen 100 € dentro de 20 años? (redondea a entero)",
+            "unit": "€",
+            "a": 55,
+            "why": "100 / 1,03²⁰ ≈ 55,37 €: el dinero parado pierde casi la mitad de su poder de compra.",
+            "tol": 0.5
+          },
+          {
+            "t": "choice",
+            "q": "Un depósito paga un 2 % con una inflación del 3 %. ¿Qué pasa con tu poder de compra?",
+            "opts": [
+              "Pierde alrededor de un 1 % al año",
+              "Gana un 2 % cada año",
+              "Se mantiene igual que hoy",
+              "Gana un 5 % cada año"
+            ],
+            "a": 0,
+            "why": "2 − 3 = −1 %: tienes más euros, pero compran menos que antes."
+          }
+        ]
+      },
+      {
+        "id": "in2",
+        "title": "Qué protege de la inflación",
+        "ex": [
+          {
+            "t": "match",
+            "q": "Empareja cada activo con cómo le afecta la inflación.",
+            "pairs": [
+              [
+                "Efectivo",
+                "Pierde poder de compra"
+              ],
+              [
+                "Bonos ligados a la inflación",
+                "Su principal se ajusta al IPC"
+              ],
+              [
+                "Acciones",
+                "Las empresas suben precios a largo plazo"
+              ],
+              [
+                "Bonos de tipo fijo",
+                "Sufren si la inflación sube por sorpresa"
+              ]
+            ],
+            "why": "Un cupón fijo del 4 % con un 6 % de inflación pierde 2 puntos al año; los bonos ligados a la inflación ajustan el principal al IPC."
+          },
+          {
+            "t": "num",
+            "q": "Un bono paga un 4 % fijo y la inflación sube al 6 %. ¿Cuántos puntos pierde al año en términos reales, aproximadamente?",
+            "unit": "",
+            "a": 2,
+            "why": "4 − 6 = −2: pierde unos 2 puntos de poder de compra al año."
+          },
+          {
+            "t": "num",
+            "q": "Regla rápida: años para que los precios se dupliquen = 72 / inflación. Con un 4 %, ¿cuántos años?",
+            "unit": "",
+            "a": 18,
+            "why": "72 / 4 = 18 años: con un 4 % de inflación, los precios se duplican en 18 años."
+          },
+          {
+            "t": "choice",
+            "q": "¿Por qué una cartera de largo plazo suele tener mayoría de acciones pese a su volatilidad?",
+            "opts": [
+              "Es el activo que más ha batido a la inflación",
+              "No pueden caer nunca",
+              "Pagan cada año más que los bonos",
+              "Están garantizadas por el Estado"
+            ],
+            "a": 0,
+            "why": "Desde 1900, las acciones mundiales han rendido en torno a un 5 % real anual, frente a cerca de un 2 % de los bonos."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "n": 13,
+    "id": "factores",
+    "track": "pasiva",
+    "title": "Factores",
+    "blurb": "Valor, tamaño, momentum y calidad: primas con letra pequeña.",
+    "lessons": [
+      {
+        "id": "fc1",
+        "title": "Qué es un factor",
+        "ex": [
+          {
+            "t": "match",
+            "q": "Empareja cada factor con las empresas que favorece.",
+            "pairs": [
+              [
+                "Valor",
+                "Baratas por beneficios o valor contable"
+              ],
+              [
+                "Tamaño",
+                "Empresas pequeñas"
+              ],
+              [
+                "Momentum",
+                "Las que más han subido en los últimos meses"
+              ],
+              [
+                "Calidad",
+                "Rentables y con poca deuda"
+              ]
+            ],
+            "why": "Cada factor ha dado una prima histórica sobre el mercado, pero solo en promedio y con años muy malos por medio."
+          },
+          {
+            "t": "choice",
+            "q": "¿Qué es un ETF «smart beta» o de factores?",
+            "opts": [
+              "Un índice que no pondera por capitalización",
+              "Un fondo con gestor que elige valores a diario",
+              "Un ETF apalancado que duplica el índice",
+              "Un fondo garantizado"
+            ],
+            "a": 0,
+            "why": "Sigue reglas fijas, como un índice, pero elige o pondera los valores por un criterio como el valor o el tamaño."
+          },
+          {
+            "t": "num",
+            "q": "Un ETF del MSCI World cobra un 0,20 % y uno de factor valor, un 0,30 %. ¿Cuántos puntos de prima anual necesita el factor solo para cubrir la diferencia?",
+            "unit": "",
+            "a": 0.1,
+            "why": "0,30 − 0,20 = 0,10 puntos al año."
+          },
+          {
+            "t": "choice",
+            "q": "El factor valor quedó por detrás del mercado gran parte de 2010-2020. ¿Qué enseña?",
+            "opts": [
+              "Las primas pueden tardar una década en aparecer",
+              "Los factores ya no funcionan nunca",
+              "Hay que cambiar de factor cada año",
+              "El valor siempre gana al año siguiente"
+            ],
+            "a": 0,
+            "why": "Una prima que llega solo en promedio exige aguantar rachas de 10 años; quien abandona en el peor momento se queda con la parte mala."
+          }
+        ]
+      },
+      {
+        "id": "fc2",
+        "title": "Factores en cartera",
+        "ex": [
+          {
+            "t": "num",
+            "q": "Cartera: 80 % MSCI World y 20 % ETF de pequeñas de valor. El World rinde un 6 % y el ETF, un 8 %. ¿Cuánto rinde la cartera?",
+            "unit": "%",
+            "a": 6.4,
+            "why": "0,8 × 6 + 0,2 × 8 = 4,8 + 1,6 = 6,4 %."
+          },
+          {
+            "t": "num",
+            "q": "Mismo reparto, pero el ETF de valor rinde un 2 % y el World, un 6 %. ¿Cuánto rinde la cartera?",
+            "unit": "%",
+            "a": 5.2,
+            "why": "0,8 × 6 + 0,2 × 2 = 4,8 + 0,4 = 5,2 %: el factor resta 0,8 puntos ese año."
+          },
+          {
+            "t": "choice",
+            "q": "¿Qué sesgo tiene ya un fondo indexado ponderado por capitalización?",
+            "opts": [
+              "Hacia las empresas más grandes",
+              "Hacia las empresas más baratas",
+              "Hacia las empresas pequeñas",
+              "Ninguno: todas pesan igual"
+            ],
+            "a": 0,
+            "why": "Cada empresa pesa según su valor en bolsa: en el MSCI World, las 10 mayores superan el 20 % del índice."
+          },
+          {
+            "t": "num",
+            "q": "Un índice de igual ponderación tiene 500 empresas. ¿Qué peso tiene cada una?",
+            "unit": "%",
+            "a": 0.2,
+            "why": "100 / 500 = 0,2 % cada una, se rebalancea periódicamente para mantenerlo."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "n": 14,
+    "id": "realoro",
+    "track": "pasiva",
+    "title": "Inmobiliario y oro",
+    "blurb": "SOCIMI, REIT y oro: qué aportan y qué no a una cartera.",
+    "lessons": [
+      {
+        "id": "io1",
+        "title": "SOCIMI y REIT",
+        "ex": [
+          {
+            "t": "choice",
+            "q": "¿Qué es una SOCIMI?",
+            "opts": [
+              "Una sociedad cotizada de inmuebles en alquiler",
+              "Un fondo garantizado de vivienda",
+              "Una hipoteca a tipo fijo",
+              "Un depósito ligado a la vivienda"
+            ],
+            "a": 0,
+            "why": "Es la versión española de los REIT: cotiza en bolsa y debe repartir como dividendo al menos el 80 % del beneficio del alquiler."
+          },
+          {
+            "t": "num",
+            "q": "Una SOCIMI cotiza a 8 € y reparte 0,40 € de dividendo anual. ¿Cuál es su rentabilidad por dividendo?",
+            "unit": "%",
+            "a": 5,
+            "why": "0,40 / 8 = 0,05: un 5 %."
+          },
+          {
+            "t": "num",
+            "q": "Un piso de 200.000 € se alquila por 900 € al mes y tiene 2.400 € de gastos anuales. ¿Cuál es su rentabilidad neta anual?",
+            "unit": "%",
+            "a": 4.2,
+            "why": "900 × 12 = 10.800 €; 10.800 − 2.400 = 8.400 €; 8.400 / 200.000 = 4,2 %."
+          },
+          {
+            "t": "choice",
+            "q": "¿Por qué un ETF del MSCI World ya incluye algo de inmobiliario?",
+            "opts": [
+              "Los REIT cotizados forman parte del índice",
+              "Porque compra pisos directamente",
+              "Porque lo exige la CNMV",
+              "No incluye nada de inmobiliario"
+            ],
+            "a": 0,
+            "why": "Los REIT cotizados son empresas del índice como las demás; añadir más inmobiliario es una apuesta extra, no diversificación nueva."
+          }
+        ]
+      },
+      {
+        "id": "io2",
+        "title": "Oro",
+        "ex": [
+          {
+            "t": "choice",
+            "q": "¿Cuál es una desventaja del oro frente a las acciones?",
+            "opts": [
+              "No genera dividendos ni intereses",
+              "No se puede comprar con un ETC",
+              "No cotiza nunca en bolsa",
+              "No puede subir de precio"
+            ],
+            "a": 0,
+            "why": "Su rentabilidad depende solo de que otro pague más por él; una acción reparte beneficios que crecen con el tiempo."
+          },
+          {
+            "t": "num",
+            "q": "Cartera de 50.000 € con un 10 % en oro. El oro sube un 20 % y el resto queda igual. ¿Cuánto pesa ahora el oro? (dos decimales)",
+            "unit": "%",
+            "a": 11.76,
+            "why": "El oro pasa de 5.000 a 6.000 € y la cartera, a 51.000 €: 6.000 / 51.000 = 11,76 %."
+          },
+          {
+            "t": "num",
+            "q": "Mismo caso: para volver al 10 % de oro, ¿cuántos euros de oro vendes?",
+            "unit": "€",
+            "a": 900,
+            "why": "El 10 % de 51.000 € son 5.100 €: vendes 6.000 − 5.100 = 900 €."
+          },
+          {
+            "t": "match",
+            "q": "Empareja cada forma de invertir con lo que es.",
+            "pairs": [
+              [
+                "ETC de oro",
+                "Título cotizado respaldado por oro físico"
+              ],
+              [
+                "Oro físico",
+                "Lingotes o monedas que guardas tú"
+              ],
+              [
+                "Mineras de oro",
+                "Acciones de empresas que extraen oro"
+              ],
+              [
+                "REIT",
+                "Empresa cotizada de inmuebles en alquiler"
+              ]
+            ],
+            "why": "Las mineras amplifican los movimientos del oro porque sus costes son fijos: tenerlas no es lo mismo que tener oro."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "n": 15,
+    "id": "divisa",
+    "track": "pasiva",
+    "title": "La divisa en la cartera",
+    "blurb": "Cuándo te afecta el dólar y cuándo merece la pena cubrirlo.",
+    "lessons": [
+      {
+        "id": "dv1",
+        "title": "Riesgo de divisa",
+        "ex": [
+          {
+            "t": "num",
+            "q": "Un ETF de EE. UU. sube un 10 % en dólares, pero el dólar cae un 5 % frente al euro. ¿Cuánto ganas en euros?",
+            "unit": "%",
+            "a": 4.5,
+            "why": "1,10 × 0,95 = 1,045: un 4,5 % en euros."
+          },
+          {
+            "t": "num",
+            "q": "Ahora el ETF sube un 10 % en dólares y el dólar sube un 5 % frente al euro. ¿Cuánto ganas en euros?",
+            "unit": "%",
+            "a": 15.5,
+            "why": "1,10 × 1,05 = 1,155: un 15,5 % en euros."
+          },
+          {
+            "t": "choice",
+            "q": "Un ETF cotiza en euros pero compra acciones de EE. UU. ¿Tienes riesgo de dólar?",
+            "opts": [
+              "Sí, el de las acciones que tiene dentro",
+              "No, porque el ETF cotiza en euros",
+              "Solo si lo vendes en EE. UU.",
+              "Solo en años de elecciones"
+            ],
+            "a": 0,
+            "why": "Lo que cuenta es la divisa de los activos: si el dólar cae un 10 %, el ETF cae en euros aunque cotice en euros."
+          },
+          {
+            "t": "match",
+            "q": "Empareja cada término de divisa con su significado.",
+            "pairs": [
+              [
+                "Clase cubierta (hedged)",
+                "Neutraliza casi todo el efecto de la divisa"
+              ],
+              [
+                "Clase no cubierta",
+                "Sube y baja también con la divisa"
+              ],
+              [
+                "Coste de cobertura",
+                "Depende de la diferencia de tipos de interés"
+              ],
+              [
+                "Divisa de cotización",
+                "Moneda en la que compras el ETF en bolsa"
+              ]
+            ],
+            "why": "Cubrir el dólar cuesta aproximadamente la diferencia entre los tipos de EE. UU. y los del euro, a veces más de 1 punto al año."
+          }
+        ]
+      },
+      {
+        "id": "dv2",
+        "title": "¿Cubrir o no?",
+        "ex": [
+          {
+            "t": "choice",
+            "q": "En la parte de acciones a largo plazo, ¿qué suelen hacer muchos inversores europeos?",
+            "opts": [
+              "No cubrir: a 20 años la divisa pesa poco",
+              "Cubrir siempre el 100 %",
+              "Cambiar de clase según el dólar",
+              "Vender cuando el dólar cae"
+            ],
+            "a": 0,
+            "why": "Las acciones se mueven un 15-20 % al año y las divisas tienden a compensarse a largo plazo; cubrir añade coste sin reducir mucho el riesgo."
+          },
+          {
+            "t": "choice",
+            "q": "¿Qué se suele hacer con la renta fija global en una cartera en euros?",
+            "opts": [
+              "Cubrirla: la divisa movería más que el bono",
+              "No cubrirla nunca",
+              "La divisa no afecta a los bonos",
+              "Comprar solo bonos emitidos en dólares"
+            ],
+            "a": 0,
+            "why": "Un bono puede moverse un 3-5 % al año y el dólar, un 10 %: sin cubrir, la parte estable de la cartera deja de serlo."
+          },
+          {
+            "t": "num",
+            "q": "Un bono en dólares rinde un 4 % y el dólar cae un 8 % frente al euro. ¿Cuánto pierdes en euros? (dos decimales)",
+            "unit": "%",
+            "a": 4.32,
+            "why": "1,04 × 0,92 = 0,9568: pierdes un 4,32 % pese a que el bono ganó un 4 %."
+          },
+          {
+            "t": "num",
+            "q": "Cartera: 60 % acciones globales, de las que un 70 % está en dólares, y 40 % renta fija cubierta. ¿Qué porcentaje de la cartera está expuesto al dólar?",
+            "unit": "%",
+            "a": 42,
+            "why": "0,60 × 0,70 = 0,42: un 42 % de la cartera; la renta fija cubierta no suma."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "n": 16,
+    "id": "revision",
+    "track": "pasiva",
+    "title": "Revisar la cartera",
+    "blurb": "El mantenimiento anual: qué mirar, qué ajustar y qué no tocar.",
+    "lessons": [
+      {
+        "id": "rv1",
+        "title": "La revisión anual",
+        "ex": [
+          {
+            "t": "choice",
+            "q": "¿Cada cuánto tiempo conviene revisar una cartera indexada?",
+            "opts": [
+              "Una vez al año, con una lista fija",
+              "Cada día al cierre",
+              "Cada vez que salen noticias",
+              "Nunca, ni para rebalancear"
+            ],
+            "a": 0,
+            "why": "Una vez al año basta para rebalancear y revisar costes y objetivos; mirarla a diario solo aumenta la tentación de tocarla."
+          },
+          {
+            "t": "match",
+            "q": "Empareja cada punto de la revisión con lo que compruebas.",
+            "pairs": [
+              [
+                "Desviación del reparto",
+                "Si algún activo se ha alejado de su peso"
+              ],
+              [
+                "Costes",
+                "Si hay un fondo equivalente más barato"
+              ],
+              [
+                "Objetivo y plazo",
+                "Si toca bajar riesgo porque la meta se acerca"
+              ],
+              [
+                "Aportación",
+                "Si puedes subirla porque ganas más"
+              ]
+            ],
+            "why": "Son cuatro preguntas que no dependen de lo que haya hecho la bolsa este año."
+          },
+          {
+            "t": "num",
+            "q": "Tu reparto objetivo es 70/30 y hoy tienes 78.000 € en acciones y 22.000 € en bonos. ¿Cuántos puntos se ha desviado la parte de acciones?",
+            "unit": "",
+            "a": 8,
+            "why": "78.000 / 100.000 = 78 %: 78 − 70 = 8 puntos por encima."
+          },
+          {
+            "t": "num",
+            "q": "Mismo caso: ¿cuántos miles de euros de acciones pasas a bonos para volver al 70/30?",
+            "unit": "",
+            "a": 8,
+            "why": "El 70 % de 100.000 € son 70.000 €: pasas 78.000 − 70.000 = 8.000 € a bonos."
+          }
+        ]
+      },
+      {
+        "id": "rv2",
+        "title": "Ajustes con el tiempo",
+        "ex": [
+          {
+            "t": "num",
+            "q": "Regla orientativa: % de renta fija = edad − 20. ¿Cuánta renta fija tendría alguien de 50 años?",
+            "unit": "%",
+            "a": 30,
+            "why": "50 − 20 = 30 %: el resto, un 70 %, en acciones. Es una guía, no una ley."
+          },
+          {
+            "t": "choice",
+            "q": "Encuentras un ETF del mismo índice con un 0,10 % menos de comisión, pero tienes plusvalías en el actual. ¿Qué haces?",
+            "opts": [
+              "Calcular antes lo que te costará tributar",
+              "Venderlo ya: siempre compensa el cambio",
+              "No mirar nunca otros fondos",
+              "Comprar los dos a medias"
+            ],
+            "a": 0,
+            "why": "Vender un ETF tributa la plusvalía; en fondos de inversión el traspaso no tributa. Compara el impuesto con el ahorro anual."
+          },
+          {
+            "t": "num",
+            "q": "Con 50.000 € invertidos, el cambio ahorra un 0,10 % al año, pero vender tributa 950 € hoy. ¿Cuántos años tardas en recuperarlo?",
+            "unit": "",
+            "a": 19,
+            "why": "50.000 × 0,10 % = 50 € al año; 950 / 50 = 19 años. Mejor dirigir solo las aportaciones nuevas al fondo barato."
+          },
+          {
+            "t": "choice",
+            "q": "La bolsa cae un 25 % y tu plan dice 70/30. ¿Qué haces en la revisión?",
+            "opts": [
+              "Rebalancear: comprar acciones hasta el 70 %",
+              "Vender acciones para evitar más caídas",
+              "Parar las aportaciones",
+              "Cambiar a 30/70 hasta que pase"
+            ],
+            "a": 0,
+            "why": "Tras la caída las acciones pesan menos del 70 %: rebalancear te obliga a comprar barato, que es justo lo que cuesta hacer."
+          }
+        ]
+      }
+    ]
+  },
+  {
     "n": 1,
     "id": "velas",
     "title": "Velas japonesas",
