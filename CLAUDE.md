@@ -38,7 +38,7 @@ icons/                iconos de la PWA, generados con tools/iconos.cjs a partir 
 
 ## Esquema del contenido (`units.json`)
 
-Unidad: `{n, id, track?, title, blurb, lessons: [...] | null}` (`null` = "Próximamente"). `track`: `"basico"`, `"tecnico"` (por defecto) o `"fundamental"`; cada ruta tiene su selector en el inicio, su numeración `n` y su propia lección actual. Básico es el primer nivel: Técnico y Fundamental se abren al completarlo, al pulsar «Ya opero: saltar los básicos» (`S.skipBasics`) o si ya hay progreso en ellas. Un usuario nuevo empieza en Básico. Cada unidad genera automáticamente un nodo "Repaso de la unidad" con 5 ejercicios al azar de sus lecciones.
+Unidad: `{n, id, track?, title, blurb, lessons: [...] | null}` (`null` = "Próximamente"). `track`: `"basico"`, `"tecnico"` (por defecto) o `"fundamental"`; cada ruta tiene su selector en el inicio, su numeración `n` y su propia lección actual. Básico es el primer nivel: Técnico y Fundamental se abren al completar sus unidades obligatorias (las que tienen `"gate": false`, como Inversión pasiva y Renta fija, son complementarias y no bloquean; así añadir unidades a Básico no vuelve a cerrar las rutas a quien ya lo terminó), al pulsar «Ya opero: saltar los básicos» (`S.skipBasics`) o si ya hay progreso en ellas. Un usuario nuevo empieza en Básico. Cada unidad genera automáticamente un nodo "Repaso de la unidad" con 5 ejercicios al azar de sus lecciones.
 
 Lección: `{id, title, ex: [...]}`. Los `id` deben ser únicos (se guardan en localStorage).
 
@@ -67,6 +67,7 @@ Gráficos (`chart`):
 - Cada ejercicio enseña una sola cosa. `why` explica el porqué con las cifras del enunciado, en 1-2 frases.
 - Varía la posición de la respuesta correcta en los `choice` y que no sea la más larga: los distractores deben ser igual de creíbles y de largos (el test falla si la correcta supera 1,5 veces a la más larga del resto). La justificación va en `why`, no en la opción.
 - Formato numérico en texto: coma decimal y símbolo tras espacio (`17,60 €`, `7,36 %`).
+- Cada enunciado (`q`) es único en todo el contenido (el test lo comprueba).
 - Contenido fiscal o normativo: solo reglas estables y bien establecidas, sin casos límite; las tablas de tramos llevan «Compruébalos cada año».
 - Tono directo, sin relleno ni advertencias legales dentro de los ejercicios. Es formación, no recomendación de inversión; el aviso va en su propia pantalla (aviso legal).
 
@@ -93,9 +94,9 @@ Sistema de tokens en `src/styles.css` (`:root`, con variante oscura por `prefers
 
 ## Tareas pendientes (por orden sugerido)
 
-0. Ruta Básico: 6 unidades hechas (acciones y órdenes, rentabilidad y riesgo, leer un gráfico, ETF e índices, impuestos en España, cuenta y bróker). Revisar cada año los tramos y normas fiscales de la unidad «Impuestos en España» y «Cuenta y bróker».
-1. Contenido técnico: unidades 1-14 hechas (velas, tendencia, riesgo, catalizadores binarios, Wyckoff/VSA, VCP, salidas escalonadas, riesgo de cartera, cortos y Fase 4, mercado general, fuerza relativa, techos y temporalidades, grupos y gaps, psicología y diario). Ideas siguientes: opciones básicas para cubrir posiciones, backtesting de un sistema.
-1b. Ruta fundamental: F1-F7 hechas (F1-F3, F5 y F6 con casos reales). Ideas siguientes: dividendos y recompras, lectura de la guía de la empresa.
+0. Ruta Básico: 8 unidades hechas (acciones y órdenes, rentabilidad y riesgo, leer un gráfico, ETF e índices, impuestos en España, cuenta y bróker; complementarias: inversión pasiva y renta fija). Revisar cada año los tramos y normas fiscales de la unidad «Impuestos en España» y «Cuenta y bróker».
+1. Contenido técnico: unidades 1-15 hechas (velas, tendencia, riesgo, catalizadores binarios, Wyckoff/VSA, VCP, salidas escalonadas, riesgo de cartera, cortos y Fase 4, mercado general, fuerza relativa, techos y temporalidades, grupos y gaps, psicología y diario, opciones para cubrir). Ideas siguientes: backtesting de un sistema.
+1b. Ruta fundamental: F1-F8 hechas (F1-F3, F5 y F6 con casos reales; F8 macro). Ideas siguientes: dividendos y recompras, lectura de la guía de la empresa.
 2. Tipos de ejercicio: `order`, `match` y `plan` hechos. Ideas: marcar una zona (rango, base) arrastrando dos líneas, o elegir el tamaño de posición con un deslizador.
 3. Repaso espaciado: hecho. Posible mejora: avisar de la racha de repaso y mostrar cuántos ejercicios están «aprendidos».
 4. Persistencia real (cuentas, sincronización): comparativa y recomendación (Supabase) en `docs/persistencia.md`, pendiente de decisión. No exige cambiar de stack: se añade `src/sync.js` y se sigue en vanilla.
@@ -118,6 +119,7 @@ Unidades (2 lecciones × 4 ejercicios cada una, como la ruta técnica):
 | F5 Informe de resultados | Sorpresas frente al consenso, BPA ajustado frente a contable y previsiones | La cuenta de resultados de arriba abajo: márgenes y BPA |
 | F6 Sectores | Cíclicos, defensivos y sensibles (Morningstar) | Qué métrica mirar en cada sector |
 | F7 Calidad del negocio | ROIC frente al coste del capital y reinversión | Ventajas competitivas y su erosión |
+| F8 Macro para inversores | Tipos, inflación y valor de los beneficios futuros | Curva de tipos y rotación sectorial |
 
 Decisiones tomadas:
 - Ruta separada con selector Técnico / Fundamental: quien viene a por fundamental no pasa antes por la técnica, y cada ruta guarda su progreso.

@@ -25,7 +25,8 @@ const dayXpNow=()=>S.day===today()?S.dayXp:0;
 // Las rutas técnica y fundamental se abren al completar los básicos, al saltarlos o si ya hay progreso en ellas.
 function advancedOpen(){
   if(S.all||S.skipBasics)return true;
-  const basic=FLAT.filter(l=>trackOf(l.unit)==='basico');
+  // Las unidades básicas con gate:false (complementarias) no cuentan para abrir las otras rutas.
+  const basic=FLAT.filter(l=>trackOf(l.unit)==='basico'&&l.unit.gate!==false);
   if(basic.every(l=>S.done[l.id]))return true;
   return FLAT.some(l=>trackOf(l.unit)!=='basico'&&S.done[l.id]);
 }

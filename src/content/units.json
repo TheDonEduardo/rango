@@ -699,6 +699,207 @@
     ]
   },
   {
+    "n": 7,
+    "id": "pasiva",
+    "track": "basico",
+    "gate": false,
+    "title": "Inversión pasiva",
+    "blurb": "Aportar cada mes, pagar poco y dejar trabajar al tiempo.",
+    "lessons": [
+      {
+        "id": "bg1",
+        "title": "Aportar cada mes",
+        "ex": [
+          {
+            "t": "num",
+            "q": "Al 7 % anual, 10.000 € invertidos de una vez se convierten en 19.672 € en 10 años. ¿Cuánto has ganado sobre lo invertido? Redondea a 1 decimal.",
+            "unit": "%",
+            "a": 96.7,
+            "tol": 0.06,
+            "why": "19.672 ÷ 10.000 − 1 = 96,7 %: casi el doble, frente al 70 % que darían 10 años al 7 % sin reinvertir. Es el interés compuesto: los beneficios generan beneficios."
+          },
+          {
+            "t": "num",
+            "q": "Con la regla del 72, ¿en cuántos años se duplica el dinero al 8 % anual?",
+            "unit": "",
+            "a": 9,
+            "why": "72 ÷ 8 = 9 años. Es una aproximación que funciona bien con rentabilidades normales: 1,08 elevado a 9 da 2,0."
+          },
+          {
+            "t": "choice",
+            "q": "Aportas la misma cantidad cada mes, suba o baje el mercado. ¿Qué ventaja tiene?",
+            "opts": [
+              "Compras más participaciones cuando está barato",
+            "Garantiza que nunca pierdas dinero",
+            "Te libra de pagar impuestos por la ganancia",
+            "Asegura batir siempre al índice de referencia"
+            ],
+            "a": 0,
+            "why": "Con la misma cantidad compras más participaciones cuando el precio cae y menos cuando sube, y te quita la tentación de adivinar el momento. No garantiza ganar."
+          },
+          {
+            "t": "num",
+            "q": "Tienes 4.800 € de ahorro líquido y unos gastos fijos de 1.200 € al mes. ¿Cuántos meses cubre tu fondo de emergencia?",
+            "unit": "",
+            "a": 4,
+            "why": "4.800 ÷ 1.200 = 4 meses. La referencia habitual es tener de 3 a 6 meses de gastos en liquidez antes de invertir: así nunca vendes en una caída para pagar un imprevisto."
+          }
+        ]
+      },
+      {
+        "id": "bg2",
+        "title": "Fondos, ETF y pensiones",
+        "ex": [
+          {
+            "t": "choice",
+            "q": "En España, ¿qué puedes mover a otro producto sin pagar impuestos por la ganancia acumulada?",
+            "opts": [
+              "Un fondo de inversión, por traspaso",
+              "Un ETF, vendiéndolo en bolsa",
+              "Acciones de una empresa",
+              "Cualquier producto del mismo banco"
+            ],
+            "a": 0,
+            "why": "Los traspasos entre fondos de inversión no tributan hasta que reembolsas. Los ETF, en general, no admiten traspaso: venderlos tributa la ganancia."
+          },
+          {
+            "t": "num",
+            "q": "Dos fondos ganan un 7 % bruto al año durante 20 años. El indexado cuesta un 0,20 % anual y el activo, un 1,80 %. ¿Cuánto más capital acumula el indexado al final? Redondea a unidades.",
+            "unit": "%",
+            "a": 35,
+            "tol": 0.5,
+            "why": "Netos: 6,8 % y 5,2 %. 1,068²⁰ = 3,73 y 1,052²⁰ = 2,76 veces lo invertido: el indexado acaba con un 35 % más. Las comisiones también se acumulan con el interés compuesto."
+          },
+          {
+            "t": "num",
+            "q": "Aportas 1.500 € a un plan de pensiones y tu tipo marginal del IRPF es del 30 %. ¿Cuánto te ahorras este año en la declaración?",
+            "unit": "€",
+            "a": 450,
+            "why": "La aportación reduce tu base imponible: 1.500 × 30 % = 450 €. Al rescatarlo tributa como rendimiento del trabajo, así que es un aplazamiento, no un regalo. Comprueba cada año el límite de aportación."
+          },
+          {
+            "t": "match",
+            "q": "Empareja cada producto con lo que lo caracteriza.",
+            "pairs": [
+              [
+                "Fondo indexado",
+                "Replica un índice y admite traspasos sin tributar"
+              ],
+              [
+                "ETF",
+                "Replica un índice y cotiza en bolsa como una acción"
+              ],
+              [
+                "Plan de pensiones",
+                "Reduce la base imponible hoy y tributa al rescatar"
+              ],
+              [
+                "Cuenta remunerada",
+                "Liquidez con interés, sin riesgo de mercado"
+              ]
+            ],
+            "why": "Los cuatro sirven a un inversor pasivo, pero para cosas distintas: crecer a largo plazo, flexibilidad, ahorro fiscal o tener el colchón disponible."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "id": "rentafija",
+    "track": "basico",
+    "gate": false,
+    "title": "Renta fija",
+    "blurb": "Letras, bonos y por qué su precio cae cuando suben los tipos.",
+    "lessons": [
+      {
+        "id": "bh1",
+        "title": "Letras y bonos",
+        "ex": [
+          {
+            "t": "num",
+            "q": "Compras una Letra del Tesoro a 12 meses por 970 € y al vencimiento recibes 1.000 €. ¿Qué rentabilidad obtienes? Redondea a 2 decimales.",
+            "unit": "%",
+            "a": 3.09,
+            "tol": 0.02,
+            "why": "(1.000 − 970) ÷ 970 = 30 ÷ 970 = 3,09 %. Las letras no pagan cupón: se compran por debajo de su nominal y la ganancia es la diferencia."
+          },
+          {
+            "t": "num",
+            "q": "Un bono de 1.000 € de nominal paga un cupón del 4 % anual. ¿Cuántos euros cobras al año por cupón?",
+            "unit": "€",
+            "a": 40,
+            "why": "1.000 × 4 % = 40 € al año, pase lo que pase con su precio en el mercado, mientras el emisor no deje de pagar."
+          },
+          {
+            "t": "num",
+            "q": "Ese bono cotiza ahora a 950 €. ¿Qué rentabilidad por cupón obtienes si lo compras a ese precio (cupón ÷ precio)? Redondea a 2 decimales.",
+            "unit": "%",
+            "a": 4.21,
+            "tol": 0.02,
+            "why": "40 ÷ 950 = 4,21 %. Al comprar por debajo del nominal cobras el mismo cupón pagando menos, y al vencimiento recibes 1.000 €."
+          },
+          {
+            "t": "choice",
+            "q": "El bono de una empresa con mala calificación crediticia paga un 9 % y uno del Estado, un 3 %. ¿Por qué esa diferencia?",
+            "opts": [
+              "Compensa su mayor riesgo de impago",
+              "La empresa es más rentable que el Estado",
+              "El Estado cobra comisiones por su bono",
+              "El bono del Estado tiene un plazo mayor"
+            ],
+            "a": 0,
+            "why": "Cuanto más probable es que el emisor no pague, más interés exige el mercado. Un 9 % no es un regalo: es el precio de ese riesgo."
+          }
+        ]
+      },
+      {
+        "id": "bh2",
+        "title": "Tipos y duración",
+        "ex": [
+          {
+            "t": "choice",
+            "q": "Si los tipos de interés suben, ¿qué les pasa a los precios de los bonos que ya existen?",
+            "opts": [
+              "Suben",
+              "Bajan",
+              "No cambian",
+              "Se duplican"
+            ],
+            "a": 1,
+            "why": "Los bonos nuevos pagarán más, así que los antiguos, con cupones menores, solo se venden si bajan de precio. Precio y tipos se mueven en sentido contrario."
+          },
+          {
+            "t": "num",
+            "q": "Un bono tiene una duración modificada de 7. Si los tipos suben un 1 %, ¿cuánto cae su precio aproximadamente?",
+            "unit": "%",
+            "a": 7,
+            "why": "Caída ≈ duración × subida de tipos = 7 × 1 % = 7 %. La duración mide cuánto sufre el precio de un bono con los tipos."
+          },
+          {
+            "t": "num",
+            "q": "Otro bono tiene una duración de 2 y los tipos suben un 1,5 %. ¿Cuánto cae su precio aproximadamente?",
+            "unit": "%",
+            "a": 3,
+            "why": "2 × 1,5 % = 3 %. Cuanto más corto es el bono, menos le afectan las subidas de tipos: por eso las letras apenas se mueven."
+          },
+          {
+            "t": "choice",
+            "q": "Compraste un bono del Estado y su precio ha caído un 8 % por la subida de tipos. Si lo mantienes hasta el vencimiento, ¿qué recibes?",
+            "opts": [
+              "Un 8 % menos del nominal",
+              "El nominal y los cupones",
+              "Nada hasta que bajen los tipos",
+              "El precio de mercado del día"
+            ],
+            "a": 1,
+            "why": "La caída solo se convierte en pérdida si vendes antes. Si el emisor no impaga, al vencimiento cobras el nominal completo y todos los cupones."
+          }
+        ]
+      }
+    ]
+  },
+  {
     "n": 1,
     "id": "velas",
     "title": "Velas japonesas",
@@ -2800,6 +3001,108 @@
     ]
   },
   {
+    "n": 15,
+    "id": "opciones",
+    "title": "Opciones para cubrir",
+    "blurb": "Cómo poner un suelo a tus acciones y cuánto cuesta.",
+    "lessons": [
+      {
+        "id": "o1",
+        "title": "Call y put",
+        "ex": [
+          {
+            "t": "match",
+            "q": "Empareja cada término de las opciones con su significado.",
+            "pairs": [
+              [
+                "Call",
+                "Derecho a comprar a un precio fijado"
+              ],
+              [
+                "Put",
+                "Derecho a vender a un precio fijado"
+              ],
+              [
+                "Prima",
+                "Lo que pagas por ese derecho"
+              ],
+              [
+                "Precio de ejercicio",
+                "El precio fijado en el contrato"
+              ]
+            ],
+            "why": "Quien compra una opción paga la prima y obtiene un derecho, no una obligación. Para cubrir acciones se usa la put: el derecho a vender."
+          },
+          {
+            "t": "num",
+            "q": "Un contrato de opciones sobre acciones de EE. UU. cubre 100 acciones y la prima es de 1,50 $ por acción. ¿Cuánto pagas por un contrato?",
+            "unit": "$",
+            "a": 150,
+            "why": "100 × 1,50 = 150 $. Las primas se cotizan por acción, pero se pagan por contrato."
+          },
+          {
+            "t": "num",
+            "q": "Tienes una put con precio de ejercicio de 45 $. Al vencimiento, la acción cotiza a 38 $. ¿Cuánto vale la put por acción?",
+            "unit": "$",
+            "a": 7,
+            "why": "45 − 38 = 7 $: tienes derecho a vender a 45 $ algo que vale 38 $. Esa ganancia compensa lo que han caído tus acciones."
+          },
+          {
+            "t": "choice",
+            "q": "Al vencimiento la acción cotiza a 52 $ y tu put es de 45 $. ¿Qué ocurre?",
+            "opts": [
+              "Cobras 7 $ por cada acción cubierta",
+              "Te obligan a vender las acciones a 45 $",
+              "Caduca sin valor: pierdes la prima",
+              "Te devuelven la prima al vencimiento"
+            ],
+            "a": 2,
+            "why": "Nadie vende a 45 $ lo que vale 52 $, así que la put no se ejerce. La prima fue el coste del seguro, como el de un coche que no ha tenido accidentes."
+          }
+        ]
+      },
+      {
+        "id": "o2",
+        "title": "Put de protección",
+        "ex": [
+          {
+            "t": "num",
+            "q": "Tienes 100 acciones compradas a 50 $ y compras una put de 45 $ por 1,50 $ por acción. ¿Cuál es tu pérdida máxima por acción?",
+            "unit": "$",
+            "a": 6.5,
+            "why": "(50 − 45) + 1,50 = 6,50 $: lo que puede caer hasta el precio de ejercicio más la prima. Caiga lo que caiga, no pierdes más."
+          },
+          {
+            "t": "num",
+            "q": "Con esa cobertura, ¿a qué precio tiene que estar la acción al vencimiento para no perder dinero?",
+            "unit": "$",
+            "a": 51.5,
+            "why": "50 + 1,50 = 51,50 $: la acción tiene que subir lo que costó la prima. La cobertura limita la pérdida, pero encarece el punto de equilibrio."
+          },
+          {
+            "t": "choice",
+            "q": "Mañana publica resultados y temes un gap bajista del 25 %. ¿Qué limita mejor tu pérdida?",
+            "opts": [
+              "Un stop más cercano al precio",
+              "Una put de protección",
+              "Aumentar el tamaño de la posición",
+              "Vender una call sobre las acciones"
+            ],
+            "a": 1,
+            "why": "El stop no protege de un gap: se ejecuta al primer precio disponible. La put fija tu precio de venta pase lo que pase, como viste en catalizadores binarios."
+          },
+          {
+            "t": "num",
+            "q": "Una put a 3 meses cuesta el 2 % del valor de la posición. Si la renuevas durante todo el año, ¿cuánto te cuesta en total?",
+            "unit": "%",
+            "a": 8,
+            "why": "4 × 2 % = 8 % al año: cubrirse siempre es caro. Las puts se usan en momentos concretos, como antes de unos resultados."
+          }
+        ]
+      }
+    ]
+  },
+  {
     "n": 1,
     "id": "crecimiento",
     "track": "fundamental",
@@ -3718,6 +4021,121 @@
             ],
             "a": 2,
             "why": "Un foso real protege los márgenes; si se hunden al llegar competidores, el foso era menor de lo que parecía. Es un criterio de invalidación de la tesis, como viste en F4."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "id": "macro",
+    "track": "fundamental",
+    "title": "Macro para inversores",
+    "blurb": "Tipos, inflación y ciclo: el viento a favor o en contra.",
+    "lessons": [
+      {
+        "id": "f8a",
+        "title": "Tipos e inflación",
+        "ex": [
+          {
+            "t": "num",
+            "q": "Una cuenta paga un 3 % y la inflación es del 4 %. ¿Cuánto poder adquisitivo pierdes al año, aproximadamente?",
+            "unit": "%",
+            "a": 1,
+            "tol": 0.05,
+            "why": "3 % − 4 % = −1 %: aunque el saldo crece, compras menos con él. La cuenta exacta es 1,03 ÷ 1,04 − 1 = −0,96 %."
+          },
+          {
+            "t": "choice",
+            "q": "El banco central sube los tipos con fuerza. ¿Qué acciones suelen sufrir más?",
+            "opts": [
+              "Supermercados y alimentación",
+              "Bancos con margen de intereses",
+              "Crecimiento con beneficios lejanos",
+              "Empresas con mucha caja neta"
+            ],
+            "a": 2,
+            "why": "Su valor depende de beneficios de dentro de muchos años, y con tipos más altos esos beneficios futuros valen menos hoy. Los bancos, en cambio, suelen mejorar su margen."
+          },
+          {
+            "t": "num",
+            "q": "Un beneficio de 100 € dentro de 10 años vale hoy 74 € descontado al 3 %, y 56 € descontado al 6 %. ¿Cuánto cae su valor actual? Redondea a 1 decimal.",
+            "unit": "%",
+            "a": 24.3,
+            "tol": 0.06,
+            "why": "1 − 56 ÷ 74 = 24,3 %. Duplicar el tipo de descuento recorta casi una cuarta parte del valor de un beneficio lejano: así golpean los tipos a las empresas de crecimiento."
+          },
+          {
+            "t": "choice",
+            "q": "Suben los costes por la inflación y una empresa no puede subir sus precios. ¿Qué le pasa?",
+            "opts": [
+              "Se le estrecha el margen",
+              "Se le amplía el margen",
+              "Sus ventas caen a cero",
+              "Nada: la inflación no le afecta"
+            ],
+            "a": 0,
+            "why": "Si los costes suben y el precio no, cada venta deja menos. Poder subir precios sin perder clientes es una de las huellas de una ventaja competitiva (F7)."
+          }
+        ]
+      },
+      {
+        "id": "f8b",
+        "title": "Curva de tipos y ciclo",
+        "ex": [
+          {
+            "t": "choice",
+            "q": "El bono a 2 años paga más que el de 10 años. ¿Cómo se llama esa situación y qué ha anticipado a menudo?",
+            "opts": [
+              "Curva invertida: muchas recesiones",
+              "Curva normal: crecimiento fuerte",
+              "Curva plana: inflación disparada",
+              "Curva invertida: bolsa al alza segura"
+            ],
+            "a": 0,
+            "why": "Normalmente los plazos largos pagan más. Cuando la curva se invierte, el mercado espera bajadas de tipos por debilidad; en EE. UU. ha precedido a la mayoría de recesiones desde los años setenta, aunque con meses o años de retraso."
+          },
+          {
+            "t": "num",
+            "q": "El bono a 10 años paga un 4,10 % y el de 2 años, un 4,60 %. ¿De cuántos puntos básicos es la inversión de la curva? (1 % = 100 puntos básicos)",
+            "unit": "",
+            "a": 50,
+            "why": "4,60 − 4,10 = 0,50 puntos porcentuales, es decir, 50 puntos básicos. Se sigue de cerca cuándo vuelve a ser positiva, porque suele coincidir con el inicio de las bajadas de tipos."
+          },
+          {
+            "t": "match",
+            "q": "Según el modelo clásico de rotación sectorial, empareja cada fase del ciclo con lo que suele ir mejor.",
+            "pairs": [
+              [
+                "Inicio de la recuperación",
+                "Cíclicos y financieras"
+              ],
+              [
+                "Expansión madura",
+                "Tecnología e industria"
+              ],
+              [
+                "Desaceleración",
+                "Defensivos: salud y consumo básico"
+              ],
+              [
+                "Recesión",
+                "Liquidez y bonos de calidad"
+              ]
+            ],
+            "why": "Es un modelo, no una regla: sirve para saber qué grupos vigilar, y la fuerza relativa de cada grupo te dice si se está cumpliendo."
+          },
+          {
+            "t": "choice",
+            "q": "Los datos macro empeoran, pero tu acción está en Fase 2 con los beneficios acelerando. ¿Qué haces?",
+            "opts": [
+              "Vender todo por la macro",
+              "Mantener con su stop y vigilar",
+              "Doblar la posición",
+              "Quitar también el stop"
+            ],
+            "a": 1,
+            "why": "El stop te protege si el mercado arrastra a la acción; vender solo por un dato macro es intentar adivinar. Como en O'Neil, manda el mercado general cuando empieza a distribuir."
           }
         ]
       }

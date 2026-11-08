@@ -54,6 +54,12 @@ for (const u of units) {
     l.ex.forEach((ex, i) => lint(ex, `${l.id}#${i + 1}`));
   }
 }
+// Cada enunciado es único (evita confundir ejercicios distintos en repasos y pruebas).
+const vistos = new Map();
+for (const u of units) for (const l of u.lessons || []) l.ex.forEach((ex, i) => {
+  if (vistos.has(ex.q)) errs.push(`enunciado repetido en ${vistos.get(ex.q)} y ${l.id}#${i + 1}`);
+  vistos.set(ex.q, `${l.id}#${i + 1}`);
+});
 if (casos) {
   if (!casos.fecha || !casos.fuente) errs.push('casos.json: falta fecha o fuente');
   for (const [id, list] of Object.entries(casos.ex)) {
@@ -91,6 +97,11 @@ if (!T.homeHTML().includes('Rango')) errs.push('home no renderiza');
 if (!T.homeHTML().includes('Acciones y órdenes')) errs.push('un usuario nuevo no empieza en la ruta básica');
 T.setTrack('tecnico');
 if (!T.homeHTML().includes('data-act="skipbasics"') || T.homeHTML().includes('node current')) errs.push('la ruta técnica no está bloqueada para un usuario nuevo');
+// Completar solo las unidades básicas obligatorias abre la ruta técnica (las de gate:false no bloquean).
+for (const l of T.FLAT) if (l.unit.track === 'basico' && l.unit.gate !== false) T.getState().done[l.id] = {acc: 1};
+if (T.homeHTML().includes('data-act="skipbasics"')) errs.push('completar los básicos obligatorios no abre la ruta técnica');
+if (!T.FLAT.some(l => l.unit.gate === false)) errs.push('no hay unidades básicas complementarias (gate:false)');
+T.getState().done = {};
 T.skipBasics();
 if (T.homeHTML().includes('data-act="skipbasics"') || !T.homeHTML().includes('node current')) errs.push('saltar los básicos no abre la ruta técnica');
 T.setTrack('fundamental');
