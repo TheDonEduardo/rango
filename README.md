@@ -1,12 +1,13 @@
 # Rango
 
-Prototipo de app gamificada tipo Duolingo para inversores: velas japonesas, fases de Weinstein, Trend Template y gestión de riesgo con ATR.
+Prototipo de app gamificada tipo Duolingo para aprender a invertir, con cuatro rutas de 16 unidades: Básico, Inversión pasiva, Análisis fundamental y Análisis técnico. Incluye casos con datos reales, simuladores, repaso espaciado y estadísticas.
 
 ## Arrancar
 
 ```bash
 npm run dev     # http://localhost:5173
 npm test        # valida contenido y recorre todas las lecciones
+npm run e2e     # navegador real y accesibilidad (requiere playwright y axe-core)
 ```
 
 Es una PWA: desde el móvil se puede instalar («Añadir a pantalla de inicio») y funciona sin conexión.
@@ -20,8 +21,8 @@ cd rango
 claude
 ```
 
-Claude Code lee `CLAUDE.md` al iniciar: ahí están la estructura, el esquema del contenido, las reglas de diseño y el trabajo siguiente. Primer mensaje sugerido:
+Claude Code lee `CLAUDE.md` al iniciar: ahí están la estructura, el esquema del contenido, las reglas de diseño y el trabajo siguiente.
 
-> Lee CLAUDE.md, ejecuta `npm test` y `npm run dev`. Después añade la unidad 4 "Catalizadores binarios" con 2 lecciones de 4 ejercicios cada una (gaps de resultados y sizing con riesgo binario), siguiendo las reglas de contenido. Verifica todas las cuentas y pasa `npm test`.
+Contenido nuevo: un archivo por unidad en `src/content/units/` (orden en `index.json`); escríbelo con `tools/contenido.py`, que asigna los ids de los ejercicios. Textos de la interfaz: `src/textos.js`.
 
-Contenido nuevo: edita solo `src/content/units.json`.
+Publicación (repositorio propio, datos con licencia, tiendas e idiomas): `docs/publicar.md`.

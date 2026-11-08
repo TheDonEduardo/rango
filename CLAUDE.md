@@ -5,7 +5,9 @@ App web gamificada tipo Duolingo para **inversores que ya operan** (bolsa, anál
 ## Comandos
 
 - `npm run dev`: servidor estático en http://localhost:5173 (hace falta servidor: los módulos ES y el `fetch` del JSON no funcionan desde `file://`).
-- `npm test`: valida el contenido (`units.json` y `casos.json`), las dos rutas y recorre todas las lecciones (y los repasos) simulando respuestas correctas, incorrectas y la pantalla "Sin vidas"; comprueba además cada caso real. Ejecútalo tras cualquier cambio en `src/` o en el contenido.
+- `npm test`: valida el contenido (unidades y `casos.json`), las rutas, los textos y recorre todas las lecciones (y los repasos) simulando respuestas correctas, incorrectas y la pantalla "Sin vidas"; comprueba además cada caso real, la migración del estado y las estadísticas. Avisa (sin fallar) del contenido con fecha de revisión vencida. Ejecútalo tras cualquier cambio en `src/` o en el contenido.
+- `npm run e2e` (`node test/e2e.cjs`): navegador real (Playwright + Chromium) con su propio servidor. Sin opciones, juega una lección de cada ruta y de cada tipo de ejercicio en móvil y escritorio, claro y oscuro, y audita la accesibilidad con axe-core. `--lecciones a,b` juega esas; `--todas` juega todas en móvil claro; `--capturas DIR` guarda capturas. Necesita `playwright` y `axe-core` instalados (en CI se instalan sin tocar package.json; sin axe-core se omite la auditoría).
+- CI: `.github/workflows/rango_test.yml` (raíz del repo) ejecuta `npm test`, el test de los generadores y `npm run e2e` en cada cambio de `rango/`.
 - `python -I tools/test_casos.py`: prueba el generador de casos con datos simulados (sin red).
 - `python tools/semana.py [--fecha AAAA-MM-DD]`: genera la Operación de la semana (`semana.json`); con `--fecha` la prepara como si fuera ese día.
 - `python tools/casos.py` (requiere `pip install yfinance`): regenera los casos reales. GitHub Actions lo hace cada sábado (`.github/workflows/rango_casos.yml` en la raíz del repo) y sube el resultado solo si `npm test` pasa.
@@ -13,36 +15,57 @@ App web gamificada tipo Duolingo para **inversores que ya operan** (bolsa, anál
 ## Estructura
 
 ```
-index.html            entrada, carga src/app.js como módulo
-src/app.js            estado, vistas (home/lección/resultado/sin vidas), lógica y eventos
-src/charts.js         SVG: gráfico de velas, línea con media, glifo de vela de la ruta
-src/content.js        carga units.json y casos.json; construye FLAT (lecciones + repasos) y define las rutas
-src/content/units.json  TODO el contenido didáctico fijo (unidades, lecciones, ejercicios)
+index.html              entrada, carga src/app.js como módulo
+src/app.js              arranque, navegación (render y VISTAS), flujo de lección (startRun/check/next/finish) y eventos
+src/state.js            progreso guardado: formato y versión (STATE_V + MIGRAR), racha, rutas abiertas, repaso espaciado
+src/ui.js               $app, toast, setCheck y `ses` (estado de la sesión que no se guarda: vista, lección en curso…)
+src/textos.js           TODOS los textos de la interfaz (preparado para traducir)
+src/drag.js             líneas arrastrables (ejercicio plan y Operación de la semana)
+src/exercises/          un archivo por tipo de ejercicio + index.js (registro TIPOS y su interfaz)
+src/views/              home, lesson (lección y resultados), sim, calc, stats, legal
+src/charts.js           SVG: gráfico de velas, línea con media, glifo de vela de la ruta
+src/content.js          carga las unidades y casos.json; construye FLAT (lecciones + repasos), EXBYID y las rutas
+src/content/units/      contenido fijo: index.json (orden) y un archivo <id>.json por unidad
 src/content/casos.json  casos reales GENERADOS por tools/casos.py: no editar a mano
 src/content/semana.json Operación de la semana GENERADA por tools/semana.py: no editar a mano
-tools/casos.py        genera casos.json con Yahoo Finance para los tickers de ../portfolio_manager.py
-src/util.js           fmt (es-ES), esc, fechas, parseNum, constantes (KEY, GOAL, RH, OFFS)
-src/icons.js          iconos SVG inline
-src/styles.css        tokens y estilos (claro/oscuro)
-test/smoke.mjs        lint de contenido + test de humo sin navegador
-manifest.webmanifest  manifiesto de la PWA (nombre, colores, iconos)
-sw.js                 service worker: uso sin conexión (precarga, fuentes incluidas)
-icons/                iconos de la PWA, generados con tools/iconos.cjs a partir del logo
+src/util.js             fmt (es-ES), esc, tx, fechas, parseNum, constantes (KEY, GOAL, RH, OFFS)
+src/icons.js            iconos SVG inline
+src/styles.css          tokens y estilos (claro/oscuro)
+tools/contenido.py      ayudas para escribir contenido: nueva_unidad, anadir (asignan ids), ch/nm/mt/od/sl
+tools/casos.py          genera casos.json con Yahoo Finance para los tickers de ../portfolio_manager.py
+test/smoke.mjs          lint de contenido + test de humo sin navegador
+test/e2e.cjs            navegador real + accesibilidad (test/contenido.cjs lee el contenido desde Node)
+manifest.webmanifest    manifiesto de la PWA (nombre, colores, iconos)
+sw.js                   service worker: uso sin conexión (precarga, unidades del índice y fuentes)
+icons/                  iconos de la PWA, generados con tools/iconos.cjs a partir del logo
+docs/                   persistencia.md (cuentas y servidor), publicar.md (repo propio, datos y tiendas)
 ```
 
-`app.js` re-renderiza con `innerHTML` por vista y usa delegación de eventos en `#app`. Las selecciones (opción, vela, nivel) y el input numérico mutan clases/valores sin re-render para no perder el foco. Si `app.js` crece, el siguiente paso natural es separar `state.js` y `views.js`.
+Cada vista devuelve HTML (`innerHTML`) y los eventos se delegan en `#app`. Las selecciones y los campos mutan clases/valores sin redibujar para no perder el foco.
+
+Tipos de ejercicio (`src/exercises/`): cada tipo es un objeto con `html`, `chart`/`after`, `ready`, `correct`, `answer`/`answerHTML`, `act` (botones `data-act` propios), `input`, `enter`, `svg`, `plan` y `focus` (ver `index.js`). La lección y los eventos no saben nada de cada tipo: para añadir uno, crea su archivo, regístralo en `TIPOS`, añade su instrucción a `t.tipos` en textos.js, su validación en `test/smoke.mjs` y su forma de responder en `test/e2e.cjs`.
+
+Textos: ninguna vista escribe texto fijo; todo sale de `t` (textos.js). Los textos con datos son funciones y los plurales se resuelven allí. El test comprueba que cada `t.clave` usada existe. No uses `t` como nombre de variable local en archivos que importan `t`.
+
+Estado guardado (`S`, localStorage `rango.v1`): lleva `v` (versión). Si cambias su formato, sube `STATE_V` y añade el paso en `MIGRAR` (de n a n+1) con su caso en el test. Los campos nuevos con valor por defecto en `DEF()` no necesitan migración.
 
 ## PWA y caché
 
 - `sw.js` precarga la app y las fuentes. Todo lo propio (página, código y contenido) va red primero: con conexión siempre llega la misma versión de todo; sin conexión, la última copia guardada. Las fuentes de Google, caché primero.
 - No hace falta subir `CACHE` para publicar código nuevo; súbelo solo para vaciar la caché antigua o cambiar la lista de precarga.
-- Si añades un archivo a `src/`, añádelo a `PRECACHE` (el test lo comprueba).
+- Si añades un archivo a `src/` (también en subcarpetas), añádelo a `PRECACHE` (el test lo comprueba). Las unidades no van en la lista: se precargan las del índice.
 
-## Esquema del contenido (`units.json`)
+## Esquema del contenido (`src/content/units/`)
+
+`index.json` es la lista ordenada de ids de unidad; cada unidad está en `<id>.json`. Escribe contenido con `tools/contenido.py` (`nueva_unidad(unidad(...), despues_de='id')`, `anadir('idLección', [ejercicios])`): asigna los ids y mantiene el formato. Después, `npm test` y `npm run e2e -- --lecciones ...`.
 
 Unidad: `{n, id, track?, title, blurb, lessons: [...] | null}` (`null` = "Próximamente"). `track`: `"basico"`, `"pasiva"`, `"fundamental"` o `"tecnico"` (por defecto); el selector del inicio las muestra en ese orden y cada una tiene su numeración `n` y su propia lección actual. Básico es el primer nivel: las otras tres se abren al completar sus unidades (una unidad básica con `"gate": false` sería complementaria y no bloquearía; úsalo si añades unidades a Básico, para no volver a cerrar las rutas a quien ya lo terminó), al pulsar «Ya opero: saltar los básicos» (`S.skipBasics`) o si ya hay progreso en ellas. Un usuario nuevo empieza en Básico. Cada unidad genera automáticamente un nodo "Repaso de la unidad" con 5 ejercicios al azar de sus lecciones.
 
 Lección: `{id, title, ex: [...]}`. Los `id` deben ser únicos (se guardan en localStorage).
+
+Cada ejercicio lleva `id: "<lección>-<n>"` fijo (lo usan el repaso espaciado, las estadísticas y el test de nivel). Nunca cambies ni reutilices un id: si sobra un ejercicio, bórralo y su id queda sin usar; los nuevos toman el siguiente número (contenido.py lo hace solo). Reordenar ejercicios ya no rompe nada.
+
+`revisar: "AAAA-MM"` (en la unidad o en el ejercicio): contenido que depende de normas o datos que cambian (tramos fiscales, FOGAIN, SOCIMI, informes SPIVA). El test avisa al llegar la fecha: revisa el texto con la norma vigente y mueve la fecha un año.
 
 Ejercicios (`why` es obligatorio y se muestra como explicación tras responder):
 
@@ -93,12 +116,13 @@ Sistema de tokens en `src/styles.css` (`:root`, con variante oscura por `prefers
 - La racha cuenta días naturales en la zona horaria del navegador.
 - Sin cuentas, sin sincronización, sin ligas.
 - Aviso legal: se acepta en el primer uso (`S.legal`, versión `LEGAL_V` en app.js; súbela si cambia el texto) y queda enlazado en el pie del inicio.
-- Repaso espaciado (`S.srs`): cada ejercicio fallado a la primera vuelve al día siguiente; cada acierto en el «Repaso del día» lo aplaza 3, 7 y 14 días y luego sale de la lista; un fallo lo reinicia. Máximo 10 por sesión; no suma lección completada. Los ejercicios se identifican por `idLección#índice` (`uid`, en content.js): no reordenes ni borres ejercicios de lecciones publicadas, añade al final. Los casos reales no entran en el repaso.
-- Test de nivel (`S.placement`): se ofrece en Básico a quien no ha hecho ninguna lección. 12 preguntas (`PLACEMENT` en content.js: dos `uid` por unidad obligatoria de Básico; si añades una unidad obligatoria, añade dos de sus ejercicios). Sin vidas ni repaso espaciado. Cada unidad con sus dos preguntas acertadas queda completada (`{acc:1,test:true}`); con `TEST_PASS` (10) aciertos o más se abren Técnico y Fundamental.
+- Repaso espaciado (`S.srs`): cada ejercicio fallado a la primera vuelve al día siguiente; cada acierto en el «Repaso del día» lo aplaza 3, 7 y 14 días y luego sale de la lista; un fallo lo reinicia. Máximo 10 por sesión; no suma lección completada. Los ejercicios se identifican por su `id` fijo. Los casos reales no entran en el repaso.
+- Test de nivel (`S.placement`): se ofrece en Básico a quien no ha hecho ninguna lección. 12 preguntas (`PLACEMENT` en content.js: dos ids de ejercicio por unidad obligatoria de Básico; si añades una unidad obligatoria, añade dos de sus ejercicios). Sin vidas ni repaso espaciado. Cada unidad con sus dos preguntas acertadas queda completada (`{acc:1,test:true}`); con `TEST_PASS` (10) aciertos o más se abren Técnico y Fundamental.
 - Operación de la semana (`S.sim`, `semana.json`): en Técnico, con la ruta abierta. Cada sábado `tools/semana.py` elige un valor de la cartera (rota por semana ISO) con sus 30 últimas sesiones y pasa la semana anterior a `prev` con hasta 5 sesiones posteriores. El usuario coloca entrada (compra en ruptura, por encima del último cierre), stop y objetivo; la semana siguiente ve el resultado en R. `simulate()` (app.js) usa reglas conservadoras: hueco a la apertura, stop antes que objetivo el mismo día, valoración al último cierre si sigue abierta. Sus casos límite están en el test. Como `semana.json` solo trae una semana pasada, `simRecord()` guarda su resultado en el plan (`S.sim[semana].res`) al arrancar: con dos semanas o más, la tarjeta muestra el historial (operaciones, en positivo, R total) y la vista del resultado lo lista.
 - Simulador de aportaciones (`S.calc`): en Pasiva, con la ruta abierta. Deslizadores de capital inicial, aportación mensual, años, rentabilidad y comisión; cálculo mensual con aportación a final de mes y comisión restada de la rentabilidad (`aportaciones()` en app.js, con valores de referencia en el test). Avisa de que supone rentabilidad constante. La casilla «Comparar con otra comisión» añade una segunda cartera (`ter2`) al gráfico y al resumen.
 - Casos reales de Pasiva (`casos_indices()` en tools/casos.py): crecimiento a 10 años (bg1) y mayor caída desde máximos (pr1) del ETF iShares Core MSCI World de acumulación en euros (EUNL.DE) y del S&P 500 desde 2000 (índice sin dividendos, y así se indica). Bonos de EE. UU. (`casos_bonos()`, Yahoo da la rentabilidad en %): efecto en el precio de un bono de duración 8 del cambio del 10 años en el último año (bh2) y pendiente 10 años − 3 meses en puntos básicos (f8b, «inversión» si es negativa).
-- Botones "Desbloquear todo" y "Reiniciar progreso" al final del inicio: solo para desarrollo, retirar antes de publicar.
+- Estadísticas (`S.stats`, vista `stats`, botón de barras en la cabecera): `ex[id] = {n, f, u}` (veces respondido, fallos a la primera, último primer intento correcto) y `min` (minutos de estudio, máximo 30 por sesión). «Puntos débiles» = ejercicios con `u: 0`, ordenados por fallos; «Practicar» lanza hasta 10 (sin guardar lección; acertar los saca de la lista y fallar los manda también al repaso).
+- Botones «Desbloquear todo» y «Reiniciar progreso»: solo aparecen con `?dev` en la dirección.
 
 ## Tareas pendientes (por orden sugerido)
 
@@ -114,6 +138,9 @@ Las cuatro rutas tienen 16 unidades (2 lecciones × 4 ejercicios): 193 lecciones
 4. Persistencia real (cuentas, sincronización): comparativa y recomendación (Supabase) en `docs/persistencia.md`, pendiente de decisión. No exige cambiar de stack: se añade `src/sync.js` y se sigue en vanilla.
 5. PWA instalable: hecho (manifiesto, iconos, uso sin conexión, botón de instalar). Avisos de racha: necesitan notificaciones push con servidor; van con el punto 4.
 6. Aviso legal: hecho. Revisarlo con un profesional antes de publicar.
+6b. Antes de cobrar: los datos de Yahoo Finance (yfinance) no tienen licencia para uso comercial. Cambiar `tools/casos.py` y `tools/semana.py` a un proveedor con licencia (ver `docs/publicar.md`).
+6c. Repositorio propio para Rango y publicación en tiendas: pasos en `docs/publicar.md`.
+6d. Traducción: los textos de interfaz ya están en `src/textos.js`; el contenido está en español y es específico de España (fiscalidad, CNMV, bróker). Ver la recomendación de idioma en `docs/publicar.md`.
 7. Fuera de Rango, en el bot del repo: `portfolio_manager.py` lleva la clave de Gemini escrita en el código. Revocarla, crear otra, guardarla como secreto de GitHub y leerla del entorno.
 
 ## Ruta fundamental
@@ -143,7 +170,7 @@ Unidades (2 lecciones × 4 ejercicios cada una, como la ruta técnica):
 
 Decisiones tomadas:
 - Ruta separada con selector Técnico / Fundamental: quien viene a por fundamental no pasa antes por la técnica, y cada ruta guarda su progreso.
-- Dos capas por lección: ejercicios fijos con números limpios para enseñar el concepto (en `units.json`) y, al final, un caso real de los valores de la cartera del bot (en `casos.json`).
+- Dos capas por lección: ejercicios fijos con números limpios para enseñar el concepto (en `src/content/units/`) y, al final, un caso real de los valores de la cartera del bot (en `casos.json`).
 - Los casos reales son solo de cálculo y se generan con código: la respuesta se calcula con las mismas cifras redondeadas que ve el usuario y el `why` solo afirma hechos verificables con los datos (comparaciones con umbrales del marco o con el trimestre anterior). Nada de valoraciones ni de «compra/vende»: cada caso indica fuente y fecha y el inicio lo marca como formación.
 - Si una plantilla puede dar un resultado negativo, se reformula o se descarta el caso (ver regla de `num`).
 - Filtra los datos absurdos o distorsionados en vez de explicarlos: PER mayor de 200 (BPA casi nulo), EV/EBITDA de 100 o más, rentabilidad por flujo de caja libre de 8 % o más (en negocios financieros el flujo operativo incluye fondos de clientes). El flujo de caja libre se suma de 4 trimestres consecutivos del estado de flujos, no del campo `freeCashflow` de Yahoo, que no es fiable. La cobertura de intereses usa el beneficio operativo, no el «EBIT» de Yahoo (incluye plusvalías). Las plantillas de F3 excluyen el sector financiero: en bancos, deuda y caja son la materia prima del negocio.
