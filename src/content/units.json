@@ -898,6 +898,415 @@
     ]
   },
   {
+    "n": 3,
+    "id": "reparto",
+    "track": "pasiva",
+    "title": "Reparto de activos",
+    "blurb": "Cuánto en acciones y cuánto en bonos: la decisión que más pesa.",
+    "lessons": [
+      {
+        "id": "pr1",
+        "title": "Acciones, bonos y horizonte",
+        "ex": [
+          {
+            "t": "num",
+            "q": "Tu cartera es 70 % acciones y 30 % bonos. Las acciones caen un 40 % y los bonos suben un 5 %. ¿Cuánto cae la cartera completa? Redondea a 1 decimal.",
+            "unit": "%",
+            "a": 26.5,
+            "why": "0,70 × (−40 %) + 0,30 × 5 % = −28 % + 1,5 % = −26,5 %. Los bonos amortiguan, pero con un 70 % en acciones la caída sigue siendo fuerte.",
+            "tol": 0.06
+          },
+          {
+            "t": "num",
+            "q": "Con el mismo escenario (acciones −40 %, bonos +5 %), ¿cuánto cae una cartera 40 % acciones y 60 % bonos?",
+            "unit": "%",
+            "a": 13,
+            "why": "0,40 × (−40 %) + 0,60 × 5 % = −16 % + 3 % = −13 %: la mitad que la 70/30. A cambio, a largo plazo crece menos."
+          },
+          {
+            "t": "choice",
+            "q": "Necesitas el dinero para la entrada de un piso dentro de 2 años. ¿Dónde lo pones?",
+            "opts": [
+              "Un fondo de acciones global",
+              "Liquidez o renta fija a corto plazo",
+              "Acciones de una sola empresa",
+              "Un ETF apalancado al Nasdaq"
+            ],
+            "a": 1,
+            "why": "Las acciones pueden tardar años en recuperarse de una caída del 40-50 %. Lo que vas a necesitar en menos de 3-5 años no debería depender de la bolsa."
+          },
+          {
+            "t": "num",
+            "q": "Según la regla orientativa «110 menos tu edad», ¿qué porcentaje en acciones tendría alguien de 40 años?",
+            "unit": "%",
+            "a": 70,
+            "why": "110 − 40 = 70 % en acciones y 30 % en bonos. Es solo un punto de partida: tu horizonte y cuánto aguantas ver caer la cartera pesan más que la edad."
+          }
+        ]
+      },
+      {
+        "id": "pr2",
+        "title": "Tolerancia y diversificación",
+        "ex": [
+          {
+            "t": "num",
+            "q": "Tienes 20.000 € con un 80 % en acciones. Si las acciones caen un 50 %, ¿cuántos miles de euros pierdes?",
+            "unit": "",
+            "a": 8,
+            "why": "20.000 × 80 % = 16.000 € en acciones, y la mitad son 8.000 €. Pregúntate antes si venderías en pánico viendo esa cifra: si es así, el reparto es demasiado agresivo para ti."
+          },
+          {
+            "t": "choice",
+            "q": "Toda tu cartera está en empresas del IBEX 35. ¿Qué riesgo corres?",
+            "opts": [
+              "Depender de un país y pocos sectores",
+              "Ninguno: es el índice de tu país",
+              "Pagar demasiadas comisiones",
+              "No poder vender cuando quieras"
+            ],
+            "a": 0,
+            "why": "El IBEX pesa mucho en bancos y en unas pocas empresas, y España es una parte pequeña de la economía mundial. Un índice global reparte el riesgo entre miles de empresas."
+          },
+          {
+            "t": "match",
+            "q": "Empareja cada activo con su papel en la cartera.",
+            "pairs": [
+              [
+                "Acciones",
+                "Crecimiento a largo plazo, con caídas fuertes"
+              ],
+              [
+                "Bonos de calidad",
+                "Estabilidad y amortiguar las caídas"
+              ],
+              [
+                "Liquidez",
+                "Disponible al momento para imprevistos"
+              ],
+              [
+                "Oro",
+                "Refugio en crisis, sin rentas"
+              ]
+            ],
+            "why": "Cada activo cumple una función distinta; combinarlos busca que la cartera entera sea más estable que cualquiera de sus partes."
+          },
+          {
+            "t": "choice",
+            "q": "¿Por qué conviene combinar activos que no se mueven a la vez?",
+            "opts": [
+              "Porque garantiza ganar todos los años",
+              "Porque elimina el riesgo de inflación",
+              "Porque reduce las caídas de la cartera",
+              "Porque así se pagan menos impuestos"
+            ],
+            "a": 2,
+            "why": "Cuando unos caen, otros aguantan o suben, y la cartera completa cae menos. No elimina el riesgo ni garantiza nada, pero hace más fácil mantenerse invertido."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "id": "rebalanceo",
+    "track": "pasiva",
+    "title": "Rebalanceo",
+    "blurb": "Volver al reparto elegido: vender caro y comprar barato sin opinar.",
+    "lessons": [
+      {
+        "id": "rb1",
+        "title": "Volver al objetivo",
+        "ex": [
+          {
+            "t": "num",
+            "q": "Empiezas con 10.000 € al 60/40. Las acciones suben un 30 % y los bonos no se mueven. ¿Qué peso tienen ahora las acciones? Redondea a 1 decimal.",
+            "unit": "%",
+            "a": 66.1,
+            "why": "Acciones: 6.000 × 1,30 = 7.800 €; total 7.800 + 4.000 = 11.800 €. 7.800 ÷ 11.800 = 66,1 %: la cartera es ahora más arriesgada de lo que elegiste.",
+            "tol": 0.06
+          },
+          {
+            "t": "num",
+            "q": "Con esa cartera de 11.800 €, ¿cuántos euros de acciones vendes para volver al 60 %?",
+            "unit": "€",
+            "a": 720,
+            "why": "Objetivo: 11.800 × 60 % = 7.080 € en acciones. Tienes 7.800 €: vendes 720 € y los pasas a bonos."
+          },
+          {
+            "t": "choice",
+            "q": "¿Qué consigue el rebalanceo de forma automática?",
+            "opts": [
+              "Compra más de lo que más sube",
+              "Vende caro y compra barato, sin opinar",
+              "Elimina por completo las caídas",
+              "Cambia el objetivo cada año"
+            ],
+            "a": 1,
+            "why": "Al vender lo que ha subido y comprar lo que ha bajado para volver al objetivo, compras barato y vendes caro sin tener que adivinar el mercado."
+          },
+          {
+            "t": "choice",
+            "q": "Tu regla es rebalancear cuando un activo se desvía más de 5 puntos. Objetivo: 60 % en acciones; ahora tienen un 63 %. ¿Qué haces?",
+            "opts": [
+              "Rebalancear ya, sin esperar",
+              "Nada: está dentro del margen",
+              "Vender todas las acciones",
+              "Cambiar el objetivo al 63 %"
+            ],
+            "a": 1,
+            "why": "63 − 60 = 3 puntos, por debajo de 5. El margen evita operar por movimientos pequeños y pagar costes de más."
+          }
+        ]
+      },
+      {
+        "id": "rb2",
+        "title": "Rebalancear en España",
+        "ex": [
+          {
+            "t": "choice",
+            "q": "Rebalanceas moviendo dinero entre dos fondos de inversión. ¿Pagas impuestos?",
+            "opts": [
+              "Sí, siempre, por la ganancia",
+              "Solo si mueves más de 1.000 €",
+              "No, si lo haces por traspaso",
+              "Solo si es en otro banco"
+            ],
+            "a": 2,
+            "why": "Los traspasos entre fondos no tributan hasta que reembolsas. Por eso los fondos indexados son tan cómodos para rebalancear en España."
+          },
+          {
+            "t": "num",
+            "q": "Para rebalancear vendes 2.000 € de un ETF con una ganancia acumulada de 500 €, a un tipo del 19 %. ¿Cuántos euros pagas de impuestos?",
+            "unit": "€",
+            "a": 95,
+            "why": "Tributa solo la ganancia: 500 × 19 % = 95 €. Con ETF, rebalancear vendiendo tiene un coste fiscal."
+          },
+          {
+            "t": "num",
+            "q": "Tienes 7.000 € en acciones y 3.000 € en bonos, con objetivo 60/40, y vas a aportar 600 €. ¿Cuántos euros pones en bonos?",
+            "unit": "€",
+            "a": 600,
+            "why": "Con 10.600 € el objetivo en bonos es 4.240 €; tienes 3.000 € y te faltan 1.240 €, así que los 600 € van a bonos. Aportando al activo que se ha quedado atrás rebalanceas sin vender ni pagar impuestos."
+          },
+          {
+            "t": "choice",
+            "q": "¿Con qué frecuencia suele bastar rebalancear?",
+            "opts": [
+              "Cada día, al cierre del mercado",
+              "Una vez al año o al superar un margen",
+              "Cada vez que la bolsa cae un poco",
+              "Nunca: la cartera se equilibra sola"
+            ],
+            "a": 1,
+            "why": "Rebalancear muy a menudo multiplica costes e impuestos; no hacerlo nunca deja que el riesgo crezca sin que lo decidas. Una vez al año o al pasar un margen suele bastar."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "id": "carteras",
+    "track": "pasiva",
+    "title": "Carteras modelo",
+    "blurb": "Repartos clásicos que se pueden mantener durante décadas.",
+    "lessons": [
+      {
+        "id": "cm1",
+        "title": "Carteras clásicas",
+        "ex": [
+          {
+            "t": "match",
+            "q": "Empareja cada cartera modelo con su composición.",
+            "pairs": [
+              [
+                "60/40",
+                "60 % acciones y 40 % bonos"
+              ],
+              [
+                "Cartera permanente",
+                "Un 25 % en cada uno: acciones, bonos largos, oro y liquidez"
+              ],
+              [
+                "Tres fondos",
+                "Acciones nacionales, internacionales y bonos"
+              ],
+              [
+                "100 % acciones",
+                "Máximo crecimiento y máximas caídas"
+              ]
+            ],
+            "why": "Todas son sencillas a propósito: pocos fondos, reglas claras y nada que decidir cada mes."
+          },
+          {
+            "t": "num",
+            "q": "En la cartera permanente con 3.600 €, ¿cuántos euros van a oro?",
+            "unit": "€",
+            "a": 900,
+            "why": "Son cuatro partes iguales: 3.600 × 25 % = 900 € en acciones, en bonos largos, en oro y en liquidez."
+          },
+          {
+            "t": "num",
+            "q": "Un año, las acciones suben un 20 % y los bonos un 2 %. ¿Qué rentabilidad tiene una cartera 60/40? Redondea a 1 decimal.",
+            "unit": "%",
+            "a": 12.8,
+            "why": "0,60 × 20 % + 0,40 × 2 % = 12 % + 0,8 % = 12,8 %. En los años buenos la 60/40 gana menos que el 100 % acciones, y en los malos cae menos.",
+            "tol": 0.06
+          },
+          {
+            "t": "choice",
+            "q": "¿Qué busca la cartera permanente con el oro y la liquidez?",
+            "opts": [
+              "Aguantar bien en cualquier escenario",
+              "Batir al S&P 500 todos los años",
+              "Maximizar el crecimiento",
+              "Evitar pagar comisiones"
+            ],
+            "a": 0,
+            "why": "Harry Browne la diseñó para cuatro escenarios: crecimiento (acciones), deflación (bonos largos), inflación (oro) y recesión (liquidez). Sacrifica rentabilidad a cambio de caídas pequeñas."
+          }
+        ]
+      },
+      {
+        "id": "cm2",
+        "title": "Elegir y mantener",
+        "ex": [
+          {
+            "t": "choice",
+            "q": "¿Qué hace que una cartera modelo funcione en la práctica?",
+            "opts": [
+              "Cambiarla según las noticias",
+              "Elegir la que más ganó el último año",
+              "Mantenerla años, aportando y rebalanceando",
+              "Tener muchos fondos parecidos"
+            ],
+            "a": 2,
+            "why": "La mayor parte del resultado viene de mantener el plan. Cambiar de cartera tras un mal año suele vender lo que acaba de caer."
+          },
+          {
+            "t": "num",
+            "q": "La cartera A ganó un 25 % el año pasado y la B un 8 %. Te cambias a A justo cuando A cae un 10 % y B sube un 6 %. ¿Cuántos puntos pierdes frente a haberte quedado en B?",
+            "unit": "",
+            "a": 16,
+            "why": "6 − (−10) = 16 puntos en un año. Perseguir lo que más ganó suele llevar a comprar tarde."
+          },
+          {
+            "t": "num",
+            "q": "Tienes la mitad en un fondo del S&P 500 y la otra mitad en un MSCI World en el que EE. UU. pesa un 70 %. ¿Qué porcentaje de tu cartera está en EE. UU.?",
+            "unit": "%",
+            "a": 85,
+            "why": "0,5 × 100 % + 0,5 × 70 % = 85 %. Dos fondos no siempre son dos apuestas distintas: mira qué hay dentro de cada uno."
+          },
+          {
+            "t": "choice",
+            "q": "Para alguien que empieza, ¿qué cartera es más fácil de mantener?",
+            "opts": [
+              "Doce fondos temáticos distintos",
+              "Un fondo indexado global y uno de bonos",
+              "Acciones elegidas por noticias",
+              "Un ETF apalancado al Nasdaq"
+            ],
+            "a": 1,
+            "why": "Dos fondos baratos y diversificados se entienden, se rebalancean en minutos y no tientan a cambiar. La sencillez es lo que permite aguantar décadas."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "id": "retirada",
+    "track": "pasiva",
+    "title": "Retirada sostenible",
+    "blurb": "Cuánto puedes sacar cada año sin quedarte sin dinero.",
+    "lessons": [
+      {
+        "id": "rt1",
+        "title": "La regla del 4 %",
+        "ex": [
+          {
+            "t": "num",
+            "q": "Quieres retirar 20.000 € al año. Con la regla del 4 %, ¿cuántos miles de euros necesitas tener invertidos?",
+            "unit": "",
+            "a": 500,
+            "why": "20.000 ÷ 0,04 = 500.000 €, es decir, 25 veces tu gasto anual."
+          },
+          {
+            "t": "num",
+            "q": "Tienes 300.000 € invertidos. Con la regla del 4 %, ¿cuántos miles de euros retiras el primer año?",
+            "unit": "",
+            "a": 12,
+            "why": "300.000 × 4 % = 12.000 €. A partir de ahí, la regla no vuelve a calcular el 4 %: ajusta esa cantidad por la inflación."
+          },
+          {
+            "t": "num",
+            "q": "El primer año retiras 12.000 € y la inflación es del 3 %. Según la regla, ¿cuántos euros más retiras el segundo año?",
+            "unit": "€",
+            "a": 360,
+            "why": "12.000 × 3 % = 360 € más, es decir, 12.360 €, sin mirar cómo ha ido la bolsa. Así mantienes el poder adquisitivo."
+          },
+          {
+            "t": "choice",
+            "q": "¿De dónde sale la regla del 4 %?",
+            "opts": [
+              "De datos históricos de EE. UU. a 30 años",
+              "De una ley española de pensiones",
+              "De lo que garantizan los bonos",
+              "De la media de los fondos de pensiones"
+            ],
+            "a": 0,
+            "why": "William Bengen (1994) vio que, con una cartera de acciones y bonos de EE. UU., retirar un 4 % ajustado por inflación aguantaba 30 años en casi todos los periodos históricos. Es una referencia, no una garantía."
+          }
+        ]
+      },
+      {
+        "id": "rt2",
+        "title": "Riesgos de la retirada",
+        "ex": [
+          {
+            "t": "choice",
+            "q": "Dos jubilados obtienen la misma rentabilidad media. A sufre una caída del 30 % su primer año; B, en su décimo año. ¿Quién corre más riesgo de quedarse sin dinero?",
+            "opts": [
+              "B, por la caída al final",
+              "A, por la caída al principio",
+              "Los dos por igual",
+              "Ninguno de los dos"
+            ],
+            "a": 1,
+            "why": "Al principio la cartera es mayor y sigues retirando: vendes barato justo cuando más pesa. Es el riesgo de secuencia de rentabilidades."
+          },
+          {
+            "t": "num",
+            "q": "Tu cartera vale 400.000 € y retiras 16.000 € al año (4 %). La bolsa cae y la cartera baja a 320.000 €. ¿Qué porcentaje de la cartera supone ahora esa retirada?",
+            "unit": "%",
+            "a": 5,
+            "why": "16.000 ÷ 320.000 = 5 %. Mantener la misma cantidad tras una caída exige vender más proporción de la cartera."
+          },
+          {
+            "t": "choice",
+            "q": "¿Qué ayuda a reducir el riesgo de secuencia?",
+            "opts": [
+              "Pasar toda la cartera a acciones",
+              "Tener 1-2 años de gastos en liquidez",
+              "Retirar más en los años malos",
+              "Concentrar la cartera en un sector"
+            ],
+            "a": 1,
+            "why": "Con un colchón en liquidez puedes no vender acciones en los años malos y reponerlo en los buenos. Retirar algo menos tras una caída también ayuda."
+          },
+          {
+            "t": "num",
+            "q": "Te jubilas a los 50 y el dinero tiene que durar 45 años, así que retiras un 3,25 % en lugar de un 4 %. ¿Cuántos miles de euros necesitas para gastar 20.000 € al año? Redondea a unidades.",
+            "unit": "",
+            "a": 615,
+            "why": "20.000 ÷ 0,0325 = 615.385 €. Para horizontes más largos que los 30 años del estudio original se suele usar una tasa menor, y eso exige más capital.",
+            "tol": 0.5
+          }
+        ]
+      }
+    ]
+  },
+  {
     "n": 1,
     "id": "velas",
     "title": "Velas japonesas",
