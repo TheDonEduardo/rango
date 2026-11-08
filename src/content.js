@@ -8,6 +8,9 @@ export const trackOf=u=>u.track||'tecnico';
 // uid = «idLección#índice»: identifica cada ejercicio fijo en el repaso espaciado (los casos reales no tienen).
 export const EXBYID=new Map();
 UNITS.forEach(u=>(u.lessons||[]).forEach(l=>l.ex.forEach((e,i)=>{e.uid=l.id+'#'+i;EXBYID.set(e.uid,e)})));
+// Test de nivel: dos ejercicios (uid) de cada unidad obligatoria de Básico. Si se añade una unidad obligatoria,
+// añade aquí dos de sus ejercicios (el test comprueba que cada unidad tiene los suyos).
+export const PLACEMENT=['ba1#0','ba2#3','bb1#0','bb2#2','bc1#0','bc2#2','bd1#0','bd2#1','be1#0','be2#2','bf1#1','bf2#2'];
 export const FLAT=[];
 UNITS.forEach(u=>{
   if(!u.lessons) return;

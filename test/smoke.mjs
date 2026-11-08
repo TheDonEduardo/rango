@@ -93,6 +93,16 @@ T.acceptLegal(); T.render();
 if (app.innerHTML.includes('Antes de empezar') || !app.innerHTML.includes('Rango')) errs.push('aceptar el aviso legal no lleva al inicio');
 if (!T.homeHTML().includes('data-act="legal"')) errs.push('falta el enlace al aviso legal en el inicio');
 if (!T.homeHTML().includes('Rango')) errs.push('home no renderiza');
+// Test de nivel: se ofrece a un usuario nuevo y sus preguntas existen (dos por unidad obligatoria de Básico).
+if (!T.homeHTML().includes('data-act="test"')) errs.push('no se ofrece el test de nivel a un usuario nuevo');
+const lecDe = uid => uid.split('#')[0];
+for (const uid of T.PLACEMENT) {
+  const [lid, i] = uid.split('#');
+  const l = units.flatMap(u => u.lessons || []).find(x => x.id === lid);
+  if (!l || !l.ex[+i]) errs.push('el test de nivel usa un ejercicio inexistente: ' + uid);
+}
+for (const u of units.filter(u => u.track === 'basico' && u.gate !== false && u.lessons))
+  if (T.PLACEMENT.filter(x => u.lessons.some(l => l.id === lecDe(x))).length !== 2) errs.push('el test de nivel no tiene dos preguntas de ' + u.id);
 // Usuario nuevo: empieza en Básico y las otras rutas están bloqueadas hasta completarlo o saltarlo.
 if (!T.homeHTML().includes('Acciones y órdenes')) errs.push('un usuario nuevo no empieza en la ruta básica');
 T.setTrack('tecnico');
@@ -143,6 +153,27 @@ let g = 0;
 while (g++ < 40 && !app.innerHTML.includes('Repaso completado')) { const ex = T.getRun().queue[0]; give(ex, right(ex)); T.check(); T.next(); }
 for (const ex of enRepaso) { const r = srs[ex.uid]; if (!r || r.step !== 1 || r.due <= dk(hoy)) errs.push('repaso espaciado no avanza ' + ex.uid); }
 if (T.getState().done.srs) errs.push('el repaso del día se guarda como lección completada');
+
+// 5) Test de nivel: todo bien abre las rutas y marca Básico; solo una unidad bien marca solo esa unidad.
+const st = T.getState();
+const hacerTest = acierta => {
+  st.done = {}; st.skipBasics = false; delete st.placement;
+  const srsAntes = JSON.stringify(st.srs);
+  T.startTest();
+  if (T.lessonHTML().includes('class="lives"')) errs.push('el test de nivel muestra vidas');
+  let k = 0;
+  while (k++ < 40 && !app.innerHTML.includes('Test completado')) { const ex = T.getRun().queue[0]; give(ex, acierta(ex) ? right(ex) : wrong(ex)); T.check(); T.next(); }
+  if (!app.innerHTML.includes('Test completado')) errs.push('el test de nivel no termina');
+  if (JSON.stringify(st.srs) !== srsAntes) errs.push('el test de nivel modifica el repaso espaciado');
+};
+hacerTest(() => true);
+const obligatorias = T.FLAT.filter(l => l.unit.track === 'basico' && l.unit.gate !== false);
+if (!st.skipBasics || !obligatorias.every(l => st.done[l.id])) errs.push('test perfecto: no abre las rutas o no marca Básico');
+if (T.FLAT.some(l => l.unit.gate === false && st.done[l.id])) errs.push('el test marca unidades complementarias');
+hacerTest(ex => ['ba1', 'ba2'].includes(lecDe(ex.uid)));
+const marcadas = Object.keys(st.done);
+if (st.skipBasics || !marcadas.length || marcadas.some(id => !T.FLAT.find(l => l.id === id && l.unit.id === 'acciones'))) errs.push('test parcial: marca de más o abre las rutas: ' + marcadas.join(','));
+if (st.placement?.score !== 2) errs.push('test parcial: puntuación mal guardada');
 
 // 5) Todos los casos reales con respuesta correcta
 if (casos) for (const L of T.FLAT.filter(l => l.casos && l.casos.length)) for (const ex of L.casos) {

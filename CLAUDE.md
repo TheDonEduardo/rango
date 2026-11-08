@@ -90,6 +90,7 @@ Sistema de tokens en `src/styles.css` (`:root`, con variante oscura por `prefers
 - Sin cuentas, sin sincronización, sin ligas.
 - Aviso legal: se acepta en el primer uso (`S.legal`, versión `LEGAL_V` en app.js; súbela si cambia el texto) y queda enlazado en el pie del inicio.
 - Repaso espaciado (`S.srs`): cada ejercicio fallado a la primera vuelve al día siguiente; cada acierto en el «Repaso del día» lo aplaza 3, 7 y 14 días y luego sale de la lista; un fallo lo reinicia. Máximo 10 por sesión; no suma lección completada. Los ejercicios se identifican por `idLección#índice` (`uid`, en content.js): no reordenes ni borres ejercicios de lecciones publicadas, añade al final. Los casos reales no entran en el repaso.
+- Test de nivel (`S.placement`): se ofrece en Básico a quien no ha hecho ninguna lección. 12 preguntas (`PLACEMENT` en content.js: dos `uid` por unidad obligatoria de Básico; si añades una unidad obligatoria, añade dos de sus ejercicios). Sin vidas ni repaso espaciado. Cada unidad con sus dos preguntas acertadas queda completada (`{acc:1,test:true}`); con `TEST_PASS` (10) aciertos o más se abren Técnico y Fundamental.
 - Botones "Desbloquear todo" y "Reiniciar progreso" al final del inicio: solo para desarrollo, retirar antes de publicar.
 
 ## Tareas pendientes (por orden sugerido)

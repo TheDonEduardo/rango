@@ -2,7 +2,7 @@
 import {KEY,GOAL,RH,OFFS,fmt,esc,today,yest,addDays,shuffle,parseNum,planTol,planStep} from './util.js';
 import {P,ico,icoX,icoOk,LOGO} from './icons.js';
 import {candlesSVG,lineSVG,glyph} from './charts.js';
-import {UNITS,FLAT,CASOS,TRACKS,EXBYID,trackOf,exCount} from './content.js';
+import {UNITS,FLAT,CASOS,TRACKS,EXBYID,PLACEMENT,trackOf,exCount} from './content.js';
 
 const DEF=()=>({xp:0,streak:0,last:null,day:null,dayXp:0,done:{},all:false,track:'basico',skipBasics:false,legal:0,srs:{}});
 // Sube LEGAL_V si cambia el texto del aviso: se vuelve a pedir la aceptación.
@@ -11,6 +11,10 @@ const LEGAL_V=1;
 const SRS_STEPS=[1,3,7,14];
 const SRS_MAX=10;
 const SRS_L={id:'srs',title:'Repaso del día',kind:'srs'};
+// Test de nivel: con TEST_PASS aciertos o más se abren Técnico y Fundamental; cada unidad con sus dos preguntas
+// acertadas queda marcada como completada.
+const TEST_L={id:'test',title:'Test de nivel',kind:'test'};
+const TEST_PASS=10;
 function load(){
   try{const j=JSON.parse(localStorage.getItem(KEY));if(j&&typeof j==='object')return Object.assign(DEF(),j)}catch(e){}
   return DEF();
@@ -87,6 +91,7 @@ function homeHTML(){
   h+=`<nav class="tracks" aria-label="Ruta">${TRACKS.map(t=>`<button data-act="track" data-track="${t.id}" aria-pressed="${S.track===t.id}">${t.title}</button>`).join('')}</nav>`;
   const TF=FLAT.filter(l=>trackOf(l.unit)===S.track);
   if(S.track!=='basico'&&!advancedOpen())h+=`<section class="gate"><p>Esta ruta se abre al completar <b>Conceptos básicos</b>.</p><div class="row"><button class="btn line" data-act="track" data-track="basico">Ir a los básicos</button><button class="btn ghost" data-act="skipbasics">Ya opero: saltar los básicos</button></div></section>`;
+  if(S.track==='basico'&&!S.placement&&!Object.keys(S.done).length)h+=`<section class="test" aria-label="Test de nivel"><div><b>¿Ya sabes de bolsa?</b><span>Haz el test de nivel: ${PLACEMENT.length} preguntas, unos 5 minutos. Marcaremos lo que ya dominas y, si aciertas casi todo, se abren Técnico y Fundamental.</span></div><div class="row"><button class="btn primary" data-act="test">Hacer el test</button><button class="btn ghost" data-act="notest">Empezar desde cero</button></div></section>`;
   const due=srsDue().length;
   if(due)h+=`<section class="srs" aria-label="Repaso del día"><div><b>Repaso del día</b><span>${due} ${due===1?'ejercicio que fallaste':'ejercicios que fallaste'}</span></div><button class="btn primary" data-act="srs">Repasar</button></section>`;
   UNITS.filter(u=>trackOf(u)===S.track).forEach(u=>{
@@ -129,7 +134,7 @@ function answerText(ex){
 function lessonHTML(){
   const ex=run.queue[0],pct=Math.round(run.done/run.total*100);
   let hearts='';for(let i=0;i<3;i++)hearts+=`<svg class="heart ${i<run.lives?'on':'off'}" viewBox="0 0 24 24" aria-hidden="true"><path d="${P.heart}" fill="currentColor"/></svg>`;
-  let h=`<div class="lesson"><div class="lbar"><button class="x" data-act="quit" aria-label="Salir de la lección">${icoX}</button><div class="prog" role="progressbar" aria-valuemin="0" aria-valuemax="${run.total}" aria-valuenow="${run.done}"><i style="width:${pct}%"></i></div><div class="lives" role="img" aria-label="${run.lives} vidas">${hearts}</div></div>`;
+  let h=`<div class="lesson"><div class="lbar"><button class="x" data-act="quit" aria-label="Salir de la lección">${icoX}</button><div class="prog" role="progressbar" aria-valuemin="0" aria-valuemax="${run.total}" aria-valuenow="${run.done}"><i style="width:${pct}%"></i></div>${run.L.kind==='test'?'':`<div class="lives" role="img" aria-label="${run.lives} vidas">${hearts}</div>`}</div>`;
   h+=`<div class="qwrap"><p class="kind">${ex.caso?`Caso real: ${esc(ex.caso)} · `:''}${KIND[ex.t]}</p><h2 class="q">${tx(ex.q)}</h2>${chartHTML(ex)}${tableHTML(ex)}`;
   if(ex.t==='choice'){
     h+='<div class="opts">';
@@ -205,8 +210,18 @@ function legalHTML(first){
   <p>Las decisiones de inversión son tuyas y bajo tu responsabilidad.</p></div>
   <div><button class="btn primary" data-act="${first?'legalok':'home'}">${first?'Entendido, empezar':'Volver'}</button></div></div>`;
 }
+function testResultHTML(r){
+  const nota=r.abre?'Técnico y Fundamental quedan abiertos. Puedes volver a los básicos cuando quieras.'
+    :r.dominadas.length?'Las unidades que dominas quedan marcadas como completadas: sigue por la primera pendiente de Básico.'
+    :'Empieza por Básico: en pocas lecciones tendrás la base para el resto.';
+  return `<div class="res"><div class="res-main"><div class="res-top">${glyph('done',r.score/r.total,84,108)}<div><h1>Test completado</h1><p>${r.score} de ${r.total} aciertos</p></div></div>
+  ${r.dominadas.length?`<div class="note"><b>Ya dominas</b><ul class="dom">${r.dominadas.map(t=>`<li>${esc(t)}</li>`).join('')}</ul></div>`:''}
+  <p class="note">${nota}</p></div>
+  <div><button class="btn primary" data-act="home">Continuar</button></div></div>`;
+}
 function resultHTML(){
   const r=lastRes,sk=streakNow();
+  if(r.test)return testResultHTML(r);
   return `<div class="res"><div class="res-main"><div class="res-top">${glyph('done',r.acc,84,108)}<div><h1>${r.srs?'Repaso completado':'Lección completada'}</h1><p>${esc(r.title)}</p></div></div>
   <div class="metrics"><div><b>+${r.xp}</b><span>XP ganados</span></div><div><b>${Math.round(r.acc*100)} %</b><span>Precisión</span></div><div><b>${sk}</b><span>${sk===1?'día de racha':'días de racha'}</span></div></div>
   <p class="note">${r.srs?'Los que has acertado volverán dentro de unos días; los que has fallado, mañana.':`El cuerpo de tu vela es proporcional a tu precisión. ${r.acc===1?'Vela llena: sin un solo fallo.':'Repite la lección para llenarla.'}`}</p></div>
@@ -232,9 +247,9 @@ function render(){
 function startRun(L){
   // Lección: ejercicios fijos barajados y, al final, un caso real al azar (si hay datos).
   // Repaso de unidad: 5 al azar de sus lecciones. Repaso del día: los fallos que tocan hoy.
-  const ex=L.kind==='srs'?shuffle(srsDue()).slice(0,SRS_MAX):L.kind==='review'?shuffle(L.unit.lessons.flatMap(l=>l.ex)).slice(0,5):shuffle(L.ex).concat(shuffle(L.casos).slice(0,1));
+  const ex=L.kind==='test'?shuffle(PLACEMENT.map(u=>EXBYID.get(u))):L.kind==='srs'?shuffle(srsDue()).slice(0,SRS_MAX):L.kind==='review'?shuffle(L.unit.lessons.flatMap(l=>l.ex)).slice(0,5):shuffle(L.ex).concat(shuffle(L.casos).slice(0,1));
   if(!ex.length){view='home';render();return}
-  run={L,queue:ex.slice(),total:ex.length,done:0,lives:3,firstWrong:0,seen:new Set(),perm:new Map(),sel:null,val:'',checked:false,ok:null};
+  run={L,res:{},queue:ex.slice(),total:ex.length,done:0,lives:3,firstWrong:0,seen:new Set(),perm:new Map(),sel:null,val:'',checked:false,ok:null};
   view='lesson';render();
 }
 function check(){
@@ -244,18 +259,36 @@ function check(){
   else if(ex.t==='plan')ok=ex.place.every(p=>Math.abs(run.sel[p.id]-p.a)<=planTol(p)+1e-9);
   else ok=run.sel===ex.a;
   run.ok=ok;run.checked=true;
-  if(!run.seen.has(ex)){run.seen.add(ex);if(!ok)run.firstWrong++;srsRecord(ex,ok);save()}
-  if(!ok)run.lives--;
+  // En el test de nivel no hay vidas ni repaso: solo se anota el resultado de cada pregunta.
+  if(!run.seen.has(ex)){run.seen.add(ex);if(!ok)run.firstWrong++;if(run.L.kind==='test')run.res[ex.uid]=ok;else srsRecord(ex,ok);save()}
+  if(!ok&&run.L.kind!=='test')run.lives--;
   render();
 }
 function next(){
   const ex=run.queue.shift();
-  if(run.ok)run.done++;else run.queue.push(ex);
+  if(run.ok||run.L.kind==='test')run.done++;else run.queue.push(ex);
   if(!run.ok&&run.lives<=0){view='fail';render();return}
   if(run.queue.length===0){finish();return}
   run.sel=null;run.val='';run.checked=false;run.ok=null;render();
 }
+function finishTest(){
+  const res=run.res,score=Object.values(res).filter(Boolean).length,total=PLACEMENT.length,dominadas=[];
+  UNITS.filter(u=>trackOf(u)==='basico'&&u.gate!==false&&u.lessons).forEach(u=>{
+    const ids=PLACEMENT.filter(x=>u.lessons.some(l=>x.startsWith(l.id+'#')));
+    if(ids.length&&ids.every(x=>res[x])){
+      dominadas.push(u.title);
+      FLAT.filter(l=>l.unit===u).forEach(l=>{if(!S.done[l.id])S.done[l.id]={acc:1,test:true}});
+    }
+  });
+  const abre=score>=TEST_PASS;
+  if(abre)S.skipBasics=true;
+  S.placement={score,total,date:today()};
+  save();
+  lastRes={test:true,score,total,dominadas,abre,title:TEST_L.title};
+  view='result';render();
+}
 function finish(){
+  if(run.L.kind==='test'){finishTest();return}
   const right=run.total-run.firstWrong,acc=right/run.total,xp=right*10+(run.firstWrong===0?10:0),t=today();
   if(S.last!==t){S.streak=(S.last===yest())?S.streak+1:1;S.last=t}
   if(S.day!==t){S.day=t;S.dayXp=0}
@@ -329,6 +362,8 @@ $app.addEventListener('click',e=>{
   else if(a==='legal'){homeY=window.scrollY;view='legal';render()}
   else if(a==='legalok'){S.legal=LEGAL_V;save();homeY=0;render()}
   else if(a==='srs'){homeY=window.scrollY;startRun(SRS_L)}
+  else if(a==='test'){homeY=0;startRun(TEST_L)}
+  else if(a==='notest'){S.placement={skipped:true};save();render()}
   else if(a==='install'&&installEvt){installEvt.prompt();installEvt.userChoice.finally(()=>{installEvt=null;homeY=window.scrollY;render()})}
   else if(a==='track'){S.track=b.dataset.track;save();homeY=0;render()}
   else if(a==='skipbasics'){S.skipBasics=true;save();homeY=0;render();toast('Rutas Técnico y Fundamental abiertas.')}
@@ -373,4 +408,4 @@ if(typeof navigator!=='undefined'&&'serviceWorker' in navigator&&typeof location
 
 
 // API mínima para tests (test/smoke.mjs)
-export const api={FLAT,CASOS,srsDue,acceptLegal:()=>{S.legal=LEGAL_V},startSrs:()=>startRun(SRS_L),setTrack:t=>{S.track=t},skipBasics:()=>{S.skipBasics=true},homeHTML,startRun,lessonHTML,check,next,resultHTML,failHTML,render,getRun:()=>run,setSel:v=>{run.sel=v},setVal:v=>{run.val=v},getState:()=>S};
+export const api={FLAT,CASOS,PLACEMENT,startTest:()=>startRun(TEST_L),srsDue,acceptLegal:()=>{S.legal=LEGAL_V},startSrs:()=>startRun(SRS_L),setTrack:t=>{S.track=t},skipBasics:()=>{S.skipBasics=true},homeHTML,startRun,lessonHTML,check,next,resultHTML,failHTML,render,getRun:()=>run,setSel:v=>{run.sel=v},setVal:v=>{run.val=v},getState:()=>S};
