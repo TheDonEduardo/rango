@@ -19,7 +19,7 @@ OUT = ROOT / "src" / "content" / "casos.json"
 BOT = ROOT.parent / "portfolio_manager.py"
 HOY = dt.date.today().strftime("%d/%m/%Y")
 # Lecciones que reciben casos reales (una sola definición para casos_de y main).
-LECCIONES_CASOS = ("f1a", "f1b", "f2a", "f2b", "f3a", "f3b", "f5a", "f6a", "bg1", "pr1")
+LECCIONES_CASOS = ("f1a", "f1b", "f2a", "f2b", "f3a", "f3b", "f5a", "f6a", "bg1", "pr1", "bh2", "f8b")
 # Índices y fondos indexados para la ruta Pasiva: (ticker, etiqueta, descripción, unidad, desde, nota sobre dividendos).
 INDICES = [
     ("EUNL.DE", "iShares Core MSCI World (EUNL)", "el ETF iShares Core MSCI World de acumulación (en euros)", "€", None,
@@ -395,6 +395,50 @@ def casos_indices():
     return out
 
 
+def serie(tk, periodo="2y"):
+    return yf.Ticker(tk).history(period=periodo, interval="1d")["Close"].dropna()
+
+
+def casos_bonos():
+    """Bonos de EE. UU. (Yahoo da la rentabilidad en %): duración (bh2) y pendiente de la curva (f8b)."""
+    out = {"bh2": [], "f8b": []}
+    diez = serie("^TNX")
+    if len(diez) > 260:
+        fin_f, fin_v = diez.index[-1], round(float(diez.iloc[-1]), 2)
+        hace = diez[diez.index <= fin_f - dt.timedelta(days=365)]
+        if len(hace):
+            ini_f, ini_v = hace.index[-1], round(float(hace.iloc[-1]), 2)
+            cambio = round(fin_v - ini_v, 2)
+            if cambio != 0:
+                efecto = round(8 * abs(cambio), 1)
+                pide = "¿cuánto habría caído su precio, aproximadamente?" if cambio > 0 else "¿cuánto habría subido su precio, aproximadamente?"
+                out["bh2"].append({
+                    "t": "num", "caso": "Bono de EE. UU. a 10 años",
+                    "q": f"La rentabilidad del bono de EE. UU. a 10 años pasó del {es(ini_v, 2)} % el {fecha(ini_f)} al {es(fin_v, 2)} % "
+                         f"el {fecha(fin_f)}. Para un bono con duración 8, {pide} Redondea a 1 decimal.",
+                    "unit": "%", "a": efecto, "tol": 0.06,
+                    "why": f"Los tipos {'subieron' if cambio > 0 else 'bajaron'} {es(abs(cambio), 2)} puntos; 8 × {es(abs(cambio), 2)} = {es(efecto)} %. "
+                           f"Cuando suben los tipos, el precio de los bonos que ya existen baja, y al revés.",
+                })
+    tres = serie("^IRX")
+    if len(diez) and len(tres) and diez.index[-1] == tres.index[-1]:
+        f = diez.index[-1]
+        d10, d3 = round(float(diez.iloc[-1]), 2), round(float(tres.iloc[-1]), 2)
+        pb = round((d10 - d3) * 100)
+        if pb != 0:
+            normal = pb > 0
+            out["f8b"].append({
+                "t": "num", "caso": "Curva de tipos de EE. UU.",
+                "q": f"Al cierre del {fecha(f)}, el bono de EE. UU. a 10 años rendía un {es(d10, 2)} % y la letra a 3 meses, un {es(d3, 2)} %. "
+                     + ("¿Cuántos puntos básicos paga de más el plazo largo?" if normal else "¿De cuántos puntos básicos es la inversión de la curva?"),
+                "unit": "", "a": abs(pb), "tol": 0.5,
+                "why": f"{es(d10, 2)} − {es(d3, 2)} = {es((d10 - d3), 2)} puntos, es decir, {abs(pb)} puntos básicos. "
+                       + ("La curva tiene pendiente positiva: el plazo largo paga más, que es lo normal."
+                          if normal else "La curva está invertida: el plazo corto paga más que el largo."),
+            })
+    return out
+
+
 def main():
     ex = {k: [] for k in LECCIONES_CASOS}
     fallos = []
@@ -404,11 +448,12 @@ def main():
                 ex[k].extend(v)
         except Exception as e:  # un ticker sin datos no debe tumbar el resto
             fallos.append(f"{tk}: {e}")
-    try:
-        for k, v in casos_indices().items():
-            ex[k].extend(v)
-    except Exception as e:
-        fallos.append(f"índices: {e}")
+    for nombre_f, fn in (("índices", casos_indices), ("bonos", casos_bonos)):
+        try:
+            for k, v in fn().items():
+                ex[k].extend(v)
+        except Exception as e:
+            fallos.append(f"{nombre_f}: {e}")
     if not any(ex.values()):
         sys.exit("Sin datos: no se sobrescribe casos.json. " + "; ".join(fallos))
     hoy = dt.date.today()

@@ -193,6 +193,11 @@ button{font:inherit;color:inherit;cursor:pointer}
 .leyenda{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--ink-2);padding:2px 6px 0}
 .leyenda span::before{content:"";display:inline-block;width:16px;height:0;margin-right:6px;vertical-align:middle;border-top:3px solid var(--up)}
 .leyenda .lv-a::before{border-top:2px dashed var(--ink-2)}
+.calcsvg .cv-b{fill:none;stroke:var(--down);stroke-width:2.5;stroke-dasharray:1 0}
+.leyenda .lv-b::before{border-top-color:var(--down)}
+.ccheck{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600}
+.ccheck input{width:20px;height:20px;accent-color:var(--up)}
+.cmpres{margin:12px 0 0;font-size:15px}
 .pfine{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px 14px;margin-top:10px}
 .pf{display:flex;align-items:center;gap:6px}
 .pf span{font-weight:600;font-size:14px;color:var(--c);min-width:64px}

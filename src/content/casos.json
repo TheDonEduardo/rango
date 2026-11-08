@@ -1287,6 +1287,28 @@
         "tol": 0.06,
         "why": "1 − 676,53 ÷ 1.565,15 = 56,8 %. Es la mayor caída de cierre a cierre desde el 03/01/2000: antes de elegir cuánto pones en acciones, piensa si aguantarías verla en tu cartera."
       }
+    ],
+    "bh2": [
+      {
+        "t": "num",
+        "caso": "Bono de EE. UU. a 10 años",
+        "q": "La rentabilidad del bono de EE. UU. a 10 años pasó del 4,09 % el 06/11/2025 al 4,86 % el 06/11/2026. Para un bono con duración 8, ¿cuánto habría caído su precio, aproximadamente? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 6.2,
+        "tol": 0.06,
+        "why": "Los tipos subieron 0,77 puntos; 8 × 0,77 = 6,2 %. Cuando suben los tipos, el precio de los bonos que ya existen baja, y al revés."
+      }
+    ],
+    "f8b": [
+      {
+        "t": "num",
+        "caso": "Curva de tipos de EE. UU.",
+        "q": "Al cierre del 06/11/2026, el bono de EE. UU. a 10 años rendía un 4,86 % y la letra a 3 meses, un 4,00 %. ¿Cuántos puntos básicos paga de más el plazo largo?",
+        "unit": "",
+        "a": 86,
+        "tol": 0.5,
+        "why": "4,86 − 4,00 = 0,86 puntos, es decir, 86 puntos básicos. La curva tiene pendiente positiva: el plazo largo paga más, que es lo normal."
+      }
     ]
   }
 }
