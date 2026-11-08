@@ -154,6 +154,39 @@ while (g++ < 40 && !app.innerHTML.includes('Repaso completado')) { const ex = T.
 for (const ex of enRepaso) { const r = srs[ex.uid]; if (!r || r.step !== 1 || r.due <= dk(hoy)) errs.push('repaso espaciado no avanza ' + ex.uid); }
 if (T.getState().done.srs) errs.push('el repaso del día se guarda como lección completada');
 
+// 6) Operación de la semana: reglas de la simulación y vistas.
+const plan = {entry: 10, stop: 9, target: 12};
+const casosSim = [
+  ['sin entrada', [[9.5, 9.8, 9.4, 9.6]], 'sin entrada', 0],
+  ['objetivo', [[9.8, 10.5, 9.7, 10.3], [10.3, 12.5, 10.2, 12.2]], 'objetivo', 2],
+  ['hueco al alza: entra a la apertura', [[10.5, 11, 10.4, 10.8]], 'abierta', 0.3],
+  ['hueco bajo el stop: sale a la apertura', [[9.8, 10.2, 9.9, 10.1], [8.5, 8.8, 8.2, 8.6]], 'stop', -1.5],
+  ['stop y objetivo el mismo día: cuenta el stop', [[9.8, 10.2, 9.9, 10.1], [10, 12.5, 8.9, 11]], 'stop', -1],
+  ['stop el mismo día de la entrada', [[9.9, 10.2, 8.8, 9]], 'stop', -1],
+];
+for (const [nom, velas, estado, r] of casosSim) {
+  const res = T.simulate(plan, velas);
+  if (res.estado !== estado || Math.abs(res.r - r) > 1e-9) errs.push(`simulación «${nom}»: ${res.estado} ${res.r}, se esperaba ${estado} ${r}`);
+}
+const semPath = path.join(root, 'src/content/semana.json');
+if (fs.existsSync(semPath)) {
+  const sem = JSON.parse(fs.readFileSync(semPath, 'utf8'));
+  const okVelas = d => Array.isArray(d) && d.every(c => c.length === 4 && c[1] >= Math.max(c[0], c[3]) && c[2] <= Math.min(c[0], c[3]));
+  if (!/^\d{4}-W\d{2}$/.test(sem.semana) || !okVelas(sem.data) || sem.data.length !== 30 || !(sem.step > 0) || sem.vol.length !== 30) errs.push('semana.json mal formado');
+  if (sem.prev && (!okVelas(sem.prev.data) || !okVelas(sem.prev.despues) || sem.prev.despues.length > 5)) errs.push('semana.json: semana anterior mal formada');
+  T.openSim();
+  if (!app.innerHTML.includes('Operación de la semana') || !/class="svg\s+plan"/.test(app.innerHTML)) errs.push('la vista del simulador no se dibuja');
+  const c = sem.data[sem.data.length - 1][3];
+  T.simDraftSet({entry: c * 1.02, stop: c * 0.95, target: c * 1.1}); T.simSave();
+  if (!T.getState().sim[sem.semana]) errs.push('el plan de la semana no se guarda');
+  if (sem.prev) {
+    T.getState().sim[sem.prev.semana] = {plan: {entry: 1, stop: 0.5, target: 2}};
+    T.openSimRes();
+    if (!app.innerHTML.includes('Resultado de la semana pasada') || !app.innerHTML.includes('class="split"')) errs.push('la vista del resultado no se dibuja');
+  }
+  T.goHome();
+}
+
 // 5) Test de nivel: todo bien abre las rutas y marca Básico; solo una unidad bien marca solo esa unidad.
 const st = T.getState();
 const hacerTest = acierta => {

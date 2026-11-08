@@ -164,6 +164,21 @@ button{font:inherit;color:inherit;cursor:pointer}
 .pl:focus{outline:none} .pl:focus-visible line,.pl.drag line{stroke-width:4}
 .pl.bad line{stroke-dasharray:6 4}
 .pl-ans line{stroke:var(--up);stroke-width:2;stroke-dasharray:3 3}
+.pl.fijo{cursor:default;pointer-events:none}
+.svg .split{stroke:var(--ink-2);stroke-width:1;stroke-dasharray:2 4}
+.svg .splitt{fill:var(--ink-2);font-size:11px}
+.sim{margin:16px 0 0;padding:14px 16px;border-radius:16px;border:2px solid var(--line);background:var(--surface);display:grid;gap:10px}
+.simrow{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.simrow span{flex:1 1 200px;min-width:0;font-size:14px;color:var(--ink-2)}
+.simrow .btn{width:auto;padding:9px 16px}
+.up{color:var(--up-ink)} .dn{color:var(--down-ink)}
+.sim-view .lbar .kind{margin:0;flex:1}
+.sim-view .intro{margin:0;line-height:1.5}
+.siminfo .warn{margin:0;color:var(--down-ink);font-weight:600}
+.simk{margin:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.simk div{padding:10px 12px;border-radius:12px;background:var(--surface);border:1px solid var(--line)}
+.simk dt{font-size:12px;color:var(--ink-2)}
+.simk dd{margin:2px 0 0;font:700 18px/1.2 var(--font-display);font-variant-numeric:tabular-nums}
 .pfine{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px 14px;margin-top:10px}
 .pf{display:flex;align-items:center;gap:6px}
 .pf span{font-weight:600;font-size:14px;color:var(--c);min-width:64px}

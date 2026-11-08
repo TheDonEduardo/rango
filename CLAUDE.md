@@ -7,6 +7,7 @@ App web gamificada tipo Duolingo para **inversores que ya operan** (bolsa, anál
 - `npm run dev`: servidor estático en http://localhost:5173 (hace falta servidor: los módulos ES y el `fetch` del JSON no funcionan desde `file://`).
 - `npm test`: valida el contenido (`units.json` y `casos.json`), las dos rutas y recorre todas las lecciones (y los repasos) simulando respuestas correctas, incorrectas y la pantalla "Sin vidas"; comprueba además cada caso real. Ejecútalo tras cualquier cambio en `src/` o en el contenido.
 - `python -I tools/test_casos.py`: prueba el generador de casos con datos simulados (sin red).
+- `python tools/semana.py [--fecha AAAA-MM-DD]`: genera la Operación de la semana (`semana.json`); con `--fecha` la prepara como si fuera ese día.
 - `python tools/casos.py` (requiere `pip install yfinance`): regenera los casos reales. GitHub Actions lo hace cada sábado (`.github/workflows/rango_casos.yml` en la raíz del repo) y sube el resultado solo si `npm test` pasa.
 
 ## Estructura
@@ -18,6 +19,7 @@ src/charts.js         SVG: gráfico de velas, línea con media, glifo de vela de
 src/content.js        carga units.json y casos.json; construye FLAT (lecciones + repasos) y define las rutas
 src/content/units.json  TODO el contenido didáctico fijo (unidades, lecciones, ejercicios)
 src/content/casos.json  casos reales GENERADOS por tools/casos.py: no editar a mano
+src/content/semana.json Operación de la semana GENERADA por tools/semana.py: no editar a mano
 tools/casos.py        genera casos.json con Yahoo Finance para los tickers de ../portfolio_manager.py
 src/util.js           fmt (es-ES), esc, fechas, parseNum, constantes (KEY, GOAL, RH, OFFS)
 src/icons.js          iconos SVG inline
@@ -91,6 +93,7 @@ Sistema de tokens en `src/styles.css` (`:root`, con variante oscura por `prefers
 - Aviso legal: se acepta en el primer uso (`S.legal`, versión `LEGAL_V` en app.js; súbela si cambia el texto) y queda enlazado en el pie del inicio.
 - Repaso espaciado (`S.srs`): cada ejercicio fallado a la primera vuelve al día siguiente; cada acierto en el «Repaso del día» lo aplaza 3, 7 y 14 días y luego sale de la lista; un fallo lo reinicia. Máximo 10 por sesión; no suma lección completada. Los ejercicios se identifican por `idLección#índice` (`uid`, en content.js): no reordenes ni borres ejercicios de lecciones publicadas, añade al final. Los casos reales no entran en el repaso.
 - Test de nivel (`S.placement`): se ofrece en Básico a quien no ha hecho ninguna lección. 12 preguntas (`PLACEMENT` en content.js: dos `uid` por unidad obligatoria de Básico; si añades una unidad obligatoria, añade dos de sus ejercicios). Sin vidas ni repaso espaciado. Cada unidad con sus dos preguntas acertadas queda completada (`{acc:1,test:true}`); con `TEST_PASS` (10) aciertos o más se abren Técnico y Fundamental.
+- Operación de la semana (`S.sim`, `semana.json`): en Técnico, con la ruta abierta. Cada sábado `tools/semana.py` elige un valor de la cartera (rota por semana ISO) con sus 30 últimas sesiones y pasa la semana anterior a `prev` con hasta 5 sesiones posteriores. El usuario coloca entrada (compra en ruptura, por encima del último cierre), stop y objetivo; la semana siguiente ve el resultado en R. `simulate()` (app.js) usa reglas conservadoras: hueco a la apertura, stop antes que objetivo el mismo día, valoración al último cierre si sigue abierta. Sus casos límite están en el test.
 - Botones "Desbloquear todo" y "Reiniciar progreso" al final del inicio: solo para desarrollo, retirar antes de publicar.
 
 ## Tareas pendientes (por orden sugerido)
@@ -98,6 +101,7 @@ Sistema de tokens en `src/styles.css` (`:root`, con variante oscura por `prefers
 0. Ruta Básico: 8 unidades hechas (acciones y órdenes, rentabilidad y riesgo, leer un gráfico, ETF e índices, impuestos en España, cuenta y bróker; complementarias: inversión pasiva y renta fija). Revisar cada año los tramos y normas fiscales de la unidad «Impuestos en España» y «Cuenta y bróker».
 1. Contenido técnico: unidades 1-15 hechas (velas, tendencia, riesgo, catalizadores binarios, Wyckoff/VSA, VCP, salidas escalonadas, riesgo de cartera, cortos y Fase 4, mercado general, fuerza relativa, techos y temporalidades, grupos y gaps, psicología y diario, opciones para cubrir). Ideas siguientes: backtesting de un sistema.
 1b. Ruta fundamental: F1-F8 hechas (F1-F3, F5 y F6 con casos reales; F8 macro). Ideas siguientes: dividendos y recompras, lectura de la guía de la empresa.
+1c. Ideas de producto: retos del día y avisos de racha por Telegram con el bot del repo; historial de resultados del simulador (R acumulado).
 2. Tipos de ejercicio: `order`, `match` y `plan` hechos. Ideas: marcar una zona (rango, base) arrastrando dos líneas, o elegir el tamaño de posición con un deslizador.
 3. Repaso espaciado: hecho. Posible mejora: avisar de la racha de repaso y mostrar cuántos ejercicios están «aprendidos».
 4. Persistencia real (cuentas, sincronización): comparativa y recomendación (Supabase) en `docs/persistencia.md`, pendiente de decisión. No exige cambiar de stack: se añade `src/sync.js` y se sigue en vanilla.

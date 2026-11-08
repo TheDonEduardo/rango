@@ -18,7 +18,8 @@ export function candlesSVG(sp,st){
   (sp.levels||[]).forEach(l=>vals.push(l.y));
   (sp.lines||[]).forEach(l=>vals.push(l.y));
   const planMode=st&&st.mode==='plan';
-  if(planMode)st.place.forEach(p=>vals.push(p.a,p.start));
+  // La escala incluye la respuesta (si la hay) y la posición actual de cada línea.
+  if(planMode)st.place.forEach(p=>[p.a,p.start,st.vals&&st.vals[p.id]].forEach(v=>{if(typeof v==='number')vals.push(v)}));
   const VH=sp.vol?48:0,pbP=pb+(VH?VH+14:0),vmax=VH?Math.max(...sp.vol):1;
   const sc=scaleOf(vals,H,pt,pbP),y=sc.y;
   const n=d.length,cw=(W-pl-pr)/n,bw=Math.min(24,cw*0.56);
@@ -30,6 +31,8 @@ export function candlesSVG(sp,st){
   sc.ticks.forEach(t=>{s+=`<line class="grid" x1="${pl}" x2="${W-pr}" y1="${y(t).toFixed(1)}" y2="${y(t).toFixed(1)}"/><text x="${W-pr+6}" y="${(y(t)+3.5).toFixed(1)}">${fmt(t,sc.dec)}</text>`});
   if(VH)s+=`<line class="grid" x1="${pl}" x2="${W-pr}" y1="${H-pb}" y2="${H-pb}"/><text x="${W-pr+6}" y="${(H-pb-VH/2+3.5).toFixed(1)}">Vol.</text>`;
   (sp.lines||[]).forEach(l=>{s+=`<line class="ref" x1="${pl}" x2="${W-pr}" y1="${y(l.y).toFixed(1)}" y2="${y(l.y).toFixed(1)}"/>`});
+  // split: separa las velas «de antes» de las que llegaron después (resultado del simulador).
+  if(sp.split!=null){const xs=(pl+cw*sp.split).toFixed(1);s+=`<line class="split" x1="${xs}" x2="${xs}" y1="${pt}" y2="${H-pb}"/><text class="splitt" x="${(+xs+4).toFixed(1)}" y="${pt+10}">Después</text>`}
   d.forEach((c,i)=>{
     const [op,hi,lo,cl]=c,cx=pl+cw*i+cw/2,up=cl>=op;
     const top=y(Math.max(op,cl)),bot=y(Math.min(op,cl)),bh=Math.max(1.6,bot-top);
@@ -52,12 +55,13 @@ export function candlesSVG(sp,st){
     s+=`<g class="lv ${lvMode?cls(l.id):''}" data-id="${l.id}" tabindex="0" role="button" aria-label="Nivel ${l.id}"><line class="lvl" x1="${pl}" x2="${W-pr}" y1="${yy}" y2="${yy}"/><rect class="hit" x="0" y="${(y(l.y)-13).toFixed(1)}" width="${W-pr}" height="26"/><g class="tag"><circle cx="18" cy="${yy}" r="11"/><text x="18" y="${(y(l.y)+4).toFixed(1)}">${l.id}</text></g></g>`;
   });
   if(planMode)st.place.forEach(p=>{
-    const v=st.vals[p.id],ok=Math.abs(v-p.a)<=planTol(p)+1e-9;
-    if(st.checked&&!ok){const ya=y(p.a).toFixed(1);s+=`<g class="pl-ans"><line x1="${pl}" x2="${W-pr}" y1="${ya}" y2="${ya}"/><text class="reft" x="${W-pr-4}" y="${(y(p.a)-5).toFixed(1)}">${esc(p.label)} correcto: ${fmt(p.a)}</text></g>`}
-    s+=`<g class="pl pl-${p.id}${st.checked?(ok?' good':' bad'):''}" data-id="${p.id}" transform="translate(0 ${y(v).toFixed(1)})"${st.checked?'':` tabindex="0" role="slider" aria-label="${esc(p.label)}" aria-valuenow="${v}" aria-valuetext="${esc(p.label)} ${fmt(v)}"`}>`
+    // fijo: líneas que solo se muestran (resultado del simulador); sin respuesta, no hay bien/mal.
+    const v=st.vals[p.id],conA=typeof p.a==='number',ok=conA&&Math.abs(v-p.a)<=planTol(p)+1e-9,quieto=st.checked||st.fijo;
+    if(st.checked&&conA&&!ok){const ya=y(p.a).toFixed(1);s+=`<g class="pl-ans"><line x1="${pl}" x2="${W-pr}" y1="${ya}" y2="${ya}"/><text class="reft" x="${W-pr-4}" y="${(y(p.a)-5).toFixed(1)}">${esc(p.label)} correcto: ${fmt(p.a)}</text></g>`}
+    s+=`<g class="pl pl-${p.id}${st.checked&&conA?(ok?' good':' bad'):''}${st.fijo?' fijo':''}" data-id="${p.id}" transform="translate(0 ${y(v).toFixed(1)})"${quieto?'':` tabindex="0" role="slider" aria-label="${esc(p.label)}" aria-valuenow="${v}" aria-valuetext="${esc(p.label)} ${fmt(v)}"`}>`
       +`<rect class="hit" x="0" y="-16" width="${W}" height="32"/><line x1="${pl}" x2="${W-pr}" y1="0" y2="0"/>`
       +`<rect class="pill" x="${pl}" y="-11" width="104" height="22" rx="11"/><text class="pt" x="${pl+52}" y="4">${esc(p.label)} ${fmt(v)}</text>`
-      +`<path class="grip" d="M${W-pr-16} -4h12M${W-pr-16} 0h12M${W-pr-16} 4h12"/></g>`;
+      +(quieto?'':`<path class="grip" d="M${W-pr-16} -4h12M${W-pr-16} 0h12M${W-pr-16} 4h12"/>`)+'</g>';
   });
   return s+'</svg>';
 }

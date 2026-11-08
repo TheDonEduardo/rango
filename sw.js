@@ -15,6 +15,7 @@ const PRECACHE = [
   'src/styles.css',
   'src/content/units.json',
   'src/content/casos.json',
+  'src/content/semana.json',
   'icons/icon-192.png',
   'icons/icon-512.png',
   'icons/maskable-512.png',

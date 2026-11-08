@@ -2,9 +2,9 @@
 import {KEY,GOAL,RH,OFFS,fmt,esc,today,yest,addDays,shuffle,parseNum,planTol,planStep} from './util.js';
 import {P,ico,icoX,icoOk,LOGO} from './icons.js';
 import {candlesSVG,lineSVG,glyph} from './charts.js';
-import {UNITS,FLAT,CASOS,TRACKS,EXBYID,PLACEMENT,trackOf,exCount} from './content.js';
+import {UNITS,FLAT,CASOS,SEMANA,TRACKS,EXBYID,PLACEMENT,trackOf,exCount} from './content.js';
 
-const DEF=()=>({xp:0,streak:0,last:null,day:null,dayXp:0,done:{},all:false,track:'basico',skipBasics:false,legal:0,srs:{}});
+const DEF=()=>({xp:0,streak:0,last:null,day:null,dayXp:0,done:{},all:false,track:'basico',skipBasics:false,legal:0,srs:{},sim:{}});
 // Sube LEGAL_V si cambia el texto del aviso: se vuelve a pedir la aceptación.
 const LEGAL_V=1;
 // Repaso espaciado: días hasta la siguiente aparición tras cada acierto. Tras el último, sale de la lista.
@@ -15,6 +15,9 @@ const SRS_L={id:'srs',title:'Repaso del día',kind:'srs'};
 // acertadas queda marcada como completada.
 const TEST_L={id:'test',title:'Test de nivel',kind:'test'};
 const TEST_PASS=10;
+// Operación de la semana (simulador con velas reales de semana.json).
+const SIM_PLACE=[{id:'entry',label:'Entrada'},{id:'stop',label:'Stop'},{id:'target',label:'Objetivo'}];
+let simDraft=null;
 function load(){
   try{const j=JSON.parse(localStorage.getItem(KEY));if(j&&typeof j==='object')return Object.assign(DEF(),j)}catch(e){}
   return DEF();
@@ -64,12 +67,15 @@ function toast(msg){
 }
 
 
+function fineHTML(place){
+  return `<div class="pfine">${place.map(p=>`<div class="pf pl-${p.id}"><span>${esc(p.label)}</span><button data-act="pstep" data-id="${p.id}" data-d="-1" aria-label="Bajar ${esc(p.label)}">−</button><button data-act="pstep" data-id="${p.id}" data-d="1" aria-label="Subir ${esc(p.label)}">+</button></div>`).join('')}</div>`;
+}
 function chartHTML(ex){
   const sp=ex.chart;if(!sp)return'';
   let st=null;
   if(ex.t==='tap'||ex.t==='level')st={mode:ex.t,sel:run.sel,checked:run.checked,a:ex.a};
   if(ex.t==='plan'){if(!run.sel)run.sel=Object.fromEntries(ex.place.map(p=>[p.id,p.start]));st={mode:'plan',vals:run.sel,checked:run.checked,place:ex.place}}
-  const fine=ex.t==='plan'&&!run.checked?`<div class="pfine">${ex.place.map(p=>`<div class="pf pl-${p.id}"><span>${esc(p.label)}</span><button data-act="pstep" data-id="${p.id}" data-d="-1" aria-label="Bajar ${esc(p.label)}">−</button><button data-act="pstep" data-id="${p.id}" data-d="1" aria-label="Subir ${esc(p.label)}">+</button></div>`).join('')}</div>`:'';
+  const fine=ex.t==='plan'&&!run.checked?fineHTML(ex.place):'';
   return `<figure class="chart">${sp.type==='line'?lineSVG(sp):candlesSVG(sp,st)}</figure>${fine}`;
 }
 // Texto de ejercicio: escapa y une cada número con su unidad (26,00 €, 12 %, 3R…) para que no se separen al saltar de línea.
@@ -92,6 +98,7 @@ function homeHTML(){
   const TF=FLAT.filter(l=>trackOf(l.unit)===S.track);
   if(S.track!=='basico'&&!advancedOpen())h+=`<section class="gate"><p>Esta ruta se abre al completar <b>Conceptos básicos</b>.</p><div class="row"><button class="btn line" data-act="track" data-track="basico">Ir a los básicos</button><button class="btn ghost" data-act="skipbasics">Ya opero: saltar los básicos</button></div></section>`;
   if(S.track==='basico'&&!S.placement&&!Object.keys(S.done).length)h+=`<section class="test" aria-label="Test de nivel"><div><b>¿Ya sabes de bolsa?</b><span>Haz el test de nivel: ${PLACEMENT.length} preguntas, unos 5 minutos. Marcaremos lo que ya dominas y, si aciertas casi todo, se abren Técnico y Fundamental.</span></div><div class="row"><button class="btn primary" data-act="test">Hacer el test</button><button class="btn ghost" data-act="notest">Empezar desde cero</button></div></section>`;
+  if(S.track==='tecnico'&&SEMANA&&advancedOpen())h+=simCardHTML();
   const due=srsDue().length;
   if(due)h+=`<section class="srs" aria-label="Repaso del día"><div><b>Repaso del día</b><span>${due} ${due===1?'ejercicio que fallaste':'ejercicios que fallaste'}</span></div><button class="btn primary" data-act="srs">Repasar</button></section>`;
   UNITS.filter(u=>trackOf(u)===S.track).forEach(u=>{
@@ -201,6 +208,83 @@ function installHTML(){
   if(nav&&/iP(hone|ad|od)/.test(nav.userAgent||'')&&!nav.standalone)return '<p>Para instalar Rango en tu iPhone: botón Compartir y «Añadir a pantalla de inicio».</p>';
   return '';
 }
+// ---------- Operación de la semana ----------
+// Simula un plan de compra en ruptura sobre las sesiones posteriores. Reglas conservadoras:
+// la entrada se activa al tocarla (si abre por encima con hueco, a la apertura); el stop y el objetivo igual;
+// si un mismo día toca stop y objetivo, cuenta el stop; si sigue abierta al final, se valora al último cierre.
+export function simulate(plan,velas){
+  const {entry,stop,target}=plan,risk=entry-stop;let fill=null,dEnt=null;
+  for(let i=0;i<velas.length;i++){
+    const [o,h,l,c]=velas[i];
+    if(fill===null){
+      if(h<entry)continue;
+      fill=o>entry?o:entry;dEnt=i;
+      if(l<=stop)return {estado:'stop',fill,exit:stop,dEnt,dSal:i,r:(stop-fill)/risk};
+      if(c>=target&&o>=target)return {estado:'objetivo',fill,exit:o,dEnt,dSal:i,r:(o-fill)/risk};
+      if(h>=target)return {estado:'objetivo',fill,exit:target,dEnt,dSal:i,r:(target-fill)/risk};
+      continue;
+    }
+    if(l<=stop){const x=o<stop?o:stop;return {estado:'stop',fill,exit:x,dEnt,dSal:i,r:(x-fill)/risk}}
+    if(h>=target){const x=o>target?o:target;return {estado:'objetivo',fill,exit:x,dEnt,dSal:i,r:(x-fill)/risk}}
+  }
+  if(fill===null)return {estado:'sin entrada',r:0};
+  const x=velas[velas.length-1][3];
+  return {estado:'abierta',fill,exit:x,dEnt,dSal:velas.length-1,r:(x-fill)/risk};
+}
+const fR=r=>(r>0?'+':r<0?'−':'')+fmt(Math.abs(r),1)+'R';
+const simLast=()=>SEMANA.data[SEMANA.data.length-1][3];
+const fechaES=iso=>iso.split('-').reverse().join('/');
+function simStart(){
+  const c=simLast(),st=SEMANA.step,sn=v=>Math.round(Math.round(v/st)*st*100)/100;
+  return {entry:sn(c*1.03),stop:sn(c*0.95),target:sn(c*1.12)};
+}
+function simValid(p){return p.stop<p.entry&&p.entry<p.target&&p.entry>simLast()}
+function simInfoHTML(){
+  const p=simDraft,m=SEMANA.moneda;
+  if(!(p.stop<p.entry&&p.entry<p.target))return '<p class="warn">Coloca el stop por debajo de la entrada y el objetivo por encima.</p>';
+  if(p.entry<=simLast())return `<p class="warn">La entrada es una compra en ruptura: ponla por encima del último cierre (${fmt(simLast())} ${m}).</p>`;
+  const risk=p.entry-p.stop;
+  return `<dl class="simk"><div><dt>Riesgo por acción</dt><dd>${fmt(risk)} ${m} · ${fmt(risk/p.entry*100,1)} %</dd></div><div><dt>Beneficio/riesgo</dt><dd>${fmt((p.target-p.entry)/risk,1)}R</dd></div></dl>`;
+}
+function simInfo(){
+  const box=$app.querySelector('#simInfo');if(box)box.innerHTML=simInfoHTML();
+  const b=$app.querySelector('[data-act=simsave]');if(b)b.disabled=!simValid(simDraft);
+}
+function simCardHTML(){
+  const P=SEMANA.prev,mio=P&&S.sim[P.semana];
+  let h='<section class="sim" aria-label="Operación de la semana"><b>Operación de la semana</b>';
+  if(mio&&P.despues&&P.despues.length){const r=simulate(mio.plan,P.despues);h+=`<div class="simrow"><span>Semana pasada, ${esc(P.nombre)}: <b class="${r.r>0?'up':r.r<0?'dn':''}">${r.estado==='sin entrada'?'sin entrada':fR(r.r)}</b></span><button class="btn ghost" data-act="simres">Ver resultado</button></div>`}
+  const guardado=S.sim[SEMANA.semana];
+  h+=`<div class="simrow"><span>${guardado?`Tu plan para ${esc(SEMANA.nombre)} está guardado. El resultado, el próximo sábado.`:`Monta tu operación sobre el gráfico real de ${esc(SEMANA.nombre)} (${esc(SEMANA.ticker)}).`}</span><button class="btn ${guardado?'ghost':'primary'}" data-act="sim">${guardado?'Ver o cambiar':'Empezar'}</button></div>`;
+  return h+'</section>';
+}
+function simHTML(){
+  const W=SEMANA,g=S.sim[W.semana];
+  if(!simDraft)simDraft=g?Object.assign({},g.plan):simStart();
+  const sp={type:'candles',data:W.data,vol:W.vol,h:300,alt:`Gráfico diario de ${W.nombre} con las líneas de tu plan`};
+  return `<div class="lesson sim-view"><div class="lbar"><button class="x" data-act="home" aria-label="Volver al inicio">${icoX}</button><p class="kind">Operación de la semana</p></div>
+  <div class="qwrap"><h2 class="q">${esc(W.nombre)} (${esc(W.ticker)})</h2>
+  <p class="intro">Plan de compra en ruptura: coloca la entrada por encima del último cierre, el stop y el objetivo. El sábado que viene verás qué habría pasado con las velas reales.</p>
+  <figure class="chart">${candlesSVG(sp,{mode:'plan',vals:simDraft,checked:false,place:SIM_PLACE})}</figure>${fineHTML(SIM_PLACE)}
+  <div id="simInfo" class="siminfo" aria-live="polite">${simInfoHTML()}</div>
+  <p class="src">Velas diarias de ${esc(W.fuente)} hasta el ${fechaES(W.hasta)}. Último cierre: ${fmt(simLast())} ${W.moneda}. Es formación, no una recomendación.</p></div>
+  <div><button class="btn primary" data-act="simsave"${simValid(simDraft)?'':' disabled'}>${g?'Guardar cambios':'Guardar mi plan'}</button></div></div>`;
+}
+function simResHTML(){
+  const P=SEMANA.prev,plan=S.sim[P.semana].plan,r=simulate(plan,P.despues),m=P.moneda;
+  const dia=i=>`la sesión ${i+1}`;
+  const txt=r.estado==='sin entrada'?`El precio no llegó a tu entrada de ${fmt(plan.entry)} ${m}: la orden no se ejecutó. Ni ganas ni pierdes.`
+    :r.estado==='stop'?`Entraste a ${fmt(r.fill)} ${m} en ${dia(r.dEnt)} y saltó el stop en ${dia(r.dSal)}, a ${fmt(r.exit)} ${m}.`
+    :r.estado==='objetivo'?`Entraste a ${fmt(r.fill)} ${m} en ${dia(r.dEnt)} y alcanzaste el objetivo en ${dia(r.dSal)}, a ${fmt(r.exit)} ${m}.`
+    :`Entraste a ${fmt(r.fill)} ${m} en ${dia(r.dEnt)} y al último cierre (${fmt(r.exit)} ${m}) la operación seguía abierta.`;
+  const sp={type:'candles',data:P.data.concat(P.despues),h:300,split:P.data.length,alt:`Gráfico diario de ${P.nombre} con tu plan y las sesiones posteriores`};
+  return `<div class="lesson sim-view"><div class="lbar"><button class="x" data-act="home" aria-label="Volver al inicio">${icoX}</button><p class="kind">Resultado de la semana pasada</p></div>
+  <div class="qwrap"><h2 class="q">${esc(P.nombre)} (${esc(P.ticker)}): <span class="${r.r>0?'up':r.r<0?'dn':''}">${r.estado==='sin entrada'?'sin entrada':fR(r.r)}</span></h2>
+  <figure class="chart">${candlesSVG(sp,{mode:'plan',vals:plan,fijo:true,place:SIM_PLACE})}</figure>
+  <p class="intro">${txt}</p>
+  <p class="src">${P.despues.length} sesiones reales después del ${fechaES(P.hasta)}. Si un día tocaba stop y objetivo, se cuenta el stop; con hueco, se ejecuta a la apertura.</p></div>
+  <div><button class="btn primary" data-act="home">Continuar</button></div></div>`;
+}
 function legalHTML(first){
   return `<div class="res legal"><div class="res-main"><h1>${first?'Antes de empezar':'Aviso legal'}</h1>
   <p>Rango es una herramienta de formación. Nada de lo que ves es asesoramiento financiero ni una recomendación de comprar o vender ningún valor.</p>
@@ -234,7 +318,7 @@ function failHTML(){
 function render(){
   const needLegal=S.legal<LEGAL_V;
   if(view==='home'&&needLegal){$app.innerHTML=legalHTML(true);window.scrollTo(0,0);return}
-  $app.innerHTML=view==='home'?homeHTML():view==='legal'?legalHTML(false):view==='lesson'?lessonHTML():view==='result'?resultHTML():failHTML();
+  $app.innerHTML=view==='home'?homeHTML():view==='legal'?legalHTML(false):view==='sim'?simHTML():view==='simres'?simResHTML():view==='lesson'?lessonHTML():view==='result'?resultHTML():failHTML();
   if(view==='home'){
     if(goCur){const n=$app.querySelector('.node.current');if(n)n.scrollIntoView({block:'center'});goCur=false}
     else window.scrollTo(0,homeY);
@@ -307,14 +391,22 @@ function pickChoice(i){
 }
 // Ejercicio «plan»: arrastrar líneas (ratón, dedo) o moverlas con las flechas del teclado.
 let drag=null;
+// Contexto de las líneas arrastrables: ejercicio plan de una lección o la Operación de la semana.
+function planCtx(){
+  if(view==='sim'&&simDraft)return {place:SIM_PLACE,step:SEMANA.step,vals:simDraft,after:simInfo};
+  if(view==='lesson'&&run&&!run.checked&&run.queue[0].t==='plan'){const ex=run.queue[0];return {place:ex.place,step:planStep(ex),vals:run.sel}}
+  return null;
+}
 function planSet(g,v){
-  const ex=run.queue[0],svg=g.ownerSVGElement,d=svg.dataset,lo=+d.lo,hi=+d.hi;
-  const st=planStep(ex);v=Math.round(Math.min(hi,Math.max(lo,v))/st)*st;v=Math.round(v*100)/100;
-  const id=g.dataset.id,p=ex.place.find(q=>q.id===id);
-  run.sel[id]=v;
+  const ctx=planCtx();if(!ctx)return;
+  const svg=g.ownerSVGElement,d=svg.dataset,lo=+d.lo,hi=+d.hi;
+  const st=ctx.step;v=Math.round(Math.min(hi,Math.max(lo,v))/st)*st;v=Math.round(v*100)/100;
+  const id=g.dataset.id,p=ctx.place.find(q=>q.id===id);
+  ctx.vals[id]=v;
   g.setAttribute('transform',`translate(0 ${(+d.top+(hi-v)/(hi-lo)*+d.ph).toFixed(1)})`);
   g.querySelector('.pt').textContent=p.label+' '+fmt(v);
   g.setAttribute('aria-valuenow',v);g.setAttribute('aria-valuetext',p.label+' '+fmt(v));
+  if(ctx.after)ctx.after();
 }
 function planMove(e){
   const g=drag.g,svg=g.ownerSVGElement,d=svg.dataset,pt=svg.createSVGPoint();
@@ -324,7 +416,7 @@ function planMove(e){
 }
 $app.addEventListener('pointerdown',e=>{
   const g=e.target.closest&&e.target.closest('.pl');
-  if(!g||view!=='lesson'||run.checked||run.queue[0].t!=='plan')return;
+  if(!g||!planCtx())return;
   e.preventDefault();drag={g};g.classList.add('drag');
   try{g.setPointerCapture(e.pointerId)}catch(_){}
   planMove(e);
@@ -349,7 +441,10 @@ $app.addEventListener('click',e=>{
     homeY=window.scrollY;startRun(L);
   }
   else if(a==='pick'&&!run.checked)pickChoice(+b.dataset.i);
-  else if(a==='pstep'&&!run.checked){const g=$app.querySelector(`.pl[data-id="${b.dataset.id}"]`);if(g)planSet(g,run.sel[b.dataset.id]+(+b.dataset.d)*planStep(run.queue[0]))}
+  else if(a==='pstep'){const c=planCtx(),g=$app.querySelector(`.pl[data-id="${b.dataset.id}"]`);if(c&&g)planSet(g,c.vals[b.dataset.id]+(+b.dataset.d)*c.step)}
+  else if(a==='sim'){homeY=window.scrollY;simDraft=null;view='sim';render()}
+  else if(a==='simres'){homeY=window.scrollY;view='simres';render()}
+  else if(a==='simsave'&&simDraft&&simValid(simDraft)){S.sim[SEMANA.semana]={ticker:SEMANA.ticker,plan:Object.assign({},simDraft),fecha:today()};save();simDraft=null;view='home';render();toast('Plan guardado. El sábado que viene verás el resultado.')}
   else if(a==='opick'&&!run.checked){
     const n=ordItems(run.queue[0]).length;if(!run.sel)run.sel=Array(n).fill(null);
     const k=run.sel.indexOf(null);if(k>=0){run.sel[k]=+b.dataset.i;updateOrd()}
@@ -357,7 +452,7 @@ $app.addEventListener('click',e=>{
   else if(a==='ounpick'&&!run.checked){run.sel[+b.dataset.k]=null;updateOrd()}
   else if(a==='check'&&!b.disabled)check();
   else if(a==='next')next();
-  else if(a==='quit'||a==='home'){view='home';goCur=(a==='home');render()}
+  else if(a==='quit'||a==='home'){const deSim=view==='sim'||view==='simres';simDraft=null;view='home';goCur=(a==='home'&&!deSim);render()}
   else if(a==='retry')startRun(run.L);
   else if(a==='legal'){homeY=window.scrollY;view='legal';render()}
   else if(a==='legalok'){S.legal=LEGAL_V;save();homeY=0;render()}
@@ -379,14 +474,15 @@ $app.addEventListener('input',e=>{
   const c=$app.querySelector('[data-act=check]');if(c)c.disabled=run.val.trim()==='';
 });
 document.addEventListener('keydown',e=>{
-  if(view!=='lesson')return;
+  if(view!=='lesson'&&view!=='sim')return;
   const t=e.target;
   if((e.key==='Enter'||e.key===' ')&&t.closest&&t.closest('.cd[tabindex],.lv')&&!run.checked){e.preventDefault();pickSvg(t.closest('.cd,.lv'));return}
-  const pg=t.closest&&t.closest('.pl');
-  if(pg&&!run.checked&&run.queue[0].t==='plan'){
+  const pg=t.closest&&t.closest('.pl'),pc=pg&&planCtx();
+  if(pc){
     const k={ArrowUp:1,ArrowRight:1,ArrowDown:-1,ArrowLeft:-1,PageUp:10,PageDown:-10}[e.key];
-    if(k){e.preventDefault();planSet(pg,run.sel[pg.dataset.id]+k*planStep(run.queue[0]));return}
+    if(k){e.preventDefault();planSet(pg,pc.vals[pg.dataset.id]+k*pc.step);return}
   }
+  if(view==='sim')return;
   // Enter mantenido (auto-repetición) no debe comprobar y saltar la explicación de un golpe.
   if(e.key==='Enter'&&e.repeat)return;
   if(e.key==='Enter'&&(!t.closest||!t.closest('button'))){
@@ -408,4 +504,4 @@ if(typeof navigator!=='undefined'&&'serviceWorker' in navigator&&typeof location
 
 
 // API mínima para tests (test/smoke.mjs)
-export const api={FLAT,CASOS,PLACEMENT,startTest:()=>startRun(TEST_L),srsDue,acceptLegal:()=>{S.legal=LEGAL_V},startSrs:()=>startRun(SRS_L),setTrack:t=>{S.track=t},skipBasics:()=>{S.skipBasics=true},homeHTML,startRun,lessonHTML,check,next,resultHTML,failHTML,render,getRun:()=>run,setSel:v=>{run.sel=v},setVal:v=>{run.val=v},getState:()=>S};
+export const api={FLAT,CASOS,SEMANA,PLACEMENT,simulate,openSim:()=>{simDraft=null;view='sim';render()},openSimRes:()=>{view='simres';render()},simDraftSet:p=>{simDraft=p},simSave:()=>{S.sim[SEMANA.semana]={ticker:SEMANA.ticker,plan:Object.assign({},simDraft),fecha:today()}},goHome:()=>{view='home';render()},startTest:()=>startRun(TEST_L),srsDue,acceptLegal:()=>{S.legal=LEGAL_V},startSrs:()=>startRun(SRS_L),setTrack:t=>{S.track=t},skipBasics:()=>{S.skipBasics=true},homeHTML,startRun,lessonHTML,check,next,resultHTML,failHTML,render,getRun:()=>run,setSel:v=>{run.sel=v},setVal:v=>{run.val=v},getState:()=>S};
