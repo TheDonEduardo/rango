@@ -97,7 +97,7 @@ Sistema de tokens en `src/styles.css` (`:root`, con variante oscura por `prefers
 1b. Ruta fundamental: F1-F5 hechas (F1-F3 y F5 con casos reales). Ideas siguientes: sectores (cíclicos, defensivos, tecnología) y calidad del negocio (ROIC, ventajas competitivas).
 2. Tipos de ejercicio: `order`, `match` y `plan` hechos. Ideas: marcar una zona (rango, base) arrastrando dos líneas, o elegir el tamaño de posición con un deslizador.
 3. Repaso espaciado: hecho. Posible mejora: avisar de la racha de repaso y mostrar cuántos ejercicios están «aprendidos».
-4. Persistencia real (cuentas, sincronización) y decidir stack: vanilla actual frente a Vite + TypeScript. Migrar solo cuando el contenido y los tipos de ejercicio se estabilicen.
+4. Persistencia real (cuentas, sincronización): comparativa y recomendación (Supabase) en `docs/persistencia.md`, pendiente de decisión. No exige cambiar de stack: se añade `src/sync.js` y se sigue en vanilla.
 5. PWA instalable: hecho (manifiesto, iconos, uso sin conexión, botón de instalar). Avisos de racha: necesitan notificaciones push con servidor; van con el punto 4.
 6. Aviso legal: hecho. Revisarlo con un profesional antes de publicar.
 7. Fuera de Rango, en el bot del repo: `portfolio_manager.py` lleva la clave de Gemini escrita en el código. Revocarla, crear otra, guardarla como secreto de GitHub y leerla del entorno.
