@@ -793,6 +793,1030 @@
     ]
   },
   {
+    "n": 8,
+    "id": "bolsa",
+    "track": "basico",
+    "title": "Cómo funciona la bolsa",
+    "blurb": "Quién compra, quién vende y cómo se forma el precio.",
+    "gate": false,
+    "lessons": [
+      {
+        "id": "bj1",
+        "title": "Mercado primario y secundario",
+        "ex": [
+          {
+            "t": "match",
+            "q": "Empareja cada pieza del mercado con lo que es.",
+            "pairs": [
+              [
+                "Salida a bolsa (OPV)",
+                "La empresa vende acciones por primera vez"
+              ],
+              [
+                "Mercado secundario",
+                "Los inversores compran y venden entre sí"
+              ],
+              [
+                "Bróker",
+                "Intermediario que lleva tu orden al mercado"
+              ],
+              [
+                "Índice bursátil",
+                "Media de un grupo de acciones, como el IBEX 35"
+              ]
+            ],
+            "why": "La empresa solo recibe dinero en la salida a bolsa o al emitir acciones nuevas; el resto del tiempo, el dinero pasa de un inversor a otro."
+          },
+          {
+            "t": "choice",
+            "q": "Compras acciones de una empresa en bolsa un martes cualquiera. ¿A quién le pagas?",
+            "opts": [
+              "A otro inversor que las vende",
+              "A la propia empresa emisora",
+              "Al Banco de España",
+              "A la CNMV"
+            ],
+            "a": 0,
+            "why": "En el mercado secundario el dinero va al vendedor; la empresa solo lo recibe cuando emite acciones nuevas, como en una OPV."
+          },
+          {
+            "t": "num",
+            "q": "Una empresa tiene 50 millones de acciones a 12 €. ¿Cuál es su capitalización, en millones de euros?",
+            "unit": "",
+            "a": 600,
+            "why": "50 millones × 12 € = 600 millones de euros: lo que vale toda la empresa en bolsa."
+          },
+          {
+            "t": "choice",
+            "q": "¿Qué determina el precio de una acción en cada momento?",
+            "opts": [
+              "El acuerdo entre compradores y vendedores",
+              "Lo fija la empresa cada mañana",
+              "Lo fija la CNMV cada día",
+              "El valor contable de la empresa"
+            ],
+            "a": 0,
+            "why": "El precio es el último al que alguien compró y otro vendió: si hay más compradores dispuestos a pagar más, sube."
+          }
+        ]
+      },
+      {
+        "id": "bj2",
+        "title": "Órdenes y horquilla",
+        "ex": [
+          {
+            "t": "match",
+            "q": "Empareja cada término de la operativa con su significado.",
+            "pairs": [
+              [
+                "Orden a mercado",
+                "Se ejecuta ya al mejor precio disponible"
+              ],
+              [
+                "Orden limitada",
+                "Solo se ejecuta a tu precio o mejor"
+              ],
+              [
+                "Horquilla (spread)",
+                "Diferencia entre precio de compra y de venta"
+              ],
+              [
+                "Subasta de apertura",
+                "Fija el primer precio del día"
+              ]
+            ],
+            "why": "La orden a mercado asegura que compras pero no el precio; la limitada asegura el precio pero no que compres."
+          },
+          {
+            "t": "num",
+            "q": "La mejor oferta de venta está a 10,05 € y la mejor de compra, a 10,00 €. ¿Cuántos céntimos de horquilla hay?",
+            "unit": "",
+            "a": 5,
+            "why": "10,05 − 10,00 = 0,05 €: 5 céntimos por acción."
+          },
+          {
+            "t": "num",
+            "q": "Con esa horquilla, compras y vendes al instante 1.000 acciones. ¿Cuántos euros pierdes solo por la horquilla?",
+            "unit": "€",
+            "a": 50,
+            "why": "1.000 × 0,05 € = 50 €, aunque el precio no se haya movido."
+          },
+          {
+            "t": "choice",
+            "q": "Una acción poco negociada tiene una horquilla de 10,00 € / 10,40 €. ¿Qué orden usas?",
+            "opts": [
+              "Una limitada al precio que aceptes",
+              "A mercado, para ir más rápido",
+              "Da igual el tipo de orden",
+              "Ninguna: no se puede comprar"
+            ],
+            "a": 0,
+            "why": "A mercado pagarías 10,40 €, un 4 % por encima del precio de compra; con una limitada controlas lo que pagas."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "id": "dinero",
+    "track": "basico",
+    "title": "El dinero y el interés",
+    "blurb": "Interés simple y compuesto, TIN, TAE e IPC.",
+    "gate": false,
+    "lessons": [
+      {
+        "id": "bk1",
+        "title": "Interés simple y compuesto",
+        "ex": [
+          {
+            "t": "num",
+            "q": "Depositas 1.000 € al 5 % de interés simple durante 3 años. ¿Cuántos euros de intereses cobras?",
+            "unit": "€",
+            "a": 150,
+            "why": "1.000 × 5 % = 50 € cada año; 50 × 3 = 150 €."
+          },
+          {
+            "t": "num",
+            "q": "Ahora al 5 % compuesto durante 3 años. ¿Cuántos euros de intereses cobras? (dos decimales)",
+            "unit": "€",
+            "a": 157.63,
+            "why": "1.000 × 1,05³ = 1.157,63 €: 7,63 € más que con interés simple, porque los intereses también rinden.",
+            "tol": 0.01
+          },
+          {
+            "t": "num",
+            "q": "Regla del 72: ¿en cuántos años se duplica tu dinero al 6 % anual?",
+            "unit": "",
+            "a": 12,
+            "why": "72 / 6 = 12 años. Al 3 % tardaría el doble, 24 años."
+          },
+          {
+            "t": "choice",
+            "q": "¿Por qué se dice que el interés compuesto es «interés sobre interés»?",
+            "opts": [
+              "Los intereses ganados también generan intereses",
+              "El banco te cobra comisión dos veces",
+              "Se pagan impuestos dos veces al año",
+              "Solo funciona con las hipotecas"
+            ],
+            "a": 0,
+            "why": "Al 5 %, el primer año ganas 50 € sobre 1.000 €; el segundo, 52,50 € sobre 1.050 €. La diferencia crece cada año."
+          }
+        ]
+      },
+      {
+        "id": "bk2",
+        "title": "TIN, TAE e IPC",
+        "ex": [
+          {
+            "t": "match",
+            "q": "Empareja cada sigla o institución con su significado.",
+            "pairs": [
+              [
+                "TIN",
+                "Tipo de interés nominal, sin gastos"
+              ],
+              [
+                "TAE",
+                "Rendimiento anual con gastos y frecuencia de pago"
+              ],
+              [
+                "IPC",
+                "Índice que mide la subida de los precios"
+              ],
+              [
+                "Banco central",
+                "Fija los tipos de interés oficiales"
+              ]
+            ],
+            "why": "Para comparar productos se usa la TAE, porque incluye comisiones y cada cuánto se pagan los intereses."
+          },
+          {
+            "t": "num",
+            "q": "Una cuenta paga un 3 % TIN con liquidación mensual. ¿Cuál es su TAE? (dos decimales)",
+            "unit": "%",
+            "a": 3.04,
+            "why": "Cada mes paga un 0,25 %: 1,0025¹² − 1 = 3,04 %. Cobrar antes hace que los intereses también rindan."
+          },
+          {
+            "t": "choice",
+            "q": "Sobre 1.000 €, el depósito A paga un 2,9 % TAE y el B, un 3 % TIN anual con 20 € de comisión al año. ¿Cuál rinde más?",
+            "opts": [
+              "El A",
+              "El B",
+              "Rinden igual",
+              "No se puede saber"
+            ],
+            "a": 0,
+            "why": "B paga 30 € y cobra 20 €: 10 € netos, un 1 %; A paga 29 €. Por eso hay que comparar la TAE."
+          },
+          {
+            "t": "num",
+            "q": "La cesta de la compra costaba 100 € y un año después cuesta 104 €. ¿Cuál ha sido la inflación?",
+            "unit": "%",
+            "a": 4,
+            "why": "(104 − 100) / 100 = 4 %: con los mismos euros compras un 4 % menos."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "n": 10,
+    "id": "ahorro",
+    "track": "basico",
+    "title": "Ahorro y presupuesto",
+    "blurb": "Antes de invertir: saber cuánto entra, cuánto sale y cuánto queda.",
+    "gate": false,
+    "lessons": [
+      {
+        "id": "bl1",
+        "title": "El presupuesto",
+        "ex": [
+          {
+            "t": "num",
+            "q": "Ingresas 1.600 € al mes. Con la regla 50/30/20, ¿cuánto destinas al ahorro?",
+            "unit": "€",
+            "a": 320,
+            "why": "El 20 % de 1.600 € son 320 € al mes."
+          },
+          {
+            "t": "num",
+            "q": "Con esos 1.600 €, ¿cuánto quedaría para necesidades, el 50 %?",
+            "unit": "€",
+            "a": 800,
+            "why": "1.600 × 0,5 = 800 € para alquiler, comida y suministros; 480 € para deseos."
+          },
+          {
+            "t": "match",
+            "q": "Empareja cada categoría del presupuesto con un ejemplo.",
+            "pairs": [
+              [
+                "Necesidades",
+                "Alquiler, comida y suministros"
+              ],
+              [
+                "Deseos",
+                "Ocio, restaurantes y viajes"
+              ],
+              [
+                "Ahorro",
+                "Colchón e inversión"
+              ],
+              [
+                "Gasto hormiga",
+                "Pequeños gastos diarios que suman mucho"
+              ]
+            ],
+            "why": "La regla 50/30/20 es una guía para empezar: lo importante es que el ahorro tenga su parte fija."
+          },
+          {
+            "t": "choice",
+            "q": "¿Cuál es la forma más eficaz de ahorrar cada mes?",
+            "opts": [
+              "Transferir el ahorro nada más cobrar",
+              "Ahorrar lo que sobre a fin de mes",
+              "Esperar a ganar más dinero",
+              "Recortar solo en vacaciones"
+            ],
+            "a": 0,
+            "why": "«Págate primero»: si los 320 € salen el día de cobro, gastas lo que queda y no al revés."
+          }
+        ]
+      },
+      {
+        "id": "bl2",
+        "title": "Pequeños gastos, grandes cifras",
+        "ex": [
+          {
+            "t": "num",
+            "q": "Tomas un café de 2 € cada día laborable, unos 20 al mes. ¿Cuántos euros gastas al año?",
+            "unit": "€",
+            "a": 480,
+            "why": "2 € × 20 × 12 = 480 € al año."
+          },
+          {
+            "t": "num",
+            "q": "Pagas una suscripción de 13 € al mes que no usas. ¿Cuántos euros pierdes al año?",
+            "unit": "€",
+            "a": 156,
+            "why": "13 × 12 = 156 € al año por algo que no usas."
+          },
+          {
+            "t": "num",
+            "q": "Ahorras 100 € al mes durante 10 años al 0,5 % mensual. ¿Cuántos miles de euros reúnes? (un decimal)",
+            "unit": "",
+            "a": 16.4,
+            "why": "100 × (1,005¹²⁰ − 1) / 0,005 ≈ 16.388 €, de los que 12.000 € son aportaciones.",
+            "tol": 0.05
+          },
+          {
+            "t": "choice",
+            "q": "No tienes nada ahorrado y quieres empezar a invertir. ¿Qué haces primero?",
+            "opts": [
+              "Reunir un colchón de emergencia",
+              "Comprar acciones con todo",
+              "Pedir un préstamo para invertir",
+              "Esperar a una caída del mercado"
+            ],
+            "a": 0,
+            "why": "Sin colchón, un imprevisto de 1.000 € te obligaría a vender quizá en el peor momento."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "n": 11,
+    "id": "deudas",
+    "track": "basico",
+    "title": "Deudas y tarjetas",
+    "blurb": "Qué cuesta deber dinero y qué deuda pagar antes.",
+    "gate": false,
+    "lessons": [
+      {
+        "id": "bm1",
+        "title": "El coste de deber",
+        "ex": [
+          {
+            "t": "choice",
+            "q": "Tienes varias deudas y dinero extra. ¿Cuál conviene pagar antes?",
+            "opts": [
+              "La de mayor tipo de interés",
+              "La de menor importe siempre",
+              "La hipoteca, siempre",
+              "La más reciente"
+            ],
+            "a": 0,
+            "why": "Cada euro que devuelves de una tarjeta al 20 % «rinde» un 20 % seguro, más de lo que suele dar la bolsa."
+          },
+          {
+            "t": "num",
+            "q": "Debes 2.000 € en una tarjeta al 20 % anual. ¿Cuántos euros de intereses pagas en un año si no devuelves nada?",
+            "unit": "€",
+            "a": 400,
+            "why": "2.000 × 20 % = 400 € al año."
+          },
+          {
+            "t": "num",
+            "q": "Un préstamo de 6.000 € a 3 años tiene cuotas de 190 € al mes. ¿Cuántos euros pagas de intereses en total?",
+            "unit": "€",
+            "a": 840,
+            "why": "190 × 36 = 6.840 €; 6.840 − 6.000 = 840 € de intereses."
+          },
+          {
+            "t": "match",
+            "q": "Empareja cada producto con cómo funciona.",
+            "pairs": [
+              [
+                "Tarjeta de débito",
+                "Cobra directamente de tu cuenta"
+              ],
+              [
+                "Tarjeta de crédito",
+                "Te presta y lo pagas a fin de mes"
+              ],
+              [
+                "Pago revolving",
+                "Cuota fija que alarga la deuda con intereses altos"
+              ],
+              [
+                "Préstamo personal",
+                "Importe fijo devuelto en cuotas"
+              ]
+            ],
+            "why": "La tarjeta de crédito pagada a fin de mes no suele cobrar intereses; la modalidad revolving puede superar el 20 % anual."
+          }
+        ]
+      },
+      {
+        "id": "bm2",
+        "title": "Revolving y prioridades",
+        "ex": [
+          {
+            "t": "num",
+            "q": "Una tarjeta revolving cobra un 2 % al mes y debes 3.000 €. ¿Cuántos euros de intereses genera el primer mes?",
+            "unit": "€",
+            "a": 60,
+            "why": "3.000 × 2 % = 60 € solo de intereses."
+          },
+          {
+            "t": "num",
+            "q": "Si pagas una cuota de 70 € ese mes, ¿cuántos euros de deuda reduces?",
+            "unit": "€",
+            "a": 10,
+            "why": "70 − 60 = 10 €: casi toda la cuota se va en intereses."
+          },
+          {
+            "t": "choice",
+            "q": "¿Por qué la tarjeta revolving es tan peligrosa?",
+            "opts": [
+              "La cuota baja apenas cubre los intereses",
+              "Porque no se puede usar en internet",
+              "Porque cobra siempre en dólares",
+              "Porque caduca cada mes"
+            ],
+            "a": 0,
+            "why": "Con 10 € de amortización al mes, devolver 3.000 € llevaría años y costaría varias veces la deuda inicial."
+          },
+          {
+            "t": "choice",
+            "q": "¿Tiene sentido invertir en bolsa mientras debes dinero en una tarjeta al 20 %?",
+            "opts": [
+              "No: pagar la tarjeta rinde un 20 % seguro",
+              "Sí, porque la bolsa siempre da más",
+              "Sí, si inviertes en ETF",
+              "Da igual una cosa que otra"
+            ],
+            "a": 0,
+            "why": "La bolsa mundial ha dado en torno a un 7 % anual a largo plazo, con años de pérdidas; la tarjeta cobra un 20 % todos los años."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "n": 12,
+    "id": "fondos",
+    "track": "basico",
+    "title": "Fondos de inversión",
+    "blurb": "Participaciones, valor liquidativo, comisiones y traspasos.",
+    "gate": false,
+    "lessons": [
+      {
+        "id": "bn1",
+        "title": "Cómo funciona un fondo",
+        "ex": [
+          {
+            "t": "match",
+            "q": "Empareja cada término de un fondo con su significado.",
+            "pairs": [
+              [
+                "Valor liquidativo",
+                "Precio de cada participación"
+              ],
+              [
+                "Partícipe",
+                "Inversor que tiene participaciones"
+              ],
+              [
+                "Gestora",
+                "Empresa que gestiona el fondo"
+              ],
+              [
+                "Depositario",
+                "Entidad que custodia los activos"
+              ]
+            ],
+            "why": "Gestora y depositario son entidades distintas: una decide qué comprar y la otra guarda los activos."
+          },
+          {
+            "t": "num",
+            "q": "Inviertes 1.500 € en un fondo con un valor liquidativo de 15 €. ¿Cuántas participaciones recibes?",
+            "unit": "",
+            "a": 100,
+            "why": "1.500 / 15 = 100 participaciones."
+          },
+          {
+            "t": "num",
+            "q": "Un año después, el valor liquidativo es de 16,50 €. ¿Cuánto has ganado, en %?",
+            "unit": "%",
+            "a": 10,
+            "why": "(16,50 − 15) / 15 = 10 %: tus 100 participaciones valen 1.650 €."
+          },
+          {
+            "t": "choice",
+            "q": "Si la gestora quiebra, ¿qué pasa con el dinero del fondo?",
+            "opts": [
+              "Sigue siendo de los partícipes",
+              "Se pierde todo",
+              "Lo cubre la gestora con su capital",
+              "Pasa a ser del depositario"
+            ],
+            "a": 0,
+            "why": "El patrimonio del fondo está separado del de la gestora y lo custodia el depositario: los activos siguen siendo de los partícipes."
+          }
+        ]
+      },
+      {
+        "id": "bn2",
+        "title": "Comisiones y tipos de fondo",
+        "ex": [
+          {
+            "t": "num",
+            "q": "Tienes 10.000 € en un fondo que cobra un 1,5 % de gestión. ¿Cuántos euros pagas al año?",
+            "unit": "€",
+            "a": 150,
+            "why": "10.000 × 1,5 % = 150 € al año, suba o baje el fondo."
+          },
+          {
+            "t": "num",
+            "q": "Un indexado cobra un 0,2 % sobre esos 10.000 €. ¿Cuántos euros ahorras al año?",
+            "unit": "€",
+            "a": 130,
+            "why": "10.000 × 0,2 % = 20 €; 150 − 20 = 130 € al año."
+          },
+          {
+            "t": "choice",
+            "q": "En España, ¿qué ventaja fiscal tienen los fondos de inversión frente a los ETF?",
+            "opts": [
+              "Puedes traspasar sin tributar",
+              "No tributan nunca",
+              "No tienen comisiones",
+              "Están garantizados"
+            ],
+            "a": 0,
+            "why": "Al traspasar de un fondo a otro no pagas impuestos hasta que retiras el dinero; vender un ETF tributa la ganancia en ese momento."
+          },
+          {
+            "t": "match",
+            "q": "Empareja cada tipo de fondo con lo que compra.",
+            "pairs": [
+              [
+                "Fondo monetario",
+                "Deuda a muy corto plazo"
+              ],
+              [
+                "Fondo de renta fija",
+                "Bonos"
+              ],
+              [
+                "Fondo de renta variable",
+                "Acciones"
+              ],
+              [
+                "Fondo mixto",
+                "Bonos y acciones a la vez"
+              ]
+            ],
+            "why": "De arriba abajo suele crecer el riesgo y la rentabilidad esperada; el mixto queda en medio según su reparto."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "n": 13,
+    "id": "activos",
+    "track": "basico",
+    "title": "Tipos de activos",
+    "blurb": "Acciones, bonos, materias primas y liquidez.",
+    "gate": false,
+    "lessons": [
+      {
+        "id": "bo1",
+        "title": "Qué puedes comprar",
+        "ex": [
+          {
+            "t": "match",
+            "q": "Empareja cada tipo de activo con lo que es.",
+            "pairs": [
+              [
+                "Acción",
+                "Parte de la propiedad de una empresa"
+              ],
+              [
+                "Bono",
+                "Préstamo a una empresa o a un Estado"
+              ],
+              [
+                "Materia prima",
+                "Oro, petróleo o trigo"
+              ],
+              [
+                "Liquidez",
+                "Dinero en cuenta o en depósito"
+              ]
+            ],
+            "why": "Con una acción eres dueño; con un bono, acreedor: cobras intereses pero no participas en los beneficios."
+          },
+          {
+            "t": "choice",
+            "q": "¿Cuál de estos activos suele tener menos riesgo?",
+            "opts": [
+              "Una letra del Tesoro",
+              "Una acción tecnológica",
+              "Una criptomoneda",
+              "Una acción de pequeña empresa"
+            ],
+            "a": 0,
+            "why": "Una letra del Tesoro es un préstamo a corto plazo al Estado: su precio apenas se mueve y el riesgo de impago es muy bajo."
+          },
+          {
+            "t": "num",
+            "q": "Una letra del Tesoro a 12 meses se compra por 970 € y devuelve 1.000 €. ¿Cuántos euros ganas?",
+            "unit": "€",
+            "a": 30,
+            "why": "1.000 − 970 = 30 €: las letras no pagan cupón, ganas la diferencia."
+          },
+          {
+            "t": "num",
+            "q": "¿Y qué rentabilidad es esa ganancia sobre lo invertido? (dos decimales)",
+            "unit": "%",
+            "a": 3.09,
+            "why": "30 / 970 = 3,09 %, algo más que el 3 % porque inviertes menos de 1.000 €."
+          }
+        ]
+      },
+      {
+        "id": "bo2",
+        "title": "Riesgo y rentabilidad",
+        "ex": [
+          {
+            "t": "choice",
+            "q": "¿Por qué las acciones han rendido históricamente más que los depósitos?",
+            "opts": [
+              "Compensan por asumir más riesgo",
+              "Porque están garantizadas",
+              "Porque no pagan impuestos",
+              "Porque nunca bajan"
+            ],
+            "a": 0,
+            "why": "Las acciones mundiales han rendido en torno a un 5 % real anual desde 1900, pero con caídas de más del 50 %; esa prima es el pago por aguantarlas."
+          },
+          {
+            "t": "num",
+            "q": "Una acción cae un 25 %. ¿Cuánto tiene que subir después para recuperarse? (dos decimales)",
+            "unit": "%",
+            "a": 33.33,
+            "why": "Queda en 0,75: 1 / 0,75 = 1,3333, una subida del 33,33 %.",
+            "tol": 0.01
+          },
+          {
+            "t": "match",
+            "q": "Empareja cada característica de una inversión con su significado.",
+            "pairs": [
+              [
+                "Liquidez de un activo",
+                "Facilidad para venderlo sin perder valor"
+              ],
+              [
+                "Volatilidad",
+                "Cuánto oscila el precio"
+              ],
+              [
+                "Diversificación",
+                "Repartir entre muchos activos"
+              ],
+              [
+                "Horizonte",
+                "Tiempo que piensas mantener la inversión"
+              ]
+            ],
+            "why": "Un activo puede ser rentable pero poco líquido, como un piso: venderlo lleva meses."
+          },
+          {
+            "t": "num",
+            "q": "Repartes 10.000 €: 60 % en acciones que suben un 10 % y 40 % en bonos que suben un 2 %. ¿Cuántos euros ganas?",
+            "unit": "€",
+            "a": 680,
+            "why": "6.000 × 10 % = 600 € y 4.000 × 2 % = 80 €: 680 € en total, un 6,8 %."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "n": 14,
+    "id": "noticias",
+    "track": "basico",
+    "title": "Leer noticias financieras",
+    "blurb": "Entender titulares y separar el ruido de la información.",
+    "gate": false,
+    "lessons": [
+      {
+        "id": "bp1",
+        "title": "Titulares y cifras",
+        "ex": [
+          {
+            "t": "choice",
+            "q": "Titular: «El IBEX se desploma un 1,2 %». ¿Cómo lo lees?",
+            "opts": [
+              "Un día normal: no es ningún desplome",
+              "El fin del mercado alcista",
+              "Una señal para venderlo todo",
+              "Una caída que nunca se recupera"
+            ],
+            "a": 0,
+            "why": "Movimientos diarios de más del 1 % ocurren decenas de veces al año; un desplome real es una caída del 20 % o más."
+          },
+          {
+            "t": "num",
+            "q": "El IBEX está en 11.000 puntos y cae un 1,2 %. ¿Cuántos puntos pierde?",
+            "unit": "",
+            "a": 132,
+            "why": "11.000 × 1,2 % = 132 puntos."
+          },
+          {
+            "t": "match",
+            "q": "Empareja cada término de las noticias con su significado.",
+            "pairs": [
+              [
+                "Puntos básicos",
+                "Centésimas de punto porcentual"
+              ],
+              [
+                "Interanual",
+                "Frente al mismo mes del año anterior"
+              ],
+              [
+                "Trimestral",
+                "De un periodo de 3 meses"
+              ],
+              [
+                "Consenso",
+                "Media de las previsiones de los analistas"
+              ]
+            ],
+            "why": "25 puntos básicos son 0,25 puntos porcentuales: el tamaño habitual de una subida o bajada de tipos."
+          },
+          {
+            "t": "num",
+            "q": "El BCE sube los tipos 25 puntos básicos desde el 2,00 %. ¿En qué tipo quedan?",
+            "unit": "%",
+            "a": 2.25,
+            "why": "25 puntos básicos = 0,25 puntos: 2,00 + 0,25 = 2,25 %."
+          }
+        ]
+      },
+      {
+        "id": "bp2",
+        "title": "Ruido y señal",
+        "ex": [
+          {
+            "t": "choice",
+            "q": "Una empresa gana 500 millones, un 20 % menos que el año pasado, pero bate el consenso y sube. ¿Por qué?",
+            "opts": [
+              "El mercado esperaba un resultado aún peor",
+              "Los mercados son siempre irracionales",
+              "Porque ganar menos es positivo",
+              "Por un error en la noticia"
+            ],
+            "a": 0,
+            "why": "El precio ya descontaba una caída mayor: lo que mueve la acción es la diferencia con lo esperado, no con el año pasado."
+          },
+          {
+            "t": "num",
+            "q": "Esa empresa gana 500 millones, un 20 % menos que el año anterior. ¿Cuántos millones ganó el año anterior?",
+            "unit": "",
+            "a": 625,
+            "why": "500 / 0,80 = 625 millones; comprobación: 625 × 0,8 = 500."
+          },
+          {
+            "t": "choice",
+            "q": "¿Qué haces con las noticias diarias si inviertes a largo plazo con fondos indexados?",
+            "opts": [
+              "Ignorarlas casi siempre",
+              "Operar con cada titular",
+              "Vender en cada mala noticia",
+              "Comprar con cada buena noticia"
+            ],
+            "a": 0,
+            "why": "Tu plan está pensado para 20 años o más: un titular de hoy no cambia el reparto ni el plazo."
+          },
+          {
+            "t": "choice",
+            "q": "Un artículo dice «esta acción puede multiplicar por 10». ¿Qué te preguntas primero?",
+            "opts": [
+              "Quién lo escribe y qué gana con ello",
+              "Cuánto dinero meto ya",
+              "Si pido un préstamo para comprar",
+              "Cuándo venderé con el beneficio"
+            ],
+            "a": 0,
+            "why": "Para multiplicar por 10 hace falta subir un 900 %; quien lo promete a menudo tiene acciones o cobra por publicarlo."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "n": 15,
+    "id": "estafas",
+    "track": "basico",
+    "title": "Estafas y chiringuitos",
+    "blurb": "Cómo reconocer un fraude antes de perder dinero.",
+    "gate": false,
+    "lessons": [
+      {
+        "id": "bq1",
+        "title": "Señales de alarma",
+        "ex": [
+          {
+            "t": "match",
+            "q": "Empareja cada término del fraude con su significado.",
+            "pairs": [
+              [
+                "Chiringuito financiero",
+                "Ofrece inversiones sin autorización"
+              ],
+              [
+                "Esquema Ponzi",
+                "Paga a los antiguos con dinero de los nuevos"
+              ],
+              [
+                "Phishing",
+                "Suplanta a tu banco para robar tus claves"
+              ],
+              [
+                "Registros de la CNMV",
+                "Donde compruebas si una entidad está autorizada"
+              ]
+            ],
+            "why": "La CNMV publica la lista de entidades autorizadas y una lista de advertencias sobre chiringuitos: mírala antes de invertir."
+          },
+          {
+            "t": "choice",
+            "q": "Te prometen un 3 % mensual garantizado. ¿Qué piensas?",
+            "opts": [
+              "Que es casi seguro una estafa",
+              "Que es una buena oportunidad",
+              "Que es normal en criptomonedas",
+              "Que hay que invertir rápido"
+            ],
+            "a": 0,
+            "why": "Rentabilidad alta y garantizada a la vez no existe: a más rentabilidad esperada, más riesgo."
+          },
+          {
+            "t": "num",
+            "q": "Un 3 % mensual compuesto durante 12 meses, ¿qué rentabilidad anual es? (redondea a entero)",
+            "unit": "%",
+            "a": 43,
+            "why": "1,03¹² = 1,426: un 43 % anual garantizado, algo que ningún producto legítimo promete.",
+            "tol": 0.5
+          },
+          {
+            "t": "choice",
+            "q": "Una «empresa de inversión» te llama sin que lo hayas pedido. ¿Qué haces?",
+            "opts": [
+              "Colgar y buscarla en la web de la CNMV",
+              "Dar tus datos para informarte",
+              "Hacer una prueba con poco dinero",
+              "Instalar el programa que te piden"
+            ],
+            "a": 0,
+            "why": "Las llamadas no solicitadas son la vía típica de los chiringuitos; instalar programas de acceso remoto les da tu cuenta."
+          }
+        ]
+      },
+      {
+        "id": "bq2",
+        "title": "Cómo cae un Ponzi",
+        "ex": [
+          {
+            "t": "num",
+            "q": "Un Ponzi promete un 10 % mensual y ha captado 100.000 €. ¿Cuántos miles de euros debe pagar cada mes en «intereses»?",
+            "unit": "",
+            "a": 10,
+            "why": "100.000 × 10 % = 10.000 € al mes, sin ningún negocio real que los genere."
+          },
+          {
+            "t": "num",
+            "q": "Si cada mes solo entran 8.000 € nuevos, ¿cuántos miles de euros le faltan al mes?",
+            "unit": "",
+            "a": 2,
+            "why": "10.000 − 8.000 = 2.000 € de agujero cada mes, y crece con cada nuevo partícipe."
+          },
+          {
+            "t": "choice",
+            "q": "¿Qué ocurre cuando dejan de entrar inversores nuevos en un esquema Ponzi?",
+            "opts": [
+              "No puede pagar y se hunde",
+              "Sigue pagando con beneficios reales",
+              "Lo rescata la CNMV",
+              "Pasa a ser un fondo legal"
+            ],
+            "a": 0,
+            "why": "Como los pagos salen del dinero nuevo, en cuanto las entradas bajan de los pagos prometidos el esquema quiebra."
+          },
+          {
+            "t": "choice",
+            "q": "¿Qué cubre el Fondo de Garantía de Inversiones (FOGAIN)?",
+            "opts": [
+              "Tus valores si el bróker quiebra, con límites",
+              "Las pérdidas por caídas de la bolsa",
+              "Cualquier estafa que sufras",
+              "Todo lo que inviertas"
+            ],
+            "a": 0,
+            "why": "Cubre hasta 100.000 € por inversor si una empresa de inversión autorizada no puede devolverte tus valores o efectivo; nunca cubre que la inversión pierda valor."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "n": 16,
+    "id": "cripto",
+    "track": "basico",
+    "title": "Criptomonedas",
+    "blurb": "Qué son, qué riesgos tienen y cómo tributan.",
+    "gate": false,
+    "lessons": [
+      {
+        "id": "br1",
+        "title": "Qué son",
+        "ex": [
+          {
+            "t": "match",
+            "q": "Empareja cada término cripto con su significado.",
+            "pairs": [
+              [
+                "Blockchain",
+                "Registro compartido de transacciones"
+              ],
+              [
+                "Bitcoin",
+                "Primera criptomoneda, con un máximo de 21 millones"
+              ],
+              [
+                "Stablecoin",
+                "Cripto que intenta valer siempre 1 dólar"
+              ],
+              [
+                "Monedero (wallet)",
+                "Guarda las claves que controlan tus criptos"
+              ]
+            ],
+            "why": "Quien tiene las claves privadas controla las criptos: por eso perderlas o que te las roben es irreversible."
+          },
+          {
+            "t": "choice",
+            "q": "¿Qué genera un bitcoin a su propietario, como un dividendo o un cupón?",
+            "opts": [
+              "Nada: solo gana si otro paga más por él",
+              "Un dividendo trimestral",
+              "Un cupón fijo anual",
+              "Intereses garantizados por el Estado"
+            ],
+            "a": 0,
+            "why": "Una acción reparte beneficios y un bono paga cupones; el bitcoin solo da rentabilidad si sube su precio."
+          },
+          {
+            "t": "num",
+            "q": "Bitcoin cayó alrededor de un 77 % entre noviembre de 2021 y noviembre de 2022. ¿Cuántos euros quedaban de 1.000 € comprados en el máximo?",
+            "unit": "€",
+            "a": 230,
+            "why": "1.000 × (1 − 0,77) = 230 €."
+          },
+          {
+            "t": "num",
+            "q": "Desde ese mínimo, ¿cuánto tenía que subir para volver al máximo? (redondea a entero)",
+            "unit": "%",
+            "a": 335,
+            "why": "1 / 0,23 = 4,35 veces: una subida del 335 %.",
+            "tol": 0.5
+          }
+        ]
+      },
+      {
+        "id": "br2",
+        "title": "Riesgos y fiscalidad",
+        "ex": [
+          {
+            "t": "choice",
+            "q": "Si pierdes las claves privadas de tu monedero, ¿qué pasa?",
+            "opts": [
+              "Pierdes tus criptos para siempre",
+              "El banco te las recupera",
+              "La CNMV te las devuelve",
+              "Se recuperan con tu DNI"
+            ],
+            "a": 0,
+            "why": "No hay ninguna entidad que pueda restaurar el acceso: sin las claves, las criptos quedan bloqueadas en la blockchain."
+          },
+          {
+            "t": "choice",
+            "q": "En España, ¿cómo tributa la ganancia por vender criptomonedas?",
+            "opts": [
+              "Como renta del ahorro, como las acciones",
+              "No tributa nunca",
+              "Solo si las cambias a dólares",
+              "Como un premio de lotería"
+            ],
+            "a": 0,
+            "why": "Vender, o cambiar una cripto por otra, genera una ganancia o pérdida patrimonial en la base del ahorro, desde el 19 %."
+          },
+          {
+            "t": "num",
+            "q": "Una cripto es el 5 % de tu cartera de 10.000 € y cae a cero. ¿Cuántos euros pierdes?",
+            "unit": "€",
+            "a": 500,
+            "why": "10.000 × 5 % = 500 €."
+          },
+          {
+            "t": "num",
+            "q": "En ese caso, ¿cuánto cae tu cartera total?",
+            "unit": "%",
+            "a": 5,
+            "why": "500 / 10.000 = 5 %: limitar el peso limita el daño aunque el activo desaparezca."
+          }
+        ]
+      }
+    ]
+  },
+  {
     "n": 1,
     "id": "pasiva",
     "track": "pasiva",
