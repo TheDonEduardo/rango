@@ -2428,6 +2428,378 @@
     ]
   },
   {
+    "n": 13,
+    "id": "grupos",
+    "title": "Grupos y gaps",
+    "blurb": "Las acciones suben en manada, y los huecos cuentan una historia.",
+    "lessons": [
+      {
+        "id": "g1",
+        "title": "Sectores y grupos líderes",
+        "ex": [
+          {
+            "t": "choice",
+            "q": "Tienes dos rupturas igual de buenas: una en un grupo que lidera el mercado y otra en un grupo rezagado. ¿Cuál eliges?",
+            "opts": [
+              "La del grupo líder",
+              "La del grupo rezagado: tiene más recorrido",
+              "Cualquiera: el grupo no influye",
+              "Ninguna: hay que repartir entre los débiles"
+            ],
+            "a": 0,
+            "why": "Las acciones suben en manada: cuando el dinero entra en un grupo, empuja a sus mejores valores. O'Neil insistía en comprar los líderes de los grupos líderes."
+          },
+          {
+            "t": "num",
+            "q": "El índice ha subido un 5 % en tres meses. ¿Cuántos de estos grupos lo baten?",
+            "table": {
+              "cols": [
+                "Grupo",
+                "Tres meses"
+              ],
+              "rows": [
+                [
+                  "Semiconductores",
+                  "+18 %"
+                ],
+                [
+                  "Software",
+                  "+9 %"
+                ],
+                [
+                  "Bancos",
+                  "+2 %"
+                ],
+                [
+                  "Energía",
+                  "−4 %"
+                ],
+                [
+                  "Salud",
+                  "+6 %"
+                ]
+              ]
+            },
+            "unit": "",
+            "a": 3,
+            "why": "Semiconductores (+18 %), software (+9 %) y salud (+6 %) superan el +5 % del índice. Busca tus compras en los primeros de la lista, empezando por semiconductores."
+          },
+          {
+            "t": "choice",
+            "q": "Tu acción rompe al alza, pero las demás de su grupo caen a mínimos. ¿Qué indica?",
+            "opts": [
+              "Que es aún más fuerte, sin matices",
+              "Nada: el grupo no importa",
+              "Menos respaldo: la ruptura es más frágil",
+              "Que el grupo romperá mañana"
+            ],
+            "a": 2,
+            "why": "Una ruptura acompañada por su grupo tiene detrás dinero entrando en el sector. Si va sola, el riesgo de fallo es mayor: reduce el tamaño o espera."
+          },
+          {
+            "t": "match",
+            "q": "Empareja cada término con su significado.",
+            "pairs": [
+              [
+                "Grupo líder",
+                "Sube más que el índice y marca máximos"
+              ],
+              [
+                "Grupo rezagado",
+                "Sube menos que el índice o cae"
+              ],
+              [
+                "Rotación sectorial",
+                "El dinero pasa de unos sectores a otros"
+              ]
+            ],
+            "why": "El mercado no sube todo a la vez: el dinero rota. Detectar a tiempo qué grupos pasan a liderar es tan importante como elegir la acción."
+          }
+        ]
+      },
+      {
+        "id": "g2",
+        "title": "Tipos de gap",
+        "ex": [
+          {
+            "t": "match",
+            "q": "Empareja cada tipo de gap con su descripción.",
+            "pairs": [
+              [
+                "Gap común",
+                "Dentro de un rango, sin volumen, y suele cerrarse"
+              ],
+              [
+                "Gap de ruptura",
+                "Sale de una base con mucho volumen"
+              ],
+              [
+                "Gap de continuación",
+                "A mitad de una tendencia fuerte"
+              ],
+              [
+                "Gap de agotamiento",
+                "Al final de una subida larga, con volumen clímax"
+              ]
+            ],
+            "why": "El mismo hueco significa cosas distintas según dónde aparece: al salir de una base, en mitad del camino o tras una subida larga."
+          },
+          {
+            "t": "tap",
+            "q": "Toca el gap de agotamiento.",
+            "chart": {
+              "type": "candles",
+              "data": [
+                [20,20.5,19.6,20.2],
+                [20.2,20.6,19.8,20.1],
+                [20.1,20.5,19.7,20.3],
+                [21.5,22.4,21.3,22.2],
+                [22.2,23,22,22.8],
+                [22.8,23.9,22.6,23.6],
+                [23.6,24.6,23.4,24.4],
+                [24.4,25.1,24,24.9],
+                [26.2,27,25.9,26.1],
+                [26.1,26.2,24.6,24.8]
+              ],
+              "vol": [50,45,55,160,90,85,95,100,190,150],
+              "h": 270,
+              "alt": "Gráfico de diez velas con volumen y dos gaps al alza"
+            },
+            "a": 8,
+            "why": "Vela 9: abre con gap tras una subida larga, con el mayor volumen, y cierra cerca de su mínimo; al día siguiente el precio vuelve dentro del hueco. El gap de la vela 4, que sale de la base, es el de ruptura."
+          },
+          {
+            "t": "num",
+            "q": "La ruptura de la base fue en 20,00 € y aparece un gap de continuación en 24,00 €. Si ese gap marca la mitad del movimiento, ¿cuál es el objetivo?",
+            "unit": "€",
+            "a": 28,
+            "why": "24,00 − 20,00 = 4,00 €; 24,00 + 4,00 = 28,00 €. Es una estimación clásica (gap de medición), no una garantía: úsala para planificar ventas parciales."
+          },
+          {
+            "t": "choice",
+            "q": "Un gap de ruptura con mucho volumen se cierra por completo dos días después. ¿Qué indica?",
+            "opts": [
+              "Ruptura fallida: reduce o sal",
+              "Nada: todos los gaps se cierran",
+              "Una señal de compra aún mejor",
+              "Que el volumen no era real"
+            ],
+            "a": 0,
+            "why": "Un gap de ruptura sano no suele cerrarse: la demanda que lo creó sostiene el precio. Si se cierra entero, quienes compraron en el gap pierden dinero y la ruptura ha fallado."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "n": 14,
+    "id": "psicologia",
+    "title": "Psicología y diario",
+    "blurb": "El sistema funciona si tú lo sigues: mide cómo operas.",
+    "lessons": [
+      {
+        "id": "p1",
+        "title": "Sesgos del operador",
+        "ex": [
+          {
+            "t": "choice",
+            "q": "Vendes enseguida las acciones que ganan y mantienes las que pierden esperando a recuperar. ¿Cómo se llama ese sesgo?",
+            "opts": [
+              "Sesgo de confirmación",
+              "Efecto disposición",
+              "Efecto manada",
+              "Sesgo de recencia"
+            ],
+            "a": 1,
+            "why": "Corta las ganancias y deja correr las pérdidas, justo al revés de lo que funciona. El stop y las salidas escalonadas existen para evitarlo."
+          },
+          {
+            "t": "match",
+            "q": "Empareja cada sesgo con su descripción.",
+            "pairs": [
+              [
+                "Sesgo de confirmación",
+                "Buscar solo datos que te dan la razón"
+              ],
+              [
+                "Efecto manada (FOMO)",
+                "Comprar porque todos compran"
+              ],
+              [
+                "Sesgo de recencia",
+                "Dar más peso a lo último que ha pasado"
+              ],
+              [
+                "Aversión a la pérdida",
+                "Perder duele más de lo que alegra ganar lo mismo"
+              ]
+            ],
+            "why": "Ninguno se elimina por conocerlo, pero un plan escrito antes de operar los neutraliza: decide cuando no hay dinero en juego."
+          },
+          {
+            "t": "choice",
+            "q": "Tras tres pérdidas seguidas, te apetece doblar el tamaño para recuperar. ¿Qué haces?",
+            "opts": [
+              "Doblar: la siguiente toca ganar",
+              "Triplicar para recuperar antes",
+              "Mantener o reducir tamaño y revisar",
+              "Quitar los stops por un tiempo"
+            ],
+            "a": 2,
+            "why": "Las operaciones son independientes: perder tres no hace más probable ganar la cuarta. Tras una racha, reducir el tamaño protege el capital mientras revisas si falla el sistema o el mercado."
+          },
+          {
+            "t": "num",
+            "q": "Planeaste perder como mucho 1R (100 €), pero bajaste el stop y acabaste perdiendo 250 €. ¿Cuántos R perdiste?",
+            "unit": "R",
+            "a": 2.5,
+            "why": "250 ÷ 100 = 2,5R. Mover el stop convirtió una pérdida pequeña y prevista en una grande: la disciplina se mide en R."
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "title": "Diario de operaciones",
+        "ex": [
+          {
+            "t": "num",
+            "q": "Estas son tus últimas 10 operaciones. ¿Cuál es el resultado medio por operación? Redondea a 2 decimales.",
+            "table": {
+              "cols": [
+                "Operación",
+                "Resultado"
+              ],
+              "rows": [
+                [
+                  "1",
+                  "+2R"
+                ],
+                [
+                  "2",
+                  "−1R"
+                ],
+                [
+                  "3",
+                  "−1R"
+                ],
+                [
+                  "4",
+                  "+3R"
+                ],
+                [
+                  "5",
+                  "−1R"
+                ],
+                [
+                  "6",
+                  "+1,5R"
+                ],
+                [
+                  "7",
+                  "−1R"
+                ],
+                [
+                  "8",
+                  "−0,5R"
+                ],
+                [
+                  "9",
+                  "+2,5R"
+                ],
+                [
+                  "10",
+                  "−1R"
+                ]
+              ]
+            },
+            "unit": "R",
+            "a": 0.35,
+            "why": "Suma: +2 − 1 − 1 + 3 − 1 + 1,5 − 1 − 0,5 + 2,5 − 1 = +3,5R en 10 operaciones, es decir, 0,35R de media. Es tu esperanza: positiva aunque solo ganes 4 de cada 10."
+          },
+          {
+            "t": "num",
+            "q": "Con las mismas 10 operaciones, ¿cuál es la ganancia media de las ganadoras? Redondea a 2 decimales.",
+            "table": {
+              "cols": [
+                "Operación",
+                "Resultado"
+              ],
+              "rows": [
+                [
+                  "1",
+                  "+2R"
+                ],
+                [
+                  "2",
+                  "−1R"
+                ],
+                [
+                  "3",
+                  "−1R"
+                ],
+                [
+                  "4",
+                  "+3R"
+                ],
+                [
+                  "5",
+                  "−1R"
+                ],
+                [
+                  "6",
+                  "+1,5R"
+                ],
+                [
+                  "7",
+                  "−1R"
+                ],
+                [
+                  "8",
+                  "−0,5R"
+                ],
+                [
+                  "9",
+                  "+2,5R"
+                ],
+                [
+                  "10",
+                  "−1R"
+                ]
+              ]
+            },
+            "unit": "R",
+            "a": 2.25,
+            "why": "Ganadoras: +2, +3, +1,5 y +2,5 = 9R en 4 operaciones, 2,25R de media. Las perdedoras quedan en torno a 0,92R: ganas más del doble de lo que pierdes."
+          },
+          {
+            "t": "choice",
+            "q": "¿Qué debe recoger tu diario además del resultado?",
+            "opts": [
+              "Solo el resultado en euros",
+              "Por qué entraste y si seguiste el plan",
+              "Lo que se opinaba en redes",
+              "Nada más: el resultado basta"
+            ],
+            "a": 1,
+            "why": "El resultado de una operación tiene mucho de azar; el proceso, no. El diario sirve para saber si pierdes por el sistema o por no seguirlo."
+          },
+          {
+            "t": "choice",
+            "q": "Una operación siguió el plan al pie de la letra y perdió 1R. ¿Cómo la valoras?",
+            "opts": [
+              "Mala: perdió dinero",
+              "Buena: el proceso fue correcto",
+              "Hay que cambiar el sistema ya",
+              "Hay que recuperarla mañana"
+            ],
+            "a": 1,
+            "why": "Con una esperanza positiva, las pérdidas de 1R son parte del sistema. Una mala operación es la que rompe el plan, gane o pierda."
+          }
+        ]
+      }
+    ]
+  },
+  {
     "n": 1,
     "id": "crecimiento",
     "track": "fundamental",
