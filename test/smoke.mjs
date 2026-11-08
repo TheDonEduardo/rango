@@ -47,7 +47,7 @@ const lint = (ex, w) => {
       if (!['choice', 'num', 'tap', 'level', 'order', 'match', 'plan'].includes(ex.t)) errs.push(w + ': tipo desconocido ' + ex.t);
 };
 for (const u of units) {
-  if (!['basico', 'tecnico', 'fundamental', undefined].includes(u.track)) errs.push('ruta desconocida en ' + u.id);
+  if (!['basico', 'pasiva', 'tecnico', 'fundamental', undefined].includes(u.track)) errs.push('ruta desconocida en ' + u.id);
   for (const l of u.lessons || []) {
     if (ids.has(l.id)) errs.push('id duplicado ' + l.id);
     ids.add(l.id);
@@ -110,12 +110,15 @@ if (!T.homeHTML().includes('data-act="skipbasics"') || T.homeHTML().includes('no
 // Completar solo las unidades básicas obligatorias abre la ruta técnica (las de gate:false no bloquean).
 for (const l of T.FLAT) if (l.unit.track === 'basico' && l.unit.gate !== false) T.getState().done[l.id] = {acc: 1};
 if (T.homeHTML().includes('data-act="skipbasics"')) errs.push('completar los básicos obligatorios no abre la ruta técnica');
-if (!T.FLAT.some(l => l.unit.gate === false)) errs.push('no hay unidades básicas complementarias (gate:false)');
 T.getState().done = {};
 T.skipBasics();
 if (T.homeHTML().includes('data-act="skipbasics"') || !T.homeHTML().includes('node current')) errs.push('saltar los básicos no abre la ruta técnica');
 T.setTrack('fundamental');
 if (!T.homeHTML().includes('Crecimiento del beneficio')) errs.push('la ruta fundamental no renderiza');
+T.setTrack('pasiva');
+if (!T.homeHTML().includes('Inversión pasiva') || !T.homeHTML().includes('Renta fija')) errs.push('la ruta Pasiva no muestra sus unidades');
+T.setTrack('basico');
+if (T.homeHTML().includes('Inversión pasiva')) errs.push('la ruta Básico muestra unidades de Pasiva');
 T.setTrack('tecnico');
 if (T.homeHTML().includes('Crecimiento del beneficio')) errs.push('la ruta técnica muestra unidades fundamentales');
 for (const L of T.FLAT) {

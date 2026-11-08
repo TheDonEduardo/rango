@@ -11,7 +11,7 @@ const LEGAL_V=1;
 const SRS_STEPS=[1,3,7,14];
 const SRS_MAX=10;
 const SRS_L={id:'srs',title:'Repaso del día',kind:'srs'};
-// Test de nivel: con TEST_PASS aciertos o más se abren Técnico y Fundamental; cada unidad con sus dos preguntas
+// Test de nivel: con TEST_PASS aciertos o más se abren las demás rutas; cada unidad con sus dos preguntas
 // acertadas queda marcada como completada.
 const TEST_L={id:'test',title:'Test de nivel',kind:'test'};
 const TEST_PASS=10;
@@ -96,8 +96,8 @@ function homeHTML(){
   h+=`<section class="goal" aria-label="Meta diaria"><div class="goal-h"><span>Meta de hoy</span><span>${Math.min(dx,GOAL)} / ${GOAL} XP</span></div><div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="${GOAL}" aria-valuenow="${Math.min(dx,GOAL)}"><i style="width:${Math.min(100,dx/GOAL*100)}%"></i></div></section>`;
   h+=`<nav class="tracks" aria-label="Ruta">${TRACKS.map(t=>`<button data-act="track" data-track="${t.id}" aria-pressed="${S.track===t.id}">${t.title}</button>`).join('')}</nav>`;
   const TF=FLAT.filter(l=>trackOf(l.unit)===S.track);
-  if(S.track!=='basico'&&!advancedOpen())h+=`<section class="gate"><p>Esta ruta se abre al completar <b>Conceptos básicos</b>.</p><div class="row"><button class="btn line" data-act="track" data-track="basico">Ir a los básicos</button><button class="btn ghost" data-act="skipbasics">Ya opero: saltar los básicos</button></div></section>`;
-  if(S.track==='basico'&&!S.placement&&!Object.keys(S.done).length)h+=`<section class="test" aria-label="Test de nivel"><div><b>¿Ya sabes de bolsa?</b><span>Haz el test de nivel: ${PLACEMENT.length} preguntas, unos 5 minutos. Marcaremos lo que ya dominas y, si aciertas casi todo, se abren Técnico y Fundamental.</span></div><div class="row"><button class="btn primary" data-act="test">Hacer el test</button><button class="btn ghost" data-act="notest">Empezar desde cero</button></div></section>`;
+  if(S.track!=='basico'&&!advancedOpen())h+=`<section class="gate"><p>Esta ruta se abre al completar la ruta <b>Básico</b>.</p><div class="row"><button class="btn line" data-act="track" data-track="basico">Ir a los básicos</button><button class="btn ghost" data-act="skipbasics">Ya opero: saltar los básicos</button></div></section>`;
+  if(S.track==='basico'&&!S.placement&&!Object.keys(S.done).length)h+=`<section class="test" aria-label="Test de nivel"><div><b>¿Ya sabes de bolsa?</b><span>Haz el test de nivel: ${PLACEMENT.length} preguntas, unos 5 minutos. Marcaremos lo que ya dominas y, si aciertas casi todo, se abren las demás rutas.</span></div><div class="row"><button class="btn primary" data-act="test">Hacer el test</button><button class="btn ghost" data-act="notest">Empezar desde cero</button></div></section>`;
   if(S.track==='tecnico'&&SEMANA&&advancedOpen())h+=simCardHTML();
   const due=srsDue().length;
   if(due)h+=`<section class="srs" aria-label="Repaso del día"><div><b>Repaso del día</b><span>${due} ${due===1?'ejercicio que fallaste':'ejercicios que fallaste'}</span></div><button class="btn primary" data-act="srs">Repasar</button></section>`;
@@ -295,7 +295,7 @@ function legalHTML(first){
   <div><button class="btn primary" data-act="${first?'legalok':'home'}">${first?'Entendido, empezar':'Volver'}</button></div></div>`;
 }
 function testResultHTML(r){
-  const nota=r.abre?'Técnico y Fundamental quedan abiertos. Puedes volver a los básicos cuando quieras.'
+  const nota=r.abre?'Pasiva, Fundamental y Técnico quedan abiertas. Puedes volver a los básicos cuando quieras.'
     :r.dominadas.length?'Las unidades que dominas quedan marcadas como completadas: sigue por la primera pendiente de Básico.'
     :'Empieza por Básico: en pocas lecciones tendrás la base para el resto.';
   return `<div class="res"><div class="res-main"><div class="res-top">${glyph('done',r.score/r.total,84,108)}<div><h1>Test completado</h1><p>${r.score} de ${r.total} aciertos</p></div></div>
@@ -437,7 +437,7 @@ $app.addEventListener('click',e=>{
   const a=b.dataset.act;
   if(a==='open'){
     const L=FLAT.find(l=>l.id===b.dataset.id),s=statuses()[L.id];
-    if(s==='locked'){toast(trackOf(L.unit)!=='basico'&&!advancedOpen()?'Completa antes los Conceptos básicos.':'Completa antes la lección anterior.');return}
+    if(s==='locked'){toast(trackOf(L.unit)!=='basico'&&!advancedOpen()?'Completa antes la ruta Básico.':'Completa antes la lección anterior.');return}
     homeY=window.scrollY;startRun(L);
   }
   else if(a==='pick'&&!run.checked)pickChoice(+b.dataset.i);
@@ -461,7 +461,7 @@ $app.addEventListener('click',e=>{
   else if(a==='notest'){S.placement={skipped:true};save();render()}
   else if(a==='install'&&installEvt){installEvt.prompt();installEvt.userChoice.finally(()=>{installEvt=null;homeY=window.scrollY;render()})}
   else if(a==='track'){S.track=b.dataset.track;save();homeY=0;render()}
-  else if(a==='skipbasics'){S.skipBasics=true;save();homeY=0;render();toast('Rutas Técnico y Fundamental abiertas.')}
+  else if(a==='skipbasics'){S.skipBasics=true;save();homeY=0;render();toast('Rutas Pasiva, Fundamental y Técnico abiertas.')}
   else if(a==='unlock'){S.all=!S.all;save();homeY=window.scrollY;render()}
   else if(a==='reset'){
     if(!resetArm){resetArm=true;homeY=window.scrollY;render();setTimeout(()=>{if(resetArm){resetArm=false;if(view==='home'){homeY=window.scrollY;render()}}},4000)}

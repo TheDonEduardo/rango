@@ -40,7 +40,7 @@ icons/                iconos de la PWA, generados con tools/iconos.cjs a partir 
 
 ## Esquema del contenido (`units.json`)
 
-Unidad: `{n, id, track?, title, blurb, lessons: [...] | null}` (`null` = "Próximamente"). `track`: `"basico"`, `"tecnico"` (por defecto) o `"fundamental"`; cada ruta tiene su selector en el inicio, su numeración `n` y su propia lección actual. Básico es el primer nivel: Técnico y Fundamental se abren al completar sus unidades obligatorias (las que tienen `"gate": false`, como Inversión pasiva y Renta fija, son complementarias y no bloquean; así añadir unidades a Básico no vuelve a cerrar las rutas a quien ya lo terminó), al pulsar «Ya opero: saltar los básicos» (`S.skipBasics`) o si ya hay progreso en ellas. Un usuario nuevo empieza en Básico. Cada unidad genera automáticamente un nodo "Repaso de la unidad" con 5 ejercicios al azar de sus lecciones.
+Unidad: `{n, id, track?, title, blurb, lessons: [...] | null}` (`null` = "Próximamente"). `track`: `"basico"`, `"pasiva"`, `"fundamental"` o `"tecnico"` (por defecto); el selector del inicio las muestra en ese orden y cada una tiene su numeración `n` y su propia lección actual. Básico es el primer nivel: las otras tres se abren al completar sus unidades (una unidad básica con `"gate": false` sería complementaria y no bloquearía; úsalo si añades unidades a Básico, para no volver a cerrar las rutas a quien ya lo terminó), al pulsar «Ya opero: saltar los básicos» (`S.skipBasics`) o si ya hay progreso en ellas. Un usuario nuevo empieza en Básico. Cada unidad genera automáticamente un nodo "Repaso de la unidad" con 5 ejercicios al azar de sus lecciones.
 
 Lección: `{id, title, ex: [...]}`. Los `id` deben ser únicos (se guardan en localStorage).
 
@@ -98,7 +98,8 @@ Sistema de tokens en `src/styles.css` (`:root`, con variante oscura por `prefers
 
 ## Tareas pendientes (por orden sugerido)
 
-0. Ruta Básico: 8 unidades hechas (acciones y órdenes, rentabilidad y riesgo, leer un gráfico, ETF e índices, impuestos en España, cuenta y bróker; complementarias: inversión pasiva y renta fija). Revisar cada año los tramos y normas fiscales de la unidad «Impuestos en España» y «Cuenta y bróker».
+0. Ruta Básico: 6 unidades (acciones y órdenes, rentabilidad y riesgo, leer un gráfico, ETF e índices, impuestos en España, cuenta y bróker).
+0b. Ruta Pasiva: 2 unidades (inversión pasiva, renta fija). Ideas siguientes: reparto entre acciones y bonos según edad y horizonte, rebalanceo, carteras modelo (60/40, permanente), retirada sostenible. Revisar cada año los tramos y normas fiscales de la unidad «Impuestos en España» y «Cuenta y bróker».
 1. Contenido técnico: unidades 1-15 hechas (velas, tendencia, riesgo, catalizadores binarios, Wyckoff/VSA, VCP, salidas escalonadas, riesgo de cartera, cortos y Fase 4, mercado general, fuerza relativa, techos y temporalidades, grupos y gaps, psicología y diario, opciones para cubrir). Ideas siguientes: backtesting de un sistema.
 1b. Ruta fundamental: F1-F8 hechas (F1-F3, F5 y F6 con casos reales; F8 macro). Ideas siguientes: dividendos y recompras, lectura de la guía de la empresa.
 1c. Ideas de producto: retos del día y avisos de racha por Telegram con el bot del repo; historial de resultados del simulador (R acumulado).

@@ -3,8 +3,8 @@ const get=async f=>(await fetch(new URL('./content/'+f,import.meta.url))).json()
 // En paralelo: casos.json (generado por tools/casos.py) es opcional; si falta, las lecciones funcionan igual.
 // semana.json (tools/semana.py) es la «Operación de la semana»; también opcional.
 export const [UNITS,CASOS,SEMANA]=await Promise.all([get('units.json'),get('casos.json').catch(()=>null),get('semana.json').catch(()=>null)]);
-// La ruta «basico» es el primer nivel: desbloquea las otras dos (o se salta desde el inicio).
-export const TRACKS=[{id:'basico',title:'Básico'},{id:'tecnico',title:'Técnico'},{id:'fundamental',title:'Fundamental'}];
+// La ruta «basico» es el primer nivel: desbloquea las demás (o se salta desde el inicio).
+export const TRACKS=[{id:'basico',title:'Básico'},{id:'pasiva',title:'Pasiva'},{id:'fundamental',title:'Fundamental'},{id:'tecnico',title:'Técnico'}];
 export const trackOf=u=>u.track||'tecnico';
 // uid = «idLección#índice»: identifica cada ejercicio fijo en el repaso espaciado (los casos reales no tienen).
 export const EXBYID=new Map();

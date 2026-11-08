@@ -699,10 +699,9 @@
     ]
   },
   {
-    "n": 7,
+    "n": 1,
     "id": "pasiva",
-    "track": "basico",
-    "gate": false,
+    "track": "pasiva",
     "title": "Inversión pasiva",
     "blurb": "Aportar cada mes, pagar poco y dejar trabajar al tiempo.",
     "lessons": [
@@ -730,9 +729,9 @@
             "q": "Aportas la misma cantidad cada mes, suba o baje el mercado. ¿Qué ventaja tiene?",
             "opts": [
               "Compras más participaciones cuando está barato",
-            "Garantiza que nunca pierdas dinero",
-            "Te libra de pagar impuestos por la ganancia",
-            "Asegura batir siempre al índice de referencia"
+              "Garantiza que nunca pierdas dinero",
+              "Te libra de pagar impuestos por la ganancia",
+              "Asegura batir siempre al índice de referencia"
             ],
             "a": 0,
             "why": "Con la misma cantidad compras más participaciones cuando el precio cae y menos cuando sube, y te quita la tentación de adivinar el momento. No garantiza ganar."
@@ -805,10 +804,9 @@
     ]
   },
   {
-    "n": 8,
+    "n": 2,
     "id": "rentafija",
-    "track": "basico",
-    "gate": false,
+    "track": "pasiva",
     "title": "Renta fija",
     "blurb": "Letras, bonos y por qué su precio cae cuando suben los tipos.",
     "lessons": [
