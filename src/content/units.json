@@ -2152,6 +2152,282 @@
     ]
   },
   {
+    "n": 11,
+    "id": "fuerza",
+    "title": "Fuerza relativa",
+    "blurb": "Compra lo que sube más que el mercado, no lo que sube.",
+    "lessons": [
+      {
+        "id": "rs1",
+        "title": "Medir la fuerza relativa",
+        "ex": [
+          {
+            "t": "choice",
+            "q": "La acción sube de 50 a 55 € (+10 %) mientras el índice pasa de 4.000 a 4.600 (+15 %). ¿Qué hace su línea de fuerza relativa (precio ÷ índice)?",
+            "opts": [
+              "Sube, porque la acción sube",
+              "Baja: sube menos que el mercado",
+              "Se queda plana",
+              "No se puede saber sin el volumen"
+            ],
+            "a": 1,
+            "why": "(55 ÷ 4.600) ÷ (50 ÷ 4.000) = 0,957: la línea RS cae un 4,3 %. La acción gana dinero, pero menos que el mercado: no es un líder."
+          },
+          {
+            "t": "num",
+            "q": "La acción sube de 40 a 52 € (+30 %) y el índice de 5.000 a 5.500 (+10 %). ¿Cuánto sube su línea RS? Redondea a 1 decimal.",
+            "unit": "%",
+            "a": 18.2,
+            "tol": 0.06,
+            "why": "(52 ÷ 5.500) ÷ (40 ÷ 5.000) = 1,182: la línea RS sube un 18,2 %. No es 30 − 10 = 20: la fuerza relativa es un cociente, no una resta."
+          },
+          {
+            "t": "choice",
+            "q": "¿Qué significa un RS Rating de 90 (Investor's Business Daily)?",
+            "opts": [
+              "Que ha subido un 90 % en el año",
+              "Que ha ido mejor que el 90 % de las acciones",
+              "Que cotiza al 90 % de su máximo",
+              "Que tiene un 90 % de opciones de subir"
+            ],
+            "a": 1,
+            "why": "Es un percentil de 1 a 99 sobre el comportamiento de los últimos 12 meses, con más peso en el último trimestre. O'Neil buscaba líderes con RS de 80 o más."
+          },
+          {
+            "t": "match",
+            "q": "Empareja cada concepto con su significado.",
+            "pairs": [
+              [
+                "Línea RS",
+                "Precio de la acción ÷ índice"
+              ],
+              [
+                "RS Rating",
+                "Percentil frente a todas las acciones"
+              ],
+              [
+                "Línea RS en máximos antes que el precio",
+                "Señal de liderazgo"
+              ],
+              [
+                "Línea RS cayendo mientras el precio sube",
+                "Sube menos que el mercado"
+              ]
+            ],
+            "why": "La línea RS compara con el índice y el RS Rating con todas las demás acciones. Que la línea RS marque máximos antes que el precio es de las señales de liderazgo que más valoraba O'Neil."
+          }
+        ]
+      },
+      {
+        "id": "rs2",
+        "title": "Comprar líderes",
+        "ex": [
+          {
+            "t": "choice",
+            "q": "Según el Trend Template de Minervini, ¿cuál puedes comprar?",
+            "table": {
+              "cols": [
+                "Acción",
+                "RS Rating",
+                "Distancia al máximo de 52 semanas"
+              ],
+              "rows": [
+                [
+                  "A",
+                  "95",
+                  "−35 %"
+                ],
+                [
+                  "B",
+                  "88",
+                  "−5 %"
+                ],
+                [
+                  "C",
+                  "60",
+                  "0 %"
+                ]
+              ]
+            },
+            "opts": [
+              "A",
+              "B",
+              "C",
+              "Ninguna"
+            ],
+            "a": 1,
+            "why": "B cumple las dos condiciones: RS de 88 (Minervini pide 70 o más) y a un 5 % de máximos (menos del 25 %). A está demasiado lejos de máximos y C tiene poca fuerza relativa."
+          },
+          {
+            "t": "choice",
+            "q": "El índice cae un 10 % y una acción solo un 3 %, sin alejarse de sus máximos. ¿Qué indica?",
+            "opts": [
+              "Debilidad: no acompaña al mercado en nada",
+              "Fuerza relativa: candidata a liderar el rebote",
+              "Que caerá más tarde, sin ninguna duda",
+              "Nada: en una corrección todo da igual"
+            ],
+            "a": 1,
+            "why": "Las acciones que aguantan una corrección suelen ser las primeras en romper al alza tras el día de confirmación. O'Neil preparaba así su lista de candidatas."
+          },
+          {
+            "t": "num",
+            "q": "Hay 4.000 acciones en el universo de comparación y una tiene un RS Rating de 90. ¿Cuántas, aproximadamente, lo han hecho mejor que ella?",
+            "unit": "",
+            "a": 400,
+            "why": "RS 90 significa mejor que el 90 %: cerca de un 10 % lo hizo mejor. 4.000 × 10 % = 400 acciones."
+          },
+          {
+            "t": "choice",
+            "q": "Una acción en Fase 2 sigue subiendo, pero su línea RS lleva meses bajando. ¿Qué haces?",
+            "opts": [
+              "Buscar otra con la línea RS al alza",
+              "Comprarla: estar en Fase 2 basta",
+              "Venderla en corto de inmediato",
+              "Esperar a que caiga un 50 %"
+            ],
+            "a": 0,
+            "why": "Weinstein pedía las dos cosas: Fase 2 y fuerza relativa mejorando. Si sube menos que el mercado, tu capital rinde más en un líder."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "n": 12,
+    "id": "techos",
+    "title": "Techos y temporalidades",
+    "blurb": "Detecta la distribución y mira el gráfico desde arriba.",
+    "lessons": [
+      {
+        "id": "wd1",
+        "title": "Distribución de Wyckoff",
+        "ex": [
+          {
+            "t": "order",
+            "q": "Ordena los eventos de una distribución de Wyckoff.",
+            "items": [
+              "Clímax comprador (BC)",
+              "Reacción automática (AR)",
+              "Prueba secundaria (ST)",
+              "Upthrust tras la distribución (UTAD)",
+              "Signo de debilidad (SOW)",
+              "Último punto de oferta (LPSY)"
+            ],
+            "why": "Es el espejo de la acumulación: el clímax comprador frena la subida, la reacción marca el suelo del rango y la prueba lo confirma. El upthrust atrapa a los últimos compradores, el signo de debilidad rompe el soporte y el último punto de oferta es el rebote fallido."
+          },
+          {
+            "t": "tap",
+            "q": "Rango lateral con resistencia en 30,00 €. Toca el upthrust.",
+            "chart": {
+              "type": "candles",
+              "data": [
+                [28,29.6,27.8,29.3],
+                [29.3,30,28.9,29.1],
+                [29.1,29.4,27.6,27.9],
+                [27.9,29.2,27.7,29],
+                [29,29.9,28.8,29.7],
+                [29.7,31.2,29.4,29.6],
+                [29.6,29.8,28.3,28.5],
+                [28.5,28.9,27.4,27.6]
+              ],
+              "vol": [100,120,110,90,95,180,140,150],
+              "h": 270,
+              "lines": [
+                {
+                  "y": 30,
+                  "label": ""
+                }
+              ],
+              "alt": "Gráfico de ocho velas con volumen y una línea de resistencia"
+            },
+            "a": 5,
+            "why": "Vela 6: supera la resistencia hasta 31,20 y cierra dentro del rango, en 29,60, con el mayor volumen. Es la trampa contraria al spring: atrae compradores en la ruptura y los deja atrapados."
+          },
+          {
+            "t": "choice",
+            "q": "Tienes la acción comprada. Tras un upthrust fallido, rompe el soporte del rango con volumen creciente. ¿Qué haces?",
+            "opts": [
+              "Vender o reducir: es un signo de debilidad",
+              "Comprar más: viene de máximos",
+              "Esperar a que recupere el máximo del upthrust",
+              "Promediar a la baja si sigue cayendo"
+            ],
+            "a": 0,
+            "why": "Upthrust y ruptura del soporte con volumen completan la distribución: la oferta ha tomado el control. Lo que sigue suele ser la Fase 4."
+          },
+          {
+            "t": "num",
+            "q": "El rango de distribución va de 27,40 € a 30,00 €. Proyecta su altura por debajo del soporte. ¿Objetivo mínimo de caída?",
+            "unit": "€",
+            "a": 24.8,
+            "why": "Altura = 30,00 − 27,40 = 2,60 €; objetivo = 27,40 − 2,60 = 24,80 €. Es la misma proyección de la acumulación, pero hacia abajo."
+          }
+        ]
+      },
+      {
+        "id": "tf1",
+        "title": "Semanal y diario",
+        "ex": [
+          {
+            "t": "choice",
+            "q": "¿Qué gráfico usa Weinstein para decidir en qué fase está una acción?",
+            "opts": [
+              "Semanal, con la media de 30 semanas",
+              "Diario, con la media de 10 sesiones",
+              "De 5 minutos, con el volumen",
+              "Mensual, sin ninguna media"
+            ],
+            "a": 0,
+            "why": "El semanal filtra el ruido diario y muestra la tendencia de fondo. El diario sirve después para afinar la entrada y el stop."
+          },
+          {
+            "t": "choice",
+            "q": "En el gráfico semanal la acción está en Fase 4, pero en el diario acaba de romper una pequeña resistencia. ¿Qué haces?",
+            "opts": [
+              "Comprar: manda el gráfico diario",
+              "No comprar: la tendencia de fondo es bajista",
+              "Comprar el doble para aprovecharlo",
+              "Vender en corto justo en la ruptura"
+            ],
+            "a": 1,
+            "why": "La temporalidad mayor marca la dirección y la menor, el momento. Una ruptura diaria dentro de una Fase 4 semanal suele ser solo un rebote."
+          },
+          {
+            "t": "num",
+            "q": "¿A cuántas sesiones diarias equivale, aproximadamente, la media de 30 semanas?",
+            "unit": "",
+            "a": 150,
+            "why": "30 semanas × 5 sesiones = 150 sesiones. Por eso el Trend Template de Minervini usa en diario las medias de 150 y 200 sesiones."
+          },
+          {
+            "t": "match",
+            "q": "Empareja cada temporalidad con su uso.",
+            "pairs": [
+              [
+                "Mensual",
+                "Contexto de años y grandes ciclos"
+              ],
+              [
+                "Semanal",
+                "Fase de Weinstein y tendencia de fondo"
+              ],
+              [
+                "Diario",
+                "Bases, rupturas y stops"
+              ],
+              [
+                "Intradía",
+                "Afinar la entrada el día de la ruptura"
+              ]
+            ],
+            "why": "De arriba abajo: cuanto mayor es la temporalidad, más pesa en la decisión de si operar; cuanto menor, más precisa es la entrada."
+          }
+        ]
+      }
+    ]
+  },
+  {
     "n": 1,
     "id": "crecimiento",
     "track": "fundamental",
