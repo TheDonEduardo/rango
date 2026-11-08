@@ -93,7 +93,7 @@ if (casos) {
 const sw = fs.readFileSync(path.join(root, 'sw.js'), 'utf8');
 const pre = JSON.parse(sw.match(/const PRECACHE = (\[[\s\S]*?\]);/)[1].replace(/'/g, '"'));
 for (const f of pre) if (f !== './' && !fs.existsSync(path.join(root, f))) errs.push('sw.js precarga un archivo que no existe: ' + f);
-for (const f of fs.readdirSync(path.join(root, 'src')).filter(f => /\.(js|css)$/.test(f))) if (!pre.includes('src/' + f)) errs.push('sw.js no precarga src/' + f);
+for (const f of fs.readdirSync(path.join(root, 'src'), {recursive: true}).map(f => f.split(path.sep).join('/')).filter(f => /\.(js|css)$/.test(f))) if (!pre.includes('src/' + f)) errs.push('sw.js no precarga src/' + f);
 const man = JSON.parse(fs.readFileSync(path.join(root, 'manifest.webmanifest'), 'utf8'));
 for (const ic of man.icons) if (!fs.existsSync(path.join(root, ic.src))) errs.push('icono del manifiesto inexistente: ' + ic.src);
 if (!man.icons.some(i => i.purpose === 'maskable')) errs.push('falta icono maskable en el manifiesto');
@@ -225,6 +225,28 @@ if (fs.existsSync(semPath)) {
     if (!app.innerHTML.includes('class="histl"')) errs.push('el resultado no lista el historial');
     delete st.sim['2000-W01'];
   }
+  T.goHome();
+}
+
+// 9) Estadísticas: cada primer intento queda registrado; los fallados forman los «puntos débiles» y se pueden practicar.
+{
+  const st = T.getState(), reg = st.stats.ex, ids = Object.keys(reg);
+  if (ids.length < nLecciones) errs.push('estadísticas: faltan registros de ejercicios');
+  if (ids.some(id => !exIds.has(id))) errs.push('estadísticas: registran ejercicios sin id (casos reales)');
+  T.openStats();
+  if (!app.innerHTML.includes('Tu progreso') || !app.innerHTML.includes('Tus puntos débiles')) errs.push('la pantalla de estadísticas no se dibuja');
+  const flojo = ids.find(id => !reg[id].u);
+  if (!flojo) errs.push('estadísticas: no hay ningún punto débil tras fallar ejercicios');
+  else {
+    T.startWeak();
+    const cola = T.getRun().queue.slice();
+    if (!cola.length || cola.length > 10 || cola.some(ex => reg[ex.id].u)) errs.push('puntos débiles: la práctica no usa los ejercicios fallados');
+    let k = 0;
+    while (k++ < 40 && !app.innerHTML.includes('Repaso completado')) { const ex = T.getRun().queue[0]; give(ex, right(ex)); T.check(); T.next(); }
+    if (cola.some(ex => !reg[ex.id].u)) errs.push('puntos débiles: acertar no saca el ejercicio de la lista');
+    if (st.done.weak) errs.push('la práctica de puntos débiles se guarda como lección');
+  }
+  if (!(st.stats.min > 0)) errs.push('estadísticas: no se suma tiempo de estudio');
   T.goHome();
 }
 

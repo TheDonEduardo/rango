@@ -15,3 +15,5 @@ export function parseNum(s){
 // Ejercicio «plan»: tolerancia de cada línea y paso al arrastrar (por defecto 0,10).
 export const planTol=p=>p.tol==null?0.1:p.tol;
 export const planStep=ex=>ex.step||0.1;
+// Texto de ejercicio: escapa y une cada número con su unidad (26,00 €, 12 %, 3R…) para que no se separen al saltar de línea.
+export const tx=s=>esc(s).replace(/(\d) (?=(?:M?[€$]|%|R\b|veces\b))/g,'$1 ');

@@ -302,3 +302,14 @@ button{font:inherit;color:inherit;cursor:pointer}
 .histl{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:6px}
 .histl li{display:flex;justify-content:space-between;gap:12px;padding:8px 12px;border-radius:10px;background:var(--surface);border:1px solid var(--line);font-size:14px}
 .histl b{font-variant-numeric:tabular-nums;white-space:nowrap}
+
+.chip.vstat{cursor:pointer;font:inherit;color:var(--ink-2);padding:6px 10px}
+.chip.vstat .ico{width:18px;height:18px}
+.estad .simk{margin-top:4px}
+.st-rutas{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:12px}
+.st-h{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap;margin-bottom:6px;font-size:14px;color:var(--ink-2)}
+.st-h b{color:var(--ink);font-size:15px}
+.sub{font:700 18px/1.2 var(--font-display);margin:24px 0 10px}
+.weak{list-style:none;margin:0 0 14px;padding:0;display:grid;gap:8px}
+.weak li{display:grid;gap:4px;padding:10px 12px;border-radius:12px;background:var(--surface);border:1px solid var(--line);font-size:14px}
+.weak small{color:var(--ink-2);font-size:12px}
