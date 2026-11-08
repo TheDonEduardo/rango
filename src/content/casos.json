@@ -1125,6 +1125,128 @@
         "a": 4,
         "why": "Batió 4 de 4 veces: cuenta solo los trimestres en que lo publicado supera al consenso. Batir de forma repetida suele llevar a los analistas a subir sus estimaciones."
       }
+    ],
+    "f6a": [
+      {
+        "t": "choice",
+        "caso": "Broadcom (AVGO)",
+        "q": "Yahoo Finance clasifica a Broadcom en el sector de tecnología. ¿A qué grupo pertenece según Morningstar?",
+        "opts": [
+          "Cíclico",
+          "Defensivo",
+          "Sensible"
+        ],
+        "a": 2,
+        "why": "Morningstar incluye tecnología en el grupo sensible: depende del ciclo, pero menos que los cíclicos."
+      },
+      {
+        "t": "choice",
+        "caso": "Alphabet (GOOGL)",
+        "q": "Yahoo Finance clasifica a Alphabet en el sector de comunicaciones. ¿A qué grupo pertenece según Morningstar?",
+        "opts": [
+          "Cíclico",
+          "Defensivo",
+          "Sensible"
+        ],
+        "a": 2,
+        "why": "Morningstar incluye comunicaciones en el grupo sensible: depende del ciclo, pero menos que los cíclicos."
+      },
+      {
+        "t": "choice",
+        "caso": "MercadoLibre (MELI)",
+        "q": "Yahoo Finance clasifica a MercadoLibre en el sector de consumo discrecional. ¿A qué grupo pertenece según Morningstar?",
+        "opts": [
+          "Cíclico",
+          "Defensivo",
+          "Sensible"
+        ],
+        "a": 0,
+        "why": "Morningstar incluye consumo discrecional en el grupo cíclico: su beneficio depende mucho de cómo vaya la economía."
+      },
+      {
+        "t": "choice",
+        "caso": "Microsoft (MSFT)",
+        "q": "Yahoo Finance clasifica a Microsoft en el sector de tecnología. ¿A qué grupo pertenece según Morningstar?",
+        "opts": [
+          "Cíclico",
+          "Defensivo",
+          "Sensible"
+        ],
+        "a": 2,
+        "why": "Morningstar incluye tecnología en el grupo sensible: depende del ciclo, pero menos que los cíclicos."
+      },
+      {
+        "t": "choice",
+        "caso": "Eli Lilly and Company (LLY)",
+        "q": "Yahoo Finance clasifica a Eli Lilly and Company en el sector de salud. ¿A qué grupo pertenece según Morningstar?",
+        "opts": [
+          "Cíclico",
+          "Defensivo",
+          "Sensible"
+        ],
+        "a": 1,
+        "why": "Morningstar incluye salud en el grupo defensivo: vende lo que se sigue comprando en una crisis."
+      },
+      {
+        "t": "choice",
+        "caso": "CrowdStrike Holdings (CRWD)",
+        "q": "Yahoo Finance clasifica a CrowdStrike Holdings en el sector de tecnología. ¿A qué grupo pertenece según Morningstar?",
+        "opts": [
+          "Cíclico",
+          "Defensivo",
+          "Sensible"
+        ],
+        "a": 2,
+        "why": "Morningstar incluye tecnología en el grupo sensible: depende del ciclo, pero menos que los cíclicos."
+      },
+      {
+        "t": "choice",
+        "caso": "Nu Holdings (NU)",
+        "q": "Yahoo Finance clasifica a Nu Holdings en el sector de servicios financieros. ¿A qué grupo pertenece según Morningstar?",
+        "opts": [
+          "Cíclico",
+          "Defensivo",
+          "Sensible"
+        ],
+        "a": 0,
+        "why": "Morningstar incluye servicios financieros en el grupo cíclico: su beneficio depende mucho de cómo vaya la economía."
+      },
+      {
+        "t": "choice",
+        "caso": "Axon Enterprise (AXON)",
+        "q": "Yahoo Finance clasifica a Axon Enterprise en el sector de industria. ¿A qué grupo pertenece según Morningstar?",
+        "opts": [
+          "Cíclico",
+          "Defensivo",
+          "Sensible"
+        ],
+        "a": 2,
+        "why": "Morningstar incluye industria en el grupo sensible: depende del ciclo, pero menos que los cíclicos."
+      },
+      {
+        "t": "choice",
+        "caso": "Meta Platforms (META)",
+        "q": "Yahoo Finance clasifica a Meta Platforms en el sector de comunicaciones. ¿A qué grupo pertenece según Morningstar?",
+        "opts": [
+          "Cíclico",
+          "Defensivo",
+          "Sensible"
+        ],
+        "a": 2,
+        "why": "Morningstar incluye comunicaciones en el grupo sensible: depende del ciclo, pero menos que los cíclicos."
+      },
+      {
+        "t": "choice",
+        "caso": "NVIDIA (NVDA)",
+        "q": "Yahoo Finance clasifica a NVIDIA en el sector de tecnología. ¿A qué grupo pertenece según Morningstar?",
+        "opts": [
+          "Cíclico",
+          "Defensivo",
+          "Sensible"
+        ],
+        "a": 2,
+        "why": "Morningstar incluye tecnología en el grupo sensible: depende del ciclo, pero menos que los cíclicos."
+      }
     ]
   }
 }

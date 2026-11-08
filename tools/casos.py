@@ -21,6 +21,18 @@ HOY = dt.date.today().strftime("%d/%m/%Y")
 FALLBACK = ["AVGO", "GOOGL", "MELI", "MSFT", "LLY", "CRWD", "NU", "AXON", "META", "NVDA"]
 CUR = {"USD": "$", "EUR": "€"}
 O_NEIL = 25  # crecimiento mínimo de ventas que pide O'Neil (CAN SLIM)
+# Sectores de Yahoo (los de Morningstar) → nombre en español y grupo de Morningstar.
+SECTORES = {
+    "Basic Materials": ("materiales básicos", "Cíclico"), "Consumer Cyclical": ("consumo discrecional", "Cíclico"),
+    "Financial Services": ("servicios financieros", "Cíclico"), "Real Estate": ("inmobiliario", "Cíclico"),
+    "Consumer Defensive": ("consumo básico", "Defensivo"), "Healthcare": ("salud", "Defensivo"),
+    "Utilities": ("servicios públicos", "Defensivo"), "Communication Services": ("comunicaciones", "Sensible"),
+    "Energy": ("energía", "Sensible"), "Industrials": ("industria", "Sensible"), "Technology": ("tecnología", "Sensible"),
+}
+GRUPOS = ["Cíclico", "Defensivo", "Sensible"]
+LECTURA = {"Cíclico": "su beneficio depende mucho de cómo vaya la economía",
+           "Defensivo": "vende lo que se sigue comprando en una crisis",
+           "Sensible": "depende del ciclo, pero menos que los cíclicos"}
 
 
 def tickers():
@@ -88,7 +100,7 @@ def casos_de(tk):
         return {}
     q = q[sorted(q.columns, reverse=True)]  # columna 0 = trimestre más reciente
     cols = list(q.columns)
-    out = {"f1a": [], "f1b": [], "f2a": [], "f2b": [], "f3a": [], "f3b": [], "f5a": []}
+    out = {"f1a": [], "f1b": [], "f2a": [], "f2b": [], "f3a": [], "f3b": [], "f5a": [], "f6a": []}
     rev, eps = row(q, "Total Revenue"), row(q, "Diluted EPS")
     gp, op = row(q, "Gross Profit"), row(q, "Operating Income")
 
@@ -244,6 +256,17 @@ def casos_de(tk):
                        f"Batir de forma repetida suele llevar a los analistas a subir sus estimaciones.",
             })
 
+    # f6a · grupo de Morningstar según el sector
+    sec = SECTORES.get(info.get("sector") or "")
+    if sec:
+        es_sec, grupo = sec
+        out["f6a"].append({
+            "t": "choice", "caso": caso,
+            "q": f"Yahoo Finance clasifica a {nombre} en el sector de {es_sec}. ¿A qué grupo pertenece según Morningstar?",
+            "opts": GRUPOS, "a": GRUPOS.index(grupo),
+            "why": f"Morningstar incluye {es_sec} en el grupo {grupo.lower()}: {LECTURA[grupo]}.",
+        })
+
     # F3: en bancos y aseguradoras la deuda y la caja son la materia prima del negocio; estas ratios no aplican.
     if info.get("sector") == "Financial Services":
         return out
@@ -313,7 +336,7 @@ def casos_de(tk):
 
 
 def main():
-    ex = {"f1a": [], "f1b": [], "f2a": [], "f2b": [], "f3a": [], "f3b": [], "f5a": []}
+    ex = {"f1a": [], "f1b": [], "f2a": [], "f2b": [], "f3a": [], "f3b": [], "f5a": [], "f6a": []}
     fallos = []
     for tk in tickers():
         try:
