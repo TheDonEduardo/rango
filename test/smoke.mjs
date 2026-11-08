@@ -190,6 +190,19 @@ if (fs.existsSync(semPath)) {
   T.goHome();
 }
 
+// 7) Simulador de aportaciones: valores de referencia calculados aparte.
+const cerca = (x, y) => Math.abs(x - y) < 0.05;
+const r1 = T.aportaciones({inicial: 0, mensual: 200, anos: 20, rent: 6, ter: 0});
+const r2 = T.aportaciones({inicial: 0, mensual: 200, anos: 20, rent: 6, ter: 1.8});
+const r3 = T.aportaciones({inicial: 5000, mensual: 0, anos: 10, rent: 7, ter: 0});
+if (!cerca(r1.final, 90687.73) || r1.aportado !== 48000 || !cerca(r2.final, 74363.05) || !cerca(r2.sinComision, 90687.73) || !cerca(r3.final, 5000 * 1.07 ** 10) || r1.serie.length !== 21)
+  errs.push(`simulador de aportaciones: ${r1.final} ${r2.final} ${r3.final}`);
+T.setTrack('pasiva'); T.skipBasics();
+if (!T.homeHTML().includes('data-act="calc"')) errs.push('la ruta Pasiva no ofrece el simulador de aportaciones');
+T.openCalc();
+if (!app.innerHTML.includes('¿Cuánto tendrías?') || !app.innerHTML.includes('calcsvg') || /NaN|undefined/.test(app.innerHTML)) errs.push('la vista del simulador de aportaciones no se dibuja bien');
+T.goHome(); T.setTrack('tecnico');
+
 // 5) Test de nivel: todo bien abre las rutas y marca Básico; solo una unidad bien marca solo esa unidad.
 const st = T.getState();
 const hacerTest = acierta => {

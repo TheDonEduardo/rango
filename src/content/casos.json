@@ -1247,6 +1247,46 @@
         "a": 2,
         "why": "Morningstar incluye tecnología en el grupo sensible: depende del ciclo, pero menos que los cíclicos."
       }
+    ],
+    "bg1": [
+      {
+        "t": "num",
+        "caso": "iShares Core MSCI World (EUNL)",
+        "q": "El ETF iShares Core MSCI World de acumulación (en euros) cerró a 38,44 € el 07/11/2016 y a 127,32 € el 06/11/2026. ¿Cuánto subió en esos 10 años? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 231.2,
+        "tol": 0.06,
+        "why": "127,32 ÷ 38,44 − 1 = 231,2 %. Al ser de acumulación, el precio ya incluye los dividendos reinvertidos. Por el camino hubo caídas fuertes: la rentabilidad es para quien no vendió."
+      },
+      {
+        "t": "num",
+        "caso": "S&P 500",
+        "q": "El índice S&P 500 cerró a 2.131,52 puntos el 07/11/2016 y a 7.376,86 puntos el 06/11/2026. ¿Cuánto subió en esos 10 años? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 246.1,
+        "tol": 0.06,
+        "why": "7.376,86 ÷ 2.131,52 − 1 = 246,1 %. Es el índice sin dividendos: con ellos reinvertidos, el resultado habría sido mejor. Por el camino hubo caídas fuertes: la rentabilidad es para quien no vendió."
+      }
+    ],
+    "pr1": [
+      {
+        "t": "num",
+        "caso": "iShares Core MSCI World (EUNL)",
+        "q": "El ETF iShares Core MSCI World de acumulación (en euros) marcó un máximo de 60,55 € el 19/02/2020 y cayó hasta 40,19 € el 23/03/2020. ¿Cuánto cayó? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 33.6,
+        "tol": 0.06,
+        "why": "1 − 40,19 ÷ 60,55 = 33,6 %. Es la mayor caída de cierre a cierre desde el 25/09/2009: antes de elegir cuánto pones en acciones, piensa si aguantarías verla en tu cartera."
+      },
+      {
+        "t": "num",
+        "caso": "S&P 500",
+        "q": "El índice S&P 500 marcó un máximo de 1.565,15 puntos el 09/10/2007 y cayó hasta 676,53 puntos el 09/03/2009. ¿Cuánto cayó? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 56.8,
+        "tol": 0.06,
+        "why": "1 − 676,53 ÷ 1.565,15 = 56,8 %. Es la mayor caída de cierre a cierre desde el 03/01/2000: antes de elegir cuánto pones en acciones, piensa si aguantarías verla en tu cartera."
+      }
     ]
   }
 }

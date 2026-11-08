@@ -19,7 +19,14 @@ OUT = ROOT / "src" / "content" / "casos.json"
 BOT = ROOT.parent / "portfolio_manager.py"
 HOY = dt.date.today().strftime("%d/%m/%Y")
 # Lecciones que reciben casos reales (una sola definición para casos_de y main).
-LECCIONES_CASOS = ("f1a", "f1b", "f2a", "f2b", "f3a", "f3b", "f5a", "f6a")
+LECCIONES_CASOS = ("f1a", "f1b", "f2a", "f2b", "f3a", "f3b", "f5a", "f6a", "bg1", "pr1")
+# Índices y fondos indexados para la ruta Pasiva: (ticker, etiqueta, descripción, unidad, desde, nota sobre dividendos).
+INDICES = [
+    ("EUNL.DE", "iShares Core MSCI World (EUNL)", "el ETF iShares Core MSCI World de acumulación (en euros)", "€", None,
+     "Al ser de acumulación, el precio ya incluye los dividendos reinvertidos."),
+    ("^GSPC", "S&P 500", "el índice S&P 500", "puntos", "2000-01-01",
+     "Es el índice sin dividendos: con ellos reinvertidos, el resultado habría sido mejor."),
+]
 FALLBACK = ["AVGO", "GOOGL", "MELI", "MSFT", "LLY", "CRWD", "NU", "AXON", "META", "NVDA"]
 CUR = {"USD": "$", "EUR": "€"}
 O_NEIL = 25  # crecimiento mínimo de ventas que pide O'Neil (CAN SLIM)
@@ -345,6 +352,49 @@ def casos_de(tk):
     return out
 
 
+def casos_indices():
+    """Casos de la ruta Pasiva: crecimiento real a 10 años (bg1) y mayor caída desde máximos (pr1)."""
+    out = {"bg1": [], "pr1": []}
+    for tk, etiqueta, desc, unidad, desde, nota in INDICES:
+        h = yf.Ticker(tk).history(period="max", interval="1d")["Close"].dropna()
+        if desde:
+            h = h[h.index >= desde]
+        if len(h) < 300:
+            continue
+        u = lambda v: f"{es(v, 2)} {unidad}"
+        # bg1 · cuánto ha subido en los últimos 10 años
+        fin_f, fin_v = h.index[-1], round(float(h.iloc[-1]), 2)
+        inicio = h[h.index >= fin_f - dt.timedelta(days=3652)]
+        if (fin_f - h.index[0]).days >= 3640 and len(inicio):
+            ini_f, ini_v = inicio.index[0], round(float(inicio.iloc[0]), 2)
+            g = round((fin_v / ini_v - 1) * 100, 1)
+            if 0 < g < 1000:
+                out["bg1"].append({
+                    "t": "num", "caso": etiqueta,
+                    "q": f"{desc[0].upper() + desc[1:]} cerró a {u(ini_v)} el {fecha(ini_f)} y a {u(fin_v)} el {fecha(fin_f)}. "
+                         f"¿Cuánto subió en esos 10 años? Redondea a 1 decimal.",
+                    "unit": "%", "a": g, "tol": 0.06,
+                    "why": f"{es(fin_v, 2)} ÷ {es(ini_v, 2)} − 1 = {es(g)} %. {nota} Por el camino hubo caídas fuertes: la rentabilidad es para quien no vendió.",
+                })
+        # pr1 · mayor caída desde un máximo (con precios de cierre)
+        pico = h.cummax()
+        caida = h / pico - 1
+        f_min = caida.idxmin()
+        f_max = h[:f_min].idxmax()
+        v_max, v_min = round(float(h[f_max]), 2), round(float(h[f_min]), 2)
+        d = round((1 - v_min / v_max) * 100, 1)
+        if 5 < d < 95:
+            out["pr1"].append({
+                "t": "num", "caso": etiqueta,
+                "q": f"{desc[0].upper() + desc[1:]} marcó un máximo de {u(v_max)} el {fecha(f_max)} y cayó hasta {u(v_min)} el {fecha(f_min)}. "
+                     f"¿Cuánto cayó? Redondea a 1 decimal.",
+                "unit": "%", "a": d, "tol": 0.06,
+                "why": f"1 − {es(v_min, 2)} ÷ {es(v_max, 2)} = {es(d)} %. Es la mayor caída de cierre a cierre desde el "
+                       f"{fecha(h.index[0])}: antes de elegir cuánto pones en acciones, piensa si aguantarías verla en tu cartera.",
+            })
+    return out
+
+
 def main():
     ex = {k: [] for k in LECCIONES_CASOS}
     fallos = []
@@ -354,6 +404,11 @@ def main():
                 ex[k].extend(v)
         except Exception as e:  # un ticker sin datos no debe tumbar el resto
             fallos.append(f"{tk}: {e}")
+    try:
+        for k, v in casos_indices().items():
+            ex[k].extend(v)
+    except Exception as e:
+        fallos.append(f"índices: {e}")
     if not any(ex.values()):
         sys.exit("Sin datos: no se sobrescribe casos.json. " + "; ".join(fallos))
     hoy = dt.date.today()

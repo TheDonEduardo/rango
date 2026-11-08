@@ -4,7 +4,7 @@ import {P,ico,icoX,icoOk,LOGO} from './icons.js';
 import {candlesSVG,lineSVG,glyph} from './charts.js';
 import {UNITS,FLAT,CASOS,SEMANA,TRACKS,EXBYID,PLACEMENT,trackOf,exCount} from './content.js';
 
-const DEF=()=>({xp:0,streak:0,last:null,day:null,dayXp:0,done:{},all:false,track:'basico',skipBasics:false,legal:0,srs:{},sim:{}});
+const DEF=()=>({xp:0,streak:0,last:null,day:null,dayXp:0,done:{},all:false,track:'basico',skipBasics:false,legal:0,srs:{},sim:{},calc:null});
 // Sube LEGAL_V si cambia el texto del aviso: se vuelve a pedir la aceptación.
 const LEGAL_V=1;
 // Repaso espaciado: días hasta la siguiente aparición tras cada acierto. Tras el último, sale de la lista.
@@ -99,6 +99,7 @@ function homeHTML(){
   if(S.track!=='basico'&&!advancedOpen())h+=`<section class="gate"><p>Esta ruta se abre al completar la ruta <b>Básico</b>.</p><div class="row"><button class="btn line" data-act="track" data-track="basico">Ir a los básicos</button><button class="btn ghost" data-act="skipbasics">Ya opero: saltar los básicos</button></div></section>`;
   if(S.track==='basico'&&!S.placement&&!Object.keys(S.done).length)h+=`<section class="test" aria-label="Test de nivel"><div><b>¿Ya sabes de bolsa?</b><span>Haz el test de nivel: ${PLACEMENT.length} preguntas, unos 5 minutos. Marcaremos lo que ya dominas y, si aciertas casi todo, se abren las demás rutas.</span></div><div class="row"><button class="btn primary" data-act="test">Hacer el test</button><button class="btn ghost" data-act="notest">Empezar desde cero</button></div></section>`;
   if(S.track==='tecnico'&&SEMANA&&advancedOpen())h+=simCardHTML();
+  if(S.track==='pasiva'&&advancedOpen())h+=`<section class="sim" aria-label="Simulador de aportaciones"><b>Simulador de aportaciones</b><div class="simrow"><span>Mira cómo crece una cartera aportando cada mes, y cuánto se llevan las comisiones.</span><button class="btn primary" data-act="calc">Abrir</button></div></section>`;
   const due=srsDue().length;
   if(due)h+=`<section class="srs" aria-label="Repaso del día"><div><b>Repaso del día</b><span>${due} ${due===1?'ejercicio que fallaste':'ejercicios que fallaste'}</span></div><button class="btn primary" data-act="srs">Repasar</button></section>`;
   UNITS.filter(u=>trackOf(u)===S.track).forEach(u=>{
@@ -285,6 +286,47 @@ function simResHTML(){
   <p class="src">${P.despues.length} sesiones reales después del ${fechaES(P.hasta)}. Si un día tocaba stop y objetivo, se cuenta el stop; con hueco, se ejecuta a la apertura.</p></div>
   <div><button class="btn primary" data-act="home">Continuar</button></div></div>`;
 }
+// ---------- Simulador de aportaciones (ruta Pasiva) ----------
+// Cálculo mensual: rentabilidad neta = rentabilidad − comisión; la aportación se hace a final de cada mes.
+export function aportaciones({inicial,mensual,anos,rent,ter}){
+  const r=Math.pow(1+(rent-ter)/100,1/12)-1,rb=Math.pow(1+rent/100,1/12)-1;
+  let v=inicial,vb=inicial;const serie=[{a:inicial,v:inicial}];
+  for(let m=1;m<=anos*12;m++){v=v*(1+r)+mensual;vb=vb*(1+rb)+mensual;if(m%12===0)serie.push({a:inicial+mensual*m,v})}
+  return {aportado:inicial+mensual*anos*12,final:v,sinComision:vb,serie};
+}
+const CALC_DEF={inicial:0,mensual:200,anos:20,rent:6,ter:0.2};
+const CALC_CTRL=[
+  ['inicial','Capital inicial',0,50000,1000,v=>fmt(v,0)+' €'],
+  ['mensual','Aportación mensual',0,2000,25,v=>fmt(v,0)+' €'],
+  ['anos','Años',1,40,1,v=>v+(v===1?' año':' años')],
+  ['rent','Rentabilidad anual',0,10,0.5,v=>fmt(v,1)+' %'],
+  ['ter','Comisión anual',0,2,0.05,v=>fmt(v,2)+' %'],
+];
+function calcChart(r){
+  const W=360,H=200,pl=8,pr=52,pt=12,pb=22,n=r.serie.length-1,max=Math.max(...r.serie.map(p=>p.v),1);
+  const x=i=>pl+(W-pl-pr)*i/Math.max(n,1),y=v=>pt+(H-pt-pb)*(1-v/max);
+  const pts=k=>r.serie.map((p,i)=>`${x(i).toFixed(1)},${y(p[k]).toFixed(1)}`).join(' ');
+  const area=`${x(0).toFixed(1)},${y(0).toFixed(1)} ${pts('v')} ${x(n).toFixed(1)},${y(0).toFixed(1)}`;
+  let s=`<svg class="svg calcsvg" viewBox="0 0 ${W} ${H}" role="img" aria-label="Valor de la cartera y dinero aportado año a año">`;
+  [0,0.5,1].forEach(f=>{const yy=y(max*f).toFixed(1);s+=`<line class="grid" x1="${pl}" x2="${W-pr}" y1="${yy}" y2="${yy}"/><text x="${W-pr+6}" y="${(+yy+3.5).toFixed(1)}">${fmt(max*f/1000,0)} mil</text>`});
+  s+=`<polygon class="cv-area" points="${area}"/><polyline class="cv-v" points="${pts('v')}"/><polyline class="cv-a" points="${pts('a')}"/>`;
+  s+=`<text x="${pl}" y="${H-6}">Año 0</text><text x="${(W-pr).toFixed(1)}" y="${H-6}" text-anchor="end">Año ${n}</text>`;
+  return s+'</svg>';
+}
+function calcOutHTML(){
+  const p=S.calc,r=aportaciones(p),gan=r.final-r.aportado,com=r.sinComision-r.final;
+  return `<dl class="simk calck"><div><dt>Valor final</dt><dd>${fmt(r.final,0)} €</dd></div><div><dt>Aportado</dt><dd>${fmt(r.aportado,0)} €</dd></div><div><dt>Rendimientos</dt><dd>${fmt(gan,0)} €</dd></div><div><dt>Se llevan las comisiones</dt><dd>${fmt(com,0)} €</dd></div></dl>
+  <figure class="chart">${calcChart(r)}<figcaption class="leyenda"><span class="lv-v">Valor de la cartera</span><span class="lv-a">Dinero aportado</span></figcaption></figure>`;
+}
+function calcHTML(){
+  if(!S.calc)S.calc=Object.assign({},CALC_DEF);
+  return `<div class="lesson sim-view"><div class="lbar"><button class="x" data-act="home" aria-label="Volver al inicio">${icoX}</button><p class="kind">Simulador de aportaciones</p></div>
+  <div class="qwrap"><h2 class="q">¿Cuánto tendrías?</h2>
+  <div class="calc">${CALC_CTRL.map(([k,l,mi,ma,st,f])=>`<label class="cc" for="calc-${k}"><span>${l}</span><output id="out-${k}">${f(S.calc[k])}</output><input type="range" id="calc-${k}" data-calc="${k}" min="${mi}" max="${ma}" step="${st}" value="${S.calc[k]}"></label>`).join('')}</div>
+  <div id="calcOut">${calcOutHTML()}</div>
+  <p class="src">Supone una rentabilidad constante cada año, algo que nunca ocurre: habrá años de fuertes caídas. Es una herramienta de formación, no una previsión ni una recomendación.</p></div>
+  <div><button class="btn primary" data-act="home">Volver</button></div></div>`;
+}
 function legalHTML(first){
   return `<div class="res legal"><div class="res-main"><h1>${first?'Antes de empezar':'Aviso legal'}</h1>
   <p>Rango es una herramienta de formación. Nada de lo que ves es asesoramiento financiero ni una recomendación de comprar o vender ningún valor.</p>
@@ -318,7 +360,7 @@ function failHTML(){
 function render(){
   const needLegal=S.legal<LEGAL_V;
   if(view==='home'&&needLegal){$app.innerHTML=legalHTML(true);window.scrollTo(0,0);return}
-  $app.innerHTML=view==='home'?homeHTML():view==='legal'?legalHTML(false):view==='sim'?simHTML():view==='simres'?simResHTML():view==='lesson'?lessonHTML():view==='result'?resultHTML():failHTML();
+  $app.innerHTML=view==='home'?homeHTML():view==='legal'?legalHTML(false):view==='sim'?simHTML():view==='simres'?simResHTML():view==='calc'?calcHTML():view==='lesson'?lessonHTML():view==='result'?resultHTML():failHTML();
   if(view==='home'){
     if(goCur){const n=$app.querySelector('.node.current');if(n)n.scrollIntoView({block:'center'});goCur=false}
     else window.scrollTo(0,homeY);
@@ -444,6 +486,7 @@ $app.addEventListener('click',e=>{
   else if(a==='pstep'){const c=planCtx(),g=$app.querySelector(`.pl[data-id="${b.dataset.id}"]`);if(c&&g)planSet(g,c.vals[b.dataset.id]+(+b.dataset.d)*c.step)}
   else if(a==='sim'){homeY=window.scrollY;simDraft=null;view='sim';render()}
   else if(a==='simres'){homeY=window.scrollY;view='simres';render()}
+  else if(a==='calc'){homeY=window.scrollY;view='calc';render()}
   else if(a==='simsave'&&simDraft&&simValid(simDraft)){S.sim[SEMANA.semana]={ticker:SEMANA.ticker,plan:Object.assign({},simDraft),fecha:today()};save();simDraft=null;view='home';render();toast('Plan guardado. El sábado que viene verás el resultado.')}
   else if(a==='opick'&&!run.checked){
     const n=ordItems(run.queue[0]).length;if(!run.sel)run.sel=Array(n).fill(null);
@@ -452,7 +495,7 @@ $app.addEventListener('click',e=>{
   else if(a==='ounpick'&&!run.checked){run.sel[+b.dataset.k]=null;updateOrd()}
   else if(a==='check'&&!b.disabled)check();
   else if(a==='next')next();
-  else if(a==='quit'||a==='home'){const deSim=view==='sim'||view==='simres';simDraft=null;view='home';goCur=(a==='home'&&!deSim);render()}
+  else if(a==='quit'||a==='home'){const deSim=view==='sim'||view==='simres'||view==='calc';simDraft=null;view='home';goCur=(a==='home'&&!deSim);render()}
   else if(a==='retry')startRun(run.L);
   else if(a==='legal'){homeY=window.scrollY;view='legal';render()}
   else if(a==='legalok'){S.legal=LEGAL_V;save();homeY=0;render()}
@@ -469,6 +512,13 @@ $app.addEventListener('click',e=>{
   }
 });
 $app.addEventListener('input',e=>{
+  // Deslizadores del simulador de aportaciones: actualizan solo el resultado, sin redibujar (no se pierde el foco).
+  const k=e.target.dataset&&e.target.dataset.calc;
+  if(k&&view==='calc'){
+    S.calc[k]=+e.target.value;save();
+    const c=CALC_CTRL.find(x=>x[0]===k);$app.querySelector('#out-'+k).textContent=c[5](S.calc[k]);
+    $app.querySelector('#calcOut').innerHTML=calcOutHTML();return;
+  }
   if(e.target.id!=='numIn'||!run)return;
   run.val=e.target.value;
   const c=$app.querySelector('[data-act=check]');if(c)c.disabled=run.val.trim()==='';
@@ -504,4 +554,4 @@ if(typeof navigator!=='undefined'&&'serviceWorker' in navigator&&typeof location
 
 
 // API mínima para tests (test/smoke.mjs)
-export const api={FLAT,CASOS,SEMANA,PLACEMENT,simulate,openSim:()=>{simDraft=null;view='sim';render()},openSimRes:()=>{view='simres';render()},simDraftSet:p=>{simDraft=p},simSave:()=>{S.sim[SEMANA.semana]={ticker:SEMANA.ticker,plan:Object.assign({},simDraft),fecha:today()}},goHome:()=>{view='home';render()},startTest:()=>startRun(TEST_L),srsDue,acceptLegal:()=>{S.legal=LEGAL_V},startSrs:()=>startRun(SRS_L),setTrack:t=>{S.track=t},skipBasics:()=>{S.skipBasics=true},homeHTML,startRun,lessonHTML,check,next,resultHTML,failHTML,render,getRun:()=>run,setSel:v=>{run.sel=v},setVal:v=>{run.val=v},getState:()=>S};
+export const api={FLAT,CASOS,SEMANA,PLACEMENT,simulate,aportaciones,openCalc:()=>{view='calc';render()},openSim:()=>{simDraft=null;view='sim';render()},openSimRes:()=>{view='simres';render()},simDraftSet:p=>{simDraft=p},simSave:()=>{S.sim[SEMANA.semana]={ticker:SEMANA.ticker,plan:Object.assign({},simDraft),fecha:today()}},goHome:()=>{view='home';render()},startTest:()=>startRun(TEST_L),srsDue,acceptLegal:()=>{S.legal=LEGAL_V},startSrs:()=>startRun(SRS_L),setTrack:t=>{S.track=t},skipBasics:()=>{S.skipBasics=true},homeHTML,startRun,lessonHTML,check,next,resultHTML,failHTML,render,getRun:()=>run,setSel:v=>{run.sel=v},setVal:v=>{run.val=v},getState:()=>S};

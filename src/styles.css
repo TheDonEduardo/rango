@@ -182,6 +182,17 @@ button{font:inherit;color:inherit;cursor:pointer}
 .simk div{padding:10px 12px;border-radius:12px;background:var(--surface);border:1px solid var(--line)}
 .simk dt{font-size:12px;color:var(--ink-2)}
 .simk dd{margin:2px 0 0;font:700 18px/1.2 var(--font-display);font-variant-numeric:tabular-nums}
+.calc{display:grid;gap:14px}
+.cc{display:grid;grid-template-columns:1fr auto;gap:4px 12px;align-items:center;font-size:14px;color:var(--ink-2)}
+.cc output{font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+.cc input{grid-column:1/-1;width:100%;accent-color:var(--up)}
+.calck{grid-template-columns:1fr 1fr}
+.calcsvg .cv-area{fill:var(--up-bg)}
+.calcsvg .cv-v{fill:none;stroke:var(--up);stroke-width:2.5}
+.calcsvg .cv-a{fill:none;stroke:var(--ink-2);stroke-width:2;stroke-dasharray:5 4}
+.leyenda{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--ink-2);padding:2px 6px 0}
+.leyenda span::before{content:"";display:inline-block;width:16px;height:0;margin-right:6px;vertical-align:middle;border-top:3px solid var(--up)}
+.leyenda .lv-a::before{border-top:2px dashed var(--ink-2)}
 .pfine{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px 14px;margin-top:10px}
 .pf{display:flex;align-items:center;gap:6px}
 .pf span{font-weight:600;font-size:14px;color:var(--c);min-width:64px}
