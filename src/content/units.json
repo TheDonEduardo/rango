@@ -699,6 +699,100 @@
     ]
   },
   {
+    "n": 7,
+    "id": "errores",
+    "track": "basico",
+    "gate": false,
+    "title": "Errores del principiante",
+    "blurb": "Lo que más dinero cuesta al empezar, y cómo evitarlo.",
+    "lessons": [
+      {
+        "id": "bi1",
+        "title": "Errores con el dinero",
+        "ex": [
+          {
+            "t": "num",
+            "q": "Inviertes 1.000 € y pagas 9,95 € de comisión al comprar y otros 9,95 € al vender. ¿Cuánto tiene que subir solo para cubrir las comisiones? Redondea a 2 decimales.",
+            "unit": "%",
+            "a": 1.99,
+            "why": "(9,95 + 9,95) ÷ 1.000 = 1,99 %. Con importes pequeños, las comisiones fijas se comen buena parte de la ganancia: busca un bróker barato o aporta menos veces y más cantidad.",
+            "tol": 0.02
+          },
+          {
+            "t": "choice",
+            "q": "Un conocido te recomienda una acción que «se va a multiplicar por 10». ¿Qué haces?",
+            "opts": [
+              "Meter todos tus ahorros en ella",
+              "Investigar y arriesgar poco",
+              "Pedir un préstamo para comprar más",
+              "Comprar ya, antes de que suba"
+            ],
+            "a": 1,
+            "why": "Nadie sabe qué acción se multiplicará. Si te interesa, investígala tú y pon solo lo que podrías perder sin que te cambie la vida."
+          },
+          {
+            "t": "num",
+            "q": "Tienes 5.000 € para invertir y pones 4.000 € en una sola acción. ¿Qué porcentaje de tu capital depende de esa empresa?",
+            "unit": "%",
+            "a": 80,
+            "why": "4.000 ÷ 5.000 = 80 %. Si esa empresa cae a la mitad, pierdes un 40 % de todo tu capital: por eso se reparte entre muchas."
+          },
+          {
+            "t": "choice",
+            "q": "¿Qué dinero no deberías invertir en bolsa?",
+            "opts": [
+              "El que necesitarás en menos de 2 años",
+              "El que no necesitarás en 10 años",
+              "Tus aportaciones mensuales planificadas",
+              "Lo que sobra tras el fondo de emergencia"
+            ],
+            "a": 0,
+            "why": "En 2 años la bolsa puede estar un 30 % por debajo. Lo que vas a necesitar pronto va en liquidez o renta fija a corto plazo."
+          }
+        ]
+      },
+      {
+        "id": "bi2",
+        "title": "Errores al operar",
+        "ex": [
+          {
+            "t": "num",
+            "q": "Compras acciones a 20 € y caen a 10 €. Compras la misma cantidad de acciones otra vez. ¿Cuál es tu precio medio?",
+            "unit": "€",
+            "a": 15,
+            "why": "(20 + 10) ÷ 2 = 15 €. Promediar a la baja dobla la apuesta en algo que va mal; hacerlo para «recuperar antes» es uno de los errores que más cuestan."
+          },
+          {
+            "t": "num",
+            "q": "Operas con un apalancamiento de 10 veces y el precio cae un 8 %. ¿Qué porcentaje de tu dinero pierdes?",
+            "unit": "%",
+            "a": 80,
+            "why": "10 × 8 % = 80 %. Con apalancamiento, un movimiento normal del mercado puede borrar casi todo tu dinero en días."
+          },
+          {
+            "t": "choice",
+            "q": "Una acción tuya ha caído un 30 % y piensas «no vendo hasta recuperar lo que pagué». ¿Qué sesgo es?",
+            "opts": [
+              "Anclaje al precio de compra",
+              "Diversificación excesiva",
+              "Rebalanceo automático",
+              "Interés compuesto"
+            ],
+            "a": 0,
+            "why": "Al mercado no le importa a qué precio compraste. La pregunta útil es si hoy la comprarías: si la respuesta es no, mantenerla es otra decisión de inversión."
+          },
+          {
+            "t": "num",
+            "q": "Haces 10 operaciones al mes y pagas 5 € por cada una. ¿Cuántos euros pagas al año en comisiones?",
+            "unit": "€",
+            "a": 600,
+            "why": "10 × 12 × 5 = 600 € al año. Con una cartera de 6.000 €, eso es un 10 % que tienes que ganar solo para quedarte igual."
+          }
+        ]
+      }
+    ]
+  },
+  {
     "n": 1,
     "id": "pasiva",
     "track": "pasiva",
@@ -3841,6 +3935,109 @@
     ]
   },
   {
+    "n": 16,
+    "id": "backtest",
+    "title": "Backtesting",
+    "blurb": "Comprobar un sistema con el pasado sin engañarte.",
+    "lessons": [
+      {
+        "id": "bt1",
+        "title": "Medir un sistema",
+        "ex": [
+          {
+            "t": "num",
+            "q": "En la prueba, las operaciones ganadoras suman 12.000 € y las perdedoras, 8.000 €. ¿Cuál es el factor de beneficio (ganancias ÷ pérdidas)?",
+            "unit": "",
+            "a": 1.5,
+            "why": "12.000 ÷ 8.000 = 1,5: por cada euro perdido se ganan 1,50 €. Por debajo de 1 el sistema pierde dinero; con costes reales, conviene que quede bastante por encima."
+          },
+          {
+            "t": "num",
+            "q": "Un sistema acierta el 40 % de las veces ganando 2,5R y falla el 60 % perdiendo 1R. ¿Cuál es su esperanza por operación?",
+            "unit": "R",
+            "a": 0.4,
+            "why": "0,40 × 2,5 − 0,60 × 1 = 1,0 − 0,6 = 0,4R por operación. Se puede ganar acertando menos de la mitad si las ganancias son mayores que las pérdidas."
+          },
+          {
+            "t": "num",
+            "q": "En la prueba, la cuenta llega a un máximo de 15.000 € y después cae hasta 12.000 € antes de recuperarse. ¿Cuál es la máxima caída?",
+            "unit": "%",
+            "a": 20,
+            "why": "(15.000 − 12.000) ÷ 15.000 = 20 %. Pregúntate si seguirías operando el sistema en mitad de esa caída: si no, en la práctica no te sirve."
+          },
+          {
+            "t": "choice",
+            "q": "Un sistema tiene 12 operaciones en la prueba, con un 75 % de aciertos. ¿Qué concluyes?",
+            "opts": [
+              "Es un sistema excelente y ya fiable",
+              "Muestra pequeña: puede ser suerte",
+              "Hay que doblar el riesgo por operación",
+              "Hay que operarlo con todo el capital"
+            ],
+            "a": 1,
+            "why": "Con 12 operaciones, unas pocas buenas o malas cambian el resultado por completo. Hacen falta decenas o cientos de operaciones, en mercados distintos, para fiarse."
+          }
+        ]
+      },
+      {
+        "id": "bt2",
+        "title": "Trampas del backtest",
+        "ex": [
+          {
+            "t": "match",
+            "q": "Empareja cada trampa del backtest con su descripción.",
+            "pairs": [
+              [
+                "Sobreajuste",
+                "Afinar tantos parámetros que solo funciona en el pasado"
+              ],
+              [
+                "Sesgo de supervivencia",
+                "Probar solo con empresas que siguen cotizando hoy"
+              ],
+              [
+                "Sesgo de anticipación",
+                "Usar datos que no se conocían al operar"
+              ],
+              [
+                "Ignorar costes",
+                "Olvidar comisiones, horquilla y deslizamiento"
+              ]
+            ],
+            "why": "Las cuatro hacen que el pasado parezca mejor de lo que fue. Un backtest honesto las evita a propósito antes de mirar el resultado."
+          },
+          {
+            "t": "choice",
+            "q": "Ajustas un sistema con datos de 2010 a 2020 y obtienes un 30 % anual. ¿Qué haces antes de operarlo?",
+            "opts": [
+              "Operarlo ya con todo el capital",
+              "Probarlo en 2021-2025 sin tocar nada",
+              "Afinarlo más con 2010-2020",
+              "Subir el riesgo por operación"
+            ],
+            "a": 1,
+            "why": "Los datos con los que ajustas no sirven para validar. Si en un periodo nuevo, sin retocar nada, el resultado se hunde, el sistema estaba sobreajustado."
+          },
+          {
+            "t": "num",
+            "q": "Un sistema gana un 0,30 % por operación antes de costes y hace 200 operaciones al año. Cada operación cuesta un 0,20 % entre comisiones y deslizamiento. Sumando sin componer, ¿qué rentabilidad anual neta le queda?",
+            "unit": "%",
+            "a": 20,
+            "why": "(0,30 − 0,20) × 200 = 20 %, frente al 60 % bruto. Cuantas más operaciones, más pesan los costes: dos terceras partes se han ido en ellos."
+          },
+          {
+            "t": "num",
+            "q": "Pruebas un sistema con las 500 empresas que forman hoy el S&P 500. Supón que en esos 15 años salieron del índice otras 150. ¿Qué porcentaje del universo real quedó fuera de tu prueba? Redondea a 1 decimal.",
+            "unit": "%",
+            "a": 23.1,
+            "why": "150 ÷ (500 + 150) = 23,1 %. Muchas de esas empresas salieron por caer: dejarlas fuera hace que el sistema parezca mejor de lo que habría sido.",
+            "tol": 0.06
+          }
+        ]
+      }
+    ]
+  },
+  {
     "n": 1,
     "id": "crecimiento",
     "track": "fundamental",
@@ -5155,6 +5352,114 @@
             ],
             "a": 3,
             "why": "Un punto más de tipo o de crecimiento cambia el valor un 17-25 %. Úsalo para entender qué tiene que pasar para justificar el precio, no como una cifra exacta."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "n": 12,
+    "id": "alertas",
+    "track": "fundamental",
+    "title": "Señales de alerta contables",
+    "blurb": "Cuando el beneficio dice una cosa y la caja otra.",
+    "lessons": [
+      {
+        "id": "fa1",
+        "title": "Cobros, inventario y caja",
+        "ex": [
+          {
+            "t": "num",
+            "q": "Ventas anuales: 730 M$. Cuentas por cobrar: 120 M$. ¿Cuántos días tarda de media en cobrar (cobros ÷ ventas × 365)?",
+            "unit": "",
+            "a": 60,
+            "why": "120 ÷ 730 × 365 = 60 días. El dato importa por su evolución: compáralo con años anteriores y con la competencia."
+          },
+          {
+            "t": "num",
+            "q": "Un año después, las ventas son 803 M$ (+10 %) y las cuentas por cobrar, 176 M$. ¿Cuántos días tarda ahora en cobrar?",
+            "unit": "",
+            "a": 80,
+            "why": "176 ÷ 803 × 365 = 80 días, frente a 60. Si los cobros crecen mucho más que las ventas, puede estar vendiendo con plazos más largos para inflar ingresos."
+          },
+          {
+            "t": "choice",
+            "q": "El inventario crece un 40 % y las ventas, un 5 %. ¿Qué puede indicar?",
+            "opts": [
+              "Que el negocio va mejor que nunca",
+              "Que bajará su deuda este año",
+              "Producto que no se vende: posible ajuste",
+              "Nada relevante para el inversor"
+            ],
+            "a": 2,
+            "why": "Si fabrica mucho más de lo que vende, tarde o temprano tendrá que bajar precios o anotar pérdidas por ese inventario, y el margen lo sufrirá."
+          },
+          {
+            "t": "num",
+            "q": "Beneficio neto anual: 300 M$. Flujo de caja operativo: 90 M$. ¿Qué porcentaje del beneficio llega a caja operativa?",
+            "unit": "%",
+            "a": 30,
+            "why": "90 ÷ 300 = 30 %. Si se repite varios años, el beneficio contable no se está convirtiendo en dinero: revisa cobros, inventarios y ajustes."
+          }
+        ]
+      },
+      {
+        "id": "fa2",
+        "title": "Ajustes y otras señales",
+        "ex": [
+          {
+            "t": "num",
+            "q": "El BPA ajustado es de 2,00 $ y excluye 0,50 $ por acción de pagos en acciones a empleados. ¿Qué porcentaje del BPA ajustado supone ese coste?",
+            "unit": "%",
+            "a": 25,
+            "why": "0,50 ÷ 2,00 = 25 %. Pagar con acciones es un coste real (diluye al accionista) aunque el BPA ajustado lo excluya."
+          },
+          {
+            "t": "choice",
+            "q": "Tras muchas compras de empresas, el fondo de comercio supone el 60 % de los activos. ¿Qué riesgo tiene?",
+            "opts": [
+              "Deterioros que hundan el beneficio",
+              "Ninguno: es dinero en caja",
+              "Que tenga que subir el dividendo",
+              "Que le bajen los impuestos"
+            ],
+            "a": 0,
+            "why": "El fondo de comercio es lo que pagó de más por las empresas compradas. Si no rinden lo esperado, se anota un deterioro de golpe y el beneficio se hunde ese año."
+          },
+          {
+            "t": "match",
+            "q": "Empareja cada señal de alerta con lo que puede esconder.",
+            "pairs": [
+              [
+                "Cambio de auditor sin explicación",
+                "Desacuerdo sobre las cuentas"
+              ],
+              [
+                "Ajustes «extraordinarios» todos los años",
+                "Costes recurrentes presentados como puntuales"
+              ],
+              [
+                "Ventas disparadas al cierre del trimestre",
+                "Adelantar ingresos para cumplir objetivos"
+              ],
+              [
+                "Retraso en publicar resultados",
+                "Problemas para cerrar las cuentas"
+              ]
+            ],
+            "why": "Ninguna demuestra un fraude por sí sola, pero cada una merece una explicación antes de invertir."
+          },
+          {
+            "t": "choice",
+            "q": "Detectas dos señales de alerta en una empresa que encaja en tu tesis. ¿Qué haces?",
+            "opts": [
+              "Comprar más: nadie lo ha visto",
+              "Ignorarlas si el gráfico es bueno",
+              "Investigar antes, o reducir el tamaño",
+              "Esperar a que lo publique la prensa"
+            ],
+            "a": 2,
+            "why": "Una tesis debe sobrevivir a las cuentas. Si no encuentras una explicación convincente, el riesgo de un desplome no compensa: menos tamaño o ninguna posición."
           }
         ]
       }

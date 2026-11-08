@@ -101,10 +101,10 @@ Sistema de tokens en `src/styles.css` (`:root`, con variante oscura por `prefers
 
 ## Tareas pendientes (por orden sugerido)
 
-0. Ruta Básico: 6 unidades (acciones y órdenes, rentabilidad y riesgo, leer un gráfico, ETF e índices, impuestos en España, cuenta y bróker).
+0. Ruta Básico: 6 unidades obligatorias (acciones y órdenes, rentabilidad y riesgo, leer un gráfico, ETF e índices, impuestos en España, cuenta y bróker) y 1 complementaria (`gate: false`): errores del principiante.
 0b. Ruta Pasiva: 9 unidades (inversión pasiva, renta fija, reparto de activos, rebalanceo, carteras modelo, retirada sostenible, fiscalidad a largo plazo, psicología del inversor pasivo, fondos y ETF por dentro), con casos reales de índices y bonos y simulador de aportaciones con comparación de comisiones. Ideas siguientes: bono español a 10 años si aparece una fuente fiable (Yahoo no lo cubre bien), simular una caída en el simulador. Revisar cada año los tramos y normas fiscales de la unidad «Impuestos en España» y «Cuenta y bróker».
-1. Contenido técnico: unidades 1-15 hechas (velas, tendencia, riesgo, catalizadores binarios, Wyckoff/VSA, VCP, salidas escalonadas, riesgo de cartera, cortos y Fase 4, mercado general, fuerza relativa, techos y temporalidades, grupos y gaps, psicología y diario, opciones para cubrir). Ideas siguientes: backtesting de un sistema.
-1b. Ruta fundamental: F1-F11 hechas (F1-F3, F5, F6 y F8 con casos reales). Ideas siguientes: casos reales de dividendos y recompras (rentabilidad por dividendo, payout, acciones en circulación con Yahoo), análisis de un sector completo.
+1. Contenido técnico: unidades 1-16 hechas (velas, tendencia, riesgo, catalizadores binarios, Wyckoff/VSA, VCP, salidas escalonadas, riesgo de cartera, cortos y Fase 4, mercado general, fuerza relativa, techos y temporalidades, grupos y gaps, psicología y diario, opciones para cubrir, backtesting).
+1b. Ruta fundamental: F1-F12 hechas (F1-F3, F5, F6, F8 y F9 con casos reales). Ideas siguientes: análisis de un sector completo. No usar las acciones en circulación de Yahoo para medir recompras: no son fiables (Alphabet aparece aumentándolas).
 1c. Ideas de producto: retos del día y avisos de racha por Telegram con el bot del repo; historial de resultados del simulador (R acumulado).
 2. Tipos de ejercicio: `order`, `match` y `plan` hechos. Ideas: marcar una zona (rango, base) arrastrando dos líneas, o elegir el tamaño de posición con un deslizador.
 3. Repaso espaciado: hecho. Posible mejora: avisar de la racha de repaso y mostrar cuántos ejercicios están «aprendidos».
@@ -132,6 +132,7 @@ Unidades (2 lecciones × 4 ejercicios cada una, como la ruta técnica):
 | F9 Dividendos y recompras | Rentabilidad, payout y ex-dividendo | Recompras: efecto en el BPA, dilución y precio |
 | F10 Guía y expectativas | Leer la guía frente al consenso | Revisiones de estimaciones |
 | F11 Descuento de flujos | Valor actual, perpetuidad y valor por acción | Sensibilidad y margen de seguridad |
+| F12 Señales de alerta contables | Cobros, inventario y caja | Ajustes, fondo de comercio y otras señales |
 
 Decisiones tomadas:
 - Ruta separada con selector Técnico / Fundamental: quien viene a por fundamental no pasa antes por la técnica, y cada ruta guarda su progreso.

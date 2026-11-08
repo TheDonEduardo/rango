@@ -19,7 +19,7 @@ OUT = ROOT / "src" / "content" / "casos.json"
 BOT = ROOT.parent / "portfolio_manager.py"
 HOY = dt.date.today().strftime("%d/%m/%Y")
 # Lecciones que reciben casos reales (una sola definición para casos_de y main).
-LECCIONES_CASOS = ("f1a", "f1b", "f2a", "f2b", "f3a", "f3b", "f5a", "f6a", "bg1", "pr1", "bh2", "f8b")
+LECCIONES_CASOS = ("f1a", "f1b", "f2a", "f2b", "f3a", "f3b", "f5a", "f6a", "bg1", "pr1", "bh2", "f8b", "f9a")
 # Índices y fondos indexados para la ruta Pasiva: (ticker, etiqueta, descripción, unidad, desde, nota sobre dividendos).
 INDICES = [
     ("EUNL.DE", "iShares Core MSCI World (EUNL)", "el ETF iShares Core MSCI World de acumulación (en euros)", "€", None,
@@ -272,6 +272,38 @@ def casos_de(tk):
                 "why": f"Batió {bates} de 4 veces: cuenta solo los trimestres en que lo publicado supera al consenso. "
                        f"Batir de forma repetida suele llevar a los analistas a subir sus estimaciones.",
             })
+
+    # f9a · rentabilidad por dividendo y payout con los dividendos pagados en los últimos 12 meses.
+    # (Las acciones en circulación de Yahoo no son fiables para medir recompras: no se usan.)
+    div = info.get("trailingAnnualDividendRate")
+    if ok(div) and div > 0 and ok(price) and price > 0 and psym == sym:
+        d2, p2 = round(float(div), 2), round(float(price), 2)
+        rd = round(d2 / p2 * 100, 2)
+        if rd >= 0.1:
+            out["f9a"].append({
+                "t": "num", "caso": caso,
+                "q": f"{nombre} cotizaba a {es(p2, 2)} {sym} al cierre del {cierre} y pagó {es(d2, 2)} {sym} por acción en dividendos "
+                     f"en los últimos 12 meses. ¿Cuál es su rentabilidad por dividendo? Redondea a 2 decimales.",
+                "unit": "%", "a": rd, "tol": 0.006,
+                "why": f"{es(d2, 2)} ÷ {es(p2, 2)} = {es(rd, 2)} %. "
+                       + ("Es un dividendo pequeño: la mayor parte de la caja se reinvierte o se usa para recomprar acciones." if rd < 1.5
+                          else "Compárala con la de su sector y comprueba que el payout permite mantenerla."),
+            })
+        e = info.get("trailingEps")
+        if ok(e) and e > 0:
+            e2 = round(float(e), 2)
+            po = round(d2 / e2 * 100, 1)
+            if 0 < po < 200:
+                out["f9a"].append({
+                    "t": "num", "caso": caso,
+                    "q": f"{nombre} pagó {es(d2, 2)} {sym} por acción en dividendos en los últimos 12 meses y su BPA contable fue de "
+                         f"{es(e2, 2)} {sym}. ¿Qué porcentaje del beneficio repartió (payout)? Redondea a 1 decimal.",
+                    "unit": "%", "a": po, "tol": 0.06,
+                    "why": f"{es(d2, 2)} ÷ {es(e2, 2)} = {es(po)} %. "
+                           + ("Reparte poco: le queda casi todo el beneficio para crecer o recomprar." if po < 40
+                              else "Reparte una parte importante del beneficio." if po < 100
+                              else "Reparte más de lo que gana: vigila si es sostenible."),
+                })
 
     # f6a · grupo de Morningstar según el sector
     sec = SECTORES.get(info.get("sector") or "")

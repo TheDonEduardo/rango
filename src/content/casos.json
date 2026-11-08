@@ -1309,6 +1309,116 @@
         "tol": 0.5,
         "why": "4,86 − 4,00 = 0,86 puntos, es decir, 86 puntos básicos. La curva tiene pendiente positiva: el plazo largo paga más, que es lo normal."
       }
+    ],
+    "f9a": [
+      {
+        "t": "num",
+        "caso": "Broadcom (AVGO)",
+        "q": "Broadcom cotizaba a 293,69 $ al cierre del 06/11/2026 y pagó 2,60 $ por acción en dividendos en los últimos 12 meses. ¿Cuál es su rentabilidad por dividendo? Redondea a 2 decimales.",
+        "unit": "%",
+        "a": 0.89,
+        "tol": 0.006,
+        "why": "2,60 ÷ 293,69 = 0,89 %. Es un dividendo pequeño: la mayor parte de la caja se reinvierte o se usa para recomprar acciones."
+      },
+      {
+        "t": "num",
+        "caso": "Broadcom (AVGO)",
+        "q": "Broadcom pagó 2,60 $ por acción en dividendos en los últimos 12 meses y su BPA contable fue de 7,83 $. ¿Qué porcentaje del beneficio repartió (payout)? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 33.2,
+        "tol": 0.06,
+        "why": "2,60 ÷ 7,83 = 33,2 %. Reparte poco: le queda casi todo el beneficio para crecer o recomprar."
+      },
+      {
+        "t": "num",
+        "caso": "Alphabet (GOOGL)",
+        "q": "Alphabet cotizaba a 284,78 $ al cierre del 06/11/2026 y pagó 0,86 $ por acción en dividendos en los últimos 12 meses. ¿Cuál es su rentabilidad por dividendo? Redondea a 2 decimales.",
+        "unit": "%",
+        "a": 0.3,
+        "tol": 0.006,
+        "why": "0,86 ÷ 284,78 = 0,30 %. Es un dividendo pequeño: la mayor parte de la caja se reinvierte o se usa para recomprar acciones."
+      },
+      {
+        "t": "num",
+        "caso": "Alphabet (GOOGL)",
+        "q": "Alphabet pagó 0,86 $ por acción en dividendos en los últimos 12 meses y su BPA contable fue de 19,15 $. ¿Qué porcentaje del beneficio repartió (payout)? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 4.5,
+        "tol": 0.06,
+        "why": "0,86 ÷ 19,15 = 4,5 %. Reparte poco: le queda casi todo el beneficio para crecer o recomprar."
+      },
+      {
+        "t": "num",
+        "caso": "Microsoft (MSFT)",
+        "q": "Microsoft cotizaba a 530,61 $ al cierre del 06/11/2026 y pagó 3,71 $ por acción en dividendos en los últimos 12 meses. ¿Cuál es su rentabilidad por dividendo? Redondea a 2 decimales.",
+        "unit": "%",
+        "a": 0.7,
+        "tol": 0.006,
+        "why": "3,71 ÷ 530,61 = 0,70 %. Es un dividendo pequeño: la mayor parte de la caja se reinvierte o se usa para recomprar acciones."
+      },
+      {
+        "t": "num",
+        "caso": "Microsoft (MSFT)",
+        "q": "Microsoft pagó 3,71 $ por acción en dividendos en los últimos 12 meses y su BPA contable fue de 19,16 $. ¿Qué porcentaje del beneficio repartió (payout)? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 19.4,
+        "tol": 0.06,
+        "why": "3,71 ÷ 19,16 = 19,4 %. Reparte poco: le queda casi todo el beneficio para crecer o recomprar."
+      },
+      {
+        "t": "num",
+        "caso": "Eli Lilly and Company (LLY)",
+        "q": "Eli Lilly and Company cotizaba a 1.354,00 $ al cierre del 06/11/2026 y pagó 6,69 $ por acción en dividendos en los últimos 12 meses. ¿Cuál es su rentabilidad por dividendo? Redondea a 2 decimales.",
+        "unit": "%",
+        "a": 0.49,
+        "tol": 0.006,
+        "why": "6,69 ÷ 1.354,00 = 0,49 %. Es un dividendo pequeño: la mayor parte de la caja se reinvierte o se usa para recomprar acciones."
+      },
+      {
+        "t": "num",
+        "caso": "Eli Lilly and Company (LLY)",
+        "q": "Eli Lilly and Company pagó 6,69 $ por acción en dividendos en los últimos 12 meses y su BPA contable fue de 30,81 $. ¿Qué porcentaje del beneficio repartió (payout)? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 21.7,
+        "tol": 0.06,
+        "why": "6,69 ÷ 30,81 = 21,7 %. Reparte poco: le queda casi todo el beneficio para crecer o recomprar."
+      },
+      {
+        "t": "num",
+        "caso": "Meta Platforms (META)",
+        "q": "Meta Platforms cotizaba a 610,15 $ al cierre del 06/11/2026 y pagó 2,10 $ por acción en dividendos en los últimos 12 meses. ¿Cuál es su rentabilidad por dividendo? Redondea a 2 decimales.",
+        "unit": "%",
+        "a": 0.34,
+        "tol": 0.006,
+        "why": "2,10 ÷ 610,15 = 0,34 %. Es un dividendo pequeño: la mayor parte de la caja se reinvierte o se usa para recomprar acciones."
+      },
+      {
+        "t": "num",
+        "caso": "Meta Platforms (META)",
+        "q": "Meta Platforms pagó 2,10 $ por acción en dividendos en los últimos 12 meses y su BPA contable fue de 29,31 $. ¿Qué porcentaje del beneficio repartió (payout)? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 7.2,
+        "tol": 0.06,
+        "why": "2,10 ÷ 29,31 = 7,2 %. Reparte poco: le queda casi todo el beneficio para crecer o recomprar."
+      },
+      {
+        "t": "num",
+        "caso": "NVIDIA (NVDA)",
+        "q": "NVIDIA cotizaba a 186,64 $ al cierre del 06/11/2026 y pagó 0,28 $ por acción en dividendos en los últimos 12 meses. ¿Cuál es su rentabilidad por dividendo? Redondea a 2 decimales.",
+        "unit": "%",
+        "a": 0.15,
+        "tol": 0.006,
+        "why": "0,28 ÷ 186,64 = 0,15 %. Es un dividendo pequeño: la mayor parte de la caja se reinvierte o se usa para recomprar acciones."
+      },
+      {
+        "t": "num",
+        "caso": "NVIDIA (NVDA)",
+        "q": "NVIDIA pagó 0,28 $ por acción en dividendos en los últimos 12 meses y su BPA contable fue de 7,91 $. ¿Qué porcentaje del beneficio repartió (payout)? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 3.5,
+        "tol": 0.06,
+        "why": "0,28 ÷ 7,91 = 3,5 %. Reparte poco: le queda casi todo el beneficio para crecer o recomprar."
+      }
     ]
   }
 }
