@@ -52,7 +52,8 @@
             "Porque cotizan siempre en dólares"
           ],
           "a": 2,
-          "why": "El convenio entre Irlanda y EE. UU. deja la retención sobre los dividendos en el 15 %, frente al 30 % general. Ese coste lo paga el fondo, aunque tú no lo veas."
+          "why": "El convenio entre Irlanda y EE. UU. deja la retención sobre los dividendos en el 15 %, frente al 30 % general. Ese coste lo paga el fondo, aunque tú no lo veas.",
+          "revisar": "2027-06"
         },
         {
           "id": "pd1-4",
@@ -60,7 +61,8 @@
           "q": "Un fondo recibe un 2 % anual en dividendos de empresas de EE. UU. ¿Cuántos puntos de rentabilidad al año ahorra con una retención del 15 % frente a una del 30 %?",
           "unit": "",
           "a": 0.3,
-          "why": "2 % × 30 % = 0,60 puntos frente a 2 % × 15 % = 0,30 puntos: ahorra 0,30 al año, más que la comisión de muchos ETF."
+          "why": "2 % × 30 % = 0,60 puntos frente a 2 % × 15 % = 0,30 puntos: ahorra 0,30 al año, más que la comisión de muchos ETF.",
+          "revisar": "2027-06"
         }
       ]
     },

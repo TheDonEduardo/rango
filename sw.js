@@ -14,6 +14,7 @@ const PRECACHE = [
   'src/util.js',
   'src/styles.css',
   'src/state.js',
+  'src/textos.js',
   'src/ui.js',
   'src/drag.js',
   'src/exercises/choice.js',

@@ -1,8 +1,8 @@
 // Elegir una opción.
 import {tx} from '../util.js';
 import {$app,setCheck} from '../ui.js';
+import {t} from '../textos.js';
 export default {
-  kind:'Elige una respuesta',
   html(ex,run){
     return '<div class="opts">'+ex.opts.map((o,i)=>{
       let c='';

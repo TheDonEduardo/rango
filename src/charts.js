@@ -1,5 +1,6 @@
 // Gráficos SVG: velas, línea con media y glifo de vela para la ruta.
 import {fmt,esc,planTol} from './util.js';
+import {t} from './textos.js';
 export function scaleOf(vals,H,pt,pb){
   let lo=Math.min(...vals),hi=Math.max(...vals);
   const pad=(hi-lo)*0.1||1;lo-=pad;hi+=pad;
@@ -29,16 +30,16 @@ export function candlesSVG(sp,st){
   const scaleAttrs=planMode?` data-lo="${sc.lo}" data-hi="${sc.hi}" data-top="${pt}" data-ph="${H-pt-pbP}"`:'';
   // Con controles dentro (velas que se tocan, niveles, líneas que se arrastran) el gráfico es un grupo, no una imagen.
   const interactivo=tapMode||(sp.levels&&sp.levels.length)||(planMode&&!st.checked&&!st.fijo);
-  let s=`<svg class="svg ${tapMode?'tap':''}${planMode?' plan':''}" viewBox="0 0 ${W} ${H}" role="${interactivo?'group':'img'}" aria-label="${esc(sp.alt||'Gráfico de velas')}"${scaleAttrs}>`;
+  let s=`<svg class="svg ${tapMode?'tap':''}${planMode?' plan':''}" viewBox="0 0 ${W} ${H}" role="${interactivo?'group':'img'}" aria-label="${esc(sp.alt||t.graficoVelas)}"${scaleAttrs}>`;
   sc.ticks.forEach(t=>{s+=`<line class="grid" x1="${pl}" x2="${W-pr}" y1="${y(t).toFixed(1)}" y2="${y(t).toFixed(1)}"/><text x="${W-pr+6}" y="${(y(t)+3.5).toFixed(1)}">${fmt(t,sc.dec)}</text>`});
-  if(VH)s+=`<line class="grid" x1="${pl}" x2="${W-pr}" y1="${H-pb}" y2="${H-pb}"/><text x="${W-pr+6}" y="${(H-pb-VH/2+3.5).toFixed(1)}">Vol.</text>`;
+  if(VH)s+=`<line class="grid" x1="${pl}" x2="${W-pr}" y1="${H-pb}" y2="${H-pb}"/><text x="${W-pr+6}" y="${(H-pb-VH/2+3.5).toFixed(1)}">${t.vol}</text>`;
   (sp.lines||[]).forEach(l=>{s+=`<line class="ref" x1="${pl}" x2="${W-pr}" y1="${y(l.y).toFixed(1)}" y2="${y(l.y).toFixed(1)}"/>`});
   // split: separa las velas «de antes» de las que llegaron después (resultado del simulador).
-  if(sp.split!=null){const xs=(pl+cw*sp.split).toFixed(1);s+=`<line class="split" x1="${xs}" x2="${xs}" y1="${pt}" y2="${H-pb}"/><text class="splitt" x="${(+xs+4).toFixed(1)}" y="${pt+10}">Después</text>`}
+  if(sp.split!=null){const xs=(pl+cw*sp.split).toFixed(1);s+=`<line class="split" x1="${xs}" x2="${xs}" y1="${pt}" y2="${H-pb}"/><text class="splitt" x="${(+xs+4).toFixed(1)}" y="${pt+10}">${t.despues}</text>`}
   d.forEach((c,i)=>{
     const [op,hi,lo,cl]=c,cx=pl+cw*i+cw/2,up=cl>=op;
     const top=y(Math.max(op,cl)),bot=y(Math.min(op,cl)),bh=Math.max(1.6,bot-top);
-    s+=`<g class="cd ${up?'up':'dn'} ${tapMode?cls(i):''}" data-i="${i}"${tapMode?` tabindex="0" role="button" aria-label="Vela ${i+1}"`:''}>`;
+    s+=`<g class="cd ${up?'up':'dn'} ${tapMode?cls(i):''}" data-i="${i}"${tapMode?` tabindex="0" role="button" aria-label="${t.vela(i+1)}"`:''}>`;
     if(tapMode)s+=`<rect class="hl" x="${(cx-cw/2+1).toFixed(1)}" y="${pt-4}" width="${(cw-2).toFixed(1)}" height="${H-pt-pb+8}" rx="6"/>`;
     if(VH){const vh=Math.max(1.5,sp.vol[i]/vmax*VH);s+=`<rect class="vol" x="${(cx-bw/2).toFixed(1)}" y="${(H-pb-vh).toFixed(1)}" width="${bw.toFixed(1)}" height="${vh.toFixed(1)}" rx="1.5"/>`}
     s+=`<line class="wick" x1="${cx.toFixed(1)}" x2="${cx.toFixed(1)}" y1="${y(hi).toFixed(1)}" y2="${y(lo).toFixed(1)}"/><rect class="body" x="${(cx-bw/2).toFixed(1)}" y="${top.toFixed(1)}" width="${bw.toFixed(1)}" height="${bh.toFixed(1)}" rx="2"/>`;
@@ -54,7 +55,7 @@ export function candlesSVG(sp,st){
   }
   (sp.levels||[]).forEach(l=>{
     const yy=y(l.y).toFixed(1);
-    s+=`<g class="lv ${lvMode?cls(l.id):''}" data-id="${l.id}" tabindex="0" role="button" aria-label="Nivel ${l.id}"><line class="lvl" x1="${pl}" x2="${W-pr}" y1="${yy}" y2="${yy}"/><rect class="hit" x="0" y="${(y(l.y)-13).toFixed(1)}" width="${W-pr}" height="26"/><g class="tag"><circle cx="18" cy="${yy}" r="11"/><text x="18" y="${(y(l.y)+4).toFixed(1)}">${l.id}</text></g></g>`;
+    s+=`<g class="lv ${lvMode?cls(l.id):''}" data-id="${l.id}" tabindex="0" role="button" aria-label="${t.nivel(l.id)}"><line class="lvl" x1="${pl}" x2="${W-pr}" y1="${yy}" y2="${yy}"/><rect class="hit" x="0" y="${(y(l.y)-13).toFixed(1)}" width="${W-pr}" height="26"/><g class="tag"><circle cx="18" cy="${yy}" r="11"/><text x="18" y="${(y(l.y)+4).toFixed(1)}">${l.id}</text></g></g>`;
   });
   if(planMode)st.place.forEach(p=>{
     // fijo: líneas que solo se muestran (resultado del simulador); sin respuesta, no hay bien/mal.
@@ -72,10 +73,10 @@ export function lineSVG(sp){
   const sc=scaleOf(sp.data.concat(sp.ma),H,pt,pb),y=sc.y;
   const n=sp.data.length,dx=(W-pl-pr)/(n-1);
   const pts=a=>a.map((v,i)=>`${(pl+dx*i).toFixed(1)},${y(v).toFixed(1)}`).join(' ');
-  let s=`<svg class="svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(sp.alt||'Gráfico de precio')}">`;
+  let s=`<svg class="svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(sp.alt||t.graficoPrecio)}">`;
   sc.ticks.forEach(t=>{s+=`<line class="grid" x1="${pl}" x2="${W-pr}" y1="${y(t).toFixed(1)}" y2="${y(t).toFixed(1)}"/><text x="${W-pr+6}" y="${(y(t)+3.5).toFixed(1)}">${fmt(t,sc.dec)}</text>`});
   s+=`<polyline class="ma" points="${pts(sp.ma)}"/><polyline class="px" points="${pts(sp.data)}"/>`;
-  s+=`<line class="px" x1="${pl}" x2="${pl+20}" y1="12" y2="12"/><text class="lg" x="${pl+26}" y="16">Precio</text><line class="ma" x1="${pl+86}" x2="${pl+106}" y1="12" y2="12"/><text class="lg" x="${pl+112}" y="16">Media de 30 semanas</text>`;
+  s+=`<line class="px" x1="${pl}" x2="${pl+20}" y1="12" y2="12"/><text class="lg" x="${pl+26}" y="16">${t.precio}</text><line class="ma" x1="${pl+86}" x2="${pl+106}" y1="12" y2="12"/><text class="lg" x="${pl+112}" y="16">${t.media30}</text>`;
   return s+'</svg>';
 }
 export function glyph(state,acc,w=56,h=72){

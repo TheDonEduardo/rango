@@ -68,7 +68,8 @@
             "Cerrar la cuenta antes de fin de año"
           ],
           "a": 2,
-          "why": "El Modelo 720 es informativo: declara los valores depositados fuera de España cuando superan 50.000 €. No es un impuesto, pero no presentarlo puede acarrear sanciones."
+          "why": "El Modelo 720 es informativo: declara los valores depositados fuera de España cuando superan 50.000 €. No es un impuesto, pero no presentarlo puede acarrear sanciones.",
+          "revisar": "2027-06"
         },
         {
           "id": "bf2-2",
@@ -81,7 +82,8 @@
             "Tributa solo en el país del bróker"
           ],
           "a": 0,
-          "why": "Como residente en España tributas aquí por todo, esté donde esté el bróker. Las operaciones de un bróker extranjero no suelen aparecer en los datos fiscales de Hacienda: las declaras tú con sus informes."
+          "why": "Como residente en España tributas aquí por todo, esté donde esté el bróker. Las operaciones de un bróker extranjero no suelen aparecer en los datos fiscales de Hacienda: las declaras tú con sus informes.",
+          "revisar": "2027-06"
         },
         {
           "id": "bf2-3",

@@ -96,7 +96,8 @@
             "Solo si es en otro banco"
           ],
           "a": 2,
-          "why": "Los traspasos entre fondos no tributan hasta que reembolsas. Por eso los fondos indexados son tan cómodos para rebalancear en España."
+          "why": "Los traspasos entre fondos no tributan hasta que reembolsas. Por eso los fondos indexados son tan cómodos para rebalancear en España.",
+          "revisar": "2027-06"
         },
         {
           "id": "rb2-2",
@@ -104,7 +105,8 @@
           "q": "Para rebalancear vendes 2.000 € de un ETF con una ganancia acumulada de 500 €, a un tipo del 19 %. ¿Cuántos euros pagas de impuestos?",
           "unit": "€",
           "a": 95,
-          "why": "Tributa solo la ganancia: 500 × 19 % = 95 €. Con ETF, rebalancear vendiendo tiene un coste fiscal."
+          "why": "Tributa solo la ganancia: 500 × 19 % = 95 €. Con ETF, rebalancear vendiendo tiene un coste fiscal.",
+          "revisar": "2027-06"
         },
         {
           "id": "rb2-3",

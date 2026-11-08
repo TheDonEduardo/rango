@@ -12,11 +12,12 @@ import {simHTML,simResHTML,simInfo,simValid,simSave,simRecord,simHist,simulate,S
 import {calcHTML,calcOutHTML,CALC_CTRL,aportaciones} from './views/calc.js';
 import {legalHTML,LEGAL_V} from './views/legal.js';
 import {statsHTML,statRecord,STATS_L,flojos} from './views/stats.js';
+import {t} from './textos.js';
 
-const SRS_L={id:'srs',title:'Repaso del día',kind:'srs'};
+const SRS_L={id:'srs',title:t.repasoDia,kind:'srs'};
 // Test de nivel: con TEST_PASS aciertos o más se abren las demás rutas; cada unidad con sus dos preguntas
 // acertadas queda marcada como completada.
-const TEST_L={id:'test',title:'Test de nivel',kind:'test'};
+const TEST_L={id:'test',title:t.testNivel,kind:'test'};
 const TEST_PASS=10;
 
 const VISTAS={home:homeHTML,legal:()=>legalHTML(false),sim:simHTML,simres:simResHTML,calc:calcHTML,lesson:lessonHTML,result:resultHTML,fail:failHTML,stats:statsHTML};
@@ -112,7 +113,7 @@ function accionEjercicio(a,b){
 const ACCIONES={
   open(b){
     const L=FLAT.find(l=>l.id===b.dataset.id),s=statuses()[L.id];
-    if(s==='locked'){toast(trackOf(L.unit)!=='basico'&&!advancedOpen()?'Completa antes la ruta Básico.':'Completa antes la lección anterior.');return}
+    if(s==='locked'){toast(trackOf(L.unit)!=='basico'&&!advancedOpen()?t.bloqueadaBasico:t.bloqueadaAnterior);return}
     ses.homeY=window.scrollY;startRun(L);
   },
   check(b){if(!b.disabled)check()},
@@ -125,7 +126,7 @@ const ACCIONES={
   calc(){ir('calc')},
   stats(){ir('stats')},
   weak(){ses.homeY=0;startRun(STATS_L)},
-  simsave(){if(ses.simDraft&&simValid(ses.simDraft)){simSave();ses.simDraft=null;ses.view='home';render();toast('Plan guardado. El sábado que viene verás el resultado.')}},
+  simsave(){if(ses.simDraft&&simValid(ses.simDraft)){simSave();ses.simDraft=null;ses.view='home';render();toast(t.planGuardado)}},
   unfold(b){const id=b.dataset.id,ab=ses.abiertas;ab.has(id)?ab.delete(id):ab.add(id);ses.homeY=window.scrollY;render();const nb=$app.querySelector(`[data-act=unfold][data-id="${id}"]`);if(nb)nb.focus({preventScroll:true})},
   legal(){ir('legal')},
   legalok(){S.legal=LEGAL_V;save();ses.homeY=0;render()},
@@ -134,7 +135,7 @@ const ACCIONES={
   notest(){S.placement={skipped:true};save();render()},
   install(){const ev=ses.installEvt;if(!ev)return;ev.prompt();ev.userChoice.finally(()=>{ses.installEvt=null;ses.homeY=window.scrollY;render()})},
   track(b){S.track=b.dataset.track;save();ses.homeY=0;render()},
-  skipbasics(){S.skipBasics=true;save();ses.homeY=0;render();toast('Rutas Pasiva, Fundamental y Técnico abiertas.')},
+  skipbasics(){S.skipBasics=true;save();ses.homeY=0;render();toast(t.rutasAbiertas)},
   // Herramientas de desarrollo: solo aparecen con ?dev en la dirección.
   unlock(){S.all=!S.all;save();ses.homeY=window.scrollY;render()},
   reset(){
@@ -164,12 +165,12 @@ $app.addEventListener('input',e=>{
 });
 document.addEventListener('keydown',e=>{
   if(ses.view!=='lesson')return;
-  const t=e.target,run=ses.run,T=TIPOS[run.queue[0].t];
-  if((e.key==='Enter'||e.key===' ')&&t.closest&&t.closest('.cd[tabindex],.lv')&&!run.checked){e.preventDefault();if(T.svg)T.svg(t.closest('.cd,.lv'),run);return}
+  const el=e.target,run=ses.run,T=TIPOS[run.queue[0].t];
+  if((e.key==='Enter'||e.key===' ')&&el.closest&&el.closest('.cd[tabindex],.lv')&&!run.checked){e.preventDefault();if(T.svg)T.svg(el.closest('.cd,.lv'),run);return}
   // Enter mantenido (auto-repetición) no debe comprobar y saltar la explicación de un golpe.
-  if(e.key!=='Enter'||e.repeat||(t.closest&&t.closest('button')))return;
+  if(e.key!=='Enter'||e.repeat||(el.closest&&el.closest('button')))return;
   if(run.checked){e.preventDefault();next()}
-  else if(T.enter&&T.enter(t,run)){e.preventDefault();check()}
+  else if(T.enter&&T.enter(el,run)){e.preventDefault();check()}
 });
 
 simRecord();
@@ -178,7 +179,7 @@ render();
 // PWA: el service worker solo se registra servido por http(s) (no en file:// ni en los tests).
 if(typeof window.addEventListener==='function'){
   window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();ses.installEvt=e;if(ses.view==='home'){ses.homeY=window.scrollY;render()}});
-  window.addEventListener('appinstalled',()=>{ses.installEvt=null;toast('Rango instalado.')});
+  window.addEventListener('appinstalled',()=>{ses.installEvt=null;toast(t.instalada)});
 }
 if(typeof navigator!=='undefined'&&'serviceWorker' in navigator&&typeof location!=='undefined'&&/^https?:$/.test(location.protocol)){
   navigator.serviceWorker.register('sw.js').catch(()=>{});

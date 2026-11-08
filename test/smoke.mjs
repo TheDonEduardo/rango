@@ -100,6 +100,16 @@ if (!man.icons.some(i => i.purpose === 'maskable')) errs.push('falta icono maska
 const fontsSw = sw.match(/const FONTS_CSS = '([^']+)'/)[1];
 if (!fs.readFileSync(path.join(root, 'index.html'), 'utf8').includes(fontsSw)) errs.push('FONTS_CSS de sw.js no coincide con la hoja de fuentes de index.html');
 
+// Textos de la interfaz: toda clave t.xxx usada en src/ existe en textos.js (evita «undefined» en pantalla).
+{
+  const {t} = await import(pathToFileURL(path.join(root, 'src/textos.js')));
+  for (const f of fs.readdirSync(path.join(root, 'src'), {recursive: true}).filter(f => f.endsWith('.js') && !f.endsWith('textos.js'))) {
+    const src = fs.readFileSync(path.join(root, 'src', f), 'utf8');
+    if (!/import \{t\} from/.test(src)) continue;
+    for (const [, k] of src.matchAll(/\bt\.([a-zA-Z0-9]+)/g)) if (!(k in t)) errs.push(`textos.js no tiene la clave t.${k} (usada en ${f})`);
+  }
+}
+
 // 2) Recorrido completo de cada lección
 const {api: T} = await import(pathToFileURL(path.join(root, 'src/app.js')));
 const ident = ex => (ex.items || ex.pairs).map((_, i) => i);
@@ -304,6 +314,19 @@ if (casos) for (const L of T.FLAT.filter(l => l.casos && l.casos.length)) for (c
   if (!T.getRun().ok) errs.push('caso real rechazado: ' + ex.q);
   if (/undefined|NaN|\[object/.test(T.lessonHTML())) errs.push('HTML roto en caso ' + ex.caso);
 }
+
+// Contenido con fecha de revisión («revisar»: "AAAA-MM» en la unidad o en el ejercicio): normas fiscales, garantías,
+// datos de informes. Al llegar la fecha se avisa (no falla) para revisarlo y mover la fecha.
+const mes = new Date().toISOString().slice(0, 7), caducados = [];
+for (const u of units) {
+  if (u.revisar !== undefined && !/^\d{4}-\d{2}$/.test(u.revisar)) errs.push(u.id + ': revisar debe ser AAAA-MM');
+  if (u.revisar && u.revisar <= mes) caducados.push(`unidad ${u.id} (${u.revisar})`);
+  for (const l of u.lessons || []) for (const ex of l.ex) {
+    if (ex.revisar !== undefined && !/^\d{4}-\d{2}$/.test(ex.revisar)) errs.push(ex.id + ': revisar debe ser AAAA-MM');
+    if (ex.revisar && ex.revisar <= mes) caducados.push(`${ex.id} (${ex.revisar})`);
+  }
+}
+if (caducados.length) console.warn('AVISO: contenido pendiente de revisar (normas o datos que pueden haber cambiado):\n- ' + caducados.join('\n- '));
 
 if (errs.length) { console.error('FALLOS:\n- ' + errs.join('\n- ')); process.exit(1); }
 const nc = casos ? Object.values(casos.ex).reduce((n, l) => n + l.length, 0) : 0;

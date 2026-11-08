@@ -5,6 +5,7 @@ import {candlesSVG,lineSVG,glyph} from '../charts.js';
 import {streakNow} from '../state.js';
 import {ses} from '../ui.js';
 import {TIPOS} from '../exercises/index.js';
+import {t} from '../textos.js';
 
 function chartHTML(ex,run){
   const sp=ex.chart;if(!sp)return'';
@@ -23,33 +24,31 @@ function tableHTML(ex){
 export function lessonHTML(){
   const run=ses.run,ex=run.queue[0],T=TIPOS[ex.t],pct=Math.round(run.done/run.total*100);
   let hearts='';for(let i=0;i<3;i++)hearts+=`<svg class="heart ${i<run.lives?'on':'off'}" viewBox="0 0 24 24" aria-hidden="true"><path d="${P.heart}" fill="currentColor"/></svg>`;
-  let h=`<div class="lesson"><div class="lbar"><button class="x" data-act="quit" aria-label="Salir de la lección">${icoX}</button><div class="prog" role="progressbar" aria-label="Progreso de la lección" aria-valuemin="0" aria-valuemax="${run.total}" aria-valuenow="${run.done}"><i style="width:${pct}%"></i></div>${run.L.kind==='test'?'':`<div class="lives" role="img" aria-label="${run.lives} vidas">${hearts}</div>`}</div>`;
-  h+=`<div class="qwrap"><p class="kind">${ex.caso?`Caso real: ${esc(ex.caso)} · `:''}${T.kind}</p><h1 class="q">${tx(ex.q)}</h1>${chartHTML(ex,run)}${tableHTML(ex)}${T.html?T.html(ex,run):''}</div>`;
+  let h=`<div class="lesson"><div class="lbar"><button class="x" data-act="quit" aria-label="${t.salirLeccion}">${icoX}</button><div class="prog" role="progressbar" aria-label="${t.progresoLeccion}" aria-valuemin="0" aria-valuemax="${run.total}" aria-valuenow="${run.done}"><i style="width:${pct}%"></i></div>${run.L.kind==='test'?'':`<div class="lives" role="img" aria-label="${t.vidas(run.lives)}">${hearts}</div>`}</div>`;
+  h+=`<div class="qwrap"><p class="kind">${ex.caso?t.casoReal(esc(ex.caso)):''}${t.tipos[ex.t]}</p><h1 class="q">${tx(ex.q)}</h1>${chartHTML(ex,run)}${tableHTML(ex)}${T.html?T.html(ex,run):''}</div>`;
   if(!run.checked){
-    h+=`<div><button class="btn primary" data-act="check"${T.ready(ex,run)?'':' disabled'}>Comprobar</button></div>`;
+    h+=`<div><button class="btn primary" data-act="check"${T.ready(ex,run)?'':' disabled'}>${t.comprobar}</button></div>`;
   }else{
-    const ans=run.ok?'':T.answerHTML?T.answerHTML(ex):`<p class="ans">Respuesta: ${tx(T.answer(ex))}</p>`;
-    h+=`<div class="fb ${run.ok?'good':'bad'}" role="status"><div class="fb-h">${run.ok?icoOk:icoX}<span>${run.ok?'Correcto':'Incorrecto'}</span></div><p>${tx(ex.why)}</p>${ans}<button class="btn primary" data-act="next">Continuar</button></div>`;
+    const ans=run.ok?'':T.answerHTML?T.answerHTML(ex):`<p class="ans">${t.respuesta}: ${tx(T.answer(ex))}</p>`;
+    h+=`<div class="fb ${run.ok?'good':'bad'}" role="status"><div class="fb-h">${run.ok?icoOk:icoX}<span>${run.ok?t.correcto:t.incorrecto}</span></div><p>${tx(ex.why)}</p>${ans}<button class="btn primary" data-act="next">${t.continuar}</button></div>`;
   }
   return h+'</div>';
 }
 function testResultHTML(r){
-  const nota=r.abre?'Pasiva, Fundamental y Técnico quedan abiertas. Puedes volver a los básicos cuando quieras.'
-    :r.dominadas.length?'Las unidades que dominas quedan marcadas como completadas: sigue por la primera pendiente de Básico.'
-    :'Empieza por Básico: en pocas lecciones tendrás la base para el resto.';
-  return `<div class="res"><div class="res-main"><div class="res-top">${glyph('done',r.score/r.total,84,108)}<div><h1>Test completado</h1><p>${r.score} de ${r.total} aciertos</p></div></div>
-  ${r.dominadas.length?`<div class="note"><b>Ya dominas</b><ul class="dom">${r.dominadas.map(t=>`<li>${esc(t)}</li>`).join('')}</ul></div>`:''}
+  const nota=r.abre?t.testAbre:r.dominadas.length?t.testDomina:t.testNada;
+  return `<div class="res"><div class="res-main"><div class="res-top">${glyph('done',r.score/r.total,84,108)}<div><h1>${t.testCompletado}</h1><p>${t.aciertos(r.score,r.total)}</p></div></div>
+  ${r.dominadas.length?`<div class="note"><b>${t.yaDominas}</b><ul class="dom">${r.dominadas.map(d=>`<li>${esc(d)}</li>`).join('')}</ul></div>`:''}
   <p class="note">${nota}</p></div>
-  <div><button class="btn primary" data-act="home">Continuar</button></div></div>`;
+  <div><button class="btn primary" data-act="home">${t.continuar}</button></div></div>`;
 }
 export function resultHTML(){
   const r=ses.lastRes,sk=streakNow();
   if(r.test)return testResultHTML(r);
-  return `<div class="res"><div class="res-main"><div class="res-top">${glyph('done',r.acc,84,108)}<div><h1>${r.srs?'Repaso completado':'Lección completada'}</h1><p>${esc(r.title)}</p></div></div>
-  <div class="metrics"><div><b>+${r.xp}</b><span>XP ganados</span></div><div><b>${Math.round(r.acc*100)} %</b><span>Precisión</span></div><div><b>${sk}</b><span>${sk===1?'día de racha':'días de racha'}</span></div></div>
-  <p class="note">${r.kind==='weak'?'Los que has acertado salen de tus puntos débiles; los que has fallado siguen en la lista y vuelven mañana al repaso.':r.srs?'Los que has acertado volverán dentro de unos días; los que has fallado, mañana.':`El cuerpo de tu vela es proporcional a tu precisión. ${r.acc===1?'Vela llena: sin un solo fallo.':'Repite la lección para llenarla.'}`}</p></div>
-  <div><button class="btn primary" data-act="home">Continuar</button></div></div>`;
+  return `<div class="res"><div class="res-main"><div class="res-top">${glyph('done',r.acc,84,108)}<div><h1>${r.srs?t.repasoCompletado:t.leccionCompletada}</h1><p>${esc(r.title)}</p></div></div>
+  <div class="metrics"><div><b>+${r.xp}</b><span>${t.xpGanados}</span></div><div><b>${Math.round(r.acc*100)} %</b><span>${t.precisionM}</span></div><div><b>${sk}</b><span>${t.diasRacha(sk)}</span></div></div>
+  <p class="note">${r.kind==='weak'?t.notaDebiles:r.srs?t.notaRepaso:t.notaVela(r.acc)}</p></div>
+  <div><button class="btn primary" data-act="home">${t.continuar}</button></div></div>`;
 }
 export function failHTML(){
-  return `<div class="res"><div class="res-main"><div class="res-top">${glyph('locked',null,84,108)}<div><h1>Sin vidas</h1><p>Has agotado los 3 fallos de esta lección.</p></div></div><p class="note">Repasa las explicaciones y vuelve a intentarlo. Las preguntas se barajan de nuevo.</p></div><div class="stack"><button class="btn primary" data-act="retry">Reintentar lección</button><button class="btn line" data-act="home">Volver al inicio</button></div></div>`;
+  return `<div class="res"><div class="res-main"><div class="res-top">${glyph('locked',null,84,108)}<div><h1>${t.sinVidas}</h1><p>${t.sinVidasExplica}</p></div></div><p class="note">${t.sinVidasNota}</p></div><div class="stack"><button class="btn primary" data-act="retry">${t.reintentar}</button><button class="btn line" data-act="home">${t.volverInicio}</button></div></div>`;
 }

@@ -2,13 +2,14 @@
 // Las usan el ejercicio «plan» y la Operación de la semana: cada uno da su contexto con setPlanCtx.
 import {fmt,esc} from './util.js';
 import {$app} from './ui.js';
+import {t} from './textos.js';
 
 let getCtx=()=>null,drag=null;
 // getter → {place, step, vals, after?} o null si ahora no hay líneas que mover.
 export function setPlanCtx(getter){getCtx=getter}
 
 export function fineHTML(place){
-  return `<div class="pfine">${place.map(p=>`<div class="pf pl-${p.id}"><span>${esc(p.label)}</span><button data-act="pstep" data-id="${p.id}" data-d="-1" aria-label="Bajar ${esc(p.label)}">−</button><button data-act="pstep" data-id="${p.id}" data-d="1" aria-label="Subir ${esc(p.label)}">+</button></div>`).join('')}</div>`;
+  return `<div class="pfine">${place.map(p=>`<div class="pf pl-${p.id}"><span>${esc(p.label)}</span><button data-act="pstep" data-id="${p.id}" data-d="-1" aria-label="${t.bajar(esc(p.label))}">−</button><button data-act="pstep" data-id="${p.id}" data-d="1" aria-label="${t.subir(esc(p.label))}">+</button></div>`).join('')}</div>`;
 }
 function planSet(g,v){
   const ctx=getCtx();if(!ctx)return;

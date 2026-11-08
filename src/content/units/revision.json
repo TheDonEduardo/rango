@@ -87,7 +87,8 @@
             "Comprar los dos a medias"
           ],
           "a": 0,
-          "why": "Vender un ETF tributa la plusvalía; en fondos de inversión el traspaso no tributa. Compara el impuesto con el ahorro anual."
+          "why": "Vender un ETF tributa la plusvalía; en fondos de inversión el traspaso no tributa. Compara el impuesto con el ahorro anual.",
+          "revisar": "2027-06"
         },
         {
           "id": "rv2-3",
@@ -95,7 +96,8 @@
           "q": "Con 50.000 € invertidos, el cambio ahorra un 0,10 % al año, pero vender tributa 950 € hoy. ¿Cuántos años tardas en recuperarlo?",
           "unit": "",
           "a": 19,
-          "why": "50.000 × 0,10 % = 50 € al año; 950 / 50 = 19 años. Mejor dirigir solo las aportaciones nuevas al fondo barato."
+          "why": "50.000 × 0,10 % = 50 € al año; 950 / 50 = 19 años. Mejor dirigir solo las aportaciones nuevas al fondo barato.",
+          "revisar": "2027-06"
         },
         {
           "id": "rv2-4",

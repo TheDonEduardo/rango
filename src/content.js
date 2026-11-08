@@ -1,3 +1,4 @@
+import {t} from './textos.js';
 // Carga el contenido (src/content/units/: index.json con el orden y un archivo por unidad, más casos.json)
 // y construye la lista plana de lecciones.
 const get=async f=>(await fetch(new URL('./content/'+f,import.meta.url))).json();
@@ -6,7 +7,7 @@ const get=async f=>(await fetch(new URL('./content/'+f,import.meta.url))).json()
 const unidades=async()=>Promise.all((await get('units/index.json')).map(id=>get('units/'+id+'.json')));
 export const [UNITS,CASOS,SEMANA]=await Promise.all([unidades(),get('casos.json').catch(()=>null),get('semana.json').catch(()=>null)]);
 // La ruta «basico» es el primer nivel: desbloquea las demás (o se salta desde el inicio).
-export const TRACKS=[{id:'basico',title:'Básico'},{id:'pasiva',title:'Pasiva'},{id:'fundamental',title:'Fundamental'},{id:'tecnico',title:'Técnico'}];
+export const TRACKS=['basico','pasiva','fundamental','tecnico'].map(id=>({id,title:t.rutas[id]}));
 export const trackOf=u=>u.track||'tecnico';
 // Cada ejercicio fijo tiene un id estable («idLección-n», asignado al crearlo y que no cambia aunque se reordene):
 // lo usan el repaso espaciado, las estadísticas y el test de nivel. Los casos reales no tienen.
@@ -22,6 +23,6 @@ UNITS.forEach(u=>{
     const casos=(CASOS&&CASOS.ex&&CASOS.ex[l.id])||[];
     FLAT.push(Object.assign({},l,{unit:u,kind:'lesson',casos}));
   });
-  FLAT.push({id:u.id+'-rev',title:'Repaso de la unidad',unit:u,kind:'review'});
+  FLAT.push({id:u.id+'-rev',title:t.repasoUnidad,unit:u,kind:'review'});
 });
 export const exCount=l=>l.kind==='review'?5:l.ex.length+(l.casos.length?1:0);

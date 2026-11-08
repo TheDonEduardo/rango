@@ -1,9 +1,9 @@
 // Arrastrar entrada, stop y objetivo sobre el gráfico (las líneas las mueve drag.js).
 import {fmt,planTol,planStep} from '../util.js';
 import {fineHTML} from '../drag.js';
+import {t} from '../textos.js';
 const init=(ex,run)=>{if(!run.sel)run.sel=Object.fromEntries(ex.place.map(p=>[p.id,p.start]))};
 export default {
-  kind:'Arrastra las líneas del gráfico',
   chart(ex,run){init(ex,run);return {mode:'plan',vals:run.sel,checked:run.checked,place:ex.place}},
   after:(ex,run)=>run.checked?'':fineHTML(ex.place),
   ready:()=>true,

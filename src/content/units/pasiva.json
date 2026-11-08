@@ -64,7 +64,8 @@
             "Cualquier producto del mismo banco"
           ],
           "a": 0,
-          "why": "Los traspasos entre fondos de inversión no tributan hasta que reembolsas. Los ETF, en general, no admiten traspaso: venderlos tributa la ganancia."
+          "why": "Los traspasos entre fondos de inversión no tributan hasta que reembolsas. Los ETF, en general, no admiten traspaso: venderlos tributa la ganancia.",
+          "revisar": "2027-06"
         },
         {
           "id": "bg2-2",
@@ -81,7 +82,8 @@
           "q": "Aportas 1.500 € a un plan de pensiones y tu tipo marginal del IRPF es del 30 %. ¿Cuánto te ahorras este año en la declaración?",
           "unit": "€",
           "a": 450,
-          "why": "La aportación reduce tu base imponible: 1.500 × 30 % = 450 €. Al rescatarlo tributa como rendimiento del trabajo, así que es un aplazamiento, no un regalo. Comprueba cada año el límite de aportación."
+          "why": "La aportación reduce tu base imponible: 1.500 × 30 % = 450 €. Al rescatarlo tributa como rendimiento del trabajo, así que es un aplazamiento, no un regalo. Comprueba cada año el límite de aportación.",
+          "revisar": "2027-06"
         },
         {
           "id": "bg2-4",
@@ -105,7 +107,8 @@
               "Liquidez con interés, sin riesgo de mercado"
             ]
           ],
-          "why": "Los cuatro sirven a un inversor pasivo, pero para cosas distintas: crecer a largo plazo, flexibilidad, ahorro fiscal o tener el colchón disponible."
+          "why": "Los cuatro sirven a un inversor pasivo, pero para cosas distintas: crecer a largo plazo, flexibilidad, ahorro fiscal o tener el colchón disponible.",
+          "revisar": "2027-06"
         }
       ]
     }
