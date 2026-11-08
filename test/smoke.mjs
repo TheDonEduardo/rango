@@ -44,7 +44,16 @@ const lint = (ex, w) => {
           else if (Math.abs(p.start - p.a) <= tol + 1e-9) errs.push(w + ': la línea ' + p.id + ' empieza ya en la respuesta');
         }
       }
-      if (!['choice', 'num', 'tap', 'level', 'order', 'match', 'plan'].includes(ex.t)) errs.push(w + ': tipo desconocido ' + ex.t);
+      if (ex.t === 'slide') {
+        const nums = ['min', 'max', 'step', 'start', 'a'].every(k => typeof ex[k] === 'number');
+        const tol = ex.tol == null ? ex.step / 2 : ex.tol, enRejilla = v => Math.abs((v - ex.min) / ex.step - Math.round((v - ex.min) / ex.step)) < 1e-6;
+        if (!nums || !ex.label) errs.push(w + ': slide necesita min, max, step, start, a y label');
+        else if (!(ex.min < ex.max && ex.a >= ex.min && ex.a <= ex.max && ex.start >= ex.min && ex.start <= ex.max)) errs.push(w + ': slide con valores fuera de rango');
+        else if (!enRejilla(ex.a) || !enRejilla(ex.start)) errs.push(w + ': a o start no caen en un paso del deslizador');
+        else if (Math.abs(ex.start - ex.a) <= tol + 1e-9) errs.push(w + ': el deslizador empieza ya en la respuesta');
+        for (const s of ex.show || []) if (!s.label || typeof s.k !== 'number') errs.push(w + ': show mal formado');
+      }
+      if (!['choice', 'num', 'tap', 'level', 'order', 'match', 'plan', 'slide'].includes(ex.t)) errs.push(w + ': tipo desconocido ' + ex.t);
 };
 for (const u of units) {
   if (!['basico', 'pasiva', 'tecnico', 'fundamental', undefined].includes(u.track)) errs.push('ruta desconocida en ' + u.id);
@@ -83,7 +92,7 @@ if (!fs.readFileSync(path.join(root, 'index.html'), 'utf8').includes(fontsSw)) e
 const {api: T} = await import(pathToFileURL(path.join(root, 'src/app.js')));
 const ident = ex => (ex.items || ex.pairs).map((_, i) => i);
 const planOf = (ex, k) => Object.fromEntries(ex.place.map(p => [p.id, p[k]]));
-const wrong = ex => ex.t === 'num' ? '999' : ex.t === 'tap' ? 0 : ex.t === 'level' ? 'Z' : ex.t === 'order' || ex.t === 'match' ? ident(ex).reverse() : ex.t === 'plan' ? planOf(ex, 'start') : (ex.a + 1) % ex.opts.length;
+const wrong = ex => ex.t === 'num' ? '999' : ex.t === 'tap' ? 0 : ex.t === 'level' ? 'Z' : ex.t === 'order' || ex.t === 'match' ? ident(ex).reverse() : ex.t === 'plan' ? planOf(ex, 'start') : ex.t === 'slide' ? ex.start : (ex.a + 1) % ex.opts.length;
 const right = ex => ex.t === 'num' ? String(ex.a).replace('.', ',') : ex.t === 'order' || ex.t === 'match' ? ident(ex) : ex.t === 'plan' ? planOf(ex, 'a') : ex.a;
 const give = (ex, v) => ex.t === 'num' ? T.setVal(v) : T.setSel(v);
 
@@ -186,6 +195,19 @@ if (fs.existsSync(semPath)) {
     T.getState().sim[sem.prev.semana] = {plan: {entry: 1, stop: 0.5, target: 2}};
     T.openSimRes();
     if (!app.innerHTML.includes('Resultado de la semana pasada') || !app.innerHTML.includes('class="split"')) errs.push('la vista del resultado no se dibuja');
+    // Historial: el resultado se guarda en el plan y, con dos semanas o más, se resume en la tarjeta.
+    const st = T.getState(), P = sem.prev, cp = P.data[P.data.length - 1][3];
+    st.sim[P.semana] = {ticker: P.ticker, plan: {entry: cp * 0.5, stop: cp * 0.4, target: cp * 10}};
+    T.simRecord();
+    const r0 = st.sim[P.semana].res, esp = T.simulate(st.sim[P.semana].plan, P.despues);
+    if (!r0 || r0.estado !== esp.estado || Math.abs(r0.r - esp.r) > 0.01) errs.push('el resultado de la semana pasada no se guarda bien');
+    st.sim['2000-W01'] = {ticker: 'X', plan: {}, res: {estado: 'stop', r: -1, nombre: 'Prueba'}};
+    if (T.simHist().length !== 2) errs.push('el historial del simulador no reúne las semanas');
+    T.setTrack('tecnico'); st.skipBasics = true;
+    if (!T.homeHTML().includes('Tu historial')) errs.push('la tarjeta no muestra el historial');
+    T.openSimRes();
+    if (!app.innerHTML.includes('class="histl"')) errs.push('el resultado no lista el historial');
+    delete st.sim['2000-W01'];
   }
   T.goHome();
 }

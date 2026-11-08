@@ -136,7 +136,7 @@ function homeHTML(){
   return h;
 }
 
-const KIND={choice:'Elige una respuesta',num:'Escribe el resultado',tap:'Toca una vela del gráfico',level:'Toca una línea del gráfico',order:'Ordena los pasos',match:'Empareja cada uno con su descripción',plan:'Arrastra las líneas del gráfico'};
+const KIND={choice:'Elige una respuesta',num:'Escribe el resultado',tap:'Toca una vela del gráfico',level:'Toca una línea del gráfico',order:'Ordena los pasos',match:'Empareja cada uno con su descripción',plan:'Arrastra las líneas del gráfico',slide:'Mueve el deslizador'};
 function answerText(ex){
   if(ex.t==='choice')return ex.opts[ex.a];
   if(ex.t==='num')return fmt(ex.a,Number.isInteger(ex.a)?0:2)+(ex.unit?' '+ex.unit:'');
@@ -144,7 +144,21 @@ function answerText(ex){
   if(ex.t==='order')return ex.items.map((t,i)=>(i+1)+'. '+t).join('  ');
   if(ex.t==='match')return ex.pairs.map(p=>p[0]+': '+p[1]).join('  ');
   if(ex.t==='plan')return ex.place.map(p=>p.label+' '+fmt(p.a)).join(' · ');
+  if(ex.t==='slide')return ex.label+': '+slFmt(ex.a,slDec(ex.step),ex.unit);
   return 'Nivel '+ex.a;
+}
+// Ejercicio «slide»: un deslizador con botones −/+ y, opcional, cifras que se recalculan al moverlo
+// (show: [{label, k, b?, unit?, dec?}] → b + valor × k), para ver la consecuencia de cada elección.
+const slDec=st=>{const t=String(st).split('.')[1];return t?t.length:0};
+const slFmt=(v,d,u)=>fmt(v,d)+(u?' '+u:'');
+const slShowHTML=(ex,v)=>(ex.show||[]).map(s=>`<div><dt>${esc(s.label)}</dt><dd>${slFmt((s.b||0)+v*s.k,s.dec==null?0:s.dec,s.unit)}</dd></div>`).join('');
+function slSet(v){
+  const ex=run.queue[0];v=Math.min(ex.max,Math.max(ex.min,v));v=Math.round(Math.round((v-ex.min)/ex.step)*ex.step*1e6)/1e6+ex.min;
+  run.sel=Math.round(v*1e6)/1e6;
+  const i=$app.querySelector('#slIn');if(i&&+i.value!==run.sel)i.value=run.sel;
+  if(i)i.setAttribute('aria-valuetext',slFmt(run.sel,slDec(ex.step),ex.unit));
+  const o=$app.querySelector('#slOut');if(o)o.textContent=slFmt(run.sel,slDec(ex.step),ex.unit);
+  const d=$app.querySelector('#slShow');if(d)d.innerHTML=slShowHTML(ex,run.sel);
 }
 function lessonHTML(){
   const ex=run.queue[0],pct=Math.round(run.done/run.total*100);
@@ -164,6 +178,11 @@ function lessonHTML(){
   if(ex.t==='num'){
     const c=run.checked?(run.ok?'good':'bad'):'';
     h+=`<div class="numrow"><input id="numIn" class="num ${c}" type="text" inputmode="decimal" autocomplete="off" aria-label="Tu respuesta" value="${esc(run.val)}"${run.checked?' disabled':''}>${ex.unit?`<span class="suffix">${ex.unit}</span>`:''}</div>`;
+  }
+  if(ex.t==='slide'){
+    if(run.sel===null)run.sel=ex.start;
+    const c=run.checked?(run.ok?' good':' bad'):'',dis=run.checked?' disabled':'',vt=slFmt(run.sel,slDec(ex.step),ex.unit);
+    h+=`<div class="slide${c}"><label class="sl-h" for="slIn"><span>${esc(ex.label)}</span><output id="slOut">${vt}</output></label><div class="sl-row"><button class="sl-b" data-act="sstep" data-d="-1" aria-label="Bajar ${esc(ex.label)}"${dis}>−</button><input type="range" id="slIn" min="${ex.min}" max="${ex.max}" step="${ex.step}" value="${run.sel}" aria-valuetext="${esc(vt)}"${dis}><button class="sl-b" data-act="sstep" data-d="1" aria-label="Subir ${esc(ex.label)}"${dis}>+</button></div>${ex.show?`<dl class="simk" id="slShow" aria-live="polite">${slShowHTML(ex,run.sel)}</dl>`:''}</div>`;
   }
   h+='</div>';
   const can=canCheck(ex);
@@ -200,7 +219,7 @@ function ordHTML(ex){
 function canCheck(ex){
   if(ex.t==='num')return run.val.trim()!=='';
   if(ex.t==='order'||ex.t==='match')return !!run.sel&&run.sel.length===ordItems(ex).length&&run.sel.every(v=>v!=null);
-  if(ex.t==='plan')return true;
+  if(ex.t==='plan'||ex.t==='slide')return true;
   return run.sel!==null;
 }
 function updateOrd(){
@@ -258,13 +277,30 @@ function simInfo(){
   const box=$app.querySelector('#simInfo');if(box)box.innerHTML=simInfoHTML();
   const b=$app.querySelector('[data-act=simsave]');if(b)b.disabled=!simValid(simDraft);
 }
+// Guarda el resultado de la semana anterior en su plan: semana.json solo trae una semana pasada,
+// así que el historial (R acumulado) se construye en el dispositivo semana a semana.
+function simRecord(){
+  const P=SEMANA&&SEMANA.prev,g=P&&S.sim[P.semana];
+  if(!g||g.ticker!==P.ticker||!P.despues||!P.despues.length)return;
+  const r=simulate(g.plan,P.despues),res={estado:r.estado,r:Math.round(r.r*100)/100,nombre:P.nombre,sesiones:P.despues.length};
+  if(!g.res||g.res.r!==res.r||g.res.estado!==res.estado||g.res.sesiones!==res.sesiones){g.res=res;save()}
+}
+const simHist=()=>Object.keys(S.sim).sort().filter(k=>S.sim[k].res).map(k=>Object.assign({semana:k},S.sim[k].res));
+function simHistHTML(full){
+  const hs=simHist(),con=hs.filter(x=>x.estado!=='sin entrada');
+  if(hs.length<2)return '';
+  const tot=con.reduce((a,x)=>a+x.r,0),pos=con.filter(x=>x.r>0).length,cls=tot>0?'up':tot<0?'dn':'';
+  let h=`<p class="simhist">Tu historial: ${hs.length} semanas, ${con.length} ${con.length===1?'operación':'operaciones'} con entrada, ${pos} en positivo. Total: <b class="${cls}">${fR(tot)}</b></p>`;
+  if(full)h+=`<ul class="histl">${hs.slice().reverse().map(x=>`<li><span>${esc(x.semana.replace('-W',' · semana '))} · ${esc(x.nombre)}</span><b class="${x.r>0?'up':x.r<0?'dn':''}">${x.estado==='sin entrada'?'sin entrada':fR(x.r)}</b></li>`).join('')}</ul>`;
+  return h;
+}
 function simCardHTML(){
   const P=SEMANA.prev,mio=P&&S.sim[P.semana];
   let h='<section class="sim" aria-label="Operación de la semana"><b>Operación de la semana</b>';
   if(mio&&P.despues&&P.despues.length){const r=simulate(mio.plan,P.despues);h+=`<div class="simrow"><span>Semana pasada, ${esc(P.nombre)}: <b class="${r.r>0?'up':r.r<0?'dn':''}">${r.estado==='sin entrada'?'sin entrada':fR(r.r)}</b></span><button class="btn ghost" data-act="simres">Ver resultado</button></div>`}
   const guardado=S.sim[SEMANA.semana];
   h+=`<div class="simrow"><span>${guardado?`Tu plan para ${esc(SEMANA.nombre)} está guardado. El resultado, el próximo sábado.`:`Monta tu operación sobre el gráfico real de ${esc(SEMANA.nombre)} (${esc(SEMANA.ticker)}).`}</span><button class="btn ${guardado?'ghost':'primary'}" data-act="sim">${guardado?'Ver o cambiar':'Empezar'}</button></div>`;
-  return h+'</section>';
+  return h+simHistHTML(false)+'</section>';
 }
 function simHTML(){
   const W=SEMANA,g=S.sim[W.semana];
@@ -290,7 +326,7 @@ function simResHTML(){
   <div class="qwrap"><h1 class="q">${esc(P.nombre)} (${esc(P.ticker)}): <span class="${r.r>0?'up':r.r<0?'dn':''}">${r.estado==='sin entrada'?'sin entrada':fR(r.r)}</span></h1>
   <figure class="chart">${candlesSVG(sp,{mode:'plan',vals:plan,fijo:true,place:SIM_PLACE})}</figure>
   <p class="intro">${txt}</p>
-  <p class="src">${P.despues.length} sesiones reales después del ${fechaES(P.hasta)}. Si un día tocaba stop y objetivo, se cuenta el stop; con hueco, se ejecuta a la apertura.</p></div>
+  <p class="src">${P.despues.length} sesiones reales después del ${fechaES(P.hasta)}. Si un día tocaba stop y objetivo, se cuenta el stop; con hueco, se ejecuta a la apertura.</p>${simHistHTML(true)}</div>
   <div><button class="btn primary" data-act="home">Continuar</button></div></div>`;
 }
 // ---------- Simulador de aportaciones (ruta Pasiva) ----------
@@ -398,6 +434,7 @@ function check(){
   if(ex.t==='num'){const v=parseNum(run.val);ok=v!==null&&Math.abs(v-ex.a)<=(ex.tol==null?0.005:ex.tol)}
   else if(ex.t==='order'||ex.t==='match')ok=!!run.sel&&run.sel.length===ordItems(ex).length&&run.sel.every((v,k)=>v===k);
   else if(ex.t==='plan')ok=ex.place.every(p=>Math.abs(run.sel[p.id]-p.a)<=planTol(p)+1e-9);
+  else if(ex.t==='slide')ok=Math.abs(run.sel-ex.a)<=(ex.tol==null?ex.step/2:ex.tol)+1e-9;
   else ok=run.sel===ex.a;
   run.ok=ok;run.checked=true;
   // En el test de nivel no hay vidas ni repaso: solo se anota el resultado de cada pregunta.
@@ -499,6 +536,7 @@ $app.addEventListener('click',e=>{
   }
   else if(a==='pick'&&!run.checked)pickChoice(+b.dataset.i);
   else if(a==='pstep'){const c=planCtx(),g=$app.querySelector(`.pl[data-id="${b.dataset.id}"]`);if(c&&g)planSet(g,c.vals[b.dataset.id]+(+b.dataset.d)*c.step)}
+  else if(a==='sstep'&&view==='lesson'&&!run.checked&&run.queue[0].t==='slide')slSet(run.sel+(+b.dataset.d)*run.queue[0].step);
   else if(a==='sim'){homeY=window.scrollY;simDraft=null;view='sim';render()}
   else if(a==='unfold'){const id=b.dataset.id;abiertas.has(id)?abiertas.delete(id):abiertas.add(id);homeY=window.scrollY;render();const nb=$app.querySelector(`[data-act=unfold][data-id="${id}"]`);if(nb)nb.focus({preventScroll:true})}
   else if(a==='simres'){homeY=window.scrollY;view='simres';render()}
@@ -536,6 +574,7 @@ $app.addEventListener('input',e=>{
     const c=CALC_CTRL.find(x=>x[0]===k);$app.querySelector('#out-'+k).textContent=c[5](S.calc[k]);
     $app.querySelector('#calcOut').innerHTML=calcOutHTML();return;
   }
+  if(e.target.id==='slIn'&&run&&!run.checked){slSet(+e.target.value);return}
   if(e.target.id!=='numIn'||!run)return;
   run.val=e.target.value;
   const c=$app.querySelector('[data-act=check]');if(c)c.disabled=run.val.trim()==='';
@@ -554,10 +593,11 @@ document.addEventListener('keydown',e=>{
   if(e.key==='Enter'&&e.repeat)return;
   if(e.key==='Enter'&&(!t.closest||!t.closest('button'))){
     if(run.checked){e.preventDefault();next()}
-    else if(t.id==='numIn'&&run.val.trim()!==''){e.preventDefault();check()}
+    else if((t.id==='numIn'&&run.val.trim()!=='')||t.id==='slIn'){e.preventDefault();check()}
   }
 });
 
+simRecord();
 render();
 
 // PWA: el service worker solo se registra servido por http(s) (no en file:// ni en los tests).
@@ -571,4 +611,4 @@ if(typeof navigator!=='undefined'&&'serviceWorker' in navigator&&typeof location
 
 
 // API mínima para tests (test/smoke.mjs)
-export const api={FLAT,CASOS,SEMANA,PLACEMENT,simulate,aportaciones,openCalc:()=>{view='calc';render()},openSim:()=>{simDraft=null;view='sim';render()},openSimRes:()=>{view='simres';render()},simDraftSet:p=>{simDraft=p},simSave:()=>{S.sim[SEMANA.semana]={ticker:SEMANA.ticker,plan:Object.assign({},simDraft),fecha:today()}},goHome:()=>{view='home';render()},startTest:()=>startRun(TEST_L),srsDue,acceptLegal:()=>{S.legal=LEGAL_V},startSrs:()=>startRun(SRS_L),setTrack:t=>{S.track=t},skipBasics:()=>{S.skipBasics=true},homeHTML,startRun,lessonHTML,check,next,resultHTML,failHTML,render,getRun:()=>run,setSel:v=>{run.sel=v},setVal:v=>{run.val=v},getState:()=>S};
+export const api={FLAT,CASOS,SEMANA,PLACEMENT,simulate,simRecord,simHist,aportaciones,openCalc:()=>{view='calc';render()},openSim:()=>{simDraft=null;view='sim';render()},openSimRes:()=>{view='simres';render()},simDraftSet:p=>{simDraft=p},simSave:()=>{S.sim[SEMANA.semana]={ticker:SEMANA.ticker,plan:Object.assign({},simDraft),fecha:today()}},goHome:()=>{view='home';render()},startTest:()=>startRun(TEST_L),srsDue,acceptLegal:()=>{S.legal=LEGAL_V},startSrs:()=>startRun(SRS_L),setTrack:t=>{S.track=t},skipBasics:()=>{S.skipBasics=true},homeHTML,startRun,lessonHTML,check,next,resultHTML,failHTML,render,getRun:()=>run,setSel:v=>{run.sel=v},setVal:v=>{run.val=v},getState:()=>S};

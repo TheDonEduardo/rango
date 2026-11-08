@@ -183,6 +183,30 @@
             ],
             "a": 1,
             "why": "B se mueve 5 veces más: un stop cercano saltaría con el ruido normal, así que va más lejos y, con el mismo riesgo en €, compras menos acciones. En la ruta técnica lo medirás con el ATR."
+          },
+          {
+            "t": "slide",
+            "q": "Tienes 5.000 € y no quieres que una sola acción te haga perder más de 250 € si cae a la mitad. Elige lo máximo que pones en ella.",
+            "label": "Inversión en la acción",
+            "min": 0,
+            "max": 2000,
+            "step": 50,
+            "start": 1500,
+            "a": 500,
+            "unit": "€",
+            "why": "Si cae un 50 %, pierdes la mitad de lo invertido: 500 € × 50 % = 250 €. Son 500 € de 5.000 €, un 10 % de la cartera.",
+            "show": [
+              {
+                "label": "Pérdida si cae un 50 %",
+                "k": 0.5,
+                "unit": "€"
+              },
+              {
+                "label": "Peso en la cartera",
+                "k": 0.02,
+                "unit": "%"
+              }
+            ]
           }
         ]
       }
@@ -1082,6 +1106,31 @@
             ],
             "a": 0,
             "why": "«Págate primero»: si los 320 € salen el día de cobro, gastas lo que queda y no al revés."
+          },
+          {
+            "t": "slide",
+            "q": "Ingresas 1.800 € al mes y quieres ahorrar el 20 %. Elige cuánto transfieres a tu cuenta de ahorro el día de cobro.",
+            "label": "Transferencia mensual",
+            "min": 0,
+            "max": 900,
+            "step": 10,
+            "start": 100,
+            "a": 360,
+            "unit": "€",
+            "why": "1.800 × 20 % = 360 € al mes, que son 4.320 € al año.",
+            "show": [
+              {
+                "label": "Parte de tus ingresos",
+                "k": 0.05555555555555555,
+                "unit": "%",
+                "dec": 1
+              },
+              {
+                "label": "Ahorro en un año",
+                "k": 12,
+                "unit": "€"
+              }
+            ]
           }
         ]
       },
@@ -2173,6 +2222,32 @@
             ],
             "a": 1,
             "why": "63 − 60 = 3 puntos, por debajo de 5. El margen evita operar por movimientos pequeños y pagar costes de más."
+          },
+          {
+            "t": "slide",
+            "q": "Cartera de 10.000 €: 7.800 € en acciones y 2.200 € en bonos. Tu objetivo es 70/30. Elige cuántos euros de acciones vendes para pasarlos a bonos.",
+            "label": "Venta de acciones",
+            "min": 0,
+            "max": 2000,
+            "step": 100,
+            "start": 0,
+            "a": 800,
+            "unit": "€",
+            "why": "El 70 % de 10.000 € son 7.000 €: vendes 7.800 − 7.000 = 800 € y los bonos quedan en 2.200 + 800 = 3.000 €, el 30 %.",
+            "show": [
+              {
+                "label": "Acciones tras vender",
+                "b": 7800,
+                "k": -1,
+                "unit": "€"
+              },
+              {
+                "label": "Peso de las acciones",
+                "b": 78,
+                "k": -0.01,
+                "unit": "%"
+              }
+            ]
           }
         ]
       },
@@ -3958,6 +4033,30 @@
             "a": 2.67,
             "tol": 0.02,
             "why": "Beneficio 6,40 ÷ riesgo 2,40 = 2,67R. Con ese ratio basta acertar el 27 % de las veces para no perder (1 ÷ (1 + 2,67))."
+          },
+          {
+            "t": "slide",
+            "q": "Cuenta de 20.000 € y arriesgas un 1 % por operación. Entrada a 50 € y stop a 47 €. Elige cuántas acciones compras sin pasar del riesgo máximo.",
+            "label": "Acciones",
+            "min": 0,
+            "max": 150,
+            "step": 1,
+            "start": 20,
+            "a": 66,
+            "unit": "",
+            "why": "Riesgo máximo: 20.000 × 1 % = 200 €; por acción, 50 − 47 = 3 €. 200 / 3 = 66,7: compras 66 (198 €), porque 67 ya arriesgan 201 €.",
+            "show": [
+              {
+                "label": "Riesgo total",
+                "k": 3,
+                "unit": "€"
+              },
+              {
+                "label": "Tamaño de la posición",
+                "k": 50,
+                "unit": "€"
+              }
+            ]
           }
         ]
       }
@@ -7126,6 +7225,26 @@
             ],
             "a": 3,
             "why": "Un punto más de tipo o de crecimiento cambia el valor un 17-25 %. Úsalo para entender qué tiene que pasar para justificar el precio, no como una cifra exacta."
+          },
+          {
+            "t": "slide",
+            "q": "Estimas un valor de 80 € por acción y exiges un margen de seguridad del 25 %. Elige el precio máximo que pagarías.",
+            "label": "Precio máximo",
+            "min": 40,
+            "max": 100,
+            "step": 1,
+            "start": 75,
+            "a": 60,
+            "unit": "€",
+            "why": "80 × (1 − 0,25) = 60 €: pagando 60 € tienes un 25 % de colchón por si tu estimación del valor es demasiado optimista.",
+            "show": [
+              {
+                "label": "Descuento sobre el valor",
+                "b": 100,
+                "k": -1.25,
+                "unit": "%"
+              }
+            ]
           }
         ]
       }
