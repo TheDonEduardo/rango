@@ -1,6 +1,6 @@
 {
   "fuente": "Yahoo Finance",
-  "fecha": "07/11/2026",
+  "fecha": "08/11/2026",
   "ex": {
     "f1a": [
       {
@@ -334,7 +334,7 @@
       {
         "t": "num",
         "caso": "Broadcom (AVGO)",
-        "q": "Precio de Broadcom el 07/11/2026: 293,69 $. BPA contable de los últimos 12 meses: 7,83 $. ¿PER? Redondea a 1 decimal.",
+        "q": "Precio de Broadcom el 08/11/2026: 293,69 $. BPA contable de los últimos 12 meses: 7,83 $. ¿PER? Redondea a 1 decimal.",
         "unit": "",
         "a": 37.5,
         "tol": 0.06,
@@ -343,7 +343,7 @@
       {
         "t": "num",
         "caso": "Broadcom (AVGO)",
-        "q": "Precio de Broadcom el 07/11/2026: 293,69 $. BPA estimado por los analistas para los próximos 12 meses: 19,47 $. ¿PER adelantado? Redondea a 1 decimal.",
+        "q": "Precio de Broadcom el 08/11/2026: 293,69 $. BPA estimado por los analistas para los próximos 12 meses: 19,47 $. ¿PER adelantado? Redondea a 1 decimal.",
         "unit": "",
         "a": 15.1,
         "tol": 0.06,
@@ -352,7 +352,7 @@
       {
         "t": "num",
         "caso": "Alphabet (GOOGL)",
-        "q": "Precio de Alphabet el 07/11/2026: 284,78 $. BPA contable de los últimos 12 meses: 19,15 $. ¿PER? Redondea a 1 decimal.",
+        "q": "Precio de Alphabet el 08/11/2026: 284,78 $. BPA contable de los últimos 12 meses: 19,15 $. ¿PER? Redondea a 1 decimal.",
         "unit": "",
         "a": 14.9,
         "tol": 0.06,
@@ -361,7 +361,7 @@
       {
         "t": "num",
         "caso": "Alphabet (GOOGL)",
-        "q": "Precio de Alphabet el 07/11/2026: 284,78 $. BPA estimado por los analistas para los próximos 12 meses: 15,44 $. ¿PER adelantado? Redondea a 1 decimal.",
+        "q": "Precio de Alphabet el 08/11/2026: 284,78 $. BPA estimado por los analistas para los próximos 12 meses: 15,44 $. ¿PER adelantado? Redondea a 1 decimal.",
         "unit": "",
         "a": 18.4,
         "tol": 0.06,
@@ -370,7 +370,7 @@
       {
         "t": "num",
         "caso": "MercadoLibre (MELI)",
-        "q": "Precio de MercadoLibre el 07/11/2026: 1.510,00 $. BPA contable de los últimos 12 meses: 37,28 $. ¿PER? Redondea a 1 decimal.",
+        "q": "Precio de MercadoLibre el 08/11/2026: 1.510,00 $. BPA contable de los últimos 12 meses: 37,28 $. ¿PER? Redondea a 1 decimal.",
         "unit": "",
         "a": 40.5,
         "tol": 0.06,
@@ -379,7 +379,7 @@
       {
         "t": "num",
         "caso": "MercadoLibre (MELI)",
-        "q": "Precio de MercadoLibre el 07/11/2026: 1.510,00 $. BPA estimado por los analistas para los próximos 12 meses: 54,92 $. ¿PER adelantado? Redondea a 1 decimal.",
+        "q": "Precio de MercadoLibre el 08/11/2026: 1.510,00 $. BPA estimado por los analistas para los próximos 12 meses: 54,92 $. ¿PER adelantado? Redondea a 1 decimal.",
         "unit": "",
         "a": 27.5,
         "tol": 0.06,
@@ -388,7 +388,7 @@
       {
         "t": "num",
         "caso": "Microsoft (MSFT)",
-        "q": "Precio de Microsoft el 07/11/2026: 530,61 $. BPA contable de los últimos 12 meses: 19,16 $. ¿PER? Redondea a 1 decimal.",
+        "q": "Precio de Microsoft el 08/11/2026: 530,61 $. BPA contable de los últimos 12 meses: 19,16 $. ¿PER? Redondea a 1 decimal.",
         "unit": "",
         "a": 27.7,
         "tol": 0.06,
@@ -397,7 +397,7 @@
       {
         "t": "num",
         "caso": "Microsoft (MSFT)",
-        "q": "Precio de Microsoft el 07/11/2026: 530,61 $. BPA estimado por los analistas para los próximos 12 meses: 24,18 $. ¿PER adelantado? Redondea a 1 decimal.",
+        "q": "Precio de Microsoft el 08/11/2026: 530,61 $. BPA estimado por los analistas para los próximos 12 meses: 24,18 $. ¿PER adelantado? Redondea a 1 decimal.",
         "unit": "",
         "a": 21.9,
         "tol": 0.06,
@@ -406,7 +406,7 @@
       {
         "t": "num",
         "caso": "Eli Lilly and Company (LLY)",
-        "q": "Precio de Eli Lilly and Company el 07/11/2026: 1.354,00 $. BPA contable de los últimos 12 meses: 30,81 $. ¿PER? Redondea a 1 decimal.",
+        "q": "Precio de Eli Lilly and Company el 08/11/2026: 1.354,00 $. BPA contable de los últimos 12 meses: 30,81 $. ¿PER? Redondea a 1 decimal.",
         "unit": "",
         "a": 43.9,
         "tol": 0.06,
@@ -415,7 +415,7 @@
       {
         "t": "num",
         "caso": "Eli Lilly and Company (LLY)",
-        "q": "Precio de Eli Lilly and Company el 07/11/2026: 1.354,00 $. BPA estimado por los analistas para los próximos 12 meses: 50,35 $. ¿PER adelantado? Redondea a 1 decimal.",
+        "q": "Precio de Eli Lilly and Company el 08/11/2026: 1.354,00 $. BPA estimado por los analistas para los próximos 12 meses: 50,35 $. ¿PER adelantado? Redondea a 1 decimal.",
         "unit": "",
         "a": 26.9,
         "tol": 0.06,
@@ -424,7 +424,7 @@
       {
         "t": "num",
         "caso": "CrowdStrike Holdings (CRWD)",
-        "q": "Precio de CrowdStrike Holdings el 07/11/2026: 216,90 $. BPA estimado por los analistas para los próximos 12 meses: 1,61 $. ¿PER adelantado? Redondea a 1 decimal.",
+        "q": "Precio de CrowdStrike Holdings el 08/11/2026: 216,90 $. BPA estimado por los analistas para los próximos 12 meses: 1,61 $. ¿PER adelantado? Redondea a 1 decimal.",
         "unit": "",
         "a": 134.7,
         "tol": 0.06,
@@ -433,7 +433,7 @@
       {
         "t": "num",
         "caso": "Nu Holdings (NU)",
-        "q": "Precio de Nu Holdings el 07/11/2026: 12,03 $. BPA contable de los últimos 12 meses: 0,73 $. ¿PER? Redondea a 1 decimal.",
+        "q": "Precio de Nu Holdings el 08/11/2026: 12,03 $. BPA contable de los últimos 12 meses: 0,73 $. ¿PER? Redondea a 1 decimal.",
         "unit": "",
         "a": 16.5,
         "tol": 0.06,
@@ -442,7 +442,7 @@
       {
         "t": "num",
         "caso": "Nu Holdings (NU)",
-        "q": "Precio de Nu Holdings el 07/11/2026: 12,03 $. BPA estimado por los analistas para los próximos 12 meses: 1,11 $. ¿PER adelantado? Redondea a 1 decimal.",
+        "q": "Precio de Nu Holdings el 08/11/2026: 12,03 $. BPA estimado por los analistas para los próximos 12 meses: 1,11 $. ¿PER adelantado? Redondea a 1 decimal.",
         "unit": "",
         "a": 10.8,
         "tol": 0.06,
@@ -451,7 +451,7 @@
       {
         "t": "num",
         "caso": "Axon Enterprise (AXON)",
-        "q": "Precio de Axon Enterprise el 07/11/2026: 313,00 $. BPA contable de los últimos 12 meses: 3,11 $. ¿PER? Redondea a 1 decimal.",
+        "q": "Precio de Axon Enterprise el 08/11/2026: 313,00 $. BPA contable de los últimos 12 meses: 3,11 $. ¿PER? Redondea a 1 decimal.",
         "unit": "",
         "a": 100.6,
         "tol": 0.06,
@@ -460,7 +460,7 @@
       {
         "t": "num",
         "caso": "Axon Enterprise (AXON)",
-        "q": "Precio de Axon Enterprise el 07/11/2026: 313,00 $. BPA estimado por los analistas para los próximos 12 meses: 9,55 $. ¿PER adelantado? Redondea a 1 decimal.",
+        "q": "Precio de Axon Enterprise el 08/11/2026: 313,00 $. BPA estimado por los analistas para los próximos 12 meses: 9,55 $. ¿PER adelantado? Redondea a 1 decimal.",
         "unit": "",
         "a": 32.8,
         "tol": 0.06,
@@ -469,7 +469,7 @@
       {
         "t": "num",
         "caso": "Meta Platforms (META)",
-        "q": "Precio de Meta Platforms el 07/11/2026: 610,15 $. BPA contable de los últimos 12 meses: 29,31 $. ¿PER? Redondea a 1 decimal.",
+        "q": "Precio de Meta Platforms el 08/11/2026: 610,15 $. BPA contable de los últimos 12 meses: 29,31 $. ¿PER? Redondea a 1 decimal.",
         "unit": "",
         "a": 20.8,
         "tol": 0.06,
@@ -478,7 +478,7 @@
       {
         "t": "num",
         "caso": "Meta Platforms (META)",
-        "q": "Precio de Meta Platforms el 07/11/2026: 610,15 $. BPA estimado por los analistas para los próximos 12 meses: 35,59 $. ¿PER adelantado? Redondea a 1 decimal.",
+        "q": "Precio de Meta Platforms el 08/11/2026: 610,15 $. BPA estimado por los analistas para los próximos 12 meses: 35,59 $. ¿PER adelantado? Redondea a 1 decimal.",
         "unit": "",
         "a": 17.1,
         "tol": 0.06,
@@ -487,7 +487,7 @@
       {
         "t": "num",
         "caso": "NVIDIA (NVDA)",
-        "q": "Precio de NVIDIA el 07/11/2026: 186,64 $. BPA contable de los últimos 12 meses: 7,91 $. ¿PER? Redondea a 1 decimal.",
+        "q": "Precio de NVIDIA el 08/11/2026: 186,64 $. BPA contable de los últimos 12 meses: 7,91 $. ¿PER? Redondea a 1 decimal.",
         "unit": "",
         "a": 23.6,
         "tol": 0.06,
@@ -496,7 +496,7 @@
       {
         "t": "num",
         "caso": "NVIDIA (NVDA)",
-        "q": "Precio de NVIDIA el 07/11/2026: 186,64 $. BPA estimado por los analistas para los próximos 12 meses: 15,91 $. ¿PER adelantado? Redondea a 1 decimal.",
+        "q": "Precio de NVIDIA el 08/11/2026: 186,64 $. BPA estimado por los analistas para los próximos 12 meses: 15,91 $. ¿PER adelantado? Redondea a 1 decimal.",
         "unit": "",
         "a": 11.7,
         "tol": 0.06,
@@ -507,7 +507,7 @@
       {
         "t": "num",
         "caso": "Broadcom (AVGO)",
-        "q": "Broadcom el 07/11/2026: capitalización de 1.401.967 M$, deuda de 59.419 M$, caja de 23.975 M$ y EBITDA de los últimos 12 meses de 52.260 M$. ¿EV/EBITDA? Redondea a 1 decimal.",
+        "q": "Broadcom el 08/11/2026: capitalización de 1.401.967 M$, deuda de 59.419 M$, caja de 23.975 M$ y EBITDA de los últimos 12 meses de 52.260 M$. ¿EV/EBITDA? Redondea a 1 decimal.",
         "unit": "",
         "a": 27.5,
         "tol": 0.06,
@@ -516,7 +516,7 @@
       {
         "t": "num",
         "caso": "Broadcom (AVGO)",
-        "q": "Broadcom: flujo de caja libre de los 4 trimestres hasta el 31/07/2026: 39.403 M$. Capitalización el 07/11/2026: 1.401.967 M$. ¿Rentabilidad por flujo de caja libre? Redondea a 1 decimal.",
+        "q": "Broadcom: flujo de caja libre de los 4 trimestres hasta el 31/07/2026: 39.403 M$. Capitalización el 08/11/2026: 1.401.967 M$. ¿Rentabilidad por flujo de caja libre? Redondea a 1 decimal.",
         "unit": "%",
         "a": 2.8,
         "tol": 0.06,
@@ -525,7 +525,7 @@
       {
         "t": "num",
         "caso": "Alphabet (GOOGL)",
-        "q": "Alphabet el 07/11/2026: capitalización de 3.501.085 M$, deuda de 150.331 M$, caja de 265.098 M$ y EBITDA de los últimos 12 meses de 185.516 M$. ¿EV/EBITDA? Redondea a 1 decimal.",
+        "q": "Alphabet el 08/11/2026: capitalización de 3.501.085 M$, deuda de 150.331 M$, caja de 265.098 M$ y EBITDA de los últimos 12 meses de 185.516 M$. ¿EV/EBITDA? Redondea a 1 decimal.",
         "unit": "",
         "a": 18.3,
         "tol": 0.06,
@@ -534,7 +534,7 @@
       {
         "t": "num",
         "caso": "Alphabet (GOOGL)",
-        "q": "Alphabet: flujo de caja libre de los 4 trimestres hasta el 30/09/2026: 19.747 M$. Capitalización el 07/11/2026: 3.501.085 M$. ¿Rentabilidad por flujo de caja libre? Redondea a 1 decimal.",
+        "q": "Alphabet: flujo de caja libre de los 4 trimestres hasta el 30/09/2026: 19.747 M$. Capitalización el 08/11/2026: 3.501.085 M$. ¿Rentabilidad por flujo de caja libre? Redondea a 1 decimal.",
         "unit": "%",
         "a": 0.6,
         "tol": 0.06,
@@ -543,7 +543,7 @@
       {
         "t": "num",
         "caso": "MercadoLibre (MELI)",
-        "q": "MercadoLibre el 07/11/2026: capitalización de 76.552 M$, deuda de 16.184 M$, caja de 7.398 M$ y EBITDA de los últimos 12 meses de 3.941 M$. ¿EV/EBITDA? Redondea a 1 decimal.",
+        "q": "MercadoLibre el 08/11/2026: capitalización de 76.552 M$, deuda de 16.184 M$, caja de 7.398 M$ y EBITDA de los últimos 12 meses de 3.941 M$. ¿EV/EBITDA? Redondea a 1 decimal.",
         "unit": "",
         "a": 21.7,
         "tol": 0.06,
@@ -552,7 +552,7 @@
       {
         "t": "num",
         "caso": "Microsoft (MSFT)",
-        "q": "Microsoft el 07/11/2026: capitalización de 3.940.413 M$, deuda de 133.931 M$, caja de 64.509 M$ y EBITDA de los últimos 12 meses de 205.691 M$. ¿EV/EBITDA? Redondea a 1 decimal.",
+        "q": "Microsoft el 08/11/2026: capitalización de 3.940.413 M$, deuda de 133.931 M$, caja de 64.509 M$ y EBITDA de los últimos 12 meses de 205.691 M$. ¿EV/EBITDA? Redondea a 1 decimal.",
         "unit": "",
         "a": 19.5,
         "tol": 0.06,
@@ -561,7 +561,7 @@
       {
         "t": "num",
         "caso": "Microsoft (MSFT)",
-        "q": "Microsoft: flujo de caja libre de los 4 trimestres hasta el 30/09/2026: 59.957 M$. Capitalización el 07/11/2026: 3.940.413 M$. ¿Rentabilidad por flujo de caja libre? Redondea a 1 decimal.",
+        "q": "Microsoft: flujo de caja libre de los 4 trimestres hasta el 30/09/2026: 59.957 M$. Capitalización el 08/11/2026: 3.940.413 M$. ¿Rentabilidad por flujo de caja libre? Redondea a 1 decimal.",
         "unit": "%",
         "a": 1.5,
         "tol": 0.06,
@@ -570,7 +570,7 @@
       {
         "t": "num",
         "caso": "Eli Lilly and Company (LLY)",
-        "q": "Eli Lilly and Company el 07/11/2026: capitalización de 1.206.069 M$, deuda de 49.503 M$, caja de 4.885 M$ y EBITDA de los últimos 12 meses de 46.489 M$. ¿EV/EBITDA? Redondea a 1 decimal.",
+        "q": "Eli Lilly and Company el 08/11/2026: capitalización de 1.206.069 M$, deuda de 49.503 M$, caja de 4.885 M$ y EBITDA de los últimos 12 meses de 46.489 M$. ¿EV/EBITDA? Redondea a 1 decimal.",
         "unit": "",
         "a": 26.9,
         "tol": 0.06,
@@ -579,7 +579,7 @@
       {
         "t": "num",
         "caso": "Eli Lilly and Company (LLY)",
-        "q": "Eli Lilly and Company: flujo de caja libre de los 4 trimestres hasta el 30/09/2026: 11.689 M$. Capitalización el 07/11/2026: 1.206.069 M$. ¿Rentabilidad por flujo de caja libre? Redondea a 1 decimal.",
+        "q": "Eli Lilly and Company: flujo de caja libre de los 4 trimestres hasta el 30/09/2026: 11.689 M$. Capitalización el 08/11/2026: 1.206.069 M$. ¿Rentabilidad por flujo de caja libre? Redondea a 1 decimal.",
         "unit": "%",
         "a": 1.0,
         "tol": 0.06,
@@ -588,7 +588,7 @@
       {
         "t": "num",
         "caso": "CrowdStrike Holdings (CRWD)",
-        "q": "CrowdStrike Holdings: flujo de caja libre de los 4 trimestres hasta el 31/07/2026: 1.523 M$. Capitalización el 07/11/2026: 222.091 M$. ¿Rentabilidad por flujo de caja libre? Redondea a 1 decimal.",
+        "q": "CrowdStrike Holdings: flujo de caja libre de los 4 trimestres hasta el 31/07/2026: 1.523 M$. Capitalización el 08/11/2026: 222.091 M$. ¿Rentabilidad por flujo de caja libre? Redondea a 1 decimal.",
         "unit": "%",
         "a": 0.7,
         "tol": 0.06,
@@ -597,7 +597,7 @@
       {
         "t": "num",
         "caso": "Axon Enterprise (AXON)",
-        "q": "Axon Enterprise: flujo de caja libre de los 4 trimestres hasta el 30/06/2026: 133,2 M$. Capitalización el 07/11/2026: 25.488 M$. ¿Rentabilidad por flujo de caja libre? Redondea a 1 decimal.",
+        "q": "Axon Enterprise: flujo de caja libre de los 4 trimestres hasta el 30/06/2026: 133,2 M$. Capitalización el 08/11/2026: 25.488 M$. ¿Rentabilidad por flujo de caja libre? Redondea a 1 decimal.",
         "unit": "%",
         "a": 0.5,
         "tol": 0.06,
@@ -606,7 +606,7 @@
       {
         "t": "num",
         "caso": "Meta Platforms (META)",
-        "q": "Meta Platforms el 07/11/2026: capitalización de 1.560.052 M$, deuda de 114.842 M$, caja de 82.449 M$ y EBITDA de los últimos 12 meses de 116.190 M$. ¿EV/EBITDA? Redondea a 1 decimal.",
+        "q": "Meta Platforms el 08/11/2026: capitalización de 1.560.052 M$, deuda de 114.842 M$, caja de 82.449 M$ y EBITDA de los últimos 12 meses de 116.190 M$. ¿EV/EBITDA? Redondea a 1 decimal.",
         "unit": "",
         "a": 13.7,
         "tol": 0.06,
@@ -615,7 +615,7 @@
       {
         "t": "num",
         "caso": "Meta Platforms (META)",
-        "q": "Meta Platforms: flujo de caja libre de los 4 trimestres hasta el 30/09/2026: 28.649 M$. Capitalización el 07/11/2026: 1.560.052 M$. ¿Rentabilidad por flujo de caja libre? Redondea a 1 decimal.",
+        "q": "Meta Platforms: flujo de caja libre de los 4 trimestres hasta el 30/09/2026: 28.649 M$. Capitalización el 08/11/2026: 1.560.052 M$. ¿Rentabilidad por flujo de caja libre? Redondea a 1 decimal.",
         "unit": "%",
         "a": 1.8,
         "tol": 0.06,
@@ -624,7 +624,7 @@
       {
         "t": "num",
         "caso": "NVIDIA (NVDA)",
-        "q": "NVIDIA el 07/11/2026: capitalización de 4.506.796 M$, deuda de 38.860 M$, caja de 62.469 M$ y EBITDA de los últimos 12 meses de 201.266 M$. ¿EV/EBITDA? Redondea a 1 decimal.",
+        "q": "NVIDIA el 08/11/2026: capitalización de 4.506.796 M$, deuda de 38.860 M$, caja de 62.469 M$ y EBITDA de los últimos 12 meses de 201.266 M$. ¿EV/EBITDA? Redondea a 1 decimal.",
         "unit": "",
         "a": 22.3,
         "tol": 0.06,
@@ -633,7 +633,7 @@
       {
         "t": "num",
         "caso": "NVIDIA (NVDA)",
-        "q": "NVIDIA: flujo de caja libre de los 4 trimestres hasta el 31/07/2026: 127.006 M$. Capitalización el 07/11/2026: 4.506.796 M$. ¿Rentabilidad por flujo de caja libre? Redondea a 1 decimal.",
+        "q": "NVIDIA: flujo de caja libre de los 4 trimestres hasta el 31/07/2026: 127.006 M$. Capitalización el 08/11/2026: 4.506.796 M$. ¿Rentabilidad por flujo de caja libre? Redondea a 1 decimal.",
         "unit": "%",
         "a": 2.8,
         "tol": 0.06,
@@ -644,7 +644,7 @@
       {
         "t": "num",
         "caso": "Broadcom (AVGO)",
-        "q": "Broadcom el 07/11/2026: deuda de 59.419 M$, caja de 23.975 M$ y EBITDA de los últimos 12 meses de 52.260 M$. ¿Deuda neta/EBITDA? Redondea a 1 decimal.",
+        "q": "Broadcom el 08/11/2026: deuda de 59.419 M$, caja de 23.975 M$ y EBITDA de los últimos 12 meses de 52.260 M$. ¿Deuda neta/EBITDA? Redondea a 1 decimal.",
         "unit": "",
         "a": 0.7,
         "tol": 0.06,
@@ -662,7 +662,7 @@
       {
         "t": "choice",
         "caso": "Alphabet (GOOGL)",
-        "q": "Alphabet el 07/11/2026: deuda de 150.331 M$ y caja de 265.098 M$. ¿Qué tiene?",
+        "q": "Alphabet el 08/11/2026: deuda de 150.331 M$ y caja de 265.098 M$. ¿Qué tiene?",
         "opts": [
           "Caja neta",
           "Deuda neta"
@@ -682,7 +682,7 @@
       {
         "t": "num",
         "caso": "MercadoLibre (MELI)",
-        "q": "MercadoLibre el 07/11/2026: deuda de 16.184 M$, caja de 7.398 M$ y EBITDA de los últimos 12 meses de 3.941 M$. ¿Deuda neta/EBITDA? Redondea a 1 decimal.",
+        "q": "MercadoLibre el 08/11/2026: deuda de 16.184 M$, caja de 7.398 M$ y EBITDA de los últimos 12 meses de 3.941 M$. ¿Deuda neta/EBITDA? Redondea a 1 decimal.",
         "unit": "",
         "a": 2.2,
         "tol": 0.06,
@@ -700,7 +700,7 @@
       {
         "t": "num",
         "caso": "Microsoft (MSFT)",
-        "q": "Microsoft el 07/11/2026: deuda de 133.931 M$, caja de 64.509 M$ y EBITDA de los últimos 12 meses de 205.691 M$. ¿Deuda neta/EBITDA? Redondea a 1 decimal.",
+        "q": "Microsoft el 08/11/2026: deuda de 133.931 M$, caja de 64.509 M$ y EBITDA de los últimos 12 meses de 205.691 M$. ¿Deuda neta/EBITDA? Redondea a 1 decimal.",
         "unit": "",
         "a": 0.3,
         "tol": 0.06,
@@ -718,7 +718,7 @@
       {
         "t": "num",
         "caso": "Eli Lilly and Company (LLY)",
-        "q": "Eli Lilly and Company el 07/11/2026: deuda de 49.503 M$, caja de 4.885 M$ y EBITDA de los últimos 12 meses de 46.489 M$. ¿Deuda neta/EBITDA? Redondea a 1 decimal.",
+        "q": "Eli Lilly and Company el 08/11/2026: deuda de 49.503 M$, caja de 4.885 M$ y EBITDA de los últimos 12 meses de 46.489 M$. ¿Deuda neta/EBITDA? Redondea a 1 decimal.",
         "unit": "",
         "a": 1.0,
         "tol": 0.06,
@@ -727,7 +727,7 @@
       {
         "t": "choice",
         "caso": "CrowdStrike Holdings (CRWD)",
-        "q": "CrowdStrike Holdings el 07/11/2026: deuda de 820,2 M$ y caja de 5.014 M$. ¿Qué tiene?",
+        "q": "CrowdStrike Holdings el 08/11/2026: deuda de 820,2 M$ y caja de 5.014 M$. ¿Qué tiene?",
         "opts": [
           "Caja neta",
           "Deuda neta"
@@ -738,7 +738,7 @@
       {
         "t": "num",
         "caso": "Axon Enterprise (AXON)",
-        "q": "Axon Enterprise el 07/11/2026: deuda de 2.988 M$, caja de 1.655 M$ y EBITDA de los últimos 12 meses de 222,9 M$. ¿Deuda neta/EBITDA? Redondea a 1 decimal.",
+        "q": "Axon Enterprise el 08/11/2026: deuda de 2.988 M$, caja de 1.655 M$ y EBITDA de los últimos 12 meses de 222,9 M$. ¿Deuda neta/EBITDA? Redondea a 1 decimal.",
         "unit": "",
         "a": 6.0,
         "tol": 0.06,
@@ -756,7 +756,7 @@
       {
         "t": "num",
         "caso": "Meta Platforms (META)",
-        "q": "Meta Platforms el 07/11/2026: deuda de 114.842 M$, caja de 82.449 M$ y EBITDA de los últimos 12 meses de 116.190 M$. ¿Deuda neta/EBITDA? Redondea a 1 decimal.",
+        "q": "Meta Platforms el 08/11/2026: deuda de 114.842 M$, caja de 82.449 M$ y EBITDA de los últimos 12 meses de 116.190 M$. ¿Deuda neta/EBITDA? Redondea a 1 decimal.",
         "unit": "",
         "a": 0.3,
         "tol": 0.06,
@@ -774,7 +774,7 @@
       {
         "t": "choice",
         "caso": "NVIDIA (NVDA)",
-        "q": "NVIDIA el 07/11/2026: deuda de 38.860 M$ y caja de 62.469 M$. ¿Qué tiene?",
+        "q": "NVIDIA el 08/11/2026: deuda de 38.860 M$ y caja de 62.469 M$. ¿Qué tiene?",
         "opts": [
           "Deuda neta",
           "Caja neta"
@@ -846,6 +846,284 @@
         "a": 65.8,
         "tol": 0.06,
         "why": "127.006 ÷ 192.879 = 65,8 %: parte del beneficio no llega a caja. Revisa si la diferencia viene de inversiones (capex), de cobros pendientes o de beneficios contables sin caja, como plusvalías de participadas."
+      }
+    ],
+    "f5a": [
+      {
+        "t": "num",
+        "caso": "Broadcom (AVGO)",
+        "q": "Broadcom, trimestre cerrado el 31/07/2026: el consenso esperaba un BPA ajustado de 3,24 $ y publicó 3,32 $. ¿De cuánto es la sorpresa? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 2.5,
+        "tol": 0.06,
+        "why": "(3,32 − 3,24) ÷ 3,24 = 2,5 %: batió al consenso."
+      },
+      {
+        "t": "num",
+        "caso": "Broadcom (AVGO)",
+        "q": "Resultados de Broadcom en sus últimos 4 trimestres (BPA ajustado, $). ¿Cuántas veces batió al consenso?",
+        "table": {
+          "cols": [
+            "Trimestre",
+            "Consenso",
+            "Publicado"
+          ],
+          "rows": [
+            [
+              "31/10/2025",
+              "1,87",
+              "1,95"
+            ],
+            [
+              "31/01/2026",
+              "2,02",
+              "2,05"
+            ],
+            [
+              "30/04/2026",
+              "2,40",
+              "2,44"
+            ],
+            [
+              "31/07/2026",
+              "3,24",
+              "3,32"
+            ]
+          ]
+        },
+        "unit": "",
+        "a": 4,
+        "why": "Batió 4 de 4 veces: cuenta solo los trimestres en que lo publicado supera al consenso. Batir de forma repetida suele llevar a los analistas a subir sus estimaciones."
+      },
+      {
+        "t": "num",
+        "caso": "Microsoft (MSFT)",
+        "q": "Microsoft, trimestre cerrado el 30/09/2026: el consenso esperaba un BPA ajustado de 4,72 $ y publicó 4,89 $. ¿De cuánto es la sorpresa? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 3.6,
+        "tol": 0.06,
+        "why": "(4,89 − 4,72) ÷ 4,72 = 3,6 %: batió al consenso."
+      },
+      {
+        "t": "num",
+        "caso": "Microsoft (MSFT)",
+        "q": "Resultados de Microsoft en sus últimos 4 trimestres (BPA ajustado, $). ¿Cuántas veces batió al consenso?",
+        "table": {
+          "cols": [
+            "Trimestre",
+            "Consenso",
+            "Publicado"
+          ],
+          "rows": [
+            [
+              "31/12/2025",
+              "3,92",
+              "4,14"
+            ],
+            [
+              "31/03/2026",
+              "4,07",
+              "4,27"
+            ],
+            [
+              "30/06/2026",
+              "4,24",
+              "4,74"
+            ],
+            [
+              "30/09/2026",
+              "4,72",
+              "4,89"
+            ]
+          ]
+        },
+        "unit": "",
+        "a": 4,
+        "why": "Batió 4 de 4 veces: cuenta solo los trimestres en que lo publicado supera al consenso. Batir de forma repetida suele llevar a los analistas a subir sus estimaciones."
+      },
+      {
+        "t": "num",
+        "caso": "Eli Lilly and Company (LLY)",
+        "q": "Eli Lilly and Company, trimestre cerrado el 30/09/2026: el consenso esperaba un BPA ajustado de 6,35 $ y publicó 7,48 $. ¿De cuánto es la sorpresa? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 17.8,
+        "tol": 0.06,
+        "why": "(7,48 − 6,35) ÷ 6,35 = 17,8 %: batió al consenso."
+      },
+      {
+        "t": "num",
+        "caso": "Eli Lilly and Company (LLY)",
+        "q": "Resultados de Eli Lilly and Company en sus últimos 4 trimestres (BPA ajustado, $). ¿Cuántas veces batió al consenso?",
+        "table": {
+          "cols": [
+            "Trimestre",
+            "Consenso",
+            "Publicado"
+          ],
+          "rows": [
+            [
+              "31/12/2025",
+              "6,91",
+              "7,54"
+            ],
+            [
+              "31/03/2026",
+              "6,79",
+              "8,55"
+            ],
+            [
+              "30/06/2026",
+              "6,58",
+              "8,38"
+            ],
+            [
+              "30/09/2026",
+              "6,35",
+              "7,48"
+            ]
+          ]
+        },
+        "unit": "",
+        "a": 4,
+        "why": "Batió 4 de 4 veces: cuenta solo los trimestres en que lo publicado supera al consenso. Batir de forma repetida suele llevar a los analistas a subir sus estimaciones."
+      },
+      {
+        "t": "num",
+        "caso": "CrowdStrike Holdings (CRWD)",
+        "q": "CrowdStrike Holdings, trimestre cerrado el 31/07/2026: el consenso esperaba un BPA ajustado de 0,29 $ y publicó 0,31 $. ¿De cuánto es la sorpresa? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 6.9,
+        "tol": 0.06,
+        "why": "(0,31 − 0,29) ÷ 0,29 = 6,9 %: batió al consenso."
+      },
+      {
+        "t": "num",
+        "caso": "CrowdStrike Holdings (CRWD)",
+        "q": "Resultados de CrowdStrike Holdings en sus últimos 4 trimestres (BPA ajustado, $). ¿Cuántas veces batió al consenso?",
+        "table": {
+          "cols": [
+            "Trimestre",
+            "Consenso",
+            "Publicado"
+          ],
+          "rows": [
+            [
+              "31/10/2025",
+              "0,24",
+              "0,24"
+            ],
+            [
+              "31/01/2026",
+              "0,28",
+              "0,28"
+            ],
+            [
+              "30/04/2026",
+              "0,27",
+              "0,28"
+            ],
+            [
+              "31/07/2026",
+              "0,29",
+              "0,31"
+            ]
+          ]
+        },
+        "unit": "",
+        "a": 2,
+        "why": "Batió 2 de 4 veces: cuenta solo los trimestres en que lo publicado supera al consenso. Batir de forma repetida suele llevar a los analistas a subir sus estimaciones."
+      },
+      {
+        "t": "num",
+        "caso": "Axon Enterprise (AXON)",
+        "q": "Axon Enterprise, trimestre cerrado el 30/09/2026: el consenso esperaba un BPA ajustado de 1,89 $ y publicó 1,72 $. ¿Cuánto se queda por debajo del consenso? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 9.0,
+        "tol": 0.06,
+        "why": "(1,72 − 1,89) ÷ 1,89 = −9,0 %: se quedó por debajo del consenso."
+      },
+      {
+        "t": "num",
+        "caso": "Axon Enterprise (AXON)",
+        "q": "Resultados de Axon Enterprise en sus últimos 4 trimestres (BPA ajustado, $). ¿Cuántas veces batió al consenso?",
+        "table": {
+          "cols": [
+            "Trimestre",
+            "Consenso",
+            "Publicado"
+          ],
+          "rows": [
+            [
+              "31/12/2025",
+              "1,60",
+              "2,15"
+            ],
+            [
+              "31/03/2026",
+              "1,60",
+              "1,61"
+            ],
+            [
+              "30/06/2026",
+              "1,84",
+              "1,88"
+            ],
+            [
+              "30/09/2026",
+              "1,89",
+              "1,72"
+            ]
+          ]
+        },
+        "unit": "",
+        "a": 3,
+        "why": "Batió 3 de 4 veces: cuenta solo los trimestres en que lo publicado supera al consenso. Batir de forma repetida suele llevar a los analistas a subir sus estimaciones."
+      },
+      {
+        "t": "num",
+        "caso": "NVIDIA (NVDA)",
+        "q": "NVIDIA, trimestre cerrado el 31/07/2026: el consenso esperaba un BPA ajustado de 2,09 $ y publicó 2,22 $. ¿De cuánto es la sorpresa? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 6.2,
+        "tol": 0.06,
+        "why": "(2,22 − 2,09) ÷ 2,09 = 6,2 %: batió al consenso."
+      },
+      {
+        "t": "num",
+        "caso": "NVIDIA (NVDA)",
+        "q": "Resultados de NVIDIA en sus últimos 4 trimestres (BPA ajustado, $). ¿Cuántas veces batió al consenso?",
+        "table": {
+          "cols": [
+            "Trimestre",
+            "Consenso",
+            "Publicado"
+          ],
+          "rows": [
+            [
+              "31/10/2025",
+              "1,26",
+              "1,30"
+            ],
+            [
+              "31/01/2026",
+              "1,54",
+              "1,62"
+            ],
+            [
+              "30/04/2026",
+              "1,77",
+              "1,87"
+            ],
+            [
+              "31/07/2026",
+              "2,09",
+              "2,22"
+            ]
+          ]
+        },
+        "unit": "",
+        "a": 4,
+        "why": "Batió 4 de 4 veces: cuenta solo los trimestres en que lo publicado supera al consenso. Batir de forma repetida suele llevar a los analistas a subir sus estimaciones."
       }
     ]
   }

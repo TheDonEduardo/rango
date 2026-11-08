@@ -67,7 +67,7 @@ Gráficos (`chart`):
 - Varía la posición de la respuesta correcta en los `choice` y que no sea la más larga: los distractores deben ser igual de creíbles y de largos (el test falla si la correcta supera 1,5 veces a la más larga del resto). La justificación va en `why`, no en la opción.
 - Formato numérico en texto: coma decimal y símbolo tras espacio (`17,60 €`, `7,36 %`).
 - Contenido fiscal o normativo: solo reglas estables y bien establecidas, sin casos límite; las tablas de tramos llevan «Compruébalos cada año».
-- Tono directo, sin relleno ni advertencias legales dentro de los ejercicios. Es formación, no recomendación de inversión; el aviso va en una pantalla aparte (pendiente).
+- Tono directo, sin relleno ni advertencias legales dentro de los ejercicios. Es formación, no recomendación de inversión; el aviso va en su propia pantalla (aviso legal).
 
 ## Diseño
 
@@ -94,7 +94,7 @@ Sistema de tokens en `src/styles.css` (`:root`, con variante oscura por `prefers
 
 0. Ruta Básico: 6 unidades hechas (acciones y órdenes, rentabilidad y riesgo, leer un gráfico, ETF e índices, impuestos en España, cuenta y bróker). Revisar cada año los tramos y normas fiscales de la unidad «Impuestos en España» y «Cuenta y bróker».
 1. Contenido técnico: unidades 1-14 hechas (velas, tendencia, riesgo, catalizadores binarios, Wyckoff/VSA, VCP, salidas escalonadas, riesgo de cartera, cortos y Fase 4, mercado general, fuerza relativa, techos y temporalidades, grupos y gaps, psicología y diario). Ideas siguientes: opciones básicas para cubrir posiciones, backtesting de un sistema.
-1b. Ruta fundamental: F1-F4 hechas (F1-F3 con casos reales). Ideas siguientes: sectores, lectura de un informe de resultados real.
+1b. Ruta fundamental: F1-F5 hechas (F1-F3 y F5 con casos reales). Ideas siguientes: sectores (cíclicos, defensivos, tecnología) y calidad del negocio (ROIC, ventajas competitivas).
 2. Tipos de ejercicio: `order`, `match` y `plan` hechos. Ideas: marcar una zona (rango, base) arrastrando dos líneas, o elegir el tamaño de posición con un deslizador.
 3. Repaso espaciado: hecho. Posible mejora: avisar de la racha de repaso y mostrar cuántos ejercicios están «aprendidos».
 4. Persistencia real (cuentas, sincronización) y decidir stack: vanilla actual frente a Vite + TypeScript. Migrar solo cuando el contenido y los tipos de ejercicio se estabilicen.
@@ -106,7 +106,7 @@ Sistema de tokens en `src/styles.css` (`:root`, con variante oscura por `prefers
 
 Principio: el análisis fundamental decide **qué** comprar; el técnico, **cuándo** y **cuánto**. Una tesis sin criterio de invalidación es como una entrada sin stop. Marco: O'Neil (CAN SLIM: C y A), Minervini (aceleración de BPA, ventas y márgenes), valoración por múltiplos y caja, y tesis escrita con catalizador e invalidación.
 
-Unidades propuestas (2 lecciones × 4 ejercicios cada una, como la ruta técnica):
+Unidades (2 lecciones × 4 ejercicios cada una, como la ruta técnica):
 
 | Unidad | Lección 1 | Lección 2 |
 |---|---|---|
@@ -114,6 +114,7 @@ Unidades propuestas (2 lecciones × 4 ejercicios cada una, como la ruta técnica
 | F2 Valoración | PER, PER adelantado y PEG: cuánto pagas por el crecimiento | EV/EBITDA, rentabilidad por flujo de caja libre y qué expectativas descuenta el precio |
 | F3 Balance y caja | Deuda neta/EBITDA y cobertura de intereses | Caja, meses de autonomía y riesgo de dilución (enlaza con la lección b3) |
 | F4 Tesis de inversión | Escribir la tesis: motor de beneficio, catalizador, horizonte y qué espera el mercado | Invalidación y seguimiento: qué dato rompe la tesis, revisión tras resultados y cómo convive con el stop técnico |
+| F5 Informe de resultados | Sorpresas frente al consenso, BPA ajustado frente a contable y previsiones | La cuenta de resultados de arriba abajo: márgenes y BPA |
 
 Decisiones tomadas:
 - Ruta separada con selector Técnico / Fundamental: quien viene a por fundamental no pasa antes por la técnica, y cada ruta guarda su progreso.
@@ -121,7 +122,7 @@ Decisiones tomadas:
 - Los casos reales son solo de cálculo y se generan con código: la respuesta se calcula con las mismas cifras redondeadas que ve el usuario y el `why` solo afirma hechos verificables con los datos (comparaciones con umbrales del marco o con el trimestre anterior). Nada de valoraciones ni de «compra/vende»: cada caso indica fuente y fecha y el inicio lo marca como formación.
 - Si una plantilla puede dar un resultado negativo, se reformula o se descarta el caso (ver regla de `num`).
 - Filtra los datos absurdos o distorsionados en vez de explicarlos: PER mayor de 200 (BPA casi nulo), EV/EBITDA de 100 o más, rentabilidad por flujo de caja libre de 8 % o más (en negocios financieros el flujo operativo incluye fondos de clientes). El flujo de caja libre se suma de 4 trimestres consecutivos del estado de flujos, no del campo `freeCashflow` de Yahoo, que no es fiable. La cobertura de intereses usa el beneficio operativo, no el «EBIT» de Yahoo (incluye plusvalías). Las plantillas de F3 excluyen el sector financiero: en bancos, deuda y caja son la materia prima del negocio.
-- La tesis encaja con el tipo de ejercicio «ordenar pasos» (ya en la lista de pendientes).
+- Sorpresas frente al consenso (F5): solo trimestres con BPA ajustado («normalized» en Yahoo). En el contable, Yahoo compara a veces con un consenso no comparable y salen sorpresas enormes y engañosas. «Batir» cuenta con las cifras redondeadas que ve el usuario.
 
 ## Convenciones de trabajo
 

@@ -88,7 +88,7 @@ def casos_de(tk):
         return {}
     q = q[sorted(q.columns, reverse=True)]  # columna 0 = trimestre más reciente
     cols = list(q.columns)
-    out = {"f1a": [], "f1b": [], "f2a": [], "f2b": [], "f3a": [], "f3b": []}
+    out = {"f1a": [], "f1b": [], "f2a": [], "f2b": [], "f3a": [], "f3b": [], "f5a": []}
     rev, eps = row(q, "Total Revenue"), row(q, "Diluted EPS")
     gp, op = row(q, "Gross Profit"), row(q, "Operating Income")
 
@@ -207,6 +207,43 @@ def casos_de(tk):
                 "why": f"{es(f, df)} ÷ {es(c, dc)} = {es(y)} %: la caja que genera el negocio por cada 100 {sym} de capitalización.",
             })
 
+    # f5a · sorpresas frente al consenso (últimos 4 trimestres publicados)
+    try:
+        eh = t.earnings_history
+    except Exception:
+        eh = None
+    if eh is not None and not eh.empty and {"epsActual", "epsEstimate"} <= set(eh.columns):
+        eh = eh.sort_index().dropna(subset=["epsActual", "epsEstimate"]).tail(4)
+        # Solo BPA ajustado («normalized»): en el contable, Yahoo compara a veces el dato publicado con un consenso
+        # que no es comparable y salen «sorpresas» enormes que enseñarían algo falso.
+        ajustado = [str(m).lower() == "normalized" for m in eh.get("methodology", [])]
+        tipo = "ajustado"
+        filas = [(ix, round(float(r.epsActual), 2), round(float(r.epsEstimate), 2)) for ix, r in eh.iterrows()]
+        ix, real, est = filas[-1]
+        if ajustado and ajustado[-1] and est > 0 and real != est:
+            sp = round((real - est) / est * 100, 1)
+            if 0 < abs(sp) < 100:
+                pide = "¿De cuánto es la sorpresa?" if sp > 0 else "¿Cuánto se queda por debajo del consenso?"
+                out["f5a"].append({
+                    "t": "num", "caso": caso,
+                    "q": f"{nombre}, trimestre cerrado el {fecha(ix)}: el consenso esperaba un BPA {tipo} de {es(est, 2)} {sym} "
+                         f"y publicó {es(real, 2)} {sym}. {pide} Redondea a 1 decimal.",
+                    "unit": "%", "a": abs(sp), "tol": 0.06,
+                    "why": f"({es(real, 2)} − {es(est, 2)}) ÷ {es(est, 2)} = {es(sp)} %: "
+                           + ("batió al consenso." if sp > 0 else "se quedó por debajo del consenso."),
+                })
+        if len(filas) == 4 and all(ajustado):
+            bates = sum(1 for _, r_, e_ in filas if r_ > e_)
+            out["f5a"].append({
+                "t": "num", "caso": caso,
+                "q": f"Resultados de {nombre} en sus últimos 4 trimestres (BPA {tipo}, {sym}). ¿Cuántas veces batió al consenso?",
+                "table": {"cols": ["Trimestre", "Consenso", "Publicado"],
+                          "rows": [[fecha(i_), es(e_, 2), es(r_, 2)] for i_, r_, e_ in filas]},
+                "unit": "", "a": bates,
+                "why": f"Batió {bates} de 4 veces: cuenta solo los trimestres en que lo publicado supera al consenso. "
+                       f"Batir de forma repetida suele llevar a los analistas a subir sus estimaciones.",
+            })
+
     # F3: en bancos y aseguradoras la deuda y la caja son la materia prima del negocio; estas ratios no aplican.
     if info.get("sector") == "Financial Services":
         return out
@@ -276,7 +313,7 @@ def casos_de(tk):
 
 
 def main():
-    ex = {"f1a": [], "f1b": [], "f2a": [], "f2b": [], "f3a": [], "f3b": []}
+    ex = {"f1a": [], "f1b": [], "f2a": [], "f2b": [], "f3a": [], "f3b": [], "f5a": []}
     fallos = []
     for tk in tickers():
         try:
