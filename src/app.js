@@ -92,8 +92,8 @@ function tableHTML(ex){
 
 function homeHTML(){
   const st=statuses(),sk=streakNow(),dx=dayXpNow();
-  let h=`<header class="top"><div class="brand">${LOGO}<span>Rango</span></div><div class="stats"><span class="chip fire" aria-label="Racha de ${sk} ${sk===1?'día':'días'}">${ico('flame')}<b>${sk}</b></span><span class="chip xp" aria-label="${S.xp} XP en total">${ico('bolt')}<b>${S.xp}</b></span></div></header><main>`;
-  h+=`<section class="goal" aria-label="Meta diaria"><div class="goal-h"><span>Meta de hoy</span><span>${Math.min(dx,GOAL)} / ${GOAL} XP</span></div><div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="${GOAL}" aria-valuenow="${Math.min(dx,GOAL)}"><i style="width:${Math.min(100,dx/GOAL*100)}%"></i></div></section>`;
+  let h=`<header class="top"><h1 class="brand">${LOGO}<span>Rango</span></h1><div class="stats"><span class="chip fire" aria-label="Racha de ${sk} ${sk===1?'día':'días'}">${ico('flame')}<b>${sk}</b></span><span class="chip xp" aria-label="${S.xp} XP en total">${ico('bolt')}<b>${S.xp}</b></span></div></header><div class="home">`;
+  h+=`<section class="goal" aria-label="Meta diaria"><div class="goal-h"><span>Meta de hoy</span><span>${Math.min(dx,GOAL)} / ${GOAL} XP</span></div><div class="bar" role="progressbar" aria-label="Meta de hoy" aria-valuemin="0" aria-valuemax="${GOAL}" aria-valuenow="${Math.min(dx,GOAL)}"><i style="width:${Math.min(100,dx/GOAL*100)}%"></i></div></section>`;
   h+=`<nav class="tracks" aria-label="Ruta">${TRACKS.map(t=>`<button data-act="track" data-track="${t.id}" aria-pressed="${S.track===t.id}">${t.title}</button>`).join('')}</nav>`;
   const TF=FLAT.filter(l=>trackOf(l.unit)===S.track);
   if(S.track!=='basico'&&!advancedOpen())h+=`<section class="gate"><p>Esta ruta se abre al completar la ruta <b>Básico</b>.</p><div class="row"><button class="btn line" data-act="track" data-track="basico">Ir a los básicos</button><button class="btn ghost" data-act="skipbasics">Ya opero: saltar los básicos</button></div></section>`;
@@ -125,7 +125,7 @@ function homeHTML(){
     h+='</div></section>';
   });
   if(S.track==='fundamental'&&CASOS)h+=`<p class="src">Casos reales con datos de ${esc(CASOS.fuente)} a ${esc(CASOS.fecha)}. Es formación, no una recomendación de inversión.</p>`;
-  h+=`</main><footer class="foot-home"><p>Prototipo. El progreso se guarda solo en este navegador. <button class="link" data-act="legal">Aviso legal</button></p>${installHTML()}<div class="row"><button class="btn ghost" data-act="unlock">${S.all?'Volver a bloquear':'Desbloquear todo'}</button><button class="btn ghost" data-act="reset">${resetArm?'Pulsa de nuevo para borrar':'Reiniciar progreso'}</button></div></footer>`;
+  h+=`</div><footer class="foot-home"><p>Prototipo. El progreso se guarda solo en este navegador. <button class="link" data-act="legal">Aviso legal</button></p>${installHTML()}<div class="row"><button class="btn ghost" data-act="unlock">${S.all?'Volver a bloquear':'Desbloquear todo'}</button><button class="btn ghost" data-act="reset">${resetArm?'Pulsa de nuevo para borrar':'Reiniciar progreso'}</button></div></footer>`;
   return h;
 }
 
@@ -142,8 +142,8 @@ function answerText(ex){
 function lessonHTML(){
   const ex=run.queue[0],pct=Math.round(run.done/run.total*100);
   let hearts='';for(let i=0;i<3;i++)hearts+=`<svg class="heart ${i<run.lives?'on':'off'}" viewBox="0 0 24 24" aria-hidden="true"><path d="${P.heart}" fill="currentColor"/></svg>`;
-  let h=`<div class="lesson"><div class="lbar"><button class="x" data-act="quit" aria-label="Salir de la lección">${icoX}</button><div class="prog" role="progressbar" aria-valuemin="0" aria-valuemax="${run.total}" aria-valuenow="${run.done}"><i style="width:${pct}%"></i></div>${run.L.kind==='test'?'':`<div class="lives" role="img" aria-label="${run.lives} vidas">${hearts}</div>`}</div>`;
-  h+=`<div class="qwrap"><p class="kind">${ex.caso?`Caso real: ${esc(ex.caso)} · `:''}${KIND[ex.t]}</p><h2 class="q">${tx(ex.q)}</h2>${chartHTML(ex)}${tableHTML(ex)}`;
+  let h=`<div class="lesson"><div class="lbar"><button class="x" data-act="quit" aria-label="Salir de la lección">${icoX}</button><div class="prog" role="progressbar" aria-label="Progreso de la lección" aria-valuemin="0" aria-valuemax="${run.total}" aria-valuenow="${run.done}"><i style="width:${pct}%"></i></div>${run.L.kind==='test'?'':`<div class="lives" role="img" aria-label="${run.lives} vidas">${hearts}</div>`}</div>`;
+  h+=`<div class="qwrap"><p class="kind">${ex.caso?`Caso real: ${esc(ex.caso)} · `:''}${KIND[ex.t]}</p><h1 class="q">${tx(ex.q)}</h1>${chartHTML(ex)}${tableHTML(ex)}`;
   if(ex.t==='choice'){
     h+='<div class="opts">';
     ex.opts.forEach((o,i)=>{
@@ -264,7 +264,7 @@ function simHTML(){
   if(!simDraft)simDraft=g?Object.assign({},g.plan):simStart();
   const sp={type:'candles',data:W.data,vol:W.vol,h:300,alt:`Gráfico diario de ${W.nombre} con las líneas de tu plan`};
   return `<div class="lesson sim-view"><div class="lbar"><button class="x" data-act="home" aria-label="Volver al inicio">${icoX}</button><p class="kind">Operación de la semana</p></div>
-  <div class="qwrap"><h2 class="q">${esc(W.nombre)} (${esc(W.ticker)})</h2>
+  <div class="qwrap"><h1 class="q">${esc(W.nombre)} (${esc(W.ticker)})</h1>
   <p class="intro">Plan de compra en ruptura: coloca la entrada por encima del último cierre, el stop y el objetivo. El sábado que viene verás qué habría pasado con las velas reales.</p>
   <figure class="chart">${candlesSVG(sp,{mode:'plan',vals:simDraft,checked:false,place:SIM_PLACE})}</figure>${fineHTML(SIM_PLACE)}
   <div id="simInfo" class="siminfo" aria-live="polite">${simInfoHTML()}</div>
@@ -280,7 +280,7 @@ function simResHTML(){
     :`Entraste a ${fmt(r.fill)} ${m} en ${dia(r.dEnt)} y al último cierre (${fmt(r.exit)} ${m}) la operación seguía abierta.`;
   const sp={type:'candles',data:P.data.concat(P.despues),h:300,split:P.data.length,alt:`Gráfico diario de ${P.nombre} con tu plan y las sesiones posteriores`};
   return `<div class="lesson sim-view"><div class="lbar"><button class="x" data-act="home" aria-label="Volver al inicio">${icoX}</button><p class="kind">Resultado de la semana pasada</p></div>
-  <div class="qwrap"><h2 class="q">${esc(P.nombre)} (${esc(P.ticker)}): <span class="${r.r>0?'up':r.r<0?'dn':''}">${r.estado==='sin entrada'?'sin entrada':fR(r.r)}</span></h2>
+  <div class="qwrap"><h1 class="q">${esc(P.nombre)} (${esc(P.ticker)}): <span class="${r.r>0?'up':r.r<0?'dn':''}">${r.estado==='sin entrada'?'sin entrada':fR(r.r)}</span></h1>
   <figure class="chart">${candlesSVG(sp,{mode:'plan',vals:plan,fijo:true,place:SIM_PLACE})}</figure>
   <p class="intro">${txt}</p>
   <p class="src">${P.despues.length} sesiones reales después del ${fechaES(P.hasta)}. Si un día tocaba stop y objetivo, se cuenta el stop; con hueco, se ejecuta a la apertura.</p></div>
@@ -327,7 +327,7 @@ const ccHTML=([k,l,mi,ma,st,f])=>`<label class="cc" for="calc-${k}"><span>${l}</
 function calcHTML(){
   S.calc=Object.assign({},CALC_DEF,S.calc);
   return `<div class="lesson sim-view"><div class="lbar"><button class="x" data-act="home" aria-label="Volver al inicio">${icoX}</button><p class="kind">Simulador de aportaciones</p></div>
-  <div class="qwrap"><h2 class="q">¿Cuánto tendrías?</h2>
+  <div class="qwrap"><h1 class="q">¿Cuánto tendrías?</h1>
   <div class="calc">${CALC_CTRL.filter(c=>c[0]!=='ter2').map(ccHTML).join('')}
   <label class="ccheck" for="calc-cmp"><input type="checkbox" id="calc-cmp" data-calc="cmp"${S.calc.cmp?' checked':''}> Comparar con otra comisión</label>
   ${S.calc.cmp?ccHTML(CALC_CTRL.find(c=>c[0]==='ter2')):''}</div>

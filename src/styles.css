@@ -50,7 +50,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 
 /* Cabecera */
 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;background:var(--bg);border-bottom:1px solid var(--line)}
-.brand{display:flex;align-items:center;gap:8px;font:800 26px/1 var(--font-display);letter-spacing:-.025em}
+.brand{display:flex;align-items:center;gap:8px;margin:0;font:800 26px/1 var(--font-display);letter-spacing:-.025em}
 .brand svg{width:18px;height:26px}
 .brand .w{stroke:var(--ink);stroke-width:2}
 .brand .b{fill:var(--up)}
@@ -158,10 +158,11 @@ button{font:inherit;color:inherit;cursor:pointer}
 .ord-ans .slot.next{border-color:var(--sel);color:var(--sel)}
 .svg.plan{touch-action:pan-x}
 .pl{cursor:ns-resize;touch-action:none;--c:var(--ink)}
-.pl-entry{--c:var(--sel)} .pl-stop{--c:var(--down)} .pl-target{--c:var(--up)}
+/* --c: línea; --ci: texto y etiqueta (tono con contraste suficiente sobre el fondo y con el texto de la etiqueta) */
+.pl-entry{--c:var(--sel);--ci:var(--sel)} .pl-stop{--c:var(--down);--ci:var(--down-ink)} .pl-target{--c:var(--up);--ci:var(--up-ink)}
 .pl line{stroke:var(--c);stroke-width:2.5}
 .pl .hit{fill:transparent}
-.pl .pill{fill:var(--c)}
+.pl .pill{fill:var(--ci,var(--c))}
 .pl .pt{fill:var(--surface);font-weight:700;font-size:12px;text-anchor:middle}
 .pl .grip{stroke:var(--c);stroke-width:2;stroke-linecap:round}
 .pl:focus{outline:none} .pl:focus-visible line,.pl.drag line{stroke-width:4}
@@ -200,7 +201,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 .cmpres{margin:12px 0 0;font-size:15px}
 .pfine{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px 14px;margin-top:10px}
 .pf{display:flex;align-items:center;gap:6px}
-.pf span{font-weight:600;font-size:14px;color:var(--c);min-width:64px}
+.pf span{font-weight:600;font-size:14px;color:var(--ci,var(--c));min-width:64px}
 .pf button{width:40px;height:36px;border-radius:10px;border:2px solid var(--line);border-bottom-width:4px;background:var(--surface);font-size:18px;font-weight:700;line-height:1;color:var(--c)}
 .ord-ans{list-style:none;margin:0;padding:0;display:grid;gap:8px}
 .ord-ans .opt{width:100%;display:flex;align-items:center;gap:12px}

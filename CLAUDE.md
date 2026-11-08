@@ -82,6 +82,7 @@ Sistema de tokens en `src/styles.css` (`:root`, con variante oscura por `prefers
 - Elemento distintivo: la ruta de lecciones es una línea de precio y cada lección es una vela. Hecha = vela verde con cuerpo proporcional a la precisión; actual = vela ámbar con pulso; bloqueada = doji gris.
 - No añadir: emojis como iconos, degradados decorativos, tarjetas idénticas con sombra, etiquetas en mayúsculas. El gráfico y la vela son el protagonista; el resto, discreto.
 - Móvil primero (columna máx. 520 px), respeta `safe-area-inset-*` y `prefers-reduced-motion`.
+- Accesibilidad (auditoría con axe-core sin incidencias en 15 pantallas, claro y oscuro): `#app` es la región principal (`<main>`); cada pantalla tiene un `h1` (el nombre en el inicio, el enunciado en lecciones y simuladores); barras de progreso con nombre; un gráfico con controles dentro es `role="group"`, no `img`. Texto de color sobre el fondo o con etiqueta: usa las variantes `--up-ink`/`--down-ink` (contraste ≥ 4,5), no `--up`/`--down`.
 
 ## Estado actual y limitaciones conocidas
 

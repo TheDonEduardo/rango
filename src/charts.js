@@ -27,7 +27,9 @@ export function candlesSVG(sp,st){
   const cls=k=>{if(!st)return'';if(st.checked){if(k===st.a)return'good';if(k===st.sel)return'bad';return''}return k===st.sel?'sel':''};
   // En modo plan, la escala viaja en atributos para que app.js convierta la posición del dedo en precio.
   const scaleAttrs=planMode?` data-lo="${sc.lo}" data-hi="${sc.hi}" data-top="${pt}" data-ph="${H-pt-pbP}"`:'';
-  let s=`<svg class="svg ${tapMode?'tap':''}${planMode?' plan':''}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(sp.alt||'Gráfico de velas')}"${scaleAttrs}>`;
+  // Con controles dentro (velas que se tocan, niveles, líneas que se arrastran) el gráfico es un grupo, no una imagen.
+  const interactivo=tapMode||(sp.levels&&sp.levels.length)||(planMode&&!st.checked&&!st.fijo);
+  let s=`<svg class="svg ${tapMode?'tap':''}${planMode?' plan':''}" viewBox="0 0 ${W} ${H}" role="${interactivo?'group':'img'}" aria-label="${esc(sp.alt||'Gráfico de velas')}"${scaleAttrs}>`;
   sc.ticks.forEach(t=>{s+=`<line class="grid" x1="${pl}" x2="${W-pr}" y1="${y(t).toFixed(1)}" y2="${y(t).toFixed(1)}"/><text x="${W-pr+6}" y="${(y(t)+3.5).toFixed(1)}">${fmt(t,sc.dec)}</text>`});
   if(VH)s+=`<line class="grid" x1="${pl}" x2="${W-pr}" y1="${H-pb}" y2="${H-pb}"/><text x="${W-pr+6}" y="${(H-pb-VH/2+3.5).toFixed(1)}">Vol.</text>`;
   (sp.lines||[]).forEach(l=>{s+=`<line class="ref" x1="${pl}" x2="${W-pr}" y1="${y(l.y).toFixed(1)}" y2="${y(l.y).toFixed(1)}"/>`});
