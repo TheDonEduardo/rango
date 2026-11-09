@@ -1,0 +1,448 @@
+[
+ {
+  "termino": "ATR",
+  "alias": [
+   "ATR(14)"
+  ],
+  "d": "Rango medio verdadero: cuánto se mueve el precio en una sesión normal, incluidos los huecos. Se usa para colocar el stop lejos del ruido diario."
+ },
+ {
+  "termino": "PER",
+  "d": "Precio entre beneficio por acción: cuántos años de beneficio actual pagas por la acción."
+ },
+ {
+  "termino": "PER adelantado",
+  "d": "El PER calculado con el beneficio por acción que se espera para el próximo año."
+ },
+ {
+  "termino": "PEG",
+  "d": "PER dividido entre el crecimiento esperado del beneficio. Cerca de 1, el precio va en línea con lo que crece."
+ },
+ {
+  "termino": "BPA",
+  "d": "Beneficio por acción: el beneficio neto dividido entre el número de acciones."
+ },
+ {
+  "termino": "EBITDA",
+  "d": "Resultado antes de intereses, impuestos, amortizaciones y depreciaciones: una aproximación a lo que genera el negocio en sí."
+ },
+ {
+  "termino": "EBIT",
+  "d": "Resultado operativo: lo que gana el negocio antes de intereses e impuestos."
+ },
+ {
+  "termino": "EV",
+  "alias": [
+   "valor de empresa"
+  ],
+  "d": "Valor de empresa: capitalización más deuda menos caja. Es lo que costaría comprar la empresa entera."
+ },
+ {
+  "termino": "EV/EBITDA",
+  "d": "Valor de empresa entre EBITDA: un múltiplo que compara empresas con distinta deuda."
+ },
+ {
+  "termino": "ROIC",
+  "d": "Rentabilidad sobre el capital invertido: cuánto beneficio operativo después de impuestos genera cada euro invertido en el negocio."
+ },
+ {
+  "termino": "CAC",
+  "d": "Coste de captación de un cliente: gasto en marketing y ventas entre clientes nuevos."
+ },
+ {
+  "termino": "LTV",
+  "d": "Valor del cliente: el margen que deja un cliente durante toda su relación con la empresa."
+ },
+ {
+  "termino": "ETF",
+  "d": "Fondo que cotiza en bolsa como una acción y normalmente copia un índice."
+ },
+ {
+  "termino": "ETC",
+  "d": "Título cotizado que sigue el precio de una materia prima, como el oro, respaldado por ella."
+ },
+ {
+  "termino": "TER",
+  "d": "Coste anual total de un fondo, en % de lo invertido. Se descuenta del valor del fondo cada día."
+ },
+ {
+  "termino": "TIN",
+  "d": "Tipo de interés nominal: el interés pactado, sin comisiones ni efecto de la frecuencia de pago."
+ },
+ {
+  "termino": "TAE",
+  "d": "Tasa anual equivalente: el rendimiento o coste real en un año, con comisiones y frecuencia de pago. La que sirve para comparar."
+ },
+ {
+  "termino": "IPC",
+  "d": "Índice de precios de consumo: mide la inflación en España."
+ },
+ {
+  "termino": "BCE",
+  "d": "Banco Central Europeo: fija los tipos de interés oficiales de la zona euro."
+ },
+ {
+  "termino": "CNMV",
+  "d": "Comisión Nacional del Mercado de Valores: el supervisor de los mercados y de las empresas de inversión en España."
+ },
+ {
+  "termino": "FOGAIN",
+  "d": "Fondo de Garantía de Inversiones: cubre hasta 100.000 € por inversor si una empresa de inversión autorizada no puede devolverte tus valores o tu dinero."
+ },
+ {
+  "termino": "SOCIMI",
+  "alias": [
+   "SOCIMIs"
+  ],
+  "d": "Sociedad cotizada española que invierte en inmuebles en alquiler y reparte la mayor parte del beneficio como dividendo."
+ },
+ {
+  "termino": "REIT",
+  "alias": [
+   "REITs"
+  ],
+  "d": "Versión estadounidense (y de otros países) de las SOCIMI: empresas cotizadas de inmuebles en alquiler."
+ },
+ {
+  "termino": "OPV",
+  "d": "Oferta pública de venta: la salida a bolsa de una empresa."
+ },
+ {
+  "termino": "IRPF",
+  "d": "Impuesto sobre la renta de las personas físicas."
+ },
+ {
+  "termino": "VCP",
+  "d": "Patrón de contracción de volatilidad de Minervini: una base con retrocesos cada vez más pequeños."
+ },
+ {
+  "termino": "VSA",
+  "d": "Análisis de volumen y rango de las velas: compara el esfuerzo (volumen) con el resultado (avance del precio)."
+ },
+ {
+  "termino": "W-8BEN",
+  "d": "Formulario de EE. UU. que reduce al 15 % la retención sobre sus dividendos para residentes en España."
+ },
+ {
+  "termino": "Modelo 720",
+  "d": "Declaración informativa de bienes en el extranjero, como valores en un bróker de fuera, si superan 50.000 €."
+ },
+ {
+  "termino": "MSCI World",
+  "d": "Índice de grandes y medianas empresas de los países desarrollados."
+ },
+ {
+  "termino": "S&P 500",
+  "d": "Índice de unas 500 grandes empresas de EE. UU."
+ },
+ {
+  "termino": "IBEX 35",
+  "alias": [
+   "IBEX"
+  ],
+  "d": "Índice de las 35 empresas más negociadas de la bolsa española."
+ },
+ {
+  "termino": "capitalización",
+  "d": "Lo que vale una empresa en bolsa: número de acciones por precio."
+ },
+ {
+  "termino": "dividendo",
+  "alias": [
+   "dividendos"
+  ],
+  "d": "Parte del beneficio que la empresa reparte a sus accionistas."
+ },
+ {
+  "termino": "payout",
+  "d": "Porcentaje del beneficio que se reparte como dividendo."
+ },
+ {
+  "termino": "recompra",
+  "alias": [
+   "recompras"
+  ],
+  "d": "Cuando la empresa compra sus propias acciones: el beneficio se reparte entre menos acciones."
+ },
+ {
+  "termino": "dilución",
+  "d": "Pérdida de peso de cada acción cuando la empresa emite acciones nuevas."
+ },
+ {
+  "termino": "float",
+  "d": "Acciones que se negocian libremente en bolsa, sin contar las de fundadores y grandes accionistas fijos."
+ },
+ {
+  "termino": "spread",
+  "d": "Diferencia entre el precio al que te venden y el precio al que te compran. También se llama horquilla."
+ },
+ {
+  "termino": "horquilla",
+  "d": "Diferencia entre el mejor precio de venta y el mejor de compra: un coste que pagas al operar."
+ },
+ {
+  "termino": "orden limitada",
+  "alias": [
+   "limitada"
+  ],
+  "d": "Orden que solo se ejecuta a tu precio o mejor."
+ },
+ {
+  "termino": "orden a mercado",
+  "alias": [
+   "a mercado"
+  ],
+  "d": "Orden que se ejecuta al momento, al mejor precio disponible."
+ },
+ {
+  "termino": "stop",
+  "alias": [
+   "orden stop"
+  ],
+  "d": "Orden que vende (o compra) automáticamente cuando el precio llega a un nivel. Limita la pérdida."
+ },
+ {
+  "termino": "volatilidad",
+  "d": "Cuánto oscila el precio. Más volatilidad, más riesgo a corto plazo."
+ },
+ {
+  "termino": "apalancamiento",
+  "d": "Invertir con dinero prestado: multiplica las ganancias y también las pérdidas."
+ },
+ {
+  "termino": "interés compuesto",
+  "d": "Interés que se calcula también sobre los intereses ya ganados."
+ },
+ {
+  "termino": "rentabilidad real",
+  "d": "Rentabilidad menos inflación: lo que crece de verdad tu poder de compra."
+ },
+ {
+  "termino": "cupón",
+  "alias": [
+   "cupones"
+  ],
+  "d": "Interés fijo que paga un bono cada año."
+ },
+ {
+  "termino": "nominal",
+  "d": "En un bono, el importe que el emisor devuelve al vencimiento. En un tipo de interés, el pactado, sin gastos."
+ },
+ {
+  "termino": "duración modificada",
+  "alias": [
+   "duración"
+  ],
+  "no": [
+   "larga duración"
+  ],
+  "d": "Cuánto cambia el precio de un bono, en %, por cada punto que se mueven los tipos de interés."
+ },
+ {
+  "termino": "puntos básicos",
+  "alias": [
+   "punto básico"
+  ],
+  "d": "Centésimas de punto porcentual: 25 puntos básicos son 0,25 puntos."
+ },
+ {
+  "termino": "curva invertida",
+  "alias": [
+   "curva de tipos"
+  ],
+  "d": "La curva de tipos compara lo que pagan los bonos a distintos plazos. Invertida: los cortos pagan más que los largos."
+ },
+ {
+  "termino": "valor liquidativo",
+  "d": "Precio de cada participación de un fondo, calculado cada día con lo que valen sus activos."
+ },
+ {
+  "termino": "traspaso",
+  "alias": [
+   "traspasos"
+  ],
+  "d": "Pasar el dinero de un fondo de inversión a otro sin vender: en España no tributa hasta el reembolso."
+ },
+ {
+  "termino": "base del ahorro",
+  "d": "Parte de la renta del IRPF donde tributan ganancias por venta, dividendos e intereses, por tramos."
+ },
+ {
+  "termino": "regla de los dos meses",
+  "d": "Si recompras el mismo valor dentro de los dos meses anteriores o posteriores a venderlo con pérdidas, esa pérdida no se puede compensar todavía."
+ },
+ {
+  "termino": "rebalancear",
+  "alias": [
+   "rebalanceo"
+  ],
+  "d": "Vender lo que ha subido y comprar lo que ha bajado para volver al reparto de activos elegido."
+ },
+ {
+  "termino": "diferencia de seguimiento",
+  "d": "Lo que se separa la rentabilidad de un fondo de la de su índice."
+ },
+ {
+  "termino": "smart beta",
+  "d": "Fondos que siguen reglas fijas, como un índice, pero eligen o ponderan los valores por un factor, como valor o tamaño."
+ },
+ {
+  "termino": "riesgo de secuencia",
+  "d": "El daño de sufrir una caída fuerte justo al empezar a retirar dinero."
+ },
+ {
+  "termino": "regla del 4 %",
+  "d": "Referencia de jubilación: retirar el 4 % de la cartera el primer año y la misma cantidad ajustada por inflación después."
+ },
+ {
+  "termino": "margen bruto",
+  "d": "Lo que queda de cada venta después del coste de producir, en % de las ventas."
+ },
+ {
+  "termino": "margen operativo",
+  "d": "Beneficio operativo entre ventas: lo que queda tras todos los costes del negocio."
+ },
+ {
+  "termino": "flujo de caja libre",
+  "alias": [
+   "caja libre"
+  ],
+  "d": "Caja que genera el negocio después de invertir en mantenerlo y hacerlo crecer."
+ },
+ {
+  "termino": "deuda neta",
+  "d": "Deuda menos caja."
+ },
+ {
+  "termino": "fondo de comercio",
+  "d": "Lo que se pagó de más sobre el valor contable al comprar otras empresas."
+ },
+ {
+  "termino": "consenso",
+  "d": "La media de lo que esperan los analistas, por ejemplo para el beneficio del trimestre."
+ },
+ {
+  "termino": "coste del capital",
+  "d": "La rentabilidad mínima que exigen accionistas y acreedores. Por debajo, crecer destruye valor."
+ },
+ {
+  "termino": "margen de seguridad",
+  "d": "Descuento entre el precio que pagas y el valor que estimas: un colchón por si te equivocas."
+ },
+ {
+  "termino": "perpetuidad",
+  "d": "Flujo que se supone que dura para siempre. Su valor hoy es el flujo entre la diferencia entre tipo de descuento y crecimiento."
+ },
+ {
+  "termino": "book-to-bill",
+  "d": "Pedidos recibidos entre facturación. Por encima de 1, la cartera de pedidos crece."
+ },
+ {
+  "termino": "mecha",
+  "alias": [
+   "mechas"
+  ],
+  "d": "Línea fina de una vela que llega al máximo o al mínimo de la sesión."
+ },
+ {
+  "termino": "martillo",
+  "d": "Vela con cuerpo pequeño arriba y mecha inferior larga: rechazo de precios bajos, útil tras una caída."
+ },
+ {
+  "termino": "envolvente",
+  "d": "Vela cuyo cuerpo cubre por completo el de la vela anterior, en sentido contrario."
+ },
+ {
+  "termino": "peonza",
+  "d": "Vela con cuerpo pequeño y mechas a ambos lados: indecisión."
+ },
+ {
+  "termino": "doji",
+  "d": "Vela que abre y cierra casi al mismo precio."
+ },
+ {
+  "termino": "soporte",
+  "d": "Nivel donde el precio rebota varias veces porque aparecen compradores."
+ },
+ {
+  "termino": "resistencia",
+  "d": "Nivel donde el precio se frena varias veces porque aparecen vendedores."
+ },
+ {
+  "termino": "gap",
+  "alias": [
+   "gaps"
+  ],
+  "d": "Hueco entre el cierre de una sesión y la apertura de la siguiente."
+ },
+ {
+  "termino": "spring",
+  "d": "En una acumulación de Wyckoff, perforación breve del soporte que vuelve dentro del rango."
+ },
+ {
+  "termino": "upthrust",
+  "d": "En una distribución de Wyckoff, superación breve de la resistencia que vuelve dentro del rango."
+ },
+ {
+  "termino": "pivote",
+  "d": "Nivel cuya superación da la señal de compra; en un VCP, el máximo de la última contracción."
+ },
+ {
+  "termino": "día de distribución",
+  "alias": [
+   "días de distribución"
+  ],
+  "d": "Según O'Neil, una caída del índice de al menos un 0,2 % con más volumen que la sesión anterior."
+ },
+ {
+  "termino": "día de confirmación",
+  "d": "Según O'Neil, una subida fuerte del índice con más volumen a partir del cuarto día de un intento de rebote."
+ },
+ {
+  "termino": "fuerza relativa",
+  "alias": [
+   "línea RS"
+  ],
+  "d": "Comportamiento de una acción frente al índice: si su línea sube, lo hace mejor que el mercado."
+ },
+ {
+  "termino": "RS Rating",
+  "d": "Percentil de 1 a 99 de Investor's Business Daily que compara una acción con todas las demás."
+ },
+ {
+  "termino": "Trend Template",
+  "d": "Lista de condiciones de Minervini para que una acción esté en tendencia alcista sana."
+ },
+ {
+  "termino": "call",
+  "d": "Opción que da derecho a comprar a un precio fijado hasta una fecha."
+ },
+ {
+  "termino": "put",
+  "d": "Opción que da derecho a vender a un precio fijado hasta una fecha."
+ },
+ {
+  "termino": "precio de ejercicio",
+  "d": "El precio al que una opción permite comprar o vender."
+ },
+ {
+  "termino": "prima",
+  "d": "Lo que se paga de más sobre una referencia. En opciones, el precio que pagas por la opción; en factores, el extra de rentabilidad sobre el mercado."
+ },
+ {
+  "termino": "factor de beneficio",
+  "d": "Lo ganado en las operaciones ganadoras entre lo perdido en las perdedoras."
+ },
+ {
+  "termino": "caída máxima",
+  "d": "Mayor caída de la cuenta desde un máximo hasta el mínimo siguiente."
+ },
+ {
+  "termino": "sobreajuste",
+  "d": "Ajustar un sistema tanto a los datos pasados que deja de funcionar con datos nuevos."
+ },
+ {
+  "termino": "esperanza",
+  "d": "Lo que gana o pierde un sistema por operación de media, en R o en %."
+ }
+]

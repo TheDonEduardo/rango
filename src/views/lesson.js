@@ -5,6 +5,7 @@ import {candlesSVG,lineSVG,glyph} from '../charts.js';
 import {streakNow} from '../state.js';
 import {ses} from '../ui.js';
 import {TIPOS} from '../exercises/index.js';
+import {glos} from '../glosario.js';
 import {t} from '../textos.js';
 
 function chartHTML(ex,run){
@@ -25,13 +26,13 @@ export function lessonHTML(){
   const run=ses.run,ex=run.queue[0],T=TIPOS[ex.t],pct=Math.round(run.done/run.total*100);
   let hearts='';for(let i=0;i<3;i++)hearts+=`<svg class="heart ${i<run.lives?'on':'off'}" viewBox="0 0 24 24" aria-hidden="true"><path d="${P.heart}" fill="currentColor"/></svg>`;
   let h=`<div class="lesson"><div class="lbar"><button class="x" data-act="quit" aria-label="${t.salirLeccion}">${icoX}</button><div class="prog" role="progressbar" aria-label="${t.progresoLeccion}" aria-valuemin="0" aria-valuemax="${run.total}" aria-valuenow="${run.done}"><i style="width:${pct}%"></i></div>${run.L.kind==='test'?'':`<div class="lives" role="img" aria-label="${t.vidas(run.lives)}">${hearts}</div>`}</div>`;
-  h+=`<div class="qwrap"><p class="kind">${ex.caso?t.casoReal(esc(ex.caso)):''}${t.tipos[ex.t]}</p><h1 class="q">${tx(ex.q)}</h1>${chartHTML(ex,run)}${tableHTML(ex)}${T.html?T.html(ex,run):''}</div>`;
+  h+=`<div class="qwrap"><p class="kind">${ex.caso?t.casoReal(esc(ex.caso)):''}${t.tipos[ex.t]}</p><h1 class="q">${glos(tx(ex.q))}</h1>${chartHTML(ex,run)}${tableHTML(ex)}${T.html?T.html(ex,run):''}</div>`;
   if(!run.checked){
     h+=`<div><button class="btn primary" data-act="check"${T.ready(ex,run)?'':' disabled'}>${t.comprobar}</button></div>`;
   }else{
     const ans=run.ok?'':(T.answerHTML?T.answerHTML(ex):`<p class="ans">${t.respuesta}: ${tx(T.answer(ex))}</p>`)
       +(ex.guia?`<button class="link teoria" data-act="guiarepaso" data-g="${ex.guia}">${t.repasarTeoria}</button>`:'');
-    h+=`<div class="fb ${run.ok?'good':'bad'}" role="status"><div class="fb-h">${run.ok?icoOk:icoX}<span>${run.ok?t.correcto:t.incorrecto}</span></div><p>${tx(ex.why)}</p>${ans}<button class="btn primary" data-act="next">${t.continuar}</button><button class="link reporte" data-act="reportar">${t.verError}</button></div>`;
+    h+=`<div class="fb ${run.ok?'good':'bad'}" role="status"><div class="fb-h">${run.ok?icoOk:icoX}<span>${run.ok?t.correcto:t.incorrecto}</span></div><p>${glos(tx(ex.why))}</p>${ans}<button class="btn primary" data-act="next">${t.continuar}</button><button class="link reporte" data-act="reportar">${t.verError}</button></div>`;
   }
   return h+'</div>';
 }

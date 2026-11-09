@@ -43,7 +43,7 @@
     {
       "id": "g3",
       "titulo": "Sobreajuste",
-      "texto": "Los datos con los que ajustas no sirven para validar. Comprueba el sistema en un periodo que no hayas usado.",
+      "texto": "Ajustar un sistema a los datos pasados hasta que encaja perfecto es sobreajuste. Los datos con los que ajustas no sirven para validar: compruébalo en un periodo que no hayas usado.",
       "ejemplo": "Un 30 % anual con datos de 2010 a 2020 no dice nada si falla en 2021-2025."
     },
     {

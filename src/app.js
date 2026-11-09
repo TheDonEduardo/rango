@@ -1,6 +1,6 @@
 // Arranque, navegación entre pantallas, flujo de una lección y eventos.
 // Las pantallas están en views/, los tipos de ejercicio en exercises/ y el progreso guardado en state.js.
-import {today,yest,shuffle} from './util.js';
+import {today,yest,shuffle,esc} from './util.js';
 import {UNITS,FLAT,CASOS,SEMANA,EXBYID,PLACEMENT,trackOf} from './content.js';
 import {S,save,resetState,migrar,advancedOpen,statuses,srsDue,srsRecord,SRS_MAX,exportar,leerCopia,importar} from './state.js';
 import {$app,toast,ses} from './ui.js';
@@ -14,6 +14,8 @@ import {calcHTML,calcOutHTML,CALC_CTRL,aportaciones} from './views/calc.js';
 import {legalHTML,LEGAL_V} from './views/legal.js';
 import {statsHTML,statRecord,STATS_L,flojos} from './views/stats.js';
 import {guiaHTML,abrirGuia,guiaPendiente} from './views/guia.js';
+import {glosarioHTML,listaGlosario} from './views/glosario.js';
+import {termino,glos} from './glosario.js';
 import {t} from './textos.js';
 
 const SRS_L={id:'srs',title:t.repasoDia,kind:'srs'};
@@ -22,7 +24,7 @@ const SRS_L={id:'srs',title:t.repasoDia,kind:'srs'};
 const TEST_L={id:'test',title:t.testNivel,kind:'test'};
 const TEST_PASS=10;
 
-const VISTAS={home:homeHTML,legal:()=>legalHTML(false),sim:simHTML,simres:simResHTML,calc:calcHTML,lesson:lessonHTML,result:resultHTML,fail:failHTML,stats:statsHTML,guia:guiaHTML};
+const VISTAS={home:homeHTML,legal:()=>legalHTML(false),sim:simHTML,simres:simResHTML,calc:calcHTML,lesson:lessonHTML,result:resultHTML,fail:failHTML,stats:statsHTML,guia:guiaHTML,glosario:glosarioHTML};
 function render(){
   if(ses.view==='home'&&S.legal<LEGAL_V){$app.innerHTML=legalHTML(true);window.scrollTo(0,0);return}
   $app.innerHTML=VISTAS[ses.view]();
@@ -102,6 +104,13 @@ function finish(){
   ses.view='result';render();
 }
 
+let termOrigen=null;
+function cerrarTermino(volver){
+  const d=$app.querySelector('.glos');if(d)d.remove();
+  if(volver&&termOrigen&&termOrigen.isConnected)termOrigen.focus({preventScroll:true});
+  termOrigen=null;
+}
+
 // Líneas arrastrables: el ejercicio «plan» en una lección o el plan de la Operación de la semana.
 setPlanCtx(()=>{
   if(ses.view==='sim'&&ses.simDraft)return {place:SIM_PLACE,step:SEMANA.step,vals:ses.simDraft,after:simInfo};
@@ -127,7 +136,7 @@ const ACCIONES={
   next,
   retry(){startRun(ses.run.L)},
   quit(){ses.simDraft=null;ses.view='home';ses.goCur=false;render()},
-  home(){const deSim=['sim','simres','calc','stats','guia'].includes(ses.view);ses.simDraft=null;ses.view='home';ses.goCur=!deSim;render()},
+  home(){const deSim=['sim','simres','calc','stats','guia','glosario'].includes(ses.view);ses.simDraft=null;ses.view='home';ses.goCur=!deSim;render()},
   sim(){ses.simDraft=null;ir('sim')},
   simres(){ir('simres')},
   calc(){ir('calc')},
@@ -135,6 +144,18 @@ const ACCIONES={
   // Guía de la unidad: desde el inicio (consulta) o desde una pregunta fallada (repaso, vuelve a la lección).
   guia(b){const u=UNITS.find(x=>x.id===b.dataset.id);abrirGuia(u,'consulta');ir('guia')},
   guiarepaso(b){const ex=ses.run.queue[0],u=FLAT.find(l=>l.id===ex.lesson).unit;abrirGuia(u,'repaso',{tarjeta:b.dataset.g});ses.view='guia';render()},
+  // Glosario: definición en una hoja inferior sin redibujar la pantalla (no se pierde la respuesta en curso).
+  term(b){
+    const g=termino(b.dataset.k);if(!g)return;
+    cerrarTermino();
+    const d=document.createElement('div');d.className='glos';d.setAttribute('role','dialog');d.setAttribute('aria-labelledby','glos-t');
+    d.innerHTML=`<b id="glos-t">${esc(g.termino)}</b><p>${esc(g.d)}</p><div class="row"><button class="btn line" data-act="glosario">${t.verGlosario}</button><button class="btn primary" data-act="termcerrar">${t.cerrar}</button></div>`;
+    $app.appendChild(d);termOrigen=b;d.querySelector('[data-act=termcerrar]').focus({preventScroll:true});
+  },
+  termcerrar(){cerrarTermino(true)},
+  glosvolver(){const v=ses.glosDesde;ses.glosDesde=null;if(v){ses.view=v;render()}else ACCIONES.home()},
+  // Desde una lección o una guía, «Volver» regresa allí (la lección sigue en curso).
+  glosario(){cerrarTermino();ses.glosDesde=['lesson','guia'].includes(ses.view)?ses.view:null;ir('glosario');const i=$app.querySelector('#glos-q');if(i)i.focus({preventScroll:true})},
   // «¿Ves un error?»: un correo ya rellenado (si hay CONTACTO) o el aviso copiado al portapapeles.
   reportar(){
     let id,q,r='';
@@ -189,6 +210,7 @@ $app.addEventListener('change',e=>{
   r.readAsText(e.target.files[0]);
 });
 $app.addEventListener('input',e=>{
+  if(e.target.id==='glos-q'){$app.querySelector('#glosLista').innerHTML=listaGlosario(e.target.value);return}
   // Deslizadores del simulador de aportaciones: actualizan solo el resultado, sin redibujar (no se pierde el foco).
   const k=e.target.dataset&&e.target.dataset.calc;
   if((k==='cmp'||k==='crash')&&ses.view==='calc'){S.calc[k]=e.target.checked;save();render();const c=$app.querySelector('#calc-'+k);if(c)c.focus({preventScroll:true});return}
@@ -201,6 +223,7 @@ $app.addEventListener('input',e=>{
   if(ses.view==='lesson'&&run&&!run.checked){const ex=run.queue[0],T=TIPOS[ex.t];if(T.input)T.input(e,run,ex)}
 });
 document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'&&$app.querySelector('.glos')){e.preventDefault();cerrarTermino(true);return}
   // Guía: flechas izquierda y derecha para pasar tarjetas.
   if(ses.view==='guia'&&ses.guia){
     const g=ses.guia,n=g.unit.guia.length;
@@ -240,7 +263,7 @@ if(typeof navigator!=='undefined'&&'serviceWorker' in navigator&&typeof location
 }
 
 // API mínima para tests (test/smoke.mjs)
-export const api={migrar,exportar,leerCopia,importar,FLAT,CASOS,SEMANA,PLACEMENT,simulate,simRecord,simHist,aportaciones,
+export const api={glos,openGlosario:()=>{ses.view='glosario';render()},migrar,exportar,leerCopia,importar,FLAT,CASOS,SEMANA,PLACEMENT,simulate,simRecord,simHist,aportaciones,
   openCalc:()=>{ses.view='calc';render()},openSim:()=>{ses.simDraft=null;ses.view='sim';render()},openSimRes:()=>{ses.view='simres';render()},
   openStats:()=>{ses.view='stats';render()},act:(a,ds={})=>ACCIONES[a]({dataset:ds}),getView:()=>ses.view,startWeak:()=>startRun(STATS_L),
   simDraftSet:p=>{ses.simDraft=p},simSave,goHome:()=>{ses.view='home';render()},startTest:()=>startRun(TEST_L),srsDue,

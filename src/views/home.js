@@ -51,7 +51,7 @@ export function homeHTML(){
     h+='</div></section>';
   });
   if(S.track==='fundamental'&&CASOS)h+=`<p class="src">${t.fuenteCasos(esc(CASOS.fuente),esc(CASOS.fecha))}</p>`;
-  h+=`</div><footer class="foot-home"><p>${t.pie} <button class="link" data-act="legal">${t.avisoLegal}</button></p>${installHTML()}${DEV?`<div class="row"><button class="btn ghost" data-act="unlock">${S.all?t.rebloquear:t.desbloquear}</button><button class="btn ghost" data-act="reset">${ses.resetArm?t.reiniciarConfirma:t.reiniciar}</button></div>`:''}</footer>`;
+  h+=`</div><footer class="foot-home"><p>${t.pie} <button class="link" data-act="legal">${t.avisoLegal}</button> · <button class="link" data-act="glosario">${t.glosario}</button></p>${installHTML()}${DEV?`<div class="row"><button class="btn ghost" data-act="unlock">${S.all?t.rebloquear:t.desbloquear}</button><button class="btn ghost" data-act="reset">${ses.resetArm?t.reiniciarConfirma:t.reiniciar}</button></div>`:''}</footer>`;
   return h;
 }
 

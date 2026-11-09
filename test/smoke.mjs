@@ -199,6 +199,22 @@ for (const L of T.FLAT) {
 { const L = T.FLAT.find(l => l.kind === 'lesson'); T.startRun(L); const ex = T.getRun().queue[0]; give(ex, right(ex)); T.check();
   if (!app.innerHTML.includes('data-act="reportar"')) errs.push('la explicación no ofrece avisar de un error'); T.goHome(); }
 
+// Glosario: entradas completas y sin repetir; los términos se marcan una vez, respetan palabras y exclusiones.
+{
+  const G = JSON.parse(fs.readFileSync(path.join(root, 'src/content/glosario.json'), 'utf8')), vistos = new Set();
+  for (const g of G) { if (!g.termino || !g.d || vistos.has(g.termino)) errs.push('entrada de glosario incompleta o repetida: ' + g.termino); vistos.add(g.termino); }
+  const h = T.glos('El ATR mide el ATR y el PERímetro no es el PER.');
+  if ((h.match(/data-act="term"/g) || []).length !== 2 || /PERímetro<\/button>|>PERí/.test(h)) errs.push('el glosario no marca bien los términos: ' + h);
+  if (/data-act="term"/.test(T.glos('desempleo de larga duración'))) errs.push('el glosario ignora sus exclusiones');
+  if (!/línea RS<\/button>/.test(T.glos('La línea RS sube'))) errs.push('el glosario no prefiere el término más largo');
+  T.openGlosario(); if (!app.innerHTML.includes('glos-q') || !app.innerHTML.includes('ATR')) errs.push('la pantalla del glosario no se dibuja'); T.goHome();
+  // Aviso: términos que no aparecen en ningún enunciado, explicación ni guía.
+  const textos = units.flatMap(u => [...(u.guia || []).flatMap(c => [c.texto, c.ejemplo || '']), ...(u.lessons || []).flatMap(l => l.ex.flatMap(e => [e.q, e.why]))]).join(' ');
+  const glosTodo = T.glos(textos.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'));
+  const sinUso = G.filter(g => !glosTodo.includes(`data-k="${G.indexOf(g)}"`));
+  if (sinUso.length) console.warn('AVISO: términos del glosario que no aparecen en el contenido: ' + sinUso.map(g => g.termino).join(', '));
+}
+
 // 3) Pantalla sin vidas
 T.startRun(T.FLAT[0]);
 for (let i = 0; i < 3; i++) { const ex = T.getRun().queue[0]; give(ex, wrong(ex)); T.check(); T.next(); }
