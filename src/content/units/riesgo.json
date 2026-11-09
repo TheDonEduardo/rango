@@ -14,6 +14,40 @@
       "id": "g2",
       "titulo": "Stop con ATR",
       "texto": "Un stop demasiado cerca salta con el ruido normal. Colocarlo a un múltiplo del ATR lo adapta a la volatilidad de cada valor.",
+      "figura": {
+        "type": "velas",
+        "alt": "Entrada a 35,00 € y stop a 32,30 €, a 1,5 veces el ATR de 1,80 € por debajo",
+        "data": [
+          [31.0,32.0,30.5,31.5],
+          [31.5,32.9,31.0,32.4],
+          [32.4,33.6,31.9,33.1],
+          [33.1,33.6,32.1,32.6],
+          [32.6,34.1,32.1,33.6],
+          [33.6,34.9,33.1,34.4],
+          [34.4,34.9,33.5,34.0],
+          [34.0,35.4,33.5,34.9]
+        ],
+        "lineas": [
+          {
+            "y": 35.0,
+            "texto": "Entrada 35,00",
+            "tono": "sel"
+          },
+          {
+            "y": 32.3,
+            "texto": "Stop 32,30",
+            "tono": "dn"
+          }
+        ],
+        "llaves": [
+          {
+            "i": 7,
+            "y1": 32.3,
+            "y2": 35.0,
+            "texto": "1,5 × ATR = 2,70 €"
+          }
+        ]
+      },
       "ejemplo": "Entrada a 35,00 € con ATR de 1,80 € y stop a 1,5 ATR: 35,00 − 2,70 = 32,30 €."
     },
     {

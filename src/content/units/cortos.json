@@ -20,6 +20,41 @@
       "id": "g3",
       "titulo": "Fase 4",
       "texto": "Tras un techo con la media aplanándose, el precio rompe el soporte y la media gira a la baja. La mejor entrada en corto suele ser el rebote al soporte roto.",
+      "figura": {
+        "type": "velas",
+        "alt": "Techo, ruptura del soporte de 40 € y rebote hasta 39,60 €, que es la entrada en corto",
+        "data": [
+          [43.6,44.3,43.3,44],
+          [44,45.3,43.7,45],
+          [45,45.3,43.9,44.2],
+          [44.2,45.4,43.9,45.1],
+          [45.1,45.4,43.3,43.6],
+          [43.6,44.7,43.3,44.4],
+          [44.4,44.7,42.5,42.8],
+          [42.8,43.1,40.9,41.2],
+          [41.2,41.5,40.1,40.4],
+          [40.4,40.7,38.3,38.6],
+          [38.6,38.9,37.6,37.9],
+          [37.9,39.1,37.6,38.8],
+          [38.8,39.9,38.5,39.6]
+        ],
+        "lineas": [
+          {
+            "y": 40.0,
+            "texto": "Soporte roto 40,00",
+            "tono": "dn",
+            "lado": "i"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 12,
+            "y": 39.6,
+            "texto": "Entrada en corto"
+          }
+        ],
+        "margen": 118
+      },
       "ejemplo": "Rompe 40 € y rebota a 39,60 €: el soporte roto es ahora resistencia."
     },
     {

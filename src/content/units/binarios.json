@@ -8,12 +8,67 @@
       "id": "g1",
       "titulo": "Gaps de resultados",
       "texto": "Un gap se mide desde el cierre previo. Los mejores siguen subiendo durante la sesión y cierran cerca del máximo con mucho volumen; el mínimo del día del gap es el soporte.",
+      "figura": {
+        "type": "velas",
+        "alt": "La acción cierra a 42,00 € y al día siguiente abre a 47,04 €, dejando un hueco del 12 %",
+        "data": [
+          [40.2,40.75,40.05,40.6],
+          [40.6,41.35,40.45,41.2],
+          [41.2,41.75,41.05,41.6],
+          [41.6,42.15,41.45,42.0],
+          [47.04,49.2,46.5,48.8],
+          [48.8,49.75,48.65,49.6]
+        ],
+        "llaves": [
+          {
+            "i": 4,
+            "y1": 42.0,
+            "y2": 47.04,
+            "texto": "Gap del 12 %",
+            "lado": "i"
+          }
+        ],
+        "lineas": [
+          {
+            "y": 42.0,
+            "texto": "Cierre previo 42,00",
+            "tono": "ink"
+          }
+        ]
+      },
       "ejemplo": "Cierre de 42,00 € y apertura de 47,04 €: un gap del 12 %."
     },
     {
       "id": "g2",
       "titulo": "El stop no protege de un gap",
       "texto": "Ante un evento binario, el precio puede abrir muy por debajo del stop: la orden se ejecuta al primer precio disponible y pierdes varias veces 1R.",
+      "figura": {
+        "type": "velas",
+        "alt": "Con el stop en 38,00 €, la acción abre directamente a 34,00 € y la orden se ejecuta ahí",
+        "data": [
+          [40.8,40.95,40.45,40.6],
+          [40.6,40.75,40.05,40.2],
+          [40.2,40.35,39.85,40.0],
+          [40.0,40.45,39.85,40.3],
+          [34.0,34.5,33.2,33.6],
+          [33.6,34.25,33.45,34.1]
+        ],
+        "lineas": [
+          {
+            "y": 38.0,
+            "texto": "Stop 38,00",
+            "tono": "dn"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 4,
+            "y": 34.0,
+            "texto": "Se vende a 34,00",
+            "lado": "i"
+          }
+        ]
+      },
       "ejemplo": "150 acciones a 40 € con stop en 38 € (1R = 300 €) y apertura a 34 €: pierdes 900 €, 3R."
     },
     {

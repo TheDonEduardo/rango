@@ -10,6 +10,7 @@ const PRECACHE = [
   'src/app.js',
   'src/charts.js',
   'src/content.js',
+  'src/figuras.js',
   'src/icons.js',
   'src/util.js',
   'src/styles.css',

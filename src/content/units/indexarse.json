@@ -15,6 +15,22 @@
       "id": "g2",
       "titulo": "Los costes se acumulan",
       "texto": "Una diferencia de coste pequeña cada año se convierte en mucho dinero con el tiempo, por el interés compuesto.",
+      "figura": {
+        "type": "curvas",
+        "alt": "10.000 € durante 30 años: al 6,8 % neto llegan a unos 72.000 € y al 5,3 %, a unos 47.000 €",
+        "series": [
+          {
+            "data": [10000,10530,11088,11676,12295,12946,13632,14355,15116,15917,16760,17649,18584,19569,20606,21698,22848,24059,25334,26677,28091,29580,31148,32798,34537,36367,38295,40324,42461,44712,47082],
+            "texto": "5,3 % neto",
+            "tono": "dn"
+          },
+          {
+            "data": [10000,10680,11406,12182,13010,13895,14840,15849,16927,18078,19307,20620,22022,23519,25119,26827,28651,30599,32680,34902,37276,39810,42517,45409,48496,51794,55316,59078,63095,67385,71968],
+            "texto": "6,8 % neto",
+            "tono": "up"
+          }
+        ]
+      },
       "ejemplo": "10.000 € durante 30 años al 6,8 % y al 5,3 % netos: unos 25.000 € de diferencia."
     },
     {

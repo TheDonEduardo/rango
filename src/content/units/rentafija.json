@@ -21,6 +21,30 @@
       "id": "g3",
       "titulo": "Tipos de interés y precios",
       "texto": "Cuando suben los tipos, los bonos antiguos pagan menos que los nuevos y su precio baja. Cuando bajan, ocurre lo contrario.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Precio de un bono al 4 % a 10 años según el tipo de interés: cuanto más suben los tipos, más baja el precio",
+        "series": [
+          {
+            "data": [1284.1,1179.7,1085.3,1000.0,922.8,852.8,789.3,731.6],
+            "texto": "Precio del bono",
+            "tono": "sel"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 3,
+            "y": 1000.0,
+            "texto": "Tipos al 4 %: 1.000 €"
+          },
+          {
+            "i": 7,
+            "y": 731.6,
+            "texto": "Al 8 %: 732 €",
+            "lado": "i"
+          }
+        ]
+      },
       "ejemplo": "La duración mide cuánto: con duración 7, una subida de tipos de un punto hace caer el precio en torno a un 7 %."
     },
     {

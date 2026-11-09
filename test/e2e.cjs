@@ -116,6 +116,7 @@ async function auditar(b, url) {
     ['estadísticas', {...base, track: 'tecnico'}, async p => { if (await p.locator('[data-act=stats]').count()) await p.click('[data-act=stats]'); }],
     ['guía', {...base, guias: {}, track: 'basico'}, async p => { await p.click('[data-act=open][data-id=ba1]'); await p.click('[data-act=guianext]'); }],
     ['guía consulta', {...base, track: 'basico'}, async p => { await p.click('[data-act=guia][data-id=acciones]'); }],
+    ['guía con figura', {...base, track: 'tecnico'}, async p => { await p.click('[data-act=guia][data-id=velas]'); }],
     ['test de nivel', {legal: 99, track: 'basico', done: {}, srs: {}}, async p => { await p.click('[data-act=test]'); }],
   ];
   const resumen = {};

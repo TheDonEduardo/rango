@@ -9,12 +9,87 @@
       "id": "g1",
       "titulo": "Velas",
       "texto": "En un gráfico diario cada vela resume una sesión con cuatro precios: apertura, máximo, mínimo y cierre. Verde si cierra por encima de la apertura; roja si cierra por debajo.",
+      "figura": {
+        "type": "velas",
+        "alt": "Una vela con su apertura, máximo, mínimo y cierre señalados",
+        "data": [
+          [10.0,10.8,9.9,10.5]
+        ],
+        "marcas": [
+          {
+            "i": 0,
+            "y": 10.8,
+            "texto": "Máximo 10,80"
+          },
+          {
+            "i": 0,
+            "y": 10.5,
+            "texto": "Cierre 10,50"
+          },
+          {
+            "i": 0,
+            "y": 10.0,
+            "texto": "Apertura 10,00"
+          },
+          {
+            "i": 0,
+            "y": 9.9,
+            "texto": "Mínimo 9,90",
+            "lado": "i"
+          }
+        ],
+        "margen": 110
+      },
       "ejemplo": "Abre a 10 €, llega a 10,80 €, baja a 9,90 € y cierra a 10,50 €: vela verde con mechas arriba y abajo."
     },
     {
       "id": "g2",
       "titulo": "Tendencia, soporte y resistencia",
       "texto": "Hay tendencia alcista cuando cada mínimo y cada máximo quedan más arriba que los anteriores. Un soporte es un nivel donde el precio rebota varias veces; una resistencia, donde se frena.",
+      "figura": {
+        "type": "velas",
+        "alt": "Tras subir, el precio rebota en el soporte de 20 € y se frena en la resistencia de 22 €",
+        "data": [
+          [15.0,15.75,14.85,15.6],
+          [15.6,16.35,15.45,16.2],
+          [16.2,16.95,16.05,16.8],
+          [16.8,17.55,16.65,17.4],
+          [17.4,18.15,17.25,18.0],
+          [18.0,18.75,17.85,18.6],
+          [18.6,19.35,18.45,19.2],
+          [19.2,20.75,19.05,20.6],
+          [20.6,20.83,20.4,20.63],
+          [20.63,22.0,20.48,21.7],
+          [21.7,21.9,21.15,21.35],
+          [21.35,21.5,20.0,20.3],
+          [20.3,21.46,20.1,21.26],
+          [21.26,21.46,20.56,20.76],
+          [20.76,22.0,20.61,21.7],
+          [21.7,21.9,20.8,21.0],
+          [21.0,21.15,20.0,20.3],
+          [20.3,21.15,20.1,20.95],
+          [20.95,21.35,20.75,21.15],
+          [21.15,22.0,21.0,21.7],
+          [21.7,21.9,21.09,21.29],
+          [21.29,21.44,20.0,20.3],
+          [20.3,22.0,20.15,21.7],
+          [21.7,21.9,20.39,20.59]
+        ],
+        "lineas": [
+          {
+            "y": 22.0,
+            "texto": "Resistencia",
+            "tono": "dn",
+            "lado": "i"
+          },
+          {
+            "y": 20.0,
+            "texto": "Soporte",
+            "tono": "up",
+            "lado": "i"
+          }
+        ]
+      },
       "ejemplo": "Tres rebotes en 20 € y varios frenazos en 22 €: rango lateral entre 20 y 22 €, sin tendencia."
     },
     {
@@ -27,6 +102,51 @@
       "id": "g4",
       "titulo": "Un plan antes de comprar",
       "texto": "Antes de comprar decide dónde entras, dónde sales si te equivocas (stop) y dónde recoges beneficios (objetivo). Así sabes cuánto arriesgas antes de arriesgarlo.",
+      "figura": {
+        "type": "velas",
+        "alt": "Plan: entrada a 20 €, stop en 18 € y objetivo en 26 €: arriesgas 2 € para ganar 6 €",
+        "data": [
+          [19.0,19.4,18.8,19.2],
+          [19.2,20.0,19.0,19.8],
+          [19.8,20.0,19.2,19.4],
+          [19.4,20.2,19.2,20.0],
+          [20.0,20.2,19.4,19.6],
+          [19.6,20.5,19.4,20.3],
+          [20.3,20.5,19.6,19.8]
+        ],
+        "lineas": [
+          {
+            "y": 26.0,
+            "texto": "Objetivo 26",
+            "tono": "up"
+          },
+          {
+            "y": 20.0,
+            "texto": "Entrada 20",
+            "tono": "sel"
+          },
+          {
+            "y": 18.0,
+            "texto": "Stop 18",
+            "tono": "dn"
+          }
+        ],
+        "llaves": [
+          {
+            "i": 6,
+            "y1": 20.0,
+            "y2": 26.0,
+            "texto": "Ganas 6 €"
+          },
+          {
+            "i": 6,
+            "y1": 18.0,
+            "y2": 20.0,
+            "texto": "Arriesgas 2 €"
+          }
+        ],
+        "h": 270
+      },
       "ejemplo": "50 acciones a 20 € con stop en 18 €: arriesgas 100 €. Con objetivo en 26 €, ganas 3 por cada 1 que arriesgas."
     }
   ],

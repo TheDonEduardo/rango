@@ -9,6 +9,30 @@
       "id": "g1",
       "titulo": "Perder cuesta más que ganar",
       "texto": "Después de una caída partes de menos dinero, así que necesitas una subida mayor para volver al punto de partida. Cuanto más grande la caída, peor.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Subida necesaria para recuperar una caída: crece mucho más deprisa que la caída",
+        "series": [
+          {
+            "data": [0.0,5.3,11.1,17.6,25.0,33.3,42.9,53.8,66.7,81.8,100.0,122.2,150.0],
+            "texto": "Subida necesaria",
+            "tono": "dn"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 4,
+            "y": 25.0,
+            "texto": "−20 % → +25 %"
+          },
+          {
+            "i": 10,
+            "y": 100.0,
+            "texto": "−50 % → +100 %",
+            "lado": "i"
+          }
+        ]
+      },
       "ejemplo": "Cae un 20 %: necesitas +25 %. Cae un 50 %: necesitas +100 %."
     },
     {

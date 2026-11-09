@@ -8,6 +8,22 @@
       "id": "g1",
       "titulo": "La línea de fuerza relativa",
       "texto": "Divide el precio de la acción entre el índice. Si sube, la acción lo hace mejor que el mercado, aunque ambos bajen.",
+      "figura": {
+        "type": "curvas",
+        "alt": "La acción sube un 30 % y el índice un 10 %: la acción lo hace mejor que el mercado",
+        "series": [
+          {
+            "data": [100,101,100,102,104,103,105,107,106,108,110],
+            "texto": "Índice +10 %",
+            "tono": "acc"
+          },
+          {
+            "data": [100,103,101,106,110,108,114,119,117,124,130],
+            "texto": "Acción +30 %",
+            "tono": "sel"
+          }
+        ]
+      },
       "ejemplo": "De 40 a 52 € con el índice de 5.000 a 5.500: la línea RS sube un 18,2 %."
     },
     {

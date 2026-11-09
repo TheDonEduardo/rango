@@ -14,6 +14,38 @@
       "id": "g2",
       "titulo": "El upthrust",
       "texto": "Supera la resistencia y vuelve dentro del rango: atrapa a los compradores tardíos. Seguido de una ruptura del soporte con volumen, completa la distribución.",
+      "figura": {
+        "type": "velas",
+        "alt": "Rango de distribución entre 27,40 y 30 €: el upthrust supera el techo hasta 31,20 € y vuelve dentro",
+        "data": [
+          [27.8,28.45,27.55,28.2],
+          [28.2,29.65,27.95,29.4],
+          [29.4,29.65,28.15,28.4],
+          [28.4,28.65,27.55,27.8],
+          [27.8,29.15,27.55,28.9],
+          [28.9,29.85,28.65,29.6],
+          [29.5,31.2,29.3,29.6],
+          [29.6,29.85,28.55,28.8],
+          [28.8,29.05,27.75,28.0],
+          [28.0,28.25,27.35,27.6],
+          [27.6,27.85,26.65,26.9]
+        ],
+        "franjas": [
+          {
+            "y1": 27.4,
+            "y2": 30.0,
+            "texto": "Distribución"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 6,
+            "y": 31.2,
+            "texto": "Upthrust",
+            "lado": "i"
+          }
+        ]
+      },
       "ejemplo": "Sube hasta 31,20 € con la resistencia en 30,00 € y cierra en 29,60 €."
     },
     {

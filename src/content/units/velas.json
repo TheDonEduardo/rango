@@ -8,24 +8,156 @@
       "id": "g1",
       "titulo": "Anatomía de una vela",
       "texto": "El cuerpo va de la apertura al cierre y las mechas marcan el máximo y el mínimo. Verde si cierra por encima de la apertura; roja si cierra por debajo.",
+      "figura": {
+        "type": "velas",
+        "alt": "Dos velas: una alcista con su cuerpo y sus mechas señalados, y una bajista con apertura, cierre, máximo y mínimo",
+        "data": [
+          [100,108,97,105],
+          [105,108,97,100]
+        ],
+        "etiquetas": [
+          "Alcista",
+          "Bajista"
+        ],
+        "llaves": [
+          {
+            "i": 0,
+            "y1": 105,
+            "y2": 108,
+            "texto": "Mecha superior",
+            "lado": "i"
+          },
+          {
+            "i": 0,
+            "y1": 100,
+            "y2": 105,
+            "texto": "Cuerpo",
+            "lado": "i"
+          },
+          {
+            "i": 0,
+            "y1": 97,
+            "y2": 100,
+            "texto": "Mecha inferior",
+            "lado": "i"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 1,
+            "y": 108,
+            "texto": "Máximo"
+          },
+          {
+            "i": 1,
+            "y": 105,
+            "texto": "Apertura"
+          },
+          {
+            "i": 1,
+            "y": 100,
+            "texto": "Cierre"
+          },
+          {
+            "i": 1,
+            "y": 97,
+            "texto": "Mínimo"
+          }
+        ]
+      },
       "ejemplo": "Apertura 100, máximo 108, mínimo 97 y cierre 105: rango de 11 €, cuerpo de 5 €, mecha superior de 3 € e inferior de 3 €."
     },
     {
       "id": "g2",
       "titulo": "Mechas: rechazo",
       "texto": "Una mecha larga muestra que el precio fue hasta allí y lo devolvieron. Arriba, rechazo de máximos; abajo, de mínimos. Una peonza, cuerpo pequeño y mechas a ambos lados, indica indecisión.",
+      "figura": {
+        "type": "velas",
+        "alt": "Tres velas: una con mecha superior larga, una peonza y una con mecha inferior larga",
+        "data": [
+          [45.4,48.2,44.8,45.0],
+          [46.0,47.6,44.6,46.2],
+          [45.0,45.6,42.0,45.4]
+        ],
+        "etiquetas": [
+          "Rechazo arriba",
+          "Peonza",
+          "Rechazo abajo"
+        ]
+      },
       "ejemplo": "Máximo de 48,20 y cierre de 45,00: una mecha superior de 3,20 € frente a un cuerpo pequeño es un rechazo claro."
     },
     {
       "id": "g3",
       "titulo": "Martillo y envolvente",
       "texto": "Un martillo tiene una mecha inferior larga y cuerpo pequeño arriba; la envolvente alcista abre bajo el cierre previo y cierra sobre su apertura. Solo valen en contexto: tras una caída y en un soporte.",
+      "figura": {
+        "type": "velas",
+        "alt": "Caída de tres velas rojas, un martillo y, después, una vela roja pequeña envuelta por una verde grande",
+        "data": [
+          [50,50.4,48.2,48.5],
+          [48.5,48.8,46.6,47],
+          [47,47.3,45,45.4],
+          [45.2,45.9,42.3,45.7],
+          [45.6,45.8,44.6,44.9],
+          [44.7,46.8,44.5,46.6]
+        ],
+        "etiquetas": [
+          null,
+          null,
+          null,
+          "Martillo",
+          null,
+          "Envolvente"
+        ],
+        "zonas": [
+          {
+            "i1": 0,
+            "i2": 2,
+            "texto": "Caída previa"
+          }
+        ]
+      },
       "ejemplo": "Mecha inferior de 3,10 € frente a un cuerpo de 0,50 € tras una caída sostenida: martillo."
     },
     {
       "id": "g4",
       "titulo": "Del patrón al plan",
       "texto": "El patrón da los niveles: entrada sobre su máximo y stop bajo su mínimo. Esa distancia es 1R y fija el tamaño de la posición.",
+      "figura": {
+        "type": "velas",
+        "alt": "Martillo con la entrada sobre su máximo, el stop bajo su mínimo y la distancia entre ambos, 1R",
+        "data": [
+          [44.3,44.6,42.4,42.7],
+          [42.7,43,41.4,41.7],
+          [41.8,42.6,38.8,42.3]
+        ],
+        "etiquetas": [
+          null,
+          null,
+          "Martillo"
+        ],
+        "lineas": [
+          {
+            "y": 42.7,
+            "texto": "Entrada 42,70",
+            "tono": "sel"
+          },
+          {
+            "y": 38.7,
+            "texto": "Stop 38,70",
+            "tono": "dn"
+          }
+        ],
+        "llaves": [
+          {
+            "i": 2,
+            "y1": 38.7,
+            "y2": 42.7,
+            "texto": "1R = 4,00 €"
+          }
+        ]
+      },
       "ejemplo": "Martillo con máximo 42,60 € y mínimo 38,80 €: entrada a 42,70 €, stop a 38,70 €, 1R = 4,00 €."
     }
   ],

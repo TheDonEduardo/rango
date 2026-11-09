@@ -44,6 +44,15 @@ for (const u of units) {
     for (const c of u.guia || []) {
       if (!c.id || !c.titulo || !c.texto || ids.has(c.id)) errs.push(`${u.id}: tarjeta de guía incompleta o repetida (${c.id})`);
       ids.add(c.id);
+      if (c.figura) {
+        const f = c.figura, w = `${u.id}/${c.id}`;
+        if (!['velas', 'curvas'].includes(f.type) || !f.alt) errs.push(w + ': figura sin tipo válido o sin alt');
+        const n = f.type === 'velas' ? (f.data || []).length : Math.max(0, ...(f.series || []).map(se => se.data.length));
+        if (!n) errs.push(w + ': figura sin datos');
+        if (f.type === 'velas' && !f.data.every(v => v.length === 4 && v[1] >= Math.max(v[0], v[3]) && v[2] <= Math.min(v[0], v[3]))) errs.push(w + ': vela mal formada en la figura');
+        for (const a of [...(f.llaves || []), ...(f.marcas || [])]) if (!(a.i >= 0 && a.i < n) || !a.texto) errs.push(w + ': anotación fuera de la figura');
+        for (const z of f.zonas || []) if (!(z.i1 >= 0 && z.i2 < n && z.i1 <= z.i2)) errs.push(w + ': zona fuera de la figura');
+      }
       const pal = (c.texto + ' ' + (c.ejemplo || '')).split(/\s+/).length;
       if (pal > 70) errs.push(`${u.id}/${c.id}: tarjeta de guía demasiado larga (${pal} palabras; máximo 70)`);
     }

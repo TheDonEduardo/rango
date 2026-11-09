@@ -20,6 +20,32 @@
       "id": "g3",
       "titulo": "Put de protección",
       "texto": "Con la acción comprada, una put fija la pérdida máxima aunque el precio abra con un gap. A cambio, la acción tiene que subir lo que costó la prima.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Resultado por acción al vencimiento: sin put la pérdida crece sin límite; con la put de 45 $ no pasa de 6,50 $",
+        "series": [
+          {
+            "data": [-10,-8,-6,-4,-2,0,2,4,6,8,10],
+            "texto": "Sin put",
+            "tono": "ink",
+            "dy": -6
+          },
+          {
+            "data": [-6.5,-6.5,-6.5,-5.5,-3.5,-1.5,0.5,2.5,4.5,6.5,8.5],
+            "texto": "Con put",
+            "tono": "sel",
+            "dy": 8
+          }
+        ],
+        "lineas": [
+          {
+            "y": 0,
+            "texto": "0 $",
+            "tono": "ink",
+            "lado": "i"
+          }
+        ]
+      },
       "ejemplo": "Acciones a 50 $ y put de 45 $ por 1,50 $: pérdida máxima de 6,50 $ y equilibrio en 51,50 $."
     },
     {

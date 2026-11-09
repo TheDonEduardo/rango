@@ -15,6 +15,17 @@
       "id": "g2",
       "titulo": "El dinero parado pierde",
       "texto": "Con inflación, el dinero que no rinde compra cada año menos. Y un depósito que paga menos que la inflación también te hace perder poder de compra.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Lo que compran 100 € con una inflación del 3 %: unos 55 € de hoy dentro de 20 años",
+        "series": [
+          {
+            "data": [100.0,97.1,94.3,91.5,88.8,86.3,83.7,81.3,78.9,76.6,74.4,72.2,70.1,68.1,66.1,64.2,62.3,60.5,58.7,57.0,55.4],
+            "texto": "55 € en 20 años",
+            "tono": "dn"
+          }
+        ]
+      },
       "ejemplo": "Con un 3 % de inflación, 100 € de hoy valdrán unos 55 € dentro de 20 años."
     },
     {

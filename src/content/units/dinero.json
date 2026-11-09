@@ -10,6 +10,22 @@
       "id": "g1",
       "titulo": "Interés simple y compuesto",
       "texto": "Con interés simple, cobras siempre sobre el capital inicial. Con interés compuesto, los intereses se suman y también rinden: interés sobre interés.",
+      "figura": {
+        "type": "curvas",
+        "alt": "1.000 € al 5 % durante 30 años: con interés simple llegan a 2.500 €; con compuesto, a 4.322 €",
+        "series": [
+          {
+            "data": [1000,1050,1100,1150,1200,1250,1300,1350,1400,1450,1500,1550,1600,1650,1700,1750,1800,1850,1900,1950,2000,2050,2100,2150,2200,2250,2300,2350,2400,2450,2500],
+            "texto": "Simple 2.500 €",
+            "tono": "acc"
+          },
+          {
+            "data": [1000,1050,1102,1158,1216,1276,1340,1407,1477,1551,1629,1710,1796,1886,1980,2079,2183,2292,2407,2527,2653,2786,2925,3072,3225,3386,3556,3733,3920,4116,4322],
+            "texto": "Compuesto 4.322 €",
+            "tono": "up"
+          }
+        ]
+      },
       "ejemplo": "1.000 € al 5 % durante 3 años: 150 € con interés simple y 157,63 € con compuesto."
     },
     {

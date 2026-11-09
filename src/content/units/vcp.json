@@ -8,6 +8,46 @@
       "id": "g1",
       "titulo": "Contracciones de volatilidad",
       "texto": "En un VCP, cada retroceso de la base es menor que el anterior y el volumen se seca: la oferta se agota.",
+      "figura": {
+        "type": "velas",
+        "alt": "Base con tres contracciones de volatilidad, cada una más estrecha que la anterior",
+        "data": [
+          [45.0,46.55,44.85,46.4],
+          [46.4,46.6,45.6,46.0],
+          [46.0,46.1,43.8,44.0],
+          [44.0,44.2,41.3,41.5],
+          [41.5,41.7,40.0,40.2],
+          [40.2,42.2,40.1,42.0],
+          [42.0,44.0,41.9,43.9],
+          [43.9,45.5,43.8,45.2],
+          [45.2,45.3,43.2,43.4],
+          [43.4,43.6,42.0,42.2],
+          [42.2,43.9,42.1,43.8],
+          [43.8,44.8,43.7,44.6],
+          [44.6,44.7,43.6,43.9],
+          [43.9,44.6,43.8,44.4],
+          [44.4,44.8,43.9,44.1],
+          [44.1,44.7,44.0,44.5]
+        ],
+        "zonas": [
+          {
+            "i1": 0,
+            "i2": 5,
+            "texto": "Contracción 1"
+          },
+          {
+            "i1": 6,
+            "i2": 9,
+            "texto": "2"
+          },
+          {
+            "i1": 10,
+            "i2": 15,
+            "texto": "3"
+          }
+        ],
+        "h": 210
+      },
       "ejemplo": "Contracciones del 25 %, 12 % y 6 %: cada una, más o menos la mitad de la anterior."
     },
     {
@@ -20,6 +60,39 @@
       "id": "g3",
       "titulo": "El pivote",
       "texto": "El pivote es el máximo de la última contracción. Se compra al superarlo con un volumen al menos un 40-50 % por encima de la media.",
+      "figura": {
+        "type": "velas",
+        "alt": "Pivote en el máximo de la última contracción y ruptura al superarlo",
+        "data": [
+          [42.0,44.0,41.9,43.9],
+          [43.9,45.5,43.8,45.2],
+          [45.2,45.3,43.2,43.4],
+          [43.4,43.6,42.0,42.2],
+          [42.2,43.9,42.1,43.8],
+          [43.8,44.8,43.7,44.6],
+          [44.6,44.7,43.6,43.9],
+          [43.9,44.6,43.8,44.4],
+          [44.4,44.8,43.9,44.1],
+          [44.1,44.7,44.0,44.5],
+          [44.5,46.4,44.4,46.2]
+        ],
+        "lineas": [
+          {
+            "y": 44.8,
+            "texto": "Pivote",
+            "tono": "sel",
+            "lado": "i"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 5,
+            "y": 46.2,
+            "texto": "Ruptura",
+            "lado": "i"
+          }
+        ]
+      },
       "ejemplo": "Pivote en 55,60 €: compra a 55,70 €. Sin volumen, la ruptura es sospechosa."
     },
     {

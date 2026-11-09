@@ -9,6 +9,30 @@
       "id": "g1",
       "titulo": "Valor actual",
       "texto": "Descontar es el interés compuesto al revés: dinero futuro vale menos hoy, y cuanto más lejano, menos.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Valor hoy de 100 € según los años que faltan para cobrarlos, con un 8 %: 68 € a 5 años y 21 € a 20",
+        "series": [
+          {
+            "data": [100.0,92.6,85.7,79.4,73.5,68.1,63.0,58.3,54.0,50.0,46.3,42.9,39.7,36.8,34.0,31.5,29.2,27.0,25.0,23.2,21.5],
+            "texto": "Valor hoy",
+            "tono": "sel"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 5,
+            "y": 68.1,
+            "texto": "5 años: 68 €"
+          },
+          {
+            "i": 20,
+            "y": 21.5,
+            "texto": "20 años: 21 €",
+            "lado": "i"
+          }
+        ]
+      },
       "ejemplo": "110 € dentro de un año al 10 % valen 100 € hoy. 100 € dentro de 5 años al 8 % valen 68,06 €."
     },
     {

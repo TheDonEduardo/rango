@@ -14,6 +14,45 @@
       "id": "g2",
       "titulo": "Las cuatro fases",
       "texto": "Fase 1: base lateral con media plana. Fase 2: precio sobre una media ascendente, la única para comprar. Fase 3: techo con media que se aplana. Fase 4: precio bajo una media descendente.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Ciclo completo de una acción: base lateral (fase 1), subida sobre la media (fase 2), techo (fase 3) y caída bajo la media (fase 4)",
+        "series": [
+          {
+            "data": [20.0,20.07,20.18,20.28,20.35,20.35,20.29,20.18,20.0,19.83,19.79,20.05,20.57,21.27,22.13,23.16,24.39,25.75,27.06,28.32,29.56,30.84,32.2,33.43,34.45,35.22,35.77,36.11,36.23,36.08,35.89,35.76,35.48,35.17,34.77,34.18,33.32,32.18,30.79,29.45,28.06,26.62,25.16,23.74],
+            "texto": "Media 30 sem.",
+            "tono": "acc"
+          },
+          {
+            "data": [20.0,20.47,20.76,20.76,20.48,20.01,19.54,19.25,19.23,19.51,20.5,22.3,23.65,24.48,25.25,26.42,28.13,29.99,31.49,32.45,33.17,34.2,36.0,36.72,37.09,36.92,36.31,35.54,35.0,34.95,35.41,36.16,35.0,34.1,32.75,30.88,28.95,27.42,26.43,25.59,24.39,22.65,20.67,19.0],
+            "texto": "Precio",
+            "tono": "ink"
+          }
+        ],
+        "zonas": [
+          {
+            "i1": 0,
+            "i2": 9,
+            "texto": "Fase 1"
+          },
+          {
+            "i1": 10,
+            "i2": 21,
+            "texto": "Fase 2"
+          },
+          {
+            "i1": 22,
+            "i2": 31,
+            "texto": "Fase 3"
+          },
+          {
+            "i1": 32,
+            "i2": 43,
+            "texto": "Fase 4"
+          }
+        ],
+        "h": 210
+      },
       "ejemplo": "Se compra la ruptura de la base de Fase 1 a Fase 2, con volumen claramente superior a la media."
     },
     {
@@ -26,6 +65,32 @@
       "id": "g4",
       "titulo": "Medias en orden",
       "texto": "Una tendencia sana tiene el precio sobre la media de 50 sesiones, la de 50 sobre la de 150 y la de 150 sobre la de 200, que además sube.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Tendencia sana: el precio por encima de la media de 50, esta sobre la de 150 y esta sobre la de 200, todas subiendo",
+        "series": [
+          {
+            "data": [39.0,39.6,40.2,40.8,41.4,42.0,42.6,43.2,43.8,44.4,45.0,45.6,46.2,46.8,47.4,48.0,48.6,49.2,49.8,50.4],
+            "texto": "Media 200",
+            "tono": "dn"
+          },
+          {
+            "data": [42.0,42.8,43.6,44.4,45.2,46.0,46.8,47.6,48.4,49.2,50.0,50.8,51.6,52.4,53.2,54.0,54.8,55.6,56.4,57.2],
+            "texto": "Media 150",
+            "tono": "acc"
+          },
+          {
+            "data": [47.0,48.1,49.2,50.3,51.4,52.5,53.6,54.7,55.8,56.9,58.0,59.1,60.2,61.3,62.4,63.5,64.6,65.7,66.8,67.9],
+            "texto": "Media 50",
+            "tono": "sel"
+          },
+          {
+            "data": [50.0,52.14,53.57,54.11,54.27,54.83,56.27,58.42,60.55,61.96,62.49,62.65,63.22,64.69,66.84,68.96,70.36,70.88,71.03,71.62],
+            "texto": "Precio",
+            "tono": "ink"
+          }
+        ]
+      },
       "ejemplo": "Si las medias se cruzan o la de 200 baja, la tendencia aún no está sana."
     }
   ],
