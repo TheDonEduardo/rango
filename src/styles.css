@@ -315,3 +315,13 @@ button{font:inherit;color:inherit;cursor:pointer}
 .weak{list-style:none;margin:0 0 14px;padding:0;display:grid;gap:8px}
 .weak li{display:grid;gap:4px;padding:10px 12px;border-radius:12px;background:var(--surface);border:1px solid var(--line);font-size:14px}
 .weak small{color:var(--ink-2);font-size:12px}
+
+.guia .gtexto{font-size:17px;line-height:1.55;margin:4px 0 16px;color:var(--ink)}
+.gej{padding:14px 16px;border-radius:14px;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent)}
+.gej b{font-size:13px;color:var(--ink-2);text-transform:uppercase;letter-spacing:.04em}
+.gej p{margin:6px 0 0;font-size:16px;line-height:1.5;font-variant-numeric:tabular-nums}
+.guia .gnav{display:flex;gap:10px}.guia .gnav .btn{flex:1}
+.guia .saltar{width:auto;padding:6px 12px;font-size:14px;margin-left:4px}
+.ban .unfold+.unfold{margin-left:6px}
+.fb .teoria{display:block;margin:0 0 12px;font-weight:600}
+.ban .btn.unfold{color:inherit;border-color:currentColor}

@@ -4,6 +4,32 @@
   "track": "basico",
   "title": "Rentabilidad y riesgo",
   "blurb": "Por qué perder poco importa más que acertar mucho.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Perder cuesta más que ganar",
+      "texto": "Después de una caída partes de menos dinero, así que necesitas una subida mayor para volver al punto de partida. Cuanto más grande la caída, peor.",
+      "ejemplo": "Cae un 20 %: necesitas +25 %. Cae un 50 %: necesitas +100 %."
+    },
+    {
+      "id": "g2",
+      "titulo": "El interés compuesto",
+      "texto": "Si reinviertes lo que ganas, las ganancias también generan ganancias. Con los años, la diferencia se hace enorme.",
+      "ejemplo": "1.000 € al 10 % anual: 1.100 € el primer año y 1.210 € el segundo. Ganas 210 €, no 200."
+    },
+    {
+      "id": "g3",
+      "titulo": "Acertar no basta",
+      "texto": "Importa cuánto ganas cuando aciertas frente a cuánto pierdes cuando fallas. Muchos aciertos pequeños no compensan unas pocas pérdidas grandes.",
+      "ejemplo": "Aciertas 6 de 10 ganando un 5 % y fallas 4 perdiendo un 10 %: 0,6 × 5 − 0,4 × 10 = −1 % de media."
+    },
+    {
+      "id": "g4",
+      "titulo": "Repartir y limitar",
+      "texto": "Repartir el dinero entre varias empresas evita que una sola te hunda. Y decidir antes cuánto aceptas perder en cada operación protege tu capital.",
+      "ejemplo": "Con 5.000 € y un límite del 1 %, arriesgas 50 € por operación: ni diez fallos seguidos te quitan más de un 10 %."
+    }
+  ],
   "lessons": [
     {
       "id": "bb1",
@@ -15,7 +41,8 @@
           "q": "Una acción cae un 50 %. ¿Cuánto tiene que subir para volver al precio inicial?",
           "unit": "%",
           "a": 100,
-          "why": "De 100 € a 50 €, recuperar 50 € sobre 50 € es un 100 %. Cuanto mayor es la pérdida, más cuesta recuperarla: por eso se corta pronto."
+          "why": "De 100 € a 50 €, recuperar 50 € sobre 50 € es un 100 %. Cuanto mayor es la pérdida, más cuesta recuperarla: por eso se corta pronto.",
+          "guia": "g1"
         },
         {
           "id": "bb1-2",
@@ -23,7 +50,8 @@
           "q": "Pierdes un 20 %. ¿Cuánto necesitas ganar para recuperarte?",
           "unit": "%",
           "a": 25,
-          "why": "De 100 € a 80 €, recuperar 20 € sobre 80 € es un 25 %. La pérdida y la ganancia necesaria no son simétricas."
+          "why": "De 100 € a 80 €, recuperar 20 € sobre 80 € es un 25 %. La pérdida y la ganancia necesaria no son simétricas.",
+          "guia": "g1"
         },
         {
           "id": "bb1-3",
@@ -31,7 +59,8 @@
           "q": "Inviertes 1.000 € al 10 % anual durante 2 años y reinviertes lo ganado. ¿Cuántos € has ganado en total?",
           "unit": "€",
           "a": 210,
-          "why": "Año 1: 1.000 × 1,10 = 1.100 €. Año 2: 1.100 × 1,10 = 1.210 €. Ganas 210 €, no 200: los beneficios también generan beneficios."
+          "why": "Año 1: 1.000 × 1,10 = 1.100 €. Año 2: 1.100 × 1,10 = 1.210 €. Ganas 210 €, no 200: los beneficios también generan beneficios.",
+          "guia": "g2"
         },
         {
           "id": "bb1-4",
@@ -44,7 +73,8 @@
             "Ganas un 1 % de media"
           ],
           "a": 1,
-          "why": "0,6 × 5 % − 0,4 × 10 % = 3 % − 4 % = −1 %. Acertar más no basta si tus pérdidas son mayores que tus ganancias."
+          "why": "0,6 × 5 % − 0,4 × 10 % = 3 % − 4 % = −1 %. Acertar más no basta si tus pérdidas son mayores que tus ganancias.",
+          "guia": "g3"
         }
       ]
     },
@@ -63,7 +93,8 @@
             "Perder gran parte del capital por un mal resultado"
           ],
           "a": 3,
-          "why": "Una sola empresa puede caer un 30-50 % en un día por unos malos resultados. Repartir entre varias empresas y sectores limita el daño de cada una."
+          "why": "Una sola empresa puede caer un 30-50 % en un día por unos malos resultados. Repartir entre varias empresas y sectores limita el daño de cada una.",
+          "guia": "g4"
         },
         {
           "id": "bb2-2",
@@ -71,7 +102,8 @@
           "q": "Repartes 6.000 € a partes iguales entre 8 acciones. ¿Cuántos € pones en cada una?",
           "unit": "€",
           "a": 750,
-          "why": "6.000 ÷ 8 = 750 €, un 12,5 % del capital en cada una. Si una cae a la mitad, pierdes 375 €: solo un 6,25 % del total."
+          "why": "6.000 ÷ 8 = 750 €, un 12,5 % del capital en cada una. Si una cae a la mitad, pierdes 375 €: solo un 6,25 % del total.",
+          "guia": "g4"
         },
         {
           "id": "bb2-3",
@@ -79,7 +111,8 @@
           "q": "Tu capital es de 5.000 € y decides no perder más del 1 % en una operación. ¿Cuál es tu pérdida máxima?",
           "unit": "€",
           "a": 50,
-          "why": "5.000 × 1 % = 50 €. Con ese límite, ni diez pérdidas seguidas te quitan un 10 % del capital."
+          "why": "5.000 × 1 % = 50 €. Con ese límite, ni diez pérdidas seguidas te quitan un 10 % del capital.",
+          "guia": "g4"
         },
         {
           "id": "bb2-4",
@@ -92,7 +125,8 @@
             "En ninguna: no hace falta stop"
           ],
           "a": 1,
-          "why": "B se mueve 5 veces más: un stop cercano saltaría con el ruido normal, así que va más lejos y, con el mismo riesgo en €, compras menos acciones. En la ruta técnica lo medirás con el ATR."
+          "why": "B se mueve 5 veces más: un stop cercano saltaría con el ruido normal, así que va más lejos y, con el mismo riesgo en €, compras menos acciones. En la ruta técnica lo medirás con el ATR.",
+          "guia": "g4"
         },
         {
           "id": "bb2-5",
@@ -117,7 +151,8 @@
               "k": 0.02,
               "unit": "%"
             }
-          ]
+          ],
+          "guia": "g4"
         }
       ]
     }

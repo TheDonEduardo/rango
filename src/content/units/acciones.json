@@ -4,6 +4,32 @@
   "track": "basico",
   "title": "Acciones y órdenes",
   "blurb": "Qué compras, cómo se compra y cuánto cuesta.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Qué es una acción",
+      "texto": "Una acción es una pequeña parte de una empresa. Si a la empresa le va bien, su valor crece y tu parte también; si le va mal, cae. Nada está garantizado.",
+      "ejemplo": "50 millones de acciones a 12 € cada una = 600 millones. Es la capitalización: lo que el mercado paga hoy por toda la empresa."
+    },
+    {
+      "id": "g2",
+      "titulo": "De dónde sale la ganancia",
+      "texto": "Ganas de dos formas: vendiendo más caro de lo que compraste y cobrando dividendos, si la empresa los reparte. La rentabilidad se mide en % sobre lo que invertiste.",
+      "ejemplo": "Compras a 25 € y sube a 28 €: (28 − 25) ÷ 25 = 12 %. Con 40 acciones ganas 120 € sobre 1.000 €."
+    },
+    {
+      "id": "g3",
+      "titulo": "Tres órdenes básicas",
+      "texto": "A mercado compra al momento, al precio que haya. Limitada fija tu precio: si no se alcanza, no se ejecuta. Stop vende sola si el precio cae hasta un nivel.",
+      "ejemplo": "Compraste a 30 € y pones un stop en 27 €: si el precio toca 27 €, vende y tu pérdida se queda en un 10 %."
+    },
+    {
+      "id": "g4",
+      "titulo": "Lo que cuesta operar",
+      "texto": "Cada operación tiene costes: la comisión del bróker y el spread, la diferencia entre el precio de compra y el de venta. Con importes pequeños pesan mucho.",
+      "ejemplo": "100 acciones a 15 € con 5 € de comisión al comprar y 5 € al vender: necesitas que suba a 15,10 € solo para no perder."
+    }
+  ],
   "lessons": [
     {
       "id": "ba1",
@@ -20,7 +46,8 @@
             "Un depósito con el capital garantizado"
           ],
           "a": 1,
-          "why": "Una acción es una fracción de la empresa: participas en sus beneficios y en su valor, pero nada está garantizado. Prestar dinero a una empresa es comprar un bono."
+          "why": "Una acción es una fracción de la empresa: participas en sus beneficios y en su valor, pero nada está garantizado. Prestar dinero a una empresa es comprar un bono.",
+          "guia": "g1"
         },
         {
           "id": "ba1-2",
@@ -28,7 +55,8 @@
           "q": "Una empresa tiene 50 millones de acciones y cada una cotiza a 12,00 €. ¿Cuántos millones de € vale en bolsa?",
           "unit": "",
           "a": 600,
-          "why": "50 millones × 12,00 € = 600 millones de €. Es la capitalización: lo que el mercado paga hoy por toda la empresa."
+          "why": "50 millones × 12,00 € = 600 millones de €. Es la capitalización: lo que el mercado paga hoy por toda la empresa.",
+          "guia": "g1"
         },
         {
           "id": "ba1-3",
@@ -36,7 +64,8 @@
           "q": "Compras 40 acciones a 25,00 € y suben a 28,00 €. ¿Qué rentabilidad llevas?",
           "unit": "%",
           "a": 12,
-          "why": "(28,00 − 25,00) ÷ 25,00 = 12 %. En euros: 3,00 € × 40 = 120 € sobre 1.000 € invertidos."
+          "why": "(28,00 − 25,00) ÷ 25,00 = 12 %. En euros: 3,00 € × 40 = 120 € sobre 1.000 € invertidos.",
+          "guia": "g2"
         },
         {
           "id": "ba1-4",
@@ -49,7 +78,8 @@
             "De la comisión que cobra el bróker"
           ],
           "a": 0,
-          "why": "Ganas si vendes por encima de lo que pagaste y, si la empresa reparte, con los dividendos. Las empresas que crecen rápido suelen reinvertir y no pagar dividendo."
+          "why": "Ganas si vendes por encima de lo que pagaste y, si la empresa reparte, con los dividendos. Las empresas que crecen rápido suelen reinvertir y no pagar dividendo.",
+          "guia": "g2"
         }
       ]
     },
@@ -68,7 +98,8 @@
             "Cualquiera: todas hacen lo mismo"
           ],
           "a": 2,
-          "why": "La limitada fija tu precio máximo: compra a 20,00 € o menos, o no compra. La de mercado se ejecuta al momento, al precio que haya."
+          "why": "La limitada fija tu precio máximo: compra a 20,00 € o menos, o no compra. La de mercado se ejecuta al momento, al precio que haya.",
+          "guia": "g3"
         },
         {
           "id": "ba2-2",
@@ -76,7 +107,8 @@
           "q": "Precio de compra (bid): 9,95 €. Precio de venta (ask): 10,05 €. ¿Cuál es el spread?",
           "unit": "€",
           "a": 0.1,
-          "why": "10,05 − 9,95 = 0,10 €. Si compras a mercado y vendes al instante, pierdes esos 0,10 € por acción; en valores poco negociados el spread es mayor."
+          "why": "10,05 − 9,95 = 0,10 €. Si compras a mercado y vendes al instante, pierdes esos 0,10 € por acción; en valores poco negociados el spread es mayor.",
+          "guia": "g4"
         },
         {
           "id": "ba2-3",
@@ -84,7 +116,8 @@
           "q": "Compras 100 acciones a 15,00 € y pagas 5 € de comisión al comprar y otros 5 € al vender. ¿A qué precio tienes que vender para no perder?",
           "unit": "€",
           "a": 15.1,
-          "why": "Coste total: 1.500 + 5 + 5 = 1.510 €; 1.510 ÷ 100 = 15,10 € por acción. Con posiciones pequeñas, las comisiones pesan mucho."
+          "why": "Coste total: 1.500 + 5 + 5 = 1.510 €; 1.510 ÷ 100 = 15,10 € por acción. Con posiciones pequeñas, las comisiones pesan mucho.",
+          "guia": "g4"
         },
         {
           "id": "ba2-4",
@@ -97,7 +130,8 @@
             "Ninguna: hay que vigilar la pantalla"
           ],
           "a": 0,
-          "why": "La stop se activa al tocar 27,00 € y vende a mercado: limita la pérdida sin vigilar. Una limitada de venta a 27,00 € se ejecutaría ya, porque el precio actual es mejor."
+          "why": "La stop se activa al tocar 27,00 € y vende a mercado: limita la pérdida sin vigilar. Una limitada de venta a 27,00 € se ejecutaría ya, porque el precio actual es mejor.",
+          "guia": "g3"
         }
       ]
     }

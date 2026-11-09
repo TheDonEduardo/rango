@@ -29,7 +29,8 @@ export function lessonHTML(){
   if(!run.checked){
     h+=`<div><button class="btn primary" data-act="check"${T.ready(ex,run)?'':' disabled'}>${t.comprobar}</button></div>`;
   }else{
-    const ans=run.ok?'':T.answerHTML?T.answerHTML(ex):`<p class="ans">${t.respuesta}: ${tx(T.answer(ex))}</p>`;
+    const ans=run.ok?'':(T.answerHTML?T.answerHTML(ex):`<p class="ans">${t.respuesta}: ${tx(T.answer(ex))}</p>`)
+      +(ex.guia?`<button class="link teoria" data-act="guiarepaso" data-g="${ex.guia}">${t.repasarTeoria}</button>`:'');
     h+=`<div class="fb ${run.ok?'good':'bad'}" role="status"><div class="fb-h">${run.ok?icoOk:icoX}<span>${run.ok?t.correcto:t.incorrecto}</span></div><p>${tx(ex.why)}</p>${ans}<button class="btn primary" data-act="next">${t.continuar}</button></div>`;
   }
   return h+'</div>';

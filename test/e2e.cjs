@@ -72,6 +72,9 @@ async function recorrer(b, url, ids, modos, dir) {
       await p.evaluate(t => localStorage.setItem('rango.v1', JSON.stringify({legal: 99, all: true, skipBasics: true, track: t, done: {}, srs: {}})), L.track);
       await p.reload();
       await p.click(`[data-act=open][data-id="${id}"]`); let g = 0;
+      // Primera vez en la unidad: sale su guía; se recorre entera y se empieza la lección.
+      while (await p.locator('.guia [data-act=guianext]').count()) await p.click('.guia [data-act=guianext]');
+      if (await p.locator('.guia').count()) await p.click('.gnav [data-act=guiafin]');
       while (g++ < 14 && !(await p.locator('text=Lección completada').count())) {
         const ex = await responder(p);
         if (!(await p.locator('.fb.good').count())) errs.push(`${id}: rechazada «${ex.q.slice(0, 50)}»`);
@@ -90,7 +93,7 @@ async function recorrer(b, url, ids, modos, dir) {
 async function auditar(b, url) {
   let AXE;
   try { AXE = fs.readFileSync(require.resolve('axe-core/axe.min.js'), 'utf8'); } catch (e) { console.log('  axe-core no instalado: se omite la auditoría'); return 0; }
-  const base = {legal: 99, all: true, skipBasics: true, done: {}, srs: {}, placement: {skipped: true}, sim: {}};
+  const base = {legal: 99, all: true, skipBasics: true, done: {}, srs: {}, placement: {skipped: true}, sim: {}, guias: {acciones: 1, rentriesgo: 1}};
   const conTipo = (track, t) => lecciones.find(l => l.track === track && l.tipos.has(t)).id;
   const abrirHasta = async (p, id, sel) => { for (let i = 0; i < 40; i++) { await p.click(`[data-act=open][data-id=${id}]`); if (await p.locator(sel).count()) return; await p.click('[data-act=quit]'); } };
   const pantallas = [
@@ -111,6 +114,8 @@ async function auditar(b, url) {
     ['simulador semana', {...base, track: 'tecnico'}, async p => { await p.click('[data-act=sim]'); }],
     ['simulador aportaciones', {...base, track: 'pasiva', calc: {cmp: true}}, async p => { await p.click('[data-act=calc]'); }],
     ['estadísticas', {...base, track: 'tecnico'}, async p => { if (await p.locator('[data-act=stats]').count()) await p.click('[data-act=stats]'); }],
+    ['guía', {...base, guias: {}, track: 'basico'}, async p => { await p.click('[data-act=open][data-id=ba1]'); await p.click('[data-act=guianext]'); }],
+    ['guía consulta', {...base, track: 'basico'}, async p => { await p.click('[data-act=guia][data-id=acciones]'); }],
     ['test de nivel', {legal: 99, track: 'basico', done: {}, srs: {}}, async p => { await p.click('[data-act=test]'); }],
   ];
   const resumen = {};

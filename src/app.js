@@ -12,6 +12,7 @@ import {simHTML,simResHTML,simInfo,simValid,simSave,simRecord,simHist,simulate,S
 import {calcHTML,calcOutHTML,CALC_CTRL,aportaciones} from './views/calc.js';
 import {legalHTML,LEGAL_V} from './views/legal.js';
 import {statsHTML,statRecord,STATS_L,flojos} from './views/stats.js';
+import {guiaHTML,abrirGuia,guiaPendiente} from './views/guia.js';
 import {t} from './textos.js';
 
 const SRS_L={id:'srs',title:t.repasoDia,kind:'srs'};
@@ -20,7 +21,7 @@ const SRS_L={id:'srs',title:t.repasoDia,kind:'srs'};
 const TEST_L={id:'test',title:t.testNivel,kind:'test'};
 const TEST_PASS=10;
 
-const VISTAS={home:homeHTML,legal:()=>legalHTML(false),sim:simHTML,simres:simResHTML,calc:calcHTML,lesson:lessonHTML,result:resultHTML,fail:failHTML,stats:statsHTML};
+const VISTAS={home:homeHTML,legal:()=>legalHTML(false),sim:simHTML,simres:simResHTML,calc:calcHTML,lesson:lessonHTML,result:resultHTML,fail:failHTML,stats:statsHTML,guia:guiaHTML};
 function render(){
   if(ses.view==='home'&&S.legal<LEGAL_V){$app.innerHTML=legalHTML(true);window.scrollTo(0,0);return}
   $app.innerHTML=VISTAS[ses.view]();
@@ -115,17 +116,25 @@ const ACCIONES={
   open(b){
     const L=FLAT.find(l=>l.id===b.dataset.id),s=statuses()[L.id];
     if(s==='locked'){toast(trackOf(L.unit)!=='basico'&&!advancedOpen()?t.bloqueadaBasico:t.bloqueadaAnterior);return}
-    ses.homeY=window.scrollY;startRun(L);
+    ses.homeY=window.scrollY;
+    if(guiaPendiente(L)){abrirGuia(L.unit,'inicio',{L});ses.view='guia';render();return}
+    startRun(L);
   },
   check(b){if(!b.disabled)check()},
   next,
   retry(){startRun(ses.run.L)},
   quit(){ses.simDraft=null;ses.view='home';ses.goCur=false;render()},
-  home(){const deSim=['sim','simres','calc','stats'].includes(ses.view);ses.simDraft=null;ses.view='home';ses.goCur=!deSim;render()},
+  home(){const deSim=['sim','simres','calc','stats','guia'].includes(ses.view);ses.simDraft=null;ses.view='home';ses.goCur=!deSim;render()},
   sim(){ses.simDraft=null;ir('sim')},
   simres(){ir('simres')},
   calc(){ir('calc')},
   stats(){ir('stats')},
+  // Guía de la unidad: desde el inicio (consulta) o desde una pregunta fallada (repaso, vuelve a la lección).
+  guia(b){const u=UNITS.find(x=>x.id===b.dataset.id);abrirGuia(u,'consulta');ir('guia')},
+  guiarepaso(b){const ex=ses.run.queue[0],u=FLAT.find(l=>l.id===ex.lesson).unit;abrirGuia(u,'repaso',{tarjeta:b.dataset.g});ses.view='guia';render()},
+  guianext(){ses.guia.i++;render()},
+  guiaprev(){ses.guia.i--;render()},
+  guiafin(){const g=ses.guia;ses.guia=null;if(g.modo==='inicio')startRun(g.L);else if(g.modo==='repaso'){ses.view='lesson';render()}else{ses.view='home';render()}},
   weak(){ses.homeY=0;startRun(STATS_L)},
   simsave(){if(ses.simDraft&&simValid(ses.simDraft)){simSave();ses.simDraft=null;ses.view='home';render();toast(t.planGuardado)}},
   unfold(b){const id=b.dataset.id,ab=ses.abiertas;ab.has(id)?ab.delete(id):ab.add(id);ses.homeY=window.scrollY;render();const nb=$app.querySelector(`[data-act=unfold][data-id="${id}"]`);if(nb)nb.focus({preventScroll:true})},
@@ -189,7 +198,7 @@ if(typeof navigator!=='undefined'&&'serviceWorker' in navigator&&typeof location
 // API mínima para tests (test/smoke.mjs)
 export const api={migrar,FLAT,CASOS,SEMANA,PLACEMENT,simulate,simRecord,simHist,aportaciones,
   openCalc:()=>{ses.view='calc';render()},openSim:()=>{ses.simDraft=null;ses.view='sim';render()},openSimRes:()=>{ses.view='simres';render()},
-  openStats:()=>{ses.view='stats';render()},startWeak:()=>startRun(STATS_L),
+  openStats:()=>{ses.view='stats';render()},act:(a,ds={})=>ACCIONES[a]({dataset:ds}),getView:()=>ses.view,startWeak:()=>startRun(STATS_L),
   simDraftSet:p=>{ses.simDraft=p},simSave,goHome:()=>{ses.view='home';render()},startTest:()=>startRun(TEST_L),srsDue,
   acceptLegal:()=>{S.legal=LEGAL_V},startSrs:()=>startRun(SRS_L),setTrack:id=>{S.track=id},skipBasics:()=>{S.skipBasics=true},
   homeHTML,startRun,lessonHTML,check,next,resultHTML,failHTML,render,getRun:()=>ses.run,setSel:v=>{ses.run.sel=v},setVal:v=>{ses.run.val=v},getState:()=>S};

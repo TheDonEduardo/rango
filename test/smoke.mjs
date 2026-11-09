@@ -36,6 +36,21 @@ for (const u of units) for (const l of u.lessons || []) for (const ex of l.ex) {
 const casosPath = path.join(root, 'src/content/casos.json');
 const casos = fs.existsSync(casosPath) ? JSON.parse(fs.readFileSync(casosPath, 'utf8')) : null;
 
+// Guías de unidad: 2-6 tarjetas cortas con id único; cada ejercicio con «guia» apunta a una tarjeta de su unidad.
+for (const u of units) {
+  const ids = new Set();
+  if (u.guia !== undefined) {
+    if (!Array.isArray(u.guia) || u.guia.length < 2 || u.guia.length > 6) errs.push(u.id + ': la guía debe tener de 2 a 6 tarjetas');
+    for (const c of u.guia || []) {
+      if (!c.id || !c.titulo || !c.texto || ids.has(c.id)) errs.push(`${u.id}: tarjeta de guía incompleta o repetida (${c.id})`);
+      ids.add(c.id);
+      const pal = (c.texto + ' ' + (c.ejemplo || '')).split(/\s+/).length;
+      if (pal > 70) errs.push(`${u.id}/${c.id}: tarjeta de guía demasiado larga (${pal} palabras; máximo 70)`);
+    }
+  }
+  for (const l of u.lessons || []) for (const ex of l.ex) if (ex.guia !== undefined && !ids.has(ex.guia)) errs.push(`${ex.id}: «guia» apunta a una tarjeta inexistente (${ex.guia})`);
+}
+
 // 1) Lint de contenido
 const ids = new Set();
 const lint = (ex, w) => {
@@ -245,6 +260,34 @@ if (fs.existsSync(semPath)) {
     delete st.sim['2000-W01'];
   }
   T.goHome();
+}
+
+// 10) Guía de la unidad: sale sola la primera vez, se puede consultar desde el inicio y se repasa desde un fallo.
+{
+  const st = T.getState(), guias = st.guias, all = st.all; st.guias = {}; st.all = true;
+  const conGuia = units.find(u => u.guia), L1 = conGuia.lessons[0];
+  T.act('open', {id: L1.id});
+  if (T.getView() !== 'guia' || !app.innerHTML.includes(conGuia.guia[0].titulo)) errs.push('la guía no sale antes de la primera lección de la unidad');
+  T.act('guianext'); if (!app.innerHTML.includes(conGuia.guia[1].titulo)) errs.push('la guía no pasa a la tarjeta siguiente');
+  T.act('guiaprev'); if (!app.innerHTML.includes(conGuia.guia[0].titulo)) errs.push('la guía no vuelve a la tarjeta anterior');
+  T.act('guiafin');
+  if (T.getView() !== 'lesson' || T.getRun().L.id !== L1.id) errs.push('saltar la guía no empieza la lección');
+  if (!st.guias[conGuia.id]) errs.push('la guía vista no se guarda');
+  // Repaso desde un fallo: vuelve a la misma lección con la explicación a la vista.
+  const run = T.getRun(), ex = run.queue[0];
+  give(ex, wrong(ex)); T.check();
+  if (ex.guia) {
+    if (!app.innerHTML.includes('data-act="guiarepaso"')) errs.push('el fallo no ofrece repasar la teoría');
+    T.act('guiarepaso', {g: ex.guia});
+    if (T.getView() !== 'guia' || !app.innerHTML.includes(conGuia.guia.find(c => c.id === ex.guia).titulo)) errs.push('repasar la teoría no abre su tarjeta');
+    T.act('guiafin');
+    if (T.getView() !== 'lesson' || T.getRun() !== run || !run.checked) errs.push('cerrar la guía no vuelve a la lección');
+  }
+  T.goHome();
+  T.act('open', {id: L1.id}); if (T.getView() !== 'lesson') errs.push('la guía vuelve a salir sola en una unidad ya vista');
+  T.goHome();
+  T.act('guia', {id: conGuia.id}); T.act('guiafin'); if (T.getView() !== 'home') errs.push('la guía consultada desde el inicio no vuelve al inicio');
+  st.guias = guias; st.all = all;
 }
 
 // 9) Estadísticas: cada primer intento queda registrado; los fallados forman los «puntos débiles» y se pueden practicar.

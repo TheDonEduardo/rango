@@ -7,6 +7,6 @@ export function toast(msg){
 }
 // view: pantalla actual · run: lección en curso · lastRes: resultado que se muestra · homeY: scroll del inicio
 // goCur: al volver, centrar la lección actual · abiertas: unidades completadas desplegadas · simDraft: plan en edición
-export const ses={view:'home',run:null,lastRes:null,homeY:0,goCur:false,resetArm:false,installEvt:null,abiertas:new Set(),simDraft:null};
+export const ses={view:'home',run:null,lastRes:null,homeY:0,goCur:false,resetArm:false,installEvt:null,abiertas:new Set(),simDraft:null,guia:null};
 // Activa o desactiva «Comprobar» sin redibujar (no se pierde el foco).
 export function setCheck(on){const c=$app.querySelector('[data-act=check]');if(c)c.disabled=!on}

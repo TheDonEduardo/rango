@@ -39,6 +39,12 @@ export const t={
   planGuardado:'Plan guardado. El sábado que viene verás el resultado.',
   rutasAbiertas:'Rutas Pasiva, Fundamental y Técnico abiertas.', instalada:'Rango instalado.',
 
+  // Guía de la unidad
+  guia:'Guía', verGuia:u=>`Guía de la unidad: ${u}`, guiaDe:u=>`Guía · ${u}`, progresoGuia:'Progreso de la guía',
+  saltar:'Saltar', saltarGuia:'Saltar la guía', cerrarGuia:'Cerrar la guía', cerrar:'Cerrar', ejemplo:'Ejemplo',
+  anterior:'Anterior', siguiente:'Siguiente', empezarLeccion:'Empezar la lección', volverLeccion:'Volver a la lección',
+  repasarTeoria:'Repasar la teoría',
+
   // Lección
   salirLeccion:'Salir de la lección', progresoLeccion:'Progreso de la lección', vidas:n=>`${n} vidas`,
   casoReal:c=>`Caso real: ${c} · `, comprobar:'Comprobar', correcto:'Correcto', incorrecto:'Incorrecto', respuesta:'Respuesta',
