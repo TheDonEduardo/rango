@@ -22,6 +22,37 @@
       "id": "g3",
       "titulo": "La horquilla",
       "texto": "Siempre hay un precio al que te venden y otro, algo menor, al que te compran. La diferencia es la horquilla: un coste que pagas aunque el precio no se mueva.",
+      "figura": {
+        "type": "velas",
+        "alt": "Siempre hay un precio de venta algo mayor que el de compra; la diferencia es la horquilla",
+        "data": [
+          [10.01,10.08,9.96,10.04],
+          null,
+          null
+        ],
+        "margen": 120,
+        "lineas": [
+          {
+            "y": 10.05,
+            "texto": "Te venden a 10,05",
+            "tono": "dn"
+          },
+          {
+            "y": 10.0,
+            "texto": "Te compran a 10,00",
+            "tono": "up"
+          }
+        ],
+        "llaves": [
+          {
+            "i": 0,
+            "y1": 10.0,
+            "y2": 10.05,
+            "texto": "Horquilla 0,05 €",
+            "lado": "i"
+          }
+        ]
+      },
       "ejemplo": "Venta a 10,05 € y compra a 10,00 €: 5 céntimos. Comprar y vender al instante 1.000 acciones cuesta 50 €."
     },
     {

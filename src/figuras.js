@@ -1,5 +1,5 @@
 // Figuras explicativas de las guías: diagramas anotados (no gráficos de datos), dibujados en SVG.
-//   {type:'velas', data:[[apertura,máximo,mínimo,cierre],...], alt, h?,
+//   {type:'velas', data:[[apertura,máximo,mínimo,cierre] | null,...], alt, h?   (null: hueco sin vela)
 //     llaves:[{i,y1,y2,texto,lado?}]  corchete junto a la vela i entre dos precios (cuerpo, mecha…)
 //     marcas:[{i,y,texto,lado?}]      punto de la vela i con su etiqueta (apertura, spring…)
 //     lineas:[{y,texto?,tono?,lado?}] línea horizontal (soporte, stop…); texto a la derecha o, con lado 'i', a la izquierda
@@ -54,7 +54,7 @@ function anotaciones(f, X, y, bw) {
 }
 function velas(f) {
   const H = f.h || 220, top = f.zonas ? 30 : 14, bot = f.etiquetas ? 30 : 14, pl = 16, pr = 16;
-  const vals = []; f.data.forEach(c => vals.push(c[1], c[2]));
+  const vals = []; f.data.forEach(c => { if (c) vals.push(c[1], c[2]); });
   ['lineas', 'franjas'].forEach(k => (f[k] || []).forEach(l => vals.push(...[l.y, l.y1, l.y2].filter(v => typeof v === 'number'))));
   const y = escala(vals, top, bot, H), n = f.data.length;
   // Margen lateral para las etiquetas de llaves y marcas: las velas se centran en el espacio que queda.
@@ -64,6 +64,7 @@ function velas(f) {
   const bw = Math.min(26, paso * 0.5);
   let s = capas(f, X, y, H, top, bot, pl, pr);
   f.data.forEach((c, i) => {
+    if (!c) return;  // hueco: deja sitio libre (para textos) sin vela
     const [o, hi, lo, cl] = c, up = cl >= o, a = y(Math.max(o, cl)), b = y(Math.min(o, cl));
     s += `<g class="cd ${up ? 'up' : 'dn'}"><line class="wick" x1="${X(i).toFixed(1)}" x2="${X(i).toFixed(1)}" y1="${y(hi).toFixed(1)}" y2="${y(lo).toFixed(1)}"/><rect class="body" x="${(X(i) - bw / 2).toFixed(1)}" y="${a.toFixed(1)}" width="${bw.toFixed(1)}" height="${Math.max(1.6, b - a).toFixed(1)}" rx="2"/></g>`;
   });

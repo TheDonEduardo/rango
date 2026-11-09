@@ -8,6 +8,37 @@
       "id": "g1",
       "titulo": "Vender por partes",
       "texto": "Vender una parte en un objetivo asegura ganancia y reduce el riesgo de lo que queda. El resultado total es la media de los tramos.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Entrada a 40 €: se vende un tercio en 2R (44 €), otro en 4R (48 €) y el último sale en la entrada",
+        "series": [
+          {
+            "data": [38.5,39.2,40.2,41,43,44,45,47,48,46,43,41,40],
+            "tono": "ink"
+          }
+        ],
+        "margen": 12,
+        "lineas": [
+          {
+            "y": 48,
+            "texto": "4R: vendes 1/3",
+            "tono": "up",
+            "lado": "i"
+          },
+          {
+            "y": 44,
+            "texto": "2R: vendes 1/3",
+            "tono": "up",
+            "lado": "i"
+          },
+          {
+            "y": 40,
+            "texto": "Entrada",
+            "tono": "sel",
+            "lado": "i"
+          }
+        ]
+      },
       "ejemplo": "Un tercio en 2R, otro en 4R y el último en la entrada: (2 + 4 + 0) ÷ 3 = 2R."
     },
     {
@@ -26,6 +57,30 @@
       "id": "g4",
       "titulo": "Vender en fuerza",
       "texto": "Las subidas más rápidas y con más volumen suelen llegar al final. Cuando el precio se aleja mucho de su media, tiende a volver.",
+      "figura": {
+        "type": "curvas",
+        "alt": "El precio sube cada vez más rápido y se aleja un 32 % de su media de 50 sesiones",
+        "series": [
+          {
+            "data": [38,39.5,41,42,43.5,44.5,45.8,47,48.5,50],
+            "texto": "Media 50",
+            "tono": "acc"
+          },
+          {
+            "data": [40,42,44,45,47,49,52,56,61,66],
+            "texto": "Precio",
+            "tono": "ink"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 9,
+            "y": 66,
+            "texto": "+32 % sobre la media",
+            "lado": "i"
+          }
+        ]
+      },
       "ejemplo": "A 66 € con la media de 50 sesiones en 50 €: un 32 % por encima, zona para vender una parte."
     }
   ],

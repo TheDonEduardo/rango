@@ -27,6 +27,31 @@
       "id": "g4",
       "titulo": "Curva de tipos y ciclo",
       "texto": "Normalmente los bonos largos pagan más que los cortos. Cuando la curva se invierte, el mercado espera bajadas de tipos, a menudo por una recesión. La rotación sectorial es un modelo, no una regla.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Curva de tipos normal, en la que los plazos largos pagan más, frente a una invertida, en la que el bono a 2 años paga más que el de 10",
+        "series": [
+          {
+            "data": [3.0,3.3,3.6,4.0,4.3],
+            "texto": "Normal",
+            "tono": "up",
+            "dy": -5
+          },
+          {
+            "data": [5.0,4.8,4.6,4.3,4.1],
+            "texto": "Invertida",
+            "tono": "dn",
+            "dy": 7
+          }
+        ],
+        "marcas": [
+          {
+            "i": 2,
+            "y": 4.6,
+            "texto": "2 años 4,60 %"
+          }
+        ]
+      },
       "ejemplo": "Bono a 10 años al 4,10 % y a 2 años al 4,60 %: curva invertida en 50 puntos básicos."
     }
   ],

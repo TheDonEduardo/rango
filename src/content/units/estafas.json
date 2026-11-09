@@ -22,6 +22,25 @@
       "id": "g3",
       "titulo": "Cómo funciona un Ponzi",
       "texto": "Un esquema Ponzi paga a los primeros con el dinero de los nuevos, sin negocio real detrás. Cuando las entradas no cubren los pagos prometidos, se hunde.",
+      "figura": {
+        "type": "curvas",
+        "alt": "La caja de un esquema Ponzi baja 2.000 € cada mes porque paga más de lo que entra, hasta quedarse en cero",
+        "series": [
+          {
+            "data": [20000,18000,16000,14000,12000,10000,8000,6000,4000,2000,0],
+            "texto": "Caja",
+            "tono": "dn"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 10,
+            "y": 0,
+            "texto": "Se hunde",
+            "lado": "i"
+          }
+        ]
+      },
       "ejemplo": "Promete un 10 % mensual sobre 100.000 €: debe pagar 10.000 € al mes. Si solo entran 8.000 €, le faltan 2.000 € cada mes."
     },
     {

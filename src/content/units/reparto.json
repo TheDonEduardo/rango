@@ -9,6 +9,22 @@
       "id": "g1",
       "titulo": "Acciones y bonos",
       "texto": "Las acciones dan más a largo plazo pero caen mucho; los bonos amortiguan. El reparto entre ambos decide cuánto puede caer tu cartera.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Si las acciones caen un 40 % y los bonos suben un 5 %, la cartera 70/30 cae un 26,5 % y la 40/60, un 13 %",
+        "series": [
+          {
+            "data": [100.0,96.8,93.5,90.3,87.0],
+            "texto": "40/60: −13 %",
+            "tono": "up"
+          },
+          {
+            "data": [100.0,93.4,86.8,80.1,73.5],
+            "texto": "70/30: −26,5 %",
+            "tono": "dn"
+          }
+        ]
+      },
       "ejemplo": "Acciones −40 % y bonos +5 %: una cartera 70/30 cae un 26,5 % y una 40/60, un 13 %."
     },
     {

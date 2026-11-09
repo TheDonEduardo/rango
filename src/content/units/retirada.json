@@ -21,6 +21,22 @@
       "id": "g3",
       "titulo": "El riesgo de secuencia",
       "texto": "Una caída fuerte justo al empezar a retirar hace mucho más daño que la misma caída años después: vendes barato cuando la cartera es mayor.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Misma rentabilidad media y mismas retiradas: con la caída al principio la cartera acaba mucho más abajo que con la caída al final",
+        "series": [
+          {
+            "data": [400000,416000,433280,451942,472098,493866,517375,542765,570186,599801,631785,666328,703634,743925,787439,834434,885189,940004,999204,883284,690627],
+            "texto": "Caída al final",
+            "tono": "up"
+          },
+          {
+            "data": [400000,304000,257600,262208,267185,272559,278364,284633,291404,298716,306614,315143,324354,334302,345047,356650,369182,382717,397334,413121,430171],
+            "texto": "Caída al principio",
+            "tono": "dn"
+          }
+        ]
+      },
       "ejemplo": "400.000 € retirando 16.000 € al año; si la cartera baja a 320.000 €, retiras un 5 %. Un colchón de liquidez evita vender en los años malos."
     },
     {

@@ -49,7 +49,7 @@ for (const u of units) {
         if (!['velas', 'curvas'].includes(f.type) || !f.alt) errs.push(w + ': figura sin tipo válido o sin alt');
         const n = f.type === 'velas' ? (f.data || []).length : Math.max(0, ...(f.series || []).map(se => se.data.length));
         if (!n) errs.push(w + ': figura sin datos');
-        if (f.type === 'velas' && !f.data.every(v => v.length === 4 && v[1] >= Math.max(v[0], v[3]) && v[2] <= Math.min(v[0], v[3]))) errs.push(w + ': vela mal formada en la figura');
+        if (f.type === 'velas' && !f.data.every(v => v === null || v.length === 4 && v[1] >= Math.max(v[0], v[3]) && v[2] <= Math.min(v[0], v[3]))) errs.push(w + ': vela mal formada en la figura');
         for (const a of [...(f.llaves || []), ...(f.marcas || [])]) if (!(a.i >= 0 && a.i < n) || !a.texto) errs.push(w + ': anotación fuera de la figura');
         for (const z of f.zonas || []) if (!(z.i1 >= 0 && z.i2 < n && z.i1 <= z.i2)) errs.push(w + ': zona fuera de la figura');
       }

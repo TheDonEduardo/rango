@@ -9,6 +9,24 @@
       "id": "g1",
       "titulo": "Por qué se descuadra",
       "texto": "Con el tiempo, lo que más sube pesa más de lo previsto y la cartera arriesga más de lo que elegiste.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Al subir las acciones un 30 %, su peso pasa del 60 % objetivo al 66,1 %",
+        "series": [
+          {
+            "data": [60.0,61.2,62.3,63.3,64.3,65.2,66.1],
+            "texto": "66,1 %",
+            "tono": "sel"
+          }
+        ],
+        "lineas": [
+          {
+            "y": 60,
+            "texto": "Objetivo 60 %",
+            "tono": "ink"
+          }
+        ]
+      },
       "ejemplo": "10.000 € al 60/40: si las acciones suben un 30 % y los bonos nada, las acciones pasan a pesar un 66,1 %."
     },
     {

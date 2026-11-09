@@ -21,6 +21,22 @@
       "id": "g3",
       "titulo": "Cuánto necesitas para jubilarte",
       "texto": "Con la regla del 4 %, la cartera necesaria es unas 25 veces lo que quieres retirar al año. Las aportaciones constantes y el tiempo hacen la mayor parte.",
+      "figura": {
+        "type": "curvas",
+        "alt": "300 € al mes durante 30 años: 108.000 € aportados se convierten en unos 301.000 €",
+        "series": [
+          {
+            "data": [0,3600,7200,10800,14400,18000,21600,25200,28800,32400,36000,39600,43200,46800,50400,54000,57600,61200,64800,68400,72000,75600,79200,82800,86400,90000,93600,97200,100800,104400,108000],
+            "texto": "Aportado 108.000 €",
+            "tono": "acc"
+          },
+          {
+            "data": [0,3701,7630,11801,16229,20931,25923,31222,36849,42822,49164,55897,63045,70634,78691,87246,96327,105969,116206,127074,138612,150862,163868,177675,192335,207898,224422,241964,260589,280362,301355],
+            "texto": "Total 301.000 €",
+            "tono": "up"
+          }
+        ]
+      },
       "ejemplo": "Retirar 24.000 € al año exige unos 600.000 €. 300 € al mes al 0,5 % mensual durante 30 años son unos 301.000 €."
     },
     {

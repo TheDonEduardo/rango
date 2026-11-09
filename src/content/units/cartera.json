@@ -20,6 +20,22 @@
       "id": "g3",
       "titulo": "Rachas",
       "texto": "Las rachas de pérdidas pasan. El tamaño de cada apuesta decide cuánto daño hacen.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Diez pérdidas seguidas: arriesgando un 2 % el capital cae un 18,3 %; arriesgando un 1 %, un 9,6 %",
+        "series": [
+          {
+            "data": [100.0,99.0,98.0,97.0,96.1,95.1,94.1,93.2,92.3,91.4,90.4],
+            "texto": "1 %: −9,6 %",
+            "tono": "up"
+          },
+          {
+            "data": [100.0,98.0,96.0,94.1,92.2,90.4,88.6,86.8,85.1,83.4,81.7],
+            "texto": "2 %: −18,3 %",
+            "tono": "dn"
+          }
+        ]
+      },
       "ejemplo": "Diez pérdidas seguidas arriesgando un 2 %: −18,3 %. Con un 1 %: −9,6 %."
     },
     {

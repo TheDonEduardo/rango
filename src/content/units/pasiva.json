@@ -9,6 +9,24 @@
       "id": "g1",
       "titulo": "Qué es invertir en pasivo",
       "texto": "Comprar el mercado entero con fondos baratos, aportar con regularidad y no intentar adivinar qué va a subir. El tiempo y el interés compuesto hacen el trabajo.",
+      "figura": {
+        "type": "curvas",
+        "alt": "10.000 € al 7 % anual se convierten en 19.672 € en 10 años",
+        "series": [
+          {
+            "data": [10000,10700,11449,12250,13108,14026,15007,16058,17182,18385,19672],
+            "texto": "19.672 €",
+            "tono": "up"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 0,
+            "y": 10000,
+            "texto": "10.000 €"
+          }
+        ]
+      },
       "ejemplo": "Al 7 % anual, 10.000 € se convierten en 19.672 € en 10 años: casi el doble sin añadir nada."
     },
     {
