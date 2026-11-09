@@ -48,7 +48,13 @@
           ],
           "a": 1,
           "why": "Una acción es una fracción de la empresa: participas en sus beneficios y en su valor, pero nada está garantizado. Prestar dinero a una empresa es comprar un bono.",
-          "guia": "g1"
+          "guia": "g1",
+          "porque": [
+            "Eso es un bono: prestas dinero y te lo devuelven con intereses. Con una acción eres dueño, no acreedor.",
+            null,
+            "Eso es un derecho de suscripción, algo que a veces reciben los accionistas, no la acción en sí.",
+            "Las acciones no garantizan nada: su precio puede bajar y puedes perder parte de lo invertido."
+          ]
         },
         {
           "id": "ba1-2",
@@ -80,7 +86,13 @@
           ],
           "a": 0,
           "why": "Ganas si vendes por encima de lo que pagaste y, si la empresa reparte, con los dividendos. Las empresas que crecen rápido suelen reinvertir y no pagar dividendo.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            null,
+            "Los dividendos son solo una parte; muchas empresas no los reparten y la ganancia llega por la subida del precio.",
+            "Las acciones no pagan intereses: los intereses son de los bonos y los depósitos.",
+            "La comisión es lo que pagas tú al bróker: es un coste, no una ganancia."
+          ]
         }
       ]
     },
@@ -101,7 +113,13 @@
           ],
           "a": 2,
           "why": "La limitada fija tu precio máximo: compra a 20,00 € o menos, o no compra. La de mercado se ejecuta al momento, al precio que haya.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            "A mercado compra al precio que haya en ese momento, aunque supere los 20,00 €.",
+            "Una orden stop de compra se activa cuando el precio sube hasta ese nivel: no limita lo que pagas.",
+            null,
+            "No hacen lo mismo: solo la limitada fija un precio máximo."
+          ]
         },
         {
           "id": "ba2-2",
@@ -133,7 +151,13 @@
           ],
           "a": 0,
           "why": "La stop se activa al tocar 27,00 € y vende a mercado: limita la pérdida sin vigilar. Una limitada de venta a 27,00 € se ejecutaría ya, porque el precio actual es mejor.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            null,
+            "Una limitada de venta a 27,00 € vendería al momento a cualquier precio igual o superior, es decir, ya.",
+            "Quieres vender, no comprar: una compra a 27,00 € aumentaría tu posición.",
+            "La orden stop existe justo para no tener que vigilar: se ejecuta sola."
+          ]
         }
       ]
     }

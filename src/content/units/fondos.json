@@ -92,7 +92,13 @@
           ],
           "a": 0,
           "why": "El patrimonio del fondo está separado del de la gestora y lo custodia el depositario: los activos siguen siendo de los partícipes.",
-          "guia": "g1"
+          "guia": "g1",
+          "porque": [
+            null,
+            "No se pierde: el patrimonio del fondo está separado del de la gestora.",
+            "La gestora no lo cubre con su dinero: simplemente, el fondo no es suyo.",
+            "El depositario custodia los activos, pero no pasan a ser suyos."
+          ]
         }
       ]
     },
@@ -132,7 +138,13 @@
           "a": 0,
           "why": "Al traspasar de un fondo a otro no pagas impuestos hasta que retiras el dinero; vender un ETF tributa la ganancia en ese momento.",
           "revisar": "2027-06",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            null,
+            "Sí tributan: al reembolsar, por la ganancia acumulada.",
+            "Los fondos tienen comisiones; de hecho, las de gestión activa suelen ser altas.",
+            "Los fondos de inversión no están garantizados: pueden perder valor."
+          ]
         },
         {
           "id": "bn2-4",

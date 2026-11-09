@@ -89,7 +89,13 @@
           ],
           "a": 1,
           "why": "Se retienen 19 € a cuenta y los descuentas en tu declaración. El dividendo va a la base del ahorro, igual que las ganancias por venta.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            "Los dividendos sí tributan en el IRPF, como renta del ahorro.",
+            null,
+            "Los dividendos tributan cuando los cobras, no al vender las acciones.",
+            "La retención es del 19 %, no de la mitad."
+          ]
         },
         {
           "id": "be1-4",
@@ -103,7 +109,13 @@
           ],
           "a": 0,
           "why": "El convenio entre España y EE. UU. limita la retención al 15 % si firmas el W-8BEN; sin él, es del 30 %. En tu declaración puedes deducir esa retención por doble imposición internacional.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            null,
+            "EE. UU. retiene en origen; luego lo descuentas en España por doble imposición.",
+            "Con el W-8BEN firmado, el convenio rebaja la retención al 15 %.",
+            "Ningún tipo es del 50 %, y lo retenido se puede deducir en el IRPF."
+          ]
         }
       ]
     },
@@ -133,7 +145,13 @@
           ],
           "a": 1,
           "why": "Se declaran igualmente y se arrastran a los cuatro años siguientes. Además, pueden compensar hasta un 25 % del saldo de dividendos e intereses.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            "No se pierden: se arrastran cuatro años para compensar ganancias futuras.",
+            null,
+            "Hacienda no devuelve pérdidas en efectivo: solo reducen lo que pagas por ganancias.",
+            "No depende de comprar más: las pérdidas se compensan con ganancias."
+          ]
         },
         {
           "id": "be2-3",
@@ -147,7 +165,13 @@
           ],
           "a": 2,
           "why": "Regla de los dos meses en valores cotizados: si compras valores iguales en los dos meses anteriores o posteriores a la venta con pérdidas, no la imputas hasta que vendas esos valores.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            "Hay un límite: la regla de los dos meses aplaza la pérdida si recompras lo mismo.",
+            "Da igual el bróker: cuenta que recompras el mismo valor dentro del plazo.",
+            null,
+            "No se compensa la mitad: se aplaza entera hasta que vendas las acciones nuevas."
+          ]
         },
         {
           "id": "be2-4",

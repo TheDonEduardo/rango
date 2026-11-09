@@ -48,7 +48,13 @@
           ],
           "a": 3,
           "why": "Las acciones de los clientes no son del bróker y deben estar separadas de su patrimonio. Si aun así no te las devuelven, en España un fondo de garantía cubre hasta 100.000 € por cliente.",
-          "guia": "g1"
+          "guia": "g1",
+          "porque": [
+            "Las acciones de los clientes no forman parte del patrimonio del bróker.",
+            "El Banco de España no garantiza las acciones; existe el FOGAIN, con límites.",
+            "El bróker no vende tus acciones: siguen siendo tuyas y se traspasan.",
+            null
+          ]
         },
         {
           "id": "bf1-2",
@@ -80,7 +86,13 @@
           ],
           "a": 0,
           "why": "Cada compra y cada venta convierten euros y dólares, y el bróker cobra por ello: según el bróker, de casi nada a más de un 0,5 % por operación. Míralo tanto como la comisión de compraventa.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            null,
+            "El precio en euros cambia con el tipo de cambio, y convertir la moneda cuesta.",
+            "Comprar acciones no lleva IVA.",
+            "No hay una tasa por entrar en el mercado; el coste oculto es el cambio de divisa."
+          ]
         }
       ]
     },
@@ -102,7 +114,13 @@
           "a": 2,
           "why": "El Modelo 720 es informativo: declara los valores depositados fuera de España cuando superan 50.000 €. No es un impuesto, pero no presentarlo puede acarrear sanciones.",
           "revisar": "2027-06",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            "Con más de 50.000 € en el extranjero sí hay una obligación: el Modelo 720.",
+            "El 720 es informativo: no es un impuesto extra.",
+            null,
+            "No hace falta cerrar la cuenta; basta con informar."
+          ]
         },
         {
           "id": "bf2-2",
@@ -117,7 +135,13 @@
           "a": 0,
           "why": "Como residente en España tributas aquí por todo, esté donde esté el bróker. Las operaciones de un bróker extranjero no suelen aparecer en los datos fiscales de Hacienda: las declaras tú con sus informes.",
           "revisar": "2027-06",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            null,
+            "Un bróker extranjero no envía tus datos a Hacienda como uno español: los declaras tú.",
+            "Como residente en España tributas aquí por todo, esté donde esté el bróker.",
+            "Tributas en España; como mucho, descuentas lo que te retengan fuera."
+          ]
         },
         {
           "id": "bf2-3",

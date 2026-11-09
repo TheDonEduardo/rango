@@ -58,6 +58,7 @@ export const t={
   compartir:'Compartir', compartirProgreso:'Compartir mi progreso', compartirTexto:'Aprendo a invertir con Rango.',
   compartirPie:(xp,d)=>`${xp} XP · ${d} ${d===1?'unidad dominada':'unidades dominadas'}`, compartirDescargado:'Imagen descargada.',
   logroLeccion:'Lección completada', logroRacha:'Mi racha en Rango', logroDominada:'Unidad dominada',
+  porQueNo:o=>`«${o}» no es correcta:`,
   verError:'¿Ves un error?', reporteAsunto:id=>`Error en Rango: ${id}`,
   reporteCuerpo:(id,q,r)=>`Ejercicio o tarjeta: ${id}\n${q}\n${r?`Respuesta de la app: ${r}\n`:''}\nQué está mal:\n`,
   reporteCopiado:'Aviso copiado: pégalo en un correo o mensaje a quien mantiene Rango.', reporteId:id=>`Anota este código para avisar del error: ${id}`,

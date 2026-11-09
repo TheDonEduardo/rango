@@ -93,7 +93,13 @@
           ],
           "a": 0,
           "why": "Rentabilidad alta y garantizada a la vez no existe: a más rentabilidad esperada, más riesgo.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            null,
+            "Rentabilidad alta y garantizada a la vez no existe: es la señal típica de estafa.",
+            "Ninguna inversión legítima, tampoco en criptomonedas, garantiza un 3 % mensual.",
+            "Las prisas son una técnica de presión de los estafadores."
+          ]
         },
         {
           "id": "bq1-3",
@@ -117,7 +123,13 @@
           ],
           "a": 0,
           "why": "Las llamadas no solicitadas son la vía típica de los chiringuitos; instalar programas de acceso remoto les da tu cuenta.",
-          "guia": "g1"
+          "guia": "g1",
+          "porque": [
+            null,
+            "Dar tus datos a quien te llama sin pedirlo es abrirle la puerta a un fraude.",
+            "Con un chiringuito, la «prueba» suele ir bien para que luego metas más.",
+            "Los programas de acceso remoto les dan el control de tu ordenador y tus cuentas."
+          ]
         }
       ]
     },
@@ -156,7 +168,13 @@
           ],
           "a": 0,
           "why": "Como los pagos salen del dinero nuevo, en cuanto las entradas bajan de los pagos prometidos el esquema quiebra.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            null,
+            "Un Ponzi no tiene beneficios reales: paga con el dinero de los nuevos.",
+            "La CNMV no rescata estafas; puede denunciarlas y advertir de ellas.",
+            "Un fraude no se convierte en legal: se hunde y los últimos lo pierden casi todo."
+          ]
         },
         {
           "id": "bq2-4",
@@ -171,7 +189,13 @@
           "a": 0,
           "why": "Cubre hasta 100.000 € por inversor si una empresa de inversión autorizada no puede devolverte tus valores o efectivo; nunca cubre que la inversión pierda valor.",
           "revisar": "2027-06",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            null,
+            "El FOGAIN no cubre que tus inversiones bajen de precio.",
+            "Solo cubre entidades autorizadas; las estafas de chiringuitos no.",
+            "Tiene un límite de 100.000 € por inversor y solo para la quiebra del intermediario."
+          ]
         }
       ]
     }

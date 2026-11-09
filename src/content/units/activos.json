@@ -74,7 +74,13 @@
           ],
           "a": 0,
           "why": "Una letra del Tesoro es un préstamo a corto plazo al Estado: su precio apenas se mueve y el riesgo de impago es muy bajo.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            null,
+            "Una acción tecnológica puede moverse mucho en pocos días.",
+            "Las criptomonedas son de los activos más volátiles: caídas del 70 % no son raras.",
+            "Las pequeñas empresas suelen ser más volátiles que las grandes."
+          ]
         },
         {
           "id": "bo1-3",
@@ -113,7 +119,13 @@
           ],
           "a": 0,
           "why": "Las acciones mundiales han rendido en torno a un 5 % real anual desde 1900, pero con caídas de más del 50 %; esa prima es el pago por aguantarlas.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            null,
+            "Las acciones no están garantizadas: pueden caer mucho.",
+            "Las acciones sí tributan, por dividendos y por ganancias al vender.",
+            "Han caído más de un 50 % en algunas crisis; esa es la razón de la prima."
+          ]
         },
         {
           "id": "bo2-2",

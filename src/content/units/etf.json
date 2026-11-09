@@ -48,7 +48,13 @@
           ],
           "a": 1,
           "why": "El IBEX 35 agrupa 35 valores españoles y el S&P 500, unas 500 grandes empresas de EE. UU. Un índice no se compra directamente: se replica con fondos indexados o ETF.",
-          "guia": "g1"
+          "guia": "g1",
+          "porque": [
+            "Un índice no es una empresa: agrupa muchas y resume cómo se mueven.",
+            null,
+            "Eso es un fondo o un ETF que copia un índice; el índice en sí no se compra.",
+            "Cada índice mide un mercado concreto (España, EE. UU.…), no todas las acciones del mundo."
+          ]
         },
         {
           "id": "bd1-2",
@@ -80,7 +86,13 @@
           ],
           "a": 2,
           "why": "El índice es tu referencia: si no lo superas a largo plazo, un fondo indexado te habría dado más con menos esfuerzo. Compárate siempre con el índice de tu mercado.",
-          "guia": "g1"
+          "guia": "g1",
+          "porque": [
+            "Ganar dinero no basta: un fondo indexado te habría dado casi el doble con menos trabajo.",
+            "Sí es comparable: el índice es lo que habrías obtenido sin elegir acciones.",
+            null,
+            "Más riesgo no arregla un resultado peor que el índice: aumenta lo que puedes perder."
+          ]
         }
       ]
     },
@@ -101,7 +113,13 @@
           ],
           "a": 0,
           "why": "Con una sola compra tienes todas las empresas del índice. Se compra y se vende durante la sesión, como una acción, con su precio y su spread.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            null,
+            "Un ETF reúne muchas empresas, no una sola.",
+            "Un ETF no paga un interés fijo: su valor sube y baja con lo que tiene dentro.",
+            "Los ETF normales no caducan: puedes mantenerlos los años que quieras."
+          ]
         },
         {
           "id": "bd2-2",
@@ -135,7 +153,13 @@
           "a": 1,
           "why": "Los reinvierte y el valor de cada participación crece. Uno de distribución te los paga, y en España cada cobro tributa en tu declaración de ese año.",
           "revisar": "2027-06",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            "Eso lo hace un ETF de distribución; el de acumulación no te paga nada.",
+            null,
+            "Las comisiones del bróker las pagas tú; el fondo no usa los dividendos para eso.",
+            "Los dividendos son del fondo, es decir, de los partícipes, no de los gestores."
+          ]
         }
       ]
     }

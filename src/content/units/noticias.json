@@ -49,7 +49,13 @@
           ],
           "a": 0,
           "why": "Movimientos diarios de más del 1 % ocurren decenas de veces al año; un desplome real es una caída del 20 % o más.",
-          "guia": "g1"
+          "guia": "g1",
+          "porque": [
+            null,
+            "Un 1,2 % en un día es habitual; no dice nada del mercado alcista.",
+            "Vender por un movimiento normal es reaccionar al ruido, no a tu plan.",
+            "Las caídas de un día suelen recuperarse; incluso las grandes se han recuperado con tiempo."
+          ]
         },
         {
           "id": "bp1-2",
@@ -113,7 +119,13 @@
           ],
           "a": 0,
           "why": "El precio ya descontaba una caída mayor: lo que mueve la acción es la diferencia con lo esperado, no con el año pasado.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            null,
+            "Hay una explicación lógica: el precio ya descontaba un resultado peor.",
+            "Ganar menos no es bueno en sí: lo que cuenta es la comparación con lo esperado.",
+            "No es un error: es la diferencia entre el dato y lo que esperaba el mercado."
+          ]
         },
         {
           "id": "bp2-2",
@@ -136,7 +148,13 @@
           ],
           "a": 0,
           "why": "Tu plan está pensado para 20 años o más: un titular de hoy no cambia el reparto ni el plazo.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            null,
+            "Operar con cada titular dispara costes y errores, y no cambia tu plan a largo plazo.",
+            "Vender en cada mala noticia te hace salir en los peores momentos.",
+            "Comprar con cada buena noticia te hace entrar cuando ya está caro."
+          ]
         },
         {
           "id": "bp2-4",
@@ -150,7 +168,13 @@
           ],
           "a": 0,
           "why": "Para multiplicar por 10 hace falta subir un 900 %; quien lo promete a menudo tiene acciones o cobra por publicarlo.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            null,
+            "Primero hay que saber quién lo dice y si tiene interés; meter dinero ya es dejarse llevar.",
+            "Pedir prestado por una promesa así es arriesgar dinero que no tienes.",
+            "Pensar en cuándo vender antes de saber si la promesa tiene base es empezar por el final."
+          ]
         }
       ]
     }

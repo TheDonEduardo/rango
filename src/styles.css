@@ -369,3 +369,5 @@ button{font:inherit;color:inherit;cursor:pointer}
 .obj-opc .btn span{font-weight:400;font-size:14px;color:var(--ink-2)}
 .objetivo .btn.ghost{justify-self:start}
 .meta-opc{display:flex;gap:8px}.meta-opc .btn{flex:1}
+.fb .porque{margin:0 0 10px;padding:10px 12px;border-radius:10px;background:rgba(0,0,0,.05)}
+.fb .porque b{display:block;margin-bottom:2px}

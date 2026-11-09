@@ -74,7 +74,13 @@
           ],
           "a": 0,
           "why": "Una acción reparte beneficios y un bono paga cupones; el bitcoin solo da rentabilidad si sube su precio.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            null,
+            "Bitcoin no reparte dividendos: no es una empresa con beneficios.",
+            "Bitcoin no paga cupones: no es un préstamo.",
+            "Ningún Estado garantiza bitcoin ni le pone intereses."
+          ]
         },
         {
           "id": "br1-3",
@@ -114,7 +120,13 @@
           ],
           "a": 0,
           "why": "No hay ninguna entidad que pueda restaurar el acceso: sin las claves, las criptos quedan bloqueadas en la blockchain.",
-          "guia": "g1"
+          "guia": "g1",
+          "porque": [
+            null,
+            "Un banco no tiene acceso a tus claves privadas.",
+            "La CNMV no puede recuperar criptos: nadie más tiene tus claves.",
+            "Tu DNI no está ligado a las claves de tu monedero."
+          ]
         },
         {
           "id": "br2-2",
@@ -129,7 +141,13 @@
           "a": 0,
           "why": "Vender, o cambiar una cripto por otra, genera una ganancia o pérdida patrimonial en la base del ahorro, desde el 19 %.",
           "revisar": "2027-06",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            null,
+            "Sí tributa: vender o cambiar criptos genera ganancias o pérdidas.",
+            "Tributa también al cambiar una cripto por otra, no solo a dólares o euros.",
+            "No es un premio: va a la base del ahorro, como las acciones."
+          ]
         },
         {
           "id": "br2-3",

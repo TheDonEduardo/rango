@@ -93,7 +93,13 @@
           ],
           "a": 0,
           "why": "Al 5 %, el primer año ganas 50 € sobre 1.000 €; el segundo, 52,50 € sobre 1.050 €. La diferencia crece cada año.",
-          "guia": "g1"
+          "guia": "g1",
+          "porque": [
+            null,
+            "No hay doble comisión: es que los intereses se suman al capital y rinden.",
+            "Los impuestos no tienen que ver con el interés compuesto.",
+            "Funciona en cualquier ahorro o inversión que reinvierta lo ganado, no solo en hipotecas."
+          ]
         }
       ]
     },
@@ -148,7 +154,13 @@
           ],
           "a": 0,
           "why": "B paga 30 € y cobra 20 €: 10 € netos, un 1 %; A paga 29 €. Por eso hay que comparar la TAE.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            null,
+            "B paga 30 € pero cobra 20 € de comisión: deja 10 €, menos que los 29 € de A.",
+            "No rinden igual: 29 € frente a 10 € netos.",
+            "Sí se puede: hay que restar la comisión, que es lo que hace la TAE."
+          ]
         },
         {
           "id": "bk2-4",

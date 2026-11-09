@@ -182,7 +182,13 @@
           ],
           "a": 0,
           "why": "Los retrocesos se detienen cada vez más arriba (10,50 y luego 11,30) y cada máximo supera al anterior: máximos y mínimos crecientes son una tendencia alcista.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            null,
+            "Bajista sería con máximos y mínimos cada vez más bajos; aquí cada retroceso para más arriba.",
+            "Lateral sería con máximos y mínimos a la misma altura; aquí suben unos y otros.",
+            "Sí se puede: los mínimos y máximos crecientes definen la tendencia alcista."
+          ]
         },
         {
           "id": "bc1-2",
@@ -232,7 +238,13 @@
           ],
           "a": 2,
           "why": "El volumen mide cuántas acciones cambian de manos. Una subida con mucho volumen indica que hay compradores grandes detrás; con poco volumen es más frágil.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            "El volumen dice cuánta gente está detrás del movimiento: importa mucho.",
+            "Mucho volumen en una subida indica lo contrario: compradores con convicción.",
+            null,
+            "Emitir acciones nuevas no se ve en el volumen de una sesión; el volumen es lo negociado ese día."
+          ]
         },
         {
           "id": "bc1-4",
@@ -246,7 +258,13 @@
           ],
           "a": 2,
           "why": "En el gráfico diario cada vela resume una sesión con cuatro precios; en el semanal, una semana. Los patrones se leen igual en cualquier escala.",
-          "guia": "g1"
+          "guia": "g1",
+          "porque": [
+            "Eso sería un gráfico horario; en el diario cada vela es una sesión entera.",
+            "Una vela tiene cuatro precios: apertura, máximo, mínimo y cierre, no solo el cierre.",
+            null,
+            "Eso sería un gráfico semanal."
+          ]
         },
         {
           "id": "bc1-5",
@@ -320,7 +338,13 @@
           ],
           "a": 3,
           "why": "Con la operación abierta, las emociones deciden por ti. Si fijas antes dónde sales, sabes cuánto puedes perder y eliges el tamaño con calma.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            "Con solo la entrada no sabes cuánto arriesgas: falta el stop y el tamaño.",
+            "Decidir sobre la marcha deja la operación en manos de las emociones.",
+            "Lo que quieres ganar importa menos que cuánto puedes perder: primero el stop y el tamaño.",
+            null
+          ]
         },
         {
           "id": "bc2-2",

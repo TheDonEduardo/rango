@@ -74,6 +74,11 @@ const lint = (ex, w) => {
         if (c > 1.5 * o) errs.push(`${w}: la opción correcta (${c} caracteres) es mucho más larga que las demás (${o})`);
       }
       if (ex.t === 'num' && typeof ex.a !== 'number') errs.push(w + ': a no numérico');
+      if (ex.porque !== undefined) {
+        if (ex.t !== 'choice' || !Array.isArray(ex.porque) || ex.porque.length !== ex.opts.length || ex.porque[ex.a] !== null || ex.porque.some((p, k) => k !== ex.a && !(typeof p === 'string' && p.length > 10)))
+          errs.push(w + ': porque debe tener una explicación por opción incorrecta y null en la correcta');
+        else for (const p of ex.porque) if (p && p.split(/\s+/).length > 35) errs.push(w + ': explicación de opción demasiado larga');
+      }
       if (ex.t === 'tap' && !(ex.chart && ex.a >= 0 && ex.a < ex.chart.data.length)) errs.push(w + ': vela fuera de rango');
       if (ex.t === 'level' && !(ex.chart?.levels || []).some(v => v.id === ex.a)) errs.push(w + ': nivel inexistente');
       if (ex.t === 'order' && !(Array.isArray(ex.items) && ex.items.length >= 3 && new Set(ex.items).size === ex.items.length)) errs.push(w + ': order necesita 3+ elementos distintos');
@@ -226,6 +231,11 @@ for (const L of T.FLAT) {
 // Textos con números: plurales y tiempo de estudio redondeado.
 { const {t} = await import(pathToFileURL(path.join(root, 'src/textos.js')));
   if (t.vidas(1) !== '1 vida' || t.nEjercicios(1) !== '1 ejercicio' || t.tiempo(59.7) !== '1 h 0 min' || t.tiempo(119.6) !== '2 h 0 min' || t.tiempo(12.2) !== '12 min') errs.push('plurales o tiempo mal formados'); }
+
+// Al fallar una pregunta con «porque», se explica por qué la opción elegida no es correcta.
+{ const L = T.FLAT.find(l => l.kind === 'lesson' && l.ex.some(e => e.porque)), ex = L.ex.find(e => e.porque);
+  T.startRun(Object.assign({}, L, {ex: [ex], casos: []})); const mala = (ex.a + 1) % ex.opts.length; T.setSel(mala); T.check();
+  if (!app.innerHTML.includes('class="porque"') || !app.innerHTML.includes(ex.porque[mala].slice(0, 20))) errs.push('el fallo no explica por qué la opción elegida no es correcta'); T.goHome(); }
 
 // 3) Pantalla sin vidas
 T.startRun(T.FLAT[0]);

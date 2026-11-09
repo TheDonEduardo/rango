@@ -92,7 +92,13 @@
           ],
           "a": 0,
           "why": "«Págate primero»: si los 320 € salen el día de cobro, gastas lo que queda y no al revés.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            null,
+            "A fin de mes casi nunca sobra: el gasto se adapta a lo que hay en la cuenta.",
+            "Ganar más no garantiza ahorrar: los gastos suelen crecer con los ingresos.",
+            "Ahorrar solo en vacaciones no crea un hábito ni una cantidad fija."
+          ]
         },
         {
           "id": "bl1-5",
@@ -168,7 +174,13 @@
           ],
           "a": 0,
           "why": "Sin colchón, un imprevisto de 1.000 € te obligaría a vender quizá en el peor momento.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            null,
+            "Sin colchón, el primer imprevisto te obligaría a vender quizá en plena caída.",
+            "Pedir prestado para invertir añade intereses y riesgo antes de tener lo básico.",
+            "Nadie sabe cuándo llegará una caída; primero el colchón, luego invertir con regularidad."
+          ]
         }
       ]
     }

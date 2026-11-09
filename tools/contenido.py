@@ -146,3 +146,24 @@ def poner_guia(uid, tarjetas, mapa):
     u2['lessons'] = u['lessons']
     guardar(u2)
     empaquetar()
+
+
+def poner_porque(P):
+    """P = {id_ejercicio: [explicación de cada opción incorrecta, en el orden de las opciones]}.
+    Guarda ex['porque'] con null en la opción correcta. Al fallar, la app muestra la de la opción elegida."""
+    pend = dict(P)
+    for uid in indice():
+        u = leer(uid); cambio = False
+        for l in u.get('lessons') or []:
+            for e in l['ex']:
+                if e['id'] not in pend:
+                    continue
+                malas = pend.pop(e['id'])
+                assert e['t'] == 'choice' and len(malas) == len(e['opts']) - 1, f"{e['id']}: {len(malas)} explicaciones para {len(e['opts']) - 1} opciones incorrectas"
+                it = iter(malas)
+                e['porque'] = [None if k == e['a'] else next(it) for k in range(len(e['opts']))]
+                cambio = True
+        if cambio:
+            guardar(u)
+    assert not pend, 'ejercicios inexistentes: ' + ', '.join(pend)
+    empaquetar()

@@ -105,7 +105,13 @@
           ],
           "a": 0,
           "why": "En el mercado secundario el dinero va al vendedor; la empresa solo lo recibe cuando emite acciones nuevas, como en una OPV.",
-          "guia": "g1"
+          "guia": "g1",
+          "porque": [
+            null,
+            "La empresa solo recibe dinero cuando emite acciones nuevas, no cuando se compran en bolsa.",
+            "El Banco de España no interviene en la compraventa de acciones.",
+            "La CNMV supervisa el mercado, pero no compra ni vende acciones."
+          ]
         },
         {
           "id": "bj1-3",
@@ -128,7 +134,13 @@
           ],
           "a": 0,
           "why": "El precio es el último al que alguien compró y otro vendió: si hay más compradores dispuestos a pagar más, sube.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            null,
+            "La empresa no fija el precio de sus acciones: lo hace el mercado.",
+            "La CNMV supervisa, pero no fija precios.",
+            "El valor contable es una referencia, pero el precio puede estar muy por encima o por debajo."
+          ]
         }
       ]
     },
@@ -192,7 +204,13 @@
           ],
           "a": 0,
           "why": "A mercado pagarías 10,40 €, un 4 % por encima del precio de compra; con una limitada controlas lo que pagas.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            null,
+            "A mercado pagarías 10,40 €, un 4 % más que el precio de compra.",
+            "Con horquillas anchas el tipo de orden importa mucho.",
+            "Sí se puede comprar; solo conviene controlar el precio."
+          ]
         }
       ]
     }

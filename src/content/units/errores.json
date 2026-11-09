@@ -59,7 +59,13 @@
           ],
           "a": 1,
           "why": "Nadie sabe qué acción se multiplicará. Si te interesa, investígala tú y pon solo lo que podrías perder sin que te cambie la vida.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            "Todo en una acción es la forma más rápida de perder mucho si sale mal.",
+            null,
+            "Pedir prestado para invertir multiplica las pérdidas y añade intereses.",
+            "Las prisas son justo lo que buscan quienes venden promesas: primero investiga."
+          ]
         },
         {
           "id": "bi1-3",
@@ -82,7 +88,13 @@
           ],
           "a": 0,
           "why": "En 2 años la bolsa puede estar un 30 % por debajo. Lo que vas a necesitar pronto va en liquidez o renta fija a corto plazo.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            null,
+            "El dinero que no necesitarás en 10 años es justo el que sí puede ir a bolsa.",
+            "Las aportaciones planificadas a largo plazo son la forma sensata de invertir.",
+            "Si ya tienes el colchón cubierto, lo que sobra sí se puede invertir."
+          ]
         }
       ]
     },
@@ -121,7 +133,13 @@
           ],
           "a": 0,
           "why": "Al mercado no le importa a qué precio compraste. La pregunta útil es si hoy la comprarías: si la respuesta es no, mantenerla es otra decisión de inversión.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            null,
+            "Diversificar es repartir entre varias inversiones; no tiene que ver con no vender.",
+            "Rebalancear es volver al reparto elegido; aquí el problema es aferrarse al precio de compra.",
+            "El interés compuesto es ganar sobre lo ganado, no un sesgo."
+          ]
         },
         {
           "id": "bi2-4",

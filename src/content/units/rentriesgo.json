@@ -99,7 +99,13 @@
           ],
           "a": 1,
           "why": "0,6 × 5 % − 0,4 × 10 % = 3 % − 4 % = −1 %. Acertar más no basta si tus pérdidas son mayores que tus ganancias.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            "Acertar más de la mitad no basta si cada pérdida es el doble que cada ganancia.",
+            null,
+            "0,6 × 5 % = 3 % y 0,4 × 10 % = 4 %: el resultado no es cero, es −1 %.",
+            "Has restado al revés: ganas un 3 % en los aciertos y pierdes un 4 % en los fallos."
+          ]
         }
       ]
     },
@@ -120,7 +126,13 @@
           ],
           "a": 3,
           "why": "Una sola empresa puede caer un 30-50 % en un día por unos malos resultados. Repartir entre varias empresas y sectores limita el daño de cada una.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            "Hasta las buenas empresas caen un 30-50 % por unos resultados flojos o una mala noticia.",
+            "Tus acciones están separadas del patrimonio del bróker: si quiebra, siguen siendo tuyas.",
+            "La custodia es un coste pequeño; el riesgo real es tener todo en una sola empresa.",
+            null
+          ]
         },
         {
           "id": "bb2-2",
@@ -152,7 +164,13 @@
           ],
           "a": 1,
           "why": "B se mueve 5 veces más: un stop cercano saltaría con el ruido normal, así que va más lejos y, con el mismo riesgo en €, compras menos acciones. En la ruta técnica lo medirás con el ATR.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            "A se mueve poco: su stop va más cerca y, con los mismos euros de riesgo, compras más acciones.",
+            null,
+            "No es igual: el stop de B va cinco veces más lejos, así que con el mismo riesgo compras cinco veces menos.",
+            "Sin stop no sabes cuánto arriesgas: es justo lo que hay que decidir antes de comprar."
+          ]
         },
         {
           "id": "bb2-5",

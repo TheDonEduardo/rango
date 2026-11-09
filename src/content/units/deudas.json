@@ -49,7 +49,13 @@
           ],
           "a": 0,
           "why": "Cada euro que devuelves de una tarjeta al 20 % «rinde» un 20 % seguro, más de lo que suele dar la bolsa.",
-          "guia": "g1"
+          "guia": "g1",
+          "porque": [
+            null,
+            "El importe importa menos que el interés: la deuda más cara es la que más te cuesta.",
+            "La hipoteca suele tener el tipo más bajo: es la última que conviene adelantar.",
+            "La fecha da igual: lo que cuenta es el tipo de interés."
+          ]
         },
         {
           "id": "bm1-2",
@@ -131,7 +137,13 @@
           ],
           "a": 0,
           "why": "Con 10 € de amortización al mes, devolver 3.000 € llevaría años y costaría varias veces la deuda inicial.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            null,
+            "Se puede usar en internet como cualquier tarjeta; el problema es el interés.",
+            "Cobra en euros; el peligro es que la cuota apenas reduce la deuda.",
+            "No caduca cada mes: la deuda sigue y sigue generando intereses."
+          ]
         },
         {
           "id": "bm2-4",
@@ -145,7 +157,13 @@
           ],
           "a": 0,
           "why": "La bolsa mundial ha dado en torno a un 7 % anual a largo plazo, con años de pérdidas; la tarjeta cobra un 20 % todos los años.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            null,
+            "La bolsa no siempre da más: de media un 7 % y con años de pérdidas.",
+            "Un ETF no rinde un 20 % seguro; la tarjeta te cobra un 20 % todos los años.",
+            "No da igual: pagar la deuda rinde un 20 % sin riesgo."
+          ]
         }
       ]
     }
