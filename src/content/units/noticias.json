@@ -35,6 +35,7 @@
     {
       "id": "bp1",
       "title": "Titulares y cifras",
+      "ultimo": 4,
       "ex": [
         {
           "id": "bp1-1",
@@ -98,6 +99,7 @@
     {
       "id": "bp2",
       "title": "Ruido y señal",
+      "ultimo": 4,
       "ex": [
         {
           "id": "bp2-1",

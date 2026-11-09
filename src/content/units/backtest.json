@@ -57,6 +57,7 @@
     {
       "id": "bt1",
       "title": "Medir un sistema",
+      "ultimo": 4,
       "ex": [
         {
           "id": "bt1-1",
@@ -104,6 +105,7 @@
     {
       "id": "bt2",
       "title": "Trampas del backtest",
+      "ultimo": 4,
       "ex": [
         {
           "id": "bt2-1",

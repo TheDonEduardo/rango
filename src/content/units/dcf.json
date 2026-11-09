@@ -58,6 +58,7 @@
     {
       "id": "f11a",
       "title": "Valor actual",
+      "ultimo": 4,
       "ex": [
         {
           "id": "f11a-1",
@@ -101,6 +102,7 @@
     {
       "id": "f11b",
       "title": "Sensibilidad y margen",
+      "ultimo": 5,
       "ex": [
         {
           "id": "f11b-1",

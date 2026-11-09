@@ -34,6 +34,7 @@
     {
       "id": "bf1",
       "title": "Elegir bróker",
+      "ultimo": 4,
       "ex": [
         {
           "id": "bf1-1",
@@ -86,6 +87,7 @@
     {
       "id": "bf2",
       "title": "Bróker extranjero y divisa",
+      "ultimo": 4,
       "ex": [
         {
           "id": "bf2-1",

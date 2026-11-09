@@ -49,6 +49,7 @@
     {
       "id": "c1",
       "title": "Riesgo abierto",
+      "ultimo": 4,
       "ex": [
         {
           "id": "c1-1",
@@ -97,6 +98,7 @@
     {
       "id": "c2",
       "title": "Exposición y mercado",
+      "ultimo": 4,
       "ex": [
         {
           "id": "c2-1",

@@ -52,6 +52,7 @@
     {
       "id": "rb1",
       "title": "Volver al objetivo",
+      "ultimo": 5,
       "ex": [
         {
           "id": "rb1-1",
@@ -133,6 +134,7 @@
     {
       "id": "rb2",
       "title": "Rebalancear en España",
+      "ultimo": 4,
       "ex": [
         {
           "id": "rb2-1",

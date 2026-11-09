@@ -50,6 +50,7 @@
     {
       "id": "rt1",
       "title": "La regla del 4 %",
+      "ultimo": 4,
       "ex": [
         {
           "id": "rt1-1",
@@ -97,6 +98,7 @@
     {
       "id": "rt2",
       "title": "Riesgos de la retirada",
+      "ultimo": 4,
       "ex": [
         {
           "id": "rt2-1",

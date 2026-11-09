@@ -34,6 +34,7 @@
     {
       "id": "fa1",
       "title": "Cobros, inventario y caja",
+      "ultimo": 4,
       "ex": [
         {
           "id": "fa1-1",
@@ -81,6 +82,7 @@
     {
       "id": "fa2",
       "title": "Ajustes y otras señales",
+      "ultimo": 4,
       "ex": [
         {
           "id": "fa2-1",

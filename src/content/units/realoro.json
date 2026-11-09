@@ -34,6 +34,7 @@
     {
       "id": "io1",
       "title": "SOCIMI y REIT",
+      "ultimo": 4,
       "ex": [
         {
           "id": "io1-1",
@@ -87,6 +88,7 @@
     {
       "id": "io2",
       "title": "Oro",
+      "ultimo": 4,
       "ex": [
         {
           "id": "io2-1",

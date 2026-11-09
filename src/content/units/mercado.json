@@ -33,6 +33,7 @@
     {
       "id": "m1",
       "title": "Días de distribución",
+      "ultimo": 4,
       "ex": [
         {
           "id": "m1-1",
@@ -119,6 +120,7 @@
     {
       "id": "m2",
       "title": "Día de confirmación",
+      "ultimo": 4,
       "ex": [
         {
           "id": "m2-1",

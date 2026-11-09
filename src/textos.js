@@ -37,7 +37,7 @@ export const t={
   repasoTitulo:'Repaso espaciado', enRepaso:'En repaso', aprendidosT:'Aprendidos',
   repasoNota:'Un ejercicio fallado vuelve al día siguiente y luego a los 3, 7 y 14 días. Si lo aciertas en todos, queda aprendido.', repasoPendiente:n=>`${n} ${pl(n,'ejercicio que fallaste','ejercicios que fallaste')}`, repasar:'Repasar',
   proximamente:'Próximamente', completada:'Completada', plegar:'Plegar', verLecciones:'Ver lecciones',
-  precision:p=>`Precisión ${p} %`, bloqueada:'Bloqueada', nEjercicios:n=>`${n} ejercicios`,
+  precision:p=>`Precisión ${p} %`, bloqueada:'Bloqueada', nEjercicios:n=>`${n} ${pl(n,'ejercicio','ejercicios')}`,
   estadoNodo:{done:'completada',locked:'bloqueada',current:'disponible',open:'disponible'},
   fuenteCasos:(f,d)=>`Casos reales con datos de ${f} a ${d}. Es formación, no una recomendación de inversión.`,
   pie:'Prototipo. El progreso se guarda solo en este navegador.', avisoLegal:'Aviso legal',
@@ -63,7 +63,7 @@ export const t={
   reporteCopiado:'Aviso copiado: pégalo en un correo o mensaje a quien mantiene Rango.', reporteId:id=>`Anota este código para avisar del error: ${id}`,
 
   // Lección
-  salirLeccion:'Salir de la lección', progresoLeccion:'Progreso de la lección', vidas:n=>`${n} vidas`,
+  salirLeccion:'Salir de la lección', progresoLeccion:'Progreso de la lección', vidas:n=>`${n} ${pl(n,'vida','vidas')}`,
   casoReal:c=>`Caso real: ${c} · `, comprobar:'Comprobar', correcto:'Correcto', incorrecto:'Incorrecto', respuesta:'Respuesta',
   tipos:{choice:'Elige una respuesta',num:'Escribe el resultado',tap:'Toca una vela del gráfico',level:'Toca una línea del gráfico',
     order:'Ordena los pasos',match:'Empareja cada uno con su descripción',plan:'Arrastra las líneas del gráfico',slide:'Mueve el deslizador',zone:'Marca la zona: arrastra el techo y el suelo'},
@@ -131,7 +131,7 @@ export const t={
   // Estadísticas
   estadisticas:'Estadísticas', tuProgreso:'Tu progreso', xp:'XP', rachaM:'Racha', dias:n=>`${n} ${pl(n,'día','días')}`,
   aciertoPrimera:'Acierto a la primera', tiempoEstudio:'Tiempo de estudio',
-  tiempo:m=>m<60?`${Math.round(m)} min`:`${Math.floor(m/60)} h ${Math.round(m%60)} min`,
+  tiempo:m=>{m=Math.round(m);return m<60?`${m} min`:`${Math.floor(m/60)} h ${m%60} min`},
   leccionesRuta:(h,n,acc)=>`${h} / ${n} lecciones${acc==null?'':` · ${acc} % de precisión`}`, leccionesDe:r=>`Lecciones de ${r}`,
   puntosDebiles:'Tus puntos débiles', debilesTitulo:'Puntos débiles', fallado:n=>`fallado ${n} ${pl(n,'vez','veces')}`,
   practicar:n=>`Practicar ${n} ${pl(n,'ejercicio','ejercicios')}`,
@@ -140,6 +140,6 @@ export const t={
   copiaTitulo:'Copia de seguridad', copiaNota:'Tu progreso se guarda solo en este navegador. Descarga una copia para no perderlo o para pasarlo a otro dispositivo.',
   copiaGuardar:'Descargar copia', copiaRecuperar:'Recuperar copia', copiaSustituir:'Sustituir mi progreso', cancelar:'Cancelar',
   copiaResumen:(f,xp,l)=>`Copia del ${f}: ${xp} XP y ${l} lecciones completadas. Sustituirá tu progreso actual.`,
-  copiaMala:'Ese archivo no es una copia de Rango.', copiaHecha:'Progreso recuperado.', copiaDescargada:'Copia descargada.',
+  copiaMala:'Ese archivo no es una copia de Rango.', copiaNueva:'Esa copia es de una versión más nueva de Rango: actualiza la app antes de recuperarla.', copiaHecha:'Progreso recuperado.', copiaDescargada:'Copia descargada.',
   statsNota:'Estadísticas guardadas solo en este dispositivo. Cuentan desde que se añadieron, no desde tu primera lección.',
 };

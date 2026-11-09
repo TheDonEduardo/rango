@@ -67,6 +67,7 @@
     {
       "id": "r1",
       "title": "Stop con ATR",
+      "ultimo": 4,
       "ex": [
         {
           "id": "r1-1",
@@ -150,6 +151,7 @@
     {
       "id": "r2",
       "title": "Tamaño de posición",
+      "ultimo": 5,
       "ex": [
         {
           "id": "r2-1",

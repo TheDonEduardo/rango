@@ -72,6 +72,7 @@
     {
       "id": "g1",
       "title": "Sectores y grupos líderes",
+      "ultimo": 4,
       "ex": [
         {
           "id": "g1-1",
@@ -164,6 +165,7 @@
     {
       "id": "g2",
       "title": "Tipos de gap",
+      "ultimo": 4,
       "ex": [
         {
           "id": "g2-1",

@@ -28,6 +28,7 @@ const TEST_PASS=10;
 
 const VISTAS={home:homeHTML,legal:()=>legalHTML(false),sim:simHTML,simres:simResHTML,calc:calcHTML,lesson:lessonHTML,result:resultHTML,fail:failHTML,stats:statsHTML,guia:guiaHTML,glosario:glosarioHTML};
 function render(){
+  termOrigen=null;
   if(ses.view==='home'&&S.legal<LEGAL_V){$app.innerHTML=legalHTML(true);window.scrollTo(0,0);return}
   $app.innerHTML=VISTAS[ses.view]();
   if(ses.view==='home'){
@@ -46,10 +47,13 @@ const ir=v=>{if(ses.view==='home')ses.homeY=window.scrollY;ses.view=v;render()};
 // Puntos débiles: los ejercicios que más fallas (estadísticas locales).
 // Prueba de nivel de una ruta avanzada: dos preguntas por unidad, en orden; se para en la primera unidad con un fallo.
 // Se prefieren preguntas de elegir o calcular (las de gráfico dependen más del dibujo que del concepto).
+const preguntaNivel=l=>l.ex.find(e=>e.t==='choice'||e.t==='num')||l.ex[0];
+const idsNivel=u=>u.lessons.slice(0,2).map(l=>preguntaNivel(l).id);
 function preguntasNivel(track){
-  const facil=l=>l.ex.find(e=>e.t==='choice'||e.t==='num')||l.ex[0];
-  return UNITS.filter(u=>trackOf(u)===track&&u.lessons).flatMap(u=>u.lessons.slice(0,2).map(facil));
+  return UNITS.filter(u=>trackOf(u)===track&&u.lessons).flatMap(u=>u.lessons.slice(0,2).map(preguntaNivel));
 }
+// Unidad superada en una prueba: todas sus lecciones y su examen quedan completados (si no lo estaban).
+const marcarUnidad=u=>FLAT.filter(l=>l.unit===u).forEach(l=>{if(!S.done[l.id])S.done[l.id]={acc:1,test:true}});
 const esPrueba=L=>L.kind==='test'||L.kind==='nivel';
 function startRun(L){
   const ex=L.kind==='test'?shuffle(PLACEMENT.map(u=>EXBYID.get(u)))
@@ -87,10 +91,8 @@ function next(){
 function finishNivel(){
   const run=ses.run,track=run.L.track,res=run.res,superadas=[];
   for(const u of UNITS.filter(u=>trackOf(u)===track&&u.lessons)){
-    const ids=u.lessons.slice(0,2).map(l=>(l.ex.find(e=>e.t==='choice'||e.t==='num')||l.ex[0]).id);
-    if(!ids.every(x=>res[x]))break;
-    superadas.push(u.title);
-    FLAT.filter(l=>l.unit===u&&l.kind==='lesson').forEach(l=>{if(!S.done[l.id])S.done[l.id]={acc:1,test:true}});
+    if(!idsNivel(u).every(x=>res[x]))break;
+    superadas.push(u.title);marcarUnidad(u);
   }
   S.pruebas[track]={unidades:superadas.length,date:today()};
   save();
@@ -102,8 +104,7 @@ function finishTest(){
   UNITS.filter(u=>trackOf(u)==='basico'&&u.gate!==false&&u.lessons).forEach(u=>{
     const ids=PLACEMENT.filter(x=>u.lessons.some(l=>l.id===EXBYID.get(x).lesson));
     if(ids.length&&ids.every(x=>res[x])){
-      dominadas.push(u.title);
-      FLAT.filter(l=>l.unit===u).forEach(l=>{if(!S.done[l.id])S.done[l.id]={acc:1,test:true}});
+      dominadas.push(u.title);marcarUnidad(u);
     }
   });
   const abre=score>=TEST_PASS;
@@ -246,9 +247,10 @@ $app.addEventListener('click',e=>{
   if(ACCIONES[a])ACCIONES[a](b);
 });
 $app.addEventListener('change',e=>{
+  if(e.target.dataset&&e.target.dataset.calc&&ses.view==='calc'){save();return}
   if(e.target.id!=='imp-file'||!e.target.files||!e.target.files[0])return;
   const r=new FileReader();
-  r.onload=()=>{const c=leerCopia(String(r.result));if(!c){toast(t.copiaMala);return}ses.copia=c;render();const b=$app.querySelector('[data-act=impok]');if(b)b.focus({preventScroll:true})};
+  r.onload=()=>{const c=leerCopia(String(r.result));if(c==='nueva'){toast(t.copiaNueva);return}if(!c){toast(t.copiaMala);return}ses.copia=c;render();const b=$app.querySelector('[data-act=impok]');if(b)b.focus({preventScroll:true})};
   r.readAsText(e.target.files[0]);
 });
 $app.addEventListener('input',e=>{
@@ -257,7 +259,7 @@ $app.addEventListener('input',e=>{
   const k=e.target.dataset&&e.target.dataset.calc;
   if((k==='cmp'||k==='crash')&&ses.view==='calc'){S.calc[k]=e.target.checked;save();render();const c=$app.querySelector('#calc-'+k);if(c)c.focus({preventScroll:true});return}
   if(k&&ses.view==='calc'){
-    S.calc[k]=+e.target.value;save();
+    S.calc[k]=+e.target.value;  // se guarda al soltar (evento change)
     const c=CALC_CTRL.find(x=>x[0]===k);$app.querySelector('#out-'+k).textContent=c[5](S.calc[k]);
     $app.querySelector('#calcOut').innerHTML=calcOutHTML();return;
   }
@@ -267,7 +269,7 @@ $app.addEventListener('input',e=>{
 document.addEventListener('keydown',e=>{
   if(e.key==='Escape'&&$app.querySelector('.glos')){e.preventDefault();cerrarTermino(true);return}
   // Guía: flechas izquierda y derecha para pasar tarjetas.
-  if(ses.view==='guia'&&ses.guia){
+  if(ses.view==='guia'&&ses.guia&&!$app.querySelector('.glos')){
     const g=ses.guia,n=g.unit.guia.length;
     if(e.key==='ArrowRight'&&g.i<n-1){e.preventDefault();ACCIONES.guianext()}
     else if(e.key==='ArrowLeft'&&g.i>0){e.preventDefault();ACCIONES.guiaprev()}
@@ -286,7 +288,7 @@ document.addEventListener('keydown',e=>{
 let toque=null;
 $app.addEventListener('pointerdown',e=>{if(ses.view==='guia'&&e.pointerType!=='mouse')toque={x:e.clientX,y:e.clientY}});
 $app.addEventListener('pointerup',e=>{
-  if(!toque||ses.view!=='guia'){toque=null;return}
+  if(!toque||ses.view!=='guia'||$app.querySelector('.glos')){toque=null;return}
   const dx=e.clientX-toque.x,dy=e.clientY-toque.y,g=ses.guia;toque=null;
   if(Math.abs(dx)<50||Math.abs(dx)<Math.abs(dy)*1.5)return;
   if(dx<0&&g.i<g.unit.guia.length-1)ACCIONES.guianext();else if(dx>0&&g.i>0)ACCIONES.guiaprev();

@@ -59,6 +59,7 @@
     {
       "id": "f8a",
       "title": "Tipos e inflación",
+      "ultimo": 4,
       "ex": [
         {
           "id": "f8a-1",
@@ -113,6 +114,7 @@
     {
       "id": "f8b",
       "title": "Curva de tipos y ciclo",
+      "ultimo": 4,
       "ex": [
         {
           "id": "f8b-1",

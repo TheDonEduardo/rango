@@ -34,6 +34,7 @@
     {
       "id": "dv1",
       "title": "Riesgo de divisa",
+      "ultimo": 4,
       "ex": [
         {
           "id": "dv1-1",
@@ -97,6 +98,7 @@
     {
       "id": "dv2",
       "title": "¿Cubrir o no?",
+      "ultimo": 4,
       "ex": [
         {
           "id": "dv2-1",

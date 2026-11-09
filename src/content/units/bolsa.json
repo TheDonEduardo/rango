@@ -66,6 +66,7 @@
     {
       "id": "bj1",
       "title": "Mercado primario y secundario",
+      "ultimo": 4,
       "ex": [
         {
           "id": "bj1-1",
@@ -134,6 +135,7 @@
     {
       "id": "bj2",
       "title": "Órdenes y horquilla",
+      "ultimo": 4,
       "ex": [
         {
           "id": "bj2-1",

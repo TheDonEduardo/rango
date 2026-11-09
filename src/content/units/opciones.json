@@ -59,6 +59,7 @@
     {
       "id": "o1",
       "title": "Call y put",
+      "ultimo": 4,
       "ex": [
         {
           "id": "o1-1",
@@ -122,6 +123,7 @@
     {
       "id": "o2",
       "title": "Put de protección",
+      "ultimo": 4,
       "ex": [
         {
           "id": "o2-1",

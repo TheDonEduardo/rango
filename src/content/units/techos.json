@@ -65,6 +65,7 @@
     {
       "id": "wd1",
       "title": "Distribución de Wyckoff",
+      "ultimo": 4,
       "ex": [
         {
           "id": "wd1-1",
@@ -139,6 +140,7 @@
     {
       "id": "tf1",
       "title": "Semanal y diario",
+      "ultimo": 4,
       "ex": [
         {
           "id": "tf1-1",

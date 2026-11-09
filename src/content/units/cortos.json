@@ -68,6 +68,7 @@
     {
       "id": "k1",
       "title": "Vender en corto",
+      "ultimo": 4,
       "ex": [
         {
           "id": "k1-1",
@@ -120,6 +121,7 @@
     {
       "id": "k2",
       "title": "Fase 4",
+      "ultimo": 4,
       "ex": [
         {
           "id": "k2-1",

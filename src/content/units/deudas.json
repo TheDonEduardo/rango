@@ -35,6 +35,7 @@
     {
       "id": "bm1",
       "title": "El coste de deber",
+      "ultimo": 4,
       "ex": [
         {
           "id": "bm1-1",
@@ -98,6 +99,7 @@
     {
       "id": "bm2",
       "title": "Revolving y prioridades",
+      "ultimo": 4,
       "ex": [
         {
           "id": "bm2-1",

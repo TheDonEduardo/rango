@@ -58,6 +58,7 @@
     {
       "id": "bb1",
       "title": "Ganar y perder",
+      "ultimo": 4,
       "ex": [
         {
           "id": "bb1-1",
@@ -105,6 +106,7 @@
     {
       "id": "bb2",
       "title": "Repartir y limitar el riesgo",
+      "ultimo": 5,
       "ex": [
         {
           "id": "bb2-1",

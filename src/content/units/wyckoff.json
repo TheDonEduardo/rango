@@ -110,6 +110,7 @@
     {
       "id": "w1",
       "title": "Acumulación y spring",
+      "ultimo": 7,
       "ex": [
         {
           "id": "w1-1",
@@ -327,6 +328,7 @@
     {
       "id": "w2",
       "title": "Esfuerzo y resultado (VSA)",
+      "ultimo": 4,
       "ex": [
         {
           "id": "w2-1",

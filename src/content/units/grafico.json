@@ -154,6 +154,7 @@
     {
       "id": "bc1",
       "title": "Precio y tendencia",
+      "ultimo": 5,
       "ex": [
         {
           "id": "bc1-1",
@@ -305,6 +306,7 @@
     {
       "id": "bc2",
       "title": "Tu primer plan",
+      "ultimo": 6,
       "ex": [
         {
           "id": "bc2-1",

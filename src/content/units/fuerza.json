@@ -49,6 +49,7 @@
     {
       "id": "rs1",
       "title": "Medir la fuerza relativa",
+      "ultimo": 4,
       "ex": [
         {
           "id": "rs1-1",
@@ -118,6 +119,7 @@
     {
       "id": "rs2",
       "title": "Comprar líderes",
+      "ultimo": 4,
       "ex": [
         {
           "id": "rs2-1",

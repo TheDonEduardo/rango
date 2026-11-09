@@ -31,8 +31,12 @@ export const exportar=()=>JSON.stringify({app:'rango',v:STATE_V,fecha:today(),es
 // Lee una copia y devuelve {estado, resumen} o null si no es una copia válida de Rango (no toca el progreso).
 export function leerCopia(texto){
   try{
-    const j=JSON.parse(texto);
-    if(!j||j.app!=='rango'||!j.estado||typeof j.estado!=='object'||typeof j.estado.xp!=='number'||typeof j.estado.done!=='object')return null;
+    const j=JSON.parse(texto),e=j&&j.estado,obj=v=>!!v&&typeof v==='object'&&!Array.isArray(v);
+    if(!j||j.app!=='rango'||!obj(e)||typeof e.xp!=='number'||!obj(e.done))return null;
+    // Los campos que sean colecciones tienen que serlo (una copia retocada con null rompería la app).
+    if(['srs','sim','stats','guias','aprendidos','dominadas','pruebas'].some(k=>k in e&&!obj(e[k]))||(obj(e.stats)&&'ex' in e.stats&&!obj(e.stats.ex)))return null;
+    // Copia hecha con una versión más nueva de Rango: no se puede convertir hacia atrás.
+    if((e.v||1)>STATE_V)return 'nueva';
     const estado=completar(JSON.parse(JSON.stringify(j.estado)));
     return {estado,resumen:{fecha:j.fecha||'',xp:estado.xp,lecciones:Object.keys(estado.done).length}};
   }catch(e){return null}

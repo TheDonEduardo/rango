@@ -35,6 +35,7 @@
     {
       "id": "bo1",
       "title": "Qué puedes comprar",
+      "ultimo": 4,
       "ex": [
         {
           "id": "bo1-1",
@@ -98,6 +99,7 @@
     {
       "id": "bo2",
       "title": "Riesgo y rentabilidad",
+      "ultimo": 4,
       "ex": [
         {
           "id": "bo2-1",

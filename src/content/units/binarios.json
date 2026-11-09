@@ -88,6 +88,7 @@
     {
       "id": "b1",
       "title": "Gaps de resultados",
+      "ultimo": 4,
       "ex": [
         {
           "id": "b1-1",
@@ -167,6 +168,7 @@
     {
       "id": "b2",
       "title": "Sizing con riesgo binario",
+      "ultimo": 4,
       "ex": [
         {
           "id": "b2-1",
@@ -215,6 +217,7 @@
     {
       "id": "b3",
       "title": "Small caps: dilución y float",
+      "ultimo": 4,
       "ex": [
         {
           "id": "b3-1",

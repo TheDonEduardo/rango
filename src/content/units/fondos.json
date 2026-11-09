@@ -35,6 +35,7 @@
     {
       "id": "bn1",
       "title": "Cómo funciona un fondo",
+      "ultimo": 4,
       "ex": [
         {
           "id": "bn1-1",
@@ -98,6 +99,7 @@
     {
       "id": "bn2",
       "title": "Comisiones y tipos de fondo",
+      "ultimo": 4,
       "ex": [
         {
           "id": "bn2-1",

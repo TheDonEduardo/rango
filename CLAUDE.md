@@ -74,7 +74,7 @@ Guía de la unidad (opcional): `guia: [{id: "g1", titulo, texto, ejemplo?, chart
 
 Lección: `{id, title, ex: [...]}`. Los `id` deben ser únicos (se guardan en localStorage).
 
-Cada ejercicio lleva `id: "<lección>-<n>"` fijo (lo usan el repaso espaciado, las estadísticas y el test de nivel). Nunca cambies ni reutilices un id: si sobra un ejercicio, bórralo y su id queda sin usar; los nuevos toman el siguiente número (contenido.py lo hace solo). Reordenar ejercicios ya no rompe nada.
+Cada lección guarda en `ultimo` el mayor número de ejercicio asignado nunca (el test exige que ningún id lo supere). Cada ejercicio lleva `id: "<lección>-<n>"` fijo (lo usan el repaso espaciado, las estadísticas y el test de nivel). Nunca cambies ni reutilices un id: si sobra un ejercicio, bórralo y su id queda sin usar; los nuevos toman el siguiente número (contenido.py lo hace solo). Reordenar ejercicios ya no rompe nada.
 
 `revisar: "AAAA-MM"` (en la unidad o en el ejercicio): contenido que depende de normas o datos que cambian (tramos fiscales, FOGAIN, SOCIMI, informes SPIVA). El test avisa al llegar la fecha: revisa el texto con la norma vigente y mueve la fecha un año.
 

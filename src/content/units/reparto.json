@@ -50,6 +50,7 @@
     {
       "id": "pr1",
       "title": "Acciones, bonos y horizonte",
+      "ultimo": 4,
       "ex": [
         {
           "id": "pr1-1",
@@ -98,6 +99,7 @@
     {
       "id": "pr2",
       "title": "Tolerancia y diversificación",
+      "ultimo": 4,
       "ex": [
         {
           "id": "pr2-1",

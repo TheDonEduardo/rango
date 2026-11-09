@@ -106,6 +106,7 @@
     {
       "id": "vcp1",
       "title": "Contracciones de volatilidad",
+      "ultimo": 4,
       "ex": [
         {
           "id": "vcp1-1",
@@ -159,6 +160,7 @@
     {
       "id": "vcp2",
       "title": "Pivote y ruptura",
+      "ultimo": 5,
       "ex": [
         {
           "id": "vcp2-1",

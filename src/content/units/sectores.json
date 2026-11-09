@@ -34,6 +34,7 @@
     {
       "id": "f6a",
       "title": "Cíclicos, defensivos y sensibles",
+      "ultimo": 4,
       "ex": [
         {
           "id": "f6a-1",
@@ -98,6 +99,7 @@
     {
       "id": "f6b",
       "title": "Qué mirar en cada sector",
+      "ultimo": 4,
       "ex": [
         {
           "id": "f6b-1",

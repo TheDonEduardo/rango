@@ -28,7 +28,7 @@ export function homeHTML(){
   const cur=TF.find(l=>st[l.id]==='current'),primera=UNITS.find(u=>trackOf(u)===S.track);
   if(cur&&cur.unit!==primera)h+=`<section class="cont" aria-label="${t.siguienteLeccion}"><div><span>${t.unidadN(cur.unit.n)} · ${esc(cur.unit.title)}</span><b>${esc(cur.title)}</b></div><button class="btn primary" data-act="open" data-id="${cur.id}">${t.continuar}</button></section>`;
   const due=srsDue().length;
-  if(due)h+=`<section class="srs" aria-label="${t.repasoDia}"><div><b>${t.repasoDia}</b><span>${t.repasoPendiente(due)}${srsResumen().aprendidos?` · ${t.aprendidos(srsResumen().aprendidos)}`:''}</span></div><button class="btn primary" data-act="srs">${t.repasar}</button></section>`;
+  if(due)h+=`<section class="srs" aria-label="${t.repasoDia}"><div><b>${t.repasoDia}</b><span>${t.repasoPendiente(due)}${(n=>n?` · ${t.aprendidos(n)}`:'')(srsResumen().aprendidos)}</span></div><button class="btn primary" data-act="srs">${t.repasar}</button></section>`;
   UNITS.filter(u=>trackOf(u)===S.track).forEach(u=>{
     if(!u.lessons){
       h+=`<section class="unit soon"><div class="ban"><div><div class="u">${t.unidadN(u.n)}</div><h2>${u.title}</h2><p>${u.blurb}</p></div><span class="cnt">${t.proximamente}</span></div></section>`;

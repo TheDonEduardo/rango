@@ -35,6 +35,7 @@
     {
       "id": "bi1",
       "title": "Errores con el dinero",
+      "ultimo": 4,
       "ex": [
         {
           "id": "bi1-1",
@@ -88,6 +89,7 @@
     {
       "id": "bi2",
       "title": "Errores al operar",
+      "ultimo": 4,
       "ex": [
         {
           "id": "bi2-1",

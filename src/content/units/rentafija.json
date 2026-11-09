@@ -58,6 +58,7 @@
     {
       "id": "bh1",
       "title": "Letras y bonos",
+      "ultimo": 4,
       "ex": [
         {
           "id": "bh1-1",
@@ -107,6 +108,7 @@
     {
       "id": "bh2",
       "title": "Tipos y duración",
+      "ultimo": 4,
       "ex": [
         {
           "id": "bh2-1",

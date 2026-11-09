@@ -75,7 +75,9 @@ def _con_ids(lid, exs, desde):
 
 
 def _siguiente(l):
-    return max([int(e['id'].rsplit('-', 1)[1]) for e in l['ex']] or [0]) + 1
+    # «ultimo» guarda el mayor número asignado nunca en la lección: aunque se borre el último ejercicio,
+    # su id no se vuelve a usar (el progreso guardado de los usuarios apunta a él).
+    return max([int(e['id'].rsplit('-', 1)[1]) for e in l['ex']] + [l.get('ultimo', 0)]) + 1
 
 
 def empaquetar():
@@ -100,6 +102,7 @@ def nueva_unidad(u, despues_de):
     for l in u['lessons']:
         assert l['id'] not in usadas, 'id de lección repetido: ' + l['id']
         l['ex'] = _con_ids(l['id'], l['ex'], 1)
+        l['ultimo'] = len(l['ex'])
     guardar(u)
     idx.insert(idx.index(despues_de) + 1, u['id'])
     (DIR / 'index.json').write_text(json.dumps(idx, ensure_ascii=False).replace(', ', ',') + '\n', encoding='utf-8')
@@ -112,7 +115,9 @@ def anadir(lesson_id, exs):
         u = leer(uid)
         for l in u.get('lessons') or []:
             if l['id'] == lesson_id:
-                l['ex'] += _con_ids(lesson_id, exs, _siguiente(l))
+                desde = _siguiente(l)
+                l['ex'] += _con_ids(lesson_id, exs, desde)
+                l['ultimo'] = desde + len(exs) - 1
                 guardar(u)
                 empaquetar()
                 return

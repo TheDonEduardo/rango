@@ -31,6 +31,7 @@ const exIds = new Set();
 for (const u of units) for (const l of u.lessons || []) for (const ex of l.ex) {
   if (!ex.id || !ex.id.startsWith(l.id + '-') || !/^\d+$/.test(ex.id.slice(l.id.length + 1))) errs.push(`${l.id}: id de ejercicio ausente o mal formado: ${ex.id}`);
   if (exIds.has(ex.id)) errs.push('id de ejercicio repetido: ' + ex.id);
+  if (!(l.ultimo >= +ex.id.slice(l.id.length + 1))) errs.push(`${ex.id}: supera «ultimo» de su lección (${l.ultimo}); usa tools/contenido.py o súbelo`);
   exIds.add(ex.id);
 }
 const casosPath = path.join(root, 'src/content/casos.json');
@@ -222,6 +223,10 @@ for (const L of T.FLAT) {
   if (medir('prueba', {id: 'x'})) errs.push('la medición envía datos sin MEDICION_URL configurada');
   T.getState().medir = false; T.openStats(); if (app.innerHTML.includes('data-act="medir"')) errs.push('se ofrece la medición sin servicio configurado'); T.goHome(); }
 
+// Textos con números: plurales y tiempo de estudio redondeado.
+{ const {t} = await import(pathToFileURL(path.join(root, 'src/textos.js')));
+  if (t.vidas(1) !== '1 vida' || t.nEjercicios(1) !== '1 ejercicio' || t.tiempo(59.7) !== '1 h 0 min' || t.tiempo(119.6) !== '2 h 0 min' || t.tiempo(12.2) !== '12 min') errs.push('plurales o tiempo mal formados'); }
+
 // 3) Pantalla sin vidas
 T.startRun(T.FLAT[0]);
 for (let i = 0; i < 3; i++) { const ex = T.getRun().queue[0]; give(ex, wrong(ex)); T.check(); T.next(); }
@@ -360,6 +365,8 @@ if (fs.existsSync(semPath)) {
   const hechas = tec.filter(u => u.lessons.every(l => st.done[l.id])).map(u => u.id);
   if (hechas.join() !== tec.slice(0, 2).map(u => u.id).join() || !app.innerHTML.includes('Prueba completada') || st.pruebas.tecnico?.unidades !== 2) errs.push('la prueba de nivel no marca justo las unidades superadas: ' + hechas.join());
   if (T.homeHTML().includes('data-act="nivel"')) errs.push('la prueba de nivel se vuelve a ofrecer tras hacerla');
+  if (!tec.slice(0, 2).every(u => st.done[u.id + '-rev'])) errs.push('la prueba de nivel no completa el examen de las unidades superadas');
+  if (!T.homeHTML().includes(`node current" style="--i:0;--off:0" data-act="open" data-id="${tec[2].lessons[0].id}"`) && !new RegExp(`node current[^>]*data-id="${tec[2].lessons[0].id}"`).test(T.homeHTML())) errs.push('tras la prueba de nivel, la lección actual no es la primera de la unidad siguiente');
   st.done = antes; T.goHome();
 }
 
@@ -409,6 +416,8 @@ if (fs.existsSync(semPath)) {
   const st = T.getState(), copia = T.exportar(), c = T.leerCopia(copia);
   if (!c || c.resumen.xp !== st.xp || JSON.stringify(c.estado) !== JSON.stringify(st)) errs.push('la copia de seguridad no recupera el mismo progreso');
   if (T.leerCopia('{"xp":5}') || T.leerCopia('no es json') || T.leerCopia(JSON.stringify({app: 'rango', estado: {xp: 'mucho'}}))) errs.push('se acepta una copia no válida');
+  if (T.leerCopia(JSON.stringify({app: 'rango', estado: {xp: 1, done: {}, srs: null}})) || T.leerCopia(JSON.stringify({app: 'rango', estado: {xp: 1, done: null}}))) errs.push('se acepta una copia con colecciones nulas');
+  if (T.leerCopia(JSON.stringify({app: 'rango', estado: {v: 99, xp: 1, done: {}}})) !== 'nueva') errs.push('se acepta una copia de una versión más nueva');
   const vieja = T.leerCopia(JSON.stringify({app: 'rango', estado: {xp: 10, done: {}, srs: {'ba1#0': {step: 0, due: '2026-01-01'}}}}));
   if (!vieja || !vieja.estado.srs['ba1-1'] || vieja.estado.v !== st.v) errs.push('una copia antigua no se migra al recuperarla');
   T.openStats(); if (!app.innerHTML.includes('data-act="compartir"')) errs.push('las estadísticas no permiten compartir el progreso');

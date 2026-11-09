@@ -34,6 +34,7 @@
     {
       "id": "fra",
       "title": "Múltiplos frente a comparables",
+      "ultimo": 4,
       "ex": [
         {
           "id": "fra-1",
@@ -81,6 +82,7 @@
     {
       "id": "frb",
       "title": "Elegir el múltiplo",
+      "ultimo": 4,
       "ex": [
         {
           "id": "frb-1",

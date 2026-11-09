@@ -34,6 +34,7 @@
     {
       "id": "f9a",
       "title": "Dividendos",
+      "ultimo": 4,
       "ex": [
         {
           "id": "f9a-1",
@@ -81,6 +82,7 @@
     {
       "id": "f9b",
       "title": "Recompras",
+      "ultimo": 4,
       "ex": [
         {
           "id": "f9b-1",

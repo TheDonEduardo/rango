@@ -27,9 +27,9 @@ export function statsHTML(){
   const rutas=TRACKS.map(ru=>{
     const ls=FLAT.filter(l=>l.kind==='lesson'&&trackOf(l.unit)===ru.id),hechas=ls.filter(l=>S.done[l.id]);
     const acc=hechas.length?hechas.reduce((a,l)=>a+S.done[l.id].acc,0)/hechas.length:null;
-    return `<li><div class="st-h"><b>${ru.title}</b><span>${t.leccionesRuta(hechas.length,ls.length,acc==null?null:Math.round(acc*100))}${dom(ru.id)?` · ${t.nDominadas(dom(ru.id))}`:''}</span></div><div class="bar" role="progressbar" aria-label="${t.leccionesDe(ru.title)}" aria-valuemin="0" aria-valuemax="${ls.length}" aria-valuenow="${hechas.length}"><i style="width:${hechas.length/ls.length*100}%"></i></div></li>`;
+    return `<li><div class="st-h"><b>${ru.title}</b><span>${t.leccionesRuta(hechas.length,ls.length,acc==null?null:Math.round(acc*100))}${(d=>d?` · ${t.nDominadas(d)}`:'')(dom(ru.id))}</span></div><div class="bar" role="progressbar" aria-label="${t.leccionesDe(ru.title)}" aria-valuemin="0" aria-valuemax="${ls.length}" aria-valuenow="${hechas.length}"><i style="width:${hechas.length/ls.length*100}%"></i></div></li>`;
   }).join('');
-  const fl=flojos(5),total=flojos(Infinity).length;
+  const todos=flojos(Infinity),fl=todos.slice(0,5),total=todos.length,sr=srsResumen();
   const lecDe=ex=>FLAT.find(l=>l.id===ex.lesson);
   const debiles=fl.length?`<ul class="weak">${fl.map(ex=>`<li><span>${tx(ex.q.length>90?ex.q.slice(0,88)+'…':ex.q)}</span><small>${esc(lecDe(ex).title)} · ${t.fallado(S.stats.ex[ex.id].f)}</small></li>`).join('')}</ul>
     <button class="btn primary" data-act="weak">${t.practicar(Math.min(total,SRS_MAX))}</button>`
@@ -41,7 +41,7 @@ export function statsHTML(){
   <h2 class="sub">${t.metaDiaria}</h2><div class="meta-opc" role="group" aria-label="${t.metaDiaria}">${META_OPC.map(m=>`<button class="btn ${S.meta===m?'primary':'line'}" data-act="meta" data-m="${m}" aria-pressed="${S.meta===m}">${t.metaXP(m)}</button>`).join('')}</div>
   <p class="note">${t.protectores(S.protector,PROTECTOR_MAX)}</p>
   <ul class="st-rutas">${rutas}</ul>
-  <h2 class="sub">${t.repasoTitulo}</h2><dl class="simk"><div><dt>${t.enRepaso}</dt><dd>${srsResumen().enRepaso}</dd></div><div><dt>${t.aprendidosT}</dt><dd>${srsResumen().aprendidos}</dd></div></dl><p class="note">${t.repasoNota}</p>
+  <h2 class="sub">${t.repasoTitulo}</h2><dl class="simk"><div><dt>${t.enRepaso}</dt><dd>${sr.enRepaso}</dd></div><div><dt>${t.aprendidosT}</dt><dd>${sr.aprendidos}</dd></div></dl><p class="note">${t.repasoNota}</p>
   <h2 class="sub">${t.puntosDebiles}</h2>${debiles}
   ${medicionDisponible()?`<h2 class="sub">${t.medicionTitulo}</h2><p class="note">${t.medicionNota}</p><button class="btn line" data-act="medir" data-v="${S.medir?0:1}" aria-pressed="${S.medir}">${S.medir?t.medicionQuitar:t.medicionActivar}</button>`:''}
   <h2 class="sub">${t.copiaTitulo}</h2><p class="note">${t.copiaNota}</p>

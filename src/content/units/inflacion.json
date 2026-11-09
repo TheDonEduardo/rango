@@ -45,6 +45,7 @@
     {
       "id": "in1",
       "title": "Rentabilidad real",
+      "ultimo": 4,
       "ex": [
         {
           "id": "in1-1",
@@ -93,6 +94,7 @@
     {
       "id": "in2",
       "title": "Qué protege de la inflación",
+      "ultimo": 4,
       "ex": [
         {
           "id": "in2-1",

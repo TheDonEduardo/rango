@@ -52,6 +52,7 @@
     {
       "id": "bg1",
       "title": "Aportar cada mes",
+      "ultimo": 4,
       "ex": [
         {
           "id": "bg1-1",
@@ -100,6 +101,7 @@
     {
       "id": "bg2",
       "title": "Fondos, ETF y pensiones",
+      "ultimo": 4,
       "ex": [
         {
           "id": "bg2-1",

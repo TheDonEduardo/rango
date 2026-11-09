@@ -50,6 +50,7 @@
     {
       "id": "ob1",
       "title": "Plazo y activo",
+      "ultimo": 4,
       "ex": [
         {
           "id": "ob1-1",
@@ -113,6 +114,7 @@
     {
       "id": "ob2",
       "title": "Cuánto aportar",
+      "ultimo": 4,
       "ex": [
         {
           "id": "ob2-1",

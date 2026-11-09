@@ -34,6 +34,7 @@
     {
       "id": "bd1",
       "title": "Índices",
+      "ultimo": 4,
       "ex": [
         {
           "id": "bd1-1",
@@ -86,6 +87,7 @@
     {
       "id": "bd2",
       "title": "ETF",
+      "ultimo": 4,
       "ex": [
         {
           "id": "bd2-1",

@@ -54,6 +54,7 @@
     {
       "id": "bq1",
       "title": "Señales de alarma",
+      "ultimo": 4,
       "ex": [
         {
           "id": "bq1-1",
@@ -123,6 +124,7 @@
     {
       "id": "bq2",
       "title": "Cómo cae un Ponzi",
+      "ultimo": 4,
       "ex": [
         {
           "id": "bq2-1",

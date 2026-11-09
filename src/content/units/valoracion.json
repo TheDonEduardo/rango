@@ -34,6 +34,7 @@
     {
       "id": "f2a",
       "title": "PER y PEG",
+      "ultimo": 4,
       "ex": [
         {
           "id": "f2a-1",
@@ -105,6 +106,7 @@
     {
       "id": "f2b",
       "title": "EV, caja y expectativas",
+      "ultimo": 5,
       "ex": [
         {
           "id": "f2b-1",
