@@ -4,6 +4,32 @@
   "track": "pasiva",
   "title": "Fondos y ETF por dentro",
   "blurb": "Qué hay detrás del índice y qué mirar antes de elegir.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Cómo replica un fondo",
+      "texto": "Un fondo indexado puede comprar todas las acciones del índice, una muestra representativa o conseguir su rentabilidad con un contrato con un banco (réplica sintética).",
+      "ejemplo": "Lo que importa al final es la diferencia de seguimiento: el índice sube un 10 % y el fondo un 9,75 %, 0,25 puntos."
+    },
+    {
+      "id": "g2",
+      "titulo": "El domicilio importa",
+      "texto": "Muchos ETF europeos de acciones de EE. UU. están en Irlanda porque allí la retención sobre los dividendos es del 15 % en lugar del 30 %.",
+      "ejemplo": "Con un 2 % de dividendos, el fondo ahorra 0,30 puntos al año: más que la comisión de muchos ETF."
+    },
+    {
+      "id": "g3",
+      "titulo": "Más allá del TER",
+      "texto": "El TER es solo una parte del coste. Cuentan también la diferencia de seguimiento y la horquilla de compraventa, y conviene evitar ETF muy pequeños que pueden cerrar.",
+      "ejemplo": "Una horquilla del 0,30 % te cuesta un 0,30 % al comprar y vender al momento."
+    },
+    {
+      "id": "g4",
+      "titulo": "Concentración",
+      "texto": "Un índice ponderado por capitalización puede estar muy concentrado en pocas empresas. Mira cuánto pesan las mayores.",
+      "ejemplo": "Si las 10 mayores pesan un 25 % y tienes 3.600 €, 900 € están en esas 10 empresas."
+    }
+  ],
   "lessons": [
     {
       "id": "pd1",
@@ -31,7 +57,8 @@
               "Lo que se separa el fondo de su índice"
             ]
           ],
-          "why": "Las tres formas de réplica buscan el mismo resultado; lo que importa al final es cuánto se separa el fondo de su índice."
+          "why": "Las tres formas de réplica buscan el mismo resultado; lo que importa al final es cuánto se separa el fondo de su índice.",
+          "guia": "g1"
         },
         {
           "id": "pd1-2",
@@ -39,7 +66,8 @@
           "q": "El índice sube un 10,00 % en el año y el fondo, un 9,75 %. ¿Cuál es la diferencia de seguimiento, en puntos?",
           "unit": "",
           "a": 0.25,
-          "why": "10,00 − 9,75 = 0,25 puntos. Incluye la comisión y otros costes; a veces el préstamo de valores la compensa en parte."
+          "why": "10,00 − 9,75 = 0,25 puntos. Incluye la comisión y otros costes; a veces el préstamo de valores la compensa en parte.",
+          "guia": "g1"
         },
         {
           "id": "pd1-3",
@@ -53,7 +81,8 @@
           ],
           "a": 2,
           "why": "El convenio entre Irlanda y EE. UU. deja la retención sobre los dividendos en el 15 %, frente al 30 % general. Ese coste lo paga el fondo, aunque tú no lo veas.",
-          "revisar": "2027-06"
+          "revisar": "2027-06",
+          "guia": "g2"
         },
         {
           "id": "pd1-4",
@@ -62,7 +91,8 @@
           "unit": "",
           "a": 0.3,
           "why": "2 % × 30 % = 0,60 puntos frente a 2 % × 15 % = 0,30 puntos: ahorra 0,30 al año, más que la comisión de muchos ETF.",
-          "revisar": "2027-06"
+          "revisar": "2027-06",
+          "guia": "g2"
         }
       ]
     },
@@ -81,7 +111,8 @@
             "No se puede saber con esto"
           ],
           "a": 0,
-          "why": "El TER es solo una parte del coste. Lo que recibes es la rentabilidad del índice menos la diferencia de seguimiento, y ahí B pierde 0,20 puntos menos al año."
+          "why": "El TER es solo una parte del coste. Lo que recibes es la rentabilidad del índice menos la diferencia de seguimiento, y ahí B pierde 0,20 puntos menos al año.",
+          "guia": "g3"
         },
         {
           "id": "pd2-2",
@@ -89,7 +120,8 @@
           "q": "Un ETF tiene una horquilla de compraventa del 0,30 %. Si lo compras y lo vendes una vez, ¿cuánto pierdes aproximadamente por la horquilla?",
           "unit": "%",
           "a": 0.3,
-          "why": "Compras al precio de venta y vendes al de compra: pierdes la horquilla completa, un 0,30 %. Con ETF grandes y líquidos es mucho menor."
+          "why": "Compras al precio de venta y vendes al de compra: pierdes la horquilla completa, un 0,30 %. Con ETF grandes y líquidos es mucho menor.",
+          "guia": "g3"
         },
         {
           "id": "pd2-3",
@@ -102,7 +134,8 @@
             "Tienen más riesgo de mercado"
           ],
           "a": 0,
-          "why": "Si el fondo cierra, te devuelven el dinero y tributas la ganancia aunque no quisieras vender. Además, suelen tener horquillas más amplias."
+          "why": "Si el fondo cierra, te devuelven el dinero y tributas la ganancia aunque no quisieras vender. Además, suelen tener horquillas más amplias.",
+          "guia": "g3"
         },
         {
           "id": "pd2-4",
@@ -110,7 +143,8 @@
           "q": "Si las 10 mayores empresas pesan un 25 % del índice y tienes 3.600 € en ese fondo, ¿cuántos euros tienes en esas 10 empresas?",
           "unit": "€",
           "a": 900,
-          "why": "3.600 × 25 % = 900 €. Un índice mundial también puede estar concentrado: conviene saber qué hay dentro."
+          "why": "3.600 × 25 % = 900 €. Un índice mundial también puede estar concentrado: conviene saber qué hay dentro.",
+          "guia": "g4"
         }
       ]
     }

@@ -4,6 +4,32 @@
   "track": "pasiva",
   "title": "Inversión pasiva",
   "blurb": "Aportar cada mes, pagar poco y dejar trabajar al tiempo.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Qué es invertir en pasivo",
+      "texto": "Comprar el mercado entero con fondos baratos, aportar con regularidad y no intentar adivinar qué va a subir. El tiempo y el interés compuesto hacen el trabajo.",
+      "ejemplo": "Al 7 % anual, 10.000 € se convierten en 19.672 € en 10 años: casi el doble sin añadir nada."
+    },
+    {
+      "id": "g2",
+      "titulo": "Aportar cada mes",
+      "texto": "Aportar la misma cantidad cada mes, suba o baje el mercado, compra más participaciones cuando está barato y menos cuando está caro. Y quita la tentación de elegir el momento.",
+      "ejemplo": "Con la regla del 72, al 8 % anual el dinero se duplica en 72 ÷ 8 = 9 años."
+    },
+    {
+      "id": "g3",
+      "titulo": "Antes, el colchón",
+      "texto": "Antes de invertir, guarda en liquidez de 3 a 6 meses de gastos. Así un imprevisto no te obliga a vender en una caída.",
+      "ejemplo": "Con 1.200 € de gastos al mes, 4.800 € de ahorro líquido son 4 meses de colchón."
+    },
+    {
+      "id": "g4",
+      "titulo": "Fondos, ETF y pensiones",
+      "texto": "Fondos indexados y ETF copian un índice por muy poco. En España, entre fondos puedes traspasar sin tributar. Los planes de pensiones reducen impuestos hoy, pero el dinero queda bloqueado.",
+      "ejemplo": "Aportar 1.500 € a un plan con un tipo marginal del 30 % te ahorra 450 € en la renta."
+    }
+  ],
   "lessons": [
     {
       "id": "bg1",
@@ -16,7 +42,8 @@
           "unit": "%",
           "a": 96.7,
           "tol": 0.06,
-          "why": "19.672 ÷ 10.000 − 1 = 96,7 %: casi el doble, frente al 70 % que darían 10 años al 7 % sin reinvertir. Es el interés compuesto: los beneficios generan beneficios."
+          "why": "19.672 ÷ 10.000 − 1 = 96,7 %: casi el doble, frente al 70 % que darían 10 años al 7 % sin reinvertir. Es el interés compuesto: los beneficios generan beneficios.",
+          "guia": "g1"
         },
         {
           "id": "bg1-2",
@@ -24,7 +51,8 @@
           "q": "Con la regla del 72, ¿en cuántos años se duplica el dinero al 8 % anual?",
           "unit": "",
           "a": 9,
-          "why": "72 ÷ 8 = 9 años. Es una aproximación que funciona bien con rentabilidades normales: 1,08 elevado a 9 da 2,0."
+          "why": "72 ÷ 8 = 9 años. Es una aproximación que funciona bien con rentabilidades normales: 1,08 elevado a 9 da 2,0.",
+          "guia": "g2"
         },
         {
           "id": "bg1-3",
@@ -37,7 +65,8 @@
             "Asegura batir siempre al índice de referencia"
           ],
           "a": 0,
-          "why": "Con la misma cantidad compras más participaciones cuando el precio cae y menos cuando sube, y te quita la tentación de adivinar el momento. No garantiza ganar."
+          "why": "Con la misma cantidad compras más participaciones cuando el precio cae y menos cuando sube, y te quita la tentación de adivinar el momento. No garantiza ganar.",
+          "guia": "g2"
         },
         {
           "id": "bg1-4",
@@ -45,7 +74,8 @@
           "q": "Tienes 4.800 € de ahorro líquido y unos gastos fijos de 1.200 € al mes. ¿Cuántos meses cubre tu fondo de emergencia?",
           "unit": "",
           "a": 4,
-          "why": "4.800 ÷ 1.200 = 4 meses. La referencia habitual es tener de 3 a 6 meses de gastos en liquidez antes de invertir: así nunca vendes en una caída para pagar un imprevisto."
+          "why": "4.800 ÷ 1.200 = 4 meses. La referencia habitual es tener de 3 a 6 meses de gastos en liquidez antes de invertir: así nunca vendes en una caída para pagar un imprevisto.",
+          "guia": "g3"
         }
       ]
     },
@@ -65,7 +95,8 @@
           ],
           "a": 0,
           "why": "Los traspasos entre fondos de inversión no tributan hasta que reembolsas. Los ETF, en general, no admiten traspaso: venderlos tributa la ganancia.",
-          "revisar": "2027-06"
+          "revisar": "2027-06",
+          "guia": "g4"
         },
         {
           "id": "bg2-2",
@@ -74,7 +105,8 @@
           "unit": "%",
           "a": 35,
           "tol": 0.5,
-          "why": "Netos: 6,8 % y 5,2 %. 1,068²⁰ = 3,73 y 1,052²⁰ = 2,76 veces lo invertido: el indexado acaba con un 35 % más. Las comisiones también se acumulan con el interés compuesto."
+          "why": "Netos: 6,8 % y 5,2 %. 1,068²⁰ = 3,73 y 1,052²⁰ = 2,76 veces lo invertido: el indexado acaba con un 35 % más. Las comisiones también se acumulan con el interés compuesto.",
+          "guia": "g4"
         },
         {
           "id": "bg2-3",
@@ -83,7 +115,8 @@
           "unit": "€",
           "a": 450,
           "why": "La aportación reduce tu base imponible: 1.500 × 30 % = 450 €. Al rescatarlo tributa como rendimiento del trabajo, así que es un aplazamiento, no un regalo. Comprueba cada año el límite de aportación.",
-          "revisar": "2027-06"
+          "revisar": "2027-06",
+          "guia": "g4"
         },
         {
           "id": "bg2-4",
@@ -108,7 +141,8 @@
             ]
           ],
           "why": "Los cuatro sirven a un inversor pasivo, pero para cosas distintas: crecer a largo plazo, flexibilidad, ahorro fiscal o tener el colchón disponible.",
-          "revisar": "2027-06"
+          "revisar": "2027-06",
+          "guia": "g4"
         }
       ]
     }

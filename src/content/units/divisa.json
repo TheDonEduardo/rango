@@ -4,6 +4,32 @@
   "track": "pasiva",
   "title": "La divisa en la cartera",
   "blurb": "Cuándo te afecta el dólar y cuándo merece la pena cubrirlo.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Riesgo de divisa",
+      "texto": "Si los activos están en dólares, tu resultado en euros depende también del dólar. Importa la divisa de las acciones, no la de cotización del ETF.",
+      "ejemplo": "El ETF sube un 10 % en dólares y el dólar cae un 5 %: ganas un 4,5 % en euros. Si el dólar sube un 5 %, un 15,5 %."
+    },
+    {
+      "id": "g2",
+      "titulo": "Clases cubiertas",
+      "texto": "Una clase cubierta (hedged) neutraliza casi todo el efecto de la divisa. Cubrir cuesta aproximadamente la diferencia de tipos de interés entre ambas monedas.",
+      "ejemplo": "A veces más de 1 punto al año en el caso del dólar."
+    },
+    {
+      "id": "g3",
+      "titulo": "Acciones: normalmente sin cubrir",
+      "texto": "Las acciones se mueven un 15-20 % al año y las divisas tienden a compensarse a largo plazo: cubrir añade coste sin reducir mucho el riesgo.",
+      "ejemplo": "Calcula tu exposición: 60 % en acciones con un 70 % en dólares son un 42 % de la cartera."
+    },
+    {
+      "id": "g4",
+      "titulo": "Bonos: normalmente cubiertos",
+      "texto": "Un bono se mueve un 3-5 % al año y el dólar puede moverse un 10 %: sin cubrir, la parte estable de la cartera deja de serlo.",
+      "ejemplo": "Un bono en dólares gana un 4 % y el dólar cae un 8 %: pierdes un 4,32 % en euros."
+    }
+  ],
   "lessons": [
     {
       "id": "dv1",
@@ -15,7 +41,8 @@
           "q": "Un ETF de EE. UU. sube un 10 % en dólares, pero el dólar cae un 5 % frente al euro. ¿Cuánto ganas en euros?",
           "unit": "%",
           "a": 4.5,
-          "why": "1,10 × 0,95 = 1,045: un 4,5 % en euros."
+          "why": "1,10 × 0,95 = 1,045: un 4,5 % en euros.",
+          "guia": "g1"
         },
         {
           "id": "dv1-2",
@@ -23,7 +50,8 @@
           "q": "Ahora el ETF sube un 10 % en dólares y el dólar sube un 5 % frente al euro. ¿Cuánto ganas en euros?",
           "unit": "%",
           "a": 15.5,
-          "why": "1,10 × 1,05 = 1,155: un 15,5 % en euros."
+          "why": "1,10 × 1,05 = 1,155: un 15,5 % en euros.",
+          "guia": "g1"
         },
         {
           "id": "dv1-3",
@@ -36,7 +64,8 @@
             "Solo en años de elecciones"
           ],
           "a": 0,
-          "why": "Lo que cuenta es la divisa de los activos: si el dólar cae un 10 %, el ETF cae en euros aunque cotice en euros."
+          "why": "Lo que cuenta es la divisa de los activos: si el dólar cae un 10 %, el ETF cae en euros aunque cotice en euros.",
+          "guia": "g1"
         },
         {
           "id": "dv1-4",
@@ -60,7 +89,8 @@
               "Moneda en la que compras el ETF en bolsa"
             ]
           ],
-          "why": "Cubrir el dólar cuesta aproximadamente la diferencia entre los tipos de EE. UU. y los del euro, a veces más de 1 punto al año."
+          "why": "Cubrir el dólar cuesta aproximadamente la diferencia entre los tipos de EE. UU. y los del euro, a veces más de 1 punto al año.",
+          "guia": "g2"
         }
       ]
     },
@@ -79,7 +109,8 @@
             "Vender cuando el dólar cae"
           ],
           "a": 0,
-          "why": "Las acciones se mueven un 15-20 % al año y las divisas tienden a compensarse a largo plazo; cubrir añade coste sin reducir mucho el riesgo."
+          "why": "Las acciones se mueven un 15-20 % al año y las divisas tienden a compensarse a largo plazo; cubrir añade coste sin reducir mucho el riesgo.",
+          "guia": "g3"
         },
         {
           "id": "dv2-2",
@@ -92,7 +123,8 @@
             "Comprar solo bonos emitidos en dólares"
           ],
           "a": 0,
-          "why": "Un bono puede moverse un 3-5 % al año y el dólar, un 10 %: sin cubrir, la parte estable de la cartera deja de serlo."
+          "why": "Un bono puede moverse un 3-5 % al año y el dólar, un 10 %: sin cubrir, la parte estable de la cartera deja de serlo.",
+          "guia": "g4"
         },
         {
           "id": "dv2-3",
@@ -100,7 +132,8 @@
           "q": "Un bono en dólares rinde un 4 % y el dólar cae un 8 % frente al euro. ¿Cuánto pierdes en euros? (dos decimales)",
           "unit": "%",
           "a": 4.32,
-          "why": "1,04 × 0,92 = 0,9568: pierdes un 4,32 % pese a que el bono ganó un 4 %."
+          "why": "1,04 × 0,92 = 0,9568: pierdes un 4,32 % pese a que el bono ganó un 4 %.",
+          "guia": "g4"
         },
         {
           "id": "dv2-4",
@@ -108,7 +141,8 @@
           "q": "Cartera: 60 % acciones globales, de las que un 70 % está en dólares, y 40 % renta fija cubierta. ¿Qué porcentaje de la cartera está expuesto al dólar?",
           "unit": "%",
           "a": 42,
-          "why": "0,60 × 0,70 = 0,42: un 42 % de la cartera; la renta fija cubierta no suma."
+          "why": "0,60 × 0,70 = 0,42: un 42 % de la cartera; la renta fija cubierta no suma.",
+          "guia": "g3"
         }
       ]
     }

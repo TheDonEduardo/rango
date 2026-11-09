@@ -5,6 +5,32 @@
   "title": "Fiscalidad a largo plazo",
   "blurb": "Diferir impuestos también es rentabilidad.",
   "revisar": "2027-06",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Diferir impuestos",
+      "texto": "Pagar impuestos al final, no cada año, deja que lo que habrías pagado siga rindiendo. Por eso un fondo de acumulación suele acabar con más que uno de distribución.",
+      "ejemplo": "10.000 € al 7 % durante 20 años: tributando solo al final acabas con un 10,8 % más que pagando cada año."
+    },
+    {
+      "id": "g2",
+      "titulo": "Qué se vende primero",
+      "texto": "En España, al vender participaciones iguales se consideran vendidas primero las más antiguas (FIFO). Cambia la ganancia que declaras.",
+      "ejemplo": "100 a 10 € y 100 a 15 €. Vendes 100 a 18 €: ganancia de 800 €, no de 300 €."
+    },
+    {
+      "id": "g3",
+      "titulo": "Traspasos entre fondos",
+      "texto": "Pasar dinero de un fondo de inversión a otro no tributa hasta el reembolso final. Reembolsar y volver a comprar sí tributa.",
+      "ejemplo": "Con una ganancia latente, cambia de fondo por traspaso, nunca vendiendo."
+    },
+    {
+      "id": "g4",
+      "titulo": "Planes de pensiones",
+      "texto": "Lo aportado reduce tu base imponible hoy, pero al rescatar tributa como rendimiento del trabajo y el dinero queda bloqueado salvo supuestos concretos.",
+      "ejemplo": "Aportas 1.500 € con un tipo marginal del 37 %: ahorras 555 €. Rescatar 6.000 € de golpe al 45 % en vez del 30 % cuesta 900 € más."
+    }
+  ],
   "lessons": [
     {
       "id": "pf1",
@@ -17,7 +43,8 @@
           "unit": "%",
           "a": 10.8,
           "why": "32.957 ÷ 29.736 − 1 = 10,8 % más, con la misma rentabilidad y el mismo tipo. El impuesto que no pagas cada año sigue generando rentabilidad.",
-          "tol": 0.06
+          "tol": 0.06,
+          "guia": "g1"
         },
         {
           "id": "pf1-2",
@@ -30,7 +57,8 @@
             "Se paga cada mes, por adelantado"
           ],
           "a": 0,
-          "why": "El fondo reinvierte los dividendos y tú no tributas hasta que vendes. A largo plazo, ese diferimiento suma rentabilidad."
+          "why": "El fondo reinvierte los dividendos y tú no tributas hasta que vendes. A largo plazo, ese diferimiento suma rentabilidad.",
+          "guia": "g1"
         },
         {
           "id": "pf1-3",
@@ -38,7 +66,8 @@
           "q": "Compraste 100 participaciones a 10 € y después otras 100 a 15 €. Vendes 100 a 18 €. Con el método FIFO que aplica Hacienda, ¿qué ganancia declaras?",
           "unit": "€",
           "a": 800,
-          "why": "FIFO: se venden primero las más antiguas, las de 10 €. (18 − 10) × 100 = 800 €, no 300 € como si fueran las de 15 €."
+          "why": "FIFO: se venden primero las más antiguas, las de 10 €. (18 − 10) × 100 = 800 €, no 300 € como si fueran las de 15 €.",
+          "guia": "g2"
         },
         {
           "id": "pf1-4",
@@ -51,7 +80,8 @@
             "Venderlo y comprar un ETF"
           ],
           "a": 1,
-          "why": "El traspaso entre fondos no tributa hasta el reembolso final. Reembolsar y comprar después adelanta el impuesto sin necesidad."
+          "why": "El traspaso entre fondos no tributa hasta el reembolso final. Reembolsar y comprar después adelanta el impuesto sin necesidad.",
+          "guia": "g3"
         }
       ]
     },
@@ -65,7 +95,8 @@
           "q": "Aportas 1.500 € a tu plan de pensiones y tu tipo marginal del IRPF es del 37 %. ¿Cuánto te ahorras este año en la declaración?",
           "unit": "€",
           "a": 555,
-          "why": "1.500 × 37 % = 555 €. Cuanto más alto tu tipo marginal hoy, más rinde la deducción."
+          "why": "1.500 × 37 % = 555 €. Cuanto más alto tu tipo marginal hoy, más rinde la deducción.",
+          "guia": "g4"
         },
         {
           "id": "pf2-2",
@@ -73,7 +104,8 @@
           "q": "Rescatas 6.000 € de un plan de pensiones de golpe y eso te sube al 45 %; repartido en varios años, tributaría al 30 %. Para simplificar, aplica cada tipo a todo el importe. ¿Cuántos euros más pagas rescatándolo de golpe?",
           "unit": "€",
           "a": 900,
-          "why": "6.000 × (45 % − 30 %) = 900 € más. El rescate tributa como rendimiento del trabajo: repartirlo en varios años suele pagar menos."
+          "why": "6.000 × (45 % − 30 %) = 900 € más. El rescate tributa como rendimiento del trabajo: repartirlo en varios años suele pagar menos.",
+          "guia": "g4"
         },
         {
           "id": "pf2-3",
@@ -86,7 +118,8 @@
             "No admite aportaciones periódicas"
           ],
           "a": 2,
-          "why": "El dinero queda inmovilizado salvo supuestos concretos, como desempleo de larga duración, enfermedad grave o aportaciones con más de 10 años de antigüedad. Comprueba las condiciones cada año."
+          "why": "El dinero queda inmovilizado salvo supuestos concretos, como desempleo de larga duración, enfermedad grave o aportaciones con más de 10 años de antigüedad. Comprueba las condiciones cada año.",
+          "guia": "g4"
         },
         {
           "id": "pf2-4",
@@ -110,7 +143,8 @@
               "Cotiza en bolsa y vender tributa la ganancia"
             ]
           ],
-          "why": "Cada uno tiene su sitio: pensiones para reducir impuestos hoy, fondos para mover dinero sin tributar y ETF para comprar en bolsa con costes bajos."
+          "why": "Cada uno tiene su sitio: pensiones para reducir impuestos hoy, fondos para mover dinero sin tributar y ETF para comprar en bolsa con costes bajos.",
+          "guia": "g4"
         }
       ]
     }

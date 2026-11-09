@@ -4,6 +4,32 @@
   "track": "pasiva",
   "title": "Revisar la cartera",
   "blurb": "El mantenimiento anual: qué mirar, qué ajustar y qué no tocar.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Una vez al año",
+      "texto": "Revisar la cartera una vez al año, con una lista fija, basta. Mirarla a diario solo aumenta la tentación de tocarla.",
+      "ejemplo": "Repasa el reparto, los costes, el objetivo y el plazo, y si puedes subir la aportación."
+    },
+    {
+      "id": "g2",
+      "titulo": "Medir la desviación",
+      "texto": "Compara el peso de cada activo con el objetivo y corrige si se ha alejado.",
+      "ejemplo": "Objetivo 70/30 con 78.000 € en acciones y 22.000 € en bonos: 8 puntos de más; pasas 8.000 € a bonos."
+    },
+    {
+      "id": "g3",
+      "titulo": "Ajustar el riesgo con la edad",
+      "texto": "A medida que se acerca el objetivo, se suele reducir el peso en acciones. Hay reglas orientativas, no leyes.",
+      "ejemplo": "Renta fija = edad − 20: con 50 años, un 30 % en renta fija."
+    },
+    {
+      "id": "g4",
+      "titulo": "Cambiar de fondo, con cuentas",
+      "texto": "Si encuentras un fondo más barato, compara el ahorro con lo que costaría cambiar. Entre fondos, el traspaso no tributa; vender un ETF, sí.",
+      "ejemplo": "Ahorras un 0,10 % sobre 50.000 € (50 € al año) pero vender tributa 950 €: tardarías 19 años en recuperarlo."
+    }
+  ],
   "lessons": [
     {
       "id": "rv1",
@@ -20,7 +46,8 @@
             "Nunca, ni para rebalancear"
           ],
           "a": 0,
-          "why": "Una vez al año basta para rebalancear y revisar costes y objetivos; mirarla a diario solo aumenta la tentación de tocarla."
+          "why": "Una vez al año basta para rebalancear y revisar costes y objetivos; mirarla a diario solo aumenta la tentación de tocarla.",
+          "guia": "g1"
         },
         {
           "id": "rv1-2",
@@ -44,7 +71,8 @@
               "Si puedes subirla porque ganas más"
             ]
           ],
-          "why": "Son cuatro preguntas que no dependen de lo que haya hecho la bolsa este año."
+          "why": "Son cuatro preguntas que no dependen de lo que haya hecho la bolsa este año.",
+          "guia": "g1"
         },
         {
           "id": "rv1-3",
@@ -52,7 +80,8 @@
           "q": "Tu reparto objetivo es 70/30 y hoy tienes 78.000 € en acciones y 22.000 € en bonos. ¿Cuántos puntos se ha desviado la parte de acciones?",
           "unit": "",
           "a": 8,
-          "why": "78.000 / 100.000 = 78 %: 78 − 70 = 8 puntos por encima."
+          "why": "78.000 / 100.000 = 78 %: 78 − 70 = 8 puntos por encima.",
+          "guia": "g2"
         },
         {
           "id": "rv1-4",
@@ -60,7 +89,8 @@
           "q": "Mismo caso: ¿cuántos miles de euros de acciones pasas a bonos para volver al 70/30?",
           "unit": "",
           "a": 8,
-          "why": "El 70 % de 100.000 € son 70.000 €: pasas 78.000 − 70.000 = 8.000 € a bonos."
+          "why": "El 70 % de 100.000 € son 70.000 €: pasas 78.000 − 70.000 = 8.000 € a bonos.",
+          "guia": "g2"
         }
       ]
     },
@@ -74,7 +104,8 @@
           "q": "Regla orientativa: % de renta fija = edad − 20. ¿Cuánta renta fija tendría alguien de 50 años?",
           "unit": "%",
           "a": 30,
-          "why": "50 − 20 = 30 %: el resto, un 70 %, en acciones. Es una guía, no una ley."
+          "why": "50 − 20 = 30 %: el resto, un 70 %, en acciones. Es una guía, no una ley.",
+          "guia": "g3"
         },
         {
           "id": "rv2-2",
@@ -88,7 +119,8 @@
           ],
           "a": 0,
           "why": "Vender un ETF tributa la plusvalía; en fondos de inversión el traspaso no tributa. Compara el impuesto con el ahorro anual.",
-          "revisar": "2027-06"
+          "revisar": "2027-06",
+          "guia": "g4"
         },
         {
           "id": "rv2-3",
@@ -97,7 +129,8 @@
           "unit": "",
           "a": 19,
           "why": "50.000 × 0,10 % = 50 € al año; 950 / 50 = 19 años. Mejor dirigir solo las aportaciones nuevas al fondo barato.",
-          "revisar": "2027-06"
+          "revisar": "2027-06",
+          "guia": "g4"
         },
         {
           "id": "rv2-4",
@@ -110,7 +143,8 @@
             "Cambiar a 30/70 hasta que pase"
           ],
           "a": 0,
-          "why": "Tras la caída las acciones pesan menos del 70 %: rebalancear te obliga a comprar barato, que es justo lo que cuesta hacer."
+          "why": "Tras la caída las acciones pesan menos del 70 %: rebalancear te obliga a comprar barato, que es justo lo que cuesta hacer.",
+          "guia": "g2"
         }
       ]
     }

@@ -8,6 +8,7 @@ Uso desde otro script o una consola de Python:
         ('mu2', 'Lección 2', [...]),
     ]), despues_de='revision')
     anadir('r2', [sl(...)])          # añade ejercicios al final de una lección existente
+    poner_guia('velas', [tarjeta('Título', 'Texto.', 'Ejemplo.'), ...], '1223 4444')  # guía de la unidad
 
 Los ids de ejercicio («lección-n») se asignan solos y nunca se reutilizan: no edites ni reordenes ids a mano.
 Al insertar una unidad se renumeran las de su ruta (n = 1, 2, 3… en el orden del índice) y se regenera
@@ -116,3 +117,27 @@ def anadir(lesson_id, exs):
                 empaquetar()
                 return
     raise KeyError('lección inexistente: ' + lesson_id)
+
+
+def tarjeta(titulo, texto, ejemplo):
+    """Tarjeta de la guía de una unidad (texto + ejemplo: 70 palabras como máximo)."""
+    return dict(titulo=titulo, texto=texto, ejemplo=ejemplo)
+
+
+def poner_guia(uid, tarjetas, mapa):
+    """Pone la guía de una unidad. mapa: número de tarjeta de cada ejercicio, por lección y separadas por
+    espacios (p. ej. '1223 4444'): al fallar ese ejercicio, «Repasar la teoría» abre esa tarjeta."""
+    u = leer(uid)
+    cards = [dict(id=f'g{i + 1}', **c) for i, c in enumerate(tarjetas)]
+    partes = mapa.split()
+    assert len(partes) == len(u['lessons']), f'{uid}: el mapa tiene {len(partes)} lecciones'
+    for l, m in zip(u['lessons'], partes):
+        assert len(m) == len(l['ex']), f"{uid}/{l['id']}: el mapa tiene {len(m)} ejercicios y la lección {len(l['ex'])}"
+        for e, k in zip(l['ex'], m):
+            assert 1 <= int(k) <= len(cards), f'{uid}: tarjeta {k} inexistente'
+            e['guia'] = f'g{k}'
+    u2 = {k: v for k, v in u.items() if k not in ('lessons', 'guia')}
+    u2['guia'] = cards
+    u2['lessons'] = u['lessons']
+    guardar(u2)
+    empaquetar()

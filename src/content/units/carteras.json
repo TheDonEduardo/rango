@@ -4,6 +4,32 @@
   "track": "pasiva",
   "title": "Carteras modelo",
   "blurb": "Repartos clásicos que se pueden mantener durante décadas.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Carteras modelo",
+      "texto": "Repartos sencillos y probados: la 60/40 (acciones y bonos), la de tres fondos o la permanente. Pocos fondos y reglas claras, nada que decidir cada mes.",
+      "ejemplo": "Un año con acciones +20 % y bonos +2 %: la 60/40 gana un 12,8 %."
+    },
+    {
+      "id": "g2",
+      "titulo": "La cartera permanente",
+      "texto": "Harry Browne la diseñó con cuatro partes iguales para cuatro escenarios: acciones (crecimiento), bonos largos (deflación), oro (inflación) y liquidez (recesión).",
+      "ejemplo": "Con 3.600 €, van 900 € a cada parte."
+    },
+    {
+      "id": "g3",
+      "titulo": "Mantener el plan",
+      "texto": "La mayor parte del resultado viene de mantener la cartera. Cambiar a la que más ganó el año pasado suele llevar a comprar tarde.",
+      "ejemplo": "Te pasas a la que ganó un 25 % y ese año pierde un 10 % mientras la tuya gana un 6 %: 16 puntos perdidos."
+    },
+    {
+      "id": "g4",
+      "titulo": "Fondos que se solapan",
+      "texto": "Dos fondos no siempre son dos apuestas distintas: mira qué empresas tiene cada uno. Para empezar, dos fondos baratos y diversificados bastan.",
+      "ejemplo": "Un S&P 500 y un MSCI World a medias: alrededor de un 85 % del dinero está en EE. UU."
+    }
+  ],
   "lessons": [
     {
       "id": "cm1",
@@ -31,7 +57,8 @@
               "Máximo crecimiento y máximas caídas"
             ]
           ],
-          "why": "Todas son sencillas a propósito: pocos fondos, reglas claras y nada que decidir cada mes."
+          "why": "Todas son sencillas a propósito: pocos fondos, reglas claras y nada que decidir cada mes.",
+          "guia": "g1"
         },
         {
           "id": "cm1-2",
@@ -39,7 +66,8 @@
           "q": "En la cartera permanente con 3.600 €, ¿cuántos euros van a oro?",
           "unit": "€",
           "a": 900,
-          "why": "Son cuatro partes iguales: 3.600 × 25 % = 900 € en acciones, en bonos largos, en oro y en liquidez."
+          "why": "Son cuatro partes iguales: 3.600 × 25 % = 900 € en acciones, en bonos largos, en oro y en liquidez.",
+          "guia": "g2"
         },
         {
           "id": "cm1-3",
@@ -48,7 +76,8 @@
           "unit": "%",
           "a": 12.8,
           "why": "0,60 × 20 % + 0,40 × 2 % = 12 % + 0,8 % = 12,8 %. En los años buenos la 60/40 gana menos que el 100 % acciones, y en los malos cae menos.",
-          "tol": 0.06
+          "tol": 0.06,
+          "guia": "g1"
         },
         {
           "id": "cm1-4",
@@ -61,7 +90,8 @@
             "Evitar pagar comisiones"
           ],
           "a": 0,
-          "why": "Harry Browne la diseñó para cuatro escenarios: crecimiento (acciones), deflación (bonos largos), inflación (oro) y recesión (liquidez). Sacrifica rentabilidad a cambio de caídas pequeñas."
+          "why": "Harry Browne la diseñó para cuatro escenarios: crecimiento (acciones), deflación (bonos largos), inflación (oro) y recesión (liquidez). Sacrifica rentabilidad a cambio de caídas pequeñas.",
+          "guia": "g2"
         }
       ]
     },
@@ -80,7 +110,8 @@
             "Tener muchos fondos parecidos"
           ],
           "a": 2,
-          "why": "La mayor parte del resultado viene de mantener el plan. Cambiar de cartera tras un mal año suele vender lo que acaba de caer."
+          "why": "La mayor parte del resultado viene de mantener el plan. Cambiar de cartera tras un mal año suele vender lo que acaba de caer.",
+          "guia": "g3"
         },
         {
           "id": "cm2-2",
@@ -88,7 +119,8 @@
           "q": "La cartera A ganó un 25 % el año pasado y la B un 8 %. Te cambias a A justo cuando A cae un 10 % y B sube un 6 %. ¿Cuántos puntos pierdes frente a haberte quedado en B?",
           "unit": "",
           "a": 16,
-          "why": "6 − (−10) = 16 puntos en un año. Perseguir lo que más ganó suele llevar a comprar tarde."
+          "why": "6 − (−10) = 16 puntos en un año. Perseguir lo que más ganó suele llevar a comprar tarde.",
+          "guia": "g3"
         },
         {
           "id": "cm2-3",
@@ -96,7 +128,8 @@
           "q": "Tienes la mitad en un fondo del S&P 500 y la otra mitad en un MSCI World en el que EE. UU. pesa un 70 %. ¿Qué porcentaje de tu cartera está en EE. UU.?",
           "unit": "%",
           "a": 85,
-          "why": "0,5 × 100 % + 0,5 × 70 % = 85 %. Dos fondos no siempre son dos apuestas distintas: mira qué hay dentro de cada uno."
+          "why": "0,5 × 100 % + 0,5 × 70 % = 85 %. Dos fondos no siempre son dos apuestas distintas: mira qué hay dentro de cada uno.",
+          "guia": "g4"
         },
         {
           "id": "cm2-4",
@@ -109,7 +142,8 @@
             "Un ETF apalancado al Nasdaq"
           ],
           "a": 1,
-          "why": "Dos fondos baratos y diversificados se entienden, se rebalancean en minutos y no tientan a cambiar. La sencillez es lo que permite aguantar décadas."
+          "why": "Dos fondos baratos y diversificados se entienden, se rebalancean en minutos y no tientan a cambiar. La sencillez es lo que permite aguantar décadas.",
+          "guia": "g4"
         }
       ]
     }

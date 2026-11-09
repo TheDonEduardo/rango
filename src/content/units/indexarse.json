@@ -4,6 +4,32 @@
   "track": "pasiva",
   "title": "Por qué indexarse",
   "blurb": "La suma cero, los costes y lo que dicen los datos.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Un juego de suma cero",
+      "texto": "Todos los inversores juntos poseen el mercado: antes de costes, la media de los gestores activos es la del mercado. Después de costes, queda por detrás justo en lo que cobran.",
+      "ejemplo": "El mercado sube un 8 % y el fondo medio cobra un 1,5 %: su partícipe gana un 6,5 %."
+    },
+    {
+      "id": "g2",
+      "titulo": "Los costes se acumulan",
+      "texto": "Una diferencia de coste pequeña cada año se convierte en mucho dinero con el tiempo, por el interés compuesto.",
+      "ejemplo": "10.000 € durante 30 años al 6,8 % y al 5,3 % netos: unos 25.000 € de diferencia."
+    },
+    {
+      "id": "g3",
+      "titulo": "Lo que dicen los datos",
+      "texto": "Los informes SPIVA comparan fondos activos con su índice: a 15 años, en torno al 85-90 % de los de acciones quedan por detrás. Y los ganadores rara vez repiten.",
+      "ejemplo": "Al cerrar los peores fondos, las clasificaciones parecen mejores de lo que fueron: es el sesgo de supervivencia."
+    },
+    {
+      "id": "g4",
+      "titulo": "El listón de un fondo caro",
+      "texto": "Un fondo activo tiene que batir al índice por más de su diferencia de comisión solo para empatar, cada año.",
+      "ejemplo": "Un 1,8 % frente a un 0,2 %: necesita 1,6 puntos extra al año. Un 1,5 % durante 20 años se lleva un 26 % del resultado."
+    }
+  ],
   "lessons": [
     {
       "id": "ix1",
@@ -20,7 +46,8 @@
             "Depende solo de cada año"
           ],
           "a": 0,
-          "why": "Todos los inversores juntos poseen el mercado: si unos ganan más que la media, otros ganan menos. Antes de costes, la media activa es la del mercado."
+          "why": "Todos los inversores juntos poseen el mercado: si unos ganan más que la media, otros ganan menos. Antes de costes, la media activa es la del mercado.",
+          "guia": "g1"
         },
         {
           "id": "ix1-2",
@@ -28,7 +55,8 @@
           "q": "El mercado sube un 8 % y el fondo activo medio lo iguala antes de costes, pero cobra un 1,5 % de comisión. ¿Qué rentabilidad neta obtiene su partícipe?",
           "unit": "%",
           "a": 6.5,
-          "why": "8 − 1,5 = 6,5 %. Tras costes, el gestor activo medio queda por detrás del índice justo en lo que cobra."
+          "why": "8 − 1,5 = 6,5 %. Tras costes, el gestor activo medio queda por detrás del índice justo en lo que cobra.",
+          "guia": "g1"
         },
         {
           "id": "ix1-3",
@@ -37,7 +65,8 @@
           "unit": "",
           "a": 25,
           "why": "10.000 × 1,068³⁰ ≈ 71.968 € frente a 10.000 × 1,053³⁰ ≈ 47.082 €: unos 25.000 € de diferencia por 1,5 puntos de coste.",
-          "tol": 0.5
+          "tol": 0.5,
+          "guia": "g2"
         },
         {
           "id": "ix1-4",
@@ -51,7 +80,8 @@
           ],
           "a": 0,
           "why": "Según los informes SPIVA de S&P, en torno al 85-90 % de los fondos activos de acciones de EE. UU. y Europa quedan por detrás de su índice a 15 años.",
-          "revisar": "2027-06"
+          "revisar": "2027-06",
+          "guia": "g3"
         }
       ]
     },
@@ -70,7 +100,8 @@
             "Que vendas el indexado y lo compres"
           ],
           "a": 0,
-          "why": "Muy pocos fondos del 25 % mejor siguen ahí 3-5 años después: el pasado reciente predice poco el futuro."
+          "why": "Muy pocos fondos del 25 % mejor siguen ahí 3-5 años después: el pasado reciente predice poco el futuro.",
+          "guia": "g3"
         },
         {
           "id": "ix2-2",
@@ -78,7 +109,8 @@
           "q": "Un fondo activo cobra un 1,8 % anual y el indexado, un 0,2 %. ¿Cuántos puntos extra al año necesita el activo solo para empatar?",
           "unit": "",
           "a": 1.6,
-          "why": "1,8 − 0,2 = 1,6 puntos cada año, antes de tener en cuenta que además debe acertar."
+          "why": "1,8 − 0,2 = 1,6 puntos cada año, antes de tener en cuenta que además debe acertar.",
+          "guia": "g4"
         },
         {
           "id": "ix2-3",
@@ -87,7 +119,8 @@
           "unit": "%",
           "a": 26,
           "why": "Te queda 0,985²⁰ ≈ 0,739 del capital: pierdes un 26 % del resultado final.",
-          "tol": 0.5
+          "tol": 0.5,
+          "guia": "g4"
         },
         {
           "id": "ix2-4",
@@ -111,7 +144,8 @@
               "Los fondos cerrados salen de las estadísticas"
             ]
           ],
-          "why": "Al cerrar o fusionar los peores fondos, las clasificaciones parecen mejores de lo que fueron; SPIVA los cuenta para evitarlo."
+          "why": "Al cerrar o fusionar los peores fondos, las clasificaciones parecen mejores de lo que fueron; SPIVA los cuenta para evitarlo.",
+          "guia": "g3"
         }
       ]
     }

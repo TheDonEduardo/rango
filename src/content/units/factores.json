@@ -4,6 +4,32 @@
   "track": "pasiva",
   "title": "Factores",
   "blurb": "Valor, tamaño, momentum y calidad: primas con letra pequeña.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Qué es un factor",
+      "texto": "Rasgos que históricamente han dado algo más que el mercado: valor (empresas baratas), tamaño (pequeñas), momentum (las que más suben) y calidad (rentables y con poca deuda).",
+      "ejemplo": "Pero solo en promedio y con años muy malos por medio."
+    },
+    {
+      "id": "g2",
+      "titulo": "ETF de factores",
+      "texto": "Un ETF «smart beta» sigue reglas fijas, como un índice, pero elige o pondera los valores por un factor en lugar de por capitalización. Suele costar algo más.",
+      "ejemplo": "Un ETF de valor al 0,30 % frente al MSCI World al 0,20 %: la prima debe superar 0,10 puntos al año."
+    },
+    {
+      "id": "g3",
+      "titulo": "Paciencia con las primas",
+      "texto": "Una prima que solo llega en promedio exige aguantar rachas largas. El factor valor quedó por detrás del mercado gran parte de 2010-2020.",
+      "ejemplo": "80 % World al 6 % y 20 % de valor: si el valor da un 8 %, la cartera un 6,4 %; si da un 2 %, un 5,2 %."
+    },
+    {
+      "id": "g4",
+      "titulo": "El índice ya tiene sesgo",
+      "texto": "Un índice por capitalización pesa más las empresas más grandes. Uno de igual ponderación da el mismo peso a todas.",
+      "ejemplo": "En el MSCI World, las 10 mayores superan el 20 %. Con 500 empresas por igual, cada una pesa un 0,2 %."
+    }
+  ],
   "lessons": [
     {
       "id": "fc1",
@@ -31,7 +57,8 @@
               "Rentables y con poca deuda"
             ]
           ],
-          "why": "Cada factor ha dado una prima histórica sobre el mercado, pero solo en promedio y con años muy malos por medio."
+          "why": "Cada factor ha dado una prima histórica sobre el mercado, pero solo en promedio y con años muy malos por medio.",
+          "guia": "g1"
         },
         {
           "id": "fc1-2",
@@ -44,7 +71,8 @@
             "Un fondo garantizado"
           ],
           "a": 0,
-          "why": "Sigue reglas fijas, como un índice, pero elige o pondera los valores por un criterio como el valor o el tamaño."
+          "why": "Sigue reglas fijas, como un índice, pero elige o pondera los valores por un criterio como el valor o el tamaño.",
+          "guia": "g2"
         },
         {
           "id": "fc1-3",
@@ -52,7 +80,8 @@
           "q": "Un ETF del MSCI World cobra un 0,20 % y uno de factor valor, un 0,30 %. ¿Cuántos puntos de prima anual necesita el factor solo para cubrir la diferencia?",
           "unit": "",
           "a": 0.1,
-          "why": "0,30 − 0,20 = 0,10 puntos al año."
+          "why": "0,30 − 0,20 = 0,10 puntos al año.",
+          "guia": "g2"
         },
         {
           "id": "fc1-4",
@@ -65,7 +94,8 @@
             "El valor siempre gana al año siguiente"
           ],
           "a": 0,
-          "why": "Una prima que llega solo en promedio exige aguantar rachas de 10 años; quien abandona en el peor momento se queda con la parte mala."
+          "why": "Una prima que llega solo en promedio exige aguantar rachas de 10 años; quien abandona en el peor momento se queda con la parte mala.",
+          "guia": "g3"
         }
       ]
     },
@@ -79,7 +109,8 @@
           "q": "Cartera: 80 % MSCI World y 20 % ETF de pequeñas de valor. El World rinde un 6 % y el ETF, un 8 %. ¿Cuánto rinde la cartera?",
           "unit": "%",
           "a": 6.4,
-          "why": "0,8 × 6 + 0,2 × 8 = 4,8 + 1,6 = 6,4 %."
+          "why": "0,8 × 6 + 0,2 × 8 = 4,8 + 1,6 = 6,4 %.",
+          "guia": "g3"
         },
         {
           "id": "fc2-2",
@@ -87,7 +118,8 @@
           "q": "Mismo reparto, pero el ETF de valor rinde un 2 % y el World, un 6 %. ¿Cuánto rinde la cartera?",
           "unit": "%",
           "a": 5.2,
-          "why": "0,8 × 6 + 0,2 × 2 = 4,8 + 0,4 = 5,2 %: el factor resta 0,8 puntos ese año."
+          "why": "0,8 × 6 + 0,2 × 2 = 4,8 + 0,4 = 5,2 %: el factor resta 0,8 puntos ese año.",
+          "guia": "g3"
         },
         {
           "id": "fc2-3",
@@ -100,7 +132,8 @@
             "Ninguno: todas pesan igual"
           ],
           "a": 0,
-          "why": "Cada empresa pesa según su valor en bolsa: en el MSCI World, las 10 mayores superan el 20 % del índice."
+          "why": "Cada empresa pesa según su valor en bolsa: en el MSCI World, las 10 mayores superan el 20 % del índice.",
+          "guia": "g4"
         },
         {
           "id": "fc2-4",
@@ -108,7 +141,8 @@
           "q": "Un índice de igual ponderación tiene 500 empresas. ¿Qué peso tiene cada una?",
           "unit": "%",
           "a": 0.2,
-          "why": "100 / 500 = 0,2 % cada una, se rebalancea periódicamente para mantenerlo."
+          "why": "100 / 500 = 0,2 % cada una, se rebalancea periódicamente para mantenerlo.",
+          "guia": "g4"
         }
       ]
     }

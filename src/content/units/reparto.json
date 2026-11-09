@@ -4,6 +4,32 @@
   "track": "pasiva",
   "title": "Reparto de activos",
   "blurb": "Cuánto en acciones y cuánto en bonos: la decisión que más pesa.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Acciones y bonos",
+      "texto": "Las acciones dan más a largo plazo pero caen mucho; los bonos amortiguan. El reparto entre ambos decide cuánto puede caer tu cartera.",
+      "ejemplo": "Acciones −40 % y bonos +5 %: una cartera 70/30 cae un 26,5 % y una 40/60, un 13 %."
+    },
+    {
+      "id": "g2",
+      "titulo": "El plazo manda",
+      "texto": "Lo que vas a necesitar en pocos años no va a acciones: pueden tardar años en recuperarse de una caída del 40-50 %. Cuanto más lejos el objetivo, más acciones puedes llevar.",
+      "ejemplo": "Regla orientativa «110 menos tu edad»: con 40 años, un 70 % en acciones."
+    },
+    {
+      "id": "g3",
+      "titulo": "Tolerancia: piensa en euros",
+      "texto": "Antes de elegir el reparto, calcula cuánto podrías perder en euros en una caída fuerte y pregúntate si aguantarías sin vender.",
+      "ejemplo": "20.000 € con un 80 % en acciones: si caen un 50 %, pierdes 8.000 €."
+    },
+    {
+      "id": "g4",
+      "titulo": "Diversificar de verdad",
+      "texto": "Combina activos que no se mueven a la vez y no lo pongas todo en un solo país o sector. La cartera completa cae menos, aunque no elimina el riesgo.",
+      "ejemplo": "El IBEX pesa mucho en bancos y en pocas empresas; España es una parte pequeña de la bolsa mundial."
+    }
+  ],
   "lessons": [
     {
       "id": "pr1",
@@ -16,7 +42,8 @@
           "unit": "%",
           "a": 26.5,
           "why": "0,70 × (−40 %) + 0,30 × 5 % = −28 % + 1,5 % = −26,5 %. Los bonos amortiguan, pero con un 70 % en acciones la caída sigue siendo fuerte.",
-          "tol": 0.06
+          "tol": 0.06,
+          "guia": "g1"
         },
         {
           "id": "pr1-2",
@@ -24,7 +51,8 @@
           "q": "Con el mismo escenario (acciones −40 %, bonos +5 %), ¿cuánto cae una cartera 40 % acciones y 60 % bonos?",
           "unit": "%",
           "a": 13,
-          "why": "0,40 × (−40 %) + 0,60 × 5 % = −16 % + 3 % = −13 %: la mitad que la 70/30. A cambio, a largo plazo crece menos."
+          "why": "0,40 × (−40 %) + 0,60 × 5 % = −16 % + 3 % = −13 %: la mitad que la 70/30. A cambio, a largo plazo crece menos.",
+          "guia": "g1"
         },
         {
           "id": "pr1-3",
@@ -37,7 +65,8 @@
             "Un ETF apalancado al Nasdaq"
           ],
           "a": 1,
-          "why": "Las acciones pueden tardar años en recuperarse de una caída del 40-50 %. Lo que vas a necesitar en menos de 3-5 años no debería depender de la bolsa."
+          "why": "Las acciones pueden tardar años en recuperarse de una caída del 40-50 %. Lo que vas a necesitar en menos de 3-5 años no debería depender de la bolsa.",
+          "guia": "g2"
         },
         {
           "id": "pr1-4",
@@ -45,7 +74,8 @@
           "q": "Según la regla orientativa «110 menos tu edad», ¿qué porcentaje en acciones tendría alguien de 40 años?",
           "unit": "%",
           "a": 70,
-          "why": "110 − 40 = 70 % en acciones y 30 % en bonos. Es solo un punto de partida: tu horizonte y cuánto aguantas ver caer la cartera pesan más que la edad."
+          "why": "110 − 40 = 70 % en acciones y 30 % en bonos. Es solo un punto de partida: tu horizonte y cuánto aguantas ver caer la cartera pesan más que la edad.",
+          "guia": "g2"
         }
       ]
     },
@@ -59,7 +89,8 @@
           "q": "Tienes 20.000 € con un 80 % en acciones. Si las acciones caen un 50 %, ¿cuántos miles de euros pierdes?",
           "unit": "",
           "a": 8,
-          "why": "20.000 × 80 % = 16.000 € en acciones, y la mitad son 8.000 €. Pregúntate antes si venderías en pánico viendo esa cifra: si es así, el reparto es demasiado agresivo para ti."
+          "why": "20.000 × 80 % = 16.000 € en acciones, y la mitad son 8.000 €. Pregúntate antes si venderías en pánico viendo esa cifra: si es así, el reparto es demasiado agresivo para ti.",
+          "guia": "g3"
         },
         {
           "id": "pr2-2",
@@ -72,7 +103,8 @@
             "No poder vender cuando quieras"
           ],
           "a": 0,
-          "why": "El IBEX pesa mucho en bancos y en unas pocas empresas, y España es una parte pequeña de la economía mundial. Un índice global reparte el riesgo entre miles de empresas."
+          "why": "El IBEX pesa mucho en bancos y en unas pocas empresas, y España es una parte pequeña de la economía mundial. Un índice global reparte el riesgo entre miles de empresas.",
+          "guia": "g4"
         },
         {
           "id": "pr2-3",
@@ -96,7 +128,8 @@
               "Refugio en crisis, sin rentas"
             ]
           ],
-          "why": "Cada activo cumple una función distinta; combinarlos busca que la cartera entera sea más estable que cualquiera de sus partes."
+          "why": "Cada activo cumple una función distinta; combinarlos busca que la cartera entera sea más estable que cualquiera de sus partes.",
+          "guia": "g4"
         },
         {
           "id": "pr2-4",
@@ -109,7 +142,8 @@
             "Porque así se pagan menos impuestos"
           ],
           "a": 2,
-          "why": "Cuando unos caen, otros aguantan o suben, y la cartera completa cae menos. No elimina el riesgo ni garantiza nada, pero hace más fácil mantenerse invertido."
+          "why": "Cuando unos caen, otros aguantan o suben, y la cartera completa cae menos. No elimina el riesgo ni garantiza nada, pero hace más fácil mantenerse invertido.",
+          "guia": "g4"
         }
       ]
     }

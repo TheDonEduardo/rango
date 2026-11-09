@@ -4,6 +4,32 @@
   "track": "pasiva",
   "title": "Psicología del inversor pasivo",
   "blurb": "El plan es sencillo; lo difícil es seguirlo cuando cae la bolsa.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Quedarse invertido",
+      "texto": "Salir del mercado en los malos momentos suele hacerte perder los mejores días, que llegan justo después de los peores.",
+      "ejemplo": "10.000 € al 7 % durante 20 años son 38.697 €; al 4 % por entrar y salir, 21.911 €: 16.786 € menos."
+    },
+    {
+      "id": "g2",
+      "titulo": "El plan para las caídas",
+      "texto": "El plan se escribe para los días malos: seguir aportando y rebalancear compra más barato. No mirar la cartera cada día evita decisiones por miedo.",
+      "ejemplo": "Tras una caída tienes 4.500 € en acciones y 4.000 € en bonos: al 60/40, compras 600 € de acciones."
+    },
+    {
+      "id": "g3",
+      "titulo": "¿De golpe o poco a poco?",
+      "texto": "Con datos históricos, invertir de golpe ganó unas dos de cada tres veces, porque el mercado sube más a menudo que baja. Repartirlo reduce el arrepentimiento si cae justo después.",
+      "ejemplo": "Si lo repartes, fija fechas y automatízalo: 6.000 € en 12 meses son 500 € al mes."
+    },
+    {
+      "id": "g4",
+      "titulo": "Sesgos que rompen el plan",
+      "texto": "Perseguir lo que más ha subido, vender por miedo o creer que esta vez es distinto. Un plan escrito y aportaciones automáticas los neutralizan.",
+      "ejemplo": "Y antes del primer euro, el colchón: sin él, un imprevisto te obliga a vender en plena caída."
+    }
+  ],
   "lessons": [
     {
       "id": "pp1",
@@ -16,7 +42,8 @@
           "unit": "",
           "a": 16.8,
           "why": "10.000 × (1,07²⁰ − 1,04²⁰) = 38.697 − 21.911 = 16.786 €. Los mejores días suelen llegar justo después de los peores, cuando quien ha salido aún no ha vuelto.",
-          "tol": 0.06
+          "tol": 0.06,
+          "guia": "g1"
         },
         {
           "id": "pp1-2",
@@ -29,7 +56,8 @@
             "Pasar la cartera a oro"
           ],
           "a": 0,
-          "why": "El plan se escribió para este momento. Aportar en las caídas compra más barato, y rebalancear obliga a comprar acciones cuando nadie quiere."
+          "why": "El plan se escribió para este momento. Aportar en las caídas compra más barato, y rebalancear obliga a comprar acciones cuando nadie quiere.",
+          "guia": "g2"
         },
         {
           "id": "pp1-3",
@@ -37,7 +65,8 @@
           "q": "Tu 60/40 de 10.000 € queda tras una caída en 4.500 € de acciones y 4.000 € de bonos. ¿Cuántos euros de acciones compras para volver al 60 %?",
           "unit": "€",
           "a": 600,
-          "why": "Total: 8.500 €; objetivo en acciones: 8.500 × 60 % = 5.100 €. Tienes 4.500 €: compras 600 € con dinero de los bonos."
+          "why": "Total: 8.500 €; objetivo en acciones: 8.500 × 60 % = 5.100 €. Tienes 4.500 €: compras 600 € con dinero de los bonos.",
+          "guia": "g2"
         },
         {
           "id": "pp1-4",
@@ -50,7 +79,8 @@
             "Está prohibido por la normativa"
           ],
           "a": 2,
-          "why": "Día a día, la bolsa baja casi tantas veces como sube, y las pérdidas pesan más que las ganancias. Mirar poco reduce la tentación de tocar un plan que funciona."
+          "why": "Día a día, la bolsa baja casi tantas veces como sube, y las pérdidas pesan más que las ganancias. Mirar poco reduce la tentación de tocar un plan que funciona.",
+          "guia": "g2"
         }
       ]
     },
@@ -69,7 +99,8 @@
             "Dejarlo en el banco"
           ],
           "a": 1,
-          "why": "Invertir de golpe ganó en torno a dos de cada tres veces, porque el mercado sube más a menudo de lo que baja. Repartir la entrada reduce el arrepentimiento si cae justo después: es una opción emocional razonable."
+          "why": "Invertir de golpe ganó en torno a dos de cada tres veces, porque el mercado sube más a menudo de lo que baja. Repartir la entrada reduce el arrepentimiento si cae justo después: es una opción emocional razonable.",
+          "guia": "g3"
         },
         {
           "id": "pp2-2",
@@ -77,7 +108,8 @@
           "q": "Decides repartir 6.000 € en 12 aportaciones mensuales iguales. ¿Cuánto inviertes cada mes?",
           "unit": "€",
           "a": 500,
-          "why": "6.000 ÷ 12 = 500 €. Fija las fechas de antemano y automatízalo: así no decides cada mes según las noticias."
+          "why": "6.000 ÷ 12 = 500 €. Fija las fechas de antemano y automatízalo: así no decides cada mes según las noticias.",
+          "guia": "g3"
         },
         {
           "id": "pp2-3",
@@ -101,7 +133,8 @@
               "Creer que sabrás cuándo salir y volver a entrar"
             ]
           ],
-          "why": "La inversión pasiva funciona sola; lo que la rompe son estas decisiones. Un plan escrito y automatizado las deja sin margen."
+          "why": "La inversión pasiva funciona sola; lo que la rompe son estas decisiones. Un plan escrito y automatizado las deja sin margen.",
+          "guia": "g4"
         },
         {
           "id": "pp2-4",
@@ -114,7 +147,8 @@
             "Las noticias del día leídas"
           ],
           "a": 1,
-          "why": "Sin colchón, el primer imprevisto te obliga a vender, quizá en plena caída. Con él, la cartera puede quedarse quieta los años que haga falta."
+          "why": "Sin colchón, el primer imprevisto te obliga a vender, quizá en plena caída. Con él, la cartera puede quedarse quieta los años que haga falta.",
+          "guia": "g4"
         }
       ]
     }

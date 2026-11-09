@@ -4,6 +4,32 @@
   "track": "pasiva",
   "title": "Inflación y rentabilidad real",
   "blurb": "Lo que importa es cuánto puedes comprar, no cuántos euros tienes.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Rentabilidad real",
+      "texto": "Lo que importa es cuánto crece tu poder de compra: la rentabilidad menos la inflación. La resta es una buena aproximación; el cálculo exacto es una división.",
+      "ejemplo": "7 % con un 3 % de inflación: un 4 % real aproximado y un 3,88 % exacto (1,07 ÷ 1,03 − 1)."
+    },
+    {
+      "id": "g2",
+      "titulo": "El dinero parado pierde",
+      "texto": "Con inflación, el dinero que no rinde compra cada año menos. Y un depósito que paga menos que la inflación también te hace perder poder de compra.",
+      "ejemplo": "Con un 3 % de inflación, 100 € de hoy valdrán unos 55 € dentro de 20 años."
+    },
+    {
+      "id": "g3",
+      "titulo": "Qué protege",
+      "texto": "Los bonos de tipo fijo sufren si la inflación sube por sorpresa; los ligados a la inflación ajustan su principal al IPC. Las empresas pueden subir precios a largo plazo.",
+      "ejemplo": "Un cupón del 4 % con un 6 % de inflación pierde unos 2 puntos al año."
+    },
+    {
+      "id": "g4",
+      "titulo": "Por qué tantas acciones",
+      "texto": "A largo plazo, las acciones son el activo que más ha batido a la inflación, pese a su volatilidad.",
+      "ejemplo": "Desde 1900, las acciones mundiales han dado en torno a un 5 % real anual frente a cerca de un 2 % de los bonos. Con un 4 % de inflación, los precios se duplican en 18 años."
+    }
+  ],
   "lessons": [
     {
       "id": "in1",
@@ -15,7 +41,8 @@
           "q": "Tu cartera rinde un 7 % y la inflación es del 3 %. ¿Cuál es la rentabilidad real aproximada?",
           "unit": "%",
           "a": 4,
-          "why": "7 − 3 = 4 %: es lo que crece de verdad tu poder de compra."
+          "why": "7 − 3 = 4 %: es lo que crece de verdad tu poder de compra.",
+          "guia": "g1"
         },
         {
           "id": "in1-2",
@@ -23,7 +50,8 @@
           "q": "Calcula la rentabilidad real exacta de ese caso: 1,07 / 1,03 − 1. (dos decimales)",
           "unit": "%",
           "a": 3.88,
-          "why": "1,07 / 1,03 = 1,0388: un 3,88 %, algo menos que la resta rápida."
+          "why": "1,07 / 1,03 = 1,0388: un 3,88 %, algo menos que la resta rápida.",
+          "guia": "g1"
         },
         {
           "id": "in1-3",
@@ -32,7 +60,8 @@
           "unit": "€",
           "a": 55,
           "why": "100 / 1,03²⁰ ≈ 55,37 €: el dinero parado pierde casi la mitad de su poder de compra.",
-          "tol": 0.5
+          "tol": 0.5,
+          "guia": "g2"
         },
         {
           "id": "in1-4",
@@ -45,7 +74,8 @@
             "Gana un 5 % cada año"
           ],
           "a": 0,
-          "why": "2 − 3 = −1 %: tienes más euros, pero compran menos que antes."
+          "why": "2 − 3 = −1 %: tienes más euros, pero compran menos que antes.",
+          "guia": "g2"
         }
       ]
     },
@@ -75,7 +105,8 @@
               "Sufren si la inflación sube por sorpresa"
             ]
           ],
-          "why": "Un cupón fijo del 4 % con un 6 % de inflación pierde 2 puntos al año; los bonos ligados a la inflación ajustan el principal al IPC."
+          "why": "Un cupón fijo del 4 % con un 6 % de inflación pierde 2 puntos al año; los bonos ligados a la inflación ajustan el principal al IPC.",
+          "guia": "g3"
         },
         {
           "id": "in2-2",
@@ -83,7 +114,8 @@
           "q": "Un bono paga un 4 % fijo y la inflación sube al 6 %. ¿Cuántos puntos pierde al año en términos reales, aproximadamente?",
           "unit": "",
           "a": 2,
-          "why": "4 − 6 = −2: pierde unos 2 puntos de poder de compra al año."
+          "why": "4 − 6 = −2: pierde unos 2 puntos de poder de compra al año.",
+          "guia": "g3"
         },
         {
           "id": "in2-3",
@@ -91,7 +123,8 @@
           "q": "Regla rápida: años para que los precios se dupliquen = 72 / inflación. Con un 4 %, ¿cuántos años?",
           "unit": "",
           "a": 18,
-          "why": "72 / 4 = 18 años: con un 4 % de inflación, los precios se duplican en 18 años."
+          "why": "72 / 4 = 18 años: con un 4 % de inflación, los precios se duplican en 18 años.",
+          "guia": "g4"
         },
         {
           "id": "in2-4",
@@ -104,7 +137,8 @@
             "Están garantizadas por el Estado"
           ],
           "a": 0,
-          "why": "Desde 1900, las acciones mundiales han rendido en torno a un 5 % real anual, frente a cerca de un 2 % de los bonos."
+          "why": "Desde 1900, las acciones mundiales han rendido en torno a un 5 % real anual, frente a cerca de un 2 % de los bonos.",
+          "guia": "g4"
         }
       ]
     }

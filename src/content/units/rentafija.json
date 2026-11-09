@@ -4,6 +4,32 @@
   "track": "pasiva",
   "title": "Renta fija",
   "blurb": "Letras, bonos y por qué su precio cae cuando suben los tipos.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Letras y bonos",
+      "texto": "Un bono es un préstamo: el emisor te paga un interés fijo, el cupón, y te devuelve el nominal al vencimiento. Las letras no pagan cupón: se compran por debajo de 1.000 € y devuelven 1.000 €.",
+      "ejemplo": "Bono de 1.000 € al 4 %: 40 € al año. Letra comprada a 970 €: ganas 30 €, un 3,09 %."
+    },
+    {
+      "id": "g2",
+      "titulo": "Precio y rentabilidad",
+      "texto": "Los bonos cotizan: si lo compras por debajo del nominal, cobras el mismo cupón pagando menos y tu rentabilidad sube. Un interés muy alto suele indicar más riesgo de impago.",
+      "ejemplo": "El bono del 4 % cotiza a 950 €: 40 ÷ 950 = 4,21 %."
+    },
+    {
+      "id": "g3",
+      "titulo": "Tipos de interés y precios",
+      "texto": "Cuando suben los tipos, los bonos antiguos pagan menos que los nuevos y su precio baja. Cuando bajan, ocurre lo contrario.",
+      "ejemplo": "La duración mide cuánto: con duración 7, una subida de tipos de un punto hace caer el precio en torno a un 7 %."
+    },
+    {
+      "id": "g4",
+      "titulo": "Plazo y paciencia",
+      "texto": "Cuanto más corto es el bono, menos le afectan los tipos. Y una caída de precio solo es pérdida si vendes: si el emisor paga, al vencimiento recuperas el nominal.",
+      "ejemplo": "Duración 2 con una subida de 1,5 puntos: el precio cae en torno a un 3 %."
+    }
+  ],
   "lessons": [
     {
       "id": "bh1",
@@ -16,7 +42,8 @@
           "unit": "%",
           "a": 3.09,
           "tol": 0.02,
-          "why": "(1.000 − 970) ÷ 970 = 30 ÷ 970 = 3,09 %. Las letras no pagan cupón: se compran por debajo de su nominal y la ganancia es la diferencia."
+          "why": "(1.000 − 970) ÷ 970 = 30 ÷ 970 = 3,09 %. Las letras no pagan cupón: se compran por debajo de su nominal y la ganancia es la diferencia.",
+          "guia": "g1"
         },
         {
           "id": "bh1-2",
@@ -24,7 +51,8 @@
           "q": "Un bono de 1.000 € de nominal paga un cupón del 4 % anual. ¿Cuántos euros cobras al año por cupón?",
           "unit": "€",
           "a": 40,
-          "why": "1.000 × 4 % = 40 € al año, pase lo que pase con su precio en el mercado, mientras el emisor no deje de pagar."
+          "why": "1.000 × 4 % = 40 € al año, pase lo que pase con su precio en el mercado, mientras el emisor no deje de pagar.",
+          "guia": "g1"
         },
         {
           "id": "bh1-3",
@@ -33,7 +61,8 @@
           "unit": "%",
           "a": 4.21,
           "tol": 0.02,
-          "why": "40 ÷ 950 = 4,21 %. Al comprar por debajo del nominal cobras el mismo cupón pagando menos, y al vencimiento recibes 1.000 €."
+          "why": "40 ÷ 950 = 4,21 %. Al comprar por debajo del nominal cobras el mismo cupón pagando menos, y al vencimiento recibes 1.000 €.",
+          "guia": "g2"
         },
         {
           "id": "bh1-4",
@@ -46,7 +75,8 @@
             "El bono del Estado tiene un plazo mayor"
           ],
           "a": 0,
-          "why": "Cuanto más probable es que el emisor no pague, más interés exige el mercado. Un 9 % no es un regalo: es el precio de ese riesgo."
+          "why": "Cuanto más probable es que el emisor no pague, más interés exige el mercado. Un 9 % no es un regalo: es el precio de ese riesgo.",
+          "guia": "g2"
         }
       ]
     },
@@ -65,7 +95,8 @@
             "Se duplican"
           ],
           "a": 1,
-          "why": "Los bonos nuevos pagarán más, así que los antiguos, con cupones menores, solo se venden si bajan de precio. Precio y tipos se mueven en sentido contrario."
+          "why": "Los bonos nuevos pagarán más, así que los antiguos, con cupones menores, solo se venden si bajan de precio. Precio y tipos se mueven en sentido contrario.",
+          "guia": "g3"
         },
         {
           "id": "bh2-2",
@@ -73,7 +104,8 @@
           "q": "Un bono tiene una duración modificada de 7. Si los tipos suben un 1 %, ¿cuánto cae su precio aproximadamente?",
           "unit": "%",
           "a": 7,
-          "why": "Caída ≈ duración × subida de tipos = 7 × 1 % = 7 %. La duración mide cuánto sufre el precio de un bono con los tipos."
+          "why": "Caída ≈ duración × subida de tipos = 7 × 1 % = 7 %. La duración mide cuánto sufre el precio de un bono con los tipos.",
+          "guia": "g3"
         },
         {
           "id": "bh2-3",
@@ -81,7 +113,8 @@
           "q": "Otro bono tiene una duración de 2 y los tipos suben un 1,5 %. ¿Cuánto cae su precio aproximadamente?",
           "unit": "%",
           "a": 3,
-          "why": "2 × 1,5 % = 3 %. Cuanto más corto es el bono, menos le afectan las subidas de tipos: por eso las letras apenas se mueven."
+          "why": "2 × 1,5 % = 3 %. Cuanto más corto es el bono, menos le afectan las subidas de tipos: por eso las letras apenas se mueven.",
+          "guia": "g4"
         },
         {
           "id": "bh2-4",
@@ -94,7 +127,8 @@
             "El precio de mercado del día"
           ],
           "a": 1,
-          "why": "La caída solo se convierte en pérdida si vendes antes. Si el emisor no impaga, al vencimiento cobras el nominal completo y todos los cupones."
+          "why": "La caída solo se convierte en pérdida si vendes antes. Si el emisor no impaga, al vencimiento cobras el nominal completo y todos los cupones.",
+          "guia": "g4"
         }
       ]
     }

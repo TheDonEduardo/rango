@@ -4,6 +4,32 @@
   "track": "pasiva",
   "title": "Invertir por objetivos",
   "blurb": "Cada meta con su plazo, su activo y su aportación.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Cada meta, su plazo",
+      "texto": "Antes de elegir dónde invertir, pregúntate cuándo necesitarás el dinero. Menos de 2 años: liquidez. De 2 a 5: sobre todo renta fija corta. Más de 10: sobre todo acciones.",
+      "ejemplo": "La entrada de un piso dentro de 18 meses va a un depósito o un fondo monetario, no a bolsa."
+    },
+    {
+      "id": "g2",
+      "titulo": "Cuánto ahorrar al mes",
+      "texto": "Divide lo que te falta entre los meses que quedan. Es el punto de partida; la rentabilidad, si llega, es un extra.",
+      "ejemplo": "Para 30.000 € en 5 años, 500 € al mes. Si ya tienes 6.000 €, 400 €."
+    },
+    {
+      "id": "g3",
+      "titulo": "Cuánto necesitas para jubilarte",
+      "texto": "Con la regla del 4 %, la cartera necesaria es unas 25 veces lo que quieres retirar al año. Las aportaciones constantes y el tiempo hacen la mayor parte.",
+      "ejemplo": "Retirar 24.000 € al año exige unos 600.000 €. 300 € al mes al 0,5 % mensual durante 30 años son unos 301.000 €."
+    },
+    {
+      "id": "g4",
+      "titulo": "Colchón y largo plazo, separados",
+      "texto": "El colchón de emergencia va en liquidez y la jubilación en cartera: cada uno con su plazo, sin depender de que la bolsa no haya caído el mes que lo necesitas.",
+      "ejemplo": "Con 1.800 € de gastos al mes, un colchón de 6 meses son 10.800 €."
+    }
+  ],
   "lessons": [
     {
       "id": "ob1",
@@ -31,7 +57,8 @@
               "Liquidez disponible al momento"
             ]
           ],
-          "why": "Cuanto más cerca está el gasto, menos tiempo hay para recuperar una caída: el dinero de corto plazo no va a bolsa."
+          "why": "Cuanto más cerca está el gasto, menos tiempo hay para recuperar una caída: el dinero de corto plazo no va a bolsa.",
+          "guia": "g1"
         },
         {
           "id": "ob1-2",
@@ -44,7 +71,8 @@
             "En un ETF de mercados emergentes"
           ],
           "a": 0,
-          "why": "La bolsa ha caído más de un 30 % en algunos años y tarda en recuperarse; con 18 meses no hay margen para esperar."
+          "why": "La bolsa ha caído más de un 30 % en algunos años y tarda en recuperarse; con 18 meses no hay margen para esperar.",
+          "guia": "g1"
         },
         {
           "id": "ob1-3",
@@ -52,7 +80,8 @@
           "q": "Quieres reunir 30.000 € en 5 años sin contar rentabilidad. ¿Cuánto debes ahorrar al mes?",
           "unit": "€",
           "a": 500,
-          "why": "30.000 / 60 meses = 500 € al mes."
+          "why": "30.000 / 60 meses = 500 € al mes.",
+          "guia": "g2"
         },
         {
           "id": "ob1-4",
@@ -60,7 +89,8 @@
           "q": "Mismo objetivo de 30.000 € en 5 años, pero ya tienes 6.000 € ahorrados. ¿Cuánto al mes?",
           "unit": "€",
           "a": 400,
-          "why": "Faltan 24.000 €: 24.000 / 60 = 400 € al mes."
+          "why": "Faltan 24.000 €: 24.000 / 60 = 400 € al mes.",
+          "guia": "g2"
         }
       ]
     },
@@ -74,7 +104,8 @@
           "q": "Para jubilarte quieres retirar 24.000 € al año con la regla del 4 %. ¿Cuántos miles de euros de cartera necesitas?",
           "unit": "",
           "a": 600,
-          "why": "24.000 / 0,04 = 600.000 €, es decir, 25 veces el gasto anual."
+          "why": "24.000 / 0,04 = 600.000 €, es decir, 25 veces el gasto anual.",
+          "guia": "g3"
         },
         {
           "id": "ob2-2",
@@ -83,7 +114,8 @@
           "unit": "",
           "a": 301,
           "why": "300 × (1,005³⁶⁰ − 1) / 0,005 ≈ 301.355 €, de los que solo 108.000 € son aportaciones.",
-          "tol": 0.5
+          "tol": 0.5,
+          "guia": "g3"
         },
         {
           "id": "ob2-3",
@@ -96,7 +128,8 @@
             "Todo en acciones y vender si hace falta"
           ],
           "a": 0,
-          "why": "Cada objetivo tiene su plazo: el colchón debe estar disponible ya, sin depender de que la bolsa no haya caído un 30 % ese mes."
+          "why": "Cada objetivo tiene su plazo: el colchón debe estar disponible ya, sin depender de que la bolsa no haya caído un 30 % ese mes.",
+          "guia": "g4"
         },
         {
           "id": "ob2-4",
@@ -104,7 +137,8 @@
           "q": "Gastas 1.800 € al mes. ¿Cuántos miles de euros debe tener un colchón de 6 meses?",
           "unit": "",
           "a": 10.8,
-          "why": "1.800 × 6 = 10.800 €."
+          "why": "1.800 × 6 = 10.800 €.",
+          "guia": "g4"
         }
       ]
     }
