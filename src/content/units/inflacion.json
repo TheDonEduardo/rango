@@ -87,7 +87,13 @@
           ],
           "a": 0,
           "why": "2 − 3 = −1 %: tienes más euros, pero compran menos que antes.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            null,
+            "El 2 % es nominal: con un 3 % de inflación, compras menos que antes.",
+            "No se mantiene: los precios suben más que tu dinero.",
+            "Rentabilidad e inflación se restan, no se suman."
+          ]
         }
       ]
     },
@@ -151,7 +157,13 @@
           ],
           "a": 0,
           "why": "Desde 1900, las acciones mundiales han rendido en torno a un 5 % real anual, frente a cerca de un 2 % de los bonos.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            null,
+            "Las acciones pueden caer mucho; es su principal riesgo.",
+            "Hay muchos años en que los bonos rinden más; la ventaja es a largo plazo.",
+            "Ninguna acción está garantizada por el Estado."
+          ]
         }
       ]
     }

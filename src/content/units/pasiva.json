@@ -85,7 +85,13 @@
           ],
           "a": 0,
           "why": "Con la misma cantidad compras más participaciones cuando el precio cae y menos cuando sube, y te quita la tentación de adivinar el momento. No garantiza ganar.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            null,
+            "Aportar cada mes no evita las pérdidas: si la bolsa cae, tu cartera también.",
+            "La forma de aportar no cambia los impuestos sobre la ganancia.",
+            "Aportar con regularidad no hace batir al índice; como mucho, lo sigue."
+          ]
         },
         {
           "id": "bg1-4",
@@ -116,7 +122,13 @@
           "a": 0,
           "why": "Los traspasos entre fondos de inversión no tributan hasta que reembolsas. Los ETF, en general, no admiten traspaso: venderlos tributa la ganancia.",
           "revisar": "2027-06",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            null,
+            "Vender un ETF en bolsa tributa la ganancia; el traspaso sin impuestos es solo entre fondos.",
+            "Vender acciones también tributa la ganancia en el momento.",
+            "No depende del banco: solo los fondos de inversión se pueden traspasar sin tributar."
+          ]
         },
         {
           "id": "bg2-2",

@@ -85,7 +85,13 @@
           ],
           "a": 1,
           "why": "Al vender lo que ha subido y comprar lo que ha bajado para volver al objetivo, compras barato y vendes caro sin tener que adivinar el mercado.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            "Al contrario: el rebalanceo vende lo que más sube para volver al objetivo.",
+            null,
+            "Rebalancear no elimina las caídas: mantiene el riesgo que elegiste.",
+            "El objetivo se mantiene; lo que se ajusta es la cartera para volver a él."
+          ]
         },
         {
           "id": "rb1-4",
@@ -99,7 +105,13 @@
           ],
           "a": 1,
           "why": "63 − 60 = 3 puntos, por debajo de 5. El margen evita operar por movimientos pequeños y pagar costes de más.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            "63 − 60 = 3 puntos, por debajo del margen de 5: la regla dice esperar.",
+            null,
+            "Vender todo no es rebalancear: solo hay que volver al 60 %, y aún no hace falta.",
+            "El objetivo no se cambia porque la cartera se haya movido: eso es dejar que el mercado decida."
+          ]
         },
         {
           "id": "rb1-5",
@@ -149,7 +161,13 @@
           "a": 2,
           "why": "Los traspasos entre fondos no tributan hasta que reembolsas. Por eso los fondos indexados son tan cómodos para rebalancear en España.",
           "revisar": "2027-06",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            "Entre fondos de inversión el traspaso no tributa hasta que reembolsas.",
+            "No hay un mínimo de 1.000 €: el traspaso no tributa sea cual sea el importe.",
+            null,
+            "Puedes traspasar entre gestoras y bancos distintos sin tributar."
+          ]
         },
         {
           "id": "rb2-2",
@@ -182,7 +200,13 @@
           ],
           "a": 1,
           "why": "Rebalancear muy a menudo multiplica costes e impuestos; no hacerlo nunca deja que el riesgo crezca sin que lo decidas. Una vez al año o al pasar un margen suele bastar.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            "Rebalancear cada día multiplica costes e impuestos sin ningún beneficio.",
+            null,
+            "Reaccionar a cada caída es operar por el ruido del mercado, no seguir el plan.",
+            "La cartera no se equilibra sola: lo que más sube pesa cada vez más."
+          ]
         }
       ]
     }

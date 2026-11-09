@@ -91,7 +91,13 @@
           ],
           "a": 0,
           "why": "William Bengen (1994) vio que, con una cartera de acciones y bonos de EE. UU., retirar un 4 % ajustado por inflación aguantaba 30 años en casi todos los periodos históricos. Es una referencia, no una garantía.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            null,
+            "No sale de ninguna ley: es una referencia de un estudio con datos de EE. UU.",
+            "Los bonos no garantizan un 4 %; la regla combina acciones y bonos.",
+            "No es la media de los fondos de pensiones, sino lo que aguantó una cartera en los peores periodos históricos."
+          ]
         }
       ]
     },
@@ -112,7 +118,13 @@
           ],
           "a": 1,
           "why": "Al principio la cartera es mayor y sigues retirando: vendes barato justo cuando más pesa. Es el riesgo de secuencia de rentabilidades.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            "Una caída al final daña menos: la cartera ya ha crecido y quedan menos años de retiradas.",
+            null,
+            "No es igual: al principio vendes barato justo cuando la cartera es mayor.",
+            "Con retiradas, el orden de las rentabilidades importa aunque la media sea la misma."
+          ]
         },
         {
           "id": "rt2-2",
@@ -135,7 +147,13 @@
           ],
           "a": 1,
           "why": "Con un colchón en liquidez puedes no vender acciones en los años malos y reponerlo en los buenos. Retirar algo menos tras una caída también ayuda.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            "Todo en acciones aumenta las caídas y el riesgo de vender en el peor momento.",
+            null,
+            "Retirar más en los años malos es lo contrario: obliga a vender más barato.",
+            "Concentrar en un sector aumenta el riesgo en vez de reducirlo."
+          ]
         },
         {
           "id": "rt2-4",

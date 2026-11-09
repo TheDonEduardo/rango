@@ -74,7 +74,13 @@
           ],
           "a": 0,
           "why": "El plan se escribió para este momento. Aportar en las caídas compra más barato, y rebalancear obliga a comprar acciones cuando nadie quiere.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            null,
+            "Vender en plena caída convierte la bajada en pérdida y te deja fuera de la recuperación.",
+            "Dejar de aportar es perder la ocasión de comprar más barato.",
+            "Cambiar a oro por miedo es abandonar el plan en el peor momento."
+          ]
         },
         {
           "id": "pp1-3",
@@ -97,7 +103,13 @@
           ],
           "a": 2,
           "why": "Día a día, la bolsa baja casi tantas veces como sube, y las pérdidas pesan más que las ganancias. Mirar poco reduce la tentación de tocar un plan que funciona.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            "Consultar la cartera no tiene coste en el bróker.",
+            "El precio no cambia por mirarlo: lo que cambia es tu tentación de tocarla.",
+            null,
+            "No hay ninguna norma que lo prohíba: es un consejo de conducta."
+          ]
         }
       ]
     },
@@ -118,7 +130,13 @@
           ],
           "a": 1,
           "why": "Invertir de golpe ganó en torno a dos de cada tres veces, porque el mercado sube más a menudo de lo que baja. Repartir la entrada reduce el arrepentimiento si cae justo después: es una opción emocional razonable.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            "Repartirlo reduce el arrepentimiento, pero ganó menos veces que invertir de golpe.",
+            null,
+            "Nadie sabe cuándo llega una caída; esperar suele costar subidas.",
+            "En el banco pierde poder de compra con la inflación."
+          ]
         },
         {
           "id": "pp2-2",
@@ -166,7 +184,13 @@
           ],
           "a": 1,
           "why": "Sin colchón, el primer imprevisto te obliga a vender, quizá en plena caída. Con él, la cartera puede quedarse quieta los años que haga falta.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            "El fondo que más ganó este año no dice nada del próximo.",
+            null,
+            "Varias cuentas no te protegen de nada: primero hace falta el colchón.",
+            "Las noticias del día no cambian lo que necesitas antes de invertir."
+          ]
         }
       ]
     }

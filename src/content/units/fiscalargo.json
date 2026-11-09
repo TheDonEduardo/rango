@@ -59,7 +59,13 @@
           ],
           "a": 0,
           "why": "El fondo reinvierte los dividendos y tú no tributas hasta que vendes. A largo plazo, ese diferimiento suma rentabilidad.",
-          "guia": "g1"
+          "guia": "g1",
+          "porque": [
+            null,
+            "Sí se paga al vender, por toda la ganancia acumulada.",
+            "No se paga el doble: se paga lo mismo, pero más tarde, y mientras tanto rinde.",
+            "No hay pagos mensuales por adelantado: el impuesto se difiere hasta vender."
+          ]
         },
         {
           "id": "pf1-3",
@@ -82,7 +88,13 @@
           ],
           "a": 1,
           "why": "El traspaso entre fondos no tributa hasta el reembolso final. Reembolsar y comprar después adelanta el impuesto sin necesidad.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            "Reembolsar tributa la ganancia; el traspaso no.",
+            null,
+            "No hay que esperar a perder: el traspaso permite cambiar sin tributar.",
+            "Vender el fondo para comprar un ETF tributa la ganancia en ese momento."
+          ]
         }
       ]
     },
@@ -121,7 +133,13 @@
           ],
           "a": 2,
           "why": "El dinero queda inmovilizado salvo supuestos concretos, como desempleo de larga duración, enfermedad grave o aportaciones con más de 10 años de antigüedad. Comprueba las condiciones cada año.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            "Un plan de pensiones puede invertir en acciones.",
+            "No tributa cada año: tributa al rescatarlo.",
+            null,
+            "Admite aportaciones periódicas, dentro de los límites anuales."
+          ]
         },
         {
           "id": "pf2-4",

@@ -73,7 +73,13 @@
           ],
           "a": 0,
           "why": "Sigue reglas fijas, como un índice, pero elige o pondera los valores por un criterio como el valor o el tamaño.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            null,
+            "Sigue reglas fijas, como un índice: no hay un gestor eligiendo cada día.",
+            "Un ETF apalancado es otra cosa: multiplica el movimiento del índice.",
+            "No está garantizado: puede caer como cualquier fondo de acciones."
+          ]
         },
         {
           "id": "fc1-3",
@@ -96,7 +102,13 @@
           ],
           "a": 0,
           "why": "Una prima que llega solo en promedio exige aguantar rachas de 10 años; quien abandona en el peor momento se queda con la parte mala.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            null,
+            "Una mala década no demuestra que un factor haya dejado de funcionar; las primas llegan solo en promedio.",
+            "Saltar de factor en factor suele llevar a comprar el que ya ha subido.",
+            "Nada garantiza que gane al año siguiente: puede seguir mal varios años."
+          ]
         }
       ]
     },
@@ -135,7 +147,13 @@
           ],
           "a": 0,
           "why": "Cada empresa pesa según su valor en bolsa: en el MSCI World, las 10 mayores superan el 20 % del índice.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            null,
+            "Las más baratas pesarían más en un índice de valor, no en uno por capitalización.",
+            "Las pequeñas pesan poco: cada empresa pesa según su tamaño en bolsa.",
+            "Solo en un índice de igual ponderación pesan todas igual."
+          ]
         },
         {
           "id": "fc2-4",

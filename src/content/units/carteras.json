@@ -92,7 +92,13 @@
           ],
           "a": 0,
           "why": "Harry Browne la diseñó para cuatro escenarios: crecimiento (acciones), deflación (bonos largos), inflación (oro) y recesión (liquidez). Sacrifica rentabilidad a cambio de caídas pequeñas.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            null,
+            "La cartera permanente sacrifica rentabilidad para caer poco: no busca batir al S&P 500.",
+            "Para maximizar el crecimiento se pondrían más acciones, no oro y liquidez.",
+            "Las comisiones no tienen que ver: el oro y la liquidez están para los escenarios malos."
+          ]
         }
       ]
     },
@@ -113,7 +119,13 @@
           ],
           "a": 2,
           "why": "La mayor parte del resultado viene de mantener el plan. Cambiar de cartera tras un mal año suele vender lo que acaba de caer.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            "Cambiar según las noticias es lo que suele estropear el resultado.",
+            "Perseguir lo que más ganó el año pasado suele llevar a comprar tarde.",
+            null,
+            "Muchos fondos parecidos no diversifican más: repiten las mismas empresas."
+          ]
         },
         {
           "id": "cm2-2",
@@ -145,7 +157,13 @@
           ],
           "a": 1,
           "why": "Dos fondos baratos y diversificados se entienden, se rebalancean en minutos y no tientan a cambiar. La sencillez es lo que permite aguantar décadas.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            "Doce fondos temáticos son difíciles de seguir y suelen solaparse.",
+            null,
+            "Elegir acciones por noticias es justo lo contrario de una cartera sencilla.",
+            "Un ETF apalancado multiplica las caídas: no es para empezar."
+          ]
         }
       ]
     }

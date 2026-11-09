@@ -49,7 +49,13 @@
           "a": 0,
           "why": "Es la versión española de los REIT: cotiza en bolsa y debe repartir como dividendo al menos el 80 % del beneficio del alquiler.",
           "revisar": "2027-06",
-          "guia": "g1"
+          "guia": "g1",
+          "porque": [
+            null,
+            "Una SOCIMI no está garantizada: es una empresa cotizada y su precio sube y baja.",
+            "No es una hipoteca: invierte en inmuebles para alquilarlos.",
+            "No es un depósito: es una acción."
+          ]
         },
         {
           "id": "io1-2",
@@ -81,7 +87,13 @@
           ],
           "a": 0,
           "why": "Los REIT cotizados son empresas del índice como las demás; añadir más inmobiliario es una apuesta extra, no diversificación nueva.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            null,
+            "El fondo no compra pisos: compra acciones de empresas, entre ellas las inmobiliarias.",
+            "La CNMV no exige ningún peso en inmobiliario.",
+            "Sí incluye: los REIT cotizados forman parte del índice."
+          ]
         }
       ]
     },
@@ -102,7 +114,13 @@
           ],
           "a": 0,
           "why": "Su rentabilidad depende solo de que otro pague más por él; una acción reparte beneficios que crecen con el tiempo.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            null,
+            "Sí se puede: un ETC de oro es la forma más habitual de comprarlo en bolsa.",
+            "El oro sí cotiza, en los mercados de materias primas y a través de ETC.",
+            "El oro sube y baja de precio, a veces mucho."
+          ]
         },
         {
           "id": "io2-2",

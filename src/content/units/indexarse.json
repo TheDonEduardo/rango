@@ -64,7 +64,13 @@
           ],
           "a": 0,
           "why": "Todos los inversores juntos poseen el mercado: si unos ganan más que la media, otros ganan menos. Antes de costes, la media activa es la del mercado.",
-          "guia": "g1"
+          "guia": "g1",
+          "porque": [
+            null,
+            "Juntos son el mercado: si unos ganan más que la media, otros ganan menos.",
+            "Antes de costes, en conjunto obtienen exactamente la del mercado; detrás quedan después de costes.",
+            "No depende del año: es una identidad, se cumple siempre."
+          ]
         },
         {
           "id": "ix1-2",
@@ -98,7 +104,13 @@
           "a": 0,
           "why": "Según los informes SPIVA de S&P, en torno al 85-90 % de los fondos activos de acciones de EE. UU. y Europa quedan por detrás de su índice a 15 años.",
           "revisar": "2027-06",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            null,
+            "Es al revés: la gran mayoría queda por detrás.",
+            "No hay ese reparto: a 15 años, en torno al 85-90 % queda por detrás.",
+            "Pagar más no compra mejores resultados: los costes restan."
+          ]
         }
       ]
     },
@@ -119,7 +131,13 @@
           ],
           "a": 0,
           "why": "Muy pocos fondos del 25 % mejor siguen ahí 3-5 años después: el pasado reciente predice poco el futuro.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            null,
+            "Los estudios muestran lo contrario: pocos fondos ganadores repiten.",
+            "Tres buenos años predicen poco del futuro.",
+            "Cambiar el indexado por un ganador reciente es perseguir rentabilidades pasadas."
+          ]
         },
         {
           "id": "ix2-2",

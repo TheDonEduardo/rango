@@ -89,7 +89,13 @@
           ],
           "a": 0,
           "why": "La bolsa ha caído más de un 30 % en algunos años y tarda en recuperarse; con 18 meses no hay margen para esperar.",
-          "guia": "g1"
+          "guia": "g1",
+          "porque": [
+            null,
+            "Un ETF global puede caer un 30 % justo antes de que necesites el dinero.",
+            "Las pequeñas empresas son aún más volátiles: demasiado riesgo a 18 meses.",
+            "Los emergentes también pueden caer mucho a corto plazo."
+          ]
         },
         {
           "id": "ob1-3",
@@ -147,7 +153,13 @@
           ],
           "a": 0,
           "why": "Cada objetivo tiene su plazo: el colchón debe estar disponible ya, sin depender de que la bolsa no haya caído un 30 % ese mes.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            null,
+            "El colchón tiene que estar disponible ya, sin depender de cómo vaya la bolsa.",
+            "Un depósito para 30 años pierde contra la inflación.",
+            "Si necesitas el colchón en una caída, venderías barato."
+          ]
         },
         {
           "id": "ob2-4",

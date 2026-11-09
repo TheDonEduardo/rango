@@ -66,7 +66,13 @@
           ],
           "a": 0,
           "why": "Lo que cuenta es la divisa de los activos: si el dólar cae un 10 %, el ETF cae en euros aunque cotice en euros.",
-          "guia": "g1"
+          "guia": "g1",
+          "porque": [
+            null,
+            "La divisa de cotización no cambia lo que tiene dentro: si el dólar cae, el ETF cae en euros.",
+            "Da igual dónde lo vendas: el riesgo está en los activos en dólares.",
+            "El dólar se mueve todos los años, haya elecciones o no."
+          ]
         },
         {
           "id": "dv1-4",
@@ -112,7 +118,13 @@
           ],
           "a": 0,
           "why": "Las acciones se mueven un 15-20 % al año y las divisas tienden a compensarse a largo plazo; cubrir añade coste sin reducir mucho el riesgo.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            null,
+            "Cubrir todo cuesta cada año y, a largo plazo, reduce poco el riesgo de las acciones.",
+            "Cambiar de clase según el dólar es intentar adivinar la divisa.",
+            "Vender por un movimiento del dólar es abandonar el plan por algo que suele compensarse."
+          ]
         },
         {
           "id": "dv2-2",
@@ -126,7 +138,13 @@
           ],
           "a": 0,
           "why": "Un bono puede moverse un 3-5 % al año y el dólar, un 10 %: sin cubrir, la parte estable de la cartera deja de serlo.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            null,
+            "Sin cubrir, un movimiento del 10 % del dólar pesaría más que lo que rinde el bono.",
+            "Sí afecta: un bono en dólares se mueve en euros con el dólar.",
+            "Comprar solo en dólares aumenta el riesgo de divisa en vez de reducirlo."
+          ]
         },
         {
           "id": "dv2-3",

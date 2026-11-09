@@ -83,7 +83,13 @@
           "a": 2,
           "why": "El convenio entre Irlanda y EE. UU. deja la retención sobre los dividendos en el 15 %, frente al 30 % general. Ese coste lo paga el fondo, aunque tú no lo veas.",
           "revisar": "2027-06",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            "No es obligatorio: es una ventaja fiscal del convenio entre Irlanda y EE. UU.",
+            "Los ETF irlandeses también cobran comisiones.",
+            null,
+            "Pueden cotizar en euros; lo que importa es dónde está domiciliado el fondo."
+          ]
         },
         {
           "id": "pd1-4",
@@ -114,7 +120,13 @@
           ],
           "a": 0,
           "why": "El TER es solo una parte del coste. Lo que recibes es la rentabilidad del índice menos la diferencia de seguimiento, y ahí B pierde 0,20 puntos menos al año.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            null,
+            "La comisión es solo una parte: A se separa del índice tres veces más que B.",
+            "Aunque copien el mismo índice, no rinden igual: cuenta la diferencia de seguimiento.",
+            "Sí se puede: la diferencia de seguimiento ya incluye todos los costes."
+          ]
         },
         {
           "id": "pd2-2",
@@ -137,7 +149,13 @@
           ],
           "a": 0,
           "why": "Si el fondo cierra, te devuelven el dinero y tributas la ganancia aunque no quisieras vender. Además, suelen tener horquillas más amplias.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            null,
+            "El tamaño no hace rendir menos en sí; el problema es que puede cerrar.",
+            "Se pueden comprar desde España.",
+            "El riesgo de mercado depende del índice, no del tamaño del fondo."
+          ]
         },
         {
           "id": "pd2-4",

@@ -48,7 +48,13 @@
           ],
           "a": 0,
           "why": "Una vez al año basta para rebalancear y revisar costes y objetivos; mirarla a diario solo aumenta la tentación de tocarla.",
-          "guia": "g1"
+          "guia": "g1",
+          "porque": [
+            null,
+            "Mirarla cada día solo aumenta la tentación de tocarla.",
+            "Revisar por cada noticia es reaccionar al ruido.",
+            "Sin revisar nunca, la cartera se descuadra y deja de tener el riesgo que elegiste."
+          ]
         },
         {
           "id": "rv1-2",
@@ -122,7 +128,13 @@
           "a": 0,
           "why": "Vender un ETF tributa la plusvalía; en fondos de inversión el traspaso no tributa. Compara el impuesto con el ahorro anual.",
           "revisar": "2027-06",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            null,
+            "No siempre compensa: vender un ETF tributa y el ahorro de comisión puede tardar años en recuperarlo.",
+            "Conviene revisar los costes de vez en cuando; lo que hay que hacer es calcular.",
+            "Comprar los dos no ahorra nada: mantienes la comisión alta en una parte."
+          ]
         },
         {
           "id": "rv2-3",
@@ -146,7 +158,13 @@
           ],
           "a": 0,
           "why": "Tras la caída las acciones pesan menos del 70 %: rebalancear te obliga a comprar barato, que es justo lo que cuesta hacer.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            null,
+            "Vender tras la caída es vender barato: el plan dice comprar hasta volver al 70 %.",
+            "Parar las aportaciones es perder la ocasión de comprar más barato.",
+            "Cambiar el reparto por miedo es abandonar el plan en el peor momento."
+          ]
         }
       ]
     }

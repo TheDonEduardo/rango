@@ -101,7 +101,13 @@
           ],
           "a": 0,
           "why": "Cuanto más probable es que el emisor no pague, más interés exige el mercado. Un 9 % no es un regalo: es el precio de ese riesgo.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            null,
+            "Que la empresa gane más no hace que su bono pague más: lo que paga el riesgo es la posibilidad de impago.",
+            "El Estado no cobra comisiones por sus bonos; la diferencia es el riesgo de no cobrar.",
+            "El enunciado no habla de plazos; la diferencia del 6 % la explica la calidad crediticia."
+          ]
         }
       ]
     },
@@ -122,7 +128,13 @@
           ],
           "a": 1,
           "why": "Los bonos nuevos pagarán más, así que los antiguos, con cupones menores, solo se venden si bajan de precio. Precio y tipos se mueven en sentido contrario.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            "Al subir los tipos, los bonos nuevos pagan más y los antiguos solo se venden más baratos.",
+            null,
+            "Sí cambian: el precio se ajusta para que su rentabilidad iguale a la de los bonos nuevos.",
+            "Una subida de tipos hace bajar el precio, no duplicarlo."
+          ]
         },
         {
           "id": "bh2-2",
@@ -154,7 +166,13 @@
           ],
           "a": 1,
           "why": "La caída solo se convierte en pérdida si vendes antes. Si el emisor no impaga, al vencimiento cobras el nominal completo y todos los cupones.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            "Al vencimiento te devuelven el nominal completo; la caída solo afecta si vendes antes.",
+            null,
+            "Los cupones se siguen cobrando cada año pase lo que pase con los tipos.",
+            "El precio de mercado solo importa si vendes antes del vencimiento."
+          ]
         }
       ]
     }
