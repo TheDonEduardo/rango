@@ -1,5 +1,5 @@
 // Inicio: cabecera, meta diaria, selector de ruta, tarjetas (test, simuladores, continuar, repaso) y camino de lecciones.
-import {GOAL,RH,OFFS,esc} from '../util.js';
+import {RH,OFFS,esc} from '../util.js';
 import {ico,LOGO} from '../icons.js';
 import {glyph} from '../charts.js';
 import {UNITS,FLAT,CASOS,SEMANA,TRACKS,PLACEMENT,trackOf,exCount} from '../content.js';
@@ -14,11 +14,12 @@ const DEV=typeof location!=='undefined'&&/[?&]dev\b/.test(location.search||'');
 export function homeHTML(){
   const st=statuses(),sk=streakNow(),dx=dayXpNow();
   let h=`<header class="top"><h1 class="brand">${LOGO}<span>Rango</span></h1><div class="stats"><span class="chip fire" aria-label="${t.racha(sk)}">${ico('flame')}<b>${sk}</b></span><span class="chip xp" aria-label="${t.xpTotal(S.xp)}">${ico('bolt')}<b>${S.xp}</b></span><button class="chip vstat" data-act="stats" aria-label="${t.verProgreso}">${ico('bars')}</button></div></header><div class="home">`;
-  h+=`<section class="goal" aria-label="${t.metaDiaria}"><div class="goal-h"><span>${t.metaHoy}</span><span>${Math.min(dx,GOAL)} / ${GOAL} XP</span></div><div class="bar" role="progressbar" aria-label="${t.metaHoy}" aria-valuemin="0" aria-valuemax="${GOAL}" aria-valuenow="${Math.min(dx,GOAL)}"><i style="width:${Math.min(100,dx/GOAL*100)}%"></i></div></section>`;
+  h+=`<section class="goal" aria-label="${t.metaDiaria}"><div class="goal-h"><span>${t.metaHoy}</span><span>${Math.min(dx,S.meta)} / ${S.meta} XP</span></div><div class="bar" role="progressbar" aria-label="${t.metaHoy}" aria-valuemin="0" aria-valuemax="${S.meta}" aria-valuenow="${Math.min(dx,S.meta)}"><i style="width:${Math.min(100,dx/S.meta*100)}%"></i></div></section>`;
   h+=`<nav class="tracks" aria-label="${t.ruta}">${TRACKS.map(r=>`<button data-act="track" data-track="${r.id}" aria-pressed="${S.track===r.id}">${r.title}</button>`).join('')}</nav>`;
   const TF=FLAT.filter(l=>trackOf(l.unit)===S.track);
-  if(S.track!=='basico'&&!advancedOpen())h+=`<section class="gate"><p>${t.bloqueoRuta}</p><div class="row"><button class="btn line" data-act="track" data-track="basico">${t.irBasicos}</button><button class="btn ghost" data-act="skipbasics">${t.saltarBasicos}</button></div></section>`;
-  if(S.track==='basico'&&!S.placement&&!Object.keys(S.done).length)h+=`<section class="test" aria-label="${t.testNivel}"><div><b>${t.testPregunta}</b><span>${t.testExplica(PLACEMENT.length)}</span></div><div class="row"><button class="btn primary" data-act="test">${t.hacerTest}</button><button class="btn ghost" data-act="notest">${t.desdeCero}</button></div></section>`;
+  if(!S.objetivo&&!Object.keys(S.done).length)h+=`<section class="objetivo" aria-label="${t.objetivoTitulo}"><b>${t.objetivoTitulo}</b><div class="obj-opc">${['basico','pasiva','fundamental','tecnico'].map(r=>`<button class="btn line" data-act="objetivo" data-track="${r}"><b>${t.objetivos[r][0]}</b><span>${t.objetivos[r][1]}</span></button>`).join('')}</div><button class="btn ghost" data-act="noobjetivo">${t.ahoraNo}</button></section>`;
+  if(S.track!=='basico'&&!advancedOpen())h+=`<section class="gate"><p>${t.bloqueoRuta}</p><div class="row"><button class="btn line" data-act="track" data-track="basico">${t.irBasicos}</button>${S.placement?'':`<button class="btn line" data-act="test">${t.hacerTest}</button>`}<button class="btn ghost" data-act="skipbasics">${t.saltarBasicos}</button></div></section>`;
+  if(S.track==='basico'&&S.objetivo&&!S.placement&&!Object.keys(S.done).length)h+=`<section class="test" aria-label="${t.testNivel}"><div><b>${t.testPregunta}</b><span>${t.testExplica(PLACEMENT.length)}</span></div><div class="row"><button class="btn primary" data-act="test">${t.hacerTest}</button><button class="btn ghost" data-act="notest">${t.desdeCero}</button></div></section>`;
   // Prueba de nivel de las rutas avanzadas: para quien aún no ha hecho ninguna lección de la ruta.
   if(S.track!=='basico'&&advancedOpen()&&!S.pruebas[S.track]&&!TF.some(l=>S.done[l.id]))h+=`<section class="test" aria-label="${t.pruebaNivel}"><div><b>${t.nivelPregunta}</b><span>${t.nivelExplica}</span></div><div class="row"><button class="btn primary" data-act="nivel" data-track="${S.track}">${t.hacerPrueba}</button><button class="btn ghost" data-act="nonivel" data-track="${S.track}">${t.desdeCero}</button></div></section>`;
   if(S.track==='tecnico'&&SEMANA&&advancedOpen())h+=simCardHTML();

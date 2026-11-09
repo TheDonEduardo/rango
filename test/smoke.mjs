@@ -158,6 +158,8 @@ if (app.innerHTML.includes('Antes de empezar') || !app.innerHTML.includes('Rango
 if (!T.homeHTML().includes('data-act="legal"')) errs.push('falta el enlace al aviso legal en el inicio');
 if (!T.homeHTML().includes('Rango')) errs.push('home no renderiza');
 // Test de nivel: se ofrece a un usuario nuevo y sus preguntas existen (dos por unidad obligatoria de Básico).
+if (!T.homeHTML().includes('data-act="objetivo"') || T.homeHTML().includes('data-act="test"')) errs.push('un usuario nuevo no elige primero su objetivo');
+T.getState().objetivo = 'basico';
 if (!T.homeHTML().includes('data-act="test"')) errs.push('no se ofrece el test de nivel a un usuario nuevo');
 const lecDe = id => id.slice(0, id.lastIndexOf('-'));
 for (const id of T.PLACEMENT) if (!exIds.has(id)) errs.push('el test de nivel usa un ejercicio inexistente: ' + id);
@@ -354,6 +356,25 @@ if (fs.existsSync(semPath)) {
   if (hechas.join() !== tec.slice(0, 2).map(u => u.id).join() || !app.innerHTML.includes('Prueba completada') || st.pruebas.tecnico?.unidades !== 2) errs.push('la prueba de nivel no marca justo las unidades superadas: ' + hechas.join());
   if (T.homeHTML().includes('data-act="nivel"')) errs.push('la prueba de nivel se vuelve a ofrecer tras hacerla');
   st.done = antes; T.goHome();
+}
+
+// Racha: un día sin practicar gasta un protector; cada 7 días seguidos se gana uno (máximo 2). Meta diaria y objetivo inicial.
+{
+  const st = T.getState(), copia = JSON.stringify(st), dia = n => { const d = new Date(); d.setDate(d.getDate() + n); return dk(d); };
+  Object.assign(st, {last: dia(-2), streak: 5, protector: 1});
+  let r = T.sumarRacha(); if (!r.usado || st.streak !== 6 || st.protector !== 0) errs.push('el protector de racha no salva un día perdido');
+  Object.assign(st, {last: dia(-2), streak: 5, protector: 0});
+  T.sumarRacha(); if (st.streak !== 1) errs.push('sin protector, un día perdido no reinicia la racha');
+  Object.assign(st, {last: dia(-1), streak: 6, protector: 2});
+  r = T.sumarRacha(); if (st.streak !== 7 || st.protector !== 2 || r.ganado) errs.push('se gana un protector por encima del máximo');
+  Object.assign(st, {last: dia(-1), streak: 13, protector: 0});
+  r = T.sumarRacha(); if (!r.ganado || st.protector !== 1) errs.push('7 días seguidos no dan un protector');
+  st.meta = 80; if (!T.homeHTML().includes('/ 80 XP')) errs.push('la meta diaria elegida no se usa en el inicio');
+  T.openStats(); if (!app.innerHTML.includes('data-act="meta"') || !app.innerHTML.includes('Protectores de racha')) errs.push('las estadísticas no permiten elegir la meta ni muestran los protectores'); T.goHome();
+  const done = st.done; st.done = {}; st.objetivo = null;
+  if (!T.homeHTML().includes('data-act="objetivo"')) errs.push('un usuario nuevo no elige objetivo');
+  st.done = done;
+  Object.assign(st, JSON.parse(copia));
 }
 
 // 9) Estadísticas: cada primer intento queda registrado; los fallados forman los «puntos débiles» y se pueden practicar.

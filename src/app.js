@@ -2,7 +2,7 @@
 // Las pantallas están en views/, los tipos de ejercicio en exercises/ y el progreso guardado en state.js.
 import {today,yest,shuffle,esc} from './util.js';
 import {UNITS,FLAT,CASOS,SEMANA,EXBYID,PLACEMENT,EXAMEN_N,trackOf} from './content.js';
-import {S,save,resetState,migrar,advancedOpen,statuses,srsDue,srsRecord,SRS_MAX,exportar,leerCopia,importar} from './state.js';
+import {S,save,resetState,migrar,advancedOpen,statuses,srsDue,srsRecord,SRS_MAX,exportar,leerCopia,importar,sumarRacha} from './state.js';
 import {$app,toast,ses} from './ui.js';
 import {setPlanCtx} from './drag.js';
 import {TIPOS} from './exercises/index.js';
@@ -114,9 +114,10 @@ function finish(){
   const run=ses.run;
   if(run.L.kind==='test'){finishTest();return}
   if(run.L.kind==='nivel'){finishNivel();return}
-  const right=run.total-run.firstWrong,acc=right/run.total,xp=right*10+(run.firstWrong===0?10:0),t=today();
-  if(S.last!==t){S.streak=(S.last===yest())?S.streak+1:1;S.last=t}
-  if(S.day!==t){S.day=t;S.dayXp=0}
+  const right=run.total-run.firstWrong,acc=right/run.total,xp=right*10+(run.firstWrong===0?10:0),hoy=today();
+  const racha=sumarRacha();
+  if(racha.usado)toast(t.protectorUsado);else if(racha.ganado)toast(t.protectorGanado);
+  if(S.day!==hoy){S.day=hoy;S.dayXp=0}
   S.xp+=xp;S.dayXp+=xp;
   const lec=run.L.kind==='lesson'||run.L.kind==='review';
   if(lec){const prev=S.done[run.L.id];S.done[run.L.id]={acc:Math.max(acc,prev?prev.acc:0)}}
@@ -211,6 +212,9 @@ const ACCIONES={
   srs(){ses.homeY=window.scrollY;startRun(SRS_L)},
   test(){ses.homeY=0;startRun(TEST_L)},
   nivel(b){ses.homeY=0;startRun({id:'nivel-'+b.dataset.track,title:t.pruebaNivel,kind:'nivel',track:b.dataset.track})},
+  meta(b){S.meta=+b.dataset.m;save();render()},
+  objetivo(b){S.objetivo=b.dataset.track;S.track=b.dataset.track;save();ses.homeY=0;render()},
+  noobjetivo(){S.objetivo='ninguno';save();render()},
   nonivel(b){S.pruebas[b.dataset.track]={saltada:true};save();render()},
   notest(){S.placement={skipped:true};save();render()},
   install(){const ev=ses.installEvt;if(!ev)return;ev.prompt();ev.userChoice.finally(()=>{ses.installEvt=null;ses.homeY=window.scrollY;render()})},
@@ -291,7 +295,7 @@ if(typeof navigator!=='undefined'&&'serviceWorker' in navigator&&typeof location
 }
 
 // API mínima para tests (test/smoke.mjs)
-export const api={glos,openGlosario:()=>{ses.view='glosario';render()},migrar,exportar,leerCopia,importar,FLAT,CASOS,SEMANA,PLACEMENT,simulate,simRecord,simHist,aportaciones,
+export const api={sumarRacha,glos,openGlosario:()=>{ses.view='glosario';render()},migrar,exportar,leerCopia,importar,FLAT,CASOS,SEMANA,PLACEMENT,simulate,simRecord,simHist,aportaciones,
   openCalc:()=>{ses.view='calc';render()},openSim:()=>{ses.simDraft=null;ses.view='sim';render()},openSimRes:()=>{ses.view='simres';render()},
   openStats:()=>{ses.view='stats';render()},act:(a,ds={})=>ACCIONES[a]({dataset:ds}),getView:()=>ses.view,startWeak:()=>startRun(STATS_L),
   simDraftSet:p=>{ses.simDraft=p},simSave,goHome:()=>{ses.view='home';render()},startTest:()=>startRun(TEST_L),startNivel:tr=>startRun({id:'nivel-'+tr,title:t.pruebaNivel,kind:'nivel',track:tr}),srsDue,

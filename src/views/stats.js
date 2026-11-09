@@ -4,7 +4,7 @@
 import {fmt,esc,tx} from '../util.js';
 import {icoX} from '../icons.js';
 import {UNITS,FLAT,TRACKS,EXBYID,trackOf} from '../content.js';
-import {S,streakNow,SRS_MAX,srsResumen} from '../state.js';
+import {S,streakNow,SRS_MAX,srsResumen,META_OPC,PROTECTOR_MAX} from '../state.js';
 import {ses} from '../ui.js';
 import {t} from '../textos.js';
 
@@ -37,6 +37,8 @@ export function statsHTML(){
   <div class="qwrap"><h1 class="q">${t.tuProgreso}</h1>
   <dl class="simk"><div><dt>${t.xp}</dt><dd>${S.xp}</dd></div><div><dt>${t.rachaM}</dt><dd>${t.dias(streakNow())}</dd></div>
   <div><dt>${t.aciertoPrimera}</dt><dd>${n?fmt((n-f)/n*100,0)+' %':'—'}</dd></div><div><dt>${t.tiempoEstudio}</dt><dd>${t.tiempo(S.stats.min||0)}</dd></div></dl>
+  <h2 class="sub">${t.metaDiaria}</h2><div class="meta-opc" role="group" aria-label="${t.metaDiaria}">${META_OPC.map(m=>`<button class="btn ${S.meta===m?'primary':'line'}" data-act="meta" data-m="${m}" aria-pressed="${S.meta===m}">${t.metaXP(m)}</button>`).join('')}</div>
+  <p class="note">${t.protectores(S.protector,PROTECTOR_MAX)}</p>
   <ul class="st-rutas">${rutas}</ul>
   <h2 class="sub">${t.repasoTitulo}</h2><dl class="simk"><div><dt>${t.enRepaso}</dt><dd>${srsResumen().enRepaso}</dd></div><div><dt>${t.aprendidosT}</dt><dd>${srsResumen().aprendidos}</dd></div></dl><p class="note">${t.repasoNota}</p>
   <h2 class="sub">${t.puntosDebiles}</h2>${debiles}

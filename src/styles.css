@@ -361,3 +361,11 @@ button{font:inherit;color:inherit;cursor:pointer}
 .glist dt{font-weight:700}.glist dd{margin:4px 0 0;font-size:14px;line-height:1.45;color:var(--ink-2)}
 .ban .dom{display:inline-flex;align-items:center;gap:4px;color:var(--accent-ink);background:var(--accent);padding:3px 9px;border-radius:999px;font-size:13px}
 .ban .dom .ico{width:14px;height:14px}
+
+.objetivo{padding:16px;border-radius:16px;background:var(--surface);border:1px solid var(--line);display:grid;gap:12px}
+.objetivo>b{font:700 20px/1.2 var(--font-display)}
+.obj-opc{display:grid;gap:8px}
+.obj-opc .btn{display:grid;gap:2px;text-align:left;padding:12px 14px;width:100%}
+.obj-opc .btn span{font-weight:400;font-size:14px;color:var(--ink-2)}
+.objetivo .btn.ghost{justify-self:start}
+.meta-opc{display:flex;gap:8px}.meta-opc .btn{flex:1}

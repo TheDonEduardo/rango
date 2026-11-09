@@ -1,6 +1,6 @@
 // Utilidades y constantes compartidas.
 export const KEY='rango.v1';
-export const GOAL=40, RH=132, OFFS=[0,14,20,14,0,-14,-20,-14];
+export const RH=132, OFFS=[0,14,20,14,0,-14,-20,-14];
 export const fmt=(v,d=2)=>Number(v).toLocaleString('es-ES',{minimumFractionDigits:d,maximumFractionDigits:d});
 export const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 export const dkey=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');

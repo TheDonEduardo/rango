@@ -5,7 +5,7 @@ import {FLAT,EXBYID,trackOf} from './content.js';
 // Versión del formato guardado. Cada cambio de formato añade un paso a MIGRAR (de la versión n a la n+1),
 // así el progreso de quien ya usa la app se convierte en vez de perderse.
 export const STATE_V=2;
-export const DEF=()=>({v:STATE_V,xp:0,streak:0,last:null,day:null,dayXp:0,done:{},all:false,track:'basico',skipBasics:false,legal:0,srs:{},sim:{},calc:null,stats:{ex:{},min:0},guias:{},aprendidos:{},dominadas:{},pruebas:{}});
+export const DEF=()=>({v:STATE_V,xp:0,streak:0,last:null,day:null,dayXp:0,done:{},all:false,track:'basico',skipBasics:false,legal:0,srs:{},sim:{},calc:null,stats:{ex:{},min:0},guias:{},aprendidos:{},dominadas:{},pruebas:{},meta:40,protector:0,objetivo:null});
 const MIGRAR={
   // 1 → 2: el repaso espaciado identificaba los ejercicios por posición («lección#índice», desde 0);
   // ahora cada ejercicio tiene un id estable («lección-n», desde 1).
@@ -39,7 +39,20 @@ export function leerCopia(texto){
 }
 export function importar(estado){S=estado;save()}
 
-export const streakNow=()=>(S.last===today()||S.last===yest())?S.streak:0;
+// Racha: sigue viva si practicaste hoy o ayer, o anteayer con un protector disponible (se gastará al practicar).
+export const streakNow=()=>(S.last===today()||S.last===yest()||(S.last===addDays(-2)&&S.protector>0))?S.streak:0;
+// Meta diaria elegible y protectores de racha: uno por cada 7 días seguidos, como mucho PROTECTOR_MAX guardados.
+export const META_OPC=[20,40,80], PROTECTOR_MAX=2;
+export function sumarRacha(){
+  const hoy=today();if(S.last===hoy)return {};
+  let usado=false,ganado=false;
+  if(S.last===yest())S.streak++;
+  else if(S.last===addDays(-2)&&S.protector>0){S.protector--;S.streak++;usado=true}
+  else S.streak=1;
+  S.last=hoy;
+  if(S.streak%7===0&&S.protector<PROTECTOR_MAX){S.protector++;ganado=true}
+  return {usado,ganado};
+}
 export const dayXpNow=()=>S.day===today()?S.dayXp:0;
 
 // Las rutas avanzadas se abren al completar los básicos obligatorios, al saltarlos o si ya hay progreso en ellas.
