@@ -57,10 +57,12 @@ export function candlesSVG(sp,st){
     const yy=y(l.y).toFixed(1);
     s+=`<g class="lv ${lvMode?cls(l.id):''}" data-id="${l.id}" tabindex="0" role="button" aria-label="${t.nivel(l.id)}"><line class="lvl" x1="${pl}" x2="${W-pr}" y1="${yy}" y2="${yy}"/><rect class="hit" x="0" y="${(y(l.y)-13).toFixed(1)}" width="${W-pr}" height="26"/><g class="tag"><circle cx="18" cy="${yy}" r="11"/><text x="18" y="${(y(l.y)+4).toFixed(1)}">${l.id}</text></g></g>`;
   });
+  // Zona (ejercicio «zone»): franja sombreada entre las líneas top y bottom; drag.js la actualiza al arrastrar.
+  if(planMode&&st.zona){const a=y(st.vals.top),b=y(st.vals.bottom);s+=`<rect class="zona" x="${pl}" width="${W-pr-pl}" y="${Math.min(a,b).toFixed(1)}" height="${Math.abs(b-a).toFixed(1)}"/>`}
   if(planMode)st.place.forEach(p=>{
     // fijo: líneas que solo se muestran (resultado del simulador); sin respuesta, no hay bien/mal.
     const v=st.vals[p.id],conA=typeof p.a==='number',ok=conA&&Math.abs(v-p.a)<=planTol(p)+1e-9,quieto=st.checked||st.fijo;
-    if(st.checked&&conA&&!ok){const ya=y(p.a).toFixed(1);s+=`<g class="pl-ans"><line x1="${pl}" x2="${W-pr}" y1="${ya}" y2="${ya}"/><text class="reft" x="${W-pr-4}" y="${(y(p.a)-5).toFixed(1)}">${esc(p.label)} correcto: ${fmt(p.a)}</text></g>`}
+    if(st.checked&&conA&&!ok){const ya=y(p.a).toFixed(1);s+=`<g class="pl-ans"><line x1="${pl}" x2="${W-pr}" y1="${ya}" y2="${ya}"/><text class="reft" x="${W-pr-4}" y="${(y(p.a)-5).toFixed(1)}">${t.valorCorrecto(esc(p.label),fmt(p.a))}</text></g>`}
     s+=`<g class="pl pl-${p.id}${st.checked&&conA?(ok?' good':' bad'):''}${st.fijo?' fijo':''}" data-id="${p.id}" transform="translate(0 ${y(v).toFixed(1)})"${quieto?'':` tabindex="0" role="slider" aria-label="${esc(p.label)}" aria-valuenow="${v}" aria-valuetext="${esc(p.label)} ${fmt(v)}"`}>`
       +`<rect class="hit" x="0" y="-16" width="${W}" height="32"/><line x1="${pl}" x2="${W-pr}" y1="0" y2="0"/>`
       +`<rect class="pill" x="${pl}" y="-11" width="104" height="22" rx="11"/><text class="pt" x="${pl+52}" y="4">${esc(p.label)} ${fmt(v)}</text>`

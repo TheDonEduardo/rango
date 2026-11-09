@@ -96,6 +96,58 @@
           ],
           "a": 2,
           "why": "En el gráfico diario cada vela resume una sesión con cuatro precios; en el semanal, una semana. Los patrones se leen igual en cualquier escala."
+        },
+        {
+          "id": "bc1-5",
+          "t": "zone",
+          "q": "Tras subir, el precio lleva semanas sin tendencia. Marca la zona lateral: el techo en los máximos que se repiten y el suelo en los mínimos que se repiten.",
+          "chart": {
+            "type": "candles",
+            "data": [
+              [15.0,15.75,14.85,15.6],
+              [15.6,16.35,15.45,16.2],
+              [16.2,16.95,16.05,16.8],
+              [16.8,17.55,16.65,17.4],
+              [17.4,18.15,17.25,18.0],
+              [18.0,18.75,17.85,18.6],
+              [18.6,19.35,18.45,19.2],
+              [19.2,20.75,19.05,20.6],
+              [20.6,20.83,20.4,20.63],
+              [20.63,22.0,20.48,21.7],
+              [21.7,21.9,21.15,21.35],
+              [21.35,21.5,20.0,20.3],
+              [20.3,21.46,20.1,21.26],
+              [21.26,21.46,20.56,20.76],
+              [20.76,22.0,20.61,21.7],
+              [21.7,21.9,20.8,21.0],
+              [21.0,21.15,20.0,20.3],
+              [20.3,21.15,20.1,20.95],
+              [20.95,21.35,20.75,21.15],
+              [21.15,22.0,21.0,21.7],
+              [21.7,21.9,21.09,21.29],
+              [21.29,21.44,20.0,20.3],
+              [20.3,22.0,20.15,21.7],
+              [21.7,21.9,20.39,20.59]
+            ],
+            "alt": "Gráfico diario: subida de 15 a 20 € y después lateral entre 20 y 22 €"
+          },
+          "place": [
+            {
+              "id": "top",
+              "label": "Techo",
+              "a": 22.0,
+              "start": 23.5,
+              "tol": 0.2
+            },
+            {
+              "id": "bottom",
+              "label": "Suelo",
+              "a": 20.0,
+              "start": 18.5,
+              "tol": 0.2
+            }
+          ],
+          "why": "Los máximos se frenan una y otra vez en 22,00 € y los mínimos en 20,00 €: un rango de 2 € (10 %). Mientras no rompa uno de los dos lados, no hay tendencia."
         }
       ]
     },

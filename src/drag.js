@@ -20,6 +20,12 @@ function planSet(g,v){
   g.setAttribute('transform',`translate(0 ${(+d.top+(hi-v)/(hi-lo)*+d.ph).toFixed(1)})`);
   g.querySelector('.pt').textContent=p.label+' '+fmt(v);
   g.setAttribute('aria-valuenow',v);g.setAttribute('aria-valuetext',p.label+' '+fmt(v));
+  // Zona entre techo y suelo (ejercicio «zone»).
+  const z=svg.querySelector('.zona');
+  if(z&&'top' in ctx.vals&&'bottom' in ctx.vals){
+    const py=w=>+d.top+(hi-w)/(hi-lo)*+d.ph,a=py(ctx.vals.top),b=py(ctx.vals.bottom);
+    z.setAttribute('y',Math.min(a,b).toFixed(1));z.setAttribute('height',Math.abs(b-a).toFixed(1));
+  }
   if(ctx.after)ctx.after();
 }
 function planMove(e){

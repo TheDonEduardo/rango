@@ -169,6 +169,8 @@ button{font:inherit;color:inherit;cursor:pointer}
 .pl{cursor:ns-resize;touch-action:none;--c:var(--ink)}
 /* --c: línea; --ci: texto y etiqueta (tono con contraste suficiente sobre el fondo y con el texto de la etiqueta) */
 .pl-entry{--c:var(--sel);--ci:var(--sel)} .pl-stop{--c:var(--down);--ci:var(--down-ink)} .pl-target{--c:var(--up);--ci:var(--up-ink)}
+.pl-top{--c:var(--accent);--ci:var(--ink)} .pl-bottom{--c:var(--sel);--ci:var(--sel)}
+.zona{fill:var(--sel);opacity:.12;pointer-events:none}
 .pl line{stroke:var(--c);stroke-width:2.5}
 .pl .hit{fill:transparent}
 .pl .pill{fill:var(--ci,var(--c))}

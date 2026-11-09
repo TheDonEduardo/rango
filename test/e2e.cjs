@@ -45,7 +45,7 @@ async function responder(p) {
   else if (ex.t === 'order' || ex.t === 'match') {
     for (const t of (ex.items || ex.pairs.map(x => x[1])))
       await p.locator('.ord-pool .opt').filter({hasText: new RegExp('^' + t.replace(/[()?+.*$^[\]{}|\\]/g, '\\$&').replace(/ /g, '\\s') + '$')}).first().click();
-  } else if (ex.t === 'plan') {
+  } else if (ex.t === 'plan' || ex.t === 'zone') {
     for (const pl of ex.place) for (let k = 0; k < 200; k++) {
       const v = await p.evaluate(id => +document.querySelector(`.pl[data-id=${id}]`).getAttribute('aria-valuenow'), pl.id);
       if (Math.abs(v - pl.a) < 0.05) break;
@@ -105,6 +105,7 @@ async function auditar(b, url) {
     ['lección order', {...base, track: 'fundamental'}, async p => abrirHasta(p, conTipo('fundamental', 'order'), '.ord:not(.match)')],
     ['lección match', {...base, track: 'tecnico'}, async p => abrirHasta(p, conTipo('tecnico', 'match'), '.match')],
     ['lección plan', {...base, track: 'tecnico'}, async p => abrirHasta(p, conTipo('tecnico', 'plan'), 'svg.plan')],
+    ['lección zone', {...base, track: 'tecnico'}, async p => abrirHasta(p, conTipo('tecnico', 'zone'), '.zona')],
     ['lección slide', {...base, track: 'tecnico'}, async p => abrirHasta(p, conTipo('tecnico', 'slide'), '#slIn')],
     ['feedback', {...base, track: 'basico'}, async p => { await p.click('[data-act=open][data-id=ba1]'); const n = p.locator('#numIn'); if (await n.count()) await n.fill('1'); else await p.locator('[data-act=pick]').first().click(); await p.click('[data-act=check]'); }],
     ['simulador semana', {...base, track: 'tecnico'}, async p => { await p.click('[data-act=sim]'); }],

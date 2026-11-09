@@ -43,10 +43,10 @@ export const t={
   salirLeccion:'Salir de la lección', progresoLeccion:'Progreso de la lección', vidas:n=>`${n} vidas`,
   casoReal:c=>`Caso real: ${c} · `, comprobar:'Comprobar', correcto:'Correcto', incorrecto:'Incorrecto', respuesta:'Respuesta',
   tipos:{choice:'Elige una respuesta',num:'Escribe el resultado',tap:'Toca una vela del gráfico',level:'Toca una línea del gráfico',
-    order:'Ordena los pasos',match:'Empareja cada uno con su descripción',plan:'Arrastra las líneas del gráfico',slide:'Mueve el deslizador'},
+    order:'Ordena los pasos',match:'Empareja cada uno con su descripción',plan:'Arrastra las líneas del gráfico',slide:'Mueve el deslizador',zone:'Marca la zona: arrastra el techo y el suelo'},
   tuRespuesta:'Tu respuesta', tusParejas:'Tus parejas', tuOrden:'Tu orden', tocaDescripcion:'Toca su descripción', quitar:x=>`Quitar: ${x}`,
   ordenCorrecto:'Orden correcto:', parejasCorrectas:'Parejas correctas:', vela:n=>`Vela ${n}`, nivel:n=>`Nivel ${n}`,
-  bajar:x=>`Bajar ${x}`, subir:x=>`Subir ${x}`,
+  bajar:x=>`Bajar ${x}`, subir:x=>`Subir ${x}`, valorCorrecto:(l,v)=>`${l} correcto: ${v}`,
 
   // Resultados
   leccionCompletada:'Lección completada', repasoCompletado:'Repaso completado', xpGanados:'XP ganados', precisionM:'Precisión',

@@ -13,4 +13,5 @@ import {tap,level} from './velas.js';
 import {order,match} from './ordenar.js';
 import plan from './plan.js';
 import slide from './slide.js';
-export const TIPOS={choice,num,tap,level,order,match,plan,slide};
+import zone from './zona.js';
+export const TIPOS={choice,num,tap,level,order,match,plan,slide,zone};
