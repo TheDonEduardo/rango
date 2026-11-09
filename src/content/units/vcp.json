@@ -3,6 +3,32 @@
   "id": "vcp",
   "title": "VCP de Minervini",
   "blurb": "Contracciones de volatilidad: compra donde el riesgo es mínimo.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Contracciones de volatilidad",
+      "texto": "En un VCP, cada retroceso de la base es menor que el anterior y el volumen se seca: la oferta se agota.",
+      "ejemplo": "Contracciones del 25 %, 12 % y 6 %: cada una, más o menos la mitad de la anterior."
+    },
+    {
+      "id": "g2",
+      "titulo": "Medir cada contracción",
+      "texto": "Se mide del máximo al mínimo de cada contracción. La última, la más estrecha, da un stop cercano.",
+      "ejemplo": "Última contracción de 58,40 a 55,20 €. Compras a 58,50 € con stop en 55,10 €: arriesgas un 5,81 %."
+    },
+    {
+      "id": "g3",
+      "titulo": "El pivote",
+      "texto": "El pivote es el máximo de la última contracción. Se compra al superarlo con un volumen al menos un 40-50 % por encima de la media.",
+      "ejemplo": "Pivote en 55,60 €: compra a 55,70 €. Sin volumen, la ruptura es sospechosa."
+    },
+    {
+      "id": "g4",
+      "titulo": "Gestionar la ruptura",
+      "texto": "Las buenas rupturas funcionan casi de inmediato. Si vuelve a la base con volumen, sal. Si funciona, asegura una parte.",
+      "ejemplo": "Entrada a 55,70 € con stop en 52,20 €: 1R = 3,50 €. Vender un tercio en 3R es a 66,20 €."
+    }
+  ],
   "lessons": [
     {
       "id": "vcp1",
@@ -19,7 +45,8 @@
             "Tres máximos crecientes con volumen creciente"
           ],
           "a": 0,
-          "why": "Cada retroceso es menor que el anterior y el volumen se seca: la oferta se agota y basta poca demanda para romper el pivote."
+          "why": "Cada retroceso es menor que el anterior y el volumen se seca: la oferta se agota y basta poca demanda para romper el pivote.",
+          "guia": "g1"
         },
         {
           "id": "vcp1-2",
@@ -27,7 +54,8 @@
           "q": "Primera contracción de la base: del máximo de 60,00 € al mínimo de 45,00 €. ¿Qué profundidad tiene?",
           "unit": "%",
           "a": 25,
-          "why": "(60,00 − 45,00) ÷ 60,00 = 15 ÷ 60 = 25 %. Se mide del máximo de cada contracción a su mínimo."
+          "why": "(60,00 − 45,00) ÷ 60,00 = 15 ÷ 60 = 25 %. Se mide del máximo de cada contracción a su mínimo.",
+          "guia": "g2"
         },
         {
           "id": "vcp1-3",
@@ -40,7 +68,8 @@
             "6 % → 6 % → 25 %"
           ],
           "a": 2,
-          "why": "Cada contracción es más o menos la mitad de la anterior: los vendedores se agotan y el rango se estrecha hacia el pivote. Si las caídas crecen, la oferta está ganando."
+          "why": "Cada contracción es más o menos la mitad de la anterior: los vendedores se agotan y el rango se estrecha hacia el pivote. Si las caídas crecen, la oferta está ganando.",
+          "guia": "g1"
         },
         {
           "id": "vcp1-4",
@@ -49,7 +78,8 @@
           "unit": "%",
           "a": 5.81,
           "tol": 0.02,
-          "why": "Stop en 55,10 €: 58,50 − 55,10 = 3,40 €, y 3,40 ÷ 58,50 = 5,81 %. La contracción final estrecha es lo que permite un stop tan cercano."
+          "why": "Stop en 55,10 €: 58,50 − 55,10 = 3,40 €, y 3,40 ÷ 58,50 = 5,81 %. La contracción final estrecha es lo que permite un stop tan cercano.",
+          "guia": "g2"
         }
       ]
     },
@@ -93,7 +123,8 @@
             "alt": "Gráfico de velas con volumen y tres niveles marcados"
           },
           "a": "B",
-          "why": "El pivote es el máximo de la última contracción, 55,60 €: comprando a 55,70 € con stop en 52,20 € (0,10 € bajo su mínimo) arriesgas 3,50 €. Esperar al máximo de la base (A, 60,00 €) obliga a arriesgar 7,80 € con el mismo stop."
+          "why": "El pivote es el máximo de la última contracción, 55,60 €: comprando a 55,70 € con stop en 52,20 € (0,10 € bajo su mínimo) arriesgas 3,50 €. Esperar al máximo de la base (A, 60,00 €) obliga a arriesgar 7,80 € con el mismo stop.",
+          "guia": "g3"
         },
         {
           "id": "vcp2-2",
@@ -106,7 +137,8 @@
             "No compras o reduces el tamaño: falta demanda que la confirme"
           ],
           "a": 3,
-          "why": "O'Neil y Minervini piden en la ruptura un volumen al menos un 40-50 % superior a la media. Sin él, la ruptura suele fallar y volver a la base."
+          "why": "O'Neil y Minervini piden en la ruptura un volumen al menos un 40-50 % superior a la media. Sin él, la ruptura suele fallar y volver a la base.",
+          "guia": "g3"
         },
         {
           "id": "vcp2-3",
@@ -114,7 +146,8 @@
           "q": "Entrada a 55,70 €, stop en 52,20 €. Vendes un tercio de la posición en 3R. ¿A qué precio?",
           "unit": "€",
           "a": 66.2,
-          "why": "1R = 55,70 − 52,20 = 3,50 €; 55,70 + 3 × 3,50 = 66,20 €. Asegurar una parte y subir el stop a la entrada deja el resto sin riesgo."
+          "why": "1R = 55,70 − 52,20 = 3,50 €; 55,70 + 3 × 3,50 = 66,20 €. Asegurar una parte y subir el stop a la entrada deja el resto sin riesgo.",
+          "guia": "g4"
         },
         {
           "id": "vcp2-4",
@@ -127,7 +160,8 @@
             "Bajas el stop a 50,00 € para darle aire"
           ],
           "a": 2,
-          "why": "Las buenas rupturas funcionan casi de inmediato; volver a la base con volumen alto indica distribución. Salir a 53,80 € cuesta 1,90 € (0,54R) en vez de 3,50 € (1R)."
+          "why": "Las buenas rupturas funcionan casi de inmediato; volver a la base con volumen alto indica distribución. Salir a 53,80 € cuesta 1,90 € (0,54R) en vez de 3,50 € (1R).",
+          "guia": "g4"
         },
         {
           "id": "vcp2-5",
@@ -176,7 +210,8 @@
               "tol": 0.2
             }
           ],
-          "why": "La última contracción va de 44,80 a 43,60 €, apenas un 2,7 %, frente al 14 % de la primera. El pivote de compra es 44,80 € y el stop natural, bajo 43,60 €."
+          "why": "La última contracción va de 44,80 a 43,60 €, apenas un 2,7 %, frente al 14 % de la primera. El pivote de compra es 44,80 € y el stop natural, bajo 43,60 €.",
+          "guia": "g2"
         }
       ]
     }

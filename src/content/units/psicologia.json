@@ -3,6 +3,32 @@
   "id": "psicologia",
   "title": "Psicología y diario",
   "blurb": "El sistema funciona si tú lo sigues: mide cómo operas.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Sesgos del operador",
+      "texto": "Vender rápido lo que gana y aguantar lo que pierde es el sesgo más común: corta las ganancias y deja correr las pérdidas.",
+      "ejemplo": "Un plan escrito antes de operar los neutraliza mejor que conocerlos."
+    },
+    {
+      "id": "g2",
+      "titulo": "Cada operación es independiente",
+      "texto": "Perder tres veces no hace más probable ganar la siguiente. Doblar el tamaño para recuperar convierte una mala racha en un desastre.",
+      "ejemplo": "Bajar el stop para «darle aire» convierte 1R (100 €) en 2,5R (250 €)."
+    },
+    {
+      "id": "g3",
+      "titulo": "El diario",
+      "texto": "Anota cada operación: el plan, el resultado en R, si seguiste las reglas y qué sentiste. Con él calculas tu esperanza real.",
+      "ejemplo": "10 operaciones que suman +3,5R: +0,35R por operación. Ganancia media de 2,25R frente a pérdidas de 1R."
+    },
+    {
+      "id": "g4",
+      "titulo": "Proceso frente a resultado",
+      "texto": "El resultado de una operación tiene mucho de azar; el proceso, no. Una operación que sigue el plan y pierde 1R es una buena operación.",
+      "ejemplo": "Evalúate por cumplir el plan, no por el resultado de cada día."
+    }
+  ],
   "lessons": [
     {
       "id": "p1",
@@ -19,7 +45,8 @@
             "Sesgo de recencia"
           ],
           "a": 1,
-          "why": "Corta las ganancias y deja correr las pérdidas, justo al revés de lo que funciona. El stop y las salidas escalonadas existen para evitarlo."
+          "why": "Corta las ganancias y deja correr las pérdidas, justo al revés de lo que funciona. El stop y las salidas escalonadas existen para evitarlo.",
+          "guia": "g1"
         },
         {
           "id": "p1-2",
@@ -43,7 +70,8 @@
               "Perder duele más de lo que alegra ganar lo mismo"
             ]
           ],
-          "why": "Ninguno se elimina por conocerlo, pero un plan escrito antes de operar los neutraliza: decide cuando no hay dinero en juego."
+          "why": "Ninguno se elimina por conocerlo, pero un plan escrito antes de operar los neutraliza: decide cuando no hay dinero en juego.",
+          "guia": "g1"
         },
         {
           "id": "p1-3",
@@ -56,7 +84,8 @@
             "Quitar los stops por un tiempo"
           ],
           "a": 2,
-          "why": "Las operaciones son independientes: perder tres no hace más probable ganar la cuarta. Tras una racha, reducir el tamaño protege el capital mientras revisas si falla el sistema o el mercado."
+          "why": "Las operaciones son independientes: perder tres no hace más probable ganar la cuarta. Tras una racha, reducir el tamaño protege el capital mientras revisas si falla el sistema o el mercado.",
+          "guia": "g2"
         },
         {
           "id": "p1-4",
@@ -64,7 +93,8 @@
           "q": "Planeaste perder como mucho 1R (100 €), pero bajaste el stop y acabaste perdiendo 250 €. ¿Cuántos R perdiste?",
           "unit": "R",
           "a": 2.5,
-          "why": "250 ÷ 100 = 2,5R. Mover el stop convirtió una pérdida pequeña y prevista en una grande: la disciplina se mide en R."
+          "why": "250 ÷ 100 = 2,5R. Mover el stop convirtió una pérdida pequeña y prevista en una grande: la disciplina se mide en R.",
+          "guia": "g2"
         }
       ]
     },
@@ -126,7 +156,8 @@
           },
           "unit": "R",
           "a": 0.35,
-          "why": "Suma: +2 − 1 − 1 + 3 − 1 + 1,5 − 1 − 0,5 + 2,5 − 1 = +3,5R en 10 operaciones, es decir, 0,35R de media. Es tu esperanza: positiva aunque solo ganes 4 de cada 10."
+          "why": "Suma: +2 − 1 − 1 + 3 − 1 + 1,5 − 1 − 0,5 + 2,5 − 1 = +3,5R en 10 operaciones, es decir, 0,35R de media. Es tu esperanza: positiva aunque solo ganes 4 de cada 10.",
+          "guia": "g3"
         },
         {
           "id": "p2-2",
@@ -182,7 +213,8 @@
           },
           "unit": "R",
           "a": 2.25,
-          "why": "Ganadoras: +2, +3, +1,5 y +2,5 = 9R en 4 operaciones, 2,25R de media. Las perdedoras quedan en torno a 0,92R: ganas más del doble de lo que pierdes."
+          "why": "Ganadoras: +2, +3, +1,5 y +2,5 = 9R en 4 operaciones, 2,25R de media. Las perdedoras quedan en torno a 0,92R: ganas más del doble de lo que pierdes.",
+          "guia": "g3"
         },
         {
           "id": "p2-3",
@@ -195,7 +227,8 @@
             "Nada más: el resultado basta"
           ],
           "a": 1,
-          "why": "El resultado de una operación tiene mucho de azar; el proceso, no. El diario sirve para saber si pierdes por el sistema o por no seguirlo."
+          "why": "El resultado de una operación tiene mucho de azar; el proceso, no. El diario sirve para saber si pierdes por el sistema o por no seguirlo.",
+          "guia": "g4"
         },
         {
           "id": "p2-4",
@@ -208,7 +241,8 @@
             "Hay que recuperarla mañana"
           ],
           "a": 1,
-          "why": "Con una esperanza positiva, las pérdidas de 1R son parte del sistema. Una mala operación es la que rompe el plan, gane o pierda."
+          "why": "Con una esperanza positiva, las pérdidas de 1R son parte del sistema. Una mala operación es la que rompe el plan, gane o pierda.",
+          "guia": "g4"
         }
       ]
     }

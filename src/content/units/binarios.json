@@ -3,6 +3,32 @@
   "id": "binarios",
   "title": "Catalizadores binarios",
   "blurb": "Small caps, biotecnología y gaps de resultados.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Gaps de resultados",
+      "texto": "Un gap se mide desde el cierre previo. Los mejores siguen subiendo durante la sesión y cierran cerca del máximo con mucho volumen; el mínimo del día del gap es el soporte.",
+      "ejemplo": "Cierre de 42,00 € y apertura de 47,04 €: un gap del 12 %."
+    },
+    {
+      "id": "g2",
+      "titulo": "El stop no protege de un gap",
+      "texto": "Ante un evento binario, el precio puede abrir muy por debajo del stop: la orden se ejecuta al primer precio disponible y pierdes varias veces 1R.",
+      "ejemplo": "150 acciones a 40 € con stop en 38 € (1R = 300 €) y apertura a 34 €: pierdes 900 €, 3R."
+    },
+    {
+      "id": "g3",
+      "titulo": "Dimensionar por el peor caso",
+      "texto": "Si vas a mantener un catalizador binario, calcula el tamaño con la caída plausible, no con el stop. Y comprueba que la esperanza sea positiva.",
+      "ejemplo": "Biotecnológica a 12 € que puede caer un 70 %: 8,40 € por acción. Con 250 € de riesgo, 29 acciones."
+    },
+    {
+      "id": "g4",
+      "titulo": "Small caps: dilución y float",
+      "texto": "Emitir acciones reparte el beneficio entre más acciones. El float son las acciones que se negocian; si rota varias veces en un día, es momentum especulativo.",
+      "ejemplo": "20 M de acciones que pasan a 25 M: una dilución del 20 %. Float de 4 M con 12 M negociadas: 3 rotaciones."
+    }
+  ],
   "lessons": [
     {
       "id": "b1",
@@ -14,7 +40,8 @@
           "q": "Cierre previo a resultados: 42,00 €. Al día siguiente abre a 47,04 €. ¿De qué tamaño es el gap?",
           "unit": "%",
           "a": 12,
-          "why": "(47,04 − 42,00) ÷ 42,00 = 5,04 ÷ 42,00 = 12 %. El gap se mide siempre desde el cierre previo."
+          "why": "(47,04 − 42,00) ÷ 42,00 = 5,04 ÷ 42,00 = 12 %. El gap se mide siempre desde el cierre previo.",
+          "guia": "g1"
         },
         {
           "id": "b1-2",
@@ -27,7 +54,8 @@
             "Cierra por debajo del cierre previo"
           ],
           "a": 2,
-          "why": "Cerrar cerca del máximo con el triple de volumen indica compra durante toda la sesión, no solo en la apertura. Si rellena medio gap el mismo día, la oferta ya absorbió la noticia."
+          "why": "Cerrar cerca del máximo con el triple de volumen indica compra durante toda la sesión, no solo en la apertura. Si rellena medio gap el mismo día, la oferta ya absorbió la noticia.",
+          "guia": "g1"
         },
         {
           "id": "b1-3",
@@ -67,7 +95,8 @@
             "alt": "Gráfico de velas con un gap al alza y tres niveles de stop"
           },
           "a": "B",
-          "why": "B queda 0,10 € bajo el mínimo del día del gap (46,50): si lo pierde, el gap ha fallado, y arriesgas 2,90 €. A está dentro del rango de esa misma vela y C (relleno del gap en 42,00) arriesga 7,30 €, unas 2,5 veces más."
+          "why": "B queda 0,10 € bajo el mínimo del día del gap (46,50): si lo pierde, el gap ha fallado, y arriesgas 2,90 €. A está dentro del rango de esa misma vela y C (relleno del gap en 42,00) arriesga 7,30 €, unas 2,5 veces más.",
+          "guia": "g1"
         },
         {
           "id": "b1-4",
@@ -75,7 +104,8 @@
           "q": "Compras 150 acciones a 40,00 € con stop en 38,00 € (1R = 300 €) y mantienes en resultados. Abre a 34,00 € y el stop se ejecuta en la apertura. ¿Cuántos R pierdes?",
           "unit": "R",
           "a": 3,
-          "why": "(40,00 − 34,00) × 150 = 900 €: 3R en lugar de 1R. La orden stop se convierte en orden a mercado y se ejecuta al primer precio disponible."
+          "why": "(40,00 − 34,00) × 150 = 900 €: 3R en lugar de 1R. La orden stop se convierte en orden a mercado y se ejecuta al primer precio disponible.",
+          "guia": "g2"
         }
       ]
     },
@@ -94,7 +124,8 @@
             "La caída plausible si el evento sale mal"
           ],
           "a": 3,
-          "why": "El precio puede abrir muy por debajo del stop, así que la pérdida real la fija el gap, no la orden. Dimensiona como si el stop no existiera."
+          "why": "El precio puede abrir muy por debajo del stop, así que la pérdida real la fija el gap, no la orden. Dimensiona como si el stop no existiera.",
+          "guia": "g2"
         },
         {
           "id": "b2-2",
@@ -102,7 +133,8 @@
           "q": "Capital 25.000 €, riesgo máximo 1 % (250 €). Una biotecnológica cotiza a 12,00 € antes de la decisión de la FDA y, si la rechazan, estimas una caída del 70 %. ¿Cuántas acciones compras como máximo? Redondea a la baja.",
           "unit": "",
           "a": 29,
-          "why": "Pérdida plausible = 12,00 × 70 % = 8,40 € por acción. 250 ÷ 8,40 = 29,76, así que 29 acciones (243,60 € en riesgo)."
+          "why": "Pérdida plausible = 12,00 × 70 % = 8,40 € por acción. 250 ÷ 8,40 = 29,76, así que 29 acciones (243,60 € en riesgo).",
+          "guia": "g3"
         },
         {
           "id": "b2-3",
@@ -111,7 +143,8 @@
           "unit": "R",
           "a": 7,
           "tol": 0.05,
-          "why": "208 × 8,40 = 1.747,20 €, y 1.747,20 ÷ 250 = 7,0R. Un solo evento equivale a siete stops normales."
+          "why": "208 × 8,40 = 1.747,20 €, y 1.747,20 ÷ 250 = 7,0R. Un solo evento equivale a siete stops normales.",
+          "guia": "g3"
         },
         {
           "id": "b2-4",
@@ -119,7 +152,8 @@
           "q": "Estimas un 60 % de probabilidad de aprobación. Si aprueban, +40 %; si rechazan, −70 %. ¿Cuánto pierdes de media por apuesta?",
           "unit": "%",
           "a": 4,
-          "why": "Esperanza = 0,60 × 40 % − 0,40 × 70 % = 24 % − 28 % = −4 %: pierdes un 4 % de media. Acertar el 60 % de las veces no basta si la pérdida es mayor que la ganancia."
+          "why": "Esperanza = 0,60 × 40 % − 0,40 × 70 % = 24 % − 28 % = −4 %: pierdes un 4 % de media. Acertar el 60 % de las veces no basta si la pérdida es mayor que la ganancia.",
+          "guia": "g3"
         }
       ]
     },
@@ -133,7 +167,8 @@
           "q": "Una small cap tiene 20 millones de acciones y emite 5 millones nuevas. Si no acudes a la ampliación, ¿cuánto se reduce tu participación?",
           "unit": "%",
           "a": 20,
-          "why": "Pasas de x ÷ 20 a x ÷ 25 millones: 20 ÷ 25 = 0,80, una dilución del 20 %. Cada acción representa ahora una quinta parte menos de la empresa."
+          "why": "Pasas de x ÷ 20 a x ÷ 25 millones: 20 ÷ 25 = 0,80, una dilución del 20 %. Cada acción representa ahora una quinta parte menos de la empresa.",
+          "guia": "g4"
         },
         {
           "id": "b3-2",
@@ -141,7 +176,8 @@
           "q": "Cotiza a 3,00 € con 20 millones de acciones y coloca 5 millones nuevas a 2,40 € (20 % de descuento). ¿Precio teórico tras la ampliación?",
           "unit": "€",
           "a": 2.88,
-          "why": "(20 × 3,00 + 5 × 2,40) ÷ 25 = 72 ÷ 25 = 2,88 € (en millones). Una colocación con descuento arrastra el precio hacia el de emisión."
+          "why": "(20 × 3,00 + 5 × 2,40) ÷ 25 = 72 ÷ 25 = 2,88 € (en millones). Una colocación con descuento arrastra el precio hacia el de emisión.",
+          "guia": "g4"
         },
         {
           "id": "b3-3",
@@ -149,7 +185,8 @@
           "q": "Float de 4 millones de acciones. Tras una noticia negocia 12 millones en una sesión. ¿Cuántas veces ha rotado el float?",
           "unit": "",
           "a": 3,
-          "why": "12 ÷ 4 = 3 rotaciones: todo el float cambió de manos tres veces. Es momentum especulativo y el giro llega igual de rápido: tamaño reducido y stop estricto."
+          "why": "12 ÷ 4 = 3 rotaciones: todo el float cambió de manos tres veces. Es momentum especulativo y el giro llega igual de rápido: tamaño reducido y stop estricto.",
+          "guia": "g4"
         },
         {
           "id": "b3-4",
@@ -162,7 +199,8 @@
             "Dividendo extraordinario a los accionistas"
           ],
           "a": 1,
-          "why": "Sin caja, la empresa necesita financiarse y la subida le permite emitir más caro: ampliaciones y ATM (ventas directas en mercado) suelen llegar tras los picos. Revisa caja trimestral y registros de emisión (S-1, S-3) antes de entrar."
+          "why": "Sin caja, la empresa necesita financiarse y la subida le permite emitir más caro: ampliaciones y ATM (ventas directas en mercado) suelen llegar tras los picos. Revisa caja trimestral y registros de emisión (S-1, S-3) antes de entrar.",
+          "guia": "g4"
         }
       ]
     }

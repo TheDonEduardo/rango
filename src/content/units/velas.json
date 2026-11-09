@@ -3,6 +3,32 @@
   "id": "velas",
   "title": "Velas japonesas",
   "blurb": "Lee la psicología del precio en una sola barra.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Anatomía de una vela",
+      "texto": "El cuerpo va de la apertura al cierre y las mechas marcan el máximo y el mínimo. Verde si cierra por encima de la apertura; roja si cierra por debajo.",
+      "ejemplo": "Apertura 100, máximo 108, mínimo 97 y cierre 105: rango de 11 €, cuerpo de 5 €, mecha superior de 3 € e inferior de 3 €."
+    },
+    {
+      "id": "g2",
+      "titulo": "Mechas: rechazo",
+      "texto": "Una mecha larga muestra que el precio fue hasta allí y lo devolvieron. Arriba, rechazo de máximos; abajo, de mínimos. Una peonza, cuerpo pequeño y mechas a ambos lados, indica indecisión.",
+      "ejemplo": "Máximo de 48,20 y cierre de 45,00: una mecha superior de 3,20 € frente a un cuerpo pequeño es un rechazo claro."
+    },
+    {
+      "id": "g3",
+      "titulo": "Martillo y envolvente",
+      "texto": "Un martillo tiene una mecha inferior larga y cuerpo pequeño arriba; la envolvente alcista abre bajo el cierre previo y cierra sobre su apertura. Solo valen en contexto: tras una caída y en un soporte.",
+      "ejemplo": "Mecha inferior de 3,10 € frente a un cuerpo de 0,50 € tras una caída sostenida: martillo."
+    },
+    {
+      "id": "g4",
+      "titulo": "Del patrón al plan",
+      "texto": "El patrón da los niveles: entrada sobre su máximo y stop bajo su mínimo. Esa distancia es 1R y fija el tamaño de la posición.",
+      "ejemplo": "Martillo con máximo 42,60 € y mínimo 38,80 €: entrada a 42,70 €, stop a 38,70 €, 1R = 4,00 €."
+    }
+  ],
   "lessons": [
     {
       "id": "v1",
@@ -19,7 +45,8 @@
             "Tiene la mecha inferior más larga"
           ],
           "a": 1,
-          "why": "El color depende solo de cierre frente a apertura. El cuerpo mide esa diferencia; las mechas marcan los extremos que el precio visitó y rechazó."
+          "why": "El color depende solo de cierre frente a apertura. El cuerpo mide esa diferencia; las mechas marcan los extremos que el precio visitó y rechazó.",
+          "guia": "g1"
         },
         {
           "id": "v1-2",
@@ -36,7 +63,8 @@
           },
           "unit": "€",
           "a": 11,
-          "why": "Rango = 108 − 97 = 11 €. Cuerpo = 105 − 100 = 5; mecha superior = 3 e inferior = 3."
+          "why": "Rango = 108 − 97 = 11 €. Cuerpo = 105 − 100 = 5; mecha superior = 3 e inferior = 3.",
+          "guia": "g1"
         },
         {
           "id": "v1-3",
@@ -56,7 +84,8 @@
             "alt": "Gráfico de siete velas"
           },
           "a": 5,
-          "why": "Vela 6: máximo 48,20 y cierre 45,00. Mecha superior de 3,20 frente a un cuerpo de 0,40: los compradores no sostuvieron el máximo."
+          "why": "Vela 6: máximo 48,20 y cierre 45,00. Mecha superior de 3,20 frente a un cuerpo de 0,40: los compradores no sostuvieron el máximo.",
+          "guia": "g2"
         },
         {
           "id": "v1-4",
@@ -69,7 +98,8 @@
             "Que la caída siguiente está garantizada"
           ],
           "a": 2,
-          "why": "Es una peonza. Tras un tramo fuerte avisa de agotamiento; dentro de un rango lateral no aporta información."
+          "why": "Es una peonza. Tras un tramo fuerte avisa de agotamiento; dentro de un rango lateral no aporta información.",
+          "guia": "g2"
         }
       ]
     },
@@ -101,7 +131,8 @@
             "Envolvente alcista"
           ],
           "a": 1,
-          "why": "Mecha inferior de 3,10 frente a un cuerpo de 0,50 y casi sin mecha superior: el precio bajó, fue comprado y cerró cerca del máximo."
+          "why": "Mecha inferior de 3,10 frente a un cuerpo de 0,50 y casi sin mecha superior: el precio bajó, fue comprado y cerró cerca del máximo.",
+          "guia": "g3"
         },
         {
           "id": "v2-2",
@@ -114,7 +145,8 @@
             "Con volumen mínimo y sin contexto"
           ],
           "a": 0,
-          "why": "El patrón solo vale en contexto: tendencia previa que revertir, un nivel que lo respalde y volumen que confirme el rechazo."
+          "why": "El patrón solo vale en contexto: tendencia previa que revertir, un nivel que lo respalde y volumen que confirme el rechazo.",
+          "guia": "g3"
         },
         {
           "id": "v2-3",
@@ -134,7 +166,8 @@
             "alt": "Gráfico de siete velas"
           },
           "a": 6,
-          "why": "Vela 7: abre bajo el cierre previo (43,80 < 44,00) y cierra sobre su apertura (46,30 > 44,50). El cuerpo verde engloba al rojo tras una caída."
+          "why": "Vela 7: abre bajo el cierre previo (43,80 < 44,00) y cierra sobre su apertura (46,30 > 44,50). El cuerpo verde engloba al rojo tras una caída.",
+          "guia": "g3"
         },
         {
           "id": "v2-4",
@@ -142,7 +175,8 @@
           "q": "Un martillo tiene máximo 42,60 y mínimo 38,80. Entras a 42,70 (máximo + 0,10) con stop en 38,70 (mínimo − 0,10). ¿Riesgo por acción?",
           "unit": "€",
           "a": 4,
-          "why": "42,70 − 38,70 = 4,00 € por acción. Esa distancia es 1R y fija el tamaño de la posición y el objetivo."
+          "why": "42,70 − 38,70 = 4,00 € por acción. Esa distancia es 1R y fija el tamaño de la posición y el objetivo.",
+          "guia": "g4"
         },
         {
           "id": "v2-5",
@@ -176,7 +210,8 @@
               "start": 44
             }
           ],
-          "why": "Entrada: 42,60 + 0,10 = 42,70 €. Stop: 38,80 − 0,10 = 38,70 €. Arriesgas 4,00 € por acción: esa distancia es 1R."
+          "why": "Entrada: 42,60 + 0,10 = 42,70 €. Stop: 38,80 − 0,10 = 38,70 €. Arriesgas 4,00 € por acción: esa distancia es 1R.",
+          "guia": "g4"
         },
         {
           "id": "v2-6",
@@ -200,7 +235,8 @@
               "Cuerpo verde que engloba al rojo anterior"
             ]
           ],
-          "why": "El martillo y la estrella fugaz son el mismo rechazo en sentidos opuestos; el doji marca indecisión; la envolvente, un giro en el que los compradores anulan la sesión anterior."
+          "why": "El martillo y la estrella fugaz son el mismo rechazo en sentidos opuestos; el doji marca indecisión; la envolvente, un giro en el que los compradores anulan la sesión anterior.",
+          "guia": "g3"
         }
       ]
     }

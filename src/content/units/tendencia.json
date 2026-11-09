@@ -3,6 +3,32 @@
   "id": "tendencia",
   "title": "Tendencia y fases",
   "blurb": "Weinstein y Minervini: opera solo a favor de la fase correcta.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "La media de 30 semanas",
+      "texto": "Weinstein mira el gráfico semanal y la media de 30 semanas: su pendiente y de qué lado está el precio definen la fase.",
+      "ejemplo": "Equivale a unas 150 sesiones diarias."
+    },
+    {
+      "id": "g2",
+      "titulo": "Las cuatro fases",
+      "texto": "Fase 1: base lateral con media plana. Fase 2: precio sobre una media ascendente, la única para comprar. Fase 3: techo con media que se aplana. Fase 4: precio bajo una media descendente.",
+      "ejemplo": "Se compra la ruptura de la base de Fase 1 a Fase 2, con volumen claramente superior a la media."
+    },
+    {
+      "id": "g3",
+      "titulo": "El Trend Template",
+      "texto": "Minervini exige, entre otras cosas, el precio a menos de un 25 % de su máximo de 52 semanas y al menos un 30 % por encima de su mínimo.",
+      "ejemplo": "Máximo de 80 €: precio de al menos 60 €. Mínimo de 20 €: precio de al menos 26 €."
+    },
+    {
+      "id": "g4",
+      "titulo": "Medias en orden",
+      "texto": "Una tendencia sana tiene el precio sobre la media de 50 sesiones, la de 50 sobre la de 150 y la de 150 sobre la de 200, que además sube.",
+      "ejemplo": "Si las medias se cruzan o la de 200 baja, la tendencia aún no está sana."
+    }
+  ],
   "lessons": [
     {
       "id": "t1",
@@ -19,7 +45,8 @@
             "Media de 5 semanas"
           ],
           "a": 2,
-          "why": "La media de 30 semanas (unas 150 sesiones) filtra el ruido. Importan su pendiente y si el precio está por encima o por debajo."
+          "why": "La media de 30 semanas (unas 150 sesiones) filtra el ruido. Importan su pendiente y si el precio está por encima o por debajo.",
+          "guia": "g1"
         },
         {
           "id": "t1-2",
@@ -38,7 +65,8 @@
             "Fase 4 (declive)"
           ],
           "a": 1,
-          "why": "Precio sobre una media de 30 semanas con pendiente ascendente: Fase 2. Es la única fase donde Weinstein compra."
+          "why": "Precio sobre una media de 30 semanas con pendiente ascendente: Fase 2. Es la única fase donde Weinstein compra.",
+          "guia": "g2"
         },
         {
           "id": "t1-3",
@@ -57,7 +85,8 @@
             "Fase 4 (declive)"
           ],
           "a": 3,
-          "why": "Precio bajo una media descendente: Fase 4. Se evita o se opera corto; nunca se promedia a la baja."
+          "why": "Precio bajo una media descendente: Fase 4. Se evita o se opera corto; nunca se promedia a la baja.",
+          "guia": "g2"
         },
         {
           "id": "t1-4",
@@ -70,7 +99,8 @@
             "El mínimo de la Fase 4, sin esperar confirmación"
           ],
           "a": 0,
-          "why": "Se compra la ruptura de la resistencia de la base con volumen claramente superior a la media. Anticiparla es adivinar."
+          "why": "Se compra la ruptura de la resistencia de la base con volumen claramente superior a la media. Anticiparla es adivinar.",
+          "guia": "g2"
         },
         {
           "id": "t1-5",
@@ -94,7 +124,8 @@
               "Precio por debajo de una media que baja"
             ]
           ],
-          "why": "Lo que define cada fase es la pendiente de la media de 30 semanas y de qué lado está el precio. Las fases 1 y 3 son laterales: las distingue lo que vino antes."
+          "why": "Lo que define cada fase es la pendiente de la media de 30 semanas y de qué lado está el precio. Las fases 1 y 3 son laterales: las distingue lo que vino antes.",
+          "guia": "g2"
         }
       ]
     },
@@ -113,7 +144,8 @@
             "El precio cotiza en mínimos de 52 semanas"
           ],
           "a": 3,
-          "why": "Se busca lo contrario: precio a menos de un 25 % de su máximo de 52 semanas, no en mínimos."
+          "why": "Se busca lo contrario: precio a menos de un 25 % de su máximo de 52 semanas, no en mínimos.",
+          "guia": "g3"
         },
         {
           "id": "t2-2",
@@ -121,7 +153,8 @@
           "q": "Máximo de 52 semanas: 80 €. El precio debe estar a menos del 25 % del máximo. ¿Precio mínimo aceptable?",
           "unit": "€",
           "a": 60,
-          "why": "80 × (1 − 0,25) = 60 €. Por debajo, el valor está demasiado lejos de sus máximos."
+          "why": "80 × (1 − 0,25) = 60 €. Por debajo, el valor está demasiado lejos de sus máximos.",
+          "guia": "g3"
         },
         {
           "id": "t2-3",
@@ -129,7 +162,8 @@
           "q": "Mínimo de 52 semanas: 20 €. El precio debe estar al menos un 30 % por encima del mínimo. ¿Precio mínimo aceptable?",
           "unit": "€",
           "a": 26,
-          "why": "20 × 1,30 = 26 €. Asegura que el valor ya salió de su zona de suelo."
+          "why": "20 × 1,30 = 26 €. Asegura que el valor ya salió de su zona de suelo.",
+          "guia": "g3"
         },
         {
           "id": "t2-4",
@@ -142,7 +176,8 @@
             "50 < 200 < 150, con la de 200 plana"
           ],
           "a": 1,
-          "why": "Precio sobre la de 50, la de 50 sobre la de 150 y esta sobre la de 200, que además debe subir. Es la Fase 2 de Weinstein en medias."
+          "why": "Precio sobre la de 50, la de 50 sobre la de 150 y esta sobre la de 200, que además debe subir. Es la Fase 2 de Weinstein en medias.",
+          "guia": "g4"
         }
       ]
     }

@@ -3,6 +3,32 @@
   "id": "backtest",
   "title": "Backtesting",
   "blurb": "Comprobar un sistema con el pasado sin engañarte.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Medir un sistema",
+      "texto": "El factor de beneficio divide lo ganado entre lo perdido. La esperanza en R combina acierto y tamaño de las ganancias: se puede ganar acertando menos de la mitad.",
+      "ejemplo": "Acierta un 40 % ganando 2,5R y falla un 60 % perdiendo 1R: +0,4R por operación."
+    },
+    {
+      "id": "g2",
+      "titulo": "Caída máxima y muestra",
+      "texto": "La caída máxima es lo que baja la cuenta desde un máximo: pregúntate si la aguantarías. Y con pocas operaciones, los resultados no significan nada.",
+      "ejemplo": "De 15.000 a 12.000 €: una caída del 20 %. Con 12 operaciones, unas pocas lo cambian todo."
+    },
+    {
+      "id": "g3",
+      "titulo": "Sobreajuste",
+      "texto": "Los datos con los que ajustas no sirven para validar. Comprueba el sistema en un periodo que no hayas usado.",
+      "ejemplo": "Un 30 % anual con datos de 2010 a 2020 no dice nada si falla en 2021-2025."
+    },
+    {
+      "id": "g4",
+      "titulo": "Costes y supervivencia",
+      "texto": "Resta comisiones y deslizamientos: con muchas operaciones, se comen el resultado. Y prueba con las empresas que existían entonces, no solo con las de hoy.",
+      "ejemplo": "Ganar un 0,30 % por operación con un 0,20 % de costes en 200 operaciones: un 20 %, no un 60 %."
+    }
+  ],
   "lessons": [
     {
       "id": "bt1",
@@ -14,7 +40,8 @@
           "q": "En la prueba, las operaciones ganadoras suman 12.000 € y las perdedoras, 8.000 €. ¿Cuál es el factor de beneficio (ganancias ÷ pérdidas)?",
           "unit": "",
           "a": 1.5,
-          "why": "12.000 ÷ 8.000 = 1,5: por cada euro perdido se ganan 1,50 €. Por debajo de 1 el sistema pierde dinero; con costes reales, conviene que quede bastante por encima."
+          "why": "12.000 ÷ 8.000 = 1,5: por cada euro perdido se ganan 1,50 €. Por debajo de 1 el sistema pierde dinero; con costes reales, conviene que quede bastante por encima.",
+          "guia": "g1"
         },
         {
           "id": "bt1-2",
@@ -22,7 +49,8 @@
           "q": "Un sistema acierta el 40 % de las veces ganando 2,5R y falla el 60 % perdiendo 1R. ¿Cuál es su esperanza por operación?",
           "unit": "R",
           "a": 0.4,
-          "why": "0,40 × 2,5 − 0,60 × 1 = 1,0 − 0,6 = 0,4R por operación. Se puede ganar acertando menos de la mitad si las ganancias son mayores que las pérdidas."
+          "why": "0,40 × 2,5 − 0,60 × 1 = 1,0 − 0,6 = 0,4R por operación. Se puede ganar acertando menos de la mitad si las ganancias son mayores que las pérdidas.",
+          "guia": "g1"
         },
         {
           "id": "bt1-3",
@@ -30,7 +58,8 @@
           "q": "En la prueba, la cuenta llega a un máximo de 15.000 € y después cae hasta 12.000 € antes de recuperarse. ¿Cuál es la máxima caída?",
           "unit": "%",
           "a": 20,
-          "why": "(15.000 − 12.000) ÷ 15.000 = 20 %. Pregúntate si seguirías operando el sistema en mitad de esa caída: si no, en la práctica no te sirve."
+          "why": "(15.000 − 12.000) ÷ 15.000 = 20 %. Pregúntate si seguirías operando el sistema en mitad de esa caída: si no, en la práctica no te sirve.",
+          "guia": "g2"
         },
         {
           "id": "bt1-4",
@@ -43,7 +72,8 @@
             "Hay que operarlo con todo el capital"
           ],
           "a": 1,
-          "why": "Con 12 operaciones, unas pocas buenas o malas cambian el resultado por completo. Hacen falta decenas o cientos de operaciones, en mercados distintos, para fiarse."
+          "why": "Con 12 operaciones, unas pocas buenas o malas cambian el resultado por completo. Hacen falta decenas o cientos de operaciones, en mercados distintos, para fiarse.",
+          "guia": "g2"
         }
       ]
     },
@@ -73,7 +103,8 @@
               "Olvidar comisiones, horquilla y deslizamiento"
             ]
           ],
-          "why": "Las cuatro hacen que el pasado parezca mejor de lo que fue. Un backtest honesto las evita a propósito antes de mirar el resultado."
+          "why": "Las cuatro hacen que el pasado parezca mejor de lo que fue. Un backtest honesto las evita a propósito antes de mirar el resultado.",
+          "guia": "g3"
         },
         {
           "id": "bt2-2",
@@ -86,7 +117,8 @@
             "Subir el riesgo por operación"
           ],
           "a": 1,
-          "why": "Los datos con los que ajustas no sirven para validar. Si en un periodo nuevo, sin retocar nada, el resultado se hunde, el sistema estaba sobreajustado."
+          "why": "Los datos con los que ajustas no sirven para validar. Si en un periodo nuevo, sin retocar nada, el resultado se hunde, el sistema estaba sobreajustado.",
+          "guia": "g3"
         },
         {
           "id": "bt2-3",
@@ -94,7 +126,8 @@
           "q": "Un sistema gana un 0,30 % por operación antes de costes y hace 200 operaciones al año. Cada operación cuesta un 0,20 % entre comisiones y deslizamiento. Sumando sin componer, ¿qué rentabilidad anual neta le queda?",
           "unit": "%",
           "a": 20,
-          "why": "(0,30 − 0,20) × 200 = 20 %, frente al 60 % bruto. Cuantas más operaciones, más pesan los costes: dos terceras partes se han ido en ellos."
+          "why": "(0,30 − 0,20) × 200 = 20 %, frente al 60 % bruto. Cuantas más operaciones, más pesan los costes: dos terceras partes se han ido en ellos.",
+          "guia": "g4"
         },
         {
           "id": "bt2-4",
@@ -103,7 +136,8 @@
           "unit": "%",
           "a": 23.1,
           "why": "150 ÷ (500 + 150) = 23,1 %. Muchas de esas empresas salieron por caer: dejarlas fuera hace que el sistema parezca mejor de lo que habría sido.",
-          "tol": 0.06
+          "tol": 0.06,
+          "guia": "g4"
         }
       ]
     }

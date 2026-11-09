@@ -3,6 +3,32 @@
   "id": "fuerza",
   "title": "Fuerza relativa",
   "blurb": "Compra lo que sube más que el mercado, no lo que sube.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "La línea de fuerza relativa",
+      "texto": "Divide el precio de la acción entre el índice. Si sube, la acción lo hace mejor que el mercado, aunque ambos bajen.",
+      "ejemplo": "De 40 a 52 € con el índice de 5.000 a 5.500: la línea RS sube un 18,2 %."
+    },
+    {
+      "id": "g2",
+      "titulo": "RS Rating",
+      "texto": "El RS Rating de IBD es un percentil de 1 a 99 frente a todas las acciones, con más peso en los últimos meses. Un 90 es mejor que el 90 %.",
+      "ejemplo": "De 4.000 acciones, un RS de 90 deja unas 400 por delante."
+    },
+    {
+      "id": "g3",
+      "titulo": "Comprar líderes",
+      "texto": "Minervini pide un RS de 70 o más. Las acciones que aguantan una corrección del mercado suelen ser las primeras en romper al alza.",
+      "ejemplo": "El índice cae un 10 % y una acción solo un 3 %: candidata a liderar."
+    },
+    {
+      "id": "g4",
+      "titulo": "Fase 2 y fuerza a la vez",
+      "texto": "Weinstein pedía las dos cosas: Fase 2 y fuerza relativa mejorando. Si sube pero menos que el mercado, hay mejores opciones.",
+      "ejemplo": "Una línea RS que baja durante meses en plena subida es una advertencia."
+    }
+  ],
   "lessons": [
     {
       "id": "rs1",
@@ -19,7 +45,8 @@
             "No se puede saber sin el volumen"
           ],
           "a": 1,
-          "why": "(55 ÷ 4.600) ÷ (50 ÷ 4.000) = 0,957: la línea RS cae un 4,3 %. La acción gana dinero, pero menos que el mercado: no es un líder."
+          "why": "(55 ÷ 4.600) ÷ (50 ÷ 4.000) = 0,957: la línea RS cae un 4,3 %. La acción gana dinero, pero menos que el mercado: no es un líder.",
+          "guia": "g1"
         },
         {
           "id": "rs1-2",
@@ -28,7 +55,8 @@
           "unit": "%",
           "a": 18.2,
           "tol": 0.06,
-          "why": "(52 ÷ 5.500) ÷ (40 ÷ 5.000) = 1,182: la línea RS sube un 18,2 %. No es 30 − 10 = 20: la fuerza relativa es un cociente, no una resta."
+          "why": "(52 ÷ 5.500) ÷ (40 ÷ 5.000) = 1,182: la línea RS sube un 18,2 %. No es 30 − 10 = 20: la fuerza relativa es un cociente, no una resta.",
+          "guia": "g1"
         },
         {
           "id": "rs1-3",
@@ -41,7 +69,8 @@
             "Que tiene un 90 % de opciones de subir"
           ],
           "a": 1,
-          "why": "Es un percentil de 1 a 99 sobre el comportamiento de los últimos 12 meses, con más peso en el último trimestre. O'Neil buscaba líderes con RS de 80 o más."
+          "why": "Es un percentil de 1 a 99 sobre el comportamiento de los últimos 12 meses, con más peso en el último trimestre. O'Neil buscaba líderes con RS de 80 o más.",
+          "guia": "g2"
         },
         {
           "id": "rs1-4",
@@ -65,7 +94,8 @@
               "Sube menos que el mercado"
             ]
           ],
-          "why": "La línea RS compara con el índice y el RS Rating con todas las demás acciones. Que la línea RS marque máximos antes que el precio es de las señales de liderazgo que más valoraba O'Neil."
+          "why": "La línea RS compara con el índice y el RS Rating con todas las demás acciones. Que la línea RS marque máximos antes que el precio es de las señales de liderazgo que más valoraba O'Neil.",
+          "guia": "g2"
         }
       ]
     },
@@ -108,7 +138,8 @@
             "Ninguna"
           ],
           "a": 1,
-          "why": "B cumple las dos condiciones: RS de 88 (Minervini pide 70 o más) y a un 5 % de máximos (menos del 25 %). A está demasiado lejos de máximos y C tiene poca fuerza relativa."
+          "why": "B cumple las dos condiciones: RS de 88 (Minervini pide 70 o más) y a un 5 % de máximos (menos del 25 %). A está demasiado lejos de máximos y C tiene poca fuerza relativa.",
+          "guia": "g3"
         },
         {
           "id": "rs2-2",
@@ -121,7 +152,8 @@
             "Nada: en una corrección todo da igual"
           ],
           "a": 1,
-          "why": "Las acciones que aguantan una corrección suelen ser las primeras en romper al alza tras el día de confirmación. O'Neil preparaba así su lista de candidatas."
+          "why": "Las acciones que aguantan una corrección suelen ser las primeras en romper al alza tras el día de confirmación. O'Neil preparaba así su lista de candidatas.",
+          "guia": "g3"
         },
         {
           "id": "rs2-3",
@@ -129,7 +161,8 @@
           "q": "Hay 4.000 acciones en el universo de comparación y una tiene un RS Rating de 90. ¿Cuántas, aproximadamente, lo han hecho mejor que ella?",
           "unit": "",
           "a": 400,
-          "why": "RS 90 significa mejor que el 90 %: cerca de un 10 % lo hizo mejor. 4.000 × 10 % = 400 acciones."
+          "why": "RS 90 significa mejor que el 90 %: cerca de un 10 % lo hizo mejor. 4.000 × 10 % = 400 acciones.",
+          "guia": "g2"
         },
         {
           "id": "rs2-4",
@@ -142,7 +175,8 @@
             "Esperar a que caiga un 50 %"
           ],
           "a": 0,
-          "why": "Weinstein pedía las dos cosas: Fase 2 y fuerza relativa mejorando. Si sube menos que el mercado, tu capital rinde más en un líder."
+          "why": "Weinstein pedía las dos cosas: Fase 2 y fuerza relativa mejorando. Si sube menos que el mercado, tu capital rinde más en un líder.",
+          "guia": "g4"
         }
       ]
     }

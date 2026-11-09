@@ -3,6 +3,32 @@
   "id": "mercado",
   "title": "Mercado general",
   "blurb": "O'Neil: lee si el mercado acompaña antes de comprar.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Días de distribución",
+      "texto": "Según O'Neil, un día de distribución es una caída del índice de al menos un 0,2 % con más volumen que la sesión anterior.",
+      "ejemplo": "De 5.000 a 4.985 puntos con más volumen: −0,3 %, cuenta."
+    },
+    {
+      "id": "g2",
+      "titulo": "Cuando se acumulan",
+      "texto": "Varios días de distribución en pocas semanas indican que los grandes inversores venden aunque el índice aguante. Es momento de reducir exposición.",
+      "ejemplo": "6 días de distribución en 25 sesiones es una señal de alerta."
+    },
+    {
+      "id": "g3",
+      "titulo": "El intento de rebote",
+      "texto": "Tras una corrección, el primer día de subida abre un intento de rebote. Si el índice pierde el mínimo, el intento falla y el recuento vuelve a empezar.",
+      "ejemplo": "Los primeros días pueden ser simples rebotes técnicos."
+    },
+    {
+      "id": "g4",
+      "titulo": "El día de confirmación",
+      "texto": "O'Neil espera un día de confirmación, una subida fuerte con más volumen a partir del cuarto día. Entonces se vuelve a comprar, poco a poco.",
+      "ejemplo": "Un 25 % del capital tras la confirmación y otro 25 % cada vez que las compras funcionan."
+    }
+  ],
   "lessons": [
     {
       "id": "m1",
@@ -19,7 +45,8 @@
             "Una caída del índice de más de un 5 % en un día"
           ],
           "a": 0,
-          "why": "El índice cae al menos un 0,2 % con más volumen que la sesión anterior: grandes inversores están vendiendo. Un día suelto no dice nada; importa cuántos se acumulan."
+          "why": "El índice cae al menos un 0,2 % con más volumen que la sesión anterior: grandes inversores están vendiendo. Un día suelto no dice nada; importa cuántos se acumulan.",
+          "guia": "g1"
         },
         {
           "id": "m1-2",
@@ -61,7 +88,8 @@
           },
           "unit": "",
           "a": 2,
-          "why": "Lunes y viernes: caen más de un 0,2 % con más volumen. El miércoles cae menos de un 0,2 % y el jueves, aunque cae más, lo hace con menos volumen."
+          "why": "Lunes y viernes: caen más de un 0,2 % con más volumen. El miércoles cae menos de un 0,2 % y el jueves, aunque cae más, lo hace con menos volumen.",
+          "guia": "g1"
         },
         {
           "id": "m1-3",
@@ -74,7 +102,8 @@
             "Vender en corto todo el mercado"
           ],
           "a": 1,
-          "why": "Los grandes inversores están vendiendo de forma repetida aunque el índice aguante. Para O'Neil, cuatro o cinco días de distribución en pocas semanas suelen preceder a una corrección."
+          "why": "Los grandes inversores están vendiendo de forma repetida aunque el índice aguante. Para O'Neil, cuatro o cinco días de distribución en pocas semanas suelen preceder a una corrección.",
+          "guia": "g2"
         },
         {
           "id": "m1-4",
@@ -82,7 +111,8 @@
           "q": "El índice cerró ayer en 5.000 puntos y hoy cierra en 4.985, con más volumen que ayer. ¿Cuánto ha caído?",
           "unit": "%",
           "a": 0.3,
-          "why": "(5.000 − 4.985) ÷ 5.000 = 0,3 %. Supera el 0,2 % y con más volumen, así que cuenta como día de distribución."
+          "why": "(5.000 − 4.985) ÷ 5.000 = 0,3 %. Supera el 0,2 % y con más volumen, así que cuenta como día de distribución.",
+          "guia": "g1"
         }
       ]
     },
@@ -101,7 +131,8 @@
             "Día de confirmación: subida fuerte con más volumen, del 4.º día en adelante",
             "Vuelves a comprar rupturas de forma gradual"
           ],
-          "why": "El mínimo y el primer día de subida abren el intento de rebote, y respetar el mínimo lo mantiene vivo. La confirmación con volumen da permiso para volver a comprar, pero poco a poco."
+          "why": "El mínimo y el primer día de subida abren el intento de rebote, y respetar el mínimo lo mantiene vivo. La confirmación con volumen da permiso para volver a comprar, pero poco a poco.",
+          "guia": "g4"
         },
         {
           "id": "m2-2",
@@ -114,7 +145,8 @@
             "No: hace falta subir un 10 %"
           ],
           "a": 1,
-          "why": "Los primeros días de un rebote pueden ser simples rebotes técnicos. O'Neil esperaba como mínimo al 4.º día del intento para darle valor a la confirmación."
+          "why": "Los primeros días de un rebote pueden ser simples rebotes técnicos. O'Neil esperaba como mínimo al 4.º día del intento para darle valor a la confirmación.",
+          "guia": "g3"
         },
         {
           "id": "m2-3",
@@ -127,7 +159,8 @@
             "Es momento de comprar más fuerte"
           ],
           "a": 0,
-          "why": "Si pierde el mínimo, el intento de rebote ha fallado. El recuento empieza de nuevo con el próximo primer día de subida."
+          "why": "Si pierde el mínimo, el intento de rebote ha fallado. El recuento empieza de nuevo con el próximo primer día de subida.",
+          "guia": "g3"
         },
         {
           "id": "m2-4",
@@ -135,7 +168,8 @@
           "q": "Tras el día de confirmación inviertes el 25 % del capital, y añades otro 25 % cada vez que tus compras ganen un 5 %. Tras dos ampliaciones, ¿qué porcentaje tienes invertido?",
           "unit": "%",
           "a": 75,
-          "why": "25 % + 25 % + 25 % = 75 %. Aumentar la exposición solo cuando las primeras compras funcionan limita el daño si la confirmación resulta falsa."
+          "why": "25 % + 25 % + 25 % = 75 %. Aumentar la exposición solo cuando las primeras compras funcionan limita el daño si la confirmación resulta falsa.",
+          "guia": "g4"
         }
       ]
     }

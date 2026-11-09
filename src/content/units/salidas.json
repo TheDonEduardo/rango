@@ -3,6 +3,32 @@
   "id": "salidas",
   "title": "Salidas escalonadas",
   "blurb": "Vende por partes: asegura pronto y deja correr el resto.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Vender por partes",
+      "texto": "Vender una parte en un objetivo asegura ganancia y reduce el riesgo de lo que queda. El resultado total es la media de los tramos.",
+      "ejemplo": "Un tercio en 2R, otro en 4R y el último en la entrada: (2 + 4 + 0) ÷ 3 = 2R."
+    },
+    {
+      "id": "g2",
+      "titulo": "Stop a la entrada",
+      "texto": "Tras asegurar una parte, subir el stop a la entrada deja el resto sin riesgo: lo peor es salir sin perder.",
+      "ejemplo": "La mitad en 2R y el resto salta en el stop original: 0,5 × 2 − 0,5 = 0,5R."
+    },
+    {
+      "id": "g3",
+      "titulo": "Dejar correr el último tramo",
+      "texto": "El último tramo es el que captura las grandes subidas: protégelo con un stop que siga al precio, como una media o los mínimos crecientes.",
+      "ejemplo": "No lo vendas por miedo mientras la tendencia siga intacta."
+    },
+    {
+      "id": "g4",
+      "titulo": "Vender en fuerza",
+      "texto": "Las subidas más rápidas y con más volumen suelen llegar al final. Cuando el precio se aleja mucho de su media, tiende a volver.",
+      "ejemplo": "A 66 € con la media de 50 sesiones en 50 €: un 32 % por encima, zona para vender una parte."
+    }
+  ],
   "lessons": [
     {
       "id": "s1",
@@ -14,7 +40,8 @@
           "q": "Vendes un tercio en 2R, otro tercio en 4R y el último salta en el stop, que habías subido a la entrada (0R). ¿Resultado medio de la operación?",
           "unit": "R",
           "a": 2,
-          "why": "(2 + 4 + 0) ÷ 3 = 2R. Aunque el último tramo salga sin ganancia, la operación cierra con el doble de lo arriesgado."
+          "why": "(2 + 4 + 0) ÷ 3 = 2R. Aunque el último tramo salga sin ganancia, la operación cierra con el doble de lo arriesgado.",
+          "guia": "g1"
         },
         {
           "id": "s1-2",
@@ -22,7 +49,8 @@
           "q": "Vendes la mitad en 2R y el precio se gira: la otra mitad sale en el stop original (−1R). ¿Resultado de la operación?",
           "unit": "R",
           "a": 0.5,
-          "why": "0,5 × 2 + 0,5 × (−1) = 0,5R. Sin la venta parcial habrías perdido 1R: vender una parte en 2R convierte esa operación en ganadora."
+          "why": "0,5 × 2 + 0,5 × (−1) = 0,5R. Sin la venta parcial habrías perdido 1R: vender una parte en 2R convierte esa operación en ganadora.",
+          "guia": "g2"
         },
         {
           "id": "s1-3",
@@ -62,7 +90,8 @@
             "alt": "Gráfico de velas al alza con tres niveles de stop"
           },
           "a": "B",
-          "why": "En la entrada (40,00 €) el resto ya no puede perder: la operación queda sin riesgo. A mantiene 1R en juego y C, a 0,50 € del precio, saltaría con el ruido normal."
+          "why": "En la entrada (40,00 €) el resto ya no puede perder: la operación queda sin riesgo. A mantiene 1R en juego y C, a 0,50 € del precio, saltaría con el ruido normal.",
+          "guia": "g2"
         },
         {
           "id": "s1-4",
@@ -75,7 +104,8 @@
             "Lo mantienes sin stop hasta fin de año"
           ],
           "a": 1,
-          "why": "El último tramo es el que captura las grandes subidas: un stop que sigue al precio evita vender demasiado pronto. Minervini acompaña a sus mayores ganadores con la media de 50 sesiones."
+          "why": "El último tramo es el que captura las grandes subidas: un stop que sigue al precio evita vender demasiado pronto. Minervini acompaña a sus mayores ganadores con la media de 50 sesiones.",
+          "guia": "g3"
         }
       ]
     },
@@ -94,7 +124,8 @@
             "Nada relevante: es una semana más"
           ],
           "a": 2,
-          "why": "Las subidas más rápidas y con más volumen suelen llegar al final de una tendencia, cuando compran los últimos. Vender una parte ahí asegura la ganancia sin intentar adivinar el techo."
+          "why": "Las subidas más rápidas y con más volumen suelen llegar al final de una tendencia, cuando compran los últimos. Vender una parte ahí asegura la ganancia sin intentar adivinar el techo.",
+          "guia": "g4"
         },
         {
           "id": "s2-2",
@@ -102,7 +133,8 @@
           "q": "La acción cotiza a 66,00 € y su media de 50 sesiones está en 50,00 €. ¿Cuánto está por encima de la media?",
           "unit": "%",
           "a": 32,
-          "why": "(66,00 − 50,00) ÷ 50,00 = 32 %. Tan alejado de su media, el precio tiende a volver a ella: es sitio para vender una parte, no para comprar."
+          "why": "(66,00 − 50,00) ÷ 50,00 = 32 %. Tan alejado de su media, el precio tiende a volver a ella: es sitio para vender una parte, no para comprar.",
+          "guia": "g4"
         },
         {
           "id": "s2-3",
@@ -110,7 +142,8 @@
           "q": "Compraste 150 acciones a 40,00 €. Vendes 50 a 44,00 €, otras 50 a 48,00 € y las últimas 50 salen en el stop, subido a 40,00 €. ¿Ganancia total?",
           "unit": "€",
           "a": 600,
-          "why": "50 × 4,00 + 50 × 8,00 + 50 × 0 = 600 €. Las ventas parciales aseguraron la ganancia aunque el último tramo saliera sin beneficio."
+          "why": "50 × 4,00 + 50 × 8,00 + 50 × 0 = 600 €. Las ventas parciales aseguraron la ganancia aunque el último tramo saliera sin beneficio.",
+          "guia": "g1"
         },
         {
           "id": "s2-4",
@@ -122,7 +155,8 @@
             "Vender otro tercio en 4R o en una subida clímax",
             "Seguir el último tercio con la media de 50 sesiones"
           ],
-          "why": "Primero limitas la pérdida, luego aseguras y eliminas el riesgo, y al final dejas correr lo que queda. Cada paso depende de que el anterior se haya cumplido."
+          "why": "Primero limitas la pérdida, luego aseguras y eliminas el riesgo, y al final dejas correr lo que queda. Cada paso depende de que el anterior se haya cumplido.",
+          "guia": "g2"
         }
       ]
     }

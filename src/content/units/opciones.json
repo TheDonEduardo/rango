@@ -3,6 +3,32 @@
   "id": "opciones",
   "title": "Opciones para cubrir",
   "blurb": "Cómo poner un suelo a tus acciones y cuánto cuesta.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Call y put",
+      "texto": "Una call da derecho a comprar a un precio de ejercicio; una put, a vender. Quien compra paga una prima y no está obligado a nada. Un contrato cubre 100 acciones.",
+      "ejemplo": "Prima de 1,50 $ por acción: 150 $ por contrato."
+    },
+    {
+      "id": "g2",
+      "titulo": "La put al vencimiento",
+      "texto": "Si al vencimiento la acción está por debajo del precio de ejercicio, la put vale la diferencia. Si está por encima, no se ejerce y la prima se pierde.",
+      "ejemplo": "Put de 45 $ con la acción a 38 $: vale 7 $. Con la acción a 52 $, no vale nada."
+    },
+    {
+      "id": "g3",
+      "titulo": "Put de protección",
+      "texto": "Con la acción comprada, una put fija la pérdida máxima aunque el precio abra con un gap. A cambio, la acción tiene que subir lo que costó la prima.",
+      "ejemplo": "Acciones a 50 $ y put de 45 $ por 1,50 $: pérdida máxima de 6,50 $ y equilibrio en 51,50 $."
+    },
+    {
+      "id": "g4",
+      "titulo": "Cubrirse cuesta",
+      "texto": "Cubrirse siempre es caro. Las puts se usan en momentos concretos, como unos resultados, no de forma permanente.",
+      "ejemplo": "Una put a 3 meses que cuesta un 2 %, renovada todo el año: un 8 %."
+    }
+  ],
   "lessons": [
     {
       "id": "o1",
@@ -30,7 +56,8 @@
               "El precio fijado en el contrato"
             ]
           ],
-          "why": "Quien compra una opción paga la prima y obtiene un derecho, no una obligación. Para cubrir acciones se usa la put: el derecho a vender."
+          "why": "Quien compra una opción paga la prima y obtiene un derecho, no una obligación. Para cubrir acciones se usa la put: el derecho a vender.",
+          "guia": "g1"
         },
         {
           "id": "o1-2",
@@ -38,7 +65,8 @@
           "q": "Un contrato de opciones sobre acciones de EE. UU. cubre 100 acciones y la prima es de 1,50 $ por acción. ¿Cuánto pagas por un contrato?",
           "unit": "$",
           "a": 150,
-          "why": "100 × 1,50 = 150 $. Las primas se cotizan por acción, pero se pagan por contrato."
+          "why": "100 × 1,50 = 150 $. Las primas se cotizan por acción, pero se pagan por contrato.",
+          "guia": "g1"
         },
         {
           "id": "o1-3",
@@ -46,7 +74,8 @@
           "q": "Tienes una put con precio de ejercicio de 45 $. Al vencimiento, la acción cotiza a 38 $. ¿Cuánto vale la put por acción?",
           "unit": "$",
           "a": 7,
-          "why": "45 − 38 = 7 $: tienes derecho a vender a 45 $ algo que vale 38 $. Esa ganancia compensa lo que han caído tus acciones."
+          "why": "45 − 38 = 7 $: tienes derecho a vender a 45 $ algo que vale 38 $. Esa ganancia compensa lo que han caído tus acciones.",
+          "guia": "g2"
         },
         {
           "id": "o1-4",
@@ -59,7 +88,8 @@
             "Te devuelven la prima al vencimiento"
           ],
           "a": 2,
-          "why": "Nadie vende a 45 $ lo que vale 52 $, así que la put no se ejerce. La prima fue el coste del seguro, como el de un coche que no ha tenido accidentes."
+          "why": "Nadie vende a 45 $ lo que vale 52 $, así que la put no se ejerce. La prima fue el coste del seguro, como el de un coche que no ha tenido accidentes.",
+          "guia": "g2"
         }
       ]
     },
@@ -73,7 +103,8 @@
           "q": "Tienes 100 acciones compradas a 50 $ y compras una put de 45 $ por 1,50 $ por acción. ¿Cuál es tu pérdida máxima por acción?",
           "unit": "$",
           "a": 6.5,
-          "why": "(50 − 45) + 1,50 = 6,50 $: lo que puede caer hasta el precio de ejercicio más la prima. Caiga lo que caiga, no pierdes más."
+          "why": "(50 − 45) + 1,50 = 6,50 $: lo que puede caer hasta el precio de ejercicio más la prima. Caiga lo que caiga, no pierdes más.",
+          "guia": "g3"
         },
         {
           "id": "o2-2",
@@ -81,7 +112,8 @@
           "q": "Con esa cobertura, ¿a qué precio tiene que estar la acción al vencimiento para no perder dinero?",
           "unit": "$",
           "a": 51.5,
-          "why": "50 + 1,50 = 51,50 $: la acción tiene que subir lo que costó la prima. La cobertura limita la pérdida, pero encarece el punto de equilibrio."
+          "why": "50 + 1,50 = 51,50 $: la acción tiene que subir lo que costó la prima. La cobertura limita la pérdida, pero encarece el punto de equilibrio.",
+          "guia": "g3"
         },
         {
           "id": "o2-3",
@@ -94,7 +126,8 @@
             "Vender una call sobre las acciones"
           ],
           "a": 1,
-          "why": "El stop no protege de un gap: se ejecuta al primer precio disponible. La put fija tu precio de venta pase lo que pase, como viste en catalizadores binarios."
+          "why": "El stop no protege de un gap: se ejecuta al primer precio disponible. La put fija tu precio de venta pase lo que pase, como viste en catalizadores binarios.",
+          "guia": "g3"
         },
         {
           "id": "o2-4",
@@ -102,7 +135,8 @@
           "q": "Una put a 3 meses cuesta el 2 % del valor de la posición. Si la renuevas durante todo el año, ¿cuánto te cuesta en total?",
           "unit": "%",
           "a": 8,
-          "why": "4 × 2 % = 8 % al año: cubrirse siempre es caro. Las puts se usan en momentos concretos, como antes de unos resultados."
+          "why": "4 × 2 % = 8 % al año: cubrirse siempre es caro. Las puts se usan en momentos concretos, como antes de unos resultados.",
+          "guia": "g4"
         }
       ]
     }

@@ -3,6 +3,32 @@
   "id": "cartera",
   "title": "Riesgo de cartera",
   "blurb": "No es cada operación: es todo lo que tienes abierto a la vez.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Riesgo abierto",
+      "texto": "Suma lo que perderías si saltasen todos tus stops a la vez. Ese riesgo abierto debe tener un límite.",
+      "ejemplo": "5 posiciones que arriesgan un 1 % cada una: un 5 % de riesgo abierto."
+    },
+    {
+      "id": "g2",
+      "titulo": "Correlación",
+      "texto": "Varias posiciones del mismo sector se mueven como una sola. Diversifica sectores, no solo valores.",
+      "ejemplo": "Cinco posiciones de semiconductores con 15.000 €: 750 € en juego con un mismo golpe."
+    },
+    {
+      "id": "g3",
+      "titulo": "Rachas",
+      "texto": "Las rachas de pérdidas pasan. El tamaño de cada apuesta decide cuánto daño hacen.",
+      "ejemplo": "Diez pérdidas seguidas arriesgando un 2 %: −18,3 %. Con un 1 %: −9,6 %."
+    },
+    {
+      "id": "g4",
+      "titulo": "Exposición y mercado",
+      "texto": "La exposición es cuánto capital está invertido. Tres de cada cuatro acciones siguen al mercado: si el mercado se debilita, reduce. Y limita el peso de cada posición.",
+      "ejemplo": "Posiciones de 11.000 € con 15.000 € de capital: un 73,3 % de exposición."
+    }
+  ],
   "lessons": [
     {
       "id": "c1",
@@ -14,7 +40,8 @@
           "q": "Tienes 5 posiciones abiertas y cada una arriesga un 1 % del capital hasta su stop. Si saltan todos los stops, ¿qué porcentaje del capital pierdes?",
           "unit": "%",
           "a": 5,
-          "why": "5 × 1 % = 5 %. Es tu riesgo abierto: lo que cuesta el peor día si todo sale mal a la vez."
+          "why": "5 × 1 % = 5 %. Es tu riesgo abierto: lo que cuesta el peor día si todo sale mal a la vez.",
+          "guia": "g1"
         },
         {
           "id": "c1-2",
@@ -22,7 +49,8 @@
           "q": "Capital de 15.000 € y esas 5 posiciones son todas de semiconductores. Si el sector cae y saltan los cinco stops, ¿cuántos € pierdes?",
           "unit": "€",
           "a": 750,
-          "why": "15.000 × 5 % = 750 €. Cinco posiciones del mismo sector se mueven como una sola posición grande: en una caída del sector saltan juntas."
+          "why": "15.000 × 5 % = 750 €. Cinco posiciones del mismo sector se mueven como una sola posición grande: en una caída del sector saltan juntas.",
+          "guia": "g2"
         },
         {
           "id": "c1-3",
@@ -35,7 +63,8 @@
             "Quitas los stops de las demás posiciones"
           ],
           "a": 1,
-          "why": "Una posición con el stop en la entrada ya no suma riesgo: así haces hueco sin superar tu límite. Si no puedes, la nueva operación espera."
+          "why": "Una posición con el stop en la entrada ya no suma riesgo: así haces hueco sin superar tu límite. Si no puedes, la nueva operación espera.",
+          "guia": "g1"
         },
         {
           "id": "c1-4",
@@ -44,7 +73,8 @@
           "unit": "%",
           "a": 18.3,
           "tol": 0.06,
-          "why": "1 − 0,98¹⁰ = 18,3 %. Con un 1 % por operación serían un 9,6 %: rachas así ocurren incluso con buenos sistemas, y el riesgo por operación decide cuánto duelen."
+          "why": "1 − 0,98¹⁰ = 18,3 %. Con un 1 % por operación serían un 9,6 %: rachas así ocurren incluso con buenos sistemas, y el riesgo por operación decide cuánto duelen.",
+          "guia": "g3"
         }
       ]
     },
@@ -59,7 +89,8 @@
           "unit": "%",
           "a": 73.3,
           "tol": 0.06,
-          "why": "(3.000 + 2.500 + 4.000 + 1.500) ÷ 15.000 = 11.000 ÷ 15.000 = 73,3 %. La exposición dice cuánto te mueve el mercado; el riesgo abierto, cuánto pierdes si saltan los stops."
+          "why": "(3.000 + 2.500 + 4.000 + 1.500) ÷ 15.000 = 11.000 ÷ 15.000 = 73,3 %. La exposición dice cuánto te mueve el mercado; el riesgo abierto, cuánto pierdes si saltan los stops.",
+          "guia": "g4"
         },
         {
           "id": "c2-2",
@@ -72,7 +103,8 @@
             "Comprar las acciones que más caen"
           ],
           "a": 0,
-          "why": "Según O'Neil, tres de cada cuatro acciones siguen la dirección del mercado. Cuando las rupturas fallan seguidas, el mercado te está diciendo que reduzcas y esperes."
+          "why": "Según O'Neil, tres de cada cuatro acciones siguen la dirección del mercado. Cuando las rupturas fallan seguidas, el mercado te está diciendo que reduzcas y esperes.",
+          "guia": "g4"
         },
         {
           "id": "c2-3",
@@ -80,7 +112,8 @@
           "q": "Capital de 15.000 € y ninguna posición puede pasar del 25 %. Arriesgas 150 €, con entrada a 50,00 € y stop en 49,00 €. ¿Cuántas acciones compras?",
           "unit": "",
           "a": 75,
-          "why": "Por riesgo saldrían 150 ÷ 1,00 = 150 acciones (7.500 €, la mitad del capital). El límite del 25 % son 3.750 €, es decir, 75 acciones: con stops muy ajustados manda el límite de tamaño."
+          "why": "Por riesgo saldrían 150 ÷ 1,00 = 150 acciones (7.500 €, la mitad del capital). El límite del 25 % son 3.750 €, es decir, 75 acciones: con stops muy ajustados manda el límite de tamaño.",
+          "guia": "g4"
         },
         {
           "id": "c2-4",
@@ -117,7 +150,8 @@
             "Ninguno: está equilibrada"
           ],
           "a": 2,
-          "why": "45 % + 30 % = 75 % en tecnología: un mal día del sector golpea casi toda la cartera a la vez. Limita el peso o el riesgo abierto por sector."
+          "why": "45 % + 30 % = 75 % en tecnología: un mal día del sector golpea casi toda la cartera a la vez. Limita el peso o el riesgo abierto por sector.",
+          "guia": "g4"
         }
       ]
     }

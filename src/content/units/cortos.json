@@ -3,6 +3,32 @@
   "id": "cortos",
   "title": "Cortos y Fase 4",
   "blurb": "Ganar con las caídas, con un riesgo que no tiene techo.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Vender en corto",
+      "texto": "Vendes primero acciones prestadas y las recompras después: ganas si baja. Si la empresa paga dividendo, lo pagas tú.",
+      "ejemplo": "Vendes 100 a 50 € y recompras a 42 €: ganas 800 €."
+    },
+    {
+      "id": "g2",
+      "titulo": "El riesgo de un corto",
+      "texto": "Una acción solo puede caer a cero, pero puede subir sin límite: la pérdida teórica de un corto es ilimitada. El stop va por encima.",
+      "ejemplo": "Corto a 50 € con stop en 53 € y 300 € de riesgo: 100 acciones."
+    },
+    {
+      "id": "g3",
+      "titulo": "Fase 4",
+      "texto": "Tras un techo con la media aplanándose, el precio rompe el soporte y la media gira a la baja. La mejor entrada en corto suele ser el rebote al soporte roto.",
+      "ejemplo": "Rompe 40 € y rebota a 39,60 €: el soporte roto es ahora resistencia."
+    },
+    {
+      "id": "g4",
+      "titulo": "Cuidado con los cortos acumulados",
+      "texto": "Con muchos cortos abiertos, una buena noticia obliga a recomprar a la vez y el precio se dispara.",
+      "ejemplo": "Un 35 % de las acciones vendidas en corto es un riesgo alto para quien se pone corto."
+    }
+  ],
   "lessons": [
     {
       "id": "k1",
@@ -14,7 +40,8 @@
           "q": "Vendes en corto 100 acciones a 50,00 € y las recompras a 42,00 €. ¿Cuánto ganas?",
           "unit": "€",
           "a": 800,
-          "why": "(50,00 − 42,00) × 100 = 800 €. En un corto vendes primero, con acciones prestadas, y ganas si recompras más barato."
+          "why": "(50,00 − 42,00) × 100 = 800 €. En un corto vendes primero, con acciones prestadas, y ganas si recompras más barato.",
+          "guia": "g1"
         },
         {
           "id": "k1-2",
@@ -27,7 +54,8 @@
             "Ninguna, si el bróker lo cubre"
           ],
           "a": 1,
-          "why": "Una acción comprada solo puede caer a cero, pero una vendida en corto puede subir sin límite. Por eso en un corto el stop no es opcional."
+          "why": "Una acción comprada solo puede caer a cero, pero una vendida en corto puede subir sin límite. Por eso en un corto el stop no es opcional.",
+          "guia": "g2"
         },
         {
           "id": "k1-3",
@@ -35,7 +63,8 @@
           "q": "Vendes en corto a 50,00 € con el stop en 53,00 € y quieres arriesgar 300 €. ¿Cuántas acciones vendes?",
           "unit": "",
           "a": 100,
-          "why": "Riesgo por acción: 53,00 − 50,00 = 3,00 €; 300 ÷ 3,00 = 100 acciones. En un corto, el stop va por encima de la entrada."
+          "why": "Riesgo por acción: 53,00 − 50,00 = 3,00 €; 300 ÷ 3,00 = 100 acciones. En un corto, el stop va por encima de la entrada.",
+          "guia": "g2"
         },
         {
           "id": "k1-4",
@@ -48,7 +77,8 @@
             "Lo pagas tú a quien te prestó las acciones"
           ],
           "a": 3,
-          "why": "Has vendido acciones prestadas, y su dueño tiene derecho al dividendo: lo pagas tú. Súmale lo que cuesta el préstamo de las acciones mientras dure el corto."
+          "why": "Has vendido acciones prestadas, y su dueño tiene derecho al dividendo: lo pagas tú. Súmale lo que cuesta el préstamo de las acciones mientras dure el corto.",
+          "guia": "g1"
         }
       ]
     },
@@ -73,7 +103,8 @@
             "Fase 4 (declive)"
           ],
           "a": 3,
-          "why": "Tras un techo lateral alrededor de una media que se aplana (Fase 3), el precio rompe hacia abajo y queda bajo una media que ya gira a la baja: Fase 4."
+          "why": "Tras un techo lateral alrededor de una media que se aplana (Fase 3), el precio rompe hacia abajo y queda bajo una media que ya gira a la baja: Fase 4.",
+          "guia": "g3"
         },
         {
           "id": "k2-2",
@@ -86,7 +117,8 @@
             "En cualquier sesión con vela roja"
           ],
           "a": 0,
-          "why": "Es el espejo de la compra: si en largo se compra la ruptura de la base de Fase 1, en corto se vende la ruptura del soporte de Fase 3. Weinstein no exige volumen alto en la ruptura bajista, aunque lo prefiere."
+          "why": "Es el espejo de la compra: si en largo se compra la ruptura de la base de Fase 1, en corto se vende la ruptura del soporte de Fase 3. Weinstein no exige volumen alto en la ruptura bajista, aunque lo prefiere.",
+          "guia": "g3"
         },
         {
           "id": "k2-3",
@@ -94,7 +126,8 @@
           "q": "La acción rompe el soporte de 40,00 € y rebota hasta 39,60 € sin recuperarlo. Vendes en corto a 39,50 € con el stop en 41,00 €. ¿Riesgo por acción?",
           "unit": "€",
           "a": 1.5,
-          "why": "41,00 − 39,50 = 1,50 €. El soporte roto se convierte en resistencia, y el rebote hacia él ofrece una entrada con el stop más cerca que en la propia ruptura."
+          "why": "41,00 − 39,50 = 1,50 €. El soporte roto se convierte en resistencia, y el rebote hacia él ofrece una entrada con el stop más cerca que en la propia ruptura.",
+          "guia": "g3"
         },
         {
           "id": "k2-4",
@@ -107,7 +140,8 @@
             "Que salga de su índice de referencia"
           ],
           "a": 2,
-          "why": "Con tantos cortos abiertos, una buena noticia obliga a muchos a recomprar a la vez, y esas recompras en cadena disparan el precio. Weinstein evitaba vender en corto valores con mucho interés bajista."
+          "why": "Con tantos cortos abiertos, una buena noticia obliga a muchos a recomprar a la vez, y esas recompras en cadena disparan el precio. Weinstein evitaba vender en corto valores con mucho interés bajista.",
+          "guia": "g4"
         }
       ]
     }

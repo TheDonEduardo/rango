@@ -93,7 +93,7 @@ async function recorrer(b, url, ids, modos, dir) {
 async function auditar(b, url) {
   let AXE;
   try { AXE = fs.readFileSync(require.resolve('axe-core/axe.min.js'), 'utf8'); } catch (e) { console.log('  axe-core no instalado: se omite la auditoría'); return 0; }
-  const base = {legal: 99, all: true, skipBasics: true, done: {}, srs: {}, placement: {skipped: true}, sim: {}, guias: {acciones: 1, rentriesgo: 1}};
+  const base = {legal: 99, all: true, skipBasics: true, done: {}, srs: {}, placement: {skipped: true}, sim: {}, guias: Object.fromEntries(units.filter(u => u.guia).map(u => [u.id, 1]))};  // guías ya vistas: se entra directo en la lección
   const conTipo = (track, t) => lecciones.find(l => l.track === track && l.tipos.has(t)).id;
   const abrirHasta = async (p, id, sel) => { for (let i = 0; i < 40; i++) { await p.click(`[data-act=open][data-id=${id}]`); if (await p.locator(sel).count()) return; await p.click('[data-act=quit]'); } };
   const pantallas = [

@@ -3,6 +3,32 @@
   "id": "riesgo",
   "title": "Riesgo y tamaño",
   "blurb": "ATR, stop y posición: sobrevive para operar mañana.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "El ATR",
+      "texto": "El ATR(14) promedia el rango verdadero de 14 sesiones, incluidos los gaps. Mide cuánto se mueve el precio, no hacia dónde.",
+      "ejemplo": "Un ATR de 1,80 € significa que el precio suele moverse algo menos de 2 € al día."
+    },
+    {
+      "id": "g2",
+      "titulo": "Stop con ATR",
+      "texto": "Un stop demasiado cerca salta con el ruido normal. Colocarlo a un múltiplo del ATR lo adapta a la volatilidad de cada valor.",
+      "ejemplo": "Entrada a 35,00 € con ATR de 1,80 € y stop a 1,5 ATR: 35,00 − 2,70 = 32,30 €."
+    },
+    {
+      "id": "g3",
+      "titulo": "1R y tamaño de posición",
+      "texto": "Decide cuánto arriesgas por operación, por ejemplo un 1 % del capital: eso es 1R. Acciones = riesgo en euros ÷ distancia al stop. Si el stop se aleja, compras menos.",
+      "ejemplo": "Capital de 25.000 € y 1 %: 250 €. Stop a 2,50 €: 100 acciones (1.840 € a 18,40 €, un 7,36 % del capital)."
+    },
+    {
+      "id": "g4",
+      "titulo": "Beneficio frente a riesgo",
+      "texto": "Compara lo que puedes ganar hasta el objetivo con lo que arriesgas hasta el stop. Con ratios altos, basta acertar pocas veces.",
+      "ejemplo": "Entrada 20,00 €, stop 17,60 € y objetivo 26,40 €: 6,40 ÷ 2,40 = 2,67R."
+    }
+  ],
   "lessons": [
     {
       "id": "r1",
@@ -19,7 +45,8 @@
             "La distancia al máximo de 52 semanas"
           ],
           "a": 0,
-          "why": "El ATR promedia el rango verdadero (incluye gaps). Mide volatilidad, no dirección; sirve para que el stop respete el ruido normal del valor."
+          "why": "El ATR promedia el rango verdadero (incluye gaps). Mide volatilidad, no dirección; sirve para que el stop respete el ruido normal del valor.",
+          "guia": "g1"
         },
         {
           "id": "r1-2",
@@ -27,7 +54,8 @@
           "q": "Entrada a 35,00 €. ATR(14) = 1,80 €. Stop a 1,5×ATR. ¿En qué precio colocas el stop?",
           "unit": "€",
           "a": 32.3,
-          "why": "35,00 − 1,5 × 1,80 = 32,30 €. Riesgo por acción: 2,70 €."
+          "why": "35,00 − 1,5 × 1,80 = 32,30 €. Riesgo por acción: 2,70 €.",
+          "guia": "g2"
         },
         {
           "id": "r1-3",
@@ -66,7 +94,8 @@
             "alt": "Gráfico de velas con tres niveles de stop"
           },
           "a": "B",
-          "why": "20,00 − 2 × 1,20 = 17,60 €. El nivel A (0,5×ATR) cae dentro del ruido diario; el C (4×ATR) arriesga el doble de lo previsto."
+          "why": "20,00 − 2 × 1,20 = 17,60 €. El nivel A (0,5×ATR) cae dentro del ruido diario; el C (4×ATR) arriesga el doble de lo previsto.",
+          "guia": "g2"
         },
         {
           "id": "r1-4",
@@ -79,7 +108,8 @@
             "Depende del precio de entrada"
           ],
           "a": 1,
-          "why": "Acciones = riesgo € ÷ distancia al stop. Si la distancia se duplica, compras la mitad: mismo riesgo, menos exposición."
+          "why": "Acciones = riesgo € ÷ distancia al stop. Si la distancia se duplica, compras la mitad: mismo riesgo, menos exposición.",
+          "guia": "g3"
         }
       ]
     },
@@ -93,7 +123,8 @@
           "q": "Capital: 25.000 €. Arriesgas el 1 % por operación. ¿Cuántos euros pierdes si salta el stop?",
           "unit": "€",
           "a": 250,
-          "why": "25.000 × 1 % = 250 €. Ese importe es 1R."
+          "why": "25.000 × 1 % = 250 €. Ese importe es 1R.",
+          "guia": "g3"
         },
         {
           "id": "r2-2",
@@ -101,7 +132,8 @@
           "q": "Riesgo 250 €. Entrada 18,40 €, ATR 1,25 €, stop a 2×ATR. ¿Cuántas acciones compras?",
           "unit": "",
           "a": 100,
-          "why": "Distancia = 2 × 1,25 = 2,50 €. Acciones = 250 ÷ 2,50 = 100. El stop queda en 15,90 €."
+          "why": "Distancia = 2 × 1,25 = 2,50 €. Acciones = 250 ÷ 2,50 = 100. El stop queda en 15,90 €.",
+          "guia": "g3"
         },
         {
           "id": "r2-3",
@@ -110,7 +142,8 @@
           "unit": "%",
           "a": 7.36,
           "tol": 0.05,
-          "why": "1.840 ÷ 25.000 = 7,36 %. Riesgo y tamaño son cosas distintas: arriesgas el 1 %, pero la posición pesa un 7,36 %."
+          "why": "1.840 ÷ 25.000 = 7,36 %. Riesgo y tamaño son cosas distintas: arriesgas el 1 %, pero la posición pesa un 7,36 %.",
+          "guia": "g3"
         },
         {
           "id": "r2-4",
@@ -119,7 +152,8 @@
           "unit": "R",
           "a": 2.67,
           "tol": 0.02,
-          "why": "Beneficio 6,40 ÷ riesgo 2,40 = 2,67R. Con ese ratio basta acertar el 27 % de las veces para no perder (1 ÷ (1 + 2,67))."
+          "why": "Beneficio 6,40 ÷ riesgo 2,40 = 2,67R. Con ese ratio basta acertar el 27 % de las veces para no perder (1 ÷ (1 + 2,67)).",
+          "guia": "g4"
         },
         {
           "id": "r2-5",
@@ -144,7 +178,8 @@
               "k": 50,
               "unit": "€"
             }
-          ]
+          ],
+          "guia": "g3"
         }
       ]
     }

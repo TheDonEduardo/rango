@@ -3,6 +3,32 @@
   "id": "wyckoff",
   "title": "Wyckoff y VSA",
   "blurb": "Lee la oferta y la demanda en el precio y el volumen.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Acumulación",
+      "texto": "Tras una caída, los grandes compradores absorben la oferta dentro de un rango lateral: clímax vendedor, rebote automático, pruebas y, a veces, un spring.",
+      "ejemplo": "Rango entre 20,20 y 23,00 €: altura de 2,80 €, objetivo de 25,80 € al romper."
+    },
+    {
+      "id": "g2",
+      "titulo": "El spring",
+      "texto": "El spring perfora el soporte y vuelve rápido dentro del rango: saca a los últimos vendedores. La entrada de menor riesgo llega tras una prueba que no baja del spring.",
+      "ejemplo": "Perfora el soporte hasta 19,20 € y cierra en 20,80 €. Stop bajo el spring, a 19,10 €."
+    },
+    {
+      "id": "g3",
+      "titulo": "Esfuerzo y resultado (VSA)",
+      "texto": "El volumen es el esfuerzo y el avance del precio, el resultado. Mucho volumen sin avance indica que alguien vende todo lo que se compra.",
+      "ejemplo": "Un clímax vendedor tiene un rango de más del doble del habitual y más del triple de volumen."
+    },
+    {
+      "id": "g4",
+      "titulo": "Falta de demanda y ruptura",
+      "texto": "Una vela alcista estrecha y con poco volumen bajo la resistencia muestra que no hay compradores. Una ruptura válida pide al menos el doble del volumen medio.",
+      "ejemplo": "Volumen medio de 800.000 y 2.000.000 en la ruptura: 2,5 veces."
+    }
+  ],
   "lessons": [
     {
       "id": "w1",
@@ -35,7 +61,8 @@
             "alt": "Gráfico de ocho velas con volumen y una línea de soporte"
           },
           "a": 6,
-          "why": "Vela 7: perfora el soporte hasta 19,20 y cierra dentro del rango, en 20,80. La ruptura bajista no tuvo continuación: la oferta que quedaba se agotó."
+          "why": "Vela 7: perfora el soporte hasta 19,20 y cierra dentro del rango, en 20,80. La ruptura bajista no tuvo continuación: la oferta que quedaba se agotó.",
+          "guia": "g2"
         },
         {
           "id": "w1-2",
@@ -48,7 +75,8 @@
             "Vender corto la perforación del soporte"
           ],
           "a": 1,
-          "why": "Una prueba que no baja del spring y con menos volumen confirma que ya no queda oferta en esa zona. El stop va bajo el mínimo del spring, cerca de la entrada."
+          "why": "Una prueba que no baja del spring y con menos volumen confirma que ya no queda oferta en esa zona. El stop va bajo el mínimo del spring, cerca de la entrada.",
+          "guia": "g2"
         },
         {
           "id": "w1-3",
@@ -91,7 +119,8 @@
             "alt": "Gráfico de velas con volumen, la entrada y tres niveles de stop"
           },
           "a": "B",
-          "why": "B queda 0,10 € bajo el mínimo del spring (19,20): si lo pierde, la acumulación ha fallado, y arriesgas 2,70 €. A está dentro del rango de la prueba y C (17,00) arriesga 4,80 €."
+          "why": "B queda 0,10 € bajo el mínimo del spring (19,20): si lo pierde, la acumulación ha fallado, y arriesgas 2,70 €. A está dentro del rango de la prueba y C (17,00) arriesga 4,80 €.",
+          "guia": "g2"
         },
         {
           "id": "w1-4",
@@ -99,7 +128,8 @@
           "q": "Rango de acumulación entre 20,20 € y 23,00 €. Proyecta la altura del rango sobre la resistencia. ¿Objetivo mínimo?",
           "unit": "€",
           "a": 25.8,
-          "why": "Altura = 23,00 − 20,20 = 2,80 €; objetivo = 23,00 + 2,80 = 25,80 €. Entrando a 21,80 € con stop en 19,10 €, ofrece 4,00 ÷ 2,70 = 1,48R hasta ahí."
+          "why": "Altura = 23,00 − 20,20 = 2,80 €; objetivo = 23,00 + 2,80 = 25,80 €. Entrando a 21,80 € con stop en 19,10 €, ofrece 4,00 ÷ 2,70 = 1,48R hasta ahí.",
+          "guia": "g1"
         },
         {
           "id": "w1-5",
@@ -113,7 +143,8 @@
             "Prueba del spring",
             "Signo de fuerza (SOS)"
           ],
-          "why": "El clímax frena la caída, el rebote automático marca el techo del rango y la prueba secundaria confirma el suelo. El spring sacude el soporte, su prueba confirma que no queda oferta y el signo de fuerza rompe hacia arriba."
+          "why": "El clímax frena la caída, el rebote automático marca el techo del rango y la prueba secundaria confirma el suelo. El spring sacude el soporte, su prueba confirma que no queda oferta y el signo de fuerza rompe hacia arriba.",
+          "guia": "g1"
         },
         {
           "id": "w1-6",
@@ -155,7 +186,8 @@
               "start": 24.6
             }
           ],
-          "why": "Entrada: 21,70 + 0,10 = 21,80 €. Stop: 19,20 − 0,10 = 19,10 €. Objetivo: 23,00 + (23,00 − 20,20) = 25,80 €. Arriesgas 2,70 € para ganar 4,00 €: 1,48R."
+          "why": "Entrada: 21,70 + 0,10 = 21,80 €. Stop: 19,20 − 0,10 = 19,10 €. Objetivo: 23,00 + (23,00 − 20,20) = 25,80 €. Arriesgas 2,70 € para ganar 4,00 €: 1,48R.",
+          "guia": "g2"
         },
         {
           "id": "w1-7",
@@ -210,7 +242,8 @@
               "tol": 0.3
             }
           ],
-          "why": "El rango va de 48,00 a 52,00 €. La sacudida a 47,20 € y la vuelta rápida dentro del rango es el spring: rompe el suelo solo un momento para sacar a los últimos vendedores."
+          "why": "El rango va de 48,00 a 52,00 €. La sacudida a 47,20 € y la vuelta rápida dentro del rango es el spring: rompe el suelo solo un momento para sacar a los últimos vendedores.",
+          "guia": "g1"
         }
       ]
     },
@@ -238,7 +271,8 @@
             "alt": "Gráfico de siete velas con volumen"
           },
           "a": 4,
-          "why": "Vela 5: rango de 3,20 (más del doble del habitual, 1,50), más del triple de volumen y cierre en 25,90, lejos del mínimo de 23,80. Los compradores absorbieron una oferta enorme."
+          "why": "Vela 5: rango de 3,20 (más del doble del habitual, 1,50), más del triple de volumen y cierre en 25,90, lejos del mínimo de 23,80. Los compradores absorbieron una oferta enorme.",
+          "guia": "g3"
         },
         {
           "id": "w2-2",
@@ -251,7 +285,8 @@
             "Ruptura confirmada: momento de añadir"
           ],
           "a": 0,
-          "why": "Mucho volumen (esfuerzo) y poco avance (resultado) significa que alguien vende todo lo que se compra. En máximos tras una subida larga, protege beneficios y no añadas."
+          "why": "Mucho volumen (esfuerzo) y poco avance (resultado) significa que alguien vende todo lo que se compra. En máximos tras una subida larga, protege beneficios y no añadas.",
+          "guia": "g3"
         },
         {
           "id": "w2-3",
@@ -278,7 +313,8 @@
             "alt": "Gráfico de seis velas con volumen"
           },
           "a": 4,
-          "why": "Vela 5: alcista, con un rango de solo 0,50 y menos de la mitad del volumen de las dos velas anteriores (50 frente a 130 y 135). Sube sin compradores y la siguiente lo confirma."
+          "why": "Vela 5: alcista, con un rango de solo 0,50 y menos de la mitad del volumen de las dos velas anteriores (50 frente a 130 y 135). Sube sin compradores y la siguiente lo confirma.",
+          "guia": "g4"
         },
         {
           "id": "w2-4",
@@ -286,7 +322,8 @@
           "q": "Volumen medio de 50 sesiones: 800.000 acciones. Hoy rompe la resistencia con 2.000.000. ¿Cuántas veces la media es el volumen de hoy?",
           "unit": "",
           "a": 2.5,
-          "why": "2.000.000 ÷ 800.000 = 2,5 veces la media. Weinstein pide al menos el doble en la ruptura; con menos, la ruptura es sospechosa."
+          "why": "2.000.000 ÷ 800.000 = 2,5 veces la media. Weinstein pide al menos el doble en la ruptura; con menos, la ruptura es sospechosa.",
+          "guia": "g4"
         }
       ]
     }

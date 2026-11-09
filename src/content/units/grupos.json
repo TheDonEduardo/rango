@@ -3,6 +3,32 @@
   "id": "grupos",
   "title": "Grupos y gaps",
   "blurb": "Las acciones suben en manada, y los huecos cuentan una historia.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Las acciones suben en manada",
+      "texto": "Cuando el dinero entra en un grupo, empuja a sus miembros. Entre dos rupturas iguales, elige la del grupo líder.",
+      "ejemplo": "Índice +5 % en tres meses: grupos que suben un 18 %, 9 % y 6 % lo superan."
+    },
+    {
+      "id": "g2",
+      "titulo": "Ruptura acompañada",
+      "texto": "Una ruptura que acompaña su grupo tiene detrás dinero entrando en el sector. Si las demás caen, desconfía.",
+      "ejemplo": "El dinero rota: detectar a tiempo qué grupos pasan a liderar es media ventaja."
+    },
+    {
+      "id": "g3",
+      "titulo": "Tipos de gap",
+      "texto": "Un gap de ruptura sale de una base; uno de continuación aparece a mitad de tendencia, y uno de agotamiento, tras una subida larga con volumen máximo.",
+      "ejemplo": "Un gap de ruptura sano no suele cerrarse: si se cierra, la ruptura ha fallado."
+    },
+    {
+      "id": "g4",
+      "titulo": "Medir con el gap",
+      "texto": "Un gap de continuación suele aparecer hacia la mitad del movimiento: la distancia ya recorrida da una estimación del recorrido que falta.",
+      "ejemplo": "Ruptura en 20 € y gap en 24 €: objetivo estimado de 28 €."
+    }
+  ],
   "lessons": [
     {
       "id": "g1",
@@ -19,7 +45,8 @@
             "Ninguna: hay que repartir entre los débiles"
           ],
           "a": 0,
-          "why": "Las acciones suben en manada: cuando el dinero entra en un grupo, empuja a sus mejores valores. O'Neil insistía en comprar los líderes de los grupos líderes."
+          "why": "Las acciones suben en manada: cuando el dinero entra en un grupo, empuja a sus mejores valores. O'Neil insistía en comprar los líderes de los grupos líderes.",
+          "guia": "g1"
         },
         {
           "id": "g1-2",
@@ -55,7 +82,8 @@
           },
           "unit": "",
           "a": 3,
-          "why": "Semiconductores (+18 %), software (+9 %) y salud (+6 %) superan el +5 % del índice. Busca tus compras en los primeros de la lista, empezando por semiconductores."
+          "why": "Semiconductores (+18 %), software (+9 %) y salud (+6 %) superan el +5 % del índice. Busca tus compras en los primeros de la lista, empezando por semiconductores.",
+          "guia": "g1"
         },
         {
           "id": "g1-3",
@@ -68,7 +96,8 @@
             "Que el grupo romperá mañana"
           ],
           "a": 2,
-          "why": "Una ruptura acompañada por su grupo tiene detrás dinero entrando en el sector. Si va sola, el riesgo de fallo es mayor: reduce el tamaño o espera."
+          "why": "Una ruptura acompañada por su grupo tiene detrás dinero entrando en el sector. Si va sola, el riesgo de fallo es mayor: reduce el tamaño o espera.",
+          "guia": "g2"
         },
         {
           "id": "g1-4",
@@ -88,7 +117,8 @@
               "El dinero pasa de unos sectores a otros"
             ]
           ],
-          "why": "El mercado no sube todo a la vez: el dinero rota. Detectar a tiempo qué grupos pasan a liderar es tan importante como elegir la acción."
+          "why": "El mercado no sube todo a la vez: el dinero rota. Detectar a tiempo qué grupos pasan a liderar es tan importante como elegir la acción.",
+          "guia": "g2"
         }
       ]
     },
@@ -118,7 +148,8 @@
               "Al final de una subida larga, con volumen clímax"
             ]
           ],
-          "why": "El mismo hueco significa cosas distintas según dónde aparece: al salir de una base, en mitad del camino o tras una subida larga."
+          "why": "El mismo hueco significa cosas distintas según dónde aparece: al salir de una base, en mitad del camino o tras una subida larga.",
+          "guia": "g3"
         },
         {
           "id": "g2-2",
@@ -143,7 +174,8 @@
             "alt": "Gráfico de diez velas con volumen y dos gaps al alza"
           },
           "a": 8,
-          "why": "Vela 9: abre con gap tras una subida larga, con el mayor volumen, y cierra cerca de su mínimo; al día siguiente el precio vuelve dentro del hueco. El gap de la vela 4, que sale de la base, es el de ruptura."
+          "why": "Vela 9: abre con gap tras una subida larga, con el mayor volumen, y cierra cerca de su mínimo; al día siguiente el precio vuelve dentro del hueco. El gap de la vela 4, que sale de la base, es el de ruptura.",
+          "guia": "g3"
         },
         {
           "id": "g2-3",
@@ -151,7 +183,8 @@
           "q": "La ruptura de la base fue en 20,00 € y aparece un gap de continuación en 24,00 €. Si ese gap marca la mitad del movimiento, ¿cuál es el objetivo?",
           "unit": "€",
           "a": 28,
-          "why": "24,00 − 20,00 = 4,00 €; 24,00 + 4,00 = 28,00 €. Es una estimación clásica (gap de medición), no una garantía: úsala para planificar ventas parciales."
+          "why": "24,00 − 20,00 = 4,00 €; 24,00 + 4,00 = 28,00 €. Es una estimación clásica (gap de medición), no una garantía: úsala para planificar ventas parciales.",
+          "guia": "g4"
         },
         {
           "id": "g2-4",
@@ -164,7 +197,8 @@
             "Que el volumen no era real"
           ],
           "a": 0,
-          "why": "Un gap de ruptura sano no suele cerrarse: la demanda que lo creó sostiene el precio. Si se cierra entero, quienes compraron en el gap pierden dinero y la ruptura ha fallado."
+          "why": "Un gap de ruptura sano no suele cerrarse: la demanda que lo creó sostiene el precio. Si se cierra entero, quienes compraron en el gap pierden dinero y la ruptura ha fallado.",
+          "guia": "g3"
         }
       ]
     }
