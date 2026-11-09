@@ -2,7 +2,7 @@
 // Las pantallas están en views/, los tipos de ejercicio en exercises/ y el progreso guardado en state.js.
 import {today,yest,shuffle} from './util.js';
 import {UNITS,FLAT,CASOS,SEMANA,EXBYID,PLACEMENT,trackOf} from './content.js';
-import {S,save,resetState,migrar,advancedOpen,statuses,srsDue,srsRecord,SRS_MAX} from './state.js';
+import {S,save,resetState,migrar,advancedOpen,statuses,srsDue,srsRecord,SRS_MAX,exportar,leerCopia,importar} from './state.js';
 import {$app,toast,ses} from './ui.js';
 import {setPlanCtx} from './drag.js';
 import {TIPOS} from './exercises/index.js';
@@ -134,6 +134,14 @@ const ACCIONES={
   // Guía de la unidad: desde el inicio (consulta) o desde una pregunta fallada (repaso, vuelve a la lección).
   guia(b){const u=UNITS.find(x=>x.id===b.dataset.id);abrirGuia(u,'consulta');ir('guia')},
   guiarepaso(b){const ex=ses.run.queue[0],u=FLAT.find(l=>l.id===ex.lesson).unit;abrirGuia(u,'repaso',{tarjeta:b.dataset.g});ses.view='guia';render()},
+  // Copia de seguridad del progreso (pantalla de estadísticas).
+  exportar(){
+    const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([exportar()],{type:'application/json'}));
+    a.download=`rango-progreso-${today()}.json`;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1000);toast(t.copiaDescargada);
+  },
+  importar(){const i=$app.querySelector('#imp-file');if(i)i.click()},
+  impok(){if(!ses.copia)return;importar(ses.copia.estado);ses.copia=null;render();toast(t.copiaHecha)},
+  impno(){ses.copia=null;render()},
   guianext(){ses.guia.i++;render()},
   guiaprev(){ses.guia.i--;render()},
   guiafin(){const g=ses.guia;ses.guia=null;if(g.modo==='inicio')startRun(g.L);else if(g.modo==='repaso'){ses.view='lesson';render();const b=$app.querySelector('[data-act=next]');if(b&&b.focus)b.focus({preventScroll:true})}else{ses.view='home';render()}},
@@ -162,6 +170,12 @@ $app.addEventListener('click',e=>{
   const a=b.dataset.act;
   if(accionEjercicio(a,b))return;
   if(ACCIONES[a])ACCIONES[a](b);
+});
+$app.addEventListener('change',e=>{
+  if(e.target.id!=='imp-file'||!e.target.files||!e.target.files[0])return;
+  const r=new FileReader();
+  r.onload=()=>{const c=leerCopia(String(r.result));if(!c){toast(t.copiaMala);return}ses.copia=c;render();const b=$app.querySelector('[data-act=impok]');if(b)b.focus({preventScroll:true})};
+  r.readAsText(e.target.files[0]);
 });
 $app.addEventListener('input',e=>{
   // Deslizadores del simulador de aportaciones: actualizan solo el resultado, sin redibujar (no se pierde el foco).
@@ -215,7 +229,7 @@ if(typeof navigator!=='undefined'&&'serviceWorker' in navigator&&typeof location
 }
 
 // API mínima para tests (test/smoke.mjs)
-export const api={migrar,FLAT,CASOS,SEMANA,PLACEMENT,simulate,simRecord,simHist,aportaciones,
+export const api={migrar,exportar,leerCopia,importar,FLAT,CASOS,SEMANA,PLACEMENT,simulate,simRecord,simHist,aportaciones,
   openCalc:()=>{ses.view='calc';render()},openSim:()=>{ses.simDraft=null;ses.view='sim';render()},openSimRes:()=>{ses.view='simres';render()},
   openStats:()=>{ses.view='stats';render()},act:(a,ds={})=>ACCIONES[a]({dataset:ds}),getView:()=>ses.view,startWeak:()=>startRun(STATS_L),
   simDraftSet:p=>{ses.simDraft=p},simSave,goHome:()=>{ses.view='home';render()},startTest:()=>startRun(TEST_L),srsDue,

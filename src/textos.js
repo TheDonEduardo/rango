@@ -121,5 +121,9 @@ export const t={
   puntosDebiles:'Tus puntos débiles', debilesTitulo:'Puntos débiles', fallado:n=>`fallado ${n} ${pl(n,'vez','veces')}`,
   practicar:n=>`Practicar ${n} ${pl(n,'ejercicio','ejercicios')}`,
   sinDebiles:'Aún no hay ejercicios pendientes: los que falles aparecerán aquí hasta que los aciertes a la primera.',
+  copiaTitulo:'Copia de seguridad', copiaNota:'Tu progreso se guarda solo en este navegador. Descarga una copia para no perderlo o para pasarlo a otro dispositivo.',
+  copiaGuardar:'Descargar copia', copiaRecuperar:'Recuperar copia', copiaSustituir:'Sustituir mi progreso', cancelar:'Cancelar',
+  copiaResumen:(f,xp,l)=>`Copia del ${f}: ${xp} XP y ${l} lecciones completadas. Sustituirá tu progreso actual.`,
+  copiaMala:'Ese archivo no es una copia de Rango.', copiaHecha:'Progreso recuperado.', copiaDescargada:'Copia descargada.',
   statsNota:'Estadísticas guardadas solo en este dispositivo. Cuentan desde que se añadieron, no desde tu primera lección.',
 };

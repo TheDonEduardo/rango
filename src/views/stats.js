@@ -5,6 +5,7 @@ import {fmt,esc,tx} from '../util.js';
 import {icoX} from '../icons.js';
 import {FLAT,TRACKS,EXBYID,trackOf} from '../content.js';
 import {S,streakNow,SRS_MAX,srsResumen} from '../state.js';
+import {ses} from '../ui.js';
 import {t} from '../textos.js';
 
 export const STATS_L={id:'weak',title:t.debilesTitulo,kind:'weak'};
@@ -38,6 +39,9 @@ export function statsHTML(){
   <ul class="st-rutas">${rutas}</ul>
   <h2 class="sub">${t.repasoTitulo}</h2><dl class="simk"><div><dt>${t.enRepaso}</dt><dd>${srsResumen().enRepaso}</dd></div><div><dt>${t.aprendidosT}</dt><dd>${srsResumen().aprendidos}</dd></div></dl><p class="note">${t.repasoNota}</p>
   <h2 class="sub">${t.puntosDebiles}</h2>${debiles}
+  <h2 class="sub">${t.copiaTitulo}</h2><p class="note">${t.copiaNota}</p>
+  <div class="row copia"><button class="btn line" data-act="exportar">${t.copiaGuardar}</button><button class="btn line" data-act="importar">${t.copiaRecuperar}</button><input type="file" id="imp-file" accept="application/json,.json" hidden></div>
+  ${ses.copia?`<div class="confirma" role="alert"><p>${t.copiaResumen(ses.copia.resumen.fecha,ses.copia.resumen.xp,ses.copia.resumen.lecciones)}</p><div class="row"><button class="btn primary" data-act="impok">${t.copiaSustituir}</button><button class="btn ghost" data-act="impno">${t.cancelar}</button></div></div>`:''}
   <p class="src">${t.statsNota}</p></div>
   <div><button class="btn line" data-act="home">${t.volver}</button></div></div>`;
 }

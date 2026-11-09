@@ -16,13 +16,28 @@ export function migrar(j){
   while(v<STATE_V){j=MIGRAR[v](j);v++}
   j.v=STATE_V;return j;
 }
+// Estado completo a partir de lo guardado (cualquier versión): rellena lo que falte con los valores por defecto.
+const completar=j=>{const s=Object.assign(DEF(),migrar(j));s.stats=Object.assign({ex:{},min:0},s.stats);return s};
 function load(){
-  try{const j=JSON.parse(localStorage.getItem(KEY));if(j&&typeof j==='object'){const s=Object.assign(DEF(),migrar(j));s.stats=Object.assign({ex:{},min:0},s.stats);return s}}catch(e){}
+  try{const j=JSON.parse(localStorage.getItem(KEY));if(j&&typeof j==='object')return completar(j)}catch(e){}
   return DEF();
 }
 export let S=load();
 export function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
 export function resetState(){S=DEF();save()}
+
+// Copia de seguridad: archivo JSON con el estado y su versión. Se puede recuperar en otro dispositivo.
+export const exportar=()=>JSON.stringify({app:'rango',v:STATE_V,fecha:today(),estado:S});
+// Lee una copia y devuelve {estado, resumen} o null si no es una copia válida de Rango (no toca el progreso).
+export function leerCopia(texto){
+  try{
+    const j=JSON.parse(texto);
+    if(!j||j.app!=='rango'||!j.estado||typeof j.estado!=='object'||typeof j.estado.xp!=='number'||typeof j.estado.done!=='object')return null;
+    const estado=completar(JSON.parse(JSON.stringify(j.estado)));
+    return {estado,resumen:{fecha:j.fecha||'',xp:estado.xp,lecciones:Object.keys(estado.done).length}};
+  }catch(e){return null}
+}
+export function importar(estado){S=estado;save()}
 
 export const streakNow=()=>(S.last===today()||S.last===yest())?S.streak:0;
 export const dayXpNow=()=>S.day===today()?S.dayXp:0;

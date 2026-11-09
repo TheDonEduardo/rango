@@ -341,3 +341,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 .fig .t-sel{stroke:var(--sel)} .fig text.t-sel{fill:var(--sel);stroke:none}
 .fig .t-acc{stroke:var(--accent-edge)} .fig text.t-acc{fill:var(--ink);stroke:none}
 .fig .t-ink{stroke:var(--ink)} .fig text.t-ink{fill:var(--ink);stroke:none}
+
+.row.copia{display:flex;gap:10px;flex-wrap:wrap}.row.copia .btn{flex:1 1 140px}
+.confirma{margin-top:12px;padding:14px 16px;border-radius:14px;background:var(--surface);border:2px solid var(--accent)}
+.confirma p{margin:0 0 10px}
