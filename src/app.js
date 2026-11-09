@@ -1,7 +1,7 @@
 // Arranque, navegación entre pantallas, flujo de una lección y eventos.
 // Las pantallas están en views/, los tipos de ejercicio en exercises/ y el progreso guardado en state.js.
 import {today,yest,shuffle,esc} from './util.js';
-import {UNITS,FLAT,CASOS,SEMANA,EXBYID,PLACEMENT,trackOf} from './content.js';
+import {UNITS,FLAT,CASOS,SEMANA,EXBYID,PLACEMENT,EXAMEN_N,trackOf} from './content.js';
 import {S,save,resetState,migrar,advancedOpen,statuses,srsDue,srsRecord,SRS_MAX,exportar,leerCopia,importar} from './state.js';
 import {$app,toast,ses} from './ui.js';
 import {setPlanCtx} from './drag.js';
@@ -42,11 +42,19 @@ const ir=v=>{if(ses.view==='home')ses.homeY=window.scrollY;ses.view=v;render()};
 // Lección: ejercicios fijos barajados y, al final, un caso real al azar (si hay datos).
 // Repaso de unidad: 5 al azar de sus lecciones. Repaso del día: los fallos que tocan hoy.
 // Puntos débiles: los ejercicios que más fallas (estadísticas locales).
+// Prueba de nivel de una ruta avanzada: dos preguntas por unidad, en orden; se para en la primera unidad con un fallo.
+// Se prefieren preguntas de elegir o calcular (las de gráfico dependen más del dibujo que del concepto).
+function preguntasNivel(track){
+  const facil=l=>l.ex.find(e=>e.t==='choice'||e.t==='num')||l.ex[0];
+  return UNITS.filter(u=>trackOf(u)===track&&u.lessons).flatMap(u=>u.lessons.slice(0,2).map(facil));
+}
+const esPrueba=L=>L.kind==='test'||L.kind==='nivel';
 function startRun(L){
   const ex=L.kind==='test'?shuffle(PLACEMENT.map(u=>EXBYID.get(u)))
+    :L.kind==='nivel'?preguntasNivel(L.track)
     :L.kind==='srs'?shuffle(srsDue()).slice(0,SRS_MAX)
     :L.kind==='weak'?shuffle(flojos(SRS_MAX))
-    :L.kind==='review'?shuffle(L.unit.lessons.flatMap(l=>l.ex)).slice(0,5)
+    :L.kind==='review'?shuffle(L.unit.lessons.flatMap(l=>l.ex)).slice(0,EXAMEN_N)
     :shuffle(L.ex).concat(shuffle(L.casos).slice(0,1));
   if(!ex.length){ses.view='home';render();return}
   ses.run={L,res:{},queue:ex.slice(),total:ex.length,done:0,lives:3,firstWrong:0,seen:new Set(),perm:new Map(),sel:null,val:'',checked:false,ok:null,t0:Date.now()};
@@ -59,18 +67,32 @@ function check(){
   if(!run.seen.has(ex)){
     run.seen.add(ex);if(!ok)run.firstWrong++;
     // El test de nivel solo anota su resultado: no entra en el repaso ni en las estadísticas.
-    if(run.L.kind==='test')run.res[ex.id]=ok;else{srsRecord(ex,ok,run.L.kind==='srs');statRecord(ex,ok)}
+    if(esPrueba(run.L))run.res[ex.id]=ok;else{srsRecord(ex,ok,run.L.kind==='srs');statRecord(ex,ok)}
     save();
   }
-  if(!ok&&run.L.kind!=='test')run.lives--;
+  if(!ok&&!esPrueba(run.L))run.lives--;
   render();
 }
 function next(){
   const run=ses.run,ex=run.queue.shift();
-  if(run.ok||run.L.kind==='test')run.done++;else run.queue.push(ex);
+  if(run.ok||esPrueba(run.L))run.done++;else run.queue.push(ex);
+  if(run.L.kind==='nivel'&&!run.ok){finishNivel();return}
   if(!run.ok&&run.lives<=0){ses.view='fail';render();return}
   if(run.queue.length===0){finish();return}
   run.sel=null;run.val='';run.checked=false;run.ok=null;render();
+}
+function finishNivel(){
+  const run=ses.run,track=run.L.track,res=run.res,superadas=[];
+  for(const u of UNITS.filter(u=>trackOf(u)===track&&u.lessons)){
+    const ids=u.lessons.slice(0,2).map(l=>(l.ex.find(e=>e.t==='choice'||e.t==='num')||l.ex[0]).id);
+    if(!ids.every(x=>res[x]))break;
+    superadas.push(u.title);
+    FLAT.filter(l=>l.unit===u&&l.kind==='lesson').forEach(l=>{if(!S.done[l.id])S.done[l.id]={acc:1,test:true}});
+  }
+  S.pruebas[track]={unidades:superadas.length,date:today()};
+  save();
+  ses.lastRes={nivel:true,track,superadas,total:UNITS.filter(u=>trackOf(u)===track&&u.lessons).length,title:run.L.title};
+  ses.view='result';render();
 }
 function finishTest(){
   const res=ses.run.res,score=Object.values(res).filter(Boolean).length,total=PLACEMENT.length,dominadas=[];
@@ -91,16 +113,20 @@ function finishTest(){
 function finish(){
   const run=ses.run;
   if(run.L.kind==='test'){finishTest();return}
+  if(run.L.kind==='nivel'){finishNivel();return}
   const right=run.total-run.firstWrong,acc=right/run.total,xp=right*10+(run.firstWrong===0?10:0),t=today();
   if(S.last!==t){S.streak=(S.last===yest())?S.streak+1:1;S.last=t}
   if(S.day!==t){S.day=t;S.dayXp=0}
   S.xp+=xp;S.dayXp+=xp;
   const lec=run.L.kind==='lesson'||run.L.kind==='review';
   if(lec){const prev=S.done[run.L.id];S.done[run.L.id]={acc:Math.max(acc,prev?prev.acc:0)}}
+  // Examen de la unidad sin un solo fallo a la primera: unidad dominada.
+  const dominada=run.L.kind==='review'&&run.firstWrong===0;
+  if(dominada)S.dominadas[run.L.unit.id]=today();
   // Tiempo dedicado (minutos, para las estadísticas): se cuenta como mucho media hora por sesión.
   S.stats.min=(S.stats.min||0)+Math.min(30,(Date.now()-run.t0)/60000);
   save();
-  ses.lastRes={xp,acc,title:run.L.title,srs:!lec,kind:run.L.kind};
+  ses.lastRes={xp,acc,title:run.L.title,srs:!lec,kind:run.L.kind,dominada};
   ses.view='result';render();
 }
 
@@ -184,6 +210,8 @@ const ACCIONES={
   legalok(){S.legal=LEGAL_V;save();ses.homeY=0;render()},
   srs(){ses.homeY=window.scrollY;startRun(SRS_L)},
   test(){ses.homeY=0;startRun(TEST_L)},
+  nivel(b){ses.homeY=0;startRun({id:'nivel-'+b.dataset.track,title:t.pruebaNivel,kind:'nivel',track:b.dataset.track})},
+  nonivel(b){S.pruebas[b.dataset.track]={saltada:true};save();render()},
   notest(){S.placement={skipped:true};save();render()},
   install(){const ev=ses.installEvt;if(!ev)return;ev.prompt();ev.userChoice.finally(()=>{ses.installEvt=null;ses.homeY=window.scrollY;render()})},
   track(b){S.track=b.dataset.track;save();ses.homeY=0;render()},
@@ -266,6 +294,6 @@ if(typeof navigator!=='undefined'&&'serviceWorker' in navigator&&typeof location
 export const api={glos,openGlosario:()=>{ses.view='glosario';render()},migrar,exportar,leerCopia,importar,FLAT,CASOS,SEMANA,PLACEMENT,simulate,simRecord,simHist,aportaciones,
   openCalc:()=>{ses.view='calc';render()},openSim:()=>{ses.simDraft=null;ses.view='sim';render()},openSimRes:()=>{ses.view='simres';render()},
   openStats:()=>{ses.view='stats';render()},act:(a,ds={})=>ACCIONES[a]({dataset:ds}),getView:()=>ses.view,startWeak:()=>startRun(STATS_L),
-  simDraftSet:p=>{ses.simDraft=p},simSave,goHome:()=>{ses.view='home';render()},startTest:()=>startRun(TEST_L),srsDue,
+  simDraftSet:p=>{ses.simDraft=p},simSave,goHome:()=>{ses.view='home';render()},startTest:()=>startRun(TEST_L),startNivel:tr=>startRun({id:'nivel-'+tr,title:t.pruebaNivel,kind:'nivel',track:tr}),srsDue,
   acceptLegal:()=>{S.legal=LEGAL_V},startSrs:()=>startRun(SRS_L),setTrack:id=>{S.track=id},skipBasics:()=>{S.skipBasics=true},
   homeHTML,startRun,lessonHTML,check,next,resultHTML,failHTML,render,getRun:()=>ses.run,setSel:v=>{ses.run.sel=v},setVal:v=>{ses.run.val=v},getState:()=>S};

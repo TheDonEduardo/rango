@@ -3,7 +3,7 @@
 // S.stats.ex[id] = {n: veces respondido, f: fallos a la primera, u: 1 si el último primer intento fue correcto}.
 import {fmt,esc,tx} from '../util.js';
 import {icoX} from '../icons.js';
-import {FLAT,TRACKS,EXBYID,trackOf} from '../content.js';
+import {UNITS,FLAT,TRACKS,EXBYID,trackOf} from '../content.js';
 import {S,streakNow,SRS_MAX,srsResumen} from '../state.js';
 import {ses} from '../ui.js';
 import {t} from '../textos.js';
@@ -20,12 +20,13 @@ export function flojos(n){
   return Object.entries(S.stats.ex).filter(([id,r])=>!r.u&&EXBYID.has(id))
     .sort((a,b)=>b[1].f-a[1].f||b[1].f/b[1].n-a[1].f/a[1].n).slice(0,n).map(([id])=>EXBYID.get(id));
 }
+const dom=r=>UNITS.filter(u=>trackOf(u)===r&&S.dominadas[u.id]).length;
 export function statsHTML(){
   const regs=Object.values(S.stats.ex),n=regs.reduce((a,r)=>a+r.n,0),f=regs.reduce((a,r)=>a+r.f,0);
   const rutas=TRACKS.map(ru=>{
     const ls=FLAT.filter(l=>l.kind==='lesson'&&trackOf(l.unit)===ru.id),hechas=ls.filter(l=>S.done[l.id]);
     const acc=hechas.length?hechas.reduce((a,l)=>a+S.done[l.id].acc,0)/hechas.length:null;
-    return `<li><div class="st-h"><b>${ru.title}</b><span>${t.leccionesRuta(hechas.length,ls.length,acc==null?null:Math.round(acc*100))}</span></div><div class="bar" role="progressbar" aria-label="${t.leccionesDe(ru.title)}" aria-valuemin="0" aria-valuemax="${ls.length}" aria-valuenow="${hechas.length}"><i style="width:${hechas.length/ls.length*100}%"></i></div></li>`;
+    return `<li><div class="st-h"><b>${ru.title}</b><span>${t.leccionesRuta(hechas.length,ls.length,acc==null?null:Math.round(acc*100))}${dom(ru.id)?` · ${t.nDominadas(dom(ru.id))}`:''}</span></div><div class="bar" role="progressbar" aria-label="${t.leccionesDe(ru.title)}" aria-valuemin="0" aria-valuemax="${ls.length}" aria-valuenow="${hechas.length}"><i style="width:${hechas.length/ls.length*100}%"></i></div></li>`;
   }).join('');
   const fl=flojos(5),total=flojos(Infinity).length;
   const lecDe=ex=>FLAT.find(l=>l.id===ex.lesson);

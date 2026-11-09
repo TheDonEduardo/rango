@@ -19,6 +19,8 @@ export function homeHTML(){
   const TF=FLAT.filter(l=>trackOf(l.unit)===S.track);
   if(S.track!=='basico'&&!advancedOpen())h+=`<section class="gate"><p>${t.bloqueoRuta}</p><div class="row"><button class="btn line" data-act="track" data-track="basico">${t.irBasicos}</button><button class="btn ghost" data-act="skipbasics">${t.saltarBasicos}</button></div></section>`;
   if(S.track==='basico'&&!S.placement&&!Object.keys(S.done).length)h+=`<section class="test" aria-label="${t.testNivel}"><div><b>${t.testPregunta}</b><span>${t.testExplica(PLACEMENT.length)}</span></div><div class="row"><button class="btn primary" data-act="test">${t.hacerTest}</button><button class="btn ghost" data-act="notest">${t.desdeCero}</button></div></section>`;
+  // Prueba de nivel de las rutas avanzadas: para quien aún no ha hecho ninguna lección de la ruta.
+  if(S.track!=='basico'&&advancedOpen()&&!S.pruebas[S.track]&&!TF.some(l=>S.done[l.id]))h+=`<section class="test" aria-label="${t.pruebaNivel}"><div><b>${t.nivelPregunta}</b><span>${t.nivelExplica}</span></div><div class="row"><button class="btn primary" data-act="nivel" data-track="${S.track}">${t.hacerPrueba}</button><button class="btn ghost" data-act="nonivel" data-track="${S.track}">${t.desdeCero}</button></div></section>`;
   if(S.track==='tecnico'&&SEMANA&&advancedOpen())h+=simCardHTML();
   if(S.track==='pasiva'&&advancedOpen())h+=`<section class="sim" aria-label="${t.calcTitulo}"><b>${t.calcTitulo}</b><div class="simrow"><span>${t.calcExplica}</span><button class="btn primary" data-act="calc">${t.abrir}</button></div></section>`;
   // Atajo a la siguiente lección cuando ya no está en la primera unidad (el camino se hace largo).
@@ -33,7 +35,7 @@ export function homeHTML(){
     }
     const items=FLAT.filter(l=>l.unit===u),doneN=items.filter(l=>S.done[l.id]).length,completa=doneN===items.length,abierta=ses.abiertas.has(u.id);
     const pliegue=completa?`<button class="btn ghost unfold" data-act="unfold" data-id="${u.id}" aria-expanded="${abierta}">${abierta?t.plegar:t.verLecciones}</button>`:'';
-    h+=`<section class="unit${completa?' hecha':''}" aria-label="${t.unidadN(u.n)}: ${u.title}"><div class="ban"><div><div class="u">${t.unidadN(u.n)}</div><h2>${u.title}</h2><p>${u.blurb}</p>${u.guia?`<button class="btn ghost unfold" data-act="guia" data-id="${u.id}" aria-label="${t.verGuia(esc(u.title))}">${t.guia}</button>`:''}${pliegue}</div><span class="cnt">${completa?t.completada:`${doneN} / ${items.length}`}</span></div>`;
+    h+=`<section class="unit${completa?' hecha':''}" aria-label="${t.unidadN(u.n)}: ${u.title}"><div class="ban"><div><div class="u">${t.unidadN(u.n)}</div><h2>${u.title}</h2><p>${u.blurb}</p>${u.guia?`<button class="btn ghost unfold" data-act="guia" data-id="${u.id}" aria-label="${t.verGuia(esc(u.title))}">${t.guia}</button>`:''}${pliegue}</div><span class="cnt">${S.dominadas[u.id]?`<span class="dom">${ico('star')} ${t.dominada}</span>`:completa?t.completada:`${doneN} / ${items.length}`}</span></div>`;
     if(completa&&!abierta){h+='</section>';return}
     h+=`<div class="path" style="--n:${items.length}"><svg class="route" viewBox="0 0 100 ${items.length*RH}" preserveAspectRatio="none" aria-hidden="true">`;
     for(let k=0;k<items.length-1;k++){

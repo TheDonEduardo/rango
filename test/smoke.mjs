@@ -329,6 +329,33 @@ if (fs.existsSync(semPath)) {
   st.guias = guias; st.all = all;
 }
 
+// Examen de la unidad: 8 ejercicios; sin fallos marca la unidad como dominada.
+{
+  const st = T.getState(), R = T.FLAT.find(l => l.kind === 'review');
+  T.startRun(R);
+  if (T.getRun().total !== 8) errs.push('el examen de la unidad no tiene 8 ejercicios');
+  let k = 0; while (k++ < 20 && !app.innerHTML.includes('Lección completada')) { const ex = T.getRun().queue[0]; give(ex, right(ex)); T.check(); T.next(); }
+  if (!st.dominadas[R.unit.id] || !app.innerHTML.includes('unidad dominada')) errs.push('un examen sin fallos no marca la unidad como dominada');
+  T.goHome(); st.track = R.unit.track || 'tecnico';
+  if (!T.homeHTML().includes('Dominada')) errs.push('el inicio no muestra la unidad dominada');
+}
+
+// Prueba de nivel de una ruta avanzada: supera dos unidades, falla en la tercera y se para ahí.
+{
+  const st = T.getState(), antes = st.done; st.done = {}; st.pruebas = {}; st.skipBasics = true; st.track = 'tecnico';
+  if (!T.homeHTML().includes('data-act="nivel"')) errs.push('la ruta técnica no ofrece la prueba de nivel');
+  T.startNivel('tecnico');
+  const run = T.getRun();
+  if (run.total !== 32 || run.lives !== 3 || app.innerHTML.includes('class="lives"')) errs.push('la prueba de nivel no tiene 32 preguntas sin vidas');
+  for (let k = 0; k < 4; k++) { const ex = T.getRun().queue[0]; give(ex, right(ex)); T.check(); T.next(); }
+  { const ex = T.getRun().queue[0]; give(ex, wrong(ex)); T.check(); T.next(); }
+  const tec = units.filter(u => (u.track || 'tecnico') === 'tecnico');
+  const hechas = tec.filter(u => u.lessons.every(l => st.done[l.id])).map(u => u.id);
+  if (hechas.join() !== tec.slice(0, 2).map(u => u.id).join() || !app.innerHTML.includes('Prueba completada') || st.pruebas.tecnico?.unidades !== 2) errs.push('la prueba de nivel no marca justo las unidades superadas: ' + hechas.join());
+  if (T.homeHTML().includes('data-act="nivel"')) errs.push('la prueba de nivel se vuelve a ofrecer tras hacerla');
+  st.done = antes; T.goHome();
+}
+
 // 9) Estadísticas: cada primer intento queda registrado; los fallados forman los «puntos débiles» y se pueden practicar.
 {
   const st = T.getState(), reg = st.stats.ex, ids = Object.keys(reg);

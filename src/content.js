@@ -24,4 +24,6 @@ UNITS.forEach(u=>{
   });
   FLAT.push({id:u.id+'-rev',title:t.repasoUnidad,unit:u,kind:'review'});
 });
-export const exCount=l=>l.kind==='review'?5:l.ex.length+(l.casos.length?1:0);
+// Examen de la unidad: EXAMEN_N ejercicios al azar de sus lecciones (o todos, si hay menos).
+export const EXAMEN_N=8;
+export const exCount=l=>l.kind==='review'?Math.min(EXAMEN_N,l.unit.lessons.reduce((a,x)=>a+x.ex.length,0)):l.ex.length+(l.casos.length?1:0);

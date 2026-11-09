@@ -8,7 +8,7 @@ export const t={
   continuar:'Continuar', volver:'Volver', volverInicio:'Volver al inicio', abrir:'Abrir', formacion:'Es formación, no una recomendación.',
 
   // Rutas y repasos
-  rutas:{basico:'Básico',pasiva:'Pasiva',fundamental:'Fundamental',tecnico:'Técnico'}, repasoUnidad:'Repaso de la unidad',
+  rutas:{basico:'Básico',pasiva:'Pasiva',fundamental:'Fundamental',tecnico:'Técnico'}, repasoUnidad:'Examen de la unidad', dominada:'Dominada', dominadaNota:'Examen sin un solo fallo: unidad dominada.', examenNota:'Apruébalo sin fallos para marcar la unidad como dominada.', nDominadas:n=>`${n} ${n===1?'unidad dominada':'unidades dominadas'}`,
   // Gráficos
   graficoVelas:'Gráfico de velas', graficoPrecio:'Gráfico de precio', vol:'Vol.', despues:'Después', precio:'Precio', media30:'Media de 30 semanas',
 
@@ -22,7 +22,11 @@ export const t={
   irBasicos:'Ir a los básicos', saltarBasicos:'Ya opero: saltar los básicos',
   testNivel:'Test de nivel', testPregunta:'¿Ya sabes de bolsa?',
   testExplica:n=>`Haz el test de nivel: ${n} preguntas, unos 5 minutos. Marcaremos lo que ya dominas y, si aciertas casi todo, se abren las demás rutas.`,
-  hacerTest:'Hacer el test', desdeCero:'Empezar desde cero',
+  hacerTest:'Hacer el test',
+  pruebaNivel:'Prueba de nivel', nivelPregunta:'¿Ya sabes de esto?', hacerPrueba:'Hacer la prueba',
+  nivelExplica:'Dos preguntas por unidad, en orden. Las unidades que superes quedan completadas; la prueba se para en la primera que falles.',
+  pruebaHecha:'Prueba completada', nivelSuperadas:(n,t)=>`${n} de ${t} unidades superadas`,
+  nivelTodo:'Dominas toda la ruta: repasa a tu ritmo o haz los exámenes de unidad.', nivelParcial:n=>`Empieza por la unidad ${n+1}: las anteriores ya están marcadas.`, nivelNada:'Empieza por la primera unidad: tendrás la base en pocas lecciones.', desdeCero:'Empezar desde cero',
   calcTitulo:'Simulador de aportaciones', calcExplica:'Mira cómo crece una cartera aportando cada mes, y cuánto se llevan las comisiones.',
   siguienteLeccion:'Siguiente lección', unidadN:n=>`Unidad ${n}`,
   repasoDia:'Repaso del día', aprendidos:n=>`${n} ${n===1?'aprendido':'aprendidos'}`,

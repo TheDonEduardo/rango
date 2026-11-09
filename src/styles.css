@@ -359,3 +359,5 @@ button{font:inherit;color:inherit;cursor:pointer}
 .glist{margin:0;display:grid;gap:10px}
 .glist div{padding:10px 12px;border-radius:12px;background:var(--surface);border:1px solid var(--line)}
 .glist dt{font-weight:700}.glist dd{margin:4px 0 0;font-size:14px;line-height:1.45;color:var(--ink-2)}
+.ban .dom{display:inline-flex;align-items:center;gap:4px;color:var(--accent-ink);background:var(--accent);padding:3px 9px;border-radius:999px;font-size:13px}
+.ban .dom .ico{width:14px;height:14px}

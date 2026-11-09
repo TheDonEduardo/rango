@@ -25,7 +25,7 @@ function tableHTML(ex){
 export function lessonHTML(){
   const run=ses.run,ex=run.queue[0],T=TIPOS[ex.t],pct=Math.round(run.done/run.total*100);
   let hearts='';for(let i=0;i<3;i++)hearts+=`<svg class="heart ${i<run.lives?'on':'off'}" viewBox="0 0 24 24" aria-hidden="true"><path d="${P.heart}" fill="currentColor"/></svg>`;
-  let h=`<div class="lesson"><div class="lbar"><button class="x" data-act="quit" aria-label="${t.salirLeccion}">${icoX}</button><div class="prog" role="progressbar" aria-label="${t.progresoLeccion}" aria-valuemin="0" aria-valuemax="${run.total}" aria-valuenow="${run.done}"><i style="width:${pct}%"></i></div>${run.L.kind==='test'?'':`<div class="lives" role="img" aria-label="${t.vidas(run.lives)}">${hearts}</div>`}</div>`;
+  let h=`<div class="lesson"><div class="lbar"><button class="x" data-act="quit" aria-label="${t.salirLeccion}">${icoX}</button><div class="prog" role="progressbar" aria-label="${t.progresoLeccion}" aria-valuemin="0" aria-valuemax="${run.total}" aria-valuenow="${run.done}"><i style="width:${pct}%"></i></div>${run.L.kind==='test'||run.L.kind==='nivel'?'':`<div class="lives" role="img" aria-label="${t.vidas(run.lives)}">${hearts}</div>`}</div>`;
   h+=`<div class="qwrap"><p class="kind">${ex.caso?t.casoReal(esc(ex.caso)):''}${t.tipos[ex.t]}</p><h1 class="q">${glos(tx(ex.q))}</h1>${chartHTML(ex,run)}${tableHTML(ex)}${T.html?T.html(ex,run):''}</div>`;
   if(!run.checked){
     h+=`<div><button class="btn primary" data-act="check"${T.ready(ex,run)?'':' disabled'}>${t.comprobar}</button></div>`;
@@ -43,12 +43,20 @@ function testResultHTML(r){
   <p class="note">${nota}</p></div>
   <div><button class="btn primary" data-act="home">${t.continuar}</button></div></div>`;
 }
+function nivelResultHTML(r){
+  const n=r.superadas.length,nota=n===r.total?t.nivelTodo:n?t.nivelParcial(n):t.nivelNada;
+  return `<div class="res"><div class="res-main"><div class="res-top">${glyph('done',n/r.total,84,108)}<div><h1>${t.pruebaHecha}</h1><p>${t.nivelSuperadas(n,r.total)}</p></div></div>
+  ${n?`<div class="note"><b>${t.yaDominas}</b><ul class="dom">${r.superadas.map(d=>`<li>${esc(d)}</li>`).join('')}</ul></div>`:''}
+  <p class="note">${nota}</p></div>
+  <div><button class="btn primary" data-act="home">${t.continuar}</button></div></div>`;
+}
 export function resultHTML(){
   const r=ses.lastRes,sk=streakNow();
   if(r.test)return testResultHTML(r);
+  if(r.nivel)return nivelResultHTML(r);
   return `<div class="res"><div class="res-main"><div class="res-top">${glyph('done',r.acc,84,108)}<div><h1>${r.srs?t.repasoCompletado:t.leccionCompletada}</h1><p>${esc(r.title)}</p></div></div>
   <div class="metrics"><div><b>+${r.xp}</b><span>${t.xpGanados}</span></div><div><b>${Math.round(r.acc*100)} %</b><span>${t.precisionM}</span></div><div><b>${sk}</b><span>${t.diasRacha(sk)}</span></div></div>
-  <p class="note">${r.kind==='weak'?t.notaDebiles:r.srs?t.notaRepaso:t.notaVela(r.acc)}</p></div>
+  <p class="note">${r.dominada?`<b>${t.dominadaNota}</b> `:r.kind==='review'?`${t.examenNota} `:''}${r.kind==='weak'?t.notaDebiles:r.srs?t.notaRepaso:t.notaVela(r.acc)}</p></div>
   <div><button class="btn primary" data-act="home">${t.continuar}</button></div></div>`;
 }
 export function failHTML(){
