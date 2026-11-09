@@ -86,7 +86,13 @@
           ],
           "a": 0,
           "why": "Las acciones suben en manada: cuando el dinero entra en un grupo, empuja a sus mejores valores. O'Neil insistía en comprar los líderes de los grupos líderes.",
-          "guia": "g1"
+          "guia": "g1",
+          "porque": [
+            null,
+            "Los rezagados suelen seguir rezagados: el dinero entra en los grupos líderes.",
+            "El grupo influye: las acciones suben en manada con su sector.",
+            "Repartir entre los débiles diluye el capital en lo que peor funciona."
+          ]
         },
         {
           "id": "g1-2",
@@ -137,7 +143,13 @@
           ],
           "a": 2,
           "why": "Una ruptura acompañada por su grupo tiene detrás dinero entrando en el sector. Si va sola, el riesgo de fallo es mayor: reduce el tamaño o espera.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            "Sin su grupo detrás, la ruptura tiene menos respaldo, no más fuerza.",
+            "Sí importa: una ruptura acompañada por su sector falla menos.",
+            null,
+            "Que el grupo caiga a mínimos no anticipa que vaya a romper al alza."
+          ]
         },
         {
           "id": "g1-4",
@@ -239,7 +251,13 @@
           ],
           "a": 0,
           "why": "Un gap de ruptura sano no suele cerrarse: la demanda que lo creó sostiene el precio. Si se cierra entero, quienes compraron en el gap pierden dinero y la ruptura ha fallado.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            null,
+            "No todos los gaps se cierran: uno de ruptura sano suele mantenerse.",
+            "Cerrar el gap borra la ruptura: es una señal peor, no mejor.",
+            "El volumen fue real; lo que falló es la demanda para sostener el precio."
+          ]
         }
       ]
     }

@@ -179,7 +179,13 @@
           ],
           "a": 1,
           "why": "El color depende solo de cierre frente a apertura. El cuerpo mide esa diferencia; las mechas marcan los extremos que el precio visitó y rechazó.",
-          "guia": "g1"
+          "guia": "g1",
+          "porque": [
+            "Cerrar por debajo de la apertura es justo lo que define una vela bajista (roja).",
+            null,
+            "El gap describe dónde abre respecto al cierre anterior, no el color de la vela.",
+            "Las mechas marcan extremos rechazados; el color depende solo de cierre frente a apertura."
+          ]
         },
         {
           "id": "v1-2",
@@ -232,7 +238,13 @@
           ],
           "a": 2,
           "why": "Es una peonza. Tras un tramo fuerte avisa de agotamiento; dentro de un rango lateral no aporta información.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            "Una aceleración se ve con cuerpos grandes en la dirección de la tendencia, no con un cuerpo pequeño.",
+            "Las mechas largas muestran que el precio recorrió mucho y volvió: hubo sesión completa.",
+            null,
+            "Ninguna vela garantiza nada; esta solo muestra equilibrio entre compradores y vendedores."
+          ]
         }
       ]
     },
@@ -266,7 +278,13 @@
           ],
           "a": 1,
           "why": "Mecha inferior de 3,10 frente a un cuerpo de 0,50 y casi sin mecha superior: el precio bajó, fue comprado y cerró cerca del máximo.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            "La estrella fugaz tiene la mecha larga arriba y aparece tras una subida.",
+            null,
+            "Un doji casi no tiene cuerpo; aquí hay un cuerpo de 0,50 cerca del máximo.",
+            "Una envolvente necesita dos velas: el cuerpo de la última cubre el de la anterior."
+          ]
         },
         {
           "id": "v2-2",
@@ -280,7 +298,13 @@
           ],
           "a": 0,
           "why": "El patrón solo vale en contexto: tendencia previa que revertir, un nivel que lo respalde y volumen que confirme el rechazo.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            null,
+            "Sin tendencia previa no hay nada que revertir: en mitad de un rango no aporta información.",
+            "Tras una subida y bajo una resistencia esa forma se lee como señal de techo, no de suelo.",
+            "Sin volumen ni contexto el patrón no tiene respaldo: es solo una forma."
+          ]
         },
         {
           "id": "v2-3",

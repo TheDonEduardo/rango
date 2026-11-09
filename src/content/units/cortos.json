@@ -91,7 +91,13 @@
           ],
           "a": 1,
           "why": "Una acción comprada solo puede caer a cero, pero una vendida en corto puede subir sin límite. Por eso en un corto el stop no es opcional.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            "En una compra lo máximo es lo invertido; en un corto el precio puede subir sin límite.",
+            null,
+            "Nada limita la subida a la mitad del precio de venta.",
+            "El bróker no asume tus pérdidas: te pide más garantías o cierra la posición."
+          ]
         },
         {
           "id": "k1-3",
@@ -114,7 +120,13 @@
           ],
           "a": 3,
           "why": "Has vendido acciones prestadas, y su dueño tiene derecho al dividendo: lo pagas tú. Súmale lo que cuesta el préstamo de las acciones mientras dure el corto.",
-          "guia": "g1"
+          "guia": "g1",
+          "porque": [
+            "Sí afecta: el dueño de las acciones prestadas tiene derecho a ese dividendo.",
+            "En corto no eres accionista: has vendido acciones que te prestaron.",
+            "El bróker no lo paga por ti: lo carga en tu cuenta.",
+            null
+          ]
         }
       ]
     },
@@ -141,7 +153,13 @@
           ],
           "a": 3,
           "why": "Tras un techo lateral alrededor de una media que se aplana (Fase 3), el precio rompe hacia abajo y queda bajo una media que ya gira a la baja: Fase 4.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            "La Fase 1 llega tras una caída larga; aquí el precio viene de un techo.",
+            "En la Fase 2 el precio está sobre una media que sube; aquí la pierde.",
+            "La Fase 3 es el techo lateral previo; al romper hacia abajo ya entra en Fase 4.",
+            null
+          ]
         },
         {
           "id": "k2-2",
@@ -155,7 +173,13 @@
           ],
           "a": 0,
           "why": "Es el espejo de la compra: si en largo se compra la ruptura de la base de Fase 1, en corto se vende la ruptura del soporte de Fase 3. Weinstein no exige volumen alto en la ruptura bajista, aunque lo prefiere.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            null,
+            "En el rebote el precio sigue sobre el soporte: la Fase 4 aún no ha empezado.",
+            "Ponerse corto en Fase 2 es ir contra la tendencia, por mucho que haya subido.",
+            "Una vela roja suelta no es una señal: falta la ruptura del soporte."
+          ]
         },
         {
           "id": "k2-3",
@@ -178,7 +202,13 @@
           ],
           "a": 2,
           "why": "Con tantos cortos abiertos, una buena noticia obliga a muchos a recomprar a la vez, y esas recompras en cadena disparan el precio. Weinstein evitaba vender en corto valores con mucho interés bajista.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            "Muchos cortos abiertos no confirman nada: es combustible para una subida brusca.",
+            "El interés bajista no afecta al dividendo: lo decide la empresa.",
+            null,
+            "Salir de un índice no depende de cuántas acciones haya en corto."
+          ]
         }
       ]
     }

@@ -111,7 +111,13 @@
           ],
           "a": 2,
           "why": "Cerrar cerca del máximo con el triple de volumen indica compra durante toda la sesión, no solo en la apertura. Si rellena medio gap el mismo día, la oferta ya absorbió la noticia.",
-          "guia": "g1"
+          "guia": "g1",
+          "porque": [
+            "Rellenar medio gap el mismo día indica que la oferta ya absorbió la noticia.",
+            "Con poco volumen no hay compra institucional detrás del gap.",
+            null,
+            "Cerrar bajo el cierre previo borra todo el gap: es una señal de debilidad."
+          ]
         },
         {
           "id": "b1-3",
@@ -182,7 +188,13 @@
           ],
           "a": 3,
           "why": "El precio puede abrir muy por debajo del stop, así que la pérdida real la fija el gap, no la orden. Dimensiona como si el stop no existiera.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            "El precio puede abrir muy por debajo del stop: la orden no limita la pérdida en un gap.",
+            "Dos ATR miden el ruido normal, no un gap por un evento binario.",
+            "Un 1 % del precio es mucho menos de lo que puede caer tras un mal resultado.",
+            null
+          ]
         },
         {
           "id": "b2-2",
@@ -258,7 +270,13 @@
           ],
           "a": 1,
           "why": "Sin caja, la empresa necesita financiarse y la subida le permite emitir más caro: ampliaciones y ATM (ventas directas en mercado) suelen llegar tras los picos. Revisa caja trimestral y registros de emisión (S-1, S-3) antes de entrar.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            "Salir de un índice no es lo probable a corto plazo; financiarse sí lo es.",
+            null,
+            "Sin caja no puede recomprar: necesita dinero, no gastarlo.",
+            "Con caja para 3 meses no puede repartir dividendos extraordinarios."
+          ]
         }
       ]
     }

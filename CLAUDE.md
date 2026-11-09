@@ -80,7 +80,7 @@ Cada lección guarda en `ultimo` el mayor número de ejercicio asignado nunca (e
 
 Ejercicios (`why` es obligatorio y se muestra como explicación tras responder):
 
-- `choice`: `{t, q, opts[], a: índice, why, chart?}`
+- `choice`: `{t, q, opts[], a: índice, why, chart?, porque?}`. `porque`: una explicación por opción (`null` en la correcta, 35 palabras como máximo) de por qué esa opción no es correcta; al fallar se muestra la de la opción elegida antes del `why`. Todos los `choice` fijos la llevan: añádela en los nuevos con `poner_porque({id: [razones de las incorrectas en orden]})` de `tools/contenido.py`.
 - `num`: `{t, q, unit: "€"|"$"|"%"|"R"|"", a: número, tol?: 0.005, why, chart?}`. El usuario puede escribir coma o punto decimal. `a` nunca negativo (el teclado decimal del móvil no tiene signo menos: pregunta «¿cuánto cae?») y mejor por debajo de 1.000 («10.000» se leería como 10).
 - Cualquier ejercicio admite `table: {cols:[...], rows:[[...]], note?}` (primera columna = cabecera de fila; celdas como texto ya formateado).
 - Casos reales (`casos.json`): `{fuente, fecha, ex: {idLección: [ejercicios con "caso": "Empresa (TICKER)"]}}`. Cada lección añade al final un caso al azar de su lista.

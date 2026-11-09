@@ -116,7 +116,13 @@
           ],
           "a": 2,
           "why": "Nadie vende a 45 $ lo que vale 52 $, así que la put no se ejerce. La prima fue el coste del seguro, como el de un coche que no ha tenido accidentes.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            "La put solo paga si la acción cae por debajo de 45 $; está en 52 $.",
+            "Una put te da el derecho a vender, no la obligación.",
+            null,
+            "La prima no se devuelve: es el precio del seguro."
+          ]
         }
       ]
     },
@@ -155,7 +161,13 @@
           ],
           "a": 1,
           "why": "El stop no protege de un gap: se ejecuta al primer precio disponible. La put fija tu precio de venta pase lo que pase, como viste en catalizadores binarios.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            "El stop no protege de un gap: se ejecuta al primer precio disponible.",
+            null,
+            "Más tamaño aumenta la pérdida si llega el gap.",
+            "Vender una call solo da una prima pequeña: no cubre una caída del 25 %."
+          ]
         },
         {
           "id": "o2-4",

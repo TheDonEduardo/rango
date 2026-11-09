@@ -112,7 +112,13 @@
           ],
           "a": 2,
           "why": "La media de 30 semanas (unas 150 sesiones) filtra el ruido. Importan su pendiente y si el precio está por encima o por debajo.",
-          "guia": "g1"
+          "guia": "g1",
+          "porque": [
+            "La media de 10 días es demasiado rápida: sigue el ruido diario, no la tendencia de fondo.",
+            "Las Bollinger miden la volatilidad alrededor de una media, no definen fases.",
+            null,
+            "La media de 5 semanas es demasiado corta para separar el ruido de la tendencia."
+          ]
         },
         {
           "id": "t1-2",
@@ -132,7 +138,13 @@
           ],
           "a": 1,
           "why": "Precio sobre una media de 30 semanas con pendiente ascendente: Fase 2. Es la única fase donde Weinstein compra.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            "En la Fase 1 la media está plana y el precio se mueve a su alrededor; aquí la media sube.",
+            null,
+            "En la Fase 3 la media se aplana y el precio la cruza arriba y abajo.",
+            "En la Fase 4 el precio está bajo una media descendente; aquí está sobre una que sube."
+          ]
         },
         {
           "id": "t1-3",
@@ -152,7 +164,13 @@
           ],
           "a": 3,
           "why": "Precio bajo una media descendente: Fase 4. Se evita o se opera corto; nunca se promedia a la baja.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            "En la Fase 1 la media se aplana tras la caída; aquí sigue bajando.",
+            "En la Fase 2 el precio está sobre una media que sube; aquí está debajo de una que baja.",
+            "En la Fase 3 la media está plana y el precio la cruza; aquí ya cae con claridad.",
+            null
+          ]
         },
         {
           "id": "t1-4",
@@ -166,7 +184,13 @@
           ],
           "a": 0,
           "why": "Se compra la ruptura de la resistencia de la base con volumen claramente superior a la media. Anticiparla es adivinar.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            null,
+            "Comprar en Fase 4 es ir contra la tendencia: los rebotes suelen fallar.",
+            "La Fase 3 es un techo: comprar retrocesos ahí es comprar mientras se distribuye.",
+            "Nadie sabe cuál es el mínimo: comprarlo sin confirmación es adivinar."
+          ]
         },
         {
           "id": "t1-5",
@@ -212,7 +236,13 @@
           ],
           "a": 3,
           "why": "Se busca lo contrario: precio a menos de un 25 % de su máximo de 52 semanas, no en mínimos.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            "Sí es criterio: el precio debe estar sobre la media de 200 sesiones.",
+            "Sí es criterio: la media de 200 debe subir al menos un mes, mejor cuatro o cinco.",
+            "Sí es criterio: al menos un 30 % sobre el mínimo de 52 semanas.",
+            null
+          ]
         },
         {
           "id": "t2-2",
@@ -244,7 +274,13 @@
           ],
           "a": 1,
           "why": "Precio sobre la de 50, la de 50 sobre la de 150 y esta sobre la de 200, que además debe subir. Es la Fase 2 de Weinstein en medias.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            "Es el orden de una tendencia bajista: precio bajo todas las medias.",
+            null,
+            "Precio bajo las medias y la de 200 a la baja: es una Fase 4, no una tendencia sana.",
+            "Medias desordenadas y la de 200 plana: no hay tendencia clara."
+          ]
         }
       ]
     }

@@ -154,7 +154,13 @@
           ],
           "a": 1,
           "why": "Una prueba que no baja del spring y con menos volumen confirma que ya no queda oferta en esa zona. El stop va bajo el mínimo del spring, cerca de la entrada.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            "Comprar en el mínimo del spring es anticiparse: aún no sabes si la oferta se ha agotado.",
+            null,
+            "Esperar a máximos de 52 semanas aleja mucho la entrada del stop bajo el spring.",
+            "El spring es una señal alcista: vender en corto va contra lo que indica."
+          ]
         },
         {
           "id": "w1-3",
@@ -365,7 +371,13 @@
           ],
           "a": 0,
           "why": "Mucho volumen (esfuerzo) y poco avance (resultado) significa que alguien vende todo lo que se compra. En máximos tras una subida larga, protege beneficios y no añadas.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            null,
+            "Si la demanda fuera fuerte, tanto volumen movería el precio mucho más.",
+            "El volumen es 2,5 veces la media: es mucho interés, no falta de él.",
+            "Mucho volumen sin avance en máximos sugiere venta, no un buen momento para añadir."
+          ]
         },
         {
           "id": "w2-3",

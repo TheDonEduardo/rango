@@ -81,7 +81,13 @@
           ],
           "a": 1,
           "why": "Una posición con el stop en la entrada ya no suma riesgo: así haces hueco sin superar tu límite. Si no puedes, la nueva operación espera.",
-          "guia": "g1"
+          "guia": "g1",
+          "porque": [
+            "Comprarla supera el límite de riesgo que te fijaste: el plan deja de servir.",
+            null,
+            "Comprar el doble lleva el riesgo abierto aún más lejos del límite.",
+            "Quitar stops no libera riesgo: lo deja sin límite."
+          ]
         },
         {
           "id": "c1-4",
@@ -122,7 +128,13 @@
           ],
           "a": 0,
           "why": "Según O'Neil, tres de cada cuatro acciones siguen la dirección del mercado. Cuando las rupturas fallan seguidas, el mercado te está diciendo que reduzcas y esperes.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            null,
+            "Más tamaño cuando las rupturas fallan multiplica las pérdidas.",
+            "La mayoría de acciones siguen al mercado: ignorarlo es operar a contracorriente.",
+            "Las que más caen suelen ser las más débiles, no las próximas líderes."
+          ]
         },
         {
           "id": "c2-3",
@@ -169,7 +181,13 @@
           ],
           "a": 2,
           "why": "45 % + 30 % = 75 % en tecnología: un mal día del sector golpea casi toda la cartera a la vez. Limita el peso o el riesgo abierto por sector.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            "La tabla no muestra un peso alto en liquidez: casi todo está invertido.",
+            "Con un 75 % en un sector, la cartera está concentrada, no demasiado repartida.",
+            null,
+            "No está equilibrada: tres cuartas partes dependen del mismo sector."
+          ]
         }
       ]
     }

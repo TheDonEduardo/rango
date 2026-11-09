@@ -47,7 +47,13 @@
           ],
           "a": 0,
           "why": "El índice cae al menos un 0,2 % con más volumen que la sesión anterior: grandes inversores están vendiendo. Un día suelto no dice nada; importa cuántos se acumulan.",
-          "guia": "g1"
+          "guia": "g1",
+          "porque": [
+            null,
+            "Una subida con poco volumen no es distribución: no hay ventas fuertes.",
+            "El pago de dividendos no tiene que ver con la distribución de O'Neil.",
+            "No hace falta una caída tan grande: basta un 0,2 % con más volumen."
+          ]
         },
         {
           "id": "m1-2",
@@ -104,7 +110,13 @@
           ],
           "a": 1,
           "why": "Los grandes inversores están vendiendo de forma repetida aunque el índice aguante. Para O'Neil, cuatro o cinco días de distribución en pocas semanas suelen preceder a una corrección.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            "Comprar más ignora que los grandes inversores están vendiendo.",
+            null,
+            "El volumen avisa antes que el precio: esperar a la caída es llegar tarde.",
+            "La distribución pide prudencia, no apostar todo contra el mercado."
+          ]
         },
         {
           "id": "m1-4",
@@ -148,7 +160,13 @@
           ],
           "a": 1,
           "why": "Los primeros días de un rebote pueden ser simples rebotes técnicos. O'Neil esperaba como mínimo al 4.º día del intento para darle valor a la confirmación.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            "Una subida fuerte en el día 2 aún puede ser un rebote técnico.",
+            null,
+            "El volumen no adelanta la confirmación: O'Neil esperaba al 4.º día.",
+            "No hace falta subir un 10 %: basta una subida clara con más volumen desde el 4.º día."
+          ]
         },
         {
           "id": "m2-3",
@@ -162,7 +180,13 @@
           ],
           "a": 0,
           "why": "Si pierde el mínimo, el intento de rebote ha fallado. El recuento empieza de nuevo con el próximo primer día de subida.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            null,
+            "Perder el mínimo anula el intento: no puede ser confirmación.",
+            "Sí cambia: el recuento vuelve a empezar desde el siguiente día de subida.",
+            "Con el intento anulado no hay señal: comprar más es adivinar."
+          ]
         },
         {
           "id": "m2-4",

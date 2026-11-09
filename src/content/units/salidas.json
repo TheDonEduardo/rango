@@ -161,7 +161,13 @@
           ],
           "a": 1,
           "why": "El último tramo es el que captura las grandes subidas: un stop que sigue al precio evita vender demasiado pronto. Minervini acompaña a sus mayores ganadores con la media de 50 sesiones.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            "Vender ya renuncia a la parte de la subida que más aporta: las grandes tendencias.",
+            null,
+            "Bajar el stop es aumentar el riesgo; un stop de seguimiento solo sube.",
+            "Sin stop puedes devolver toda la ganancia del último tercio."
+          ]
         }
       ]
     },
@@ -182,7 +188,13 @@
           ],
           "a": 2,
           "why": "Las subidas más rápidas y con más volumen suelen llegar al final de una tendencia, cuando compran los últimos. Vender una parte ahí asegura la ganancia sin intentar adivinar el techo.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            "La subida más rápida y con más volumen suele llegar al final de la tendencia, no al principio.",
+            "Comprar con todo el capital en un posible clímax es la peor forma de asumir riesgo.",
+            null,
+            "El mayor volumen de toda la tendencia con un gap no es una semana normal."
+          ]
         },
         {
           "id": "s2-2",

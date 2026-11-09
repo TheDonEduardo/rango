@@ -63,7 +63,13 @@
           ],
           "a": 1,
           "why": "(55 ÷ 4.600) ÷ (50 ÷ 4.000) = 0,957: la línea RS cae un 4,3 %. La acción gana dinero, pero menos que el mercado: no es un líder.",
-          "guia": "g1"
+          "guia": "g1",
+          "porque": [
+            "La línea RS compara con el índice: la acción sube, pero menos que el mercado.",
+            null,
+            "Solo estaría plana si ambos subieran lo mismo: 10 % frente a 15 %.",
+            "La línea RS solo usa precios: precio ÷ índice."
+          ]
         },
         {
           "id": "rs1-2",
@@ -87,7 +93,13 @@
           ],
           "a": 1,
           "why": "Es un percentil de 1 a 99 sobre el comportamiento de los últimos 12 meses, con más peso en el último trimestre. O'Neil buscaba líderes con RS de 80 o más.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            "Es un percentil frente a otras acciones, no una subida en %.",
+            null,
+            "El RS Rating mide comportamiento relativo, no la distancia a máximos.",
+            "No es una probabilidad: mide lo que ya ha hecho la acción."
+          ]
         },
         {
           "id": "rs1-4",
@@ -157,7 +169,13 @@
           ],
           "a": 1,
           "why": "B cumple las dos condiciones: RS de 88 (Minervini pide 70 o más) y a un 5 % de máximos (menos del 25 %). A está demasiado lejos de máximos y C tiene poca fuerza relativa.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            "A está demasiado lejos de sus máximos: Minervini pide menos del 25 %.",
+            null,
+            "C tiene poca fuerza relativa: Minervini pide 70 o más.",
+            "B cumple las dos condiciones: RS de 88 y a un 5 % de máximos."
+          ]
         },
         {
           "id": "rs2-2",
@@ -171,7 +189,13 @@
           ],
           "a": 1,
           "why": "Las acciones que aguantan una corrección suelen ser las primeras en romper al alza tras el día de confirmación. O'Neil preparaba así su lista de candidatas.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            "Caer un 3 % cuando el índice cae un 10 % es aguantar mejor que el mercado.",
+            null,
+            "Nada lo garantiza; aguantar la corrección es una señal de fuerza.",
+            "Las que aguantan una corrección suelen liderar el rebote: importa mucho."
+          ]
         },
         {
           "id": "rs2-3",
@@ -194,7 +218,13 @@
           ],
           "a": 0,
           "why": "Weinstein pedía las dos cosas: Fase 2 y fuerza relativa mejorando. Si sube menos que el mercado, tu capital rinde más en un líder.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            null,
+            "Weinstein pedía Fase 2 y fuerza relativa mejorando: la Fase 2 sola no basta.",
+            "Una acción en Fase 2 que sube no es un corto: va contra la tendencia.",
+            "Esperar una caída del 50 % no tiene base: el problema es que rinde menos que otras."
+          ]
         }
       ]
     }

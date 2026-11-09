@@ -81,7 +81,13 @@
           ],
           "a": 0,
           "why": "El ATR promedia el rango verdadero (incluye gaps). Mide volatilidad, no dirección; sirve para que el stop respete el ruido normal del valor.",
-          "guia": "g1"
+          "guia": "g1",
+          "porque": [
+            null,
+            "El ATR mide cuánto se mueve el precio, no hacia dónde.",
+            "El ATR no usa el volumen: promedia rangos de precio.",
+            "La distancia a máximos es otro dato; el ATR mide la volatilidad."
+          ]
         },
         {
           "id": "r1-2",
@@ -144,7 +150,13 @@
           ],
           "a": 1,
           "why": "Acciones = riesgo € ÷ distancia al stop. Si la distancia se duplica, compras la mitad: mismo riesgo, menos exposición.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            "Sería al revés: más distancia al stop con el mismo riesgo obliga a comprar menos.",
+            null,
+            "Sí cambia: acciones = riesgo € ÷ distancia al stop, y la distancia se duplica.",
+            "El precio de entrada no entra en la cuenta: solo el riesgo y la distancia al stop."
+          ]
         }
       ]
     },

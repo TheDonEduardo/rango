@@ -124,7 +124,13 @@
           ],
           "a": 0,
           "why": "Upthrust y ruptura del soporte con volumen completan la distribución: la oferta ha tomado el control. Lo que sigue suele ser la Fase 4.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            null,
+            "Venir de máximos no compensa una ruptura del soporte con volumen.",
+            "Esperar sin stop puede costar caro: tras la distribución suele llegar la Fase 4.",
+            "Promediar a la baja es aumentar una posición que la oferta ya domina."
+          ]
         },
         {
           "id": "wd1-4",
@@ -154,7 +160,13 @@
           ],
           "a": 0,
           "why": "El semanal filtra el ruido diario y muestra la tendencia de fondo. El diario sirve después para afinar la entrada y el stop.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            null,
+            "La media de 10 sesiones es demasiado rápida para definir una fase.",
+            "El gráfico de 5 minutos sirve para operar dentro del día, no para la tendencia.",
+            "Sin media no hay referencia para medir la pendiente ni la fase."
+          ]
         },
         {
           "id": "tf1-2",
@@ -168,7 +180,13 @@
           ],
           "a": 1,
           "why": "La temporalidad mayor marca la dirección y la menor, el momento. Una ruptura diaria dentro de una Fase 4 semanal suele ser solo un rebote.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            "La temporalidad mayor marca la dirección; el diario solo el momento.",
+            null,
+            "Doblar el tamaño contra la tendencia semanal aumenta el riesgo sin motivo.",
+            "Ponerse corto justo cuando el precio rompe al alza es ir contra el movimiento inmediato."
+          ]
         },
         {
           "id": "tf1-3",

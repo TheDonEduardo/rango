@@ -47,7 +47,13 @@
           ],
           "a": 1,
           "why": "Corta las ganancias y deja correr las pérdidas, justo al revés de lo que funciona. El stop y las salidas escalonadas existen para evitarlo.",
-          "guia": "g1"
+          "guia": "g1",
+          "porque": [
+            "El sesgo de confirmación es buscar solo datos que te den la razón.",
+            null,
+            "El efecto manada es seguir lo que hace la mayoría.",
+            "El sesgo de recencia es dar demasiado peso a lo último que ha pasado."
+          ]
         },
         {
           "id": "p1-2",
@@ -86,7 +92,13 @@
           ],
           "a": 2,
           "why": "Las operaciones son independientes: perder tres no hace más probable ganar la cuarta. Tras una racha, reducir el tamaño protege el capital mientras revisas si falla el sistema o el mercado.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            "Las operaciones son independientes: perder tres no hace más probable ganar la cuarta.",
+            "Triplicar tras una racha mala multiplica el riesgo justo cuando algo puede fallar.",
+            null,
+            "Quitar los stops deja las pérdidas sin límite."
+          ]
         },
         {
           "id": "p1-4",
@@ -230,7 +242,13 @@
           ],
           "a": 1,
           "why": "El resultado de una operación tiene mucho de azar; el proceso, no. El diario sirve para saber si pierdes por el sistema o por no seguirlo.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            "El resultado tiene mucho de azar; sin el porqué no sabes qué mejorar.",
+            null,
+            "Las opiniones de redes no te dicen si seguiste tu plan.",
+            "El resultado solo no distingue un buen proceso con mala suerte de un error."
+          ]
         },
         {
           "id": "p2-4",
@@ -244,7 +262,13 @@
           ],
           "a": 1,
           "why": "Con una esperanza positiva, las pérdidas de 1R son parte del sistema. Una mala operación es la que rompe el plan, gane o pierda.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            "Perder 1R siguiendo el plan es parte del sistema, no un error.",
+            null,
+            "Una pérdida dentro del plan no dice nada del sistema; hacen falta muchas operaciones.",
+            "Querer recuperarla rápido lleva a romper el plan."
+          ]
         }
       ]
     }

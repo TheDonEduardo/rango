@@ -98,7 +98,13 @@
           ],
           "a": 1,
           "why": "Con 12 operaciones, unas pocas buenas o malas cambian el resultado por completo. Hacen falta decenas o cientos de operaciones, en mercados distintos, para fiarse.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            "Con 12 operaciones el porcentaje de aciertos puede ser suerte.",
+            null,
+            "Doblar el riesgo con una muestra tan pequeña es apostar por algo sin probar.",
+            "Operarlo con todo el capital sin haberlo validado arriesga la cuenta entera."
+          ]
         }
       ]
     },
@@ -144,7 +150,13 @@
           ],
           "a": 1,
           "why": "Los datos con los que ajustas no sirven para validar. Si en un periodo nuevo, sin retocar nada, el resultado se hunde, el sistema estaba sobreajustado.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            "Sin validarlo en datos nuevos no sabes si el 30 % es real o sobreajuste.",
+            null,
+            "Afinarlo más con los mismos datos aumenta el sobreajuste.",
+            "Subir el riesgo antes de validarlo agrava el problema si el sistema falla."
+          ]
         },
         {
           "id": "bt2-3",

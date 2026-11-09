@@ -120,7 +120,13 @@
           ],
           "a": 0,
           "why": "Cada retroceso es menor que el anterior y el volumen se seca: la oferta se agota y basta poca demanda para romper el pivote.",
-          "guia": "g1"
+          "guia": "g1",
+          "porque": [
+            null,
+            "Una caída en V no es una base: no hay contracciones sucesivas.",
+            "En un VCP la volatilidad decrece; si crece, la oferta gana.",
+            "En un VCP el volumen se seca durante la base, no crece."
+          ]
         },
         {
           "id": "vcp1-2",
@@ -143,7 +149,13 @@
           ],
           "a": 2,
           "why": "Cada contracción es más o menos la mitad de la anterior: los vendedores se agotan y el rango se estrecha hacia el pivote. Si las caídas crecen, la oferta está ganando.",
-          "guia": "g1"
+          "guia": "g1",
+          "porque": [
+            "Las caídas crecen: la oferta está ganando, lo contrario de un VCP.",
+            "Las caídas no se reducen: el rango no se estrecha.",
+            null,
+            "La última caída es la mayor: la base se rompe en vez de estrecharse."
+          ]
         },
         {
           "id": "vcp1-4",
@@ -213,7 +225,13 @@
           ],
           "a": 3,
           "why": "O'Neil y Minervini piden en la ruptura un volumen al menos un 40-50 % superior a la media. Sin él, la ruptura suele fallar y volver a la base.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            "Sin volumen la ruptura suele fallar: el precio solo no la confirma.",
+            "Doblar el tamaño en una ruptura dudosa aumenta el riesgo justo cuando hay menos respaldo.",
+            "Una ruptura débil no es una señal bajista: no hay motivo para ponerse corto.",
+            null
+          ]
         },
         {
           "id": "vcp2-3",
@@ -236,7 +254,13 @@
           ],
           "a": 2,
           "why": "Las buenas rupturas funcionan casi de inmediato; volver a la base con volumen alto indica distribución. Salir a 53,80 € cuesta 1,90 € (0,54R) en vez de 3,50 € (1R).",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            "Esperar al stop cuesta 3,50 € (1R) cuando la ruptura ya ha fallado.",
+            "Promediar a la baja es aumentar una posición que no funciona.",
+            null,
+            "Bajar el stop es aumentar la pérdida que aceptaste al entrar."
+          ]
         },
         {
           "id": "vcp2-5",
