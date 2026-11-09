@@ -137,6 +137,27 @@ async function auditar(b, url) {
   return ks.length;
 }
 
+// Guía: las flechas y el deslizamiento pasan de tarjeta, y el foco queda en el botón principal.
+async function guiaNavegacion(b, url) {
+  const p = await b.newPage({viewport: {width: 390, height: 844}, hasTouch: true}), errs = [];
+  await p.goto(url);
+  await p.evaluate(() => localStorage.setItem('rango.v1', JSON.stringify({legal: 99, skipBasics: true, track: 'tecnico'})));
+  await p.reload(); await p.click('[data-act=guia][data-id=velas]');
+  const pos = async () => (await p.locator('.guia .kind').innerText()).match(/(\d+) \/ \d+/)[1];
+  await p.keyboard.press('ArrowRight'); if (await pos() !== '2') errs.push('la flecha derecha no pasa a la tarjeta 2');
+  await p.keyboard.press('ArrowLeft'); if (await pos() !== '1') errs.push('la flecha izquierda no vuelve a la tarjeta 1');
+  if (!(await p.evaluate(() => document.activeElement && document.activeElement.matches('.gnav .btn.primary')))) errs.push('el foco no queda en el botón principal de la guía');
+  const desliza = dx => p.evaluate(dx => {
+    const el = document.querySelector('.guia .qwrap'), o = {pointerType: 'touch', bubbles: true, clientY: 300};
+    el.dispatchEvent(new PointerEvent('pointerdown', {...o, clientX: 200})); el.dispatchEvent(new PointerEvent('pointerup', {...o, clientX: 200 + dx}));
+  }, dx);
+  await desliza(-120); if (await pos() !== '2') errs.push('deslizar a la izquierda no pasa de tarjeta');
+  await desliza(120); if (await pos() !== '1') errs.push('deslizar a la derecha no vuelve');
+  await desliza(-20); if (await pos() !== '1') errs.push('un toque corto cambia de tarjeta');
+  console.log('  ' + (errs.length ? errs.join('\n  ') : 'bien'));
+  await p.close(); return errs.length;
+}
+
 (async () => {
   const s = await servidor(), url = `http://127.0.0.1:${s.address().port}/`;
   const b = await chromium.launch();
@@ -155,6 +176,7 @@ async function auditar(b, url) {
   }
   console.log(`Recorrido de ${ids.length} lecciones en ${modos.length} modo(s):`);
   let fallos = await recorrer(b, url, ids, modos, dir);
+  if (!has('--lecciones') && !has('--todas')) { console.log('Guía (teclado y dedo):'); fallos += await guiaNavegacion(b, url); }
   if (!has('--sin-axe') && !has('--lecciones') && !has('--todas')) { console.log('Accesibilidad:'); fallos += await auditar(b, url); }
   await b.close(); s.close();
   console.log(fallos ? `FALLOS: ${fallos}` : 'OK');

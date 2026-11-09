@@ -31,6 +31,8 @@ function render(){
   }else window.scrollTo(0,0);
   const run=ses.run;
   if(ses.view==='lesson'&&!run.checked){const T=TIPOS[run.queue[0].t];if(T.focus)T.focus()}
+  // Guía: el foco va al botón principal, así el teclado y los lectores de pantalla siguen la tarjeta nueva.
+  if(ses.view==='guia'){const b=$app.querySelector('.gnav .btn.primary');if(b&&b.focus)b.focus({preventScroll:true})}
 }
 const ir=v=>{if(ses.view==='home')ses.homeY=window.scrollY;ses.view=v;render()};
 
@@ -134,7 +136,7 @@ const ACCIONES={
   guiarepaso(b){const ex=ses.run.queue[0],u=FLAT.find(l=>l.id===ex.lesson).unit;abrirGuia(u,'repaso',{tarjeta:b.dataset.g});ses.view='guia';render()},
   guianext(){ses.guia.i++;render()},
   guiaprev(){ses.guia.i--;render()},
-  guiafin(){const g=ses.guia;ses.guia=null;if(g.modo==='inicio')startRun(g.L);else if(g.modo==='repaso'){ses.view='lesson';render()}else{ses.view='home';render()}},
+  guiafin(){const g=ses.guia;ses.guia=null;if(g.modo==='inicio')startRun(g.L);else if(g.modo==='repaso'){ses.view='lesson';render();const b=$app.querySelector('[data-act=next]');if(b&&b.focus)b.focus({preventScroll:true})}else{ses.view='home';render()}},
   weak(){ses.homeY=0;startRun(STATS_L)},
   simsave(){if(ses.simDraft&&simValid(ses.simDraft)){simSave();ses.simDraft=null;ses.view='home';render();toast(t.planGuardado)}},
   unfold(b){const id=b.dataset.id,ab=ses.abiertas;ab.has(id)?ab.delete(id):ab.add(id);ses.homeY=window.scrollY;render();const nb=$app.querySelector(`[data-act=unfold][data-id="${id}"]`);if(nb)nb.focus({preventScroll:true})},
@@ -174,6 +176,13 @@ $app.addEventListener('input',e=>{
   if(ses.view==='lesson'&&run&&!run.checked){const ex=run.queue[0],T=TIPOS[ex.t];if(T.input)T.input(e,run,ex)}
 });
 document.addEventListener('keydown',e=>{
+  // Guía: flechas izquierda y derecha para pasar tarjetas.
+  if(ses.view==='guia'&&ses.guia){
+    const g=ses.guia,n=g.unit.guia.length;
+    if(e.key==='ArrowRight'&&g.i<n-1){e.preventDefault();ACCIONES.guianext()}
+    else if(e.key==='ArrowLeft'&&g.i>0){e.preventDefault();ACCIONES.guiaprev()}
+    return;
+  }
   if(ses.view!=='lesson')return;
   const el=e.target,run=ses.run,T=TIPOS[run.queue[0].t];
   if((e.key==='Enter'||e.key===' ')&&el.closest&&el.closest('.cd[tabindex],.lv')&&!run.checked){e.preventDefault();if(T.svg)T.svg(el.closest('.cd,.lv'),run);return}
@@ -181,6 +190,16 @@ document.addEventListener('keydown',e=>{
   if(e.key!=='Enter'||e.repeat||(el.closest&&el.closest('button')))return;
   if(run.checked){e.preventDefault();next()}
   else if(T.enter&&T.enter(el,run)){e.preventDefault();check()}
+});
+
+// Guía: deslizar el dedo en horizontal pasa de tarjeta (más de 50 px y más horizontal que vertical).
+let toque=null;
+$app.addEventListener('pointerdown',e=>{if(ses.view==='guia'&&e.pointerType!=='mouse')toque={x:e.clientX,y:e.clientY}});
+$app.addEventListener('pointerup',e=>{
+  if(!toque||ses.view!=='guia'){toque=null;return}
+  const dx=e.clientX-toque.x,dy=e.clientY-toque.y,g=ses.guia;toque=null;
+  if(Math.abs(dx)<50||Math.abs(dx)<Math.abs(dy)*1.5)return;
+  if(dx<0&&g.i<g.unit.guia.length-1)ACCIONES.guianext();else if(dx>0&&g.i>0)ACCIONES.guiaprev();
 });
 
 simRecord();
