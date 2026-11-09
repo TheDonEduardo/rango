@@ -31,7 +31,7 @@ function render(){
   const run=ses.run;
   if(ses.view==='lesson'&&!run.checked){const T=TIPOS[run.queue[0].t];if(T.focus)T.focus()}
 }
-const ir=(v,{guardarY=true}={})=>{if(guardarY&&ses.view==='home')ses.homeY=window.scrollY;ses.view=v;render()};
+const ir=v=>{if(ses.view==='home')ses.homeY=window.scrollY;ses.view=v;render()};
 
 // Lección: ejercicios fijos barajados y, al final, un caso real al azar (si hay datos).
 // Repaso de unidad: 5 al azar de sus lecciones. Repaso del día: los fallos que tocan hoy.
@@ -52,8 +52,9 @@ function check(){
   // Solo cuenta el primer intento de cada ejercicio. En el test de nivel no hay vidas ni repaso.
   if(!run.seen.has(ex)){
     run.seen.add(ex);if(!ok)run.firstWrong++;
-    if(run.L.kind==='test')run.res[ex.id]=ok;else srsRecord(ex,ok,run.L.kind==='srs');
-    statRecord(ex,ok);save();
+    // El test de nivel solo anota su resultado: no entra en el repaso ni en las estadísticas.
+    if(run.L.kind==='test')run.res[ex.id]=ok;else{srsRecord(ex,ok,run.L.kind==='srs');statRecord(ex,ok)}
+    save();
   }
   if(!ok&&run.L.kind!=='test')run.lives--;
   render();
@@ -190,5 +191,5 @@ export const api={migrar,FLAT,CASOS,SEMANA,PLACEMENT,simulate,simRecord,simHist,
   openCalc:()=>{ses.view='calc';render()},openSim:()=>{ses.simDraft=null;ses.view='sim';render()},openSimRes:()=>{ses.view='simres';render()},
   openStats:()=>{ses.view='stats';render()},startWeak:()=>startRun(STATS_L),
   simDraftSet:p=>{ses.simDraft=p},simSave,goHome:()=>{ses.view='home';render()},startTest:()=>startRun(TEST_L),srsDue,
-  acceptLegal:()=>{S.legal=LEGAL_V},startSrs:()=>startRun(SRS_L),setTrack:t=>{S.track=t},skipBasics:()=>{S.skipBasics=true},
+  acceptLegal:()=>{S.legal=LEGAL_V},startSrs:()=>startRun(SRS_L),setTrack:id=>{S.track=id},skipBasics:()=>{S.skipBasics=true},
   homeHTML,startRun,lessonHTML,check,next,resultHTML,failHTML,render,getRun:()=>ses.run,setSel:v=>{ses.run.sel=v},setVal:v=>{ses.run.val=v},getState:()=>S};

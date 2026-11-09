@@ -25,13 +25,15 @@ src/exercises/          un archivo por tipo de ejercicio + index.js (registro TI
 src/views/              home, lesson (lección y resultados), sim, calc, stats, legal
 src/charts.js           SVG: gráfico de velas, línea con media, glifo de vela de la ruta
 src/content.js          carga las unidades y casos.json; construye FLAT (lecciones + repasos), EXBYID y las rutas
-src/content/units/      contenido fijo: index.json (orden) y un archivo <id>.json por unidad
+src/content/units/      contenido fijo (fuente): index.json (orden) y un archivo <id>.json por unidad
+src/content/units.json  las unidades juntas, GENERADO con `npm run empaquetar`: es lo único que descarga la app
 src/content/casos.json  casos reales GENERADOS por tools/casos.py: no editar a mano
 src/content/semana.json Operación de la semana GENERADA por tools/semana.py: no editar a mano
 src/util.js             fmt (es-ES), esc, tx, fechas, parseNum, constantes (KEY, GOAL, RH, OFFS)
 src/icons.js            iconos SVG inline
 src/styles.css          tokens y estilos (claro/oscuro)
-tools/contenido.py      ayudas para escribir contenido: nueva_unidad, anadir (asignan ids), ch/nm/mt/od/sl
+tools/contenido.py      ayudas para escribir contenido: nueva_unidad, anadir (asignan ids, renumeran y empaquetan), ch/nm/mt/od/sl
+tools/empaquetar.mjs    genera src/content/units.json a partir de src/content/units/
 tools/casos.py          genera casos.json con Yahoo Finance para los tickers de ../portfolio_manager.py
 test/smoke.mjs          lint de contenido + test de humo sin navegador
 test/e2e.cjs            navegador real + accesibilidad (test/contenido.cjs lee el contenido desde Node)
@@ -53,11 +55,11 @@ Estado guardado (`S`, localStorage `rango.v1`): lleva `v` (versión). Si cambias
 
 - `sw.js` precarga la app y las fuentes. Todo lo propio (página, código y contenido) va red primero: con conexión siempre llega la misma versión de todo; sin conexión, la última copia guardada. Las fuentes de Google, caché primero.
 - No hace falta subir `CACHE` para publicar código nuevo; súbelo solo para vaciar la caché antigua o cambiar la lista de precarga.
-- Si añades un archivo a `src/` (también en subcarpetas), añádelo a `PRECACHE` (el test lo comprueba). Las unidades no van en la lista: se precargan las del índice.
+- Si añades un archivo a `src/` (también en subcarpetas), añádelo a `PRECACHE` (el test lo comprueba). El contenido se precarga como `src/content/units.json`.
 
 ## Esquema del contenido (`src/content/units/`)
 
-`index.json` es la lista ordenada de ids de unidad; cada unidad está en `<id>.json`. Escribe contenido con `tools/contenido.py` (`nueva_unidad(unidad(...), despues_de='id')`, `anadir('idLección', [ejercicios])`): asigna los ids y mantiene el formato. Después, `npm test` y `npm run e2e -- --lecciones ...`.
+`index.json` es la lista ordenada de ids de unidad; cada unidad está en `<id>.json`. La app no lee estos archivos: carga `src/content/units.json` (una sola petición), que se genera con `npm run empaquetar`; `npm test` falla si no está al día. Escribe contenido con `tools/contenido.py` (`nueva_unidad(unidad(...), despues_de='id')`, `anadir('idLección', [ejercicios])`): asigna los ids, renumera las unidades de la ruta y empaqueta. Si editas un archivo de unidad a mano, ejecuta `npm run empaquetar`. Después, `npm test` y `npm run e2e -- --lecciones ...`. En cada ruta, `n` va 1, 2, 3… en el orden del índice (el test lo comprueba).
 
 Unidad: `{n, id, track?, title, blurb, lessons: [...] | null}` (`null` = "Próximamente"). `track`: `"basico"`, `"pasiva"`, `"fundamental"` o `"tecnico"` (por defecto); el selector del inicio las muestra en ese orden y cada una tiene su numeración `n` y su propia lección actual. Básico es el primer nivel: las otras tres se abren al completar sus unidades (una unidad básica con `"gate": false` sería complementaria y no bloquearía; úsalo si añades unidades a Básico, para no volver a cerrar las rutas a quien ya lo terminó), al pulsar «Ya opero: saltar los básicos» (`S.skipBasics`) o si ya hay progreso en ellas. Un usuario nuevo empieza en Básico. Cada unidad genera automáticamente un nodo "Repaso de la unidad" con 5 ejercicios al azar de sus lecciones.
 

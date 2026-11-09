@@ -4,7 +4,7 @@
 import {fmt,esc,tx} from '../util.js';
 import {icoX} from '../icons.js';
 import {FLAT,TRACKS,EXBYID,trackOf} from '../content.js';
-import {S,streakNow} from '../state.js';
+import {S,streakNow,SRS_MAX} from '../state.js';
 import {t} from '../textos.js';
 
 export const STATS_L={id:'weak',title:t.debilesTitulo,kind:'weak'};
@@ -29,7 +29,7 @@ export function statsHTML(){
   const fl=flojos(5),total=flojos(Infinity).length;
   const lecDe=ex=>FLAT.find(l=>l.id===ex.lesson);
   const debiles=fl.length?`<ul class="weak">${fl.map(ex=>`<li><span>${tx(ex.q.length>90?ex.q.slice(0,88)+'…':ex.q)}</span><small>${esc(lecDe(ex).title)} · ${t.fallado(S.stats.ex[ex.id].f)}</small></li>`).join('')}</ul>
-    <button class="btn primary" data-act="weak">${t.practicar(Math.min(total,10))}</button>`
+    <button class="btn primary" data-act="weak">${t.practicar(Math.min(total,SRS_MAX))}</button>`
     :`<p class="note">${t.sinDebiles}</p>`;
   return `<div class="lesson sim-view estad"><div class="lbar"><button class="x" data-act="home" aria-label="${t.volverInicio}">${icoX}</button><p class="kind">${t.estadisticas}</p></div>
   <div class="qwrap"><h1 class="q">${t.tuProgreso}</h1>

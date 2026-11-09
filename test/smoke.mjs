@@ -3,6 +3,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath, pathToFileURL} from 'node:url';
+import {createRequire} from 'node:module';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const store = {};
@@ -15,9 +16,13 @@ def('localStorage', {getItem: k => store[k] ?? null, setItem: (k, v) => { store[
 def('fetch', async u => ({json: async () => JSON.parse(fs.readFileSync(fileURLToPath(u), 'utf8'))}));
 
 const errs = [];
-const udir = path.join(root, 'src/content/units');
-const indice = JSON.parse(fs.readFileSync(path.join(udir, 'index.json'), 'utf8'));
-const units = indice.map(id => JSON.parse(fs.readFileSync(path.join(udir, id + '.json'), 'utf8')));
+const C = createRequire(import.meta.url)('./contenido.cjs');
+const udir = C.dirUnidades(root), indice = C.indice(root), units = C.unidades(root);
+// La app carga units.json (las unidades juntas): tiene que coincidir con los archivos por unidad.
+if (!fs.existsSync(C.paquete(root)) || fs.readFileSync(C.paquete(root), 'utf8') !== JSON.stringify(units) + '\n') errs.push('src/content/units.json no está al día con src/content/units/: ejecuta npm run empaquetar');
+// Numeración: en cada ruta, las unidades van 1, 2, 3… en el orden del índice.
+const porRuta = {};
+for (const u of units) { const r = u.track || 'tecnico'; porRuta[r] = (porRuta[r] || 0) + 1; if (u.n !== porRuta[r]) errs.push(`${u.id}: n = ${u.n}, debería ser ${porRuta[r]} (orden del índice en la ruta ${r})`); }
 // Cada archivo de unidad está en el índice y se llama como su unidad.
 for (const f of fs.readdirSync(udir).filter(f => f !== 'index.json')) if (!indice.includes(f.replace(/\.json$/, ''))) errs.push('unidad fuera del índice: ' + f);
 units.forEach((u, i) => { if (u.id !== indice[i]) errs.push(`el archivo ${indice[i]}.json contiene la unidad ${u.id}`); });
@@ -290,13 +295,14 @@ T.goHome(); T.setTrack('tecnico');
 const st = T.getState();
 const hacerTest = acierta => {
   st.done = {}; st.skipBasics = false; delete st.placement;
-  const srsAntes = JSON.stringify(st.srs);
+  const srsAntes = JSON.stringify(st.srs), statsAntes = JSON.stringify(st.stats.ex);
   T.startTest();
   if (T.lessonHTML().includes('class="lives"')) errs.push('el test de nivel muestra vidas');
   let k = 0;
   while (k++ < 40 && !app.innerHTML.includes('Test completado')) { const ex = T.getRun().queue[0]; give(ex, acierta(ex) ? right(ex) : wrong(ex)); T.check(); T.next(); }
   if (!app.innerHTML.includes('Test completado')) errs.push('el test de nivel no termina');
   if (JSON.stringify(st.srs) !== srsAntes) errs.push('el test de nivel modifica el repaso espaciado');
+  if (JSON.stringify(st.stats.ex) !== statsAntes) errs.push('el test de nivel modifica las estadísticas');
 };
 hacerTest(() => true);
 const obligatorias = T.FLAT.filter(l => l.unit.track === 'basico' && l.unit.gate !== false);

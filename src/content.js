@@ -1,11 +1,10 @@
 import {t} from './textos.js';
-// Carga el contenido (src/content/units/: index.json con el orden y un archivo por unidad, más casos.json)
-// y construye la lista plana de lecciones.
+// Carga el contenido (src/content/units.json, generado a partir de src/content/units/, más casos.json)
+// y construye la lista plana de lecciones. Una sola petición para todas las unidades.
 const get=async f=>(await fetch(new URL('./content/'+f,import.meta.url))).json();
 // En paralelo: casos.json (generado por tools/casos.py) es opcional; si falta, las lecciones funcionan igual.
 // semana.json (tools/semana.py) es la «Operación de la semana»; también opcional.
-const unidades=async()=>Promise.all((await get('units/index.json')).map(id=>get('units/'+id+'.json')));
-export const [UNITS,CASOS,SEMANA]=await Promise.all([unidades(),get('casos.json').catch(()=>null),get('semana.json').catch(()=>null)]);
+export const [UNITS,CASOS,SEMANA]=await Promise.all([get('units.json'),get('casos.json').catch(()=>null),get('semana.json').catch(()=>null)]);
 // La ruta «basico» es el primer nivel: desbloquea las demás (o se salta desde el inicio).
 export const TRACKS=['basico','pasiva','fundamental','tecnico'].map(id=>({id,title:t.rutas[id]}));
 export const trackOf=u=>u.track||'tecnico';

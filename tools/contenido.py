@@ -10,10 +10,13 @@ Uso desde otro script o una consola de Python:
     anadir('r2', [sl(...)])          # añade ejercicios al final de una lección existente
 
 Los ids de ejercicio («lección-n») se asignan solos y nunca se reutilizan: no edites ni reordenes ids a mano.
+Al insertar una unidad se renumeran las de su ruta (n = 1, 2, 3… en el orden del índice) y se regenera
+src/content/units.json (el archivo que carga la app) con node tools/empaquetar.mjs.
 Después: npm test (valida reglas de contenido) y node test/e2e.cjs --lecciones mu1,mu2.
 """
 import json
 import re
+import subprocess
 from pathlib import Path
 
 DIR = Path(__file__).resolve().parent.parent / 'src' / 'content' / 'units'
@@ -74,6 +77,21 @@ def _siguiente(l):
     return max([int(e['id'].rsplit('-', 1)[1]) for e in l['ex']] or [0]) + 1
 
 
+def empaquetar():
+    subprocess.run(['node', str(DIR.parent.parent.parent / 'tools' / 'empaquetar.mjs')], check=True)
+
+
+def _renumerar(idx, track):
+    n = 0
+    for uid in idx:
+        u = leer(uid)
+        if (u.get('track') or 'tecnico') == track:
+            n += 1
+            if u['n'] != n:
+                u['n'] = n
+                guardar(u)
+
+
 def nueva_unidad(u, despues_de):
     idx = indice()
     assert u['id'] not in idx, 'id de unidad repetido: ' + u['id']
@@ -84,6 +102,8 @@ def nueva_unidad(u, despues_de):
     guardar(u)
     idx.insert(idx.index(despues_de) + 1, u['id'])
     (DIR / 'index.json').write_text(json.dumps(idx, ensure_ascii=False).replace(', ', ',') + '\n', encoding='utf-8')
+    _renumerar(idx, u.get('track') or 'tecnico')
+    empaquetar()
 
 
 def anadir(lesson_id, exs):
@@ -93,5 +113,6 @@ def anadir(lesson_id, exs):
             if l['id'] == lesson_id:
                 l['ex'] += _con_ids(lesson_id, exs, _siguiente(l))
                 guardar(u)
+                empaquetar()
                 return
     raise KeyError('lección inexistente: ' + lesson_id)

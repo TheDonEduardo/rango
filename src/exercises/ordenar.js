@@ -40,7 +40,7 @@ const tipo=(answer,answerHTML)=>({
     ounpick(b,run,ex){run.sel[+b.dataset.k]=null;update(ex,run)},
   },
 });
-export const order=tipo(ex=>ex.items.map((t,i)=>(i+1)+'. '+t).join('  '),
-  ex=>`<div class="ans">${t.ordenCorrecto}<ol>${ex.items.map(t=>`<li>${tx(t)}</li>`).join('')}</ol></div>`);
+export const order=tipo(ex=>ex.items.map((it,i)=>(i+1)+'. '+it).join('  '),
+  ex=>`<div class="ans">${t.ordenCorrecto}<ol>${ex.items.map(it=>`<li>${tx(it)}</li>`).join('')}</ol></div>`);
 export const match=tipo(ex=>ex.pairs.map(p=>p[0]+': '+p[1]).join('  '),
   ex=>`<div class="ans">${t.parejasCorrectas}<ul>${ex.pairs.map(p=>`<li>${tx(p[0])}: ${tx(p[1])}</li>`).join('')}</ul></div>`);

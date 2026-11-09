@@ -54,7 +54,7 @@ def tickers():
         return env
     fichero = Path(__file__).resolve().parent / "tickers.txt"
     if fichero.exists():
-        lst = [x.strip().upper() for x in fichero.read_text(encoding="utf-8").splitlines() if x.strip() and not x.startswith("#")]
+        lst = [x.strip().upper() for x in fichero.read_text(encoding="utf-8").splitlines() if x.strip() and not x.strip().startswith("#")]
         if lst:
             return lst
     if BOT.exists():

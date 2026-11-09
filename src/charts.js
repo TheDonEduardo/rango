@@ -31,7 +31,7 @@ export function candlesSVG(sp,st){
   // Con controles dentro (velas que se tocan, niveles, líneas que se arrastran) el gráfico es un grupo, no una imagen.
   const interactivo=tapMode||(sp.levels&&sp.levels.length)||(planMode&&!st.checked&&!st.fijo);
   let s=`<svg class="svg ${tapMode?'tap':''}${planMode?' plan':''}" viewBox="0 0 ${W} ${H}" role="${interactivo?'group':'img'}" aria-label="${esc(sp.alt||t.graficoVelas)}"${scaleAttrs}>`;
-  sc.ticks.forEach(t=>{s+=`<line class="grid" x1="${pl}" x2="${W-pr}" y1="${y(t).toFixed(1)}" y2="${y(t).toFixed(1)}"/><text x="${W-pr+6}" y="${(y(t)+3.5).toFixed(1)}">${fmt(t,sc.dec)}</text>`});
+  sc.ticks.forEach(v=>{s+=`<line class="grid" x1="${pl}" x2="${W-pr}" y1="${y(v).toFixed(1)}" y2="${y(v).toFixed(1)}"/><text x="${W-pr+6}" y="${(y(v)+3.5).toFixed(1)}">${fmt(v,sc.dec)}</text>`});
   if(VH)s+=`<line class="grid" x1="${pl}" x2="${W-pr}" y1="${H-pb}" y2="${H-pb}"/><text x="${W-pr+6}" y="${(H-pb-VH/2+3.5).toFixed(1)}">${t.vol}</text>`;
   (sp.lines||[]).forEach(l=>{s+=`<line class="ref" x1="${pl}" x2="${W-pr}" y1="${y(l.y).toFixed(1)}" y2="${y(l.y).toFixed(1)}"/>`});
   // split: separa las velas «de antes» de las que llegaron después (resultado del simulador).
@@ -74,7 +74,7 @@ export function lineSVG(sp){
   const n=sp.data.length,dx=(W-pl-pr)/(n-1);
   const pts=a=>a.map((v,i)=>`${(pl+dx*i).toFixed(1)},${y(v).toFixed(1)}`).join(' ');
   let s=`<svg class="svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(sp.alt||t.graficoPrecio)}">`;
-  sc.ticks.forEach(t=>{s+=`<line class="grid" x1="${pl}" x2="${W-pr}" y1="${y(t).toFixed(1)}" y2="${y(t).toFixed(1)}"/><text x="${W-pr+6}" y="${(y(t)+3.5).toFixed(1)}">${fmt(t,sc.dec)}</text>`});
+  sc.ticks.forEach(v=>{s+=`<line class="grid" x1="${pl}" x2="${W-pr}" y1="${y(v).toFixed(1)}" y2="${y(v).toFixed(1)}"/><text x="${W-pr+6}" y="${(y(v)+3.5).toFixed(1)}">${fmt(v,sc.dec)}</text>`});
   s+=`<polyline class="ma" points="${pts(sp.ma)}"/><polyline class="px" points="${pts(sp.data)}"/>`;
   s+=`<line class="px" x1="${pl}" x2="${pl+20}" y1="12" y2="12"/><text class="lg" x="${pl+26}" y="16">${t.precio}</text><line class="ma" x1="${pl+86}" x2="${pl+106}" y1="12" y2="12"/><text class="lg" x="${pl+112}" y="16">${t.media30}</text>`;
   return s+'</svg>';

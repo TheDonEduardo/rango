@@ -12,7 +12,7 @@ npm run e2e     # navegador real y accesibilidad (requiere playwright y axe-core
 
 Es una PWA: desde el móvil se puede instalar («Añadir a pantalla de inicio») y funciona sin conexión.
 
-Necesita Node 18+ (solo para el servidor estático y los tests; la app no tiene dependencias).
+Necesita Node 20+ (solo para el servidor estático, los tests y `npm run empaquetar`; la app no tiene dependencias).
 
 ## Trabajar con Claude Code
 
