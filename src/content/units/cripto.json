@@ -5,6 +5,32 @@
   "title": "Criptomonedas",
   "blurb": "Qué son, qué riesgos tienen y cómo tributan.",
   "gate": false,
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Qué es una criptomoneda",
+      "texto": "Un activo digital que se registra en una blockchain, un registro compartido. Quien tiene las claves privadas controla las criptos: si las pierdes, no hay a quién reclamar.",
+      "ejemplo": "Bitcoin tiene un máximo de 21 millones de unidades. Una stablecoin intenta valer siempre 1 dólar."
+    },
+    {
+      "id": "g2",
+      "titulo": "No genera rentas",
+      "texto": "Una acción reparte beneficios y un bono paga intereses. Un bitcoin no genera nada: solo ganas si alguien paga más por él después.",
+      "ejemplo": "Su valor depende por completo de la demanda futura."
+    },
+    {
+      "id": "g3",
+      "titulo": "Volatilidad extrema",
+      "texto": "Las criptos pueden caer más de un 70 % en meses, y recuperar una caída así exige multiplicar el precio.",
+      "ejemplo": "Bitcoin cayó un 77 % entre noviembre de 2021 y noviembre de 2022: 1.000 € quedaron en 230 €. Para volver necesitaba subir un 335 %."
+    },
+    {
+      "id": "g4",
+      "titulo": "Limitar el peso y tributar",
+      "texto": "Si inviertes, que sea una parte pequeña que puedas perder entera. En España, vender o cambiar una cripto por otra tributa en la base del ahorro.",
+      "ejemplo": "Un 5 % de una cartera de 10.000 €: si cae a cero, pierdes 500 €, un 5 % del total."
+    }
+  ],
   "lessons": [
     {
       "id": "br1",
@@ -32,7 +58,8 @@
               "Guarda las claves que controlan tus criptos"
             ]
           ],
-          "why": "Quien tiene las claves privadas controla las criptos: por eso perderlas o que te las roben es irreversible."
+          "why": "Quien tiene las claves privadas controla las criptos: por eso perderlas o que te las roben es irreversible.",
+          "guia": "g1"
         },
         {
           "id": "br1-2",
@@ -45,7 +72,8 @@
             "Intereses garantizados por el Estado"
           ],
           "a": 0,
-          "why": "Una acción reparte beneficios y un bono paga cupones; el bitcoin solo da rentabilidad si sube su precio."
+          "why": "Una acción reparte beneficios y un bono paga cupones; el bitcoin solo da rentabilidad si sube su precio.",
+          "guia": "g2"
         },
         {
           "id": "br1-3",
@@ -53,7 +81,8 @@
           "q": "Bitcoin cayó alrededor de un 77 % entre noviembre de 2021 y noviembre de 2022. ¿Cuántos euros quedaban de 1.000 € comprados en el máximo?",
           "unit": "€",
           "a": 230,
-          "why": "1.000 × (1 − 0,77) = 230 €."
+          "why": "1.000 × (1 − 0,77) = 230 €.",
+          "guia": "g3"
         },
         {
           "id": "br1-4",
@@ -62,7 +91,8 @@
           "unit": "%",
           "a": 335,
           "why": "1 / 0,23 = 4,35 veces: una subida del 335 %.",
-          "tol": 0.5
+          "tol": 0.5,
+          "guia": "g3"
         }
       ]
     },
@@ -81,7 +111,8 @@
             "Se recuperan con tu DNI"
           ],
           "a": 0,
-          "why": "No hay ninguna entidad que pueda restaurar el acceso: sin las claves, las criptos quedan bloqueadas en la blockchain."
+          "why": "No hay ninguna entidad que pueda restaurar el acceso: sin las claves, las criptos quedan bloqueadas en la blockchain.",
+          "guia": "g1"
         },
         {
           "id": "br2-2",
@@ -95,7 +126,8 @@
           ],
           "a": 0,
           "why": "Vender, o cambiar una cripto por otra, genera una ganancia o pérdida patrimonial en la base del ahorro, desde el 19 %.",
-          "revisar": "2027-06"
+          "revisar": "2027-06",
+          "guia": "g4"
         },
         {
           "id": "br2-3",
@@ -103,7 +135,8 @@
           "q": "Una cripto es el 5 % de tu cartera de 10.000 € y cae a cero. ¿Cuántos euros pierdes?",
           "unit": "€",
           "a": 500,
-          "why": "10.000 × 5 % = 500 €."
+          "why": "10.000 × 5 % = 500 €.",
+          "guia": "g4"
         },
         {
           "id": "br2-4",
@@ -111,7 +144,8 @@
           "q": "En ese caso, ¿cuánto cae tu cartera total?",
           "unit": "%",
           "a": 5,
-          "why": "500 / 10.000 = 5 %: limitar el peso limita el daño aunque el activo desaparezca."
+          "why": "500 / 10.000 = 5 %: limitar el peso limita el daño aunque el activo desaparezca.",
+          "guia": "g4"
         }
       ]
     }

@@ -5,6 +5,32 @@
   "title": "Cómo funciona la bolsa",
   "blurb": "Quién compra, quién vende y cómo se forma el precio.",
   "gate": false,
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Mercado primario y secundario",
+      "texto": "La empresa recibe dinero solo cuando emite acciones, como en una salida a bolsa (OPV). Después, en el mercado secundario, los inversores se las compran y venden entre sí.",
+      "ejemplo": "Si compras un martes cualquiera, pagas a otro inversor que vende, no a la empresa."
+    },
+    {
+      "id": "g2",
+      "titulo": "Capitalización y precio",
+      "texto": "La capitalización es lo que vale la empresa en bolsa: acciones por precio. El precio es el del último acuerdo entre un comprador y un vendedor.",
+      "ejemplo": "50 millones de acciones a 12 € = 600 millones de euros."
+    },
+    {
+      "id": "g3",
+      "titulo": "La horquilla",
+      "texto": "Siempre hay un precio al que te venden y otro, algo menor, al que te compran. La diferencia es la horquilla: un coste que pagas aunque el precio no se mueva.",
+      "ejemplo": "Venta a 10,05 € y compra a 10,00 €: 5 céntimos. Comprar y vender al instante 1.000 acciones cuesta 50 €."
+    },
+    {
+      "id": "g4",
+      "titulo": "Órdenes en valores poco líquidos",
+      "texto": "Una orden a mercado asegura que compras, pero no el precio. Con horquillas anchas, usa una limitada para controlar lo que pagas.",
+      "ejemplo": "Horquilla de 10,00 / 10,40 €: a mercado pagarías un 4 % por encima del precio de compra."
+    }
+  ],
   "lessons": [
     {
       "id": "bj1",
@@ -32,7 +58,8 @@
               "Media de un grupo de acciones, como el IBEX 35"
             ]
           ],
-          "why": "La empresa solo recibe dinero en la salida a bolsa o al emitir acciones nuevas; el resto del tiempo, el dinero pasa de un inversor a otro."
+          "why": "La empresa solo recibe dinero en la salida a bolsa o al emitir acciones nuevas; el resto del tiempo, el dinero pasa de un inversor a otro.",
+          "guia": "g1"
         },
         {
           "id": "bj1-2",
@@ -45,7 +72,8 @@
             "A la CNMV"
           ],
           "a": 0,
-          "why": "En el mercado secundario el dinero va al vendedor; la empresa solo lo recibe cuando emite acciones nuevas, como en una OPV."
+          "why": "En el mercado secundario el dinero va al vendedor; la empresa solo lo recibe cuando emite acciones nuevas, como en una OPV.",
+          "guia": "g1"
         },
         {
           "id": "bj1-3",
@@ -53,7 +81,8 @@
           "q": "Una empresa tiene 50 millones de acciones a 12 €. ¿Cuál es su capitalización, en millones de euros?",
           "unit": "",
           "a": 600,
-          "why": "50 millones × 12 € = 600 millones de euros: lo que vale toda la empresa en bolsa."
+          "why": "50 millones × 12 € = 600 millones de euros: lo que vale toda la empresa en bolsa.",
+          "guia": "g2"
         },
         {
           "id": "bj1-4",
@@ -66,7 +95,8 @@
             "El valor contable de la empresa"
           ],
           "a": 0,
-          "why": "El precio es el último al que alguien compró y otro vendió: si hay más compradores dispuestos a pagar más, sube."
+          "why": "El precio es el último al que alguien compró y otro vendió: si hay más compradores dispuestos a pagar más, sube.",
+          "guia": "g2"
         }
       ]
     },
@@ -96,7 +126,8 @@
               "Fija el primer precio del día"
             ]
           ],
-          "why": "La orden a mercado asegura que compras pero no el precio; la limitada asegura el precio pero no que compres."
+          "why": "La orden a mercado asegura que compras pero no el precio; la limitada asegura el precio pero no que compres.",
+          "guia": "g4"
         },
         {
           "id": "bj2-2",
@@ -104,7 +135,8 @@
           "q": "La mejor oferta de venta está a 10,05 € y la mejor de compra, a 10,00 €. ¿Cuántos céntimos de horquilla hay?",
           "unit": "",
           "a": 5,
-          "why": "10,05 − 10,00 = 0,05 €: 5 céntimos por acción."
+          "why": "10,05 − 10,00 = 0,05 €: 5 céntimos por acción.",
+          "guia": "g3"
         },
         {
           "id": "bj2-3",
@@ -112,7 +144,8 @@
           "q": "Con esa horquilla, compras y vendes al instante 1.000 acciones. ¿Cuántos euros pierdes solo por la horquilla?",
           "unit": "€",
           "a": 50,
-          "why": "1.000 × 0,05 € = 50 €, aunque el precio no se haya movido."
+          "why": "1.000 × 0,05 € = 50 €, aunque el precio no se haya movido.",
+          "guia": "g3"
         },
         {
           "id": "bj2-4",
@@ -125,7 +158,8 @@
             "Ninguna: no se puede comprar"
           ],
           "a": 0,
-          "why": "A mercado pagarías 10,40 €, un 4 % por encima del precio de compra; con una limitada controlas lo que pagas."
+          "why": "A mercado pagarías 10,40 €, un 4 % por encima del precio de compra; con una limitada controlas lo que pagas.",
+          "guia": "g4"
         }
       ]
     }

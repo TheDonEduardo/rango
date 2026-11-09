@@ -5,6 +5,32 @@
   "title": "Ahorro y presupuesto",
   "blurb": "Antes de invertir: saber cuánto entra, cuánto sale y cuánto queda.",
   "gate": false,
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "El presupuesto 50/30/20",
+      "texto": "Una guía para empezar: un 50 % de tus ingresos a necesidades, un 30 % a deseos y un 20 % a ahorro. Lo importante es que el ahorro tenga su parte fija.",
+      "ejemplo": "Con 1.600 € al mes: 800 € a necesidades, 480 € a deseos y 320 € a ahorro."
+    },
+    {
+      "id": "g2",
+      "titulo": "Págate primero",
+      "texto": "Si esperas a ver qué sobra a fin de mes, no sobra. Transfiere el ahorro el día de cobro y gasta lo que queda.",
+      "ejemplo": "Con 1.800 € y un 20 %, transfieres 360 € cada mes: 4.320 € al año."
+    },
+    {
+      "id": "g3",
+      "titulo": "Los gastos pequeños suman",
+      "texto": "Los gastos diarios y las suscripciones que no usas parecen poca cosa, pero al año son cifras grandes. Y ahorrar poco con constancia también lo es.",
+      "ejemplo": "Un café de 2 € cada día laborable son 480 € al año. 100 € al mes durante 10 años al 0,5 % mensual son unos 16.400 €."
+    },
+    {
+      "id": "g4",
+      "titulo": "Primero, el colchón",
+      "texto": "Antes de invertir, reúne un fondo de emergencia de varios meses de gastos en liquidez. Sin él, un imprevisto te obligaría a vender quizá en el peor momento.",
+      "ejemplo": "Con 1.500 € de gastos al mes, un colchón de 6 meses son 9.000 €."
+    }
+  ],
   "lessons": [
     {
       "id": "bl1",
@@ -16,7 +42,8 @@
           "q": "Ingresas 1.600 € al mes. Con la regla 50/30/20, ¿cuánto destinas al ahorro?",
           "unit": "€",
           "a": 320,
-          "why": "El 20 % de 1.600 € son 320 € al mes."
+          "why": "El 20 % de 1.600 € son 320 € al mes.",
+          "guia": "g1"
         },
         {
           "id": "bl1-2",
@@ -24,7 +51,8 @@
           "q": "Con esos 1.600 €, ¿cuánto quedaría para necesidades, el 50 %?",
           "unit": "€",
           "a": 800,
-          "why": "1.600 × 0,5 = 800 € para alquiler, comida y suministros; 480 € para deseos."
+          "why": "1.600 × 0,5 = 800 € para alquiler, comida y suministros; 480 € para deseos.",
+          "guia": "g1"
         },
         {
           "id": "bl1-3",
@@ -48,7 +76,8 @@
               "Pequeños gastos diarios que suman mucho"
             ]
           ],
-          "why": "La regla 50/30/20 es una guía para empezar: lo importante es que el ahorro tenga su parte fija."
+          "why": "La regla 50/30/20 es una guía para empezar: lo importante es que el ahorro tenga su parte fija.",
+          "guia": "g1"
         },
         {
           "id": "bl1-4",
@@ -61,7 +90,8 @@
             "Recortar solo en vacaciones"
           ],
           "a": 0,
-          "why": "«Págate primero»: si los 320 € salen el día de cobro, gastas lo que queda y no al revés."
+          "why": "«Págate primero»: si los 320 € salen el día de cobro, gastas lo que queda y no al revés.",
+          "guia": "g2"
         },
         {
           "id": "bl1-5",
@@ -87,7 +117,8 @@
               "k": 12,
               "unit": "€"
             }
-          ]
+          ],
+          "guia": "g2"
         }
       ]
     },
@@ -101,7 +132,8 @@
           "q": "Tomas un café de 2 € cada día laborable, unos 20 al mes. ¿Cuántos euros gastas al año?",
           "unit": "€",
           "a": 480,
-          "why": "2 € × 20 × 12 = 480 € al año."
+          "why": "2 € × 20 × 12 = 480 € al año.",
+          "guia": "g3"
         },
         {
           "id": "bl2-2",
@@ -109,7 +141,8 @@
           "q": "Pagas una suscripción de 13 € al mes que no usas. ¿Cuántos euros pierdes al año?",
           "unit": "€",
           "a": 156,
-          "why": "13 × 12 = 156 € al año por algo que no usas."
+          "why": "13 × 12 = 156 € al año por algo que no usas.",
+          "guia": "g3"
         },
         {
           "id": "bl2-3",
@@ -118,7 +151,8 @@
           "unit": "",
           "a": 16.4,
           "why": "100 × (1,005¹²⁰ − 1) / 0,005 ≈ 16.388 €, de los que 12.000 € son aportaciones.",
-          "tol": 0.05
+          "tol": 0.05,
+          "guia": "g3"
         },
         {
           "id": "bl2-4",
@@ -131,7 +165,8 @@
             "Esperar a una caída del mercado"
           ],
           "a": 0,
-          "why": "Sin colchón, un imprevisto de 1.000 € te obligaría a vender quizá en el peor momento."
+          "why": "Sin colchón, un imprevisto de 1.000 € te obligaría a vender quizá en el peor momento.",
+          "guia": "g4"
         }
       ]
     }

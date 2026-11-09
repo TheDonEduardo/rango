@@ -5,6 +5,32 @@
   "title": "Tipos de activos",
   "blurb": "Acciones, bonos, materias primas y liquidez.",
   "gate": false,
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Dueño o acreedor",
+      "texto": "Con una acción eres dueño de una parte de la empresa; con un bono le prestas dinero y cobras intereses. También hay materias primas, como el oro, y liquidez.",
+      "ejemplo": "Si la empresa gana mucho más, el accionista se beneficia; el bonista cobra lo pactado."
+    },
+    {
+      "id": "g2",
+      "titulo": "Letras del Tesoro",
+      "texto": "Una letra es un préstamo a corto plazo al Estado. Se compra por menos de 1.000 € y al vencer devuelve 1.000 €: la ganancia es la diferencia.",
+      "ejemplo": "Compras a 970 € y recibes 1.000 €: ganas 30 €, un 3,09 % sobre lo invertido."
+    },
+    {
+      "id": "g3",
+      "titulo": "Más rentabilidad, más riesgo",
+      "texto": "Las acciones han rendido más que los depósitos a largo plazo porque compensan por sus caídas. Y recuperar una caída exige una subida mayor.",
+      "ejemplo": "Desde 1900, las acciones mundiales han dado en torno a un 5 % real anual. Una caída del 25 % pide una subida del 33,33 %."
+    },
+    {
+      "id": "g4",
+      "titulo": "Repartir entre activos",
+      "texto": "Combinar activos que se mueven distinto suaviza el resultado. Fíjate también en la liquidez: lo fácil que es vender sin perder valor.",
+      "ejemplo": "6.000 € en acciones que suben un 10 % y 4.000 € en bonos que suben un 2 %: ganas 680 €, un 6,8 %."
+    }
+  ],
   "lessons": [
     {
       "id": "bo1",
@@ -32,7 +58,8 @@
               "Dinero en cuenta o en depósito"
             ]
           ],
-          "why": "Con una acción eres dueño; con un bono, acreedor: cobras intereses pero no participas en los beneficios."
+          "why": "Con una acción eres dueño; con un bono, acreedor: cobras intereses pero no participas en los beneficios.",
+          "guia": "g1"
         },
         {
           "id": "bo1-2",
@@ -45,7 +72,8 @@
             "Una acción de pequeña empresa"
           ],
           "a": 0,
-          "why": "Una letra del Tesoro es un préstamo a corto plazo al Estado: su precio apenas se mueve y el riesgo de impago es muy bajo."
+          "why": "Una letra del Tesoro es un préstamo a corto plazo al Estado: su precio apenas se mueve y el riesgo de impago es muy bajo.",
+          "guia": "g2"
         },
         {
           "id": "bo1-3",
@@ -53,7 +81,8 @@
           "q": "Una letra del Tesoro a 12 meses se compra por 970 € y devuelve 1.000 €. ¿Cuántos euros ganas?",
           "unit": "€",
           "a": 30,
-          "why": "1.000 − 970 = 30 €: las letras no pagan cupón, ganas la diferencia."
+          "why": "1.000 − 970 = 30 €: las letras no pagan cupón, ganas la diferencia.",
+          "guia": "g2"
         },
         {
           "id": "bo1-4",
@@ -61,7 +90,8 @@
           "q": "¿Y qué rentabilidad es esa ganancia sobre lo invertido? (dos decimales)",
           "unit": "%",
           "a": 3.09,
-          "why": "30 / 970 = 3,09 %, algo más que el 3 % porque inviertes menos de 1.000 €."
+          "why": "30 / 970 = 3,09 %, algo más que el 3 % porque inviertes menos de 1.000 €.",
+          "guia": "g2"
         }
       ]
     },
@@ -80,7 +110,8 @@
             "Porque nunca bajan"
           ],
           "a": 0,
-          "why": "Las acciones mundiales han rendido en torno a un 5 % real anual desde 1900, pero con caídas de más del 50 %; esa prima es el pago por aguantarlas."
+          "why": "Las acciones mundiales han rendido en torno a un 5 % real anual desde 1900, pero con caídas de más del 50 %; esa prima es el pago por aguantarlas.",
+          "guia": "g3"
         },
         {
           "id": "bo2-2",
@@ -89,7 +120,8 @@
           "unit": "%",
           "a": 33.33,
           "why": "Queda en 0,75: 1 / 0,75 = 1,3333, una subida del 33,33 %.",
-          "tol": 0.01
+          "tol": 0.01,
+          "guia": "g3"
         },
         {
           "id": "bo2-3",
@@ -113,7 +145,8 @@
               "Tiempo que piensas mantener la inversión"
             ]
           ],
-          "why": "Un activo puede ser rentable pero poco líquido, como un piso: venderlo lleva meses."
+          "why": "Un activo puede ser rentable pero poco líquido, como un piso: venderlo lleva meses.",
+          "guia": "g4"
         },
         {
           "id": "bo2-4",
@@ -121,7 +154,8 @@
           "q": "Repartes 10.000 €: 60 % en acciones que suben un 10 % y 40 % en bonos que suben un 2 %. ¿Cuántos euros ganas?",
           "unit": "€",
           "a": 680,
-          "why": "6.000 × 10 % = 600 € y 4.000 × 2 % = 80 €: 680 € en total, un 6,8 %."
+          "why": "6.000 × 10 % = 600 € y 4.000 × 2 % = 80 €: 680 € en total, un 6,8 %.",
+          "guia": "g4"
         }
       ]
     }

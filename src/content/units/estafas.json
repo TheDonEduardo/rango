@@ -5,6 +5,32 @@
   "title": "Estafas y chiringuitos",
   "blurb": "Cómo reconocer un fraude antes de perder dinero.",
   "gate": false,
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Chiringuitos financieros",
+      "texto": "Un chiringuito ofrece inversiones sin estar autorizado. Antes de dar un euro, búscalo en los registros de la CNMV y en su lista de advertencias.",
+      "ejemplo": "Si te llaman sin haberlo pedido, cuelga y búscalo tú. Nunca instales programas de acceso remoto."
+    },
+    {
+      "id": "g2",
+      "titulo": "Garantizado y muy rentable no existe",
+      "texto": "A más rentabilidad esperada, más riesgo. Una rentabilidad alta y además garantizada es la señal más clara de fraude.",
+      "ejemplo": "Un 3 % mensual compuesto son un 43 % al año «garantizado»: ningún producto legítimo lo promete."
+    },
+    {
+      "id": "g3",
+      "titulo": "Cómo funciona un Ponzi",
+      "texto": "Un esquema Ponzi paga a los primeros con el dinero de los nuevos, sin negocio real detrás. Cuando las entradas no cubren los pagos prometidos, se hunde.",
+      "ejemplo": "Promete un 10 % mensual sobre 100.000 €: debe pagar 10.000 € al mes. Si solo entran 8.000 €, le faltan 2.000 € cada mes."
+    },
+    {
+      "id": "g4",
+      "titulo": "Qué te protege",
+      "texto": "El FOGAIN cubre hasta 100.000 € por inversor si una empresa de inversión autorizada no puede devolverte tus valores o tu dinero. Nunca cubre que la inversión pierda valor.",
+      "ejemplo": "Con un chiringuito no autorizado, no te cubre ningún fondo de garantía."
+    }
+  ],
   "lessons": [
     {
       "id": "bq1",
@@ -32,7 +58,8 @@
               "Donde compruebas si una entidad está autorizada"
             ]
           ],
-          "why": "La CNMV publica la lista de entidades autorizadas y una lista de advertencias sobre chiringuitos: mírala antes de invertir."
+          "why": "La CNMV publica la lista de entidades autorizadas y una lista de advertencias sobre chiringuitos: mírala antes de invertir.",
+          "guia": "g1"
         },
         {
           "id": "bq1-2",
@@ -45,7 +72,8 @@
             "Que hay que invertir rápido"
           ],
           "a": 0,
-          "why": "Rentabilidad alta y garantizada a la vez no existe: a más rentabilidad esperada, más riesgo."
+          "why": "Rentabilidad alta y garantizada a la vez no existe: a más rentabilidad esperada, más riesgo.",
+          "guia": "g2"
         },
         {
           "id": "bq1-3",
@@ -54,7 +82,8 @@
           "unit": "%",
           "a": 43,
           "why": "1,03¹² = 1,426: un 43 % anual garantizado, algo que ningún producto legítimo promete.",
-          "tol": 0.5
+          "tol": 0.5,
+          "guia": "g2"
         },
         {
           "id": "bq1-4",
@@ -67,7 +96,8 @@
             "Instalar el programa que te piden"
           ],
           "a": 0,
-          "why": "Las llamadas no solicitadas son la vía típica de los chiringuitos; instalar programas de acceso remoto les da tu cuenta."
+          "why": "Las llamadas no solicitadas son la vía típica de los chiringuitos; instalar programas de acceso remoto les da tu cuenta.",
+          "guia": "g1"
         }
       ]
     },
@@ -81,7 +111,8 @@
           "q": "Un Ponzi promete un 10 % mensual y ha captado 100.000 €. ¿Cuántos miles de euros debe pagar cada mes en «intereses»?",
           "unit": "",
           "a": 10,
-          "why": "100.000 × 10 % = 10.000 € al mes, sin ningún negocio real que los genere."
+          "why": "100.000 × 10 % = 10.000 € al mes, sin ningún negocio real que los genere.",
+          "guia": "g3"
         },
         {
           "id": "bq2-2",
@@ -89,7 +120,8 @@
           "q": "Si cada mes solo entran 8.000 € nuevos, ¿cuántos miles de euros le faltan al mes?",
           "unit": "",
           "a": 2,
-          "why": "10.000 − 8.000 = 2.000 € de agujero cada mes, y crece con cada nuevo partícipe."
+          "why": "10.000 − 8.000 = 2.000 € de agujero cada mes, y crece con cada nuevo partícipe.",
+          "guia": "g3"
         },
         {
           "id": "bq2-3",
@@ -102,7 +134,8 @@
             "Pasa a ser un fondo legal"
           ],
           "a": 0,
-          "why": "Como los pagos salen del dinero nuevo, en cuanto las entradas bajan de los pagos prometidos el esquema quiebra."
+          "why": "Como los pagos salen del dinero nuevo, en cuanto las entradas bajan de los pagos prometidos el esquema quiebra.",
+          "guia": "g3"
         },
         {
           "id": "bq2-4",
@@ -116,7 +149,8 @@
           ],
           "a": 0,
           "why": "Cubre hasta 100.000 € por inversor si una empresa de inversión autorizada no puede devolverte tus valores o efectivo; nunca cubre que la inversión pierda valor.",
-          "revisar": "2027-06"
+          "revisar": "2027-06",
+          "guia": "g4"
         }
       ]
     }

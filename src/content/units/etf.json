@@ -4,6 +4,32 @@
   "track": "basico",
   "title": "ETF e índices",
   "blurb": "Comprar todo un mercado de una vez y saber con qué compararte.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Qué es un índice",
+      "texto": "Un índice mide un grupo de empresas: el IBEX 35, 35 valores españoles; el S&P 500, unas 500 grandes de EE. UU. Es la referencia para saber si lo haces bien.",
+      "ejemplo": "Si tu cartera gana un 8 % y el S&P 500 un 15 %, lo habrías hecho mejor comprando el índice."
+    },
+    {
+      "id": "g2",
+      "titulo": "Pesos dentro del índice",
+      "texto": "En los índices ponderados por capitalización, cada empresa pesa según lo que vale en bolsa. Unas pocas grandes pueden mover todo el índice.",
+      "ejemplo": "A vale 600 M€, B 300 M€ y C 100 M€: A pesa un 60 %. Si solo A sube un 10 %, el índice sube un 6 %."
+    },
+    {
+      "id": "g3",
+      "titulo": "Qué es un ETF",
+      "texto": "Un ETF es un fondo que copia un índice y cotiza en bolsa como una acción. Con una sola compra tienes todas sus empresas, por un coste anual muy bajo (TER).",
+      "ejemplo": "10.000 € con un TER del 0,07 % cuestan 7 € al año. Un fondo activo al 1,5 % costaría 150 €."
+    },
+    {
+      "id": "g4",
+      "titulo": "Acumulación o distribución",
+      "texto": "Un ETF de distribución te paga los dividendos de sus empresas, y tributan cada año. Uno de acumulación los reinvierte y no pagas impuestos hasta vender.",
+      "ejemplo": "Si el índice sube un 12 % y el TER es del 0,20 %, el ETF de acumulación sube en torno a un 11,8 %."
+    }
+  ],
   "lessons": [
     {
       "id": "bd1",
@@ -20,7 +46,8 @@
             "El precio medio de todas las acciones del mundo"
           ],
           "a": 1,
-          "why": "El IBEX 35 agrupa 35 valores españoles y el S&P 500, unas 500 grandes empresas de EE. UU. Un índice no se compra directamente: se replica con fondos indexados o ETF."
+          "why": "El IBEX 35 agrupa 35 valores españoles y el S&P 500, unas 500 grandes empresas de EE. UU. Un índice no se compra directamente: se replica con fondos indexados o ETF.",
+          "guia": "g1"
         },
         {
           "id": "bd1-2",
@@ -28,7 +55,8 @@
           "q": "Un índice ponderado por capitalización tiene tres empresas: A vale 600 M€, B 300 M€ y C 100 M€. ¿Cuánto pesa A en el índice?",
           "unit": "%",
           "a": 60,
-          "why": "600 ÷ (600 + 300 + 100) = 600 ÷ 1.000 = 60 %. En los índices ponderados por capitalización, como el S&P 500, las mayores empresas mueven buena parte del índice."
+          "why": "600 ÷ (600 + 300 + 100) = 600 ÷ 1.000 = 60 %. En los índices ponderados por capitalización, como el S&P 500, las mayores empresas mueven buena parte del índice.",
+          "guia": "g2"
         },
         {
           "id": "bd1-3",
@@ -36,7 +64,8 @@
           "q": "Mismo índice: A (60 % del peso) sube un 10 % y B y C no se mueven. ¿Cuánto sube el índice?",
           "unit": "%",
           "a": 6,
-          "why": "60 % × 10 % = 6 %. Por eso unas pocas empresas grandes pueden hacer subir el índice aunque la mayoría de sus valores no suba."
+          "why": "60 % × 10 % = 6 %. Por eso unas pocas empresas grandes pueden hacer subir el índice aunque la mayoría de sus valores no suba.",
+          "guia": "g2"
         },
         {
           "id": "bd1-4",
@@ -49,7 +78,8 @@
             "Debes doblar el riesgo el año que viene"
           ],
           "a": 2,
-          "why": "El índice es tu referencia: si no lo superas a largo plazo, un fondo indexado te habría dado más con menos esfuerzo. Compárate siempre con el índice de tu mercado."
+          "why": "El índice es tu referencia: si no lo superas a largo plazo, un fondo indexado te habría dado más con menos esfuerzo. Compárate siempre con el índice de tu mercado.",
+          "guia": "g1"
         }
       ]
     },
@@ -68,7 +98,8 @@
             "Un derivado que caduca cada mes y se renueva"
           ],
           "a": 0,
-          "why": "Con una sola compra tienes todas las empresas del índice. Se compra y se vende durante la sesión, como una acción, con su precio y su spread."
+          "why": "Con una sola compra tienes todas las empresas del índice. Se compra y se vende durante la sesión, como una acción, con su precio y su spread.",
+          "guia": "g3"
         },
         {
           "id": "bd2-2",
@@ -76,7 +107,8 @@
           "q": "Inviertes 10.000 € en un ETF con un coste anual (TER) del 0,07 %. ¿Cuántos € te cuesta al año?",
           "unit": "€",
           "a": 7,
-          "why": "10.000 × 0,07 % = 7 € al año. Un fondo de gestión activa con un 1,5 % costaría 150 €, y esa diferencia se acumula año tras año."
+          "why": "10.000 × 0,07 % = 7 € al año. Un fondo de gestión activa con un 1,5 % costaría 150 €, y esa diferencia se acumula año tras año.",
+          "guia": "g3"
         },
         {
           "id": "bd2-3",
@@ -85,7 +117,8 @@
           "unit": "%",
           "a": 11.8,
           "tol": 0.06,
-          "why": "12 % − 0,20 % ≈ 11,8 %. El coste se descuenta del valor del fondo a diario; además puede haber una pequeña diferencia de seguimiento con el índice."
+          "why": "12 % − 0,20 % ≈ 11,8 %. El coste se descuenta del valor del fondo a diario; además puede haber una pequeña diferencia de seguimiento con el índice.",
+          "guia": "g4"
         },
         {
           "id": "bd2-4",
@@ -99,7 +132,8 @@
           ],
           "a": 1,
           "why": "Los reinvierte y el valor de cada participación crece. Uno de distribución te los paga, y en España cada cobro tributa en tu declaración de ese año.",
-          "revisar": "2027-06"
+          "revisar": "2027-06",
+          "guia": "g4"
         }
       ]
     }

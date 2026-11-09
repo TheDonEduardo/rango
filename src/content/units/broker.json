@@ -4,6 +4,32 @@
   "track": "basico",
   "title": "Cuenta y bróker",
   "blurb": "Dónde guardas tus acciones y lo que cuesta de verdad.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Tus acciones no son del bróker",
+      "texto": "El bróker guarda tus acciones separadas de su patrimonio: si quiebra, siguen siendo tuyas. Comprueba que está autorizado por la CNMV o por el supervisor de su país.",
+      "ejemplo": "Si aun así faltaran valores, el fondo de garantía cubre hasta 100.000 € por inversor en España."
+    },
+    {
+      "id": "g2",
+      "titulo": "Comisiones que se suman",
+      "texto": "Mira la comisión por operación, los mínimos, la custodia anual y el cambio de divisa. Con órdenes pequeñas, los mínimos pesan mucho.",
+      "ejemplo": "Un 0,1 % con mínimo de 4 €: comprar 2.000 € cuesta 4 €, un 0,2 %. Custodia del 0,2 % sobre 20.000 €: 40 € al año."
+    },
+    {
+      "id": "g3",
+      "titulo": "La divisa también cuenta",
+      "texto": "Al comprar en dólares, el resultado en euros depende también del tipo de cambio, y el bróker cobra por cambiar la moneda en cada compra y venta.",
+      "ejemplo": "Compras a 100 $ con el euro a 1,10 $ (90,91 €) y vendes a 100 $ con el euro a 1,20 $ (83,33 €): pierdes un 8,33 %."
+    },
+    {
+      "id": "g4",
+      "titulo": "Bróker extranjero",
+      "texto": "Como residente en España tributas aquí por todo, esté donde esté el bróker, y lo declaras tú. Si tienes más de 50.000 € en valores fuera de España, además presentas el Modelo 720, que es informativo.",
+      "ejemplo": "60.000 € en un bróker extranjero: declaras tus ganancias en la renta y presentas el 720."
+    }
+  ],
   "lessons": [
     {
       "id": "bf1",
@@ -20,7 +46,8 @@
             "Están a tu nombre, separadas de las del bróker"
           ],
           "a": 3,
-          "why": "Las acciones de los clientes no son del bróker y deben estar separadas de su patrimonio. Si aun así no te las devuelven, en España un fondo de garantía cubre hasta 100.000 € por cliente."
+          "why": "Las acciones de los clientes no son del bróker y deben estar separadas de su patrimonio. Si aun así no te las devuelven, en España un fondo de garantía cubre hasta 100.000 € por cliente.",
+          "guia": "g1"
         },
         {
           "id": "bf1-2",
@@ -28,7 +55,8 @@
           "q": "El bróker cobra un 0,1 % por operación, con un mínimo de 4 €. Compras 2.000 € de acciones. ¿Cuánto pagas de comisión?",
           "unit": "€",
           "a": 4,
-          "why": "2.000 × 0,1 % = 2 €, pero el mínimo es 4 €: pagas 4 €, un 0,2 % de la compra. Con órdenes pequeñas manda el mínimo."
+          "why": "2.000 × 0,1 % = 2 €, pero el mínimo es 4 €: pagas 4 €, un 0,2 % de la compra. Con órdenes pequeñas manda el mínimo.",
+          "guia": "g2"
         },
         {
           "id": "bf1-3",
@@ -36,7 +64,8 @@
           "q": "Tu bróker cobra una custodia del 0,2 % anual y tu cartera vale 20.000 €. ¿Cuánto pagas al año?",
           "unit": "€",
           "a": 40,
-          "why": "20.000 × 0,2 % = 40 € al año, aunque no operes. Muchos brókeres ya no cobran custodia: compáralo antes de abrir la cuenta."
+          "why": "20.000 × 0,2 % = 40 € al año, aunque no operes. Muchos brókeres ya no cobran custodia: compáralo antes de abrir la cuenta.",
+          "guia": "g2"
         },
         {
           "id": "bf1-4",
@@ -49,7 +78,8 @@
             "Una tasa fija por entrar en el mercado"
           ],
           "a": 0,
-          "why": "Cada compra y cada venta convierten euros y dólares, y el bróker cobra por ello: según el bróker, de casi nada a más de un 0,5 % por operación. Míralo tanto como la comisión de compraventa."
+          "why": "Cada compra y cada venta convierten euros y dólares, y el bróker cobra por ello: según el bróker, de casi nada a más de un 0,5 % por operación. Míralo tanto como la comisión de compraventa.",
+          "guia": "g3"
         }
       ]
     },
@@ -69,7 +99,8 @@
           ],
           "a": 2,
           "why": "El Modelo 720 es informativo: declara los valores depositados fuera de España cuando superan 50.000 €. No es un impuesto, pero no presentarlo puede acarrear sanciones.",
-          "revisar": "2027-06"
+          "revisar": "2027-06",
+          "guia": "g4"
         },
         {
           "id": "bf2-2",
@@ -83,7 +114,8 @@
           ],
           "a": 0,
           "why": "Como residente en España tributas aquí por todo, esté donde esté el bróker. Las operaciones de un bróker extranjero no suelen aparecer en los datos fiscales de Hacienda: las declaras tú con sus informes.",
-          "revisar": "2027-06"
+          "revisar": "2027-06",
+          "guia": "g4"
         },
         {
           "id": "bf2-3",
@@ -92,7 +124,8 @@
           "unit": "%",
           "a": 8.33,
           "tol": 0.02,
-          "why": "Compra: 100 ÷ 1,10 = 90,91 €. Venta: 100 ÷ 1,20 = 83,33 €. Pierdes un 8,33 % aunque la acción no se haya movido: el dólar ha perdido valor frente al euro."
+          "why": "Compra: 100 ÷ 1,10 = 90,91 €. Venta: 100 ÷ 1,20 = 83,33 €. Pierdes un 8,33 % aunque la acción no se haya movido: el dólar ha perdido valor frente al euro.",
+          "guia": "g3"
         },
         {
           "id": "bf2-4",
@@ -100,7 +133,8 @@
           "q": "Compras 1.000 € de acciones de EE. UU. con una comisión de 2 € y un 0,5 % por el cambio de divisa, y pagas lo mismo al vender. ¿Cuánto pagas en total?",
           "unit": "€",
           "a": 14,
-          "why": "Compra: 2 + 1.000 × 0,5 % = 7 €. Venta: otros 7 €. En total 14 €, un 1,4 % de la operación: la divisa cuesta más que la comisión."
+          "why": "Compra: 2 + 1.000 × 0,5 % = 7 €. Venta: otros 7 €. En total 14 €, un 1,4 % de la operación: la divisa cuesta más que la comisión.",
+          "guia": "g3"
         }
       ]
     }

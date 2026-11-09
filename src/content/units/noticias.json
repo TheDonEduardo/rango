@@ -5,6 +5,32 @@
   "title": "Leer noticias financieras",
   "blurb": "Entender titulares y separar el ruido de la información.",
   "gate": false,
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Leer un titular",
+      "texto": "Los titulares exageran: «desplome» para un día normal. Mira la cifra y compárala con lo habitual antes de reaccionar.",
+      "ejemplo": "El IBEX en 11.000 puntos cae un 1,2 %: 132 puntos. Pasa decenas de veces al año; un desplome real es un 20 % o más."
+    },
+    {
+      "id": "g2",
+      "titulo": "Términos que vas a leer",
+      "texto": "Un punto básico es una centésima de punto porcentual. «Interanual» compara con el mismo mes del año anterior. El consenso es la media de lo que esperan los analistas.",
+      "ejemplo": "El BCE sube los tipos 25 puntos básicos desde el 2,00 %: quedan en el 2,25 %."
+    },
+    {
+      "id": "g3",
+      "titulo": "Lo que mueve el precio",
+      "texto": "La bolsa reacciona a la diferencia entre el dato y lo que se esperaba, no al dato en sí. Una mala noticia menos mala de lo previsto puede hacer subir la acción.",
+      "ejemplo": "Gana 500 millones, un 20 % menos que los 625 del año anterior, pero bate el consenso: la acción sube."
+    },
+    {
+      "id": "g4",
+      "titulo": "Ruido y conflictos de interés",
+      "texto": "Si inviertes a largo plazo, casi ninguna noticia diaria cambia tu plan. Ante promesas espectaculares, pregunta quién lo dice y qué gana con ello.",
+      "ejemplo": "Multiplicar por 10 exige subir un 900 %. Quien lo promete a menudo tiene acciones o cobra por publicarlo."
+    }
+  ],
   "lessons": [
     {
       "id": "bp1",
@@ -21,7 +47,8 @@
             "Una caída que nunca se recupera"
           ],
           "a": 0,
-          "why": "Movimientos diarios de más del 1 % ocurren decenas de veces al año; un desplome real es una caída del 20 % o más."
+          "why": "Movimientos diarios de más del 1 % ocurren decenas de veces al año; un desplome real es una caída del 20 % o más.",
+          "guia": "g1"
         },
         {
           "id": "bp1-2",
@@ -29,7 +56,8 @@
           "q": "El IBEX está en 11.000 puntos y cae un 1,2 %. ¿Cuántos puntos pierde?",
           "unit": "",
           "a": 132,
-          "why": "11.000 × 1,2 % = 132 puntos."
+          "why": "11.000 × 1,2 % = 132 puntos.",
+          "guia": "g1"
         },
         {
           "id": "bp1-3",
@@ -53,7 +81,8 @@
               "Media de las previsiones de los analistas"
             ]
           ],
-          "why": "25 puntos básicos son 0,25 puntos porcentuales: el tamaño habitual de una subida o bajada de tipos."
+          "why": "25 puntos básicos son 0,25 puntos porcentuales: el tamaño habitual de una subida o bajada de tipos.",
+          "guia": "g2"
         },
         {
           "id": "bp1-4",
@@ -61,7 +90,8 @@
           "q": "El BCE sube los tipos 25 puntos básicos desde el 2,00 %. ¿En qué tipo quedan?",
           "unit": "%",
           "a": 2.25,
-          "why": "25 puntos básicos = 0,25 puntos: 2,00 + 0,25 = 2,25 %."
+          "why": "25 puntos básicos = 0,25 puntos: 2,00 + 0,25 = 2,25 %.",
+          "guia": "g2"
         }
       ]
     },
@@ -80,7 +110,8 @@
             "Por un error en la noticia"
           ],
           "a": 0,
-          "why": "El precio ya descontaba una caída mayor: lo que mueve la acción es la diferencia con lo esperado, no con el año pasado."
+          "why": "El precio ya descontaba una caída mayor: lo que mueve la acción es la diferencia con lo esperado, no con el año pasado.",
+          "guia": "g3"
         },
         {
           "id": "bp2-2",
@@ -88,7 +119,8 @@
           "q": "Esa empresa gana 500 millones, un 20 % menos que el año anterior. ¿Cuántos millones ganó el año anterior?",
           "unit": "",
           "a": 625,
-          "why": "500 / 0,80 = 625 millones; comprobación: 625 × 0,8 = 500."
+          "why": "500 / 0,80 = 625 millones; comprobación: 625 × 0,8 = 500.",
+          "guia": "g3"
         },
         {
           "id": "bp2-3",
@@ -101,7 +133,8 @@
             "Comprar con cada buena noticia"
           ],
           "a": 0,
-          "why": "Tu plan está pensado para 20 años o más: un titular de hoy no cambia el reparto ni el plazo."
+          "why": "Tu plan está pensado para 20 años o más: un titular de hoy no cambia el reparto ni el plazo.",
+          "guia": "g4"
         },
         {
           "id": "bp2-4",
@@ -114,7 +147,8 @@
             "Cuándo venderé con el beneficio"
           ],
           "a": 0,
-          "why": "Para multiplicar por 10 hace falta subir un 900 %; quien lo promete a menudo tiene acciones o cobra por publicarlo."
+          "why": "Para multiplicar por 10 hace falta subir un 900 %; quien lo promete a menudo tiene acciones o cobra por publicarlo.",
+          "guia": "g4"
         }
       ]
     }

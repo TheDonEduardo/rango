@@ -5,6 +5,32 @@
   "title": "El dinero y el interés",
   "blurb": "Interés simple y compuesto, TIN, TAE e IPC.",
   "gate": false,
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Interés simple y compuesto",
+      "texto": "Con interés simple, cobras siempre sobre el capital inicial. Con interés compuesto, los intereses se suman y también rinden: interés sobre interés.",
+      "ejemplo": "1.000 € al 5 % durante 3 años: 150 € con interés simple y 157,63 € con compuesto."
+    },
+    {
+      "id": "g2",
+      "titulo": "La regla del 72",
+      "texto": "Para saber cuántos años tarda en duplicarse tu dinero, divide 72 entre la rentabilidad anual. Sirve igual para ver cómo la inflación reduce lo que puedes comprar.",
+      "ejemplo": "Al 6 % anual, tu dinero se duplica en unos 12 años; al 3 %, en 24."
+    },
+    {
+      "id": "g3",
+      "titulo": "TIN y TAE",
+      "texto": "El TIN es el interés sin más; la TAE incluye comisiones y cada cuánto se pagan los intereses. Para comparar productos, mira siempre la TAE.",
+      "ejemplo": "Un 3 % TIN pagado cada mes es un 3,04 % TAE. Un 3 % TIN con 20 € de comisión sobre 1.000 € rinde solo un 1 %."
+    },
+    {
+      "id": "g4",
+      "titulo": "Inflación",
+      "texto": "La inflación es la subida general de precios; en España se mide con el IPC. Si tu dinero rinde menos que la inflación, pierdes poder de compra.",
+      "ejemplo": "La cesta pasa de 100 € a 104 €: un 4 % de inflación. Con los mismos euros compras un 4 % menos."
+    }
+  ],
   "lessons": [
     {
       "id": "bk1",
@@ -16,7 +42,8 @@
           "q": "Depositas 1.000 € al 5 % de interés simple durante 3 años. ¿Cuántos euros de intereses cobras?",
           "unit": "€",
           "a": 150,
-          "why": "1.000 × 5 % = 50 € cada año; 50 × 3 = 150 €."
+          "why": "1.000 × 5 % = 50 € cada año; 50 × 3 = 150 €.",
+          "guia": "g1"
         },
         {
           "id": "bk1-2",
@@ -25,7 +52,8 @@
           "unit": "€",
           "a": 157.63,
           "why": "1.000 × 1,05³ = 1.157,63 €: 7,63 € más que con interés simple, porque los intereses también rinden.",
-          "tol": 0.01
+          "tol": 0.01,
+          "guia": "g1"
         },
         {
           "id": "bk1-3",
@@ -33,7 +61,8 @@
           "q": "Regla del 72: ¿en cuántos años se duplica tu dinero al 6 % anual?",
           "unit": "",
           "a": 12,
-          "why": "72 / 6 = 12 años. Al 3 % tardaría el doble, 24 años."
+          "why": "72 / 6 = 12 años. Al 3 % tardaría el doble, 24 años.",
+          "guia": "g2"
         },
         {
           "id": "bk1-4",
@@ -46,7 +75,8 @@
             "Solo funciona con las hipotecas"
           ],
           "a": 0,
-          "why": "Al 5 %, el primer año ganas 50 € sobre 1.000 €; el segundo, 52,50 € sobre 1.050 €. La diferencia crece cada año."
+          "why": "Al 5 %, el primer año ganas 50 € sobre 1.000 €; el segundo, 52,50 € sobre 1.050 €. La diferencia crece cada año.",
+          "guia": "g1"
         }
       ]
     },
@@ -76,7 +106,8 @@
               "Fija los tipos de interés oficiales"
             ]
           ],
-          "why": "Para comparar productos se usa la TAE, porque incluye comisiones y cada cuánto se pagan los intereses."
+          "why": "Para comparar productos se usa la TAE, porque incluye comisiones y cada cuánto se pagan los intereses.",
+          "guia": "g3"
         },
         {
           "id": "bk2-2",
@@ -84,7 +115,8 @@
           "q": "Una cuenta paga un 3 % TIN con liquidación mensual. ¿Cuál es su TAE? (dos decimales)",
           "unit": "%",
           "a": 3.04,
-          "why": "Cada mes paga un 0,25 %: 1,0025¹² − 1 = 3,04 %. Cobrar antes hace que los intereses también rindan."
+          "why": "Cada mes paga un 0,25 %: 1,0025¹² − 1 = 3,04 %. Cobrar antes hace que los intereses también rindan.",
+          "guia": "g3"
         },
         {
           "id": "bk2-3",
@@ -97,7 +129,8 @@
             "No se puede saber"
           ],
           "a": 0,
-          "why": "B paga 30 € y cobra 20 €: 10 € netos, un 1 %; A paga 29 €. Por eso hay que comparar la TAE."
+          "why": "B paga 30 € y cobra 20 €: 10 € netos, un 1 %; A paga 29 €. Por eso hay que comparar la TAE.",
+          "guia": "g3"
         },
         {
           "id": "bk2-4",
@@ -105,7 +138,8 @@
           "q": "La cesta de la compra costaba 100 € y un año después cuesta 104 €. ¿Cuál ha sido la inflación?",
           "unit": "%",
           "a": 4,
-          "why": "(104 − 100) / 100 = 4 %: con los mismos euros compras un 4 % menos."
+          "why": "(104 − 100) / 100 = 4 %: con los mismos euros compras un 4 % menos.",
+          "guia": "g4"
         }
       ]
     }

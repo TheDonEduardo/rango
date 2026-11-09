@@ -5,6 +5,32 @@
   "title": "Impuestos en España",
   "blurb": "Qué tributa, cuánto y cómo aprovechar las pérdidas.",
   "revisar": "2027-06",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "La ganancia que tributa",
+      "texto": "Al vender, tributas por la diferencia entre lo que recibes y lo que pagaste, restando las comisiones. Va a la base del ahorro.",
+      "ejemplo": "Compras por 2.000 €, vendes por 2.600 € y pagas 10 € de gastos: la ganancia es de 590 €."
+    },
+    {
+      "id": "g2",
+      "titulo": "Tramos del ahorro",
+      "texto": "La base del ahorro tributa por tramos: un 19 % los primeros 6.000 € y un 21 % de 6.000 a 50.000 €, con tipos más altos por encima. Cada tipo se aplica solo a su tramo.",
+      "ejemplo": "Ganancia de 8.000 €: 6.000 × 19 % + 2.000 × 21 % = 1.560 €, un 19,5 % de media."
+    },
+    {
+      "id": "g3",
+      "titulo": "Dividendos",
+      "texto": "Al cobrar un dividendo, te retienen un 19 % a cuenta y lo descuentas en la declaración. En EE. UU. retienen un 15 % si firmas el W-8BEN; parte se recupera por doble imposición.",
+      "ejemplo": "Dividendo español de 100 €: cobras 81 € y los 19 € retenidos cuentan como ya pagados."
+    },
+    {
+      "id": "g4",
+      "titulo": "Pérdidas y regla de los dos meses",
+      "texto": "Las pérdidas compensan las ganancias del año y, si sobran, se arrastran cuatro años. Pero si recompras el mismo valor en los dos meses anteriores o posteriores, la pérdida se aplaza.",
+      "ejemplo": "Ganas 900 € y pierdes 400 €: tributas por 500 €. Al 19 %, de 500 € te quedan 405 €."
+    }
+  ],
   "lessons": [
     {
       "id": "be1",
@@ -16,7 +42,8 @@
           "q": "Compras 100 acciones a 20,00 € y las vendes a 26,00 €. Entre compra y venta pagaste 10 € de comisiones. ¿Qué ganancia declaras?",
           "unit": "€",
           "a": 590,
-          "why": "Venta 2.600 € − compra 2.000 € − 10 € de gastos = 590 €. Las comisiones de compra y venta reducen la ganancia que declaras."
+          "why": "Venta 2.600 € − compra 2.000 € − 10 € de gastos = 590 €. Las comisiones de compra y venta reducen la ganancia que declaras.",
+          "guia": "g1"
         },
         {
           "id": "be1-2",
@@ -46,7 +73,8 @@
           "unit": "%",
           "a": 19.5,
           "tol": 0.06,
-          "why": "6.000 × 19 % = 1.140 € y 2.000 × 21 % = 420 €: 1.560 € en total, un 19,5 % de media. Cada tipo solo grava la parte que cae dentro de su tramo."
+          "why": "6.000 × 19 % = 1.140 € y 2.000 × 21 % = 420 €: 1.560 € en total, un 19,5 % de media. Cada tipo solo grava la parte que cae dentro de su tramo.",
+          "guia": "g2"
         },
         {
           "id": "be1-3",
@@ -59,7 +87,8 @@
             "Recibes 50 €: Hacienda se queda la mitad"
           ],
           "a": 1,
-          "why": "Se retienen 19 € a cuenta y los descuentas en tu declaración. El dividendo va a la base del ahorro, igual que las ganancias por venta."
+          "why": "Se retienen 19 € a cuenta y los descuentas en tu declaración. El dividendo va a la base del ahorro, igual que las ganancias por venta.",
+          "guia": "g3"
         },
         {
           "id": "be1-4",
@@ -72,7 +101,8 @@
             "Un 50 %, sin poder deducirlo"
           ],
           "a": 0,
-          "why": "El convenio entre España y EE. UU. limita la retención al 15 % si firmas el W-8BEN; sin él, es del 30 %. En tu declaración puedes deducir esa retención por doble imposición internacional."
+          "why": "El convenio entre España y EE. UU. limita la retención al 15 % si firmas el W-8BEN; sin él, es del 30 %. En tu declaración puedes deducir esa retención por doble imposición internacional.",
+          "guia": "g3"
         }
       ]
     },
@@ -86,7 +116,8 @@
           "q": "Este año ganas 900 € al vender unas acciones y pierdes 400 € con otras. ¿Por qué ganancia tributas?",
           "unit": "€",
           "a": 500,
-          "why": "900 − 400 = 500 €. Las pérdidas por venta compensan las ganancias del mismo año."
+          "why": "900 − 400 = 500 €. Las pérdidas por venta compensan las ganancias del mismo año.",
+          "guia": "g4"
         },
         {
           "id": "be2-2",
@@ -99,7 +130,8 @@
             "Solo cuentan si compras más acciones"
           ],
           "a": 1,
-          "why": "Se declaran igualmente y se arrastran a los cuatro años siguientes. Además, pueden compensar hasta un 25 % del saldo de dividendos e intereses."
+          "why": "Se declaran igualmente y se arrastran a los cuatro años siguientes. Además, pueden compensar hasta un 25 % del saldo de dividendos e intereses.",
+          "guia": "g4"
         },
         {
           "id": "be2-3",
@@ -112,7 +144,8 @@
             "Sí, pero solo la mitad de la pérdida"
           ],
           "a": 2,
-          "why": "Regla de los dos meses en valores cotizados: si compras valores iguales en los dos meses anteriores o posteriores a la venta con pérdidas, no la imputas hasta que vendas esos valores."
+          "why": "Regla de los dos meses en valores cotizados: si compras valores iguales en los dos meses anteriores o posteriores a la venta con pérdidas, no la imputas hasta que vendas esos valores.",
+          "guia": "g4"
         },
         {
           "id": "be2-4",
@@ -120,7 +153,8 @@
           "q": "Ganancia de 500 €, toda dentro del primer tramo (19 %). ¿Cuánto te queda después de impuestos?",
           "unit": "€",
           "a": 405,
-          "why": "500 × (1 − 0,19) = 405 €. Calcula siempre tu rentabilidad después de impuestos: es la que de verdad se queda en tu bolsillo."
+          "why": "500 × (1 − 0,19) = 405 €. Calcula siempre tu rentabilidad después de impuestos: es la que de verdad se queda en tu bolsillo.",
+          "guia": "g4"
         }
       ]
     }

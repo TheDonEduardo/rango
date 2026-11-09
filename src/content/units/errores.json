@@ -5,6 +5,32 @@
   "gate": false,
   "title": "Errores del principiante",
   "blurb": "Lo que más dinero cuesta al empezar, y cómo evitarlo.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Las comisiones con poco dinero",
+      "texto": "Con importes pequeños, una comisión fija se come una parte grande de la ganancia. Y operar mucho multiplica el coste aunque cada orden parezca barata.",
+      "ejemplo": "9,95 € al comprar y al vender sobre 1.000 € son un 1,99 %. Diez operaciones al mes a 5 € son 600 € al año."
+    },
+    {
+      "id": "g2",
+      "titulo": "Todo en una acción",
+      "texto": "Concentrar casi todo en una empresa hace que un solo tropiezo te hunda. Y lo que necesitas pronto no va a bolsa: en dos años puede estar un 30 % abajo.",
+      "ejemplo": "4.000 € de 5.000 € en una acción: si cae a la mitad, pierdes un 40 % de todo tu dinero."
+    },
+    {
+      "id": "g3",
+      "titulo": "Promediar y apalancarse",
+      "texto": "Comprar más de algo que cae dobla la apuesta en lo que va mal. El apalancamiento multiplica cada movimiento, también las caídas.",
+      "ejemplo": "Con apalancamiento de 10 veces, una caída del 8 % te quita un 80 %."
+    },
+    {
+      "id": "g4",
+      "titulo": "Esperar a «recuperar»",
+      "texto": "Al mercado no le importa a qué precio compraste. La pregunta útil es si hoy volverías a comprar esa acción; si no, mantenerla es una decisión, no una espera.",
+      "ejemplo": "Desconfía también de quien promete que algo «se multiplicará por 10»: nadie lo sabe."
+    }
+  ],
   "lessons": [
     {
       "id": "bi1",
@@ -17,7 +43,8 @@
           "unit": "%",
           "a": 1.99,
           "why": "(9,95 + 9,95) ÷ 1.000 = 1,99 %. Con importes pequeños, las comisiones fijas se comen buena parte de la ganancia: busca un bróker barato o aporta menos veces y más cantidad.",
-          "tol": 0.02
+          "tol": 0.02,
+          "guia": "g1"
         },
         {
           "id": "bi1-2",
@@ -30,7 +57,8 @@
             "Comprar ya, antes de que suba"
           ],
           "a": 1,
-          "why": "Nadie sabe qué acción se multiplicará. Si te interesa, investígala tú y pon solo lo que podrías perder sin que te cambie la vida."
+          "why": "Nadie sabe qué acción se multiplicará. Si te interesa, investígala tú y pon solo lo que podrías perder sin que te cambie la vida.",
+          "guia": "g4"
         },
         {
           "id": "bi1-3",
@@ -38,7 +66,8 @@
           "q": "Tienes 5.000 € para invertir y pones 4.000 € en una sola acción. ¿Qué porcentaje de tu capital depende de esa empresa?",
           "unit": "%",
           "a": 80,
-          "why": "4.000 ÷ 5.000 = 80 %. Si esa empresa cae a la mitad, pierdes un 40 % de todo tu capital: por eso se reparte entre muchas."
+          "why": "4.000 ÷ 5.000 = 80 %. Si esa empresa cae a la mitad, pierdes un 40 % de todo tu capital: por eso se reparte entre muchas.",
+          "guia": "g2"
         },
         {
           "id": "bi1-4",
@@ -51,7 +80,8 @@
             "Lo que sobra tras el fondo de emergencia"
           ],
           "a": 0,
-          "why": "En 2 años la bolsa puede estar un 30 % por debajo. Lo que vas a necesitar pronto va en liquidez o renta fija a corto plazo."
+          "why": "En 2 años la bolsa puede estar un 30 % por debajo. Lo que vas a necesitar pronto va en liquidez o renta fija a corto plazo.",
+          "guia": "g2"
         }
       ]
     },
@@ -65,7 +95,8 @@
           "q": "Compras acciones a 20 € y caen a 10 €. Compras la misma cantidad de acciones otra vez. ¿Cuál es tu precio medio?",
           "unit": "€",
           "a": 15,
-          "why": "(20 + 10) ÷ 2 = 15 €. Promediar a la baja dobla la apuesta en algo que va mal; hacerlo para «recuperar antes» es uno de los errores que más cuestan."
+          "why": "(20 + 10) ÷ 2 = 15 €. Promediar a la baja dobla la apuesta en algo que va mal; hacerlo para «recuperar antes» es uno de los errores que más cuestan.",
+          "guia": "g3"
         },
         {
           "id": "bi2-2",
@@ -73,7 +104,8 @@
           "q": "Operas con un apalancamiento de 10 veces y el precio cae un 8 %. ¿Qué porcentaje de tu dinero pierdes?",
           "unit": "%",
           "a": 80,
-          "why": "10 × 8 % = 80 %. Con apalancamiento, un movimiento normal del mercado puede borrar casi todo tu dinero en días."
+          "why": "10 × 8 % = 80 %. Con apalancamiento, un movimiento normal del mercado puede borrar casi todo tu dinero en días.",
+          "guia": "g3"
         },
         {
           "id": "bi2-3",
@@ -86,7 +118,8 @@
             "Interés compuesto"
           ],
           "a": 0,
-          "why": "Al mercado no le importa a qué precio compraste. La pregunta útil es si hoy la comprarías: si la respuesta es no, mantenerla es otra decisión de inversión."
+          "why": "Al mercado no le importa a qué precio compraste. La pregunta útil es si hoy la comprarías: si la respuesta es no, mantenerla es otra decisión de inversión.",
+          "guia": "g4"
         },
         {
           "id": "bi2-4",
@@ -94,7 +127,8 @@
           "q": "Haces 10 operaciones al mes y pagas 5 € por cada una. ¿Cuántos euros pagas al año en comisiones?",
           "unit": "€",
           "a": 600,
-          "why": "10 × 12 × 5 = 600 € al año. Con una cartera de 6.000 €, eso es un 10 % que tienes que ganar solo para quedarte igual."
+          "why": "10 × 12 × 5 = 600 € al año. Con una cartera de 6.000 €, eso es un 10 % que tienes que ganar solo para quedarte igual.",
+          "guia": "g1"
         }
       ]
     }
