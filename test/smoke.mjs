@@ -74,6 +74,7 @@ const lint = (ex, w) => {
         if (c > 1.5 * o) errs.push(`${w}: la opción correcta (${c} caracteres) es mucho más larga que las demás (${o})`);
       }
       if (ex.t === 'num' && typeof ex.a !== 'number') errs.push(w + ': a no numérico');
+      if (ex.t === 'choice' && ex.porque === undefined && !ex.caso) errs.push(w + ': falta porque (por qué no es correcta cada opción)');
       if (ex.porque !== undefined) {
         if (ex.t !== 'choice' || !Array.isArray(ex.porque) || ex.porque.length !== ex.opts.length || ex.porque[ex.a] !== null || ex.porque.some((p, k) => k !== ex.a && !(typeof p === 'string' && p.length > 10)))
           errs.push(w + ': porque debe tener una explicación por opción incorrecta y null en la correcta');
