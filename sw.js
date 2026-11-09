@@ -9,6 +9,7 @@ const PRECACHE = [
   'manifest.webmanifest',
   'src/app.js',
   'src/charts.js',
+  'src/compartir.js',
   'src/config.js',
   'src/content.js',
   'src/figuras.js',

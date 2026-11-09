@@ -406,6 +406,7 @@ if (fs.existsSync(semPath)) {
   if (T.leerCopia('{"xp":5}') || T.leerCopia('no es json') || T.leerCopia(JSON.stringify({app: 'rango', estado: {xp: 'mucho'}}))) errs.push('se acepta una copia no válida');
   const vieja = T.leerCopia(JSON.stringify({app: 'rango', estado: {xp: 10, done: {}, srs: {'ba1#0': {step: 0, due: '2026-01-01'}}}}));
   if (!vieja || !vieja.estado.srs['ba1-1'] || vieja.estado.v !== st.v) errs.push('una copia antigua no se migra al recuperarla');
+  T.openStats(); if (!app.innerHTML.includes('data-act="compartir"')) errs.push('las estadísticas no permiten compartir el progreso');
   T.openStats(); if (!app.innerHTML.includes('data-act="exportar"') || !app.innerHTML.includes('data-act="importar"')) errs.push('las estadísticas no ofrecen la copia de seguridad');
   T.goHome();
 }

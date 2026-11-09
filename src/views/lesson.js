@@ -41,14 +41,14 @@ function testResultHTML(r){
   return `<div class="res"><div class="res-main"><div class="res-top">${glyph('done',r.score/r.total,84,108)}<div><h1>${t.testCompletado}</h1><p>${t.aciertos(r.score,r.total)}</p></div></div>
   ${r.dominadas.length?`<div class="note"><b>${t.yaDominas}</b><ul class="dom">${r.dominadas.map(d=>`<li>${esc(d)}</li>`).join('')}</ul></div>`:''}
   <p class="note">${nota}</p></div>
-  <div><button class="btn primary" data-act="home">${t.continuar}</button></div></div>`;
+  <div class="stack"><button class="btn primary" data-act="home">${t.continuar}</button><button class="btn line" data-act="compartir">${t.compartir}</button></div></div>`;
 }
 function nivelResultHTML(r){
   const n=r.superadas.length,nota=n===r.total?t.nivelTodo:n?t.nivelParcial(n):t.nivelNada;
   return `<div class="res"><div class="res-main"><div class="res-top">${glyph('done',n/r.total,84,108)}<div><h1>${t.pruebaHecha}</h1><p>${t.nivelSuperadas(n,r.total)}</p></div></div>
   ${n?`<div class="note"><b>${t.yaDominas}</b><ul class="dom">${r.superadas.map(d=>`<li>${esc(d)}</li>`).join('')}</ul></div>`:''}
   <p class="note">${nota}</p></div>
-  <div><button class="btn primary" data-act="home">${t.continuar}</button></div></div>`;
+  <div class="stack"><button class="btn primary" data-act="home">${t.continuar}</button><button class="btn line" data-act="compartir">${t.compartir}</button></div></div>`;
 }
 export function resultHTML(){
   const r=ses.lastRes,sk=streakNow();
@@ -57,7 +57,7 @@ export function resultHTML(){
   return `<div class="res"><div class="res-main"><div class="res-top">${glyph('done',r.acc,84,108)}<div><h1>${r.srs?t.repasoCompletado:t.leccionCompletada}</h1><p>${esc(r.title)}</p></div></div>
   <div class="metrics"><div><b>+${r.xp}</b><span>${t.xpGanados}</span></div><div><b>${Math.round(r.acc*100)} %</b><span>${t.precisionM}</span></div><div><b>${sk}</b><span>${t.diasRacha(sk)}</span></div></div>
   <p class="note">${r.dominada?`<b>${t.dominadaNota}</b> `:r.kind==='review'?`${t.examenNota} `:''}${r.kind==='weak'?t.notaDebiles:r.srs?t.notaRepaso:t.notaVela(r.acc)}</p></div>
-  <div><button class="btn primary" data-act="home">${t.continuar}</button></div></div>`;
+  <div class="stack"><button class="btn primary" data-act="home">${t.continuar}</button><button class="btn line" data-act="compartir">${t.compartir}</button></div></div>`;
 }
 export function failHTML(){
   return `<div class="res"><div class="res-main"><div class="res-top">${glyph('locked',null,84,108)}<div><h1>${t.sinVidas}</h1><p>${t.sinVidasExplica}</p></div></div><p class="note">${t.sinVidasNota}</p></div><div class="stack"><button class="btn primary" data-act="retry">${t.reintentar}</button><button class="btn line" data-act="home">${t.volverInicio}</button></div></div>`;

@@ -46,5 +46,5 @@ export function statsHTML(){
   <div class="row copia"><button class="btn line" data-act="exportar">${t.copiaGuardar}</button><button class="btn line" data-act="importar">${t.copiaRecuperar}</button><input type="file" id="imp-file" accept="application/json,.json" hidden></div>
   ${ses.copia?`<div class="confirma" role="alert"><p>${t.copiaResumen(ses.copia.resumen.fecha,ses.copia.resumen.xp,ses.copia.resumen.lecciones)}</p><div class="row"><button class="btn primary" data-act="impok">${t.copiaSustituir}</button><button class="btn ghost" data-act="impno">${t.cancelar}</button></div></div>`:''}
   <p class="src">${t.statsNota}</p></div>
-  <div><button class="btn line" data-act="home">${t.volver}</button></div></div>`;
+  <div class="stack"><button class="btn line" data-act="compartir">${t.compartirProgreso}</button><button class="btn line" data-act="home">${t.volver}</button></div></div>`;
 }

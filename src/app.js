@@ -7,6 +7,7 @@ import {$app,toast,ses} from './ui.js';
 import {setPlanCtx} from './drag.js';
 import {TIPOS} from './exercises/index.js';
 import {CONTACTO} from './config.js';
+import {compartirLogro} from './compartir.js';
 import {homeHTML} from './views/home.js';
 import {lessonHTML,resultHTML,failHTML} from './views/lesson.js';
 import {simHTML,simResHTML,simInfo,simValid,simSave,simRecord,simHist,simulate,SIM_PLACE} from './views/sim.js';
@@ -192,6 +193,11 @@ const ACCIONES={
     if(CONTACTO){location.href=`mailto:${CONTACTO}?subject=${encodeURIComponent(t.reporteAsunto(id))}&body=${encodeURIComponent(cuerpo)}`;return}
     const cb=navigator.clipboard;
     if(cb&&cb.writeText)cb.writeText(cuerpo).then(()=>toast(t.reporteCopiado),()=>toast(t.reporteId(id)));else toast(t.reporteId(id));
+  },
+  // Compartir logros: imagen generada en el dispositivo (menú del sistema o descarga).
+  compartir(){
+    const r=ses.lastRes,titulo=ses.view==='result'&&r?(r.dominada?t.logroDominada:r.test||r.nivel?r.title:t.logroLeccion):t.logroRacha;
+    compartirLogro(titulo).then(res=>{if(res==='descargado')toast(t.compartirDescargado)});
   },
   // Copia de seguridad del progreso (pantalla de estadísticas).
   exportar(){
