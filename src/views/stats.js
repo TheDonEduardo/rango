@@ -4,7 +4,7 @@
 import {fmt,esc,tx} from '../util.js';
 import {icoX} from '../icons.js';
 import {FLAT,TRACKS,EXBYID,trackOf} from '../content.js';
-import {S,streakNow,SRS_MAX} from '../state.js';
+import {S,streakNow,SRS_MAX,srsResumen} from '../state.js';
 import {t} from '../textos.js';
 
 export const STATS_L={id:'weak',title:t.debilesTitulo,kind:'weak'};
@@ -36,6 +36,7 @@ export function statsHTML(){
   <dl class="simk"><div><dt>${t.xp}</dt><dd>${S.xp}</dd></div><div><dt>${t.rachaM}</dt><dd>${t.dias(streakNow())}</dd></div>
   <div><dt>${t.aciertoPrimera}</dt><dd>${n?fmt((n-f)/n*100,0)+' %':'—'}</dd></div><div><dt>${t.tiempoEstudio}</dt><dd>${t.tiempo(S.stats.min||0)}</dd></div></dl>
   <ul class="st-rutas">${rutas}</ul>
+  <h2 class="sub">${t.repasoTitulo}</h2><dl class="simk"><div><dt>${t.enRepaso}</dt><dd>${srsResumen().enRepaso}</dd></div><div><dt>${t.aprendidosT}</dt><dd>${srsResumen().aprendidos}</dd></div></dl><p class="note">${t.repasoNota}</p>
   <h2 class="sub">${t.puntosDebiles}</h2>${debiles}
   <p class="src">${t.statsNota}</p></div>
   <div><button class="btn line" data-act="home">${t.volver}</button></div></div>`;

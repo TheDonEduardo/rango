@@ -215,6 +215,16 @@ if (enRepaso.length !== 10) errs.push('el repaso del día no limita a 10 ejercic
 let g = 0;
 while (g++ < 40 && !app.innerHTML.includes('Repaso completado')) { const ex = T.getRun().queue[0]; give(ex, right(ex)); T.check(); T.next(); }
 for (const ex of enRepaso) { const r = srs[ex.id]; if (!r || r.step !== 1 || r.due <= dk(hoy)) errs.push('repaso espaciado no avanza ' + ex.id); }
+// Aprendidos: un ejercicio que supera todos los intervalos sale del repaso y cuenta como aprendido; si se vuelve a fallar, deja de contar.
+{
+  const ex = enRepaso[0], st = T.getState();
+  const otras = {}; for (const u in st.srs) if (u !== ex.id) { otras[u] = st.srs[u].due; st.srs[u].due = '2999-01-01'; }
+  for (let k = 1; k < 4; k++) { st.srs[ex.id].due = dk(hoy); T.startSrs(); give(ex, right(ex)); T.check(); T.next(); }
+  for (const u in otras) if (st.srs[u]) st.srs[u].due = otras[u];
+  if (st.srs[ex.id] || !st.aprendidos[ex.id]) errs.push('un ejercicio que supera todos los intervalos no queda aprendido');
+  if (!T.homeHTML().includes('aprendido') && Object.keys(st.srs).some(u => st.srs[u].due <= dk(hoy))) errs.push('el inicio no muestra los aprendidos');
+  T.openStats(); if (!app.innerHTML.includes('Aprendidos')) errs.push('las estadísticas no muestran los aprendidos'); T.goHome();
+}
 if (T.getState().done.srs) errs.push('el repaso del día se guarda como lección completada');
 
 // Migración del estado guardado: la versión 1 (repaso por posición) pasa a ids estables.
@@ -343,6 +353,16 @@ T.setTrack('pasiva'); T.skipBasics();
 if (!T.homeHTML().includes('data-act="calc"')) errs.push('la ruta Pasiva no ofrece el simulador de aportaciones');
 T.openCalc();
 if (!app.innerHTML.includes('¿Cuánto tendrías?') || !app.innerHTML.includes('calcsvg') || /NaN|undefined/.test(app.innerHTML)) errs.push('la vista del simulador de aportaciones no se dibuja bien');
+// Caída simulada: sin rentabilidad, 10.000 € que caen un 30 % en el año 5 se quedan en 7.000 €; con 100 € al mes, (10.000 + 6.000) × 0,7 + 6.000 = 17.200 €.
+{
+  const c1 = T.aportaciones({inicial: 10000, mensual: 0, anos: 10, rent: 0, ter: 0, caida: 30, anoCaida: 5});
+  const c2 = T.aportaciones({inicial: 10000, mensual: 100, anos: 10, rent: 0, ter: 0, caida: 30, anoCaida: 5});
+  const c3 = T.aportaciones({inicial: 10000, mensual: 0, anos: 4, rent: 0, ter: 0, caida: 30, anoCaida: 5});
+  if (Math.abs(c1.final - 7000) > 0.01 || Math.abs(c2.final - 17200) > 0.01 || Math.abs(c3.final - 10000) > 0.01) errs.push(`simulador: caída mal aplicada ${c1.final} ${c2.final} ${c3.final}`);
+  T.getState().calc.crash = true; T.openCalc();
+  if (!app.innerHTML.includes('Con una caída del') || /NaN|undefined/.test(app.innerHTML)) errs.push('el simulador no muestra el resultado de la caída');
+  T.getState().calc.crash = false;
+}
 T.getState().calc.cmp = true; T.openCalc();
 if (!app.innerHTML.includes('class="cv-b"') || !app.innerHTML.includes('menos que con')) errs.push('la comparación de carteras no se dibuja');
 T.goHome(); T.setTrack('tecnico');

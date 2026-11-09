@@ -25,7 +25,9 @@ export const t={
   hacerTest:'Hacer el test', desdeCero:'Empezar desde cero',
   calcTitulo:'Simulador de aportaciones', calcExplica:'Mira cómo crece una cartera aportando cada mes, y cuánto se llevan las comisiones.',
   siguienteLeccion:'Siguiente lección', unidadN:n=>`Unidad ${n}`,
-  repasoDia:'Repaso del día', repasoPendiente:n=>`${n} ${pl(n,'ejercicio que fallaste','ejercicios que fallaste')}`, repasar:'Repasar',
+  repasoDia:'Repaso del día', aprendidos:n=>`${n} ${n===1?'aprendido':'aprendidos'}`,
+  repasoTitulo:'Repaso espaciado', enRepaso:'En repaso', aprendidosT:'Aprendidos',
+  repasoNota:'Un ejercicio fallado vuelve al día siguiente y luego a los 3, 7 y 14 días. Si lo aciertas en todos, queda aprendido.', repasoPendiente:n=>`${n} ${pl(n,'ejercicio que fallaste','ejercicios que fallaste')}`, repasar:'Repasar',
   proximamente:'Próximamente', completada:'Completada', plegar:'Plegar', verLecciones:'Ver lecciones',
   precision:p=>`Precisión ${p} %`, bloqueada:'Bloqueada', nEjercicios:n=>`${n} ejercicios`,
   estadoNodo:{done:'completada',locked:'bloqueada',current:'disponible',open:'disponible'},
@@ -101,7 +103,9 @@ export const t={
 
   // Simulador de aportaciones
   calcPregunta:'¿Cuánto tendrías?',
-  calcCtrl:{inicial:'Capital inicial',mensual:'Aportación mensual',anos:'Años',rent:'Rentabilidad anual',ter:'Comisión anual',ter2:'Comisión de la otra cartera'},
+  calcCtrl:{inicial:'Capital inicial',mensual:'Aportación mensual',anos:'Años',rent:'Rentabilidad anual',ter:'Comisión anual',ter2:'Comisión de la otra cartera',caida:'Tamaño de la caída',anoCaida:'Año de la caída'},
+  simularCaida:'Simular una caída de la bolsa',
+  caidaRes:(c,a,v,d)=>`Con una caída del ${c} % en el año ${a} acabarías con <b>${v} €</b>: ${d} € menos que sin ella. Si sigues aportando, durante la caída compras más barato.`,
   anos:n=>`${n} ${pl(n,'año','años')}`, mil:x=>`${x} mil`, anoN:n=>`Año ${n}`,
   calcAlt:'Valor de la cartera y dinero aportado año a año', comparar:'Comparar con otra comisión',
   comparacion:(t2,v,dif,mas,t1)=>`Con un ${t2} % de comisión tendrías <b>${v} €</b>: ${dif} € ${mas?'más':'menos'} que con un ${t1} %.`,

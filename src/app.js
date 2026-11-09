@@ -166,7 +166,7 @@ $app.addEventListener('click',e=>{
 $app.addEventListener('input',e=>{
   // Deslizadores del simulador de aportaciones: actualizan solo el resultado, sin redibujar (no se pierde el foco).
   const k=e.target.dataset&&e.target.dataset.calc;
-  if(k==='cmp'&&ses.view==='calc'){S.calc.cmp=e.target.checked;save();render();const c=$app.querySelector('#calc-cmp');if(c)c.focus({preventScroll:true});return}
+  if((k==='cmp'||k==='crash')&&ses.view==='calc'){S.calc[k]=e.target.checked;save();render();const c=$app.querySelector('#calc-'+k);if(c)c.focus({preventScroll:true});return}
   if(k&&ses.view==='calc'){
     S.calc[k]=+e.target.value;save();
     const c=CALC_CTRL.find(x=>x[0]===k);$app.querySelector('#out-'+k).textContent=c[5](S.calc[k]);
