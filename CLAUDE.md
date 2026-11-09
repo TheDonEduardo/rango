@@ -22,7 +22,11 @@ src/ui.js               $app, toast, setCheck y `ses` (estado de la sesión que 
 src/textos.js           TODOS los textos de la interfaz (preparado para traducir)
 src/glosario.js         marca como botones los términos del glosario (glos) en enunciados, explicaciones y guías
 src/content/glosario.json  glosario: [{termino, alias?, no?, d}] (no: frases donde el término significa otra cosa)
-src/config.js           configuración del despliegue: CONTACTO (correo de «¿Ves un error?»; vacío = copiar al portapapeles)
+src/config.js           configuración del despliegue: CONTACTO (correo de «¿Ves un error?»; vacío = copiar al portapapeles),
+                        LISTA_ESPERA (formulario de la lista de espera) y MEDICION_URL (eventos anónimos); vacíos = desactivados
+src/compartir.js        imagen de logro (canvas 1080×1080) para compartir o descargar
+src/medicion.js         medir(evento, datos): eventos anónimos, solo con MEDICION_URL y si el usuario lo activa (S.medir)
+bienvenida.html         página de presentación independiente de la app, con lista de espera configurable
 src/drag.js             líneas arrastrables (ejercicio plan y Operación de la semana)
 src/exercises/          un archivo por tipo de ejercicio + index.js (registro TIPOS y su interfaz)
 src/views/              home, lesson (lección y resultados), sim, calc, stats, legal
@@ -132,6 +136,8 @@ Sistema de tokens en `src/styles.css` (`:root`, con variante oscura por `prefers
 - Examen de la unidad (nodo `kind:'review'`, `EXAMEN_N` = 8 preguntas): sin fallos a la primera, la unidad queda dominada (`S.dominadas`), con estrella en el inicio y recuento en estadísticas.
 - Prueba de nivel de las rutas avanzadas (`kind:'nivel'`, `S.pruebas`): dos preguntas por unidad en orden (de elegir o calcular); se para en la primera unidad con un fallo y marca las anteriores como completadas. Sin vidas ni repaso.
 - Meta diaria (`S.meta`: 20, 40 u 80 XP, en estadísticas) y protectores de racha (`S.protector`): uno por cada 7 días seguidos, máximo 2; si un día no practicas, al volver se gasta uno y la racha sigue (`sumarRacha()`).
+- Compartir logros: botón en los resultados y en «Tu progreso»; dibuja la tarjeta en el dispositivo y usa el menú de compartir del sistema o la descarga.
+- Medición anónima: eventos `leccion` (id, tipo, acierto), `fallo` (id del ejercicio), `abandono` (id, hecho/total) y `guia` (unidad, tarjeta en la que se cerró). Sin MEDICION_URL no se envía nada ni se ofrece la opción; con ella, es opcional y está desactivada por defecto. Si la activas en producción, menciónalo en la política de privacidad.
 - «¿Ves un error?»: enlace en la explicación de cada ejercicio y en cada tarjeta de guía; prepara un aviso con el id del ejercicio o de la tarjeta. Antes de publicar, pon un correo en `CONTACTO`.
 - Copia de seguridad (estadísticas): `exportar()` descarga `{app:'rango', v, fecha, estado}`; `leerCopia()` valida y migra; `importar()` sustituye el progreso tras confirmar.
 - Aprendidos (`S.aprendidos`, id → fecha): un ejercicio que supera el último intervalo del repaso sale de `S.srs` y queda aprendido; si se vuelve a fallar, deja de contar. Se muestran en el repaso del día y en estadísticas (`srsResumen()`).

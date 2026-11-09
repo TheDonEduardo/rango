@@ -136,6 +136,7 @@ export const t={
   puntosDebiles:'Tus puntos débiles', debilesTitulo:'Puntos débiles', fallado:n=>`fallado ${n} ${pl(n,'vez','veces')}`,
   practicar:n=>`Practicar ${n} ${pl(n,'ejercicio','ejercicios')}`,
   sinDebiles:'Aún no hay ejercicios pendientes: los que falles aparecerán aquí hasta que los aciertes a la primera.',
+  medicionTitulo:'Ayudar a mejorar Rango', medicionNota:'Si lo activas, Rango envía datos anónimos de uso: qué lecciones terminas o dejas a medias y qué preguntas fallas. Nunca tu nombre, tu correo ni nada que te identifique.', medicionActivar:'Activar', medicionQuitar:'Desactivar',
   copiaTitulo:'Copia de seguridad', copiaNota:'Tu progreso se guarda solo en este navegador. Descarga una copia para no perderlo o para pasarlo a otro dispositivo.',
   copiaGuardar:'Descargar copia', copiaRecuperar:'Recuperar copia', copiaSustituir:'Sustituir mi progreso', cancelar:'Cancelar',
   copiaResumen:(f,xp,l)=>`Copia del ${f}: ${xp} XP y ${l} lecciones completadas. Sustituirá tu progreso actual.`,

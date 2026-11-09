@@ -8,6 +8,7 @@ import {setPlanCtx} from './drag.js';
 import {TIPOS} from './exercises/index.js';
 import {CONTACTO} from './config.js';
 import {compartirLogro} from './compartir.js';
+import {medir} from './medicion.js';
 import {homeHTML} from './views/home.js';
 import {lessonHTML,resultHTML,failHTML} from './views/lesson.js';
 import {simHTML,simResHTML,simInfo,simValid,simSave,simRecord,simHist,simulate,SIM_PLACE} from './views/sim.js';
@@ -69,6 +70,7 @@ function check(){
     run.seen.add(ex);if(!ok)run.firstWrong++;
     // El test de nivel solo anota su resultado: no entra en el repaso ni en las estadísticas.
     if(esPrueba(run.L))run.res[ex.id]=ok;else{srsRecord(ex,ok,run.L.kind==='srs');statRecord(ex,ok)}
+    if(!ok&&ex.id)medir('fallo',{id:ex.id});
     save();
   }
   if(!ok&&!esPrueba(run.L))run.lives--;
@@ -116,6 +118,7 @@ function finish(){
   if(run.L.kind==='test'){finishTest();return}
   if(run.L.kind==='nivel'){finishNivel();return}
   const right=run.total-run.firstWrong,acc=right/run.total,xp=right*10+(run.firstWrong===0?10:0),hoy=today();
+  medir('leccion',{id:run.L.id,tipo:run.L.kind,acc:Math.round(acc*100)});
   const racha=sumarRacha();
   if(racha.usado)toast(t.protectorUsado);else if(racha.ganado)toast(t.protectorGanado);
   if(S.day!==hoy){S.day=hoy;S.dayXp=0}
@@ -163,7 +166,7 @@ const ACCIONES={
   check(b){if(!b.disabled)check()},
   next,
   retry(){startRun(ses.run.L)},
-  quit(){ses.simDraft=null;ses.view='home';ses.goCur=false;render()},
+  quit(){const r=ses.run;if(ses.view==='lesson'&&r)medir('abandono',{id:r.L.id,tipo:r.L.kind,hecho:r.done,total:r.total});ses.simDraft=null;ses.view='home';ses.goCur=false;render()},
   home(){const deSim=['sim','simres','calc','stats','guia','glosario'].includes(ses.view);ses.simDraft=null;ses.view='home';ses.goCur=!deSim;render()},
   sim(){ses.simDraft=null;ir('sim')},
   simres(){ir('simres')},
@@ -209,7 +212,7 @@ const ACCIONES={
   impno(){ses.copia=null;render()},
   guianext(){ses.guia.i++;render()},
   guiaprev(){ses.guia.i--;render()},
-  guiafin(){const g=ses.guia;ses.guia=null;if(g.modo==='inicio')startRun(g.L);else if(g.modo==='repaso'){ses.view='lesson';render();const b=$app.querySelector('[data-act=next]');if(b&&b.focus)b.focus({preventScroll:true})}else{ses.view='home';render()}},
+  guiafin(){const g=ses.guia;if(g.modo==='inicio')medir('guia',{unidad:g.unit.id,tarjeta:g.i+1,de:g.unit.guia.length});ses.guia=null;if(g.modo==='inicio')startRun(g.L);else if(g.modo==='repaso'){ses.view='lesson';render();const b=$app.querySelector('[data-act=next]');if(b&&b.focus)b.focus({preventScroll:true})}else{ses.view='home';render()}},
   weak(){ses.homeY=0;startRun(STATS_L)},
   simsave(){if(ses.simDraft&&simValid(ses.simDraft)){simSave();ses.simDraft=null;ses.view='home';render();toast(t.planGuardado)}},
   unfold(b){const id=b.dataset.id,ab=ses.abiertas;ab.has(id)?ab.delete(id):ab.add(id);ses.homeY=window.scrollY;render();const nb=$app.querySelector(`[data-act=unfold][data-id="${id}"]`);if(nb)nb.focus({preventScroll:true})},
@@ -218,6 +221,7 @@ const ACCIONES={
   srs(){ses.homeY=window.scrollY;startRun(SRS_L)},
   test(){ses.homeY=0;startRun(TEST_L)},
   nivel(b){ses.homeY=0;startRun({id:'nivel-'+b.dataset.track,title:t.pruebaNivel,kind:'nivel',track:b.dataset.track})},
+  medir(b){S.medir=b.dataset.v==='1';save();render()},
   meta(b){S.meta=+b.dataset.m;save();render()},
   objetivo(b){S.objetivo=b.dataset.track;S.track=b.dataset.track;save();ses.homeY=0;render()},
   noobjetivo(){S.objetivo='ninguno';save();render()},

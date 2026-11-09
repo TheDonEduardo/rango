@@ -133,6 +133,14 @@ async function auditar(b, url) {
     for (const v of r) (resumen[v.id] = resumen[v.id] || {help: v.help, donde: [], ej: v.ej}).donde.push(`${nom} (${scheme})`);
     await p.close();
   }
+  // Página de presentación (independiente de la app).
+  for (const scheme of ['light', 'dark']) {
+    const p = await b.newPage({viewport: {width: 390, height: 844}, colorScheme: scheme});
+    await p.goto(url + 'bienvenida.html'); await p.waitForSelector('h1'); await p.addScriptTag({content: AXE});
+    const r = await p.evaluate(async () => (await axe.run(document, {runOnly: ['wcag2a', 'wcag2aa', 'wcag21aa', 'best-practice']})).violations.map(v => ({id: v.id, help: v.help, ej: v.nodes[0].target.join(' ')})));
+    for (const v of r) (resumen[v.id] = resumen[v.id] || {help: v.help, donde: [], ej: v.ej}).donde.push(`bienvenida (${scheme})`);
+    await p.close();
+  }
   const ks = Object.keys(resumen);
   for (const k of ks) console.log(`  ${k}: ${resumen[k].help}\n    en: ${resumen[k].donde.join(', ')}\n    ej: ${resumen[k].ej}`);
   console.log(ks.length ? `  ${ks.length} incidencias de accesibilidad` : '  accesibilidad: sin incidencias');

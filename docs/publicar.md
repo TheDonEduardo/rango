@@ -44,6 +44,14 @@ Con cuentas de usuario, las dos tiendas exigen poder borrar la cuenta desde la p
 
 Comprueba requisitos, cuotas y comisiones en las páginas oficiales antes de empezar: cambian a menudo.
 
-## 4. Idiomas
+## 4. Configuración antes de publicar (`src/config.js`)
+
+- `CONTACTO`: correo que recibe los avisos de «¿Ves un error?» (y la lista de espera si no hay formulario).
+- `LISTA_ESPERA`: dirección de un formulario que acepte POST con un campo `email` (Formspree, Tally, Google Forms…) para `bienvenida.html`.
+- `MEDICION_URL`: servicio que recibe los eventos anónimos de `src/medicion.js` (por ejemplo, una función propia o Plausible/Umami con eventos personalizados). Es opcional para el usuario y debe figurar en la política de privacidad.
+
+`bienvenida.html` es la página de presentación: publícala en la raíz del dominio (o como `/`) y deja la app en una ruta propia si quieres separarlas; ahora la enlaza con `./`.
+
+## 5. Idiomas
 
 Los textos de la interfaz están en `src/textos.js`: para traducir la interfaz basta otro archivo con las mismas claves. El contenido es más trabajo: unas 520 preguntas fijas, las plantillas de `tools/casos.py` y unas 20 unidades específicas de España (fiscalidad, bróker, CNMV, FOGAIN, SOCIMI) que habría que adaptar por país, no traducir. Recomendación: validar primero en España, después Latinoamérica con módulos fiscales por país, y el inglés si los datos lo justifican.

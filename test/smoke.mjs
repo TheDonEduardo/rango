@@ -217,6 +217,11 @@ for (const L of T.FLAT) {
   if (sinUso.length) console.warn('AVISO: términos del glosario que no aparecen en el contenido: ' + sinUso.map(g => g.termino).join(', '));
 }
 
+// Medición anónima: sin MEDICION_URL no se envía nada ni se ofrece en estadísticas.
+{ const {medir} = await import(pathToFileURL(path.join(root, 'src/medicion.js'))); T.getState().medir = true;
+  if (medir('prueba', {id: 'x'})) errs.push('la medición envía datos sin MEDICION_URL configurada');
+  T.getState().medir = false; T.openStats(); if (app.innerHTML.includes('data-act="medir"')) errs.push('se ofrece la medición sin servicio configurado'); T.goHome(); }
+
 // 3) Pantalla sin vidas
 T.startRun(T.FLAT[0]);
 for (let i = 0; i < 3; i++) { const ex = T.getRun().queue[0]; give(ex, wrong(ex)); T.check(); T.next(); }

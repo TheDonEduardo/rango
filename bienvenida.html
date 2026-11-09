@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rango · Aprende a invertir</title>
+<meta name="description" content="Aprende a invertir con lecciones de cinco minutos: conceptos básicos, inversión pasiva, análisis fundamental y técnico. En español, con ejercicios y datos reales.">
+<meta name="theme-color" content="#EDF1F5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0C1622" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<!-- Página de presentación de Rango (independiente de la app). La lista de espera se configura en src/config.js. -->
+<style>
+:root{--bg:#EDF1F5;--surface:#FFFFFF;--ink:#12202F;--ink-2:#4B5B6C;--line:#D5DCE4;--up:#0F9D68;--up-ink:#0A6B47;--accent:#F2B01E;--accent-ink:#2E2200;--banner-bg:#12202F;--banner-fg:#F2F6FA;--font-display:"Bricolage Grotesque",system-ui,sans-serif;--font-body:"IBM Plex Sans",system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root{--bg:#0C1622;--surface:#13202F;--ink:#E8EEF5;--ink-2:#9AA9BA;--line:#26364A;--up:#2BC48A;--up-ink:#6BE3B0;--accent:#F5B82E;--banner-bg:#1B2D43}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 var(--font-body)}
+main{max-width:880px;margin:0 auto;padding:24px 16px 48px}
+.top{display:flex;align-items:center;gap:10px;font:800 26px var(--font-display)}
+.top svg{width:22px;height:30px}
+.top .w{stroke:var(--up);stroke-width:2.4}.top .b{fill:var(--up)}
+h1{font:800 clamp(34px,7vw,56px)/1.05 var(--font-display);letter-spacing:-.02em;margin:40px 0 14px;text-wrap:balance}
+.lead{font-size:clamp(18px,2.6vw,21px);color:var(--ink-2);max-width:40ch;margin:0 0 24px}
+.cta{display:inline-block;padding:14px 26px;border-radius:14px;background:var(--accent);color:var(--accent-ink);font-weight:700;text-decoration:none;border-bottom:4px solid #C98F0A}
+.cta:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.sub{color:var(--ink-2);font-size:15px;margin-top:10px}
+h2{font:700 26px/1.2 var(--font-display);margin:48px 0 16px}
+.rutas{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:0;padding:0;list-style:none}
+.rutas li{background:var(--banner-bg);color:var(--banner-fg);border-radius:16px;padding:16px 18px}
+.rutas b{display:block;font:700 20px var(--font-display);margin-bottom:4px}
+.rutas span{font-size:15px;opacity:.85}
+.puntos{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:0;padding:0;list-style:none}
+.puntos li{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.puntos b{display:block;margin-bottom:2px}
+.puntos span{color:var(--ink-2);font-size:15px}
+.espera{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px}
+.espera form{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.espera label{flex:1 1 220px;display:grid;gap:4px;font-size:14px;color:var(--ink-2)}
+.espera input{font:inherit;padding:12px;border-radius:12px;border:2px solid var(--line);background:var(--bg);color:var(--ink)}
+.espera button,.espera a.btn{font:inherit;font-weight:700;padding:12px 20px;border-radius:12px;border:0;background:var(--up);color:#fff;cursor:pointer;align-self:end;text-decoration:none}
+footer{margin-top:48px;color:var(--ink-2);font-size:14px}
+footer a{color:inherit}
+</style>
+</head>
+<body>
+<main>
+  <header class="top"><svg viewBox="0 0 18 26" aria-hidden="true"><line class="w" x1="9" x2="9" y1="1" y2="25"/><rect class="b" x="2" y="7" width="14" height="12" rx="3"/></svg>Rango</header>
+  <h1>Aprende a invertir en cinco minutos al día</h1>
+  <p class="lead">Lecciones cortas con ejercicios, teoría con dibujos y casos con datos reales. Desde qué es una acción hasta cómo colocar un stop.</p>
+  <a class="cta" href="./">Empezar gratis</a>
+  <p class="sub">Funciona en el navegador y se puede instalar en el móvil. Sin registro.</p>
+
+  <h2>Cuatro rutas, 64 unidades</h2>
+  <ul class="rutas">
+    <li><b>Básico</b><span>Qué es una acción, riesgo, ETF, impuestos en España, deudas y cómo evitar estafas.</span></li>
+    <li><b>Inversión pasiva</b><span>Fondos indexados, reparto de activos, rebalanceo, carteras modelo y jubilación.</span></li>
+    <li><b>Análisis fundamental</b><span>Crecimiento del beneficio, valoración, balance, calidad del negocio y descuento de flujos.</span></li>
+    <li><b>Análisis técnico</b><span>Velas, fases de Weinstein, tamaño de posición, VCP, Wyckoff, salidas y backtesting.</span></li>
+  </ul>
+
+  <h2>Cómo aprendes</h2>
+  <ul class="puntos">
+    <li><b>Más de 500 ejercicios</b><span>Elegir, calcular, tocar el gráfico, arrastrar el stop o marcar un rango.</span></li>
+    <li><b>Teoría corta con dibujos</b><span>Cuatro tarjetas por unidad y un glosario a un toque.</span></li>
+    <li><b>Repaso espaciado</b><span>Lo que fallas vuelve hasta que lo aprendes.</span></li>
+    <li><b>Datos reales</b><span>Casos con cifras de empresas y una operación simulada cada semana.</span></li>
+  </ul>
+
+  <section id="espera" hidden>
+    <h2>Avísame cuando llegue a las tiendas</h2>
+    <div class="espera">
+      <p>Deja tu correo y te avisamos cuando Rango esté en Google Play y en la App Store. Solo lo usamos para eso.</p>
+      <form id="espera-form" method="post">
+        <label>Correo electrónico<input type="email" name="email" required autocomplete="email"></label>
+        <button type="submit">Avísame</button>
+      </form>
+      <p id="espera-correo" hidden><a class="btn" id="espera-mailto" href="#">Escríbenos para apuntarte</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Rango es una herramienta de formación. Nada de lo que ves es asesoramiento financiero ni una recomendación de inversión. Invertir conlleva riesgo de perder parte o todo el capital.</p>
+  </footer>
+</main>
+<script type="module">
+// Lista de espera: con LISTA_ESPERA (dirección de un formulario que acepte POST) se usa el formulario;
+// sin ella pero con CONTACTO, un enlace de correo; sin ninguna, la sección no se muestra.
+import {LISTA_ESPERA, CONTACTO} from './src/config.js';
+const sec = document.getElementById('espera');
+if (LISTA_ESPERA) {
+  document.getElementById('espera-form').action = LISTA_ESPERA; sec.hidden = false;
+} else if (CONTACTO) {
+  document.getElementById('espera-form').hidden = true;
+  const a = document.getElementById('espera-mailto');
+  a.href = `mailto:${CONTACTO}?subject=${encodeURIComponent('Lista de espera de Rango')}`;
+  document.getElementById('espera-correo').hidden = false; sec.hidden = false;
+}
+</script>
+</body>
+</html>
