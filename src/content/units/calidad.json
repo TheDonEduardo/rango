@@ -66,7 +66,13 @@
           ],
           "a": 1,
           "why": "Cada 100 $ invertidos rinden 6 $ pero cuestan 9 $: cuanto más crece, más valor destruye. Crecer solo crea valor con un ROIC por encima del coste del capital.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            "Crecer solo crea valor si rinde más de lo que cuesta; aquí rinde menos.",
+            null,
+            "Sí cambia: cada euro invertido destruye 3 céntimos de valor al año.",
+            "Depende de la rentabilidad frente al coste, no del PER."
+          ]
         },
         {
           "id": "f7a-4",
@@ -121,7 +127,13 @@
           ],
           "a": 0,
           "why": "Si la competencia pudiera copiar el negocio, los márgenes y el ROIC caerían. Mantenerlos altos durante muchos años es la huella de un foso real.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            null,
+            "Una subida de un año puede ser suerte o moda; no demuestra una ventaja duradera.",
+            "Un presidente famoso no impide que la competencia copie el negocio.",
+            "Gastar en publicidad no prueba que los clientes no puedan irse."
+          ]
         },
         {
           "id": "f7b-3",
@@ -171,7 +183,13 @@
           ],
           "a": 1,
           "why": "B mantiene un ROIC del 24-27 % año tras año: la competencia no consigue erosionarlo. A alterna años buenos y malos (negocio cíclico) y C es estable, pero bajo.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            "A alterna años buenos y malos: parece un negocio cíclico, no una ventaja estable.",
+            null,
+            "C es estable, pero con un 6-7 %: sin ventaja, la competencia deja el rendimiento bajo.",
+            "B mantiene un 24-27 % durante cinco años: eso es una ventaja."
+          ]
         },
         {
           "id": "f7b-4",
@@ -185,7 +203,13 @@
           ],
           "a": 2,
           "why": "Un foso real protege los márgenes; si se hunden al llegar competidores, el foso era menor de lo que parecía. Es un criterio de invalidación de la tesis, como viste en F4.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            "Pasar del 70 % al 55 % en dos años no es ruido: es una tendencia.",
+            "Comprar más cuando la ventaja se erosiona es apostar contra los datos.",
+            null,
+            "El margen bruto es justo donde se ve si la ventaja aguanta."
+          ]
         }
       ]
     }

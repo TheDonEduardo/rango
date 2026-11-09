@@ -83,7 +83,13 @@
           ],
           "a": 2,
           "why": "Su valor depende de beneficios de dentro de muchos años, y con tipos más altos esos beneficios futuros valen menos hoy. Los bancos, en cambio, suelen mejorar su margen.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            "Supermercados y alimentación son defensivos: sus beneficios dependen poco de los tipos.",
+            "Los bancos suelen ganar margen cuando suben los tipos.",
+            null,
+            "Con mucha caja, los tipos altos incluso les dan más intereses."
+          ]
         },
         {
           "id": "f8a-3",
@@ -107,7 +113,13 @@
           ],
           "a": 0,
           "why": "Si los costes suben y el precio no, cada venta deja menos. Poder subir precios sin perder clientes es una de las huellas de una ventaja competitiva (F7).",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            null,
+            "Es al revés: si los costes suben y el precio no, cada venta deja menos.",
+            "Las ventas no caen a cero; lo que cae es el margen.",
+            "Sí le afecta: a través de sus costes."
+          ]
         }
       ]
     },
@@ -128,7 +140,13 @@
           ],
           "a": 0,
           "why": "Normalmente los plazos largos pagan más. Cuando la curva se invierte, el mercado espera bajadas de tipos por debilidad; en EE. UU. ha precedido a la mayoría de recesiones desde los años setenta, aunque con meses o años de retraso.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            null,
+            "Normal es lo contrario: los plazos largos pagan más.",
+            "Curva plana es cuando pagan casi igual; la del enunciado está invertida.",
+            "Una curva invertida ha anticipado a menudo recesiones, no bolsa al alza."
+          ]
         },
         {
           "id": "f8b-2",
@@ -176,7 +194,13 @@
           ],
           "a": 1,
           "why": "El stop te protege si el mercado arrastra a la acción; vender solo por un dato macro es intentar adivinar. Como en O'Neil, manda el mercado general cuando empieza a distribuir.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            "Vender todo por la macro ignora lo que dice tu acción y tu stop.",
+            null,
+            "Doblar la posición con la macro empeorando aumenta el riesgo sin motivo.",
+            "Quitar el stop te deja sin protección justo cuando el entorno empeora."
+          ]
         }
       ]
     }

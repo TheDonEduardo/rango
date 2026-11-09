@@ -66,7 +66,13 @@
           ],
           "a": 0,
           "why": "La diferencia suele ser pago en acciones a empleados, amortización de compras de empresas o partidas puntuales. Si se repiten cada trimestre, son costes reales aunque se excluyan.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            null,
+            "El ajustado excluye costes que pueden ser reales y recurrentes: hay que mirar cuáles.",
+            "El ajustado no es falso; puede ser útil si lo excluido es de verdad puntual.",
+            "El dividendo no explica la diferencia entre los dos BPA."
+          ]
         },
         {
           "id": "f5a-4",
@@ -80,7 +86,13 @@
           ],
           "a": 2,
           "why": "El precio mira hacia delante: unas previsiones flojas pesan más que un buen trimestre ya pasado. Lee siempre la guía de la empresa, no solo el titular.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            "No suele ser un error: el precio reacciona a lo que viene, no solo a lo publicado.",
+            "El volumen no explica la caída; las previsiones sí.",
+            null,
+            "La hora de publicación no cambia el valor de la empresa."
+          ]
         }
       ]
     },

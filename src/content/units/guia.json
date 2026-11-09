@@ -58,7 +58,13 @@
           ],
           "a": 0,
           "why": "Es la combinación que más mueve el precio: el pasado y el futuro mejoran a la vez, y los analistas tienen que subir sus estimaciones.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            null,
+            "«Miss» es no llegar al consenso; aquí lo bate.",
+            "Batir y subir la previsión tiene mucho efecto: suele mover el precio y las estimaciones.",
+            "Una ampliación de capital es emitir acciones; no tiene que ver."
+          ]
         },
         {
           "id": "f10a-3",
@@ -81,7 +87,13 @@
           ],
           "a": 2,
           "why": "Muchas empresas guían por debajo de lo que esperan para poder batir. Con ese historial, el mercado ya descuenta que superará su guía: lo que sorprendería es que no lo hiciera.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            "El historial muestra lo contrario: guía por debajo y luego la supera.",
+            "Sí importa: el mercado la usa como punto de partida.",
+            null,
+            "Ninguna guía es una garantía; solo una referencia que esta empresa suele superar."
+          ]
         }
       ]
     },
@@ -120,7 +132,13 @@
           ],
           "a": 0,
           "why": "Mismo precio con más beneficio esperado: el PER adelantado baja. Si las revisiones son fiables, el precio suele acabar ajustándose.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            null,
+            "Con más beneficio esperado y el mismo precio, el PER baja: se abarata.",
+            "Sí cambia: el precio no se mueve, pero el beneficio esperado sube.",
+            "Se puede valorar igual: solo hay que usar las nuevas estimaciones."
+          ]
         },
         {
           "id": "f10b-4",

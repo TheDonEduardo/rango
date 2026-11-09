@@ -48,7 +48,13 @@
           ],
           "a": 0,
           "why": "Las fábricas tardan años en construirse: cuando la demanda sube falta oferta y los precios se disparan, y cuando la nueva capacidad llega sobra. Ese ciclo mueve márgenes y acciones.",
-          "guia": "g1"
+          "guia": "g1",
+          "porque": [
+            null,
+            "No es defensiva: la demanda de chips cae mucho en las crisis.",
+            "No crece igual: alterna años de escasez y de exceso de oferta.",
+            "Los precios no los fija el Estado: los marca la oferta y la demanda."
+          ]
         },
         {
           "id": "fsa-2",
@@ -72,7 +78,13 @@
           ],
           "a": 1,
           "why": "Por encima de 1, la cartera de pedidos crece y las ventas futuras tienen respaldo. Por debajo de 1 durante varios trimestres suele marcar el inicio de la fase baja.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            "Un book-to-bill mayor que 1 indica lo contrario: entran más pedidos.",
+            null,
+            "Nada es seguro, pero más pedidos que ventas apunta a más ventas, no a menos.",
+            "Sí dice algo: la cartera de pedidos crece."
+          ]
         },
         {
           "id": "fsa-4",
@@ -102,7 +114,13 @@
           ],
           "a": 1,
           "why": "El precio se adelanta: empieza a subir cuando el inventario se ha limpiado aunque los beneficios aún no hayan tocado suelo. Esperar a ver buenos beneficios suele ser llegar tarde.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            "Con beneficios récord suele ser el pico del ciclo, no el fondo.",
+            null,
+            "Cuando todos son optimistas, el precio suele estar alto.",
+            "Pedidos en máximos indican el pico del ciclo."
+          ]
         },
         {
           "id": "fsb-2",

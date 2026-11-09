@@ -48,7 +48,13 @@
           ],
           "a": 2,
           "why": "Solo la C tiene motor medible (ventas +40 %), catalizador con fecha (la planta en el 2T) e invalidación concreta (margen por debajo del 56 %). Las demás son relatos razonables, pero no dicen cuándo te equivocas.",
-          "guia": "g1"
+          "guia": "g1",
+          "porque": [
+            "No tiene ningún dato medible ni nada que la invalide: es una opinión.",
+            "Barato no es una tesis: falta qué hará cambiar al mercado y cuándo.",
+            null,
+            "Eso es un análisis técnico: dice cuándo, pero no por qué crecerá el negocio."
+          ]
         },
         {
           "id": "f4a-2",
@@ -85,7 +91,13 @@
           ],
           "a": 1,
           "why": "Un catalizador lejano no mueve el precio en tu horizonte y te inmoviliza el capital. Espera a que el precio confirme (Fase 2, ruptura de un VCP) antes de entrar.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            "Comprar 18 meses antes inmoviliza el capital sin que el precio tenga por qué moverse.",
+            null,
+            "Unas opciones a un mes caducan mucho antes que el catalizador.",
+            "Promediar a la baja es aumentar una posición que va mal."
+          ]
         }
       ]
     },
@@ -120,7 +132,13 @@
           ],
           "a": 3,
           "why": "Fijaste la invalidación antes de comprar precisamente para no reinterpretarla después. Si te quedas, ya no operas tu tesis sino el precio, y sin criterio de salida.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            "El precio puede subir por otros motivos; tu tesis ya no se cumple.",
+            "Comprar más con la tesis rota es apostar por algo que ya no crees.",
+            "Esperar es reinterpretar la invalidación que fijaste antes de comprar.",
+            null
+          ]
         },
         {
           "id": "f4b-3",
@@ -134,7 +152,13 @@
           ],
           "a": 0,
           "why": "El stop limita la pérdida a 1R pase lo que pase con la tesis. Si la tesis sigue viva, puedes volver a comprar cuando el precio confirme otra vez.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            null,
+            "Bajar el stop es aumentar la pérdida que aceptaste: es romper tu propio plan.",
+            "La tesis no protege del precio: comprar más mientras cae dobla el riesgo.",
+            "Esperar a resultados sin stop deja la pérdida sin límite."
+          ]
         },
         {
           "id": "f4b-4",

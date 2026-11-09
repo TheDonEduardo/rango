@@ -90,7 +90,13 @@
           ],
           "a": 1,
           "why": "B debe 4,5 años de EBITDA y su beneficio operativo cubre solo 2 veces los intereses: si cae a la mitad, los cubre justo. C no debe nada y A tiene margen de sobra.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            "A debe medio año de EBITDA y cubre los intereses 20 veces: tiene margen de sobra.",
+            null,
+            "C no tiene deuda: no tiene riesgo financiero.",
+            "No es igual: B debe 4,5 años de EBITDA y apenas cubre los intereses."
+          ]
         },
         {
           "id": "f3a-4",
@@ -104,7 +110,13 @@
           ],
           "a": 0,
           "why": "Con 300 M$ no puede devolver 2.000 M$: al 7 %, los intereses de esa deuda pasan de 60 a 140 M$ al año, o tendrá que emitir acciones.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            null,
+            "Un año pasa rápido: hay que refinanciar 2.000 M$ con solo 300 M$ de caja y a tipos más altos.",
+            "Con la caja justa, lo probable es recortar el dividendo, no subirlo.",
+            "Salir de un índice no es el riesgo principal; lo es pagar mucho más o diluir."
+          ]
         }
       ]
     },
@@ -144,7 +156,13 @@
           ],
           "a": 2,
           "why": "Si los clientes no pagan, el beneficio contable crece pero la caja no: el beneficio no se convierte en caja. Puede ser ventas forzadas con plazos de cobro largos; vigila si se repite el trimestre siguiente.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            "Un negocio excelente convierte su beneficio en caja; aquí la caja es negativa.",
+            "Con caja operativa negativa, no puede estar reduciendo deuda con lo que genera.",
+            null,
+            "Sin caja, no hay de dónde pagar más dividendo."
+          ]
         },
         {
           "id": "f3b-4",

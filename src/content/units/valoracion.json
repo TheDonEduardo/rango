@@ -99,7 +99,13 @@
           ],
           "a": 0,
           "why": "PEG: A 40 ÷ 50 = 0,8; B 15 ÷ 5 = 3; C 25 ÷ 10 = 2,5. El PER más alto es el más barato por unidad de crecimiento: por eso los líderes de Minervini rara vez tienen PER bajo.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            null,
+            "B tiene el PER más bajo, pero crece solo un 5 %: PEG 3, la más cara por crecimiento.",
+            "C: PEG 2,5, mucho más caro que el 0,8 de A.",
+            "No: los PEG son 0,8, 3 y 2,5."
+          ]
         }
       ]
     },
@@ -147,7 +153,13 @@
           ],
           "a": 2,
           "why": "Con PER 60, el precio ya descuenta años de crecimiento alto: cumplir no basta, hay que superar. Mueve el precio la diferencia con lo esperado, no el dato en sí.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            "Los resultados fueron buenos: un 30 % más, justo lo esperado.",
+            "No es un error: con PER 60, cumplir no basta; el precio ya lo descontaba.",
+            null,
+            "El volumen no explica la caída; la explica lo que ya descontaba el precio."
+          ]
         },
         {
           "id": "f2b-5",

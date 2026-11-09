@@ -66,7 +66,13 @@
           ],
           "a": 2,
           "why": "Si fabrica mucho más de lo que vende, tarde o temprano tendrá que bajar precios o anotar pérdidas por ese inventario, y el margen lo sufrirá.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            "Fabricar mucho más de lo que se vende no es buena señal.",
+            "Acumular inventario consume caja: no ayuda a bajar la deuda.",
+            null,
+            "Es relevante: puede acabar en rebajas de precio o en pérdidas."
+          ]
         },
         {
           "id": "fa1-4",
@@ -105,7 +111,13 @@
           ],
           "a": 0,
           "why": "El fondo de comercio es lo que pagó de más por las empresas compradas. Si no rinden lo esperado, se anota un deterioro de golpe y el beneficio se hunde ese año.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            null,
+            "El fondo de comercio no es caja: es lo que se pagó de más en las compras.",
+            "No obliga a subir el dividendo.",
+            "Pagar menos impuestos no es el riesgo: lo es que un deterioro hunda el beneficio."
+          ]
         },
         {
           "id": "fa2-3",
@@ -144,7 +156,13 @@
           ],
           "a": 2,
           "why": "Una tesis debe sobrevivir a las cuentas. Si no encuentras una explicación convincente, el riesgo de un desplome no compensa: menos tamaño o ninguna posición.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            "Que nadie las haya visto no las hace inofensivas.",
+            "Un buen gráfico no compensa unas cuentas dudosas.",
+            null,
+            "Cuando lo publique la prensa, el precio ya habrá caído."
+          ]
         }
       ]
     }

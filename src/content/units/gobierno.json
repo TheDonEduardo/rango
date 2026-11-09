@@ -48,7 +48,13 @@
           ],
           "a": 0,
           "why": "Hay muchos motivos para vender acciones, pero solo uno para comprarlas con tu dinero: creer que van a subir. Las compras de directivos son una de las señales más útiles.",
-          "guia": "g1"
+          "guia": "g1",
+          "porque": [
+            null,
+            "Quien va a irse no suele comprar acciones con su dinero.",
+            "Una ampliación diluye: un directivo no compraría justo antes.",
+            "No es obligatorio: por eso es una señal."
+          ]
         },
         {
           "id": "fga-2",
@@ -62,7 +68,13 @@
           ],
           "a": 1,
           "why": "Muchos directivos cobran en acciones y venden con planes fijados de antemano para diversificar. Preocupan las ventas grandes, repentinas o de varios a la vez.",
-          "guia": "g1"
+          "guia": "g1",
+          "porque": [
+            "Las ventas programadas cada trimestre son habituales para diversificar o pagar impuestos.",
+            null,
+            "Vender no es una señal de compra.",
+            "No está prohibido: está regulado y se comunica."
+          ]
         },
         {
           "id": "fga-3",
@@ -126,7 +138,13 @@
           ],
           "a": 1,
           "why": "Puede recomprar acciones con deuda o recortar inversión para subir el BPA del año. Los mejores incentivos miran el ROIC o el flujo de caja a varios años.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            "El BPA se puede inflar recomprando con deuda o recortando inversión.",
+            null,
+            "Un bono ligado al BPA no lleva a reducir la deuda.",
+            "Los impuestos no son el riesgo: lo es sacrificar el futuro por el BPA del año."
+          ]
         },
         {
           "id": "fgb-3",
@@ -149,7 +167,13 @@
           ],
           "a": 2,
           "why": "Lo que una dirección hace con el capital deja huella en el ROIC durante años. Es la medida más objetiva de si sabe invertir el dinero de los accionistas.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            "Salir en televisión no dice nada de cómo gestiona el dinero.",
+            "Una guía optimista puede ser solo marketing.",
+            null,
+            "El tamaño de la sede no mide lo que rinde lo invertido."
+          ]
         }
       ]
     }

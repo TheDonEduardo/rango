@@ -144,7 +144,13 @@
           ],
           "a": 3,
           "why": "Un punto más de tipo o de crecimiento cambia el valor un 17-25 %. Úsalo para entender qué tiene que pasar para justificar el precio, no como una cifra exacta.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            "Sirve para cualquier empresa que genere caja; en los bancos, de hecho, se usa menos.",
+            "Sí la tiene en cuenta: al pasar del valor de la empresa al de las acciones.",
+            "Se basa justo en el flujo de caja libre.",
+            null
+          ]
         },
         {
           "id": "f11b-5",

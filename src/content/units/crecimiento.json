@@ -86,7 +86,13 @@
           ],
           "a": 1,
           "why": "B pasa del 12 % al 25 % y al 41 %: cada trimestre crece más rápido que el anterior. A crece más hoy, pero desacelera; O'Neil y Minervini buscan la aceleración, que suele preceder a las grandes subidas.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            "A crece mucho, pero cada vez menos: del 40 % al 30 % y al 22 %. Eso es desacelerar.",
+            null,
+            "C crece de forma estable (35-36-34 %): no acelera.",
+            "Sí hay una: B pasa del 12 % al 25 % y al 41 %."
+          ]
         },
         {
           "id": "f1a-3",
@@ -134,7 +140,13 @@
           ],
           "a": 3,
           "why": "Sin ventas, el BPA solo crece por márgenes, recompras o partidas puntuales, y eso tiene límite. O'Neil pide que las ventas acompañen con al menos un 25 % de crecimiento.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            "El BPA puede crecer por recompras o partidas puntuales; sin ventas, ese crecimiento no dura.",
+            "Comparar el PER no explica de dónde sale el crecimiento, que es lo dudoso.",
+            "El dividendo no aclara si el beneficio es sano; primero, su origen.",
+            null
+          ]
         }
       ]
     },
@@ -180,7 +192,13 @@
           ],
           "a": 0,
           "why": "Los costes fijos se reparten entre más ventas y cada dólar adicional deja más margen. Minervini busca que BPA, ventas y márgenes aceleren a la vez durante tres trimestres.",
-          "guia": "g3"
+          "guia": "g3",
+          "porque": [
+            null,
+            "Un margen que sube del 14 % al 19 % con más ventas es lo contrario de un deterioro.",
+            "Las recompras afectan al BPA, no al margen operativo.",
+            "Si subieran los costes fijos, el margen bajaría; aquí sube."
+          ]
         },
         {
           "id": "f1b-3",
@@ -203,7 +221,13 @@
           ],
           "a": 1,
           "why": "El precio descuenta beneficios futuros, y una rebaja de previsiones obliga a los analistas a recortar estimaciones. Una sorpresa positiva con previsión rebajada suele acabar en gap bajista.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            "El precio mira hacia delante: un buen trimestre pesa menos que un año peor de lo previsto.",
+            null,
+            "No se compensan: la rebaja obliga a los analistas a recortar todo el año.",
+            "El volumen no explica la reacción; la explica la nueva previsión."
+          ]
         }
       ]
     }

@@ -69,7 +69,13 @@
           ],
           "a": 0,
           "why": "La luz y la comida se siguen pagando en una crisis; el coche nuevo o el viaje se aplazan. Por eso los defensivos caen menos en las recesiones y suben menos en las expansiones.",
-          "guia": "g1"
+          "guia": "g1",
+          "porque": [
+            null,
+            "Los coches nuevos se aplazan en una crisis: es un sector cíclico.",
+            "Los viajes son de lo primero que se recorta en una recesión.",
+            "La vivienda nueva se frena mucho cuando la economía cae."
+          ]
         },
         {
           "id": "f6a-3",
@@ -92,7 +98,13 @@
           ],
           "a": 1,
           "why": "El precio se adelanta al ciclo: sube cuando los beneficios todavía están en el suelo pero dejan de empeorar. Comprar con beneficios récord suele ser comprar el techo.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            "Con beneficios récord el PER parece bajo, pero suele ser el pico del ciclo.",
+            null,
+            "Cuando todo el mundo habla de un sector, el precio suele estar ya alto.",
+            "No hay que evitarlas: se compran en el momento adecuado del ciclo."
+          ]
         }
       ]
     },
@@ -156,7 +168,13 @@
           ],
           "a": 2,
           "why": "Cada sector tiene sus PER habituales según su crecimiento y su riesgo. Una empresa es cara o barata frente a sus comparables y a lo que crece, no frente a cualquier otra.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            "Cada sector tiene sus PER habituales: un banco no es más barato solo por un número menor.",
+            "Un PER alto puede justificarse con más crecimiento; no demuestra una burbuja.",
+            null,
+            "El PER sirve, pero comparando con empresas parecidas."
+          ]
         }
       ]
     }

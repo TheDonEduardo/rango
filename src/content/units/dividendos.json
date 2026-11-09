@@ -66,7 +66,13 @@
           ],
           "a": 0,
           "why": "Reparte más de lo que gana: lo paga con caja o con deuda, y eso no dura. Una rentabilidad por dividendo muy alta suele ser una advertencia, no una oportunidad.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            null,
+            "Repartir más de lo que gana no es sostenible: lo paga con caja o con deuda.",
+            "Pagar el 120 % no dice nada de que el beneficio vaya a crecer.",
+            "Más bien al contrario: puede estar endeudándose para pagarlo."
+          ]
         },
         {
           "id": "f9a-4",
@@ -124,7 +130,13 @@
           ],
           "a": 1,
           "why": "Con PER 60, cada 100 $ de recompra compran solo 1,67 $ de beneficio anual (100 ÷ 60). Recomprar crea valor cuando la acción está barata, no a cualquier precio.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            "Recomprar caro rinde poco: con PER 60, 100 $ compran 1,67 $ de beneficio al año.",
+            null,
+            "Recomprar no obliga a subir el dividendo.",
+            "Recomprar con la caja libre no lleva a salir de bolsa."
+          ]
         }
       ]
     }

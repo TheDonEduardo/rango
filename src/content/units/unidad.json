@@ -75,7 +75,13 @@
           ],
           "a": 1,
           "why": "La referencia habitual es 3 o más. Con 1,6, crecer más deprisa puede destruir dinero: primero hay que mejorar retención, precio o coste de captación.",
-          "guia": "g2"
+          "guia": "g2",
+          "porque": [
+            "Con 1,6 apenas compensa captar clientes; lo sano es 3 o más.",
+            null,
+            "Si el producto fuera gratis, no habría margen que comparar.",
+            "Sí dice mucho: si crecer crea o destruye valor."
+          ]
         }
       ]
     },
@@ -116,7 +122,13 @@
           ],
           "a": 2,
           "why": "Si los clientes existentes gastan cada vez más, la empresa crece aunque deje de captar: es la retención neta por encima del 100 % que viste en F6.",
-          "guia": "g4"
+          "guia": "g4",
+          "porque": [
+            "Si perdiera clientes, gastarían menos, no más.",
+            "Si el precio bajara, gastarían menos con el tiempo.",
+            null,
+            "Es muy útil: crecer con los clientes existentes es barato."
+          ]
         },
         {
           "id": "fub-4",
