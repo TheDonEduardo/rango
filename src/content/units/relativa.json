@@ -4,6 +4,32 @@
   "track": "fundamental",
   "title": "Valoración relativa",
   "blurb": "Barata o cara frente a sus comparables.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Valorar con comparables",
+      "texto": "Aplica el múltiplo medio de empresas parecidas a tu empresa. Da el precio si el mercado la valorase como a la media de su grupo.",
+      "ejemplo": "Comparables a PER 24 y un BPA de 3,50 $: 84 $. Sin beneficios, ventas de 150 M$ a 6 veces: 900 M$."
+    },
+    {
+      "id": "g2",
+      "titulo": "Primas y descuentos",
+      "texto": "Un múltiplo mayor se justifica con más crecimiento, más ROIC o menos riesgo. Antes de ver un descuento como oportunidad, busca su razón.",
+      "ejemplo": "PER 18 frente a 24 de sus comparables: un descuento del 25 %."
+    },
+    {
+      "id": "g3",
+      "titulo": "Elegir el múltiplo",
+      "texto": "El PER solo mira el capital; el EV/EBITDA suma la deuda y resta la caja. Cada sector se valora por lo que mueve su negocio: capital en bancos, ventas en empresas sin beneficios.",
+      "ejemplo": "Capitalización de 1.000 M$, deuda neta de 200 M$ y EBITDA de 100 M$: EV/EBITDA de 12."
+    },
+    {
+      "id": "g4",
+      "titulo": "Si todo el sector está caro",
+      "texto": "Comparar solo dice si una empresa es cara o barata frente a otras. Si todo el grupo está inflado, la más barata del sector puede seguir siendo cara.",
+      "ejemplo": "Contrasta los múltiplos con la historia del sector y con un descuento de flujos."
+    }
+  ],
   "lessons": [
     {
       "id": "fra",
@@ -15,7 +41,8 @@
           "q": "Sus comparables cotizan a un PER medio de 24 y tu empresa tiene un BPA de 3,50 $. ¿Qué precio implica ese múltiplo?",
           "unit": "$",
           "a": 84,
-          "why": "24 × 3,50 = 84 $. Es el precio si el mercado la valorase como a la media de su grupo, no una garantía de que llegue ahí."
+          "why": "24 × 3,50 = 84 $. Es el precio si el mercado la valorase como a la media de su grupo, no una garantía de que llegue ahí.",
+          "guia": "g1"
         },
         {
           "id": "fra-2",
@@ -23,7 +50,8 @@
           "q": "Una empresa sin beneficios vende 150 M$ al año y su sector cotiza a 6 veces ventas (EV/ventas). ¿Qué valor de empresa implica, en millones?",
           "unit": "",
           "a": 900,
-          "why": "150 × 6 = 900 M$. Sin beneficios, se usan las ventas; el riesgo es pagar por ventas que quizá nunca den beneficio."
+          "why": "150 × 6 = 900 M$. Sin beneficios, se usan las ventas; el riesgo es pagar por ventas que quizá nunca den beneficio.",
+          "guia": "g1"
         },
         {
           "id": "fra-3",
@@ -36,7 +64,8 @@
             "Porque este año paga menos impuestos"
           ],
           "a": 1,
-          "why": "Un múltiplo mayor se justifica con más crecimiento, más ROIC o menos riesgo. Si no hay nada de eso, la prima es solo entusiasmo."
+          "why": "Un múltiplo mayor se justifica con más crecimiento, más ROIC o menos riesgo. Si no hay nada de eso, la prima es solo entusiasmo.",
+          "guia": "g2"
         },
         {
           "id": "fra-4",
@@ -44,7 +73,8 @@
           "q": "Cotiza a un PER de 18 y sus comparables, a 24. ¿Con qué descuento cotiza?",
           "unit": "%",
           "a": 25,
-          "why": "(24 − 18) ÷ 24 = 25 %. Antes de verlo como oportunidad, busca la razón del descuento: suele haberla."
+          "why": "(24 − 18) ÷ 24 = 25 %. Antes de verlo como oportunidad, busca la razón del descuento: suele haberla.",
+          "guia": "g2"
         }
       ]
     },
@@ -63,7 +93,8 @@
             "El precio frente al valor contable"
           ],
           "a": 0,
-          "why": "El PER solo mira el capital; el EV suma la deuda y resta la caja, así que compara negocios con financiaciones distintas."
+          "why": "El PER solo mira el capital; el EV suma la deuda y resta la caja, así que compara negocios con financiaciones distintas.",
+          "guia": "g3"
         },
         {
           "id": "frb-2",
@@ -71,7 +102,8 @@
           "q": "Capitalización de 1.000 M$, deuda neta de 200 M$ y EBITDA de 100 M$. ¿A cuántas veces EBITDA cotiza?",
           "unit": "",
           "a": 12,
-          "why": "EV = 1.000 + 200 = 1.200 M$; 1.200 ÷ 100 = 12 veces."
+          "why": "EV = 1.000 + 200 = 1.200 M$; 1.200 ÷ 100 = 12 veces.",
+          "guia": "g3"
         },
         {
           "id": "frb-3",
@@ -95,7 +127,8 @@
               "Precio frente al valor de sus inmuebles"
             ]
           ],
-          "why": "Cada sector se valora por lo que mueve su negocio: el capital en los bancos, las ventas en el software temprano y los activos en el inmobiliario."
+          "why": "Cada sector se valora por lo que mueve su negocio: el capital en los bancos, las ventas en el software temprano y los activos en el inmobiliario.",
+          "guia": "g3"
         },
         {
           "id": "frb-4",
@@ -108,7 +141,8 @@
             "Que no tenga comparables"
           ],
           "a": 0,
-          "why": "Comparar solo dice si es cara o barata frente a otros. Si todo el grupo está inflado, conviene contrastarlo con un descuento de flujos o con su propia historia."
+          "why": "Comparar solo dice si es cara o barata frente a otros. Si todo el grupo está inflado, conviene contrastarlo con un descuento de flujos o con su propia historia.",
+          "guia": "g4"
         }
       ]
     }

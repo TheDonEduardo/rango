@@ -4,6 +4,32 @@
   "track": "fundamental",
   "title": "Gestión y gobierno corporativo",
   "blurb": "Quién manda, cómo cobra y qué hace con tu dinero.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Compras y ventas de directivos",
+      "texto": "Hay muchos motivos para vender acciones, pero solo uno para comprarlas con tu dinero. Las ventas escalonadas con planes fijados de antemano suelen ser rutina.",
+      "ejemplo": "Un consejero delegado que compra 5 M$ en el mercado es una señal más fuerte que diez ventas programadas."
+    },
+    {
+      "id": "g2",
+      "titulo": "Los fundadores dentro",
+      "texto": "Que los fundadores conserven una parte importante alinea sus intereses con los tuyos, aunque también les da mucho control.",
+      "ejemplo": "Los fundadores tienen 120 M de 400 M de acciones: un 30 %."
+    },
+    {
+      "id": "g3",
+      "titulo": "Incentivos",
+      "texto": "No importa tanto cuánto cobra la dirección como en qué se basa. Un bono ligado solo al BPA del año invita a recomprar con deuda o recortar inversión.",
+      "ejemplo": "Mejor ligado al ROIC o al valor a largo plazo."
+    },
+    {
+      "id": "g4",
+      "titulo": "Asignación de capital",
+      "texto": "Lo que la dirección hace con la caja deja huella en el ROIC durante años. Las compras con primas altas tienen que justificarse con mejoras reales.",
+      "ejemplo": "Pagar 1.300 M$ por una empresa que cotizaba a 1.000 M$ es una prima del 30 %."
+    }
+  ],
   "lessons": [
     {
       "id": "fga",
@@ -20,7 +46,8 @@
             "Nada: es obligatorio"
           ],
           "a": 0,
-          "why": "Hay muchos motivos para vender acciones, pero solo uno para comprarlas con tu dinero: creer que van a subir. Las compras de directivos son una de las señales más útiles."
+          "why": "Hay muchos motivos para vender acciones, pero solo uno para comprarlas con tu dinero: creer que van a subir. Las compras de directivos son una de las señales más útiles.",
+          "guia": "g1"
         },
         {
           "id": "fga-2",
@@ -33,7 +60,8 @@
             "Está prohibido por ley"
           ],
           "a": 1,
-          "why": "Muchos directivos cobran en acciones y venden con planes fijados de antemano para diversificar. Preocupan las ventas grandes, repentinas o de varios a la vez."
+          "why": "Muchos directivos cobran en acciones y venden con planes fijados de antemano para diversificar. Preocupan las ventas grandes, repentinas o de varios a la vez.",
+          "guia": "g1"
         },
         {
           "id": "fga-3",
@@ -41,7 +69,8 @@
           "q": "Los fundadores tienen 120 M de las 400 M de acciones. ¿Qué porcentaje de la empresa controlan?",
           "unit": "%",
           "a": 30,
-          "why": "120 ÷ 400 = 30 %. Que los fundadores sigan dentro alinea sus intereses con los tuyos, aunque también les da mucho poder en las votaciones."
+          "why": "120 ÷ 400 = 30 %. Que los fundadores sigan dentro alinea sus intereses con los tuyos, aunque también les da mucho poder en las votaciones.",
+          "guia": "g2"
         },
         {
           "id": "fga-4",
@@ -65,7 +94,8 @@
               "Liga el sueldo a objetivos del negocio"
             ]
           ],
-          "why": "Un buen gobierno corporativo hace que la dirección trabaje para los accionistas y rinda cuentas cuando se equivoca."
+          "why": "Un buen gobierno corporativo hace que la dirección trabaje para los accionistas y rinda cuentas cuando se equivoca.",
+          "guia": "g3"
         }
       ]
     },
@@ -79,7 +109,8 @@
           "q": "El consejero delegado cobra 30 M$ al año y el beneficio neto es de 600 M$. ¿Qué porcentaje del beneficio supone su remuneración?",
           "unit": "%",
           "a": 5,
-          "why": "30 ÷ 600 = 5 %. No es el importe lo que importa, sino si está ligado a crear valor para el accionista a largo plazo."
+          "why": "30 ÷ 600 = 5 %. No es el importe lo que importa, sino si está ligado a crear valor para el accionista a largo plazo.",
+          "guia": "g3"
         },
         {
           "id": "fgb-2",
@@ -92,7 +123,8 @@
             "Que pague más impuestos"
           ],
           "a": 1,
-          "why": "Puede recomprar acciones con deuda o recortar inversión para subir el BPA del año. Los mejores incentivos miran el ROIC o el flujo de caja a varios años."
+          "why": "Puede recomprar acciones con deuda o recortar inversión para subir el BPA del año. Los mejores incentivos miran el ROIC o el flujo de caja a varios años.",
+          "guia": "g3"
         },
         {
           "id": "fgb-3",
@@ -100,7 +132,8 @@
           "q": "La empresa compra otra por 1.300 M$ cuando esta cotizaba a 1.000 M$. ¿Qué prima paga?",
           "unit": "%",
           "a": 30,
-          "why": "(1.300 − 1.000) ÷ 1.000 = 30 %. Para que la compra cree valor, las mejoras que consiga tienen que valer más que esa prima, y muchas compras no lo logran."
+          "why": "(1.300 − 1.000) ÷ 1.000 = 30 %. Para que la compra cree valor, las mejoras que consiga tienen que valer más que esa prima, y muchas compras no lo logran.",
+          "guia": "g4"
         },
         {
           "id": "fgb-4",
@@ -113,7 +146,8 @@
             "El tamaño de su sede"
           ],
           "a": 2,
-          "why": "Lo que una dirección hace con el capital deja huella en el ROIC durante años. Es la medida más objetiva de si sabe invertir el dinero de los accionistas."
+          "why": "Lo que una dirección hace con el capital deja huella en el ROIC durante años. Es la medida más objetiva de si sabe invertir el dinero de los accionistas.",
+          "guia": "g4"
         }
       ]
     }

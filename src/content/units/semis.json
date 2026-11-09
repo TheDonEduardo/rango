@@ -4,6 +4,32 @@
   "track": "fundamental",
   "title": "Análisis de un sector: chips",
   "blurb": "Semiconductores: un sector cíclico que hay que saber leer.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Un sector muy cíclico",
+      "texto": "Las fábricas de chips tardan años en construirse: cuando la demanda sube falta oferta y los precios suben; cuando llega la nueva capacidad, sobra y caen.",
+      "ejemplo": "Es un negocio muy intensivo en capital: invertir 15.000 M$ con ventas de 50.000 M$ es un 30 %."
+    },
+    {
+      "id": "g2",
+      "titulo": "Inventario y pedidos",
+      "texto": "El inventario que crece más rápido que las ventas anticipa caídas. El book-to-bill compara pedidos con facturación: por encima de 1, la cartera crece.",
+      "ejemplo": "Inventario de 6.000 M$ con un coste de ventas de 24.000 M$: 91 días. Pedidos de 1.100 M$ y facturación de 1.000: 1,1."
+    },
+    {
+      "id": "g3",
+      "titulo": "Leer el ciclo",
+      "texto": "El precio se adelanta: empieza a subir cuando el inventario se ha limpiado aunque los beneficios sigan bajos. Los márgenes amplifican el ciclo.",
+      "ejemplo": "Con ventas de 4.000 M$, pasar de un margen bruto del 60 % al 45 % son 600 M$ menos."
+    },
+    {
+      "id": "g4",
+      "titulo": "Tipos de empresa y clientes",
+      "texto": "Diseño sin fábrica, fabricantes, equipos y memoria se mueven distinto. Y la concentración de clientes es un riesgo propio del sector.",
+      "ejemplo": "Si el mayor cliente es el 25 % de las ventas y recorta sus compras a la mitad, las ventas caen un 12,5 %."
+    }
+  ],
   "lessons": [
     {
       "id": "fsa",
@@ -20,7 +46,8 @@
             "Regulada: los precios los fija el Estado"
           ],
           "a": 0,
-          "why": "Las fábricas tardan años en construirse: cuando la demanda sube falta oferta y los precios se disparan, y cuando la nueva capacidad llega sobra. Ese ciclo mueve márgenes y acciones."
+          "why": "Las fábricas tardan años en construirse: cuando la demanda sube falta oferta y los precios se disparan, y cuando la nueva capacidad llega sobra. Ese ciclo mueve márgenes y acciones.",
+          "guia": "g1"
         },
         {
           "id": "fsa-2",
@@ -29,7 +56,8 @@
           "unit": "",
           "a": 91,
           "why": "6.000 ÷ 24.000 × 365 = 91 días. En chips, un inventario que crece más rápido que las ventas suele anticipar recortes de precios.",
-          "tol": 0.5
+          "tol": 0.5,
+          "guia": "g2"
         },
         {
           "id": "fsa-3",
@@ -42,7 +70,8 @@
             "Nada sobre su demanda"
           ],
           "a": 1,
-          "why": "Por encima de 1, la cartera de pedidos crece y las ventas futuras tienen respaldo. Por debajo de 1 durante varios trimestres suele marcar el inicio de la fase baja."
+          "why": "Por encima de 1, la cartera de pedidos crece y las ventas futuras tienen respaldo. Por debajo de 1 durante varios trimestres suele marcar el inicio de la fase baja.",
+          "guia": "g2"
         },
         {
           "id": "fsa-4",
@@ -50,7 +79,8 @@
           "q": "Un fabricante vende 50.000 M$ al año y dedica 15.000 M$ a inversión en fábricas (capex). ¿Qué porcentaje de sus ventas reinvierte?",
           "unit": "%",
           "a": 30,
-          "why": "15.000 ÷ 50.000 = 30 %. Es un negocio muy intensivo en capital: el flujo de caja libre depende tanto de la inversión como del beneficio."
+          "why": "15.000 ÷ 50.000 = 30 %. Es un negocio muy intensivo en capital: el flujo de caja libre depende tanto de la inversión como del beneficio.",
+          "guia": "g1"
         }
       ]
     },
@@ -69,7 +99,8 @@
             "Cuando los pedidos están en máximos"
           ],
           "a": 1,
-          "why": "El precio se adelanta: empieza a subir cuando el inventario se ha limpiado aunque los beneficios aún no hayan tocado suelo. Esperar a ver buenos beneficios suele ser llegar tarde."
+          "why": "El precio se adelanta: empieza a subir cuando el inventario se ha limpiado aunque los beneficios aún no hayan tocado suelo. Esperar a ver buenos beneficios suele ser llegar tarde.",
+          "guia": "g3"
         },
         {
           "id": "fsb-2",
@@ -77,7 +108,8 @@
           "q": "Con ventas de 4.000 M$, el margen bruto pasa del 60 % en el pico al 45 % en el valle. ¿Cuántos millones de beneficio bruto pierde solo por el margen?",
           "unit": "",
           "a": 600,
-          "why": "4.000 × (60 % − 45 %) = 600 M$. En los sectores cíclicos los márgenes amplifican el ciclo: el beneficio cae mucho más que las ventas."
+          "why": "4.000 × (60 % − 45 %) = 600 M$. En los sectores cíclicos los márgenes amplifican el ciclo: el beneficio cae mucho más que las ventas.",
+          "guia": "g3"
         },
         {
           "id": "fsb-3",
@@ -101,7 +133,8 @@
               "Dependen del capex de sus clientes"
             ]
           ],
-          "why": "No todo el sector se mueve igual: el diseño sin fábrica tiene márgenes más estables, y los equipos dependen de cuánto inviertan los fabricantes."
+          "why": "No todo el sector se mueve igual: el diseño sin fábrica tiene márgenes más estables, y los equipos dependen de cuánto inviertan los fabricantes.",
+          "guia": "g4"
         },
         {
           "id": "fsb-4",
@@ -109,7 +142,8 @@
           "q": "El mayor cliente de una empresa supone el 25 % de sus ventas. Si reduce sus compras a la mitad, ¿cuánto caen las ventas totales?",
           "unit": "%",
           "a": 12.5,
-          "why": "25 % × 50 % = 12,5 %. La concentración de clientes es un riesgo propio del sector: un solo cambio de proveedor puede costar un trimestre."
+          "why": "25 % × 50 % = 12,5 %. La concentración de clientes es un riesgo propio del sector: un solo cambio de proveedor puede costar un trimestre.",
+          "guia": "g4"
         }
       ]
     }

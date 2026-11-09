@@ -4,6 +4,32 @@
   "track": "fundamental",
   "title": "Economía de la unidad",
   "blurb": "Cuánto cuesta un cliente y cuánto deja.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Coste de captación (CAC)",
+      "texto": "Lo que cuesta conseguir un cliente: gasto en marketing y ventas entre clientes nuevos. Por sí solo no dice nada; hay que compararlo con lo que deja el cliente.",
+      "ejemplo": "600.000 € para conseguir 2.000 clientes: 300 € por cliente."
+    },
+    {
+      "id": "g2",
+      "titulo": "Valor del cliente (LTV)",
+      "texto": "El margen que deja un cliente durante toda su relación con la empresa. La referencia habitual es que el LTV sea 3 o más veces el CAC.",
+      "ejemplo": "20 € al mes con un 80 % de margen durante 30 meses: 480 €. Con un CAC de 300 €, LTV/CAC de 1,6: crecer puede destruir dinero."
+    },
+    {
+      "id": "g3",
+      "titulo": "Recuperar la inversión",
+      "texto": "Cuántos meses tarda el margen de un cliente en cubrir lo que costó captarlo. Cuanto más tarda, más caja necesita la empresa para crecer.",
+      "ejemplo": "CAC de 300 € y margen de 16 € al mes: 18,75 meses."
+    },
+    {
+      "id": "g4",
+      "titulo": "Bajas y expansión",
+      "texto": "Las bajas mensuales marcan cuánto dura un cliente. Si los clientes existentes gastan cada vez más, la empresa crece aunque capte menos.",
+      "ejemplo": "Con un 3 % de bajas al mes, la vida media es de 33 meses; con un 2 %, de 50."
+    }
+  ],
   "lessons": [
     {
       "id": "fua",
@@ -15,7 +41,8 @@
           "q": "Una empresa gasta 600.000 € en marketing y ventas y consigue 2.000 clientes nuevos. ¿Cuánto le cuesta captar cada uno?",
           "unit": "€",
           "a": 300,
-          "why": "600.000 ÷ 2.000 = 300 € por cliente (CAC). Por sí solo no dice nada: hay que compararlo con lo que deja cada cliente."
+          "why": "600.000 ÷ 2.000 = 300 € por cliente (CAC). Por sí solo no dice nada: hay que compararlo con lo que deja cada cliente.",
+          "guia": "g1"
         },
         {
           "id": "fua-2",
@@ -23,7 +50,8 @@
           "q": "Cada cliente paga 20 € al mes, con un margen bruto del 80 %, y se queda de media 30 meses. ¿Cuánto margen deja en total (LTV)?",
           "unit": "€",
           "a": 480,
-          "why": "20 × 80 % × 30 = 480 €. Es el valor del cliente durante toda su relación con la empresa."
+          "why": "20 × 80 % × 30 = 480 €. Es el valor del cliente durante toda su relación con la empresa.",
+          "guia": "g2"
         },
         {
           "id": "fua-3",
@@ -31,7 +59,8 @@
           "q": "Con ese LTV de 480 € y un coste de captación de 300 €, ¿cuál es la relación LTV/CAC?",
           "unit": "",
           "a": 1.6,
-          "why": "480 ÷ 300 = 1,6: cada euro gastado en captar devuelve 1,60 € de margen, antes de cubrir el resto de gastos."
+          "why": "480 ÷ 300 = 1,6: cada euro gastado en captar devuelve 1,60 € de margen, antes de cubrir el resto de gastos.",
+          "guia": "g2"
         },
         {
           "id": "fua-4",
@@ -44,7 +73,8 @@
             "Nada sobre la rentabilidad"
           ],
           "a": 1,
-          "why": "La referencia habitual es 3 o más. Con 1,6, crecer más deprisa puede destruir dinero: primero hay que mejorar retención, precio o coste de captación."
+          "why": "La referencia habitual es 3 o más. Con 1,6, crecer más deprisa puede destruir dinero: primero hay que mejorar retención, precio o coste de captación.",
+          "guia": "g2"
         }
       ]
     },
@@ -59,7 +89,8 @@
           "unit": "",
           "a": 18.8,
           "why": "300 ÷ 16 = 18,75 meses. Cuanto más tarda, más caja necesita la empresa para crecer.",
-          "tol": 0.06
+          "tol": 0.06,
+          "guia": "g3"
         },
         {
           "id": "fub-2",
@@ -68,7 +99,8 @@
           "unit": "",
           "a": 33.3,
           "why": "1 ÷ 0,03 = 33,3 meses. Bajar las bajas del 3 % al 2 % alargaría la vida media a 50 meses: la retención es la palanca más potente del LTV.",
-          "tol": 0.06
+          "tol": 0.06,
+          "guia": "g4"
         },
         {
           "id": "fub-3",
@@ -81,7 +113,8 @@
             "Nada útil para el inversor"
           ],
           "a": 2,
-          "why": "Si los clientes existentes gastan cada vez más, la empresa crece aunque deje de captar: es la retención neta por encima del 100 % que viste en F6."
+          "why": "Si los clientes existentes gastan cada vez más, la empresa crece aunque deje de captar: es la retención neta por encima del 100 % que viste en F6.",
+          "guia": "g4"
         },
         {
           "id": "fub-4",
@@ -105,7 +138,8 @@
               "Meses para recuperar la captación"
             ]
           ],
-          "why": "Las cuatro juntas dicen si crecer crea o destruye valor, algo que la cuenta de resultados de una empresa joven no muestra."
+          "why": "Las cuatro juntas dicen si crecer crea o destruye valor, algo que la cuenta de resultados de una empresa joven no muestra.",
+          "guia": "g2"
         }
       ]
     }

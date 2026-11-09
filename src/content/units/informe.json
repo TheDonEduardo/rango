@@ -4,6 +4,32 @@
   "track": "fundamental",
   "title": "Informe de resultados",
   "blurb": "Qué mirar el día que una empresa publica sus cuentas.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Sorpresas frente al consenso",
+      "texto": "El precio reacciona a la diferencia entre el dato y lo que esperaban los analistas. Una sorpresa en ventas es más difícil de fabricar que una en BPA.",
+      "ejemplo": "Consenso de 1,60 $ y BPA de 1,76 $: una sorpresa del 10 %."
+    },
+    {
+      "id": "g2",
+      "titulo": "Ajustado frente a contable",
+      "texto": "El BPA ajustado excluye partidas que la empresa considera no recurrentes, como el pago en acciones o las amortizaciones de compras. Mira siempre qué se deja fuera.",
+      "ejemplo": "Ajustado de 1,20 $ y contable de 0,80 $: averigua qué explica esos 0,40 $."
+    },
+    {
+      "id": "g3",
+      "titulo": "La guía pesa más",
+      "texto": "El precio mira hacia delante: unas previsiones flojas pueden hundir una acción aunque el trimestre bata en todo.",
+      "ejemplo": "Bate en BPA y ventas, pero rebaja la guía: la acción cae un 7 %."
+    },
+    {
+      "id": "g4",
+      "titulo": "La cuenta de resultados",
+      "texto": "De arriba abajo: ventas, menos coste de las ventas (margen bruto), menos gastos operativos (margen operativo), menos intereses e impuestos (beneficio neto).",
+      "ejemplo": "Ventas de 800 M$, costes de 320 y gastos de 280: margen operativo del 25 %."
+    }
+  ],
   "lessons": [
     {
       "id": "f5a",
@@ -15,7 +41,8 @@
           "q": "El consenso de analistas esperaba un BPA de 1,60 $ y la empresa publica 1,76 $. ¿De cuánto es la sorpresa?",
           "unit": "%",
           "a": 10,
-          "why": "(1,76 − 1,60) ÷ 1,60 = 0,16 ÷ 1,60 = 10 %. El precio reacciona a la diferencia con lo esperado, no al dato en sí."
+          "why": "(1,76 − 1,60) ÷ 1,60 = 0,16 ÷ 1,60 = 10 %. El precio reacciona a la diferencia con lo esperado, no al dato en sí.",
+          "guia": "g1"
         },
         {
           "id": "f5a-2",
@@ -23,7 +50,8 @@
           "q": "El consenso esperaba unas ventas de 500 M$ y la empresa publica 515 M$. ¿De cuánto es la sorpresa en ventas?",
           "unit": "%",
           "a": 3,
-          "why": "(515 − 500) ÷ 500 = 3 %. Una sorpresa en ventas es más difícil de fabricar que una en BPA, que puede venir de recompras, impuestos o recortes puntuales."
+          "why": "(515 − 500) ÷ 500 = 3 %. Una sorpresa en ventas es más difícil de fabricar que una en BPA, que puede venir de recompras, impuestos o recortes puntuales.",
+          "guia": "g1"
         },
         {
           "id": "f5a-3",
@@ -36,7 +64,8 @@
             "Si ha subido el dividendo"
           ],
           "a": 0,
-          "why": "La diferencia suele ser pago en acciones a empleados, amortización de compras de empresas o partidas puntuales. Si se repiten cada trimestre, son costes reales aunque se excluyan."
+          "why": "La diferencia suele ser pago en acciones a empleados, amortización de compras de empresas o partidas puntuales. Si se repiten cada trimestre, son costes reales aunque se excluyan.",
+          "guia": "g2"
         },
         {
           "id": "f5a-4",
@@ -49,7 +78,8 @@
             "Que los resultados se publicaron tarde"
           ],
           "a": 2,
-          "why": "El precio mira hacia delante: unas previsiones flojas pesan más que un buen trimestre ya pasado. Lee siempre la guía de la empresa, no solo el titular."
+          "why": "El precio mira hacia delante: unas previsiones flojas pesan más que un buen trimestre ya pasado. Lee siempre la guía de la empresa, no solo el titular.",
+          "guia": "g3"
         }
       ]
     },
@@ -70,7 +100,8 @@
             "Intereses e impuestos",
             "Beneficio neto"
           ],
-          "why": "Se parte de las ventas y se van restando costes: los de producir, los de operar y, al final, intereses e impuestos. Cada escalón dice dónde se va el dinero."
+          "why": "Se parte de las ventas y se van restando costes: los de producir, los de operar y, al final, intereses e impuestos. Cada escalón dice dónde se va el dinero.",
+          "guia": "g4"
         },
         {
           "id": "f5b-2",
@@ -98,7 +129,8 @@
           },
           "unit": "%",
           "a": 25,
-          "why": "Beneficio operativo = 800 − 320 − 280 = 200 M$; 200 ÷ 800 = 25 %. Es lo que queda de cada dólar vendido tras pagar el negocio, antes de intereses e impuestos."
+          "why": "Beneficio operativo = 800 − 320 − 280 = 200 M$; 200 ÷ 800 = 25 %. Es lo que queda de cada dólar vendido tras pagar el negocio, antes de intereses e impuestos.",
+          "guia": "g4"
         },
         {
           "id": "f5b-3",
@@ -106,7 +138,8 @@
           "q": "Beneficio operativo de 200 M$, intereses de 20 M$, impuesto del 25 % y 90 M de acciones. ¿BPA?",
           "unit": "$",
           "a": 1.5,
-          "why": "(200 − 20) × (1 − 0,25) = 135 M$ de beneficio neto; 135 ÷ 90 = 1,50 $ por acción."
+          "why": "(200 − 20) × (1 − 0,25) = 135 M$ de beneficio neto; 135 ÷ 90 = 1,50 $ por acción.",
+          "guia": "g4"
         },
         {
           "id": "f5b-4",
@@ -130,7 +163,8 @@
               "Beneficio neto ÷ número de acciones"
             ]
           ],
-          "why": "Cada margen sale de dividir su beneficio entre las ventas: bruto, operativo y neto. Si el bruto aguanta y el operativo cae, el problema está en los gastos, no en el producto."
+          "why": "Cada margen sale de dividir su beneficio entre las ventas: bruto, operativo y neto. Si el bruto aguanta y el operativo cae, el problema está en los gastos, no en el producto.",
+          "guia": "g4"
         }
       ]
     }

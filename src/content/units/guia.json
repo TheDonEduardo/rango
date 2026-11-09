@@ -4,6 +4,32 @@
   "track": "fundamental",
   "title": "Guía y expectativas",
   "blurb": "Lo que la empresa promete y lo que los analistas esperan.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Leer la guía",
+      "texto": "La guía es la previsión de la propia empresa. Se compara su punto medio con el consenso: si queda por debajo, suele pesar más que el trimestre.",
+      "ejemplo": "Guía de 1.180 a 1.220 M$: punto medio de 1.200, un 2,44 % por debajo de un consenso de 1.230."
+    },
+    {
+      "id": "g2",
+      "titulo": "Lo que más mueve el precio",
+      "texto": "Batir el trimestre y subir la previsión del año a la vez es la combinación más potente: el pasado y el futuro mejoran juntos.",
+      "ejemplo": "Una guía de 920 M$ sobre 800 M$ del año pasado implica crecer un 15 %."
+    },
+    {
+      "id": "g3",
+      "titulo": "Historial de la empresa",
+      "texto": "Muchas empresas guían por debajo de lo que esperan para poder batir. Con ese historial, el mercado ya lo descuenta.",
+      "ejemplo": "Ocho trimestres seguidos superando su guía: batirla otra vez no sorprende a nadie."
+    },
+    {
+      "id": "g4",
+      "titulo": "Revisiones de estimaciones",
+      "texto": "Las revisiones al alza del consenso son una de las señales que más mueven el precio. Si suben las estimaciones y el precio no, el PER adelantado baja.",
+      "ejemplo": "BPA estimado de 4,00 a 4,40 $ (+10 %) con el precio a 88 $: el PER adelantado pasa de 22 a 20."
+    }
+  ],
   "lessons": [
     {
       "id": "f10a",
@@ -16,7 +42,8 @@
           "unit": "%",
           "a": 2.44,
           "why": "Punto medio: (1.180 + 1.220) ÷ 2 = 1.200 M$. (1.230 − 1.200) ÷ 1.230 = 2,44 % por debajo: aunque el trimestre haya sido bueno, esta guía suele castigar el precio.",
-          "tol": 0.02
+          "tol": 0.02,
+          "guia": "g1"
         },
         {
           "id": "f10a-2",
@@ -29,7 +56,8 @@
             "Una ampliación de capital"
           ],
           "a": 0,
-          "why": "Es la combinación que más mueve el precio: el pasado y el futuro mejoran a la vez, y los analistas tienen que subir sus estimaciones."
+          "why": "Es la combinación que más mueve el precio: el pasado y el futuro mejoran a la vez, y los analistas tienen que subir sus estimaciones.",
+          "guia": "g2"
         },
         {
           "id": "f10a-3",
@@ -37,7 +65,8 @@
           "q": "Las ventas del año pasado fueron 800 M$ y la guía para este año es de 920 M$. ¿Qué crecimiento implica?",
           "unit": "%",
           "a": 15,
-          "why": "920 ÷ 800 − 1 = 15 %. Compáralo con el crecimiento de años anteriores: una guía que desacelera pesa aunque el número parezca alto."
+          "why": "920 ÷ 800 − 1 = 15 %. Compáralo con el crecimiento de años anteriores: una guía que desacelera pesa aunque el número parezca alto.",
+          "guia": "g2"
         },
         {
           "id": "f10a-4",
@@ -50,7 +79,8 @@
             "Como una garantía de resultados"
           ],
           "a": 2,
-          "why": "Muchas empresas guían por debajo de lo que esperan para poder batir. Con ese historial, el mercado ya descuenta que superará su guía: lo que sorprendería es que no lo hiciera."
+          "why": "Muchas empresas guían por debajo de lo que esperan para poder batir. Con ese historial, el mercado ya descuenta que superará su guía: lo que sorprendería es que no lo hiciera.",
+          "guia": "g3"
         }
       ]
     },
@@ -64,7 +94,8 @@
           "q": "Hace tres meses el consenso de BPA para el año era de 4,00 $ y hoy es de 4,40 $. ¿Cuánto se ha revisado al alza?",
           "unit": "%",
           "a": 10,
-          "why": "4,40 ÷ 4,00 − 1 = 10 %. Las revisiones al alza seguidas son una de las señales que más acompañan a las acciones líderes."
+          "why": "4,40 ÷ 4,00 − 1 = 10 %. Las revisiones al alza seguidas son una de las señales que más acompañan a las acciones líderes.",
+          "guia": "g4"
         },
         {
           "id": "f10b-2",
@@ -72,7 +103,8 @@
           "q": "La acción sigue cotizando a 88 $. ¿Cuál es su PER adelantado con la nueva estimación de 4,40 $?",
           "unit": "",
           "a": 20,
-          "why": "88 ÷ 4,40 = 20, frente a 88 ÷ 4,00 = 22 hace tres meses. Sin moverse el precio, la acción se ha abaratado."
+          "why": "88 ÷ 4,40 = 20, frente a 88 ÷ 4,00 = 22 hace tres meses. Sin moverse el precio, la acción se ha abaratado.",
+          "guia": "g4"
         },
         {
           "id": "f10b-3",
@@ -85,7 +117,8 @@
             "Ya no se puede valorar"
           ],
           "a": 0,
-          "why": "Mismo precio con más beneficio esperado: el PER adelantado baja. Si las revisiones son fiables, el precio suele acabar ajustándose."
+          "why": "Mismo precio con más beneficio esperado: el PER adelantado baja. Si las revisiones son fiables, el precio suele acabar ajustándose.",
+          "guia": "g4"
         },
         {
           "id": "f10b-4",
@@ -109,7 +142,8 @@
               "Diferencia entre lo publicado y lo esperado"
             ]
           ],
-          "why": "El precio se mueve con lo que cambia frente a lo esperado: por eso importan tanto la guía, el consenso y sus revisiones."
+          "why": "El precio se mueve con lo que cambia frente a lo esperado: por eso importan tanto la guía, el consenso y sus revisiones.",
+          "guia": "g4"
         }
       ]
     }

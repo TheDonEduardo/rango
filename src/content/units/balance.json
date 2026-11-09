@@ -4,6 +4,32 @@
   "track": "fundamental",
   "title": "Balance y caja",
   "blurb": "Deuda, autonomía de caja y riesgo de dilución.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Deuda neta / EBITDA",
+      "texto": "Mide cuántos años de resultado bruto harían falta para pagar la deuda, restando la caja. Por encima de 3, el endeudamiento empieza a ser alto en la mayoría de sectores.",
+      "ejemplo": "Deuda de 6.000 M$, caja de 1.500 y EBITDA de 1.500: 3 veces."
+    },
+    {
+      "id": "g2",
+      "titulo": "Cobertura de intereses",
+      "texto": "El beneficio operativo entre los intereses dice cuánto podría caer el negocio antes de no poder pagarlos. Y fíjate en cuándo vence la deuda y a qué tipo se renovará.",
+      "ejemplo": "EBIT de 800 M$ e intereses de 200: cobertura de 4 veces. El beneficio podría caer un 75 % y aún pagaría."
+    },
+    {
+      "id": "g3",
+      "titulo": "Caja y autonomía",
+      "texto": "Una empresa que pierde dinero necesita saber cuánto le dura la caja. Con poca, tendrá que pedir prestado o emitir acciones, y eso diluye al accionista.",
+      "ejemplo": "120 M$ de caja quemando 30 M$ por trimestre: 12 meses. Colocar 90 M$ a 2,70 $ con 100 M de acciones exige un 33 % más de acciones."
+    },
+    {
+      "id": "g4",
+      "titulo": "Beneficio frente a caja",
+      "texto": "El beneficio contable no paga facturas; la caja, sí. Compara el flujo de caja con el beneficio: si la conversión cae varios años seguidos, algo no cuadra.",
+      "ejemplo": "Beneficio de 400 M$ y caja libre de 340 M$: convierte un 85 %."
+    }
+  ],
   "lessons": [
     {
       "id": "f3a",
@@ -15,7 +41,8 @@
           "q": "Deuda: 6.000 M$. Caja: 1.500 M$. EBITDA anual: 1.500 M$. ¿Deuda neta/EBITDA?",
           "unit": "",
           "a": 3,
-          "why": "(6.000 − 1.500) ÷ 1.500 = 3 veces: necesitaría tres años de EBITDA íntegro para pagar la deuda neta. Cuanto más alto, menos margen tiene si el negocio se frena."
+          "why": "(6.000 − 1.500) ÷ 1.500 = 3 veces: necesitaría tres años de EBITDA íntegro para pagar la deuda neta. Cuanto más alto, menos margen tiene si el negocio se frena.",
+          "guia": "g1"
         },
         {
           "id": "f3a-2",
@@ -23,7 +50,8 @@
           "q": "Beneficio operativo (EBIT) anual: 800 M$. Gastos por intereses: 200 M$. ¿Cobertura de intereses?",
           "unit": "",
           "a": 4,
-          "why": "800 ÷ 200 = 4 veces: el beneficio operativo podría caer un 75 %, hasta 200 M$, y aún cubriría los intereses."
+          "why": "800 ÷ 200 = 4 veces: el beneficio operativo podría caer un 75 %, hasta 200 M$, y aún cubriría los intereses.",
+          "guia": "g2"
         },
         {
           "id": "f3a-3",
@@ -60,7 +88,8 @@
             "Las tres por igual"
           ],
           "a": 1,
-          "why": "B debe 4,5 años de EBITDA y su beneficio operativo cubre solo 2 veces los intereses: si cae a la mitad, los cubre justo. C no debe nada y A tiene margen de sobra."
+          "why": "B debe 4,5 años de EBITDA y su beneficio operativo cubre solo 2 veces los intereses: si cae a la mitad, los cubre justo. C no debe nada y A tiene margen de sobra.",
+          "guia": "g2"
         },
         {
           "id": "f3a-4",
@@ -73,7 +102,8 @@
             "Que salga de su índice de referencia"
           ],
           "a": 0,
-          "why": "Con 300 M$ no puede devolver 2.000 M$: al 7 %, los intereses de esa deuda pasan de 60 a 140 M$ al año, o tendrá que emitir acciones."
+          "why": "Con 300 M$ no puede devolver 2.000 M$: al 7 %, los intereses de esa deuda pasan de 60 a 140 M$ al año, o tendrá que emitir acciones.",
+          "guia": "g2"
         }
       ]
     },
@@ -87,7 +117,8 @@
           "q": "Caja: 120 M$. La empresa quema 30 M$ por trimestre. ¿Cuántos meses de autonomía tiene?",
           "unit": "",
           "a": 12,
-          "why": "120 ÷ 30 = 4 trimestres, es decir, 12 meses. Con menos de un año de caja, la próxima ampliación de capital es cuestión de tiempo."
+          "why": "120 ÷ 30 = 4 trimestres, es decir, 12 meses. Con menos de un año de caja, la próxima ampliación de capital es cuestión de tiempo.",
+          "guia": "g3"
         },
         {
           "id": "f3b-2",
@@ -96,7 +127,8 @@
           "unit": "",
           "a": 33.3,
           "tol": 0.06,
-          "why": "Precio de colocación 3,00 × 0,90 = 2,70 $; 90 ÷ 2,70 = 33,3 M de acciones nuevas, un 33 % más sobre los 100 M actuales."
+          "why": "Precio de colocación 3,00 × 0,90 = 2,70 $; 90 ÷ 2,70 = 33,3 M de acciones nuevas, un 33 % más sobre los 100 M actuales.",
+          "guia": "g3"
         },
         {
           "id": "f3b-3",
@@ -109,7 +141,8 @@
             "Que repartirá más dividendo"
           ],
           "a": 2,
-          "why": "Si los clientes no pagan, el beneficio contable crece pero la caja no: el beneficio no se convierte en caja. Puede ser ventas forzadas con plazos de cobro largos; vigila si se repite el trimestre siguiente."
+          "why": "Si los clientes no pagan, el beneficio contable crece pero la caja no: el beneficio no se convierte en caja. Puede ser ventas forzadas con plazos de cobro largos; vigila si se repite el trimestre siguiente.",
+          "guia": "g4"
         },
         {
           "id": "f3b-4",
@@ -117,7 +150,8 @@
           "q": "Beneficio neto anual: 400 M$. Flujo de caja libre: 340 M$. ¿Qué porcentaje del beneficio convierte en caja?",
           "unit": "%",
           "a": 85,
-          "why": "340 ÷ 400 = 85 %: convierte en caja 85 de cada 100 $ de beneficio. Si la conversión cae trimestre tras trimestre, revisa cobros, inventarios e inversiones."
+          "why": "340 ÷ 400 = 85 %: convierte en caja 85 de cada 100 $ de beneficio. Si la conversión cae trimestre tras trimestre, revisa cobros, inventarios e inversiones.",
+          "guia": "g4"
         }
       ]
     }

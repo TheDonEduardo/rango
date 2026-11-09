@@ -4,6 +4,32 @@
   "track": "fundamental",
   "title": "Macro para inversores",
   "blurb": "Tipos, inflación y ciclo: el viento a favor o en contra.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Tipos reales",
+      "texto": "Lo que cuenta es el tipo de interés menos la inflación. Si es negativo, el dinero ahorrado pierde poder de compra aunque el saldo crezca.",
+      "ejemplo": "Una cuenta al 3 % con un 4 % de inflación: pierdes en torno a un 1 % al año."
+    },
+    {
+      "id": "g2",
+      "titulo": "Tipos y valoración",
+      "texto": "El valor de una empresa es el de sus beneficios futuros descontados. Con tipos más altos, los beneficios lejanos valen menos: las empresas de crecimiento sufren más.",
+      "ejemplo": "100 € dentro de 10 años valen 74 € al 3 % y 56 € al 6 %: un 24 % menos."
+    },
+    {
+      "id": "g3",
+      "titulo": "Poder de fijación de precios",
+      "texto": "Con inflación suben los costes. Las empresas que pueden subir precios sin perder clientes protegen sus márgenes; las que no, los ven caer.",
+      "ejemplo": "Si los costes suben un 10 % y el precio no se mueve, cada venta deja menos."
+    },
+    {
+      "id": "g4",
+      "titulo": "Curva de tipos y ciclo",
+      "texto": "Normalmente los bonos largos pagan más que los cortos. Cuando la curva se invierte, el mercado espera bajadas de tipos, a menudo por una recesión. La rotación sectorial es un modelo, no una regla.",
+      "ejemplo": "Bono a 10 años al 4,10 % y a 2 años al 4,60 %: curva invertida en 50 puntos básicos."
+    }
+  ],
   "lessons": [
     {
       "id": "f8a",
@@ -16,7 +42,8 @@
           "unit": "%",
           "a": 1,
           "tol": 0.05,
-          "why": "3 % − 4 % = −1 %: aunque el saldo crece, compras menos con él. La cuenta exacta es 1,03 ÷ 1,04 − 1 = −0,96 %."
+          "why": "3 % − 4 % = −1 %: aunque el saldo crece, compras menos con él. La cuenta exacta es 1,03 ÷ 1,04 − 1 = −0,96 %.",
+          "guia": "g1"
         },
         {
           "id": "f8a-2",
@@ -29,7 +56,8 @@
             "Empresas con mucha caja neta"
           ],
           "a": 2,
-          "why": "Su valor depende de beneficios de dentro de muchos años, y con tipos más altos esos beneficios futuros valen menos hoy. Los bancos, en cambio, suelen mejorar su margen."
+          "why": "Su valor depende de beneficios de dentro de muchos años, y con tipos más altos esos beneficios futuros valen menos hoy. Los bancos, en cambio, suelen mejorar su margen.",
+          "guia": "g2"
         },
         {
           "id": "f8a-3",
@@ -38,7 +66,8 @@
           "unit": "%",
           "a": 24.3,
           "tol": 0.06,
-          "why": "1 − 56 ÷ 74 = 24,3 %. Duplicar el tipo de descuento recorta casi una cuarta parte del valor de un beneficio lejano: así golpean los tipos a las empresas de crecimiento."
+          "why": "1 − 56 ÷ 74 = 24,3 %. Duplicar el tipo de descuento recorta casi una cuarta parte del valor de un beneficio lejano: así golpean los tipos a las empresas de crecimiento.",
+          "guia": "g2"
         },
         {
           "id": "f8a-4",
@@ -51,7 +80,8 @@
             "Nada: la inflación no le afecta"
           ],
           "a": 0,
-          "why": "Si los costes suben y el precio no, cada venta deja menos. Poder subir precios sin perder clientes es una de las huellas de una ventaja competitiva (F7)."
+          "why": "Si los costes suben y el precio no, cada venta deja menos. Poder subir precios sin perder clientes es una de las huellas de una ventaja competitiva (F7).",
+          "guia": "g3"
         }
       ]
     },
@@ -70,7 +100,8 @@
             "Curva invertida: bolsa al alza segura"
           ],
           "a": 0,
-          "why": "Normalmente los plazos largos pagan más. Cuando la curva se invierte, el mercado espera bajadas de tipos por debilidad; en EE. UU. ha precedido a la mayoría de recesiones desde los años setenta, aunque con meses o años de retraso."
+          "why": "Normalmente los plazos largos pagan más. Cuando la curva se invierte, el mercado espera bajadas de tipos por debilidad; en EE. UU. ha precedido a la mayoría de recesiones desde los años setenta, aunque con meses o años de retraso.",
+          "guia": "g4"
         },
         {
           "id": "f8b-2",
@@ -78,7 +109,8 @@
           "q": "El bono a 10 años paga un 4,10 % y el de 2 años, un 4,60 %. ¿De cuántos puntos básicos es la inversión de la curva? (1 % = 100 puntos básicos)",
           "unit": "",
           "a": 50,
-          "why": "4,60 − 4,10 = 0,50 puntos porcentuales, es decir, 50 puntos básicos. Se sigue de cerca cuándo vuelve a ser positiva, porque suele coincidir con el inicio de las bajadas de tipos."
+          "why": "4,60 − 4,10 = 0,50 puntos porcentuales, es decir, 50 puntos básicos. Se sigue de cerca cuándo vuelve a ser positiva, porque suele coincidir con el inicio de las bajadas de tipos.",
+          "guia": "g4"
         },
         {
           "id": "f8b-3",
@@ -102,7 +134,8 @@
               "Liquidez y bonos de calidad"
             ]
           ],
-          "why": "Es un modelo, no una regla: sirve para saber qué grupos vigilar, y la fuerza relativa de cada grupo te dice si se está cumpliendo."
+          "why": "Es un modelo, no una regla: sirve para saber qué grupos vigilar, y la fuerza relativa de cada grupo te dice si se está cumpliendo.",
+          "guia": "g4"
         },
         {
           "id": "f8b-4",
@@ -115,7 +148,8 @@
             "Quitar también el stop"
           ],
           "a": 1,
-          "why": "El stop te protege si el mercado arrastra a la acción; vender solo por un dato macro es intentar adivinar. Como en O'Neil, manda el mercado general cuando empieza a distribuir."
+          "why": "El stop te protege si el mercado arrastra a la acción; vender solo por un dato macro es intentar adivinar. Como en O'Neil, manda el mercado general cuando empieza a distribuir.",
+          "guia": "g4"
         }
       ]
     }

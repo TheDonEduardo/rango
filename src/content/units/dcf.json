@@ -4,6 +4,32 @@
   "track": "fundamental",
   "title": "Descuento de flujos",
   "blurb": "Cuánto vale hoy el dinero que la empresa generará mañana.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Valor actual",
+      "texto": "Descontar es el interés compuesto al revés: dinero futuro vale menos hoy, y cuanto más lejano, menos.",
+      "ejemplo": "110 € dentro de un año al 10 % valen 100 € hoy. 100 € dentro de 5 años al 8 % valen 68,06 €."
+    },
+    {
+      "id": "g2",
+      "titulo": "Perpetuidad",
+      "texto": "Si un flujo crece a un ritmo constante para siempre, su valor hoy es el flujo del próximo año entre la diferencia entre el tipo de descuento y el crecimiento.",
+      "ejemplo": "40 M$ creciendo un 3 % con un tipo del 8 %: 40 ÷ 0,05 = 800 M$."
+    },
+    {
+      "id": "g3",
+      "titulo": "Del valor de la empresa a la acción",
+      "texto": "Al valor de la empresa se le resta la deuda neta, que es de los acreedores, y se divide entre las acciones.",
+      "ejemplo": "800 M$ menos 200 M$ de deuda neta, entre 50 M de acciones: 12 $ por acción."
+    },
+    {
+      "id": "g4",
+      "titulo": "Sensibilidad y margen de seguridad",
+      "texto": "Un punto más de tipo o de crecimiento cambia el valor un 17-25 %. Por eso se compra con margen de seguridad: un descuento sobre tu estimación.",
+      "ejemplo": "Con un 9 % en vez del 8 %, el valor baja de 800 a 667 M$. Valor de 12 $ y precio de 9 $: margen del 25 %."
+    }
+  ],
   "lessons": [
     {
       "id": "f11a",
@@ -15,7 +41,8 @@
           "q": "Recibirás 110 € dentro de un año. Si exiges un 10 % de rentabilidad, ¿cuánto vale ese dinero hoy?",
           "unit": "€",
           "a": 100,
-          "why": "110 ÷ 1,10 = 100 €. Descontar es el interés compuesto al revés: dinero futuro vale menos que dinero de hoy."
+          "why": "110 ÷ 1,10 = 100 €. Descontar es el interés compuesto al revés: dinero futuro vale menos que dinero de hoy.",
+          "guia": "g1"
         },
         {
           "id": "f11a-2",
@@ -24,7 +51,8 @@
           "unit": "€",
           "a": 68.06,
           "why": "100 ÷ 1,08⁵ = 100 ÷ 1,4693 = 68,06 €. Cuanto más lejano el flujo, más pesa el tipo de descuento.",
-          "tol": 0.02
+          "tol": 0.02,
+          "guia": "g1"
         },
         {
           "id": "f11a-3",
@@ -32,7 +60,8 @@
           "q": "El flujo de caja libre del próximo año será de 40 M$ y crecerá un 3 % anual para siempre. Exiges un 8 %. ¿Cuántos millones vale la empresa?",
           "unit": "",
           "a": 800,
-          "why": "Perpetuidad con crecimiento: 40 ÷ (0,08 − 0,03) = 40 ÷ 0,05 = 800 M$."
+          "why": "Perpetuidad con crecimiento: 40 ÷ (0,08 − 0,03) = 40 ÷ 0,05 = 800 M$.",
+          "guia": "g2"
         },
         {
           "id": "f11a-4",
@@ -40,7 +69,8 @@
           "q": "Ese valor de 800 M$, menos 200 M$ de deuda neta, entre 50 M de acciones. ¿Valor por acción?",
           "unit": "$",
           "a": 12,
-          "why": "(800 − 200) ÷ 50 = 12 $. La deuda es de los acreedores: el accionista solo se queda con lo que sobra."
+          "why": "(800 − 200) ÷ 50 = 12 $. La deuda es de los acreedores: el accionista solo se queda con lo que sobra.",
+          "guia": "g3"
         }
       ]
     },
@@ -55,7 +85,8 @@
           "unit": "%",
           "a": 16.7,
           "why": "40 ÷ (0,09 − 0,03) = 666,7 M$ frente a 800 M$: un 16,7 % menos por un solo punto de tipo exigido.",
-          "tol": 0.06
+          "tol": 0.06,
+          "guia": "g4"
         },
         {
           "id": "f11b-2",
@@ -63,7 +94,8 @@
           "q": "Y si en lugar de eso supones un crecimiento del 4 % (con el 8 % exigido), ¿cuánto sube el valor frente a los 800 M$?",
           "unit": "%",
           "a": 25,
-          "why": "40 ÷ (0,08 − 0,04) = 1.000 M$: un 25 % más por un punto de crecimiento. Pequeños cambios en los supuestos mueven mucho el resultado."
+          "why": "40 ÷ (0,08 − 0,04) = 1.000 M$: un 25 % más por un punto de crecimiento. Pequeños cambios en los supuestos mueven mucho el resultado.",
+          "guia": "g4"
         },
         {
           "id": "f11b-3",
@@ -71,7 +103,8 @@
           "q": "Estimas un valor de 12 $ por acción y cotiza a 9 $. ¿Qué margen de seguridad tienes?",
           "unit": "%",
           "a": 25,
-          "why": "(12 − 9) ÷ 12 = 25 %. Es el colchón por si tus supuestos son demasiado optimistas, que es lo habitual."
+          "why": "(12 − 9) ÷ 12 = 25 %. Es el colchón por si tus supuestos son demasiado optimistas, que es lo habitual.",
+          "guia": "g4"
         },
         {
           "id": "f11b-4",
@@ -84,7 +117,8 @@
             "Es muy sensible a los supuestos"
           ],
           "a": 3,
-          "why": "Un punto más de tipo o de crecimiento cambia el valor un 17-25 %. Úsalo para entender qué tiene que pasar para justificar el precio, no como una cifra exacta."
+          "why": "Un punto más de tipo o de crecimiento cambia el valor un 17-25 %. Úsalo para entender qué tiene que pasar para justificar el precio, no como una cifra exacta.",
+          "guia": "g4"
         },
         {
           "id": "f11b-5",
@@ -105,7 +139,8 @@
               "k": -1.25,
               "unit": "%"
             }
-          ]
+          ],
+          "guia": "g4"
         }
       ]
     }

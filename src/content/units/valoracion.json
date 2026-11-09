@@ -4,6 +4,32 @@
   "track": "fundamental",
   "title": "Valoración",
   "blurb": "PER, PEG, EV/EBITDA y qué expectativas descuenta el precio.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "PER",
+      "texto": "El PER es cuántas veces pagas el beneficio de un año: precio entre BPA. El adelantado usa el BPA estimado del año que viene. Solo, no dice si es caro o barato.",
+      "ejemplo": "A 90 $ con un BPA de 3 $: PER 30. Con un BPA estimado de 4,50 $: PER adelantado 20."
+    },
+    {
+      "id": "g2",
+      "titulo": "PEG",
+      "texto": "El PEG divide el PER entre el crecimiento esperado del BPA. Cerca de 1, el precio va en línea con el crecimiento; muy por encima, pagas mucho por él.",
+      "ejemplo": "PER 40 con un crecimiento del 50 %: PEG 0,8. PER 15 con un 5 %: PEG 3. La primera es más barata para lo que crece."
+    },
+    {
+      "id": "g3",
+      "titulo": "EV/EBITDA y caja libre",
+      "texto": "El valor de empresa (EV) suma la deuda y resta la caja: compara negocios con distinta financiación. La rentabilidad por caja libre mide la caja que genera por cada 100 $ de capitalización.",
+      "ejemplo": "Capitalización de 50.000 M$, deuda de 8.000 y caja de 3.000: EV de 55.000 M$. Con 2.500 M$ de caja libre, un 5 %."
+    },
+    {
+      "id": "g4",
+      "titulo": "Qué descuenta el precio",
+      "texto": "Un PER alto ya descuenta años de crecimiento: cumplir no basta, hay que superar lo esperado. Y si el PER se contrae, el beneficio tiene que crecer más para que el precio no caiga.",
+      "ejemplo": "A 100 $ con PER 25, si el PER baja a 20 hace falta un BPA de 5 $, un 25 % más, solo para mantener el precio."
+    }
+  ],
   "lessons": [
     {
       "id": "f2a",
@@ -15,7 +41,8 @@
           "q": "Una acción cotiza a 90,00 $ y su BPA de los últimos 12 meses es de 3,00 $. ¿PER?",
           "unit": "",
           "a": 30,
-          "why": "90,00 ÷ 3,00 = 30: pagas 30 veces el beneficio de un año. Solo, no dice si es caro o barato; falta saber cuánto crecerá."
+          "why": "90,00 ÷ 3,00 = 30: pagas 30 veces el beneficio de un año. Solo, no dice si es caro o barato; falta saber cuánto crecerá.",
+          "guia": "g1"
         },
         {
           "id": "f2a-2",
@@ -23,7 +50,8 @@
           "q": "Misma acción a 90,00 $. Los analistas estiman un BPA de 4,50 $ para los próximos 12 meses. ¿PER adelantado?",
           "unit": "",
           "a": 20,
-          "why": "90,00 ÷ 4,50 = 20 veces, frente a 30 con el BPA pasado. Si el beneficio crece un 50 % como se espera, la misma acción pasa a ser bastante más barata."
+          "why": "90,00 ÷ 4,50 = 20 veces, frente a 30 con el BPA pasado. Si el beneficio crece un 50 % como se espera, la misma acción pasa a ser bastante más barata.",
+          "guia": "g1"
         },
         {
           "id": "f2a-3",
@@ -31,7 +59,8 @@
           "q": "PER de 30 y crecimiento esperado del BPA del 25 % anual. ¿PEG?",
           "unit": "",
           "a": 1.2,
-          "why": "PEG = PER ÷ crecimiento = 30 ÷ 25 = 1,2. Cerca de 1, el precio va en línea con el crecimiento; muy por encima, pagas crecimiento que todavía no existe."
+          "why": "PEG = PER ÷ crecimiento = 30 ÷ 25 = 1,2. Cerca de 1, el precio va en línea con el crecimiento; muy por encima, pagas crecimiento que todavía no existe.",
+          "guia": "g2"
         },
         {
           "id": "f2a-4",
@@ -68,7 +97,8 @@
             "Las tres por igual"
           ],
           "a": 0,
-          "why": "PEG: A 40 ÷ 50 = 0,8; B 15 ÷ 5 = 3; C 25 ÷ 10 = 2,5. El PER más alto es el más barato por unidad de crecimiento: por eso los líderes de Minervini rara vez tienen PER bajo."
+          "why": "PEG: A 40 ÷ 50 = 0,8; B 15 ÷ 5 = 3; C 25 ÷ 10 = 2,5. El PER más alto es el más barato por unidad de crecimiento: por eso los líderes de Minervini rara vez tienen PER bajo.",
+          "guia": "g2"
         }
       ]
     },
@@ -82,7 +112,8 @@
           "q": "Capitalización: 50.000 M$. Deuda: 8.000 M$. Caja: 3.000 M$. EBITDA anual: 5.000 M$. ¿EV/EBITDA?",
           "unit": "",
           "a": 11,
-          "why": "EV = 50.000 + 8.000 − 3.000 = 55.000 M$, y 55.000 ÷ 5.000 = 11 veces. El EV incluye la deuda: a igual capitalización, la empresa endeudada es más cara."
+          "why": "EV = 50.000 + 8.000 − 3.000 = 55.000 M$, y 55.000 ÷ 5.000 = 11 veces. El EV incluye la deuda: a igual capitalización, la empresa endeudada es más cara.",
+          "guia": "g3"
         },
         {
           "id": "f2b-2",
@@ -90,7 +121,8 @@
           "q": "Flujo de caja libre de los últimos 12 meses: 2.500 M$. Capitalización: 50.000 M$. ¿Rentabilidad por flujo de caja libre?",
           "unit": "%",
           "a": 5,
-          "why": "2.500 ÷ 50.000 = 5 %: la caja que genera el negocio por cada 100 $ invertidos. A diferencia del BPA, es difícil de maquillar con contabilidad."
+          "why": "2.500 ÷ 50.000 = 5 %: la caja que genera el negocio por cada 100 $ invertidos. A diferencia del BPA, es difícil de maquillar con contabilidad.",
+          "guia": "g3"
         },
         {
           "id": "f2b-3",
@@ -98,7 +130,8 @@
           "q": "Cotiza a 100 $ con un BPA estimado de 4,00 $ (PER 25). Si dentro de un año el mercado solo paga un PER de 20, ¿cuánto tiene que crecer el BPA para que el precio no baje?",
           "unit": "%",
           "a": 25,
-          "why": "100 ÷ 20 = 5,00 $ de BPA, un 25 % más que 4,00 $. Si el PER se contrae, el beneficio tiene que crecer solo para que el precio se mantenga."
+          "why": "100 ÷ 20 = 5,00 $ de BPA, un 25 % más que 4,00 $. Si el PER se contrae, el beneficio tiene que crecer solo para que el precio se mantenga.",
+          "guia": "g4"
         },
         {
           "id": "f2b-4",
@@ -111,7 +144,8 @@
             "El volumen de la sesión fue bajo"
           ],
           "a": 2,
-          "why": "Con PER 60, el precio ya descuenta años de crecimiento alto: cumplir no basta, hay que superar. Mueve el precio la diferencia con lo esperado, no el dato en sí."
+          "why": "Con PER 60, el precio ya descuenta años de crecimiento alto: cumplir no basta, hay que superar. Mueve el precio la diferencia con lo esperado, no el dato en sí.",
+          "guia": "g4"
         },
         {
           "id": "f2b-5",
@@ -135,7 +169,8 @@
               "Flujo de caja libre ÷ capitalización"
             ]
           ],
-          "why": "El PER y el PEG miran el beneficio por acción; el EV/EBITDA incluye la deuda; la rentabilidad por flujo de caja mira la caja, más difícil de maquillar."
+          "why": "El PER y el PEG miran el beneficio por acción; el EV/EBITDA incluye la deuda; la rentabilidad por flujo de caja mira la caja, más difícil de maquillar.",
+          "guia": "g3"
         }
       ]
     }

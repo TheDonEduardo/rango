@@ -4,6 +4,32 @@
   "track": "fundamental",
   "title": "Tesis de inversión",
   "blurb": "Motor, catalizador e invalidación: un stop para la tesis.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Una tesis bien formulada",
+      "texto": "Una tesis dice qué motor medible hará crecer el beneficio, qué catalizador con fecha lo hará visible y en qué horizonte. «Es una gran empresa» no es una tesis.",
+      "ejemplo": "Ventas +40 % por un producto nuevo, nueva planta operativa en el 3T y un año de horizonte."
+    },
+    {
+      "id": "g2",
+      "titulo": "Tu ventaja frente al consenso",
+      "texto": "El precio ya refleja lo que espera la mayoría. Ganas si aciertas algo que el consenso aún no descuenta, antes de que suban las estimaciones.",
+      "ejemplo": "Consenso de 2,00 $ con PER 25: 50 $. Si el BPA llega a 2,40 $ y el PER se mantiene, 60 $: un 20 % más."
+    },
+    {
+      "id": "g3",
+      "titulo": "Catalizador y horizonte",
+      "texto": "Un catalizador lejano no mueve el precio en tu horizonte y te inmoviliza el capital. Elige tesis cuyo catalizador llegue cuando lo necesitas.",
+      "ejemplo": "Un contrato que se decide dentro de 18 meses no sirve para una operación de tres meses."
+    },
+    {
+      "id": "g4",
+      "titulo": "Invalidación y stop",
+      "texto": "Antes de comprar, escribe qué dato rompe la tesis y respétalo. El stop técnico limita la pérdida pase lo que pase: el fundamental dice qué, el técnico cuándo y el riesgo, cuánto.",
+      "ejemplo": "Compras a 50 $ con stop en 46 $; si un mal resultado abre a 44 $, pierdes 1,5R. Por eso se reduce tamaño antes de resultados."
+    }
+  ],
   "lessons": [
     {
       "id": "f4a",
@@ -20,7 +46,8 @@
             "El gráfico está en Fase 2 con volumen creciente y medias alineadas, así que el mercado ya reconoce que el negocio va bien"
           ],
           "a": 2,
-          "why": "Solo la C tiene motor medible (ventas +40 %), catalizador con fecha (la planta en el 2T) e invalidación concreta (margen por debajo del 56 %). Las demás son relatos razonables, pero no dicen cuándo te equivocas."
+          "why": "Solo la C tiene motor medible (ventas +40 %), catalizador con fecha (la planta en el 2T) e invalidación concreta (margen por debajo del 56 %). Las demás son relatos razonables, pero no dicen cuándo te equivocas.",
+          "guia": "g1"
         },
         {
           "id": "f4a-2",
@@ -33,7 +60,8 @@
             "Los analistas suben sus estimaciones",
             "Con el precio quieto, el PER adelantado baja y atrae compradores"
           ],
-          "why": "Primero mejora el negocio, luego el beneficio y después las estimaciones. Si detectas los dos primeros pasos antes que el consenso, tu tesis va por delante del precio."
+          "why": "Primero mejora el negocio, luego el beneficio y después las estimaciones. Si detectas los dos primeros pasos antes que el consenso, tu tesis va por delante del precio.",
+          "guia": "g2"
         },
         {
           "id": "f4a-3",
@@ -41,7 +69,8 @@
           "q": "El consenso espera un BPA de 2,00 $ y cotiza a un PER adelantado de 25. Tu tesis estima 2,40 $. Si el PER se mantiene, ¿qué potencial tiene si aciertas?",
           "unit": "%",
           "a": 20,
-          "why": "Hoy: 25 × 2,00 = 50 $. Si aciertas: 25 × 2,40 = 60 $, un 20 % más. Tu ventaja está solo en la diferencia con el consenso, no en que la empresa crezca."
+          "why": "Hoy: 25 × 2,00 = 50 $. Si aciertas: 25 × 2,40 = 60 $, un 20 % más. Tu ventaja está solo en la diferencia con el consenso, no en que la empresa crezca.",
+          "guia": "g2"
         },
         {
           "id": "f4a-4",
@@ -54,7 +83,8 @@
             "Comprar ahora y promediar a la baja mientras tanto"
           ],
           "a": 1,
-          "why": "Un catalizador lejano no mueve el precio en tu horizonte y te inmoviliza el capital. Espera a que el precio confirme (Fase 2, ruptura de un VCP) antes de entrar."
+          "why": "Un catalizador lejano no mueve el precio en tu horizonte y te inmoviliza el capital. Espera a que el precio confirme (Fase 2, ruptura de un VCP) antes de entrar.",
+          "guia": "g3"
         }
       ]
     },
@@ -73,7 +103,8 @@
             "Calcular el tamaño con el stop y el riesgo por operación",
             "Revisar la tesis en cada publicación de resultados"
           ],
-          "why": "El fundamental decide qué comprar, el técnico cuándo y la gestión del riesgo cuánto. La revisión tras cada resultado decide si sigues dentro."
+          "why": "El fundamental decide qué comprar, el técnico cuándo y la gestión del riesgo cuánto. La revisión tras cada resultado decide si sigues dentro.",
+          "guia": "g4"
         },
         {
           "id": "f4b-2",
@@ -86,7 +117,8 @@
             "Sales o reduces: la tesis está invalidada aunque el precio suba"
           ],
           "a": 3,
-          "why": "Fijaste la invalidación antes de comprar precisamente para no reinterpretarla después. Si te quedas, ya no operas tu tesis sino el precio, y sin criterio de salida."
+          "why": "Fijaste la invalidación antes de comprar precisamente para no reinterpretarla después. Si te quedas, ya no operas tu tesis sino el precio, y sin criterio de salida.",
+          "guia": "g4"
         },
         {
           "id": "f4b-3",
@@ -99,7 +131,8 @@
             "Esperas a los próximos resultados"
           ],
           "a": 0,
-          "why": "El stop limita la pérdida a 1R pase lo que pase con la tesis. Si la tesis sigue viva, puedes volver a comprar cuando el precio confirme otra vez."
+          "why": "El stop limita la pérdida a 1R pase lo que pase con la tesis. Si la tesis sigue viva, puedes volver a comprar cuando el precio confirme otra vez.",
+          "guia": "g4"
         },
         {
           "id": "f4b-4",
@@ -107,7 +140,8 @@
           "q": "Compraste a 50,00 $ con stop en 46,00 $. La tesis falla en resultados y la acción abre a 44,00 $. ¿Cuántos R pierdes?",
           "unit": "R",
           "a": 1.5,
-          "why": "(50,00 − 44,00) ÷ (50,00 − 46,00) = 6 ÷ 4 = 1,5R. Por eso, antes de resultados, el tamaño se calcula con el gap posible y no con el stop."
+          "why": "(50,00 − 44,00) ÷ (50,00 − 46,00) = 6 ÷ 4 = 1,5R. Por eso, antes de resultados, el tamaño se calcula con el gap posible y no con el stop.",
+          "guia": "g4"
         }
       ]
     }

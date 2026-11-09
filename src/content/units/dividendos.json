@@ -4,6 +4,32 @@
   "track": "fundamental",
   "title": "Dividendos y recompras",
   "blurb": "Cómo devuelve el dinero una empresa, y cuándo eso crea valor.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Rentabilidad por dividendo",
+      "texto": "Dividendo anual entre precio. Si el precio cae y el dividendo se mantiene, la rentabilidad sube: a veces porque el mercado duda de que se mantenga.",
+      "ejemplo": "A 60 $ con 2,40 $ de dividendo: un 4 %."
+    },
+    {
+      "id": "g2",
+      "titulo": "Payout",
+      "texto": "El porcentaje del beneficio que se reparte. Un payout por encima del 100 % se paga con caja o deuda y no dura.",
+      "ejemplo": "BPA de 3 $ y dividendo de 2,40 $: payout del 80 %."
+    },
+    {
+      "id": "g3",
+      "titulo": "El dividendo no es gratis",
+      "texto": "El dividendo sale del valor de la empresa: el día que se descuenta, el precio baja más o menos en esa cantidad.",
+      "ejemplo": "A 50 € con 1,50 € de dividendo: tras descontarlo, cotiza en torno a 48,50 €."
+    },
+    {
+      "id": "g4",
+      "titulo": "Recompras",
+      "texto": "Recomprar acciones reparte el beneficio entre menos acciones y sube el BPA. Mira la reducción neta (descontando las que emite) y a qué precio recompra.",
+      "ejemplo": "Gana 1.000 M$ con 500 M de acciones y recompra 25 M: el BPA pasa de 2,00 a 2,11 $. Con PER 60, recomprar rinde poco."
+    }
+  ],
   "lessons": [
     {
       "id": "f9a",
@@ -15,7 +41,8 @@
           "q": "Una acción cotiza a 60,00 $ y paga 2,40 $ de dividendo al año. ¿Cuál es su rentabilidad por dividendo?",
           "unit": "%",
           "a": 4,
-          "why": "2,40 ÷ 60,00 = 4 %. Si el precio cae y el dividendo se mantiene, la rentabilidad sube: mira siempre si ese dividendo es sostenible."
+          "why": "2,40 ÷ 60,00 = 4 %. Si el precio cae y el dividendo se mantiene, la rentabilidad sube: mira siempre si ese dividendo es sostenible.",
+          "guia": "g1"
         },
         {
           "id": "f9a-2",
@@ -23,7 +50,8 @@
           "q": "Su BPA es de 3,00 $ y reparte 2,40 $ por acción. ¿Qué porcentaje del beneficio reparte (payout)?",
           "unit": "%",
           "a": 80,
-          "why": "2,40 ÷ 3,00 = 80 %. Le queda solo un 20 % para reinvertir o reducir deuda: con payouts altos, el dividendo crece poco."
+          "why": "2,40 ÷ 3,00 = 80 %. Le queda solo un 20 % para reinvertir o reducir deuda: con payouts altos, el dividendo crece poco.",
+          "guia": "g2"
         },
         {
           "id": "f9a-3",
@@ -36,7 +64,8 @@
             "Que la empresa no tiene ninguna deuda"
           ],
           "a": 0,
-          "why": "Reparte más de lo que gana: lo paga con caja o con deuda, y eso no dura. Una rentabilidad por dividendo muy alta suele ser una advertencia, no una oportunidad."
+          "why": "Reparte más de lo que gana: lo paga con caja o con deuda, y eso no dura. Una rentabilidad por dividendo muy alta suele ser una advertencia, no una oportunidad.",
+          "guia": "g2"
         },
         {
           "id": "f9a-4",
@@ -44,7 +73,8 @@
           "q": "Cotiza a 50,00 € y paga un dividendo de 1,50 € por acción. Si nada más cambia, ¿a qué precio teórico abre el día ex-dividendo?",
           "unit": "€",
           "a": 48.5,
-          "why": "50,00 − 1,50 = 48,50 €. El dividendo sale del valor de la empresa: no es dinero gratis, y además tributa."
+          "why": "50,00 − 1,50 = 48,50 €. El dividendo sale del valor de la empresa: no es dinero gratis, y además tributa.",
+          "guia": "g3"
         }
       ]
     },
@@ -59,7 +89,8 @@
           "unit": "%",
           "a": 5.26,
           "why": "BPA antes: 1.000 ÷ 500 = 2,00 $; después: 1.000 ÷ 475 = 2,11 $, un 5,26 % más sin ganar un dólar más. Por eso conviene separar el crecimiento del negocio del de la recompra.",
-          "tol": 0.02
+          "tol": 0.02,
+          "guia": "g4"
         },
         {
           "id": "f9b-2",
@@ -67,7 +98,8 @@
           "q": "Tenía 400 M de acciones. Recompra 20 M, pero emite 15 M nuevas para pagar a sus empleados. ¿En qué porcentaje baja de verdad el número de acciones?",
           "unit": "%",
           "a": 1.25,
-          "why": "(20 − 15) ÷ 400 = 1,25 %. La recompra anunciada es de 20 M, pero la reducción real, neta de las acciones emitidas, es de solo 5 M."
+          "why": "(20 − 15) ÷ 400 = 1,25 %. La recompra anunciada es de 20 M, pero la reducción real, neta de las acciones emitidas, es de solo 5 M.",
+          "guia": "g4"
         },
         {
           "id": "f9b-3",
@@ -75,7 +107,8 @@
           "q": "Su rentabilidad por dividendo es del 2 % y la recompra neta de acciones equivale a otro 3 % de su capitalización. ¿Cuánto devuelve en total al accionista cada año?",
           "unit": "%",
           "a": 5,
-          "why": "2 % + 3 % = 5 %. Dividendos y recompras son dos formas de devolver caja; sumadas dan una idea más completa que el dividendo solo."
+          "why": "2 % + 3 % = 5 %. Dividendos y recompras son dos formas de devolver caja; sumadas dan una idea más completa que el dividendo solo.",
+          "guia": "g4"
         },
         {
           "id": "f9b-4",
@@ -88,7 +121,8 @@
             "Que acabe saliendo de bolsa"
           ],
           "a": 1,
-          "why": "Con PER 60, cada 100 $ de recompra compran solo 1,67 $ de beneficio anual (100 ÷ 60). Recomprar crea valor cuando la acción está barata, no a cualquier precio."
+          "why": "Con PER 60, cada 100 $ de recompra compran solo 1,67 $ de beneficio anual (100 ÷ 60). Recomprar crea valor cuando la acción está barata, no a cualquier precio.",
+          "guia": "g4"
         }
       ]
     }

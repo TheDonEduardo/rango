@@ -4,6 +4,32 @@
   "track": "fundamental",
   "title": "Sectores",
   "blurb": "Cada sector gana dinero a su manera y se mide distinto.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Cíclicos, defensivos y sensibles",
+      "texto": "Los cíclicos dependen mucho de la economía (coches, acero, viajes). Los defensivos venden lo que se compra igual en una crisis (luz, comida). Los sensibles quedan en medio.",
+      "ejemplo": "En una recesión, una eléctrica mantiene mejor sus beneficios que un fabricante de coches."
+    },
+    {
+      "id": "g2",
+      "titulo": "El PER engaña en los cíclicos",
+      "texto": "En el pico del ciclo el beneficio es máximo y el PER parece bajo, justo en el peor momento para comprar. El precio se adelanta al ciclo.",
+      "ejemplo": "A 40 $ con un BPA de 4 $ en el pico: PER 10. En el valle, con 1 $, el PER es 40."
+    },
+    {
+      "id": "g3",
+      "titulo": "Cada sector, su métrica",
+      "texto": "No hay una métrica universal. En software importan el crecimiento, la retención de ingresos y la «regla del 40»; en bancos, el capital y el valor contable.",
+      "ejemplo": "Crece un 25 % con un margen de caja libre del 18 %: 25 + 18 = 43, por encima de 40."
+    },
+    {
+      "id": "g4",
+      "titulo": "Múltiplos según el sector",
+      "texto": "Cada sector tiene sus PER habituales según su crecimiento y su riesgo. Compara una empresa con su sector, no con otro distinto.",
+      "ejemplo": "Un banco a PER 9 no es más barato que un software a PER 35: crecen y arriesgan distinto."
+    }
+  ],
   "lessons": [
     {
       "id": "f6a",
@@ -27,7 +53,8 @@
               "Tecnología, industria, energía y comunicaciones"
             ]
           ],
-          "why": "Los cíclicos dependen mucho de la economía; los defensivos venden lo que se compra igual en una crisis; los sensibles están en medio. Yahoo Finance usa estos mismos sectores."
+          "why": "Los cíclicos dependen mucho de la economía; los defensivos venden lo que se compra igual en una crisis; los sensibles están en medio. Yahoo Finance usa estos mismos sectores.",
+          "guia": "g1"
         },
         {
           "id": "f6a-2",
@@ -40,7 +67,8 @@
             "Una promotora inmobiliaria"
           ],
           "a": 0,
-          "why": "La luz y la comida se siguen pagando en una crisis; el coche nuevo o el viaje se aplazan. Por eso los defensivos caen menos en las recesiones y suben menos en las expansiones."
+          "why": "La luz y la comida se siguen pagando en una crisis; el coche nuevo o el viaje se aplazan. Por eso los defensivos caen menos en las recesiones y suben menos en las expansiones.",
+          "guia": "g1"
         },
         {
           "id": "f6a-3",
@@ -48,7 +76,8 @@
           "q": "Una siderúrgica gana 4,00 $ por acción en el pico del ciclo y 1,00 $ en el valle. Cotiza a 40 $. ¿Qué PER tiene en el pico?",
           "unit": "",
           "a": 10,
-          "why": "40 ÷ 4,00 = 10: parece barata justo en el peor momento para comprar. En el valle, con 1,00 $, el PER sería 40. En las cíclicas, un PER bajo suele coincidir con el techo del beneficio."
+          "why": "40 ÷ 4,00 = 10: parece barata justo en el peor momento para comprar. En el valle, con 1,00 $, el PER sería 40. En las cíclicas, un PER bajo suele coincidir con el techo del beneficio.",
+          "guia": "g2"
         },
         {
           "id": "f6a-4",
@@ -61,7 +90,8 @@
             "Nunca: las cíclicas hay que evitarlas"
           ],
           "a": 1,
-          "why": "El precio se adelanta al ciclo: sube cuando los beneficios todavía están en el suelo pero dejan de empeorar. Comprar con beneficios récord suele ser comprar el techo."
+          "why": "El precio se adelanta al ciclo: sube cuando los beneficios todavía están en el suelo pero dejan de empeorar. Comprar con beneficios récord suele ser comprar el techo.",
+          "guia": "g2"
         }
       ]
     },
@@ -91,7 +121,8 @@
               "Precio del crudo y coste de extracción"
             ]
           ],
-          "why": "No hay una métrica universal: cada negocio tiene su motor. Antes de analizar una empresa, pregúntate de qué depende que gane más o menos dinero."
+          "why": "No hay una métrica universal: cada negocio tiene su motor. Antes de analizar una empresa, pregúntate de qué depende que gane más o menos dinero.",
+          "guia": "g3"
         },
         {
           "id": "f6b-2",
@@ -99,7 +130,8 @@
           "q": "Una empresa de software crece un 25 % al año y su margen de flujo de caja libre es del 18 %. ¿Qué puntuación saca en la regla del 40?",
           "unit": "",
           "a": 43,
-          "why": "25 + 18 = 43: supera 40, el umbral habitual de equilibrio entre crecer y ganar dinero en software. Quien crece poco tiene que compensar con más margen, y al revés."
+          "why": "25 + 18 = 43: supera 40, el umbral habitual de equilibrio entre crecer y ganar dinero en software. Quien crece poco tiene que compensar con más margen, y al revés.",
+          "guia": "g3"
         },
         {
           "id": "f6b-3",
@@ -107,7 +139,8 @@
           "q": "Los clientes que hace un año pagaban 100 M$ hoy pagan 115 M$, contando a los que se han ido. ¿Cuál es la retención neta de ingresos?",
           "unit": "%",
           "a": 115,
-          "why": "115 ÷ 100 = 115 %: los clientes existentes gastan un 15 % más aunque algunos se hayan ido. Por encima del 100 %, la empresa crece sin captar clientes nuevos."
+          "why": "115 ÷ 100 = 115 %: los clientes existentes gastan un 15 % más aunque algunos se hayan ido. Por encima del 100 %, la empresa crece sin captar clientes nuevos.",
+          "guia": "g3"
         },
         {
           "id": "f6b-4",
@@ -120,7 +153,8 @@
             "El PER no sirve en ningún sector"
           ],
           "a": 2,
-          "why": "Cada sector tiene sus PER habituales según su crecimiento y su riesgo. Una empresa es cara o barata frente a sus comparables y a lo que crece, no frente a cualquier otra."
+          "why": "Cada sector tiene sus PER habituales según su crecimiento y su riesgo. Una empresa es cara o barata frente a sus comparables y a lo que crece, no frente a cualquier otra.",
+          "guia": "g4"
         }
       ]
     }
