@@ -46,6 +46,9 @@ export const t={
   saltar:'Saltar', saltarGuia:'Saltar la guía', cerrarGuia:'Cerrar la guía', cerrar:'Cerrar', ejemplo:'Ejemplo',
   anterior:'Anterior', siguiente:'Siguiente', empezarLeccion:'Empezar la lección', volverLeccion:'Volver a la lección',
   repasarTeoria:'Repasar la teoría',
+  verError:'¿Ves un error?', reporteAsunto:id=>`Error en Rango: ${id}`,
+  reporteCuerpo:(id,q,r)=>`Ejercicio o tarjeta: ${id}\n${q}\n${r?`Respuesta de la app: ${r}\n`:''}\nQué está mal:\n`,
+  reporteCopiado:'Aviso copiado: pégalo en un correo o mensaje a quien mantiene Rango.', reporteId:id=>`Anota este código para avisar del error: ${id}`,
 
   // Lección
   salirLeccion:'Salir de la lección', progresoLeccion:'Progreso de la lección', vidas:n=>`${n} vidas`,

@@ -3,7 +3,8 @@ export const $app=document.getElementById('app'), $toast=document.getElementById
 let toastT=0;
 export function toast(msg){
   $toast.textContent=msg;$toast.hidden=false;clearTimeout(toastT);
-  toastT=setTimeout(()=>{$toast.hidden=true},2400);
+  // Más tiempo para los avisos largos (unos 60 ms por carácter, mínimo 2,4 s).
+  toastT=setTimeout(()=>{$toast.hidden=true},Math.max(2400,msg.length*60));
 }
 // view: pantalla actual · run: lección en curso · lastRes: resultado que se muestra · homeY: scroll del inicio
 // goCur: al volver, centrar la lección actual · abiertas: unidades completadas desplegadas · simDraft: plan en edición

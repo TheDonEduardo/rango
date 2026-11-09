@@ -345,3 +345,5 @@ button{font:inherit;color:inherit;cursor:pointer}
 .row.copia{display:flex;gap:10px;flex-wrap:wrap}.row.copia .btn{flex:1 1 140px}
 .confirma{margin-top:12px;padding:14px 16px;border-radius:14px;background:var(--surface);border:2px solid var(--accent)}
 .confirma p{margin:0 0 10px}
+.link.reporte{display:block;margin:12px auto 0;font-size:13px;color:var(--ink-2)}
+.fb .link.reporte{color:inherit;opacity:.85}

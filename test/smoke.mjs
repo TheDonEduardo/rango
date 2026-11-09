@@ -195,6 +195,10 @@ for (const L of T.FLAT) {
   if (!app.innerHTML.includes('Lección completada')) errs.push('no completa ' + L.id);
 }
 
+// «¿Ves un error?» en la explicación de cada ejercicio.
+{ const L = T.FLAT.find(l => l.kind === 'lesson'); T.startRun(L); const ex = T.getRun().queue[0]; give(ex, right(ex)); T.check();
+  if (!app.innerHTML.includes('data-act="reportar"')) errs.push('la explicación no ofrece avisar de un error'); T.goHome(); }
+
 // 3) Pantalla sin vidas
 T.startRun(T.FLAT[0]);
 for (let i = 0; i < 3; i++) { const ex = T.getRun().queue[0]; give(ex, wrong(ex)); T.check(); T.next(); }

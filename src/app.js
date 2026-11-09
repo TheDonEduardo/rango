@@ -6,6 +6,7 @@ import {S,save,resetState,migrar,advancedOpen,statuses,srsDue,srsRecord,SRS_MAX,
 import {$app,toast,ses} from './ui.js';
 import {setPlanCtx} from './drag.js';
 import {TIPOS} from './exercises/index.js';
+import {CONTACTO} from './config.js';
 import {homeHTML} from './views/home.js';
 import {lessonHTML,resultHTML,failHTML} from './views/lesson.js';
 import {simHTML,simResHTML,simInfo,simValid,simSave,simRecord,simHist,simulate,SIM_PLACE} from './views/sim.js';
@@ -134,6 +135,16 @@ const ACCIONES={
   // Guía de la unidad: desde el inicio (consulta) o desde una pregunta fallada (repaso, vuelve a la lección).
   guia(b){const u=UNITS.find(x=>x.id===b.dataset.id);abrirGuia(u,'consulta');ir('guia')},
   guiarepaso(b){const ex=ses.run.queue[0],u=FLAT.find(l=>l.id===ex.lesson).unit;abrirGuia(u,'repaso',{tarjeta:b.dataset.g});ses.view='guia';render()},
+  // «¿Ves un error?»: un correo ya rellenado (si hay CONTACTO) o el aviso copiado al portapapeles.
+  reportar(){
+    let id,q,r='';
+    if(ses.view==='guia'&&ses.guia){const c=ses.guia.unit.guia[ses.guia.i];id=`${ses.guia.unit.id}/${c.id}`;q=c.titulo}
+    else{const ex=ses.run.queue[0];id=ex.id||`caso ${ex.caso} (${ses.run.L.id})`;q=ex.q;r=TIPOS[ex.t].answer(ex)}
+    const cuerpo=t.reporteCuerpo(id,q,r);
+    if(CONTACTO){location.href=`mailto:${CONTACTO}?subject=${encodeURIComponent(t.reporteAsunto(id))}&body=${encodeURIComponent(cuerpo)}`;return}
+    const cb=navigator.clipboard;
+    if(cb&&cb.writeText)cb.writeText(cuerpo).then(()=>toast(t.reporteCopiado),()=>toast(t.reporteId(id)));else toast(t.reporteId(id));
+  },
   // Copia de seguridad del progreso (pantalla de estadísticas).
   exportar(){
     const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([exportar()],{type:'application/json'}));
