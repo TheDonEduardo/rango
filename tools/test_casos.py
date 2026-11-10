@@ -68,7 +68,33 @@ if not per:
 if set(out) != set(mod.LECCIONES_CASOS):
     fallos.append("casos_de no usa LECCIONES_CASOS")
 
+# 4) Casos técnicos con velas simuladas: cifras coherentes, nada negativo y tamaño redondeado hacia abajo.
+import numpy as np
+dias = pd.bdate_range("2024-11-01", periods=300, tz="America/New_York")
+cierre = pd.Series(np.linspace(50, 80, 300), index=dias)
+velas = pd.DataFrame({"Open": cierre.shift(1).fillna(50), "High": cierre + 1, "Low": cierre - 1, "Close": cierre}, index=dias)
+velas.iloc[200, velas.columns.get_loc("Open")] = cierre.iloc[199] * 1.08  # hueco del 8 %, que se cierra al día siguiente
+velas.iloc[200, velas.columns.get_loc("Low")] = cierre.iloc[199] * 1.07
+tec = types.SimpleNamespace(info={"shortName": "Prueba Inc.", "currency": "USD"}, history=lambda **k: velas)
+mod = cargar(types.SimpleNamespace(Ticker=lambda tk: tec))
+indice = pd.Series(np.linspace(4000, 4400, 300), index=dias)
+out = mod.casos_tecnicos("TEST", indice)
+for k in ("t1", "t2", "r1", "r2", "rs1", "g2"):
+    if not out[k]:
+        fallos.append(f"casos técnicos: sin casos de {k}")
+    for e in out[k]:
+        if e["a"] < 0 or e["a"] >= 1000:
+            fallos.append(f"casos técnicos: respuesta fuera de rango en {k}: {e['a']}")
+if out["r2"]:
+    atr = float(out["r2"][0]["q"].split("es de ")[1].split(" ")[0].replace(",", "."))
+    if out["r2"][0]["a"] != int(500 // (2 * atr)):
+        fallos.append(f"casos técnicos: tamaño mal redondeado ({out['r2'][0]['a']} con ATR {atr})")
+if out["g2"] and ("8,0 %" not in out["g2"][0]["why"] or "11/08/2025 el precio volvió" not in out["g2"][0]["why"]):
+    fallos.append(f"casos técnicos: hueco mal medido: {out['g2'][0]['why']}")
+if out["t2"] and "lo cumple" not in out["t2"][-1]["why"]:
+    fallos.append("casos técnicos: +60 % sobre el mínimo debería cumplir el criterio de Minervini")
+
 if fallos:
     print("FALLOS:\n- " + "\n- ".join(fallos))
     sys.exit(1)
-print("OK: generador de casos (sin methodology, sin estimaciones, ajustado, fecha de cierre)")
+print("OK: generador de casos (sin methodology, sin estimaciones, ajustado, fecha de cierre, técnicos)")

@@ -20,13 +20,18 @@ OUT = ROOT / "src" / "content" / "casos.json"
 BOT = ROOT.parent / "portfolio_manager.py"
 HOY = dt.date.today().strftime("%d/%m/%Y")
 # Lecciones que reciben casos reales (una sola definición para casos_de y main).
-LECCIONES_CASOS = ("f1a", "f1b", "f2a", "f2b", "f3a", "f3b", "f5a", "f6a", "bg1", "pr1", "bh2", "f8b", "f9a")
+LECCIONES_CASOS = ("f1a", "f1b", "f2a", "f2b", "f3a", "f3b", "f5a", "f6a", "bg1", "pr1", "bh2", "f8b", "f9a",
+                   "t1", "t2", "r1", "r2", "rs1", "g2", "dv1", "io2")
 # Índices y fondos indexados para la ruta Pasiva: (ticker, etiqueta, descripción, unidad, desde, nota sobre dividendos).
 INDICES = [
     ("EUNL.DE", "iShares Core MSCI World (EUNL)", "el ETF iShares Core MSCI World de acumulación (en euros)", "€", None,
      "Al ser de acumulación, el precio ya incluye los dividendos reinvertidos."),
     ("^GSPC", "S&P 500", "el índice S&P 500", "puntos", "2000-01-01",
      "Es el índice sin dividendos: con ellos reinvertidos, el resultado habría sido mejor."),
+    ("^STOXX50E", "Euro Stoxx 50", "el índice Euro Stoxx 50", "puntos", "2000-01-01",
+     "Es el índice sin dividendos: con ellos reinvertidos, el resultado habría sido mejor."),
+    ("^IBEX", "IBEX 35", "el IBEX 35", "puntos", "2000-01-01",
+     "Es el índice sin dividendos, que en el IBEX pesan mucho: con ellos reinvertidos, el resultado habría sido bastante mejor."),
 ]
 FALLBACK = ["AVGO", "GOOGL", "MELI", "MSFT", "LLY", "CRWD", "NU", "AXON", "META", "NVDA"]
 CUR = {"USD": "$", "EUR": "€"}
@@ -439,6 +444,209 @@ def casos_indices():
     return out
 
 
+RIESGO_ATR = 500  # riesgo por operación del caso de tamaño con ATR, en la divisa del valor
+
+
+def tr_medio(h, n=14):
+    """ATR simple: media del rango verdadero de las n últimas sesiones (incluye los huecos)."""
+    prev = h["Close"].shift(1)
+    tr = (h["High"] - h["Low"]).combine((h["High"] - prev).abs(), max).combine((h["Low"] - prev).abs(), max)
+    return float(tr.iloc[-n:].mean())
+
+
+def casos_tecnicos(tk, indice=None):
+    """Casos de la ruta Técnico con las velas diarias del valor: media de 150 sesiones (t1), distancia a máximos y
+    mínimos de 52 semanas (t2), stop y tamaño con ATR (r1, r2), fuerza relativa frente al S&P 500 (rs1) y mayor hueco
+    al alza del último año (g2). Solo cifras y comparaciones con los umbrales del marco, nunca «compra» o «vende»."""
+    out = {k: [] for k in ("t1", "t2", "r1", "r2", "rs1", "g2")}
+    t = yf.Ticker(tk)
+    info = t.info or {}
+    h = t.history(period="2y", interval="1d").dropna(subset=["Open", "High", "Low", "Close"])
+    if len(h) < 260:
+        return out
+    nombre = f"{limpio(info.get('shortName') or tk)} ({tk})"
+    cur = CUR.get(info.get("currency"), info.get("currency") or "")
+    u = lambda v: f"{es(v, 2)} {cur}"
+    cierre = h["Close"]
+    f, c = cierre.index[-1], round(float(cierre.iloc[-1]), 2)
+    base = {"t": "num", "caso": nombre}
+
+    # t1 · distancia a la media de 150 sesiones (30 semanas) y su pendiente en 20 sesiones
+    ma = cierre.rolling(150).mean()
+    m, m20 = round(float(ma.iloc[-1]), 2), round(float(ma.iloc[-21]), 2)
+    d = round(abs(c / m - 1) * 100, 1)
+    if d >= 0.1 and m != m20 and c != m:
+        encima = c > m
+        sube = m > m20
+        if encima and sube:
+            lectura = "Precio por encima de una media que sube: las dos condiciones de la Fase 2 de Weinstein."
+        elif encima:
+            lectura = "Precio por encima, pero la media aún baja: no cumple las dos condiciones de la Fase 2."
+        else:
+            lectura = "Precio por debajo de la media: Weinstein no compra en esa situación."
+        out["t1"].append({**base,
+            "q": f"Al cierre del {fecha(f)}, {nombre} cotizaba a {u(c)} y su media de 150 sesiones (unas 30 semanas) estaba en {u(m)}. "
+                 f"¿A qué distancia porcentual está el precio de la media? Redondea a 1 decimal.",
+            "unit": "%", "a": d, "tol": 0.06,
+            "why": f"{es(c, 2)} ÷ {es(m, 2)} − 1 = {'+' if encima else '−'}{es(d)} %. Hace 20 sesiones la media estaba en {es(m20, 2)}: "
+                   f"{'sube' if sube else 'baja'}. {lectura}",
+        })
+
+    # t2 · distancia al máximo y al mínimo de cierre de las últimas 52 semanas
+    ano = cierre.iloc[-252:]
+    mx, mn = round(float(ano.max()), 2), round(float(ano.min()), 2)
+    dmx = round((1 - c / mx) * 100, 1)
+    if dmx >= 0.1:
+        out["t2"].append({**base,
+            "q": f"{nombre} cerró a {u(c)} el {fecha(f)}. Su cierre más alto de las últimas 52 semanas fue {u(mx)}. "
+                 f"¿A qué distancia porcentual está de ese máximo? Redondea a 1 decimal.",
+            "unit": "%", "a": dmx, "tol": 0.06,
+            "why": f"1 − {es(c, 2)} ÷ {es(mx, 2)} = {es(dmx)} %. Minervini pide menos de un 25 % de distancia al máximo: "
+                   + ("lo cumple." if dmx < 25 else "no lo cumple."),
+        })
+    smn = round((c / mn - 1) * 100, 1)
+    if 0.1 <= smn < 1000:
+        out["t2"].append({**base,
+            "q": f"{nombre} cerró a {u(c)} el {fecha(f)}. Su cierre más bajo de las últimas 52 semanas fue {u(mn)}. "
+                 f"¿Cuánto está por encima de ese mínimo? Redondea a 1 decimal.",
+            "unit": "%", "a": smn, "tol": 0.06,
+            "why": f"{es(c, 2)} ÷ {es(mn, 2)} − 1 = {es(smn)} %. Minervini pide al menos un 30 % sobre el mínimo de 52 semanas: "
+                   + ("lo cumple." if smn >= 30 else "no lo cumple."),
+        })
+
+    # r1 · stop a 2 ATR bajo el cierre; r2 · acciones con un riesgo fijo y ese stop
+    atr = round(tr_medio(h), 2)
+    if atr > 0:
+        dist = round(2 * atr, 2)
+        stop = round(c - dist, 2)
+        if 0 < stop < 1000:
+            out["r1"].append({**base,
+                "q": f"{nombre} cerró a {u(c)} el {fecha(f)} con un ATR(14) de {u(atr)}. Si compras al cierre con el stop a 2 ATR, "
+                     f"¿a qué precio va el stop?",
+                "unit": cur if cur in ("€", "$") else "", "a": stop, "tol": 0.011,
+                "why": f"2 × {es(atr, 2)} = {es(dist, 2)}; {es(c, 2)} − {es(dist, 2)} = {es(stop, 2)}. "
+                       f"El stop queda a un {es(dist / c * 100)} % del precio: es el ruido normal de este valor.",
+            })
+        n = math.floor(RIESGO_ATR / dist + 1e-9)
+        if 1 <= n < 1000:
+            out["r2"].append({**base,
+                "q": f"Quieres arriesgar {es(RIESGO_ATR, 0)} {cur} en {nombre}, con el stop a 2 ATR. Su ATR(14) al {fecha(f)} es de {u(atr)}. "
+                     f"¿Cuántas acciones compras como máximo?",
+                "unit": "", "a": n, "tol": 0.01,
+                "why": f"Distancia al stop: 2 × {es(atr, 2)} = {es(dist, 2)}. {es(RIESGO_ATR, 0)} ÷ {es(dist, 2)} = {es(math.floor(RIESGO_ATR / dist * 100) / 100, 2)}: "
+                       f"{n} {'acción' if n == 1 else 'acciones'}, redondeando hacia abajo para no pasar del riesgo.",
+            })
+
+    # rs1 · cambio de la línea de fuerza relativa (precio ÷ S&P 500) en unas 13 semanas
+    if indice is not None and len(indice):
+        comun = cierre.index.intersection(indice.index)
+        if len(comun) > 70:
+            f0, f1 = comun[-64], comun[-1]
+            p0, p1 = round(float(cierre[f0]), 2), round(float(cierre[f1]), 2)
+            i0, i1 = round(float(indice[f0]), 2), round(float(indice[f1]), 2)
+            rs = round(((p1 / i1) / (p0 / i0) - 1) * 100, 1)
+            if abs(rs) >= 0.1:
+                out["rs1"].append({**base,
+                    "q": f"{nombre} pasó de {u(p0)} el {fecha(f0)} a {u(p1)} el {fecha(f1)}; el S&P 500, de {es(i0, 2)} a {es(i1, 2)} puntos. "
+                         f"¿Cuánto {'subió' if rs > 0 else 'bajó'} su línea de fuerza relativa (precio ÷ índice)? Redondea a 1 decimal.",
+                    "unit": "%", "a": abs(rs), "tol": 0.06,
+                    "why": f"({es(p1, 2)} ÷ {es(i1, 2)}) ÷ ({es(p0, 2)} ÷ {es(i0, 2)}) − 1 = {'+' if rs > 0 else '−'}{es(abs(rs))} %. "
+                           + ("Lo hizo mejor que el mercado en ese periodo." if rs > 0 else "Lo hizo peor que el mercado en ese periodo."),
+                })
+
+    # g2 · mayor hueco al alza del último año (apertura frente al cierre anterior) y si se ha cerrado después
+    ult = h.iloc[-253:]
+    gaps = (ult["Open"] / ult["Close"].shift(1) - 1).iloc[1:]
+    if len(gaps):
+        fg = gaps.idxmax()
+        k = ult.index.get_loc(fg)
+        prev_c, ap = round(float(ult["Close"].iloc[k - 1]), 2), round(float(ult["Open"].iloc[k]), 2)
+        g = round((ap / prev_c - 1) * 100, 1)
+        if 3 <= g < 100:
+            despues = ult.iloc[k:]
+            cerrado = despues[despues["Low"] <= prev_c]
+            estado = ("Ese mismo día el precio volvió a " + u(prev_c) + " y cerró el hueco." if len(cerrado) and cerrado.index[0] == fg
+                      else f"El {fecha(cerrado.index[0])} el precio volvió a {u(prev_c)} y cerró el hueco." if len(cerrado)
+                      else f"Hasta el {fecha(f)} el precio no ha vuelto a {u(prev_c)}: el hueco sigue abierto.")
+            out["g2"].append({**base,
+                "q": f"El {fecha(fg)}, {nombre} abrió a {u(ap)} tras cerrar la sesión anterior a {u(prev_c)}. "
+                     f"Fue su mayor hueco al alza del último año. ¿De cuánto fue? Redondea a 1 decimal.",
+                "unit": "%", "a": g, "tol": 0.06,
+                "why": f"{es(ap, 2)} ÷ {es(prev_c, 2)} − 1 = {es(g)} %. {estado}",
+            })
+    return out
+
+
+def casos_divisa():
+    """dv1 · rentabilidad del S&P 500 en dólares y en euros en el último año (EURUSD=X: dólares por euro)."""
+    out = {"dv1": []}
+    sp, fx = serie("^GSPC"), serie("EURUSD=X")
+    # Cada serie viene en la zona horaria de su mercado: se comparan por fecha de calendario.
+    for s_ in (sp, fx):
+        s_.index = s_.index.tz_localize(None).normalize() if s_.index.tz is not None else s_.index.normalize()
+    sp, fx = sp[~sp.index.duplicated()], fx[~fx.index.duplicated()]
+    comun = sp.index.intersection(fx.index)
+    if len(comun) < 250:
+        return out
+    f1 = comun[-1]
+    hace = comun[comun <= f1 - dt.timedelta(days=365)]
+    if not len(hace):
+        return out
+    f0 = hace[-1]
+    i0, i1 = round(float(sp[f0]), 2), round(float(sp[f1]), 2)
+    c0, c1 = round(float(fx[f0]), 4), round(float(fx[f1]), 4)
+    r_usd = round((i1 / i0 - 1) * 100, 1)
+    r_eur = round(((i1 / c1) / (i0 / c0) - 1) * 100, 1)
+    if abs(r_eur) < 0.1:
+        return out
+    gana = r_eur > 0
+    cambio = "se abarató" if c1 > c0 else "se encareció"
+    out["dv1"].append({
+        "t": "num", "caso": "S&P 500 en euros",
+        "q": f"Del {fecha(f0)} al {fecha(f1)}, el S&P 500 pasó de {es(i0, 2)} a {es(i1, 2)} puntos y el euro, de {es(c0, 4)} a {es(c1, 4)} dólares. "
+             f"Sin cubrir la divisa, ¿cuánto {'ganó' if gana else 'perdió'} en euros un inversor europeo? Redondea a 1 decimal.",
+        "unit": "%", "a": abs(r_eur), "tol": 0.06,
+        "why": f"({es(i1, 2)} ÷ {es(c1, 4)}) ÷ ({es(i0, 2)} ÷ {es(c0, 4)}) − 1 = {'+' if gana else '−'}{es(abs(r_eur))} %, frente a un "
+               f"{'+' if r_usd >= 0 else '−'}{es(abs(r_usd))} % en dólares: el dólar {cambio} frente al euro. Es el índice sin dividendos.",
+    })
+    return out
+
+
+def casos_oro():
+    """io2 · oro (futuro continuo de Yahoo, GC=F, en dólares por onza): crecimiento a 10 años y mayor caída desde 2000."""
+    out = {"io2": []}
+    h = yf.Ticker("GC=F").history(period="max", interval="1d")["Close"].dropna()
+    h = h[h.index >= "2000-01-01"]
+    if len(h) < 3000:
+        return out
+    u = lambda v: f"{es(v, 2)} $"
+    fin_f, fin_v = h.index[-1], round(float(h.iloc[-1]), 2)
+    ini = h[h.index >= fin_f - dt.timedelta(days=3652)]
+    ini_f, ini_v = ini.index[0], round(float(ini.iloc[0]), 2)
+    g = round((fin_v / ini_v - 1) * 100, 1)
+    if 0 < g < 1000:
+        out["io2"].append({
+            "t": "num", "caso": "Oro (futuro, $ por onza)",
+            "q": f"La onza de oro cotizaba a {u(ini_v)} el {fecha(ini_f)} y a {u(fin_v)} el {fecha(fin_f)}. ¿Cuánto subió en esos 10 años? Redondea a 1 decimal.",
+            "unit": "%", "a": g, "tol": 0.06,
+            "why": f"{es(fin_v, 2)} ÷ {es(ini_v, 2)} − 1 = {es(g)} %. El oro no paga dividendos ni intereses: todo su rendimiento es la variación del precio.",
+        })
+    caida = h / h.cummax() - 1
+    f_min = caida.idxmin()
+    f_max = h[:f_min].idxmax()
+    v_max, v_min = round(float(h[f_max]), 2), round(float(h[f_min]), 2)
+    d = round((1 - v_min / v_max) * 100, 1)
+    if 5 < d < 95:
+        out["io2"].append({
+            "t": "num", "caso": "Oro (futuro, $ por onza)",
+            "q": f"La onza de oro marcó un máximo de {u(v_max)} el {fecha(f_max)} y cayó hasta {u(v_min)} el {fecha(f_min)}. ¿Cuánto cayó? Redondea a 1 decimal.",
+            "unit": "%", "a": d, "tol": 0.06,
+            "why": f"1 − {es(v_min, 2)} ÷ {es(v_max, 2)} = {es(d)} %. Es su mayor caída de cierre a cierre desde el {fecha(h.index[0])}: "
+                   f"el oro diversifica, pero no es un activo sin riesgo.",
+        })
+    return out
+
+
 def serie(tk, periodo="2y"):
     return yf.Ticker(tk).history(period=periodo, interval="1d")["Close"].dropna()
 
@@ -486,13 +694,18 @@ def casos_bonos():
 def main():
     ex = {k: [] for k in LECCIONES_CASOS}
     fallos = []
+    try:
+        sp = serie("^GSPC", "1y")
+    except Exception as e:
+        sp, _ = None, fallos.append(f"S&P 500: {e}")
     for tk in tickers():
-        try:
-            for k, v in casos_de(tk).items():
-                ex[k].extend(v)
-        except Exception as e:  # un ticker sin datos no debe tumbar el resto
-            fallos.append(f"{tk}: {e}")
-    for nombre_f, fn in (("índices", casos_indices), ("bonos", casos_bonos)):
+        for fn in (casos_de, lambda x: casos_tecnicos(x, sp)):
+            try:
+                for k, v in fn(tk).items():
+                    ex[k].extend(v)
+            except Exception as e:  # un ticker sin datos no debe tumbar el resto
+                fallos.append(f"{tk}: {e}")
+    for nombre_f, fn in (("índices", casos_indices), ("bonos", casos_bonos), ("divisa", casos_divisa), ("oro", casos_oro)):
         try:
             for k, v in fn().items():
                 ex[k].extend(v)
