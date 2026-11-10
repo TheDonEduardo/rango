@@ -68,7 +68,27 @@ if not per:
 if set(out) != set(mod.LECCIONES_CASOS):
     fallos.append("casos_de no usa LECCIONES_CASOS")
 
-# 4) Casos técnicos con velas simuladas: cifras coherentes, nada negativo y tamaño redondeado hacia abajo.
+# 4) ROIC y revisiones de estimaciones: cuentas con las cifras que ve el usuario y plural correcto.
+f4 = pd.to_datetime(["2026-09-30", "2026-06-30", "2026-03-31", "2025-12-31"])
+qi = pd.DataFrame([[250e6] * 4, [50e6] * 4, [200e6] * 4], index=["Operating Income", "Tax Provision", "Pretax Income"], columns=f4)
+bs = pd.DataFrame([[400e6], [100e6], [700e6]], index=["Total Debt", "Cash Cash Equivalents And Short Term Investments", "Stockholders Equity"],
+                  columns=pd.to_datetime(["2026-09-30"]))
+trend = pd.DataFrame({"current": [5.5], "90daysAgo": [5.0]}, index=["0y"])
+revs = pd.DataFrame({"upLast30days": [1], "downLast30days": [3]}, index=["0y"])
+rt = types.SimpleNamespace(info={"shortName": "Prueba Inc.", "financialCurrency": "USD", "sector": "Technology"},
+                           quarterly_income_stmt=qi, quarterly_balance_sheet=bs, eps_trend=trend, eps_revisions=revs)
+mod = cargar(types.SimpleNamespace(Ticker=lambda tk: rt))
+out = mod.casos_roic_estimaciones("TEST")
+# 1.000 × (1 − 0,25) = 750; capital invertido 400 + 700 − 100 = 1.000 → 75 %
+if [e["a"] for e in out["f7a"]] != [75.0]:
+    fallos.append(f"ROIC mal calculado: {out['f7a']}")
+if [e["a"] for e in out["f10b"]] != [10.0, 25.0] or "1 analista subió" not in out["f10b"][1]["q"]:
+    fallos.append(f"revisiones mal calculadas: {[(e['a'], e['q']) for e in out['f10b']]}")
+rt.info = dict(rt.info, sector="Financial Services")
+if mod.casos_roic_estimaciones("TEST")["f7a"]:
+    fallos.append("ROIC en un banco")
+
+# 5) Casos técnicos con velas simuladas: cifras coherentes, nada negativo y tamaño redondeado hacia abajo.
 import numpy as np
 dias = pd.bdate_range("2024-11-01", periods=300, tz="America/New_York")
 cierre = pd.Series(np.linspace(50, 80, 300), index=dias)
@@ -97,4 +117,4 @@ if out["t2"] and "lo cumple" not in out["t2"][-1]["why"]:
 if fallos:
     print("FALLOS:\n- " + "\n- ".join(fallos))
     sys.exit(1)
-print("OK: generador de casos (sin methodology, sin estimaciones, ajustado, fecha de cierre, técnicos)")
+print("OK: generador de casos (sin methodology, sin estimaciones, ajustado, fecha de cierre, ROIC, revisiones, técnicos)")

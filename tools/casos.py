@@ -21,7 +21,7 @@ BOT = ROOT.parent / "portfolio_manager.py"
 HOY = dt.date.today().strftime("%d/%m/%Y")
 # Lecciones que reciben casos reales (una sola definición para casos_de y main).
 LECCIONES_CASOS = ("f1a", "f1b", "f2a", "f2b", "f3a", "f3b", "f5a", "f6a", "bg1", "pr1", "bh2", "f8b", "f9a",
-                   "t1", "t2", "r1", "r2", "rs1", "g2", "dv1", "io2")
+                   "t1", "t2", "r1", "r2", "rs1", "g2", "dv1", "io2", "f7a", "f10b")
 # Índices y fondos indexados para la ruta Pasiva: (ticker, etiqueta, descripción, unidad, desde, nota sobre dividendos).
 INDICES = [
     ("EUNL.DE", "iShares Core MSCI World (EUNL)", "el ETF iShares Core MSCI World de acumulación (en euros)", "€", None,
@@ -444,6 +444,92 @@ def casos_indices():
     return out
 
 
+def casos_roic_estimaciones(tk):
+    """f7a · ROIC de los 4 últimos trimestres (beneficio operativo después de impuestos ÷ capital invertido) y
+    f10b · revisiones del consenso de BPA ajustado del año fiscal en curso en 90 días y sentido de las revisiones
+    de los últimos 30 días."""
+    out = {"f7a": [], "f10b": []}
+    t = yf.Ticker(tk)
+    info = t.info or {}
+    sym = CUR.get(info.get("financialCurrency") or "USD")
+    if not sym:
+        return out
+    nombre = limpio(info.get("shortName") or tk)
+    caso = f"{nombre} ({tk})"
+
+    # f7a · ROIC. En bancos y aseguradoras el capital invertido no tiene sentido (deuda y caja son el negocio).
+    q, b = t.quarterly_income_stmt, t.quarterly_balance_sheet
+    if info.get("sector") != "Financial Services" and b is not None and not b.empty:
+        op4, hasta = ultimos4(q, "Operating Income")
+        tax4, _ = ultimos4(q, "Tax Provision")
+        pre4, _ = ultimos4(q, "Pretax Income")
+        b = b[sorted(b.columns, reverse=True)]
+        c = b.columns[0]
+        val = lambda fila: float(b.loc[fila][c]) if fila in b.index and ok(b.loc[fila][c]) else None
+        deuda, caja, patr = val("Total Debt"), val("Cash Cash Equivalents And Short Term Investments"), val("Stockholders Equity")
+        if all(ok(x) for x in (op4, tax4, pre4, deuda, caja, patr)) and op4 > 0 and pre4 > 0 and tax4 >= 0:
+            tasa = round(tax4 / pre4 * 100)
+            (o, do), (d, dd), (k, dk), (e, de) = mill(op4), mill(deuda), mill(caja), mill(patr)
+            ic = round(d + e - k, 1)
+            if 0 <= tasa <= 40 and ic > 0:
+                nopat = o * (1 - tasa / 100)
+                roic = round(nopat / ic * 100, 1)
+                nd = 0 if abs(ic) >= 1000 else 1
+                if 0 < roic < 100:
+                    lect = ("muy por encima de un coste del capital típico del 8-10 %: crecer reinvirtiendo crea valor."
+                            if roic >= 15 else
+                            "por encima de un coste del capital típico del 8-10 %, aunque sin mucho margen."
+                            if roic > 10 else
+                            "en la zona de un coste del capital típico del 8-10 % o por debajo: crecer apenas crea valor.")
+                    out["f7a"].append({
+                        "t": "num", "caso": caso,
+                        "q": f"{nombre}, 4 trimestres hasta el {fecha(hasta)}: beneficio operativo de {es(o, do)} M{sym} y tipo impositivo "
+                             f"efectivo del {tasa} %. Último balance: deuda de {es(d, dd)} M{sym}, patrimonio de {es(e, de)} M{sym} y caja de "
+                             f"{es(k, dk)} M{sym}. ¿ROIC? Redondea a 1 decimal.",
+                        "unit": "%", "a": roic, "tol": 0.06,
+                        "why": f"{es(o, do)} × (1 − 0,{tasa:02d}) = {es(nopat, 1)} M{sym} después de impuestos; capital invertido: "
+                               f"{es(d, dd)} + {es(e, de)} − {es(k, dk)} = {es(ic, nd)} M{sym}. {es(nopat, 1)} ÷ {es(ic, nd)} = {es(roic)} %, {lect}",
+                    })
+
+    # f10b · revisiones del consenso (Yahoo: eps_trend y eps_revisions, BPA ajustado)
+    try:
+        tr, rv = t.eps_trend, t.eps_revisions
+    except Exception:
+        tr, rv = None, None
+    if tr is not None and not tr.empty and "0y" in tr.index and {"current", "90daysAgo"} <= set(tr.columns):
+        hoy_v, antes_v = tr.loc["0y"]["current"], tr.loc["0y"]["90daysAgo"]
+        if ok(hoy_v) and ok(antes_v) and antes_v > 0 and hoy_v > 0:
+            v1, v0 = round(float(hoy_v), 2), round(float(antes_v), 2)
+            g = round((v1 / v0 - 1) * 100, 1)
+            if abs(g) >= 0.1 and abs(g) < 500:
+                sube = g > 0
+                out["f10b"].append({
+                    "t": "num", "caso": caso,
+                    "q": f"Hace 90 días, el consenso de BPA ajustado de {nombre} para su año fiscal en curso era de {es(v0, 2)} {sym}; "
+                         f"al {HOY}, es de {es(v1, 2)} {sym}. ¿Cuánto se ha revisado {'al alza' if sube else 'a la baja'}? Redondea a 1 decimal.",
+                    "unit": "%", "a": abs(g), "tol": 0.06,
+                    "why": f"{es(v1, 2)} ÷ {es(v0, 2)} − 1 = {'+' if sube else '−'}{es(abs(g))} %. "
+                           + ("Los analistas esperan ahora más beneficio que hace tres meses." if sube
+                              else "Los analistas esperan ahora menos beneficio que hace tres meses."),
+                })
+    if rv is not None and not rv.empty and "0y" in rv.index and {"upLast30days", "downLast30days"} <= set(rv.columns):
+        up, dn = rv.loc["0y"]["upLast30days"], rv.loc["0y"]["downLast30days"]
+        if ok(up) and ok(dn) and up + dn > 0:
+            up, dn = int(up), int(dn)
+            p = round(up / (up + dn) * 100, 1)
+            out["f10b"].append({
+                "t": "num", "caso": caso,
+                "q": f"En los 30 días hasta el {HOY}, {up} {'analista subió' if up == 1 else 'analistas subieron'} su estimación de BPA de "
+                     f"{nombre} para el año fiscal en curso y {dn} la {'bajó' if dn == 1 else 'bajaron'}. ¿Qué porcentaje de las revisiones fue al alza? "
+                     f"Redondea a 1 decimal.",
+                "unit": "%", "a": p, "tol": 0.06,
+                "why": f"{up} ÷ ({up} + {dn}) = {up} ÷ {up + dn} = {es(p)} %. "
+                       + ("La mayoría de las revisiones van al alza." if p > 50 else
+                          "Las revisiones al alza no son mayoría." if p < 50 else "Hay tantas revisiones al alza como a la baja."),
+            })
+    return out
+
+
 RIESGO_ATR = 500  # riesgo por operación del caso de tamaño con ATR, en la divisa del valor
 
 
@@ -699,7 +785,7 @@ def main():
     except Exception as e:
         sp, _ = None, fallos.append(f"S&P 500: {e}")
     for tk in tickers():
-        for fn in (casos_de, lambda x: casos_tecnicos(x, sp)):
+        for fn in (casos_de, lambda x: casos_tecnicos(x, sp), casos_roic_estimaciones):
             try:
                 for k, v in fn(tk).items():
                     ex[k].extend(v)

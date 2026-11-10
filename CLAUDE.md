@@ -154,7 +154,7 @@ Hecho: cuatro rutas de 16 unidades (2 lecciones × 4 ejercicios; 193 lecciones c
 
 - Básico: 6 unidades obligatorias (acciones y órdenes, rentabilidad y riesgo, leer un gráfico, ETF e índices, impuestos en España, cuenta y bróker) y 10 complementarias (`gate: false`): errores del principiante, cómo funciona la bolsa, el dinero y el interés, ahorro y presupuesto, deudas y tarjetas, fondos de inversión, tipos de activos, leer noticias financieras, estafas y chiringuitos, criptomonedas.
 - Pasiva: inversión pasiva, renta fija, reparto de activos, rebalanceo, carteras modelo, retirada sostenible, fiscalidad a largo plazo, psicología del inversor pasivo, fondos y ETF por dentro, por qué indexarse, objetivos, inflación, factores, inmobiliario y oro, divisa, revisión anual. Casos reales de índices, bonos, divisa y oro.
-- Fundamental: F1-F16 (tabla más abajo); F1-F3, F5, F6, F8 y F9 con casos reales. No usar las acciones en circulación de Yahoo para medir recompras: no son fiables.
+- Fundamental: F1-F16 (tabla más abajo); F1-F3, F5-F10 con casos reales (F4 no lleva: es de criterio). No usar las acciones en circulación de Yahoo para medir recompras: no son fiables.
 - Técnico (casos reales en t1, t2, r1, r2, rs1 y g2): velas, tendencia, riesgo, catalizadores binarios, Wyckoff/VSA, VCP, salidas escalonadas, riesgo de cartera, cortos y Fase 4, mercado general, fuerza relativa, techos y temporalidades, grupos y gaps, psicología y diario, opciones para cubrir, backtesting.
 
 Pendiente (por orden sugerido):
@@ -197,6 +197,8 @@ Decisiones tomadas:
 - Los casos reales son solo de cálculo y se generan con código: la respuesta se calcula con las mismas cifras redondeadas que ve el usuario y el `why` solo afirma hechos verificables con los datos (comparaciones con umbrales del marco o con el trimestre anterior). Nada de valoraciones ni de «compra/vende»: cada caso indica fuente y fecha y el inicio lo marca como formación.
 - Si una plantilla puede dar un resultado negativo, se reformula o se descarta el caso (ver regla de `num`).
 - Filtra los datos absurdos o distorsionados en vez de explicarlos: PER mayor de 200 (BPA casi nulo), EV/EBITDA de 100 o más, rentabilidad por flujo de caja libre de 8 % o más (en negocios financieros el flujo operativo incluye fondos de clientes). El flujo de caja libre se suma de 4 trimestres consecutivos del estado de flujos, no del campo `freeCashflow` de Yahoo, que no es fiable. La cobertura de intereses usa el beneficio operativo, no el «EBIT» de Yahoo (incluye plusvalías). Las plantillas de F3 excluyen el sector financiero: en bancos, deuda y caja son la materia prima del negocio.
+- ROIC (F7, `casos_roic_estimaciones()`): beneficio operativo de 4 trimestres × (1 − tipo efectivo, impuestos ÷ beneficio antes de impuestos de los mismos trimestres, entre 0 y 40 %) ÷ (deuda + patrimonio − caja del último balance). Sin sector financiero; se descarta con capital invertido negativo o ROIC fuera de 0-100 %. Se compara con un coste del capital típico del 8-10 %.
+- Revisiones (F10): consenso de BPA ajustado del año fiscal en curso hoy frente a hace 90 días (`eps_trend` de Yahoo) y revisiones al alza y a la baja de los últimos 30 días (`eps_revisions`).
 - Sorpresas frente al consenso (F5): solo trimestres con BPA ajustado («normalized» en Yahoo). En el contable, Yahoo compara a veces con un consenso no comparable y salen sorpresas enormes y engañosas. «Batir» cuenta con las cifras redondeadas que ve el usuario.
 
 ## Convenciones de trabajo
