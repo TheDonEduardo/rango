@@ -1,4 +1,4 @@
-// Inicio: cabecera, meta diaria, selector de ruta, tarjetas (test, simuladores, continuar, repaso) y camino de lecciones.
+// Inicio: cabecera, selector de ruta, un aviso como mucho, «Hoy» (meta, siguiente lección y repaso), la herramienta de la ruta y el camino.
 import {RH,OFFS,esc} from '../util.js';
 import {ico,LOGO} from '../icons.js';
 import {glyph} from '../charts.js';
@@ -14,21 +14,10 @@ const DEV=typeof location!=='undefined'&&/[?&]dev\b/.test(location.search||'');
 export function homeHTML(){
   const st=statuses(),sk=streakNow(),dx=dayXpNow();
   let h=`<header class="top"><h1 class="brand">${LOGO}<span>Rango</span></h1><div class="stats"><span class="chip fire" aria-label="${t.racha(sk)}">${ico('flame')}<b>${sk}</b></span><span class="chip xp" aria-label="${t.xpTotal(S.xp)}">${ico('bolt')}<b>${S.xp}</b></span><button class="chip vstat" data-act="stats" aria-label="${t.verProgreso}">${ico('bars')}</button></div></header><div class="home">`;
-  h+=`<section class="goal" aria-label="${t.metaDiaria}"><div class="goal-h"><span>${t.metaHoy}</span><span>${Math.min(dx,S.meta)} / ${S.meta} XP</span></div><div class="bar" role="progressbar" aria-label="${t.metaHoy}" aria-valuemin="0" aria-valuemax="${S.meta}" aria-valuenow="${Math.min(dx,S.meta)}"><i style="width:${Math.min(100,dx/S.meta*100)}%"></i></div></section>`;
   h+=`<nav class="tracks" aria-label="${t.ruta}">${TRACKS.map(r=>`<button data-act="track" data-track="${r.id}" aria-pressed="${S.track===r.id}">${r.title}</button>`).join('')}</nav>`;
   const TF=FLAT.filter(l=>trackOf(l.unit)===S.track);
-  if(!S.objetivo&&!Object.keys(S.done).length)h+=`<section class="objetivo" aria-label="${t.objetivoTitulo}"><b>${t.objetivoTitulo}</b><div class="obj-opc">${['basico','pasiva','fundamental','tecnico'].map(r=>`<button class="btn line" data-act="objetivo" data-track="${r}"><b>${t.objetivos[r][0]}</b><span>${t.objetivos[r][1]}</span></button>`).join('')}</div><button class="btn ghost" data-act="noobjetivo">${t.ahoraNo}</button></section>`;
-  if(S.track!=='basico'&&!advancedOpen())h+=`<section class="gate"><p>${t.bloqueoRuta}</p><div class="row"><button class="btn line" data-act="track" data-track="basico">${t.irBasicos}</button>${S.placement?'':`<button class="btn line" data-act="test">${t.hacerTest}</button>`}<button class="btn ghost" data-act="skipbasics">${t.saltarBasicos}</button></div></section>`;
-  if(S.track==='basico'&&S.objetivo&&!S.placement&&!Object.keys(S.done).length)h+=`<section class="test" aria-label="${t.testNivel}"><div><b>${t.testPregunta}</b><span>${t.testExplica(PLACEMENT.length)}</span></div><div class="row"><button class="btn primary" data-act="test">${t.hacerTest}</button><button class="btn ghost" data-act="notest">${t.desdeCero}</button></div></section>`;
-  // Prueba de nivel de las rutas avanzadas: para quien aún no ha hecho ninguna lección de la ruta.
-  if(S.track!=='basico'&&advancedOpen()&&!S.pruebas[S.track]&&!TF.some(l=>S.done[l.id]))h+=`<section class="test" aria-label="${t.pruebaNivel}"><div><b>${t.nivelPregunta}</b><span>${t.nivelExplica}</span></div><div class="row"><button class="btn primary" data-act="nivel" data-track="${S.track}">${t.hacerPrueba}</button><button class="btn ghost" data-act="nonivel" data-track="${S.track}">${t.desdeCero}</button></div></section>`;
-  if(S.track==='tecnico'&&SEMANA&&advancedOpen())h+=simCardHTML();
-  if(S.track==='pasiva'&&advancedOpen())h+=`<section class="sim" aria-label="${t.calcTitulo}"><b>${t.calcTitulo}</b><div class="simrow"><span>${t.calcExplica}</span><button class="btn primary" data-act="calc">${t.abrir}</button></div></section>`;
-  // Atajo a la siguiente lección cuando ya no está en la primera unidad (el camino se hace largo).
-  const cur=TF.find(l=>st[l.id]==='current'),primera=UNITS.find(u=>trackOf(u)===S.track);
-  if(cur&&cur.unit!==primera)h+=`<section class="cont" aria-label="${t.siguienteLeccion}"><div><span>${t.unidadN(cur.unit.n)} · ${esc(cur.unit.title)}</span><b>${esc(cur.title)}</b></div><button class="btn primary" data-act="open" data-id="${cur.id}">${t.continuar}</button></section>`;
-  const due=srsDue().length;
-  if(due)h+=`<section class="srs" aria-label="${t.repasoDia}"><div><b>${t.repasoDia}</b><span>${t.repasoPendiente(due)}${(n=>n?` · ${t.aprendidos(n)}`:'')(srsResumen().aprendidos)}</span></div><button class="btn primary" data-act="srs">${t.repasar}</button></section>`;
+  // Orden fijo: como mucho un aviso (objetivo, ruta cerrada, test o prueba de nivel), después «Hoy» y la herramienta de la ruta.
+  h+=avisoHTML(TF)+hoyHTML(st,TF,dx)+herramientaHTML();
   UNITS.filter(u=>trackOf(u)===S.track).forEach(u=>{
     if(!u.lessons){
       h+=`<section class="unit soon"><div class="ban"><div><div class="u">${t.unidadN(u.n)}</div><h2>${u.title}</h2><p>${u.blurb}</p></div><span class="cnt">${t.proximamente}</span></div></section>`;
@@ -56,6 +45,38 @@ export function homeHTML(){
   if(S.track==='fundamental'&&CASOS)h+=`<p class="src">${t.fuenteCasos(esc(CASOS.fuente),esc(CASOS.fecha))}</p>`;
   h+=`</div><footer class="foot-home"><p>${t.pie} <button class="link" data-act="legal">${t.avisoLegal}</button> · <button class="link" data-act="glosario">${t.glosario}</button></p>${installHTML()}${DEV?`<div class="row"><button class="btn ghost" data-act="unlock">${S.all?t.rebloquear:t.desbloquear}</button><button class="btn ghost" data-act="reset">${ses.resetArm?t.reiniciarConfirma:t.reiniciar}</button></div>`:''}</footer>`;
   return h;
+}
+
+// Decisiones de quien empieza: solo la primera que aplique, para no apilar tarjetas.
+function avisoHTML(TF){
+  if(!S.objetivo&&!Object.keys(S.done).length)return `<section class="objetivo" aria-label="${t.objetivoTitulo}"><b>${t.objetivoTitulo}</b><div class="obj-opc">${['basico','pasiva','fundamental','tecnico'].map(r=>`<button class="btn line" data-act="objetivo" data-track="${r}"><b>${t.objetivos[r][0]}</b><span>${t.objetivos[r][1]}</span></button>`).join('')}</div><button class="btn ghost" data-act="noobjetivo">${t.ahoraNo}</button></section>`;
+  if(S.track!=='basico'&&!advancedOpen())return `<section class="gate"><p>${t.bloqueoRuta}</p><div class="row"><button class="btn line" data-act="track" data-track="basico">${t.irBasicos}</button>${S.placement?'':`<button class="btn line" data-act="test">${t.hacerTest}</button>`}<button class="btn ghost" data-act="skipbasics">${t.saltarBasicos}</button></div></section>`;
+  if(S.track==='basico'&&!S.placement&&!Object.keys(S.done).length)return `<section class="test" aria-label="${t.testNivel}"><div><b>${t.testPregunta}</b><span>${t.testExplica(PLACEMENT.length)}</span></div><div class="row"><button class="btn primary" data-act="test">${t.hacerTest}</button><button class="btn ghost" data-act="notest">${t.desdeCero}</button></div></section>`;
+  // Prueba de nivel de las rutas avanzadas: para quien aún no ha hecho ninguna lección de la ruta.
+  if(S.track!=='basico'&&!S.pruebas[S.track]&&!TF.some(l=>S.done[l.id]))return `<section class="test" aria-label="${t.pruebaNivel}"><div><b>${t.nivelPregunta}</b><span>${t.nivelExplica}</span></div><div class="row"><button class="btn primary" data-act="nivel" data-track="${S.track}">${t.hacerPrueba}</button><button class="btn ghost" data-act="nonivel" data-track="${S.track}">${t.desdeCero}</button></div></section>`;
+  return '';
+}
+
+// «Hoy»: meta diaria, siguiente lección y repaso en una sola tarjeta. Sin nada que hacer ni XP, no sale.
+function hoyHTML(st,TF,dx){
+  const due=srsDue().length;
+  // La siguiente lección, si ya has empezado la ruta y no está a la vista (fuera de la primera unidad).
+  const cur=TF.find(l=>st[l.id]==='current'),primera=UNITS.find(u=>trackOf(u)===S.track);
+  const sigue=cur&&cur.unit!==primera&&advancedOpenFor(S.track);
+  if(!S.xp&&!due&&!sigue)return '';
+  let h=`<section class="hoy" aria-label="${t.hoy}"><div class="goal"><div class="goal-h"><span>${t.metaHoy}</span><span>${Math.min(dx,S.meta)} / ${S.meta} XP</span></div><div class="bar" role="progressbar" aria-label="${t.metaHoy}" aria-valuemin="0" aria-valuemax="${S.meta}" aria-valuenow="${Math.min(dx,S.meta)}"><i style="width:${Math.min(100,dx/S.meta*100)}%"></i></div></div>`;
+  if(sigue)h+=`<div class="hoy-row cont"><div><span>${t.unidadN(cur.unit.n)} · ${esc(cur.unit.title)}</span><b>${esc(cur.title)}</b></div><button class="btn primary" data-act="open" data-id="${cur.id}">${t.continuar}</button></div>`;
+  if(due)h+=`<div class="hoy-row srs"><div><b>${t.repasoDia}</b><span>${t.repasoPendiente(due)}${(n=>n?` · ${t.aprendidos(n)}`:'')(srsResumen().aprendidos)}</span></div><button class="btn ${sigue?'line':'primary'}" data-act="srs">${t.repasar}</button></div>`;
+  return h+'</section>';
+}
+const advancedOpenFor=r=>r==='basico'||advancedOpen();
+
+// Herramienta propia de la ruta: Operación de la semana (Técnico) o simulador de aportaciones (Pasiva).
+function herramientaHTML(){
+  if(!advancedOpen())return '';
+  if(S.track==='tecnico'&&SEMANA)return simCardHTML();
+  if(S.track==='pasiva')return `<section class="sim" aria-label="${t.calcTitulo}"><b>${t.calcTitulo}</b><div class="simrow"><span>${t.calcExplica}</span><button class="btn line" data-act="calc">${t.abrir}</button></div></section>`;
+  return '';
 }
 
 // Instalar como app: botón cuando el navegador lo ofrece (Android, Chrome); en iPhone/iPad, indicación manual.

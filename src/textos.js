@@ -16,7 +16,7 @@ export const t={
   racha:n=>`Racha de ${n} ${pl(n,'día','días')}`,
   xpTotal:n=>`${n} XP en total`,
   verProgreso:'Tu progreso y puntos débiles',
-  metaDiaria:'Meta diaria', metaHoy:'Meta de hoy', metaXP:m=>`${m} XP`,
+  metaDiaria:'Meta diaria', metaHoy:'Meta de hoy', hoy:'Hoy', metaXP:m=>`${m} XP`,
   protectores:(n,max)=>`Protectores de racha: ${n} de ${max}. Ganas uno cada 7 días seguidos; si un día no practicas, se gasta uno y la racha sigue.`,
   protectorUsado:'Usaste un protector: tu racha sigue.', protectorGanado:'¡7 días seguidos! Ganas un protector de racha.',
   objetivoTitulo:'¿Qué quieres aprender?', ahoraNo:'Ahora no',

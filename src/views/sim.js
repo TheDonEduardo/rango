@@ -74,7 +74,7 @@ export function simCardHTML(){
   let h=`<section class="sim" aria-label="${t.simTitulo}"><b>${t.simTitulo}</b>`;
   if(mio&&P.despues&&P.despues.length){const r=simulate(mio.plan,P.despues);h+=`<div class="simrow"><span>${t.semanaPasada(esc(P.nombre))}<b class="${r.r>0?'up':r.r<0?'dn':''}">${r.estado==='sin entrada'?t.sinEntrada:fR(r.r)}</b></span><button class="btn ghost" data-act="simres">${t.verResultado}</button></div>`}
   const guardado=S.sim[SEMANA.semana];
-  h+=`<div class="simrow"><span>${guardado?t.planGuardadoCard(esc(SEMANA.nombre)):t.montaPlan(esc(SEMANA.nombre),esc(SEMANA.ticker))}</span><button class="btn ${guardado?'ghost':'primary'}" data-act="sim">${guardado?t.verCambiar:t.empezar}</button></div>`;
+  h+=`<div class="simrow"><span>${guardado?t.planGuardadoCard(esc(SEMANA.nombre)):t.montaPlan(esc(SEMANA.nombre),esc(SEMANA.ticker))}</span><button class="btn ${guardado?'ghost':'line'}" data-act="sim">${guardado?t.verCambiar:t.empezar}</button></div>`;
   return h+simHistHTML(false)+'</section>';
 }
 export function simHTML(){

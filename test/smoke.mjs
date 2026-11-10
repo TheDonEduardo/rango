@@ -442,7 +442,10 @@ if (fs.existsSync(semPath)) {
   for (const l of T.FLAT.filter(l => l.unit.id === 'velas')) st.done[l.id] = {acc: 1};
   const h = T.homeHTML();
   if (!h.includes('data-act="unfold"') || !h.includes('Completada')) errs.push('la unidad completada no se pliega');
-  if (!/class="cont"[\s\S]*data-id="t1"/.test(h)) errs.push('falta el atajo «Continuar» a la siguiente lección');
+  if (!/class="hoy-row cont"[\s\S]*data-id="t1"/.test(h)) errs.push('falta el atajo «Continuar» a la siguiente lección');
+  // Inicio ordenado: una sola tarjeta «Hoy» y, como mucho, un aviso de los de empezar.
+  if ((h.match(/class="hoy"/g) || []).length !== 1) errs.push('el inicio no reúne meta, continuar y repaso en una tarjeta «Hoy»');
+  if ((h.match(/class="(objetivo|gate|test)"/g) || []).length > 1) errs.push('el inicio apila varios avisos');
   if (h.includes('data-id="v1"')) errs.push('las lecciones de la unidad completada siguen visibles');
   st.done = antes;
 }
