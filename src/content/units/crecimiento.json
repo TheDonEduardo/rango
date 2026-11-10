@@ -15,7 +15,41 @@
       "id": "g2",
       "titulo": "Aceleración",
       "texto": "Lo que más mueve una acción es que el crecimiento sea cada vez más rápido. Mira la tendencia de los últimos trimestres, no solo el último dato.",
-      "ejemplo": "Un BPA que crece un 12 %, luego un 25 % y luego un 41 % está acelerando."
+      "ejemplo": "Un BPA que crece un 12 %, luego un 25 % y luego un 41 % está acelerando.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Crecimiento interanual del BPA en cuatro trimestres seguidos: 8 %, 12 %, 25 % y 41 %. Cada trimestre crece más rápido que el anterior.",
+        "series": [
+          {
+            "data": [
+              8,
+              12,
+              25,
+              41
+            ],
+            "texto": "BPA",
+            "tono": "up"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 1,
+            "y": 12,
+            "texto": "12 %"
+          },
+          {
+            "i": 2,
+            "y": 25,
+            "texto": "25 %"
+          },
+          {
+            "i": 3,
+            "y": 41,
+            "texto": "41 %",
+            "lado": "i"
+          }
+        ]
+      }
     },
     {
       "id": "g3",

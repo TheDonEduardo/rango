@@ -9,7 +9,42 @@
       "id": "g1",
       "titulo": "Un sector muy cíclico",
       "texto": "Las fábricas de chips tardan años en construirse: cuando la demanda sube falta oferta y los precios suben; cuando llega la nueva capacidad, sobra y caen.",
-      "ejemplo": "Es un negocio muy intensivo en capital: invertir 15.000 M$ con ventas de 50.000 M$ es un 30 %."
+      "ejemplo": "Es un negocio muy intensivo en capital: invertir 15.000 M$ con ventas de 50.000 M$ es un 30 %.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Precio de los chips a lo largo del ciclo: sube en la fase de escasez y se hunde cuando entra en funcionamiento la nueva capacidad y sobra oferta.",
+        "series": [
+          {
+            "data": [
+              60,
+              75,
+              95,
+              100,
+              80,
+              55,
+              50,
+              65,
+              85,
+              100
+            ],
+            "texto": "Precios",
+            "tono": "sel"
+          }
+        ],
+        "zonas": [
+          {
+            "i1": 1,
+            "i2": 3,
+            "texto": "Escasez"
+          },
+          {
+            "i1": 4,
+            "i2": 6,
+            "texto": "Exceso de oferta"
+          }
+        ],
+        "h": 210
+      }
     },
     {
       "id": "g2",

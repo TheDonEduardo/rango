@@ -21,7 +21,52 @@
       "id": "g3",
       "titulo": "El dividendo no es gratis",
       "texto": "El dividendo sale del valor de la empresa: el día que se descuenta, el precio baja más o menos en esa cantidad.",
-      "ejemplo": "A 50 € con 1,50 € de dividendo: tras descontarlo, cotiza en torno a 48,50 €."
+      "ejemplo": "A 50 € con 1,50 € de dividendo: tras descontarlo, cotiza en torno a 48,50 €.",
+      "figura": {
+        "type": "velas",
+        "alt": "La acción cierra a 50,00 € y el día en que descuenta un dividendo de 1,50 € abre a 48,50 €.",
+        "data": [
+          [
+            49.4,
+            49.9,
+            49.2,
+            49.8
+          ],
+          [
+            49.8,
+            50.2,
+            49.6,
+            50.0
+          ],
+          [
+            48.5,
+            48.9,
+            48.3,
+            48.7
+          ],
+          [
+            48.7,
+            49.0,
+            48.5,
+            48.8
+          ]
+        ],
+        "llaves": [
+          {
+            "i": 2,
+            "y1": 48.5,
+            "y2": 50,
+            "texto": "Dividendo 1,50 €"
+          }
+        ],
+        "lineas": [
+          {
+            "y": 50,
+            "texto": "Cierre 50,00",
+            "tono": "ink"
+          }
+        ]
+      }
     },
     {
       "id": "g4",

@@ -15,7 +15,38 @@
       "id": "g2",
       "titulo": "El PER engaña en los cíclicos",
       "texto": "En el pico del ciclo el beneficio es máximo y el PER parece bajo, justo en el peor momento para comprar. El precio se adelanta al ciclo.",
-      "ejemplo": "A 40 $ con un BPA de 4 $ en el pico: PER 10. En el valle, con 1 $, el PER es 40."
+      "ejemplo": "A 40 $ con un BPA de 4 $ en el pico: PER 10. En el valle, con 1 $, el PER es 40.",
+      "figura": {
+        "type": "curvas",
+        "alt": "BPA de una empresa cíclica a lo largo del ciclo, con el precio fijo en 40 $: en el pico gana 4 $ y el PER es 10; en el valle gana 1 $ y el PER es 40.",
+        "series": [
+          {
+            "data": [
+              1,
+              2,
+              3,
+              4,
+              3,
+              2,
+              1
+            ],
+            "texto": "BPA",
+            "tono": "sel"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 3,
+            "y": 4,
+            "texto": "Pico: PER 10"
+          },
+          {
+            "i": 0,
+            "y": 1,
+            "texto": "Valle: PER 40"
+          }
+        ]
+      }
     },
     {
       "id": "g3",

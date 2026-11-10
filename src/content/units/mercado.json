@@ -14,7 +14,47 @@
       "id": "g2",
       "titulo": "Cuando se acumulan",
       "texto": "Varios días de distribución en pocas semanas indican que los grandes inversores venden aunque el índice aguante. Es momento de reducir exposición.",
-      "ejemplo": "6 días de distribución en 25 sesiones es una señal de alerta."
+      "ejemplo": "6 días de distribución en 25 sesiones es una señal de alerta.",
+      "figura": {
+        "type": "curvas",
+        "alt": "El índice se mantiene cerca de máximos mientras acumula tres días de distribución, marcados con una D.",
+        "series": [
+          {
+            "data": [
+              100,
+              101,
+              102,
+              103,
+              103.5,
+              103,
+              104,
+              103.4,
+              104,
+              103.2,
+              103.6
+            ],
+            "texto": "Índice",
+            "tono": "ink"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 5,
+            "y": 103,
+            "texto": "D"
+          },
+          {
+            "i": 7,
+            "y": 103.4,
+            "texto": "D"
+          },
+          {
+            "i": 9,
+            "y": 103.2,
+            "texto": "D"
+          }
+        ]
+      }
     },
     {
       "id": "g3",
@@ -26,7 +66,72 @@
       "id": "g4",
       "titulo": "El día de confirmación",
       "texto": "O'Neil espera un día de confirmación, una subida fuerte con más volumen a partir del cuarto día. Entonces se vuelve a comprar, poco a poco.",
-      "ejemplo": "Un 25 % del capital tras la confirmación y otro 25 % cada vez que las compras funcionan."
+      "ejemplo": "Un 25 % del capital tras la confirmación y otro 25 % cada vez que las compras funcionan.",
+      "figura": {
+        "type": "velas",
+        "alt": "El índice cae hasta su mínimo, rebota tres días sin perderlo y el cuarto día sube con fuerza: es el día de confirmación.",
+        "data": [
+          [
+            104,
+            104.5,
+            101,
+            101.5
+          ],
+          [
+            101.5,
+            102,
+            98.5,
+            99
+          ],
+          [
+            99,
+            99.5,
+            96.2,
+            96.6
+          ],
+          [
+            96.6,
+            98,
+            96.4,
+            97.8
+          ],
+          [
+            97.8,
+            98.6,
+            97.4,
+            98.2
+          ],
+          [
+            98.2,
+            98.9,
+            97.9,
+            98.6
+          ],
+          [
+            98.7,
+            101.5,
+            98.6,
+            101.3
+          ]
+        ],
+        "lineas": [
+          {
+            "y": 96.2,
+            "texto": "Mínimo",
+            "tono": "dn",
+            "lado": "i"
+          }
+        ],
+        "etiquetas": [
+          null,
+          null,
+          null,
+          "Día 1",
+          "Día 2",
+          "Día 3",
+          "Día 4"
+        ]
+      }
     }
   ],
   "lessons": [

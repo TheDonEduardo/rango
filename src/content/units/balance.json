@@ -21,7 +21,32 @@
       "id": "g3",
       "titulo": "Caja y autonomía",
       "texto": "Una empresa que pierde dinero necesita saber cuánto le dura la caja. Con poca, tendrá que pedir prestado o emitir acciones, y eso diluye al accionista.",
-      "ejemplo": "120 M$ de caja quemando 30 M$ por trimestre: 12 meses. Colocar 90 M$ a 2,70 $ con 100 M de acciones exige un 33 % más de acciones."
+      "ejemplo": "120 M$ de caja quemando 30 M$ por trimestre: 12 meses. Colocar 90 M$ a 2,70 $ con 100 M de acciones exige un 33 % más de acciones.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Caja de 120 M$ que baja 30 M$ cada trimestre: se agota en cuatro trimestres, 12 meses.",
+        "series": [
+          {
+            "data": [
+              120,
+              90,
+              60,
+              30,
+              0
+            ],
+            "texto": "Caja",
+            "tono": "sel"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 4,
+            "y": 0,
+            "texto": "12 meses: sin caja",
+            "lado": "i"
+          }
+        ]
+      }
     },
     {
       "id": "g4",

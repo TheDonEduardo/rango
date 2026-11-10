@@ -21,13 +21,102 @@
       "id": "g3",
       "titulo": "Recuperar la inversión",
       "texto": "Cuántos meses tarda el margen de un cliente en cubrir lo que costó captarlo. Cuanto más tarda, más caja necesita la empresa para crecer.",
-      "ejemplo": "CAC de 300 € y margen de 16 € al mes: 18,75 meses."
+      "ejemplo": "CAC de 300 € y margen de 16 € al mes: 18,75 meses.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Margen acumulado de un cliente a 16 € al mes frente a un coste de captación de 300 €: se recupera durante el mes 19.",
+        "series": [
+          {
+            "data": [
+              0,
+              16,
+              32,
+              48,
+              64,
+              80,
+              96,
+              112,
+              128,
+              144,
+              160,
+              176,
+              192,
+              208,
+              224,
+              240,
+              256,
+              272,
+              288,
+              304,
+              320,
+              336,
+              352,
+              368,
+              384
+            ],
+            "texto": "Margen",
+            "tono": "up"
+          }
+        ],
+        "lineas": [
+          {
+            "y": 300,
+            "texto": "CAC 300 €: recuperado en el mes 19",
+            "tono": "dn",
+            "lado": "i"
+          }
+        ]
+      }
     },
     {
       "id": "g4",
       "titulo": "Bajas y expansión",
       "texto": "Las bajas mensuales marcan cuánto dura un cliente. Si los clientes existentes gastan cada vez más, la empresa crece aunque capte menos.",
-      "ejemplo": "Con un 3 % de bajas al mes, la vida media es de 33 meses; con un 2 %, de 50."
+      "ejemplo": "Con un 3 % de bajas al mes, la vida media es de 33 meses; con un 2 %, de 50.",
+      "figura": {
+        "type": "curvas",
+        "alt": "De 100 clientes, a los 36 meses quedan unos 33 con un 3 % de bajas al mes y unos 48 con un 2 %.",
+        "series": [
+          {
+            "data": [
+              100.0,
+              94.1,
+              88.6,
+              83.4,
+              78.5,
+              73.9,
+              69.5,
+              65.4,
+              61.6,
+              58.0,
+              54.5,
+              51.3,
+              48.3
+            ],
+            "texto": "2 % al mes",
+            "tono": "up"
+          },
+          {
+            "data": [
+              100.0,
+              91.3,
+              83.3,
+              76.0,
+              69.4,
+              63.3,
+              57.8,
+              52.7,
+              48.1,
+              43.9,
+              40.1,
+              36.6,
+              33.4
+            ],
+            "texto": "3 % al mes",
+            "tono": "dn"
+          }
+        ]
+      }
     }
   ],
   "lessons": [
