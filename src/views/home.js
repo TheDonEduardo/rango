@@ -3,7 +3,7 @@ import {RH,OFFS,esc} from '../util.js';
 import {ico,LOGO} from '../icons.js';
 import {glyph} from '../charts.js';
 import {UNITS,FLAT,CASOS,SEMANA,TRACKS,PLACEMENT,trackOf,exCount} from '../content.js';
-import {S,streakNow,dayXpNow,advancedOpen,statuses,srsDue,srsResumen} from '../state.js';
+import {S,streakNow,dayXpNow,advancedOpen,statuses,srsDue,srsResumen,retoHoy,retoHecho} from '../state.js';
 import {ses} from '../ui.js';
 import {simCardHTML} from './sim.js';
 import {t} from '../textos.js';
@@ -63,10 +63,13 @@ function hoyHTML(st,TF,dx){
   // La siguiente lección, si ya has empezado la ruta y no está a la vista (fuera de la primera unidad).
   const cur=TF.find(l=>st[l.id]==='current'),primera=UNITS.find(u=>trackOf(u)===S.track);
   const sigue=cur&&cur.unit!==primera&&advancedOpenFor(S.track);
+  const reto=retoHoy(),hecho=retoHecho();
   if(!S.xp&&!due&&!sigue)return '';
   let h=`<section class="hoy" aria-label="${t.hoy}"><div class="goal"><div class="goal-h"><span>${t.metaHoy}</span><span>${Math.min(dx,S.meta)} / ${S.meta} XP</span></div><div class="bar" role="progressbar" aria-label="${t.metaHoy}" aria-valuemin="0" aria-valuemax="${S.meta}" aria-valuenow="${Math.min(dx,S.meta)}"><i style="width:${Math.min(100,dx/S.meta*100)}%"></i></div></div>`;
   if(sigue)h+=`<div class="hoy-row cont"><div><span>${t.unidadN(cur.unit.n)} · ${esc(cur.unit.title)}</span><b>${esc(cur.title)}</b></div><button class="btn primary" data-act="open" data-id="${cur.id}">${t.continuar}</button></div>`;
-  if(due)h+=`<div class="hoy-row srs"><div><b>${t.repasoDia}</b><span>${t.repasoPendiente(due)}${(n=>n?` · ${t.aprendidos(n)}`:'')(srsResumen().aprendidos)}</span></div><button class="btn ${sigue?'line':'primary'}" data-act="srs">${t.repasar}</button></div>`;
+  if(reto)h+=hecho?`<div class="hoy-row reto"><div><b>${t.retoDia}</b><span>${t.retoHecho(S.reto.ok)}</span></div></div>`
+    :`<div class="hoy-row reto"><div><b>${t.retoDia}</b><span>${t.retoExplica}</span></div><button class="btn ${sigue?'line':'primary'}" data-act="reto">${t.responder}</button></div>`;
+  if(due)h+=`<div class="hoy-row srs"><div><b>${t.repasoDia}</b><span>${t.repasoPendiente(due)}${(n=>n?` · ${t.aprendidos(n)}`:'')(srsResumen().aprendidos)}</span></div><button class="btn ${sigue||(reto&&!hecho)?'line':'primary'}" data-act="srs">${t.repasar}</button></div>`;
   return h+'</section>';
 }
 const advancedOpenFor=r=>r==='basico'||advancedOpen();

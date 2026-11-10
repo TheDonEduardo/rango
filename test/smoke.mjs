@@ -449,6 +449,21 @@ if (fs.existsSync(semPath)) {
   if (h.includes('data-id="v1"')) errs.push('las lecciones de la unidad completada siguen visibles');
   st.done = antes;
 }
+// Reto del día: una pregunta de lo ya completado, la misma todo el día; acertarla da 20 XP y queda hecho hasta mañana.
+{
+  const st = T.getState(), antes = st.done, retoAntes = st.reto, xp0 = st.xp;
+  st.done = {}; st.reto = null;
+  if (T.retoHoy()) errs.push('reto del día sin lecciones completadas');
+  for (const l of T.FLAT.filter(l => l.unit.id === 'velas' && l.kind === 'lesson')) st.done[l.id] = {acc: 1};
+  const r = T.retoHoy();
+  if (!r || !['choice', 'num'].includes(r.t) || !['v1', 'v2'].includes(r.id.split('-')[0]) || T.retoHoy() !== r) errs.push('el reto del día no sale de lo completado o cambia en el mismo día');
+  if (!T.homeHTML().includes('data-act="reto"')) errs.push('el inicio no ofrece el reto del día');
+  T.startReto(); give(r, right(r)); T.check(); T.next();
+  if (!st.reto || !st.reto.ok || st.xp - xp0 !== 20) errs.push('el reto acertado no da 20 XP o no queda anotado: ' + JSON.stringify(st.reto));
+  if (T.homeHTML().includes('data-act="reto"') || !T.homeHTML().includes('Mañana, otro')) errs.push('el reto hecho se sigue ofreciendo');
+  if (st.done.reto) errs.push('el reto se guarda como lección completada');
+  T.goHome(); st.done = antes; st.reto = retoAntes;
+}
 
 // 7) Simulador de aportaciones: valores de referencia calculados aparte.
 const cerca = (x, y) => Math.abs(x - y) < 0.05;

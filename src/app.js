@@ -2,7 +2,7 @@
 // Las pantallas están en views/, los tipos de ejercicio en exercises/ y el progreso guardado en state.js.
 import {today,yest,shuffle,esc} from './util.js';
 import {UNITS,FLAT,CASOS,SEMANA,EXBYID,PLACEMENT,EXAMEN_N,trackOf} from './content.js';
-import {S,save,resetState,migrar,advancedOpen,statuses,srsDue,srsRecord,SRS_MAX,exportar,leerCopia,importar,sumarRacha} from './state.js';
+import {S,save,resetState,migrar,advancedOpen,statuses,srsDue,srsRecord,SRS_MAX,exportar,leerCopia,importar,sumarRacha,retoHoy} from './state.js';
 import {$app,toast,ses} from './ui.js';
 import {setPlanCtx} from './drag.js';
 import {TIPOS} from './exercises/index.js';
@@ -21,6 +21,7 @@ import {termino,glos} from './glosario.js';
 import {t} from './textos.js';
 
 const SRS_L={id:'srs',title:t.repasoDia,kind:'srs'};
+const RETO_L={id:'reto',title:t.retoDia,kind:'reto'};
 // Test de nivel: con TEST_PASS aciertos o más se abren las demás rutas; cada unidad con sus dos preguntas
 // acertadas queda marcada como completada.
 const TEST_L={id:'test',title:t.testNivel,kind:'test'};
@@ -59,6 +60,7 @@ function startRun(L){
   const ex=L.kind==='test'?shuffle(PLACEMENT.map(u=>EXBYID.get(u)))
     :L.kind==='nivel'?preguntasNivel(L.track)
     :L.kind==='srs'?shuffle(srsDue()).slice(0,SRS_MAX)
+    :L.kind==='reto'?[retoHoy()].filter(Boolean)
     :L.kind==='weak'?shuffle(flojos(SRS_MAX))
     :L.kind==='review'?shuffle(L.unit.lessons.flatMap(l=>l.ex)).slice(0,EXAMEN_N)
     :shuffle(L.ex).concat(shuffle(L.casos).slice(0,1));
@@ -129,6 +131,7 @@ function finish(){
   // Examen de la unidad sin un solo fallo a la primera: unidad dominada.
   const dominada=run.L.kind==='review'&&run.firstWrong===0;
   if(dominada)S.dominadas[run.L.unit.id]=today();
+  if(run.L.kind==='reto')S.reto={fecha:hoy,ok:run.firstWrong===0};
   // Tiempo dedicado (minutos, para las estadísticas): se cuenta como mucho media hora por sesión.
   S.stats.min=(S.stats.min||0)+Math.min(30,(Date.now()-run.t0)/60000);
   save();
@@ -220,6 +223,7 @@ const ACCIONES={
   legal(){ir('legal')},
   legalok(){S.legal=LEGAL_V;save();ses.homeY=0;render()},
   srs(){ses.homeY=window.scrollY;startRun(SRS_L)},
+  reto(){ses.homeY=window.scrollY;startRun(RETO_L)},
   test(){ses.homeY=0;startRun(TEST_L)},
   nivel(b){ses.homeY=0;startRun({id:'nivel-'+b.dataset.track,title:t.pruebaNivel,kind:'nivel',track:b.dataset.track})},
   medir(b){S.medir=b.dataset.v==='1';save();render()},
@@ -311,5 +315,5 @@ export const api={sumarRacha,glos,openGlosario:()=>{ses.view='glosario';render()
   openCalc:()=>{ses.view='calc';render()},openSim:()=>{ses.simDraft=null;ses.view='sim';render()},openSimRes:()=>{ses.view='simres';render()},
   openStats:()=>{ses.view='stats';render()},act:(a,ds={})=>ACCIONES[a]({dataset:ds}),getView:()=>ses.view,startWeak:()=>startRun(STATS_L),
   simDraftSet:p=>{ses.simDraft=p},simSave,goHome:()=>{ses.view='home';render()},startTest:()=>startRun(TEST_L),startNivel:tr=>startRun({id:'nivel-'+tr,title:t.pruebaNivel,kind:'nivel',track:tr}),srsDue,
-  acceptLegal:()=>{S.legal=LEGAL_V},startSrs:()=>startRun(SRS_L),setTrack:id=>{S.track=id},skipBasics:()=>{S.skipBasics=true},
+  acceptLegal:()=>{S.legal=LEGAL_V},startSrs:()=>startRun(SRS_L),startReto:()=>startRun(RETO_L),retoHoy,setTrack:id=>{S.track=id},skipBasics:()=>{S.skipBasics=true},
   homeHTML,startRun,lessonHTML,check,next,resultHTML,failHTML,render,getRun:()=>ses.run,setSel:v=>{ses.run.sel=v},setVal:v=>{ses.run.val=v},getState:()=>S};

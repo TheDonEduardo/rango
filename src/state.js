@@ -5,7 +5,7 @@ import {FLAT,EXBYID,trackOf} from './content.js';
 // Versión del formato guardado. Cada cambio de formato añade un paso a MIGRAR (de la versión n a la n+1),
 // así el progreso de quien ya usa la app se convierte en vez de perderse.
 export const STATE_V=2;
-export const DEF=()=>({v:STATE_V,xp:0,streak:0,last:null,day:null,dayXp:0,done:{},all:false,track:'basico',skipBasics:false,legal:0,srs:{},sim:{},calc:null,stats:{ex:{},min:0},guias:{},aprendidos:{},dominadas:{},pruebas:{},meta:40,protector:0,objetivo:null,medir:false});
+export const DEF=()=>({v:STATE_V,xp:0,streak:0,last:null,day:null,dayXp:0,done:{},all:false,track:'basico',skipBasics:false,legal:0,srs:{},sim:{},calc:null,stats:{ex:{},min:0},guias:{},aprendidos:{},dominadas:{},pruebas:{},meta:40,protector:0,objetivo:null,medir:false,reto:null});
 const MIGRAR={
   // 1 → 2: el repaso espaciado identificaba los ejercicios por posición («lección#índice», desde 0);
   // ahora cada ejercicio tiene un id estable («lección-n», desde 1).
@@ -85,6 +85,15 @@ export function srsDue(){
   const t=today();
   return Object.keys(S.srs).filter(u=>S.srs[u].due<=t&&EXBYID.has(u)).map(u=>EXBYID.get(u));
 }
+// Reto del día: una pregunta (de elegir o calcular) de las lecciones que ya has completado, la misma todo el día.
+// Se elige con la fecha, así no hace falta guardarla; S.reto = {fecha, ok} anota que hoy ya está hecho.
+export function retoHoy(){
+  const pool=FLAT.filter(l=>l.kind==='lesson'&&S.done[l.id]).flatMap(l=>l.ex).filter(e=>e.id&&(e.t==='choice'||e.t==='num'));
+  if(!pool.length)return null;
+  let h=0;for(const c of today())h=(h*31+c.charCodeAt(0))>>>0;
+  return pool[h%pool.length];
+}
+export const retoHecho=()=>!!(S.reto&&S.reto.fecha===today());
 export const srsResumen=()=>({enRepaso:Object.keys(S.srs).filter(u=>EXBYID.has(u)).length,aprendidos:Object.keys(S.aprendidos).filter(u=>EXBYID.has(u)).length});
 // Un fallo lo programa para mañana; un acierto dentro del «Repaso del día» lo aplaza al siguiente intervalo.
 export function srsRecord(ex,ok,enRepaso){

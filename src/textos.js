@@ -33,6 +33,8 @@ export const t={
   nivelTodo:'Dominas toda la ruta: repasa a tu ritmo o haz los exámenes de unidad.', nivelParcial:n=>`Empieza por la unidad ${n+1}: las anteriores ya están marcadas.`, nivelNada:'Empieza por la primera unidad: tendrás la base en pocas lecciones.', desdeCero:'Empezar desde cero',
   calcTitulo:'Simulador de aportaciones', calcExplica:'Mira cómo crece una cartera aportando cada mes, y cuánto se llevan las comisiones.',
   siguienteLeccion:'Siguiente lección', unidadN:n=>`Unidad ${n}`,
+  retoDia:'Reto del día', retoExplica:'Una pregunta de lo ya estudiado · 20 XP', retoHecho:ok=>ok?'Hecho: acertado a la primera. Mañana, otro.':'Hecho. Mañana, otro.', responder:'Responder', retoCompletado:'Reto completado',
+  notaReto:ok=>ok?'Acertado a la primera: lo tienes asentado.':'Lo has fallado a la primera: volverá en tu repaso de mañana.',
   repasoDia:'Repaso del día', aprendidos:n=>`${n} ${n===1?'aprendido':'aprendidos'}`,
   repasoTitulo:'Repaso espaciado', enRepaso:'En repaso', aprendidosT:'Aprendidos',
   repasoNota:'Un ejercicio fallado vuelve al día siguiente y luego a los 3, 7 y 14 días. Si lo aciertas en todos, queda aprendido.', repasoPendiente:n=>`${n} ${pl(n,'ejercicio que fallaste','ejercicios que fallaste')}`, repasar:'Repasar',
