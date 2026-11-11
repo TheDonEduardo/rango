@@ -334,7 +334,19 @@
           "unit": "€",
           "a": 4,
           "why": "42,70 − 38,70 = 4,00 € por acción. Esa distancia es 1R y fija el tamaño de la posición y el objetivo.",
-          "guia": "g4"
+          "guia": "g4",
+          "variantes": [
+            {
+              "q": "Un martillo tiene máximo 25,40 y mínimo 23,10. Entras a 25,50 (máximo + 0,10) con stop en 23,00 (mínimo − 0,10). ¿Riesgo por acción?",
+              "a": 2.5,
+              "why": "25,50 − 23,00 = 2,50 € por acción. Esa distancia es 1R y fija el tamaño de la posición y el objetivo."
+            },
+            {
+              "q": "Un martillo tiene máximo 61,90 y mínimo 58,60. Entras a 62,00 (máximo + 0,10) con stop en 58,50 (mínimo − 0,10). ¿Riesgo por acción?",
+              "a": 3.5,
+              "why": "62,00 − 58,50 = 3,50 € por acción. Esa distancia es 1R y fija el tamaño de la posición y el objetivo."
+            }
+          ]
         },
         {
           "id": "v2-5",

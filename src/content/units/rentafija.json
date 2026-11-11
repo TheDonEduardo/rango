@@ -68,7 +68,19 @@
           "a": 3.09,
           "tol": 0.02,
           "why": "(1.000 − 970) ÷ 970 = 30 ÷ 970 = 3,09 %. Las letras no pagan cupón: se compran por debajo de su nominal y la ganancia es la diferencia.",
-          "guia": "g1"
+          "guia": "g1",
+          "variantes": [
+            {
+              "q": "Compras una Letra del Tesoro a 12 meses por 980 € y al vencimiento recibes 1.000 €. ¿Qué rentabilidad obtienes? Redondea a 2 decimales.",
+              "a": 2.04,
+              "why": "(1.000 − 980) ÷ 980 = 20 ÷ 980 = 2,04 %. Las letras no pagan cupón: se compran por debajo de su nominal y la ganancia es la diferencia."
+            },
+            {
+              "q": "Compras una Letra del Tesoro a 12 meses por 965 € y al vencimiento recibes 1.000 €. ¿Qué rentabilidad obtienes? Redondea a 2 decimales.",
+              "a": 3.63,
+              "why": "(1.000 − 965) ÷ 965 = 35 ÷ 965 = 3,63 %. Las letras no pagan cupón: se compran por debajo de su nominal y la ganancia es la diferencia."
+            }
+          ]
         },
         {
           "id": "bh1-2",

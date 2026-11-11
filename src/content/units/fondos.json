@@ -69,7 +69,19 @@
           "unit": "",
           "a": 100,
           "why": "1.500 / 15 = 100 participaciones.",
-          "guia": "g2"
+          "guia": "g2",
+          "variantes": [
+            {
+              "q": "Inviertes 2.400 € en un fondo con un valor liquidativo de 12 €. ¿Cuántas participaciones recibes?",
+              "a": 200,
+              "why": "2.400 / 12 = 200 participaciones."
+            },
+            {
+              "q": "Inviertes 900 € en un fondo con un valor liquidativo de 22,5 €. ¿Cuántas participaciones recibes?",
+              "a": 40,
+              "why": "900 / 22,5 = 40 participaciones."
+            }
+          ]
         },
         {
           "id": "bn1-3",

@@ -90,7 +90,19 @@
           "unit": "%",
           "a": 15,
           "why": "150 ÷ 1.000 = 15 %: cada 100 $ invertidos en el negocio generan 15 $ al año. Es la rentabilidad del negocio en sí, se financie como se financie.",
-          "guia": "g1"
+          "guia": "g1",
+          "variantes": [
+            {
+              "q": "Beneficio operativo después de impuestos: 240 M$. Capital invertido en el negocio: 2.000 M$. ¿ROIC?",
+              "a": 12,
+              "why": "240 ÷ 2.000 = 12 %: cada 100 $ invertidos en el negocio generan 12 $ al año. Es la rentabilidad del negocio en sí, se financie como se financie."
+            },
+            {
+              "q": "Beneficio operativo después de impuestos: 90 M$. Capital invertido en el negocio: 400 M$. ¿ROIC?",
+              "a": 22.5,
+              "why": "90 ÷ 400 = 22,5 %: cada 100 $ invertidos en el negocio generan 22,5 $ al año. Es la rentabilidad del negocio en sí, se financie como se financie."
+            }
+          ]
         },
         {
           "id": "f7a-2",

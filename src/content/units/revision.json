@@ -88,7 +88,19 @@
           "unit": "",
           "a": 8,
           "why": "78.000 / 100.000 = 78 %: 78 − 70 = 8 puntos por encima.",
-          "guia": "g2"
+          "guia": "g2",
+          "variantes": [
+            {
+              "q": "Tu reparto objetivo es 60/40 y hoy tienes 66.000 € en acciones y 34.000 € en bonos. ¿Cuántos puntos se ha desviado la parte de acciones?",
+              "a": 6,
+              "why": "66.000 / 100.000 = 66 %: 66 − 60 = 6 puntos por encima."
+            },
+            {
+              "q": "Tu reparto objetivo es 80/20 y hoy tienes 45.000 € en acciones y 5.000 € en bonos. ¿Cuántos puntos se ha desviado la parte de acciones?",
+              "a": 10,
+              "why": "45.000 / 50.000 = 90 %: 90 − 80 = 10 puntos por encima."
+            }
+          ]
         },
         {
           "id": "rv1-4",

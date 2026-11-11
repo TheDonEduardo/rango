@@ -43,7 +43,19 @@
           "unit": "",
           "a": 30,
           "why": "90,00 ÷ 3,00 = 30: pagas 30 veces el beneficio de un año. Solo, no dice si es caro o barato; falta saber cuánto crecerá.",
-          "guia": "g1"
+          "guia": "g1",
+          "variantes": [
+            {
+              "q": "Una acción cotiza a 120,00 $ y su BPA de los últimos 12 meses es de 5,00 $. ¿PER?",
+              "a": 24,
+              "why": "120,00 ÷ 5,00 = 24: pagas 24 veces el beneficio de un año. Solo, no dice si es caro o barato; falta saber cuánto crecerá."
+            },
+            {
+              "q": "Una acción cotiza a 45,00 $ y su BPA de los últimos 12 meses es de 2,50 $. ¿PER?",
+              "a": 18,
+              "why": "45,00 ÷ 2,50 = 18: pagas 18 veces el beneficio de un año. Solo, no dice si es caro o barato; falta saber cuánto crecerá."
+            }
+          ]
         },
         {
           "id": "f2a-2",

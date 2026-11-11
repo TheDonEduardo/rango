@@ -77,7 +77,19 @@
           "unit": "€",
           "a": 800,
           "why": "(50,00 − 42,00) × 100 = 800 €. En un corto vendes primero, con acciones prestadas, y ganas si recompras más barato.",
-          "guia": "g1"
+          "guia": "g1",
+          "variantes": [
+            {
+              "q": "Vendes en corto 200 acciones a 30,00 € y las recompras a 27,50 €. ¿Cuánto ganas?",
+              "a": 500,
+              "why": "(30,00 − 27,50) × 200 = 500 €. En un corto vendes primero, con acciones prestadas, y ganas si recompras más barato."
+            },
+            {
+              "q": "Vendes en corto 50 acciones a 80,00 € y las recompras a 71,00 €. ¿Cuánto ganas?",
+              "a": 450,
+              "why": "(80,00 − 71,00) × 50 = 450 €. En un corto vendes primero, con acciones prestadas, y ganas si recompras más barato."
+            }
+          ]
         },
         {
           "id": "k1-2",

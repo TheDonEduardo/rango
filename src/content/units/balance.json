@@ -62,7 +62,19 @@
           "unit": "",
           "a": 3,
           "why": "(6.000 − 1.500) ÷ 1.500 = 3 veces: necesitaría tres años de EBITDA íntegro para pagar la deuda neta. Cuanto más alto, menos margen tiene si el negocio se frena.",
-          "guia": "g1"
+          "guia": "g1",
+          "variantes": [
+            {
+              "q": "Deuda: 4.000 M$. Caja: 1.000 M$. EBITDA anual: 2.000 M$. ¿Deuda neta/EBITDA?",
+              "a": 1.5,
+              "why": "(4.000 − 1.000) ÷ 2.000 = 1,5 veces: necesitaría 1,5 años de EBITDA íntegro para pagar la deuda neta. Cuanto más alto, menos margen tiene si el negocio se frena."
+            },
+            {
+              "q": "Deuda: 9.000 M$. Caja: 1.000 M$. EBITDA anual: 2.000 M$. ¿Deuda neta/EBITDA?",
+              "a": 4,
+              "why": "(9.000 − 1.000) ÷ 2.000 = 4 veces: necesitaría 4 años de EBITDA íntegro para pagar la deuda neta. Cuanto más alto, menos margen tiene si el negocio se frena."
+            }
+          ]
         },
         {
           "id": "f3a-2",

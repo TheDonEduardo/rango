@@ -68,7 +68,19 @@
           "unit": "€",
           "a": 900,
           "why": "Son cuatro partes iguales: 3.600 × 25 % = 900 € en acciones, en bonos largos, en oro y en liquidez.",
-          "guia": "g2"
+          "guia": "g2",
+          "variantes": [
+            {
+              "q": "En la cartera permanente con 2.800 €, ¿cuántos euros van a oro?",
+              "a": 700,
+              "why": "Son cuatro partes iguales: 2.800 × 25 % = 700 € en acciones, en bonos largos, en oro y en liquidez."
+            },
+            {
+              "q": "En la cartera permanente con 1.600 €, ¿cuántos euros van a oro?",
+              "a": 400,
+              "why": "Son cuatro partes iguales: 1.600 × 25 % = 400 € en acciones, en bonos largos, en oro y en liquidez."
+            }
+          ]
         },
         {
           "id": "cm1-3",

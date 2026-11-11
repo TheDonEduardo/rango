@@ -74,6 +74,19 @@ const lint = (ex, w) => {
         if (c > 1.25 * o) errs.push(`${w}: la opción correcta (${c} caracteres) es mucho más larga que las demás (${o})`);
       }
       if (ex.t === 'num' && typeof ex.a !== 'number') errs.push(w + ': a no numérico');
+      // Variantes de un ejercicio de cálculo: mismas reglas que el original y enunciados distintos entre sí.
+      if (ex.variantes !== undefined) {
+        if (ex.t !== 'num' || !Array.isArray(ex.variantes) || !ex.variantes.length) errs.push(w + ': variantes solo en ejercicios de cálculo y no vacías');
+        else {
+          const vistos = new Set([ex.q]);
+          for (const v of ex.variantes) {
+            if (typeof v.q !== 'string' || typeof v.why !== 'string' || typeof v.a !== 'number' || !(v.a >= 0 && v.a < 1000)) errs.push(w + ': variante mal formada');
+            else if (vistos.has(v.q)) errs.push(w + ': variante con el mismo enunciado que otra');
+            else if (v.a === ex.a && ex.variantes.every(x => x.a === ex.a)) errs.push(w + ': todas las variantes dan la misma respuesta que el original');
+            vistos.add(v.q);
+          }
+        }
+      }
       if (ex.t === 'choice' && ex.porque === undefined && !ex.caso) errs.push(w + ': falta porque (por qué no es correcta cada opción)');
       if (ex.porque !== undefined) {
         if (ex.t !== 'choice' || !Array.isArray(ex.porque) || ex.porque.length !== ex.opts.length || ex.porque[ex.a] !== null || ex.porque.some((p, k) => k !== ex.a && !(typeof p === 'string' && p.length > 10)))
@@ -246,6 +259,17 @@ for (const L of T.FLAT) {
 // Textos con números: plurales y tiempo de estudio redondeado.
 { const {t} = await import(pathToFileURL(path.join(root, 'src/textos.js')));
   if (t.vidas(1) !== '1 vida' || t.nEjercicios(1) !== '1 ejercicio' || t.tiempo(59.7) !== '1 h 0 min' || t.tiempo(119.6) !== '2 h 0 min' || t.tiempo(12.2) !== '12 min') errs.push('plurales o tiempo mal formados'); }
+
+// Variantes: en el examen de la unidad, un ejercicio con variantes sale con cifras distintas alguna vez y se corrige con ellas.
+{ const R = T.FLAT.find(l => l.kind === 'review' && l.unit.lessons.some(x => x.ex.some(e => e.variantes)));
+  const base = R.unit.lessons.flatMap(x => x.ex).find(e => e.variantes), vistos = new Set();
+  for (let k = 0; k < 60 && vistos.size < 2; k++) {
+    T.startRun(R); const run = T.getRun(), e = run.queue.find(x => x.id === base.id);
+    if (e) { vistos.add(e.q);
+      if (e.q !== base.q) { run.queue = [e]; T.setVal(String(e.a).replace('.', ',')); T.check(); if (!T.getRun().ok) errs.push('una variante no se corrige con su propia respuesta'); if (e.id !== base.id || e.unit !== base.unit) errs.push('la variante pierde el id o la unidad'); } }
+    T.goHome();
+  }
+  if (vistos.size < 2) errs.push('el examen no usa las variantes numéricas'); }
 
 // Las opciones se barajan (salvo las de orden fijo) y cada botón conserva su índice original.
 { const L = T.FLAT.find(l => l.kind === 'lesson' && l.ex.some(e => e.t === 'choice' && !T.ordenFijo(e.opts))), ex = L.ex.find(e => e.t === 'choice' && !T.ordenFijo(e.opts));

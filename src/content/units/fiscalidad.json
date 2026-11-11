@@ -44,7 +44,19 @@
           "unit": "€",
           "a": 590,
           "why": "Venta 2.600 € − compra 2.000 € − 10 € de gastos = 590 €. Las comisiones de compra y venta reducen la ganancia que declaras.",
-          "guia": "g1"
+          "guia": "g1",
+          "variantes": [
+            {
+              "q": "Compras 50 acciones a 30,00 € y las vendes a 38,00 €. Entre compra y venta pagaste 12 € de comisiones. ¿Qué ganancia declaras?",
+              "a": 388,
+              "why": "Venta 1.900 € − compra 1.500 € − 12 € de gastos = 388 €. Las comisiones de compra y venta reducen la ganancia que declaras."
+            },
+            {
+              "q": "Compras 200 acciones a 10,00 € y las vendes a 12,50 €. Entre compra y venta pagaste 20 € de comisiones. ¿Qué ganancia declaras?",
+              "a": 480,
+              "why": "Venta 2.500 € − compra 2.000 € − 20 € de gastos = 480 €. Las comisiones de compra y venta reducen la ganancia que declaras."
+            }
+          ]
         },
         {
           "id": "be1-2",

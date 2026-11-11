@@ -96,7 +96,19 @@
           "unit": "€",
           "a": 32.3,
           "why": "35,00 − 1,5 × 1,80 = 32,30 €. Riesgo por acción: 2,70 €.",
-          "guia": "g2"
+          "guia": "g2",
+          "variantes": [
+            {
+              "q": "Entrada a 52,00 €. ATR(14) = 2,40 €. Stop a 2×ATR. ¿En qué precio colocas el stop?",
+              "a": 47.2,
+              "why": "52,00 − 2 × 2,40 = 47,20 €. Riesgo por acción: 4,80 €."
+            },
+            {
+              "q": "Entrada a 18,50 €. ATR(14) = 0,90 €. Stop a 1,5×ATR. ¿En qué precio colocas el stop?",
+              "a": 17.15,
+              "why": "18,50 − 1,5 × 0,90 = 17,15 €. Riesgo por acción: 1,35 €."
+            }
+          ]
         },
         {
           "id": "r1-3",

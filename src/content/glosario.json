@@ -463,5 +463,32 @@
  {
   "termino": "pago en acciones",
   "d": "Parte del sueldo de los empleados que se paga con acciones nuevas. No sale caja, pero diluye al accionista: es un coste real."
+ },
+ {
+  "termino": "MSCI",
+  "no": [
+   "MSCI World"
+  ],
+  "d": "Empresa que elabora índices bursátiles muy usados por los fondos indexados, como el MSCI World o el MSCI Emerging Markets."
+ },
+ {
+  "termino": "SPIVA",
+  "d": "Informe periódico de S&P que compara los fondos de gestión activa con su índice de referencia."
+ },
+ {
+  "termino": "FIFO",
+  "d": "«Primero en entrar, primero en salir»: al vender, Hacienda considera que vendes primero las acciones o participaciones más antiguas."
+ },
+ {
+  "termino": "FDA",
+  "d": "Agencia de EE. UU. que aprueba los medicamentos. Sus decisiones mueven con fuerza las acciones de biotecnología."
+ },
+ {
+  "termino": "capex",
+  "d": "Inversión en activos fijos (fábricas, equipos, centros de datos). Se resta del flujo de caja operativo para obtener el flujo de caja libre."
+ },
+ {
+  "termino": "BPA ajustado",
+  "d": "Beneficio por acción que excluye partidas que la empresa considera no recurrentes. Conviene mirar qué se ha excluido."
  }
 ]

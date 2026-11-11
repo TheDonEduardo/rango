@@ -69,13 +69,20 @@ function preguntasNivel(track){
 // Unidad superada en una prueba: todas sus lecciones y su examen quedan completados (si no lo estaban).
 const marcarUnidad=u=>FLAT.filter(l=>l.unit===u).forEach(l=>{if(!S.done[l.id])S.done[l.id]={acc:1,test:true}});
 const esPrueba=L=>L.kind==='test'||L.kind==='nivel';
+// Variantes: fuera de la lección (examen, repaso, puntos débiles), un ejercicio de cálculo con `variantes` sale al azar
+// con sus cifras originales o con las de una variante, para que no se responda de memoria. Conserva su id.
+const conVariante=e=>{
+  if(!e.variantes||!e.variantes.length)return e;
+  const k=Math.floor(Math.random()*(e.variantes.length+1));
+  return k?Object.assign({},e,e.variantes[k-1]):e;
+};
 function startRun(L){
   const ex=L.kind==='test'?shuffle(PLACEMENT.map(u=>EXBYID.get(u)))
     :L.kind==='nivel'?preguntasNivel(L.track)
-    :L.kind==='srs'?shuffle(srsDue()).slice(0,SRS_MAX)
+    :L.kind==='srs'?shuffle(srsDue()).slice(0,SRS_MAX).map(conVariante)
     :L.kind==='reto'?[retoHoy()].filter(Boolean)
-    :L.kind==='weak'?shuffle(flojos(SRS_MAX))
-    :L.kind==='review'?shuffle(L.unit.lessons.flatMap(l=>l.ex)).slice(0,EXAMEN_N)
+    :L.kind==='weak'?shuffle(flojos(SRS_MAX)).map(conVariante)
+    :L.kind==='review'?shuffle(L.unit.lessons.flatMap(l=>l.ex)).slice(0,EXAMEN_N).map(conVariante)
     :shuffle(L.ex).concat(shuffle(L.casos).slice(0,1));
   if(!ex.length){ses.view='home';render();return}
   ses.run={L,res:{},queue:ex.slice(),total:ex.length,done:0,lives:3,firstWrong:0,seen:new Set(),perm:new Map(),sel:null,val:'',checked:false,ok:null,t0:Date.now()};

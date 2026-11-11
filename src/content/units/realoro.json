@@ -64,7 +64,19 @@
           "unit": "%",
           "a": 5,
           "why": "0,40 / 8 = 0,05: un 5 %.",
-          "guia": "g1"
+          "guia": "g1",
+          "variantes": [
+            {
+              "q": "Una SOCIMI cotiza a 12 € y reparte 0,72 € de dividendo anual. ¿Cuál es su rentabilidad por dividendo?",
+              "a": 6,
+              "why": "0,72 / 12 = 0,06: un 6 %."
+            },
+            {
+              "q": "Una SOCIMI cotiza a 25 € y reparte 1,00 € de dividendo anual. ¿Cuál es su rentabilidad por dividendo?",
+              "a": 4,
+              "why": "1,00 / 25 = 0,04: un 4 %."
+            }
+          ]
         },
         {
           "id": "io1-3",

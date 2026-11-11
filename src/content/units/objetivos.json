@@ -104,7 +104,19 @@
           "unit": "€",
           "a": 500,
           "why": "30.000 / 60 meses = 500 € al mes.",
-          "guia": "g2"
+          "guia": "g2",
+          "variantes": [
+            {
+              "q": "Quieres reunir 18.000 € en 4 años sin contar rentabilidad. ¿Cuánto debes ahorrar al mes?",
+              "a": 375,
+              "why": "18.000 / 48 meses = 375 € al mes."
+            },
+            {
+              "q": "Quieres reunir 21.600 € en 3 años sin contar rentabilidad. ¿Cuánto debes ahorrar al mes?",
+              "a": 600,
+              "why": "21.600 / 36 meses = 600 € al mes."
+            }
+          ]
         },
         {
           "id": "ob1-4",

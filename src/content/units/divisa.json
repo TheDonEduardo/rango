@@ -43,7 +43,19 @@
           "unit": "%",
           "a": 4.5,
           "why": "1,10 × 0,95 = 1,045: un 4,5 % en euros.",
-          "guia": "g1"
+          "guia": "g1",
+          "variantes": [
+            {
+              "q": "Un ETF de EE. UU. sube un 20 % en dólares, pero el dólar cae un 10 % frente al euro. ¿Cuánto ganas en euros?",
+              "a": 8,
+              "why": "1,20 × 0,90 = 1,080: un 8 % en euros."
+            },
+            {
+              "q": "Un ETF de EE. UU. sube un 15 % en dólares, pero el dólar cae un 4 % frente al euro. ¿Cuánto ganas en euros?",
+              "a": 10.4,
+              "why": "1,15 × 0,96 = 1,104: un 10,4 % en euros."
+            }
+          ]
         },
         {
           "id": "dv1-2",

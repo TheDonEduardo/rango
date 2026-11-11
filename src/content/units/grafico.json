@@ -353,7 +353,19 @@
           "unit": "€",
           "a": 100,
           "why": "(20,00 − 18,00) × 50 = 100 €. Conocer esa cifra antes de entrar es lo que te permite elegir el tamaño.",
-          "guia": "g4"
+          "guia": "g4",
+          "variantes": [
+            {
+              "q": "Compras 40 acciones a 15,00 € con el stop en 13,50 €. Si salta, ¿cuánto pierdes?",
+              "a": 60,
+              "why": "(15,00 − 13,50) × 40 = 60 €. Conocer esa cifra antes de entrar es lo que te permite elegir el tamaño."
+            },
+            {
+              "q": "Compras 80 acciones a 30,00 € con el stop en 28,00 €. Si salta, ¿cuánto pierdes?",
+              "a": 160,
+              "why": "(30,00 − 28,00) × 80 = 160 €. Conocer esa cifra antes de entrar es lo que te permite elegir el tamaño."
+            }
+          ]
         },
         {
           "id": "bc2-3",

@@ -77,7 +77,19 @@
           "unit": "%",
           "a": 20,
           "why": "Hoy: 25 × 2,00 = 50 $. Si aciertas: 25 × 2,40 = 60 $, un 20 % más. Tu ventaja está solo en la diferencia con el consenso, no en que la empresa crezca.",
-          "guia": "g2"
+          "guia": "g2",
+          "variantes": [
+            {
+              "q": "El consenso espera un BPA de 4,00 $ y cotiza a un PER adelantado de 20. Tu tesis estima 4,60 $. Si el PER se mantiene, ¿qué potencial tiene si aciertas?",
+              "a": 15,
+              "why": "Hoy: 20 × 4,00 = 80 $. Si aciertas: 20 × 4,60 = 92 $, un 15 % más. Tu ventaja está solo en la diferencia con el consenso, no en que la empresa crezca."
+            },
+            {
+              "q": "El consenso espera un BPA de 1,50 $ y cotiza a un PER adelantado de 30. Tu tesis estima 1,95 $. Si el PER se mantiene, ¿qué potencial tiene si aciertas?",
+              "a": 30,
+              "why": "Hoy: 30 × 1,50 = 45 $. Si aciertas: 30 × 1,95 = 58,5 $, un 30 % más. Tu ventaja está solo en la diferencia con el consenso, no en que la empresa crezca."
+            }
+          ]
         },
         {
           "id": "f4a-4",

@@ -63,7 +63,19 @@
           "unit": "€",
           "a": 4,
           "why": "2.000 × 0,1 % = 2 €, pero el mínimo es 4 €: pagas 4 €, un 0,2 % de la compra. Con órdenes pequeñas manda el mínimo.",
-          "guia": "g2"
+          "guia": "g2",
+          "variantes": [
+            {
+              "q": "El bróker cobra un 0,1 % por operación, con un mínimo de 3 €. Compras 1.500 € de acciones. ¿Cuánto pagas de comisión?",
+              "a": 3,
+              "why": "1.500 × 0,1 % = 1,5 €, pero el mínimo es 3 €: pagas 3 €, un 0,2 % de la compra. Con órdenes pequeñas manda el mínimo."
+            },
+            {
+              "q": "El bróker cobra un 0,1 % por operación, con un mínimo de 4 €. Compras 8.000 € de acciones. ¿Cuánto pagas de comisión?",
+              "a": 8,
+              "why": "8.000 × 0,1 % = 8 €, más que el mínimo de 4 €: pagas 8 €. El mínimo solo manda en las órdenes pequeñas."
+            }
+          ]
         },
         {
           "id": "bf1-3",

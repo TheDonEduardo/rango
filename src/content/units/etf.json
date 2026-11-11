@@ -63,7 +63,19 @@
           "unit": "%",
           "a": 60,
           "why": "600 ÷ (600 + 300 + 100) = 600 ÷ 1.000 = 60 %. En los índices ponderados por capitalización, como el S&P 500, las mayores empresas mueven buena parte del índice.",
-          "guia": "g2"
+          "guia": "g2",
+          "variantes": [
+            {
+              "q": "Un índice ponderado por capitalización tiene tres empresas: A vale 450 M€, B 350 M€ y C 200 M€. ¿Cuánto pesa A en el índice?",
+              "a": 45,
+              "why": "450 ÷ (450 + 350 + 200) = 450 ÷ 1.000 = 45 %. En los índices ponderados por capitalización, como el S&P 500, las mayores empresas mueven buena parte del índice."
+            },
+            {
+              "q": "Un índice ponderado por capitalización tiene tres empresas: A vale 800 M€, B 150 M€ y C 50 M€. ¿Cuánto pesa A en el índice?",
+              "a": 80,
+              "why": "800 ÷ (800 + 150 + 50) = 800 ÷ 1.000 = 80 %. En los índices ponderados por capitalización, como el S&P 500, las mayores empresas mueven buena parte del índice."
+            }
+          ]
         },
         {
           "id": "bd1-3",

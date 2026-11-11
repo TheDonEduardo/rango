@@ -75,7 +75,19 @@
           "a": 5,
           "why": "50 ÷ 1.250 = 4 % de rentabilidad por caja libre; 9 % − 4 % = 5 %. Si no crees que pueda crecer un 5 % al año para siempre, el precio es exigente.",
           "tol": 0.06,
-          "guia": "g1"
+          "guia": "g1",
+          "variantes": [
+            {
+              "q": "Una empresa sin deuda neta generará 60 M$ de flujo de caja libre el próximo año y vale 1.000 M$ en bolsa. Exiges un 9 %. ¿Qué crecimiento anual para siempre descuenta el precio?",
+              "a": 3,
+              "why": "60 ÷ 1.000 = 6 % de rentabilidad por caja libre; 9 % − 6 % = 3 %. Si no crees que pueda crecer un 3 % al año para siempre, el precio es exigente."
+            },
+            {
+              "q": "Una empresa sin deuda neta generará 30 M$ de flujo de caja libre el próximo año y vale 1.500 M$ en bolsa. Exiges un 8 %. ¿Qué crecimiento anual para siempre descuenta el precio?",
+              "a": 6,
+              "why": "30 ÷ 1.500 = 2 % de rentabilidad por caja libre; 8 % − 2 % = 6 %. Si no crees que pueda crecer un 6 % al año para siempre, el precio es exigente."
+            }
+          ]
         },
         {
           "id": "fva-2",

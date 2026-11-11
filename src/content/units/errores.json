@@ -45,7 +45,19 @@
           "a": 1.99,
           "why": "(9,95 + 9,95) ÷ 1.000 = 1,99 %. Con importes pequeños, las comisiones fijas se comen buena parte de la ganancia: busca un bróker barato o aporta menos veces y más cantidad.",
           "tol": 0.02,
-          "guia": "g1"
+          "guia": "g1",
+          "variantes": [
+            {
+              "q": "Inviertes 500 € y pagas 4,95 € de comisión al comprar y otros 4,95 € al vender. ¿Cuánto tiene que subir solo para cubrir las comisiones? Redondea a 2 decimales.",
+              "a": 1.98,
+              "why": "(4,95 + 4,95) ÷ 500 = 1,98 %. Con importes pequeños, las comisiones fijas se comen buena parte de la ganancia: busca un bróker barato o aporta menos veces y más cantidad."
+            },
+            {
+              "q": "Inviertes 2.500 € y pagas 7,50 € de comisión al comprar y otros 7,50 € al vender. ¿Cuánto tiene que subir solo para cubrir las comisiones? Redondea a 2 decimales.",
+              "a": 0.6,
+              "why": "(7,50 + 7,50) ÷ 2.500 = 0,60 %. Con importes pequeños, las comisiones fijas se comen buena parte de la ganancia: busca un bróker barato o aporta menos veces y más cantidad."
+            }
+          ]
         },
         {
           "id": "bi1-2",

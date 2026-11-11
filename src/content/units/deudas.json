@@ -64,7 +64,19 @@
           "unit": "€",
           "a": 400,
           "why": "2.000 × 20 % = 400 € al año.",
-          "guia": "g1"
+          "guia": "g1",
+          "variantes": [
+            {
+              "q": "Debes 1.500 € en una tarjeta al 24 % anual. ¿Cuántos euros de intereses pagas en un año si no devuelves nada?",
+              "a": 360,
+              "why": "1.500 × 24 % = 360 € al año."
+            },
+            {
+              "q": "Debes 3.000 € en una tarjeta al 18 % anual. ¿Cuántos euros de intereses pagas en un año si no devuelves nada?",
+              "a": 540,
+              "why": "3.000 × 18 % = 540 € al año."
+            }
+          ]
         },
         {
           "id": "bm1-3",

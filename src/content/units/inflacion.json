@@ -54,7 +54,19 @@
           "unit": "%",
           "a": 4,
           "why": "7 − 3 = 4 %: es lo que crece de verdad tu poder de compra.",
-          "guia": "g1"
+          "guia": "g1",
+          "variantes": [
+            {
+              "q": "Tu cartera rinde un 5 % y la inflación es del 2 %. ¿Cuál es la rentabilidad real aproximada?",
+              "a": 3,
+              "why": "5 − 2 = 3 %: es lo que crece de verdad tu poder de compra."
+            },
+            {
+              "q": "Tu cartera rinde un 6,5 % y la inflación es del 4 %. ¿Cuál es la rentabilidad real aproximada?",
+              "a": 2.5,
+              "why": "6,5 − 4 = 2,5 %: es lo que crece de verdad tu poder de compra."
+            }
+          ]
         },
         {
           "id": "in1-2",

@@ -43,7 +43,19 @@
           "unit": "$",
           "a": 84,
           "why": "24 × 3,50 = 84 $. Es el precio si el mercado la valorase como a la media de su grupo, no una garantía de que llegue ahí.",
-          "guia": "g1"
+          "guia": "g1",
+          "variantes": [
+            {
+              "q": "Sus comparables cotizan a un PER medio de 18 y tu empresa tiene un BPA de 2,50 $. ¿Qué precio implica ese múltiplo?",
+              "a": 45,
+              "why": "18 × 2,50 = 45 $. Es el precio si el mercado la valorase como a la media de su grupo, no una garantía de que llegue ahí."
+            },
+            {
+              "q": "Sus comparables cotizan a un PER medio de 30 y tu empresa tiene un BPA de 1,20 $. ¿Qué precio implica ese múltiplo?",
+              "a": 36,
+              "why": "30 × 1,20 = 36 $. Es el precio si el mercado la valorase como a la media de su grupo, no una garantía de que llegue ahí."
+            }
+          ]
         },
         {
           "id": "fra-2",

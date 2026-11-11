@@ -79,7 +79,19 @@
           "unit": "%",
           "a": 6.5,
           "why": "8 − 1,5 = 6,5 %. Tras costes, el gestor activo medio queda por detrás del índice justo en lo que cobra.",
-          "guia": "g1"
+          "guia": "g1",
+          "variantes": [
+            {
+              "q": "El mercado sube un 6 % y el fondo activo medio lo iguala antes de costes, pero cobra un 1,8 % de comisión. ¿Qué rentabilidad neta obtiene su partícipe?",
+              "a": 4.2,
+              "why": "6 − 1,8 = 4,2 %. Tras costes, el gestor activo medio queda por detrás del índice justo en lo que cobra."
+            },
+            {
+              "q": "El mercado sube un 10 % y el fondo activo medio lo iguala antes de costes, pero cobra un 1,25 % de comisión. ¿Qué rentabilidad neta obtiene su partícipe?",
+              "a": 8.75,
+              "why": "10 − 1,25 = 8,75 %. Tras costes, el gestor activo medio queda por detrás del índice justo en lo que cobra."
+            }
+          ]
         },
         {
           "id": "ix1-3",

@@ -59,7 +59,19 @@
           "unit": "",
           "a": 500,
           "why": "20.000 ÷ 0,04 = 500.000 €, es decir, 25 veces tu gasto anual.",
-          "guia": "g1"
+          "guia": "g1",
+          "variantes": [
+            {
+              "q": "Quieres retirar 30.000 € al año. Con la regla del 4 %, ¿cuántos miles de euros necesitas tener invertidos?",
+              "a": 750,
+              "why": "30.000 ÷ 0,04 = 750.000 €, es decir, 25 veces tu gasto anual."
+            },
+            {
+              "q": "Quieres retirar 16.000 € al año. Con la regla del 4 %, ¿cuántos miles de euros necesitas tener invertidos?",
+              "a": 400,
+              "why": "16.000 ÷ 0,04 = 400.000 €, es decir, 25 veces tu gasto anual."
+            }
+          ]
         },
         {
           "id": "rt1-2",

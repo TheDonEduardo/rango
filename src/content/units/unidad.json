@@ -78,7 +78,19 @@
           "unit": "€",
           "a": 300,
           "why": "600.000 ÷ 2.000 = 300 € por cliente (CAC). Por sí solo no dice nada: hay que compararlo con lo que deja cada cliente.",
-          "guia": "g1"
+          "guia": "g1",
+          "variantes": [
+            {
+              "q": "Una empresa gasta 450.000 € en marketing y ventas y consigue 3.000 clientes nuevos. ¿Cuánto le cuesta captar cada uno?",
+              "a": 150,
+              "why": "450.000 ÷ 3.000 = 150 € por cliente (CAC). Por sí solo no dice nada: hay que compararlo con lo que deja cada cliente."
+            },
+            {
+              "q": "Una empresa gasta 1.200.000 € en marketing y ventas y consigue 2.500 clientes nuevos. ¿Cuánto le cuesta captar cada uno?",
+              "a": 480,
+              "why": "1.200.000 ÷ 2.500 = 480 € por cliente (CAC). Por sí solo no dice nada: hay que compararlo con lo que deja cada cliente."
+            }
+          ]
         },
         {
           "id": "fua-2",

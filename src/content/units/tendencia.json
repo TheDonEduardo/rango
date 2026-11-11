@@ -251,7 +251,19 @@
           "unit": "€",
           "a": 60,
           "why": "80 × (1 − 0,25) = 60 €. Por debajo, el valor está demasiado lejos de sus máximos.",
-          "guia": "g3"
+          "guia": "g3",
+          "variantes": [
+            {
+              "q": "Máximo de 52 semanas: 120 €. El precio debe estar a menos del 25 % del máximo. ¿Precio mínimo aceptable?",
+              "a": 90,
+              "why": "120 × (1 − 0,25) = 90 €. Por debajo, el valor está demasiado lejos de sus máximos."
+            },
+            {
+              "q": "Máximo de 52 semanas: 48 €. El precio debe estar a menos del 25 % del máximo. ¿Precio mínimo aceptable?",
+              "a": 36,
+              "why": "48 × (1 − 0,25) = 36 €. Por debajo, el valor está demasiado lejos de sus máximos."
+            }
+          ]
         },
         {
           "id": "t2-3",

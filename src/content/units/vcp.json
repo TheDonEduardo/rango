@@ -135,7 +135,19 @@
           "unit": "%",
           "a": 25,
           "why": "(60,00 − 45,00) ÷ 60,00 = 15 ÷ 60 = 25 %. Se mide del máximo de cada contracción a su mínimo.",
-          "guia": "g2"
+          "guia": "g2",
+          "variantes": [
+            {
+              "q": "Primera contracción de la base: del máximo de 80,00 € al mínimo de 64,00 €. ¿Qué profundidad tiene?",
+              "a": 20,
+              "why": "(80,00 − 64,00) ÷ 80,00 = 16 ÷ 80 = 20 %. Se mide del máximo de cada contracción a su mínimo."
+            },
+            {
+              "q": "Primera contracción de la base: del máximo de 50,00 € al mínimo de 41,00 €. ¿Qué profundidad tiene?",
+              "a": 18,
+              "why": "(50,00 − 41,00) ÷ 50,00 = 9 ÷ 50 = 18 %. Se mide del máximo de cada contracción a su mínimo."
+            }
+          ]
         },
         {
           "id": "vcp1-3",

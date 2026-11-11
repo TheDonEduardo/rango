@@ -79,7 +79,19 @@
           "a": 18.2,
           "tol": 0.06,
           "why": "(52 ÷ 5.500) ÷ (40 ÷ 5.000) = 1,182: la línea RS sube un 18,2 %. No es 30 − 10 = 20: la fuerza relativa es un cociente, no una resta.",
-          "guia": "g1"
+          "guia": "g1",
+          "variantes": [
+            {
+              "q": "La acción sube de 50 a 70 € (+40 %) y el índice de 4.000 a 4.200 (+5 %). ¿Cuánto sube su línea RS? Redondea a 1 decimal.",
+              "a": 33.3,
+              "why": "(70 ÷ 4.200) ÷ (50 ÷ 4.000) = 1,333: la línea RS sube un 33,3 %. No es 40 − 5 = 35: la fuerza relativa es un cociente, no una resta."
+            },
+            {
+              "q": "La acción sube de 20 a 25 € (+25 %) y el índice de 6.000 a 6.300 (+5 %). ¿Cuánto sube su línea RS? Redondea a 1 decimal.",
+              "a": 19,
+              "why": "(25 ÷ 6.300) ÷ (20 ÷ 6.000) = 1,190: la línea RS sube un 19,0 %. No es 25 − 5 = 20: la fuerza relativa es un cociente, no una resta."
+            }
+          ]
         },
         {
           "id": "rs1-3",

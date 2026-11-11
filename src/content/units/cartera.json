@@ -58,7 +58,19 @@
           "unit": "%",
           "a": 5,
           "why": "5 × 1 % = 5 %. Es tu riesgo abierto: lo que cuesta el peor día si todo sale mal a la vez.",
-          "guia": "g1"
+          "guia": "g1",
+          "variantes": [
+            {
+              "q": "Tienes 8 posiciones abiertas y cada una arriesga un 0,5 % del capital hasta su stop. Si saltan todos los stops, ¿qué porcentaje del capital pierdes?",
+              "a": 4,
+              "why": "8 × 0,5 % = 4 %. Es tu riesgo abierto: lo que cuesta el peor día si todo sale mal a la vez."
+            },
+            {
+              "q": "Tienes 4 posiciones abiertas y cada una arriesga un 1,5 % del capital hasta su stop. Si saltan todos los stops, ¿qué porcentaje del capital pierdes?",
+              "a": 6,
+              "why": "4 × 1,5 % = 6 %. Es tu riesgo abierto: lo que cuesta el peor día si todo sale mal a la vez."
+            }
+          ]
         },
         {
           "id": "c1-2",

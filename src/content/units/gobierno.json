@@ -83,7 +83,19 @@
           "unit": "%",
           "a": 30,
           "why": "120 ÷ 400 = 30 %. Que los fundadores sigan dentro alinea sus intereses con los tuyos, aunque también les da mucho poder en las votaciones.",
-          "guia": "g2"
+          "guia": "g2",
+          "variantes": [
+            {
+              "q": "Los fundadores tienen 90 M de las 600 M de acciones. ¿Qué porcentaje de la empresa controlan?",
+              "a": 15,
+              "why": "90 ÷ 600 = 15 %. Que los fundadores sigan dentro alinea sus intereses con los tuyos, aunque también les da mucho poder en las votaciones."
+            },
+            {
+              "q": "Los fundadores tienen 50 M de las 125 M de acciones. ¿Qué porcentaje de la empresa controlan?",
+              "a": 40,
+              "why": "50 ÷ 125 = 40 %. Que los fundadores sigan dentro alinea sus intereses con los tuyos, aunque también les da mucho poder en las votaciones."
+            }
+          ]
         },
         {
           "id": "fga-4",

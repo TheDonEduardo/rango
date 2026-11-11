@@ -213,7 +213,19 @@
           "unit": "€",
           "a": 25.8,
           "why": "Altura = 23,00 − 20,20 = 2,80 €; objetivo = 23,00 + 2,80 = 25,80 €. Entrando a 21,80 € con stop en 19,10 €, ofrece 4,00 ÷ 2,70 = 1,48R hasta ahí.",
-          "guia": "g1"
+          "guia": "g1",
+          "variantes": [
+            {
+              "q": "Rango de acumulación entre 31,50 € y 35,00 €. Proyecta la altura del rango sobre la resistencia. ¿Objetivo mínimo?",
+              "a": 38.5,
+              "why": "Altura = 35,00 − 31,50 = 3,50 €; objetivo = 35,00 + 3,50 = 38,50 €."
+            },
+            {
+              "q": "Rango de acumulación entre 12,40 € y 14,00 €. Proyecta la altura del rango sobre la resistencia. ¿Objetivo mínimo?",
+              "a": 15.6,
+              "why": "Altura = 14,00 − 12,40 = 1,60 €; objetivo = 14,00 + 1,60 = 15,60 €."
+            }
+          ]
         },
         {
           "id": "w1-5",

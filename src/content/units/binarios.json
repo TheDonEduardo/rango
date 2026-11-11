@@ -97,7 +97,19 @@
           "unit": "%",
           "a": 12,
           "why": "(47,04 − 42,00) ÷ 42,00 = 5,04 ÷ 42,00 = 12 %. El gap se mide siempre desde el cierre previo.",
-          "guia": "g1"
+          "guia": "g1",
+          "variantes": [
+            {
+              "q": "Cierre previo a resultados: 25,00 €. Al día siguiente abre a 27,00 €. ¿De qué tamaño es el gap?",
+              "a": 8,
+              "why": "(27,00 − 25,00) ÷ 25,00 = 2,00 ÷ 25,00 = 8 %. El gap se mide siempre desde el cierre previo."
+            },
+            {
+              "q": "Cierre previo a resultados: 60,00 €. Al día siguiente abre a 66,00 €. ¿De qué tamaño es el gap?",
+              "a": 10,
+              "why": "(66,00 − 60,00) ÷ 60,00 = 6,00 ÷ 60,00 = 10 %. El gap se mide siempre desde el cierre previo."
+            }
+          ]
         },
         {
           "id": "b1-2",

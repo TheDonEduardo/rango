@@ -43,7 +43,19 @@
           "unit": "",
           "a": 60,
           "why": "120 ÷ 730 × 365 = 60 días. El dato importa por su evolución: compáralo con años anteriores y con la competencia.",
-          "guia": "g1"
+          "guia": "g1",
+          "variantes": [
+            {
+              "q": "Ventas anuales: 1.460 M$. Cuentas por cobrar: 180 M$. ¿Cuántos días tarda de media en cobrar (cobros ÷ ventas × 365)?",
+              "a": 45,
+              "why": "180 ÷ 1.460 × 365 = 45 días. El dato importa por su evolución: compáralo con años anteriores y con la competencia."
+            },
+            {
+              "q": "Ventas anuales: 365 M$. Cuentas por cobrar: 90 M$. ¿Cuántos días tarda de media en cobrar (cobros ÷ ventas × 365)?",
+              "a": 90,
+              "why": "90 ÷ 365 × 365 = 90 días. El dato importa por su evolución: compáralo con años anteriores y con la competencia."
+            }
+          ]
         },
         {
           "id": "fa1-2",

@@ -66,7 +66,19 @@
           "unit": "",
           "a": 1.5,
           "why": "12.000 ÷ 8.000 = 1,5: por cada euro perdido se ganan 1,50 €. Por debajo de 1 el sistema pierde dinero; con costes reales, conviene que quede bastante por encima.",
-          "guia": "g1"
+          "guia": "g1",
+          "variantes": [
+            {
+              "q": "En la prueba, las operaciones ganadoras suman 15.000 € y las perdedoras, 6.000 €. ¿Cuál es el factor de beneficio (ganancias ÷ pérdidas)?",
+              "a": 2.5,
+              "why": "15.000 ÷ 6.000 = 2,5: por cada euro perdido se ganan 2,50 €. Por debajo de 1 el sistema pierde dinero; con costes reales, conviene que quede bastante por encima."
+            },
+            {
+              "q": "En la prueba, las operaciones ganadoras suman 9.000 € y las perdedoras, 7.500 €. ¿Cuál es el factor de beneficio (ganancias ÷ pérdidas)?",
+              "a": 1.2,
+              "why": "9.000 ÷ 7.500 = 1,2: por cada euro perdido se ganan 1,20 €. Por debajo de 1 el sistema pierde dinero; con costes reales, conviene que quede bastante por encima."
+            }
+          ]
         },
         {
           "id": "bt1-2",

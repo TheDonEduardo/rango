@@ -60,7 +60,19 @@
           "a": 26.5,
           "why": "0,70 × (−40 %) + 0,30 × 5 % = −28 % + 1,5 % = −26,5 %. Los bonos amortiguan, pero con un 70 % en acciones la caída sigue siendo fuerte.",
           "tol": 0.06,
-          "guia": "g1"
+          "guia": "g1",
+          "variantes": [
+            {
+              "q": "Tu cartera es 80 % acciones y 20 % bonos. Las acciones caen un 35 % y los bonos suben un 4 %. ¿Cuánto cae la cartera completa? Redondea a 1 decimal.",
+              "a": 27.2,
+              "why": "0,80 × (−35 %) + 0,20 × 4 % = −28 % + 0,8 % = −27,2 %. Los bonos amortiguan, pero con un 80 % en acciones la caída sigue siendo fuerte."
+            },
+            {
+              "q": "Tu cartera es 50 % acciones y 50 % bonos. Las acciones caen un 40 % y los bonos suben un 6 %. ¿Cuánto cae la cartera completa? Redondea a 1 decimal.",
+              "a": 17,
+              "why": "0,50 × (−40 %) + 0,50 × 6 % = −20 % + 3 % = −17,0 %. Los bonos amortiguan, pero con un 50 % en acciones la caída sigue siendo fuerte."
+            }
+          ]
         },
         {
           "id": "pr1-2",

@@ -183,7 +183,19 @@
           "unit": "%",
           "a": 0.3,
           "why": "(5.000 − 4.985) ÷ 5.000 = 0,3 %. Supera el 0,2 % y con más volumen, así que cuenta como día de distribución.",
-          "guia": "g1"
+          "guia": "g1",
+          "variantes": [
+            {
+              "q": "El índice cerró ayer en 6.000 puntos y hoy cierra en 5.970, con más volumen que ayer. ¿Cuánto ha caído?",
+              "a": 0.5,
+              "why": "(6.000 − 5.970) ÷ 6.000 = 0,5 %. Supera el 0,2 % y con más volumen, así que cuenta como día de distribución."
+            },
+            {
+              "q": "El índice cerró ayer en 4.000 puntos y hoy cierra en 3.984, con más volumen que ayer. ¿Cuánto ha caído?",
+              "a": 0.4,
+              "why": "(4.000 − 3.984) ÷ 4.000 = 0,4 %. Supera el 0,2 % y con más volumen, así que cuenta como día de distribución."
+            }
+          ]
         }
       ]
     },

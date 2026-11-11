@@ -43,7 +43,19 @@
           "unit": "%",
           "a": 10,
           "why": "(1,76 − 1,60) ÷ 1,60 = 0,16 ÷ 1,60 = 10 %. El precio reacciona a la diferencia con lo esperado, no al dato en sí.",
-          "guia": "g1"
+          "guia": "g1",
+          "variantes": [
+            {
+              "q": "El consenso de analistas esperaba un BPA de 2,00 $ y la empresa publica 2,30 $. ¿De cuánto es la sorpresa?",
+              "a": 15,
+              "why": "(2,30 − 2,00) ÷ 2,00 = 0,30 ÷ 2,00 = 15 %. El precio reacciona a la diferencia con lo esperado, no al dato en sí."
+            },
+            {
+              "q": "El consenso de analistas esperaba un BPA de 0,80 $ y la empresa publica 0,84 $. ¿De cuánto es la sorpresa?",
+              "a": 5,
+              "why": "(0,84 − 0,80) ÷ 0,80 = 0,04 ÷ 0,80 = 5 %. El precio reacciona a la diferencia con lo esperado, no al dato en sí."
+            }
+          ]
         },
         {
           "id": "f5a-2",

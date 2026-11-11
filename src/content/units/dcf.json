@@ -67,7 +67,19 @@
           "unit": "€",
           "a": 100,
           "why": "110 ÷ 1,10 = 100 €. Descontar es el interés compuesto al revés: dinero futuro vale menos que dinero de hoy.",
-          "guia": "g1"
+          "guia": "g1",
+          "variantes": [
+            {
+              "q": "Recibirás 525 € dentro de un año. Si exiges un 5 % de rentabilidad, ¿cuánto vale ese dinero hoy?",
+              "a": 500,
+              "why": "525 ÷ 1,05 = 500 €. Descontar es el interés compuesto al revés: dinero futuro vale menos que dinero de hoy."
+            },
+            {
+              "q": "Recibirás 648 € dentro de un año. Si exiges un 8 % de rentabilidad, ¿cuánto vale ese dinero hoy?",
+              "a": 600,
+              "why": "648 ÷ 1,08 = 600 €. Descontar es el interés compuesto al revés: dinero futuro vale menos que dinero de hoy."
+            }
+          ]
         },
         {
           "id": "f11a-2",

@@ -107,7 +107,19 @@
           "unit": "R",
           "a": 2.5,
           "why": "250 ÷ 100 = 2,5R. Mover el stop convirtió una pérdida pequeña y prevista en una grande: la disciplina se mide en R.",
-          "guia": "g2"
+          "guia": "g2",
+          "variantes": [
+            {
+              "q": "Planeaste perder como mucho 1R (200 €), pero bajaste el stop y acabaste perdiendo 700 €. ¿Cuántos R perdiste?",
+              "a": 3.5,
+              "why": "700 ÷ 200 = 3,5R. Mover el stop convirtió una pérdida pequeña y prevista en una grande: la disciplina se mide en R."
+            },
+            {
+              "q": "Planeaste perder como mucho 1R (150 €), pero bajaste el stop y acabaste perdiendo 270 €. ¿Cuántos R perdiste?",
+              "a": 1.8,
+              "why": "270 ÷ 150 = 1,8R. Mover el stop convirtió una pérdida pequeña y prevista en una grande: la disciplina se mide en R."
+            }
+          ]
         }
       ]
     },

@@ -44,7 +44,19 @@
           "unit": "€",
           "a": 320,
           "why": "El 20 % de 1.600 € son 320 € al mes.",
-          "guia": "g1"
+          "guia": "g1",
+          "variantes": [
+            {
+              "q": "Ingresas 2.100 € al mes. Con la regla 50/30/20, ¿cuánto destinas al ahorro?",
+              "a": 420,
+              "why": "El 20 % de 2.100 € son 420 € al mes."
+            },
+            {
+              "q": "Ingresas 1.350 € al mes. Con la regla 50/30/20, ¿cuánto destinas al ahorro?",
+              "a": 270,
+              "why": "El 20 % de 1.350 € son 270 € al mes."
+            }
+          ]
         },
         {
           "id": "bl1-2",

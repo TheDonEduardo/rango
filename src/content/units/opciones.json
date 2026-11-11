@@ -93,7 +93,19 @@
           "unit": "$",
           "a": 150,
           "why": "100 × 1,50 = 150 $. Las primas se cotizan por acción, pero se pagan por contrato.",
-          "guia": "g1"
+          "guia": "g1",
+          "variantes": [
+            {
+              "q": "Un contrato de opciones sobre acciones de EE. UU. cubre 100 acciones y la prima es de 2,35 $ por acción. ¿Cuánto pagas por un contrato?",
+              "a": 235,
+              "why": "100 × 2,35 = 235 $. Las primas se cotizan por acción, pero se pagan por contrato."
+            },
+            {
+              "q": "Un contrato de opciones sobre acciones de EE. UU. cubre 100 acciones y la prima es de 0,80 $ por acción. ¿Cuánto pagas por un contrato?",
+              "a": 80,
+              "why": "100 × 0,80 = 80 $. Las primas se cotizan por acción, pero se pagan por contrato."
+            }
+          ]
         },
         {
           "id": "o1-3",

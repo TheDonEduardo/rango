@@ -26,30 +26,10 @@
         "type": "velas",
         "alt": "La acción cierra a 50,00 € y el día en que descuenta un dividendo de 1,50 € abre a 48,50 €.",
         "data": [
-          [
-            49.4,
-            49.9,
-            49.2,
-            49.8
-          ],
-          [
-            49.8,
-            50.2,
-            49.6,
-            50.0
-          ],
-          [
-            48.5,
-            48.9,
-            48.3,
-            48.7
-          ],
-          [
-            48.7,
-            49.0,
-            48.5,
-            48.8
-          ]
+          [49.4,49.9,49.2,49.8],
+          [49.8,50.2,49.6,50.0],
+          [48.5,48.9,48.3,48.7],
+          [48.7,49.0,48.5,48.8]
         ],
         "llaves": [
           {
@@ -88,7 +68,19 @@
           "unit": "%",
           "a": 4,
           "why": "2,40 ÷ 60,00 = 4 %. Si el precio cae y el dividendo se mantiene, la rentabilidad sube: mira siempre si ese dividendo es sostenible.",
-          "guia": "g1"
+          "guia": "g1",
+          "variantes": [
+            {
+              "q": "Una acción cotiza a 80,00 $ y paga 2,00 $ de dividendo al año. ¿Cuál es su rentabilidad por dividendo?",
+              "a": 2.5,
+              "why": "2,00 ÷ 80,00 = 2,5 %. Si el precio cae y el dividendo se mantiene, la rentabilidad sube: mira siempre si ese dividendo es sostenible."
+            },
+            {
+              "q": "Una acción cotiza a 25,00 $ y paga 1,50 $ de dividendo al año. ¿Cuál es su rentabilidad por dividendo?",
+              "a": 6,
+              "why": "1,50 ÷ 25,00 = 6 %. Si el precio cae y el dividendo se mantiene, la rentabilidad sube: mira siempre si ese dividendo es sostenible."
+            }
+          ]
         },
         {
           "id": "f9a-2",

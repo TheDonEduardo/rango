@@ -63,7 +63,19 @@
           "unit": "",
           "a": 600,
           "why": "50 millones × 12,00 € = 600 millones de €. Es la capitalización: lo que el mercado paga hoy por toda la empresa.",
-          "guia": "g1"
+          "guia": "g1",
+          "variantes": [
+            {
+              "q": "Una empresa tiene 40 millones de acciones y cada una cotiza a 8,00 €. ¿Cuántos millones de € vale en bolsa?",
+              "a": 320,
+              "why": "40 millones × 8,00 € = 320 millones de €. Es la capitalización: lo que el mercado paga hoy por toda la empresa."
+            },
+            {
+              "q": "Una empresa tiene 25 millones de acciones y cada una cotiza a 30,00 €. ¿Cuántos millones de € vale en bolsa?",
+              "a": 750,
+              "why": "25 millones × 30,00 € = 750 millones de €. Es la capitalización: lo que el mercado paga hoy por toda la empresa."
+            }
+          ]
         },
         {
           "id": "ba1-3",
