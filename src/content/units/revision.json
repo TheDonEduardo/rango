@@ -152,7 +152,7 @@
           "q": "La bolsa cae un 25 % y tu plan dice 70/30. ¿Qué haces en la revisión?",
           "opts": [
             "Rebalancear: comprar acciones hasta el 70 %",
-            "Vender acciones para evitar más caídas",
+            "Vender acciones para evitar que caiga aún más",
             "Parar las aportaciones",
             "Cambiar a 30/70 hasta que pase"
           ],

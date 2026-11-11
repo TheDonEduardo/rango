@@ -45,7 +45,7 @@
             "Un día normal: no es ningún desplome",
             "El fin del mercado alcista",
             "Una señal para venderlo todo",
-            "Una caída que nunca se recupera"
+            "Una caída que el índice ya nunca recuperará"
           ],
           "a": 0,
           "why": "Movimientos diarios de más del 1 % ocurren decenas de veces al año; un desplome real es una caída del 20 % o más.",
@@ -113,7 +113,7 @@
           "q": "Una empresa gana 500 millones, un 20 % menos que el año pasado, pero bate el consenso y sube. ¿Por qué?",
           "opts": [
             "El mercado esperaba un resultado aún peor",
-            "Los mercados son siempre irracionales",
+            "Los mercados son siempre irracionales con esto",
             "Porque ganar menos es positivo",
             "Por un error en la noticia"
           ],
@@ -163,7 +163,7 @@
           "opts": [
             "Quién lo escribe y qué gana con ello",
             "Cuánto dinero meto ya",
-            "Si pido un préstamo para comprar",
+            "Si pido un préstamo para comprar más acciones",
             "Cuándo venderé con el beneficio"
           ],
           "a": 0,

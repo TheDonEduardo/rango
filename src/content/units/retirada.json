@@ -111,7 +111,7 @@
           "t": "choice",
           "q": "Dos jubilados obtienen la misma rentabilidad media. A sufre una caída del 30 % su primer año; B, en su décimo año. ¿Quién corre más riesgo de quedarse sin dinero?",
           "opts": [
-            "B, por la caída al final",
+            "B, por sufrir la caída al final",
             "A, por la caída al principio",
             "Los dos por igual",
             "Ninguno de los dos"

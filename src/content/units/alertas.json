@@ -59,7 +59,7 @@
           "t": "choice",
           "q": "El inventario crece un 40 % y las ventas, un 5 %. ¿Qué puede indicar?",
           "opts": [
-            "Que el negocio va mejor que nunca",
+            "Que el negocio va mejor que nunca y vende más",
             "Que bajará su deuda este año",
             "Producto que no se vende: posible ajuste",
             "Nada relevante para el inversor"

@@ -44,7 +44,7 @@
             "Una empresa que cotiza en bolsa",
             "Una cesta de acciones que resume cómo se mueve un mercado",
             "Un fondo que compras directamente en el bróker",
-            "El precio medio de todas las acciones del mundo"
+            "El precio medio de todas las acciones que cotizan en el mundo"
           ],
           "a": 1,
           "why": "El IBEX 35 agrupa 35 valores españoles y el S&P 500, unas 500 grandes empresas de EE. UU. Un índice no se compra directamente: se replica con fondos indexados o ETF.",
@@ -107,7 +107,7 @@
           "q": "¿Qué es un ETF?",
           "opts": [
             "Un fondo que replica un índice y cotiza como una acción",
-            "Una acción de una sola empresa de gran tamaño",
+            "Una acción de una sola empresa de gran tamaño y muy conocida",
             "Un depósito bancario con un interés fijo anual",
             "Un derivado que caduca cada mes y se renueva"
           ],

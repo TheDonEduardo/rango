@@ -150,7 +150,7 @@
           "t": "choice",
           "q": "Los clientes de cada año gastan más en su segundo año que en el primero. ¿Qué indica?",
           "opts": [
-            "Que la empresa pierde clientes",
+            "Que la empresa pierde clientes cada año",
             "Que el precio baja cada año",
             "Que crece sin captar clientes nuevos",
             "Nada útil para el inversor"

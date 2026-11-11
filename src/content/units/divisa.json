@@ -60,7 +60,7 @@
           "q": "Un ETF cotiza en euros pero compra acciones de EE. UU. ¿Tienes riesgo de dólar?",
           "opts": [
             "Sí, el de las acciones que tiene dentro",
-            "No, porque el ETF cotiza en euros",
+            "No, porque el ETF cotiza y reparte en euros",
             "Solo si lo vendes en EE. UU.",
             "Solo en años de elecciones"
           ],
@@ -112,7 +112,7 @@
           "q": "En la parte de acciones a largo plazo, ¿qué suelen hacer muchos inversores europeos?",
           "opts": [
             "No cubrir: a 20 años la divisa pesa poco",
-            "Cubrir siempre el 100 % de la divisa",
+            "Cubrir siempre el 100 % de la divisa extranjera",
             "Cambiar de clase según el dólar",
             "Vender cuando el dólar cae"
           ],
@@ -134,7 +134,7 @@
             "Cubrirla: la divisa movería más que el bono",
             "No cubrirla nunca",
             "La divisa no afecta a los bonos",
-            "Comprar solo bonos emitidos en dólares"
+            "Comprar solo bonos emitidos en dólares de EE. UU."
           ],
           "a": 0,
           "why": "Un bono puede moverse un 3-5 % al año y el dólar, un 10 %: sin cubrir, la parte estable de la cartera deja de serlo.",

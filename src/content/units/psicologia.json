@@ -86,7 +86,7 @@
           "q": "Tras tres pérdidas seguidas, te apetece doblar el tamaño para recuperar. ¿Qué haces?",
           "opts": [
             "Doblar: la siguiente toca ganar",
-            "Triplicar para recuperar antes",
+            "Triplicar el tamaño para recuperar antes",
             "Mantener o reducir tamaño y revisar",
             "Quitar los stops por un tiempo"
           ],

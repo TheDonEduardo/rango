@@ -292,7 +292,7 @@
           "q": "¿Cuándo es más fiable un martillo?",
           "opts": [
             "Tras una caída, sobre un soporte y con volumen creciente",
-            "En mitad de un rango lateral, sin tendencia previa",
+            "En mitad de un rango lateral, sin ninguna tendencia previa",
             "Tras una subida, bajo una resistencia",
             "Con volumen mínimo y sin contexto"
           ],

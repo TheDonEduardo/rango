@@ -122,7 +122,7 @@
           "q": "Toda tu cartera está en empresas del IBEX 35. ¿Qué riesgo corres?",
           "opts": [
             "Depender de un país y pocos sectores",
-            "Ninguno: es el índice de tu país",
+            "Ninguno: es el índice de tu propio país",
             "Pagar demasiadas comisiones",
             "No poder vender cuando quieras"
           ],

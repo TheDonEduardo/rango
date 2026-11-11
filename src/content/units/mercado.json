@@ -101,7 +101,7 @@
             "Una caída del índice con más volumen que el día anterior",
             "Una subida del índice con muy poco volumen",
             "El día en que las empresas pagan dividendos",
-            "Una caída del índice de más de un 5 % en un día"
+            "Una caída del índice de más de un 5 % en una sola jornada"
           ],
           "a": 0,
           "why": "El índice cae al menos un 0,2 % con más volumen que la sesión anterior: grandes inversores están vendiendo. Un día suelto no dice nada; importa cuántos se acumulan.",
@@ -232,7 +232,7 @@
           "q": "En el tercer día del intento de rebote, el índice cae por debajo del mínimo de la corrección. ¿Qué ocurre?",
           "opts": [
             "El intento se anula y hay que esperar otro",
-            "Pasa a contar como día de confirmación",
+            "Pasa a contar directamente como día de confirmación",
             "Nada: el recuento de días continúa",
             "Es momento de comprar más fuerte"
           ],

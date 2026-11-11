@@ -161,7 +161,7 @@
             "Sí, sin ningún límite",
             "Sí, si recompras en otro bróker",
             "No: se aplaza hasta que vendas las nuevas",
-            "Sí, pero solo la mitad de la pérdida"
+            "Sí, pero solo la mitad de la pérdida declarada"
           ],
           "a": 2,
           "why": "Regla de los dos meses en valores cotizados: si compras valores iguales en los dos meses anteriores o posteriores a la venta con pérdidas, no la imputas hasta que vendas esos valores.",

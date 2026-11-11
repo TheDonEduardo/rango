@@ -86,7 +86,7 @@
           "q": "¿Qué busca la cartera permanente con el oro y la liquidez?",
           "opts": [
             "Aguantar bien en cualquier escenario",
-            "Batir al S&P 500 todos los años",
+            "Batir al S&P 500 todos los años sin excepción",
             "Maximizar el crecimiento",
             "Evitar pagar comisiones"
           ],
@@ -113,7 +113,7 @@
           "q": "¿Qué hace que una cartera modelo funcione en la práctica?",
           "opts": [
             "Cambiarla según las noticias",
-            "Elegir la que más ganó el último año",
+            "Elegir cada año la que más ganó el año anterior",
             "Mantenerla años, aportando y rebalanceando",
             "Tener muchos fondos parecidos"
           ],

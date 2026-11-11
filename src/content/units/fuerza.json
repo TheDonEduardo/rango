@@ -89,7 +89,7 @@
             "Que ha subido un 90 % en el año",
             "Que ha ido mejor que el 90 % de las acciones",
             "Que cotiza al 90 % de su máximo",
-            "Que tiene un 90 % de opciones de subir"
+            "Que tiene un 90 % de probabilidades de seguir subiendo"
           ],
           "a": 1,
           "why": "Es un percentil de 1 a 99 sobre el comportamiento de los últimos 12 meses, con más peso en el último trimestre. O'Neil buscaba líderes con RS de 80 o más.",
@@ -182,7 +182,7 @@
           "t": "choice",
           "q": "El índice cae un 10 % y una acción solo un 3 %, sin alejarse de sus máximos. ¿Qué indica?",
           "opts": [
-            "Debilidad: no acompaña al mercado en nada",
+            "Debilidad: no acompaña al mercado ni en la caída",
             "Fuerza relativa: candidata a liderar el rebote",
             "Que caerá más tarde, sin ninguna duda",
             "Nada: en una corrección todo da igual"

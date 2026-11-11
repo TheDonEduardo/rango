@@ -156,7 +156,7 @@
           "opts": [
             "Lo vendes al día siguiente para asegurar",
             "Le pones un stop bajo la media de 50 sesiones",
-            "Le bajas el stop si el precio retrocede",
+            "Le bajas el stop cada vez que el precio retrocede",
             "Lo mantienes sin stop hasta fin de año"
           ],
           "a": 1,

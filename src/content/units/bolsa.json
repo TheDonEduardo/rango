@@ -198,7 +198,7 @@
           "q": "Una acción poco negociada tiene una horquilla de 10,00 € / 10,40 €. ¿Qué orden usas?",
           "opts": [
             "Una limitada al precio que aceptes",
-            "A mercado, para ir más rápido",
+            "A mercado, para que se ejecute más rápido",
             "Da igual el tipo de orden",
             "Ninguna: no se puede comprar"
           ],

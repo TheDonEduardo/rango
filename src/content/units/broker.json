@@ -43,7 +43,7 @@
           "opts": [
             "Nada: pasan al patrimonio del bróker",
             "El Banco de España te lo devuelve todo",
-            "El bróker debe venderlas antes de quebrar",
+            "El bróker está obligado a venderlas antes de quebrar",
             "Están a tu nombre, separadas de las del bróker"
           ],
           "a": 3,
@@ -129,7 +129,7 @@
           "opts": [
             "Declaras tú cada operación con sus informes",
             "Nada: Hacienda lo rellena todo",
-            "No tributas en España por esa cuenta",
+            "No tributas en España por esa cuenta extranjera",
             "Tributa solo en el país del bróker"
           ],
           "a": 0,

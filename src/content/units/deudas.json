@@ -131,7 +131,7 @@
           "q": "¿Por qué la tarjeta revolving es tan peligrosa?",
           "opts": [
             "La cuota baja apenas cubre los intereses",
-            "Porque no se puede usar en internet",
+            "Porque no se puede usar para comprar en internet",
             "Porque cobra siempre en dólares",
             "Porque caduca cada mes"
           ],
@@ -151,7 +151,7 @@
           "q": "¿Tiene sentido invertir en bolsa mientras debes dinero en una tarjeta al 20 %?",
           "opts": [
             "No: pagar la tarjeta rinde un 20 % seguro",
-            "Sí, porque la bolsa siempre da más",
+            "Sí, porque la bolsa siempre da más que eso",
             "Sí, si inviertes en ETF",
             "Da igual una cosa que otra"
           ],

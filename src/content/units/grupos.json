@@ -136,7 +136,7 @@
           "t": "choice",
           "q": "Tu acción rompe al alza, pero las demás de su grupo caen a mínimos. ¿Qué indica?",
           "opts": [
-            "Que es aún más fuerte, sin matices",
+            "Que es aún más fuerte que su grupo, sin matices",
             "Nada: el grupo no importa",
             "Menos respaldo: la ruptura es más frágil",
             "Que el grupo romperá mañana"
