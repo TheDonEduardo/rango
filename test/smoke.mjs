@@ -137,6 +137,11 @@ for (const f of fs.readdirSync(path.join(root, 'src'), {recursive: true}).map(f 
 const man = JSON.parse(fs.readFileSync(path.join(root, 'manifest.webmanifest'), 'utf8'));
 for (const ic of man.icons) if (!fs.existsSync(path.join(root, ic.src))) errs.push('icono del manifiesto inexistente: ' + ic.src);
 if (!man.icons.some(i => i.purpose === 'maskable')) errs.push('falta icono maskable en el manifiesto');
+// Carga en paralelo: index.html precarga todos los módulos de la app (si falta uno, vuelve a llegar en cadena).
+{ const h = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
+  for (const f of fs.readdirSync(path.join(root, 'src'), {recursive: true}).map(f => f.split(path.sep).join('/')).filter(f => /\.js$/.test(f) && f !== 'bienvenida.js'))
+    if (!h.includes(`<link rel="modulepreload" href="src/${f}">`)) errs.push('index.html no precarga el módulo src/' + f);
+  for (const m of h.matchAll(/rel="modulepreload" href="([^"]+)"/g)) if (!fs.existsSync(path.join(root, m[1]))) errs.push('index.html precarga un módulo que no existe: ' + m[1]); }
 // Seguridad: las dos páginas llevan política de seguridad de contenido y ningún script en línea (los bloquearía).
 for (const f of ['index.html', 'bienvenida.html']) {
   const h = fs.readFileSync(path.join(root, f), 'utf8');
