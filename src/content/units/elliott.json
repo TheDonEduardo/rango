@@ -1,0 +1,304 @@
+{
+  "n": 14,
+  "id": "elliott",
+  "track": "tecnico",
+  "title": "Ondas de Elliott",
+  "blurb": "Cinco ondas a favor, tres en contra: escenarios con stop.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Cinco ondas a favor, tres en contra",
+      "texto": "Elliott describe una tendencia como cinco ondas a favor (la 1, la 3 y la 5 impulsan; la 2 y la 4 corrigen) y tres en contra (A, B y C). Es una forma de ordenar el gráfico, no una ley: sirve para plantear escenarios.",
+      "ejemplo": "Onda 1 de 40 a 52 €, corrección hasta 44,60 € y onda 3 hacia 64 €.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Ciclo de Elliott: cinco ondas al alza (1 a 5) y una corrección en tres tramos (A, B y C).",
+        "series": [
+          {
+            "data": [40,52,44.6,64,57,68,61,65,56],
+            "tono": "sel"
+          }
+        ],
+        "margen": 30,
+        "marcas": [
+          {
+            "i": 1,
+            "y": 52,
+            "texto": "1",
+            "lado": "d"
+          },
+          {
+            "i": 2,
+            "y": 44.6,
+            "texto": "2",
+            "lado": "i"
+          },
+          {
+            "i": 3,
+            "y": 64,
+            "texto": "3",
+            "lado": "d"
+          },
+          {
+            "i": 4,
+            "y": 57,
+            "texto": "4",
+            "lado": "i"
+          },
+          {
+            "i": 5,
+            "y": 68,
+            "texto": "5",
+            "lado": "d"
+          },
+          {
+            "i": 6,
+            "y": 61,
+            "texto": "A",
+            "lado": "i"
+          },
+          {
+            "i": 7,
+            "y": 65,
+            "texto": "B",
+            "lado": "d"
+          },
+          {
+            "i": 8,
+            "y": 56,
+            "texto": "C",
+            "lado": "i"
+          }
+        ],
+        "zonas": [
+          {
+            "i1": 0,
+            "i2": 5,
+            "texto": "Impulso"
+          },
+          {
+            "i1": 6,
+            "i2": 8,
+            "texto": "Corrección"
+          }
+        ],
+        "h": 210
+      }
+    },
+    {
+      "id": "g2",
+      "titulo": "Las tres reglas",
+      "texto": "Nunca se rompen: la onda 2 no baja del inicio de la 1; la 3 nunca es la más corta de las tres de impulso; la 4 no entra en el terreno de la 1. Si se rompe una, el recuento está mal.",
+      "ejemplo": "Con la onda 1 de 40 a 52 €, una bajada a 50,80 € en la onda 4 invalida el recuento.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Ondas 1 a 5 con los dos niveles de las reglas: el inicio de la onda 1, que la onda 2 no puede perder, y el techo de la onda 1, que la onda 4 no puede perforar.",
+        "series": [
+          {
+            "data": [40,52,44.6,64,57,68],
+            "tono": "sel"
+          }
+        ],
+        "margen": 150,
+        "lineas": [
+          {
+            "y": 52,
+            "texto": "Techo de la onda 1",
+            "tono": "acc"
+          },
+          {
+            "y": 40,
+            "texto": "Inicio de la onda 1",
+            "tono": "dn"
+          }
+        ]
+      }
+    },
+    {
+      "id": "g3",
+      "titulo": "Fibonacci",
+      "texto": "La onda 2 suele retroceder entre el 50 % y el 61,8 % de la 1, y la 4, en torno al 38,2 % de la 3. La onda 3 mide a menudo 1,618 veces la 1. Son referencias habituales, no reglas.",
+      "ejemplo": "Onda 1 de 12 €: un retroceso del 61,8 % la lleva a 44,58 €, y una onda 3 de 1,618 veces mide 19,42 €.",
+      "figura": {
+        "type": "curvas",
+        "alt": "La onda 2 retrocede el 61,8 % de la onda 1 hasta 44,58 € y la onda 3 mide 1,618 veces la onda 1, hasta 64 €.",
+        "series": [
+          {
+            "data": [40,52,44.58,64],
+            "tono": "sel"
+          }
+        ],
+        "margen": 150,
+        "lineas": [
+          {
+            "y": 44.58,
+            "texto": "Retroceso del 61,8 %",
+            "tono": "acc"
+          },
+          {
+            "y": 64,
+            "texto": "Onda 3: 1,618 × onda 1",
+            "tono": "up"
+          }
+        ]
+      }
+    },
+    {
+      "id": "g4",
+      "titulo": "Operar con Elliott",
+      "texto": "Dos analistas pueden contar el mismo gráfico de forma distinta. Úsalo como escenario: el nivel que invalida el recuento es tu stop y el objetivo de Fibonacci, tu salida parcial. Si el precio rompe el nivel, cambias de escenario.",
+      "ejemplo": "Compra a 47 € con el stop bajo 40 € y objetivo en 64,02 €: unos 2,4R."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "el1",
+      "title": "Las ondas y sus reglas",
+      "ex": [
+        {
+          "id": "el1-1",
+          "t": "choice",
+          "q": "¿Cuál de estas es una de las tres reglas de Elliott que nunca se rompen?",
+          "opts": [
+            "La onda 5 es siempre la más larga de las tres",
+            "La onda 4 retrocede siempre un 61,8 %",
+            "La onda 2 no baja del inicio de la onda 1",
+            "La onda 3 dura más sesiones que las demás"
+          ],
+          "a": 2,
+          "why": "Las tres reglas firmes: la onda 2 no baja del inicio de la 1, la 3 nunca es la más corta de las de impulso y la 4 no entra en el terreno de la 1. Lo demás son tendencias habituales, no reglas.",
+          "guia": "g2",
+          "porque": [
+            "Es al revés: la que nunca puede ser la más corta es la onda 3; la 5 a menudo es la más débil.",
+            "El 61,8 % es un retroceso habitual de la onda 2; la 4 suele quedarse en torno al 38,2 %, y ninguno es obligatorio.",
+            null,
+            "La regla habla de longitud en precio, no de duración: la onda 3 nunca es la más corta."
+          ]
+        },
+        {
+          "id": "el1-2",
+          "t": "num",
+          "q": "La onda 1 sube de 40,00 a 52,00 € y la onda 2 baja hasta 44,60 €. ¿Qué porcentaje de la onda 1 ha retrocedido? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 61.7,
+          "why": "(52,00 − 44,60) ÷ (52,00 − 40,00) = 7,40 ÷ 12,00 = 61,7 %: muy cerca del 61,8 % de Fibonacci, el retroceso más habitual de una onda 2. Mientras no baje de 40,00 €, el recuento sigue en pie.",
+          "tol": 0.06,
+          "guia": "g3"
+        },
+        {
+          "id": "el1-3",
+          "t": "num",
+          "q": "Con esa onda 1 de 12,00 € y la onda 2 terminada en 44,60 €, ¿dónde acabaría una onda 3 que midiera 1,618 veces la onda 1?",
+          "unit": "€",
+          "a": 64.02,
+          "why": "1,618 × 12,00 = 19,42 €; 44,60 + 19,42 = 64,02 €. Es un objetivo de referencia para vender una parte, no un precio garantizado.",
+          "tol": 0.011,
+          "guia": "g3"
+        },
+        {
+          "id": "el1-4",
+          "t": "match",
+          "q": "Empareja cada onda con lo que suele caracterizarla.",
+          "pairs": [
+            [
+              "Onda 1",
+              "Arranca desde un suelo; casi nadie se lo cree"
+            ],
+            [
+              "Onda 3",
+              "Nunca es la más corta; suele traer más volumen"
+            ],
+            [
+              "Onda 5",
+              "Último impulso, a menudo con menos fuerza"
+            ],
+            [
+              "Onda C",
+              "Cierra la corrección de tres tramos"
+            ]
+          ],
+          "why": "Las ondas 1, 3 y 5 impulsan; la 3 suele ser la más fuerte y la 5 avanza a menudo con menos volumen. Tras ellas llega la corrección A-B-C, que termina con la C.",
+          "guia": "g1"
+        }
+      ],
+      "ultimo": 4
+    },
+    {
+      "id": "el2",
+      "title": "Operar con Elliott",
+      "ex": [
+        {
+          "id": "el2-1",
+          "t": "choice",
+          "q": "Cuentas la onda 1 de 40,00 a 52,00 € y crees que la onda 2 ha terminado en 44,60 €. ¿Qué nivel invalida ese recuento?",
+          "opts": [
+            "44,60 €, el final de la onda 2",
+            "52,00 €, el final de la onda 1",
+            "48,30 €, la mitad del retroceso",
+            "40,00 €, el inicio de la onda 1"
+          ],
+          "a": 3,
+          "why": "Si el precio baja de 40,00 €, la onda 2 habría retrocedido más del 100 % de la 1, y eso rompe una regla. Ahí va el stop: cualquier precio por encima sigue siendo compatible con el recuento.",
+          "guia": "g2",
+          "porque": [
+            "Bajar de 44,60 € solo alarga la onda 2: el recuento sigue en pie mientras no pierda 40,00 €.",
+            "Superar 52,00 € confirma la onda 3; no invalida nada.",
+            "La mitad del retroceso no tiene ningún papel en las reglas de Elliott.",
+            null
+          ]
+        },
+        {
+          "id": "el2-2",
+          "t": "num",
+          "q": "Compras a 47,00 € con el stop en 39,90 €, justo bajo el inicio de la onda 1, y el objetivo de la onda 3 en 64,02 €. ¿Cuántos R vale el objetivo? Redondea a 1 decimal.",
+          "unit": "R",
+          "a": 2.4,
+          "why": "Riesgo: 47,00 − 39,90 = 7,10 €. Recorrido: 64,02 − 47,00 = 17,02 €. 17,02 ÷ 7,10 = 2,4R: compensa el riesgo aunque el stop de Elliott quede lejos.",
+          "tol": 0.06,
+          "guia": "g4"
+        },
+        {
+          "id": "el2-3",
+          "t": "choice",
+          "q": "La onda 1 llegó a 52,00 €. En lo que parecía la onda 4, el precio baja hasta 50,80 €. ¿Qué concluyes?",
+          "opts": [
+            "Es una onda 4 profunda: buena compra",
+            "El recuento no vale: hay que revisarlo",
+            "La onda 5 será más larga de lo normal",
+            "Nada: la regla solo vale en semanal"
+          ],
+          "a": 1,
+          "why": "La onda 4 no puede entrar en el terreno de la onda 1, que acabó en 52,00 €. Al bajar a 50,80 €, lo que contabas como ondas 3 y 4 no lo era: replantea el escenario antes de operar.",
+          "guia": "g2",
+          "porque": [
+            "Bajar a 50,80 € rompe una regla: no es una onda 4 válida, así que no hay base para comprar.",
+            null,
+            "Con la regla rota no hay recuento que proyectar: esa onda 5 no existe.",
+            "Las reglas valen en cualquier temporalidad: intradía, diario o semanal."
+          ]
+        },
+        {
+          "id": "el2-4",
+          "t": "choice",
+          "q": "Dos analistas cuentan las ondas del mismo gráfico de forma distinta. ¿Cómo usas Elliott en tus operaciones?",
+          "opts": [
+            "Como una predicción exacta del objetivo",
+            "Solo cuando todos los recuentos coinciden",
+            "Como escenario con nivel de invalidación",
+            "Nunca: si es subjetivo, no sirve de nada"
+          ],
+          "a": 2,
+          "why": "Elliott es subjetivo: lo útil es el nivel que invalida tu recuento, que te da el stop, y los objetivos de Fibonacci, que te dan salidas parciales. Si el precio lo invalida, cambias de escenario.",
+          "guia": "g4",
+          "porque": [
+            "Los objetivos de Fibonacci son referencias habituales, no precios exactos: el precio puede quedarse corto o pasarse.",
+            "Casi nunca coinciden todos: esperar a eso es no operarlo nunca.",
+            null,
+            "Aunque el recuento sea subjetivo, el nivel de invalidación es objetivo y sirve para colocar el stop."
+          ]
+        }
+      ],
+      "ultimo": 4
+    }
+  ]
+}

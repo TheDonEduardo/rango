@@ -369,7 +369,8 @@ if (fs.existsSync(semPath)) {
   if (!T.homeHTML().includes('data-act="nivel"')) errs.push('la ruta técnica no ofrece la prueba de nivel');
   T.startNivel('tecnico');
   const run = T.getRun();
-  if (run.total !== 32 || run.lives !== 3 || app.innerHTML.includes('class="lives"')) errs.push('la prueba de nivel no tiene 32 preguntas sin vidas');
+  const nTec = 2 * new Set(T.FLAT.filter(l => l.kind === 'lesson' && (l.unit.track || 'tecnico') === 'tecnico').map(l => l.unit.id)).size;
+  if (run.total !== nTec || run.lives !== 3 || app.innerHTML.includes('class="lives"')) errs.push(`la prueba de nivel no tiene ${nTec} preguntas (2 por unidad) sin vidas`);
   for (let k = 0; k < 4; k++) { const ex = T.getRun().queue[0]; give(ex, right(ex)); T.check(); T.next(); }
   { const ex = T.getRun().queue[0]; give(ex, wrong(ex)); T.check(); T.next(); }
   const tec = units.filter(u => (u.track || 'tecnico') === 'tecnico');

@@ -444,5 +444,16 @@
  {
   "termino": "esperanza",
   "d": "Lo que gana o pierde un sistema por operación de media, en R o en %."
+ },
+ {
+  "termino": "ondas de Elliott",
+  "alias": [
+   "Elliott"
+  ],
+  "d": "Forma de ordenar una tendencia en cinco ondas a favor y tres en contra (A, B y C), con tres reglas que no se rompen. Es subjetiva: sirve para plantear escenarios con un nivel que los invalida."
+ },
+ {
+  "termino": "Fibonacci",
+  "d": "Proporciones (38,2 %, 50 %, 61,8 % o 1,618) que se usan para estimar hasta dónde retrocede o avanza una onda. Son referencias habituales, no reglas."
  }
 ]
