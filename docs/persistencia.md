@@ -1,5 +1,16 @@
 # Persistencia real: opciones y recomendación
 
+**Estado: hecho en código, a falta del proyecto de Supabase.** `src/sync.js` (cuentas con enlace mágico, fusión y sincronización) y `docs/supabase.sql` (tabla `progreso`, seguridad por fila y `borrar_cuenta()`). Para activarlo:
+
+1. Crea un proyecto en supabase.com, en la región de Frankfurt.
+2. En el editor SQL, ejecuta `docs/supabase.sql`.
+3. En Authentication → URL Configuration, pon la dirección donde publiques Rango como «Site URL» y añádela a «Redirect URLs».
+4. Copia la URL del proyecto y la clave «anon» (Project Settings → API) en `SUPABASE_URL` y `SUPABASE_ANON` de `src/config.js`. La clave «service_role» no va nunca en la app ni en el repositorio.
+5. Personaliza el correo del enlace en Authentication → Email Templates (en español) y, antes de abrirlo al público, configura un SMTP propio: el de Supabase solo envía unos pocos correos por hora.
+6. Publica la política de privacidad (la cuenta guarda el correo y el progreso).
+
+Pendiente: avisos de racha (web push), que necesitan una función programada en el servidor.
+
 Estado actual: todo el progreso (XP, racha, lecciones hechas, repaso espaciado) vive en `localStorage` (`rango.v1`). Se pierde al borrar los datos del navegador o cambiar de dispositivo, y no permite avisos de racha.
 
 ## Qué necesita Rango

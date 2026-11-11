@@ -5,7 +5,7 @@ import {FLAT,EXBYID,trackOf} from './content.js';
 // Versión del formato guardado. Cada cambio de formato añade un paso a MIGRAR (de la versión n a la n+1),
 // así el progreso de quien ya usa la app se convierte en vez de perderse.
 export const STATE_V=2;
-export const DEF=()=>({v:STATE_V,xp:0,streak:0,last:null,day:null,dayXp:0,done:{},all:false,track:'basico',skipBasics:false,legal:0,srs:{},sim:{},calc:null,stats:{ex:{},min:0},guias:{},aprendidos:{},dominadas:{},pruebas:{},meta:40,protector:0,objetivo:null,medir:false,reto:null});
+export const DEF=()=>({v:STATE_V,xp:0,streak:0,last:null,day:null,dayXp:0,done:{},all:false,track:'basico',skipBasics:false,legal:0,srs:{},sim:{},calc:null,stats:{ex:{},min:0},guias:{},aprendidos:{},dominadas:{},pruebas:{},meta:40,protector:0,objetivo:null,medir:false,reto:null,mod:0});
 const MIGRAR={
   // 1 → 2: el repaso espaciado identificaba los ejercicios por posición («lección#índice», desde 0);
   // ahora cada ejercicio tiene un id estable («lección-n», desde 1).
@@ -17,13 +17,15 @@ export function migrar(j){
   j.v=STATE_V;return j;
 }
 // Estado completo a partir de lo guardado (cualquier versión): rellena lo que falte con los valores por defecto.
-const completar=j=>{const s=Object.assign(DEF(),migrar(j));s.stats=Object.assign({ex:{},min:0},s.stats);return s};
+export const completar=j=>{const s=Object.assign(DEF(),migrar(j));s.stats=Object.assign({ex:{},min:0},s.stats);return s};
 function load(){
   try{const j=JSON.parse(localStorage.getItem(KEY));if(j&&typeof j==='object')return completar(j)}catch(e){}
   return DEF();
 }
 export let S=load();
-export function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+// alGuardar: funciones que se avisan tras cada guardado (la sincronización con la cuenta, si está activa).
+export const alGuardar=new Set();
+export function save(){S.mod=Date.now();try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}alGuardar.forEach(f=>f())}
 export function resetState(){S=DEF();save()}
 
 // Copia de seguridad: archivo JSON con el estado y su versión. Se puede recuperar en otro dispositivo.

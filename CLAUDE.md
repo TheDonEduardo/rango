@@ -26,6 +26,7 @@ src/config.js           configuración del despliegue: CONTACTO (correo de «¿V
                         LISTA_ESPERA (formulario de la lista de espera) y MEDICION_URL (eventos anónimos); vacíos = desactivados
 src/compartir.js        imagen de logro (canvas 1080×1080) para compartir o descargar
 src/medicion.js         medir(evento, datos): eventos anónimos, solo con MEDICION_URL y si el usuario lo activa (S.medir)
+src/sync.js             cuentas (enlace mágico) y sincronización con Supabase por REST; solo con SUPABASE_URL y SUPABASE_ANON
 bienvenida.html         página de presentación independiente de la app, con lista de espera configurable
 src/drag.js             líneas arrastrables (ejercicio plan y Operación de la semana)
 src/exercises/          un archivo por tipo de ejercicio + index.js (registro TIPOS y su interfaz)
@@ -126,7 +127,7 @@ Sistema de tokens en `src/styles.css` (`:root`, con variante oscura por `prefers
 - Un fallo reencola el ejercicio al final; la lección solo termina con todos acertados.
 - XP: 10 por acierto a la primera + 10 de bonus sin fallos.
 - La racha cuenta días naturales en la zona horaria del navegador.
-- Sin cuentas, sin sincronización, sin ligas.
+- Cuentas y sincronización opcionales (ver «Cuentas» más abajo); sin ligas.
 - Aviso legal: se acepta en el primer uso (`S.legal`, versión `LEGAL_V` en app.js; súbela si cambia el texto) y queda enlazado en el pie del inicio.
 - Repaso espaciado (`S.srs`): cada ejercicio fallado a la primera vuelve al día siguiente; cada acierto en el «Repaso del día» lo aplaza 3, 7 y 14 días y luego sale de la lista; un fallo lo reinicia. Máximo 10 por sesión; no suma lección completada. Los ejercicios se identifican por su `id` fijo. Los casos reales no entran en el repaso.
 - Test de nivel (`S.placement`): se ofrece en Básico a quien no ha hecho ninguna lección. 12 preguntas (`PLACEMENT` en content.js: dos ids de ejercicio por unidad obligatoria de Básico; si añades una unidad obligatoria, añade dos de sus ejercicios). Sin vidas ni repaso espaciado. Cada unidad con sus dos preguntas acertadas queda completada (`{acc:1,test:true}`); con `TEST_PASS` (10) aciertos o más se abren Técnico y Fundamental.
@@ -146,6 +147,7 @@ Sistema de tokens en `src/styles.css` (`:root`, con variante oscura por `prefers
 - Casos reales de Técnico (`casos_tecnicos()`, con las velas diarias de 2 años de cada valor): distancia a la media de 150 sesiones y su pendiente en 20 sesiones (t1), distancia al máximo y al mínimo de cierre de 52 semanas frente a los umbrales de Minervini (t2), stop a 2 ATR (r1; ATR simple de 14 sesiones), acciones con 500 de riesgo y ese stop, redondeando hacia abajo (r2), cambio de la línea RS frente al S&P 500 en 63 sesiones (rs1) y mayor hueco al alza del último año, con si se cerró después (g2). Solo cifras y comparaciones con umbrales: nunca se dice en qué fase está ni si hay que comprar.
 - Estadísticas (`S.stats`, vista `stats`, botón de barras en la cabecera): `ex[id] = {n, f, u}` (veces respondido, fallos a la primera, último primer intento correcto) y `min` (minutos de estudio, máximo 30 por sesión). «Puntos débiles» = ejercicios con `u: 0`, ordenados por fallos; «Practicar» lanza hasta 10 (sin guardar lección; acertar los saca de la lista y fallar los manda también al repaso).
 - Reto del día (`retoHoy()` en state.js, `S.reto = {fecha, ok}`): una pregunta de elegir o calcular de las lecciones completadas (de todas las rutas), elegida con la fecha, así es la misma todo el día sin guardarla. 20 XP si se acierta a la primera (10 + 10 de bonus, como una lección de un ejercicio); fallarla la manda al repaso. No cuenta como lección; abandonarlo no lo marca como hecho.
+- Cuentas (`src/sync.js`, desactivadas mientras `SUPABASE_URL`/`SUPABASE_ANON` estén vacías; pasos en docs/persistencia.md y SQL en docs/supabase.sql): sección «Tu cuenta» en estadísticas con enlace mágico por correo; al volver, la sesión llega en el fragmento de la dirección y se guarda en `rango.sesion`. Al arrancar con sesión se baja el estado, se fusiona con el local (`fusionar`: unión de lecciones con la mejor precisión, mayor XP, repaso por paso más avanzado, aprendidos ganan, estadísticas con más intentos, racha del último día practicado, preferencias del estado modificado más recientemente, `S.mod`) y se sube; después, cada `save()` sube el estado con 5 s de espera. Una copia del servidor de una versión más nueva no se aplica. «Borrar cuenta» llama a `borrar_cuenta()` y deja el progreso local. Sus pruebas, con un servidor simulado, están en el test.
 - Botones «Desbloquear todo» y «Reiniciar progreso»: solo aparecen con `?dev` en la dirección.
 
 ## Estado y tareas pendientes
@@ -158,7 +160,7 @@ Hecho: cuatro rutas (16 unidades en Básico, Pasiva y Fundamental; 17 en Técnic
 - Técnico (casos reales en t1, t2, r1, r2, rs1 y g2): velas, tendencia, riesgo, catalizadores binarios, Wyckoff/VSA, VCP, salidas escalonadas, riesgo de cartera, cortos y Fase 4, mercado general, fuerza relativa, techos y temporalidades, grupos y gaps, ondas de Elliott (cinco ondas y A-B-C, tres reglas, Fibonacci y el nivel de invalidación como stop), psicología y diario, opciones para cubrir, backtesting.
 
 Pendiente (por orden sugerido):
-1. Decisiones del propietario: persistencia real con cuentas (comparativa y recomendación, Supabase, en `docs/persistencia.md`; se añade `src/sync.js` sin cambiar de stack) y, después, monetización. Los avisos de racha (push) dependen del servidor.
+1. Decisiones del propietario: activar las cuentas (ya programadas: crear el proyecto de Supabase y seguir los pasos de `docs/persistencia.md`) y, después, monetización. Los avisos de racha (push) necesitan una función programada en el servidor.
 2. Antes de cobrar: datos con licencia en lugar de Yahoo Finance (`docs/publicar.md`) y revisión del aviso legal por un profesional.
 3. Publicación: repositorio propio, dominio, Google Play (TWA) y App Store (Capacitor), en `docs/publicar.md`.
 4. Mantenimiento anual: el test avisa del contenido con `revisar` vencido (fiscalidad, FOGAIN, SOCIMI, SPIVA).

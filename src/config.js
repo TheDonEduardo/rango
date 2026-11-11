@@ -7,3 +7,7 @@ export const CONTACTO='';
 export const LISTA_ESPERA='';
 // MEDICION_URL: dirección que recibe los eventos de uso anónimos (ver src/medicion.js). Vacío: no se mide nada.
 export const MEDICION_URL='';
+// SUPABASE_URL y SUPABASE_ANON: proyecto de Supabase para las cuentas y la sincronización (ver docs/persistencia.md
+// y docs/supabase.sql). La clave «anon» es pública por diseño; la de servicio no va nunca aquí. Vacías: sin cuentas.
+export const SUPABASE_URL='';
+export const SUPABASE_ANON='';

@@ -12,7 +12,7 @@ const app = el();
 const def = (k, v) => Object.defineProperty(globalThis, k, {value: v, configurable: true, writable: true});
 def('document', {getElementById: id => id === 'app' ? app : el(), addEventListener(){}, querySelector(){return null}});
 def('window', {scrollTo(){}, scrollY: 0});
-def('localStorage', {getItem: k => store[k] ?? null, setItem: (k, v) => { store[k] = v; }});
+def('localStorage', {getItem: k => store[k] ?? null, setItem: (k, v) => { store[k] = v; }, removeItem: k => { delete store[k]; }});
 def('fetch', async u => ({json: async () => JSON.parse(fs.readFileSync(fileURLToPath(u), 'utf8'))}));
 
 const errs = [];
@@ -546,6 +546,60 @@ for (const u of units) {
   }
 }
 if (caducados.length) console.warn('AVISO: contenido pendiente de revisar (normas o datos que pueden haber cambiado):\n- ' + caducados.join('\n- '));
+
+// Cuentas (src/sync.js): sin proyecto configurado no se ofrece nada; la fusión no pierde progreso de ningún
+// dispositivo; y el flujo completo funciona contra un servidor simulado (enlace, retorno, bajada, fusión y subida).
+{
+  T.openStats(); if (app.innerHTML.includes('cuenta-email')) errs.push('se ofrece la cuenta sin Supabase configurado'); T.goHome();
+  const a = {xp: 300, mod: 2, done: {x1: {acc: 0.5}, x2: {acc: 1}}, srs: {e1: {step: 1, due: '2026-11-20'}, e2: {step: 0, due: '2026-11-12'}},
+    aprendidos: {e3: '2026-10-01'}, stats: {ex: {e1: {n: 3, f: 1, u: 1}}, min: 10}, guias: {g: 1}, dominadas: {}, pruebas: {}, sim: {},
+    streak: 4, last: '2026-11-10', meta: 80, track: 'tecnico'};
+  const b = {xp: 500, mod: 1, done: {x1: {acc: 1}, x3: {acc: 0.75}}, srs: {e1: {step: 2, due: '2026-11-25'}, e3: {step: 0, due: '2026-11-12'}},
+    aprendidos: {}, stats: {ex: {e1: {n: 5, f: 2, u: 1}, e9: {n: 1, f: 1, u: 0}}, min: 30}, guias: {h: 1}, dominadas: {u: '2026-11-01'}, pruebas: {}, sim: {},
+    streak: 9, last: '2026-11-09', meta: 20, track: 'basico', skipBasics: true};
+  const f = T.fusionar(a, b);
+  if (f.xp !== 500 || f.done.x1.acc !== 1 || !f.done.x2 || !f.done.x3) errs.push('fusión: se pierden lecciones o XP');
+  if (f.srs.e1.step !== 2 || !f.srs.e2 || f.srs.e3) errs.push('fusión: repaso mal combinado (o un aprendido vuelve al repaso)');
+  if (f.stats.ex.e1.n !== 5 || !f.stats.ex.e9 || f.stats.min !== 30) errs.push('fusión: estadísticas mal combinadas');
+  if (!f.guias.g || !f.guias.h || !f.dominadas.u || !f.skipBasics) errs.push('fusión: se pierden guías, unidades dominadas o el salto de básicos');
+  if (f.streak !== 4 || f.last !== '2026-11-10' || f.meta !== 80 || f.track !== 'tecnico') errs.push('fusión: racha o preferencias del dispositivo equivocado');
+  const canon = o => JSON.stringify(o, (k, v) => v && typeof v === 'object' && !Array.isArray(v) ? Object.fromEntries(Object.entries(v).sort()) : v);
+  if (canon(T.fusionar(b, a)) !== canon(f)) errs.push('fusión: el resultado depende del orden');
+
+  // Servidor simulado
+  const st = T.getState(), copia = JSON.parse(JSON.stringify(st)), llamadas = [];
+  let guardado = {v: st.v, xp: 99999, done: {zz: {acc: 1}}, srs: {}, mod: 1};
+  const fetchAntes = globalThis.fetch;
+  globalThis.fetch = async (url, o = {}) => {
+    llamadas.push([o.method || 'GET', url.replace('https://x.supabase.co', ''), o.headers]);
+    const ok = (d, s = 200) => ({ok: s < 300, status: s, text: async () => d == null ? '' : JSON.stringify(d)});
+    if (url.includes('/auth/v1/otp')) return ok({});
+    if (url.includes('/auth/v1/user')) return o.headers.Authorization === 'Bearer T1' ? ok({id: 'u1', email: 'a@b.es'}) : ok(null, 401);
+    if (url.includes('/rest/v1/progreso?select')) return ok(guardado ? [{estado: guardado}] : []);
+    if (url.endsWith('/rest/v1/progreso')) { guardado = JSON.parse(o.body).estado; return ok(null, 201); }
+    if (url.includes('/rpc/borrar_cuenta')) { guardado = null; return ok(null, 204); }
+    if (url.includes('/auth/v1/logout')) return ok(null, 204);
+    return ok(null, 404);
+  };
+  T.configurar({url: 'https://x.supabase.co/', anon: 'ANON'});
+  await T.enviarEnlace('a@b.es', 'https://rango.app/');
+  if (!llamadas[0][1].startsWith('/auth/v1/otp?redirect_to=https%3A%2F%2Frango.app%2F') || llamadas[0][2].apikey !== 'ANON') errs.push('cuenta: el enlace no se pide bien');
+  let limpio = false;
+  if (!(await T.leerRetorno('#access_token=T1&refresh_token=R1&expires_in=3600&token_type=bearer', () => { limpio = true; })) || !limpio || T.sesion().user.id !== 'u1') errs.push('cuenta: no se lee la sesión al volver del correo');
+  if (await T.leerRetorno('#otra=cosa')) errs.push('cuenta: un fragmento cualquiera abre sesión');
+  const xpLocal = st.xp, cambio = await T.sincronizar(), S2 = T.getState();
+  if (!cambio || S2.xp !== 99999 || !S2.done.zz || Object.keys(copia.done).some(k => !S2.done[k])) errs.push('cuenta: la sincronización no fusiona lo local con lo guardado');
+  if (!guardado || guardado.xp !== 99999 || !guardado.done.zz) errs.push('cuenta: no se sube el estado fusionado');
+  const sube = llamadas.find(l => l[1] === '/rest/v1/progreso');
+  if (!sube || sube[2].Authorization !== 'Bearer T1' || sube[2].Prefer !== 'resolution=merge-duplicates') errs.push('cuenta: la subida no va autenticada o no actualiza la fila');
+  T.openStats(); if (!app.innerHTML.includes('a@b.es') || !app.innerHTML.includes('data-act="cuentacerrar"')) errs.push('cuenta: la pantalla no muestra la sesión'); T.goHome();
+  guardado = {v: 999, xp: 1};
+  if (await T.sincronizar() || T.getState().xp === 1) errs.push('cuenta: se aplica una copia de una versión más nueva');
+  await T.borrarCuenta();
+  if (T.sesion() || guardado !== null || T.getState().xp !== 99999) errs.push('cuenta: el borrado no cierra la sesión o borra el progreso local');
+  // Deja el estado como estaba para el resto del test.
+  T.importar(copia); st.xp = xpLocal; T.configurar({url: '', anon: ''}); globalThis.fetch = fetchAntes;
+}
 
 if (errs.length) { console.error('FALLOS:\n- ' + errs.join('\n- ')); process.exit(1); }
 const nc = casos ? Object.values(casos.ex).reduce((n, l) => n + l.length, 0) : 0;

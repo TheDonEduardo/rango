@@ -8,6 +8,7 @@ import {setPlanCtx} from './drag.js';
 import {TIPOS} from './exercises/index.js';
 import {ordenFijo} from './exercises/choice.js';
 import {CONTACTO} from './config.js';
+import {cuentaActiva,enviarEnlace,leerRetorno,sincronizar,cerrarSesion,borrarCuenta,sesion,fusionar,configurar} from './sync.js';
 import {compartirLogro} from './compartir.js';
 import {medir} from './medicion.js';
 import {homeHTML} from './views/home.js';
@@ -228,6 +229,16 @@ const ACCIONES={
   test(){ses.homeY=0;startRun(TEST_L)},
   nivel(b){ses.homeY=0;startRun({id:'nivel-'+b.dataset.track,title:t.pruebaNivel,kind:'nivel',track:b.dataset.track})},
   medir(b){S.medir=b.dataset.v==='1';save();render()},
+  cuentaenviar(){
+    const i=$app.querySelector('#cuenta-email'),email=i?i.value.trim():'';
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){toast(t.cuentaMalCorreo);if(i)i.focus();return}
+    enviarEnlace(email,location.origin+location.pathname).then(()=>toast(t.cuentaEnviado),()=>toast(t.cuentaError));
+  },
+  cuentacerrar(){cerrarSesion().then(()=>{toast(t.cuentaCerrada);render()})},
+  cuentaborrar(){
+    if(!ses.borrarArm){ses.borrarArm=true;render();setTimeout(()=>{if(ses.borrarArm){ses.borrarArm=false;if(ses.view==='stats')render()}},4000);return}
+    ses.borrarArm=false;borrarCuenta().then(()=>{toast(t.cuentaBorrada);render()},()=>{toast(t.cuentaError);render()});
+  },
   meta(b){S.meta=+b.dataset.m;save();render()},
   objetivo(b){S.objetivo=b.dataset.track;S.track=b.dataset.track;save();ses.homeY=0;render()},
   noobjetivo(){S.objetivo='ninguno';save();render()},
@@ -302,6 +313,15 @@ $app.addEventListener('pointerup',e=>{
 simRecord();
 render();
 
+// Cuenta: al volver del enlace del correo se guarda la sesión; con sesión, se fusiona con lo guardado en el servidor.
+// Solo se vuelve a dibujar si cambió algo y no hay una lección en curso.
+const redibujar=c=>{if(c&&['home','stats'].includes(ses.view))render()};
+if(cuentaActiva()&&typeof location!=='undefined'){
+  leerRetorno(location.hash,()=>history.replaceState(null,'',location.pathname+location.search))
+    .then(nueva=>{if(nueva)toast(t.cuentaHecha);return sesion()?sincronizar():false})
+    .then(c=>redibujar(c||ses.view==='stats'),()=>{if(ses.view==='stats')render()});
+}
+
 // PWA: el service worker solo se registra servido por http(s) (no en file:// ni en los tests).
 if(typeof window.addEventListener==='function'){
   window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();ses.installEvt=e;if(ses.view==='home'){ses.homeY=window.scrollY;render()}});
@@ -316,5 +336,5 @@ export const api={sumarRacha,glos,openGlosario:()=>{ses.view='glosario';render()
   openCalc:()=>{ses.view='calc';render()},openSim:()=>{ses.simDraft=null;ses.view='sim';render()},openSimRes:()=>{ses.view='simres';render()},
   openStats:()=>{ses.view='stats';render()},act:(a,ds={})=>ACCIONES[a]({dataset:ds}),getView:()=>ses.view,startWeak:()=>startRun(STATS_L),
   simDraftSet:p=>{ses.simDraft=p},simSave,goHome:()=>{ses.view='home';render()},startTest:()=>startRun(TEST_L),startNivel:tr=>startRun({id:'nivel-'+tr,title:t.pruebaNivel,kind:'nivel',track:tr}),srsDue,
-  acceptLegal:()=>{S.legal=LEGAL_V},startSrs:()=>startRun(SRS_L),startReto:()=>startRun(RETO_L),retoHoy,ordenFijo,setTrack:id=>{S.track=id},skipBasics:()=>{S.skipBasics=true},
+  acceptLegal:()=>{S.legal=LEGAL_V},startSrs:()=>startRun(SRS_L),startReto:()=>startRun(RETO_L),retoHoy,ordenFijo,fusionar,configurar,enviarEnlace,leerRetorno,sincronizar,cerrarSesion,borrarCuenta,sesion,setTrack:id=>{S.track=id},skipBasics:()=>{S.skipBasics=true},
   homeHTML,startRun,lessonHTML,check,next,resultHTML,failHTML,render,getRun:()=>ses.run,setSel:v=>{ses.run.sel=v},setVal:v=>{ses.run.val=v},getState:()=>S};

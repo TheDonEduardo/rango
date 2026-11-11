@@ -7,6 +7,7 @@ import {UNITS,FLAT,TRACKS,EXBYID,trackOf} from '../content.js';
 import {S,streakNow,SRS_MAX,srsResumen,META_OPC,PROTECTOR_MAX} from '../state.js';
 import {ses} from '../ui.js';
 import {medicionDisponible} from '../medicion.js';
+import {cuentaActiva,sesion,estadoCuenta} from '../sync.js';
 import {t} from '../textos.js';
 
 export const STATS_L={id:'weak',title:t.debilesTitulo,kind:'weak'};
@@ -22,6 +23,16 @@ export function flojos(n){
     .sort((a,b)=>b[1].f-a[1].f||b[1].f/b[1].n-a[1].f/a[1].n).slice(0,n).map(([id])=>EXBYID.get(id));
 }
 const dom=r=>UNITS.filter(u=>trackOf(u)===r&&S.dominadas[u.id]).length;
+// Cuenta (solo si config.js trae el proyecto de Supabase): acceso por enlace mágico, estado y baja.
+function cuentaHTML(){
+  if(!cuentaActiva())return '';
+  const s=sesion();
+  if(!s)return `<h2 class="sub">${t.cuentaTitulo}</h2><p class="note">${t.cuentaNota}</p>
+  <div class="row cuenta"><input type="email" id="cuenta-email" autocomplete="email" inputmode="email" aria-label="${t.cuentaEmail}" placeholder="${t.cuentaEmail}"><button class="btn primary" data-act="cuentaenviar">${t.cuentaEnviar}</button></div>`;
+  const h=estadoCuenta.ultima?estadoCuenta.ultima.toLocaleTimeString('es-ES',{hour:'2-digit',minute:'2-digit'}):null;
+  return `<h2 class="sub">${t.cuentaTitulo}</h2><p class="note">${t.cuentaConectado(esc(s.user.email))} ${estadoCuenta.error?t.cuentaError:h?t.cuentaSincronizado(h):t.cuentaPendiente}</p>
+  <div class="row cuenta"><button class="btn line" data-act="cuentacerrar">${t.cuentaCerrar}</button><button class="btn ghost" data-act="cuentaborrar">${ses.borrarArm?t.cuentaBorrarConfirma:t.cuentaBorrar}</button></div>`;
+}
 export function statsHTML(){
   const regs=Object.values(S.stats.ex),n=regs.reduce((a,r)=>a+r.n,0),f=regs.reduce((a,r)=>a+r.f,0);
   const rutas=TRACKS.map(ru=>{
@@ -44,7 +55,8 @@ export function statsHTML(){
   <h2 class="sub">${t.repasoTitulo}</h2><dl class="simk"><div><dt>${t.enRepaso}</dt><dd>${sr.enRepaso}</dd></div><div><dt>${t.aprendidosT}</dt><dd>${sr.aprendidos}</dd></div></dl><p class="note">${t.repasoNota}</p>
   <h2 class="sub">${t.puntosDebiles}</h2>${debiles}
   ${medicionDisponible()?`<h2 class="sub">${t.medicionTitulo}</h2><p class="note">${t.medicionNota}</p><button class="btn line" data-act="medir" data-v="${S.medir?0:1}" aria-pressed="${S.medir}">${S.medir?t.medicionQuitar:t.medicionActivar}</button>`:''}
-  <h2 class="sub">${t.copiaTitulo}</h2><p class="note">${t.copiaNota}</p>
+  ${cuentaHTML()}
+  <h2 class="sub">${t.copiaTitulo}</h2><p class="note">${sesion()?t.copiaNotaCuenta:t.copiaNota}</p>
   <div class="row copia"><button class="btn line" data-act="exportar">${t.copiaGuardar}</button><button class="btn line" data-act="importar">${t.copiaRecuperar}</button><input type="file" id="imp-file" accept="application/json,.json" hidden></div>
   ${ses.copia?`<div class="confirma" role="alert"><p>${t.copiaResumen(ses.copia.resumen.fecha,ses.copia.resumen.xp,ses.copia.resumen.lecciones)}</p><div class="row"><button class="btn primary" data-act="impok">${t.copiaSustituir}</button><button class="btn ghost" data-act="impno">${t.cancelar}</button></div></div>`:''}
   <p class="src">${t.statsNota}</p></div>

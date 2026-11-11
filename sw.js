@@ -19,6 +19,7 @@ const PRECACHE = [
   'src/util.js',
   'src/styles.css',
   'src/state.js',
+  'src/sync.js',
   'src/textos.js',
   'src/ui.js',
   'src/drag.js',
