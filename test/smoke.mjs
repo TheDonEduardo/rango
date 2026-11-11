@@ -137,6 +137,13 @@ for (const f of fs.readdirSync(path.join(root, 'src'), {recursive: true}).map(f 
 const man = JSON.parse(fs.readFileSync(path.join(root, 'manifest.webmanifest'), 'utf8'));
 for (const ic of man.icons) if (!fs.existsSync(path.join(root, ic.src))) errs.push('icono del manifiesto inexistente: ' + ic.src);
 if (!man.icons.some(i => i.purpose === 'maskable')) errs.push('falta icono maskable en el manifiesto');
+// Seguridad: las dos páginas llevan política de seguridad de contenido y ningún script en línea (los bloquearía).
+for (const f of ['index.html', 'bienvenida.html']) {
+  const h = fs.readFileSync(path.join(root, f), 'utf8');
+  if (!/http-equiv="Content-Security-Policy"[^>]*script-src 'self'/.test(h)) errs.push(f + ': falta la política de seguridad de contenido');
+  if (/<script(?![^>]*\bsrc=)[^>]*>/.test(h) || /\son\w+="/.test(h)) errs.push(f + ': script en línea o manejador en un atributo (la política de seguridad los bloquea)');
+  if (!h.includes('property="og:image"')) errs.push(f + ': faltan los metadatos para compartir el enlace');
+}
 // Fuentes propias: ninguna página pide recursos a Google (privacidad) y el service worker las precarga.
 for (const f of ['index.html', 'bienvenida.html', 'sw.js', 'src/styles.css']) if (/fonts\.(googleapis|gstatic)\.com/.test(fs.readFileSync(path.join(root, f), 'utf8'))) errs.push(f + ' sigue pidiendo fuentes a Google');
 for (const f of fs.readdirSync(path.join(root, 'fonts')).filter(f => /\.(woff2|css)$/.test(f))) if (!pre.includes('fonts/' + f)) errs.push('sw.js no precarga fonts/' + f);

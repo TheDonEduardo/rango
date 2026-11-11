@@ -6,6 +6,7 @@ export const CONTACTO='';
 // un formulario de Google…), para la lista de espera de bienvenida.html. Vacío: se usa CONTACTO o no se muestra.
 export const LISTA_ESPERA='';
 // MEDICION_URL: dirección que recibe los eventos de uso anónimos (ver src/medicion.js). Vacío: no se mide nada.
+// Si la pones, añade su dominio a «connect-src» de la política de seguridad (meta Content-Security-Policy de index.html).
 export const MEDICION_URL='';
 // SUPABASE_URL y SUPABASE_ANON: proyecto de Supabase para las cuentas y la sincronización (ver docs/persistencia.md
 // y docs/supabase.sql). La clave «anon» es pública por diseño; la de servicio no va nunca aquí. Vacías: sin cuentas.

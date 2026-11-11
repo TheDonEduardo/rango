@@ -8,6 +8,7 @@ const PRECACHE = [
   'index.html',
   'manifest.webmanifest',
   'src/app.js',
+  'src/bienvenida.js',
   'src/main.js',
   'src/charts.js',
   'src/compartir.js',

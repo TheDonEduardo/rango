@@ -39,9 +39,20 @@ function render(){
     else window.scrollTo(0,ses.homeY);
   }else window.scrollTo(0,0);
   const run=ses.run;
+  if(ses.view==='result')contar($app.querySelector('[data-cuenta]'));
   if(ses.view==='lesson'&&!run.checked){const T=TIPOS[run.queue[0].t];if(T.focus)T.focus()}
   // Guía: el foco va al botón principal, así el teclado y los lectores de pantalla siguen la tarjeta nueva.
   if(ses.view==='guia'){const b=$app.querySelector('.gnav .btn.primary');if(b&&b.focus)b.focus({preventScroll:true})}
+}
+// Resultado: los XP ganados suben de 0 a su valor en medio segundo (no con «reducir movimiento»).
+function contar(el){
+  if(!el||typeof requestAnimationFrame!=='function'||typeof matchMedia!=='function'||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  const fin=+el.dataset.cuenta,t0=performance.now(),paso=ahora=>{
+    if(!el.isConnected)return;
+    const k=Math.min(1,(ahora-t0)/500);el.textContent='+'+Math.round(fin*(1-(1-k)*(1-k)));
+    if(k<1)requestAnimationFrame(paso);
+  };
+  if(fin>0)requestAnimationFrame(paso);
 }
 const ir=v=>{if(ses.view==='home')ses.homeY=window.scrollY;ses.view=v;render()};
 
@@ -82,6 +93,7 @@ function check(){
     save();
   }
   if(!ok&&!esPrueba(run.L))run.lives--;
+  try{if(typeof navigator!=='undefined'&&navigator.vibrate)navigator.vibrate(ok?12:[30,50,30])}catch(e){}
   render();
 }
 function next(){
@@ -295,9 +307,19 @@ document.addEventListener('keydown',e=>{
   }
   if(ses.view!=='lesson')return;
   const el=e.target,run=ses.run,T=TIPOS[run.queue[0].t];
+  // Teclas 1-9: eligen la opción en esa posición (preguntas de elegir), sin estar escribiendo en un campo.
+  if(/^[1-9]$/.test(e.key)&&!run.checked&&!e.ctrlKey&&!e.metaKey&&!e.altKey&&!(el.closest&&el.closest('input,textarea'))){
+    const b=$app.querySelectorAll('.opts>.opt[data-act=pick]')[+e.key-1];
+    if(b){e.preventDefault();b.click()}
+    return;
+  }
   if((e.key==='Enter'||e.key===' ')&&el.closest&&el.closest('.cd[tabindex],.lv')&&!run.checked){e.preventDefault();if(T.svg)T.svg(el.closest('.cd,.lv'),run);return}
   // Enter mantenido (auto-repetición) no debe comprobar y saltar la explicación de un golpe.
-  if(e.key!=='Enter'||e.repeat||(el.closest&&el.closest('button')))return;
+  if(e.key!=='Enter'||e.repeat)return;
+  // Enter sobre la opción ya elegida la comprueba; sobre cualquier otro botón, hace lo que haga ese botón.
+  const opcion=el.closest&&el.closest('.opts>.opt[data-act=pick]'),elegida=opcion&&!run.checked&&+opcion.dataset.i===run.sel;
+  if(el.closest&&el.closest('button')&&!elegida)return;
+  if(elegida){e.preventDefault();check();return}
   if(run.checked){e.preventDefault();next()}
   else if(T.enter&&T.enter(el,run)){e.preventDefault();check()}
 });

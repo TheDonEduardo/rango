@@ -13,11 +13,12 @@ const DEV=typeof location!=='undefined'&&/[?&]dev\b/.test(location.search||'');
 
 export function homeHTML(){
   const st=statuses(),sk=streakNow(),dx=dayXpNow();
-  let h=`<header class="top"><h1 class="brand">${LOGO}<span>Rango</span></h1><div class="stats"><span class="chip fire" aria-label="${t.racha(sk)}">${ico('flame')}<b>${sk}</b></span><span class="chip xp" aria-label="${t.xpTotal(S.xp)}">${ico('bolt')}<b>${S.xp}</b></span><button class="chip vstat" data-act="stats" aria-label="${t.verProgreso}">${ico('bars')}</button></div></header><div class="home">`;
+  let h=`<header class="top"><h1 class="brand">${LOGO}<span>Rango</span></h1><div class="stats"><span class="chip fire" aria-label="${t.racha(sk)}">${ico('flame')}<b>${sk}</b></span><span class="chip xp" aria-label="${t.xpTotal(S.xp)}">${ico('bolt')}<b>${S.xp}</b></span><button class="chip vstat" data-act="stats" aria-label="${t.verProgreso}">${ico('bars')}</button></div></header><div class="home"><div class="lado">`;
   h+=`<nav class="tracks" aria-label="${t.ruta}">${TRACKS.map(r=>`<button data-act="track" data-track="${r.id}" aria-pressed="${S.track===r.id}">${r.title}</button>`).join('')}</nav>`;
   const TF=FLAT.filter(l=>trackOf(l.unit)===S.track);
   // Orden fijo: como mucho un aviso (objetivo, ruta cerrada, test o prueba de nivel), después «Hoy» y la herramienta de la ruta.
-  h+=avisoHTML(TF)+hoyHTML(st,TF,dx)+herramientaHTML();
+  // En escritorio, «lado» queda fijo a la izquierda y «camino» (las unidades) a la derecha; en móvil van seguidos.
+  h+=avisoHTML(TF)+hoyHTML(st,TF,dx)+herramientaHTML()+'</div><div class="camino">';
   UNITS.filter(u=>trackOf(u)===S.track).forEach(u=>{
     if(!u.lessons){
       h+=`<section class="unit soon"><div class="ban"><div><div class="u">${t.unidadN(u.n)}</div><h2>${u.title}</h2><p>${u.blurb}</p></div><span class="cnt">${t.proximamente}</span></div></section>`;
@@ -43,7 +44,7 @@ export function homeHTML(){
     h+='</div></section>';
   });
   if(S.track==='fundamental'&&CASOS)h+=`<p class="src">${t.fuenteCasos(esc(CASOS.fuente),esc(CASOS.fecha))}</p>`;
-  h+=`</div><footer class="foot-home"><p>${t.pie} <button class="link" data-act="legal">${t.avisoLegal}</button> · <button class="link" data-act="privacidad">${t.privacidad}</button> · <button class="link" data-act="glosario">${t.glosario}</button></p>${installHTML()}${DEV?`<div class="row"><button class="btn ghost" data-act="unlock">${S.all?t.rebloquear:t.desbloquear}</button><button class="btn ghost" data-act="reset">${ses.resetArm?t.reiniciarConfirma:t.reiniciar}</button></div>`:''}</footer>`;
+  h+=`</div></div><footer class="foot-home"><p>${t.pie} <button class="link" data-act="legal">${t.avisoLegal}</button> · <button class="link" data-act="privacidad">${t.privacidad}</button> · <button class="link" data-act="glosario">${t.glosario}</button></p>${installHTML()}${DEV?`<div class="row"><button class="btn ghost" data-act="unlock">${S.all?t.rebloquear:t.desbloquear}</button><button class="btn ghost" data-act="reset">${ses.resetArm?t.reiniciarConfirma:t.reiniciar}</button></div>`:''}</footer>`;
   return h;
 }
 

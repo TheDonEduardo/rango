@@ -124,7 +124,8 @@ async function auditar(b, url) {
   ];
   const resumen = {};
   for (const scheme of ['light', 'dark']) for (const [nom, st, ir] of pantallas) {
-    const p = await b.newPage({viewport: {width: 390, height: 844}, colorScheme: scheme});
+    // Sin animaciones: axe mediría el contraste a mitad de un fundido, no el estado final.
+    const p = await b.newPage({viewport: {width: 390, height: 844}, colorScheme: scheme, reducedMotion: 'reduce', bypassCSP: true});
     await p.goto(url);
     await p.evaluate(s => { localStorage.clear(); if (Object.keys(s).length) localStorage.setItem('rango.v1', JSON.stringify(s)); }, st);
     await p.reload(); await p.waitForSelector('#app *');
@@ -136,7 +137,7 @@ async function auditar(b, url) {
   }
   // Página de presentación (independiente de la app).
   for (const scheme of ['light', 'dark']) {
-    const p = await b.newPage({viewport: {width: 390, height: 844}, colorScheme: scheme});
+    const p = await b.newPage({viewport: {width: 390, height: 844}, colorScheme: scheme, bypassCSP: true});
     await p.goto(url + 'bienvenida.html'); await p.waitForSelector('h1'); await p.addScriptTag({content: AXE});
     const r = await p.evaluate(async () => (await axe.run(document, {runOnly: ['wcag2a', 'wcag2aa', 'wcag21aa', 'best-practice']})).violations.map(v => ({id: v.id, help: v.help, ej: v.nodes[0].target.join(' ')})));
     for (const v of r) (resumen[v.id] = resumen[v.id] || {help: v.help, donde: [], ej: v.ej}).donde.push(`bienvenida (${scheme})`);

@@ -20,6 +20,7 @@ export default {
     }).join('')+'</div>';
   },
   ready:(ex,run)=>run.sel!==null,
+  enter:(el,run)=>run.sel!==null,
   correct:(ex,run)=>run.sel===ex.a,
   answer:ex=>ex.opts[ex.a],
   // Por qué no es correcta la opción elegida (porque[i], null en la correcta), si el ejercicio lo trae.
