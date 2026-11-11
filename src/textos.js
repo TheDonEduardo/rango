@@ -87,6 +87,17 @@ export const t={
   sinVidas:'Sin vidas', sinVidasExplica:'Has agotado los 3 fallos de esta lección.',
   sinVidasNota:'Repasa las explicaciones y vuelve a intentarlo. Las preguntas se barajan de nuevo.', reintentar:'Reintentar lección',
 
+  // Política de privacidad (borrador: revísala con un profesional antes de publicar)
+  privacidad:'Privacidad', privTitulo:'Política de privacidad',
+  privTexto:[
+    '<b>Sin cuenta, tus datos no salen de tu dispositivo.</b> Tu progreso, tu racha y tus estadísticas se guardan solo en este navegador. Rango no usa cookies de terceros ni rastreadores, y la app no pide nada a otros servidores: hasta las fuentes van incluidas.',
+    '<b>Si creas una cuenta</b>, guardamos tu correo electrónico y tu progreso para sincronizarlo entre dispositivos. Se alojan en Supabase, en servidores de la Unión Europea (Fráncfort). Los usamos solo para darte ese servicio, que es la base legal del tratamiento, y los conservamos mientras tengas la cuenta. «Borrar cuenta», en Tu progreso, los elimina del servidor.',
+    '<b>Medición anónima</b>: solo si la activas en Tu progreso. Envía qué lecciones terminas o dejas a medias y qué preguntas fallas, sin tu nombre, tu correo ni ningún identificador. Puedes desactivarla cuando quieras.',
+    '<b>Avisos de errores</b>: si nos escribes desde «¿Ves un error?», recibimos lo que pongas en el mensaje y la dirección desde la que lo envías.',
+    '<b>Tus derechos</b>: puedes acceder a tus datos, corregirlos, borrarlos, llevártelos (Descargar copia, en Tu progreso) u oponerte a su uso. Si crees que no los tratamos bien, puedes reclamar ante la Agencia Española de Protección de Datos (aepd.es).',
+  ],
+  privContacto:c=>c?`Para cualquier duda o para ejercer tus derechos, escribe a ${c}.`:'Para cualquier duda o para ejercer tus derechos, usa «¿Ves un error?» en cualquier ejercicio.',
+
   // Aviso legal
   legalPrimero:'Antes de empezar', legalEntendido:'Entendido, empezar',
   legalTexto:[

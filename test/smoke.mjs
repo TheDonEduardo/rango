@@ -137,8 +137,10 @@ for (const f of fs.readdirSync(path.join(root, 'src'), {recursive: true}).map(f 
 const man = JSON.parse(fs.readFileSync(path.join(root, 'manifest.webmanifest'), 'utf8'));
 for (const ic of man.icons) if (!fs.existsSync(path.join(root, ic.src))) errs.push('icono del manifiesto inexistente: ' + ic.src);
 if (!man.icons.some(i => i.purpose === 'maskable')) errs.push('falta icono maskable en el manifiesto');
-const fontsSw = sw.match(/const FONTS_CSS = '([^']+)'/)[1];
-if (!fs.readFileSync(path.join(root, 'index.html'), 'utf8').includes(fontsSw)) errs.push('FONTS_CSS de sw.js no coincide con la hoja de fuentes de index.html');
+// Fuentes propias: ninguna página pide recursos a Google (privacidad) y el service worker las precarga.
+for (const f of ['index.html', 'bienvenida.html', 'sw.js', 'src/styles.css']) if (/fonts\.(googleapis|gstatic)\.com/.test(fs.readFileSync(path.join(root, f), 'utf8'))) errs.push(f + ' sigue pidiendo fuentes a Google');
+for (const f of fs.readdirSync(path.join(root, 'fonts')).filter(f => /\.(woff2|css)$/.test(f))) if (!pre.includes('fonts/' + f)) errs.push('sw.js no precarga fonts/' + f);
+for (const m of fs.readFileSync(path.join(root, 'fonts/fuentes.css'), 'utf8').matchAll(/url\(([^)]+)\)/g)) if (!fs.existsSync(path.join(root, 'fonts', m[1]))) errs.push('fuente inexistente: ' + m[1]);
 
 // Textos de la interfaz: toda clave t.xxx usada en src/ existe en textos.js (evita «undefined» en pantalla).
 {
@@ -546,6 +548,16 @@ for (const u of units) {
   }
 }
 if (caducados.length) console.warn('AVISO: contenido pendiente de revisar (normas o datos que pueden haber cambiado):\n- ' + caducados.join('\n- '));
+
+// Política de privacidad: enlazada en el pie; «Volver» regresa al inicio o a Tu progreso, según desde dónde se abrió.
+{
+  if (!T.homeHTML().includes('data-act="privacidad"')) errs.push('falta el enlace a la política de privacidad en el inicio');
+  T.goHome(); T.act('privacidad');
+  if (T.getView() !== 'privacidad' || !app.innerHTML.includes('Política de privacidad') || !app.innerHTML.includes('aepd.es')) errs.push('la política de privacidad no se muestra');
+  T.act('privvolver'); if (T.getView() !== 'home') errs.push('privacidad: «Volver» no regresa al inicio');
+  T.openStats(); T.act('privacidad'); T.act('privvolver'); if (T.getView() !== 'stats') errs.push('privacidad: «Volver» no regresa a Tu progreso');
+  T.goHome();
+}
 
 // Cuentas (src/sync.js): sin proyecto configurado no se ofrece nada; la fusión no pierde progreso de ningún
 // dispositivo; y el flujo completo funciona contra un servidor simulado (enlace, retorno, bajada, fusión y subida).

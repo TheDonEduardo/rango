@@ -1,8 +1,8 @@
 // Service worker de Rango: permite usar la app sin conexión.
-// Todo lo propio va red primero (código y contenido llegan siempre de la misma versión); sin conexión, la caché.
+// Todo va red primero (código, contenido y fuentes llegan siempre de la misma versión); sin conexión, la caché.
+// Las fuentes se sirven desde fonts/: la app no pide nada a terceros.
 // Subir CACHE ya no es necesario para publicar código nuevo; solo sirve para vaciar la caché antigua.
-const CACHE = 'rango-v3';
-const FONTS_CSS = 'https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=IBM+Plex+Sans:wght@400;500;600&display=swap';
+const CACHE = 'rango-v4';
 const PRECACHE = [
   './',
   'index.html',
@@ -43,29 +43,19 @@ const PRECACHE = [
   'src/content/glosario.json',
   'src/content/casos.json',
   'src/content/semana.json',
+  'fonts/fuentes.css',
+  'fonts/bricolage-grotesque-latin.woff2',
+  'fonts/ibm-plex-sans-latin.woff2',
   'icons/icon-192.png',
   'icons/icon-512.png',
   'icons/maskable-512.png',
   'icons/apple-touch-icon.png'
 ];
 
-// Guarda la hoja de Google Fonts y todas sus fuentes para que la tipografía funcione sin conexión
-// aunque esa pantalla no se haya visto nunca. Si falla (sin red), la app sigue funcionando con la letra del sistema.
-async function guardarFuentes(c) {
-  try {
-    const css = await fetch(FONTS_CSS);
-    if (!css.ok) return;
-    const texto = await css.clone().text();
-    await c.put(FONTS_CSS, css);
-    const urls = [...new Set(texto.match(/https:\/\/fonts\.gstatic\.com\/[^)]+\.woff2/g) || [])];
-    await Promise.all(urls.map(u => fetch(u, {mode: 'cors'}).then(r => r.ok && c.put(u, r)).catch(() => {})));
-  } catch (_) {}
-}
-
 self.addEventListener('install', e => {
   // cache: 'reload' salta la caché HTTP del navegador: la precarga guarda siempre la versión del servidor.
   e.waitUntil(caches.open(CACHE)
-    .then(c => c.addAll(PRECACHE.map(u => new Request(u, {cache: 'reload'}))).then(() => guardarFuentes(c)))
+    .then(c => c.addAll(PRECACHE.map(u => new Request(u, {cache: 'reload'}))))
     .then(() => self.skipWaiting()));
 });
 
@@ -80,13 +70,6 @@ self.addEventListener('fetch', e => {
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
 
-  // Fuentes de Google: no cambian; caché primero.
-  if (url.hostname.endsWith('googleapis.com') || url.hostname.endsWith('gstatic.com')) {
-    e.respondWith(caches.open(CACHE).then(async c => (await c.match(req)) ||
-      fetch(req).then(res => { if (res.ok || res.type === 'opaque') c.put(req, res.clone()); return res; })
-        .catch(() => Response.error())));
-    return;
-  }
   if (url.origin !== location.origin) return;
 
   // Página, código y contenido: red primero (siempre la misma versión de todo); sin conexión, la copia guardada.

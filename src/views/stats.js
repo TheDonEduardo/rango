@@ -27,7 +27,7 @@ const dom=r=>UNITS.filter(u=>trackOf(u)===r&&S.dominadas[u.id]).length;
 function cuentaHTML(){
   if(!cuentaActiva())return '';
   const s=sesion();
-  if(!s)return `<h2 class="sub">${t.cuentaTitulo}</h2><p class="note">${t.cuentaNota}</p>
+  if(!s)return `<h2 class="sub">${t.cuentaTitulo}</h2><p class="note">${t.cuentaNota} <button class="link" data-act="privacidad">${t.privTitulo}</button></p>
   <div class="row cuenta"><input type="email" id="cuenta-email" autocomplete="email" inputmode="email" aria-label="${t.cuentaEmail}" placeholder="${t.cuentaEmail}"><button class="btn primary" data-act="cuentaenviar">${t.cuentaEnviar}</button></div>`;
   const h=estadoCuenta.ultima?estadoCuenta.ultima.toLocaleTimeString('es-ES',{hour:'2-digit',minute:'2-digit'}):null;
   return `<h2 class="sub">${t.cuentaTitulo}</h2><p class="note">${t.cuentaConectado(esc(s.user.email))} ${estadoCuenta.error?t.cuentaError:h?t.cuentaSincronizado(h):t.cuentaPendiente}</p>

@@ -1,0 +1,4 @@
+/* Fuentes alojadas con la app (no se piden a Google: ninguna visita envía la IP a terceros).
+   Subconjunto «latin» de Google Fonts: cubre el español (tildes, ñ, ¿ ¡, € y −). Licencia SIL OFL 1.1 (ver OFL-*.txt). */
+@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:600 800;font-display:swap;src:url(bricolage-grotesque-latin.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:400 600;font-display:swap;src:url(ibm-plex-sans-latin.woff2) format('woff2')}

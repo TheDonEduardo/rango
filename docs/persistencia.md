@@ -7,7 +7,7 @@
 3. En Authentication → URL Configuration, pon la dirección donde publiques Rango como «Site URL» y añádela a «Redirect URLs».
 4. Copia la URL del proyecto y la clave «anon» (Project Settings → API) en `SUPABASE_URL` y `SUPABASE_ANON` de `src/config.js`. La clave «service_role» no va nunca en la app ni en el repositorio.
 5. Personaliza el correo del enlace en Authentication → Email Templates (en español) y, antes de abrirlo al público, configura un SMTP propio: el de Supabase solo envía unos pocos correos por hora.
-6. Publica la política de privacidad (la cuenta guarda el correo y el progreso).
+6. Revisa con un profesional la política de privacidad de la app (Privacidad, en el pie del inicio): ya explica qué guarda la cuenta y dónde.
 
 Pendiente: avisos de racha (web push), que necesitan una función programada en el servidor.
 

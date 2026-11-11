@@ -118,6 +118,7 @@ async function auditar(b, url) {
     ['guía consulta', {...base, track: 'basico'}, async p => { await p.click('[data-act=guia][data-id=acciones]'); }],
     ['definición del glosario', {...base, track: 'tecnico'}, async p => { await p.click('[data-act=guia][data-id=riesgo]'); await p.locator('.term').first().click(); }],
     ['glosario', {...base, track: 'basico'}, async p => { await p.click('[data-act=glosario]'); }],
+    ['privacidad', {...base, track: 'basico'}, async p => { await p.click('[data-act=privacidad]'); }],
     ['guía con figura', {...base, track: 'tecnico'}, async p => { await p.click('[data-act=guia][data-id=velas]'); }],
     ['test de nivel', {legal: 99, track: 'basico', done: {}, srs: {}, objetivo: 'basico'}, async p => { await p.click('[data-act=test]'); }],
   ];

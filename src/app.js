@@ -15,7 +15,7 @@ import {homeHTML} from './views/home.js';
 import {lessonHTML,resultHTML,failHTML} from './views/lesson.js';
 import {simHTML,simResHTML,simInfo,simValid,simSave,simRecord,simHist,simulate,SIM_PLACE} from './views/sim.js';
 import {calcHTML,calcOutHTML,CALC_CTRL,aportaciones} from './views/calc.js';
-import {legalHTML,LEGAL_V} from './views/legal.js';
+import {legalHTML,privacidadHTML,LEGAL_V} from './views/legal.js';
 import {statsHTML,statRecord,STATS_L,flojos} from './views/stats.js';
 import {guiaHTML,abrirGuia,guiaPendiente} from './views/guia.js';
 import {glosarioHTML,listaGlosario} from './views/glosario.js';
@@ -29,7 +29,7 @@ const RETO_L={id:'reto',title:t.retoDia,kind:'reto'};
 const TEST_L={id:'test',title:t.testNivel,kind:'test'};
 const TEST_PASS=10;
 
-const VISTAS={home:homeHTML,legal:()=>legalHTML(false),sim:simHTML,simres:simResHTML,calc:calcHTML,lesson:lessonHTML,result:resultHTML,fail:failHTML,stats:statsHTML,guia:guiaHTML,glosario:glosarioHTML};
+const VISTAS={home:homeHTML,legal:()=>legalHTML(false),sim:simHTML,simres:simResHTML,calc:calcHTML,lesson:lessonHTML,result:resultHTML,fail:failHTML,stats:statsHTML,guia:guiaHTML,glosario:glosarioHTML,privacidad:privacidadHTML};
 function render(){
   termOrigen=null;
   if(ses.view==='home'&&S.legal<LEGAL_V){$app.innerHTML=legalHTML(true);window.scrollTo(0,0);return}
@@ -223,6 +223,8 @@ const ACCIONES={
   simsave(){if(ses.simDraft&&simValid(ses.simDraft)){simSave();ses.simDraft=null;ses.view='home';render();toast(t.planGuardado)}},
   unfold(b){const id=b.dataset.id,ab=ses.abiertas;ab.has(id)?ab.delete(id):ab.add(id);ses.homeY=window.scrollY;render();const nb=$app.querySelector(`[data-act=unfold][data-id="${id}"]`);if(nb)nb.focus({preventScroll:true})},
   legal(){ir('legal')},
+  privacidad(){ses.privDesde=ses.view==='stats'?'stats':'home';ir('privacidad')},
+  privvolver(){ses.view=ses.privDesde||'home';ses.privDesde=null;render()},
   legalok(){S.legal=LEGAL_V;save();ses.homeY=0;render()},
   srs(){ses.homeY=window.scrollY;startRun(SRS_L)},
   reto(){ses.homeY=window.scrollY;startRun(RETO_L)},
