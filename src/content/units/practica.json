@@ -1,0 +1,195 @@
+{
+  "n": 15,
+  "id": "practica",
+  "track": "fundamental",
+  "title": "Valorar en la práctica",
+  "blurb": "DCF inverso, escenarios y las trampas más habituales.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "DCF inverso",
+      "texto": "En vez de adivinar el futuro, pregunta qué futuro descuenta el precio: despeja el crecimiento que justifica la cotización y compáralo con lo que la empresa ha logrado. Solo tienes que juzgar si esa expectativa es creíble.",
+      "ejemplo": "50 M$ de caja libre, 1.250 M$ de valor y un 9 % exigido: el precio descuenta un 5 % de crecimiento para siempre."
+    },
+    {
+      "id": "g2",
+      "titulo": "Escenarios, no un número",
+      "texto": "Un DCF con un solo resultado da una precisión falsa. Calcula un escenario pesimista, uno base y uno optimista, mira cuánto perderías si se cumple el pesimista y decide con el rango.",
+      "ejemplo": "60, 90 y 130 $ con probabilidades del 25, 50 y 25 %: valor esperado de 92,50 $. A 72 $, el pesimista supone perder un 16,7 %.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Tres escenarios de valor (60, 90 y 130 $) frente a un precio de 72 $: el precio queda por encima del pesimista y por debajo del base.",
+        "series": [
+          {
+            "data": [72,72,72,72,72],
+            "texto": "Precio 72 $",
+            "tono": "ink"
+          }
+        ],
+        "margen": 90,
+        "lineas": [
+          {
+            "y": 130,
+            "texto": "Optimista 130 $",
+            "tono": "up",
+            "lado": "i"
+          },
+          {
+            "y": 90,
+            "texto": "Base 90 $",
+            "tono": "sel",
+            "lado": "i"
+          },
+          {
+            "y": 60,
+            "texto": "Pesimista 60 $",
+            "tono": "dn",
+            "lado": "i"
+          }
+        ]
+      }
+    },
+    {
+      "id": "g3",
+      "titulo": "La caja libre de verdad",
+      "texto": "El pago en acciones a empleados es un coste real aunque no salga caja: réstalo del flujo de caja libre. Y la dilución hace que el beneficio por acción crezca menos que el beneficio total.",
+      "ejemplo": "1.200 M$ de flujo operativo, 300 de capex y 250 en acciones: 650 M$ de caja libre, no 900."
+    },
+    {
+      "id": "g4",
+      "titulo": "No promedies métodos",
+      "texto": "Si tres métodos dan resultados muy distintos, la media esconde el problema: alguno usa una hipótesis equivocada o no encaja con el negocio. Averigua qué explica la diferencia y usa el método que corresponde al tipo de empresa.",
+      "ejemplo": "60, 95 y 140 $: la media de 98 $ no significa nada hasta saber por qué difieren."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "fva",
+      "title": "Qué descuenta el precio",
+      "ex": [
+        {
+          "id": "fva-1",
+          "t": "num",
+          "q": "Una empresa sin deuda neta generará 50 M$ de flujo de caja libre el próximo año y vale 1.250 M$ en bolsa. Exiges un 9 %. ¿Qué crecimiento anual para siempre descuenta el precio?",
+          "unit": "%",
+          "a": 5,
+          "why": "50 ÷ 1.250 = 4 % de rentabilidad por caja libre; 9 % − 4 % = 5 %. Si no crees que pueda crecer un 5 % al año para siempre, el precio es exigente.",
+          "tol": 0.06,
+          "guia": "g1"
+        },
+        {
+          "id": "fva-2",
+          "t": "choice",
+          "q": "El DCF inverso dice que el precio descuenta un crecimiento del 15 % anual durante 10 años. La empresa ha crecido un 8 % de media en 5 años. ¿Qué concluyes?",
+          "opts": [
+            "El mercado exige mucho más de lo logrado",
+            "Está barata: el mercado es pesimista",
+            "Nada: el pasado no importa nada",
+            "Hay que comprar antes de que crezca"
+          ],
+          "a": 0,
+          "why": "El precio ya incluye casi el doble del crecimiento que la empresa ha conseguido. Para ganar dinero tiene que superar esa expectativa: el riesgo de decepcionar es alto.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Si el mercado fuera pesimista, descontaría menos crecimiento del logrado, no casi el doble.",
+            "El pasado no garantiza nada, pero es la mejor referencia para juzgar si un 15 % es creíble.",
+            "Comprar porque «va a crecer» es aceptar justo la expectativa exigente que ya está en el precio."
+          ]
+        },
+        {
+          "id": "fva-3",
+          "t": "num",
+          "q": "Escenarios para una acción: pesimista, 60 $ (25 % de probabilidad); base, 90 $ (50 %); optimista, 130 $ (25 %). ¿Cuál es el valor esperado?",
+          "unit": "$",
+          "a": 92.5,
+          "why": "60 × 0,25 + 90 × 0,50 + 130 × 0,25 = 15 + 45 + 32,50 = 92,50 $. El rango, de 60 a 130 $, importa tanto como la media.",
+          "tol": 0.01,
+          "guia": "g2"
+        },
+        {
+          "id": "fva-4",
+          "t": "num",
+          "q": "Esa acción cotiza a 72 $. Si se cumple el escenario pesimista de 60 $, ¿cuánto pierdes? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 16.7,
+          "why": "(72 − 60) ÷ 72 = 16,7 %. Antes de comprar, pregúntate si aceptarías esa pérdida: el escenario base no es el único que puede pasar.",
+          "tol": 0.06,
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 4
+    },
+    {
+      "id": "fvb",
+      "title": "Trampas al valorar",
+      "ex": [
+        {
+          "id": "fvb-1",
+          "t": "num",
+          "q": "Flujo de caja operativo de 1.200 M$, capex de 300 M$ y 250 M$ de pago en acciones a empleados. ¿Cuántos millones de flujo de caja libre quedan si restas ese pago?",
+          "unit": "",
+          "a": 650,
+          "why": "1.200 − 300 − 250 = 650 M$. Sin restar el pago en acciones saldrían 900 M$, un 38 % más: ese coste es real aunque no salga caja, porque cada año diluye al accionista.",
+          "guia": "g3"
+        },
+        {
+          "id": "fvb-2",
+          "t": "num",
+          "q": "Una empresa emite cada año un 3 % de acciones nuevas para pagar a sus empleados. Si su beneficio total crece un 10 %, ¿cuánto crece el beneficio por acción? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 6.8,
+          "why": "1,10 ÷ 1,03 − 1 = 6,8 %. La dilución se come casi un tercio del crecimiento: lo que cuenta para ti es el beneficio por acción, no el total.",
+          "tol": 0.06,
+          "guia": "g3"
+        },
+        {
+          "id": "fvb-3",
+          "t": "choice",
+          "q": "Tres métodos de valoración dan 60 $, 95 $ y 140 $ por acción. ¿Qué haces?",
+          "opts": [
+            "Usar la media, 98 $, como precio objetivo",
+            "Ver qué hipótesis explican la diferencia",
+            "Quedarte con el más alto, el más fiable",
+            "Descartar los tres porque no coinciden"
+          ],
+          "a": 1,
+          "why": "Una diferencia tan grande indica que algún método usa una hipótesis equivocada o no encaja con el negocio. La media la esconde: primero averigua por qué difieren.",
+          "guia": "g4",
+          "porque": [
+            "La media de 98 $ mezcla una hipótesis equivocada con las buenas: no es más fiable que cada una.",
+            null,
+            "El más alto suele ser el de las hipótesis más optimistas, no el más fiable.",
+            "Que no coincidan es información: señala qué hipótesis pesa, no que haya que tirarlo todo."
+          ]
+        },
+        {
+          "id": "fvb-4",
+          "t": "match",
+          "q": "Empareja cada error al valorar con su consecuencia.",
+          "pairs": [
+            [
+              "Bajar un punto la tasa de descuento",
+              "El valor del DCF sube mucho"
+            ],
+            [
+              "Ignorar el pago en acciones",
+              "La caja libre parece mayor"
+            ],
+            [
+              "Usar el PER en el pico del ciclo",
+              "Parece barata justo antes de caer"
+            ],
+            [
+              "Comparar con un sector caro",
+              "Lo caro parece precio justo"
+            ]
+          ],
+          "why": "Cada uno de estos errores empuja la valoración en la misma dirección: hace que una acción parezca más barata de lo que es.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 4
+    }
+  ]
+}

@@ -455,5 +455,13 @@
  {
   "termino": "Fibonacci",
   "d": "Proporciones (38,2 %, 50 %, 61,8 % o 1,618) que se usan para estimar hasta dónde retrocede o avanza una onda. Son referencias habituales, no reglas."
+ },
+ {
+  "termino": "DCF inverso",
+  "d": "Descuento de flujos al revés: en vez de estimar el valor, calcula qué crecimiento justifica el precio actual, para juzgar si esa expectativa es creíble."
+ },
+ {
+  "termino": "pago en acciones",
+  "d": "Parte del sueldo de los empleados que se paga con acciones nuevas. No sale caja, pero diluye al accionista: es un coste real."
  }
 ]

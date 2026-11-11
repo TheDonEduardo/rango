@@ -54,4 +54,4 @@ Comprueba requisitos, cuotas y comisiones en las páginas oficiales antes de emp
 
 ## 5. Idiomas
 
-Los textos de la interfaz están en `src/textos.js`: para traducir la interfaz basta otro archivo con las mismas claves. El contenido es más trabajo: unas 540 preguntas fijas, las plantillas de `tools/casos.py` y unas 20 unidades específicas de España (fiscalidad, bróker, CNMV, FOGAIN, SOCIMI) que habría que adaptar por país, no traducir. Recomendación: validar primero en España, después Latinoamérica con módulos fiscales por país, y el inglés si los datos lo justifican.
+Los textos de la interfaz están en `src/textos.js`: para traducir la interfaz basta otro archivo con las mismas claves. El contenido es más trabajo: unas 550 preguntas fijas, las plantillas de `tools/casos.py` y unas 20 unidades específicas de España (fiscalidad, bróker, CNMV, FOGAIN, SOCIMI) que habría que adaptar por país, no traducir. Recomendación: validar primero en España, después Latinoamérica con módulos fiscales por país, y el inglés si los datos lo justifican.
