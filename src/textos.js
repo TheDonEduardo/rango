@@ -46,6 +46,10 @@ export const t={
   instalar:'Instalar Rango en este dispositivo', instalarIos:'Para instalar Rango en tu iPhone: botón Compartir y «Añadir a pantalla de inicio».',
   desbloquear:'Desbloquear todo', rebloquear:'Volver a bloquear', reiniciar:'Reiniciar progreso', reiniciarConfirma:'Pulsa de nuevo para borrar',
 
+  // Carga y errores
+  cargaError:'No se ha podido cargar Rango', cargaErrorNota:'Comprueba tu conexión y vuelve a intentarlo. Tu progreso está guardado en este dispositivo.', reintentarCarga:'Reintentar',
+  errorInesperado:'Algo ha fallado. Si la pantalla no responde, recarga la página.',
+
   // Avisos breves
   bloqueadaBasico:'Completa antes la ruta Básico.', bloqueadaAnterior:'Completa antes la lección anterior.',
   planGuardado:'Plan guardado. El sábado que viene verás el resultado.',

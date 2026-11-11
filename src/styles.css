@@ -371,3 +371,12 @@ button{font:inherit;color:inherit;cursor:pointer}
 .row.cuenta{display:flex;gap:10px;flex-wrap:wrap}.row.cuenta .btn{flex:1 1 140px}
 .row.cuenta input{flex:1 1 220px;min-width:0;padding:12px 14px;border-radius:12px;border:2px solid var(--line);background:var(--surface);color:var(--ink);font:inherit}
 .row.cuenta input:focus-visible{outline:none;border-color:var(--sel)}
+
+/* Pantalla de carga (en index.html, antes de que arranque la app) y aviso sin JavaScript */
+.carga{min-height:100vh;min-height:100dvh;display:grid;place-content:center;justify-items:center;gap:14px;color:var(--ink-2)}
+.carga svg{width:36px;height:52px;animation:latido 1.2s ease-in-out infinite}
+.carga line{stroke:var(--ink);stroke-width:2;stroke-linecap:round}.carga rect{fill:var(--up)}
+.carga p{margin:0;font-weight:500}
+@keyframes latido{0%,100%{transform:scaleY(.82)}50%{transform:scaleY(1.08)}}
+.noscript{max-width:520px;margin:40px auto;padding:16px;border-radius:14px;background:var(--surface);border:2px solid var(--line)}
+@media (prefers-reduced-motion:reduce){.carga svg{animation:none}}

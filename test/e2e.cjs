@@ -169,6 +169,22 @@ async function guiaNavegacion(b, url) {
   await p.close(); return errs.length;
 }
 
+// Carga: mientras llega el contenido se ve la pantalla de carga; si no llega, un mensaje con «Reintentar» que funciona.
+async function cargaFallida(b, url) {
+  const p = await b.newPage({viewport: {width: 390, height: 844}}), errs = [];
+  let cortar = true;
+  await p.route('**/units.json', r => cortar ? r.abort() : r.continue());
+  await p.goto(url); await p.waitForSelector('#reintentar', {timeout: 5000}).catch(() => errs.push('sin contenido no aparece el mensaje con «Reintentar»'));
+  cortar = false;
+  if (!errs.length) { await p.click('#reintentar'); await p.waitForSelector('.legal, .top', {timeout: 5000}).catch(() => errs.push('«Reintentar» no vuelve a cargar la app')); }
+  const q = await b.newPage({viewport: {width: 390, height: 844}});
+  await q.route('**/units.json', async r => { await new Promise(s => setTimeout(s, 800)); r.continue(); });
+  await q.goto(url, {waitUntil: 'commit'}); await q.waitForSelector('.carga', {timeout: 3000}).catch(() => errs.push('no se ve la pantalla de carga'));
+  await q.waitForSelector('.legal, .top', {timeout: 5000}).catch(() => errs.push('la app no arranca tras la carga lenta'));
+  console.log('  ' + (errs.length ? errs.join('\n  ') : 'bien'));
+  await p.close(); await q.close(); return errs.length;
+}
+
 (async () => {
   const s = await servidor(), url = `http://127.0.0.1:${s.address().port}/`;
   const b = await chromium.launch();
@@ -188,6 +204,7 @@ async function guiaNavegacion(b, url) {
   console.log(`Recorrido de ${ids.length} lecciones en ${modos.length} modo(s):`);
   let fallos = await recorrer(b, url, ids, modos, dir);
   if (!has('--lecciones') && !has('--todas')) { console.log('Guía (teclado y dedo):'); fallos += await guiaNavegacion(b, url); }
+  if (!has('--lecciones') && !has('--todas')) { console.log('Carga y fallo de carga:'); fallos += await cargaFallida(b, url); }
   if (!has('--sin-axe') && !has('--lecciones') && !has('--todas')) { console.log('Accesibilidad:'); fallos += await auditar(b, url); }
   await b.close(); s.close();
   console.log(fallos ? `FALLOS: ${fallos}` : 'OK');
