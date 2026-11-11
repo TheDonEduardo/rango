@@ -15,7 +15,7 @@ Rango vive en `rango/` dentro del repositorio del bot. Para separarlo:
 4. Valores de los casos reales: sin el bot al lado, crea `tools/tickers.txt` (un ticker por línea) o define la variable `RANGO_TICKERS` en el workflow. `tools/casos.py` y `tools/semana.py` los leen en ese orden antes de buscar `../portfolio_manager.py`.
 5. Nada más depende del bot.
 
-Antes o después, en el repositorio del bot: la clave de Gemini sigue escrita en `portfolio_manager.py`. Revócala, crea otra, guárdala como secreto de GitHub y léela del entorno.
+Antes o después, en el repositorio del bot: el bot ya no usa Gemini, pero la clave antigua sigue en el historial de git. Anúlala en Google AI Studio.
 
 ## 2. Datos de mercado con licencia
 

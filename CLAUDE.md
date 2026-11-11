@@ -164,7 +164,7 @@ Pendiente (por orden sugerido):
 4. Mantenimiento anual: el test avisa del contenido con `revisar` vencido (fiscalidad, FOGAIN, SOCIMI, SPIVA).
 5. Ideas: avisos por Telegram con el bot del repo; bono español a 10 años si aparece una fuente fiable; más figuras en las guías donde un dibujo aclare.
 6. Traducción: textos de interfaz en `src/textos.js`; el contenido es específico de España (ver `docs/publicar.md`).
-7. Fuera de Rango, en el bot del repo: `portfolio_manager.py` ya lee la clave de Gemini del entorno (`GEMINI_API_KEY`, secreto de GitHub Actions, enviada en cabecera). Falta que el propietario revoque la clave antigua (sigue en el historial de git), cree el secreto y fusione el cambio en `main`.
+7. Fuera de Rango, en el bot del repo: se ha quitado Gemini de `portfolio_manager.py` (ahora envía a Telegram el cierre y la variación del día de cada valor y de la cartera ponderada). Falta que el propietario anule la clave antigua en Google AI Studio (sigue en el historial de git) y fusione el cambio en `main`. La lista `PORTFOLIO` la usa tools/casos.py: no la quites.
 
 ## Ruta fundamental
 
