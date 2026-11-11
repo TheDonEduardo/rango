@@ -150,10 +150,10 @@
           "t": "choice",
           "q": "Para alguien que empieza, ¿qué cartera es más fácil de mantener?",
           "opts": [
-            "Doce fondos temáticos distintos",
+            "Doce fondos temáticos distintos de moda",
             "Un fondo indexado global y uno de bonos",
-            "Acciones elegidas por noticias",
-            "Un ETF apalancado al Nasdaq"
+            "Acciones elegidas según las noticias",
+            "Un ETF apalancado al Nasdaq 100"
           ],
           "a": 1,
           "why": "Dos fondos baratos y diversificados se entienden, se rebalancean en minutos y no tientan a cambiar. La sencillez es lo que permite aguantar décadas.",

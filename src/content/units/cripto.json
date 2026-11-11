@@ -114,9 +114,9 @@
           "q": "Si pierdes las claves privadas de tu monedero, ¿qué pasa?",
           "opts": [
             "Pierdes tus criptos para siempre",
-            "El banco te las recupera",
-            "La CNMV te las devuelve",
-            "Se recuperan con tu DNI"
+            "El banco te las recupera en unos días",
+            "La CNMV te las devuelve si lo pides",
+            "Se recuperan presentando tu DNI"
           ],
           "a": 0,
           "why": "No hay ninguna entidad que pueda restaurar el acceso: sin las claves, las criptos quedan bloqueadas en la blockchain.",
@@ -134,9 +134,9 @@
           "q": "En España, ¿cómo tributa la ganancia por vender criptomonedas?",
           "opts": [
             "Como renta del ahorro, como las acciones",
-            "No tributa nunca",
-            "Solo si las cambias a dólares",
-            "Como un premio de lotería"
+            "No tributa nunca, ganes lo que ganes",
+            "Solo si las cambias después a dólares",
+            "Como un premio de lotería o de un sorteo"
           ],
           "a": 0,
           "why": "Vender, o cambiar una cripto por otra, genera una ganancia o pérdida patrimonial en la base del ahorro, desde el 19 %.",

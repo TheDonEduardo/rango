@@ -79,9 +79,9 @@
           "t": "choice",
           "q": "Tu cartera ha ganado un 8 % este año y el S&P 500, un 15 %. ¿Qué conclusión sacas?",
           "opts": [
-            "Lo has hecho bien: has ganado dinero",
+            "Lo has hecho bien: has ganado dinero este año",
             "El índice no es comparable con una cartera",
-            "Lo has hecho peor que comprar el índice, con más trabajo",
+            "Peor que el índice, y con más trabajo",
             "Debes doblar el riesgo el año que viene"
           ],
           "a": 2,

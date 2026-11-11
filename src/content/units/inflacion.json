@@ -81,7 +81,7 @@
           "q": "Un depósito paga un 2 % con una inflación del 3 %. ¿Qué pasa con tu poder de compra?",
           "opts": [
             "Pierde alrededor de un 1 % al año",
-            "Gana un 2 % cada año",
+            "Gana un 2 % cada año, como el depósito",
             "Se mantiene igual que hoy",
             "Gana un 5 % cada año"
           ],
@@ -151,8 +151,8 @@
           "q": "¿Por qué una cartera de largo plazo suele tener mayoría de acciones pese a su volatilidad?",
           "opts": [
             "Es el activo que más ha batido a la inflación",
-            "No pueden caer nunca",
-            "Pagan cada año más que los bonos",
+            "No pueden caer nunca a largo plazo",
+            "Pagan cada año más intereses que los bonos",
             "Están garantizadas por el Estado"
           ],
           "a": 0,

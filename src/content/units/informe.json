@@ -79,10 +79,10 @@
           "t": "choice",
           "q": "Bate al consenso en BPA y en ventas, pero la acción cae un 7 % tras los resultados. ¿Qué lo explica más a menudo?",
           "opts": [
-            "Un error del mercado que se corregirá",
-            "Que el volumen de la sesión fue bajo",
-            "Previsiones del próximo trimestre por debajo del consenso",
-            "Que los resultados se publicaron tarde"
+            "Un error del mercado que se corregirá pronto",
+            "Que el volumen de la sesión fue más bajo de lo normal",
+            "Previsiones por debajo de lo que esperaba el consenso",
+            "Que los resultados se publicaron fuera de hora"
           ],
           "a": 2,
           "why": "El precio mira hacia delante: unas previsiones flojas pesan más que un buen trimestre ya pasado. Lee siempre la guía de la empresa, no solo el titular.",

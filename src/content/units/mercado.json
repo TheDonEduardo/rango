@@ -20,19 +20,7 @@
         "alt": "El índice se mantiene cerca de máximos mientras acumula tres días de distribución, marcados con una D.",
         "series": [
           {
-            "data": [
-              100,
-              101,
-              102,
-              103,
-              103.5,
-              103,
-              104,
-              103.4,
-              104,
-              103.2,
-              103.6
-            ],
+            "data": [100,101,102,103,103.5,103,104,103.4,104,103.2,103.6],
             "texto": "Índice",
             "tono": "ink"
           }
@@ -71,48 +59,13 @@
         "type": "velas",
         "alt": "El índice cae hasta su mínimo, rebota tres días sin perderlo y el cuarto día sube con fuerza: es el día de confirmación.",
         "data": [
-          [
-            104,
-            104.5,
-            101,
-            101.5
-          ],
-          [
-            101.5,
-            102,
-            98.5,
-            99
-          ],
-          [
-            99,
-            99.5,
-            96.2,
-            96.6
-          ],
-          [
-            96.6,
-            98,
-            96.4,
-            97.8
-          ],
-          [
-            97.8,
-            98.6,
-            97.4,
-            98.2
-          ],
-          [
-            98.2,
-            98.9,
-            97.9,
-            98.6
-          ],
-          [
-            98.7,
-            101.5,
-            98.6,
-            101.3
-          ]
+          [104,104.5,101,101.5],
+          [101.5,102,98.5,99],
+          [99,99.5,96.2,96.6],
+          [96.6,98,96.4,97.8],
+          [97.8,98.6,97.4,98.2],
+          [98.2,98.9,97.9,98.6],
+          [98.7,101.5,98.6,101.3]
         ],
         "lineas": [
           {
@@ -279,8 +232,8 @@
           "q": "En el tercer día del intento de rebote, el índice cae por debajo del mínimo de la corrección. ¿Qué ocurre?",
           "opts": [
             "El intento se anula y hay que esperar otro",
-            "Pasa a ser un día de confirmación",
-            "Nada: el recuento continúa",
+            "Pasa a contar como día de confirmación",
+            "Nada: el recuento de días continúa",
             "Es momento de comprar más fuerte"
           ],
           "a": 0,

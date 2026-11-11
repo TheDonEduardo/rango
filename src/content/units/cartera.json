@@ -74,9 +74,9 @@
           "t": "choice",
           "q": "Tu límite de riesgo abierto es un 6 % y ya lo has alcanzado. Aparece una compra nueva. ¿Qué haces?",
           "opts": [
-            "La compras igualmente: es buena",
-            "Liberas riesgo subiendo stops a la entrada, o renuncias",
-            "Compras el doble para compensar",
+            "La compras igualmente: es una buena oportunidad",
+            "Liberas riesgo con stops en la entrada, o renuncias",
+            "Compras el doble para compensar las anteriores",
             "Quitas los stops de las demás posiciones"
           ],
           "a": 1,

@@ -103,7 +103,7 @@ Gráficos (`chart`):
 - Nivel de usuario: en Técnico y Fundamental ya conoce los conceptos básicos; se enseña criterio operativo (qué hacer, a qué nivel, con qué riesgo), no definiciones de manual. En Básico se permiten definiciones, pero siempre con un ejemplo numérico o práctico, y cada concepto apunta a dónde se usará después (ATR, R, velas).
 - Marco de referencia: Weinstein (fases, MA 30 semanas), Minervini (Trend Template, VCP), Wyckoff/VSA, ATR para stops y tamaño, múltiplos R, salidas escalonadas.
 - Cada ejercicio enseña una sola cosa. `why` explica el porqué con las cifras del enunciado, en 1-2 frases.
-- Varía la posición de la respuesta correcta en los `choice` y que no sea la más larga: los distractores deben ser igual de creíbles y de largos (el test falla si la correcta supera 1,5 veces a la más larga del resto). La justificación va en `why`, no en la opción.
+- Varía la posición de la respuesta correcta en los `choice` y que no sea la más larga: los distractores deben ser igual de creíbles y de largos (el test falla si la correcta supera 1,25 veces a la más larga del resto). La app baraja las opciones en cada lección salvo que su orden tenga sentido (`ordenFijo` en exercises/choice.js: etiquetas de 8 caracteres o menos, como A, B, C, Ninguna, o todas empiezan por la misma palabra, como Fase 1…4). La justificación va en `why`, no en la opción.
 - Formato numérico en texto: coma decimal y símbolo tras espacio (`17,60 €`, `7,36 %`).
 - Cada enunciado (`q`) es único en todo el contenido (el test lo comprueba).
 - Contenido fiscal o normativo: solo reglas estables y bien establecidas, sin casos límite; las tablas de tramos llevan «Compruébalos cada año».

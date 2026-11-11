@@ -138,10 +138,10 @@
           "t": "choice",
           "q": "Cierras el año con pérdidas por venta de acciones y ninguna ganancia. ¿Qué pasa con ellas?",
           "opts": [
-            "Se pierden",
-            "Las compensas con ganancias de los 4 años siguientes",
-            "Hacienda te las devuelve en efectivo",
-            "Solo cuentan si compras más acciones"
+            "Se pierden y no cuentan para nada",
+            "Las compensas con ganancias en los próximos 4 años",
+            "Hacienda te las devuelve en efectivo al año siguiente",
+            "Solo cuentan si vuelves a comprar más acciones"
           ],
           "a": 1,
           "why": "Se declaran igualmente y se arrastran a los cuatro años siguientes. Además, pueden compensar hasta un 25 % del saldo de dividendos e intereses.",

@@ -58,7 +58,7 @@
           "q": "Una cartera rinde un 7 % anual durante 20 años. Supón que, por salir y entrar del mercado, te pierdes los mejores días y tu rentabilidad baja al 4 %. Con 10.000 €, ¿cuántos miles de euros menos tienes al final? Redondea a 1 decimal.",
           "unit": "",
           "a": 16.8,
-          "why": "10.000 × (1,07²⁰ − 1,04²⁰) = 38.697 − 21.911 = 16.786 €. Los mejores días suelen llegar justo después de los peores, cuando quien ha salido aún no ha vuelto.",
+          "why": "10.000 × (1,07²⁰ − 1,04²⁰) = 38.697 − 21.911 = 16.786 €, unos 16,8 miles de euros menos. Los mejores días suelen llegar justo después de los peores, cuando quien ha salido aún no ha vuelto.",
           "tol": 0.06,
           "guia": "g1"
         },
@@ -68,9 +68,9 @@
           "q": "La bolsa cae un 25 % y las noticias son terribles. Tu plan es aportar cada mes y rebalancear una vez al año. ¿Qué haces?",
           "opts": [
             "Seguir el plan, y rebalancear si toca",
-            "Venderlo todo hasta que pase",
-            "Dejar de aportar unos meses",
-            "Pasar la cartera a oro"
+            "Venderlo todo hasta que pase la tormenta",
+            "Dejar de aportar hasta que se calme",
+            "Pasar toda la cartera a oro"
           ],
           "a": 0,
           "why": "El plan se escribió para este momento. Aportar en las caídas compra más barato, y rebalancear obliga a comprar acciones cuando nadie quiere.",

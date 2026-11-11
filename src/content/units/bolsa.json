@@ -128,9 +128,9 @@
           "q": "¿Qué determina el precio de una acción en cada momento?",
           "opts": [
             "El acuerdo entre compradores y vendedores",
-            "Lo fija la empresa cada mañana",
-            "Lo fija la CNMV cada día",
-            "El valor contable de la empresa"
+            "Lo fija la propia empresa cada mañana",
+            "Lo fija la CNMV al abrir cada sesión",
+            "El valor contable que publica la empresa"
           ],
           "a": 0,
           "why": "El precio es el último al que alguien compró y otro vendió: si hay más compradores dispuestos a pagar más, sube.",

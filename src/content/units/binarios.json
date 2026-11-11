@@ -106,7 +106,7 @@
           "opts": [
             "Abre arriba y rellena medio gap antes del cierre",
             "Volumen por debajo de su media de 50 sesiones",
-            "Cierra en el tercio superior del rango con 3× su volumen medio",
+            "Cierra en el tercio superior con 3× su volumen",
             "Cierra por debajo del cierre previo"
           ],
           "a": 2,
@@ -181,8 +181,8 @@
           "t": "choice",
           "q": "Mantienes una posición durante un catalizador binario (resultados, decisión de la FDA). ¿Qué distancia usas para calcular el tamaño?",
           "opts": [
-            "La distancia al stop",
-            "2×ATR(14)",
+            "La distancia al stop que tienes puesto",
+            "Dos veces el ATR(14) del valor",
             "El 1 % del precio de entrada",
             "La caída plausible si el evento sale mal"
           ],

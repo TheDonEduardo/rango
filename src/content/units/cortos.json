@@ -113,8 +113,8 @@
           "t": "choice",
           "q": "Mantienes un corto y la empresa paga un dividendo. ¿Qué ocurre?",
           "opts": [
-            "No afecta en nada al corto",
-            "Lo cobras tú, como accionista",
+            "No afecta en nada a la posición en corto",
+            "Lo cobras tú, como si fueras accionista",
             "Lo paga el bróker en tu nombre",
             "Lo pagas tú a quien te prestó las acciones"
           ],

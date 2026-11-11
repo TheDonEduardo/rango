@@ -6,6 +6,7 @@ import {S,save,resetState,migrar,advancedOpen,statuses,srsDue,srsRecord,SRS_MAX,
 import {$app,toast,ses} from './ui.js';
 import {setPlanCtx} from './drag.js';
 import {TIPOS} from './exercises/index.js';
+import {ordenFijo} from './exercises/choice.js';
 import {CONTACTO} from './config.js';
 import {compartirLogro} from './compartir.js';
 import {medir} from './medicion.js';
@@ -315,5 +316,5 @@ export const api={sumarRacha,glos,openGlosario:()=>{ses.view='glosario';render()
   openCalc:()=>{ses.view='calc';render()},openSim:()=>{ses.simDraft=null;ses.view='sim';render()},openSimRes:()=>{ses.view='simres';render()},
   openStats:()=>{ses.view='stats';render()},act:(a,ds={})=>ACCIONES[a]({dataset:ds}),getView:()=>ses.view,startWeak:()=>startRun(STATS_L),
   simDraftSet:p=>{ses.simDraft=p},simSave,goHome:()=>{ses.view='home';render()},startTest:()=>startRun(TEST_L),startNivel:tr=>startRun({id:'nivel-'+tr,title:t.pruebaNivel,kind:'nivel',track:tr}),srsDue,
-  acceptLegal:()=>{S.legal=LEGAL_V},startSrs:()=>startRun(SRS_L),startReto:()=>startRun(RETO_L),retoHoy,setTrack:id=>{S.track=id},skipBasics:()=>{S.skipBasics=true},
+  acceptLegal:()=>{S.legal=LEGAL_V},startSrs:()=>startRun(SRS_L),startReto:()=>startRun(RETO_L),retoHoy,ordenFijo,setTrack:id=>{S.track=id},skipBasics:()=>{S.skipBasics=true},
   homeHTML,startRun,lessonHTML,check,next,resultHTML,failHTML,render,getRun:()=>ses.run,setSel:v=>{ses.run.sel=v},setVal:v=>{ses.run.val=v},getState:()=>S};

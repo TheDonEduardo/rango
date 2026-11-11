@@ -21,15 +21,7 @@
         "alt": "BPA de una empresa cíclica a lo largo del ciclo, con el precio fijo en 40 $: en el pico gana 4 $ y el PER es 10; en el valle gana 1 $ y el PER es 40.",
         "series": [
           {
-            "data": [
-              1,
-              2,
-              3,
-              4,
-              3,
-              2,
-              1
-            ],
+            "data": [1,2,3,4,3,2,1],
             "texto": "BPA",
             "tono": "sel"
           }
@@ -94,8 +86,8 @@
           "q": "La economía entra en recesión. ¿Qué empresa suele mantener mejor sus beneficios?",
           "opts": [
             "Una eléctrica o una de alimentación",
-            "Una fabricante de coches",
-            "Una cadena de hoteles",
+            "Una fabricante de coches y camiones",
+            "Una cadena de hoteles de vacaciones",
             "Una promotora inmobiliaria"
           ],
           "a": 0,
@@ -192,10 +184,10 @@
           "t": "choice",
           "q": "Un banco cotiza a un PER de 9 y una empresa de software a un PER de 35. ¿Qué conclusión sacas?",
           "opts": [
-            "El banco está más barato, sin más",
-            "El software está en burbuja, seguro",
+            "El banco está más barato, sin más que decir",
+            "El software está en burbuja, eso es seguro",
             "Compara cada una con su sector y su crecimiento",
-            "El PER no sirve en ningún sector"
+            "El PER no sirve para nada en ningún sector"
           ],
           "a": 2,
           "why": "Cada sector tiene sus PER habituales según su crecimiento y su riesgo. Una empresa es cara o barata frente a sus comparables y a lo que crece, no frente a cualquier otra.",

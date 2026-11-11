@@ -75,8 +75,8 @@
           "t": "choice",
           "q": "¿Por qué muchos ETF europeos de acciones de EE. UU. están domiciliados en Irlanda?",
           "opts": [
-            "Porque es obligatorio por ley europea",
-            "Porque así no cobran comisiones",
+            "Porque lo exige la normativa europea de fondos",
+            "Porque allí no pueden cobrar comisiones",
             "Pagan menos retención por dividendos de EE. UU.",
             "Porque cotizan siempre en dólares"
           ],

@@ -167,7 +167,7 @@
           "q": "Gastas 1.800 € al mes. ¿Cuántos miles de euros debe tener un colchón de 6 meses?",
           "unit": "",
           "a": 10.8,
-          "why": "1.800 × 6 = 10.800 €.",
+          "why": "1.800 × 6 = 10.800 €, es decir, 10,8 miles de euros.",
           "guia": "g4"
         }
       ]

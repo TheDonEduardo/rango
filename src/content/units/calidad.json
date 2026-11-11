@@ -21,26 +21,12 @@
         "alt": "Dos empresas frente a un coste del capital del 9 %: la que tiene un ROIC del 20 % crea valor al crecer y la que tiene un 6 % lo destruye.",
         "series": [
           {
-            "data": [
-              20,
-              21,
-              20,
-              22,
-              21,
-              20
-            ],
+            "data": [20,21,20,22,21,20],
             "texto": "ROIC 20 %",
             "tono": "up"
           },
           {
-            "data": [
-              6,
-              6,
-              5,
-              6,
-              6,
-              6
-            ],
+            "data": [6,6,5,6,6,6],
             "texto": "ROIC 6 %",
             "tono": "dn"
           }
@@ -71,26 +57,12 @@
         "alt": "Dos negocios durante seis años: uno con foso mantiene un ROIC del 24-27 %; el otro cae del 25 % al 7 % cuando llegan competidores.",
         "series": [
           {
-            "data": [
-              25,
-              26,
-              24,
-              27,
-              25,
-              26
-            ],
+            "data": [25,26,24,27,25,26],
             "texto": "Con foso",
             "tono": "up"
           },
           {
-            "data": [
-              25,
-              24,
-              18,
-              12,
-              8,
-              7
-            ],
+            "data": [25,24,18,12,8,7],
             "texto": "Sin foso",
             "tono": "dn"
           }
@@ -134,7 +106,7 @@
           "t": "choice",
           "q": "El ROIC de una empresa es del 6 % y su coste del capital, del 9 %. Si crece invirtiendo más, ¿qué ocurre?",
           "opts": [
-            "Crea valor: crecer siempre es bueno",
+            "Crea valor: crecer siempre es bueno para todos",
             "Destruye valor: rinde menos de lo que cuesta",
             "No cambia nada para el accionista",
             "Depende solo del PER al que cotice"

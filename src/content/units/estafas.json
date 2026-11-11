@@ -182,9 +182,9 @@
           "q": "¿Qué cubre el Fondo de Garantía de Inversiones (FOGAIN)?",
           "opts": [
             "Tus valores si el bróker quiebra, con límites",
-            "Las pérdidas por caídas de la bolsa",
-            "Cualquier estafa que sufras",
-            "Todo lo que inviertas"
+            "Tus pérdidas cuando la bolsa cae con fuerza",
+            "Cualquier estafa que sufras en internet",
+            "Todo lo que inviertas, sin ningún límite"
           ],
           "a": 0,
           "why": "Cubre hasta 100.000 € por inversor si una empresa de inversión autorizada no puede devolverte tus valores o efectivo; nunca cubre que la inversión pierda valor.",

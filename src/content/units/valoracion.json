@@ -146,9 +146,9 @@
           "t": "choice",
           "q": "Una empresa con PER 60 publica un BPA un 30 % superior al del año anterior, justo lo esperado, y cae un 8 %. ¿Por qué?",
           "opts": [
-            "Los resultados fueron malos",
+            "Los resultados fueron peores de lo que parece",
             "Es un error del mercado: hay que comprar más",
-            "El precio ya descontaba ese crecimiento y el mercado quería más",
+            "El precio ya descontaba ese crecimiento",
             "El volumen de la sesión fue bajo"
           ],
           "a": 2,

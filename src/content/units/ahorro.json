@@ -158,7 +158,7 @@
           "q": "Ahorras 100 € al mes durante 10 años al 0,5 % mensual. ¿Cuántos miles de euros reúnes? (un decimal)",
           "unit": "",
           "a": 16.4,
-          "why": "100 × (1,005¹²⁰ − 1) / 0,005 ≈ 16.388 €, de los que 12.000 € son aportaciones.",
+          "why": "100 × (1,005¹²⁰ − 1) / 0,005 ≈ 16.388 €, unos 16,4 miles de euros, de los que 12.000 € son aportaciones.",
           "tol": 0.05,
           "guia": "g3"
         },

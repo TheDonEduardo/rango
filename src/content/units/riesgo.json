@@ -74,8 +74,8 @@
           "t": "choice",
           "q": "¿Qué mide el ATR(14)?",
           "opts": [
-            "El rango verdadero medio de las últimas 14 velas",
-            "La dirección de la tendencia",
+            "El rango verdadero medio de 14 velas",
+            "La dirección de la tendencia actual",
             "El volumen medio de 14 sesiones",
             "La distancia al máximo de 52 semanas"
           ],

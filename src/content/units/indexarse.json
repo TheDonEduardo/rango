@@ -97,7 +97,7 @@
           "q": "¿Qué suelen mostrar los informes SPIVA sobre los fondos activos de acciones a 15 años?",
           "opts": [
             "La gran mayoría queda por detrás de su índice",
-            "Casi todos baten a su índice",
+            "Casi todos baten a su índice de referencia",
             "La mitad bate al índice cada año",
             "Los fondos más caros lo hacen mejor"
           ],
@@ -125,8 +125,8 @@
           "q": "Un fondo activo ha batido al índice los últimos 3 años. ¿Qué dicen los estudios de persistencia?",
           "opts": [
             "Pocos ganadores repiten en los años siguientes",
-            "Lo seguirá batiendo casi seguro",
-            "Es la mejor señal para invertir",
+            "Lo seguirá batiendo casi seguro unos años",
+            "Es la mejor señal para invertir en él",
             "Que vendas el indexado y lo compres"
           ],
           "a": 0,

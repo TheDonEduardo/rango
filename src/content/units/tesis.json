@@ -84,9 +84,9 @@
           "t": "choice",
           "q": "Tu tesis depende de un contrato que se decide dentro de 18 meses y operas a 2-8 semanas. ¿Qué haces?",
           "opts": [
-            "Comprar ya: el catalizador llegará",
-            "Esperar a que el precio confirme o a que el catalizador se acerque",
-            "Comprar opciones a un mes",
+            "Comprar ya: el catalizador llegará antes o después",
+            "Esperar a que confirme el precio o se acerque la fecha",
+            "Comprar opciones a un mes vista",
             "Comprar ahora y promediar a la baja mientras tanto"
           ],
           "a": 1,
@@ -125,10 +125,10 @@
           "t": "choice",
           "q": "Tu tesis exige un margen bruto superior al 60 %. Publica un 57 % y el precio sube un 6 %. ¿Qué haces?",
           "opts": [
-            "Mantienes: el precio te da la razón",
+            "Mantienes: el precio te está dando la razón",
             "Compras más aprovechando la subida",
             "Esperas al siguiente trimestre para decidir",
-            "Sales o reduces: la tesis está invalidada aunque el precio suba"
+            "Sales o reduces: la tesis está rota aunque suba"
           ],
           "a": 3,
           "why": "Fijaste la invalidación antes de comprar precisamente para no reinterpretarla después. Si te quedas, ya no operas tu tesis sino el precio, y sin criterio de salida.",
@@ -146,9 +146,9 @@
           "q": "La tesis sigue intacta, pero el precio pierde tu stop técnico. ¿Qué haces?",
           "opts": [
             "Ejecutas el stop: la tesis no te protege del precio",
-            "Bajas el stop para darle más margen",
+            "Bajas el stop para darle más margen a la tesis",
             "Compras más porque la tesis sigue viva",
-            "Esperas a los próximos resultados"
+            "Esperas a los próximos resultados sin hacer nada"
           ],
           "a": 0,
           "why": "El stop limita la pérdida a 1R pase lo que pase con la tesis. Si la tesis sigue viva, puedes volver a comprar cuando el precio confirme otra vez.",

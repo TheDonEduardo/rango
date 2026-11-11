@@ -42,7 +42,7 @@
           "q": "¿Cada cuánto tiempo conviene revisar una cartera indexada?",
           "opts": [
             "Una vez al año, con una lista fija",
-            "Cada día al cierre",
+            "Cada día, al cierre del mercado",
             "Cada vez que salen noticias",
             "Nunca, ni para rebalancear"
           ],

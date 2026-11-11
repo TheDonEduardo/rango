@@ -147,10 +147,10 @@
           "t": "choice",
           "q": "Acabas de ver un spring. ¿Cuál es la entrada de menor riesgo?",
           "opts": [
-            "Comprar con orden limitada en el mínimo del spring",
-            "Esperar una prueba con menos volumen y comprar al superar su máximo",
-            "Esperar a que supere el máximo de 52 semanas",
-            "Vender corto la perforación del soporte"
+            "Comprar con orden limitada justo en el mínimo del spring",
+            "Comprar al superar el máximo de una prueba con menos volumen",
+            "Esperar a que supere el máximo de las 52 semanas",
+            "Vender en corto la perforación del soporte"
           ],
           "a": 1,
           "why": "Una prueba que no baja del spring y con menos volumen confirma que ya no queda oferta en esa zona. El stop va bajo el mínimo del spring, cerca de la entrada.",
@@ -364,10 +364,10 @@
           "t": "choice",
           "q": "Tras una subida larga, en máximos, aparece una vela alcista de rango estrecho con 2,5× el volumen medio. ¿Qué lectura VSA haces?",
           "opts": [
-            "Esfuerzo sin resultado: la oferta absorbe la demanda, posible techo",
-            "Demanda fuerte: continuación probable",
+            "Esfuerzo sin resultado: la oferta absorbe, posible techo",
+            "Demanda fuerte: lo más probable es que siga subiendo",
             "Falta de interés: el volumen no aporta información",
-            "Ruptura confirmada: momento de añadir"
+            "Ruptura confirmada: buen momento para añadir"
           ],
           "a": 0,
           "why": "Mucho volumen (esfuerzo) y poco avance (resultado) significa que alguien vende todo lo que se compra. En máximos tras una subida larga, protege beneficios y no añadas.",

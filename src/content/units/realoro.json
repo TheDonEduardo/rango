@@ -42,7 +42,7 @@
           "q": "¿Qué es una SOCIMI?",
           "opts": [
             "Una sociedad cotizada de inmuebles en alquiler",
-            "Un fondo garantizado de vivienda",
+            "Un fondo garantizado que invierte en vivienda",
             "Una hipoteca a tipo fijo",
             "Un depósito ligado a la vivienda"
           ],
@@ -81,7 +81,7 @@
           "q": "¿Por qué un ETF del MSCI World ya incluye algo de inmobiliario?",
           "opts": [
             "Los REIT cotizados forman parte del índice",
-            "Porque compra pisos directamente",
+            "Porque el fondo compra pisos directamente",
             "Porque lo exige la CNMV",
             "No incluye nada de inmobiliario"
           ],

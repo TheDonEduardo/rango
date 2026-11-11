@@ -113,9 +113,9 @@
           "t": "choice",
           "q": "¿Qué define un VCP de Minervini?",
           "opts": [
-            "Contracciones sucesivas cada vez más pequeñas con volumen decreciente",
+            "Contracciones cada vez menores con volumen decreciente",
             "Una caída en V seguida de un rebote con volumen",
-            "Un rango lateral con volatilidad creciente",
+            "Un rango lateral con una volatilidad cada vez mayor",
             "Tres máximos crecientes con volumen creciente"
           ],
           "a": 0,
@@ -218,10 +218,10 @@
           "t": "choice",
           "q": "El precio supera el pivote con un volumen un 20 % inferior a su media de 50 sesiones. ¿Qué haces?",
           "opts": [
-            "Compras igual: el precio manda",
+            "Compras igual: el precio manda sobre el volumen",
             "Compras el doble para aprovechar la ruptura",
-            "Vendes corto la ruptura",
-            "No compras o reduces el tamaño: falta demanda que la confirme"
+            "Vendes en corto la ruptura porque fallará",
+            "No compras o reduces: falta demanda que la confirme"
           ],
           "a": 3,
           "why": "O'Neil y Minervini piden en la ruptura un volumen al menos un 40-50 % superior a la media. Sin él, la ruptura suele fallar y volver a la base.",

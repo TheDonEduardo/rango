@@ -173,7 +173,7 @@
           "t": "choice",
           "q": "En el gráfico semanal la acción está en Fase 4, pero en el diario acaba de romper una pequeña resistencia. ¿Qué haces?",
           "opts": [
-            "Comprar: manda el gráfico diario",
+            "Comprar: manda siempre el gráfico diario",
             "No comprar: la tendencia de fondo es bajista",
             "Comprar el doble para aprovecharlo",
             "Vender en corto justo en la ruptura"

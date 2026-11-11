@@ -235,10 +235,10 @@
           "t": "choice",
           "q": "¿Qué debe recoger tu diario además del resultado?",
           "opts": [
-            "Solo el resultado en euros",
+            "Solo el resultado en euros de la operación",
             "Por qué entraste y si seguiste el plan",
-            "Lo que se opinaba en redes",
-            "Nada más: el resultado basta"
+            "Lo que se opinaba en redes ese día",
+            "Nada más: el resultado ya lo dice todo"
           ],
           "a": 1,
           "why": "El resultado de una operación tiene mucho de azar; el proceso, no. El diario sirve para saber si pierdes por el sistema o por no seguirlo.",

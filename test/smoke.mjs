@@ -71,7 +71,7 @@ const lint = (ex, w) => {
       if (ex.t === 'choice' && ex.opts.length > 2) {
         // La correcta no puede delatarse por ser mucho más larga que todas las demás.
         const c = ex.opts[ex.a].length, o = Math.max(...ex.opts.filter((_, k) => k !== ex.a).map(t => t.length));
-        if (c > 1.5 * o) errs.push(`${w}: la opción correcta (${c} caracteres) es mucho más larga que las demás (${o})`);
+        if (c > 1.25 * o) errs.push(`${w}: la opción correcta (${c} caracteres) es mucho más larga que las demás (${o})`);
       }
       if (ex.t === 'num' && typeof ex.a !== 'number') errs.push(w + ': a no numérico');
       if (ex.t === 'choice' && ex.porque === undefined && !ex.caso) errs.push(w + ': falta porque (por qué no es correcta cada opción)');
@@ -232,6 +232,19 @@ for (const L of T.FLAT) {
 // Textos con números: plurales y tiempo de estudio redondeado.
 { const {t} = await import(pathToFileURL(path.join(root, 'src/textos.js')));
   if (t.vidas(1) !== '1 vida' || t.nEjercicios(1) !== '1 ejercicio' || t.tiempo(59.7) !== '1 h 0 min' || t.tiempo(119.6) !== '2 h 0 min' || t.tiempo(12.2) !== '12 min') errs.push('plurales o tiempo mal formados'); }
+
+// Las opciones se barajan (salvo las de orden fijo) y cada botón conserva su índice original.
+{ const L = T.FLAT.find(l => l.kind === 'lesson' && l.ex.some(e => e.t === 'choice' && !T.ordenFijo(e.opts))), ex = L.ex.find(e => e.t === 'choice' && !T.ordenFijo(e.opts));
+  const ordenes = new Set();
+  for (let k = 0; k < 30; k++) {
+    T.startRun(Object.assign({}, L, {ex: [ex], casos: []}));
+    const h = app.innerHTML, ids = [...h.matchAll(/data-act="pick" data-i="(\d)"/g)].map(m => m[1]).join('');
+    ordenes.add(ids);
+    if (!new RegExp(`data-i="${ex.a}"[^>]*>${ex.opts[ex.a].replace(/[.*+?^${}()|[\]\\]/g, '\\$&').slice(0, 15)}`).test(h)) errs.push('el botón de la opción correcta no lleva su texto');
+    T.goHome();
+  }
+  if (ordenes.size < 2) errs.push('las opciones de elegir no se barajan');
+  if (!T.ordenFijo(['A', 'B', 'C', 'Ninguna']) || !T.ordenFijo(['Fase 1 (base)', 'Fase 2 (avance)', 'Fase 3 (techo)', 'Fase 4 (declive)'])) errs.push('se barajan opciones cuyo orden tiene sentido'); }
 
 // Al fallar una pregunta con «porque», se explica por qué la opción elegida no es correcta.
 { const L = T.FLAT.find(l => l.kind === 'lesson' && l.ex.some(e => e.porque)), ex = L.ex.find(e => e.porque);

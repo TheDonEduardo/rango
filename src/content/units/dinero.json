@@ -87,9 +87,9 @@
           "q": "¿Por qué se dice que el interés compuesto es «interés sobre interés»?",
           "opts": [
             "Los intereses ganados también generan intereses",
-            "El banco te cobra comisión dos veces",
-            "Se pagan impuestos dos veces al año",
-            "Solo funciona con las hipotecas"
+            "El banco te cobra la comisión dos veces al año",
+            "Se pagan impuestos dos veces sobre lo ganado",
+            "Solo funciona con hipotecas y préstamos"
           ],
           "a": 0,
           "why": "Al 5 %, el primer año ganas 50 € sobre 1.000 €; el segundo, 52,50 € sobre 1.050 €. La diferencia crece cada año.",

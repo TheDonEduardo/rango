@@ -231,9 +231,9 @@
           "t": "choice",
           "q": "El precio sube un 5 % con el triple del volumen habitual. ¿Qué te dice el volumen?",
           "opts": [
-            "Nada: el volumen no importa",
-            "Que la subida es falsa",
-            "Que hay mucha participación detrás de la subida y la respalda",
+            "Nada: el volumen no importa en una subida",
+            "Que la subida es falsa y se dará la vuelta",
+            "Que mucha participación respalda la subida",
             "Que la empresa ha emitido acciones nuevas"
           ],
           "a": 2,
@@ -251,10 +251,10 @@
           "t": "choice",
           "q": "¿Qué representa cada vela de un gráfico diario?",
           "opts": [
-            "Una hora de cotización",
-            "Solo el precio de cierre del día",
-            "Una sesión: su apertura, máximo, mínimo y cierre",
-            "Una semana de cotización"
+            "Una hora de cotización dentro de la sesión",
+            "Solo el precio de cierre de cada día",
+            "Una sesión: apertura, máximo, mínimo y cierre",
+            "Una semana completa de cotización"
           ],
           "a": 2,
           "why": "En el gráfico diario cada vela resume una sesión con cuatro precios; en el semanal, una semana. Los patrones se leen igual en cualquier escala.",

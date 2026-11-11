@@ -76,10 +76,10 @@
           "t": "choice",
           "q": "Necesitas el dinero para la entrada de un piso dentro de 2 años. ¿Dónde lo pones?",
           "opts": [
-            "Un fondo de acciones global",
+            "Un fondo de acciones global indexado",
             "Liquidez o renta fija a corto plazo",
-            "Acciones de una sola empresa",
-            "Un ETF apalancado al Nasdaq"
+            "Acciones de una sola empresa sólida",
+            "Un ETF apalancado al Nasdaq 100"
           ],
           "a": 1,
           "why": "Las acciones pueden tardar años en recuperarse de una caída del 40-50 %. Lo que vas a necesitar en menos de 3-5 años no debería depender de la bolsa.",
