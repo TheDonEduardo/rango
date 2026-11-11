@@ -27,7 +27,12 @@
 @media (prefers-color-scheme:dark){:root{--bg:#0C1622;--surface:#13202F;--ink:#E8EEF5;--ink-2:#9AA9BA;--line:#26364A;--up:#2BC48A;--up-ink:#6BE3B0;--accent:#F5B82E;--banner-bg:#1B2D43}}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 var(--font-body)}
-main{max-width:880px;margin:0 auto;padding:24px 16px 48px}
+main{max-width:1000px;margin:0 auto;padding:24px 16px 48px}
+.hero{display:grid;gap:36px;align-items:center}
+.hero-v{display:flex;gap:14px;justify-content:center;padding-bottom:28px}
+.hero-v img{width:min(46%,236px);height:auto;border-radius:22px;border:1px solid var(--line);box-shadow:0 14px 34px rgba(18,32,47,.16)}
+.hero-v img+img{transform:translateY(28px)}
+@media (min-width:860px){.hero{grid-template-columns:1.05fr .95fr;gap:48px;margin-top:8px}}
 .top{display:flex;align-items:center;gap:10px;font:800 26px var(--font-display)}
 .top svg{width:22px;height:30px}
 .top .w{stroke:var(--up);stroke-width:2.4}.top .b{fill:var(--up)}
@@ -57,10 +62,18 @@ footer a{color:inherit}
 <body>
 <main>
   <header class="top"><svg viewBox="0 0 18 26" aria-hidden="true"><line class="w" x1="9" x2="9" y1="1" y2="25"/><rect class="b" x="2" y="7" width="14" height="12" rx="3"/></svg>Rango</header>
-  <h1>Aprende a invertir en cinco minutos al día</h1>
-  <p class="lead">Lecciones cortas con ejercicios, teoría con dibujos y casos con datos reales. Desde qué es una acción hasta cómo colocar un stop.</p>
-  <a class="cta" href="./">Empezar gratis</a>
-  <p class="sub">Funciona en el navegador y se puede instalar en el móvil. Sin registro.</p>
+  <div class="hero">
+    <div>
+      <h1>Aprende a invertir en cinco minutos al día</h1>
+      <p class="lead">Lecciones cortas con ejercicios, teoría con dibujos y casos con datos reales. Desde qué es una acción hasta cómo colocar un stop.</p>
+      <a class="cta" href="./">Empezar gratis</a>
+      <p class="sub">Funciona en el navegador y se puede instalar en el móvil. Sin registro.</p>
+    </div>
+    <div class="hero-v">
+      <img src="icons/captura-inicio.webp" width="520" height="1040" alt="El camino de lecciones de Rango: cada lección es una vela que se pone verde al completarla">
+      <img src="icons/captura-leccion.webp" width="520" height="1040" alt="Un ejercicio de Rango: marcar el techo y el suelo de una zona sobre un gráfico de velas">
+    </div>
+  </div>
 
   <h2>Cuatro rutas, 66 unidades</h2>
   <ul class="rutas">

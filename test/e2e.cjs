@@ -63,7 +63,8 @@ async function responder(p) {
 async function recorrer(b, url, ids, modos, dir) {
   let fallos = 0;
   for (const [tag, vp, scheme] of modos) {
-    const p = await b.newPage({viewport: vp, colorScheme: scheme}); const errs = [];
+    // En escritorio, sin animaciones: el recorrido va más rápido y el móvil ya las ejercita.
+    const p = await b.newPage({viewport: vp, colorScheme: scheme, reducedMotion: vp.width > 600 ? 'reduce' : 'no-preference'}); const errs = [];
     p.on('pageerror', e => errs.push(e.message)); p.on('console', m => m.type() === 'error' && errs.push(m.text()));
     await p.goto(url);
     for (const id of ids) {

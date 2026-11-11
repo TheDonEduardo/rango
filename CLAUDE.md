@@ -6,7 +6,7 @@ App web gamificada tipo Duolingo para **inversores que ya operan** (bolsa, anál
 
 - `npm run dev`: servidor estático en http://localhost:5173 (hace falta servidor: los módulos ES y el `fetch` del JSON no funcionan desde `file://`).
 - `npm test`: valida el contenido (unidades y `casos.json`), las rutas, los textos y recorre todas las lecciones (y los repasos) simulando respuestas correctas, incorrectas y la pantalla "Sin vidas"; comprueba además cada caso real, la migración del estado y las estadísticas. Avisa (sin fallar) del contenido con fecha de revisión vencida. Ejecútalo tras cualquier cambio en `src/` o en el contenido.
-- `npm run e2e` (`node test/e2e.cjs`): navegador real (Playwright + Chromium) con su propio servidor. Sin opciones, juega una lección de cada ruta y de cada tipo de ejercicio en móvil y escritorio, claro y oscuro, y audita la accesibilidad con axe-core. `--lecciones a,b` juega esas; `--todas` juega todas en móvil claro; `--capturas DIR` guarda capturas. Necesita `playwright` y `axe-core` instalados (en CI se instalan sin tocar package.json; sin axe-core se omite la auditoría).
+- `npm run e2e` (`node test/e2e.cjs`): navegador real (Playwright + Chromium) con su propio servidor. Sin opciones, juega una lección de cada ruta y de cada tipo de ejercicio en móvil y escritorio, claro y oscuro, comprueba la pantalla de carga y el mensaje de fallo de carga, y audita la accesibilidad con axe-core (con las animaciones desactivadas y saltándose la política de seguridad solo para inyectar axe). `--lecciones a,b` juega esas; `--todas` juega todas en móvil claro; `--capturas DIR` guarda capturas. Necesita `playwright` y `axe-core` instalados (en CI se instalan sin tocar package.json; sin axe-core se omite la auditoría).
 - CI: `.github/workflows/rango_test.yml` (raíz del repo) ejecuta `npm test`, el test de los generadores y `npm run e2e` en cada cambio de `rango/`.
 - `python -I tools/test_casos.py`: prueba el generador de casos con datos simulados (sin red).
 - `python tools/semana.py [--fecha AAAA-MM-DD]`: genera la Operación de la semana (`semana.json`); con `--fecha` la prepara como si fuera ese día.
@@ -15,7 +15,8 @@ App web gamificada tipo Duolingo para **inversores que ya operan** (bolsa, anál
 ## Estructura
 
 ```
-index.html              entrada, carga src/app.js como módulo
+index.html              entrada: pantalla de carga estática y src/main.js como módulo
+src/main.js             carga app.js; si falla (sin red ni copia, contenido que no llega), mensaje con «Reintentar»
 src/app.js              arranque, navegación (render y VISTAS), flujo de lección (startRun/check/next/finish) y eventos
 src/state.js            progreso guardado: formato y versión (STATE_V + MIGRAR), racha, rutas abiertas, repaso espaciado
 src/ui.js               $app, toast, setCheck y `ses` (estado de la sesión que no se guarda: vista, lección en curso…)
@@ -27,7 +28,8 @@ src/config.js           configuración del despliegue: CONTACTO (correo de «¿V
 src/compartir.js        imagen de logro (canvas 1080×1080) para compartir o descargar
 src/medicion.js         medir(evento, datos): eventos anónimos, solo con MEDICION_URL y si el usuario lo activa (S.medir)
 src/sync.js             cuentas (enlace mágico) y sincronización con Supabase por REST; solo con SUPABASE_URL y SUPABASE_ANON
-bienvenida.html         página de presentación independiente de la app, con lista de espera configurable
+bienvenida.html         página de presentación independiente de la app, con capturas (icons/captura-*.webp) y lista de espera
+                        configurable (src/bienvenida.js)
 src/drag.js             líneas arrastrables (ejercicio plan y Operación de la semana)
 src/exercises/          un archivo por tipo de ejercicio + index.js (registro TIPOS y su interfaz)
 src/views/              home, lesson (lección y resultados), sim, calc, stats, legal
@@ -63,6 +65,8 @@ Estado guardado (`S`, localStorage `rango.v1`): lleva `v` (versión). Si cambias
 
 - `sw.js` precarga la app y las fuentes. Todo (página, código, contenido y fuentes) va red primero: con conexión siempre llega la misma versión de todo; sin conexión, la última copia guardada.
 - Fuentes propias en `fonts/` (subconjunto latino de Google Fonts, licencia OFL incluida; `fonts/fuentes.css`): la app y bienvenida.html no piden nada a terceros, para no enviar la IP de los usuarios a Google (RGPD). El test falla si vuelve a aparecer fonts.googleapis.com o si una fuente no está en `PRECACHE`.
+- Seguridad: index.html y bienvenida.html llevan una política de seguridad de contenido (meta `Content-Security-Policy`): solo scripts propios, sin scripts en línea ni manejadores en atributos (el test lo comprueba), conexiones solo al propio sitio y a `*.supabase.co`. Si configuras `MEDICION_URL` u otro servicio, añade su dominio a `connect-src`.
+- Compartir el enlace: metadatos Open Graph y `icons/og.png` (1200×630). `og:image` es una ruta relativa: al publicar con dominio propio, ponla absoluta (muchas redes no resuelven rutas relativas).
 - No hace falta subir `CACHE` para publicar código nuevo; súbelo solo para vaciar la caché antigua o cambiar la lista de precarga.
 - Si añades un archivo a `src/` (también en subcarpetas), añádelo a `PRECACHE` (el test lo comprueba). El contenido se precarga como `src/content/units.json`.
 
@@ -120,6 +124,8 @@ Sistema de tokens en `src/styles.css` (`:root`, con variante oscura por `prefers
 - Elemento distintivo: la ruta de lecciones es una línea de precio y cada lección es una vela. Hecha = vela verde con cuerpo proporcional a la precisión; actual = vela ámbar con pulso; bloqueada = doji gris. Una unidad completada se muestra plegada (cabecera con «Completada» y «Ver lecciones»); el estado desplegado no se guarda. Inicio ordenado, de arriba abajo: selector de ruta; como mucho un aviso de los de empezar (objetivo, ruta cerrada, test de nivel o prueba de nivel, el primero que aplique: `avisoHTML`); la tarjeta «Hoy» (`hoyHTML`: meta diaria, «Continuar» cuando la lección actual ya no está en la primera unidad, «Reto del día» y «Repaso del día»; no sale sin XP ni nada pendiente); la herramienta de la ruta (Operación de la semana o simulador de aportaciones, con botón secundario) y el camino. Un solo botón principal por pantalla siempre que se pueda; no añadas tarjetas sueltas: mete lo nuevo en «Hoy» o en el aviso.
 - No añadir: emojis como iconos, degradados decorativos, tarjetas idénticas con sombra, etiquetas en mayúsculas. El gráfico y la vela son el protagonista; el resto, discreto.
 - Móvil primero (columna máx. 520 px), respeta `safe-area-inset-*` y `prefers-reduced-motion`.
+- Escritorio (960 px o más, al final de styles.css): el inicio pasa a dos columnas (`.lado` fijo a la izquierda con selector, aviso, «Hoy» y herramienta; `.camino` con las unidades a la derecha) y las lecciones dejan de ocupar toda la altura, con el botón cerca del ejercicio. En las preguntas de elegir, las teclas 1-9 eligen la opción (su número se ve junto a cada una) y Enter comprueba o continúa.
+- Movimiento (bloque final de styles.css, solo con `prefers-reduced-motion: no-preference`): la barra de progreso crece desde donde estaba (`--de`), el enunciado entra con un fundido al cambiar de pregunta (`.qwrap.entra`), el panel de explicación sube, la opción acertada late y la fallada tiembla; en el resultado, la vela aparece y los XP cuentan desde 0 (`contar()` en app.js). Vibración breve al comprobar donde el dispositivo la admite. Todo por debajo de medio segundo: nada decorativo ni en bucle.
 - Accesibilidad (auditoría con axe-core sin incidencias en 15 pantallas, claro y oscuro): `#app` es la región principal (`<main>`); cada pantalla tiene un `h1` (el nombre en el inicio, el enunciado en lecciones y simuladores); barras de progreso con nombre; un gráfico con controles dentro es `role="group"`, no `img`. Texto de color sobre el fondo o con etiqueta: usa las variantes `--up-ink`/`--down-ink` (contraste ≥ 4,5), no `--up`/`--down`.
 
 ## Estado actual y limitaciones conocidas
