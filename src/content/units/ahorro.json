@@ -16,7 +16,23 @@
       "id": "g2",
       "titulo": "Págate primero",
       "texto": "Si esperas a ver qué sobra a fin de mes, no sobra. Transfiere el ahorro el día de cobro y gasta lo que queda.",
-      "ejemplo": "Con 1.800 € y un 20 %, transfieres 360 € cada mes: 4.320 € al año."
+      "ejemplo": "Con 1.800 € y un 20 %, transfieres 360 € cada mes: 4.320 € al año.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Ahorrar 360 € al mes durante 20 años: guardados suman 86.400 €; invertidos al 5 % anual, 142.845 €",
+        "series": [
+          {
+            "data": [0,4320,8640,12960,17280,21600,25920,30240,34560,38880,43200,47520,51840,56160,60480,64800,69120,73440,77760,82080,86400],
+            "texto": "Guardado: 86.400 €",
+            "tono": "acc"
+          },
+          {
+            "data": [0,4320,8856,13619,18620,23871,29384,35173,41252,47635,54336,61373,68762,76520,84666,93219,102200,111630,121532,131928,142845],
+            "texto": "Invertido al 5 %: 142.845 €",
+            "tono": "up"
+          }
+        ]
+      }
     },
     {
       "id": "g3",

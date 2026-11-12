@@ -59,7 +59,7 @@
     {
       "id": "f9a",
       "title": "Dividendos",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "f9a-1",
@@ -119,6 +119,35 @@
           "a": 48.5,
           "why": "50,00 − 1,50 = 48,50 €. El dividendo sale del valor de la empresa: no es dinero gratis, y además tributa.",
           "guia": "g3"
+        },
+        {
+          "id": "f9a-5",
+          "t": "num",
+          "q": "Con estos datos por acción, ¿qué porcentaje del beneficio reparte como dividendo?",
+          "unit": "%",
+          "a": 35,
+          "why": "1,40 ÷ 4,00 = 35 %. Y sobre el flujo de caja libre, 1,40 ÷ 3,50 = 40 %: el dividendo está cubierto con holgura por el beneficio y por la caja.",
+          "table": {
+            "cols": [
+              "Por acción",
+              "Importe"
+            ],
+            "rows": [
+              [
+                "Beneficio (BPA)",
+                "4,00 €"
+              ],
+              [
+                "Flujo de caja libre",
+                "3,50 €"
+              ],
+              [
+                "Dividendo",
+                "1,40 €"
+              ]
+            ]
+          },
+          "guia": "g2"
         }
       ]
     },

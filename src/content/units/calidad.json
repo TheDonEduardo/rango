@@ -81,7 +81,7 @@
     {
       "id": "f7a",
       "title": "ROIC",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "f7a-1",
@@ -141,6 +141,50 @@
           "a": 10,
           "why": "20 % × 50 % = 10 % anual, sin pedir prestado ni emitir acciones. Un ROIC alto permite crecer rápido reinvirtiendo poco.",
           "guia": "g3"
+        },
+        {
+          "id": "f7a-5",
+          "t": "choice",
+          "q": "El coste del capital de las tres empresas es del 9 %. ¿Cuál crea valor al crecer?",
+          "opts": [
+            "Empresa A",
+            "Empresa B",
+            "Empresa C",
+            "Todas"
+          ],
+          "a": 0,
+          "why": "Solo A gana más (18 %) de lo que cuesta su capital (9 %): cada euro reinvertido crea valor. C lo iguala y no crea nada; B lo destruye aunque crezca.",
+          "table": {
+            "cols": [
+              "Empresa",
+              "ROIC",
+              "Crecimiento de ventas"
+            ],
+            "rows": [
+              [
+                "A",
+                "18 %",
+                "10 %"
+              ],
+              [
+                "B",
+                "6 %",
+                "25 %"
+              ],
+              [
+                "C",
+                "9 %",
+                "15 %"
+              ]
+            ]
+          },
+          "guia": "g2",
+          "porque": [
+            null,
+            "Gana un 6 % con capital que cuesta un 9 %: cuanto más crece, más valor destruye.",
+            "Gana justo lo que cuesta su capital: crecer no añade ni quita valor.",
+            "Solo crea valor la que gana más que su coste de capital."
+          ]
         }
       ]
     },

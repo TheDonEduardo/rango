@@ -154,7 +154,7 @@
     {
       "id": "f3b",
       "title": "Caja y autonomía",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "f3b-1",
@@ -203,6 +203,35 @@
           "a": 85,
           "why": "340 ÷ 400 = 85 %: convierte en caja 85 de cada 100 $ de beneficio. Si la conversión cae trimestre tras trimestre, revisa cobros, inventarios e inversiones.",
           "guia": "g4"
+        },
+        {
+          "id": "f3b-5",
+          "t": "num",
+          "q": "Con estos datos, ¿cuántas veces su EBITDA debe la empresa en términos netos?",
+          "unit": "veces",
+          "a": 3,
+          "why": "Deuda neta: 900 − 300 = 600 M€. 600 ÷ 200 = 3 veces. Por encima de 3 la deuda empieza a pesar; por encima de 4-5, una mala racha puede comprometer a la empresa.",
+          "table": {
+            "cols": [
+              "Partida",
+              "Importe"
+            ],
+            "rows": [
+              [
+                "Deuda financiera",
+                "900 M€"
+              ],
+              [
+                "Caja",
+                "300 M€"
+              ],
+              [
+                "EBITDA anual",
+                "200 M€"
+              ]
+            ]
+          },
+          "guia": "g1"
         }
       ]
     }

@@ -44,7 +44,18 @@
       "id": "g4",
       "titulo": "Inflación",
       "texto": "La inflación es la subida general de precios; en España se mide con el IPC. Si tu dinero rinde menos que la inflación, pierdes poder de compra.",
-      "ejemplo": "La cesta pasa de 100 € a 104 €: un 4 % de inflación. Con los mismos euros compras un 4 % menos."
+      "ejemplo": "La cesta pasa de 100 € a 104 €: un 4 % de inflación. Con los mismos euros compras un 4 % menos.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Con una inflación del 3 % anual, lo que hoy compras con 1.000 € exige cada año más dinero: a los 25 años, esos 1.000 € compran lo que hoy 478 €",
+        "series": [
+          {
+            "data": [1000,971,943,915,888,863,837,813,789,766,744,722,701,681,661,642,623,605,587,570,554,538,522,507,492,478],
+            "texto": "Poder de compra: 478 €",
+            "tono": "dn"
+          }
+        ]
+      }
     }
   ],
   "lessons": [

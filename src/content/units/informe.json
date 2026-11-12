@@ -34,7 +34,7 @@
     {
       "id": "f5a",
       "title": "Sorpresas y consenso",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "f5a-1",
@@ -105,6 +105,20 @@
             null,
             "La hora de publicación no cambia el valor de la empresa."
           ]
+        },
+        {
+          "id": "f5a-5",
+          "t": "order",
+          "q": "Ordena cómo revisar unos resultados trimestrales.",
+          "items": [
+            "Ventas y BPA frente al consenso",
+            "Márgenes y flujo de caja",
+            "Guía para el próximo trimestre",
+            "Preguntas de los analistas en la conferencia",
+            "Reacción del precio y del volumen"
+          ],
+          "why": "Primero qué ha pasado (cifras frente a lo esperado), luego su calidad (márgenes y caja), después qué espera la empresa y, al final, cómo lo interpreta el mercado.",
+          "guia": "g1"
         }
       ]
     },

@@ -50,7 +50,7 @@
     {
       "id": "rt1",
       "title": "La regla del 4 %",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "rt1-1",
@@ -110,6 +110,27 @@
             "Los bonos no garantizan un 4 %; la regla combina acciones y bonos.",
             "No es la media de los fondos de pensiones, sino lo que aguantó una cartera en los peores periodos históricos."
           ]
+        },
+        {
+          "id": "rt1-5",
+          "t": "slide",
+          "q": "Quieres retirar 18.000 € al año con la regla del 4 %. Mueve el capital hasta que alcance.",
+          "label": "Capital acumulado",
+          "min": 200,
+          "max": 800,
+          "step": 25,
+          "start": 300,
+          "a": 450,
+          "unit": "mil €",
+          "why": "18.000 € ÷ 4 % = 450.000 €: 25 veces tu gasto anual. Cada 1.000 € de gasto anual que recortes reduce la meta en 25.000 €.",
+          "show": [
+            {
+              "label": "Retirada anual al 4 %",
+              "k": 40,
+              "unit": "€"
+            }
+          ],
+          "guia": "g1"
         }
       ]
     },

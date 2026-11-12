@@ -34,7 +34,7 @@
     {
       "id": "f10a",
       "title": "Leer la guía",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "f10a-1",
@@ -94,6 +94,32 @@
             null,
             "Ninguna guía es una garantía; solo una referencia que esta empresa suele superar."
           ]
+        },
+        {
+          "id": "f10a-5",
+          "t": "num",
+          "q": "¿Cuánto supera el punto medio de la guía al consenso? Redondea a 2 decimales.",
+          "unit": "%",
+          "a": 2.04,
+          "why": "Punto medio: (480 + 520) ÷ 2 = 500 M$. 500 ÷ 490 − 1 = 2,04 %. Una guía por encima del consenso obliga a los analistas a subir estimaciones.",
+          "tol": 0.006,
+          "table": {
+            "cols": [
+              "Ventas del próximo trimestre",
+              "Importe"
+            ],
+            "rows": [
+              [
+                "Guía de la empresa",
+                "480 a 520 M$"
+              ],
+              [
+                "Consenso de analistas",
+                "490 M$"
+              ]
+            ]
+          },
+          "guia": "g1"
         }
       ]
     },

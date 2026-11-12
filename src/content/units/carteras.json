@@ -34,7 +34,7 @@
     {
       "id": "cm1",
       "title": "Carteras clásicas",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "cm1-1",
@@ -110,6 +110,54 @@
             "La cartera permanente sacrifica rentabilidad para caer poco: no busca batir al S&P 500.",
             "Para maximizar el crecimiento se pondrían más acciones, no oro y liquidez.",
             "Las comisiones no tienen que ver: el oro y la liquidez están para los escenarios malos."
+          ]
+        },
+        {
+          "id": "cm1-5",
+          "t": "choice",
+          "q": "Tres carteras. ¿Cuál caerá más en una crisis bursátil?",
+          "opts": [
+            "Cartera A",
+            "Cartera B",
+            "Cartera C",
+            "Igual"
+          ],
+          "a": 2,
+          "why": "La C tiene un 90 % en acciones: si la bolsa cae un 40 %, pierde cerca de un 36 %. La A, con un 25 %, apenas perdería un 10 %. El peso en acciones explica casi toda la diferencia.",
+          "table": {
+            "cols": [
+              "Cartera",
+              "Acciones",
+              "Bonos",
+              "Oro"
+            ],
+            "rows": [
+              [
+                "A",
+                "25 %",
+                "50 %",
+                "25 %"
+              ],
+              [
+                "B",
+                "60 %",
+                "40 %",
+                "0 %"
+              ],
+              [
+                "C",
+                "90 %",
+                "10 %",
+                "0 %"
+              ]
+            ]
+          },
+          "guia": "g1",
+          "porque": [
+            "Con un 25 % en acciones es la que menos sufre una caída de la bolsa.",
+            "Con un 60 % cae bastante, pero menos que la que tiene un 90 %.",
+            null,
+            "No caen igual: el peso en acciones es muy distinto en cada una."
           ]
         }
       ]

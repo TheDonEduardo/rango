@@ -50,7 +50,7 @@
     {
       "id": "pr1",
       "title": "Acciones, bonos y horizonte",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "pr1-1",
@@ -111,6 +111,27 @@
           "a": 70,
           "why": "110 − 40 = 70 % en acciones y 30 % en bonos. Es solo un punto de partida: tu horizonte y cuánto aguantas ver caer la cartera pesan más que la edad.",
           "guia": "g2"
+        },
+        {
+          "id": "pr1-5",
+          "t": "slide",
+          "q": "No quieres que tu cartera caiga más de un 20 % si la bolsa cae un 50 % y los bonos no se mueven. Elige el peso máximo en acciones.",
+          "label": "Peso en acciones",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "start": 70,
+          "a": 40,
+          "unit": "%",
+          "why": "40 % × 50 % = 20 %. El peso en acciones es el mando que regula la caída máxima que verás: fíjalo pensando en el peor año, no en el mejor.",
+          "show": [
+            {
+              "label": "Caída de la cartera",
+              "k": 0.5,
+              "unit": "%"
+            }
+          ],
+          "guia": "g3"
         }
       ]
     },

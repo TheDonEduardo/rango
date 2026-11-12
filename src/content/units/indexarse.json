@@ -129,7 +129,7 @@
     {
       "id": "ix2",
       "title": "Persistencia y costes",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "ix2-1",
@@ -194,6 +194,50 @@
           ],
           "why": "Al cerrar o fusionar los peores fondos, las clasificaciones parecen mejores de lo que fueron; SPIVA los cuenta para evitarlo.",
           "guia": "g3"
+        },
+        {
+          "id": "ix2-5",
+          "t": "choice",
+          "q": "Tres fondos indexados al mismo índice. ¿Cuál lo ha seguido mejor?",
+          "opts": [
+            "Fondo A",
+            "Fondo B",
+            "Fondo C",
+            "Igual"
+          ],
+          "a": 0,
+          "why": "Lo que cuenta es la diferencia real frente al índice, no la comisión anunciada. El A se queda solo 0,12 puntos por debajo; el B es el más barato sobre el papel, pero pierde 0,35.",
+          "table": {
+            "cols": [
+              "Fondo",
+              "Comisión (TER)",
+              "Diferencia anual frente al índice"
+            ],
+            "rows": [
+              [
+                "A",
+                "0,20 %",
+                "−0,12 %"
+              ],
+              [
+                "B",
+                "0,12 %",
+                "−0,35 %"
+              ],
+              [
+                "C",
+                "0,25 %",
+                "−0,30 %"
+              ]
+            ]
+          },
+          "guia": "g2",
+          "porque": [
+            null,
+            "Es el más barato sobre el papel, pero es el que más se aleja del índice.",
+            "Es el más caro y además se queda 0,30 puntos por debajo del índice.",
+            "Sus diferencias frente al índice van de 0,12 a 0,35 puntos: no son iguales."
+          ]
         }
       ]
     }

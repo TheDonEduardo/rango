@@ -132,7 +132,7 @@
     {
       "id": "ob2",
       "title": "Cuánto aportar",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "ob2-1",
@@ -181,6 +181,20 @@
           "a": 10.8,
           "why": "1.800 × 6 = 10.800 €, es decir, 10,8 miles de euros.",
           "guia": "g4"
+        },
+        {
+          "id": "ob2-5",
+          "t": "order",
+          "q": "Ordena estos productos del plazo más corto al más largo para el que encajan.",
+          "items": [
+            "Cuenta remunerada",
+            "Depósito o letra a 12 meses",
+            "Fondo de renta fija a corto plazo",
+            "Cartera mixta de acciones y bonos",
+            "Fondo de acciones global"
+          ],
+          "why": "Cuanto antes necesites el dinero, menos caída puedes permitirte. La bolsa solo encaja en objetivos a más de diez años, cuando hay tiempo para recuperarse.",
+          "guia": "g1"
         }
       ]
     }
