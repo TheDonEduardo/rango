@@ -465,13 +465,6 @@
   "d": "Parte del sueldo de los empleados que se paga con acciones nuevas. No sale caja, pero diluye al accionista: es un coste real."
  },
  {
-  "termino": "MSCI",
-  "no": [
-   "MSCI World"
-  ],
-  "d": "Empresa que elabora índices bursátiles muy usados por los fondos indexados, como el MSCI World o el MSCI Emerging Markets."
- },
- {
   "termino": "SPIVA",
   "d": "Informe periódico de S&P que compara los fondos de gestión activa con su índice de referencia."
  },

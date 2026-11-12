@@ -1,5 +1,5 @@
 {
-  "n": 13,
+  "n": 14,
   "id": "semis",
   "track": "fundamental",
   "title": "Análisis de un sector: chips",
@@ -15,18 +15,7 @@
         "alt": "Precio de los chips a lo largo del ciclo: sube en la fase de escasez y se hunde cuando entra en funcionamiento la nueva capacidad y sobra oferta.",
         "series": [
           {
-            "data": [
-              60,
-              75,
-              95,
-              100,
-              80,
-              55,
-              50,
-              65,
-              85,
-              100
-            ],
+            "data": [60,75,95,100,80,55,50,65,85,100],
             "texto": "Precios",
             "tono": "sel"
           }

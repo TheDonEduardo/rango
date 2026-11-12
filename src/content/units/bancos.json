@@ -1,0 +1,184 @@
+{
+  "n": 7,
+  "id": "bancos",
+  "track": "fundamental",
+  "title": "Bancos y aseguradoras",
+  "blurb": "Margen de intereses, ROE, capital y precio sobre valor contable.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Margen de intereses",
+      "texto": "Un banco gana la diferencia entre lo que cobra por prestar y lo que paga por el dinero. Cuando suben los tipos, el margen suele mejorar al principio; después, los depósitos se encarecen y la morosidad puede subir.",
+      "ejemplo": "Presta 10.000 M€ al 4,5 % y paga un 1,5 %: 300 M€ de margen al año.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Un banco cobra un 4,5 % por los préstamos y paga un 1,5 % por los depósitos: la diferencia, 3 puntos, es su margen de intereses.",
+        "series": [
+          {
+            "data": [4.5,4.5,4.5,4.5,4.5,4.5],
+            "texto": "Préstamos 4,5 %",
+            "tono": "up"
+          },
+          {
+            "data": [1.5,1.5,1.5,1.5,1.5,1.5],
+            "texto": "Depósitos 1,5 %",
+            "tono": "dn"
+          }
+        ],
+        "llaves": [
+          {
+            "i": 2,
+            "y1": 1.5,
+            "y2": 4.5,
+            "texto": "Margen: 3 puntos"
+          }
+        ],
+        "h": 170
+      }
+    },
+    {
+      "id": "g2",
+      "titulo": "ROE y morosidad",
+      "texto": "La rentabilidad de un banco se mide con el ROE, beneficio entre patrimonio, porque la deuda es su materia prima. La morosidad dice qué parte de los préstamos no se cobra: si sube, las provisiones se comen el beneficio.",
+      "ejemplo": "Gana 1.200 M€ con 10.000 M€ de patrimonio: ROE del 12 %. Dudosos de 300 M€ sobre 10.000: un 3 %."
+    },
+    {
+      "id": "g3",
+      "titulo": "Precio sobre valor contable",
+      "texto": "Los bancos se valoran por lo que se paga por su patrimonio. Cotizar por debajo de 1 no es una ganga si el ROE es menor que la rentabilidad que exigen los accionistas.",
+      "ejemplo": "A 12,00 € con un valor contable de 15,00 €: 0,8 veces. Con un ROE del 5 %, el descuento puede estar justificado."
+    },
+    {
+      "id": "g4",
+      "titulo": "Capital y aseguradoras",
+      "texto": "El CET1 es el colchón de capital frente a pérdidas, sobre los activos ponderados por riesgo. En las aseguradoras se mira el ratio combinado: siniestros y gastos entre primas; por debajo de 100, el seguro gana dinero.",
+      "ejemplo": "1.300 M€ de capital sobre 10.000 M€ de activos ponderados: CET1 del 13 %."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "fb1",
+      "title": "Cómo gana dinero un banco",
+      "ex": [
+        {
+          "id": "fb1-1",
+          "t": "num",
+          "q": "Un banco presta 10.000 M€ al 4,5 % y paga un 1,5 % por los depósitos que financian esos préstamos. ¿Cuántos millones gana al año de margen de intereses?",
+          "unit": "",
+          "a": 300,
+          "why": "4,5 % − 1,5 % = 3 puntos; 10.000 × 3 % = 300 M€. Es el negocio básico de un banco: cobrar por prestar más de lo que paga por el dinero.",
+          "guia": "g1"
+        },
+        {
+          "id": "fb1-2",
+          "t": "num",
+          "q": "Un banco gana 1.200 M€ con un patrimonio de 10.000 M€. ¿Cuál es su ROE?",
+          "unit": "%",
+          "a": 12,
+          "why": "1.200 ÷ 10.000 = 12 %. En los bancos se usa el ROE, no el ROIC: la deuda es su materia prima y no se puede separar del negocio.",
+          "guia": "g2"
+        },
+        {
+          "id": "fb1-3",
+          "t": "choice",
+          "q": "El banco central sube los tipos. ¿Qué suele pasar con el margen de intereses a corto plazo?",
+          "opts": [
+            "Baja siempre: paga más por los depósitos",
+            "Suele subir: los préstamos se encarecen antes",
+            "No cambia: los tipos no afectan a un banco",
+            "Desaparece: nadie pide ya préstamos"
+          ],
+          "a": 1,
+          "why": "Los préstamos a tipo variable se revisan pronto y los depósitos tardan más en pagar. Con el tiempo los depositantes exigen más y, si la economía se frena, sube la morosidad.",
+          "guia": "g1",
+          "porque": [
+            "A corto plazo el banco tarda en subir lo que paga por los depósitos; por eso el margen suele mejorar.",
+            null,
+            "Los tipos son la variable que más mueve el margen de un banco.",
+            "Se piden menos préstamos, pero no desaparecen, y los que ya existen pagan más."
+          ]
+        },
+        {
+          "id": "fb1-4",
+          "t": "num",
+          "q": "De 10.000 M€ en préstamos, 300 M€ son dudosos. ¿Cuál es la tasa de morosidad?",
+          "unit": "%",
+          "a": 3,
+          "why": "300 ÷ 10.000 = 3 %. Importa su tendencia: una morosidad que sube obliga a dotar provisiones, que se restan del beneficio.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 4
+    },
+    {
+      "id": "fb2",
+      "title": "Valorar un banco",
+      "ex": [
+        {
+          "id": "fb2-1",
+          "t": "num",
+          "q": "Un banco cotiza a 12,00 € y su valor contable por acción es de 15,00 €. ¿A cuántas veces su valor contable cotiza?",
+          "unit": "",
+          "a": 0.8,
+          "why": "12,00 ÷ 15,00 = 0,8 veces. En los bancos, el precio sobre valor contable es el múltiplo de referencia: su balance son activos financieros valorados cerca de mercado.",
+          "guia": "g3"
+        },
+        {
+          "id": "fb2-2",
+          "t": "choice",
+          "q": "Ese banco cotiza a 0,8 veces su valor contable y su ROE es del 5 %. ¿Cómo lo lees?",
+          "opts": [
+            "Ganga segura: cotiza por debajo de su valor en libros",
+            "Puede ser justo: gana menos de lo que cuesta su capital",
+            "Un error del mercado que se corregirá en poco tiempo",
+            "Señal de quiebra inminente"
+          ],
+          "a": 1,
+          "why": "Si los accionistas exigen un 10 % y el banco gana un 5 % sobre su patrimonio, ese patrimonio vale menos que su valor en libros. Un descuento con ROE bajo no es una ganga por sí solo.",
+          "guia": "g3",
+          "porque": [
+            "Con un ROE del 5 %, por debajo de lo que exige el accionista, el descuento puede ser merecido.",
+            null,
+            "El mercado puede tener razón: paga menos por un patrimonio que rinde poco.",
+            "Un descuento sobre el valor contable no indica quiebra: indica poca rentabilidad."
+          ]
+        },
+        {
+          "id": "fb2-3",
+          "t": "num",
+          "q": "Un banco tiene 1.300 M€ de capital de máxima calidad y 10.000 M€ de activos ponderados por riesgo. ¿Cuál es su ratio CET1?",
+          "unit": "%",
+          "a": 13,
+          "why": "1.300 ÷ 10.000 = 13 %. Es el colchón para absorber pérdidas: cuanto más alto sobre el mínimo que exige el supervisor, más margen para repartir dividendos.",
+          "guia": "g4"
+        },
+        {
+          "id": "fb2-4",
+          "t": "match",
+          "q": "Empareja cada medida con lo que dice de un banco o de una aseguradora.",
+          "pairs": [
+            [
+              "Margen de intereses",
+              "Lo que gana entre prestar y captar dinero"
+            ],
+            [
+              "Morosidad",
+              "Parte de los préstamos que no se cobra"
+            ],
+            [
+              "CET1",
+              "Colchón de capital frente a pérdidas"
+            ],
+            [
+              "Ratio combinado",
+              "Siniestros y gastos entre primas: por debajo de 100, gana"
+            ]
+          ],
+          "why": "En el sector financiero no sirven el EV/EBITDA ni la deuda neta: se miran el margen, la calidad de los préstamos, el capital y, en aseguradoras, el ratio combinado.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 4
+    }
+  ]
+}

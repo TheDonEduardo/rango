@@ -1,0 +1,231 @@
+{
+  "n": 7,
+  "id": "bases",
+  "track": "tecnico",
+  "title": "Bases de O'Neil",
+  "blurb": "Taza con asa, doble suelo y base plana: dónde está el pivote.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Taza con asa",
+      "texto": "Es la base más conocida de O'Neil: una corrección redondeada del 12 al 33 % que recupera casi todo lo perdido, seguida de un retroceso corto, el asa. Se forma en semanas o meses, dentro de una tendencia alcista.",
+      "ejemplo": "De 50,00 € a 37,50 €: una taza del 25 %.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Taza con asa: el precio cae de forma redondeada de 50 a 37,50 €, se recupera, retrocede un poco en el asa y rompe el pivote.",
+        "series": [
+          {
+            "data": [50,47,43,39.5,37.5,38,40,44,47.5,49.4,47.5,45.5,46.5,48.5,49.6,52],
+            "tono": "ink"
+          }
+        ],
+        "margen": 120,
+        "h": 210,
+        "zonas": [
+          {
+            "i1": 0,
+            "i2": 9,
+            "texto": "Taza"
+          },
+          {
+            "i1": 10,
+            "i2": 13,
+            "texto": "Asa"
+          }
+        ],
+        "lineas": [
+          {
+            "y": 49.5,
+            "texto": "Pivote 49,50",
+            "tono": "acc"
+          }
+        ]
+      }
+    },
+    {
+      "id": "g2",
+      "titulo": "El asa y el pivote",
+      "texto": "El asa debe estar en la mitad superior de la taza, retroceder poco y con volumen bajo. El pivote es su máximo: se compra al superarlo con volumen alto, con una pérdida máxima del 7-8 %.",
+      "ejemplo": "Asa de 49,40 € a 45,45 €: un 8,0 %. Compra a 49,50 € y límite de pérdida en 45,54 €."
+    },
+    {
+      "id": "g3",
+      "titulo": "Doble suelo y base plana",
+      "texto": "El doble suelo dibuja una W: se compra al superar su pico central, no en el segundo mínimo. La base plana es un rango de menos del 15 % durante cinco semanas o más: el pivote es su máximo.",
+      "ejemplo": "Seis semanas entre 70,00 € y 80,00 €: una base plana del 12,5 %.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Doble suelo en forma de W: dos mínimos separados por un pico central; el punto de compra está al superar ese pico.",
+        "series": [
+          {
+            "data": [62,56,50,54,58,53,49.5,54,58.6,62],
+            "tono": "ink"
+          }
+        ],
+        "margen": 120,
+        "lineas": [
+          {
+            "y": 58.1,
+            "texto": "Pivote: pico central",
+            "tono": "acc"
+          }
+        ]
+      }
+    },
+    {
+      "id": "g4",
+      "titulo": "Contar las bases",
+      "texto": "Las primeras bases de una subida son las más fiables. A partir de la tercera, el patrón es evidente para todos y falla más: reduce el tamaño o exige mejores condiciones.",
+      "ejemplo": "Primera base tras salir de una Fase 1: la mejor. Cuarta base tras duplicar el precio: precaución."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "on1",
+      "title": "Taza con asa",
+      "ex": [
+        {
+          "id": "on1-1",
+          "t": "choice",
+          "q": "¿Qué dibuja una taza con asa?",
+          "opts": [
+            "Dos mínimos iguales separados por un rebote",
+            "Caída redondeada, recuperación y un retroceso corto",
+            "Un rango estrecho tras una subida fuerte",
+            "Tres máximos con el central más alto"
+          ],
+          "a": 1,
+          "why": "La taza es una corrección redondeada que recupera casi todo lo perdido; el asa, un último retroceso corto cerca del máximo, donde salen los últimos vendedores antes de la ruptura.",
+          "guia": "g1",
+          "porque": [
+            "Eso es un doble suelo, otra base distinta.",
+            null,
+            "Eso describe una base plana.",
+            "Eso es un hombro-cabeza-hombro, una figura de techo."
+          ]
+        },
+        {
+          "id": "on1-2",
+          "t": "num",
+          "q": "La taza va de un máximo de 50,00 € a un mínimo de 37,50 €. ¿Qué profundidad tiene?",
+          "unit": "%",
+          "a": 25,
+          "why": "(50,00 − 37,50) ÷ 50,00 = 25 %. O'Neil consideraba normales tazas del 12 al 33 %; mucho más profundas suelen fallar, porque queda demasiada gente atrapada arriba.",
+          "guia": "g1"
+        },
+        {
+          "id": "on1-3",
+          "t": "num",
+          "q": "El asa baja de 49,40 € a 45,45 €. ¿Cuánto retrocede? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 8.0,
+          "why": "(49,40 − 45,45) ÷ 49,40 = 8,0 %. Un asa sana retrocede poco, menos de un 12-15 %, y con volumen bajo: indica que ya casi nadie quiere vender.",
+          "tol": 0.06,
+          "guia": "g2"
+        },
+        {
+          "id": "on1-4",
+          "t": "choice",
+          "q": "El asa se forma en la mitad inferior de la taza. ¿Cómo la lees?",
+          "opts": [
+            "Mejor: queda más recorrido hasta el máximo",
+            "Débil: estas bases tienden a fallar",
+            "Indiferente: solo importa el volumen",
+            "Es una segunda taza, aún más fiable"
+          ],
+          "a": 1,
+          "why": "Un asa baja indica que la demanda no ha podido recuperar la caída. O'Neil pedía que el asa estuviera en la mitad superior de la taza y por encima de la media de 200 sesiones.",
+          "guia": "g2",
+          "porque": [
+            "Un asa baja no da más recorrido: indica que la demanda no ha recuperado la caída.",
+            null,
+            "El volumen importa, pero la posición del asa también: abajo es señal de debilidad.",
+            "No es otra taza: es un asa mal situada, y esas bases fallan más."
+          ]
+        }
+      ],
+      "ultimo": 4
+    },
+    {
+      "id": "on2",
+      "title": "Doble suelo y base plana",
+      "ex": [
+        {
+          "id": "on2-1",
+          "t": "choice",
+          "q": "En un doble suelo en forma de W, ¿dónde está el punto de compra?",
+          "opts": [
+            "En el segundo mínimo de la W",
+            "En el primer mínimo de la W",
+            "Al superar el máximo intermedio de la W",
+            "En el máximo anterior a la caída"
+          ],
+          "a": 2,
+          "why": "El pivote es el pico central de la W: al superarlo, el precio demuestra que la demanda ha absorbido las dos caídas. Comprar en el segundo mínimo es adivinar el suelo.",
+          "guia": "g3",
+          "porque": [
+            "Comprar en el segundo mínimo es adivinar el suelo: aún no hay confirmación.",
+            "El primer mínimo queda atrás y nadie sabe entonces que habrá una W.",
+            null,
+            "El máximo anterior a la caída queda demasiado lejos: el pivote es el pico central."
+          ]
+        },
+        {
+          "id": "on2-2",
+          "t": "num",
+          "q": "Tras subir un 30 %, la acción se mueve seis semanas entre 70,00 € y 80,00 €. ¿Qué profundidad tiene esa base?",
+          "unit": "%",
+          "a": 12.5,
+          "why": "(80,00 − 70,00) ÷ 80,00 = 12,5 %. Menos de un 15 % durante cinco semanas o más es una base plana: el precio descansa sin ceder terreno. El pivote es su máximo.",
+          "guia": "g3"
+        },
+        {
+          "id": "on2-3",
+          "t": "choice",
+          "q": "Es la cuarta base que forma la acción desde que empezó su subida. ¿Qué cambia?",
+          "opts": [
+            "Nada: todas las bases valen lo mismo",
+            "Es más fiable: el patrón ya está probado",
+            "Más riesgo de fallo: es una base tardía",
+            "Hay que comprar el doble que en la primera"
+          ],
+          "a": 2,
+          "why": "Las primeras bases de una tendencia son las que mejor funcionan. En la tercera o cuarta el patrón ya es evidente para todos y la subida está madura: reduce tamaño o exige más.",
+          "guia": "g4",
+          "porque": [
+            "Las bases tardías fallan más que las primeras.",
+            "Que el patrón sea evidente para todos lo hace menos fiable, no más.",
+            null,
+            "En una base tardía se reduce el tamaño, no se dobla."
+          ]
+        },
+        {
+          "id": "on2-4",
+          "t": "match",
+          "q": "Empareja cada base con lo que la distingue.",
+          "pairs": [
+            [
+              "Taza con asa",
+              "Caída redondeada y retroceso corto final"
+            ],
+            [
+              "Doble suelo",
+              "W: se compra al superar su pico central"
+            ],
+            [
+              "Base plana",
+              "Rango de menos del 15 % durante semanas"
+            ],
+            [
+              "VCP",
+              "Contracciones cada vez más pequeñas"
+            ]
+          ],
+          "why": "Todas son pausas dentro de una tendencia alcista: la oferta se agota y el punto de compra es la ruptura de un nivel concreto, con volumen.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 4
+    }
+  ]
+}

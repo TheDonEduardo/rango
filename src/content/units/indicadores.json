@@ -1,0 +1,205 @@
+{
+  "n": 16,
+  "id": "indicadores",
+  "track": "tecnico",
+  "title": "Indicadores",
+  "blurb": "RSI, MACD y Bollinger: qué aportan y qué no.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "RSI",
+      "texto": "El RSI va de 0 a 100 y mide la fuerza de las subidas frente a las bajadas recientes. Por encima de 70 se dice «sobrecomprado», pero en una tendencia fuerte puede seguir ahí semanas: no es una señal de venta.",
+      "ejemplo": "Una acción líder en Fase 2 con RSI de 78 puede seguir subiendo: la salida la marca el stop."
+    },
+    {
+      "id": "g2",
+      "titulo": "Divergencias",
+      "texto": "Si el precio marca un nuevo máximo y el RSI no, la subida pierde impulso. Es un aviso para subir stops o no añadir, no una orden de venta: puede durar meses.",
+      "ejemplo": "Nuevo máximo del precio con un RSI más bajo que en el máximo anterior: divergencia bajista."
+    },
+    {
+      "id": "g3",
+      "titulo": "MACD",
+      "texto": "El MACD es la diferencia entre dos medias exponenciales, la de 12 y la de 26 sesiones. Positivo y creciente indica que el precio reciente sube más rápido que el de fondo. Como todo indicador, va con retraso.",
+      "ejemplo": "Media de 12 en 52,40 € y de 26 en 50,90 €: MACD de 1,50 €."
+    },
+    {
+      "id": "g4",
+      "titulo": "Bandas de Bollinger",
+      "texto": "Dos bandas a dos desviaciones típicas de la media de 20 sesiones. Se estrechan con poca volatilidad y se ensanchan cuando vuelve: un estrechamiento suele preceder a un movimiento, sin decir hacia dónde.",
+      "ejemplo": "Media en 40,00 € y desviación de 1,50 €: bandas en 43,00 € y 37,00 €, un ancho del 15 %.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Bandas de Bollinger que se estrechan alrededor de la media durante semanas y se abren de golpe cuando el precio rompe al alza.",
+        "series": [
+          {
+            "data": [43,42.8,42.3,42.1,41.6,41.5,41.4,41.4,42.2,43.8,45.8,48],
+            "texto": "Banda sup.",
+            "tono": "sel"
+          },
+          {
+            "data": [40,40.2,40.1,40.3,40.2,40.4,40.5,40.6,41,41.8,42.8,44],
+            "texto": "Media 20",
+            "tono": "acc"
+          },
+          {
+            "data": [37,37.6,37.9,38.5,38.8,39.3,39.6,39.8,39.8,39.8,39.8,40],
+            "texto": "Banda inf.",
+            "tono": "sel"
+          }
+        ],
+        "zonas": [
+          {
+            "i1": 4,
+            "i2": 7,
+            "texto": "Estrechamiento"
+          }
+        ],
+        "h": 210
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "id1",
+      "title": "RSI y MACD",
+      "ex": [
+        {
+          "id": "id1-1",
+          "t": "choice",
+          "q": "Una acción en Fase 2 fuerte marca un RSI de 78. ¿Qué haces?",
+          "opts": [
+            "Vender: la sobrecompra anuncia el techo",
+            "Venderla en corto de inmediato",
+            "Nada por eso solo: puede seguir alto semanas",
+            "Comprar más: cuanto más alto, mejor"
+          ],
+          "a": 2,
+          "why": "En una tendencia fuerte el RSI pasa semanas por encima de 70. «Sobrecomprado» no es una señal de venta: describe una subida rápida. La salida la marcan el stop y el precio.",
+          "guia": "g1",
+          "porque": [
+            "En tendencias fuertes el RSI sigue alto semanas: vender por eso es salir de las mejores subidas.",
+            "Ponerse corto contra una Fase 2 fuerte es ir contra la tendencia.",
+            null,
+            "Un RSI alto tampoco es motivo de compra: solo describe la subida reciente."
+          ]
+        },
+        {
+          "id": "id1-2",
+          "t": "choice",
+          "q": "El precio marca un nuevo máximo, pero el RSI se queda por debajo de su máximo anterior. ¿Cómo lo usas?",
+          "opts": [
+            "Aviso de pérdida de fuerza: sube los stops",
+            "Señal de venta inmediata de todo",
+            "Señal de compra: el RSI tiene recorrido",
+            "No significa nada en ningún caso"
+          ],
+          "a": 0,
+          "why": "Es una divergencia bajista: el precio sube con menos impulso. Avisa, pero puede durar meses; sirve para ajustar stops o no añadir, no para vender por sí sola.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "Una divergencia puede durar meses: no basta para venderlo todo.",
+            "El RSI más bajo indica menos impulso, no más recorrido.",
+            "Sí significa algo: la subida pierde fuerza, y conviene proteger la ganancia."
+          ]
+        },
+        {
+          "id": "id1-3",
+          "t": "num",
+          "q": "La media exponencial de 12 sesiones está en 52,40 € y la de 26, en 50,90 €. ¿Cuánto vale el MACD?",
+          "unit": "€",
+          "a": 1.5,
+          "why": "52,40 − 50,90 = 1,50 €. El MACD es la diferencia entre las dos medias: positivo y creciente significa que el precio reciente sube más rápido que el de fondo.",
+          "guia": "g3"
+        },
+        {
+          "id": "id1-4",
+          "t": "choice",
+          "q": "¿Qué información añaden los indicadores al precio y al volumen?",
+          "opts": [
+            "Anticipan el precio con mucha fiabilidad",
+            "Ninguna nueva: los resumen de otra forma",
+            "Sustituyen al stop y al tamaño",
+            "Datos internos de la empresa"
+          ],
+          "a": 1,
+          "why": "RSI, MACD y Bollinger se calculan solo con el precio pasado. Ordenan lo que ya está en el gráfico; por eso sirven como apoyo, no como base de una operación.",
+          "guia": "g4",
+          "porque": [
+            "Se calculan con precios pasados: van con retraso y no anticipan con fiabilidad.",
+            null,
+            "Ningún indicador limita la pérdida: eso lo hacen el stop y el tamaño.",
+            "No usan datos de la empresa, solo precio y volumen."
+          ]
+        }
+      ],
+      "ultimo": 4
+    },
+    {
+      "id": "id2",
+      "title": "Bollinger y uso práctico",
+      "ex": [
+        {
+          "id": "id2-1",
+          "t": "num",
+          "q": "La media de 20 sesiones está en 40,00 € y la desviación típica es de 1,50 €. ¿Dónde está la banda superior de Bollinger?",
+          "unit": "€",
+          "a": 43,
+          "why": "40,00 + 2 × 1,50 = 43,00 €. Las bandas van dos desviaciones por encima y por debajo de la media: se ensanchan cuando sube la volatilidad y se estrechan cuando baja.",
+          "guia": "g4"
+        },
+        {
+          "id": "id2-2",
+          "t": "choice",
+          "q": "Las bandas de Bollinger se estrechan hasta su mínimo de seis meses. ¿Qué indica?",
+          "opts": [
+            "La tendencia se ha agotado: toca vender",
+            "Volatilidad muy baja: suele llegar un movimiento",
+            "Una señal de compra garantizada",
+            "Un fallo en el cálculo del indicador"
+          ],
+          "a": 1,
+          "why": "La volatilidad alterna fases de calma y de expansión. Un estrechamiento avisa de que se acerca un movimiento, pero no dice hacia dónde: es la misma idea que las contracciones de un VCP.",
+          "guia": "g4",
+          "porque": [
+            "El estrechamiento no dice que la tendencia haya terminado ni hacia dónde irá el precio.",
+            null,
+            "No garantiza nada: el movimiento puede ser a la baja.",
+            "No es un fallo: las bandas se estrechan cuando baja la volatilidad."
+          ]
+        },
+        {
+          "id": "id2-3",
+          "t": "num",
+          "q": "Banda superior en 43,00 €, inferior en 37,00 € y media en 40,00 €. ¿Qué ancho tienen las bandas, en porcentaje de la media?",
+          "unit": "%",
+          "a": 15,
+          "why": "(43,00 − 37,00) ÷ 40,00 = 15 %. Comparar ese ancho con el de meses anteriores dice si la volatilidad está alta o baja para ese valor.",
+          "guia": "g4"
+        },
+        {
+          "id": "id2-4",
+          "t": "choice",
+          "q": "¿Qué papel dejas a los indicadores en tu sistema?",
+          "opts": [
+            "La única señal de entrada y de salida",
+            "Usar diez a la vez para confirmar",
+            "Un filtro, después de tendencia y riesgo",
+            "Solo sirven en gráficos de un minuto"
+          ],
+          "a": 2,
+          "why": "Primero la tendencia (fase y medias), el riesgo (stop y tamaño) y el volumen. Un indicador puede ayudar a afinar; varios a la vez repiten la misma información y dan falsa seguridad.",
+          "guia": "g4",
+          "porque": [
+            "Un indicador solo, sin tendencia ni stop, da muchas señales falsas.",
+            "Diez indicadores repiten la misma información del precio: falsa seguridad.",
+            null,
+            "Se usan en cualquier temporalidad; el problema no es el plazo."
+          ]
+        }
+      ],
+      "ultimo": 4
+    }
+  ]
+}
