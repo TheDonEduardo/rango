@@ -1,0 +1,238 @@
+{
+  "n": 20,
+  "id": "operacion",
+  "track": "tecnico",
+  "title": "Caso completo: planifica una operación",
+  "blurb": "Del mercado al diario: una operación entera con sus números.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "De arriba abajo",
+      "texto": "Primero el mercado, luego la acción. Busca compras solo con el índice en tendencia alcista, y elige valores en Fase 2, con fuerza relativa alta y una base ordenada.",
+      "ejemplo": "Fase 2, fuerza relativa 92 y base de 6 semanas con volumen seco: candidata."
+    },
+    {
+      "id": "g2",
+      "titulo": "El plan antes de la orden",
+      "texto": "Entrada en el pivote, stop a menos de un 7-8 % y tamaño calculado desde el riesgo: euros que arriesgas divididos entre el riesgo por acción.",
+      "ejemplo": "200 € ÷ 2,40 € = 83 acciones: 3.320 €, el 16,6 % de la cuenta."
+    },
+    {
+      "id": "g3",
+      "titulo": "Gestionar la posición",
+      "texto": "Exige volumen en la ruptura. En 2R, vende una parte y sube el stop a la entrada: la operación ya no puede perder y el resto busca el objetivo.",
+      "ejemplo": "Entrada 40,00 € y riesgo 2,40 €: 2R en 44,80 € y 3R en 47,20 €."
+    },
+    {
+      "id": "g4",
+      "titulo": "Revisar en R",
+      "texto": "Anota cada resultado en R. Con el porcentaje de aciertos y las medias de ganancia y pérdida calculas la expectativa: si es positiva, el sistema gana aunque falles a menudo.",
+      "ejemplo": "0,40 × 2,5R − 0,60 × 1R = 0,4R por operación."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "zt1",
+      "title": "Filtrar y preparar",
+      "ex": [
+        {
+          "id": "zt1-1",
+          "t": "choice",
+          "q": "Caso práctico: cuenta de 20.000 € y riesgo del 1 % por operación. El índice cotiza sobre su media de 200 sesiones, que sube, y casi no hay días de distribución. ¿Qué haces?",
+          "opts": [
+            "Buscar compras: el mercado acompaña",
+            "Abrir cortos: está demasiado alto",
+            "Quedarte fuera hasta que corrija",
+            "Comprar con el doble de riesgo"
+          ],
+          "a": 0,
+          "why": "Tres de cada cuatro acciones siguen al mercado. Con el índice en tendencia alcista y sin distribución, las rupturas tienen el viento a favor. El riesgo por operación no cambia.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Ponerse corto contra una tendencia alcista sana es ir contra la mayoría de las acciones.",
+            "Esperar una corrección que nadie sabe cuándo llegará te deja fuera de las mejores rupturas.",
+            "Que el mercado acompañe no justifica doblar el riesgo: el 1 % se mantiene."
+          ]
+        },
+        {
+          "id": "zt1-2",
+          "t": "choice",
+          "q": "Tienes tres candidatas. ¿Cuál preparas?",
+          "table": {
+            "cols": [
+              "Acción",
+              "Fase",
+              "Fuerza relativa",
+              "Base"
+            ],
+            "rows": [
+              [
+                "A",
+                "2",
+                "92",
+                "6 semanas, volumen seco"
+              ],
+              [
+                "B",
+                "4",
+                "35",
+                "Cae hacia mínimos"
+              ],
+              [
+                "C",
+                "2",
+                "88",
+                "Subida vertical, sin base"
+              ]
+            ]
+          },
+          "opts": [
+            "Acción A",
+            "Acción B",
+            "Acción C",
+            "Las tres"
+          ],
+          "a": 0,
+          "why": "A reúne todo: Fase 2, fuerza relativa alta y una base ordenada con el volumen secándose. B está en caída y C está extendida: comprarla ahora es perseguir el precio.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "B está en Fase 4 y con fuerza relativa baja: no se compra lo que cae.",
+            "C está extendida y sin base: no hay un stop lógico cercano.",
+            "Solo A cumple las condiciones; B y C no tienen punto de compra."
+          ]
+        },
+        {
+          "id": "zt1-3",
+          "t": "num",
+          "q": "El pivote de A está en 40,00 € y colocas el stop en 37,60 €. ¿Qué porcentaje arriesgas por acción?",
+          "unit": "%",
+          "a": 6,
+          "why": "(40,00 − 37,60) ÷ 40,00 = 6 %. Está dentro del límite del 7-8 %: si el stop lógico quedara más lejos, la entrada estaría demasiado extendida.",
+          "guia": "g2"
+        },
+        {
+          "id": "zt1-4",
+          "t": "num",
+          "q": "Arriesgas el 1 % de 20.000 € y cada acción arriesga 2,40 €. ¿Cuántas acciones compras? Redondea hacia abajo.",
+          "unit": "acc.",
+          "a": 83,
+          "why": "Riesgo: 20.000 € × 1 % = 200 €. 200 ÷ 2,40 = 83,3: compras 83 acciones. Siempre hacia abajo, para no pasar del riesgo fijado.",
+          "guia": "g2"
+        },
+        {
+          "id": "zt1-5",
+          "t": "num",
+          "q": "Compras 83 acciones a 40,00 €. ¿Qué porcentaje de la cuenta ocupa la posición? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 16.6,
+          "why": "83 × 40,00 € = 3.320 €, y 3.320 ÷ 20.000 = 16,6 %. El tamaño sale del riesgo y del stop, no de cuánto «te gusta» la acción.",
+          "tol": 0.06,
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "zt2",
+      "title": "Gestionar y revisar",
+      "ex": [
+        {
+          "id": "zt2-1",
+          "t": "num",
+          "q": "Entrada a 40,00 € y riesgo de 2,40 € por acción. ¿En qué precio está el objetivo de 3R?",
+          "unit": "€",
+          "a": 47.2,
+          "why": "40,00 + 3 × 2,40 = 47,20 €. Definir el objetivo en R antes de entrar te dice si la operación merece la pena.",
+          "guia": "g3"
+        },
+        {
+          "id": "zt2-2",
+          "t": "choice",
+          "q": "La acción supera el pivote, pero con un volumen un 40 % inferior a su media. ¿Cómo lo lees?",
+          "opts": [
+            "Ruptura fiable: el precio ya ha superado el nivel",
+            "Ruptura dudosa: entra con menos tamaño o espera",
+            "Señal de venta en corto inmediata y agresiva",
+            "El volumen no aporta ninguna información útil"
+          ],
+          "a": 1,
+          "why": "Una ruptura sana atrae demanda: volumen al menos un 40-50 % por encima de la media. Sin volumen, las instituciones no están comprando y el fallo es más probable.",
+          "guia": "g3",
+          "porque": [
+            "Superar el nivel sin volumen no demuestra demanda: muchas de esas rupturas fallan.",
+            null,
+            "Una ruptura débil no es una señal de venta en corto en plena Fase 2.",
+            "El volumen es la huella de las instituciones: confirma o desmiente la ruptura."
+          ]
+        },
+        {
+          "id": "zt2-3",
+          "t": "choice",
+          "q": "El precio llega a 44,80 €, que son 2R. ¿Qué haces?",
+          "opts": [
+            "Vender una parte y subir el stop a la entrada",
+            "Comprar más y bajar el stop para darle aire",
+            "Venderlo todo: 2R es el máximo posible",
+            "Quitar el stop: ya va en ganancias"
+          ],
+          "a": 0,
+          "why": "Al asegurar una parte y llevar el stop a 40,00 €, la operación ya no puede acabar en pérdida y el resto queda libre para buscar el objetivo.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Bajar el stop aumenta el riesgo justo cuando deberías reducirlo.",
+            "Vender todo en 2R impide que una ganadora llegue a 3R o más.",
+            "Sin stop, una ganancia puede acabar convertida en pérdida."
+          ]
+        },
+        {
+          "id": "zt2-4",
+          "t": "num",
+          "q": "Vendes 40 acciones a 44,80 € y las otras 43 salen después en el stop de entrada, a 40,00 €. ¿Cuánto ganas en total?",
+          "unit": "€",
+          "a": 192,
+          "why": "40 × (44,80 − 40,00) = 192 €. Las otras 43 salen sin ganancia ni pérdida. No llegó a 3R, pero el plan protegió el beneficio.",
+          "guia": "g3"
+        },
+        {
+          "id": "zt2-5",
+          "t": "num",
+          "q": "Ganaste 192 € arriesgando 200 €. ¿Cuántas R son? Redondea a 2 decimales.",
+          "unit": "R",
+          "a": 0.96,
+          "why": "192 ÷ 200 = 0,96R. Anotar cada resultado en R permite comparar operaciones de distinto tamaño en el diario.",
+          "tol": 0.006,
+          "guia": "g4"
+        },
+        {
+          "id": "zt2-6",
+          "t": "num",
+          "q": "Tras 20 operaciones, tu diario dice: 40 % de aciertos, ganancia media de 2,5R y pérdida media de 1R. ¿Cuál es tu expectativa por operación?",
+          "unit": "R",
+          "a": 0.4,
+          "why": "0,40 × 2,5 − 0,60 × 1 = 1,0 − 0,6 = 0,4R. Fallando más de la mitad, el sistema gana: cada operación aporta de media 0,4 veces lo arriesgado.",
+          "tol": 0.006,
+          "guia": "g4"
+        },
+        {
+          "id": "zt2-7",
+          "t": "order",
+          "q": "Ordena la operación completa.",
+          "items": [
+            "Comprobar la tendencia del mercado",
+            "Elegir la acción en Fase 2 con base",
+            "Fijar entrada, stop y tamaño",
+            "Comprar en la ruptura con volumen",
+            "Vender parte en 2R y subir el stop",
+            "Anotar el resultado en R en el diario"
+          ],
+          "why": "De lo general a lo concreto: mercado, acción, plan, ejecución, gestión y revisión. Saltarse un paso es la causa habitual de las pérdidas evitables.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 7
+    }
+  ]
+}

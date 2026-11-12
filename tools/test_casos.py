@@ -114,7 +114,31 @@ if out["g2"] and ("8,0 %" not in out["g2"][0]["why"] or "11/08/2025 el precio vo
 if out["t2"] and "lo cumple" not in out["t2"][-1]["why"]:
     fallos.append("casos técnicos: +60 % sobre el mínimo debería cumplir el criterio de Minervini")
 
+# Básico: resultado de un año (subida y caída) y recuperación tras la mayor caída.
+dias = pd.date_range("2024-01-01", "2026-11-06", freq="B")
+n = len(dias)
+sube = pd.DataFrame({"Close": [100 + 50 * i / (n - 1) for i in range(n)]}, index=dias)
+baja = pd.DataFrame({"Close": [100 - 40 * i / (n - 1) for i in range(n)]}, index=dias)
+for nombre_s, datos, verbo in (("sube", sube, "subió"), ("baja", baja, "cayó")):
+    m = cargar(types.SimpleNamespace(Ticker=lambda tk, d=datos: types.SimpleNamespace(
+        info={"shortName": "Prueba Inc.", "currency": "USD"}, history=lambda **k: d)))
+    m.tickers = lambda: ["TEST"]
+    ob = m.casos_basico()
+    if not ob["ba1"] or verbo not in ob["ba1"][0]["q"] or not (0 < ob["ba1"][0]["a"] < 1000):
+        fallos.append(f"casos básico ({nombre_s}): ba1 mal generado: {ob['ba1'][:1]}")
+    if not ob["bd1"] or verbo not in ob["bd1"][0]["q"]:
+        fallos.append(f"casos básico ({nombre_s}): bd1 mal generado")
+    if nombre_s == "baja":
+        if not ob["bb1"]:
+            fallos.append("casos básico: falta bb1 con una caída del 40 %")
+        else:
+            e = ob["bb1"][0]
+            if abs(e["a"] - 66.7) > 0.11 or "40,0 %" not in e["q"]:
+                fallos.append(f"casos básico: recuperación mal calculada: {e['a']} · {e['q']}")
+    elif ob["bb1"]:
+        fallos.append("casos básico: bb1 sin caída relevante")
+
 if fallos:
     print("FALLOS:\n- " + "\n- ".join(fallos))
     sys.exit(1)
-print("OK: generador de casos (sin methodology, sin estimaciones, ajustado, fecha de cierre, ROIC, revisiones, técnicos)")
+print("OK: generador de casos (sin methodology, sin estimaciones, ajustado, fecha de cierre, ROIC, revisiones, técnicos, básico)")

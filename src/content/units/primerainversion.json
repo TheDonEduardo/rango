@@ -1,0 +1,199 @@
+{
+  "n": 17,
+  "id": "primerainversion",
+  "track": "basico",
+  "title": "Caso completo: tu primera inversión",
+  "blurb": "De la tarjeta de crédito al primer fondo, paso a paso.",
+  "gate": false,
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Primero, la deuda cara",
+      "texto": "Una deuda de tarjeta cuesta más de lo que rinde cualquier inversión razonable. Pagarla es una ganancia segura. Solo después tiene sentido invertir.",
+      "ejemplo": "Deuda de 900 € al 22 % TAE: cancelarla ahorra unos 200 € de intereses al año."
+    },
+    {
+      "id": "g2",
+      "titulo": "Colchón y dinero con fecha",
+      "texto": "Aparta de 3 a 6 meses de gastos en una cuenta disponible. El dinero que necesitarás en menos de 3-5 años tampoco va a bolsa: una caída podría pillarte justo antes.",
+      "ejemplo": "Gastos de 1.200 € al mes: colchón de 4 meses = 4.800 €."
+    },
+    {
+      "id": "g3",
+      "titulo": "Un fondo sencillo y barato",
+      "texto": "Para el largo plazo, un fondo indexado global reparte tu dinero entre miles de empresas. Mira la comisión: es lo único que pagas seguro cada año.",
+      "ejemplo": "Sobre 10.000 €, pasar de 1,80 % a 0,20 % ahorra 160 € al año."
+    },
+    {
+      "id": "g4",
+      "titulo": "Aportar siempre, pase lo que pase",
+      "texto": "Una aportación fija mensual compra más participaciones cuando el precio baja y reduce tu precio medio. El plan solo funciona si lo mantienes en las caídas.",
+      "ejemplo": "150 € a 10,00 € y 150 € a 7,50 €: 35 participaciones a 8,57 € de media."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "zb1",
+      "title": "Antes de invertir",
+      "ex": [
+        {
+          "id": "zb1-1",
+          "t": "num",
+          "q": "Caso de Lucía: gana 1.500 € netos al mes, gasta 1.200 € y tiene 6.000 € ahorrados. ¿Cuántos meses de gastos cubren sus ahorros?",
+          "unit": "meses",
+          "a": 5,
+          "why": "6.000 € ÷ 1.200 € = 5 meses. Antes de invertir conviene saber cuánto tiempo aguantarías sin ingresos: ese es tu colchón.",
+          "guia": "g1"
+        },
+        {
+          "id": "zb1-2",
+          "t": "choice",
+          "q": "Lucía debe 900 € en una tarjeta de crédito al 22 % TAE. ¿Qué hace primero con sus ahorros?",
+          "opts": [
+            "Invertir todo en bolsa para ganar más del 22 %",
+            "Pagar la tarjeta: es un 22 % seguro",
+            "Dejar la deuda y abrir un depósito al 2 %",
+            "Pagar solo el mínimo mensual de la tarjeta"
+          ],
+          "a": 1,
+          "why": "Cancelar una deuda al 22 % equivale a ganar un 22 % sin riesgo. Ninguna inversión razonable promete eso: la deuda cara va siempre primero.",
+          "guia": "g1",
+          "porque": [
+            "Nadie puede prometerte más de un 22 % anual en bolsa; la deuda sí te cuesta un 22 % seguro.",
+            null,
+            "Ganarías un 2 % mientras pagas un 22 %: pierdes un 20 % cada año.",
+            "Pagar el mínimo alarga la deuda y multiplica los intereses."
+          ]
+        },
+        {
+          "id": "zb1-3",
+          "t": "num",
+          "q": "Paga los 900 € de la tarjeta y aparta un colchón de 4 meses de gastos. ¿Cuánto le queda de los 6.000 € para invertir?",
+          "unit": "€",
+          "a": 300,
+          "why": "Colchón: 4 × 1.200 € = 4.800 €. Quedan 6.000 − 900 − 4.800 = 300 €. Parece poco, pero ahora cada euro que ahorre puede ir a invertir.",
+          "guia": "g2"
+        },
+        {
+          "id": "zb1-4",
+          "t": "num",
+          "q": "Cada mes le sobran 300 € y decide invertir 150 €. ¿Qué porcentaje de sus ingresos invierte?",
+          "unit": "%",
+          "a": 10,
+          "why": "150 € ÷ 1.500 € = 10 %. Fijar un porcentaje y automatizarlo el día de cobro funciona mejor que invertir «lo que sobre».",
+          "guia": "g2"
+        },
+        {
+          "id": "zb1-5",
+          "t": "choice",
+          "q": "Dentro de 2 años necesitará 3.000 € para un coche. ¿Dónde guarda ese dinero?",
+          "opts": [
+            "En un fondo de bolsa global",
+            "En una cuenta remunerada o un depósito",
+            "En acciones de una sola empresa",
+            "En criptomonedas, por si suben"
+          ],
+          "a": 1,
+          "why": "La bolsa puede caer un 30 % justo cuando necesites el dinero. Lo que vas a usar en menos de 3-5 años va a productos sin riesgo de caída, aunque rindan poco.",
+          "guia": "g2",
+          "porque": [
+            "A dos años, la bolsa puede estar un 30 % abajo justo cuando necesites el dinero.",
+            null,
+            "Una sola acción añade todavía más riesgo que un fondo de bolsa.",
+            "Las criptomonedas pueden perder más de la mitad en meses: no sirven para dinero con fecha."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "zb2",
+      "title": "La primera compra",
+      "ex": [
+        {
+          "id": "zb2-1",
+          "t": "choice",
+          "q": "Para el dinero que no tocará en 15 años o más, ¿qué producto encaja mejor como punto de partida?",
+          "opts": [
+            "Un fondo indexado global de bajo coste",
+            "Las tres acciones más comentadas del año",
+            "Un fondo temático con 2 % de comisión",
+            "Un producto apalancado que multiplica por 3"
+          ],
+          "a": 0,
+          "why": "Un fondo indexado global reparte tu dinero entre miles de empresas por un coste mínimo. Es sencillo, diversificado y no exige acertar con ninguna empresa.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Las acciones de moda concentran el riesgo y suelen comprarse caras.",
+            "Un 2 % de comisión se come buena parte de la rentabilidad a 15 años.",
+            "El apalancamiento multiplica las pérdidas y puede dejarte a cero."
+          ]
+        },
+        {
+          "id": "zb2-2",
+          "t": "num",
+          "q": "Dos fondos siguen el mismo índice: uno cobra un 0,20 % al año y otro un 1,80 %. Sobre 10.000 €, ¿cuántos euros más al año cuesta el caro?",
+          "unit": "€",
+          "a": 160,
+          "why": "10.000 € × (1,80 % − 0,20 %) = 160 € cada año, suba o baje el mercado. Y la diferencia crece con el interés compuesto.",
+          "guia": "g3"
+        },
+        {
+          "id": "zb2-3",
+          "t": "num",
+          "q": "Aporta 150 € cada mes. El primer mes la participación vale 10,00 € y el segundo, 7,50 €. ¿Cuántas participaciones tiene tras las dos compras?",
+          "unit": "part.",
+          "a": 35,
+          "why": "150 ÷ 10,00 = 15 y 150 ÷ 7,50 = 20: en total 35. Con la misma aportación, cuando el precio baja compras más participaciones.",
+          "guia": "g4"
+        },
+        {
+          "id": "zb2-4",
+          "t": "num",
+          "q": "Ha invertido 300 € y tiene 35 participaciones. ¿Cuál es su precio medio de compra? Redondea a 2 decimales.",
+          "unit": "€",
+          "a": 8.57,
+          "why": "300 € ÷ 35 = 8,57 €. Queda por debajo de la media de los dos precios (8,75 €) porque compró más participaciones cuando estaban baratas.",
+          "tol": 0.006,
+          "guia": "g4"
+        },
+        {
+          "id": "zb2-5",
+          "t": "choice",
+          "q": "A los seis meses la bolsa cae un 20 % y su fondo está en pérdidas. Su plan era a 15 años. ¿Qué hace?",
+          "opts": [
+            "Vender todo y volver cuando suba",
+            "Seguir aportando según el plan",
+            "Dejar de aportar hasta que pase",
+            "Cambiar a la acción que más sube"
+          ],
+          "a": 1,
+          "why": "Su plazo no ha cambiado: sigue siendo de 15 años. Las caídas son normales y, mientras aporta, le permiten comprar más barato. Vender convierte una caída temporal en pérdida real.",
+          "guia": "g4",
+          "porque": [
+            "Nadie sabe cuándo «sube»: quien vende suele volver más caro.",
+            null,
+            "Dejar de aportar es renunciar a comprar barato, justo cuando más conviene.",
+            "Perseguir lo que más sube es comprar caro y cambiar el plan por miedo."
+          ]
+        },
+        {
+          "id": "zb2-6",
+          "t": "order",
+          "q": "Ordena los pasos del plan de Lucía.",
+          "items": [
+            "Pagar la deuda cara de la tarjeta",
+            "Apartar el colchón de emergencia",
+            "Separar el dinero que necesitará pronto",
+            "Elegir un fondo indexado global barato",
+            "Automatizar una aportación mensual"
+          ],
+          "why": "Primero se tapan los agujeros (deuda cara), luego se protege (colchón y gastos previstos) y solo entonces se invierte, con un producto sencillo y de forma automática.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 6
+    }
+  ]
+}

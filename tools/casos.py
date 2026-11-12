@@ -21,7 +21,8 @@ BOT = ROOT.parent / "portfolio_manager.py"
 HOY = dt.date.today().strftime("%d/%m/%Y")
 # Lecciones que reciben casos reales (una sola definición para casos_de y main).
 LECCIONES_CASOS = ("f1a", "f1b", "f2a", "f2b", "f3a", "f3b", "f5a", "f6a", "bg1", "pr1", "bh2", "f8b", "f9a",
-                   "t1", "t2", "r1", "r2", "rs1", "g2", "dv1", "io2", "f7a", "f10b")
+                   "t1", "t2", "r1", "r2", "rs1", "g2", "dv1", "io2", "f7a", "f10b",
+                   "ba1", "bb1", "bd1")
 # Índices y fondos indexados para la ruta Pasiva: (ticker, etiqueta, descripción, unidad, desde, nota sobre dividendos).
 INDICES = [
     ("EUNL.DE", "iShares Core MSCI World (EUNL)", "el ETF iShares Core MSCI World de acumulación (en euros)", "€", None,
@@ -733,6 +734,83 @@ def casos_oro():
     return out
 
 
+def casos_basico():
+    """Casos de la ruta Básico: resultado de un año en una acción (ba1), cuánto hay que subir tras la mayor
+    caída de un índice (bb1) y resultado de un año en un índice (bd1)."""
+    out = {"ba1": [], "bb1": [], "bd1": []}
+
+    def un_ano(h):
+        fin_f, fin_v = h.index[-1], round(float(h.iloc[-1]), 2)
+        antes = h[h.index <= fin_f - dt.timedelta(days=365)]
+        if not len(antes) or (fin_f - antes.index[-1]).days > 375:
+            return None
+        ini_f, ini_v = antes.index[-1], round(float(antes.iloc[-1]), 2)
+        g = round((fin_v / ini_v - 1) * 100, 1)
+        return (ini_f, ini_v, fin_f, fin_v, g) if 0.5 <= abs(g) < 900 else None
+
+    for tk in tickers():
+        try:
+            t = yf.Ticker(tk)
+            info = t.info or {}
+            h = t.history(period="2y", interval="1d")["Close"].dropna()
+        except Exception:
+            continue
+        r = un_ano(h) if len(h) > 260 else None
+        if not r:
+            continue
+        ini_f, ini_v, fin_f, fin_v, g = r
+        nombre = limpio(info.get("shortName") or tk)
+        sym = CUR.get(info.get("currency") or "USD", "$")
+        sube = g > 0
+        out["ba1"].append({
+            "t": "num", "caso": nombre,
+            "q": f"Una acción de {nombre} cerró a {es(ini_v, 2)} {sym} el {fecha(ini_f)} y a {es(fin_v, 2)} {sym} el {fecha(fin_f)}. "
+                 f"¿Cuánto {'subió' if sube else 'cayó'} en ese año? Redondea a 1 decimal.",
+            "unit": "%", "a": abs(g), "tol": 0.06,
+            "why": (f"{es(fin_v, 2)} ÷ {es(ini_v, 2)} − 1 = {es(g)} %. " if sube else f"1 − {es(fin_v, 2)} ÷ {es(ini_v, 2)} = {es(abs(g))} %. ")
+                   + "Es el resultado de una sola acción en un solo año: puede ser muy distinto del año siguiente, para bien o para mal.",
+        })
+    for tk, etiqueta, desc, unidad, desde, nota in INDICES:
+        try:
+            h = yf.Ticker(tk).history(period="max", interval="1d")["Close"].dropna()
+        except Exception:
+            continue
+        if desde:
+            h = h[h.index >= desde]
+        if len(h) < 300:
+            continue
+        u = lambda v: f"{es(v, 2)} {unidad}"
+        Desc = desc[0].upper() + desc[1:]
+        r = un_ano(h)
+        if r:
+            ini_f, ini_v, fin_f, fin_v, g = r
+            sube = g > 0
+            out["bd1"].append({
+                "t": "num", "caso": etiqueta,
+                "q": f"{Desc} cerró a {u(ini_v)} el {fecha(ini_f)} y a {u(fin_v)} el {fecha(fin_f)}. "
+                     f"¿Cuánto {'subió' if sube else 'cayó'} en ese año? Redondea a 1 decimal.",
+                "unit": "%", "a": abs(g), "tol": 0.06,
+                "why": (f"{es(fin_v, 2)} ÷ {es(ini_v, 2)} − 1 = {es(g)} %. " if sube else f"1 − {es(fin_v, 2)} ÷ {es(ini_v, 2)} = {es(abs(g))} %. ")
+                       + f"{nota} Un índice resume cientos de empresas: su resultado es el del conjunto, no el de la mejor ni el de la peor.",
+            })
+        caida = h / h.cummax() - 1
+        f_min = caida.idxmin()
+        f_max = h[:f_min].idxmax()
+        v_max, v_min = round(float(h[f_max]), 2), round(float(h[f_min]), 2)
+        d = round((1 - v_min / v_max) * 100, 1)
+        sub = round((v_max / v_min - 1) * 100, 1)
+        if 5 < d < 90 and sub < 900:
+            out["bb1"].append({
+                "t": "num", "caso": etiqueta,
+                "q": f"{Desc} cayó de {u(v_max)} ({fecha(f_max)}) a {u(v_min)} ({fecha(f_min)}), un {es(d)} %. "
+                     f"¿Cuánto tenía que subir desde ahí para volver al máximo? Redondea a 1 decimal.",
+                "unit": "%", "a": sub, "tol": 0.06,
+                "why": f"{es(v_max, 2)} ÷ {es(v_min, 2)} − 1 = {es(sub)} %. Recuperar una caída del {es(d)} % exige subir más que eso, "
+                       f"porque la subida parte de una base más pequeña.",
+            })
+    return out
+
+
 def serie(tk, periodo="2y"):
     return yf.Ticker(tk).history(period=periodo, interval="1d")["Close"].dropna()
 
@@ -791,7 +869,7 @@ def main():
                     ex[k].extend(v)
             except Exception as e:  # un ticker sin datos no debe tumbar el resto
                 fallos.append(f"{tk}: {e}")
-    for nombre_f, fn in (("índices", casos_indices), ("bonos", casos_bonos), ("divisa", casos_divisa), ("oro", casos_oro)):
+    for nombre_f, fn in (("índices", casos_indices), ("básico", casos_basico), ("bonos", casos_bonos), ("divisa", casos_divisa), ("oro", casos_oro)):
         try:
             for k, v in fn().items():
                 ex[k].extend(v)

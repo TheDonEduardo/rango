@@ -1,0 +1,225 @@
+{
+  "n": 18,
+  "id": "tucartera",
+  "track": "pasiva",
+  "title": "Caso completo: monta tu cartera",
+  "blurb": "Diseñar, aportar, rebalancear y retirar: una cartera de principio a fin.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "El reparto manda",
+      "texto": "El peso de las acciones decide casi todo: cuánto puedes ganar y cuánto verás caer tu cartera. Elígelo según tu plazo y según la caída que soportarías sin vender.",
+      "ejemplo": "Cartera 80/20 con la bolsa cayendo un 40 %: pierde un 32 %."
+    },
+    {
+      "id": "g2",
+      "titulo": "Barata y eficiente",
+      "texto": "Calcula el coste medio ponderado de tus fondos y usa clases de acumulación mientras no necesites rentas: los dividendos se reinvierten sin tributar.",
+      "ejemplo": "0,80 × 0,20 % + 0,20 × 0,10 % = 0,18 % al año."
+    },
+    {
+      "id": "g3",
+      "titulo": "Rebalancear",
+      "texto": "Cuando un activo se aleja de su peso objetivo, vuelve al reparto: con aportaciones nuevas o con un traspaso entre fondos, que en España no tributa.",
+      "ejemplo": "Acciones al 84 % en una cartera de 12.500 €: pasa 500 € a bonos."
+    },
+    {
+      "id": "g4",
+      "titulo": "Acercarse a la meta",
+      "texto": "Al acercarse la jubilación, baja el peso de las acciones de forma gradual. La regla del 4 % orienta sobre cuánto retirar el primer año.",
+      "ejemplo": "240.000 € × 4 % = 9.600 € al año: 800 € al mes."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "zp1",
+      "title": "El diseño",
+      "ex": [
+        {
+          "id": "zp1-1",
+          "t": "choice",
+          "q": "Caso de Marcos: 35 años, 10.000 € para invertir, aportará 400 € al mes y no tocará el dinero en 25 años. ¿Qué reparto encaja mejor?",
+          "opts": [
+            "20 % acciones y 80 % bonos",
+            "80 % acciones y 20 % bonos",
+            "100 % en una sola acción",
+            "50 % oro y 50 % liquidez"
+          ],
+          "a": 1,
+          "why": "Con 25 años por delante puede asumir las caídas de la bolsa a cambio de más rentabilidad esperada. Un 20 % en bonos amortigua y le da munición para rebalancear.",
+          "guia": "g1",
+          "porque": [
+            "Con 25 años de plazo, un 80 % en bonos renuncia a casi todo el crecimiento.",
+            null,
+            "Una sola acción puede quebrar: eso no es una cartera, es una apuesta.",
+            "El oro y la liquidez no generan beneficios: a 25 años se quedan muy atrás."
+          ]
+        },
+        {
+          "id": "zp1-2",
+          "t": "num",
+          "q": "Su cartera es 80 % acciones y 20 % bonos. Si la bolsa cae un 40 % y los bonos no se mueven, ¿cuánto cae la cartera?",
+          "unit": "%",
+          "a": 32,
+          "why": "80 % × 40 % = 32 %. Antes de elegir un reparto, pregúntate si aguantarías ver esa caída en tu cuenta sin vender.",
+          "guia": "g1"
+        },
+        {
+          "id": "zp1-3",
+          "t": "num",
+          "q": "El fondo de acciones cuesta un 0,20 % al año y el de bonos, un 0,10 %. ¿Cuál es el coste medio de la cartera 80/20? Redondea a 2 decimales.",
+          "unit": "%",
+          "a": 0.18,
+          "why": "0,80 × 0,20 % + 0,20 × 0,10 % = 0,16 % + 0,02 % = 0,18 %. Por debajo del 0,30 % es una cartera barata.",
+          "tol": 0.006,
+          "guia": "g2"
+        },
+        {
+          "id": "zp1-4",
+          "t": "choice",
+          "q": "No necesita rentas hasta jubilarse. En España, ¿qué clase de fondo le conviene?",
+          "opts": [
+            "De distribución: cobra dividendos cada año",
+            "De acumulación: reinvierte los dividendos",
+            "Da igual: tributan exactamente lo mismo",
+            "El que haya subido más el último año"
+          ],
+          "a": 1,
+          "why": "Un fondo de acumulación reinvierte los dividendos sin que tributes por ellos. Los impuestos se pagan al vender, dentro de décadas, y mientras tanto ese dinero sigue creciendo.",
+          "guia": "g2",
+          "porque": [
+            "Los dividendos cobrados tributan cada año: pagas antes y reinviertes menos.",
+            null,
+            "No da igual: el de distribución tributa por cada dividendo cobrado.",
+            "La rentabilidad pasada no dice nada de la clase de fondo que te conviene."
+          ]
+        },
+        {
+          "id": "zp1-5",
+          "t": "num",
+          "q": "De los 400 € que aporta cada mes con el reparto 80/20, ¿cuántos van al fondo de acciones?",
+          "unit": "€",
+          "a": 320,
+          "why": "400 € × 80 % = 320 € a acciones y 80 € a bonos. Aportar siempre en la proporción objetivo mantiene la cartera cerca de su reparto.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "zp2",
+      "title": "El mantenimiento",
+      "ex": [
+        {
+          "id": "zp2-1",
+          "t": "num",
+          "q": "Tras un buen año, la cartera de Marcos queda así. ¿Qué peso tienen las acciones?",
+          "table": {
+            "cols": [
+              "Fondo",
+              "Valor"
+            ],
+            "rows": [
+              [
+                "Acciones globales",
+                "10.500 €"
+              ],
+              [
+                "Bonos",
+                "2.000 €"
+              ],
+              [
+                "Total",
+                "12.500 €"
+              ]
+            ]
+          },
+          "unit": "%",
+          "a": 84,
+          "why": "10.500 € ÷ 12.500 € = 84 %. La bolsa ha subido más que los bonos y la cartera tiene ahora más riesgo del que eligió.",
+          "guia": "g3"
+        },
+        {
+          "id": "zp2-2",
+          "t": "num",
+          "q": "Para volver al 80 % en acciones con 12.500 € de cartera, ¿cuántos euros pasa de acciones a bonos?",
+          "unit": "€",
+          "a": 500,
+          "why": "Objetivo en acciones: 12.500 € × 80 % = 10.000 €. Tiene 10.500 €: sobran 500 €, que pasan a bonos (2.000 € → 2.500 €, el 20 %).",
+          "guia": "g3"
+        },
+        {
+          "id": "zp2-3",
+          "t": "slide",
+          "q": "Comprueba el rebalanceo: mueve cuánto debe haber en bonos en una cartera de 12.500 € para que pesen un 20 %.",
+          "label": "Dinero en bonos",
+          "min": 1000,
+          "max": 4000,
+          "step": 100,
+          "start": 2000,
+          "a": 2500,
+          "unit": "€",
+          "why": "12.500 € × 20 % = 2.500 €. Rebalancear es vender un poco de lo que ha subido y comprar lo que se ha quedado atrás, de forma mecánica.",
+          "show": [
+            {
+              "label": "Peso de los bonos",
+              "k": 0.008,
+              "unit": "%"
+            }
+          ],
+          "guia": "g3"
+        },
+        {
+          "id": "zp2-4",
+          "t": "choice",
+          "q": "¿Cómo puede Marcos rebalancear en España sin pagar impuestos ahora?",
+          "opts": [
+            "Vendiendo el fondo y recomprando otro al día siguiente",
+            "Con un traspaso entre fondos o con las aportaciones nuevas",
+            "No se puede: rebalancear siempre tributa en el año",
+            "Reembolsando solo en diciembre de cada ejercicio"
+          ],
+          "a": 1,
+          "why": "El traspaso entre fondos de inversión no tributa: la ganancia se arrastra al nuevo fondo. También puede dirigir las aportaciones nuevas a lo que pesa de menos.",
+          "guia": "g3",
+          "porque": [
+            "Vender tributa por la ganancia, aunque recompres al día siguiente.",
+            null,
+            "Sí se puede: el traspaso entre fondos difiere los impuestos.",
+            "Un reembolso tributa igual en diciembre que en cualquier otro mes."
+          ]
+        },
+        {
+          "id": "zp2-5",
+          "t": "choice",
+          "q": "Marcos cumple 60 años y se jubilará en 5. ¿Qué ajusta en la cartera?",
+          "opts": [
+            "Sube a 100 % acciones para ganar más al final",
+            "Baja poco a poco el peso de las acciones",
+            "Nada: el reparto se elige una vez y no cambia",
+            "Lo pasa todo a liquidez de un día para otro"
+          ],
+          "a": 1,
+          "why": "Cuanto más cerca está de usar el dinero, menos margen tiene para recuperarse de una caída. Reducir acciones de forma gradual protege lo acumulado sin renunciar a todo el crecimiento.",
+          "guia": "g4",
+          "porque": [
+            "Una caída del 40 % a los 64 años no le dejaría tiempo para recuperarse.",
+            null,
+            "El reparto se revisa cuando cambia tu plazo, y el suyo se ha acortado.",
+            "Un cambio brusco le saca del mercado de golpe; la bajada debe ser gradual."
+          ]
+        },
+        {
+          "id": "zp2-6",
+          "t": "num",
+          "q": "Llega a la jubilación con 240.000 €. Con la regla del 4 %, ¿cuánto puede retirar al mes el primer año?",
+          "unit": "€",
+          "a": 800,
+          "why": "240.000 € × 4 % = 9.600 € al año, es decir, 800 € al mes. Es una orientación, no una garantía: conviene ser flexible si los primeros años son malos.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 6
+    }
+  ]
+}

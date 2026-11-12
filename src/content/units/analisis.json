@@ -1,0 +1,219 @@
+{
+  "n": 19,
+  "id": "analisis",
+  "track": "fundamental",
+  "title": "Caso completo: analiza una empresa",
+  "blurb": "Negocio, números, valoración y decisión sobre una empresa de principio a fin.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Crecimiento rentable",
+      "texto": "Empieza por las ventas y los márgenes: cuánto crece la empresa y si gana más por cada euro vendido. En software, la regla del 40 suma crecimiento y margen de flujo de caja libre.",
+      "ejemplo": "Crece un 25 % con un margen del 18 %: 43 puntos."
+    },
+    {
+      "id": "g2",
+      "titulo": "Calidad y balance",
+      "texto": "Ingresos recurrentes y retención neta por encima del 100 % indican clientes fieles. Caja neta y flujo de caja positivo, independencia. Resta el pago en acciones: es un coste real.",
+      "ejemplo": "Flujo de caja libre de 180 M€ menos 60 M€ en acciones: 120 M€."
+    },
+    {
+      "id": "g3",
+      "titulo": "Qué descuenta el precio",
+      "texto": "Divide el valor de empresa entre el flujo de caja libre ajustado. Un múltiplo alto exige crecimiento: proyecta un escenario con hipótesis escritas y un múltiplo de salida prudente.",
+      "ejemplo": "3.600 M€ ÷ 120 M€ = 30 veces, una rentabilidad del 3,3 %."
+    },
+    {
+      "id": "g4",
+      "titulo": "Margen y tesis",
+      "texto": "Compra solo con margen de seguridad sobre tu valor estimado. Y escribe qué dato del negocio invalidaría la tesis: eso decide la venta, no el precio.",
+      "ejemplo": "Valor estimado de 45,00 € con un 25 % de margen: máximo 33,75 €."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "zf1",
+      "title": "El negocio y los números",
+      "ex": [
+        {
+          "id": "zf1-1",
+          "t": "num",
+          "q": "Caso práctico: analizas Nébula Software. ¿Cuánto han crecido sus ventas este año?",
+          "table": {
+            "cols": [
+              "Nébula Software",
+              "Año pasado",
+              "Este año"
+            ],
+            "rows": [
+              [
+                "Ventas",
+                "800 M€",
+                "1.000 M€"
+              ],
+              [
+                "Beneficio operativo",
+                "140 M€",
+                "200 M€"
+              ],
+              [
+                "Flujo de caja libre",
+                "130 M€",
+                "180 M€"
+              ]
+            ],
+            "note": "Empresa ficticia para practicar."
+          },
+          "unit": "%",
+          "a": 25,
+          "why": "(1.000 − 800) ÷ 800 = 25 %. El crecimiento es el punto de partida: después hay que ver si es rentable y si puede durar.",
+          "guia": "g1"
+        },
+        {
+          "id": "zf1-2",
+          "t": "num",
+          "q": "Nébula gana 200 M€ de beneficio operativo sobre 1.000 M€ de ventas. ¿Qué margen operativo tiene?",
+          "unit": "%",
+          "a": 20,
+          "why": "200 ÷ 1.000 = 20 %. El año anterior era 140 ÷ 800 = 17,5 %: el margen se amplía, señal de apalancamiento operativo.",
+          "guia": "g1"
+        },
+        {
+          "id": "zf1-3",
+          "t": "num",
+          "q": "Crece un 25 % y su flujo de caja libre es de 180 M€ sobre 1.000 M€ de ventas. ¿Cuánto suma en la regla del 40?",
+          "unit": "puntos",
+          "a": 43,
+          "why": "Margen de flujo de caja libre: 180 ÷ 1.000 = 18 %. Regla del 40: 25 + 18 = 43. Supera 40: combina bien crecimiento y rentabilidad.",
+          "guia": "g1"
+        },
+        {
+          "id": "zf1-4",
+          "t": "choice",
+          "q": "El 95 % de sus ingresos son suscripciones y la retención neta es del 118 %. ¿Qué te dice?",
+          "opts": [
+            "Pierde un 18 % de sus clientes cada año",
+            "Los clientes se quedan y gastan más cada año",
+            "Sus ingresos dependen de un solo cliente",
+            "Crece únicamente gracias a subir precios"
+          ],
+          "a": 1,
+          "why": "Una retención neta del 118 % significa que los clientes de hace un año gastan hoy un 18 % más, contando las bajas. Es una señal clara de producto valioso y de ventaja competitiva.",
+          "guia": "g2",
+          "porque": [
+            "Sería una retención del 82 %; un 118 % significa que el gasto de los clientes crece.",
+            null,
+            "La retención neta no mide concentración de clientes.",
+            "El 118 % incluye ampliaciones de uso y nuevos módulos, no solo precio."
+          ]
+        },
+        {
+          "id": "zf1-5",
+          "t": "choice",
+          "q": "Nébula tiene 100 M€ de caja neta y genera flujo de caja libre positivo. ¿Cómo valoras su balance?",
+          "opts": [
+            "Frágil: necesita ampliar capital pronto",
+            "Sólido: puede financiar su crecimiento sola",
+            "Arriesgado: tener caja destruye valor",
+            "Imposible de valorar sin ver el dividendo"
+          ],
+          "a": 1,
+          "why": "Sin deuda neta y generando caja, no depende de bancos ni de ampliaciones de capital. Aguanta una recesión y puede invertir o recomprar acciones.",
+          "guia": "g2",
+          "porque": [
+            "Con caja neta y flujo positivo no necesita pedir dinero a nadie.",
+            null,
+            "La caja da margen de maniobra; lo que destruye valor es malgastarla.",
+            "El dividendo no mide la solidez: muchas empresas en crecimiento no lo pagan."
+          ]
+        },
+        {
+          "id": "zf1-6",
+          "t": "num",
+          "q": "Paga 60 M€ al año a sus empleados en acciones. ¿Cuál es el flujo de caja libre ajustado por ese pago?",
+          "unit": "M€",
+          "a": 120,
+          "why": "180 − 60 = 120 M€. El pago en acciones no sale de la caja, pero diluye al accionista: es un coste real y conviene restarlo.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 6
+    },
+    {
+      "id": "zf2",
+      "title": "Valoración y decisión",
+      "ex": [
+        {
+          "id": "zf2-1",
+          "t": "num",
+          "q": "Nébula capitaliza 3.700 M€ y tiene 100 M€ de caja neta. Con un flujo de caja libre ajustado de 120 M€, ¿a cuántas veces cotiza su valor de empresa?",
+          "unit": "veces",
+          "a": 30,
+          "why": "Valor de empresa: 3.700 − 100 = 3.600 M€. 3.600 ÷ 120 = 30 veces. Es un múltiplo exigente: el precio ya descuenta años de crecimiento.",
+          "guia": "g3"
+        },
+        {
+          "id": "zf2-2",
+          "t": "num",
+          "q": "Con un valor de empresa de 3.600 M€ y 120 M€ de flujo de caja libre ajustado, ¿qué rentabilidad por flujo de caja ofrece? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 3.3,
+          "why": "120 ÷ 3.600 = 3,3 %. Es lo que rendiría hoy la empresa si no creciera: compárala con el 3-4 % de un bono para ver cuánto crecimiento necesitas.",
+          "tol": 0.06,
+          "guia": "g3"
+        },
+        {
+          "id": "zf2-3",
+          "t": "num",
+          "q": "Escenario base: el flujo de caja ajustado de 120 M€ crece un 20 % al año durante tres años. ¿Cuánto será entonces? Redondea al entero.",
+          "unit": "M€",
+          "a": 207,
+          "why": "120 × 1,20 × 1,20 × 1,20 = 207,36 M€, unos 207 M€. Escribe siempre la hipótesis: si el crecimiento se queda en el 10 %, serían 160 M€.",
+          "tol": 0.6,
+          "guia": "g3"
+        },
+        {
+          "id": "zf2-4",
+          "t": "num",
+          "q": "Si en tres años el valor de empresa es de 5.180 M€ (207 M€ a 25 veces) frente a 3.600 M€ hoy, ¿cuánto se revaloriza? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 43.9,
+          "why": "(5.180 − 3.600) ÷ 3.600 = 43,9 % en tres años, cerca de un 13 % anual. El múltiplo baja de 30 a 25: lo normal cuando el crecimiento madura.",
+          "tol": 0.06,
+          "guia": "g4"
+        },
+        {
+          "id": "zf2-5",
+          "t": "num",
+          "q": "Estimas que Nébula vale 45,00 € por acción y exiges un margen de seguridad del 25 %. ¿Cuál es tu precio máximo de compra?",
+          "unit": "€",
+          "a": 33.75,
+          "why": "45,00 × (1 − 0,25) = 33,75 €. Cotiza a 37,00 €: buena empresa, pero aún no a tu precio. El margen te protege si tus hipótesis fallan.",
+          "tol": 0.006,
+          "guia": "g4"
+        },
+        {
+          "id": "zf2-6",
+          "t": "choice",
+          "q": "Escribes la tesis. ¿Qué dato la invalidaría y te haría vender?",
+          "opts": [
+            "Que la acción caiga un 10 % en una semana",
+            "Que la retención neta baje de 100 % y el crecimiento se frene",
+            "Que un analista rebaje su recomendación",
+            "Que el índice de referencia marque nuevos máximos"
+          ],
+          "a": 1,
+          "why": "La tesis se apoya en clientes que se quedan y gastan más. Si eso se rompe, el negocio ha cambiado. El precio, los analistas o el índice no dicen nada del negocio.",
+          "guia": "g4",
+          "porque": [
+            "Una caída semanal del precio no cambia el negocio: puede ser una oportunidad.",
+            null,
+            "Una recomendación es una opinión; la tesis depende de los datos del negocio.",
+            "Lo que haga el índice no afecta a los clientes de la empresa."
+          ]
+        }
+      ],
+      "ultimo": 6
+    }
+  ]
+}
