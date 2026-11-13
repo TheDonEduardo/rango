@@ -2,7 +2,7 @@
   "n": 19,
   "id": "analisis",
   "track": "fundamental",
-  "title": "Caso completo: analiza una empresa",
+  "title": "Analiza una empresa",
   "blurb": "Negocio, números, valoración y decisión sobre una empresa de principio a fin.",
   "guia": [
     {
@@ -215,5 +215,6 @@
       ],
       "ultimo": 6
     }
-  ]
+  ],
+  "caso": true
 }

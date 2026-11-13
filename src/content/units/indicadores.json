@@ -132,9 +132,49 @@
             "Ningún indicador limita la pérdida: eso lo hacen el stop y el tamaño.",
             "No usan datos de la empresa, solo precio y volumen."
           ]
+        },
+        {
+          "id": "id1-5",
+          "t": "choice",
+          "q": "Tres acciones y su RSI de 14 sesiones. ¿Cuál está en sobreventa?",
+          "opts": [
+            "Acción A",
+            "Acción B",
+            "Acción C",
+            "Ninguna"
+          ],
+          "a": 2,
+          "why": "Por debajo de 30 el RSI marca sobreventa: la caída reciente ha sido muy rápida. No es una señal de compra por sí sola; en una tendencia bajista puede seguir ahí semanas.",
+          "table": {
+            "cols": [
+              "Acción",
+              "RSI (14)"
+            ],
+            "rows": [
+              [
+                "A",
+                "82"
+              ],
+              [
+                "B",
+                "48"
+              ],
+              [
+                "C",
+                "24"
+              ]
+            ]
+          },
+          "guia": "g1",
+          "porque": [
+            "Con 82 está en sobrecompra, lo contrario.",
+            "Con 48 está en zona neutra.",
+            null,
+            "Sí hay una: la que tiene el RSI por debajo de 30."
+          ]
         }
       ],
-      "ultimo": 4
+      "ultimo": 5
     },
     {
       "id": "id2",
@@ -197,9 +237,34 @@
             null,
             "Se usan en cualquier temporalidad; el problema no es el plazo."
           ]
+        },
+        {
+          "id": "id2-5",
+          "t": "num",
+          "q": "Con estos datos, ¿dónde está la banda superior de Bollinger (media más 2 desviaciones)?",
+          "unit": "€",
+          "a": 54,
+          "why": "50,00 + 2 × 2,00 = 54,00 €. La inferior queda en 46,00 €. Cuando la desviación se reduce, las bandas se estrechan: suele anunciar un movimiento amplio.",
+          "table": {
+            "cols": [
+              "Dato",
+              "Valor"
+            ],
+            "rows": [
+              [
+                "Media de 20 sesiones",
+                "50,00 €"
+              ],
+              [
+                "Desviación típica",
+                "2,00 €"
+              ]
+            ]
+          },
+          "guia": "g4"
         }
       ],
-      "ultimo": 4
+      "ultimo": 5
     }
   ]
 }

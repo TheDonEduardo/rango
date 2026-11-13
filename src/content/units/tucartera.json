@@ -2,7 +2,7 @@
   "n": 18,
   "id": "tucartera",
   "track": "pasiva",
-  "title": "Caso completo: monta tu cartera",
+  "title": "Monta tu cartera",
   "blurb": "Diseñar, aportar, rebalancear y retirar: una cartera de principio a fin.",
   "guia": [
     {
@@ -221,5 +221,6 @@
       ],
       "ultimo": 6
     }
-  ]
+  ],
+  "caso": true
 }

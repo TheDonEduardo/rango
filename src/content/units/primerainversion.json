@@ -2,7 +2,7 @@
   "n": 17,
   "id": "primerainversion",
   "track": "basico",
-  "title": "Caso completo: tu primera inversión",
+  "title": "Tu primera inversión",
   "blurb": "De la tarjeta de crédito al primer fondo, paso a paso.",
   "gate": false,
   "guia": [
@@ -195,5 +195,6 @@
       ],
       "ultimo": 6
     }
-  ]
+  ],
+  "caso": true
 }

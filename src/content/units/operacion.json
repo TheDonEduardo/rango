@@ -2,7 +2,7 @@
   "n": 20,
   "id": "operacion",
   "track": "tecnico",
-  "title": "Caso completo: planifica una operación",
+  "title": "Planifica una operación",
   "blurb": "Del mercado al diario: una operación entera con sus números.",
   "guia": [
     {
@@ -234,5 +234,6 @@
       ],
       "ultimo": 7
     }
-  ]
+  ],
+  "caso": true
 }

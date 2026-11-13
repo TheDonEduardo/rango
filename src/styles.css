@@ -100,6 +100,11 @@ button{font:inherit;color:inherit;cursor:pointer}
 .ban h2{margin:2px 0 4px;font:700 22px/1.15 var(--font-display);letter-spacing:-.01em;text-wrap:balance}
 .ban p{margin:0;font-size:14px;opacity:.85;max-width:34ch}
 .ban .cnt{font-weight:600;font-size:14px;white-space:nowrap;font-variant-numeric:tabular-nums;opacity:.9}
+.ban{position:relative;overflow:hidden}
+.ban .uprog{position:absolute;left:0;right:0;bottom:0;height:4px;background:color-mix(in srgb,currentColor 18%,transparent)}
+.ban .uprog::after{content:"";display:block;height:100%;width:var(--p);background:currentColor;opacity:.85;border-radius:0 2px 2px 0;transition:width .4s ease}
+.ban .fin{display:inline-block;padding:1px 8px;border-radius:999px;border:1.5px solid currentColor;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.unit.final .ban .u{opacity:1}
 .unit.soon .ban{background:transparent;color:var(--ink-2);border:2px dashed var(--line)}
 .unit.hecha .ban{background:var(--surface);color:var(--ink);border:2px solid var(--up)}
 .unit.hecha .ban .cnt{color:var(--up-ink);opacity:1}

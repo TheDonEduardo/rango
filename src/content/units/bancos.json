@@ -106,9 +106,34 @@
           "a": 3,
           "why": "300 ÷ 10.000 = 3 %. Importa su tendencia: una morosidad que sube obliga a dotar provisiones, que se restan del beneficio.",
           "guia": "g2"
+        },
+        {
+          "id": "fb1-5",
+          "t": "num",
+          "q": "Con estos datos, ¿qué rentabilidad sobre fondos propios (ROE) tiene el banco?",
+          "unit": "%",
+          "a": 12,
+          "why": "1.200 ÷ 10.000 = 12 %. Un banco crea valor cuando su ROE supera su coste del capital, que suele rondar el 10 %.",
+          "table": {
+            "cols": [
+              "Banco",
+              "Importe"
+            ],
+            "rows": [
+              [
+                "Beneficio neto",
+                "1.200 M€"
+              ],
+              [
+                "Fondos propios",
+                "10.000 M€"
+              ]
+            ]
+          },
+          "guia": "g2"
         }
       ],
-      "ultimo": 4
+      "ultimo": 5
     },
     {
       "id": "fb2",
@@ -176,9 +201,49 @@
           ],
           "why": "En el sector financiero no sirven el EV/EBITDA ni la deuda neta: se miran el margen, la calidad de los préstamos, el capital y, en aseguradoras, el ratio combinado.",
           "guia": "g4"
+        },
+        {
+          "id": "fb2-5",
+          "t": "choice",
+          "q": "Ratio combinado de tres aseguradoras. ¿Cuál gana dinero con el negocio asegurador?",
+          "opts": [
+            "Aseguradora A",
+            "Aseguradora B",
+            "Aseguradora C",
+            "Las tres"
+          ],
+          "a": 0,
+          "why": "El ratio combinado suma siniestros y gastos sobre primas. Por debajo de 100 % hay beneficio técnico: A gana 8 € por cada 100 € de primas. B empata y C pierde 8 €.",
+          "table": {
+            "cols": [
+              "Aseguradora",
+              "Ratio combinado"
+            ],
+            "rows": [
+              [
+                "A",
+                "92 %"
+              ],
+              [
+                "B",
+                "100 %"
+              ],
+              [
+                "C",
+                "108 %"
+              ]
+            ]
+          },
+          "guia": "g4",
+          "porque": [
+            null,
+            "Con un 100 % ni gana ni pierde con los seguros.",
+            "Con un 108 % paga más en siniestros y gastos de lo que cobra.",
+            "Solo gana la que está por debajo del 100 %."
+          ]
         }
       ],
-      "ultimo": 4
+      "ultimo": 5
     }
   ]
 }

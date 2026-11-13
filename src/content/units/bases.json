@@ -142,9 +142,30 @@
             "El volumen importa, pero la posición del asa también: abajo es señal de debilidad.",
             "No es otra taza: es un asa mal situada, y esas bases fallan más."
           ]
+        },
+        {
+          "id": "on1-5",
+          "t": "slide",
+          "q": "Una taza parte de un máximo de 80,00 €. Mueve el mínimo hasta que la profundidad sea del 25 %.",
+          "label": "Mínimo de la taza",
+          "min": 40,
+          "max": 80,
+          "step": 1,
+          "start": 70,
+          "a": 60,
+          "unit": "€",
+          "why": "80,00 × (1 − 0,25) = 60,00 €. Entre el 12 y el 33 % la taza es normal; si el mínimo bajara de 53,60 €, sería demasiado profunda.",
+          "show": [
+            {
+              "label": "Mínimo sobre el máximo",
+              "k": 1.25,
+              "unit": "%"
+            }
+          ],
+          "guia": "g1"
         }
       ],
-      "ultimo": 4
+      "ultimo": 5
     },
     {
       "id": "on2",
@@ -223,9 +244,23 @@
           ],
           "why": "Todas son pausas dentro de una tendencia alcista: la oferta se agota y el punto de compra es la ruptura de un nivel concreto, con volumen.",
           "guia": "g4"
+        },
+        {
+          "id": "on2-5",
+          "t": "order",
+          "q": "Ordena cómo se forma un doble suelo.",
+          "items": [
+            "Caída hasta el primer mínimo",
+            "Rebote hasta el pico central",
+            "Segunda caída hasta la zona del primer mínimo",
+            "Subida con volumen creciente",
+            "Ruptura del pico central: punto de compra"
+          ],
+          "why": "La W se completa de izquierda a derecha y solo da señal al final: hasta que el precio no supera el pico central, el segundo mínimo puede ser una simple parada en la caída.",
+          "guia": "g3"
         }
       ],
-      "ultimo": 4
+      "ultimo": 5
     }
   ]
 }

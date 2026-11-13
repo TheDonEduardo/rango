@@ -93,9 +93,35 @@
             null,
             "No siempre: depende de los tipos y de la comisión del fondo."
           ]
+        },
+        {
+          "id": "lq1-5",
+          "t": "num",
+          "q": "Compras una letra del Tesoro a 12 meses con estos datos. ¿Qué rentabilidad obtienes? Redondea a 2 decimales.",
+          "unit": "%",
+          "a": 3.09,
+          "why": "(1.000 − 970) ÷ 970 = 3,09 %. Las letras no pagan cupón: se compran con descuento y la ganancia es la diferencia hasta el nominal.",
+          "tol": 0.006,
+          "table": {
+            "cols": [
+              "Letra a 12 meses",
+              "Importe"
+            ],
+            "rows": [
+              [
+                "Precio de compra",
+                "970 €"
+              ],
+              [
+                "Devolución al vencimiento",
+                "1.000 €"
+              ]
+            ]
+          },
+          "guia": "g3"
         }
       ],
-      "ultimo": 4
+      "ultimo": 5
     },
     {
       "id": "lq2",
@@ -159,9 +185,30 @@
             "2 % menos 3 % de inflación es una pérdida real de alrededor de un 1 %.",
             "La inflación resta poder de compra a todo el dinero, también al efectivo."
           ]
+        },
+        {
+          "id": "lq2-5",
+          "t": "slide",
+          "q": "Tienes 250.000 € en depósitos. El fondo de garantía cubre 100.000 € por titular y entidad. Elige el mínimo de bancos para tenerlo todo cubierto.",
+          "label": "Número de bancos",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "start": 1,
+          "a": 3,
+          "unit": "bancos",
+          "why": "Con 2 bancos cubres 200.000 €; con 3, hasta 300.000 €. Repartir entre entidades es la forma sencilla de no superar el límite.",
+          "show": [
+            {
+              "label": "Importe cubierto como máximo",
+              "k": 100,
+              "unit": "mil €"
+            }
+          ],
+          "guia": "g4"
         }
       ],
-      "ultimo": 4
+      "ultimo": 5
     }
   ]
 }
