@@ -190,7 +190,19 @@
           "a": 33.75,
           "why": "45,00 × (1 − 0,25) = 33,75 €. Cotiza a 37,00 €: buena empresa, pero aún no a tu precio. El margen te protege si tus hipótesis fallan.",
           "tol": 0.006,
-          "guia": "g4"
+          "guia": "g4",
+          "variantes": [
+            {
+              "q": "Estimas que Nébula vale 50,00 € por acción y exiges un margen de seguridad del 30 %. ¿Cuál es tu precio máximo de compra?",
+              "a": 35,
+              "why": "50,00 × (1 − 0,30) = 35,00 €. Por encima de ese precio, esperas: el margen te protege si tus hipótesis fallan."
+            },
+            {
+              "q": "Estimas que Nébula vale 40,00 € por acción y exiges un margen de seguridad del 20 %. ¿Cuál es tu precio máximo de compra?",
+              "a": 32,
+              "why": "40,00 × (1 − 0,20) = 32,00 €. Por encima de ese precio, esperas: el margen te protege si tus hipótesis fallan."
+            }
+          ]
         },
         {
           "id": "zf2-6",

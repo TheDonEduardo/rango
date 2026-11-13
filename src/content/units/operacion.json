@@ -110,7 +110,19 @@
           "unit": "%",
           "a": 6,
           "why": "(40,00 − 37,60) ÷ 40,00 = 6 %. Está dentro del límite del 7-8 %: si el stop lógico quedara más lejos, la entrada estaría demasiado extendida.",
-          "guia": "g2"
+          "guia": "g2",
+          "variantes": [
+            {
+              "q": "El pivote de A está en 50,00 € y colocas el stop en 46,50 €. ¿Qué porcentaje arriesgas por acción?",
+              "a": 7,
+              "why": "(50,00 − 46,50) ÷ 50,00 = 7 %. Está dentro del límite del 7-8 %: si el stop lógico quedara más lejos, la entrada estaría demasiado extendida."
+            },
+            {
+              "q": "El pivote de A está en 25,00 € y colocas el stop en 23,75 €. ¿Qué porcentaje arriesgas por acción?",
+              "a": 5,
+              "why": "(25,00 − 23,75) ÷ 25,00 = 5 %. Está dentro del límite del 7-8 %: si el stop lógico quedara más lejos, la entrada estaría demasiado extendida."
+            }
+          ]
         },
         {
           "id": "zt1-4",
@@ -145,7 +157,19 @@
           "unit": "€",
           "a": 47.2,
           "why": "40,00 + 3 × 2,40 = 47,20 €. Definir el objetivo en R antes de entrar te dice si la operación merece la pena.",
-          "guia": "g3"
+          "guia": "g3",
+          "variantes": [
+            {
+              "q": "Entrada a 50,00 € y riesgo de 3,50 € por acción. ¿En qué precio está el objetivo de 3R?",
+              "a": 60.5,
+              "why": "50,00 + 3 × 3,50 = 60,50 €. Definir el objetivo en R antes de entrar te dice si la operación merece la pena."
+            },
+            {
+              "q": "Entrada a 25,00 € y riesgo de 1,25 € por acción. ¿En qué precio está el objetivo de 3R?",
+              "a": 28.75,
+              "why": "25,00 + 3 × 1,25 = 28,75 €. Definir el objetivo en R antes de entrar te dice si la operación merece la pena."
+            }
+          ]
         },
         {
           "id": "zt2-2",
@@ -214,7 +238,19 @@
           "a": 0.4,
           "why": "0,40 × 2,5 − 0,60 × 1 = 1,0 − 0,6 = 0,4R. Fallando más de la mitad, el sistema gana: cada operación aporta de media 0,4 veces lo arriesgado.",
           "tol": 0.006,
-          "guia": "g4"
+          "guia": "g4",
+          "variantes": [
+            {
+              "q": "Tras 20 operaciones, tu diario dice: 50 % de aciertos, ganancia media de 2R y pérdida media de 1R. ¿Cuál es tu expectativa por operación?",
+              "a": 0.5,
+              "why": "0,50 × 2 − 0,50 × 1 = 0,5R. Lo que cuenta no es acertar mucho, sino lo que ganas cuando aciertas frente a lo que pierdes cuando fallas."
+            },
+            {
+              "q": "Tras 20 operaciones, tu diario dice: 35 % de aciertos, ganancia media de 4R y pérdida media de 1R. ¿Cuál es tu expectativa por operación?",
+              "a": 0.75,
+              "why": "0,35 × 4 − 0,65 × 1 = 0,75R. Lo que cuenta no es acertar mucho, sino lo que ganas cuando aciertas frente a lo que pierdes cuando fallas."
+            }
+          ]
         },
         {
           "id": "zt2-7",

@@ -62,7 +62,19 @@
           "unit": "%",
           "a": 32,
           "why": "80 % × 40 % = 32 %. Antes de elegir un reparto, pregúntate si aguantarías ver esa caída en tu cuenta sin vender.",
-          "guia": "g1"
+          "guia": "g1",
+          "variantes": [
+            {
+              "q": "Su cartera es 60 % acciones y 40 % bonos. Si la bolsa cae un 50 % y los bonos no se mueven, ¿cuánto cae la cartera?",
+              "a": 30,
+              "why": "60 % × 50 % = 30 %. Antes de elegir un reparto, pregúntate si aguantarías ver esa caída en tu cuenta sin vender."
+            },
+            {
+              "q": "Su cartera es 70 % acciones y 30 % bonos. Si la bolsa cae un 30 % y los bonos no se mueven, ¿cuánto cae la cartera?",
+              "a": 21,
+              "why": "70 % × 30 % = 21 %. Antes de elegir un reparto, pregúntate si aguantarías ver esa caída en tu cuenta sin vender."
+            }
+          ]
         },
         {
           "id": "zp1-3",
@@ -216,7 +228,19 @@
           "unit": "€",
           "a": 800,
           "why": "240.000 € × 4 % = 9.600 € al año, es decir, 800 € al mes. Es una orientación, no una garantía: conviene ser flexible si los primeros años son malos.",
-          "guia": "g4"
+          "guia": "g4",
+          "variantes": [
+            {
+              "q": "Llega a la jubilación con 180.000 €. Con la regla del 4 %, ¿cuánto puede retirar al mes el primer año?",
+              "a": 600,
+              "why": "180.000 € × 4 % = 7.200 € al año, es decir, 600 € al mes. Es una orientación, no una garantía: conviene ser flexible si los primeros años son malos."
+            },
+            {
+              "q": "Llega a la jubilación con 270.000 €. Con la regla del 4 %, ¿cuánto puede retirar al mes el primer año?",
+              "a": 900,
+              "why": "270.000 € × 4 % = 10.800 € al año, es decir, 900 € al mes. Es una orientación, no una garantía: conviene ser flexible si los primeros años son malos."
+            }
+          ]
         }
       ],
       "ultimo": 6

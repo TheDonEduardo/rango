@@ -137,7 +137,19 @@
           "unit": "€",
           "a": 160,
           "why": "10.000 € × (1,80 % − 0,20 %) = 160 € cada año, suba o baje el mercado. Y la diferencia crece con el interés compuesto.",
-          "guia": "g3"
+          "guia": "g3",
+          "variantes": [
+            {
+              "q": "Dos fondos siguen el mismo índice: uno cobra un 0,15 % al año y otro un 1,65 %. Sobre 20.000 €, ¿cuántos euros más al año cuesta el caro?",
+              "a": 300,
+              "why": "20.000 € × (1,65 % − 0,15 %) = 300 € cada año, suba o baje el mercado. Y la diferencia crece con el interés compuesto."
+            },
+            {
+              "q": "Dos fondos siguen el mismo índice: uno cobra un 0,25 % al año y otro un 1,50 %. Sobre 8.000 €, ¿cuántos euros más al año cuesta el caro?",
+              "a": 100,
+              "why": "8.000 € × (1,50 % − 0,25 %) = 100 € cada año, suba o baje el mercado. Y la diferencia crece con el interés compuesto."
+            }
+          ]
         },
         {
           "id": "zb2-3",
@@ -146,7 +158,19 @@
           "unit": "part.",
           "a": 35,
           "why": "150 ÷ 10,00 = 15 y 150 ÷ 7,50 = 20: en total 35. Con la misma aportación, cuando el precio baja compras más participaciones.",
-          "guia": "g4"
+          "guia": "g4",
+          "variantes": [
+            {
+              "q": "Aporta 200 € cada mes. El primer mes la participación vale 20,00 € y el segundo, 16,00 €. ¿Cuántas participaciones tiene tras las dos compras?",
+              "a": 22.5,
+              "why": "200 ÷ 20,00 = 10 y 200 ÷ 16,00 = 12,5: en total 22,5. Con la misma aportación, cuando el precio baja compras más participaciones."
+            },
+            {
+              "q": "Aporta 120 € cada mes. El primer mes la participación vale 12,00 € y el segundo, 8,00 €. ¿Cuántas participaciones tiene tras las dos compras?",
+              "a": 25,
+              "why": "120 ÷ 12,00 = 10 y 120 ÷ 8,00 = 15: en total 25. Con la misma aportación, cuando el precio baja compras más participaciones."
+            }
+          ]
         },
         {
           "id": "zb2-4",
