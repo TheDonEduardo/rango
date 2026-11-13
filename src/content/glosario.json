@@ -483,5 +483,55 @@
  {
   "termino": "BPA ajustado",
   "d": "Beneficio por acción que excluye partidas que la empresa considera no recurrentes. Conviene mirar qué se ha excluido."
+ },
+ {
+  "termino": "RSI",
+  "d": "Índice de fuerza relativa: mide de 0 a 100 la velocidad de las subidas frente a las caídas recientes. Por encima de 70, sobrecompra; por debajo de 30, sobreventa."
+ },
+ {
+  "termino": "MACD",
+  "d": "Indicador que compara dos medias móviles del precio. Cuando cruza su línea de señal, avisa de un cambio de impulso."
+ },
+ {
+  "termino": "bandas de Bollinger",
+  "alias": [
+   "Bollinger"
+  ],
+  "d": "Dos líneas a dos desviaciones típicas de la media de 20 sesiones. Si se estrechan, la volatilidad es baja y suele venir un movimiento amplio."
+ },
+ {
+  "termino": "taza con asa",
+  "d": "Base de O'Neil: una corrección redondeada que recupera casi todo lo perdido, seguida de un retroceso corto. Se compra al superar el máximo del asa."
+ },
+ {
+  "termino": "doble suelo",
+  "d": "Base en forma de W: dos mínimos parecidos separados por un rebote. Se compra al superar el pico central."
+ },
+ {
+  "termino": "ROE",
+  "d": "Rentabilidad sobre fondos propios: beneficio neto entre el capital de los accionistas. Es la medida habitual en bancos."
+ },
+ {
+  "termino": "ratio combinado",
+  "d": "En una aseguradora, siniestros más gastos entre primas. Por debajo de 100 %, gana dinero asegurando."
+ },
+ {
+  "termino": "margen de intereses",
+  "d": "Lo que gana un banco entre lo que cobra por prestar y lo que paga por los depósitos."
+ },
+ {
+  "termino": "fondo monetario",
+  "alias": [
+   "fondos monetarios"
+  ],
+  "d": "Fondo que invierte en deuda a muy corto plazo: riesgo muy bajo y dinero disponible en uno o dos días."
+ },
+ {
+  "termino": "letra del Tesoro",
+  "alias": [
+   "letras del Tesoro",
+   "letras"
+  ],
+  "d": "Deuda del Estado a 12 meses o menos. No paga cupón: se compra con descuento y devuelve el nominal al vencer."
  }
 ]
