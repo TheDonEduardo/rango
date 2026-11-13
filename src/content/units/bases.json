@@ -111,7 +111,19 @@
           "unit": "%",
           "a": 25,
           "why": "(50,00 − 37,50) ÷ 50,00 = 25 %. O'Neil consideraba normales tazas del 12 al 33 %; mucho más profundas suelen fallar, porque queda demasiada gente atrapada arriba.",
-          "guia": "g1"
+          "guia": "g1",
+          "variantes": [
+            {
+              "q": "La taza va de un máximo de 80,00 € a un mínimo de 64,00 €. ¿Qué profundidad tiene?",
+              "a": 20,
+              "why": "(80,00 − 64,00) ÷ 80,00 = 20 %. O'Neil consideraba normales tazas del 12 al 33 %; mucho más profundas suelen fallar, porque queda demasiada gente atrapada arriba."
+            },
+            {
+              "q": "La taza va de un máximo de 40,00 € a un mínimo de 28,00 €. ¿Qué profundidad tiene?",
+              "a": 30,
+              "why": "(40,00 − 28,00) ÷ 40,00 = 30 %. O'Neil consideraba normales tazas del 12 al 33 %; mucho más profundas suelen fallar, porque queda demasiada gente atrapada arriba."
+            }
+          ]
         },
         {
           "id": "on1-3",
@@ -121,7 +133,19 @@
           "a": 8.0,
           "why": "(49,40 − 45,45) ÷ 49,40 = 8,0 %. Un asa sana retrocede poco, menos de un 12-15 %, y con volumen bajo: indica que ya casi nadie quiere vender.",
           "tol": 0.06,
-          "guia": "g2"
+          "guia": "g2",
+          "variantes": [
+            {
+              "q": "El asa baja de 78,50 € a 72,00 €. ¿Cuánto retrocede? Redondea a 1 decimal.",
+              "a": 8.3,
+              "why": "(78,50 − 72,00) ÷ 78,50 = 8,3 %. Un asa sana retrocede poco, menos de un 12-15 %, y con volumen bajo: indica que ya casi nadie quiere vender."
+            },
+            {
+              "q": "El asa baja de 39,20 € a 35,50 €. ¿Cuánto retrocede? Redondea a 1 decimal.",
+              "a": 9.4,
+              "why": "(39,20 − 35,50) ÷ 39,20 = 9,4 %. Un asa sana retrocede poco, menos de un 12-15 %, y con volumen bajo: indica que ya casi nadie quiere vender."
+            }
+          ]
         },
         {
           "id": "on1-4",
@@ -198,7 +222,19 @@
           "unit": "%",
           "a": 12.5,
           "why": "(80,00 − 70,00) ÷ 80,00 = 12,5 %. Menos de un 15 % durante cinco semanas o más es una base plana: el precio descansa sin ceder terreno. El pivote es su máximo.",
-          "guia": "g3"
+          "guia": "g3",
+          "variantes": [
+            {
+              "q": "Tras subir un 30 %, la acción se mueve seis semanas entre 45,00 € y 50,00 €. ¿Qué profundidad tiene esa base?",
+              "a": 10,
+              "why": "(50,00 − 45,00) ÷ 50,00 = 10 %. Menos de un 15 % durante cinco semanas o más es una base plana: el precio descansa sin ceder terreno. El pivote es su máximo."
+            },
+            {
+              "q": "Tras subir un 30 %, la acción se mueve seis semanas entre 88,00 € y 100,00 €. ¿Qué profundidad tiene esa base?",
+              "a": 12,
+              "why": "(100,00 − 88,00) ÷ 100,00 = 12 %. Menos de un 15 % durante cinco semanas o más es una base plana: el precio descansa sin ceder terreno. El pivote es su máximo."
+            }
+          ]
         },
         {
           "id": "on2-3",

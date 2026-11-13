@@ -213,6 +213,22 @@ V = {
  'zf2-5': (lambda v, m: (f"Estimas que Nébula vale {e(v)} € por acción y exiges un margen de seguridad del {m} %. ¿Cuál es tu precio máximo de compra?", r2(v * (1 - m / 100)),
                          f"{e(v)} × (1 − {e(m / 100)}) = {e(v * (1 - m / 100))} €. Por encima de ese precio, esperas: el margen te protege si tus hipótesis fallan."),
            [(50.0, 30), (40.0, 20)]),
+ # ---- Unidades nuevas: bases, bancos y liquidez
+ 'on1-2': (lambda a, b: (f"La taza va de un máximo de {e(a)} € a un mínimo de {e(b)} €. ¿Qué profundidad tiene?", r2((a - b) / a * 100),
+                         f"({e(a)} − {e(b)}) ÷ {e(a)} = {n(r2((a - b) / a * 100))} %. O'Neil consideraba normales tazas del 12 al 33 %; mucho más profundas suelen fallar, porque queda demasiada gente atrapada arriba."),
+           [(80.0, 64.0), (40.0, 28.0)]),
+ 'on1-3': (lambda a, b: (f"El asa baja de {e(a)} € a {e(b)} €. ¿Cuánto retrocede? Redondea a 1 decimal.", r1((a - b) / a * 100),
+                         f"({e(a)} − {e(b)}) ÷ {e(a)} = {e(r1((a - b) / a * 100), 1)} %. Un asa sana retrocede poco, menos de un 12-15 %, y con volumen bajo: indica que ya casi nadie quiere vender."),
+           [(78.5, 72.0), (39.2, 35.5)]),
+ 'on2-2': (lambda a, b: (f"Tras subir un 30 %, la acción se mueve seis semanas entre {e(a)} € y {e(b)} €. ¿Qué profundidad tiene esa base?", r2((b - a) / b * 100),
+                         f"({e(b)} − {e(a)}) ÷ {e(b)} = {n(r2((b - a) / b * 100))} %. Menos de un 15 % durante cinco semanas o más es una base plana: el precio descansa sin ceder terreno. El pivote es su máximo."),
+           [(45.0, 50.0), (88.0, 100.0)]),
+ 'fb1-1': (lambda k, c, d: (f"Un banco presta {e(k, 0)} M€ al {n(c)} % y paga un {n(d)} % por los depósitos que financian esos préstamos. ¿Cuántos millones gana al año de margen de intereses?", r2(k * (c - d) / 100),
+                            f"{e(k, 0)} M€ × ({n(c)} % − {n(d)} %) = {n(r2(k * (c - d) / 100))} M€. Es la principal fuente de ingresos de un banco: cobrar por prestar más de lo que paga por el dinero."),
+           [(20000, 5.0, 2.0), (8000, 4.0, 1.5)]),
+ 'lq2-1': (lambda k: (f"El fondo de garantía de depósitos cubre hasta 100.000 € por titular y entidad. Tienes {e(k, 0)} € en un solo banco. ¿Cuántos miles de euros quedan sin cubrir?", (k - 100000) / 1000,
+                      f"{e(k, 0)} € − 100.000 € = {e(k - 100000, 0)} €, es decir, {n((k - 100000) / 1000)} mil euros sin cubrir. Repartir entre varias entidades lo evita."),
+           [(180000,), (230000,)]),
 }
 
 

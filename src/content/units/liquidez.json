@@ -135,7 +135,19 @@
           "a": 50,
           "why": "150.000 − 100.000 = 50.000 €, es decir, 50 mil. Repartir el dinero entre dos entidades lo dejaría todo cubierto.",
           "revisar": "2027-06",
-          "guia": "g4"
+          "guia": "g4",
+          "variantes": [
+            {
+              "q": "El fondo de garantía de depósitos cubre hasta 100.000 € por titular y entidad. Tienes 180.000 € en un solo banco. ¿Cuántos miles de euros quedan sin cubrir?",
+              "a": 80,
+              "why": "180.000 € − 100.000 € = 80.000 €, es decir, 80 mil euros sin cubrir. Repartir entre varias entidades lo evita."
+            },
+            {
+              "q": "El fondo de garantía de depósitos cubre hasta 100.000 € por titular y entidad. Tienes 230.000 € en un solo banco. ¿Cuántos miles de euros quedan sin cubrir?",
+              "a": 130,
+              "why": "230.000 € − 100.000 € = 130.000 €, es decir, 130 mil euros sin cubrir. Repartir entre varias entidades lo evita."
+            }
+          ]
         },
         {
           "id": "lq2-2",
