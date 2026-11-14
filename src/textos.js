@@ -75,7 +75,7 @@ export const t={
     compra:['De la idea a la compra','Analiza la empresa, comprueba el gráfico y planifica la operación con su riesgo.'],
     proteger:['Protege tu dinero','Estafas, sesgos, deudas y dónde guardar lo que no puedes arriesgar.']},
   itinMeta:(h,n,r)=>`${h} de ${n} lecciones · ${r}`, itinSiguiendo:'Lo estás siguiendo', itinEmpezar:'Seguir este itinerario', itinRetomar:'Retomar este itinerario', itinDejar:'Dejar de seguirlo',
-  itinPaso:(n,k,tot)=>`Itinerario · ${n} · ${k} de ${tot}`, itinSeguir:'Seguir', itinHecho:'Itinerario completado', itinOtros:'Ver otros',
+  itinPaso:(n,k,tot)=>`Itinerario · ${n} · ${k} de ${tot}`, itinSeguir:'Seguir', itinHecho:'Itinerario completado', itinOtros:'Ver otros', itinVer:'O sigue un itinerario guiado',
 
   // Lección
   salirLeccion:'Salir de la lección', progresoLeccion:'Progreso de la lección', vidas:n=>`${n} ${pl(n,'vida','vidas')}`,

@@ -534,6 +534,7 @@ T.setTrack('pasiva'); T.skipBasics();
   const st = T.getState(), hechas = st.done; st.done = {}; st.itin = null;
   T.act('itinerarios');
   if (!app.innerHTML.includes('Itinerarios guiados') || /undefined|NaN/.test(app.innerHTML)) errs.push('la pantalla de itinerarios no se dibuja bien');
+  { const o = st.objetivo, x = st.xp; st.objetivo = null; st.xp = 0; if (!T.homeHTML().includes('O sigue un itinerario guiado')) errs.push('la pantalla de objetivo no ofrece los itinerarios'); st.objetivo = o; st.xp = x; }
   T.act('itinsel', {id: 'compra'});
   if (st.itin !== 'compra' || !T.homeHTML().includes('data-act="itinsig"')) errs.push('elegir un itinerario no lo muestra en el inicio');
   st.done.f1a = {acc: 1};

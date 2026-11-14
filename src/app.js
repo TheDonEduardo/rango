@@ -192,7 +192,7 @@ const ACCIONES={
   },
   // Itinerarios: elegir uno, dejarlo y abrir su siguiente lección (sin los bloqueos de las rutas: el orden lo da el itinerario).
   itinerarios(){ir('itinerarios')},
-  itinsel(b){if(ITINERARIOS.some(x=>x.id===b.dataset.id)){S.itin=b.dataset.id;save();ses.view='home';ses.goCur=false;ses.homeY=0;render()}},
+  itinsel(b){if(ITINERARIOS.some(x=>x.id===b.dataset.id)){S.itin=b.dataset.id;if(!S.objetivo)S.objetivo='ninguno';save();ses.view='home';ses.goCur=false;ses.homeY=0;render()}},
   itindejar(){S.itin=null;save();render()},
   itinsig(){
     const a=itinActual();if(!a||!a.sig)return;
