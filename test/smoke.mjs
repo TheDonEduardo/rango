@@ -527,7 +527,9 @@ if (!cerca(r1.final, 90687.73) || r1.aportado !== 48000 || !cerca(r2.final, 7436
 T.setTrack('pasiva'); T.skipBasics();
 // Itinerarios: lecciones existentes y sin repetir; elegir uno lo muestra en «Hoy» y abre su siguiente lección aunque esté bloqueada en su ruta.
 {
+  const {t} = await import(pathToFileURL(path.join(root, 'src/textos.js')));
   for (const it of T.ITINERARIOS) {
+    if (!t.itin[it.id] || !t.itinLogros[it.id] || t.itinLogros[it.id].length !== 3) errs.push(`itinerario ${it.id}: faltan sus textos`);
     const malos = it.pasos.filter(id => !T.FLAT.some(l => l.id === id && l.kind === 'lesson'));
     if (malos.length || new Set(it.pasos).size !== it.pasos.length) errs.push(`itinerario ${it.id}: lecciones inexistentes o repetidas ${malos}`);
   }

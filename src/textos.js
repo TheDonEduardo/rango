@@ -73,12 +73,18 @@ export const t={
   itinerarios:'Itinerarios', itinTitulo:'Itinerarios guiados', itinNota:'Recorridos con un objetivo concreto que enlazan lecciones de varias rutas. Lo que hagas aquí cuenta también en cada ruta.',
   itin:{cartera:['Tu primera cartera','De qué es una acción a montar y mantener una cartera de fondos indexados.'],
     compra:['De la idea a la compra','Analiza la empresa, comprueba el gráfico y planifica la operación con su riesgo.'],
-    proteger:['Protege tu dinero','Estafas, sesgos, deudas y dónde guardar lo que no puedes arriesgar.']},
+    proteger:['Protege tu dinero','Estafas, sesgos, deudas y dónde guardar lo que no puedes arriesgar.'],
+    jubilacion:['Prepara tu jubilación','Cuánto necesitas, cómo llegar y cómo retirar el dinero sin que se acabe.'],
+    resultados:['Lee unos resultados','Sorpresas, márgenes, guía y señales de alerta en un informe trimestral.'],
+    riesgo:['Gestiona el riesgo','Stop, tamaño de posición, salidas, riesgo de cartera y disciplina.']},
   itinMeta:(h,n,r)=>`${h} de ${n} lecciones · ${r}`, itinSiguiendo:'Lo estás siguiendo', itinEmpezar:'Seguir este itinerario', itinRetomar:'Retomar este itinerario', itinDejar:'Dejar de seguirlo',
   itinPaso:(n,k,tot)=>`Itinerario · ${n} · ${k} de ${tot}`, itinSeguir:'Seguir', itinHecho:'Itinerario completado',  itinVer:'O sigue un itinerario guiado', itinCompletado:'Completado', itinSabes:'Lo que ya sabes hacer:', itinSiguiente:n=>`Siguiente: ${n}`, itinResumen:'Ver resumen',
   itinLogros:{cartera:['Elegir un fondo indexado barato y entender qué hay dentro','Decidir tu reparto entre acciones y bonos según tu plazo','Aportar cada mes y rebalancear sin pagar impuestos de más'],
     compra:['Leer el crecimiento, la valoración y la deuda de una empresa','Comprobar la tendencia y situar la entrada y el stop','Calcular el tamaño de la posición y gestionar la salida en R'],
-    proteger:['Reconocer una estafa antes de poner dinero','Detectar tus sesgos y decidir con reglas escritas','Guardar el dinero a corto plazo donde no puede caer']},
+    proteger:['Reconocer una estafa antes de poner dinero','Detectar tus sesgos y decidir con reglas escritas','Guardar el dinero a corto plazo donde no puede caer'],
+    jubilacion:['Calcular cuánto necesitas y cuánto ahorrar cada mes','Contar con la inflación y ajustar el reparto al plazo','Retirar con una regla sostenible y pagando menos impuestos'],
+    resultados:['Comparar las cifras con el consenso y con la guía','Distinguir beneficio ajustado, contable y caja','Detectar señales de alerta en cobros, inventario y ajustes'],
+    riesgo:['Colocar el stop con el ATR y calcular el tamaño','Escalonar las salidas y medir el resultado en R','Limitar el riesgo total de la cartera y seguir tu plan']},
 
 
   // Lección
