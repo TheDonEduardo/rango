@@ -1,6 +1,6 @@
 {
   "fuente": "Yahoo Finance",
-  "fecha": "12/11/2026",
+  "fecha": "14/11/2026",
   "ex": {
     "f1a": [
       {
@@ -105,20 +105,20 @@
       {
         "t": "num",
         "caso": "Nu Holdings (NU)",
-        "q": "Ventas de Nu Holdings en el trimestre cerrado el 30/06/2026: 3.769 M$. Mismo trimestre del año anterior: 2.510 M$. ¿Crecimiento interanual? Redondea a 1 decimal.",
+        "q": "Ventas de Nu Holdings en el trimestre cerrado el 30/09/2026: 4.030 M$. Mismo trimestre del año anterior: 2.729 M$. ¿Crecimiento interanual? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 50.2,
+        "a": 47.7,
         "tol": 0.06,
-        "why": "3.769 ÷ 2.510 − 1 = 50,2 %. Ese ritmo supera el 25 % que pide O'Neil a las ventas."
+        "why": "4.030 ÷ 2.729 − 1 = 47,7 %. Ese ritmo supera el 25 % que pide O'Neil a las ventas."
       },
       {
         "t": "num",
         "caso": "Nu Holdings (NU)",
-        "q": "BPA diluido contable de Nu Holdings en el trimestre cerrado el 30/06/2026: 0,22 $. Mismo trimestre del año anterior: 0,13 $. ¿Crecimiento interanual? Redondea a 1 decimal.",
+        "q": "BPA diluido contable de Nu Holdings en el trimestre cerrado el 30/09/2026: 0,22 $. Mismo trimestre del año anterior: 0,16 $. ¿Crecimiento interanual? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 69.2,
+        "a": 37.5,
         "tol": 0.06,
-        "why": "0,22 ÷ 0,13 − 1 = 69,2 %. Es el BPA contable: antes de concluir, revisa si incluye partidas puntuales."
+        "why": "0,22 ÷ 0,16 − 1 = 37,5 %. Es el BPA contable: antes de concluir, revisa si incluye partidas puntuales."
       },
       {
         "t": "num",
@@ -325,270 +325,270 @@
       {
         "t": "num",
         "caso": "Broadcom (AVGO)",
-        "q": "Precio de Broadcom al cierre del 11/11/2026: 345,22 $. BPA contable de los últimos 12 meses: 7,83 $. ¿PER? Redondea a 1 decimal.",
+        "q": "Precio de Broadcom al cierre del 13/11/2026: 347,01 $. BPA contable de los últimos 12 meses: 7,83 $. ¿PER? Redondea a 1 decimal.",
         "unit": "",
-        "a": 44.1,
+        "a": 44.3,
         "tol": 0.06,
-        "why": "345,22 ÷ 7,83 = 44,1 veces. Es el beneficio contable del último año."
+        "why": "347,01 ÷ 7,83 = 44,3 veces. Es el beneficio contable del último año."
       },
       {
         "t": "num",
         "caso": "Broadcom (AVGO)",
-        "q": "Precio de Broadcom al cierre del 11/11/2026: 345,22 $. BPA estimado por los analistas para los próximos 12 meses: 19,47 $. ¿PER adelantado? Redondea a 1 decimal.",
+        "q": "Precio de Broadcom al cierre del 13/11/2026: 347,01 $. BPA estimado por los analistas para los próximos 12 meses: 19,41 $. ¿PER adelantado? Redondea a 1 decimal.",
         "unit": "",
-        "a": 17.7,
+        "a": 17.9,
         "tol": 0.06,
-        "why": "345,22 ÷ 19,47 = 17,7 veces. Ojo: el BPA estimado suele ser «ajustado» y el pasado, contable; no compares ambos PER sin saberlo."
+        "why": "347,01 ÷ 19,41 = 17,9 veces. Ojo: el BPA estimado suele ser «ajustado» y el pasado, contable; no compares ambos PER sin saberlo."
       },
       {
         "t": "num",
         "caso": "Alphabet (GOOGL)",
-        "q": "Precio de Alphabet al cierre del 11/11/2026: 293,45 $. BPA contable de los últimos 12 meses: 19,55 $. ¿PER? Redondea a 1 decimal.",
+        "q": "Precio de Alphabet al cierre del 13/11/2026: 295,77 $. BPA contable de los últimos 12 meses: 19,15 $. ¿PER? Redondea a 1 decimal.",
         "unit": "",
-        "a": 15.0,
+        "a": 15.4,
         "tol": 0.06,
-        "why": "293,45 ÷ 19,55 = 15,0 veces. Es el beneficio contable del último año."
+        "why": "295,77 ÷ 19,15 = 15,4 veces. Es el beneficio contable del último año."
       },
       {
         "t": "num",
         "caso": "Alphabet (GOOGL)",
-        "q": "Precio de Alphabet al cierre del 11/11/2026: 293,45 $. BPA estimado por los analistas para los próximos 12 meses: 15,44 $. ¿PER adelantado? Redondea a 1 decimal.",
+        "q": "Precio de Alphabet al cierre del 13/11/2026: 295,77 $. BPA estimado por los analistas para los próximos 12 meses: 15,44 $. ¿PER adelantado? Redondea a 1 decimal.",
         "unit": "",
-        "a": 19.0,
+        "a": 19.2,
         "tol": 0.06,
-        "why": "293,45 ÷ 15,44 = 19,0 veces. Ojo: el BPA estimado suele ser «ajustado» y el pasado, contable; no compares ambos PER sin saberlo."
+        "why": "295,77 ÷ 15,44 = 19,2 veces. Ojo: el BPA estimado suele ser «ajustado» y el pasado, contable; no compares ambos PER sin saberlo."
       },
       {
         "t": "num",
         "caso": "MercadoLibre (MELI)",
-        "q": "Precio de MercadoLibre al cierre del 11/11/2026: 1.512,02 $. BPA contable de los últimos 12 meses: 37,28 $. ¿PER? Redondea a 1 decimal.",
+        "q": "Precio de MercadoLibre al cierre del 13/11/2026: 1.491,49 $. BPA contable de los últimos 12 meses: 37,28 $. ¿PER? Redondea a 1 decimal.",
         "unit": "",
-        "a": 40.6,
+        "a": 40.0,
         "tol": 0.06,
-        "why": "1.512,02 ÷ 37,28 = 40,6 veces. Es el beneficio contable del último año."
+        "why": "1.491,49 ÷ 37,28 = 40,0 veces. Es el beneficio contable del último año."
       },
       {
         "t": "num",
         "caso": "MercadoLibre (MELI)",
-        "q": "Precio de MercadoLibre al cierre del 11/11/2026: 1.512,02 $. BPA estimado por los analistas para los próximos 12 meses: 54,44 $. ¿PER adelantado? Redondea a 1 decimal.",
+        "q": "Precio de MercadoLibre al cierre del 13/11/2026: 1.491,49 $. BPA estimado por los analistas para los próximos 12 meses: 53,09 $. ¿PER adelantado? Redondea a 1 decimal.",
         "unit": "",
-        "a": 27.8,
+        "a": 28.1,
         "tol": 0.06,
-        "why": "1.512,02 ÷ 54,44 = 27,8 veces. Ojo: el BPA estimado suele ser «ajustado» y el pasado, contable; no compares ambos PER sin saberlo."
+        "why": "1.491,49 ÷ 53,09 = 28,1 veces. Ojo: el BPA estimado suele ser «ajustado» y el pasado, contable; no compares ambos PER sin saberlo."
       },
       {
         "t": "num",
         "caso": "Microsoft (MSFT)",
-        "q": "Precio de Microsoft al cierre del 11/11/2026: 521,12 $. BPA contable de los últimos 12 meses: 19,16 $. ¿PER? Redondea a 1 decimal.",
+        "q": "Precio de Microsoft al cierre del 13/11/2026: 523,88 $. BPA contable de los últimos 12 meses: 19,16 $. ¿PER? Redondea a 1 decimal.",
         "unit": "",
-        "a": 27.2,
+        "a": 27.3,
         "tol": 0.06,
-        "why": "521,12 ÷ 19,16 = 27,2 veces. Es el beneficio contable del último año."
+        "why": "523,88 ÷ 19,16 = 27,3 veces. Es el beneficio contable del último año."
       },
       {
         "t": "num",
         "caso": "Microsoft (MSFT)",
-        "q": "Precio de Microsoft al cierre del 11/11/2026: 521,12 $. BPA estimado por los analistas para los próximos 12 meses: 24,20 $. ¿PER adelantado? Redondea a 1 decimal.",
+        "q": "Precio de Microsoft al cierre del 13/11/2026: 523,88 $. BPA estimado por los analistas para los próximos 12 meses: 24,19 $. ¿PER adelantado? Redondea a 1 decimal.",
         "unit": "",
-        "a": 21.5,
+        "a": 21.7,
         "tol": 0.06,
-        "why": "521,12 ÷ 24,20 = 21,5 veces. Ojo: el BPA estimado suele ser «ajustado» y el pasado, contable; no compares ambos PER sin saberlo."
+        "why": "523,88 ÷ 24,19 = 21,7 veces. Ojo: el BPA estimado suele ser «ajustado» y el pasado, contable; no compares ambos PER sin saberlo."
       },
       {
         "t": "num",
         "caso": "Eli Lilly and Company (LLY)",
-        "q": "Precio de Eli Lilly and Company al cierre del 11/11/2026: 1.437,29 $. BPA contable de los últimos 12 meses: 30,92 $. ¿PER? Redondea a 1 decimal.",
+        "q": "Precio de Eli Lilly and Company al cierre del 13/11/2026: 1.443,50 $. BPA contable de los últimos 12 meses: 30,81 $. ¿PER? Redondea a 1 decimal.",
         "unit": "",
-        "a": 46.5,
+        "a": 46.9,
         "tol": 0.06,
-        "why": "1.437,29 ÷ 30,92 = 46,5 veces. Es el beneficio contable del último año."
+        "why": "1.443,50 ÷ 30,81 = 46,9 veces. Es el beneficio contable del último año."
       },
       {
         "t": "num",
         "caso": "Eli Lilly and Company (LLY)",
-        "q": "Precio de Eli Lilly and Company al cierre del 11/11/2026: 1.437,29 $. BPA estimado por los analistas para los próximos 12 meses: 50,54 $. ¿PER adelantado? Redondea a 1 decimal.",
+        "q": "Precio de Eli Lilly and Company al cierre del 13/11/2026: 1.443,50 $. BPA estimado por los analistas para los próximos 12 meses: 50,64 $. ¿PER adelantado? Redondea a 1 decimal.",
         "unit": "",
-        "a": 28.4,
+        "a": 28.5,
         "tol": 0.06,
-        "why": "1.437,29 ÷ 50,54 = 28,4 veces. Ojo: el BPA estimado suele ser «ajustado» y el pasado, contable; no compares ambos PER sin saberlo."
+        "why": "1.443,50 ÷ 50,64 = 28,5 veces. Ojo: el BPA estimado suele ser «ajustado» y el pasado, contable; no compares ambos PER sin saberlo."
       },
       {
         "t": "num",
         "caso": "CrowdStrike Holdings (CRWD)",
-        "q": "Precio de CrowdStrike Holdings al cierre del 11/11/2026: 229,06 $. BPA estimado por los analistas para los próximos 12 meses: 1,61 $. ¿PER adelantado? Redondea a 1 decimal.",
+        "q": "Precio de CrowdStrike Holdings al cierre del 13/11/2026: 226,61 $. BPA estimado por los analistas para los próximos 12 meses: 1,61 $. ¿PER adelantado? Redondea a 1 decimal.",
         "unit": "",
-        "a": 142.3,
+        "a": 140.8,
         "tol": 0.06,
-        "why": "229,06 ÷ 1,61 = 142,3 veces. Ojo: el BPA estimado suele ser «ajustado» y el pasado, contable; no compares ambos PER sin saberlo."
+        "why": "226,61 ÷ 1,61 = 140,8 veces. Ojo: el BPA estimado suele ser «ajustado» y el pasado, contable; no compares ambos PER sin saberlo."
       },
       {
         "t": "num",
         "caso": "Nu Holdings (NU)",
-        "q": "Precio de Nu Holdings al cierre del 11/11/2026: 12,32 $. BPA contable de los últimos 12 meses: 0,75 $. ¿PER? Redondea a 1 decimal.",
+        "q": "Precio de Nu Holdings al cierre del 13/11/2026: 13,22 $. BPA contable de los últimos 12 meses: 0,80 $. ¿PER? Redondea a 1 decimal.",
         "unit": "",
-        "a": 16.4,
+        "a": 16.5,
         "tol": 0.06,
-        "why": "12,32 ÷ 0,75 = 16,4 veces. Es el beneficio contable del último año."
+        "why": "13,22 ÷ 0,80 = 16,5 veces. Es el beneficio contable del último año."
       },
       {
         "t": "num",
         "caso": "Nu Holdings (NU)",
-        "q": "Precio de Nu Holdings al cierre del 11/11/2026: 12,32 $. BPA estimado por los analistas para los próximos 12 meses: 1,09 $. ¿PER adelantado? Redondea a 1 decimal.",
+        "q": "Precio de Nu Holdings al cierre del 13/11/2026: 13,22 $. BPA estimado por los analistas para los próximos 12 meses: 1,09 $. ¿PER adelantado? Redondea a 1 decimal.",
         "unit": "",
-        "a": 11.3,
+        "a": 12.1,
         "tol": 0.06,
-        "why": "12,32 ÷ 1,09 = 11,3 veces. Ojo: el BPA estimado suele ser «ajustado» y el pasado, contable; no compares ambos PER sin saberlo."
+        "why": "13,22 ÷ 1,09 = 12,1 veces. Ojo: el BPA estimado suele ser «ajustado» y el pasado, contable; no compares ambos PER sin saberlo."
       },
       {
         "t": "num",
         "caso": "Axon Enterprise (AXON)",
-        "q": "Precio de Axon Enterprise al cierre del 11/11/2026: 315,42 $. BPA contable de los últimos 12 meses: 3,24 $. ¿PER? Redondea a 1 decimal.",
+        "q": "Precio de Axon Enterprise al cierre del 13/11/2026: 315,43 $. BPA contable de los últimos 12 meses: 3,11 $. ¿PER? Redondea a 1 decimal.",
         "unit": "",
-        "a": 97.4,
+        "a": 101.4,
         "tol": 0.06,
-        "why": "315,42 ÷ 3,24 = 97,4 veces. Es el beneficio contable del último año."
+        "why": "315,43 ÷ 3,11 = 101,4 veces. Es el beneficio contable del último año."
       },
       {
         "t": "num",
         "caso": "Axon Enterprise (AXON)",
-        "q": "Precio de Axon Enterprise al cierre del 11/11/2026: 315,42 $. BPA estimado por los analistas para los próximos 12 meses: 9,44 $. ¿PER adelantado? Redondea a 1 decimal.",
+        "q": "Precio de Axon Enterprise al cierre del 13/11/2026: 315,43 $. BPA estimado por los analistas para los próximos 12 meses: 9,44 $. ¿PER adelantado? Redondea a 1 decimal.",
         "unit": "",
         "a": 33.4,
         "tol": 0.06,
-        "why": "315,42 ÷ 9,44 = 33,4 veces. Ojo: el BPA estimado suele ser «ajustado» y el pasado, contable; no compares ambos PER sin saberlo."
+        "why": "315,43 ÷ 9,44 = 33,4 veces. Ojo: el BPA estimado suele ser «ajustado» y el pasado, contable; no compares ambos PER sin saberlo."
       },
       {
         "t": "num",
         "caso": "Meta Platforms (META)",
-        "q": "Precio de Meta Platforms al cierre del 11/11/2026: 628,77 $. BPA contable de los últimos 12 meses: 28,73 $. ¿PER? Redondea a 1 decimal.",
+        "q": "Precio de Meta Platforms al cierre del 13/11/2026: 641,69 $. BPA contable de los últimos 12 meses: 29,31 $. ¿PER? Redondea a 1 decimal.",
         "unit": "",
         "a": 21.9,
         "tol": 0.06,
-        "why": "628,77 ÷ 28,73 = 21,9 veces. Es el beneficio contable del último año."
+        "why": "641,69 ÷ 29,31 = 21,9 veces. Es el beneficio contable del último año."
       },
       {
         "t": "num",
         "caso": "Meta Platforms (META)",
-        "q": "Precio de Meta Platforms al cierre del 11/11/2026: 628,77 $. BPA estimado por los analistas para los próximos 12 meses: 35,59 $. ¿PER adelantado? Redondea a 1 decimal.",
+        "q": "Precio de Meta Platforms al cierre del 13/11/2026: 641,69 $. BPA estimado por los analistas para los próximos 12 meses: 35,59 $. ¿PER adelantado? Redondea a 1 decimal.",
         "unit": "",
-        "a": 17.7,
+        "a": 18.0,
         "tol": 0.06,
-        "why": "628,77 ÷ 35,59 = 17,7 veces. Ojo: el BPA estimado suele ser «ajustado» y el pasado, contable; no compares ambos PER sin saberlo."
+        "why": "641,69 ÷ 35,59 = 18,0 veces. Ojo: el BPA estimado suele ser «ajustado» y el pasado, contable; no compares ambos PER sin saberlo."
       },
       {
         "t": "num",
         "caso": "NVIDIA (NVDA)",
-        "q": "Precio de NVIDIA al cierre del 11/11/2026: 173,73 $. BPA contable de los últimos 12 meses: 8,14 $. ¿PER? Redondea a 1 decimal.",
+        "q": "Precio de NVIDIA al cierre del 13/11/2026: 162,85 $. BPA contable de los últimos 12 meses: 7,91 $. ¿PER? Redondea a 1 decimal.",
         "unit": "",
-        "a": 21.3,
+        "a": 20.6,
         "tol": 0.06,
-        "why": "173,73 ÷ 8,14 = 21,3 veces. Es el beneficio contable del último año."
+        "why": "162,85 ÷ 7,91 = 20,6 veces. Es el beneficio contable del último año."
       },
       {
         "t": "num",
         "caso": "NVIDIA (NVDA)",
-        "q": "Precio de NVIDIA al cierre del 11/11/2026: 173,73 $. BPA estimado por los analistas para los próximos 12 meses: 15,91 $. ¿PER adelantado? Redondea a 1 decimal.",
+        "q": "Precio de NVIDIA al cierre del 13/11/2026: 162,85 $. BPA estimado por los analistas para los próximos 12 meses: 15,85 $. ¿PER adelantado? Redondea a 1 decimal.",
         "unit": "",
-        "a": 10.9,
+        "a": 10.3,
         "tol": 0.06,
-        "why": "173,73 ÷ 15,91 = 10,9 veces. Ojo: el BPA estimado suele ser «ajustado» y el pasado, contable; no compares ambos PER sin saberlo."
+        "why": "162,85 ÷ 15,85 = 10,3 veces. Ojo: el BPA estimado suele ser «ajustado» y el pasado, contable; no compares ambos PER sin saberlo."
       }
     ],
     "f2b": [
       {
         "t": "num",
         "caso": "Broadcom (AVGO)",
-        "q": "Broadcom al cierre del 11/11/2026: capitalización de 1.647.953 M$, deuda de 59.419 M$, caja de 23.975 M$ y EBITDA de los últimos 12 meses de 52.260 M$. ¿EV/EBITDA? Redondea a 1 decimal.",
+        "q": "Broadcom al cierre del 13/11/2026: capitalización de 1.656.497 M$, deuda de 59.419 M$, caja de 23.975 M$ y EBITDA de los últimos 12 meses de 52.260 M$. ¿EV/EBITDA? Redondea a 1 decimal.",
         "unit": "",
-        "a": 32.2,
+        "a": 32.4,
         "tol": 0.06,
-        "why": "EV = 1.647.953 + 59.419 − 23.975 = 1.683.397 M$; ÷ 52.260 = 32,2 veces."
+        "why": "EV = 1.656.497 + 59.419 − 23.975 = 1.691.941 M$; ÷ 52.260 = 32,4 veces."
       },
       {
         "t": "num",
         "caso": "Broadcom (AVGO)",
-        "q": "Broadcom: flujo de caja libre de los 4 trimestres hasta el 31/07/2026: 39.403 M$. Capitalización al cierre del 11/11/2026: 1.647.953 M$. ¿Rentabilidad por flujo de caja libre? Redondea a 1 decimal.",
+        "q": "Broadcom: flujo de caja libre de los 4 trimestres hasta el 31/07/2026: 39.403 M$. Capitalización al cierre del 13/11/2026: 1.656.497 M$. ¿Rentabilidad por flujo de caja libre? Redondea a 1 decimal.",
         "unit": "%",
         "a": 2.4,
         "tol": 0.06,
-        "why": "39.403 ÷ 1.647.953 = 2,4 %: la caja que genera el negocio por cada 100 $ de capitalización."
+        "why": "39.403 ÷ 1.656.497 = 2,4 %: la caja que genera el negocio por cada 100 $ de capitalización."
       },
       {
         "t": "num",
         "caso": "Alphabet (GOOGL)",
-        "q": "Alphabet al cierre del 11/11/2026: capitalización de 3.607.674 M$, deuda de 150.331 M$, caja de 265.098 M$ y EBITDA de los últimos 12 meses de 185.516 M$. ¿EV/EBITDA? Redondea a 1 decimal.",
+        "q": "Alphabet al cierre del 13/11/2026: capitalización de 3.636.196 M$, deuda de 150.331 M$, caja de 265.098 M$ y EBITDA de los últimos 12 meses de 185.516 M$. ¿EV/EBITDA? Redondea a 1 decimal.",
         "unit": "",
-        "a": 18.8,
+        "a": 19.0,
         "tol": 0.06,
-        "why": "EV = 3.607.674 + 150.331 − 265.098 = 3.492.907 M$; ÷ 185.516 = 18,8 veces."
+        "why": "EV = 3.636.196 + 150.331 − 265.098 = 3.521.429 M$; ÷ 185.516 = 19,0 veces."
       },
       {
         "t": "num",
         "caso": "Alphabet (GOOGL)",
-        "q": "Alphabet: flujo de caja libre de los 4 trimestres hasta el 30/09/2026: 19.747 M$. Capitalización al cierre del 11/11/2026: 3.607.674 M$. ¿Rentabilidad por flujo de caja libre? Redondea a 1 decimal.",
+        "q": "Alphabet: flujo de caja libre de los 4 trimestres hasta el 30/09/2026: 19.747 M$. Capitalización al cierre del 13/11/2026: 3.636.196 M$. ¿Rentabilidad por flujo de caja libre? Redondea a 1 decimal.",
         "unit": "%",
         "a": 0.5,
         "tol": 0.06,
-        "why": "19.747 ÷ 3.607.674 = 0,5 %: la caja que genera el negocio por cada 100 $ de capitalización."
+        "why": "19.747 ÷ 3.636.196 = 0,5 %: la caja que genera el negocio por cada 100 $ de capitalización."
       },
       {
         "t": "num",
         "caso": "MercadoLibre (MELI)",
-        "q": "MercadoLibre al cierre del 11/11/2026: capitalización de 76.655 M$, deuda de 16.184 M$, caja de 7.398 M$ y EBITDA de los últimos 12 meses de 3.941 M$. ¿EV/EBITDA? Redondea a 1 decimal.",
+        "q": "MercadoLibre al cierre del 13/11/2026: capitalización de 75.614 M$, deuda de 16.184 M$, caja de 7.398 M$ y EBITDA de los últimos 12 meses de 3.941 M$. ¿EV/EBITDA? Redondea a 1 decimal.",
         "unit": "",
-        "a": 21.7,
+        "a": 21.4,
         "tol": 0.06,
-        "why": "EV = 76.655 + 16.184 − 7.398 = 85.441 M$; ÷ 3.941 = 21,7 veces."
+        "why": "EV = 75.614 + 16.184 − 7.398 = 84.400 M$; ÷ 3.941 = 21,4 veces."
       },
       {
         "t": "num",
         "caso": "Microsoft (MSFT)",
-        "q": "Microsoft al cierre del 11/11/2026: capitalización de 3.869.976 M$, deuda de 133.931 M$, caja de 64.509 M$ y EBITDA de los últimos 12 meses de 205.691 M$. ¿EV/EBITDA? Redondea a 1 decimal.",
+        "q": "Microsoft al cierre del 13/11/2026: capitalización de 3.890.435 M$, deuda de 133.931 M$, caja de 64.509 M$ y EBITDA de los últimos 12 meses de 205.691 M$. ¿EV/EBITDA? Redondea a 1 decimal.",
         "unit": "",
-        "a": 19.2,
+        "a": 19.3,
         "tol": 0.06,
-        "why": "EV = 3.869.976 + 133.931 − 64.509 = 3.939.398 M$; ÷ 205.691 = 19,2 veces."
+        "why": "EV = 3.890.435 + 133.931 − 64.509 = 3.959.857 M$; ÷ 205.691 = 19,3 veces."
       },
       {
         "t": "num",
         "caso": "Microsoft (MSFT)",
-        "q": "Microsoft: flujo de caja libre de los 4 trimestres hasta el 30/09/2026: 59.957 M$. Capitalización al cierre del 11/11/2026: 3.869.976 M$. ¿Rentabilidad por flujo de caja libre? Redondea a 1 decimal.",
+        "q": "Microsoft: flujo de caja libre de los 4 trimestres hasta el 30/09/2026: 59.957 M$. Capitalización al cierre del 13/11/2026: 3.890.435 M$. ¿Rentabilidad por flujo de caja libre? Redondea a 1 decimal.",
         "unit": "%",
         "a": 1.5,
         "tol": 0.06,
-        "why": "59.957 ÷ 3.869.976 = 1,5 %: la caja que genera el negocio por cada 100 $ de capitalización."
+        "why": "59.957 ÷ 3.890.435 = 1,5 %: la caja que genera el negocio por cada 100 $ de capitalización."
       },
       {
         "t": "num",
         "caso": "Eli Lilly and Company (LLY)",
-        "q": "Eli Lilly and Company al cierre del 11/11/2026: capitalización de 1.280.259 M$, deuda de 49.503 M$, caja de 4.885 M$ y EBITDA de los últimos 12 meses de 46.489 M$. ¿EV/EBITDA? Redondea a 1 decimal.",
+        "q": "Eli Lilly and Company al cierre del 13/11/2026: capitalización de 1.285.790 M$, deuda de 49.503 M$, caja de 4.885 M$ y EBITDA de los últimos 12 meses de 46.489 M$. ¿EV/EBITDA? Redondea a 1 decimal.",
         "unit": "",
-        "a": 28.5,
+        "a": 28.6,
         "tol": 0.06,
-        "why": "EV = 1.280.259 + 49.503 − 4.885 = 1.324.877 M$; ÷ 46.489 = 28,5 veces."
+        "why": "EV = 1.285.790 + 49.503 − 4.885 = 1.330.408 M$; ÷ 46.489 = 28,6 veces."
       },
       {
         "t": "num",
         "caso": "Eli Lilly and Company (LLY)",
-        "q": "Eli Lilly and Company: flujo de caja libre de los 4 trimestres hasta el 30/09/2026: 11.689 M$. Capitalización al cierre del 11/11/2026: 1.280.259 M$. ¿Rentabilidad por flujo de caja libre? Redondea a 1 decimal.",
+        "q": "Eli Lilly and Company: flujo de caja libre de los 4 trimestres hasta el 30/09/2026: 11.689 M$. Capitalización al cierre del 13/11/2026: 1.285.790 M$. ¿Rentabilidad por flujo de caja libre? Redondea a 1 decimal.",
         "unit": "%",
         "a": 0.9,
         "tol": 0.06,
-        "why": "11.689 ÷ 1.280.259 = 0,9 %: la caja que genera el negocio por cada 100 $ de capitalización."
+        "why": "11.689 ÷ 1.285.790 = 0,9 %: la caja que genera el negocio por cada 100 $ de capitalización."
       },
       {
         "t": "num",
         "caso": "CrowdStrike Holdings (CRWD)",
-        "q": "CrowdStrike Holdings: flujo de caja libre de los 4 trimestres hasta el 31/07/2026: 1.523 M$. Capitalización al cierre del 11/11/2026: 234.543 M$. ¿Rentabilidad por flujo de caja libre? Redondea a 1 decimal.",
+        "q": "CrowdStrike Holdings: flujo de caja libre de los 4 trimestres hasta el 31/07/2026: 1.523 M$. Capitalización al cierre del 13/11/2026: 232.034 M$. ¿Rentabilidad por flujo de caja libre? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 0.6,
+        "a": 0.7,
         "tol": 0.06,
-        "why": "1.523 ÷ 234.543 = 0,6 %: la caja que genera el negocio por cada 100 $ de capitalización."
+        "why": "1.523 ÷ 232.034 = 0,7 %: la caja que genera el negocio por cada 100 $ de capitalización."
       },
       {
         "t": "num",
         "caso": "Axon Enterprise (AXON)",
-        "q": "Axon Enterprise: flujo de caja libre de los 4 trimestres hasta el 30/09/2026: 80,9 M$. Capitalización al cierre del 11/11/2026: 25.686 M$. ¿Rentabilidad por flujo de caja libre? Redondea a 1 decimal.",
+        "q": "Axon Enterprise: flujo de caja libre de los 4 trimestres hasta el 30/09/2026: 80,9 M$. Capitalización al cierre del 13/11/2026: 25.686 M$. ¿Rentabilidad por flujo de caja libre? Redondea a 1 decimal.",
         "unit": "%",
         "a": 0.3,
         "tol": 0.06,
@@ -597,38 +597,38 @@
       {
         "t": "num",
         "caso": "Meta Platforms (META)",
-        "q": "Meta Platforms al cierre del 11/11/2026: capitalización de 1.607.660 M$, deuda de 114.842 M$, caja de 82.449 M$ y EBITDA de los últimos 12 meses de 116.190 M$. ¿EV/EBITDA? Redondea a 1 decimal.",
+        "q": "Meta Platforms al cierre del 13/11/2026: capitalización de 1.640.694 M$, deuda de 114.842 M$, caja de 82.449 M$ y EBITDA de los últimos 12 meses de 116.190 M$. ¿EV/EBITDA? Redondea a 1 decimal.",
         "unit": "",
-        "a": 14.1,
+        "a": 14.4,
         "tol": 0.06,
-        "why": "EV = 1.607.660 + 114.842 − 82.449 = 1.640.053 M$; ÷ 116.190 = 14,1 veces."
+        "why": "EV = 1.640.694 + 114.842 − 82.449 = 1.673.087 M$; ÷ 116.190 = 14,4 veces."
       },
       {
         "t": "num",
         "caso": "Meta Platforms (META)",
-        "q": "Meta Platforms: flujo de caja libre de los 4 trimestres hasta el 30/09/2026: 28.649 M$. Capitalización al cierre del 11/11/2026: 1.607.660 M$. ¿Rentabilidad por flujo de caja libre? Redondea a 1 decimal.",
+        "q": "Meta Platforms: flujo de caja libre de los 4 trimestres hasta el 30/09/2026: 28.649 M$. Capitalización al cierre del 13/11/2026: 1.640.694 M$. ¿Rentabilidad por flujo de caja libre? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 1.8,
+        "a": 1.7,
         "tol": 0.06,
-        "why": "28.649 ÷ 1.607.660 = 1,8 %: la caja que genera el negocio por cada 100 $ de capitalización."
+        "why": "28.649 ÷ 1.640.694 = 1,7 %: la caja que genera el negocio por cada 100 $ de capitalización."
       },
       {
         "t": "num",
         "caso": "NVIDIA (NVDA)",
-        "q": "NVIDIA al cierre del 11/11/2026: capitalización de 4.195.058 M$, deuda de 38.860 M$, caja de 62.469 M$ y EBITDA de los últimos 12 meses de 201.266 M$. ¿EV/EBITDA? Redondea a 1 decimal.",
+        "q": "NVIDIA al cierre del 13/11/2026: capitalización de 3.932.339 M$, deuda de 38.860 M$, caja de 62.469 M$ y EBITDA de los últimos 12 meses de 201.266 M$. ¿EV/EBITDA? Redondea a 1 decimal.",
         "unit": "",
-        "a": 20.7,
+        "a": 19.4,
         "tol": 0.06,
-        "why": "EV = 4.195.058 + 38.860 − 62.469 = 4.171.449 M$; ÷ 201.266 = 20,7 veces."
+        "why": "EV = 3.932.339 + 38.860 − 62.469 = 3.908.730 M$; ÷ 201.266 = 19,4 veces."
       },
       {
         "t": "num",
         "caso": "NVIDIA (NVDA)",
-        "q": "NVIDIA: flujo de caja libre de los 4 trimestres hasta el 31/07/2026: 127.006 M$. Capitalización al cierre del 11/11/2026: 4.195.058 M$. ¿Rentabilidad por flujo de caja libre? Redondea a 1 decimal.",
+        "q": "NVIDIA: flujo de caja libre de los 4 trimestres hasta el 31/07/2026: 127.006 M$. Capitalización al cierre del 13/11/2026: 3.932.339 M$. ¿Rentabilidad por flujo de caja libre? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 3.0,
+        "a": 3.2,
         "tol": 0.06,
-        "why": "127.006 ÷ 4.195.058 = 3,0 %: la caja que genera el negocio por cada 100 $ de capitalización."
+        "why": "127.006 ÷ 3.932.339 = 3,2 %: la caja que genera el negocio por cada 100 $ de capitalización."
       }
     ],
     "f3a": [
@@ -1243,38 +1243,38 @@
       {
         "t": "num",
         "caso": "iShares Core MSCI World (EUNL)",
-        "q": "El ETF iShares Core MSCI World de acumulación (en euros) cerró a 39,36 € el 10/11/2016 y a 128,65 € el 10/11/2026. ¿Cuánto subió en esos 10 años? Redondea a 1 decimal.",
+        "q": "El ETF iShares Core MSCI World de acumulación (en euros) cerró a 39,80 € el 14/11/2016 y a 130,44 € el 13/11/2026. ¿Cuánto subió en esos 10 años? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 226.9,
+        "a": 227.7,
         "tol": 0.06,
-        "why": "128,65 ÷ 39,36 − 1 = 226,9 %. Al ser de acumulación, el precio ya incluye los dividendos reinvertidos. Por el camino hubo caídas fuertes: la rentabilidad es para quien no vendió."
+        "why": "130,44 ÷ 39,80 − 1 = 227,7 %. Al ser de acumulación, el precio ya incluye los dividendos reinvertidos. Por el camino hubo caídas fuertes: la rentabilidad es para quien no vendió."
       },
       {
         "t": "num",
         "caso": "S&P 500",
-        "q": "El índice S&P 500 cerró a 2.164,45 puntos el 11/11/2016 y a 7.619,38 puntos el 11/11/2026. ¿Cuánto subió en esos 10 años? Redondea a 1 decimal.",
+        "q": "El índice S&P 500 cerró a 2.164,20 puntos el 14/11/2016 y a 7.561,67 puntos el 13/11/2026. ¿Cuánto subió en esos 10 años? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 252.0,
+        "a": 249.4,
         "tol": 0.06,
-        "why": "7.619,38 ÷ 2.164,45 − 1 = 252,0 %. Es el índice sin dividendos: con ellos reinvertidos, el resultado habría sido mejor. Por el camino hubo caídas fuertes: la rentabilidad es para quien no vendió."
+        "why": "7.561,67 ÷ 2.164,20 − 1 = 249,4 %. Es el índice sin dividendos: con ellos reinvertidos, el resultado habría sido mejor. Por el camino hubo caídas fuertes: la rentabilidad es para quien no vendió."
       },
       {
         "t": "num",
         "caso": "Euro Stoxx 50",
-        "q": "El índice Euro Stoxx 50 cerró a 3.030,02 puntos el 11/11/2016 y a 6.393,39 puntos el 11/11/2026. ¿Cuánto subió en esos 10 años? Redondea a 1 decimal.",
+        "q": "El índice Euro Stoxx 50 cerró a 3.039,80 puntos el 14/11/2016 y a 6.386,86 puntos el 13/11/2026. ¿Cuánto subió en esos 10 años? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 111.0,
+        "a": 110.1,
         "tol": 0.06,
-        "why": "6.393,39 ÷ 3.030,02 − 1 = 111,0 %. Es el índice sin dividendos: con ellos reinvertidos, el resultado habría sido mejor. Por el camino hubo caídas fuertes: la rentabilidad es para quien no vendió."
+        "why": "6.386,86 ÷ 3.039,80 − 1 = 110,1 %. Es el índice sin dividendos: con ellos reinvertidos, el resultado habría sido mejor. Por el camino hubo caídas fuertes: la rentabilidad es para quien no vendió."
       },
       {
         "t": "num",
         "caso": "IBEX 35",
-        "q": "El IBEX 35 cerró a 8.639,20 puntos el 11/11/2016 y a 20.027,90 puntos el 11/11/2026. ¿Cuánto subió en esos 10 años? Redondea a 1 decimal.",
+        "q": "El IBEX 35 cerró a 8.658,20 puntos el 14/11/2016 y a 20.020,10 puntos el 13/11/2026. ¿Cuánto subió en esos 10 años? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 131.8,
+        "a": 131.2,
         "tol": 0.06,
-        "why": "20.027,90 ÷ 8.639,20 − 1 = 131,8 %. Es el índice sin dividendos, que en el IBEX pesan mucho: con ellos reinvertidos, el resultado habría sido bastante mejor. Por el camino hubo caídas fuertes: la rentabilidad es para quien no vendió."
+        "why": "20.020,10 ÷ 8.658,20 − 1 = 131,2 %. Es el índice sin dividendos, que en el IBEX pesan mucho: con ellos reinvertidos, el resultado habría sido bastante mejor. Por el camino hubo caídas fuertes: la rentabilidad es para quien no vendió."
       }
     ],
     "pr1": [
@@ -1319,33 +1319,33 @@
       {
         "t": "num",
         "caso": "Bono de EE. UU. a 10 años",
-        "q": "La rentabilidad del bono de EE. UU. a 10 años pasó del 4,12 % el 11/11/2025 al 5,00 % el 11/11/2026. Para un bono con duración 8, ¿cuánto habría caído su precio, aproximadamente? Redondea a 1 decimal.",
+        "q": "La rentabilidad del bono de EE. UU. a 10 años pasó del 4,11 % el 13/11/2025 al 5,15 % el 13/11/2026. Para un bono con duración 8, ¿cuánto habría caído su precio, aproximadamente? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 7.0,
+        "a": 8.3,
         "tol": 0.06,
-        "why": "Los tipos subieron 0,88 puntos; 8 × 0,88 = 7,0 %. Cuando suben los tipos, el precio de los bonos que ya existen baja, y al revés."
+        "why": "Los tipos subieron 1,04 puntos; 8 × 1,04 = 8,3 %. Cuando suben los tipos, el precio de los bonos que ya existen baja, y al revés."
       }
     ],
     "f8b": [
       {
         "t": "num",
         "caso": "Curva de tipos de EE. UU.",
-        "q": "Al cierre del 11/11/2026, el bono de EE. UU. a 10 años rendía un 5,00 % y la letra a 3 meses, un 4,12 %. ¿Cuántos puntos básicos paga de más el plazo largo?",
+        "q": "Al cierre del 13/11/2026, el bono de EE. UU. a 10 años rendía un 5,15 % y la letra a 3 meses, un 4,12 %. ¿Cuántos puntos básicos paga de más el plazo largo?",
         "unit": "",
-        "a": 88,
+        "a": 103,
         "tol": 0.5,
-        "why": "5,00 − 4,12 = 0,88 puntos, es decir, 88 puntos básicos. La curva tiene pendiente positiva: el plazo largo paga más, que es lo normal."
+        "why": "5,15 − 4,12 = 1,03 puntos, es decir, 103 puntos básicos. La curva tiene pendiente positiva: el plazo largo paga más, que es lo normal."
       }
     ],
     "f9a": [
       {
         "t": "num",
         "caso": "Broadcom (AVGO)",
-        "q": "Broadcom cotizaba a 345,22 $ al cierre del 11/11/2026 y pagó 2,60 $ por acción en dividendos en los últimos 12 meses. ¿Cuál es su rentabilidad por dividendo? Redondea a 2 decimales.",
+        "q": "Broadcom cotizaba a 347,01 $ al cierre del 13/11/2026 y pagó 2,60 $ por acción en dividendos en los últimos 12 meses. ¿Cuál es su rentabilidad por dividendo? Redondea a 2 decimales.",
         "unit": "%",
         "a": 0.75,
         "tol": 0.006,
-        "why": "2,60 ÷ 345,22 = 0,75 %. Es un dividendo pequeño: la mayor parte de la caja se reinvierte o se usa para recomprar acciones."
+        "why": "2,60 ÷ 347,01 = 0,75 %. Es un dividendo pequeño: la mayor parte de la caja se reinvierte o se usa para recomprar acciones."
       },
       {
         "t": "num",
@@ -1359,29 +1359,29 @@
       {
         "t": "num",
         "caso": "Alphabet (GOOGL)",
-        "q": "Alphabet cotizaba a 293,45 $ al cierre del 11/11/2026 y pagó 0,86 $ por acción en dividendos en los últimos 12 meses. ¿Cuál es su rentabilidad por dividendo? Redondea a 2 decimales.",
+        "q": "Alphabet cotizaba a 295,77 $ al cierre del 13/11/2026 y pagó 0,86 $ por acción en dividendos en los últimos 12 meses. ¿Cuál es su rentabilidad por dividendo? Redondea a 2 decimales.",
         "unit": "%",
         "a": 0.29,
         "tol": 0.006,
-        "why": "0,86 ÷ 293,45 = 0,29 %. Es un dividendo pequeño: la mayor parte de la caja se reinvierte o se usa para recomprar acciones."
+        "why": "0,86 ÷ 295,77 = 0,29 %. Es un dividendo pequeño: la mayor parte de la caja se reinvierte o se usa para recomprar acciones."
       },
       {
         "t": "num",
         "caso": "Alphabet (GOOGL)",
-        "q": "Alphabet pagó 0,86 $ por acción en dividendos en los últimos 12 meses y su BPA contable fue de 19,55 $. ¿Qué porcentaje del beneficio repartió (payout)? Redondea a 1 decimal.",
+        "q": "Alphabet pagó 0,86 $ por acción en dividendos en los últimos 12 meses y su BPA contable fue de 19,15 $. ¿Qué porcentaje del beneficio repartió (payout)? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 4.4,
+        "a": 4.5,
         "tol": 0.06,
-        "why": "0,86 ÷ 19,55 = 4,4 %. Reparte poco: le queda casi todo el beneficio para crecer o recomprar."
+        "why": "0,86 ÷ 19,15 = 4,5 %. Reparte poco: le queda casi todo el beneficio para crecer o recomprar."
       },
       {
         "t": "num",
         "caso": "Microsoft (MSFT)",
-        "q": "Microsoft cotizaba a 521,12 $ al cierre del 11/11/2026 y pagó 3,71 $ por acción en dividendos en los últimos 12 meses. ¿Cuál es su rentabilidad por dividendo? Redondea a 2 decimales.",
+        "q": "Microsoft cotizaba a 523,88 $ al cierre del 13/11/2026 y pagó 3,71 $ por acción en dividendos en los últimos 12 meses. ¿Cuál es su rentabilidad por dividendo? Redondea a 2 decimales.",
         "unit": "%",
         "a": 0.71,
         "tol": 0.006,
-        "why": "3,71 ÷ 521,12 = 0,71 %. Es un dividendo pequeño: la mayor parte de la caja se reinvierte o se usa para recomprar acciones."
+        "why": "3,71 ÷ 523,88 = 0,71 %. Es un dividendo pequeño: la mayor parte de la caja se reinvierte o se usa para recomprar acciones."
       },
       {
         "t": "num",
@@ -1395,579 +1395,570 @@
       {
         "t": "num",
         "caso": "Eli Lilly and Company (LLY)",
-        "q": "Eli Lilly and Company cotizaba a 1.437,29 $ al cierre del 11/11/2026 y pagó 6,69 $ por acción en dividendos en los últimos 12 meses. ¿Cuál es su rentabilidad por dividendo? Redondea a 2 decimales.",
+        "q": "Eli Lilly and Company cotizaba a 1.443,50 $ al cierre del 13/11/2026 y pagó 6,69 $ por acción en dividendos en los últimos 12 meses. ¿Cuál es su rentabilidad por dividendo? Redondea a 2 decimales.",
         "unit": "%",
-        "a": 0.47,
+        "a": 0.46,
         "tol": 0.006,
-        "why": "6,69 ÷ 1.437,29 = 0,47 %. Es un dividendo pequeño: la mayor parte de la caja se reinvierte o se usa para recomprar acciones."
+        "why": "6,69 ÷ 1.443,50 = 0,46 %. Es un dividendo pequeño: la mayor parte de la caja se reinvierte o se usa para recomprar acciones."
       },
       {
         "t": "num",
         "caso": "Eli Lilly and Company (LLY)",
-        "q": "Eli Lilly and Company pagó 6,69 $ por acción en dividendos en los últimos 12 meses y su BPA contable fue de 30,92 $. ¿Qué porcentaje del beneficio repartió (payout)? Redondea a 1 decimal.",
+        "q": "Eli Lilly and Company pagó 6,69 $ por acción en dividendos en los últimos 12 meses y su BPA contable fue de 30,81 $. ¿Qué porcentaje del beneficio repartió (payout)? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 21.6,
+        "a": 21.7,
         "tol": 0.06,
-        "why": "6,69 ÷ 30,92 = 21,6 %. Reparte poco: le queda casi todo el beneficio para crecer o recomprar."
+        "why": "6,69 ÷ 30,81 = 21,7 %. Reparte poco: le queda casi todo el beneficio para crecer o recomprar."
       },
       {
         "t": "num",
         "caso": "Meta Platforms (META)",
-        "q": "Meta Platforms cotizaba a 628,77 $ al cierre del 11/11/2026 y pagó 2,10 $ por acción en dividendos en los últimos 12 meses. ¿Cuál es su rentabilidad por dividendo? Redondea a 2 decimales.",
+        "q": "Meta Platforms cotizaba a 641,69 $ al cierre del 13/11/2026 y pagó 2,10 $ por acción en dividendos en los últimos 12 meses. ¿Cuál es su rentabilidad por dividendo? Redondea a 2 decimales.",
         "unit": "%",
         "a": 0.33,
         "tol": 0.006,
-        "why": "2,10 ÷ 628,77 = 0,33 %. Es un dividendo pequeño: la mayor parte de la caja se reinvierte o se usa para recomprar acciones."
+        "why": "2,10 ÷ 641,69 = 0,33 %. Es un dividendo pequeño: la mayor parte de la caja se reinvierte o se usa para recomprar acciones."
       },
       {
         "t": "num",
         "caso": "Meta Platforms (META)",
-        "q": "Meta Platforms pagó 2,10 $ por acción en dividendos en los últimos 12 meses y su BPA contable fue de 28,73 $. ¿Qué porcentaje del beneficio repartió (payout)? Redondea a 1 decimal.",
+        "q": "Meta Platforms pagó 2,10 $ por acción en dividendos en los últimos 12 meses y su BPA contable fue de 29,31 $. ¿Qué porcentaje del beneficio repartió (payout)? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 7.3,
+        "a": 7.2,
         "tol": 0.06,
-        "why": "2,10 ÷ 28,73 = 7,3 %. Reparte poco: le queda casi todo el beneficio para crecer o recomprar."
+        "why": "2,10 ÷ 29,31 = 7,2 %. Reparte poco: le queda casi todo el beneficio para crecer o recomprar."
       },
       {
         "t": "num",
         "caso": "NVIDIA (NVDA)",
-        "q": "NVIDIA cotizaba a 173,73 $ al cierre del 11/11/2026 y pagó 0,28 $ por acción en dividendos en los últimos 12 meses. ¿Cuál es su rentabilidad por dividendo? Redondea a 2 decimales.",
+        "q": "NVIDIA cotizaba a 162,85 $ al cierre del 13/11/2026 y pagó 0,28 $ por acción en dividendos en los últimos 12 meses. ¿Cuál es su rentabilidad por dividendo? Redondea a 2 decimales.",
         "unit": "%",
-        "a": 0.16,
+        "a": 0.17,
         "tol": 0.006,
-        "why": "0,28 ÷ 173,73 = 0,16 %. Es un dividendo pequeño: la mayor parte de la caja se reinvierte o se usa para recomprar acciones."
+        "why": "0,28 ÷ 162,85 = 0,17 %. Es un dividendo pequeño: la mayor parte de la caja se reinvierte o se usa para recomprar acciones."
       },
       {
         "t": "num",
         "caso": "NVIDIA (NVDA)",
-        "q": "NVIDIA pagó 0,28 $ por acción en dividendos en los últimos 12 meses y su BPA contable fue de 8,14 $. ¿Qué porcentaje del beneficio repartió (payout)? Redondea a 1 decimal.",
+        "q": "NVIDIA pagó 0,28 $ por acción en dividendos en los últimos 12 meses y su BPA contable fue de 7,91 $. ¿Qué porcentaje del beneficio repartió (payout)? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 3.4,
+        "a": 3.5,
         "tol": 0.06,
-        "why": "0,28 ÷ 8,14 = 3,4 %. Reparte poco: le queda casi todo el beneficio para crecer o recomprar."
+        "why": "0,28 ÷ 7,91 = 3,5 %. Reparte poco: le queda casi todo el beneficio para crecer o recomprar."
       }
     ],
     "t1": [
       {
         "t": "num",
         "caso": "Broadcom (AVGO)",
-        "q": "Al cierre del 11/11/2026, Broadcom (AVGO) cotizaba a 345,22 $ y su media de 150 sesiones (unas 30 semanas) estaba en 380,22 $. ¿A qué distancia porcentual está el precio de la media? Redondea a 1 decimal.",
+        "q": "Al cierre del 13/11/2026, Broadcom (AVGO) cotizaba a 347,01 $ y su media de 150 sesiones (unas 30 semanas) estaba en 379,97 $. ¿A qué distancia porcentual está el precio de la media? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 9.2,
+        "a": 8.7,
         "tol": 0.06,
-        "why": "345,22 ÷ 380,22 − 1 = −9,2 %. Hace 20 sesiones la media estaba en 378,87: sube. Precio por debajo de la media: Weinstein no compra en esa situación."
+        "why": "347,01 ÷ 379,97 − 1 = −8,7 %. Hace 20 sesiones la media estaba en 379,00: sube. Precio por debajo de la media: Weinstein no compra en esa situación."
       },
       {
         "t": "num",
         "caso": "Alphabet (GOOGL)",
-        "q": "Al cierre del 11/11/2026, Alphabet (GOOGL) cotizaba a 293,45 $ y su media de 150 sesiones (unas 30 semanas) estaba en 348,72 $. ¿A qué distancia porcentual está el precio de la media? Redondea a 1 decimal.",
+        "q": "Al cierre del 13/11/2026, Alphabet (GOOGL) cotizaba a 295,77 $ y su media de 150 sesiones (unas 30 semanas) estaba en 348,43 $. ¿A qué distancia porcentual está el precio de la media? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 15.8,
+        "a": 15.1,
         "tol": 0.06,
-        "why": "293,45 ÷ 348,72 − 1 = −15,8 %. Hace 20 sesiones la media estaba en 347,39: sube. Precio por debajo de la media: Weinstein no compra en esa situación."
+        "why": "295,77 ÷ 348,43 − 1 = −15,1 %. Hace 20 sesiones la media estaba en 347,96: sube. Precio por debajo de la media: Weinstein no compra en esa situación."
       },
       {
         "t": "num",
         "caso": "MercadoLibre (MELI)",
-        "q": "Al cierre del 11/11/2026, MercadoLibre (MELI) cotizaba a 1.512,02 $ y su media de 150 sesiones (unas 30 semanas) estaba en 1.775,65 $. ¿A qué distancia porcentual está el precio de la media? Redondea a 1 decimal.",
+        "q": "Al cierre del 13/11/2026, MercadoLibre (MELI) cotizaba a 1.491,49 $ y su media de 150 sesiones (unas 30 semanas) estaba en 1.771,39 $. ¿A qué distancia porcentual está el precio de la media? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 14.8,
+        "a": 15.8,
         "tol": 0.06,
-        "why": "1.512,02 ÷ 1.775,65 − 1 = −14,8 %. Hace 20 sesiones la media estaba en 1.774,95: sube. Precio por debajo de la media: Weinstein no compra en esa situación."
+        "why": "1.491,49 ÷ 1.771,39 − 1 = −15,8 %. Hace 20 sesiones la media estaba en 1.777,22: baja. Precio por debajo de la media: Weinstein no compra en esa situación."
       },
       {
         "t": "num",
         "caso": "Microsoft (MSFT)",
-        "q": "Al cierre del 11/11/2026, Microsoft (MSFT) cotizaba a 521,13 $ y su media de 150 sesiones (unas 30 semanas) estaba en 455,00 $. ¿A qué distancia porcentual está el precio de la media? Redondea a 1 decimal.",
+        "q": "Al cierre del 13/11/2026, Microsoft (MSFT) cotizaba a 523,88 $ y su media de 150 sesiones (unas 30 semanas) estaba en 456,96 $. ¿A qué distancia porcentual está el precio de la media? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 14.5,
+        "a": 14.6,
         "tol": 0.06,
-        "why": "521,13 ÷ 455,00 − 1 = +14,5 %. Hace 20 sesiones la media estaba en 434,56: sube. Precio por encima de una media que sube: las dos condiciones de la Fase 2 de Weinstein."
+        "why": "523,88 ÷ 456,96 − 1 = +14,6 %. Hace 20 sesiones la media estaba en 436,39: sube. Precio por encima de una media que sube: las dos condiciones de la Fase 2 de Weinstein."
       },
       {
         "t": "num",
         "caso": "Eli Lilly and Company (LLY)",
-        "q": "Al cierre del 11/11/2026, Eli Lilly and Company (LLY) cotizaba a 1.437,29 $ y su media de 150 sesiones (unas 30 semanas) estaba en 1.143,25 $. ¿A qué distancia porcentual está el precio de la media? Redondea a 1 decimal.",
+        "q": "Al cierre del 13/11/2026, Eli Lilly and Company (LLY) cotizaba a 1.443,50 $ y su media de 150 sesiones (unas 30 semanas) estaba en 1.148,58 $. ¿A qué distancia porcentual está el precio de la media? Redondea a 1 decimal.",
         "unit": "%",
         "a": 25.7,
         "tol": 0.06,
-        "why": "1.437,29 ÷ 1.143,25 − 1 = +25,7 %. Hace 20 sesiones la media estaba en 1.088,39: sube. Precio por encima de una media que sube: las dos condiciones de la Fase 2 de Weinstein."
+        "why": "1.443,50 ÷ 1.148,58 − 1 = +25,7 %. Hace 20 sesiones la media estaba en 1.090,75: sube. Precio por encima de una media que sube: las dos condiciones de la Fase 2 de Weinstein."
       },
       {
         "t": "num",
         "caso": "CrowdStrike Holdings (CRWD)",
-        "q": "Al cierre del 11/11/2026, CrowdStrike Holdings (CRWD) cotizaba a 229,06 $ y su media de 150 sesiones (unas 30 semanas) estaba en 195,10 $. ¿A qué distancia porcentual está el precio de la media? Redondea a 1 decimal.",
+        "q": "Al cierre del 13/11/2026, CrowdStrike Holdings (CRWD) cotizaba a 226,61 $ y su media de 150 sesiones (unas 30 semanas) estaba en 196,84 $. ¿A qué distancia porcentual está el precio de la media? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 17.4,
+        "a": 15.1,
         "tol": 0.06,
-        "why": "229,06 ÷ 195,10 − 1 = +17,4 %. Hace 20 sesiones la media estaba en 176,62: sube. Precio por encima de una media que sube: las dos condiciones de la Fase 2 de Weinstein."
+        "why": "226,61 ÷ 196,84 − 1 = +15,1 %. Hace 20 sesiones la media estaba en 178,29: sube. Precio por encima de una media que sube: las dos condiciones de la Fase 2 de Weinstein."
       },
       {
         "t": "num",
         "caso": "Nu Holdings (NU)",
-        "q": "Al cierre del 11/11/2026, Nu Holdings (NU) cotizaba a 12,32 $ y su media de 150 sesiones (unas 30 semanas) estaba en 13,79 $. ¿A qué distancia porcentual está el precio de la media? Redondea a 1 decimal.",
+        "q": "Al cierre del 13/11/2026, Nu Holdings (NU) cotizaba a 13,22 $ y su media de 150 sesiones (unas 30 semanas) estaba en 13,75 $. ¿A qué distancia porcentual está el precio de la media? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 10.7,
+        "a": 3.9,
         "tol": 0.06,
-        "why": "12,32 ÷ 13,79 − 1 = −10,7 %. Hace 20 sesiones la media estaba en 13,94: baja. Precio por debajo de la media: Weinstein no compra en esa situación."
+        "why": "13,22 ÷ 13,75 − 1 = −3,9 %. Hace 20 sesiones la media estaba en 13,95: baja. Precio por debajo de la media: Weinstein no compra en esa situación."
       },
       {
         "t": "num",
         "caso": "Axon Enterprise (AXON)",
-        "q": "Al cierre del 11/11/2026, Axon Enterprise (AXON) cotizaba a 315,42 $ y su media de 150 sesiones (unas 30 semanas) estaba en 467,57 $. ¿A qué distancia porcentual está el precio de la media? Redondea a 1 decimal.",
+        "q": "Al cierre del 13/11/2026, Axon Enterprise (AXON) cotizaba a 315,43 $ y su media de 150 sesiones (unas 30 semanas) estaba en 467,01 $. ¿A qué distancia porcentual está el precio de la media? Redondea a 1 decimal.",
         "unit": "%",
         "a": 32.5,
         "tol": 0.06,
-        "why": "315,42 ÷ 467,57 − 1 = −32,5 %. Hace 20 sesiones la media estaba en 475,33: baja. Precio por debajo de la media: Weinstein no compra en esa situación."
+        "why": "315,43 ÷ 467,01 − 1 = −32,5 %. Hace 20 sesiones la media estaba en 474,08: baja. Precio por debajo de la media: Weinstein no compra en esa situación."
       },
       {
         "t": "num",
         "caso": "Meta Platforms (META)",
-        "q": "Al cierre del 11/11/2026, Meta Platforms (META) cotizaba a 628,77 $ y su media de 150 sesiones (unas 30 semanas) estaba en 629,97 $. ¿A qué distancia porcentual está el precio de la media? Redondea a 1 decimal.",
+        "q": "Al cierre del 13/11/2026, Meta Platforms (META) cotizaba a 641,69 $ y su media de 150 sesiones (unas 30 semanas) estaba en 629,99 $. ¿A qué distancia porcentual está el precio de la media? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 0.2,
+        "a": 1.9,
         "tol": 0.06,
-        "why": "628,77 ÷ 629,97 − 1 = −0,2 %. Hace 20 sesiones la media estaba en 622,58: sube. Precio por debajo de la media: Weinstein no compra en esa situación."
+        "why": "641,69 ÷ 629,99 − 1 = +1,9 %. Hace 20 sesiones la media estaba en 623,90: sube. Precio por encima de una media que sube: las dos condiciones de la Fase 2 de Weinstein."
       },
       {
         "t": "num",
         "caso": "NVIDIA (NVDA)",
-        "q": "Al cierre del 11/11/2026, NVIDIA (NVDA) cotizaba a 173,73 $ y su media de 150 sesiones (unas 30 semanas) estaba en 211,68 $. ¿A qué distancia porcentual está el precio de la media? Redondea a 1 decimal.",
+        "q": "Al cierre del 13/11/2026, NVIDIA (NVDA) cotizaba a 162,85 $ y su media de 150 sesiones (unas 30 semanas) estaba en 211,36 $. ¿A qué distancia porcentual está el precio de la media? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 17.9,
+        "a": 23.0,
         "tol": 0.06,
-        "why": "173,73 ÷ 211,68 − 1 = −17,9 %. Hace 20 sesiones la media estaba en 208,07: sube. Precio por debajo de la media: Weinstein no compra en esa situación."
+        "why": "162,85 ÷ 211,36 − 1 = −23,0 %. Hace 20 sesiones la media estaba en 208,53: sube. Precio por debajo de la media: Weinstein no compra en esa situación."
       }
     ],
     "t2": [
       {
         "t": "num",
         "caso": "Broadcom (AVGO)",
-        "q": "Broadcom (AVGO) cerró a 345,22 $ el 11/11/2026. Su cierre más alto de las últimas 52 semanas fue 479,94 $. ¿A qué distancia porcentual está de ese máximo? Redondea a 1 decimal.",
+        "q": "Broadcom (AVGO) cerró a 347,01 $ el 13/11/2026. Su cierre más alto de las últimas 52 semanas fue 479,94 $. ¿A qué distancia porcentual está de ese máximo? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 28.1,
+        "a": 27.7,
         "tol": 0.06,
-        "why": "1 − 345,22 ÷ 479,94 = 28,1 %. Minervini pide menos de un 25 % de distancia al máximo: no lo cumple."
+        "why": "1 − 347,01 ÷ 479,94 = 27,7 %. Minervini pide menos de un 25 % de distancia al máximo: no lo cumple."
       },
       {
         "t": "num",
         "caso": "Broadcom (AVGO)",
-        "q": "Broadcom (AVGO) cerró a 345,22 $ el 11/11/2026. Su cierre más bajo de las últimas 52 semanas fue 291,53 $. ¿Cuánto está por encima de ese mínimo? Redondea a 1 decimal.",
+        "q": "Broadcom (AVGO) cerró a 347,01 $ el 13/11/2026. Su cierre más bajo de las últimas 52 semanas fue 291,53 $. ¿Cuánto está por encima de ese mínimo? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 18.4,
+        "a": 19.0,
         "tol": 0.06,
-        "why": "345,22 ÷ 291,53 − 1 = 18,4 %. Minervini pide al menos un 30 % sobre el mínimo de 52 semanas: no lo cumple."
+        "why": "347,01 ÷ 291,53 − 1 = 19,0 %. Minervini pide al menos un 30 % sobre el mínimo de 52 semanas: no lo cumple."
       },
       {
         "t": "num",
         "caso": "Alphabet (GOOGL)",
-        "q": "Alphabet (GOOGL) cerró a 293,45 $ el 11/11/2026. Su cierre más alto de las últimas 52 semanas fue 402,12 $. ¿A qué distancia porcentual está de ese máximo? Redondea a 1 decimal.",
+        "q": "Alphabet (GOOGL) cerró a 295,77 $ el 13/11/2026. Su cierre más alto de las últimas 52 semanas fue 402,12 $. ¿A qué distancia porcentual está de ese máximo? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 27.0,
+        "a": 26.4,
         "tol": 0.06,
-        "why": "1 − 293,45 ÷ 402,12 = 27,0 %. Minervini pide menos de un 25 % de distancia al máximo: no lo cumple."
+        "why": "1 − 295,77 ÷ 402,12 = 26,4 %. Minervini pide menos de un 25 % de distancia al máximo: no lo cumple."
       },
       {
         "t": "num",
         "caso": "Alphabet (GOOGL)",
-        "q": "Alphabet (GOOGL) cerró a 293,45 $ el 11/11/2026. Su cierre más bajo de las últimas 52 semanas fue 273,16 $. ¿Cuánto está por encima de ese mínimo? Redondea a 1 decimal.",
+        "q": "Alphabet (GOOGL) cerró a 295,77 $ el 13/11/2026. Su cierre más bajo de las últimas 52 semanas fue 273,16 $. ¿Cuánto está por encima de ese mínimo? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 7.4,
+        "a": 8.3,
         "tol": 0.06,
-        "why": "293,45 ÷ 273,16 − 1 = 7,4 %. Minervini pide al menos un 30 % sobre el mínimo de 52 semanas: no lo cumple."
+        "why": "295,77 ÷ 273,16 − 1 = 8,3 %. Minervini pide al menos un 30 % sobre el mínimo de 52 semanas: no lo cumple."
       },
       {
         "t": "num",
         "caso": "MercadoLibre (MELI)",
-        "q": "MercadoLibre (MELI) cerró a 1.512,02 $ el 11/11/2026. Su cierre más alto de las últimas 52 semanas fue 2.295,00 $. ¿A qué distancia porcentual está de ese máximo? Redondea a 1 decimal.",
+        "q": "MercadoLibre (MELI) cerró a 1.491,49 $ el 13/11/2026. Su cierre más alto de las últimas 52 semanas fue 2.295,00 $. ¿A qué distancia porcentual está de ese máximo? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 34.1,
+        "a": 35.0,
         "tol": 0.06,
-        "why": "1 − 1.512,02 ÷ 2.295,00 = 34,1 %. Minervini pide menos de un 25 % de distancia al máximo: no lo cumple."
+        "why": "1 − 1.491,49 ÷ 2.295,00 = 35,0 %. Minervini pide menos de un 25 % de distancia al máximo: no lo cumple."
       },
       {
         "t": "num",
         "caso": "MercadoLibre (MELI)",
-        "q": "MercadoLibre (MELI) cerró a 1.512,02 $ el 11/11/2026. Su cierre más bajo de las últimas 52 semanas fue 1.490,24 $. ¿Cuánto está por encima de ese mínimo? Redondea a 1 decimal.",
+        "q": "MercadoLibre (MELI) cerró a 1.491,49 $ el 13/11/2026. Su cierre más bajo de las últimas 52 semanas fue 1.475,09 $. ¿Cuánto está por encima de ese mínimo? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 1.5,
+        "a": 1.1,
         "tol": 0.06,
-        "why": "1.512,02 ÷ 1.490,24 − 1 = 1,5 %. Minervini pide al menos un 30 % sobre el mínimo de 52 semanas: no lo cumple."
+        "why": "1.491,49 ÷ 1.475,09 − 1 = 1,1 %. Minervini pide al menos un 30 % sobre el mínimo de 52 semanas: no lo cumple."
       },
       {
         "t": "num",
         "caso": "Microsoft (MSFT)",
-        "q": "Microsoft (MSFT) cerró a 521,13 $ el 11/11/2026. Su cierre más alto de las últimas 52 semanas fue 555,80 $. ¿A qué distancia porcentual está de ese máximo? Redondea a 1 decimal.",
+        "q": "Microsoft (MSFT) cerró a 523,88 $ el 13/11/2026. Su cierre más alto de las últimas 52 semanas fue 555,80 $. ¿A qué distancia porcentual está de ese máximo? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 6.2,
+        "a": 5.7,
         "tol": 0.06,
-        "why": "1 − 521,13 ÷ 555,80 = 6,2 %. Minervini pide menos de un 25 % de distancia al máximo: lo cumple."
+        "why": "1 − 523,88 ÷ 555,80 = 5,7 %. Minervini pide menos de un 25 % de distancia al máximo: lo cumple."
       },
       {
         "t": "num",
         "caso": "Microsoft (MSFT)",
-        "q": "Microsoft (MSFT) cerró a 521,13 $ el 11/11/2026. Su cierre más bajo de las últimas 52 semanas fue 352,17 $. ¿Cuánto está por encima de ese mínimo? Redondea a 1 decimal.",
+        "q": "Microsoft (MSFT) cerró a 523,88 $ el 13/11/2026. Su cierre más bajo de las últimas 52 semanas fue 352,17 $. ¿Cuánto está por encima de ese mínimo? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 48.0,
+        "a": 48.8,
         "tol": 0.06,
-        "why": "521,13 ÷ 352,17 − 1 = 48,0 %. Minervini pide al menos un 30 % sobre el mínimo de 52 semanas: lo cumple."
+        "why": "523,88 ÷ 352,17 − 1 = 48,8 %. Minervini pide al menos un 30 % sobre el mínimo de 52 semanas: lo cumple."
       },
       {
         "t": "num",
         "caso": "Eli Lilly and Company (LLY)",
-        "q": "Eli Lilly and Company (LLY) cerró a 1.437,29 $ el 11/11/2026. Su cierre más bajo de las últimas 52 semanas fue 848,53 $. ¿Cuánto está por encima de ese mínimo? Redondea a 1 decimal.",
+        "q": "Eli Lilly and Company (LLY) cerró a 1.443,50 $ el 13/11/2026. Su cierre más bajo de las últimas 52 semanas fue 847,50 $. ¿Cuánto está por encima de ese mínimo? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 69.4,
+        "a": 70.3,
         "tol": 0.06,
-        "why": "1.437,29 ÷ 848,53 − 1 = 69,4 %. Minervini pide al menos un 30 % sobre el mínimo de 52 semanas: lo cumple."
+        "why": "1.443,50 ÷ 847,50 − 1 = 70,3 %. Minervini pide al menos un 30 % sobre el mínimo de 52 semanas: lo cumple."
       },
       {
         "t": "num",
         "caso": "CrowdStrike Holdings (CRWD)",
-        "q": "CrowdStrike Holdings (CRWD) cerró a 229,06 $ el 11/11/2026. Su cierre más alto de las últimas 52 semanas fue 278,86 $. ¿A qué distancia porcentual está de ese máximo? Redondea a 1 decimal.",
+        "q": "CrowdStrike Holdings (CRWD) cerró a 226,61 $ el 13/11/2026. Su cierre más alto de las últimas 52 semanas fue 278,86 $. ¿A qué distancia porcentual está de ese máximo? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 17.9,
+        "a": 18.7,
         "tol": 0.06,
-        "why": "1 − 229,06 ÷ 278,86 = 17,9 %. Minervini pide menos de un 25 % de distancia al máximo: lo cumple."
+        "why": "1 − 226,61 ÷ 278,86 = 18,7 %. Minervini pide menos de un 25 % de distancia al máximo: lo cumple."
       },
       {
         "t": "num",
         "caso": "CrowdStrike Holdings (CRWD)",
-        "q": "CrowdStrike Holdings (CRWD) cerró a 229,06 $ el 11/11/2026. Su cierre más bajo de las últimas 52 semanas fue 87,56 $. ¿Cuánto está por encima de ese mínimo? Redondea a 1 decimal.",
+        "q": "CrowdStrike Holdings (CRWD) cerró a 226,61 $ el 13/11/2026. Su cierre más bajo de las últimas 52 semanas fue 87,56 $. ¿Cuánto está por encima de ese mínimo? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 161.6,
+        "a": 158.8,
         "tol": 0.06,
-        "why": "229,06 ÷ 87,56 − 1 = 161,6 %. Minervini pide al menos un 30 % sobre el mínimo de 52 semanas: lo cumple."
+        "why": "226,61 ÷ 87,56 − 1 = 158,8 %. Minervini pide al menos un 30 % sobre el mínimo de 52 semanas: lo cumple."
       },
       {
         "t": "num",
         "caso": "Nu Holdings (NU)",
-        "q": "Nu Holdings (NU) cerró a 12,32 $ el 11/11/2026. Su cierre más alto de las últimas 52 semanas fue 18,76 $. ¿A qué distancia porcentual está de ese máximo? Redondea a 1 decimal.",
+        "q": "Nu Holdings (NU) cerró a 13,22 $ el 13/11/2026. Su cierre más alto de las últimas 52 semanas fue 18,76 $. ¿A qué distancia porcentual está de ese máximo? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 34.3,
+        "a": 29.5,
         "tol": 0.06,
-        "why": "1 − 12,32 ÷ 18,76 = 34,3 %. Minervini pide menos de un 25 % de distancia al máximo: no lo cumple."
+        "why": "1 − 13,22 ÷ 18,76 = 29,5 %. Minervini pide menos de un 25 % de distancia al máximo: no lo cumple."
       },
       {
         "t": "num",
         "caso": "Nu Holdings (NU)",
-        "q": "Nu Holdings (NU) cerró a 12,32 $ el 11/11/2026. Su cierre más bajo de las últimas 52 semanas fue 11,60 $. ¿Cuánto está por encima de ese mínimo? Redondea a 1 decimal.",
+        "q": "Nu Holdings (NU) cerró a 13,22 $ el 13/11/2026. Su cierre más bajo de las últimas 52 semanas fue 11,60 $. ¿Cuánto está por encima de ese mínimo? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 6.2,
+        "a": 14.0,
         "tol": 0.06,
-        "why": "12,32 ÷ 11,60 − 1 = 6,2 %. Minervini pide al menos un 30 % sobre el mínimo de 52 semanas: no lo cumple."
+        "why": "13,22 ÷ 11,60 − 1 = 14,0 %. Minervini pide al menos un 30 % sobre el mínimo de 52 semanas: no lo cumple."
       },
       {
         "t": "num",
         "caso": "Axon Enterprise (AXON)",
-        "q": "Axon Enterprise (AXON) cerró a 315,42 $ el 11/11/2026. Su cierre más alto de las últimas 52 semanas fue 645,72 $. ¿A qué distancia porcentual está de ese máximo? Redondea a 1 decimal.",
+        "q": "Axon Enterprise (AXON) cerró a 315,43 $ el 13/11/2026. Su cierre más alto de las últimas 52 semanas fue 645,72 $. ¿A qué distancia porcentual está de ese máximo? Redondea a 1 decimal.",
         "unit": "%",
         "a": 51.2,
         "tol": 0.06,
-        "why": "1 − 315,42 ÷ 645,72 = 51,2 %. Minervini pide menos de un 25 % de distancia al máximo: no lo cumple."
+        "why": "1 − 315,43 ÷ 645,72 = 51,2 %. Minervini pide menos de un 25 % de distancia al máximo: no lo cumple."
       },
       {
         "t": "num",
         "caso": "Axon Enterprise (AXON)",
-        "q": "Axon Enterprise (AXON) cerró a 315,42 $ el 11/11/2026. Su cierre más bajo de las últimas 52 semanas fue 302,54 $. ¿Cuánto está por encima de ese mínimo? Redondea a 1 decimal.",
+        "q": "Axon Enterprise (AXON) cerró a 315,43 $ el 13/11/2026. Su cierre más bajo de las últimas 52 semanas fue 302,54 $. ¿Cuánto está por encima de ese mínimo? Redondea a 1 decimal.",
         "unit": "%",
         "a": 4.3,
         "tol": 0.06,
-        "why": "315,42 ÷ 302,54 − 1 = 4,3 %. Minervini pide al menos un 30 % sobre el mínimo de 52 semanas: no lo cumple."
+        "why": "315,43 ÷ 302,54 − 1 = 4,3 %. Minervini pide al menos un 30 % sobre el mínimo de 52 semanas: no lo cumple."
       },
       {
         "t": "num",
         "caso": "Meta Platforms (META)",
-        "q": "Meta Platforms (META) cerró a 628,77 $ el 11/11/2026. Su cierre más alto de las últimas 52 semanas fue 777,59 $. ¿A qué distancia porcentual está de ese máximo? Redondea a 1 decimal.",
+        "q": "Meta Platforms (META) cerró a 641,69 $ el 13/11/2026. Su cierre más alto de las últimas 52 semanas fue 777,59 $. ¿A qué distancia porcentual está de ese máximo? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 19.1,
+        "a": 17.5,
         "tol": 0.06,
-        "why": "1 − 628,77 ÷ 777,59 = 19,1 %. Minervini pide menos de un 25 % de distancia al máximo: lo cumple."
+        "why": "1 − 641,69 ÷ 777,59 = 17,5 %. Minervini pide menos de un 25 % de distancia al máximo: lo cumple."
       },
       {
         "t": "num",
         "caso": "Meta Platforms (META)",
-        "q": "Meta Platforms (META) cerró a 628,77 $ el 11/11/2026. Su cierre más bajo de las últimas 52 semanas fue 524,82 $. ¿Cuánto está por encima de ese mínimo? Redondea a 1 decimal.",
+        "q": "Meta Platforms (META) cerró a 641,69 $ el 13/11/2026. Su cierre más bajo de las últimas 52 semanas fue 524,82 $. ¿Cuánto está por encima de ese mínimo? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 19.8,
+        "a": 22.3,
         "tol": 0.06,
-        "why": "628,77 ÷ 524,82 − 1 = 19,8 %. Minervini pide al menos un 30 % sobre el mínimo de 52 semanas: no lo cumple."
+        "why": "641,69 ÷ 524,82 − 1 = 22,3 %. Minervini pide al menos un 30 % sobre el mínimo de 52 semanas: no lo cumple."
       },
       {
         "t": "num",
         "caso": "NVIDIA (NVDA)",
-        "q": "NVIDIA (NVDA) cerró a 173,73 $ el 11/11/2026. Su cierre más alto de las últimas 52 semanas fue 239,24 $. ¿A qué distancia porcentual está de ese máximo? Redondea a 1 decimal.",
+        "q": "NVIDIA (NVDA) cerró a 162,85 $ el 13/11/2026. Su cierre más alto de las últimas 52 semanas fue 239,24 $. ¿A qué distancia porcentual está de ese máximo? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 27.4,
+        "a": 31.9,
         "tol": 0.06,
-        "why": "1 − 173,73 ÷ 239,24 = 27,4 %. Minervini pide menos de un 25 % de distancia al máximo: no lo cumple."
-      },
-      {
-        "t": "num",
-        "caso": "NVIDIA (NVDA)",
-        "q": "NVIDIA (NVDA) cerró a 173,73 $ el 11/11/2026. Su cierre más bajo de las últimas 52 semanas fue 164,79 $. ¿Cuánto está por encima de ese mínimo? Redondea a 1 decimal.",
-        "unit": "%",
-        "a": 5.4,
-        "tol": 0.06,
-        "why": "173,73 ÷ 164,79 − 1 = 5,4 %. Minervini pide al menos un 30 % sobre el mínimo de 52 semanas: no lo cumple."
+        "why": "1 − 162,85 ÷ 239,24 = 31,9 %. Minervini pide menos de un 25 % de distancia al máximo: no lo cumple."
       }
     ],
     "r1": [
       {
         "t": "num",
         "caso": "Broadcom (AVGO)",
-        "q": "Broadcom (AVGO) cerró a 345,22 $ el 11/11/2026 con un ATR(14) de 17,86 $. Si compras al cierre con el stop a 2 ATR, ¿a qué precio va el stop?",
+        "q": "Broadcom (AVGO) cerró a 347,01 $ el 13/11/2026 con un ATR(14) de 20,25 $. Si compras al cierre con el stop a 2 ATR, ¿a qué precio va el stop?",
         "unit": "$",
-        "a": 309.5,
+        "a": 306.51,
         "tol": 0.011,
-        "why": "2 × 17,86 = 35,72; 345,22 − 35,72 = 309,50. El stop queda a un 10,3 % del precio: es el ruido normal de este valor."
+        "why": "2 × 20,25 = 40,50; 347,01 − 40,50 = 306,51. El stop queda a un 11,7 % del precio: es el ruido normal de este valor."
       },
       {
         "t": "num",
         "caso": "Alphabet (GOOGL)",
-        "q": "Alphabet (GOOGL) cerró a 293,45 $ el 11/11/2026 con un ATR(14) de 11,10 $. Si compras al cierre con el stop a 2 ATR, ¿a qué precio va el stop?",
+        "q": "Alphabet (GOOGL) cerró a 295,77 $ el 13/11/2026 con un ATR(14) de 11,91 $. Si compras al cierre con el stop a 2 ATR, ¿a qué precio va el stop?",
         "unit": "$",
-        "a": 271.25,
+        "a": 271.95,
         "tol": 0.011,
-        "why": "2 × 11,10 = 22,20; 293,45 − 22,20 = 271,25. El stop queda a un 7,6 % del precio: es el ruido normal de este valor."
+        "why": "2 × 11,91 = 23,82; 295,77 − 23,82 = 271,95. El stop queda a un 8,1 % del precio: es el ruido normal de este valor."
       },
       {
         "t": "num",
         "caso": "Microsoft (MSFT)",
-        "q": "Microsoft (MSFT) cerró a 521,13 $ el 11/11/2026 con un ATR(14) de 17,51 $. Si compras al cierre con el stop a 2 ATR, ¿a qué precio va el stop?",
+        "q": "Microsoft (MSFT) cerró a 523,88 $ el 13/11/2026 con un ATR(14) de 17,55 $. Si compras al cierre con el stop a 2 ATR, ¿a qué precio va el stop?",
         "unit": "$",
-        "a": 486.11,
+        "a": 488.78,
         "tol": 0.011,
-        "why": "2 × 17,51 = 35,02; 521,13 − 35,02 = 486,11. El stop queda a un 6,7 % del precio: es el ruido normal de este valor."
+        "why": "2 × 17,55 = 35,10; 523,88 − 35,10 = 488,78. El stop queda a un 6,7 % del precio: es el ruido normal de este valor."
       },
       {
         "t": "num",
         "caso": "CrowdStrike Holdings (CRWD)",
-        "q": "CrowdStrike Holdings (CRWD) cerró a 229,06 $ el 11/11/2026 con un ATR(14) de 15,13 $. Si compras al cierre con el stop a 2 ATR, ¿a qué precio va el stop?",
+        "q": "CrowdStrike Holdings (CRWD) cerró a 226,61 $ el 13/11/2026 con un ATR(14) de 14,84 $. Si compras al cierre con el stop a 2 ATR, ¿a qué precio va el stop?",
         "unit": "$",
-        "a": 198.8,
+        "a": 196.93,
         "tol": 0.011,
-        "why": "2 × 15,13 = 30,26; 229,06 − 30,26 = 198,80. El stop queda a un 13,2 % del precio: es el ruido normal de este valor."
+        "why": "2 × 14,84 = 29,68; 226,61 − 29,68 = 196,93. El stop queda a un 13,1 % del precio: es el ruido normal de este valor."
       },
       {
         "t": "num",
         "caso": "Nu Holdings (NU)",
-        "q": "Nu Holdings (NU) cerró a 12,32 $ el 11/11/2026 con un ATR(14) de 0,71 $. Si compras al cierre con el stop a 2 ATR, ¿a qué precio va el stop?",
+        "q": "Nu Holdings (NU) cerró a 13,22 $ el 13/11/2026 con un ATR(14) de 0,55 $. Si compras al cierre con el stop a 2 ATR, ¿a qué precio va el stop?",
         "unit": "$",
-        "a": 10.9,
+        "a": 12.12,
         "tol": 0.011,
-        "why": "2 × 0,71 = 1,42; 12,32 − 1,42 = 10,90. El stop queda a un 11,5 % del precio: es el ruido normal de este valor."
+        "why": "2 × 0,55 = 1,10; 13,22 − 1,10 = 12,12. El stop queda a un 8,3 % del precio: es el ruido normal de este valor."
       },
       {
         "t": "num",
         "caso": "Axon Enterprise (AXON)",
-        "q": "Axon Enterprise (AXON) cerró a 315,42 $ el 11/11/2026 con un ATR(14) de 24,06 $. Si compras al cierre con el stop a 2 ATR, ¿a qué precio va el stop?",
+        "q": "Axon Enterprise (AXON) cerró a 315,43 $ el 13/11/2026 con un ATR(14) de 24,14 $. Si compras al cierre con el stop a 2 ATR, ¿a qué precio va el stop?",
         "unit": "$",
-        "a": 267.3,
+        "a": 267.15,
         "tol": 0.011,
-        "why": "2 × 24,06 = 48,12; 315,42 − 48,12 = 267,30. El stop queda a un 15,3 % del precio: es el ruido normal de este valor."
+        "why": "2 × 24,14 = 48,28; 315,43 − 48,28 = 267,15. El stop queda a un 15,3 % del precio: es el ruido normal de este valor."
       },
       {
         "t": "num",
         "caso": "Meta Platforms (META)",
-        "q": "Meta Platforms (META) cerró a 628,77 $ el 11/11/2026 con un ATR(14) de 21,23 $. Si compras al cierre con el stop a 2 ATR, ¿a qué precio va el stop?",
+        "q": "Meta Platforms (META) cerró a 641,69 $ el 13/11/2026 con un ATR(14) de 20,96 $. Si compras al cierre con el stop a 2 ATR, ¿a qué precio va el stop?",
         "unit": "$",
-        "a": 586.31,
+        "a": 599.77,
         "tol": 0.011,
-        "why": "2 × 21,23 = 42,46; 628,77 − 42,46 = 586,31. El stop queda a un 6,8 % del precio: es el ruido normal de este valor."
+        "why": "2 × 20,96 = 41,92; 641,69 − 41,92 = 599,77. El stop queda a un 6,5 % del precio: es el ruido normal de este valor."
       },
       {
         "t": "num",
         "caso": "NVIDIA (NVDA)",
-        "q": "NVIDIA (NVDA) cerró a 173,73 $ el 11/11/2026 con un ATR(14) de 9,14 $. Si compras al cierre con el stop a 2 ATR, ¿a qué precio va el stop?",
+        "q": "NVIDIA (NVDA) cerró a 162,85 $ el 13/11/2026 con un ATR(14) de 11,00 $. Si compras al cierre con el stop a 2 ATR, ¿a qué precio va el stop?",
         "unit": "$",
-        "a": 155.45,
+        "a": 140.85,
         "tol": 0.011,
-        "why": "2 × 9,14 = 18,28; 173,73 − 18,28 = 155,45. El stop queda a un 10,5 % del precio: es el ruido normal de este valor."
+        "why": "2 × 11,00 = 22,00; 162,85 − 22,00 = 140,85. El stop queda a un 13,5 % del precio: es el ruido normal de este valor."
       }
     ],
     "r2": [
       {
         "t": "num",
         "caso": "Broadcom (AVGO)",
-        "q": "Quieres arriesgar 500 $ en Broadcom (AVGO), con el stop a 2 ATR. Su ATR(14) al 11/11/2026 es de 17,86 $. ¿Cuántas acciones compras como máximo?",
+        "q": "Quieres arriesgar 500 $ en Broadcom (AVGO), con el stop a 2 ATR. Su ATR(14) al 13/11/2026 es de 20,25 $. ¿Cuántas acciones compras como máximo?",
         "unit": "",
-        "a": 13,
+        "a": 12,
         "tol": 0.01,
-        "why": "Distancia al stop: 2 × 17,86 = 35,72. 500 ÷ 35,72 = 13,99: 13 acciones, redondeando hacia abajo para no pasar del riesgo."
+        "why": "Distancia al stop: 2 × 20,25 = 40,50. 500 ÷ 40,50 = 12,34: 12 acciones, redondeando hacia abajo para no pasar del riesgo."
       },
       {
         "t": "num",
         "caso": "Alphabet (GOOGL)",
-        "q": "Quieres arriesgar 500 $ en Alphabet (GOOGL), con el stop a 2 ATR. Su ATR(14) al 11/11/2026 es de 11,10 $. ¿Cuántas acciones compras como máximo?",
+        "q": "Quieres arriesgar 500 $ en Alphabet (GOOGL), con el stop a 2 ATR. Su ATR(14) al 13/11/2026 es de 11,91 $. ¿Cuántas acciones compras como máximo?",
         "unit": "",
-        "a": 22,
+        "a": 20,
         "tol": 0.01,
-        "why": "Distancia al stop: 2 × 11,10 = 22,20. 500 ÷ 22,20 = 22,52: 22 acciones, redondeando hacia abajo para no pasar del riesgo."
+        "why": "Distancia al stop: 2 × 11,91 = 23,82. 500 ÷ 23,82 = 20,99: 20 acciones, redondeando hacia abajo para no pasar del riesgo."
       },
       {
         "t": "num",
         "caso": "MercadoLibre (MELI)",
-        "q": "Quieres arriesgar 500 $ en MercadoLibre (MELI), con el stop a 2 ATR. Su ATR(14) al 11/11/2026 es de 82,31 $. ¿Cuántas acciones compras como máximo?",
+        "q": "Quieres arriesgar 500 $ en MercadoLibre (MELI), con el stop a 2 ATR. Su ATR(14) al 13/11/2026 es de 68,19 $. ¿Cuántas acciones compras como máximo?",
         "unit": "",
         "a": 3,
         "tol": 0.01,
-        "why": "Distancia al stop: 2 × 82,31 = 164,62. 500 ÷ 164,62 = 3,03: 3 acciones, redondeando hacia abajo para no pasar del riesgo."
+        "why": "Distancia al stop: 2 × 68,19 = 136,38. 500 ÷ 136,38 = 3,66: 3 acciones, redondeando hacia abajo para no pasar del riesgo."
       },
       {
         "t": "num",
         "caso": "Microsoft (MSFT)",
-        "q": "Quieres arriesgar 500 $ en Microsoft (MSFT), con el stop a 2 ATR. Su ATR(14) al 11/11/2026 es de 17,51 $. ¿Cuántas acciones compras como máximo?",
+        "q": "Quieres arriesgar 500 $ en Microsoft (MSFT), con el stop a 2 ATR. Su ATR(14) al 13/11/2026 es de 17,55 $. ¿Cuántas acciones compras como máximo?",
         "unit": "",
         "a": 14,
         "tol": 0.01,
-        "why": "Distancia al stop: 2 × 17,51 = 35,02. 500 ÷ 35,02 = 14,27: 14 acciones, redondeando hacia abajo para no pasar del riesgo."
+        "why": "Distancia al stop: 2 × 17,55 = 35,10. 500 ÷ 35,10 = 14,24: 14 acciones, redondeando hacia abajo para no pasar del riesgo."
       },
       {
         "t": "num",
         "caso": "Eli Lilly and Company (LLY)",
-        "q": "Quieres arriesgar 500 $ en Eli Lilly and Company (LLY), con el stop a 2 ATR. Su ATR(14) al 11/11/2026 es de 51,83 $. ¿Cuántas acciones compras como máximo?",
+        "q": "Quieres arriesgar 500 $ en Eli Lilly and Company (LLY), con el stop a 2 ATR. Su ATR(14) al 13/11/2026 es de 50,97 $. ¿Cuántas acciones compras como máximo?",
         "unit": "",
         "a": 4,
         "tol": 0.01,
-        "why": "Distancia al stop: 2 × 51,83 = 103,66. 500 ÷ 103,66 = 4,82: 4 acciones, redondeando hacia abajo para no pasar del riesgo."
+        "why": "Distancia al stop: 2 × 50,97 = 101,94. 500 ÷ 101,94 = 4,90: 4 acciones, redondeando hacia abajo para no pasar del riesgo."
       },
       {
         "t": "num",
         "caso": "CrowdStrike Holdings (CRWD)",
-        "q": "Quieres arriesgar 500 $ en CrowdStrike Holdings (CRWD), con el stop a 2 ATR. Su ATR(14) al 11/11/2026 es de 15,13 $. ¿Cuántas acciones compras como máximo?",
+        "q": "Quieres arriesgar 500 $ en CrowdStrike Holdings (CRWD), con el stop a 2 ATR. Su ATR(14) al 13/11/2026 es de 14,84 $. ¿Cuántas acciones compras como máximo?",
         "unit": "",
         "a": 16,
         "tol": 0.01,
-        "why": "Distancia al stop: 2 × 15,13 = 30,26. 500 ÷ 30,26 = 16,52: 16 acciones, redondeando hacia abajo para no pasar del riesgo."
+        "why": "Distancia al stop: 2 × 14,84 = 29,68. 500 ÷ 29,68 = 16,84: 16 acciones, redondeando hacia abajo para no pasar del riesgo."
       },
       {
         "t": "num",
         "caso": "Nu Holdings (NU)",
-        "q": "Quieres arriesgar 500 $ en Nu Holdings (NU), con el stop a 2 ATR. Su ATR(14) al 11/11/2026 es de 0,71 $. ¿Cuántas acciones compras como máximo?",
+        "q": "Quieres arriesgar 500 $ en Nu Holdings (NU), con el stop a 2 ATR. Su ATR(14) al 13/11/2026 es de 0,55 $. ¿Cuántas acciones compras como máximo?",
         "unit": "",
-        "a": 352,
+        "a": 454,
         "tol": 0.01,
-        "why": "Distancia al stop: 2 × 0,71 = 1,42. 500 ÷ 1,42 = 352,11: 352 acciones, redondeando hacia abajo para no pasar del riesgo."
+        "why": "Distancia al stop: 2 × 0,55 = 1,10. 500 ÷ 1,10 = 454,54: 454 acciones, redondeando hacia abajo para no pasar del riesgo."
       },
       {
         "t": "num",
         "caso": "Axon Enterprise (AXON)",
-        "q": "Quieres arriesgar 500 $ en Axon Enterprise (AXON), con el stop a 2 ATR. Su ATR(14) al 11/11/2026 es de 24,06 $. ¿Cuántas acciones compras como máximo?",
+        "q": "Quieres arriesgar 500 $ en Axon Enterprise (AXON), con el stop a 2 ATR. Su ATR(14) al 13/11/2026 es de 24,14 $. ¿Cuántas acciones compras como máximo?",
         "unit": "",
         "a": 10,
         "tol": 0.01,
-        "why": "Distancia al stop: 2 × 24,06 = 48,12. 500 ÷ 48,12 = 10,39: 10 acciones, redondeando hacia abajo para no pasar del riesgo."
+        "why": "Distancia al stop: 2 × 24,14 = 48,28. 500 ÷ 48,28 = 10,35: 10 acciones, redondeando hacia abajo para no pasar del riesgo."
       },
       {
         "t": "num",
         "caso": "Meta Platforms (META)",
-        "q": "Quieres arriesgar 500 $ en Meta Platforms (META), con el stop a 2 ATR. Su ATR(14) al 11/11/2026 es de 21,23 $. ¿Cuántas acciones compras como máximo?",
+        "q": "Quieres arriesgar 500 $ en Meta Platforms (META), con el stop a 2 ATR. Su ATR(14) al 13/11/2026 es de 20,96 $. ¿Cuántas acciones compras como máximo?",
         "unit": "",
         "a": 11,
         "tol": 0.01,
-        "why": "Distancia al stop: 2 × 21,23 = 42,46. 500 ÷ 42,46 = 11,77: 11 acciones, redondeando hacia abajo para no pasar del riesgo."
+        "why": "Distancia al stop: 2 × 20,96 = 41,92. 500 ÷ 41,92 = 11,92: 11 acciones, redondeando hacia abajo para no pasar del riesgo."
       },
       {
         "t": "num",
         "caso": "NVIDIA (NVDA)",
-        "q": "Quieres arriesgar 500 $ en NVIDIA (NVDA), con el stop a 2 ATR. Su ATR(14) al 11/11/2026 es de 9,14 $. ¿Cuántas acciones compras como máximo?",
+        "q": "Quieres arriesgar 500 $ en NVIDIA (NVDA), con el stop a 2 ATR. Su ATR(14) al 13/11/2026 es de 11,00 $. ¿Cuántas acciones compras como máximo?",
         "unit": "",
-        "a": 27,
+        "a": 22,
         "tol": 0.01,
-        "why": "Distancia al stop: 2 × 9,14 = 18,28. 500 ÷ 18,28 = 27,35: 27 acciones, redondeando hacia abajo para no pasar del riesgo."
+        "why": "Distancia al stop: 2 × 11,00 = 22,00. 500 ÷ 22,00 = 22,72: 22 acciones, redondeando hacia abajo para no pasar del riesgo."
       }
     ],
     "rs1": [
       {
         "t": "num",
         "caso": "Broadcom (AVGO)",
-        "q": "Broadcom (AVGO) pasó de 417,06 $ el 13/08/2026 a 345,22 $ el 11/11/2026; el S&P 500, de 7.798,99 a 7.619,38 puntos. ¿Cuánto bajó su línea de fuerza relativa (precio ÷ índice)? Redondea a 1 decimal.",
+        "q": "Broadcom (AVGO) pasó de 391,72 $ el 17/08/2026 a 347,01 $ el 13/11/2026; el S&P 500, de 7.745,06 a 7.561,67 puntos. ¿Cuánto bajó su línea de fuerza relativa (precio ÷ índice)? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 15.3,
+        "a": 9.3,
         "tol": 0.06,
-        "why": "(345,22 ÷ 7.619,38) ÷ (417,06 ÷ 7.798,99) − 1 = −15,3 %. Lo hizo peor que el mercado en ese periodo."
+        "why": "(347,01 ÷ 7.561,67) ÷ (391,72 ÷ 7.745,06) − 1 = −9,3 %. Lo hizo peor que el mercado en ese periodo."
       },
       {
         "t": "num",
         "caso": "Alphabet (GOOGL)",
-        "q": "Alphabet (GOOGL) pasó de 346,14 $ el 13/08/2026 a 293,45 $ el 11/11/2026; el S&P 500, de 7.798,99 a 7.619,38 puntos. ¿Cuánto bajó su línea de fuerza relativa (precio ÷ índice)? Redondea a 1 decimal.",
+        "q": "Alphabet (GOOGL) pasó de 343,78 $ el 17/08/2026 a 295,77 $ el 13/11/2026; el S&P 500, de 7.745,06 a 7.561,67 puntos. ¿Cuánto bajó su línea de fuerza relativa (precio ÷ índice)? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 13.2,
+        "a": 11.9,
         "tol": 0.06,
-        "why": "(293,45 ÷ 7.619,38) ÷ (346,14 ÷ 7.798,99) − 1 = −13,2 %. Lo hizo peor que el mercado en ese periodo."
+        "why": "(295,77 ÷ 7.561,67) ÷ (343,78 ÷ 7.745,06) − 1 = −11,9 %. Lo hizo peor que el mercado en ese periodo."
       },
       {
         "t": "num",
         "caso": "MercadoLibre (MELI)",
-        "q": "MercadoLibre (MELI) pasó de 1.828,25 $ el 13/08/2026 a 1.512,02 $ el 11/11/2026; el S&P 500, de 7.798,99 a 7.619,38 puntos. ¿Cuánto bajó su línea de fuerza relativa (precio ÷ índice)? Redondea a 1 decimal.",
+        "q": "MercadoLibre (MELI) pasó de 1.787,57 $ el 17/08/2026 a 1.491,49 $ el 13/11/2026; el S&P 500, de 7.745,06 a 7.561,67 puntos. ¿Cuánto bajó su línea de fuerza relativa (precio ÷ índice)? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 15.3,
+        "a": 14.5,
         "tol": 0.06,
-        "why": "(1.512,02 ÷ 7.619,38) ÷ (1.828,25 ÷ 7.798,99) − 1 = −15,3 %. Lo hizo peor que el mercado en ese periodo."
+        "why": "(1.491,49 ÷ 7.561,67) ÷ (1.787,57 ÷ 7.745,06) − 1 = −14,5 %. Lo hizo peor que el mercado en ese periodo."
       },
       {
         "t": "num",
         "caso": "Microsoft (MSFT)",
-        "q": "Microsoft (MSFT) pasó de 495,95 $ el 13/08/2026 a 521,13 $ el 11/11/2026; el S&P 500, de 7.798,99 a 7.619,38 puntos. ¿Cuánto subió su línea de fuerza relativa (precio ÷ índice)? Redondea a 1 decimal.",
+        "q": "Microsoft (MSFT) pasó de 479,45 $ el 17/08/2026 a 523,88 $ el 13/11/2026; el S&P 500, de 7.745,06 a 7.561,67 puntos. ¿Cuánto subió su línea de fuerza relativa (precio ÷ índice)? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 7.6,
+        "a": 11.9,
         "tol": 0.06,
-        "why": "(521,13 ÷ 7.619,38) ÷ (495,95 ÷ 7.798,99) − 1 = +7,6 %. Lo hizo mejor que el mercado en ese periodo."
+        "why": "(523,88 ÷ 7.561,67) ÷ (479,45 ÷ 7.745,06) − 1 = +11,9 %. Lo hizo mejor que el mercado en ese periodo."
       },
       {
         "t": "num",
         "caso": "Eli Lilly and Company (LLY)",
-        "q": "Eli Lilly and Company (LLY) pasó de 1.207,27 $ el 13/08/2026 a 1.437,29 $ el 11/11/2026; el S&P 500, de 7.798,99 a 7.619,38 puntos. ¿Cuánto subió su línea de fuerza relativa (precio ÷ índice)? Redondea a 1 decimal.",
+        "q": "Eli Lilly and Company (LLY) pasó de 1.181,73 $ el 17/08/2026 a 1.443,50 $ el 13/11/2026; el S&P 500, de 7.745,06 a 7.561,67 puntos. ¿Cuánto subió su línea de fuerza relativa (precio ÷ índice)? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 21.9,
+        "a": 25.1,
         "tol": 0.06,
-        "why": "(1.437,29 ÷ 7.619,38) ÷ (1.207,27 ÷ 7.798,99) − 1 = +21,9 %. Lo hizo mejor que el mercado en ese periodo."
+        "why": "(1.443,50 ÷ 7.561,67) ÷ (1.181,73 ÷ 7.745,06) − 1 = +25,1 %. Lo hizo mejor que el mercado en ese periodo."
       },
       {
         "t": "num",
         "caso": "CrowdStrike Holdings (CRWD)",
-        "q": "CrowdStrike Holdings (CRWD) pasó de 225,53 $ el 13/08/2026 a 229,06 $ el 11/11/2026; el S&P 500, de 7.798,99 a 7.619,38 puntos. ¿Cuánto subió su línea de fuerza relativa (precio ÷ índice)? Redondea a 1 decimal.",
+        "q": "CrowdStrike Holdings (CRWD) pasó de 213,90 $ el 17/08/2026 a 226,61 $ el 13/11/2026; el S&P 500, de 7.745,06 a 7.561,67 puntos. ¿Cuánto subió su línea de fuerza relativa (precio ÷ índice)? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 4.0,
+        "a": 8.5,
         "tol": 0.06,
-        "why": "(229,06 ÷ 7.619,38) ÷ (225,53 ÷ 7.798,99) − 1 = +4,0 %. Lo hizo mejor que el mercado en ese periodo."
+        "why": "(226,61 ÷ 7.561,67) ÷ (213,90 ÷ 7.745,06) − 1 = +8,5 %. Lo hizo mejor que el mercado en ese periodo."
       },
       {
         "t": "num",
         "caso": "Nu Holdings (NU)",
-        "q": "Nu Holdings (NU) pasó de 13,93 $ el 13/08/2026 a 12,32 $ el 11/11/2026; el S&P 500, de 7.798,99 a 7.619,38 puntos. ¿Cuánto bajó su línea de fuerza relativa (precio ÷ índice)? Redondea a 1 decimal.",
+        "q": "Nu Holdings (NU) pasó de 14,74 $ el 17/08/2026 a 13,22 $ el 13/11/2026; el S&P 500, de 7.745,06 a 7.561,67 puntos. ¿Cuánto bajó su línea de fuerza relativa (precio ÷ índice)? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 9.5,
+        "a": 8.1,
         "tol": 0.06,
-        "why": "(12,32 ÷ 7.619,38) ÷ (13,93 ÷ 7.798,99) − 1 = −9,5 %. Lo hizo peor que el mercado en ese periodo."
+        "why": "(13,22 ÷ 7.561,67) ÷ (14,74 ÷ 7.745,06) − 1 = −8,1 %. Lo hizo peor que el mercado en ese periodo."
       },
       {
         "t": "num",
         "caso": "Axon Enterprise (AXON)",
-        "q": "Axon Enterprise (AXON) pasó de 615,59 $ el 13/08/2026 a 315,42 $ el 11/11/2026; el S&P 500, de 7.798,99 a 7.619,38 puntos. ¿Cuánto bajó su línea de fuerza relativa (precio ÷ índice)? Redondea a 1 decimal.",
+        "q": "Axon Enterprise (AXON) pasó de 604,32 $ el 17/08/2026 a 315,43 $ el 13/11/2026; el S&P 500, de 7.745,06 a 7.561,67 puntos. ¿Cuánto bajó su línea de fuerza relativa (precio ÷ índice)? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 47.6,
+        "a": 46.5,
         "tol": 0.06,
-        "why": "(315,42 ÷ 7.619,38) ÷ (615,59 ÷ 7.798,99) − 1 = −47,6 %. Lo hizo peor que el mercado en ese periodo."
+        "why": "(315,43 ÷ 7.561,67) ÷ (604,32 ÷ 7.745,06) − 1 = −46,5 %. Lo hizo peor que el mercado en ese periodo."
       },
       {
         "t": "num",
         "caso": "Meta Platforms (META)",
-        "q": "Meta Platforms (META) pasó de 594,50 $ el 13/08/2026 a 628,77 $ el 11/11/2026; el S&P 500, de 7.798,99 a 7.619,38 puntos. ¿Cuánto subió su línea de fuerza relativa (precio ÷ índice)? Redondea a 1 decimal.",
+        "q": "Meta Platforms (META) pasó de 568,52 $ el 17/08/2026 a 641,69 $ el 13/11/2026; el S&P 500, de 7.745,06 a 7.561,67 puntos. ¿Cuánto subió su línea de fuerza relativa (precio ÷ índice)? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 8.3,
+        "a": 15.6,
         "tol": 0.06,
-        "why": "(628,77 ÷ 7.619,38) ÷ (594,50 ÷ 7.798,99) − 1 = +8,3 %. Lo hizo mejor que el mercado en ese periodo."
+        "why": "(641,69 ÷ 7.561,67) ÷ (568,52 ÷ 7.745,06) − 1 = +15,6 %. Lo hizo mejor que el mercado en ese periodo."
       },
       {
         "t": "num",
         "caso": "NVIDIA (NVDA)",
-        "q": "NVIDIA (NVDA) pasó de 225,05 $ el 13/08/2026 a 173,73 $ el 11/11/2026; el S&P 500, de 7.798,99 a 7.619,38 puntos. ¿Cuánto bajó su línea de fuerza relativa (precio ÷ índice)? Redondea a 1 decimal.",
+        "q": "NVIDIA (NVDA) pasó de 224,76 $ el 17/08/2026 a 162,85 $ el 13/11/2026; el S&P 500, de 7.745,06 a 7.561,67 puntos. ¿Cuánto bajó su línea de fuerza relativa (precio ÷ índice)? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 21.0,
+        "a": 25.8,
         "tol": 0.06,
-        "why": "(173,73 ÷ 7.619,38) ÷ (225,05 ÷ 7.798,99) − 1 = −21,0 %. Lo hizo peor que el mercado en ese periodo."
+        "why": "(162,85 ÷ 7.561,67) ÷ (224,76 ÷ 7.745,06) − 1 = −25,8 %. Lo hizo peor que el mercado en ese periodo."
       }
     ],
     "g2": [
@@ -2005,16 +1996,16 @@
         "unit": "%",
         "a": 12.1,
         "tol": 0.06,
-        "why": "437,08 ÷ 389,81 − 1 = 12,1 %. Hasta el 11/11/2026 el precio no ha vuelto a 389,81 $: el hueco sigue abierto."
+        "why": "437,08 ÷ 389,81 − 1 = 12,1 %. Hasta el 13/11/2026 el precio no ha vuelto a 389,81 $: el hueco sigue abierto."
       },
       {
         "t": "num",
         "caso": "Eli Lilly and Company (LLY)",
-        "q": "El 04/02/2026, Eli Lilly and Company (LLY) abrió a 1.069,95 $ tras cerrar la sesión anterior a 998,64 $. Fue su mayor hueco al alza del último año. ¿De cuánto fue? Redondea a 1 decimal.",
+        "q": "El 04/02/2026, Eli Lilly and Company (LLY) abrió a 1.068,65 $ tras cerrar la sesión anterior a 997,43 $. Fue su mayor hueco al alza del último año. ¿De cuánto fue? Redondea a 1 decimal.",
         "unit": "%",
         "a": 7.1,
         "tol": 0.06,
-        "why": "1.069,95 ÷ 998,64 − 1 = 7,1 %. El 03/03/2026 el precio volvió a 998,64 $ y cerró el hueco."
+        "why": "1.068,65 ÷ 997,43 − 1 = 7,1 %. El 03/03/2026 el precio volvió a 997,43 $ y cerró el hueco."
       },
       {
         "t": "num",
@@ -2023,7 +2014,7 @@
         "unit": "%",
         "a": 10.1,
         "tol": 0.06,
-        "why": "208,25 ÷ 189,18 − 1 = 10,1 %. Hasta el 11/11/2026 el precio no ha vuelto a 189,18 $: el hueco sigue abierto."
+        "why": "208,25 ÷ 189,18 − 1 = 10,1 %. Hasta el 13/11/2026 el precio no ha vuelto a 189,18 $: el hueco sigue abierto."
       },
       {
         "t": "num",
@@ -2066,22 +2057,22 @@
       {
         "t": "num",
         "caso": "S&P 500 en euros",
-        "q": "Del 11/11/2025 al 11/11/2026, el S&P 500 pasó de 6.846,61 a 7.619,38 puntos y el euro, de 1,1557 a 1,1169 dólares. Sin cubrir la divisa, ¿cuánto ganó en euros un inversor europeo? Redondea a 1 decimal.",
+        "q": "Del 13/11/2025 al 13/11/2026, el S&P 500 pasó de 6.737,49 a 7.561,67 puntos y el euro, de 1,1592 a 1,1050 dólares. Sin cubrir la divisa, ¿cuánto ganó en euros un inversor europeo? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 15.2,
+        "a": 17.7,
         "tol": 0.06,
-        "why": "(7.619,38 ÷ 1,1169) ÷ (6.846,61 ÷ 1,1557) − 1 = +15,2 %, frente a un +11,3 % en dólares: el dólar se encareció frente al euro. Es el índice sin dividendos."
+        "why": "(7.561,67 ÷ 1,1050) ÷ (6.737,49 ÷ 1,1592) − 1 = +17,7 %, frente a un +12,2 % en dólares: el dólar se encareció frente al euro. Es el índice sin dividendos."
       }
     ],
     "io2": [
       {
         "t": "num",
         "caso": "Oro (futuro, $ por onza)",
-        "q": "La onza de oro cotizaba a 1.221,20 $ el 14/11/2016 y a 3.986,20 $ el 11/11/2026. ¿Cuánto subió en esos 10 años? Redondea a 1 decimal.",
+        "q": "La onza de oro cotizaba a 1.221,20 $ el 14/11/2016 y a 3.886,30 $ el 13/11/2026. ¿Cuánto subió en esos 10 años? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 226.4,
+        "a": 218.2,
         "tol": 0.06,
-        "why": "3.986,20 ÷ 1.221,20 − 1 = 226,4 %. El oro no paga dividendos ni intereses: todo su rendimiento es la variación del precio."
+        "why": "3.886,30 ÷ 1.221,20 − 1 = 218,2 %. El oro no paga dividendos ni intereses: todo su rendimiento es la variación del precio."
       },
       {
         "t": "num",
@@ -2162,16 +2153,16 @@
       {
         "t": "num",
         "caso": "Broadcom (AVGO)",
-        "q": "Hace 90 días, el consenso de BPA ajustado de Broadcom para su año fiscal en curso era de 11,63 $; al 12/11/2026, es de 11,67 $. ¿Cuánto se ha revisado al alza? Redondea a 1 decimal.",
+        "q": "Hace 90 días, el consenso de BPA ajustado de Broadcom para su año fiscal en curso era de 11,63 $; al 14/11/2026, es de 11,66 $. ¿Cuánto se ha revisado al alza? Redondea a 1 decimal.",
         "unit": "%",
         "a": 0.3,
         "tol": 0.06,
-        "why": "11,67 ÷ 11,63 − 1 = +0,3 %. Los analistas esperan ahora más beneficio que hace tres meses."
+        "why": "11,66 ÷ 11,63 − 1 = +0,3 %. Los analistas esperan ahora más beneficio que hace tres meses."
       },
       {
         "t": "num",
         "caso": "Broadcom (AVGO)",
-        "q": "En los 30 días hasta el 12/11/2026, 1 analista subió su estimación de BPA de Broadcom para el año fiscal en curso y 0 la bajaron. ¿Qué porcentaje de las revisiones fue al alza? Redondea a 1 decimal.",
+        "q": "En los 30 días hasta el 14/11/2026, 1 analista subió su estimación de BPA de Broadcom para el año fiscal en curso y 0 la bajaron. ¿Qué porcentaje de las revisiones fue al alza? Redondea a 1 decimal.",
         "unit": "%",
         "a": 100.0,
         "tol": 0.06,
@@ -2180,7 +2171,7 @@
       {
         "t": "num",
         "caso": "Alphabet (GOOGL)",
-        "q": "Hace 90 días, el consenso de BPA ajustado de Alphabet para su año fiscal en curso era de 20,59 $; al 12/11/2026, es de 19,56 $. ¿Cuánto se ha revisado a la baja? Redondea a 1 decimal.",
+        "q": "Hace 90 días, el consenso de BPA ajustado de Alphabet para su año fiscal en curso era de 20,59 $; al 14/11/2026, es de 19,56 $. ¿Cuánto se ha revisado a la baja? Redondea a 1 decimal.",
         "unit": "%",
         "a": 5.0,
         "tol": 0.06,
@@ -2189,70 +2180,70 @@
       {
         "t": "num",
         "caso": "Alphabet (GOOGL)",
-        "q": "En los 30 días hasta el 12/11/2026, 3 analistas subieron su estimación de BPA de Alphabet para el año fiscal en curso y 38 la bajaron. ¿Qué porcentaje de las revisiones fue al alza? Redondea a 1 decimal.",
+        "q": "En los 30 días hasta el 14/11/2026, 0 analistas subieron su estimación de BPA de Alphabet para el año fiscal en curso y 45 la bajaron. ¿Qué porcentaje de las revisiones fue al alza? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 7.3,
+        "a": 0.0,
         "tol": 0.06,
-        "why": "3 ÷ (3 + 38) = 3 ÷ 41 = 7,3 %. Las revisiones al alza no son mayoría."
+        "why": "0 ÷ (0 + 45) = 0 ÷ 45 = 0,0 %. Las revisiones al alza no son mayoría."
       },
       {
         "t": "num",
         "caso": "MercadoLibre (MELI)",
-        "q": "Hace 90 días, el consenso de BPA ajustado de MercadoLibre para su año fiscal en curso era de 38,34 $; al 12/11/2026, es de 36,21 $. ¿Cuánto se ha revisado a la baja? Redondea a 1 decimal.",
-        "unit": "%",
-        "a": 5.6,
-        "tol": 0.06,
-        "why": "36,21 ÷ 38,34 − 1 = −5,6 %. Los analistas esperan ahora menos beneficio que hace tres meses."
-      },
-      {
-        "t": "num",
-        "caso": "MercadoLibre (MELI)",
-        "q": "En los 30 días hasta el 12/11/2026, 4 analistas subieron su estimación de BPA de MercadoLibre para el año fiscal en curso y 5 la bajaron. ¿Qué porcentaje de las revisiones fue al alza? Redondea a 1 decimal.",
-        "unit": "%",
-        "a": 44.4,
-        "tol": 0.06,
-        "why": "4 ÷ (4 + 5) = 4 ÷ 9 = 44,4 %. Las revisiones al alza no son mayoría."
-      },
-      {
-        "t": "num",
-        "caso": "Microsoft (MSFT)",
-        "q": "Hace 90 días, el consenso de BPA ajustado de Microsoft para su año fiscal en curso era de 19,72 $; al 12/11/2026, es de 20,01 $. ¿Cuánto se ha revisado al alza? Redondea a 1 decimal.",
-        "unit": "%",
-        "a": 1.5,
-        "tol": 0.06,
-        "why": "20,01 ÷ 19,72 − 1 = +1,5 %. Los analistas esperan ahora más beneficio que hace tres meses."
-      },
-      {
-        "t": "num",
-        "caso": "Microsoft (MSFT)",
-        "q": "En los 30 días hasta el 12/11/2026, 23 analistas subieron su estimación de BPA de Microsoft para el año fiscal en curso y 3 la bajaron. ¿Qué porcentaje de las revisiones fue al alza? Redondea a 1 decimal.",
-        "unit": "%",
-        "a": 88.5,
-        "tol": 0.06,
-        "why": "23 ÷ (23 + 3) = 23 ÷ 26 = 88,5 %. La mayoría de las revisiones van al alza."
-      },
-      {
-        "t": "num",
-        "caso": "Eli Lilly and Company (LLY)",
-        "q": "Hace 90 días, el consenso de BPA ajustado de Eli Lilly and Company para su año fiscal en curso era de 36,51 $; al 12/11/2026, es de 35,35 $. ¿Cuánto se ha revisado a la baja? Redondea a 1 decimal.",
-        "unit": "%",
-        "a": 3.2,
-        "tol": 0.06,
-        "why": "35,35 ÷ 36,51 − 1 = −3,2 %. Los analistas esperan ahora menos beneficio que hace tres meses."
-      },
-      {
-        "t": "num",
-        "caso": "Eli Lilly and Company (LLY)",
-        "q": "En los 30 días hasta el 12/11/2026, 1 analista subió su estimación de BPA de Eli Lilly and Company para el año fiscal en curso y 18 la bajaron. ¿Qué porcentaje de las revisiones fue al alza? Redondea a 1 decimal.",
+        "q": "Hace 90 días, el consenso de BPA ajustado de MercadoLibre para su año fiscal en curso era de 38,31 $; al 14/11/2026, es de 36,28 $. ¿Cuánto se ha revisado a la baja? Redondea a 1 decimal.",
         "unit": "%",
         "a": 5.3,
         "tol": 0.06,
-        "why": "1 ÷ (1 + 18) = 1 ÷ 19 = 5,3 %. Las revisiones al alza no son mayoría."
+        "why": "36,28 ÷ 38,31 − 1 = −5,3 %. Los analistas esperan ahora menos beneficio que hace tres meses."
+      },
+      {
+        "t": "num",
+        "caso": "MercadoLibre (MELI)",
+        "q": "En los 30 días hasta el 14/11/2026, 3 analistas subieron su estimación de BPA de MercadoLibre para el año fiscal en curso y 3 la bajaron. ¿Qué porcentaje de las revisiones fue al alza? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 50.0,
+        "tol": 0.06,
+        "why": "3 ÷ (3 + 3) = 3 ÷ 6 = 50,0 %. Hay tantas revisiones al alza como a la baja."
+      },
+      {
+        "t": "num",
+        "caso": "Microsoft (MSFT)",
+        "q": "Hace 90 días, el consenso de BPA ajustado de Microsoft para su año fiscal en curso era de 19,73 $; al 14/11/2026, es de 20,01 $. ¿Cuánto se ha revisado al alza? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 1.4,
+        "tol": 0.06,
+        "why": "20,01 ÷ 19,73 − 1 = +1,4 %. Los analistas esperan ahora más beneficio que hace tres meses."
+      },
+      {
+        "t": "num",
+        "caso": "Microsoft (MSFT)",
+        "q": "En los 30 días hasta el 14/11/2026, 25 analistas subieron su estimación de BPA de Microsoft para el año fiscal en curso y 3 la bajaron. ¿Qué porcentaje de las revisiones fue al alza? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 89.3,
+        "tol": 0.06,
+        "why": "25 ÷ (25 + 3) = 25 ÷ 28 = 89,3 %. La mayoría de las revisiones van al alza."
+      },
+      {
+        "t": "num",
+        "caso": "Eli Lilly and Company (LLY)",
+        "q": "Hace 90 días, el consenso de BPA ajustado de Eli Lilly and Company para su año fiscal en curso era de 36,73 $; al 14/11/2026, es de 35,39 $. ¿Cuánto se ha revisado a la baja? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 3.6,
+        "tol": 0.06,
+        "why": "35,39 ÷ 36,73 − 1 = −3,6 %. Los analistas esperan ahora menos beneficio que hace tres meses."
+      },
+      {
+        "t": "num",
+        "caso": "Eli Lilly and Company (LLY)",
+        "q": "En los 30 días hasta el 14/11/2026, 1 analista subió su estimación de BPA de Eli Lilly and Company para el año fiscal en curso y 24 la bajaron. ¿Qué porcentaje de las revisiones fue al alza? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 4.0,
+        "tol": 0.06,
+        "why": "1 ÷ (1 + 24) = 1 ÷ 25 = 4,0 %. Las revisiones al alza no son mayoría."
       },
       {
         "t": "num",
         "caso": "CrowdStrike Holdings (CRWD)",
-        "q": "Hace 90 días, el consenso de BPA ajustado de CrowdStrike Holdings para su año fiscal en curso era de 1,28 $; al 12/11/2026, es de 1,26 $. ¿Cuánto se ha revisado a la baja? Redondea a 1 decimal.",
+        "q": "Hace 90 días, el consenso de BPA ajustado de CrowdStrike Holdings para su año fiscal en curso era de 1,28 $; al 14/11/2026, es de 1,26 $. ¿Cuánto se ha revisado a la baja? Redondea a 1 decimal.",
         "unit": "%",
         "a": 1.6,
         "tol": 0.06,
@@ -2261,7 +2252,7 @@
       {
         "t": "num",
         "caso": "CrowdStrike Holdings (CRWD)",
-        "q": "En los 30 días hasta el 12/11/2026, 2 analistas subieron su estimación de BPA de CrowdStrike Holdings para el año fiscal en curso y 0 la bajaron. ¿Qué porcentaje de las revisiones fue al alza? Redondea a 1 decimal.",
+        "q": "En los 30 días hasta el 14/11/2026, 2 analistas subieron su estimación de BPA de CrowdStrike Holdings para el año fiscal en curso y 0 la bajaron. ¿Qué porcentaje de las revisiones fue al alza? Redondea a 1 decimal.",
         "unit": "%",
         "a": 100.0,
         "tol": 0.06,
@@ -2270,25 +2261,25 @@
       {
         "t": "num",
         "caso": "Nu Holdings (NU)",
-        "q": "Hace 90 días, el consenso de BPA ajustado de Nu Holdings para su año fiscal en curso era de 0,81 $; al 12/11/2026, es de 0,85 $. ¿Cuánto se ha revisado al alza? Redondea a 1 decimal.",
+        "q": "Hace 90 días, el consenso de BPA ajustado de Nu Holdings para su año fiscal en curso era de 0,84 $; al 14/11/2026, es de 0,85 $. ¿Cuánto se ha revisado al alza? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 4.9,
+        "a": 1.2,
         "tol": 0.06,
-        "why": "0,85 ÷ 0,81 − 1 = +4,9 %. Los analistas esperan ahora más beneficio que hace tres meses."
+        "why": "0,85 ÷ 0,84 − 1 = +1,2 %. Los analistas esperan ahora más beneficio que hace tres meses."
       },
       {
         "t": "num",
         "caso": "Nu Holdings (NU)",
-        "q": "En los 30 días hasta el 12/11/2026, 1 analista subió su estimación de BPA de Nu Holdings para el año fiscal en curso y 4 la bajaron. ¿Qué porcentaje de las revisiones fue al alza? Redondea a 1 decimal.",
+        "q": "En los 30 días hasta el 14/11/2026, 2 analistas subieron su estimación de BPA de Nu Holdings para el año fiscal en curso y 4 la bajaron. ¿Qué porcentaje de las revisiones fue al alza? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 20.0,
+        "a": 33.3,
         "tol": 0.06,
-        "why": "1 ÷ (1 + 4) = 1 ÷ 5 = 20,0 %. Las revisiones al alza no son mayoría."
+        "why": "2 ÷ (2 + 4) = 2 ÷ 6 = 33,3 %. Las revisiones al alza no son mayoría."
       },
       {
         "t": "num",
         "caso": "Axon Enterprise (AXON)",
-        "q": "Hace 90 días, el consenso de BPA ajustado de Axon Enterprise para su año fiscal en curso era de 7,71 $; al 12/11/2026, es de 7,11 $. ¿Cuánto se ha revisado a la baja? Redondea a 1 decimal.",
+        "q": "Hace 90 días, el consenso de BPA ajustado de Axon Enterprise para su año fiscal en curso era de 7,71 $; al 14/11/2026, es de 7,11 $. ¿Cuánto se ha revisado a la baja? Redondea a 1 decimal.",
         "unit": "%",
         "a": 7.8,
         "tol": 0.06,
@@ -2297,16 +2288,16 @@
       {
         "t": "num",
         "caso": "Axon Enterprise (AXON)",
-        "q": "En los 30 días hasta el 12/11/2026, 1 analista subió su estimación de BPA de Axon Enterprise para el año fiscal en curso y 3 la bajaron. ¿Qué porcentaje de las revisiones fue al alza? Redondea a 1 decimal.",
+        "q": "En los 30 días hasta el 14/11/2026, 3 analistas subieron su estimación de BPA de Axon Enterprise para el año fiscal en curso y 11 la bajaron. ¿Qué porcentaje de las revisiones fue al alza? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 25.0,
+        "a": 21.4,
         "tol": 0.06,
-        "why": "1 ÷ (1 + 3) = 1 ÷ 4 = 25,0 %. Las revisiones al alza no son mayoría."
+        "why": "3 ÷ (3 + 11) = 3 ÷ 14 = 21,4 %. Las revisiones al alza no son mayoría."
       },
       {
         "t": "num",
         "caso": "Meta Platforms (META)",
-        "q": "Hace 90 días, el consenso de BPA ajustado de Meta Platforms para su año fiscal en curso era de 31,79 $; al 12/11/2026, es de 29,12 $. ¿Cuánto se ha revisado a la baja? Redondea a 1 decimal.",
+        "q": "Hace 90 días, el consenso de BPA ajustado de Meta Platforms para su año fiscal en curso era de 31,79 $; al 14/11/2026, es de 29,12 $. ¿Cuánto se ha revisado a la baja? Redondea a 1 decimal.",
         "unit": "%",
         "a": 8.4,
         "tol": 0.06,
@@ -2315,7 +2306,7 @@
       {
         "t": "num",
         "caso": "Meta Platforms (META)",
-        "q": "En los 30 días hasta el 12/11/2026, 7 analistas subieron su estimación de BPA de Meta Platforms para el año fiscal en curso y 40 la bajaron. ¿Qué porcentaje de las revisiones fue al alza? Redondea a 1 decimal.",
+        "q": "En los 30 días hasta el 14/11/2026, 7 analistas subieron su estimación de BPA de Meta Platforms para el año fiscal en curso y 40 la bajaron. ¿Qué porcentaje de las revisiones fue al alza? Redondea a 1 decimal.",
         "unit": "%",
         "a": 14.9,
         "tol": 0.06,
@@ -2324,7 +2315,7 @@
       {
         "t": "num",
         "caso": "NVIDIA (NVDA)",
-        "q": "Hace 90 días, el consenso de BPA ajustado de NVIDIA para su año fiscal en curso era de 8,96 $; al 12/11/2026, es de 9,32 $. ¿Cuánto se ha revisado al alza? Redondea a 1 decimal.",
+        "q": "Hace 90 días, el consenso de BPA ajustado de NVIDIA para su año fiscal en curso era de 8,96 $; al 14/11/2026, es de 9,32 $. ¿Cuánto se ha revisado al alza? Redondea a 1 decimal.",
         "unit": "%",
         "a": 4.0,
         "tol": 0.06,
@@ -2333,7 +2324,7 @@
       {
         "t": "num",
         "caso": "NVIDIA (NVDA)",
-        "q": "En los 30 días hasta el 12/11/2026, 2 analistas subieron su estimación de BPA de NVIDIA para el año fiscal en curso y 0 la bajaron. ¿Qué porcentaje de las revisiones fue al alza? Redondea a 1 decimal.",
+        "q": "En los 30 días hasta el 14/11/2026, 2 analistas subieron su estimación de BPA de NVIDIA para el año fiscal en curso y 0 la bajaron. ¿Qué porcentaje de las revisiones fue al alza? Redondea a 1 decimal.",
         "unit": "%",
         "a": 100.0,
         "tol": 0.06,
@@ -2344,92 +2335,92 @@
       {
         "t": "num",
         "caso": "Broadcom",
-        "q": "Una acción de Broadcom cerró a 349,36 $ el 11/11/2025 y a 345,22 $ el 11/11/2026. ¿Cuánto cayó en ese año? Redondea a 1 decimal.",
+        "q": "Una acción de Broadcom cerró a 337,47 $ el 13/11/2025 y a 347,01 $ el 13/11/2026. ¿Cuánto subió en ese año? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 1.2,
+        "a": 2.8,
         "tol": 0.06,
-        "why": "1 − 345,22 ÷ 349,36 = 1,2 %. Es el resultado de una sola acción en un solo año: puede ser muy distinto del año siguiente, para bien o para mal."
+        "why": "347,01 ÷ 337,47 − 1 = 2,8 %. Es el resultado de una sola acción en un solo año: puede ser muy distinto del año siguiente, para bien o para mal."
       },
       {
         "t": "num",
         "caso": "Alphabet",
-        "q": "Una acción de Alphabet cerró a 290,55 $ el 11/11/2025 y a 293,45 $ el 11/11/2026. ¿Cuánto subió en ese año? Redondea a 1 decimal.",
+        "q": "Una acción de Alphabet cerró a 277,85 $ el 13/11/2025 y a 295,77 $ el 13/11/2026. ¿Cuánto subió en ese año? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 1.0,
+        "a": 6.4,
         "tol": 0.06,
-        "why": "293,45 ÷ 290,55 − 1 = 1,0 %. Es el resultado de una sola acción en un solo año: puede ser muy distinto del año siguiente, para bien o para mal."
+        "why": "295,77 ÷ 277,85 − 1 = 6,4 %. Es el resultado de una sola acción en un solo año: puede ser muy distinto del año siguiente, para bien o para mal."
       },
       {
         "t": "num",
         "caso": "MercadoLibre",
-        "q": "Una acción de MercadoLibre cerró a 2.099,57 $ el 11/11/2025 y a 1.512,02 $ el 11/11/2026. ¿Cuánto cayó en ese año? Redondea a 1 decimal.",
+        "q": "Una acción de MercadoLibre cerró a 2.031,05 $ el 13/11/2025 y a 1.491,49 $ el 13/11/2026. ¿Cuánto cayó en ese año? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 28.0,
+        "a": 26.6,
         "tol": 0.06,
-        "why": "1 − 1.512,02 ÷ 2.099,57 = 28,0 %. Es el resultado de una sola acción en un solo año: puede ser muy distinto del año siguiente, para bien o para mal."
+        "why": "1 − 1.491,49 ÷ 2.031,05 = 26,6 %. Es el resultado de una sola acción en un solo año: puede ser muy distinto del año siguiente, para bien o para mal."
       },
       {
         "t": "num",
         "caso": "Microsoft",
-        "q": "Una acción de Microsoft cerró a 504,53 $ el 11/11/2025 y a 521,13 $ el 11/11/2026. ¿Cuánto subió en ese año? Redondea a 1 decimal.",
+        "q": "Una acción de Microsoft cerró a 499,18 $ el 13/11/2025 y a 523,88 $ el 13/11/2026. ¿Cuánto subió en ese año? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 3.3,
+        "a": 4.9,
         "tol": 0.06,
-        "why": "521,13 ÷ 504,53 − 1 = 3,3 %. Es el resultado de una sola acción en un solo año: puede ser muy distinto del año siguiente, para bien o para mal."
+        "why": "523,88 ÷ 499,18 − 1 = 4,9 %. Es el resultado de una sola acción en un solo año: puede ser muy distinto del año siguiente, para bien o para mal."
       },
       {
         "t": "num",
         "caso": "Eli Lilly and Company",
-        "q": "Una acción de Eli Lilly and Company cerró a 982,42 $ el 11/11/2025 y a 1.437,29 $ el 11/11/2026. ¿Cuánto subió en ese año? Redondea a 1 decimal.",
+        "q": "Una acción de Eli Lilly and Company cerró a 1.015,23 $ el 13/11/2025 y a 1.443,50 $ el 13/11/2026. ¿Cuánto subió en ese año? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 46.3,
+        "a": 42.2,
         "tol": 0.06,
-        "why": "1.437,29 ÷ 982,42 − 1 = 46,3 %. Es el resultado de una sola acción en un solo año: puede ser muy distinto del año siguiente, para bien o para mal."
+        "why": "1.443,50 ÷ 1.015,23 − 1 = 42,2 %. Es el resultado de una sola acción en un solo año: puede ser muy distinto del año siguiente, para bien o para mal."
       },
       {
         "t": "num",
         "caso": "CrowdStrike Holdings",
-        "q": "Una acción de CrowdStrike Holdings cerró a 139,18 $ el 11/11/2025 y a 229,06 $ el 11/11/2026. ¿Cuánto subió en ese año? Redondea a 1 decimal.",
+        "q": "Una acción de CrowdStrike Holdings cerró a 132,45 $ el 13/11/2025 y a 226,61 $ el 13/11/2026. ¿Cuánto subió en ese año? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 64.6,
+        "a": 71.1,
         "tol": 0.06,
-        "why": "229,06 ÷ 139,18 − 1 = 64,6 %. Es el resultado de una sola acción en un solo año: puede ser muy distinto del año siguiente, para bien o para mal."
+        "why": "226,61 ÷ 132,45 − 1 = 71,1 %. Es el resultado de una sola acción en un solo año: puede ser muy distinto del año siguiente, para bien o para mal."
       },
       {
         "t": "num",
         "caso": "Nu Holdings",
-        "q": "Una acción de Nu Holdings cerró a 16,39 $ el 11/11/2025 y a 12,32 $ el 11/11/2026. ¿Cuánto cayó en ese año? Redondea a 1 decimal.",
+        "q": "Una acción de Nu Holdings cerró a 15,59 $ el 13/11/2025 y a 13,22 $ el 13/11/2026. ¿Cuánto cayó en ese año? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 24.8,
+        "a": 15.2,
         "tol": 0.06,
-        "why": "1 − 12,32 ÷ 16,39 = 24,8 %. Es el resultado de una sola acción en un solo año: puede ser muy distinto del año siguiente, para bien o para mal."
+        "why": "1 − 13,22 ÷ 15,59 = 15,2 %. Es el resultado de una sola acción en un solo año: puede ser muy distinto del año siguiente, para bien o para mal."
       },
       {
         "t": "num",
         "caso": "Axon Enterprise",
-        "q": "Una acción de Axon Enterprise cerró a 572,18 $ el 11/11/2025 y a 315,42 $ el 11/11/2026. ¿Cuánto cayó en ese año? Redondea a 1 decimal.",
+        "q": "Una acción de Axon Enterprise cerró a 557,29 $ el 13/11/2025 y a 315,43 $ el 13/11/2026. ¿Cuánto cayó en ese año? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 44.9,
+        "a": 43.4,
         "tol": 0.06,
-        "why": "1 − 315,42 ÷ 572,18 = 44,9 %. Es el resultado de una sola acción en un solo año: puede ser muy distinto del año siguiente, para bien o para mal."
+        "why": "1 − 315,43 ÷ 557,29 = 43,4 %. Es el resultado de una sola acción en un solo año: puede ser muy distinto del año siguiente, para bien o para mal."
       },
       {
         "t": "num",
         "caso": "Meta Platforms",
-        "q": "Una acción de Meta Platforms cerró a 624,96 $ el 11/11/2025 y a 628,77 $ el 11/11/2026. ¿Cuánto subió en ese año? Redondea a 1 decimal.",
+        "q": "Una acción de Meta Platforms cerró a 607,83 $ el 13/11/2025 y a 641,69 $ el 13/11/2026. ¿Cuánto subió en ese año? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 0.6,
+        "a": 5.6,
         "tol": 0.06,
-        "why": "628,77 ÷ 624,96 − 1 = 0,6 %. Es el resultado de una sola acción en un solo año: puede ser muy distinto del año siguiente, para bien o para mal."
+        "why": "641,69 ÷ 607,83 − 1 = 5,6 %. Es el resultado de una sola acción en un solo año: puede ser muy distinto del año siguiente, para bien o para mal."
       },
       {
         "t": "num",
         "caso": "NVIDIA",
-        "q": "Una acción de NVIDIA cerró a 192,70 $ el 11/11/2025 y a 173,73 $ el 11/11/2026. ¿Cuánto cayó en ese año? Redondea a 1 decimal.",
+        "q": "Una acción de NVIDIA cerró a 186,41 $ el 13/11/2025 y a 162,85 $ el 13/11/2026. ¿Cuánto cayó en ese año? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 9.8,
+        "a": 12.6,
         "tol": 0.06,
-        "why": "1 − 173,73 ÷ 192,70 = 9,8 %. Es el resultado de una sola acción en un solo año: puede ser muy distinto del año siguiente, para bien o para mal."
+        "why": "1 − 162,85 ÷ 186,41 = 12,6 %. Es el resultado de una sola acción en un solo año: puede ser muy distinto del año siguiente, para bien o para mal."
       }
     ],
     "bb1": [
@@ -2474,38 +2465,671 @@
       {
         "t": "num",
         "caso": "iShares Core MSCI World (EUNL)",
-        "q": "El ETF iShares Core MSCI World de acumulación (en euros) cerró a 110,92 € el 10/11/2025 y a 128,65 € el 10/11/2026. ¿Cuánto subió en ese año? Redondea a 1 decimal.",
+        "q": "El ETF iShares Core MSCI World de acumulación (en euros) cerró a 110,40 € el 13/11/2025 y a 130,44 € el 13/11/2026. ¿Cuánto subió en ese año? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 16.0,
+        "a": 18.2,
         "tol": 0.06,
-        "why": "128,65 ÷ 110,92 − 1 = 16,0 %. Al ser de acumulación, el precio ya incluye los dividendos reinvertidos. Un índice resume cientos de empresas: su resultado es el del conjunto, no el de la mejor ni el de la peor."
+        "why": "130,44 ÷ 110,40 − 1 = 18,2 %. Al ser de acumulación, el precio ya incluye los dividendos reinvertidos. Un índice resume cientos de empresas: su resultado es el del conjunto, no el de la mejor ni el de la peor."
       },
       {
         "t": "num",
         "caso": "S&P 500",
-        "q": "El índice S&P 500 cerró a 6.846,61 puntos el 11/11/2025 y a 7.619,38 puntos el 11/11/2026. ¿Cuánto subió en ese año? Redondea a 1 decimal.",
+        "q": "El índice S&P 500 cerró a 6.737,49 puntos el 13/11/2025 y a 7.561,67 puntos el 13/11/2026. ¿Cuánto subió en ese año? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 11.3,
+        "a": 12.2,
         "tol": 0.06,
-        "why": "7.619,38 ÷ 6.846,61 − 1 = 11,3 %. Es el índice sin dividendos: con ellos reinvertidos, el resultado habría sido mejor. Un índice resume cientos de empresas: su resultado es el del conjunto, no el de la mejor ni el de la peor."
+        "why": "7.561,67 ÷ 6.737,49 − 1 = 12,2 %. Es el índice sin dividendos: con ellos reinvertidos, el resultado habría sido mejor. Un índice resume cientos de empresas: su resultado es el del conjunto, no el de la mejor ni el de la peor."
       },
       {
         "t": "num",
         "caso": "Euro Stoxx 50",
-        "q": "El índice Euro Stoxx 50 cerró a 5.725,70 puntos el 11/11/2025 y a 6.393,39 puntos el 11/11/2026. ¿Cuánto subió en ese año? Redondea a 1 decimal.",
+        "q": "El índice Euro Stoxx 50 cerró a 5.742,79 puntos el 13/11/2025 y a 6.386,86 puntos el 13/11/2026. ¿Cuánto subió en ese año? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 11.7,
+        "a": 11.2,
         "tol": 0.06,
-        "why": "6.393,39 ÷ 5.725,70 − 1 = 11,7 %. Es el índice sin dividendos: con ellos reinvertidos, el resultado habría sido mejor. Un índice resume cientos de empresas: su resultado es el del conjunto, no el de la mejor ni el de la peor."
+        "why": "6.386,86 ÷ 5.742,79 − 1 = 11,2 %. Es el índice sin dividendos: con ellos reinvertidos, el resultado habría sido mejor. Un índice resume cientos de empresas: su resultado es el del conjunto, no el de la mejor ni el de la peor."
       },
       {
         "t": "num",
         "caso": "IBEX 35",
-        "q": "El IBEX 35 cerró a 16.388,80 puntos el 11/11/2025 y a 20.027,90 puntos el 11/11/2026. ¿Cuánto subió en ese año? Redondea a 1 decimal.",
+        "q": "El IBEX 35 cerró a 16.577,40 puntos el 13/11/2025 y a 20.020,10 puntos el 13/11/2026. ¿Cuánto subió en ese año? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 22.2,
+        "a": 20.8,
         "tol": 0.06,
-        "why": "20.027,90 ÷ 16.388,80 − 1 = 22,2 %. Es el índice sin dividendos, que en el IBEX pesan mucho: con ellos reinvertidos, el resultado habría sido bastante mejor. Un índice resume cientos de empresas: su resultado es el del conjunto, no el de la mejor ni el de la peor."
+        "why": "20.020,10 ÷ 16.577,40 − 1 = 20,8 %. Es el índice sin dividendos, que en el IBEX pesan mucho: con ellos reinvertidos, el resultado habría sido bastante mejor. Un índice resume cientos de empresas: su resultado es el del conjunto, no el de la mejor ni el de la peor."
+      }
+    ],
+    "zf1": [
+      {
+        "t": "num",
+        "caso": "Broadcom (AVGO)",
+        "table": {
+          "cols": [
+            "Broadcom",
+            "12 meses hasta el 31/07/2026"
+          ],
+          "rows": [
+            [
+              "Ventas",
+              "89.104 M$"
+            ],
+            [
+              "Beneficio operativo",
+              "43.237 M$"
+            ],
+            [
+              "Flujo de caja libre",
+              "39.403 M$"
+            ]
+          ]
+        },
+        "q": "Haz con Broadcom lo mismo que con Nébula: ¿qué margen operativo tiene? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 48.5,
+        "tol": 0.06,
+        "why": "43.237 ÷ 89.104 = 48,5 %. Es lo que queda de cada 100 $ de ventas tras todos los costes del negocio."
+      },
+      {
+        "t": "num",
+        "caso": "Broadcom (AVGO)",
+        "table": {
+          "cols": [
+            "Broadcom",
+            "12 meses hasta el 31/07/2026"
+          ],
+          "rows": [
+            [
+              "Ventas",
+              "89.104 M$"
+            ],
+            [
+              "Beneficio operativo",
+              "43.237 M$"
+            ],
+            [
+              "Flujo de caja libre",
+              "39.403 M$"
+            ]
+          ]
+        },
+        "q": "Con las cifras de Broadcom, ¿qué margen de flujo de caja libre tiene? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 44.2,
+        "tol": 0.06,
+        "why": "39.403 ÷ 89.104 = 44,2 %. Sumado al crecimiento de las ventas da la regla del 40."
+      },
+      {
+        "t": "num",
+        "caso": "Alphabet (GOOGL)",
+        "table": {
+          "cols": [
+            "Alphabet",
+            "12 meses hasta el 30/09/2026"
+          ],
+          "rows": [
+            [
+              "Ventas",
+              "471.098 M$"
+            ],
+            [
+              "Beneficio operativo",
+              "156.976 M$"
+            ],
+            [
+              "Flujo de caja libre",
+              "19.747 M$"
+            ]
+          ]
+        },
+        "q": "Haz con Alphabet lo mismo que con Nébula: ¿qué margen operativo tiene? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 33.3,
+        "tol": 0.06,
+        "why": "156.976 ÷ 471.098 = 33,3 %. Es lo que queda de cada 100 $ de ventas tras todos los costes del negocio."
+      },
+      {
+        "t": "num",
+        "caso": "Alphabet (GOOGL)",
+        "table": {
+          "cols": [
+            "Alphabet",
+            "12 meses hasta el 30/09/2026"
+          ],
+          "rows": [
+            [
+              "Ventas",
+              "471.098 M$"
+            ],
+            [
+              "Beneficio operativo",
+              "156.976 M$"
+            ],
+            [
+              "Flujo de caja libre",
+              "19.747 M$"
+            ]
+          ]
+        },
+        "q": "Con las cifras de Alphabet, ¿qué margen de flujo de caja libre tiene? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 4.2,
+        "tol": 0.06,
+        "why": "19.747 ÷ 471.098 = 4,2 %. Sumado al crecimiento de las ventas da la regla del 40."
+      },
+      {
+        "t": "num",
+        "caso": "MercadoLibre (MELI)",
+        "table": {
+          "cols": [
+            "MercadoLibre",
+            "12 meses hasta el 30/09/2026"
+          ],
+          "rows": [
+            [
+              "Ventas",
+              "38.523 M$"
+            ],
+            [
+              "Beneficio operativo",
+              "2.859 M$"
+            ],
+            [
+              "Flujo de caja libre",
+              "12.254 M$"
+            ]
+          ]
+        },
+        "q": "Haz con MercadoLibre lo mismo que con Nébula: ¿qué margen operativo tiene? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 7.4,
+        "tol": 0.06,
+        "why": "2.859 ÷ 38.523 = 7,4 %. Es lo que queda de cada 100 $ de ventas tras todos los costes del negocio."
+      },
+      {
+        "t": "num",
+        "caso": "MercadoLibre (MELI)",
+        "table": {
+          "cols": [
+            "MercadoLibre",
+            "12 meses hasta el 30/09/2026"
+          ],
+          "rows": [
+            [
+              "Ventas",
+              "38.523 M$"
+            ],
+            [
+              "Beneficio operativo",
+              "2.859 M$"
+            ],
+            [
+              "Flujo de caja libre",
+              "12.254 M$"
+            ]
+          ]
+        },
+        "q": "Con las cifras de MercadoLibre, ¿qué margen de flujo de caja libre tiene? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 31.8,
+        "tol": 0.06,
+        "why": "12.254 ÷ 38.523 = 31,8 %. Sumado al crecimiento de las ventas da la regla del 40."
+      },
+      {
+        "t": "num",
+        "caso": "Microsoft (MSFT)",
+        "table": {
+          "cols": [
+            "Microsoft",
+            "12 meses hasta el 30/09/2026"
+          ],
+          "rows": [
+            [
+              "Ventas",
+              "346.445 M$"
+            ],
+            [
+              "Beneficio operativo",
+              "163.191 M$"
+            ],
+            [
+              "Flujo de caja libre",
+              "59.957 M$"
+            ]
+          ]
+        },
+        "q": "Haz con Microsoft lo mismo que con Nébula: ¿qué margen operativo tiene? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 47.1,
+        "tol": 0.06,
+        "why": "163.191 ÷ 346.445 = 47,1 %. Es lo que queda de cada 100 $ de ventas tras todos los costes del negocio."
+      },
+      {
+        "t": "num",
+        "caso": "Microsoft (MSFT)",
+        "table": {
+          "cols": [
+            "Microsoft",
+            "12 meses hasta el 30/09/2026"
+          ],
+          "rows": [
+            [
+              "Ventas",
+              "346.445 M$"
+            ],
+            [
+              "Beneficio operativo",
+              "163.191 M$"
+            ],
+            [
+              "Flujo de caja libre",
+              "59.957 M$"
+            ]
+          ]
+        },
+        "q": "Con las cifras de Microsoft, ¿qué margen de flujo de caja libre tiene? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 17.3,
+        "tol": 0.06,
+        "why": "59.957 ÷ 346.445 = 17,3 %. Sumado al crecimiento de las ventas da la regla del 40."
+      },
+      {
+        "t": "num",
+        "caso": "Eli Lilly and Company (LLY)",
+        "table": {
+          "cols": [
+            "Eli Lilly and Company",
+            "12 meses hasta el 30/09/2026"
+          ],
+          "rows": [
+            [
+              "Ventas",
+              "86.462 M$"
+            ],
+            [
+              "Beneficio operativo",
+              "44.314 M$"
+            ],
+            [
+              "Flujo de caja libre",
+              "11.689 M$"
+            ]
+          ]
+        },
+        "q": "Haz con Eli Lilly and Company lo mismo que con Nébula: ¿qué margen operativo tiene? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 51.3,
+        "tol": 0.06,
+        "why": "44.314 ÷ 86.462 = 51,3 %. Es lo que queda de cada 100 $ de ventas tras todos los costes del negocio."
+      },
+      {
+        "t": "num",
+        "caso": "Eli Lilly and Company (LLY)",
+        "table": {
+          "cols": [
+            "Eli Lilly and Company",
+            "12 meses hasta el 30/09/2026"
+          ],
+          "rows": [
+            [
+              "Ventas",
+              "86.462 M$"
+            ],
+            [
+              "Beneficio operativo",
+              "44.314 M$"
+            ],
+            [
+              "Flujo de caja libre",
+              "11.689 M$"
+            ]
+          ]
+        },
+        "q": "Con las cifras de Eli Lilly and Company, ¿qué margen de flujo de caja libre tiene? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 13.5,
+        "tol": 0.06,
+        "why": "11.689 ÷ 86.462 = 13,5 %. Sumado al crecimiento de las ventas da la regla del 40."
+      },
+      {
+        "t": "num",
+        "caso": "Axon Enterprise (AXON)",
+        "table": {
+          "cols": [
+            "Axon Enterprise",
+            "12 meses hasta el 30/09/2026"
+          ],
+          "rows": [
+            [
+              "Ventas",
+              "3.417 M$"
+            ],
+            [
+              "Beneficio operativo",
+              "68,0 M$"
+            ],
+            [
+              "Flujo de caja libre",
+              "80,9 M$"
+            ]
+          ]
+        },
+        "q": "Haz con Axon Enterprise lo mismo que con Nébula: ¿qué margen operativo tiene? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 2.0,
+        "tol": 0.06,
+        "why": "68,0 ÷ 3.417 = 2,0 %. Es lo que queda de cada 100 $ de ventas tras todos los costes del negocio."
+      },
+      {
+        "t": "num",
+        "caso": "Axon Enterprise (AXON)",
+        "table": {
+          "cols": [
+            "Axon Enterprise",
+            "12 meses hasta el 30/09/2026"
+          ],
+          "rows": [
+            [
+              "Ventas",
+              "3.417 M$"
+            ],
+            [
+              "Beneficio operativo",
+              "68,0 M$"
+            ],
+            [
+              "Flujo de caja libre",
+              "80,9 M$"
+            ]
+          ]
+        },
+        "q": "Con las cifras de Axon Enterprise, ¿qué margen de flujo de caja libre tiene? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 2.4,
+        "tol": 0.06,
+        "why": "80,9 ÷ 3.417 = 2,4 %. Sumado al crecimiento de las ventas da la regla del 40."
+      },
+      {
+        "t": "num",
+        "caso": "Meta Platforms (META)",
+        "table": {
+          "cols": [
+            "Meta Platforms",
+            "12 meses hasta el 30/09/2026"
+          ],
+          "rows": [
+            [
+              "Ventas",
+              "241.606 M$"
+            ],
+            [
+              "Beneficio operativo",
+              "79.380 M$"
+            ],
+            [
+              "Flujo de caja libre",
+              "28.649 M$"
+            ]
+          ]
+        },
+        "q": "Haz con Meta Platforms lo mismo que con Nébula: ¿qué margen operativo tiene? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 32.9,
+        "tol": 0.06,
+        "why": "79.380 ÷ 241.606 = 32,9 %. Es lo que queda de cada 100 $ de ventas tras todos los costes del negocio."
+      },
+      {
+        "t": "num",
+        "caso": "Meta Platforms (META)",
+        "table": {
+          "cols": [
+            "Meta Platforms",
+            "12 meses hasta el 30/09/2026"
+          ],
+          "rows": [
+            [
+              "Ventas",
+              "241.606 M$"
+            ],
+            [
+              "Beneficio operativo",
+              "79.380 M$"
+            ],
+            [
+              "Flujo de caja libre",
+              "28.649 M$"
+            ]
+          ]
+        },
+        "q": "Con las cifras de Meta Platforms, ¿qué margen de flujo de caja libre tiene? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 11.9,
+        "tol": 0.06,
+        "why": "28.649 ÷ 241.606 = 11,9 %. Sumado al crecimiento de las ventas da la regla del 40."
+      },
+      {
+        "t": "num",
+        "caso": "NVIDIA (NVDA)",
+        "table": {
+          "cols": [
+            "NVIDIA",
+            "12 meses hasta el 31/07/2026"
+          ],
+          "rows": [
+            [
+              "Ventas",
+              "302.969 M$"
+            ],
+            [
+              "Beneficio operativo",
+              "197.579 M$"
+            ],
+            [
+              "Flujo de caja libre",
+              "127.006 M$"
+            ]
+          ]
+        },
+        "q": "Haz con NVIDIA lo mismo que con Nébula: ¿qué margen operativo tiene? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 65.2,
+        "tol": 0.06,
+        "why": "197.579 ÷ 302.969 = 65,2 %. Es lo que queda de cada 100 $ de ventas tras todos los costes del negocio."
+      },
+      {
+        "t": "num",
+        "caso": "NVIDIA (NVDA)",
+        "table": {
+          "cols": [
+            "NVIDIA",
+            "12 meses hasta el 31/07/2026"
+          ],
+          "rows": [
+            [
+              "Ventas",
+              "302.969 M$"
+            ],
+            [
+              "Beneficio operativo",
+              "197.579 M$"
+            ],
+            [
+              "Flujo de caja libre",
+              "127.006 M$"
+            ]
+          ]
+        },
+        "q": "Con las cifras de NVIDIA, ¿qué margen de flujo de caja libre tiene? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 41.9,
+        "tol": 0.06,
+        "why": "127.006 ÷ 302.969 = 41,9 %. Sumado al crecimiento de las ventas da la regla del 40."
+      }
+    ],
+    "zf2": [
+      {
+        "t": "num",
+        "caso": "Broadcom (AVGO)",
+        "table": {
+          "cols": [
+            "Broadcom",
+            "Importe"
+          ],
+          "rows": [
+            [
+              "Capitalización (13/11/2026)",
+              "1.656.497 M$"
+            ],
+            [
+              "Deuda",
+              "59.419 M$"
+            ],
+            [
+              "Caja",
+              "23.975 M$"
+            ],
+            [
+              "Flujo de caja libre (12 meses hasta el 31/07/2026)",
+              "39.403 M$"
+            ]
+          ]
+        },
+        "q": "Valora Broadcom como hiciste con Nébula: ¿a cuántas veces su flujo de caja libre cotiza el valor de empresa? Redondea a 1 decimal.",
+        "unit": "veces",
+        "a": 42.9,
+        "tol": 0.06,
+        "why": "Valor de empresa = 1.656.497 + 59.419 − 23.975 = 1.691.941 M$; ÷ 39.403 = 42,9 veces. Aquí el flujo no descuenta el pago en acciones: con él, el múltiplo sería más alto."
+      },
+      {
+        "t": "num",
+        "caso": "Microsoft (MSFT)",
+        "table": {
+          "cols": [
+            "Microsoft",
+            "Importe"
+          ],
+          "rows": [
+            [
+              "Capitalización (13/11/2026)",
+              "3.890.435 M$"
+            ],
+            [
+              "Deuda",
+              "133.931 M$"
+            ],
+            [
+              "Caja",
+              "64.509 M$"
+            ],
+            [
+              "Flujo de caja libre (12 meses hasta el 30/09/2026)",
+              "59.957 M$"
+            ]
+          ]
+        },
+        "q": "Valora Microsoft como hiciste con Nébula: ¿a cuántas veces su flujo de caja libre cotiza el valor de empresa? Redondea a 1 decimal.",
+        "unit": "veces",
+        "a": 66.0,
+        "tol": 0.06,
+        "why": "Valor de empresa = 3.890.435 + 133.931 − 64.509 = 3.959.857 M$; ÷ 59.957 = 66,0 veces. Aquí el flujo no descuenta el pago en acciones: con él, el múltiplo sería más alto."
+      },
+      {
+        "t": "num",
+        "caso": "Eli Lilly and Company (LLY)",
+        "table": {
+          "cols": [
+            "Eli Lilly and Company",
+            "Importe"
+          ],
+          "rows": [
+            [
+              "Capitalización (13/11/2026)",
+              "1.285.790 M$"
+            ],
+            [
+              "Deuda",
+              "49.503 M$"
+            ],
+            [
+              "Caja",
+              "4.885 M$"
+            ],
+            [
+              "Flujo de caja libre (12 meses hasta el 30/09/2026)",
+              "11.689 M$"
+            ]
+          ]
+        },
+        "q": "Valora Eli Lilly and Company como hiciste con Nébula: ¿a cuántas veces su flujo de caja libre cotiza el valor de empresa? Redondea a 1 decimal.",
+        "unit": "veces",
+        "a": 113.8,
+        "tol": 0.06,
+        "why": "Valor de empresa = 1.285.790 + 49.503 − 4.885 = 1.330.408 M$; ÷ 11.689 = 113,8 veces. Aquí el flujo no descuenta el pago en acciones: con él, el múltiplo sería más alto."
+      },
+      {
+        "t": "num",
+        "caso": "Meta Platforms (META)",
+        "table": {
+          "cols": [
+            "Meta Platforms",
+            "Importe"
+          ],
+          "rows": [
+            [
+              "Capitalización (13/11/2026)",
+              "1.640.694 M$"
+            ],
+            [
+              "Deuda",
+              "114.842 M$"
+            ],
+            [
+              "Caja",
+              "82.449 M$"
+            ],
+            [
+              "Flujo de caja libre (12 meses hasta el 30/09/2026)",
+              "28.649 M$"
+            ]
+          ]
+        },
+        "q": "Valora Meta Platforms como hiciste con Nébula: ¿a cuántas veces su flujo de caja libre cotiza el valor de empresa? Redondea a 1 decimal.",
+        "unit": "veces",
+        "a": 58.4,
+        "tol": 0.06,
+        "why": "Valor de empresa = 1.640.694 + 114.842 − 82.449 = 1.673.087 M$; ÷ 28.649 = 58,4 veces. Aquí el flujo no descuenta el pago en acciones: con él, el múltiplo sería más alto."
+      },
+      {
+        "t": "num",
+        "caso": "NVIDIA (NVDA)",
+        "table": {
+          "cols": [
+            "NVIDIA",
+            "Importe"
+          ],
+          "rows": [
+            [
+              "Capitalización (13/11/2026)",
+              "3.932.339 M$"
+            ],
+            [
+              "Deuda",
+              "38.860 M$"
+            ],
+            [
+              "Caja",
+              "62.469 M$"
+            ],
+            [
+              "Flujo de caja libre (12 meses hasta el 31/07/2026)",
+              "127.006 M$"
+            ]
+          ]
+        },
+        "q": "Valora NVIDIA como hiciste con Nébula: ¿a cuántas veces su flujo de caja libre cotiza el valor de empresa? Redondea a 1 decimal.",
+        "unit": "veces",
+        "a": 30.8,
+        "tol": 0.06,
+        "why": "Valor de empresa = 3.932.339 + 38.860 − 62.469 = 3.908.730 M$; ÷ 127.006 = 30,8 veces. Aquí el flujo no descuenta el pago en acciones: con él, el múltiplo sería más alto."
       }
     ]
   }

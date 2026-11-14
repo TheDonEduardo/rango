@@ -138,6 +138,14 @@ for nombre_s, datos, verbo in (("sube", sube, "subió"), ("baja", baja, "cayó")
     elif ob["bb1"]:
         fallos.append("casos básico: bb1 sin caída relevante")
 
+# Caso final de Fundamental: sin estado de flujos no genera nada ni se cae.
+try:
+    oa = cargar(fake(ok)).casos_analisis("TEST")
+    if oa["zf1"] or oa["zf2"]:
+        fallos.append("casos de análisis: genera casos sin flujo de caja")
+except Exception as e:
+    fallos.append(f"casos de análisis lanza {type(e).__name__}: {e}")
+
 if fallos:
     print("FALLOS:\n- " + "\n- ".join(fallos))
     sys.exit(1)

@@ -9,13 +9,13 @@
     {
       "id": "g1",
       "titulo": "Perder duele más",
-      "texto": "Una pérdida duele aproximadamente el doble de lo que alegra una ganancia igual. Por eso se vende en las caídas, justo en el peor momento.",
+      "texto": "Es la aversión a la pérdida: una pérdida duele aproximadamente el doble de lo que alegra una ganancia igual. Por eso se vende en las caídas, justo en el peor momento.",
       "ejemplo": "Vender 100 participaciones a 70,00 € y recomprar a 87,50 €: te quedas con 80."
     },
     {
       "id": "g2",
       "titulo": "Anclaje y confirmación",
-      "texto": "El precio al que compraste no importa: pregúntate si comprarías hoy. Y busca a propósito los argumentos en contra de lo que tienes.",
+      "texto": "El anclaje es aferrarte al precio al que compraste: no importa, pregúntate si comprarías hoy. Y busca a propósito los argumentos en contra de lo que tienes.",
       "ejemplo": "De 20,00 € a 12,00 €: necesita subir un 66,7 % para volver."
     },
     {

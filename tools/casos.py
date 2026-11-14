@@ -22,7 +22,7 @@ HOY = dt.date.today().strftime("%d/%m/%Y")
 # Lecciones que reciben casos reales (una sola definición para casos_de y main).
 LECCIONES_CASOS = ("f1a", "f1b", "f2a", "f2b", "f3a", "f3b", "f5a", "f6a", "bg1", "pr1", "bh2", "f8b", "f9a",
                    "t1", "t2", "r1", "r2", "rs1", "g2", "dv1", "io2", "f7a", "f10b",
-                   "ba1", "bb1", "bd1")
+                   "ba1", "bb1", "bd1", "zf1", "zf2")
 # Índices y fondos indexados para la ruta Pasiva: (ticker, etiqueta, descripción, unidad, desde, nota sobre dividendos).
 INDICES = [
     ("EUNL.DE", "iShares Core MSCI World (EUNL)", "el ETF iShares Core MSCI World de acumulación (en euros)", "€", None,
@@ -734,6 +734,64 @@ def casos_oro():
     return out
 
 
+def casos_analisis(tk):
+    """Casos del caso final de Fundamental con una empresa real: márgenes de 12 meses (zf1) y valor de empresa
+    entre flujo de caja libre (zf2). Sin sector financiero: su deuda y su caja son la materia prima del negocio."""
+    out = {"zf1": [], "zf2": []}
+    t = yf.Ticker(tk)
+    info = t.info or {}
+    sym = CUR.get(info.get("financialCurrency") or "USD")
+    if not sym or info.get("sector") == "Financial Services":
+        return out
+    nombre = limpio(info.get("shortName") or tk)
+    caso = f"{nombre} ({tk})"
+    q, cf = t.quarterly_income_stmt, t.quarterly_cashflow
+    rev4, hasta = ultimos4(q, "Total Revenue")
+    op4, hasta_op = ultimos4(q, "Operating Income")
+    fcf4, hasta_fcf = ultimos4(cf, "Free Cash Flow")
+    if rev4 is None or op4 is None or fcf4 is None or hasta != hasta_op or hasta != hasta_fcf or rev4 <= 0 or op4 <= 0 or fcf4 <= 0:
+        return out
+    (v, dv), (o, do), (f, df) = mill(rev4), mill(op4), mill(fcf4)
+    tabla = {"cols": [nombre, f"12 meses hasta el {fecha(hasta)}"],
+             "rows": [["Ventas", f"{es(v, dv)} M{sym}"], ["Beneficio operativo", f"{es(o, do)} M{sym}"], ["Flujo de caja libre", f"{es(f, df)} M{sym}"]]}
+    mo, mf = round(o / v * 100, 1), round(f / v * 100, 1)
+    if 0 < mo < 90:
+        out["zf1"].append({
+            "t": "num", "caso": caso, "table": tabla,
+            "q": f"Haz con {nombre} lo mismo que con Nébula: ¿qué margen operativo tiene? Redondea a 1 decimal.",
+            "unit": "%", "a": mo, "tol": 0.06,
+            "why": f"{es(o, do)} ÷ {es(v, dv)} = {es(mo)} %. Es lo que queda de cada 100 {sym} de ventas tras todos los costes del negocio.",
+        })
+    if 0 < mf < 90:
+        out["zf1"].append({
+            "t": "num", "caso": caso, "table": tabla,
+            "q": f"Con las cifras de {nombre}, ¿qué margen de flujo de caja libre tiene? Redondea a 1 decimal.",
+            "unit": "%", "a": mf, "tol": 0.06,
+            "why": f"{es(f, df)} ÷ {es(v, dv)} = {es(mf)} %. Sumado al crecimiento de las ventas da la regla del 40.",
+        })
+    cap, debt, cash = (info.get(k) for k in ("marketCap", "totalDebt", "totalCash"))
+    psym = CUR.get(info.get("currency") or "USD")
+    t_mercado = info.get("regularMarketTime")
+    cierre = fecha(dt.datetime.fromtimestamp(t_mercado)) if isinstance(t_mercado, (int, float)) else HOY
+    if psym == sym and all(ok(x) for x in (cap, debt, cash)) and cap > 0:
+        (c, dc), (d, dd), (k, dk) = mill(cap), mill(debt), mill(cash)
+        ev = round(c + d - k, 1)
+        mult = round(ev / f, 1)
+        # Rentabilidad por flujo de caja de 8 % o más: suele ser una distorsión (fondos de clientes en negocios de pagos).
+        if ev > 0 and 5 <= mult < 150 and f / c * 100 < 8:
+            out["zf2"].append({
+                "t": "num", "caso": caso,
+                "table": {"cols": [nombre, "Importe"],
+                          "rows": [[f"Capitalización ({cierre})", f"{es(c, dc)} M{sym}"], ["Deuda", f"{es(d, dd)} M{sym}"], ["Caja", f"{es(k, dk)} M{sym}"],
+                                   [f"Flujo de caja libre (12 meses hasta el {fecha(hasta)})", f"{es(f, df)} M{sym}"]]},
+                "q": f"Valora {nombre} como hiciste con Nébula: ¿a cuántas veces su flujo de caja libre cotiza el valor de empresa? Redondea a 1 decimal.",
+                "unit": "veces", "a": mult, "tol": 0.06,
+                "why": f"Valor de empresa = {es(c, dc)} + {es(d, dd)} − {es(k, dk)} = {es(ev, 0 if abs(ev) >= 1000 else 1)} M{sym}; "
+                       f"÷ {es(f, df)} = {es(mult)} veces. Aquí el flujo no descuenta el pago en acciones: con él, el múltiplo sería más alto.",
+            })
+    return out
+
+
 def casos_basico():
     """Casos de la ruta Básico: resultado de un año en una acción (ba1), cuánto hay que subir tras la mayor
     caída de un índice (bb1) y resultado de un año en un índice (bd1)."""
@@ -863,7 +921,7 @@ def main():
     except Exception as e:
         sp, _ = None, fallos.append(f"S&P 500: {e}")
     for tk in tickers():
-        for fn in (casos_de, lambda x: casos_tecnicos(x, sp), casos_roic_estimaciones):
+        for fn in (casos_de, lambda x: casos_tecnicos(x, sp), casos_roic_estimaciones, casos_analisis):
             try:
                 for k, v in fn(tk).items():
                     ex[k].extend(v)
