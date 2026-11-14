@@ -306,7 +306,7 @@ $app.addEventListener('input',e=>{
   if(e.target.id==='glos-q'){$app.querySelector('#glosLista').innerHTML=listaGlosario(e.target.value);return}
   // Deslizadores del simulador de aportaciones: actualizan solo el resultado, sin redibujar (no se pierde el foco).
   const k=e.target.dataset&&e.target.dataset.calc;
-  if((k==='cmp'||k==='crash'||k==='hist')&&ses.view==='calc'){S.calc[k]=e.target.checked;save();render();const c=$app.querySelector('#calc-'+k);if(c)c.focus({preventScroll:true});return}
+  if((k==='cmp'||k==='crash'||k==='hist'||k==='eur')&&ses.view==='calc'){S.calc[k]=e.target.checked;save();render();const c=$app.querySelector('#calc-'+k);if(c)c.focus({preventScroll:true});return}
   if(k&&ses.view==='calc'){
     S.calc[k]=+e.target.value;  // se guarda al soltar (evento change)
     const c=CALC_CTRL.find(x=>x[0]===k);$app.querySelector('#out-'+k).textContent=c[5](S.calc[k]);

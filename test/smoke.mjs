@@ -559,6 +559,7 @@ T.setTrack('pasiva'); T.skipBasics();
     const h = JSON.parse(fs.readFileSync(hp, 'utf8'));
     if (!h.fuente || h.anos.length < 15 || h.acciones.length !== h.anos.length || h.bonos.length !== h.anos.length || h.anos.some((a, i) => i && a !== h.anos[i - 1] + 1)
       || h.acciones.concat(h.bonos).some(v => typeof v !== 'number' || v < -90 || v > 150)) errs.push('historico.json mal formado');
+    if (h.eur && (h.eur.anos.length < 12 || h.eur.acciones.length !== h.eur.anos.length || h.eur.bonos.length !== h.eur.anos.length)) errs.push('historico.json: serie en euros mal formada');
   }
   const H2 = {anos: [1, 2], acciones: [100, -50], bonos: [0, 0]};
   const con = T.historia(50, true, H2), sin = T.historia(50, false, H2);

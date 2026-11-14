@@ -17,7 +17,7 @@ export function aportaciones({inicial,mensual,anos,rent,ter,caida=0,anoCaida=0})
   }
   return {aportado:inicial+mensual*anos*12,final:v,sinComision:vb,serie};
 }
-const CALC_DEF={inicial:0,mensual:200,anos:20,rent:6,ter:0.2,cmp:false,ter2:1.8,crash:false,caida:30,anoCaida:10,hist:false,peso:60};
+const CALC_DEF={inicial:0,mensual:200,anos:20,rent:6,ter:0.2,cmp:false,ter2:1.8,crash:false,caida:30,anoCaida:10,hist:false,peso:60,eur:false};
 export const CALC_CTRL=[
   ['inicial',t.calcCtrl.inicial,0,50000,1000,v=>fmt(v,0)+' €'],
   ['mensual',t.calcCtrl.mensual,0,2000,25,v=>fmt(v,0)+' €'],
@@ -65,22 +65,24 @@ export function historia(peso,rebal,H){
   });
   return {serie,final:a+b,peor:-peor,caida,pesoFinal:a/(a+b)*100};
 }
-function histChart(r,r0){
+// Serie elegida: en euros (índice mundial y deuda de la zona euro) si existe y está marcada; si no, en dólares.
+const serieHist=()=>S.calc.eur&&HISTORICO.eur?HISTORICO.eur:HISTORICO;
+function histChart(r,r0,HS){
   const W=360,H=180,pl=8,pr=52,pt=12,pb=22,n=r.serie.length-1,max=Math.max(...r.serie,...r0.serie);
   const x=i=>pl+(W-pl-pr)*i/n,y=v=>pt+(H-pt-pb)*(1-v/max),pts=s=>s.map((v,i)=>`${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(' ');
   let s=`<svg class="svg calcsvg" viewBox="0 0 ${W} ${H}" role="img" aria-label="${t.histAlt}">`;
   [0,0.5,1].forEach(f=>{const yy=y(max*f).toFixed(1);s+=`<line class="grid" x1="${pl}" x2="${W-pr}" y1="${yy}" y2="${yy}"/><text x="${W-pr+6}" y="${(+yy+3.5).toFixed(1)}">${t.mil(fmt(max*f/1000,0))}</text>`});
   s+=`<polyline class="cv-b" points="${pts(r0.serie)}"/><polyline class="cv-v" points="${pts(r.serie)}"/>`;
-  s+=`<text x="${pl}" y="${H-6}">${HISTORICO.anos[0]-1}</text><text x="${(W-pr).toFixed(1)}" y="${H-6}" text-anchor="end">${HISTORICO.anos[n-1]}</text>`;
+  s+=`<text x="${pl}" y="${H-6}">${HS.anos[0]-1}</text><text x="${(W-pr).toFixed(1)}" y="${H-6}" text-anchor="end">${HS.anos[n-1]}</text>`;
   return s+'</svg>';
 }
 export function histOutHTML(){
   if(!HISTORICO||!S.calc.hist)return '';
-  const r=historia(S.calc.peso,true,HISTORICO),r0=historia(S.calc.peso,false,HISTORICO),a0=HISTORICO.anos[0],a1=HISTORICO.anos[HISTORICO.anos.length-1];
-  return `<dl class="simk calck"><div><dt>${t.histFinal}</dt><dd>${fmt(r.final,0)} $</dd></div><div><dt>${t.histSin}</dt><dd>${fmt(r0.final,0)} $</dd></div><div><dt>${t.histPeor}</dt><dd>−${fmt(r.peor,1)} %</dd></div><div><dt>${t.histCaida}</dt><dd>−${fmt(r.caida,1)} %</dd></div></dl>
-  <p class="cmpres">${t.histRes(fmt(S.calc.peso,0),a0,a1,fmt(r0.pesoFinal,0))}</p>
-  <figure class="chart">${histChart(r,r0)}<figcaption class="leyenda"><span class="lv-v">${t.histCon}</span><span class="lv-b">${t.histSin}</span></figcaption></figure>
-  <p class="src">${t.histNota(HISTORICO.fuente,a0,a1)}</p>`;
+  const HS=serieHist(),eur=HS!==HISTORICO,m=eur?'€':'$',r=historia(S.calc.peso,true,HS),r0=historia(S.calc.peso,false,HS),a0=HS.anos[0],a1=HS.anos[HS.anos.length-1];
+  return `<dl class="simk calck"><div><dt>${t.histFinal}</dt><dd>${fmt(r.final,0)} ${m}</dd></div><div><dt>${t.histSin}</dt><dd>${fmt(r0.final,0)} ${m}</dd></div><div><dt>${t.histPeor}</dt><dd>−${fmt(r.peor,1)} %</dd></div><div><dt>${t.histCaida}</dt><dd>−${fmt(r.caida,1)} %</dd></div></dl>
+  <p class="cmpres">${t.histRes(m,fmt(S.calc.peso,0),a0,a1,fmt(r0.pesoFinal,0),r0.pesoFinal>S.calc.peso+0.5)}</p>
+  <figure class="chart">${histChart(r,r0,HS)}<figcaption class="leyenda"><span class="lv-v">${t.histCon}</span><span class="lv-b">${t.histSin}</span></figcaption></figure>
+  <p class="src">${(eur?t.histNotaEur:t.histNota)(HISTORICO.fuente,a0,a1)}</p>`;
 }
 const ccHTML=([k,l,mi,ma,st,f])=>`<label class="cc" for="calc-${k}"><span>${l}</span><output id="out-${k}">${f(S.calc[k])}</output><input type="range" id="calc-${k}" data-calc="${k}" min="${mi}" max="${ma}" step="${st}" value="${S.calc[k]}"></label>`;
 export function calcHTML(){
@@ -95,6 +97,7 @@ export function calcHTML(){
   <div id="calcOut">${calcOutHTML()}</div>
   <p class="src">${t.calcNota}</p>
   ${HISTORICO?`<h2 class="calch">${t.histTitulo}</h2><div class="calc"><label class="ccheck" for="calc-hist"><input type="checkbox" id="calc-hist" data-calc="hist"${S.calc.hist?' checked':''}> ${t.histActivar(HISTORICO.anos[0],HISTORICO.anos[HISTORICO.anos.length-1])}</label>
+  ${S.calc.hist&&HISTORICO.eur?`<label class="ccheck" for="calc-eur"><input type="checkbox" id="calc-eur" data-calc="eur"${S.calc.eur?' checked':''}> ${t.histEur(HISTORICO.eur.anos[0],HISTORICO.eur.anos[HISTORICO.eur.anos.length-1])}</label>`:''}
   ${S.calc.hist?ccHTML(CALC_CTRL.find(c=>c[0]==='peso')):''}</div><div id="histOut">${histOutHTML()}</div>`:''}</div>
   <div><button class="btn primary" data-act="home">${t.volver}</button></div></div>`;
 }
