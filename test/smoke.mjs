@@ -525,6 +525,26 @@ const r3 = T.aportaciones({inicial: 5000, mensual: 0, anos: 10, rent: 7, ter: 0}
 if (!cerca(r1.final, 90687.73) || r1.aportado !== 48000 || !cerca(r2.final, 74363.05) || !cerca(r2.sinComision, 90687.73) || !cerca(r3.final, 5000 * 1.07 ** 10) || r1.serie.length !== 21)
   errs.push(`simulador de aportaciones: ${r1.final} ${r2.final} ${r3.final}`);
 T.setTrack('pasiva'); T.skipBasics();
+// Itinerarios: lecciones existentes y sin repetir; elegir uno lo muestra en «Hoy» y abre su siguiente lección aunque esté bloqueada en su ruta.
+{
+  for (const it of T.ITINERARIOS) {
+    const malos = it.pasos.filter(id => !T.FLAT.some(l => l.id === id && l.kind === 'lesson'));
+    if (malos.length || new Set(it.pasos).size !== it.pasos.length) errs.push(`itinerario ${it.id}: lecciones inexistentes o repetidas ${malos}`);
+  }
+  const st = T.getState(), hechas = st.done; st.done = {}; st.itin = null;
+  T.act('itinerarios');
+  if (!app.innerHTML.includes('Itinerarios guiados') || /undefined|NaN/.test(app.innerHTML)) errs.push('la pantalla de itinerarios no se dibuja bien');
+  T.act('itinsel', {id: 'compra'});
+  if (st.itin !== 'compra' || !T.homeHTML().includes('data-act="itinsig"')) errs.push('elegir un itinerario no lo muestra en el inicio');
+  st.done.f1a = {acc: 1};
+  if (T.itinActual().sig.id !== 'f2a' || T.itinActual().hechas !== 1) errs.push('el itinerario no avanza a la siguiente lección pendiente');
+  st.guias = Object.assign({}, st.guias, {valoracion: 1});
+  T.act('itinsig');
+  if (T.getView() !== 'lesson' || T.getRun().L.id !== 'f2a') errs.push('«Seguir» no abre la siguiente lección del itinerario');
+  T.act('home'); T.act('itindejar');
+  if (st.itin !== null) errs.push('no se puede dejar un itinerario');
+  st.done = hechas;
+}
 // Simulador con datos reales: archivo bien formado y cálculo comprobado a mano con dos años inventados.
 {
   const hp = path.join(root, 'src/content/historico.json');

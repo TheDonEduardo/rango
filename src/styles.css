@@ -214,6 +214,13 @@ button{font:inherit;color:inherit;cursor:pointer}
 .ccheck{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600}
 .ccheck input{width:20px;height:20px;accent-color:var(--up)}
 .cmpres{margin:12px 0 0;font-size:15px}
+.itin{margin-top:16px;padding:16px;border-radius:16px;background:var(--surface);border:1px solid var(--line)}
+.itin.activo{border:2px solid var(--up)}
+.itin h2{margin:0 0 4px;font:700 20px/1.2 var(--font-display)}
+.itin p{margin:0 0 8px;font-size:15px}
+.itin .itin-m{font-size:13px;color:var(--ink-2)}
+.itin-l{margin:0 0 14px;padding-left:22px;font-size:14px;line-height:1.6;color:var(--ink-2)}
+.itin-l li.ok{color:var(--up-ink);font-weight:600}
 .calch{margin:28px 0 12px;font:700 20px/1.2 var(--font-display)}
 .pfine{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px 14px;margin-top:10px}
 .pf{display:flex;align-items:center;gap:6px}

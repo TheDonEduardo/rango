@@ -69,6 +69,14 @@ export const t={
   reporteCuerpo:(id,q,r)=>`Ejercicio o tarjeta: ${id}\n${q}\n${r?`Respuesta de la app: ${r}\n`:''}\nQué está mal:\n`,
   reporteCopiado:'Aviso copiado: pégalo en un correo o mensaje a quien mantiene Rango.', reporteId:id=>`Anota este código para avisar del error: ${id}`,
 
+  // Itinerarios
+  itinerarios:'Itinerarios', itinTitulo:'Itinerarios guiados', itinNota:'Recorridos con un objetivo concreto que enlazan lecciones de varias rutas. Lo que hagas aquí cuenta también en cada ruta.',
+  itin:{cartera:['Tu primera cartera','De qué es una acción a montar y mantener una cartera de fondos indexados.'],
+    compra:['De la idea a la compra','Analiza la empresa, comprueba el gráfico y planifica la operación con su riesgo.'],
+    proteger:['Protege tu dinero','Estafas, sesgos, deudas y dónde guardar lo que no puedes arriesgar.']},
+  itinMeta:(h,n,r)=>`${h} de ${n} lecciones · ${r}`, itinSiguiendo:'Lo estás siguiendo', itinEmpezar:'Seguir este itinerario', itinRetomar:'Retomar este itinerario', itinDejar:'Dejar de seguirlo',
+  itinPaso:(n,k,tot)=>`Itinerario · ${n} · ${k} de ${tot}`, itinSeguir:'Seguir', itinHecho:'Itinerario completado', itinOtros:'Ver otros',
+
   // Lección
   salirLeccion:'Salir de la lección', progresoLeccion:'Progreso de la lección', vidas:n=>`${n} ${pl(n,'vida','vidas')}`,
   casoReal:c=>`Caso real: ${c} · `, comprobar:'Comprobar', correcto:'Correcto', incorrecto:'Incorrecto', respuesta:'Respuesta',

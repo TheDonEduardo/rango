@@ -19,6 +19,8 @@ import {legalHTML,privacidadHTML,LEGAL_V} from './views/legal.js';
 import {statsHTML,statRecord,STATS_L,flojos} from './views/stats.js';
 import {guiaHTML,abrirGuia,guiaPendiente} from './views/guia.js';
 import {glosarioHTML,listaGlosario} from './views/glosario.js';
+import {itinerariosHTML} from './views/itinerarios.js';
+import {ITINERARIOS,itinActual} from './itinerarios.js';
 import {termino,glos} from './glosario.js';
 import {t} from './textos.js';
 
@@ -29,7 +31,7 @@ const RETO_L={id:'reto',title:t.retoDia,kind:'reto'};
 const TEST_L={id:'test',title:t.testNivel,kind:'test'};
 const TEST_PASS=10;
 
-const VISTAS={home:homeHTML,legal:()=>legalHTML(false),sim:simHTML,simres:simResHTML,calc:calcHTML,lesson:lessonHTML,result:resultHTML,fail:failHTML,stats:statsHTML,guia:guiaHTML,glosario:glosarioHTML,privacidad:privacidadHTML};
+const VISTAS={home:homeHTML,legal:()=>legalHTML(false),sim:simHTML,simres:simResHTML,calc:calcHTML,lesson:lessonHTML,result:resultHTML,fail:failHTML,stats:statsHTML,guia:guiaHTML,glosario:glosarioHTML,itinerarios:itinerariosHTML,privacidad:privacidadHTML};
 function render(){
   termOrigen=null;
   if(ses.view==='home'&&S.legal<LEGAL_V){$app.innerHTML=legalHTML(true);window.scrollTo(0,0);return}
@@ -188,11 +190,21 @@ const ACCIONES={
     if(guiaPendiente(L)){abrirGuia(L.unit,'inicio',{L});ses.view='guia';render();return}
     startRun(L);
   },
+  // Itinerarios: elegir uno, dejarlo y abrir su siguiente lección (sin los bloqueos de las rutas: el orden lo da el itinerario).
+  itinerarios(){ir('itinerarios')},
+  itinsel(b){if(ITINERARIOS.some(x=>x.id===b.dataset.id)){S.itin=b.dataset.id;save();ses.view='home';ses.goCur=false;ses.homeY=0;render()}},
+  itindejar(){S.itin=null;save();render()},
+  itinsig(){
+    const a=itinActual();if(!a||!a.sig)return;
+    ses.homeY=window.scrollY;
+    if(guiaPendiente(a.sig)){abrirGuia(a.sig.unit,'inicio',{L:a.sig});ses.view='guia';render();return}
+    startRun(a.sig);
+  },
   check(b){if(!b.disabled)check()},
   next,
   retry(){startRun(ses.run.L)},
   quit(){const r=ses.run;if(ses.view==='lesson'&&r)medir('abandono',{id:r.L.id,tipo:r.L.kind,hecho:r.done,total:r.total});ses.simDraft=null;ses.view='home';ses.goCur=false;render()},
-  home(){const deSim=['sim','simres','calc','stats','guia','glosario'].includes(ses.view);ses.simDraft=null;ses.view='home';ses.goCur=!deSim;render()},
+  home(){const deSim=['sim','simres','calc','stats','guia','glosario','itinerarios'].includes(ses.view);ses.simDraft=null;ses.view='home';ses.goCur=!deSim;render()},
   sim(){ses.simDraft=null;ir('sim')},
   simres(){ir('simres')},
   calc(){ir('calc')},
@@ -364,7 +376,7 @@ if(typeof navigator!=='undefined'&&'serviceWorker' in navigator&&typeof location
 }
 
 // API mínima para tests (test/smoke.mjs)
-export const api={sumarRacha,glos,openGlosario:()=>{ses.view='glosario';render()},migrar,exportar,leerCopia,importar,FLAT,CASOS,SEMANA,PLACEMENT,simulate,simRecord,simHist,aportaciones,historia,
+export const api={sumarRacha,glos,openGlosario:()=>{ses.view='glosario';render()},migrar,exportar,leerCopia,importar,FLAT,CASOS,SEMANA,PLACEMENT,simulate,simRecord,simHist,aportaciones,historia,ITINERARIOS,itinActual,
   openCalc:()=>{ses.view='calc';render()},openSim:()=>{ses.simDraft=null;ses.view='sim';render()},openSimRes:()=>{ses.view='simres';render()},
   openStats:()=>{ses.view='stats';render()},act:(a,ds={})=>ACCIONES[a]({dataset:ds}),getView:()=>ses.view,startWeak:()=>startRun(STATS_L),
   simDraftSet:p=>{ses.simDraft=p},simSave,goHome:()=>{ses.view='home';render()},startTest:()=>startRun(TEST_L),startNivel:tr=>startRun({id:'nivel-'+tr,title:t.pruebaNivel,kind:'nivel',track:tr}),srsDue,

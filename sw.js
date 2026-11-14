@@ -35,6 +35,8 @@ const PRECACHE = [
   'src/exercises/zona.js',
   'src/views/calc.js',
   'src/views/glosario.js',
+  'src/views/itinerarios.js',
+  'src/itinerarios.js',
   'src/views/guia.js',
   'src/views/home.js',
   'src/views/legal.js',

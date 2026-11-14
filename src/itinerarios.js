@@ -1,0 +1,16 @@
+// Itinerarios: recorridos guiados que encadenan lecciones de varias rutas con un objetivo concreto.
+// Cada paso es el id de una lección; el orden es el del itinerario, no el de las rutas (no aplica sus bloqueos).
+import {FLAT} from './content.js';
+import {S} from './state.js';
+
+export const ITINERARIOS=[
+  {id:'cartera',pasos:['ba1','bb1','bd1','bd2','bn1','bg1','bg2','pr1','ix1','rb1','zb1','zb2','zp1','zp2']},
+  {id:'compra',pasos:['f1a','f2a','f3a','f4a','fm1','t1','t2','r1','r2','zf2','zt1','zt2']},
+  {id:'proteger',pasos:['bq1','bq2','bs1','bs2','bm1','lq1','lq2','pp1']},
+];
+// Progreso de un itinerario: lecciones (en orden), cuántas están hechas y la siguiente pendiente (o null).
+export function progreso(it){
+  const L=it.pasos.map(id=>FLAT.find(l=>l.id===id)).filter(Boolean),hechas=L.filter(l=>S.done[l.id]).length;
+  return {L,hechas,total:L.length,sig:L.find(l=>!S.done[l.id])||null};
+}
+export const itinActual=()=>{const it=ITINERARIOS.find(x=>x.id===S.itin);return it?Object.assign({it},progreso(it)):null};

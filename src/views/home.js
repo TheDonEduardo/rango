@@ -7,6 +7,7 @@ import {S,streakNow,dayXpNow,advancedOpen,statuses,srsDue,srsResumen,retoHoy,ret
 import {ses} from '../ui.js';
 import {simCardHTML} from './sim.js';
 import {t} from '../textos.js';
+import {itinActual} from '../itinerarios.js';
 
 // Herramientas de desarrollo (desbloquear todo, reiniciar): solo con ?dev en la dirección.
 const DEV=typeof location!=='undefined'&&/[?&]dev\b/.test(location.search||'');
@@ -44,7 +45,7 @@ export function homeHTML(){
     h+='</div></section>';
   });
   if(S.track==='fundamental'&&CASOS)h+=`<p class="src">${t.fuenteCasos(esc(CASOS.fuente),esc(CASOS.fecha))}</p>`;
-  h+=`</div></div><footer class="foot-home"><p>${t.pie} <button class="link" data-act="legal">${t.avisoLegal}</button> · <button class="link" data-act="privacidad">${t.privacidad}</button> · <button class="link" data-act="glosario">${t.glosario}</button></p>${installHTML()}${DEV?`<div class="row"><button class="btn ghost" data-act="unlock">${S.all?t.rebloquear:t.desbloquear}</button><button class="btn ghost" data-act="reset">${ses.resetArm?t.reiniciarConfirma:t.reiniciar}</button></div>`:''}</footer>`;
+  h+=`</div></div><footer class="foot-home"><p>${t.pie} <button class="link" data-act="legal">${t.avisoLegal}</button> · <button class="link" data-act="privacidad">${t.privacidad}</button> · <button class="link" data-act="glosario">${t.glosario}</button> · <button class="link" data-act="itinerarios">${t.itinerarios}</button></p>${installHTML()}${DEV?`<div class="row"><button class="btn ghost" data-act="unlock">${S.all?t.rebloquear:t.desbloquear}</button><button class="btn ghost" data-act="reset">${ses.resetArm?t.reiniciarConfirma:t.reiniciar}</button></div>`:''}</footer>`;
   return h;
 }
 
@@ -65,12 +66,15 @@ function hoyHTML(st,TF,dx){
   const cur=TF.find(l=>st[l.id]==='current'),primera=UNITS.find(u=>trackOf(u)===S.track);
   const sigue=cur&&cur.unit!==primera&&advancedOpenFor(S.track);
   const reto=retoHoy(),hecho=retoHecho();
-  if(!S.xp&&!due&&!sigue)return '';
+  const iti=itinActual();
+  if(!S.xp&&!due&&!sigue&&!iti)return '';
   let h=`<section class="hoy" aria-label="${t.hoy}"><div class="goal"><div class="goal-h"><span>${t.metaHoy}</span><span>${Math.min(dx,S.meta)} / ${S.meta} XP</span></div><div class="bar" role="progressbar" aria-label="${t.metaHoy}" aria-valuemin="0" aria-valuemax="${S.meta}" aria-valuenow="${Math.min(dx,S.meta)}"><i style="width:${Math.min(100,dx/S.meta*100)}%"></i></div></div>`;
   if(sigue)h+=`<div class="hoy-row cont"><div><span>${t.unidadN(cur.unit.n)} · ${esc(cur.unit.title)}</span><b>${esc(cur.title)}</b></div><button class="btn primary" data-act="open" data-id="${cur.id}">${t.continuar}</button></div>`;
+  if(iti)h+=iti.sig?`<div class="hoy-row itin-r"><div><span>${t.itinPaso(esc(t.itin[iti.it.id][0]),iti.hechas+1,iti.total)}</span><b>${esc(iti.sig.title)}</b></div><button class="btn ${sigue?'line':'primary'}" data-act="itinsig">${t.itinSeguir}</button></div>`
+    :`<div class="hoy-row itin-r"><div><b>${t.itinHecho}</b><span>${esc(t.itin[iti.it.id][0])}</span></div><button class="btn line" data-act="itinerarios">${t.itinOtros}</button></div>`;
   if(reto)h+=hecho?`<div class="hoy-row reto"><div><b>${t.retoDia}</b><span>${t.retoHecho(S.reto.ok)}</span></div></div>`
-    :`<div class="hoy-row reto"><div><b>${t.retoDia}</b><span>${t.retoExplica}</span></div><button class="btn ${sigue?'line':'primary'}" data-act="reto">${t.responder}</button></div>`;
-  if(due)h+=`<div class="hoy-row srs"><div><b>${t.repasoDia}</b><span>${t.repasoPendiente(due)}${(n=>n?` · ${t.aprendidos(n)}`:'')(srsResumen().aprendidos)}</span></div><button class="btn ${sigue||(reto&&!hecho)?'line':'primary'}" data-act="srs">${t.repasar}</button></div>`;
+    :`<div class="hoy-row reto"><div><b>${t.retoDia}</b><span>${t.retoExplica}</span></div><button class="btn ${sigue||(iti&&iti.sig)?'line':'primary'}" data-act="reto">${t.responder}</button></div>`;
+  if(due)h+=`<div class="hoy-row srs"><div><b>${t.repasoDia}</b><span>${t.repasoPendiente(due)}${(n=>n?` · ${t.aprendidos(n)}`:'')(srsResumen().aprendidos)}</span></div><button class="btn ${sigue||(iti&&iti.sig)||(reto&&!hecho)?'line':'primary'}" data-act="srs">${t.repasar}</button></div>`;
   return h+'</section>';
 }
 const advancedOpenFor=r=>r==='basico'||advancedOpen();
