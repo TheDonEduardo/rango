@@ -533,5 +533,25 @@
    "letras"
   ],
   "d": "Deuda del Estado a 12 meses o menos. No paga cupón: se compra con descuento y devuelve el nominal al vencer."
+ },
+ {
+  "termino": "efecto red",
+  "d": "Ventaja competitiva en la que cada usuario nuevo hace el servicio más valioso para los demás."
+ },
+ {
+  "termino": "costes de cambio",
+  "d": "Lo que le cuesta a un cliente, en tiempo, dinero y riesgo, pasarse a un proveedor rival. Cuanto mayores, más fiel es el cliente."
+ },
+ {
+  "termino": "anclaje",
+  "d": "Sesgo de aferrarse a una cifra de referencia, como el precio al que compraste, aunque ya no sea relevante."
+ },
+ {
+  "termino": "sesgo de confirmación",
+  "d": "Tendencia a buscar y creer solo la información que confirma lo que ya piensas."
+ },
+ {
+  "termino": "aversión a la pérdida",
+  "d": "Una pérdida duele aproximadamente el doble de lo que alegra una ganancia del mismo tamaño."
  }
 ]

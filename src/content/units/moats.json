@@ -1,0 +1,247 @@
+{
+  "n": 19,
+  "id": "moats",
+  "track": "fundamental",
+  "title": "Ventajas competitivas",
+  "blurb": "Qué protege a un negocio de sus rivales y cómo comprobar que sigue ahí.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Qué es una ventaja competitiva",
+      "texto": "Es lo que impide a los rivales copiar un negocio rentable. Se reconoce en los números: una rentabilidad sobre el capital alta que se mantiene durante muchos años.",
+      "ejemplo": "ROIC del 22 % hace diez años y del 21 % hoy: la ventaja sigue intacta."
+    },
+    {
+      "id": "g2",
+      "titulo": "Las cuatro fuentes",
+      "texto": "Efecto red: más usuarios, más valor. Costes de cambio: irse sale caro. Ventaja de costes: producir más barato. Activos intangibles: marcas, patentes y licencias.",
+      "ejemplo": "Fabricar por 6,00 € lo que a otros les cuesta 8,00 €: margen del 40 % frente al 20 %."
+    },
+    {
+      "id": "g3",
+      "titulo": "Poder de precios y retención",
+      "texto": "La mejor prueba es subir precios sin perder clientes. La segunda, la retención: qué porcentaje de clientes sigue un año después.",
+      "ejemplo": "Subir un 8 % y perder un 1 % de ventas: los ingresos crecen un 6,9 %."
+    },
+    {
+      "id": "g4",
+      "titulo": "Erosión y precio",
+      "texto": "Vigila el margen bruto: si cae mientras la empresa hace descuentos, la ventaja se debilita. Y no pagues cualquier precio: una gran empresa cara puede ser una mala inversión.",
+      "ejemplo": "Cambiar cuesta 12.000 € y ahorra 3.000 € al año: 4 años para compensar."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "fm1",
+      "title": "Las cuatro fuentes",
+      "ex": [
+        {
+          "id": "fm1-1",
+          "t": "match",
+          "q": "Empareja cada ventaja competitiva con lo que la define.",
+          "pairs": [
+            [
+              "Efecto red",
+              "Cada usuario nuevo lo hace más valioso"
+            ],
+            [
+              "Costes de cambio",
+              "Irse a un rival cuesta tiempo y dinero"
+            ],
+            [
+              "Ventaja de costes",
+              "Produce más barato que sus rivales"
+            ],
+            [
+              "Activos intangibles",
+              "Marcas, patentes y licencias"
+            ]
+          ],
+          "why": "Son las cuatro fuentes clásicas de ventaja competitiva. Todas hacen lo mismo: impiden que un rival copie el negocio y se lleve sus beneficios.",
+          "guia": "g2"
+        },
+        {
+          "id": "fm1-2",
+          "t": "choice",
+          "q": "Una empresa usa un programa de contabilidad con diez años de datos dentro y toda la plantilla formada en él. ¿Qué protege al proveedor?",
+          "opts": [
+            "El efecto red entre sus usuarios",
+            "Los costes de cambio del cliente",
+            "Una ventaja de costes de producción",
+            "Una patente sobre la contabilidad"
+          ],
+          "a": 1,
+          "why": "Migrar datos, formar a la plantilla y arriesgarse a errores cuesta mucho más que la cuota anual. Por eso el cliente se queda aunque un rival sea algo más barato.",
+          "guia": "g2",
+          "porque": [
+            "Que otros usen el programa no lo hace más útil para este cliente.",
+            null,
+            "Producir software más barato no explica que el cliente no se vaya.",
+            "Llevar la contabilidad no se puede patentar: lo que retiene es el coste de irse."
+          ]
+        },
+        {
+          "id": "fm1-3",
+          "t": "num",
+          "q": "El producto se vende a 10,00 €. La empresa A lo fabrica por 6,00 € y sus rivales, por 8,00 €. ¿Qué margen bruto tiene A?",
+          "unit": "%",
+          "a": 40,
+          "why": "(10,00 − 6,00) ÷ 10,00 = 40 %, frente al 20 % de sus rivales. Con esa ventaja de costes, A puede bajar precios y seguir ganando cuando los demás ya pierden.",
+          "guia": "g2"
+        },
+        {
+          "id": "fm1-4",
+          "t": "choice",
+          "q": "Rentabilidad sobre el capital (ROIC) de tres empresas hace diez años y hoy. ¿Cuál muestra una ventaja duradera?",
+          "opts": [
+            "Empresa A",
+            "Empresa B",
+            "Empresa C",
+            "Las tres"
+          ],
+          "a": 0,
+          "why": "A mantiene un ROIC alto durante una década: nadie ha conseguido quitarle el negocio. B lo tenía alto, pero la competencia se lo ha comido. C nunca ganó más que su coste del capital.",
+          "table": {
+            "cols": [
+              "Empresa",
+              "ROIC hace 10 años",
+              "ROIC hoy"
+            ],
+            "rows": [
+              [
+                "A",
+                "22 %",
+                "21 %"
+              ],
+              [
+                "B",
+                "25 %",
+                "9 %"
+              ],
+              [
+                "C",
+                "8 %",
+                "8 %"
+              ]
+            ]
+          },
+          "guia": "g1",
+          "porque": [
+            null,
+            "Su ROIC ha caído del 25 al 9 %: la competencia le ha quitado la ventaja.",
+            "Un 8 % apenas cubre el coste del capital: nunca tuvo ventaja.",
+            "Solo una mantiene una rentabilidad alta durante toda la década."
+          ]
+        },
+        {
+          "id": "fm1-5",
+          "t": "choice",
+          "q": "Una empresa sube sus precios un 8 % y solo pierde un 1 % de clientes. ¿Qué demuestra?",
+          "opts": [
+            "Que sus clientes no comparan precios nunca",
+            "Que tiene poder de fijación de precios",
+            "Que el producto estaba mal valorado antes",
+            "Que sus rivales van a quebrar pronto"
+          ],
+          "a": 1,
+          "why": "Poder subir precios sin perder clientes es la prueba más directa de una ventaja competitiva: el cliente no tiene una alternativa igual de buena.",
+          "guia": "g3",
+          "porque": [
+            "Si no compararan, tampoco se habría ido ese 1 %: se quedan porque no hay alternativa igual.",
+            null,
+            "Que el cliente acepte la subida habla de la fuerza del producto hoy, no de un error pasado.",
+            "Nada indica cómo están los rivales: solo que el cliente no se va con ellos."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "fm2",
+      "title": "Medir y vigilar",
+      "ex": [
+        {
+          "id": "fm2-1",
+          "t": "num",
+          "q": "Sube los precios un 8 % y vende un 1 % menos de unidades. ¿Cuánto cambian sus ingresos? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 6.9,
+          "why": "1,08 × 0,99 = 1,0692: los ingresos suben un 6,9 %. Y como los costes apenas cambian, casi toda la subida llega al beneficio.",
+          "tol": 0.06,
+          "guia": "g3"
+        },
+        {
+          "id": "fm2-2",
+          "t": "num",
+          "q": "De los 200 clientes que tenía a principio de año, 184 siguen al final. ¿Qué tasa de retención tiene?",
+          "unit": "%",
+          "a": 92,
+          "why": "184 ÷ 200 = 92 %. Una retención alta y estable indica que el cliente no encuentra motivos para irse. Si cae año tras año, la ventaja se debilita.",
+          "guia": "g3"
+        },
+        {
+          "id": "fm2-3",
+          "t": "choice",
+          "q": "¿Qué señal avisa de que una ventaja competitiva se está erosionando?",
+          "opts": [
+            "El margen bruto cae cada año mientras vende con descuentos",
+            "La acción baja un 10 % en un mes de caídas generales",
+            "La empresa anuncia que subirá el dividendo este año",
+            "Un competidor pequeño cierra una de sus fábricas"
+          ],
+          "a": 0,
+          "why": "Si necesita descuentos para mantener las ventas, ha perdido poder de precios. El margen bruto es el primer sitio donde se ve, antes que en el beneficio.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Una caída con todo el mercado no dice nada del negocio.",
+            "Subir el dividendo no indica erosión: suele reflejar confianza en la caja.",
+            "Que un rival cierre fábricas apunta a lo contrario: menos competencia."
+          ]
+        },
+        {
+          "id": "fm2-4",
+          "t": "slide",
+          "q": "Cambiar de proveedor le cuesta a un cliente 12.000 €, y el rival le ahorra 3.000 € al año. Mueve los años que tarda en compensarle el cambio.",
+          "label": "Años con el nuevo proveedor",
+          "min": 1,
+          "max": 10,
+          "step": 1,
+          "start": 1,
+          "a": 4,
+          "unit": "años",
+          "why": "12.000 € ÷ 3.000 € = 4 años. Cuanto más tarda en compensar, menos clientes se van: ese plazo mide la fuerza de los costes de cambio.",
+          "show": [
+            {
+              "label": "Ahorro acumulado",
+              "k": 3000,
+              "unit": "€"
+            }
+          ],
+          "guia": "g4"
+        },
+        {
+          "id": "fm2-5",
+          "t": "choice",
+          "q": "Una empresa tiene una ventaja competitiva muy sólida, pero cotiza a 60 veces sus beneficios. ¿Qué concluyes?",
+          "opts": [
+            "Con esa ventaja, cualquier precio es bueno",
+            "Gran empresa no implica gran inversión",
+            "Hay que venderla en corto de inmediato",
+            "El múltiplo no importa en estas empresas"
+          ],
+          "a": 1,
+          "why": "La ventaja protege el negocio, no tu rentabilidad. Si el precio ya descuenta décadas de crecimiento, una empresa excelente puede dar un resultado mediocre.",
+          "guia": "g4",
+          "porque": [
+            "El precio pagado determina tu rentabilidad, por buena que sea la empresa.",
+            null,
+            "Estar cara no es motivo para ponerse corto: las empresas excelentes pueden seguir caras años.",
+            "El múltiplo importa siempre: indica cuánto crecimiento estás pagando ya."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

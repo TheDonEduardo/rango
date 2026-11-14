@@ -1,0 +1,229 @@
+{
+  "n": 17,
+  "id": "sesgos",
+  "track": "basico",
+  "title": "Sesgos del inversor",
+  "blurb": "Las trampas de tu propia mente y cómo no caer en ellas.",
+  "gate": false,
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Perder duele más",
+      "texto": "Una pérdida duele aproximadamente el doble de lo que alegra una ganancia igual. Por eso se vende en las caídas, justo en el peor momento.",
+      "ejemplo": "Vender 100 participaciones a 70,00 € y recomprar a 87,50 €: te quedas con 80."
+    },
+    {
+      "id": "g2",
+      "titulo": "Anclaje y confirmación",
+      "texto": "El precio al que compraste no importa: pregúntate si comprarías hoy. Y busca a propósito los argumentos en contra de lo que tienes.",
+      "ejemplo": "De 20,00 € a 12,00 €: necesita subir un 66,7 % para volver."
+    },
+    {
+      "id": "g3",
+      "titulo": "Rebaño y exceso de confianza",
+      "texto": "Que todos compren algo no lo hace bueno, y unos cuantos aciertos no te hacen experto. Las rachas suelen deberse al mercado, no a ti.",
+      "ejemplo": "Una acción sube un 80 % y todos hablan de ella: comprueba tu plan antes de comprar."
+    },
+    {
+      "id": "g4",
+      "titulo": "Reglas antes que emociones",
+      "texto": "Decide con calma y por escrito: cuánto, a qué plazo y qué te haría vender. Automatiza las aportaciones y limita lo que inviertes por intuición.",
+      "ejemplo": "Cartera de 20.000 € con un 5 % para apuestas: 1.000 € como máximo."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "bs1",
+      "title": "Trampas de la mente",
+      "ex": [
+        {
+          "id": "bs1-1",
+          "t": "match",
+          "q": "Empareja cada sesgo con lo que te hace hacer.",
+          "pairs": [
+            [
+              "Aversión a la pérdida",
+              "Perder te duele el doble que ganar lo mismo"
+            ],
+            [
+              "Sesgo de confirmación",
+              "Buscar solo datos que te dan la razón"
+            ],
+            [
+              "Anclaje",
+              "Aferrarte al precio al que compraste"
+            ],
+            [
+              "Efecto rebaño",
+              "Comprar porque todos compran"
+            ]
+          ],
+          "why": "No son defectos de carácter: le pasan a todo el mundo. Conocerlos por su nombre es el primer paso para detectarlos a tiempo.",
+          "guia": "g1"
+        },
+        {
+          "id": "bs1-2",
+          "t": "choice",
+          "q": "Compraste a 20,00 € y cotiza a 12,00 €. El negocio ha empeorado, pero dices: «no vendo hasta recuperar los 20». ¿Qué sesgo es?",
+          "opts": [
+            "Efecto rebaño",
+            "Anclaje",
+            "Exceso de confianza",
+            "Sesgo de confirmación"
+          ],
+          "a": 1,
+          "why": "Tu precio de compra no le importa al mercado. La única pregunta útil es: con lo que sé hoy, ¿compraría esta acción a 12 €? Si la respuesta es no, mantenerla es un error.",
+          "guia": "g2",
+          "porque": [
+            "Nadie te empuja a mantenerla: te ata tu propio precio de compra.",
+            null,
+            "No es exceso de confianza: es aferrarse a una cifra del pasado.",
+            "Sería confirmación si solo buscaras datos a favor; aquí te fijas en tu precio de compra."
+          ]
+        },
+        {
+          "id": "bs1-3",
+          "t": "num",
+          "q": "Esa acción ha caído de 20,00 € a 12,00 €. ¿Cuánto tiene que subir para volver a 20,00 €? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 66.7,
+          "why": "20,00 ÷ 12,00 − 1 = 66,7 %. Ha caído un 40 %, pero necesita subir mucho más para volver: esperar a «recuperar» puede llevar años o no ocurrir nunca.",
+          "tol": 0.06,
+          "guia": "g2"
+        },
+        {
+          "id": "bs1-4",
+          "t": "choice",
+          "q": "Todo el mundo habla de una acción que ha subido un 80 % este año y un conocido presume de sus ganancias. ¿Qué haces?",
+          "opts": [
+            "Comprar ya, antes de que suba más",
+            "Comprobar si encaja en tu plan antes de comprar",
+            "Pedir un préstamo para no quedarte fuera",
+            "Vender tus fondos para entrar con todo"
+          ],
+          "a": 1,
+          "why": "El miedo a quedarse fuera empuja a comprar tarde y caro. Que algo haya subido no es un motivo para comprarlo: tu plan y tu plazo sí lo son.",
+          "guia": "g3",
+          "porque": [
+            "Comprar por miedo a quedarte fuera suele ser comprar tarde y caro.",
+            null,
+            "Endeudarse para perseguir una subida multiplica el daño si se da la vuelta.",
+            "Deshacer tu plan por una moda concentra todo el riesgo en una apuesta."
+          ]
+        },
+        {
+          "id": "bs1-5",
+          "t": "choice",
+          "q": "Tienes una acción y solo lees a quienes opinan que subirá. ¿Cómo contrarrestas ese sesgo?",
+          "opts": [
+            "Leyendo más opiniones favorables para asegurarte",
+            "Buscando a propósito el mejor argumento en contra",
+            "Dejando de informarte sobre esa empresa",
+            "Preguntando solo a otros accionistas"
+          ],
+          "a": 1,
+          "why": "El sesgo de confirmación se combate buscando activamente lo que te contradice. Si no eres capaz de explicar por qué alguien vendería, no conoces bien la inversión.",
+          "guia": "g2",
+          "porque": [
+            "Más opiniones a favor refuerzan el sesgo en lugar de corregirlo.",
+            null,
+            "Dejar de informarte te deja sin saber si la tesis ha cambiado.",
+            "Los demás accionistas tienen tu mismo interés en creer que subirá."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "bs2",
+      "title": "Defenderte de ti mismo",
+      "ex": [
+        {
+          "id": "bs2-1",
+          "t": "num",
+          "q": "Tenías 100 participaciones de un fondo. En una caída vendes todas a 70,00 € y, cuando te tranquilizas, recompras a 87,50 €. ¿Cuántas participaciones tienes ahora?",
+          "unit": "part.",
+          "a": 80,
+          "why": "100 × 70,00 € = 7.000 €, y 7.000 ÷ 87,50 = 80. Tienes el mismo fondo, pero un 20 % menos de participaciones para siempre: es el coste de vender por miedo.",
+          "guia": "g1"
+        },
+        {
+          "id": "bs2-2",
+          "t": "choice",
+          "q": "¿Cuál es la mejor defensa contra las decisiones tomadas en caliente?",
+          "opts": [
+            "Mirar la cartera varias veces al día para reaccionar",
+            "Reglas escritas de antemano y aportaciones automáticas",
+            "Seguir a muchos expertos a la vez en redes sociales",
+            "Confiar en la intuición que tengas en cada momento"
+          ],
+          "a": 1,
+          "why": "Lo que decides con calma lo ejecutas mejor que lo que improvisas con miedo o euforia. Automatizar las aportaciones elimina la decisión justo cuando más cuesta tomarla.",
+          "guia": "g4",
+          "porque": [
+            "Mirar la cartera a todas horas aumenta la tentación de actuar por impulso.",
+            null,
+            "Muchas voces opinando a la vez añaden ruido y prisa, no criterio.",
+            "La intuición del momento es justo lo que falla con miedo o euforia."
+          ]
+        },
+        {
+          "id": "bs2-3",
+          "t": "slide",
+          "q": "Tu cartera es de 20.000 €. Decides que tus apuestas «por intuición» no pasen del 5 %. Mueve el importe máximo.",
+          "label": "Dinero para apuestas",
+          "min": 0,
+          "max": 5000,
+          "step": 250,
+          "start": 3000,
+          "a": 1000,
+          "unit": "€",
+          "why": "20.000 € × 5 % = 1.000 €. Reservar una parte pequeña para lo que te apetece probar protege el resto del plan de tus impulsos.",
+          "show": [
+            {
+              "label": "Peso en la cartera",
+              "k": 0.005,
+              "unit": "%"
+            }
+          ],
+          "guia": "g4"
+        },
+        {
+          "id": "bs2-4",
+          "t": "choice",
+          "q": "Aciertas tres compras seguidas y decides doblar el tamaño de la siguiente. ¿Qué te está pasando?",
+          "opts": [
+            "Has demostrado que tu método funciona siempre",
+            "Confundes una racha con habilidad: exceso de confianza",
+            "Estás gestionando bien el riesgo de la cartera",
+            "Aplicas correctamente el interés compuesto"
+          ],
+          "a": 1,
+          "why": "Tres aciertos no demuestran nada: en un mercado alcista casi todo sube. Aumentar el tamaño tras una racha hace que el primer fallo se lleve todo lo ganado.",
+          "guia": "g3",
+          "porque": [
+            "Tres aciertos son muy pocos para demostrar que un método funciona.",
+            null,
+            "Doblar el tamaño tras una racha es lo contrario de gestionar el riesgo.",
+            "El interés compuesto no tiene que ver con aumentar las apuestas."
+          ]
+        },
+        {
+          "id": "bs2-5",
+          "t": "order",
+          "q": "Ordena los pasos antes de una compra para decidir con cabeza.",
+          "items": [
+            "Escribir por qué quieres comprar",
+            "Definir cuánto dinero y a qué plazo",
+            "Decidir qué te haría vender",
+            "Esperar un día antes de ejecutar",
+            "Comprar y anotarlo en tu registro"
+          ],
+          "why": "Escribir obliga a concretar, y la espera deja pasar el impulso. Si al día siguiente la compra sigue teniendo sentido, adelante.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}
