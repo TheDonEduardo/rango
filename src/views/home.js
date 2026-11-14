@@ -37,7 +37,7 @@ export function homeHTML(){
     h+='</svg>';
     items.forEach((l,k)=>{
       const gi=TF.indexOf(l),s=st[l.id],rec=S.done[l.id],off=OFFS[gi%OFFS.length];
-      const sub=s==='done'?t.precision(Math.round(rec.acc*100)):s==='locked'?t.bloqueada:t.nEjercicios(exCount(l));
+      const sub=s==='done'?(rec.test?t.superadaTest:t.precision(Math.round((rec.acc||0)*100))):s==='locked'?t.bloqueada:t.nEjercicios(exCount(l));
       const stx=t.estadoNodo[s];
       h+=`<button class="node ${s}" style="--i:${k};--off:${off}" data-act="open" data-id="${l.id}" aria-label="${esc(l.title)}, ${stx}"${s==='locked'?' aria-disabled="true"':''}><span class="g">${glyph(s,rec?rec.acc:null)}</span><span class="nt">${esc(l.title)}</span><span class="ns">${sub}</span></button>`;
     });

@@ -39,7 +39,7 @@ export const t={
   repasoTitulo:'Repaso espaciado', enRepaso:'En repaso', aprendidosT:'Aprendidos',
   repasoNota:'Un ejercicio fallado vuelve al día siguiente y luego a los 3, 7 y 14 días. Si lo aciertas en todos, queda aprendido.', repasoPendiente:n=>`${n} ${pl(n,'ejercicio que fallaste','ejercicios que fallaste')}`, repasar:'Repasar',
   proximamente:'Próximamente', completada:'Completada', plegar:'Plegar', verLecciones:'Ver lecciones',
-  precision:p=>`Precisión ${p} %`, bloqueada:'Bloqueada', nEjercicios:n=>`${n} ${pl(n,'ejercicio','ejercicios')}`,
+  precision:p=>`Precisión ${p} %`, superadaTest:'Superada en el test', bloqueada:'Bloqueada', nEjercicios:n=>`${n} ${pl(n,'ejercicio','ejercicios')}`,
   estadoNodo:{done:'completada',locked:'bloqueada',current:'disponible',open:'disponible'},
   fuenteCasos:(f,d)=>`Casos reales con datos de ${f} a ${d}. Es formación, no una recomendación de inversión.`,
   pie:'Prototipo. El progreso se guarda solo en este navegador.', avisoLegal:'Aviso legal',
