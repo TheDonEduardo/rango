@@ -218,6 +218,9 @@ button{font:inherit;color:inherit;cursor:pointer}
 .itin.activo{border:2px solid var(--up)}
 .itin h2{margin:0 0 4px;font:700 20px/1.2 var(--font-display)}
 .itin p{margin:0 0 8px;font-size:15px}
+.itin.hecho{border:2px solid var(--up)}
+.itin .itin-ok{margin:0 0 4px;font-size:13px;font-weight:700;color:var(--up-ink)}
+ul.itin-l{list-style:'✓  '}
 .itin .itin-m{font-size:13px;color:var(--ink-2)}
 .itin-l{margin:0 0 14px;padding-left:22px;font-size:14px;line-height:1.6;color:var(--ink-2)}
 .itin-l li.ok{color:var(--up-ink);font-weight:600}

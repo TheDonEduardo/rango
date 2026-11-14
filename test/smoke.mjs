@@ -542,6 +542,12 @@ T.setTrack('pasiva'); T.skipBasics();
   st.guias = Object.assign({}, st.guias, {valoracion: 1});
   T.act('itinsig');
   if (T.getView() !== 'lesson' || T.getRun().L.id !== 'f2a') errs.push('«Seguir» no abre la siguiente lección del itinerario');
+  // Itinerario terminado: «Hoy» ofrece el resumen y la pantalla propone el siguiente.
+  for (const id of T.ITINERARIOS.find(x => x.id === 'compra').pasos) st.done[id] = {acc: 1};
+  T.act('home');
+  if (!T.homeHTML().includes('Itinerario completado') || T.itinActual().sig) errs.push('el itinerario terminado no se marca en el inicio');
+  T.act('itinerarios');
+  if (!app.innerHTML.includes('Lo que ya sabes hacer') || !app.innerHTML.includes('Siguiente: Tu primera cartera') || /undefined/.test(app.innerHTML)) errs.push('el cierre del itinerario no se dibuja bien');
   T.act('home'); T.act('itindejar');
   if (st.itin !== null) errs.push('no se puede dejar un itinerario');
   st.done = hechas;

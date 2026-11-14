@@ -75,7 +75,11 @@ export const t={
     compra:['De la idea a la compra','Analiza la empresa, comprueba el gráfico y planifica la operación con su riesgo.'],
     proteger:['Protege tu dinero','Estafas, sesgos, deudas y dónde guardar lo que no puedes arriesgar.']},
   itinMeta:(h,n,r)=>`${h} de ${n} lecciones · ${r}`, itinSiguiendo:'Lo estás siguiendo', itinEmpezar:'Seguir este itinerario', itinRetomar:'Retomar este itinerario', itinDejar:'Dejar de seguirlo',
-  itinPaso:(n,k,tot)=>`Itinerario · ${n} · ${k} de ${tot}`, itinSeguir:'Seguir', itinHecho:'Itinerario completado', itinOtros:'Ver otros', itinVer:'O sigue un itinerario guiado',
+  itinPaso:(n,k,tot)=>`Itinerario · ${n} · ${k} de ${tot}`, itinSeguir:'Seguir', itinHecho:'Itinerario completado',  itinVer:'O sigue un itinerario guiado', itinCompletado:'Completado', itinSabes:'Lo que ya sabes hacer:', itinSiguiente:n=>`Siguiente: ${n}`, itinResumen:'Ver resumen',
+  itinLogros:{cartera:['Elegir un fondo indexado barato y entender qué hay dentro','Decidir tu reparto entre acciones y bonos según tu plazo','Aportar cada mes y rebalancear sin pagar impuestos de más'],
+    compra:['Leer el crecimiento, la valoración y la deuda de una empresa','Comprobar la tendencia y situar la entrada y el stop','Calcular el tamaño de la posición y gestionar la salida en R'],
+    proteger:['Reconocer una estafa antes de poner dinero','Detectar tus sesgos y decidir con reglas escritas','Guardar el dinero a corto plazo donde no puede caer']},
+
 
   // Lección
   salirLeccion:'Salir de la lección', progresoLeccion:'Progreso de la lección', vidas:n=>`${n} ${pl(n,'vida','vidas')}`,
