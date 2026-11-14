@@ -21,7 +21,41 @@
       "id": "g3",
       "titulo": "Gestionar la posición",
       "texto": "Exige volumen en la ruptura. En 2R, vende una parte y sube el stop a la entrada: la operación ya no puede perder y el resto busca el objetivo.",
-      "ejemplo": "Entrada 40,00 € y riesgo 2,40 €: 2R en 44,80 € y 3R en 47,20 €."
+      "ejemplo": "Entrada 40,00 € y riesgo 2,40 €: 2R en 44,80 € y 3R en 47,20 €.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Operación con entrada en 40,00 €, stop en 37,60 €, venta parcial en 2R (44,80 €) y objetivo de 3R en 47,20 €: el precio sube hasta 2R y vuelve a la entrada.",
+        "series": [
+          {
+            "data": [38.6,39.2,38.9,39.6,40.3,41.4,42.2,43.5,44.8,44.1,42.9,41.6,40.0],
+            "tono": "ink"
+          }
+        ],
+        "margen": 130,
+        "h": 230,
+        "lineas": [
+          {
+            "y": 47.2,
+            "texto": "Objetivo 3R: 47,20",
+            "tono": "up"
+          },
+          {
+            "y": 44.8,
+            "texto": "2R: 44,80",
+            "tono": "up"
+          },
+          {
+            "y": 40,
+            "texto": "Entrada 40,00",
+            "tono": "acc"
+          },
+          {
+            "y": 37.6,
+            "texto": "Stop 37,60",
+            "tono": "dn"
+          }
+        ]
+      }
     },
     {
       "id": "g4",
