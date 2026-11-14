@@ -1,0 +1,189 @@
+{
+  "n": 2,
+  "id": "opvalor",
+  "track": "derivados",
+  "title": "Valor intrínseco y temporal",
+  "blurb": "Qué parte de la prima es real y cuál se evapora con el tiempo.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Dentro y fuera del dinero",
+      "texto": "Una call está dentro del dinero cuando la acción cotiza por encima del ejercicio; una put, cuando cotiza por debajo. Fuera del dinero, ejercerla hoy no daría nada.",
+      "ejemplo": "Call de 100 $ con la acción a 110 $: dentro del dinero."
+    },
+    {
+      "id": "g2",
+      "titulo": "Dos partes de la prima",
+      "texto": "La prima suma el valor intrínseco, lo que darías ejerciendo hoy, y el valor temporal, lo que pagas por el tiempo que queda. Fuera del dinero, toda la prima es valor temporal.",
+      "ejemplo": "Call de 50 $ a 7 $ con la acción a 54 $: 4 $ intrínsecos y 3 $ temporales."
+    },
+    {
+      "id": "g3",
+      "titulo": "El tiempo se come la prima",
+      "texto": "El valor temporal se pierde cada día (la theta) y cada vez más deprisa al acercarse el vencimiento. Comprar opciones exige que el movimiento llegue pronto.",
+      "ejemplo": "Una theta de 0,06 $ al día: en 10 días, de 2,40 $ a 1,80 $."
+    },
+    {
+      "id": "g4",
+      "titulo": "Cuánto arriesgar",
+      "texto": "La prima comprada puede perderse entera. Fija cuánto de la cuenta pones en primas como harías con el riesgo de una operación, y no lo superes.",
+      "ejemplo": "Cuenta de 10.000 $ y 2 % de riesgo: 200 $ en primas, un contrato de 150 $."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "op3",
+      "title": "Dentro y fuera del dinero",
+      "ex": [
+        {
+          "id": "op3-1",
+          "t": "match",
+          "q": "Empareja cada opción con su situación.",
+          "pairs": [
+            [
+              "Call dentro del dinero",
+              "Acción a 110 $, ejercicio 100 $"
+            ],
+            [
+              "Call fuera del dinero",
+              "Acción a 90 $, ejercicio 100 $"
+            ],
+            [
+              "Put dentro del dinero",
+              "Acción a 80 $, ejercicio 95 $"
+            ],
+            [
+              "En el dinero",
+              "Acción y ejercicio a 100 $"
+            ]
+          ],
+          "why": "Una opción está dentro del dinero si ejercerla hoy da algo: la call, con la acción por encima del ejercicio; la put, por debajo.",
+          "guia": "g1"
+        },
+        {
+          "id": "op3-2",
+          "t": "num",
+          "q": "Una call con ejercicio 50 $ cotiza a 7 $ y la acción está en 54 $. ¿Cuánto de esa prima es valor intrínseco?",
+          "unit": "$",
+          "a": 4,
+          "why": "54 − 50 = 4 $. Es lo que darías ejerciendo hoy. El resto de la prima es lo que se paga por el tiempo que queda.",
+          "guia": "g2"
+        },
+        {
+          "id": "op3-3",
+          "t": "num",
+          "q": "Y de esos 7 $ de prima, ¿cuánto es valor temporal?",
+          "unit": "$",
+          "a": 3,
+          "why": "7 − 4 = 3 $. El valor temporal es lo que pagas por la posibilidad de que la acción siga moviéndose a tu favor antes del vencimiento. Al vencer, es cero.",
+          "guia": "g2"
+        },
+        {
+          "id": "op3-4",
+          "t": "choice",
+          "q": "Una put con ejercicio 40 $ cotiza a 1,20 $ con la acción a 45 $. ¿Qué es esa prima?",
+          "opts": [
+            "Todo valor temporal: está fuera del dinero",
+            "Todo valor intrínseco: está dentro del dinero",
+            "Mitad intrínseco y mitad temporal",
+            "Un error de precio: debería valer cero"
+          ],
+          "a": 0,
+          "why": "Con la acción a 45 $, vender a 40 $ no da nada: valor intrínseco cero. Los 1,20 $ son la posibilidad de que caiga por debajo de 40 $ antes del vencimiento.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "Con la acción a 45 $, vender a 40 $ no da nada: no hay valor intrínseco.",
+            "No tiene parte intrínseca: está fuera del dinero.",
+            "No es un error: es lo que se paga por la posibilidad de que caiga."
+          ]
+        }
+      ],
+      "ultimo": 4
+    },
+    {
+      "id": "op4",
+      "title": "El tiempo corre en contra",
+      "ex": [
+        {
+          "id": "op4-1",
+          "t": "choice",
+          "q": "Compras una opción fuera del dinero a 60 días. Si la acción no se mueve, ¿qué le pasa a la prima?",
+          "opts": [
+            "Baja, y cada vez más deprisa al acercarse el fin",
+            "Se mantiene hasta el día del vencimiento",
+            "Sube, porque queda menos tiempo de espera",
+            "Baja lo mismo cada día hasta llegar a cero"
+          ],
+          "a": 0,
+          "why": "El valor temporal se pierde poco a poco al principio y muy deprisa en las últimas semanas. Si compras una opción, el tiempo juega en tu contra.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "El valor temporal se pierde cada día, aunque la acción no se mueva.",
+            "Menos tiempo significa menos posibilidades de ganar: la prima baja, no sube.",
+            "No baja lo mismo cada día: se acelera en las últimas semanas."
+          ]
+        },
+        {
+          "id": "op4-2",
+          "t": "num",
+          "q": "Una opción vale 2,40 $ y pierde 0,06 $ al día por el paso del tiempo (su theta). Si nada más cambia, ¿cuánto valdrá dentro de 10 días?",
+          "unit": "$",
+          "a": 1.8,
+          "why": "2,40 − 10 × 0,06 = 1,80 $. Es una aproximación: la theta crece al acercarse el vencimiento, así que la pérdida real suele ser algo mayor.",
+          "tol": 0.006,
+          "guia": "g3"
+        },
+        {
+          "id": "op4-3",
+          "t": "slide",
+          "q": "Tu cuenta es de 10.000 $ y no quieres arriesgar más del 2 % en primas. Cada contrato cuesta 150 $. Elige cuántos contratos compras.",
+          "label": "Contratos",
+          "min": 0,
+          "max": 6,
+          "step": 1,
+          "start": 5,
+          "a": 1,
+          "unit": "",
+          "why": "10.000 × 2 % = 200 $. Con 150 $ por contrato caben 1,3: compras 1. La prima entera puede perderse, así que se dimensiona como el riesgo de un stop.",
+          "show": [
+            {
+              "label": "Prima total",
+              "k": 150,
+              "unit": "$"
+            },
+            {
+              "label": "Peso en la cuenta",
+              "k": 1.5,
+              "unit": "%",
+              "dec": 1
+            }
+          ],
+          "guia": "g4"
+        },
+        {
+          "id": "op4-4",
+          "t": "choice",
+          "q": "¿Por qué muchas opciones compradas fuera del dinero acaban sin valor?",
+          "opts": [
+            "Necesitan un movimiento grande y rápido a favor",
+            "El emisor de la opción puede cancelarlas",
+            "Los brókeres las cierran antes del vencimiento",
+            "Pagan comisiones que superan cualquier beneficio"
+          ],
+          "a": 0,
+          "why": "Para ganar, la acción tiene que superar el ejercicio más la prima antes de una fecha. Acertar la dirección no basta: también hay que acertar el tamaño y el plazo.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Una opción cotizada no la puede cancelar quien la emitió.",
+            "El bróker no cierra tus opciones salvo que no tengas garantías suficientes.",
+            "Las comisiones existen, pero no explican que venzan sin valor."
+          ]
+        }
+      ],
+      "ultimo": 4
+    }
+  ]
+}

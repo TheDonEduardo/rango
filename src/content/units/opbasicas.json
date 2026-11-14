@@ -1,0 +1,210 @@
+{
+  "n": 1,
+  "id": "opbasicas",
+  "track": "derivados",
+  "title": "Qué es una opción",
+  "blurb": "Call y put, prima, precio de ejercicio y vencimiento.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Call y put",
+      "texto": "Una call da el derecho a comprar, y una put, a vender, a un precio fijado (el de ejercicio) hasta una fecha (el vencimiento). Es un derecho, no una obligación: si no te conviene, no lo ejerces.",
+      "ejemplo": "Put con ejercicio 50 $ y la acción a 42 $: puedes vender a 50 $ lo que vale 42 $."
+    },
+    {
+      "id": "g2",
+      "titulo": "El contrato",
+      "texto": "Las opciones sobre acciones se negocian por contratos, normalmente de 100 acciones. La prima se cotiza por acción, así que el coste de un contrato es 100 veces su precio.",
+      "ejemplo": "3 calls a 2,50 $: 3 × 100 × 2,50 = 750 $."
+    },
+    {
+      "id": "g3",
+      "titulo": "Resultado al vencimiento",
+      "texto": "Una call gana lo que la acción supere al ejercicio, menos la prima. Una put gana lo que la acción quede por debajo del ejercicio, menos la prima. El punto de equilibrio está a una prima de distancia del ejercicio.",
+      "ejemplo": "Call de 100 $ con prima de 4 $: equilibrio en 104 $; con la acción a 112 $, gana 8 $.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Resultado al vencimiento de una call con ejercicio 100 $ y prima de 4 $: pierde 4 $ hasta 100 $ y gana a partir de 104 $, sin límite.",
+        "series": [
+          {
+            "data": [-4,-4,-4,-4,0,4,8,12,16],
+            "tono": "ink"
+          }
+        ],
+        "margen": 130,
+        "h": 210,
+        "lineas": [
+          {
+            "y": 0,
+            "texto": "Equilibrio: 104 $",
+            "tono": "acc"
+          },
+          {
+            "y": -4,
+            "texto": "Pérdida máx.: −4 $",
+            "tono": "dn"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 6,
+            "y": 8,
+            "texto": "112 $: +8 $"
+          }
+        ]
+      }
+    },
+    {
+      "id": "g4",
+      "titulo": "La pérdida máxima",
+      "texto": "Quien compra una opción nunca pierde más que la prima pagada: si el precio va en contra, la opción vence sin valor. Por eso la prima es el riesgo, y hay que dimensionarla como un stop.",
+      "ejemplo": "Call de 100 $ con prima de 4 $ y la acción a 95 $: pierdes 4 $, no más."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "op1",
+      "title": "Derecho a comprar o vender",
+      "ex": [
+        {
+          "id": "op1-1",
+          "t": "choice",
+          "q": "¿Qué te da comprar una call?",
+          "opts": [
+            "El derecho a comprar a un precio fijado hasta una fecha",
+            "La obligación de comprar a un precio fijado",
+            "El derecho a vender a un precio fijado hasta una fecha",
+            "Una parte de los dividendos hasta el vencimiento"
+          ],
+          "a": 0,
+          "why": "La call da el derecho, no la obligación, a comprar al precio de ejercicio hasta el vencimiento. Si no te conviene, no la ejerces y solo pierdes lo que pagaste.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Quien compra la opción tiene un derecho; la obligación la tiene quien la vende.",
+            "Ese es el derecho que da una put, no una call.",
+            "Las opciones no dan derecho a dividendos: solo el accionista los cobra."
+          ]
+        },
+        {
+          "id": "op1-2",
+          "t": "num",
+          "q": "Un contrato de opciones sobre acciones cubre 100 acciones. Compras 3 calls con una prima de 2,50 $ por acción. ¿Cuánto pagas?",
+          "unit": "$",
+          "a": 750,
+          "why": "3 contratos × 100 acciones × 2,50 $ = 750 $. La prima se cotiza por acción, pero se paga por contrato: un precio de 2,50 $ cuesta 250 $ cada uno.",
+          "guia": "g2"
+        },
+        {
+          "id": "op1-3",
+          "t": "choice",
+          "q": "Tienes una put con precio de ejercicio 50 $. Al vencimiento la acción cotiza a 42 $. ¿Qué haces?",
+          "opts": [
+            "Ejercerla: vendes a 50 $ lo que vale 42 $",
+            "Dejarla vencer: la acción ha bajado",
+            "Ejercerla: compras a 50 $ lo que vale 42 $",
+            "Venderla antes: al vencimiento no vale nada"
+          ],
+          "a": 0,
+          "why": "La put da el derecho a vender a 50 $. Con la acción a 42 $, ese derecho vale 8 $ por acción: la put gana cuando la acción cae.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Precisamente porque ha bajado, la put vale dinero: dejarla vencer es tirarlo.",
+            "Una put da derecho a vender, no a comprar.",
+            "Al vencimiento vale lo que la acción queda por debajo del ejercicio: 8 $."
+          ]
+        },
+        {
+          "id": "op1-4",
+          "t": "match",
+          "q": "Empareja cada término con lo que es.",
+          "pairs": [
+            [
+              "Prima",
+              "Lo que pagas por la opción"
+            ],
+            [
+              "Precio de ejercicio",
+              "Precio al que puedes comprar o vender"
+            ],
+            [
+              "Vencimiento",
+              "Fecha en que se extingue el derecho"
+            ],
+            [
+              "Contrato",
+              "Cubre normalmente 100 acciones"
+            ]
+          ],
+          "why": "Son las cuatro piezas de cualquier opción. Con ellas se calcula todo lo demás: cuánto cuesta, cuándo gana y cuánto puedes perder.",
+          "guia": "g3"
+        }
+      ],
+      "ultimo": 4
+    },
+    {
+      "id": "op2",
+      "title": "Resultado al vencimiento",
+      "ex": [
+        {
+          "id": "op2-1",
+          "t": "num",
+          "q": "Compras una call con precio de ejercicio 100 $ y prima de 4 $. Al vencimiento la acción vale 112 $. ¿Cuánto ganas por acción?",
+          "unit": "$",
+          "a": 8,
+          "why": "112 − 100 − 4 = 8 $. Ejerces para comprar a 100 $ lo que vale 112 $, y a esos 12 $ les restas los 4 $ que pagaste.",
+          "guia": "g3"
+        },
+        {
+          "id": "op2-2",
+          "t": "num",
+          "q": "Con esa call (ejercicio 100 $, prima 4 $), ¿a qué precio debe estar la acción al vencimiento para no ganar ni perder?",
+          "unit": "$",
+          "a": 104,
+          "why": "100 + 4 = 104 $. Es el punto de equilibrio: la acción no solo tiene que subir, tiene que subir lo bastante para pagar la prima.",
+          "guia": "g3"
+        },
+        {
+          "id": "op2-3",
+          "t": "num",
+          "q": "Si al vencimiento la acción está en 95 $, ¿cuánto pierdes por acción con esa call?",
+          "unit": "$",
+          "a": 4,
+          "why": "Por debajo de 100 $ no te conviene ejercer: la call vence sin valor y pierdes la prima entera, 4 $. Es tu pérdida máxima, caiga lo que caiga la acción.",
+          "guia": "g4"
+        },
+        {
+          "id": "op2-4",
+          "t": "choice",
+          "q": "Compras una put con ejercicio 60 $ y prima de 3 $. ¿Cuál es tu pérdida máxima por acción?",
+          "opts": [
+            "3 $, la prima pagada",
+            "57 $, el ejercicio menos la prima",
+            "60 $, el precio de ejercicio",
+            "Ilimitada si la acción sube"
+          ],
+          "a": 0,
+          "why": "Quien compra una opción nunca pierde más que la prima. Si la acción sube, la put vence sin valor y se pierden esos 3 $.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Esa es la ganancia máxima de la put si la acción cayera a cero.",
+            "Comprando la opción no pierdes el precio de ejercicio: solo la prima.",
+            "Si la acción sube, la put vence sin valor: pierdes la prima y nada más."
+          ]
+        },
+        {
+          "id": "op2-5",
+          "t": "num",
+          "q": "Con esa put (ejercicio 60 $, prima 3 $), la acción cae a 48 $ al vencimiento. ¿Cuánto ganas por acción?",
+          "unit": "$",
+          "a": 9,
+          "why": "60 − 48 − 3 = 9 $. Vendes a 60 $ lo que vale 48 $ y restas la prima. Su punto de equilibrio es 57 $: por encima, la put pierde dinero.",
+          "guia": "g3"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

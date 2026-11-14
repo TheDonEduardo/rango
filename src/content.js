@@ -7,7 +7,7 @@ const get=async f=>(await fetch(new URL('./content/'+f,import.meta.url))).json()
 // historico.json (tools/historico.py): rentabilidades anuales reales para el simulador de cartera; opcional.
 export const [UNITS,CASOS,SEMANA,GLOSARIO,HISTORICO]=await Promise.all([get('units.json'),get('casos.json').catch(()=>null),get('semana.json').catch(()=>null),get('glosario.json').catch(()=>[]),get('historico.json').catch(()=>null)]);
 // La ruta «basico» es el primer nivel: desbloquea las demás (o se salta desde el inicio).
-export const TRACKS=['basico','pasiva','fundamental','tecnico'].map(id=>({id,title:t.rutas[id]}));
+export const TRACKS=['basico','pasiva','fundamental','tecnico','derivados'].map(id=>({id,title:t.rutas[id]}));
 export const trackOf=u=>u.track||'tecnico';
 // Cada ejercicio fijo tiene un id estable («idLección-n», asignado al crearlo y que no cambia aunque se reordene):
 // lo usan el repaso espaciado, las estadísticas y el test de nivel. Los casos reales no tienen.

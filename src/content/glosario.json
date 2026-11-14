@@ -553,5 +553,25 @@
  {
   "termino": "aversión a la pérdida",
   "d": "Una pérdida duele aproximadamente el doble de lo que alegra una ganancia del mismo tamaño."
+ },
+ {
+  "termino": "valor intrínseco",
+  "d": "Lo que daría una opción si se ejerciera hoy: en una call, lo que la acción supera al ejercicio; en una put, lo que queda por debajo."
+ },
+ {
+  "termino": "valor temporal",
+  "d": "La parte de la prima que no es valor intrínseco: lo que se paga por el tiempo que queda hasta el vencimiento. Al vencer, es cero."
+ },
+ {
+  "termino": "theta",
+  "d": "Lo que pierde una opción cada día por el paso del tiempo, si nada más cambia. Crece al acercarse el vencimiento."
+ },
+ {
+  "termino": "dentro del dinero",
+  "alias": [
+   "fuera del dinero",
+   "en el dinero"
+  ],
+  "d": "Una opción está dentro del dinero si ejercerla hoy daría algo; fuera, si no daría nada; en el dinero, si el precio de la acción y el de ejercicio coinciden."
  }
 ]

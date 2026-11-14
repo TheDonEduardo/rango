@@ -37,6 +37,9 @@ function render(){
   if(ses.view==='home'&&S.legal<LEGAL_V){$app.innerHTML=legalHTML(true);window.scrollTo(0,0);return}
   $app.innerHTML=VISTAS[ses.view]();
   if(ses.view==='home'){
+    // Selector de rutas desplazable: la ruta elegida siempre a la vista, sin mover la página.
+    const tr=$app.querySelector('.tracks'),act=tr&&tr.querySelector('[aria-pressed="true"]');
+    if(act&&(act.offsetLeft+act.offsetWidth>tr.scrollLeft+tr.clientWidth||act.offsetLeft<tr.scrollLeft))tr.scrollLeft=act.offsetLeft-8;
     if(ses.goCur){const n=$app.querySelector('.node.current');if(n)n.scrollIntoView({block:'center'});ses.goCur=false}
     else window.scrollTo(0,ses.homeY);
   }else window.scrollTo(0,0);
