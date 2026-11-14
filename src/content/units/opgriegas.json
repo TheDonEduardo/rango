@@ -1,0 +1,213 @@
+{
+  "n": 3,
+  "id": "opgriegas",
+  "track": "derivados",
+  "title": "Las griegas",
+  "blurb": "Delta, theta, vega y gamma: qué mueve el precio de una opción.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Delta",
+      "texto": "La delta dice cuánto se mueve la opción por cada dólar de la acción. Va de 0 a 1 en las calls y de 0 a −1 en las puts. En el dinero ronda 0,5; muy dentro, se acerca a 1.",
+      "ejemplo": "Call con delta 0,60: si la acción sube 1 $, la call sube unos 0,60 $."
+    },
+    {
+      "id": "g2",
+      "titulo": "Delta como acciones",
+      "texto": "Multiplicada por 100 y por el número de contratos, la delta da las acciones equivalentes de tu posición. Sirve para comparar su riesgo con el de comprar acciones.",
+      "ejemplo": "3 contratos con delta 0,40: como tener 120 acciones."
+    },
+    {
+      "id": "g3",
+      "titulo": "Theta y vega",
+      "texto": "La theta es lo que pierde la opción cada día. La vega, lo que gana o pierde por cada punto de volatilidad implícita. Tras un dato esperado, la volatilidad cae y la prima con ella.",
+      "ejemplo": "Vega de 0,12 y la volatilidad del 60 % al 35 %: la call pierde 3,00 $."
+    },
+    {
+      "id": "g4",
+      "titulo": "Gamma y el vencimiento",
+      "texto": "La gamma mide cuánto cambia la delta. Cerca del vencimiento, gamma y theta se disparan: la opción reacciona mucho al precio y pierde valor muy deprisa si no llega.",
+      "ejemplo": "Call barata a 3 días del vencimiento: o se mueve ya, o vence sin valor."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "op5",
+      "title": "Delta",
+      "ex": [
+        {
+          "id": "op5-1",
+          "t": "choice",
+          "q": "Una call tiene una delta de 0,60. Si la acción sube 1 $, ¿qué le pasa a la call?",
+          "opts": [
+            "Sube unos 0,60 $",
+            "Sube 1 $, igual que la acción",
+            "Baja unos 0,60 $",
+            "Sube un 60 %"
+          ],
+          "a": 0,
+          "why": "La delta dice cuánto se mueve la opción por cada dólar de la acción. Con 0,60, la call gana unos 60 céntimos por cada dólar que sube la acción.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "La call solo se mueve como la acción si su delta es 1.",
+            "Una call con delta positiva sube cuando sube la acción.",
+            "La delta mide dólares por dólar de la acción, no un porcentaje."
+          ]
+        },
+        {
+          "id": "op5-2",
+          "t": "num",
+          "q": "Tienes 3 contratos de una call con delta 0,40. ¿A cuántas acciones equivale tu posición?",
+          "unit": "acc.",
+          "a": 120,
+          "why": "3 × 100 × 0,40 = 120 acciones. Si la acción sube 1 $, tu posición gana unos 120 $: así se compara el riesgo de las opciones con el de las acciones.",
+          "guia": "g2"
+        },
+        {
+          "id": "op5-3",
+          "t": "num",
+          "q": "Una put tiene una delta de −0,30. Si la acción cae 2 $, ¿cuánto sube la put por acción, aproximadamente?",
+          "unit": "$",
+          "a": 0.6,
+          "why": "2 × 0,30 = 0,60 $. La delta de una put es negativa: gana cuando la acción cae.",
+          "tol": 0.006,
+          "guia": "g1"
+        },
+        {
+          "id": "op5-4",
+          "t": "choice",
+          "q": "¿Qué delta tiene, aproximadamente, una call muy dentro del dinero?",
+          "opts": [
+            "Cerca de 1: se mueve casi como la acción",
+            "Cerca de 0: apenas reacciona a la acción",
+            "Cerca de 0,5: como una en el dinero",
+            "Negativa: gana cuando la acción cae"
+          ],
+          "a": 0,
+          "why": "Muy dentro del dinero, la call casi seguro se ejercerá: se comporta como tener las acciones. Muy fuera del dinero, la delta se acerca a 0.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Eso le pasa a una call muy fuera del dinero.",
+            "Una delta de 0,5 corresponde a una opción en el dinero.",
+            "La delta de una call es siempre positiva: la negativa es la de las puts."
+          ]
+        },
+        {
+          "id": "op5-5",
+          "t": "slide",
+          "q": "Quieres una posición equivalente a 200 acciones con calls de delta 0,50. Elige cuántos contratos compras.",
+          "label": "Contratos",
+          "min": 0,
+          "max": 8,
+          "step": 1,
+          "start": 7,
+          "a": 4,
+          "unit": "",
+          "why": "200 ÷ (100 × 0,50) = 4 contratos. La delta cambia cuando se mueve la acción, así que esa equivalencia hay que revisarla.",
+          "show": [
+            {
+              "label": "Acciones equivalentes",
+              "k": 50,
+              "unit": "acc."
+            }
+          ],
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "op6",
+      "title": "Theta y vega",
+      "ex": [
+        {
+          "id": "op6-1",
+          "t": "choice",
+          "q": "¿Qué mide la vega de una opción?",
+          "opts": [
+            "Cuánto cambia su precio si sube la volatilidad implícita",
+            "Cuánto pierde cada día por el paso del tiempo",
+            "Cuánto cambia su precio si la acción sube 1 $",
+            "Cuánto cambia su delta si la acción sube 1 $"
+          ],
+          "a": 0,
+          "why": "La vega mide la sensibilidad a la volatilidad implícita: cuánto sube la prima por cada punto que sube la volatilidad que descuenta el mercado.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Eso lo mide la theta.",
+            "Eso lo mide la delta.",
+            "Eso lo mide la gamma."
+          ]
+        },
+        {
+          "id": "op6-2",
+          "t": "num",
+          "q": "Una call vale 5,00 $ y tiene una vega de 0,15 por punto de volatilidad. Si la volatilidad implícita sube del 30 % al 34 %, ¿cuánto valdrá, sin otros cambios?",
+          "unit": "$",
+          "a": 5.6,
+          "why": "4 puntos × 0,15 = 0,60 $: la call pasa de 5,00 $ a 5,60 $ aunque la acción no se mueva.",
+          "tol": 0.006,
+          "guia": "g3"
+        },
+        {
+          "id": "op6-3",
+          "t": "num",
+          "q": "Compras una call a 6,00 $ antes de resultados, con una volatilidad implícita del 60 %. Tras el dato baja al 35 % y la acción no se mueve. Con una vega de 0,12, ¿cuánto pierde la call por acción?",
+          "unit": "$",
+          "a": 3,
+          "why": "25 puntos × 0,12 = 3,00 $: la mitad de la prima. Tras un dato, la volatilidad implícita suele desplomarse porque la incertidumbre ya ha pasado.",
+          "guia": "g3"
+        },
+        {
+          "id": "op6-4",
+          "t": "match",
+          "q": "Empareja cada griega con lo que mide.",
+          "pairs": [
+            [
+              "Delta",
+              "Sensibilidad al precio de la acción"
+            ],
+            [
+              "Theta",
+              "Pérdida diaria por el paso del tiempo"
+            ],
+            [
+              "Vega",
+              "Sensibilidad a la volatilidad implícita"
+            ],
+            [
+              "Gamma",
+              "Cuánto cambia la delta"
+            ]
+          ],
+          "why": "Las griegas descomponen el precio de una opción en lo que lo mueve: la acción, el tiempo y la volatilidad.",
+          "guia": "g3"
+        },
+        {
+          "id": "op6-5",
+          "t": "choice",
+          "q": "Compras una call barata a 3 días del vencimiento esperando una subida. ¿Qué griega juega más en tu contra?",
+          "opts": [
+            "La theta: pierde valor muy deprisa cada día",
+            "La vega: la volatilidad siempre baja al final",
+            "La delta: es negativa en las calls",
+            "La gamma: impide que la call suba"
+          ],
+          "a": 0,
+          "why": "En los últimos días, el valor temporal se evapora muy deprisa. Si la subida no llega ya, la call vence sin valor.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "La vega no es lo que más pesa al final: la volatilidad no siempre baja.",
+            "La delta de una call nunca es negativa.",
+            "La gamma no impide subir: hace que la delta cambie deprisa."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

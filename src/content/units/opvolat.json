@@ -1,0 +1,179 @@
+{
+  "n": 4,
+  "id": "opvolat",
+  "track": "derivados",
+  "title": "Volatilidad implícita",
+  "blurb": "Qué movimiento descuenta la prima y qué pasa después de un dato.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Volatilidad implícita",
+      "texto": "Es la volatilidad que descuenta el precio de las opciones: lo que el mercado espera que se mueva la acción. Cuanto más alta, más cara la prima.",
+      "ejemplo": "Volatilidad del 60 % antes de resultados frente al 35 % habitual: primas caras."
+    },
+    {
+      "id": "g2",
+      "titulo": "El movimiento descontado",
+      "texto": "Para un plazo, multiplica la volatilidad anual por la raíz del plazo en años. Antes de un dato, la suma de la call y la put en el dinero entre el precio da el movimiento esperado.",
+      "ejemplo": "32 % × √(1/12) = 9,2 % en un mes. Call de 2,10 $ y put de 1,90 $ con la acción a 50 $: 8 %."
+    },
+    {
+      "id": "g3",
+      "titulo": "Cara o barata",
+      "texto": "Comprar opciones con la volatilidad alta exige un movimiento mayor que el descontado. Si el movimiento es menor, pierdes aunque aciertes la dirección.",
+      "ejemplo": "Rango esperado del 10 % con la acción a 80 $: hasta 88 $."
+    },
+    {
+      "id": "g4",
+      "titulo": "Después del dato",
+      "texto": "Tras resultados, la volatilidad implícita se desploma. Quien compró opciones pierde por la vega; quien las vendió cobra esa caída.",
+      "ejemplo": "Call y put por 4,00 $ con la acción a 50 $; sube a 53 $: pierdes 1 $."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "op7",
+      "title": "Qué descuenta la prima",
+      "ex": [
+        {
+          "id": "op7-1",
+          "t": "choice",
+          "q": "¿Qué es la volatilidad implícita?",
+          "opts": [
+            "La volatilidad futura que descuenta el precio de la opción",
+            "La volatilidad que tuvo la acción el último año",
+            "La diferencia entre el máximo y el mínimo del día",
+            "La comisión que cobra el mercado por cada contrato"
+          ],
+          "a": 0,
+          "why": "Es la volatilidad que hace cuadrar la prima con su precio de mercado: lo que el mercado espera que se mueva la acción hasta el vencimiento.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Esa es la volatilidad histórica: mira atrás, no lo que descuenta el precio.",
+            "Eso es el rango del día, no una volatilidad anualizada.",
+            "No es una comisión: es parte de lo que explica la prima."
+          ]
+        },
+        {
+          "id": "op7-2",
+          "t": "num",
+          "q": "La acción cotiza a 100 $ con una volatilidad implícita del 32 % anual. ¿Qué movimiento descuenta para un mes? Usa volatilidad × √(1/12) y redondea a 1 decimal.",
+          "unit": "%",
+          "a": 9.2,
+          "why": "32 % × √(1/12) = 32 × 0,289 = 9,2 %. El mercado espera que, unas dos de cada tres veces, la acción acabe el mes entre unos 90,80 $ y 109,20 $.",
+          "tol": 0.06,
+          "guia": "g2"
+        },
+        {
+          "id": "op7-3",
+          "t": "num",
+          "q": "Antes de resultados, la call y la put en el dinero (ejercicio 50 $) cuestan 2,10 $ y 1,90 $. ¿Qué movimiento, en %, descuenta el mercado con la acción a 50 $?",
+          "unit": "%",
+          "a": 8,
+          "why": "2,10 + 1,90 = 4,00 $, y 4,00 ÷ 50 = 8 %. Si crees que se moverá menos, comprar esas opciones pierde aunque aciertes la dirección.",
+          "guia": "g2"
+        },
+        {
+          "id": "op7-4",
+          "t": "choice",
+          "q": "La volatilidad implícita de una acción está en su nivel más alto del año. ¿Qué implica para quien compra opciones?",
+          "opts": [
+            "Paga primas caras: necesita un movimiento mayor",
+            "Paga primas baratas: buen momento para comprar",
+            "No cambia nada: la prima depende solo del precio",
+            "Su pérdida máxima deja de ser la prima pagada"
+          ],
+          "a": 0,
+          "why": "Con la volatilidad alta, las primas son caras. Para ganar, el movimiento tiene que superar lo que ya descuenta el mercado, y si la volatilidad vuelve a bajar, la prima pierde valor.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Con la volatilidad alta, las primas son caras, no baratas.",
+            "La prima depende también del tiempo y de la volatilidad, no solo del precio.",
+            "Quien compra nunca pierde más que la prima, sea cual sea la volatilidad."
+          ]
+        }
+      ],
+      "ultimo": 4
+    },
+    {
+      "id": "op8",
+      "title": "Comprar o vender volatilidad",
+      "ex": [
+        {
+          "id": "op8-1",
+          "t": "choice",
+          "q": "Compras una call antes de resultados. La empresa bate y la acción sube un 3 %, pero tu call vale menos que ayer. ¿Por qué?",
+          "opts": [
+            "La volatilidad implícita se desplomó tras el dato",
+            "El bróker ajusta las calls después de resultados",
+            "La delta de la call se volvió negativa",
+            "Las calls no pueden subir el día de resultados"
+          ],
+          "a": 0,
+          "why": "Antes del dato, la prima incluía mucha incertidumbre. Al publicarse, la volatilidad cae y la prima pierde más por la vega de lo que gana por la delta.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "El bróker no ajusta el precio de las opciones: lo fija el mercado.",
+            "La delta de una call nunca es negativa.",
+            "Pueden subir si el movimiento supera lo descontado."
+          ]
+        },
+        {
+          "id": "op8-2",
+          "t": "num",
+          "q": "Compras la call y la put en el dinero por 4,00 $ en total, con la acción a 50 $. Tras el dato sube a 53 $ y la put vence sin valor. ¿Cuánto pierdes por acción al vencimiento?",
+          "unit": "$",
+          "a": 1,
+          "why": "La call vale 53 − 50 = 3 $ y pagaste 4 $: pierdes 1 $. La acción se movió un 6 %, menos que el 8 % que descontaba el mercado.",
+          "guia": "g4"
+        },
+        {
+          "id": "op8-3",
+          "t": "choice",
+          "q": "¿Quién gana cuando la volatilidad implícita está alta y después baja?",
+          "opts": [
+            "Quien vendió opciones y cobró esas primas",
+            "Quien compró opciones justo antes",
+            "Quien compró acciones con ese dinero",
+            "Nadie: la volatilidad no afecta al precio"
+          ],
+          "a": 0,
+          "why": "Quien vende opciones cobra la prima y gana si la volatilidad baja o el movimiento es menor de lo esperado. A cambio, asume el riesgo de un movimiento grande.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Pagó una prima cara y la volatilidad, al bajar, se la come.",
+            "La volatilidad implícita afecta a las opciones, no a quien solo tiene acciones.",
+            "Afecta, y mucho: es lo que mide la vega."
+          ]
+        },
+        {
+          "id": "op8-4",
+          "t": "slide",
+          "q": "La acción cotiza a 80 $ y el mercado descuenta un movimiento del 10 % hasta el vencimiento. Mueve el límite superior del rango esperado.",
+          "label": "Límite superior",
+          "min": 80,
+          "max": 100,
+          "step": 1,
+          "start": 82,
+          "a": 88,
+          "unit": "$",
+          "why": "80 × 1,10 = 88 $. Por encima de ese nivel, el movimiento supera lo descontado: es lo que necesita quien compra una call para ganar a la volatilidad.",
+          "show": [
+            {
+              "label": "Subida desde 80 $",
+              "k": 1.25,
+              "b": -100,
+              "unit": "%"
+            }
+          ],
+          "guia": "g3"
+        }
+      ],
+      "ultimo": 4
+    }
+  ]
+}

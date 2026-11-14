@@ -573,5 +573,21 @@
    "en el dinero"
   ],
   "d": "Una opción está dentro del dinero si ejercerla hoy daría algo; fuera, si no daría nada; en el dinero, si el precio de la acción y el de ejercicio coinciden."
+ },
+ {
+  "termino": "delta",
+  "d": "Cuánto se mueve el precio de una opción por cada dólar que se mueve la acción: de 0 a 1 en las calls y de 0 a −1 en las puts."
+ },
+ {
+  "termino": "gamma",
+  "d": "Cuánto cambia la delta de una opción cuando la acción se mueve. Se dispara cerca del vencimiento."
+ },
+ {
+  "termino": "vega",
+  "d": "Cuánto cambia el precio de una opción por cada punto que se mueve la volatilidad implícita."
+ },
+ {
+  "termino": "volatilidad implícita",
+  "d": "La volatilidad que descuenta el precio de las opciones: lo que el mercado espera que se mueva la acción hasta el vencimiento."
  }
 ]
