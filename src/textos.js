@@ -136,7 +136,7 @@ export const t={
 
   // Simulador de aportaciones
   calcPregunta:'¿Cuánto tendrías?',
-  calcCtrl:{inicial:'Capital inicial',mensual:'Aportación mensual',anos:'Años',rent:'Rentabilidad anual',ter:'Comisión anual',ter2:'Comisión de la otra cartera',caida:'Tamaño de la caída',anoCaida:'Año de la caída'},
+  calcCtrl:{inicial:'Capital inicial',mensual:'Aportación mensual',anos:'Años',rent:'Rentabilidad anual',ter:'Comisión anual',ter2:'Comisión de la otra cartera',caida:'Tamaño de la caída',anoCaida:'Año de la caída',peso:'Peso en acciones'},
   simularCaida:'Simular una caída de la bolsa',
   caidaRes:(c,a,v,d)=>`Con una caída del ${c} % en el año ${a} acabarías con <b>${v} €</b>: ${d} € menos que sin ella. Si sigues aportando, durante la caída compras más barato.`,
   anos:n=>`${n} ${pl(n,'año','años')}`, mil:x=>`${x} mil`, anoN:n=>`Año ${n}`,
@@ -144,6 +144,11 @@ export const t={
   comparacion:(t2,v,dif,mas,t1)=>`Con un ${t2} % de comisión tendrías <b>${v} €</b>: ${dif} € ${mas?'más':'menos'} que con un ${t1} %.`,
   valorFinal:'Valor final', aportado:'Aportado', rendimientos:'Rendimientos', comisiones:'Se llevan las comisiones',
   carteraCon:x=>`Cartera con un ${x} %`, dineroAportado:'Dinero aportado',
+  histTitulo:'Con datos reales', histActivar:(a,b)=>`Probar una cartera de acciones y bonos con lo que pasó de ${a} a ${b}`,
+  histFinal:'Con rebalanceo anual', histSin:'Sin rebalancear', histCon:'Con rebalanceo anual', histPeor:'Peor año', histCaida:'Mayor caída',
+  histRes:(p,a,b,pf)=>`10.000 $ invertidos a principios de ${a} con un ${p} % en acciones, hasta finales de ${b}. Sin rebalancear, las acciones habrían acabado pesando un ${pf} %: más riesgo del que elegiste.`,
+  histAlt:'Valor de la cartera año a año, con y sin rebalanceo',
+  histNota:(f,a,b)=>`Rentabilidades anuales de ${a} a ${b} de los ETF SPY (S&P 500) e IEF (deuda de EE. UU. a 7-10 años), con dividendos y cupones reinvertidos, en dólares y sin impuestos. Datos de ${f}. El peor año y la mayor caída se miden a cierre de año: dentro del año fueron mayores. Lo que pasó no garantiza lo que pasará.`,
   calcNota:'Supone una rentabilidad constante cada año, algo que nunca ocurre: habrá años de fuertes caídas. Es una herramienta de formación, no una previsión ni una recomendación.',
 
   // Estadísticas

@@ -525,6 +525,20 @@ const r3 = T.aportaciones({inicial: 5000, mensual: 0, anos: 10, rent: 7, ter: 0}
 if (!cerca(r1.final, 90687.73) || r1.aportado !== 48000 || !cerca(r2.final, 74363.05) || !cerca(r2.sinComision, 90687.73) || !cerca(r3.final, 5000 * 1.07 ** 10) || r1.serie.length !== 21)
   errs.push(`simulador de aportaciones: ${r1.final} ${r2.final} ${r3.final}`);
 T.setTrack('pasiva'); T.skipBasics();
+// Simulador con datos reales: archivo bien formado y cálculo comprobado a mano con dos años inventados.
+{
+  const hp = path.join(root, 'src/content/historico.json');
+  if (fs.existsSync(hp)) {
+    const h = JSON.parse(fs.readFileSync(hp, 'utf8'));
+    if (!h.fuente || h.anos.length < 15 || h.acciones.length !== h.anos.length || h.bonos.length !== h.anos.length || h.anos.some((a, i) => i && a !== h.anos[i - 1] + 1)
+      || h.acciones.concat(h.bonos).some(v => typeof v !== 'number' || v < -90 || v > 150)) errs.push('historico.json mal formado');
+  }
+  const H2 = {anos: [1, 2], acciones: [100, -50], bonos: [0, 0]};
+  const con = T.historia(50, true, H2), sin = T.historia(50, false, H2);
+  // Con rebalanceo: 15.000 tras el año 1 (7.500 + 7.500) y 11.250 tras el 2. Sin él: 10.000 + 5.000 y luego 5.000 + 5.000.
+  if (Math.abs(con.final - 11250) > 0.01 || Math.abs(sin.final - 10000) > 0.01 || Math.abs(con.peor - 25) > 0.01 || Math.abs(sin.caida - 100 / 3) > 0.01 || Math.abs(sin.pesoFinal - 50) > 0.01)
+    errs.push(`simulador con datos reales: ${con.final} ${sin.final} ${con.peor} ${sin.caida}`);
+}
 if (!T.homeHTML().includes('data-act="calc"')) errs.push('la ruta Pasiva no ofrece el simulador de aportaciones');
 T.openCalc();
 if (!app.innerHTML.includes('¿Cuánto tendrías?') || !app.innerHTML.includes('calcsvg') || /NaN|undefined/.test(app.innerHTML)) errs.push('la vista del simulador de aportaciones no se dibuja bien');

@@ -14,7 +14,7 @@ import {medir} from './medicion.js';
 import {homeHTML} from './views/home.js';
 import {lessonHTML,resultHTML,failHTML} from './views/lesson.js';
 import {simHTML,simResHTML,simInfo,simValid,simSave,simRecord,simHist,simulate,SIM_PLACE} from './views/sim.js';
-import {calcHTML,calcOutHTML,CALC_CTRL,aportaciones} from './views/calc.js';
+import {calcHTML,calcOutHTML,histOutHTML,historia,CALC_CTRL,aportaciones} from './views/calc.js';
 import {legalHTML,privacidadHTML,LEGAL_V} from './views/legal.js';
 import {statsHTML,statRecord,STATS_L,flojos} from './views/stats.js';
 import {guiaHTML,abrirGuia,guiaPendiente} from './views/guia.js';
@@ -294,10 +294,11 @@ $app.addEventListener('input',e=>{
   if(e.target.id==='glos-q'){$app.querySelector('#glosLista').innerHTML=listaGlosario(e.target.value);return}
   // Deslizadores del simulador de aportaciones: actualizan solo el resultado, sin redibujar (no se pierde el foco).
   const k=e.target.dataset&&e.target.dataset.calc;
-  if((k==='cmp'||k==='crash')&&ses.view==='calc'){S.calc[k]=e.target.checked;save();render();const c=$app.querySelector('#calc-'+k);if(c)c.focus({preventScroll:true});return}
+  if((k==='cmp'||k==='crash'||k==='hist')&&ses.view==='calc'){S.calc[k]=e.target.checked;save();render();const c=$app.querySelector('#calc-'+k);if(c)c.focus({preventScroll:true});return}
   if(k&&ses.view==='calc'){
     S.calc[k]=+e.target.value;  // se guarda al soltar (evento change)
     const c=CALC_CTRL.find(x=>x[0]===k);$app.querySelector('#out-'+k).textContent=c[5](S.calc[k]);
+    if(k==='peso'){$app.querySelector('#histOut').innerHTML=histOutHTML();return}
     $app.querySelector('#calcOut').innerHTML=calcOutHTML();return;
   }
   const run=ses.run;
@@ -363,7 +364,7 @@ if(typeof navigator!=='undefined'&&'serviceWorker' in navigator&&typeof location
 }
 
 // API mínima para tests (test/smoke.mjs)
-export const api={sumarRacha,glos,openGlosario:()=>{ses.view='glosario';render()},migrar,exportar,leerCopia,importar,FLAT,CASOS,SEMANA,PLACEMENT,simulate,simRecord,simHist,aportaciones,
+export const api={sumarRacha,glos,openGlosario:()=>{ses.view='glosario';render()},migrar,exportar,leerCopia,importar,FLAT,CASOS,SEMANA,PLACEMENT,simulate,simRecord,simHist,aportaciones,historia,
   openCalc:()=>{ses.view='calc';render()},openSim:()=>{ses.simDraft=null;ses.view='sim';render()},openSimRes:()=>{ses.view='simres';render()},
   openStats:()=>{ses.view='stats';render()},act:(a,ds={})=>ACCIONES[a]({dataset:ds}),getView:()=>ses.view,startWeak:()=>startRun(STATS_L),
   simDraftSet:p=>{ses.simDraft=p},simSave,goHome:()=>{ses.view='home';render()},startTest:()=>startRun(TEST_L),startNivel:tr=>startRun({id:'nivel-'+tr,title:t.pruebaNivel,kind:'nivel',track:tr}),srsDue,

@@ -214,6 +214,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 .ccheck{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600}
 .ccheck input{width:20px;height:20px;accent-color:var(--up)}
 .cmpres{margin:12px 0 0;font-size:15px}
+.calch{margin:28px 0 12px;font:700 20px/1.2 var(--font-display)}
 .pfine{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px 14px;margin-top:10px}
 .pf{display:flex;align-items:center;gap:6px}
 .pf span{font-weight:600;font-size:14px;color:var(--ci,var(--c));min-width:64px}
