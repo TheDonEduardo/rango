@@ -313,7 +313,7 @@ for (const ex of enRepaso) { const r = srs[ex.id]; if (!r || r.step !== 1 || r.d
 {
   const ex = enRepaso[0], st = T.getState();
   const otras = {}; for (const u in st.srs) if (u !== ex.id) { otras[u] = st.srs[u].due; st.srs[u].due = '2999-01-01'; }
-  for (let k = 1; k < 4; k++) { st.srs[ex.id].due = dk(hoy); T.startSrs(); give(ex, right(ex)); T.check(); T.next(); }
+  for (let k = 1; k < 4; k++) { st.srs[ex.id].due = dk(hoy); T.startSrs(); const cur = T.getRun().queue[0]; give(cur, right(cur)); T.check(); T.next(); }  // cur: el repaso puede servir una variante numérica
   for (const u in otras) if (st.srs[u]) st.srs[u].due = otras[u];
   if (st.srs[ex.id] || !st.aprendidos[ex.id]) errs.push('un ejercicio que supera todos los intervalos no queda aprendido');
   if (!T.homeHTML().includes('aprendido') && Object.keys(st.srs).some(u => st.srs[u].due <= dk(hoy))) errs.push('el inicio no muestra los aprendidos');
