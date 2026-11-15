@@ -616,5 +616,13 @@
  {
   "termino": "collar",
   "d": "Protección de unas acciones comprando una put y vendiendo una call: la put pone suelo a la pérdida y la call, que la paga, pone techo a la ganancia."
+ },
+ {
+  "termino": "rolar",
+  "d": "Cerrar una opción y abrir otra parecida con un vencimiento posterior, a veces con otro precio de ejercicio."
+ },
+ {
+  "termino": "asignación",
+  "d": "Cuando ejercen una opción que has vendido: te toca comprar o entregar 100 acciones por contrato al precio de ejercicio."
  }
 ]

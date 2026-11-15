@@ -1,0 +1,196 @@
+{
+  "n": 9,
+  "id": "opgestion",
+  "track": "derivados",
+  "title": "Gestión y ajustes",
+  "blurb": "Cuándo cerrar, cuándo rolar y qué pasa si te asignan.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Recoger beneficios",
+      "texto": "En una opción vendida, cuando ya has ganado la mayor parte de la prima, lo que queda no compensa el riesgo: ciérrala. En una comprada que ha subido mucho, vende al menos una parte.",
+      "ejemplo": "Put vendida a 2,00 $ que vale 0,40 $: llevas el 80 % de la ganancia máxima."
+    },
+    {
+      "id": "g2",
+      "titulo": "Límite de pérdida",
+      "texto": "Una opción comprada puede perderlo todo y el tiempo corre en contra. Fija antes de entrar a qué precio la cierras, igual que un stop.",
+      "ejemplo": "Call comprada a 3,00 $ con límite del 50 %: cierras en 1,50 $."
+    },
+    {
+      "id": "g3",
+      "titulo": "Rolar",
+      "texto": "Rolar es cerrar una opción y abrir otra con un vencimiento posterior. Sirve para prolongar una estrategia; usado para no aceptar una pérdida, solo la aplaza.",
+      "ejemplo": "Recomprar a 1,80 $ y vender el mes siguiente a 2,60 $: crédito de 0,80 $."
+    },
+    {
+      "id": "g4",
+      "titulo": "Asignación",
+      "texto": "Si vendes opciones, te pueden ejercer: entregas o compras 100 acciones por contrato. Con las calls ocurre sobre todo dentro del dinero y antes de un dividendo.",
+      "ejemplo": "Dos puts de 45 $ asignadas: pagas 9.000 $."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "op17",
+      "title": "Cerrar a tiempo",
+      "ex": [
+        {
+          "id": "op17-1",
+          "t": "choice",
+          "q": "Vendiste una put por 2,00 $ y ahora vale 0,40 $, con tres semanas hasta el vencimiento. ¿Qué haces?",
+          "opts": [
+            "Recomprarla: queda poco que ganar y todo el riesgo",
+            "Esperar al vencimiento para ganar los 0,40 $",
+            "Vender otra put igual para cobrar el doble",
+            "Nada: una put vendida no se puede cerrar antes"
+          ],
+          "a": 0,
+          "why": "Ya has ganado 1,60 $ de los 2,00 $ posibles. Mantenerla tres semanas más arriesga una caída fuerte a cambio de 0,40 $: cerrar libera el riesgo y el efectivo.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Arriesgas tres semanas de posibles caídas por solo 0,40 $.",
+            "Doblar la posición dobla también el riesgo que querías reducir.",
+            "Sí se puede: basta con recomprar la put en el mercado."
+          ]
+        },
+        {
+          "id": "op17-2",
+          "t": "num",
+          "q": "En esa put vendida por 2,00 $ que ahora vale 0,40 $, ¿qué porcentaje de la ganancia máxima llevas ya?",
+          "unit": "%",
+          "a": 80,
+          "why": "(2,00 − 0,40) ÷ 2,00 = 80 %. Muchos vendedores de opciones cierran al capturar entre la mitad y las tres cuartas partes de la prima.",
+          "guia": "g1"
+        },
+        {
+          "id": "op17-3",
+          "t": "num",
+          "q": "Compras una call por 3,00 $ con la regla de cerrarla si pierde la mitad de su valor. ¿A qué precio de la opción cierras?",
+          "unit": "$",
+          "a": 1.5,
+          "why": "3,00 × 50 % = 1,50 $. Una opción comprada puede perderlo todo: fijar el límite antes de entrar evita esperar un rebote que el tiempo hace cada vez más difícil.",
+          "tol": 0.006,
+          "guia": "g2"
+        },
+        {
+          "id": "op17-4",
+          "t": "choice",
+          "q": "Tu call comprada vale el doble a dos semanas del vencimiento. ¿Qué es lo más sensato?",
+          "opts": [
+            "Vender al menos una parte y asegurar la ganancia",
+            "Mantener todo: aún puede valer el triple",
+            "Comprar más contratos al precio actual",
+            "Esperar al último día para decidir qué hacer"
+          ],
+          "a": 0,
+          "why": "En las últimas semanas la theta se acelera y un pequeño retroceso de la acción borra la ganancia. Vender una parte asegura el beneficio y deja correr el resto.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Puede, pero un retroceso pequeño borra la ganancia, y la theta corre.",
+            "Comprar más cara y con menos tiempo empeora la relación entre riesgo y beneficio.",
+            "El último día el valor temporal ha desaparecido: esperar es regalarlo."
+          ]
+        },
+        {
+          "id": "op17-5",
+          "t": "num",
+          "q": "Compraste 4 contratos de una call a 2,50 $ y vendes 2 de ellos a 5,00 $. ¿Qué porcentaje del coste total recuperas?",
+          "unit": "%",
+          "a": 100,
+          "why": "Coste: 4 × 100 × 2,50 = 1.000 $. Venta: 2 × 100 × 5,00 = 1.000 $. Recuperas el 100 %: los dos contratos que quedan ya no pueden hacerte perder.",
+          "guia": "g1"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "op18",
+      "title": "Rolar y asignación",
+      "ex": [
+        {
+          "id": "op18-1",
+          "t": "choice",
+          "q": "¿Qué es rolar una opción?",
+          "opts": [
+            "Cerrarla y abrir otra con un vencimiento posterior",
+            "Ejercerla antes de la fecha de vencimiento",
+            "Comprar el doble de contratos de la misma",
+            "Cambiarla por acciones de la misma empresa"
+          ],
+          "a": 0,
+          "why": "Rolar es cerrar la posición actual y abrir otra parecida más adelante en el tiempo, a veces con otro ejercicio. Se usa para prolongar una estrategia o para ganar tiempo.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Eso es el ejercicio anticipado, no rolar.",
+            "Eso es aumentar la posición, no desplazarla en el tiempo.",
+            "Las opciones no se canjean por acciones: se ejercen o se cierran."
+          ]
+        },
+        {
+          "id": "op18-2",
+          "t": "num",
+          "q": "Recompras por 1,80 $ la call que vendiste y vendes la del mes siguiente por 2,60 $. ¿Cuánto cobras por acción al rolar?",
+          "unit": "$",
+          "a": 0.8,
+          "why": "2,60 − 1,80 = 0,80 $ de crédito neto. Rolar con crédito significa que cobras por alargar el compromiso un mes más.",
+          "tol": 0.006,
+          "guia": "g3"
+        },
+        {
+          "id": "op18-3",
+          "t": "choice",
+          "q": "Llevas tres meses rolando una put vendida que va en pérdidas. ¿Qué riesgo corres?",
+          "opts": [
+            "Aplazar la pérdida mientras sigue creciendo",
+            "Ninguno: rolando nunca se llega a perder",
+            "Que el bróker te cobre impuestos de más",
+            "Que la put se convierta en una call"
+          ],
+          "a": 0,
+          "why": "Rolar no borra la pérdida: la aplaza y mantiene el riesgo abierto. Decide de antemano en qué punto aceptas la pérdida y cierras.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Rolar no evita la pérdida: la deja abierta y puede hacerse mayor.",
+            "El bróker no decide tus impuestos: los declaras tú.",
+            "Una put no cambia de tipo por rolarla."
+          ]
+        },
+        {
+          "id": "op18-4",
+          "t": "choice",
+          "q": "¿Cuándo es más probable que te ejerzan antes de tiempo una call vendida?",
+          "opts": [
+            "Dentro del dinero y justo antes de un dividendo",
+            "Fuera del dinero y a meses del vencimiento",
+            "El mismo día en que la vendes",
+            "Cuando la acción lleva días sin moverse"
+          ],
+          "a": 0,
+          "why": "Quien tiene la call puede ejercerla para cobrar el dividendo si le compensa más que el valor temporal que pierde. Vigila las fechas de dividendo de tus calls vendidas.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Fuera del dinero, ejercer sería comprar más caro que en el mercado.",
+            "Recién vendida conserva todo su valor temporal: nadie lo regala ejerciendo.",
+            "Que la acción esté quieta no da ningún motivo para ejercer antes."
+          ]
+        },
+        {
+          "id": "op18-5",
+          "t": "num",
+          "q": "Te asignan 2 puts vendidas con ejercicio 45 $. ¿Cuántos miles de dólares tienes que pagar por las acciones?",
+          "unit": "mil $",
+          "a": 9,
+          "why": "2 × 100 × 45 $ = 9.000 $. La asignación te convierte en accionista: por eso el efectivo debe estar reservado desde el primer día.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

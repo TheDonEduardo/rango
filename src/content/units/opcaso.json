@@ -1,0 +1,200 @@
+{
+  "n": 11,
+  "id": "opcaso",
+  "track": "derivados",
+  "title": "Protege una posición",
+  "blurb": "Un collar antes de resultados, de la decisión al cierre y a los impuestos.",
+  "caso": true,
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Medir el riesgo",
+      "texto": "Antes de pensar en opciones, mide qué pesa la posición y qué movimiento descuenta el mercado. La suma de la call y la put en el dinero, entre el precio, da el movimiento esperado.",
+      "ejemplo": "200 acciones a 60 $ en una cuenta de 30.000 $: un 40 %. Call y put por 6,00 $: un 10 %."
+    },
+    {
+      "id": "g2",
+      "titulo": "La estrategia y sus números",
+      "texto": "Elige la estrategia por lo que necesitas: aquí, proteger sin vender y gastando poco. Calcula siempre el coste y la pérdida máxima antes de abrirla.",
+      "ejemplo": "Collar con put de 54 $ y call de 66 $: 80 $ de coste y 6,40 $ de pérdida máxima por acción."
+    },
+    {
+      "id": "g3",
+      "titulo": "Después del dato",
+      "texto": "Con el dato publicado, la protección ya ha hecho su trabajo: cierra las opciones. Recompra la call vendida si vale casi nada y vende la put con su ganancia.",
+      "ejemplo": "Put vendida a 4,20 $ y call recomprada a 0,05 $: pierde 6,25 $ por acción en lugar de 10 $."
+    },
+    {
+      "id": "g4",
+      "titulo": "Revisar y declarar",
+      "texto": "Las opciones cerradas dan ganancias o pérdidas patrimoniales del año, aunque conserves las acciones. Anota el resultado completo para saber si la protección mereció la pena.",
+      "ejemplo": "Ganancias de la put y de la call: a la base del ahorro de este año."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "zo1",
+      "title": "Elegir la estrategia",
+      "ex": [
+        {
+          "id": "zo1-1",
+          "t": "num",
+          "q": "Caso de Marta: tiene 200 acciones de Atlas a 60 $ en una cuenta de 30.000 $. ¿Qué peso tiene la posición?",
+          "unit": "%",
+          "a": 40,
+          "why": "200 × 60 $ = 12.000 $, y 12.000 ÷ 30.000 = 40 %. Es una posición muy concentrada: un mal resultado se nota en toda la cuenta.",
+          "guia": "g1"
+        },
+        {
+          "id": "zo1-2",
+          "t": "choice",
+          "q": "Atlas publica resultados en tres semanas. Marta no quiere vender, porque tributaría por la ganancia, ni pagar mucho por protegerse. ¿Qué estrategia encaja?",
+          "opts": [
+            "Un collar: comprar una put y vender una call",
+            "Comprar calls para ganar más si sube",
+            "Vender puts sobre la misma acción",
+            "Una call cubierta, sin comprar la put"
+          ],
+          "a": 0,
+          "why": "El collar pone suelo a la pérdida con la put y la paga casi entera con la call. Marta conserva sus acciones y sabe de antemano lo peor que puede pasar.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "Comprar calls añade riesgo a una posición que ya pesa demasiado.",
+            "Vender puts la obligaría a comprar más si la acción cae: lo contrario de protegerse.",
+            "La call cubierta cobra una prima, pero no pone suelo a la caída."
+          ]
+        },
+        {
+          "id": "zo1-3",
+          "t": "num",
+          "q": "La call y la put en el dinero (ejercicio 60 $) cuestan 3,10 $ y 2,90 $. ¿Qué movimiento descuenta el mercado para los resultados?",
+          "unit": "%",
+          "a": 10,
+          "why": "3,10 + 2,90 = 6,00 $, y 6,00 ÷ 60 = 10 %. El mercado espera que Atlas se mueva unos 6 $ arriba o abajo: el suelo y el techo del collar deben tenerlo en cuenta.",
+          "guia": "g1"
+        },
+        {
+          "id": "zo1-4",
+          "t": "num",
+          "q": "Marta compra la put de 54 $ por 2,40 $ y vende la call de 66 $ por 2,00 $, sobre sus 200 acciones. ¿Cuánto le cuesta el collar en total?",
+          "unit": "$",
+          "a": 80,
+          "why": "(2,40 − 2,00) × 200 = 0,40 × 200 = 80 $. Proteger 12.000 $ durante los resultados le cuesta 80 $.",
+          "guia": "g2"
+        },
+        {
+          "id": "zo1-5",
+          "t": "num",
+          "q": "Con ese collar (acciones a 60 $, put de 54 $, coste 0,40 $), ¿cuál es la pérdida máxima por acción?",
+          "unit": "$",
+          "a": 6.4,
+          "why": "(60 − 54) + 0,40 = 6,40 $. Aunque Atlas se hunda, Marta puede vender a 54 $.",
+          "tol": 0.006,
+          "guia": "g2"
+        },
+        {
+          "id": "zo1-6",
+          "t": "num",
+          "q": "Esa pérdida máxima de 6,40 $ en 200 acciones, ¿qué porcentaje de la cuenta de 30.000 $ supone? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 4.3,
+          "why": "6,40 × 200 = 1.280 $, y 1.280 ÷ 30.000 = 4,3 %. Sin collar, una caída del 20 % le costaría 2.400 $, un 8 % de la cuenta.",
+          "tol": 0.06,
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 6
+    },
+    {
+      "id": "zo2",
+      "title": "El resultado y el cierre",
+      "ex": [
+        {
+          "id": "zo2-1",
+          "t": "num",
+          "q": "Atlas decepciona y cae a 50 $. Sin collar, Marta perdería 10 $ por acción; con él, 6,40 $. ¿Cuántos dólares se ahorra en sus 200 acciones?",
+          "unit": "$",
+          "a": 720,
+          "why": "(10 − 6,40) × 200 = 3,60 × 200 = 720 $. Pagó 80 $ por una protección que le ha evitado 720 $ de pérdida.",
+          "guia": "g3"
+        },
+        {
+          "id": "zo2-2",
+          "t": "choice",
+          "q": "Tras la caída, la call de 66 $ que vendió vale 0,05 $. ¿Qué hace Marta con ella?",
+          "opts": [
+            "Recomprarla por casi nada y quitar el techo",
+            "Dejarla abierta hasta el vencimiento",
+            "Vender otra call igual por 0,05 $",
+            "Ejercerla para vender a 66 $"
+          ],
+          "a": 0,
+          "why": "Ya ha ganado casi toda la prima. Por 0,05 $ elimina el compromiso de vender a 66 $ y recupera toda la subida si la acción rebota.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Mantenerla arriesga perder una subida fuerte para ganar solo 0,05 $.",
+            "Vender otra dobla el compromiso de venta por una prima insignificante.",
+            "La call la vendió ella: no puede ejercerla, solo recomprarla."
+          ]
+        },
+        {
+          "id": "zo2-3",
+          "t": "num",
+          "q": "Marta vende por 4,20 $ la put que compró a 2,40 $. ¿Cuánto gana con la put en sus 200 acciones?",
+          "unit": "$",
+          "a": 360,
+          "why": "(4,20 − 2,40) × 200 = 1,80 × 200 = 360 $. La put ha cumplido su función: compensar parte de la caída de las acciones.",
+          "guia": "g3"
+        },
+        {
+          "id": "zo2-4",
+          "t": "num",
+          "q": "Resultado por acción: las acciones pierden 10 $, la put gana 1,80 $ y la call deja 1,95 $ (cobró 2,00 $ y la recompró a 0,05 $). ¿Cuánto pierde por acción en total?",
+          "unit": "$",
+          "a": 6.25,
+          "why": "10 − 1,80 − 1,95 = 6,25 $. Algo menos que el máximo de 6,40 $, porque vendió la put con valor temporal y recompró la call barata.",
+          "tol": 0.006,
+          "guia": "g3"
+        },
+        {
+          "id": "zo2-5",
+          "t": "choice",
+          "q": "Marta conserva las acciones. ¿Qué declara este año por la operación?",
+          "opts": [
+            "Las ganancias de la put y de la call",
+            "La pérdida de las acciones, aunque no venda",
+            "Nada hasta que venda las acciones",
+            "Solo la prima que pagó por la put"
+          ],
+          "a": 0,
+          "why": "La put y la call ya están cerradas: sus ganancias son patrimoniales y van a la base del ahorro de este año. La caída de las acciones no cuenta hasta que las venda.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Una pérdida no realizada no se declara: hace falta vender.",
+            "Las opciones ya están cerradas: tributan este año, venda o no las acciones.",
+            "Se declara el resultado de cada opción, no solo la prima pagada."
+          ]
+        },
+        {
+          "id": "zo2-6",
+          "t": "order",
+          "q": "Ordena el proceso que ha seguido Marta.",
+          "items": [
+            "Medir el peso y el riesgo de la posición",
+            "Ver qué movimiento descuenta el mercado",
+            "Elegir una estrategia con pérdida máxima conocida",
+            "Calcular el coste y la pérdida máxima",
+            "Cerrar las opciones después del dato",
+            "Anotar el resultado y los impuestos"
+          ],
+          "why": "Primero el riesgo, después lo que espera el mercado, luego la estrategia y sus números, y al final la gestión y la revisión. Las opciones van al servicio del plan, no al revés.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 6
+    }
+  ]
+}

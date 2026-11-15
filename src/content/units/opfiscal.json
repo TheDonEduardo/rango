@@ -1,0 +1,214 @@
+{
+  "n": 10,
+  "id": "opfiscal",
+  "track": "derivados",
+  "title": "Impuestos de las opciones",
+  "blurb": "Cómo tributan en España, cómo se compensan y qué apartar.",
+  "revisar": "2027-11",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Ganancia patrimonial",
+      "texto": "Para un particular, el resultado de las opciones es una ganancia o pérdida patrimonial y va a la base del ahorro, como las ventas de acciones. Tributa el año en que la operación se cierra o vence.",
+      "ejemplo": "Hasta 6.000 € de base del ahorro, el tipo es del 19 %."
+    },
+    {
+      "id": "g2",
+      "titulo": "Qué se declara",
+      "texto": "Si cierras antes del vencimiento, la diferencia entre lo cobrado y lo pagado. Si una opción comprada vence sin valor, pierdes la prima. Si una vendida vence sin ejercerse, ganas la prima. Las comisiones restan.",
+      "ejemplo": "Put comprada por 250 € y vendida por 610 €, con 10 € de gastos: 350 €."
+    },
+    {
+      "id": "g3",
+      "titulo": "Compensar",
+      "texto": "Ganancias y pérdidas de opciones, acciones y fondos se suman entre sí. Si el año acaba en pérdida, se guarda para los cuatro años siguientes, siempre que la declares.",
+      "ejemplo": "900 € de ganancia en acciones y 300 € de pérdida en opciones: tributas por 600 €."
+    },
+    {
+      "id": "g4",
+      "titulo": "Sin retención y en euros",
+      "texto": "El bróker no retiene nada: aparta tú el impuesto. Las operaciones en otra divisa se pasan a euros con el cambio de cada fecha, y con un bróker extranjero los cálculos son tuyos.",
+      "ejemplo": "Ganancia de 4.000 € al 19 %: 760 € que no son tuyos."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "op19",
+      "title": "Cómo tributan",
+      "ex": [
+        {
+          "id": "op19-1",
+          "t": "choice",
+          "q": "Eres un particular y ganas dinero comprando y vendiendo opciones. ¿Cómo tributa en el IRPF?",
+          "opts": [
+            "Como ganancia patrimonial en la base del ahorro",
+            "Como rendimiento del trabajo, igual que la nómina",
+            "No tributa hasta que retires el dinero del bróker",
+            "Como dividendo, con retención del bróker"
+          ],
+          "a": 0,
+          "why": "El resultado de las opciones es una ganancia o pérdida patrimonial y va a la base del ahorro, junto con las ventas de acciones y fondos. Tributa el año en que se cierra o vence la operación.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Los rendimientos del trabajo son el sueldo: las opciones van a la base del ahorro.",
+            "Tributa el año en que cierras la operación, saques o no el dinero.",
+            "No es un dividendo ni lleva retención."
+          ]
+        },
+        {
+          "id": "op19-2",
+          "t": "num",
+          "q": "Compras una call por 300 € y pagas 5 € de comisión. Vence sin valor. ¿Qué pérdida patrimonial declaras?",
+          "unit": "€",
+          "a": 305,
+          "why": "300 + 5 = 305 €. La prima pagada y las comisiones son tu pérdida, y se declara en el año del vencimiento.",
+          "guia": "g2"
+        },
+        {
+          "id": "op19-3",
+          "t": "num",
+          "q": "Compras una put por 250 € y la vendes por 610 €. Las comisiones suman 10 €. ¿Qué ganancia declaras?",
+          "unit": "€",
+          "a": 350,
+          "why": "610 − 250 − 10 = 350 €. Al cerrar antes del vencimiento, la ganancia es la diferencia entre lo cobrado y lo pagado, menos los gastos.",
+          "guia": "g2"
+        },
+        {
+          "id": "op19-4",
+          "t": "num",
+          "q": "Vendes una put y cobras 180 € de prima, con 3 € de comisión. Vence sin que te ejerzan. ¿Qué ganancia declaras?",
+          "unit": "€",
+          "a": 177,
+          "why": "180 − 3 = 177 €. La prima cobrada por una opción que vence sin ejercerse es una ganancia patrimonial del año en que vence.",
+          "guia": "g2"
+        },
+        {
+          "id": "op19-5",
+          "t": "choice",
+          "q": "¿Te retiene el bróker impuestos sobre las ganancias con opciones?",
+          "opts": [
+            "No: las pagas tú en la declaración del año siguiente",
+            "Sí: un 19 % en cada operación con ganancia",
+            "Sí, pero solo si el bróker es español",
+            "No, y además están exentas hasta 6.000 €"
+          ],
+          "a": 0,
+          "why": "Las ganancias patrimoniales con opciones no llevan retención. El dinero que ves en la cuenta no es todo tuyo: una parte es de Hacienda y hay que tenerla apartada.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "No hay retención sobre estas ganancias, ni del 19 % ni de otro tipo.",
+            "Tampoco retiene un bróker español en las ganancias con opciones.",
+            "No hay ningún mínimo exento: tributan desde el primer euro."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "op20",
+      "title": "Compensar y declarar",
+      "ex": [
+        {
+          "id": "op20-1",
+          "t": "num",
+          "q": "En el año ganas 900 € vendiendo acciones y pierdes 300 € con opciones. ¿Por cuánto tributas?",
+          "unit": "€",
+          "a": 600,
+          "why": "900 − 300 = 600 €. Las ganancias y pérdidas de acciones, fondos y opciones se suman entre sí dentro de la base del ahorro.",
+          "guia": "g3"
+        },
+        {
+          "id": "op20-2",
+          "t": "num",
+          "q": "Tu única renta del ahorro del año es una ganancia neta de 1.500 € con opciones. ¿Cuánto pagas?",
+          "table": {
+            "cols": [
+              "Base del ahorro",
+              "Tipo"
+            ],
+            "rows": [
+              [
+                "Hasta 6.000 €",
+                "19 %"
+              ],
+              [
+                "De 6.000 a 50.000 €",
+                "21 %"
+              ]
+            ],
+            "note": "Primeros tramos del IRPF (base del ahorro). Compruébalos cada año."
+          },
+          "unit": "€",
+          "a": 285,
+          "why": "1.500 € × 19 % = 285 €. Hasta 6.000 € todo va al primer tramo.",
+          "guia": "g3"
+        },
+        {
+          "id": "op20-3",
+          "t": "choice",
+          "q": "Este año pierdes 3.000 € netos con opciones y no tienes otras ganancias. ¿Qué pasa con esa pérdida?",
+          "opts": [
+            "Puedes compensarla en los cuatro años siguientes",
+            "Se pierde: solo vale en el año en que ocurre",
+            "Hacienda te la devuelve en la declaración",
+            "Se resta directamente de tu nómina del año"
+          ],
+          "a": 0,
+          "why": "El saldo negativo se guarda para compensar ganancias patrimoniales de los cuatro años siguientes. Hay que declararlo aunque no pagues nada, o se pierde el derecho.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "No se pierde: puede compensarse durante cuatro años.",
+            "Hacienda no devuelve pérdidas: te deja restarlas de ganancias futuras.",
+            "No se resta del sueldo: se compensa con ganancias patrimoniales."
+          ]
+        },
+        {
+          "id": "op20-4",
+          "t": "choice",
+          "q": "Operas opciones en dólares con un bróker extranjero. ¿Qué tienes que hacer para declararlas?",
+          "opts": [
+            "Pasar cada operación a euros con el cambio de su fecha",
+            "Declarar solo el saldo final en dólares del año",
+            "Nada: el bróker extranjero informa a Hacienda",
+            "Esperar a traer el dinero a un banco español"
+          ],
+          "a": 0,
+          "why": "Cada compra y cada venta se convierte a euros con el tipo de cambio de su día. Un bróker extranjero no suele enviar tus datos fiscales a Hacienda: los cálculos son cosa tuya.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Cada operación se convierte con el cambio de su día, no el saldo final.",
+            "Un bróker extranjero no suele enviar tus datos fiscales a Hacienda.",
+            "Tributas al cerrar la operación, traigas o no el dinero a España."
+          ]
+        },
+        {
+          "id": "op20-5",
+          "t": "slide",
+          "q": "Ganas 4.000 € con opciones en el año, sin retención, y tributas al 19 %. Mueve lo que apartas para la declaración.",
+          "label": "Dinero apartado",
+          "min": 0,
+          "max": 2000,
+          "step": 20,
+          "start": 200,
+          "a": 760,
+          "unit": "€",
+          "why": "4.000 € × 19 % = 760 €. Apártalo cuando cierras la operación: en junio del año siguiente habrá que pagarlo, hayas ganado o perdido después.",
+          "show": [
+            {
+              "label": "Sobre la ganancia",
+              "k": 0.025,
+              "unit": "%",
+              "dec": 1
+            }
+          ],
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}
