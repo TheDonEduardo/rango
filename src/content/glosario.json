@@ -174,7 +174,17 @@
  },
  {
   "termino": "spread",
-  "d": "Diferencia entre el precio al que te venden y el precio al que te compran. También se llama horquilla."
+  "d": "Diferencia entre el precio al que te venden y el precio al que te compran. También se llama horquilla.",
+  "no": [
+   "cada spread",
+   "el spread",
+   "ese spread",
+   "spread alcista",
+   "spread de crédito",
+   "spread de débito",
+   "spread vertical",
+   "un spread"
+  ]
  },
  {
   "termino": "horquilla",
@@ -593,5 +603,18 @@
  {
   "termino": "call cubierta",
   "d": "Estrategia de tener 100 acciones y vender una call sobre ellas: cobras la prima a cambio de comprometerte a vender al precio de ejercicio."
+ },
+ {
+  "termino": "spread vertical",
+  "alias": [
+   "spread alcista",
+   "spread de crédito",
+   "spread de débito"
+  ],
+  "d": "Combinación de dos opciones del mismo tipo y vencimiento con distinto precio de ejercicio: se compra una y se vende otra. Acota la ganancia y la pérdida."
+ },
+ {
+  "termino": "collar",
+  "d": "Protección de unas acciones comprando una put y vendiendo una call: la put pone suelo a la pérdida y la call, que la paga, pone techo a la ganancia."
  }
 ]

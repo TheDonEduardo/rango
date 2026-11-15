@@ -1,0 +1,220 @@
+{
+  "n": 7,
+  "id": "opspread",
+  "track": "derivados",
+  "title": "Spreads verticales",
+  "blurb": "Combinar dos opciones para pagar menos y acotar el riesgo.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Qué es un spread vertical",
+      "texto": "Combinas dos opciones del mismo tipo y vencimiento con distinto ejercicio: compras una y vendes otra. Ganancia y pérdida quedan acotadas desde el principio.",
+      "ejemplo": "Comprar la call de 100 $ y vender la de 110 $."
+    },
+    {
+      "id": "g2",
+      "titulo": "Spread de débito",
+      "texto": "Pagas un coste neto, que es tu pérdida máxima. La ganancia máxima es la distancia entre ejercicios menos ese coste, y el equilibrio, el ejercicio comprado más el coste.",
+      "ejemplo": "Calls de 100 $ y 110 $ por 3 $: máximo 7 $, equilibrio en 103 $.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Resultado de un spread alcista con calls de 100 $ y 110 $ y coste de 3 $: pierde 3 $ por debajo de 100 $ y gana 7 $ por encima de 110 $.",
+        "series": [
+          {
+            "data": [-3,-3,-3,2,7,7,7],
+            "tono": "ink"
+          }
+        ],
+        "margen": 140,
+        "h": 210,
+        "lineas": [
+          {
+            "y": 7,
+            "texto": "Ganancia máx.: 7 $",
+            "tono": "up"
+          },
+          {
+            "y": -3,
+            "texto": "Pérdida máx.: −3 $",
+            "tono": "dn"
+          }
+        ]
+      }
+    },
+    {
+      "id": "g3",
+      "titulo": "Spread de crédito",
+      "texto": "Cobras al abrirlo y esa es tu ganancia máxima. La pérdida máxima es la distancia entre ejercicios menos lo cobrado: la opción comprada es tu seguro.",
+      "ejemplo": "Puts de 50 $ y 45 $: cobras 1,20 $ y arriesgas 3,80 $."
+    },
+    {
+      "id": "g4",
+      "titulo": "Tamaño y probabilidad",
+      "texto": "Dimensiona con la pérdida máxima, no con la prima. Y compara lo que ganas con lo que arriesgas: cuanto menor es la proporción, más veces necesitas acertar.",
+      "ejemplo": "Ganar 1,20 $ arriesgando 3,80 $: un 31,6 %. Cuenta de 20.000 $ al 2 %: un contrato."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "op13",
+      "title": "Spread alcista con calls",
+      "ex": [
+        {
+          "id": "op13-1",
+          "t": "choice",
+          "q": "¿Qué es un spread vertical alcista con calls?",
+          "opts": [
+            "Comprar una call y vender otra de ejercicio más alto",
+            "Comprar dos calls del mismo precio de ejercicio",
+            "Vender una call y comprar las acciones a la vez",
+            "Comprar una call y una put del mismo ejercicio"
+          ],
+          "a": 0,
+          "why": "Compras una call y vendes otra con el mismo vencimiento y un ejercicio más alto. La prima que cobras abarata la compra, a cambio de poner techo a la ganancia.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Dos calls iguales doblan la apuesta: no hay ninguna vendida que la abarate.",
+            "Eso es una call cubierta, con acciones en cartera.",
+            "Eso apuesta a un movimiento grande en cualquier dirección."
+          ]
+        },
+        {
+          "id": "op13-2",
+          "t": "num",
+          "q": "Compras la call de 100 $ por 5 $ y vendes la de 110 $ por 2 $. ¿Cuánto pagas por acción?",
+          "unit": "$",
+          "a": 3,
+          "why": "5 − 2 = 3 $. Es el coste neto y también lo máximo que puedes perder: si la acción acaba por debajo de 100 $, las dos calls vencen sin valor.",
+          "guia": "g2"
+        },
+        {
+          "id": "op13-3",
+          "t": "num",
+          "q": "Con ese spread alcista (calls de 100 $ y 110 $, coste 3 $), ¿cuál es la ganancia máxima por acción?",
+          "unit": "$",
+          "a": 7,
+          "why": "(110 − 100) − 3 = 7 $. Por encima de 110 $, lo que gana la call comprada lo pierde la vendida: el resultado ya no mejora.",
+          "guia": "g2"
+        },
+        {
+          "id": "op13-4",
+          "t": "num",
+          "q": "¿A qué precio de la acción al vencimiento no ganas ni pierdes con ese spread alcista?",
+          "unit": "$",
+          "a": 103,
+          "why": "100 + 3 = 103 $. Es el ejercicio de la call comprada más el coste neto. La call sola, a 5 $, necesitaría 105 $.",
+          "guia": "g2"
+        },
+        {
+          "id": "op13-5",
+          "t": "num",
+          "q": "La acción acaba en 106 $ al vencimiento. ¿Cuánto ganas por acción con el spread alcista de 100 $ y 110 $?",
+          "unit": "$",
+          "a": 3,
+          "why": "La call de 100 $ vale 6 $ y la de 110 $ vence sin valor: 6 − 3 de coste = 3 $.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "op14",
+      "title": "Spread de crédito",
+      "ex": [
+        {
+          "id": "op14-1",
+          "t": "num",
+          "q": "Vendes la put de 50 $ por 2,00 $ y compras la de 45 $ por 0,80 $. ¿Cuánto cobras por acción?",
+          "unit": "$",
+          "a": 1.2,
+          "why": "2,00 − 0,80 = 1,20 $. Es un spread de crédito: cobras al abrirlo y esa es tu ganancia máxima, si la acción acaba por encima de 50 $.",
+          "tol": 0.006,
+          "guia": "g3"
+        },
+        {
+          "id": "op14-2",
+          "t": "num",
+          "q": "En ese spread de crédito (puts de 50 $ y 45 $, cobras 1,20 $), ¿cuál es la pérdida máxima por acción?",
+          "unit": "$",
+          "a": 3.8,
+          "why": "(50 − 45) − 1,20 = 3,80 $. Ocurre si la acción acaba por debajo de 45 $: compras a 50 $ y vendes a 45 $ con tu put.",
+          "tol": 0.006,
+          "guia": "g3"
+        },
+        {
+          "id": "op14-3",
+          "t": "choice",
+          "q": "¿Para qué sirve la put de 45 $ que compras en ese spread de crédito?",
+          "opts": [
+            "Limita la pérdida si la acción se hunde",
+            "Aumenta la prima que cobras al abrirlo",
+            "Te da derecho a cobrar los dividendos",
+            "Evita que te ejerzan la put vendida"
+          ],
+          "a": 0,
+          "why": "Sin ella, vender la put de 50 $ te expone a toda la caída. Con ella, por debajo de 45 $ ya no pierdes más: el riesgo queda acotado desde el primer día.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Comprarla cuesta 0,80 $: reduce lo que cobras, no lo aumenta.",
+            "Las opciones no dan derecho a dividendos.",
+            "Te pueden ejercer igual: lo que cambia es que tu pérdida queda limitada."
+          ]
+        },
+        {
+          "id": "op14-4",
+          "t": "num",
+          "q": "Arriesgas 3,80 $ para ganar 1,20 $. ¿Qué porcentaje del riesgo máximo es la ganancia máxima? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 31.6,
+          "why": "1,20 ÷ 3,80 = 31,6 %. Ganas poco muchas veces y pierdes mucho pocas: necesitas acertar más de tres de cada cuatro para no perder dinero.",
+          "tol": 0.06,
+          "guia": "g4"
+        },
+        {
+          "id": "op14-5",
+          "t": "slide",
+          "q": "Tu cuenta es de 20.000 $ y limitas el riesgo al 2 % por operación. Cada spread arriesga 380 $. Elige cuántos abres.",
+          "label": "Contratos",
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "start": 4,
+          "a": 1,
+          "unit": "",
+          "why": "20.000 × 2 % = 400 $. Con 380 $ de pérdida máxima por contrato, cabe 1. En un spread, el tamaño se calcula con la pérdida máxima, no con la prima.",
+          "show": [
+            {
+              "label": "Pérdida máxima total",
+              "k": 380,
+              "unit": "$"
+            }
+          ],
+          "guia": "g4"
+        },
+        {
+          "id": "op14-6",
+          "t": "choice",
+          "q": "¿Qué ganas con un spread vertical frente a comprar solo la call?",
+          "opts": [
+            "Pagas menos y el tiempo te perjudica menos",
+            "Una ganancia sin techo si la acción se dispara",
+            "La seguridad de no perder nunca la prima",
+            "Cobrar el dividendo de las acciones"
+          ],
+          "a": 0,
+          "why": "La call vendida abarata la posición y compensa parte de la pérdida por tiempo y por volatilidad. A cambio, la ganancia tiene techo.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "El spread tiene techo: esa ganancia sin límite es de la call sola.",
+            "Puedes perder todo el coste neto si la acción no sube.",
+            "Las opciones no cobran dividendos, con spread o sin él."
+          ]
+        }
+      ],
+      "ultimo": 6
+    }
+  ]
+}

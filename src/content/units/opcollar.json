@@ -1,0 +1,226 @@
+{
+  "n": 8,
+  "id": "opcollar",
+  "track": "derivados",
+  "title": "Collar",
+  "blurb": "Poner suelo a una posición y pagarlo con un techo.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Qué es un collar",
+      "texto": "Sobre acciones que ya tienes, compras una put por debajo del precio y vendes una call por encima. La prima de la call paga, en todo o en parte, la put.",
+      "ejemplo": "Put de 72 $ a 2,00 $ y call de 90 $ a 1,50 $: coste de 0,50 $."
+    },
+    {
+      "id": "g2",
+      "titulo": "Suelo y techo",
+      "texto": "La put fija la pérdida máxima y la call, la ganancia máxima. Entre los dos ejercicios, la posición se comporta como la acción.",
+      "ejemplo": "Acciones a 80 $: pérdida máxima de 8,50 $ y ganancia máxima de 9,50 $.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Resultado de un collar sobre acciones a 80 $ con put de 72 $ y call de 90 $: pierde como máximo 8,50 $ y gana como máximo 9,50 $.",
+        "series": [
+          {
+            "data": [-8.5,-8.5,-8.5,-2.5,3.5,9.5,9.5,9.5],
+            "tono": "ink"
+          }
+        ],
+        "margen": 150,
+        "h": 210,
+        "lineas": [
+          {
+            "y": 9.5,
+            "texto": "Ganancia máx.: 9,50 $",
+            "tono": "up"
+          },
+          {
+            "y": -8.5,
+            "texto": "Pérdida máx.: −8,50 $",
+            "tono": "dn"
+          }
+        ]
+      }
+    },
+    {
+      "id": "g3",
+      "titulo": "En cada escenario",
+      "texto": "Si la acción se hunde, vendes al ejercicio de la put. Si se dispara, vendes al de la call. En los dos casos el resultado se conoce de antemano.",
+      "ejemplo": "La acción cae a 60 $: pierdes 8,50 $ en lugar de 20 $."
+    },
+    {
+      "id": "g4",
+      "titulo": "Cuándo usarlo",
+      "texto": "Para proteger una posición grande con ganancias sin venderla, durante un periodo incierto. A diferencia de un stop, la put garantiza el precio aunque haya un hueco.",
+      "ejemplo": "Resultados la semana que viene y una posición que pesa mucho: collar hasta después del dato."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "op15",
+      "title": "Suelo y techo",
+      "ex": [
+        {
+          "id": "op15-1",
+          "t": "choice",
+          "q": "¿Qué es un collar?",
+          "opts": [
+            "Acciones, una put comprada y una call vendida",
+            "Acciones y dos puts compradas a distinto precio",
+            "Una call comprada y otra vendida más arriba",
+            "Una put vendida con el efectivo reservado"
+          ],
+          "a": 0,
+          "why": "Sobre acciones que ya tienes, compras una put que pone suelo a la pérdida y vendes una call que la financia. A cambio, la call pone techo a la ganancia.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Dos puts protegen dos veces, pero nadie paga su coste: falta la call vendida.",
+            "Eso es un spread vertical y no incluye acciones.",
+            "Eso es una put vendida con garantía: asume riesgo en lugar de cubrirlo."
+          ]
+        },
+        {
+          "id": "op15-2",
+          "t": "num",
+          "q": "Tienes acciones a 80 $. Compras la put de 72 $ por 2,00 $ y vendes la call de 90 $ por 1,50 $. ¿Cuánto te cuesta el collar por acción?",
+          "unit": "$",
+          "a": 0.5,
+          "why": "2,00 − 1,50 = 0,50 $. La prima de la call paga casi toda la put: proteger sale mucho más barato que comprando solo la put.",
+          "tol": 0.006,
+          "guia": "g1"
+        },
+        {
+          "id": "op15-3",
+          "t": "num",
+          "q": "Con ese collar (acciones a 80 $, put de 72 $, call de 90 $, coste 0,50 $), ¿cuál es la pérdida máxima por acción?",
+          "unit": "$",
+          "a": 8.5,
+          "why": "(80 − 72) + 0,50 = 8,50 $. Por mucho que caiga la acción, puedes vender a 72 $.",
+          "tol": 0.006,
+          "guia": "g2"
+        },
+        {
+          "id": "op15-4",
+          "t": "num",
+          "q": "¿Y cuál es la ganancia máxima por acción de ese collar?",
+          "unit": "$",
+          "a": 9.5,
+          "why": "(90 − 80) − 0,50 = 9,50 $. Por encima de 90 $ te ejercen la call y vendes a ese precio.",
+          "tol": 0.006,
+          "guia": "g2"
+        },
+        {
+          "id": "op15-5",
+          "t": "num",
+          "q": "¿Qué porcentaje de los 80 $ supone esa pérdida máxima de 8,50 $? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 10.6,
+          "why": "8,50 ÷ 80 = 10,6 %. Hasta el vencimiento sabes exactamente lo peor que puede pasar con esa posición.",
+          "tol": 0.06,
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "op16",
+      "title": "Cuándo usarlo",
+      "ex": [
+        {
+          "id": "op16-1",
+          "t": "num",
+          "q": "La acción se hunde a 60 $. Con el collar pierdes 8,50 $ por acción. ¿Cuánto te ahorra frente a no tenerlo?",
+          "unit": "$",
+          "a": 11.5,
+          "why": "Sin collar perderías 80 − 60 = 20 $. Con él, 8,50 $. La diferencia, 11,50 $, es lo que vale la put cuando más falta hace.",
+          "tol": 0.006,
+          "guia": "g3"
+        },
+        {
+          "id": "op16-2",
+          "t": "choice",
+          "q": "La acción sube a 110 $ con tu collar puesto. ¿Qué ocurre?",
+          "opts": [
+            "Vendes a 90 $ y ganas 9,50 $ por acción",
+            "Vendes a 110 $ y ganas 30 $ por acción",
+            "La put te obliga a vender a 72 $",
+            "El collar se anula y no ganas nada"
+          ],
+          "a": 0,
+          "why": "La call vendida te obliga a vender a 90 $. Ese es el precio de la protección: renuncias a la subida por encima del techo.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Te comprometiste a vender a 90 $ con la call: la subida por encima no es tuya.",
+            "La put es un derecho, no una obligación: con la acción arriba no la usas.",
+            "El collar sigue en vigor: ganas hasta el techo de 90 $."
+          ]
+        },
+        {
+          "id": "op16-3",
+          "t": "choice",
+          "q": "¿Cuándo tiene más sentido un collar?",
+          "opts": [
+            "Posición grande con ganancias que no quieres vender aún",
+            "Acción que acabas de comprar y esperas que se dispare",
+            "Cartera diversificada de fondos indexados",
+            "Acción que piensas vender mañana mismo"
+          ],
+          "a": 0,
+          "why": "Protege una posición concentrada durante un periodo incierto sin venderla, y por tanto sin adelantar impuestos. Si esperas una gran subida, el techo te estorba.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Si esperas una gran subida, la call vendida te la limita.",
+            "Una cartera indexada ya está diversificada: el collar es para posiciones concentradas.",
+            "Si vas a vender mañana, proteger con opciones es un coste inútil."
+          ]
+        },
+        {
+          "id": "op16-4",
+          "t": "choice",
+          "q": "¿Qué ventaja tiene la put del collar frente a una orden stop?",
+          "opts": [
+            "Garantiza el precio aunque la acción abra con hueco",
+            "No cuesta nada y protege la posición para siempre",
+            "Se ejecuta siempre antes que cualquier orden stop",
+            "Permite ganar dinero cuando la acción cae mucho"
+          ],
+          "a": 0,
+          "why": "Un stop se ejecuta al precio que haya: con un hueco bajista, mucho más abajo. La put da derecho a vender a 72 $ pase lo que pase, pero solo hasta el vencimiento y pagando su prima.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "La put cuesta su prima y solo protege hasta el vencimiento.",
+            "No se ejecuta sola ni antes: es un derecho que decides usar.",
+            "Con acciones en cartera, la put reduce la pérdida, no la convierte en ganancia."
+          ]
+        },
+        {
+          "id": "op16-5",
+          "t": "slide",
+          "q": "Tus acciones valen 80 $ y quieres que la caída hasta el suelo no pase del 10 %. Mueve el ejercicio de la put.",
+          "label": "Ejercicio de la put",
+          "min": 60,
+          "max": 80,
+          "step": 1,
+          "start": 65,
+          "a": 72,
+          "unit": "$",
+          "why": "80 × 0,90 = 72 $. Un suelo más alto protege más, pero la put cuesta más: el collar siempre es un equilibrio entre suelo, techo y coste.",
+          "show": [
+            {
+              "label": "Caída hasta el suelo",
+              "k": -1.25,
+              "b": 100,
+              "unit": "%",
+              "dec": 1
+            }
+          ],
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

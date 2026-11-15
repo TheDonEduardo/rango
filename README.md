@@ -1,6 +1,6 @@
 # Rango
 
-Prototipo de app gamificada tipo Duolingo para aprender a invertir, con cinco rutas y 82 unidades: Básico, Inversión pasiva, Análisis fundamental, Análisis técnico y Opciones. Incluye casos con datos reales, simuladores, repaso espaciado y estadísticas.
+Prototipo de app gamificada tipo Duolingo para aprender a invertir, con cinco rutas y 84 unidades: Básico, Inversión pasiva, Análisis fundamental, Análisis técnico y Opciones. Incluye casos con datos reales, simuladores, repaso espaciado y estadísticas.
 
 ## Arrancar
 
