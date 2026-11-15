@@ -1,0 +1,223 @@
+{
+  "n": 5,
+  "id": "nomina",
+  "track": "personal",
+  "title": "La nómina y el IRPF",
+  "blurb": "Del bruto al neto, tramos, tipo marginal y por qué la declaración sale a devolver.",
+  "revisar": "2027-02",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Bruto y neto",
+      "texto": "El bruto es lo que la empresa te paga; el neto, lo que llega a tu cuenta tras descontar tu cotización y la retención. Compara ofertas por el bruto anual y presupuesta con el neto.",
+      "ejemplo": "2.500 € brutos menos 162,50 € y 375 €: te llega el 78,5 %."
+    },
+    {
+      "id": "g2",
+      "titulo": "Cotización y retención",
+      "texto": "Cotizas en torno a un 6,5 % a la Seguridad Social, que paga pensiones y desempleo. La retención del IRPF es un porcentaje del bruto que la empresa ingresa en Hacienda por ti.",
+      "ejemplo": "2.500 € × 6,5 % = 162,50 €; al 15 % de retención, 375 €."
+    },
+    {
+      "id": "g3",
+      "titulo": "Tramos, marginal y medio",
+      "texto": "El IRPF se paga por tramos: cada tipo se aplica solo a la parte de renta de su tramo. El marginal es el tipo del último euro; el medio, el impuesto total entre la renta.",
+      "ejemplo": "Base de 20.200 €: tipo medio del 20,9 % y marginal del 24 %."
+    },
+    {
+      "id": "g4",
+      "titulo": "La retención es un anticipo",
+      "texto": "Lo retenido en nómina se compara en la declaración con el impuesto real del año. Si adelantaste de más, te devuelven; si de menos, pagas la diferencia.",
+      "ejemplo": "De una subida de 1.000 € en el tramo del 30 % te quedan 700 €."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "fp9",
+      "title": "Del bruto al neto",
+      "ex": [
+        {
+          "id": "fp9-1",
+          "t": "choice",
+          "q": "¿Qué diferencia hay entre el sueldo bruto y el neto?",
+          "opts": [
+            "El neto es el bruto menos cotizaciones y retención",
+            "El neto incluye las pagas extra y el bruto no",
+            "El bruto es lo que cobras tras pagar impuestos",
+            "Ninguna: son dos nombres para la misma cifra"
+          ],
+          "a": 0,
+          "why": "Del bruto se descuentan tu cotización a la Seguridad Social y la retención del IRPF. Lo que queda, el neto, es lo que llega a tu cuenta.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Las pagas extra forman parte del bruto anual, se repartan como se repartan.",
+            "Es al revés: el bruto es la cifra antes de descuentos.",
+            "No son lo mismo: entre uno y otro están la cotización y el IRPF."
+          ]
+        },
+        {
+          "id": "fp9-2",
+          "t": "num",
+          "q": "Tu sueldo bruto es de 2.500 € al mes y cotizas un 6,5 % a la Seguridad Social. ¿Cuánto te descuentan por ese concepto? Redondea a 1 decimal.",
+          "unit": "€",
+          "a": 162.5,
+          "why": "2.500 € × 6,5 % = 162,50 €. Con ello pagas tu parte de la pensión, el desempleo y la formación. La empresa cotiza por ti bastante más, aparte de tu bruto.",
+          "tol": 0.06,
+          "guia": "g2"
+        },
+        {
+          "id": "fp9-3",
+          "t": "num",
+          "q": "Sobre ese bruto de 2.500 € te aplican una retención de IRPF del 15 %. ¿Cuánto te retienen?",
+          "unit": "€",
+          "a": 375,
+          "why": "2.500 € × 15 % = 375 €. La empresa lo ingresa en Hacienda en tu nombre, como anticipo del impuesto del año.",
+          "guia": "g2"
+        },
+        {
+          "id": "fp9-4",
+          "t": "num",
+          "q": "De 2.500 € brutos te descuentan 162,50 € de cotización y 375 € de IRPF. ¿Qué porcentaje del bruto te llega? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 78.5,
+          "why": "2.500 − 162,50 − 375 = 1.962,50 €, y 1.962,50 ÷ 2.500 = 78,5 %. Para presupuestar, la cifra que cuenta es el neto.",
+          "tol": 0.06,
+          "guia": "g1"
+        },
+        {
+          "id": "fp9-5",
+          "t": "choice",
+          "q": "Te ofrecen 30.000 € brutos al año, en 12 o en 14 pagas. ¿Qué cambia?",
+          "opts": [
+            "Solo el reparto: al año cobras lo mismo",
+            "Con 14 pagas cobras dos sueldos más al año",
+            "Con 12 pagas tributas menos IRPF al año",
+            "Con 14 pagas cotizas menos a la Seguridad Social"
+          ],
+          "a": 0,
+          "why": "El bruto anual es el mismo. Con 12 pagas cada mensualidad es mayor; con 14, hay dos extras y las demás son más pequeñas. Compara ofertas siempre por el bruto anual.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "El total anual es el mismo: 30.000 €.",
+            "El IRPF se calcula sobre la renta del año, no sobre el número de pagas.",
+            "La cotización depende del salario anual, no de cómo se reparta."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "fp10",
+      "title": "Cómo funciona el IRPF",
+      "ex": [
+        {
+          "id": "fp10-1",
+          "t": "choice",
+          "q": "Te suben el sueldo y parte de tu renta pasa al tramo siguiente. ¿Qué ocurre?",
+          "opts": [
+            "Solo el exceso sobre el tramo paga el tipo más alto",
+            "Todo tu sueldo pasa a pagar el tipo más alto",
+            "Cobras menos neto que antes de la subida",
+            "Dejas de cotizar a la Seguridad Social"
+          ],
+          "a": 0,
+          "why": "Cada tramo aplica su tipo solo a la parte de la renta que cae dentro de él. Por eso una subida nunca te deja cobrando menos neto que antes.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "El tipo nuevo solo afecta a la parte de renta que entra en ese tramo.",
+            "Imposible: del euro adicional siempre te queda una parte.",
+            "La cotización no depende del tramo del IRPF."
+          ]
+        },
+        {
+          "id": "fp10-2",
+          "t": "num",
+          "q": "Con esta escala y sin reducciones, para simplificar, ¿qué tipo medio paga una base de 20.200 €? Redondea a 1 decimal.",
+          "table": {
+            "cols": [
+              "Base",
+              "Tipo"
+            ],
+            "rows": [
+              [
+                "Hasta 12.450 €",
+                "19 %"
+              ],
+              [
+                "De 12.450 a 20.200 €",
+                "24 %"
+              ],
+              [
+                "De 20.200 a 35.200 €",
+                "30 %"
+              ],
+              [
+                "De 35.200 a 60.000 €",
+                "37 %"
+              ]
+            ],
+            "note": "Escala general orientativa: cada comunidad autónoma la ajusta. Compruébala cada año."
+          },
+          "unit": "%",
+          "a": 20.9,
+          "tol": 0.06,
+          "why": "12.450 € × 19 % = 2.365,50 € y 7.750 € × 24 % = 1.860 €: en total 4.225,50 €. 4.225,50 ÷ 20.200 = 20,9 %. El tipo medio queda por debajo del 24 % del último tramo.",
+          "guia": "g3"
+        },
+        {
+          "id": "fp10-3",
+          "t": "num",
+          "q": "Tu renta está en el tramo del 30 % y te suben 1.000 € brutos al año. Sin contar la cotización, ¿cuánto de esa subida te queda tras el IRPF?",
+          "unit": "€",
+          "a": 700,
+          "why": "1.000 € × (1 − 30 %) = 700 €. El tipo de tu último tramo, el marginal, es el que se aplica a cada euro adicional que ganas.",
+          "guia": "g3"
+        },
+        {
+          "id": "fp10-4",
+          "t": "choice",
+          "q": "¿Qué es el tipo marginal?",
+          "opts": [
+            "El que paga el último euro que ganas",
+            "El impuesto total dividido entre tu renta",
+            "La retención que aparece en la nómina",
+            "El tipo que paga el primer tramo de renta"
+          ],
+          "a": 0,
+          "why": "El marginal es el tipo de tu tramo más alto y sirve para decidir: cuánto te queda de una subida o cuánto ahorra una deducción. El medio dice cuánto pagas en conjunto.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Eso es el tipo medio.",
+            "La retención se parece al tipo medio previsto, no al marginal.",
+            "Ese es el tipo más bajo de la escala, no el marginal."
+          ]
+        },
+        {
+          "id": "fp10-5",
+          "t": "choice",
+          "q": "Te han retenido en nómina más de lo que te corresponde pagar en el año. ¿Qué pasa?",
+          "opts": [
+            "La declaración te sale a devolver",
+            "Pierdes la diferencia a favor de Hacienda",
+            "La empresa te lo descuenta el año siguiente",
+            "Tienes que pagar una segunda vez"
+          ],
+          "a": 0,
+          "why": "La retención es un anticipo. En la declaración se calcula el impuesto real: si adelantaste de más, Hacienda te devuelve la diferencia; si de menos, la pagas.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "No se pierde: Hacienda devuelve lo adelantado de más.",
+            "La devolución la hace Hacienda, no la empresa.",
+            "Pagar de nuevo sería lo contrario: aquí has pagado de más."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

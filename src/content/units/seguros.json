@@ -1,0 +1,206 @@
+{
+  "n": 6,
+  "id": "seguros",
+  "track": "personal",
+  "title": "Seguros",
+  "blurb": "Qué merece la pena asegurar, por cuánto y con qué franquicia.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Qué asegurar",
+      "texto": "Asegura lo que te arruinaría: la vivienda, la responsabilidad civil, la muerte o la invalidez de quien sostiene la casa. Los gastos pequeños los cubre tu colchón, no una póliza.",
+      "ejemplo": "Seguro de 120 € al año para un móvil de 600 €: en 5 años lo has pagado entero."
+    },
+    {
+      "id": "g2",
+      "titulo": "El seguro de vida",
+      "texto": "Lo necesita quien tiene dependientes o deudas que otros heredarían. El capital sale de sumar la deuda pendiente y los años de gastos que quieres cubrir.",
+      "ejemplo": "Hipoteca de 120.000 € y 5 años de 24.000 €: 240.000 €."
+    },
+    {
+      "id": "g3",
+      "titulo": "La franquicia",
+      "texto": "Es la parte de cada siniestro que pagas tú. Cuanto más alta, más barata la prima. Elígela según lo que tu colchón pueda asumir.",
+      "ejemplo": "Daño de 1.200 € con franquicia de 300 €: cobras 900 €."
+    },
+    {
+      "id": "g4",
+      "titulo": "Infraseguro y sobreseguro",
+      "texto": "Si aseguras por menos del valor real, cobras solo la misma proporción del daño. Si aseguras por más, pagas prima de sobra. El capital debe ser el valor real.",
+      "ejemplo": "Asegurar 100.000 € de 200.000 €: de un daño de 30.000 € cobras 15.000 €."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "fp11",
+      "title": "Qué asegurar",
+      "ex": [
+        {
+          "id": "fp11-1",
+          "t": "choice",
+          "q": "¿Qué conviene asegurar?",
+          "opts": [
+            "Las pérdidas grandes que no podrías pagar",
+            "Los gastos pequeños y frecuentes del día a día",
+            "Todo lo que tenga un seguro disponible",
+            "Solo aquello que sea obligatorio por ley"
+          ],
+          "a": 0,
+          "why": "Un seguro cambia una pérdida grande e incierta por un coste pequeño y seguro. Para gastos que puedes pagar de tu bolsillo, la prima suele costar más de lo que cubre.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Los gastos pequeños se pagan mejor con el colchón que con primas.",
+            "Asegurarlo todo cuesta más de lo que evita.",
+            "Hay riesgos graves que la ley no obliga a asegurar, como tu vivienda."
+          ]
+        },
+        {
+          "id": "fp11-2",
+          "t": "num",
+          "q": "Un seguro para un móvil de 600 € cuesta 120 € al año. ¿En cuántos años habrás pagado en primas el precio del móvil?",
+          "unit": "años",
+          "a": 5,
+          "why": "600 ÷ 120 = 5 años. Y si lo usas, además suele haber franquicia. Los seguros de cosas baratas rara vez compensan: ese riesgo lo cubre tu colchón.",
+          "guia": "g1"
+        },
+        {
+          "id": "fp11-3",
+          "t": "choice",
+          "q": "¿Quién necesita de verdad un seguro de vida?",
+          "opts": [
+            "Quien tiene personas que dependen de sus ingresos",
+            "Cualquier persona, desde que empieza a trabajar",
+            "Quien vive solo y no tiene ninguna deuda",
+            "Solo quienes tienen más de 60 años"
+          ],
+          "a": 0,
+          "why": "El seguro de vida protege a quienes dependen económicamente de ti: hijos, pareja, o quien se quedaría con tu hipoteca. Sin dependientes ni deudas, apenas hay nada que cubrir.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "Sin nadie que dependa de ti ni deudas, hay poco que proteger.",
+            "Ese es justo el caso en que menos falta hace.",
+            "A esa edad suele haber menos dependientes y el seguro es más caro."
+          ]
+        },
+        {
+          "id": "fp11-4",
+          "t": "num",
+          "q": "Quieres que tu seguro de vida cubra la hipoteca pendiente, de 120.000 €, y 5 años de gastos familiares de 24.000 € al año. ¿Cuántos miles de euros aseguras?",
+          "unit": "mil €",
+          "a": 240,
+          "why": "120.000 + 5 × 24.000 = 240.000 €. El capital se calcula con lo que tu familia necesitaría, no con una cifra redonda.",
+          "guia": "g2"
+        },
+        {
+          "id": "fp11-5",
+          "t": "choice",
+          "q": "El banco te ofrece su seguro de vida al firmar la hipoteca. ¿Qué haces?",
+          "opts": [
+            "Comparar el coste total con uno contratado fuera",
+            "Aceptarlo: es obligatorio contratarlo con el banco",
+            "Rechazar cualquier seguro de vida sin mirar",
+            "Elegir siempre el que tenga la prima más alta"
+          ],
+          "a": 0,
+          "why": "Puedes contratar el seguro con otra compañía. El del banco a veces rebaja el tipo de la hipoteca: suma la prima y el ahorro en intereses para ver qué opción cuesta menos.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "No puede obligarte: puedes contratarlo con otra compañía.",
+            "Con hipoteca y familia, el seguro de vida suele ser necesario.",
+            "La prima más alta no es mejor: importan la cobertura y el coste total."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "fp12",
+      "title": "Franquicia e infraseguro",
+      "ex": [
+        {
+          "id": "fp12-1",
+          "t": "num",
+          "q": "Tu seguro de hogar tiene una franquicia de 300 € y sufres un daño de 1.200 €. ¿Cuánto te paga la aseguradora?",
+          "unit": "€",
+          "a": 900,
+          "why": "1.200 − 300 = 900 €. La franquicia es la parte de cada siniestro que asumes tú.",
+          "guia": "g3"
+        },
+        {
+          "id": "fp12-2",
+          "t": "choice",
+          "q": "¿Qué consigues al elegir una franquicia más alta?",
+          "opts": [
+            "Una prima más baja, asumiendo tú lo pequeño",
+            "Una cobertura mayor en cada siniestro",
+            "Cobrar más deprisa cuando hay un daño",
+            "Que el seguro no pueda subir de precio"
+          ],
+          "a": 0,
+          "why": "Con más franquicia, la aseguradora deja de pagar los siniestros pequeños y te cobra menos. Tiene sentido si tu colchón puede cubrir esos importes.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "La franquicia reduce lo que cobras, no lo aumenta.",
+            "No afecta a los plazos de pago.",
+            "La prima puede seguir cambiando cada año."
+          ]
+        },
+        {
+          "id": "fp12-3",
+          "t": "num",
+          "q": "Aseguras tu vivienda por 100.000 € cuando vale 200.000 €. Sufres un daño de 30.000 €. Con la regla proporcional, ¿cuántos miles de euros cobras?",
+          "unit": "mil €",
+          "a": 15,
+          "why": "Aseguraste la mitad del valor, así que cobras la mitad del daño: 30.000 × 100.000 ÷ 200.000 = 15.000 €. Es el infraseguro: ahorrar en prima sale caro.",
+          "guia": "g4"
+        },
+        {
+          "id": "fp12-4",
+          "t": "choice",
+          "q": "Aseguras tus muebles por el doble de lo que valen. ¿Qué consigues?",
+          "opts": [
+            "Pagar más prima sin cobrar más que el daño real",
+            "Cobrar el doble del daño si hay un siniestro",
+            "Una rebaja en la prima por asegurar más",
+            "Quedar cubierto frente a cualquier riesgo"
+          ],
+          "a": 0,
+          "why": "El seguro indemniza el daño real, no la cifra que pusiste. Asegurar de más solo encarece la prima.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "La indemnización nunca supera el daño real.",
+            "Más capital asegurado significa más prima, no menos.",
+            "El capital no amplía los riesgos cubiertos: eso lo dicen las condiciones."
+          ]
+        },
+        {
+          "id": "fp12-5",
+          "t": "slide",
+          "q": "El contenido de tu casa vale 40.000 €. Mueve el capital asegurado para no quedarte corto ni pagar de más.",
+          "label": "Capital asegurado",
+          "min": 10,
+          "max": 80,
+          "step": 5,
+          "start": 20,
+          "a": 40,
+          "unit": "mil €",
+          "why": "El capital debe coincidir con el valor real: 40.000 €. Por debajo, la regla proporcional recorta la indemnización; por encima, pagas prima por nada.",
+          "show": [
+            {
+              "label": "Cobertura sobre el valor real",
+              "k": 2.5,
+              "unit": "%"
+            }
+          ],
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

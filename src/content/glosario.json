@@ -636,5 +636,28 @@
  {
   "termino": "coste de oportunidad",
   "d": "Lo que dejas de ganar por usar el dinero en una cosa en lugar de en otra."
+ },
+ {
+  "termino": "franquicia",
+  "d": "En un seguro, la parte de cada siniestro que paga el asegurado. Cuanto más alta, más barata la prima."
+ },
+ {
+  "termino": "infraseguro",
+  "d": "Asegurar un bien por menos de su valor real. La aseguradora paga entonces solo la misma proporción del daño."
+ },
+ {
+  "termino": "tipo marginal",
+  "alias": [
+   "marginal"
+  ],
+  "d": "El tipo de impuesto que paga el último euro que ganas: el de tu tramo más alto."
+ },
+ {
+  "termino": "base reguladora",
+  "d": "Media de tus bases de cotización de los últimos años de carrera. Sobre ella se aplica el porcentaje que da tu pensión."
+ },
+ {
+  "termino": "tasa de sustitución",
+  "d": "Parte del último sueldo que reemplaza la pensión."
  }
 ]

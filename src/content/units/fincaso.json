@@ -1,0 +1,182 @@
+{
+  "n": 8,
+  "id": "fincaso",
+  "track": "personal",
+  "title": "Ordena tus finanzas",
+  "blurb": "Una pareja, un piso y un plan: del ahorro a la hipoteca y los seguros.",
+  "caso": true,
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "La foto",
+      "texto": "Empieza por los números: cuánto entra, cuánto sale y cuánto se ahorra. Y aparta primero el colchón: no forma parte del dinero para comprar.",
+      "ejemplo": "Ingresos de 3.600 € y gastos de 2.700 €: ahorran el 25 %. Colchón de 6 meses: 16.200 €."
+    },
+    {
+      "id": "g2",
+      "titulo": "El objetivo",
+      "texto": "Comprar exige cerca del 30 % del precio entre entrada y gastos. Resta lo que tienes disponible y divide lo que falta entre tu ahorro mensual: ese es el plazo.",
+      "ejemplo": "Faltan 16.200 € y ahorran 900 € al mes: 18 meses."
+    },
+    {
+      "id": "g3",
+      "titulo": "Una cuota holgada",
+      "texto": "Mide la cuota sobre tus ingresos, también en el peor escenario de tipos. Cuanto más lejos del 35 %, más margen para ahorrar y para imprevistos.",
+      "ejemplo": "Cuota de 683 € con 3.600 € de ingresos: un 19 %."
+    },
+    {
+      "id": "g4",
+      "titulo": "Proteger y seguir",
+      "texto": "Asegura el riesgo que hundiría a la familia, repón el colchón con los gastos nuevos e invierte a largo plazo lo que sobre.",
+      "ejemplo": "Tras comprar, ahorran 767 € al mes: primero el colchón, después la jubilación."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "zr1",
+      "title": "La foto y el objetivo",
+      "ex": [
+        {
+          "id": "zr1-1",
+          "t": "num",
+          "q": "Caso de Ana y Luis: ingresan 3.600 € netos al mes y gastan 2.700 €, alquiler incluido. ¿Qué porcentaje de sus ingresos ahorran?",
+          "unit": "%",
+          "a": 25,
+          "why": "(3.600 − 2.700) ÷ 3.600 = 900 ÷ 3.600 = 25 %. Es una buena tasa: la base para cualquier objetivo grande.",
+          "guia": "g1"
+        },
+        {
+          "id": "zr1-2",
+          "t": "num",
+          "q": "Quieren un colchón de 6 meses de gastos. ¿Cuántos miles de euros son? Redondea a 1 decimal.",
+          "unit": "mil €",
+          "a": 16.2,
+          "why": "6 × 2.700 € = 16.200 €. Ese dinero no se toca para la entrada: comprar sin colchón deja a la familia sin margen ante cualquier imprevisto.",
+          "tol": 0.06,
+          "guia": "g1"
+        },
+        {
+          "id": "zr1-3",
+          "t": "num",
+          "q": "Tienen 54.000 € ahorrados. Tras apartar el colchón de 16.200 €, ¿cuántos miles de euros les quedan para la compra? Redondea a 1 decimal.",
+          "unit": "mil €",
+          "a": 37.8,
+          "why": "54.000 − 16.200 = 37.800 €. Es el dinero realmente disponible para la entrada y los gastos.",
+          "tol": 0.06,
+          "guia": "g2"
+        },
+        {
+          "id": "zr1-4",
+          "t": "num",
+          "q": "El piso que quieren cuesta 180.000 € y necesitan el 30 % entre entrada y gastos. Con 37.800 € disponibles, ¿cuántos miles de euros les faltan? Redondea a 1 decimal.",
+          "unit": "mil €",
+          "a": 16.2,
+          "why": "180.000 € × 30 % = 54.000 €. Menos 37.800 €: faltan 16.200 €.",
+          "tol": 0.06,
+          "guia": "g2"
+        },
+        {
+          "id": "zr1-5",
+          "t": "num",
+          "q": "Ahorrando 900 € al mes, ¿cuántos meses tardan en reunir esos 16.200 €?",
+          "unit": "meses",
+          "a": 18,
+          "why": "16.200 ÷ 900 = 18 meses. Un año y medio de espera a cambio de comprar sin quedarse a cero.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "zr2",
+      "title": "La decisión",
+      "ex": [
+        {
+          "id": "zr2-1",
+          "t": "num",
+          "q": "Piden 144.000 € a 25 años al 3 % fijo, con una cuota de 683 €. ¿Qué porcentaje de sus ingresos de 3.600 € supone? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 19,
+          "why": "683 ÷ 3.600 = 19,0 %. Muy por debajo del 35 %: la cuota les deja margen para ahorrar y para imprevistos.",
+          "tol": 0.06,
+          "guia": "g3"
+        },
+        {
+          "id": "zr2-2",
+          "t": "num",
+          "q": "Con una variable, si los tipos subieran dos puntos la cuota sería de 842 €. ¿Qué porcentaje de sus ingresos supondría? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 23.4,
+          "why": "842 ÷ 3.600 = 23,4 %. Podrían pagarla, así que la variable no sería una temeridad. Eligen la fija porque prefieren saber lo que pagarán.",
+          "tol": 0.06,
+          "guia": "g3"
+        },
+        {
+          "id": "zr2-3",
+          "t": "choice",
+          "q": "Tienen un hijo y Luis aporta la mayor parte de los ingresos. ¿Qué seguro es prioritario al firmar la hipoteca?",
+          "opts": [
+            "Uno de vida que cubra la deuda pendiente",
+            "Uno para los electrodomésticos nuevos",
+            "Uno de móvil para cada miembro de la familia",
+            "Ninguno: con el colchón es suficiente"
+          ],
+          "a": 0,
+          "why": "Si faltara el principal sueldo, la familia no podría pagar la hipoteca. El seguro de vida cubre justo ese riesgo, que el colchón no puede asumir.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Un electrodoméstico roto se paga con el colchón.",
+            "Un móvil es un gasto pequeño: no merece una póliza.",
+            "El colchón cubre meses de gastos, no una hipoteca de 144.000 €."
+          ]
+        },
+        {
+          "id": "zr2-4",
+          "t": "num",
+          "q": "Ya propietarios, sus gastos sin alquiler son de 1.900 €, la cuota es de 683 € y los gastos de la vivienda, 250 €. ¿Cuánto ahorran al mes con 3.600 € de ingresos?",
+          "unit": "€",
+          "a": 767,
+          "why": "3.600 − 1.900 − 683 − 250 = 767 €. Algo menos que antes, pero ahora parte de la cuota también es ahorro: la que devuelve capital.",
+          "guia": "g4"
+        },
+        {
+          "id": "zr2-5",
+          "t": "choice",
+          "q": "¿A qué dedican primero esos 767 € de ahorro mensual?",
+          "opts": [
+            "A reponer el colchón, y después a invertir a largo plazo",
+            "A amortizar hipoteca, aunque se queden sin colchón",
+            "A cambiar de coche, ahora que tienen piso",
+            "A la cuenta corriente, sin ningún destino"
+          ],
+          "a": 0,
+          "why": "Primero la seguridad: un colchón adaptado a los nuevos gastos. Después, invertir para la jubilación, donde el plazo largo trabaja a su favor.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Amortizar sin colchón los deja expuestos a cualquier imprevisto.",
+            "Un coche nuevo es un gasto que frena todo lo demás.",
+            "Sin destino, el ahorro se acaba gastando o se lo come la inflación."
+          ]
+        },
+        {
+          "id": "zr2-6",
+          "t": "order",
+          "q": "Ordena el plan de Ana y Luis.",
+          "items": [
+            "Medir ingresos, gastos y ahorro",
+            "Apartar el colchón de emergencia",
+            "Reunir la entrada y los gastos",
+            "Elegir una hipoteca con cuota holgada",
+            "Asegurar los riesgos grandes",
+            "Invertir a largo plazo lo que sobra"
+          ],
+          "why": "Primero saber dónde están, luego protegerse, después el objetivo grande y, al final, hacer crecer lo que sobra. Saltarse un paso es lo que convierte una compra en un problema.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 6
+    }
+  ]
+}

@@ -79,6 +79,7 @@ export const t={
     jubilacion:['Prepara tu jubilación','Cuánto necesitas, cómo llegar y cómo retirar el dinero sin que se acabe.'],
     resultados:['Lee unos resultados','Sorpresas, márgenes, guía y señales de alerta en un informe trimestral.'],
     riesgo:['Gestiona el riesgo','Stop, tamaño de posición, salidas, riesgo de cartera y disciplina.'],
+    vivienda:['Compra tu primera vivienda','Hipoteca, comprar o alquilar, seguros y un plan completo para llegar a la entrada.'],
     opciones:['Tus primeras opciones','De qué es una call a proteger una posición con un collar, impuestos incluidos.']},
   itinMeta:(h,n,r)=>`${h} de ${n} lecciones · ${r}`, itinSiguiendo:'Lo estás siguiendo', itinEmpezar:'Seguir este itinerario', itinRetomar:'Retomar este itinerario', itinDejar:'Dejar de seguirlo',
   itinPaso:(n,k,tot)=>`Itinerario · ${n} · ${k} de ${tot}`, itinSeguir:'Seguir', itinHecho:'Itinerario completado',  itinVer:'O sigue un itinerario guiado', itinCompletado:'Completado', itinSabes:'Lo que ya sabes hacer:', itinSiguiente:n=>`Siguiente: ${n}`, itinResumen:'Ver resumen',
@@ -88,6 +89,7 @@ export const t={
     jubilacion:['Calcular cuánto necesitas y cuánto ahorrar cada mes','Contar con la inflación y ajustar el reparto al plazo','Retirar con una regla sostenible y pagando menos impuestos'],
     resultados:['Comparar las cifras con el consenso y con la guía','Distinguir beneficio ajustado, contable y caja','Detectar señales de alerta en cobros, inventario y ajustes'],
     riesgo:['Colocar el stop con el ATR y calcular el tamaño','Escalonar las salidas y medir el resultado en R','Limitar el riesgo total de la cartera y seguir tu plan'],
+    vivienda:['Saber cuánto ahorro necesitas y qué cuota puedes asumir','Elegir entre hipoteca fija, variable o mixta','Decidir si te conviene comprar o seguir de alquiler'],
     opciones:['Calcular el resultado y la pérdida máxima de una opción','Cobrar primas con call cubierta y put con garantía','Proteger una posición con un collar y declararlo bien']},
 
 
