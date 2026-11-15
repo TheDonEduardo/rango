@@ -1,0 +1,94 @@
+{
+ "semana": "2026-W46",
+ "hasta": "13/11/2026",
+ "fuente": "Yahoo Finance",
+ "fecha": "15/11/2026",
+ "ex": [
+  {
+   "t": "num",
+   "caso": "S&P 500",
+   "q": "El S&P 500 cerró a 7.376,86 puntos el 06/11/2026 y a 7.561,67 puntos el 13/11/2026. ¿Cuánto subió en la semana? Redondea a 2 decimales.",
+   "unit": "%",
+   "a": 2.51,
+   "tol": 0.006,
+   "why": "7.561,67 ÷ 7.376,86 − 1 = 2,51 %. Una semana es ruido: sirve para practicar el cálculo, no para sacar conclusiones."
+  },
+  {
+   "t": "num",
+   "caso": "MSCI World en euros",
+   "q": "El ETF iShares Core MSCI World (en euros) cerró a 127,32 € el 06/11/2026 y a 130,44 € el 13/11/2026. ¿Cuánto subió en la semana? Redondea a 2 decimales.",
+   "unit": "%",
+   "a": 2.45,
+   "tol": 0.006,
+   "why": "130,44 ÷ 127,32 − 1 = 2,45 %. Una semana es ruido: sirve para practicar el cálculo, no para sacar conclusiones."
+  },
+  {
+   "t": "num",
+   "caso": "Bono de EE. UU. a 10 años",
+   "q": "La rentabilidad del bono de EE. UU. a 10 años pasó del 4,86 % (06/11/2026) al 5,15 % (13/11/2026). ¿Cuántos puntos básicos subió?",
+   "unit": "pb",
+   "a": 29,
+   "why": "5,15 − 4,86 = 0,29 puntos porcentuales, es decir, 29 puntos básicos. Cuando la rentabilidad sube, el precio de los bonos ya emitidos cae."
+  },
+  {
+   "t": "num",
+   "caso": "Euro frente al dólar",
+   "q": "El euro pasó de 1,1228 $ (06/11/2026) a 1,1050 $ (13/11/2026). ¿Cuánto se depreció frente al dólar? Redondea a 2 decimales.",
+   "unit": "%",
+   "a": 1.59,
+   "tol": 0.006,
+   "why": "1 − 1,1050 ÷ 1,1228 = 1,59 %. Un euro más débil suma rentabilidad a quien tiene inversiones en dólares sin cubrir."
+  },
+  {
+   "t": "choice",
+   "caso": "Cartera",
+   "q": "Cierres de cuatro acciones al final de la semana anterior y de esta. ¿Cuál subió más en porcentaje?",
+   "table": {
+    "cols": [
+     "Acción",
+     "Semana anterior",
+     "Esta semana"
+    ],
+    "rows": [
+     [
+      "Axon Enterprise",
+      "313,00 $",
+      "315,43 $"
+     ],
+     [
+      "Broadcom",
+      "293,69 $",
+      "347,01 $"
+     ],
+     [
+      "Meta Platforms",
+      "610,15 $",
+      "641,69 $"
+     ],
+     [
+      "NVIDIA",
+      "186,64 $",
+      "162,85 $"
+     ]
+    ]
+   },
+   "opts": [
+    "Axon Enterprise",
+    "Broadcom",
+    "Meta Platforms",
+    "NVIDIA"
+   ],
+   "a": 1,
+   "why": "Axon Enterprise: 0,78 %; Broadcom: 18,16 %; Meta Platforms: 5,17 %; NVIDIA: −12,75 %. Para comparar acciones de precios distintos hay que mirar el porcentaje, no los dólares."
+  },
+  {
+   "t": "num",
+   "caso": "IBEX 35",
+   "q": "El IBEX 35 cerró a 19.369,50 puntos el 06/11/2026 y a 20.020,10 puntos el 13/11/2026. ¿Cuánto subió en la semana? Redondea a 2 decimales.",
+   "unit": "%",
+   "a": 3.36,
+   "tol": 0.006,
+   "why": "20.020,10 ÷ 19.369,50 − 1 = 3,36 %. Una semana es ruido: sirve para practicar el cálculo, no para sacar conclusiones."
+  }
+ ]
+}

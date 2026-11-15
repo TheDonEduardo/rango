@@ -146,7 +146,32 @@ try:
 except Exception as e:
     fallos.append(f"casos de análisis lanza {type(e).__name__}: {e}")
 
+# Mercado de la semana: con una serie que sube, pregunta «subió» y calcula la variación entre viernes.
+def cargar_mercado(fake_yf):
+    sys.modules["yfinance"] = fake_yf
+    spec = importlib.util.spec_from_file_location("mercado", AQUI / "mercado.py")
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
+dias_m = pd.bdate_range("2026-10-26", "2026-11-13")
+serie_m = pd.DataFrame({"Close": [100.0 + i for i in range(len(dias_m))]}, index=dias_m)
+mm = cargar_mercado(types.SimpleNamespace(Ticker=lambda tk: types.SimpleNamespace(info={"shortName": tk}, history=lambda **k: serie_m)))
+mm.tickers = lambda: ["AAA", "BBB", "CCC", "DDD"]
+exm, _ = mm.generar()
+if len(exm) < 3:
+    fallos.append(f"mercado: solo {len(exm)} preguntas")
+sp_m = next((e for e in exm if e["caso"] == "S&P 500"), None)
+# Viernes 6 de noviembre: 109; viernes 13: 114. 114 ÷ 109 − 1 = 4,59 %.
+if not sp_m or "subió" not in sp_m["q"] or abs(sp_m["a"] - 4.59) > 0.006 or "06/11/2026" not in sp_m["q"]:
+    fallos.append(f"mercado: variación semanal mal calculada: {sp_m}")
+if any(e["caso"] == "Cartera" for e in exm):
+    fallos.append("mercado: pregunta de la cartera sin un ganador claro")
+if len(mm.elegir(exm)) > 6:
+    fallos.append("mercado: más de 6 preguntas")
+
 if fallos:
     print("FALLOS:\n- " + "\n- ".join(fallos))
     sys.exit(1)
-print("OK: generador de casos (sin methodology, sin estimaciones, ajustado, fecha de cierre, ROIC, revisiones, técnicos, básico)")
+print("OK: generador de casos (sin methodology, sin estimaciones, ajustado, fecha de cierre, ROIC, revisiones, técnicos, básico, mercado)")

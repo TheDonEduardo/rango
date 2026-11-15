@@ -34,6 +34,8 @@ export const t={
   calcTitulo:'Simulador de aportaciones', calcExplica:'Mira cómo crece una cartera aportando cada mes, y cuánto se llevan las comisiones.',
   siguienteLeccion:'Siguiente lección', unidadN:n=>`Unidad ${n}`, casoFinal:'Caso final',
   retoDia:'Reto del día', retoExplica:'Una pregunta de lo ya estudiado · 20 XP', retoHecho:ok=>ok?'Hecho: acertado a la primera. Mañana, otro.':'Hecho. Mañana, otro.', responder:'Responder', retoCompletado:'Reto completado',
+  mercadoTitulo:'Mercado de la semana', mercadoExplica:(n,f)=>`${n} preguntas con lo que pasó hasta el ${f}`, mercadoHecho:(ok,n)=>`Hecho: ${ok} de ${n} a la primera. El sábado, otro.`,
+  mercadoCompletado:'Mercado de la semana completado', notaMercado:'Datos reales de la semana. Es práctica de cálculo, no una recomendación: el sábado habrá preguntas nuevas.',
   notaReto:ok=>ok?'Acertado a la primera: lo tienes asentado.':'Lo has fallado a la primera: volverá en tu repaso de mañana.',
   repasoDia:'Repaso del día', aprendidos:n=>`${n} ${n===1?'aprendido':'aprendidos'}`,
   repasoTitulo:'Repaso espaciado', enRepaso:'En repaso', aprendidosT:'Aprendidos',

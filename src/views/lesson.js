@@ -55,9 +55,9 @@ export function resultHTML(){
   const r=ses.lastRes,sk=streakNow();
   if(r.test)return testResultHTML(r);
   if(r.nivel)return nivelResultHTML(r);
-  return `<div class="res"><div class="res-main"><div class="res-top">${glyph('done',r.acc,84,108)}<div><h1>${r.kind==='reto'?t.retoCompletado:r.srs?t.repasoCompletado:t.leccionCompletada}</h1><p>${esc(r.title)}</p></div></div>
+  return `<div class="res"><div class="res-main"><div class="res-top">${glyph('done',r.acc,84,108)}<div><h1>${r.kind==='mercado'?t.mercadoCompletado:r.kind==='reto'?t.retoCompletado:r.srs?t.repasoCompletado:t.leccionCompletada}</h1><p>${esc(r.title)}</p></div></div>
   <div class="metrics"><div><b data-cuenta="${r.xp}">+${r.xp}</b><span>${t.xpGanados}</span></div><div><b>${Math.round(r.acc*100)} %</b><span>${t.precisionM}</span></div><div><b>${sk}</b><span>${t.diasRacha(sk)}</span></div></div>
-  <p class="note">${r.dominada?`<b>${t.dominadaNota}</b> `:r.kind==='review'?`${t.examenNota} `:''}${r.kind==='reto'?t.notaReto(r.acc===1):r.kind==='weak'?t.notaDebiles:r.srs?t.notaRepaso:t.notaVela(r.acc)}</p></div>
+  <p class="note">${r.dominada?`<b>${t.dominadaNota}</b> `:r.kind==='review'?`${t.examenNota} `:''}${r.kind==='mercado'?t.notaMercado:r.kind==='reto'?t.notaReto(r.acc===1):r.kind==='weak'?t.notaDebiles:r.srs?t.notaRepaso:t.notaVela(r.acc)}</p></div>
   <div class="stack"><button class="btn primary" data-act="home">${t.continuar}</button><button class="btn line" data-act="compartir">${t.compartir}</button></div></div>`;
 }
 export function failHTML(){

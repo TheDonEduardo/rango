@@ -48,6 +48,7 @@ const PRECACHE = [
   'src/content/casos.json',
   'src/content/semana.json',
   'src/content/historico.json',
+  'src/content/mercado.json',
   'fonts/fuentes.css',
   'fonts/bricolage-grotesque-latin.woff2',
   'fonts/ibm-plex-sans-latin.woff2',

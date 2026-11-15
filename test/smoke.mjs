@@ -525,6 +525,33 @@ const r3 = T.aportaciones({inicial: 5000, mensual: 0, anos: 10, rent: 7, ter: 0}
 if (!cerca(r1.final, 90687.73) || r1.aportado !== 48000 || !cerca(r2.final, 74363.05) || !cerca(r2.sinComision, 90687.73) || !cerca(r3.final, 5000 * 1.07 ** 10) || r1.serie.length !== 21)
   errs.push(`simulador de aportaciones: ${r1.final} ${r2.final} ${r3.final}`);
 T.setTrack('pasiva'); T.skipBasics();
+// Mercado de la semana: archivo bien formado; hacerlo lo marca como hecho y no entra en el repaso.
+{
+  const mp = path.join(root, 'src/content/mercado.json');
+  if (fs.existsSync(mp)) {
+    const m = JSON.parse(fs.readFileSync(mp, 'utf8'));
+    if (!/^\d{4}-W\d{2}$/.test(m.semana) || !m.hasta || !m.fuente || !Array.isArray(m.ex) || m.ex.length < 3 || m.ex.length > 6) errs.push('mercado.json mal formado');
+    for (const e of m.ex || []) {
+      if (!e.q || !e.why || !e.caso || !['num', 'choice'].includes(e.t)) errs.push('mercado.json: pregunta incompleta: ' + e.q);
+      if (e.t === 'num' && !(e.a >= 0 && e.a < 1000)) errs.push('mercado.json: respuesta fuera de rango: ' + e.q);
+      if (e.t === 'choice' && !(e.opts && e.opts[e.a])) errs.push('mercado.json: opción correcta inexistente: ' + e.q);
+      if (/NaN|undefined|None/.test(e.q + e.why)) errs.push('mercado.json: texto roto: ' + e.q);
+    }
+  }
+  if (T.MERCADO) {
+    const st = T.getState(), nSrs = Object.keys(st.srs).length; st.mercado = null; st.xp = st.xp || 10;
+    T.act('home');
+    if (!T.homeHTML().includes('data-act="mercado"')) errs.push('el inicio no ofrece el mercado de la semana');
+    T.act('mercado');
+    let g = 0;
+    while (g++ < 30 && T.getView() === 'lesson') { const ex = T.getRun().queue[0]; give(ex, right(ex)); T.check(); T.next(); }
+    if (!st.mercado || st.mercado.semana !== T.MERCADO.semana || st.mercado.ok !== T.MERCADO.ex.length) errs.push('el mercado de la semana no queda hecho: ' + JSON.stringify(st.mercado));
+    if (!app.innerHTML.includes('Mercado de la semana completado')) errs.push('el resultado del mercado de la semana no se dibuja');
+    if (Object.keys(st.srs).length !== nSrs) errs.push('el mercado de la semana entra en el repaso');
+    T.act('home');
+    if (T.homeHTML().includes('data-act="mercado"') || !T.homeHTML().includes('El sábado, otro')) errs.push('el mercado de la semana hecho se sigue ofreciendo');
+  }
+}
 // Itinerarios: lecciones existentes y sin repetir; elegir uno lo muestra en «Hoy» y abre su siguiente lección aunque esté bloqueada en su ruta.
 {
   const {t} = await import(pathToFileURL(path.join(root, 'src/textos.js')));

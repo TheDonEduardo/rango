@@ -2,7 +2,7 @@
 import {RH,OFFS,esc} from '../util.js';
 import {ico,LOGO} from '../icons.js';
 import {glyph} from '../charts.js';
-import {UNITS,FLAT,CASOS,SEMANA,TRACKS,PLACEMENT,trackOf,exCount} from '../content.js';
+import {UNITS,FLAT,CASOS,SEMANA,MERCADO,TRACKS,PLACEMENT,trackOf,exCount} from '../content.js';
 import {S,streakNow,dayXpNow,advancedOpen,statuses,srsDue,srsResumen,retoHoy,retoHecho} from '../state.js';
 import {ses} from '../ui.js';
 import {simCardHTML} from './sim.js';
@@ -74,6 +74,11 @@ function hoyHTML(st,TF,dx){
     :`<div class="hoy-row itin-r"><div><b>${t.itinHecho}</b><span>${esc(t.itin[iti.it.id][0])}</span></div><button class="btn ${sigue?'line':'primary'}" data-act="itinerarios">${t.itinResumen}</button></div>`;
   if(reto)h+=hecho?`<div class="hoy-row reto"><div><b>${t.retoDia}</b><span>${t.retoHecho(S.reto.ok)}</span></div></div>`
     :`<div class="hoy-row reto"><div><b>${t.retoDia}</b><span>${t.retoExplica}</span></div><button class="btn ${sigue||(iti&&iti.sig)?'line':'primary'}" data-act="reto">${t.responder}</button></div>`;
+  if(MERCADO){
+    const m=S.mercado&&S.mercado.semana===MERCADO.semana?S.mercado:null;
+    h+=m?`<div class="hoy-row merc"><div><b>${t.mercadoTitulo}</b><span>${t.mercadoHecho(m.ok,m.total)}</span></div></div>`
+      :`<div class="hoy-row merc"><div><b>${t.mercadoTitulo}</b><span>${t.mercadoExplica(MERCADO.ex.length,esc(MERCADO.hasta))}</span></div><button class="btn line" data-act="mercado">${t.empezar}</button></div>`;
+  }
   if(due)h+=`<div class="hoy-row srs"><div><b>${t.repasoDia}</b><span>${t.repasoPendiente(due)}${(n=>n?` · ${t.aprendidos(n)}`:'')(srsResumen().aprendidos)}</span></div><button class="btn ${sigue||(iti&&iti.sig)||(reto&&!hecho)?'line':'primary'}" data-act="srs">${t.repasar}</button></div>`;
   return h+'</section>';
 }
