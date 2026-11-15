@@ -121,7 +121,7 @@ const lint = (ex, w) => {
       if (!['choice', 'num', 'tap', 'level', 'order', 'match', 'plan', 'slide', 'zone'].includes(ex.t)) errs.push(w + ': tipo desconocido ' + ex.t);
 };
 for (const u of units) {
-  if (!['basico', 'pasiva', 'tecnico', 'fundamental', 'derivados', undefined].includes(u.track)) errs.push('ruta desconocida en ' + u.id);
+  if (!['basico', 'personal', 'pasiva', 'tecnico', 'fundamental', 'derivados', undefined].includes(u.track)) errs.push('ruta desconocida en ' + u.id);
   for (const l of u.lessons || []) {
     if (ids.has(l.id)) errs.push('id duplicado ' + l.id);
     ids.add(l.id);

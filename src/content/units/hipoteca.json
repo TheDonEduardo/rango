@@ -1,0 +1,205 @@
+{
+  "n": 1,
+  "id": "hipoteca",
+  "track": "personal",
+  "title": "La hipoteca",
+  "blurb": "Qué pagas en cada cuota, cuánto cuesta en total y cuánto puedes pedir.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "La cuota por dentro",
+      "texto": "Cada cuota suma los intereses de lo que debes ese mes y una parte de capital. La cuota no cambia, pero al principio es casi toda intereses y al final, casi toda capital.",
+      "ejemplo": "150.000 € al 3 %: el primer mes, 375 € de intereses y 336 € de capital."
+    },
+    {
+      "id": "g2",
+      "titulo": "El coste total",
+      "texto": "Multiplica la cuota por el número de meses y resta lo prestado: son los intereses totales. Amortizar antes de tiempo ahorra más al principio, cuando la deuda es mayor.",
+      "ejemplo": "711 € durante 300 meses: 213.300 € pagados, 63.300 € de intereses.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Deuda pendiente de una hipoteca de 150.000 € a 25 años al 3 %: baja despacio al principio y deprisa al final; a los 10 años aún se deben 103.003 €.",
+        "series": [
+          {
+            "data": [150000,145908,141692,137348,132871,128258,123505,118608,113561,108361,103003,97481,91792,85930,79889,73665,67252,60643,53833,46817,39586,32136,24460,16549,8399,0],
+            "tono": "ink"
+          }
+        ],
+        "margen": 120,
+        "h": 200,
+        "marcas": [
+          {
+            "i": 10,
+            "y": 103003,
+            "texto": "Año 10: 103 mil €"
+          }
+        ]
+      }
+    },
+    {
+      "id": "g3",
+      "titulo": "El ahorro previo",
+      "texto": "El banco suele financiar hasta el 80 %. Necesitas la entrada del 20 % y cerca de un 10 % más para impuestos y gastos: en torno al 30 % del precio.",
+      "ejemplo": "Piso de 200.000 €: 40.000 € de entrada y 20.000 € de gastos."
+    },
+    {
+      "id": "g4",
+      "titulo": "La cuota que aguantas",
+      "texto": "No dediques más del 35 % de tus ingresos netos a deudas. Y compara ofertas por la TAE, que incluye comisiones y productos vinculados, no por el TIN.",
+      "ejemplo": "Ingresos de 2.400 € al mes: cuota máxima de 840 €."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "fp1",
+      "title": "Cuota, capital e intereses",
+      "ex": [
+        {
+          "id": "fp1-1",
+          "t": "choice",
+          "q": "¿Qué pagas en cada cuota de una hipoteca?",
+          "opts": [
+            "Intereses de lo que debes y una parte del capital",
+            "Solo intereses hasta el último año del préstamo",
+            "Solo capital: los intereses se pagan al final",
+            "Una cantidad de capital idéntica todos los meses"
+          ],
+          "a": 0,
+          "why": "Cada cuota tiene dos partes: los intereses sobre lo que aún debes y la devolución de capital. La cuota es la misma, pero su reparto cambia mes a mes.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Desde la primera cuota devuelves algo de capital, aunque sea poco.",
+            "Los intereses se pagan cada mes, no al final.",
+            "Lo constante es la cuota total: el capital devuelto crece cada mes."
+          ]
+        },
+        {
+          "id": "fp1-2",
+          "t": "num",
+          "q": "Debes 150.000 € al 3 % anual. ¿Cuántos intereses pagas el primer mes?",
+          "unit": "€",
+          "a": 375,
+          "why": "150.000 € × 3 % ÷ 12 = 375 €. Los intereses de cada mes se calculan sobre lo que debes en ese momento.",
+          "guia": "g1"
+        },
+        {
+          "id": "fp1-3",
+          "t": "num",
+          "q": "La cuota de esa hipoteca (150.000 € a 25 años al 3 %) es de 711 €. Si 375 € son intereses, ¿cuánto capital devuelves el primer mes?",
+          "unit": "€",
+          "a": 336,
+          "why": "711 − 375 = 336 €. Al mes siguiente debes un poco menos, pagas algo menos de intereses y devuelves algo más de capital.",
+          "guia": "g1"
+        },
+        {
+          "id": "fp1-4",
+          "t": "num",
+          "q": "Pagas 711 € al mes durante 25 años por un préstamo de 150.000 €. ¿Cuántos miles de euros pagas de intereses en total? Redondea a 1 decimal.",
+          "unit": "mil €",
+          "a": 63.3,
+          "why": "711 € × 300 meses = 213.300 €. Menos los 150.000 € prestados: 63.300 € de intereses, 63,3 mil. El plazo largo abarata la cuota y encarece el total.",
+          "tol": 0.06,
+          "guia": "g2"
+        },
+        {
+          "id": "fp1-5",
+          "t": "choice",
+          "q": "¿Cuándo ahorra más intereses una amortización anticipada?",
+          "opts": [
+            "En los primeros años, cuando más capital debes",
+            "En los últimos años, cuando ya debes poco",
+            "Da igual: siempre ahorra lo mismo",
+            "Solo si coincide con una bajada de tipos"
+          ],
+          "a": 0,
+          "why": "Los intereses se calculan sobre lo que debes. Al principio la deuda es mayor y queda más plazo por delante: cada euro amortizado deja de generar intereses durante más años.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "Al final debes poco y queda poco plazo: apenas hay intereses que ahorrar.",
+            "No da igual: cuanto antes amortizas, más años de intereses evitas.",
+            "El ahorro depende de la deuda y del plazo que quedan, no de lo que hagan los tipos."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "fp2",
+      "title": "Cuánto puedes pedir",
+      "ex": [
+        {
+          "id": "fp2-1",
+          "t": "num",
+          "q": "Tus ingresos netos son de 2.400 € al mes. Con la regla de no dedicar más del 35 % a deudas, ¿cuál es tu cuota máxima?",
+          "unit": "€",
+          "a": 840,
+          "why": "2.400 € × 35 % = 840 €. Por encima de ese nivel, cualquier imprevisto o subida de tipos compromete el resto de tus gastos.",
+          "guia": "g4"
+        },
+        {
+          "id": "fp2-2",
+          "t": "num",
+          "q": "Un piso cuesta 200.000 € y el banco financia el 80 %. ¿Cuántos miles de euros tienes que poner de entrada?",
+          "unit": "mil €",
+          "a": 40,
+          "why": "200.000 € × 20 % = 40.000 €. Los bancos suelen financiar hasta el 80 % del precio o de la tasación, lo que sea menor.",
+          "guia": "g3"
+        },
+        {
+          "id": "fp2-3",
+          "t": "num",
+          "q": "Además de la entrada de 40.000 €, los impuestos y gastos de la compra rondan el 10 % del precio de 200.000 €. ¿Cuántos miles de euros necesitas ahorrados en total?",
+          "unit": "mil €",
+          "a": 60,
+          "why": "Entrada de 40.000 € + gastos de 20.000 € = 60.000 €: cerca del 30 % del precio. Es la barrera real para comprar, más que la cuota.",
+          "guia": "g3"
+        },
+        {
+          "id": "fp2-4",
+          "t": "slide",
+          "q": "Tienes 45.000 € ahorrados y necesitas el 30 % del precio entre entrada y gastos. Mueve el precio máximo del piso que puedes comprar.",
+          "label": "Precio del piso",
+          "min": 100,
+          "max": 300,
+          "step": 10,
+          "start": 250,
+          "a": 150,
+          "unit": "mil €",
+          "why": "45.000 € ÷ 30 % = 150.000 €. El ahorro disponible fija el precio máximo antes incluso de hablar con el banco.",
+          "show": [
+            {
+              "label": "Ahorro necesario",
+              "k": 0.3,
+              "unit": "mil €",
+              "dec": 0
+            }
+          ],
+          "guia": "g3"
+        },
+        {
+          "id": "fp2-5",
+          "t": "choice",
+          "q": "Dos bancos te ofrecen hipoteca. ¿Con qué dato las comparas?",
+          "opts": [
+            "La TAE, que incluye comisiones y otros gastos",
+            "El TIN, que es el interés que pagas al mes",
+            "La cuota del primer mes de cada una",
+            "El regalo de bienvenida de cada banco"
+          ],
+          "a": 0,
+          "why": "La TAE recoge el interés, las comisiones y el coste de los productos que te exigen contratar. Un TIN bajo con seguros caros puede salir peor que uno algo más alto.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "El TIN no incluye comisiones ni seguros: dos ofertas con el mismo TIN pueden costar distinto.",
+            "La cuota inicial puede ser baja por una oferta temporal o un plazo más largo.",
+            "Un regalo no compensa décadas de un tipo peor."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

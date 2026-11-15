@@ -1,7 +1,7 @@
 // Arranque, navegación entre pantallas, flujo de una lección y eventos.
 // Las pantallas están en views/, los tipos de ejercicio en exercises/ y el progreso guardado en state.js.
 import {today,yest,shuffle,esc} from './util.js';
-import {UNITS,FLAT,CASOS,SEMANA,MERCADO,EXBYID,PLACEMENT,EXAMEN_N,trackOf} from './content.js';
+import {UNITS,FLAT,CASOS,SEMANA,MERCADO,EXBYID,PLACEMENT,EXAMEN_N,trackOf,libre} from './content.js';
 import {S,save,resetState,migrar,advancedOpen,statuses,srsDue,srsRecord,SRS_MAX,exportar,leerCopia,importar,sumarRacha,retoHoy} from './state.js';
 import {$app,toast,ses} from './ui.js';
 import {setPlanCtx} from './drag.js';
@@ -192,7 +192,7 @@ function accionEjercicio(a,b){
 const ACCIONES={
   open(b){
     const L=FLAT.find(l=>l.id===b.dataset.id),s=statuses()[L.id];
-    if(s==='locked'){toast(trackOf(L.unit)!=='basico'&&!advancedOpen()?t.bloqueadaBasico:t.bloqueadaAnterior);return}
+    if(s==='locked'){toast(!libre(trackOf(L.unit))&&!advancedOpen()?t.bloqueadaBasico:t.bloqueadaAnterior);return}
     ses.homeY=window.scrollY;
     if(guiaPendiente(L)){abrirGuia(L.unit,'inicio',{L});ses.view='guia';render();return}
     startRun(L);

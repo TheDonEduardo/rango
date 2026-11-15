@@ -624,5 +624,13 @@
  {
   "termino": "asignación",
   "d": "Cuando ejercen una opción que has vendido: te toca comprar o entregar 100 acciones por contrato al precio de ejercicio."
+ },
+ {
+  "termino": "Euríbor",
+  "d": "Tipo de interés al que se prestan dinero los bancos europeos. Es la referencia de casi todas las hipotecas variables en España."
+ },
+ {
+  "termino": "diferencial",
+  "d": "Lo que el banco suma al Euríbor en una hipoteca variable. Se pacta al firmar y no cambia."
  }
 ]

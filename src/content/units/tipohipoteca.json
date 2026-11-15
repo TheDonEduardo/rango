@@ -1,0 +1,246 @@
+{
+  "n": 2,
+  "id": "tipohipoteca",
+  "track": "personal",
+  "title": "Fija, variable o mixta",
+  "blurb": "Cómo cambia la cuota con el Euríbor y cuándo amortizar.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "La variable",
+      "texto": "Su tipo es el Euríbor más un diferencial pactado. Se revisa cada 6 o 12 meses: si el Euríbor sube, tu cuota sube.",
+      "ejemplo": "Euríbor al 2,40 % y diferencial de 0,70 %: pagas un 3,10 %."
+    },
+    {
+      "id": "g2",
+      "titulo": "Cuánto cambia la cuota",
+      "texto": "Antes de firmar una variable, calcula la cuota con dos puntos más de tipo. Si no podrías pagarla, no es para ti.",
+      "ejemplo": "150.000 € a 25 años: 711 € al 3 % y 877 € al 5 %."
+    },
+    {
+      "id": "g3",
+      "titulo": "Fija y mixta",
+      "texto": "En la fija, la cuota no cambia y el riesgo de tipos lo asume el banco, que cobra por ello. La mixta es fija los primeros años y variable después.",
+      "ejemplo": "Con la cuota en el 35 % de tus ingresos, la certeza de la fija vale más."
+    },
+    {
+      "id": "g4",
+      "titulo": "Amortizar",
+      "texto": "Cada euro amortizado deja de pagar intereses. Reducir el plazo ahorra más que reducir la cuota. Comprueba la comisión de tu contrato.",
+      "ejemplo": "Amortizar 10.000 € al 3 %: unos 300 € menos de intereses el primer año."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "fp3",
+      "title": "Euríbor y diferencial",
+      "ex": [
+        {
+          "id": "fp3-1",
+          "t": "choice",
+          "q": "¿Cómo se calcula el tipo de una hipoteca variable?",
+          "opts": [
+            "Euríbor más un diferencial fijo, revisado cada cierto tiempo",
+            "Un tipo fijo que el banco puede cambiar cuando quiera",
+            "La inflación del año anterior más un punto",
+            "El tipo oficial del BCE, sin nada más"
+          ],
+          "a": 0,
+          "why": "El diferencial se pacta al firmar y no cambia. El Euríbor sí: en cada revisión, normalmente cada 6 o 12 meses, tu tipo se recalcula con su valor de ese momento.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "El banco no puede cambiarlo a su antojo: sigue al Euríbor en fechas pactadas.",
+            "La referencia habitual es el Euríbor, no la inflación.",
+            "Al tipo de referencia se le suma siempre el diferencial del banco."
+          ]
+        },
+        {
+          "id": "fp3-2",
+          "t": "num",
+          "q": "Tu hipoteca es Euríbor + 0,70 % y el Euríbor está en el 2,40 %. ¿Qué tipo pagas tras la revisión?",
+          "unit": "%",
+          "a": 3.1,
+          "why": "2,40 % + 0,70 % = 3,10 %. Lo único que puedes negociar es el diferencial; el Euríbor lo fija el mercado.",
+          "tol": 0.006,
+          "guia": "g1"
+        },
+        {
+          "id": "fp3-3",
+          "t": "num",
+          "q": "Según la tabla, ¿cuántos euros al mes sube la cuota si el tipo pasa del 3 % al 5 %?",
+          "table": {
+            "cols": [
+              "Tipo de interés",
+              "Cuota mensual"
+            ],
+            "rows": [
+              [
+                "2 %",
+                "636 €"
+              ],
+              [
+                "3 %",
+                "711 €"
+              ],
+              [
+                "4 %",
+                "792 €"
+              ],
+              [
+                "5 %",
+                "877 €"
+              ]
+            ],
+            "note": "Hipoteca de 150.000 € a 25 años."
+          },
+          "unit": "€",
+          "a": 166,
+          "why": "877 − 711 = 166 € más cada mes. casi 2.000 € al año. Antes de firmar una variable, comprueba que podrías pagar la cuota con dos puntos más.",
+          "guia": "g2"
+        },
+        {
+          "id": "fp3-4",
+          "t": "num",
+          "q": "¿Qué porcentaje sube la cuota al pasar del 3 % al 5 %? Redondea a 1 decimal.",
+          "table": {
+            "cols": [
+              "Tipo de interés",
+              "Cuota mensual"
+            ],
+            "rows": [
+              [
+                "2 %",
+                "636 €"
+              ],
+              [
+                "3 %",
+                "711 €"
+              ],
+              [
+                "4 %",
+                "792 €"
+              ],
+              [
+                "5 %",
+                "877 €"
+              ]
+            ],
+            "note": "Hipoteca de 150.000 € a 25 años."
+          },
+          "unit": "%",
+          "a": 23.3,
+          "tol": 0.06,
+          "why": "877 ÷ 711 − 1 = 23,3 %. Dos puntos más de tipo suben la cuota casi una cuarta parte: el efecto es mayor cuanto más plazo queda.",
+          "guia": "g2"
+        },
+        {
+          "id": "fp3-5",
+          "t": "choice",
+          "q": "En una hipoteca fija, ¿quién asume el riesgo de que suban los tipos?",
+          "opts": [
+            "El banco: por eso suele empezar algo más cara",
+            "Tú: la cuota sube en cada revisión",
+            "Nadie: los tipos fijos no dependen del mercado",
+            "El Estado, que compensa la diferencia"
+          ],
+          "a": 0,
+          "why": "Con tipo fijo, tu cuota no cambia pase lo que pase. El banco cobra por asumir ese riesgo con un tipo inicial algo más alto que el de una variable.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Eso ocurre en la variable: en la fija la cuota no se revisa.",
+            "Los tipos fijos también dependen del mercado, pero solo al firmar.",
+            "El Estado no compensa nada: el riesgo es del banco."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "fp4",
+      "title": "Elegir y amortizar",
+      "ex": [
+        {
+          "id": "fp4-1",
+          "t": "choice",
+          "q": "La cuota se llevaría el 35 % de tus ingresos y no tienes margen para subidas. ¿Qué hipoteca encaja mejor?",
+          "opts": [
+            "Fija: sabes lo que pagarás hasta el final",
+            "Variable: empieza con la cuota más baja",
+            "Variable sin diferencial, si la encuentras",
+            "La de mayor plazo, sea del tipo que sea"
+          ],
+          "a": 0,
+          "why": "Si una subida de tipos te pondría en apuros, la certeza vale más que el posible ahorro. La variable es para quien puede absorber cuotas más altas.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "La cuota baja de hoy puede subir justo cuando menos margen tienes.",
+            "Sin diferencial seguiría subiendo con el Euríbor: el riesgo es el mismo.",
+            "Más plazo baja la cuota, pero no te protege de los tipos y encarece el total."
+          ]
+        },
+        {
+          "id": "fp4-2",
+          "t": "choice",
+          "q": "¿Qué es una hipoteca mixta?",
+          "opts": [
+            "Fija los primeros años y variable después",
+            "Mitad del capital a tipo fijo y mitad variable",
+            "Una hipoteca firmada con dos bancos a la vez",
+            "Variable con un tope máximo de cuota"
+          ],
+          "a": 0,
+          "why": "Da la seguridad del tipo fijo al principio, cuando más debes, y pasa a variable después. El riesgo de tipos no desaparece: se aplaza.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "No se reparte el capital: se reparte el tiempo.",
+            "Sigue siendo un solo préstamo con un solo banco.",
+            "Eso sería una variable con techo, un producto distinto."
+          ]
+        },
+        {
+          "id": "fp4-3",
+          "t": "num",
+          "q": "Amortizas 10.000 € de una hipoteca al 3 %. ¿Cuántos euros de intereses te ahorras, aproximadamente, el primer año?",
+          "unit": "€",
+          "a": 300,
+          "why": "10.000 € × 3 % = 300 €. Y el ahorro se repite, cada vez algo menor, todos los años que le quedaban a ese capital.",
+          "guia": "g4"
+        },
+        {
+          "id": "fp4-4",
+          "t": "choice",
+          "q": "Al amortizar, puedes reducir la cuota o reducir el plazo. ¿Qué ahorra más intereses?",
+          "opts": [
+            "Reducir el plazo: debes durante menos años",
+            "Reducir la cuota: pagas menos cada mes",
+            "Las dos ahorran exactamente lo mismo",
+            "Ninguna: amortizar no cambia los intereses"
+          ],
+          "a": 0,
+          "why": "Reducir el plazo mantiene la cuota y elimina años enteros de intereses. Reducir la cuota da más aire cada mes, pero ahorra menos en total.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Baja la cuota, pero sigues debiendo los mismos años.",
+            "No ahorran lo mismo: menos plazo significa menos años de intereses.",
+            "Amortizar reduce la deuda y, con ella, los intereses futuros."
+          ]
+        },
+        {
+          "id": "fp4-5",
+          "t": "num",
+          "q": "Tu contrato cobra una comisión del 0,25 % por amortizar. ¿Cuánto pagas por amortizar 10.000 €?",
+          "unit": "€",
+          "a": 25,
+          "why": "10.000 € × 0,25 % = 25 €. Frente a los 300 € de intereses que ahorras solo el primer año, compensa de sobra. Mira siempre la comisión de tu escritura.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

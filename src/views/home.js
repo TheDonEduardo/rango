@@ -2,7 +2,7 @@
 import {RH,OFFS,esc} from '../util.js';
 import {ico,LOGO} from '../icons.js';
 import {glyph} from '../charts.js';
-import {UNITS,FLAT,CASOS,SEMANA,MERCADO,TRACKS,PLACEMENT,trackOf,exCount} from '../content.js';
+import {UNITS,FLAT,CASOS,SEMANA,MERCADO,TRACKS,PLACEMENT,trackOf,exCount,libre} from '../content.js';
 import {S,streakNow,dayXpNow,advancedOpen,statuses,srsDue,srsResumen,retoHoy,retoHecho} from '../state.js';
 import {ses} from '../ui.js';
 import {simCardHTML} from './sim.js';
@@ -51,8 +51,8 @@ export function homeHTML(){
 
 // Decisiones de quien empieza: solo la primera que aplique, para no apilar tarjetas.
 function avisoHTML(TF){
-  if(!S.objetivo&&!Object.keys(S.done).length)return `<section class="objetivo" aria-label="${t.objetivoTitulo}"><b>${t.objetivoTitulo}</b><div class="obj-opc">${['basico','pasiva','fundamental','tecnico','derivados'].map(r=>`<button class="btn line" data-act="objetivo" data-track="${r}"><b>${t.objetivos[r][0]}</b><span>${t.objetivos[r][1]}</span></button>`).join('')}</div><div class="row"><button class="btn ghost" data-act="itinerarios">${t.itinVer}</button><button class="btn ghost" data-act="noobjetivo">${t.ahoraNo}</button></div></section>`;
-  if(S.track!=='basico'&&!advancedOpen())return `<section class="gate"><p>${t.bloqueoRuta}</p><div class="row"><button class="btn line" data-act="track" data-track="basico">${t.irBasicos}</button>${S.placement?'':`<button class="btn line" data-act="test">${t.hacerTest}</button>`}<button class="btn ghost" data-act="skipbasics">${t.saltarBasicos}</button></div></section>`;
+  if(!S.objetivo&&!Object.keys(S.done).length)return `<section class="objetivo" aria-label="${t.objetivoTitulo}"><b>${t.objetivoTitulo}</b><div class="obj-opc">${['basico','personal','pasiva','fundamental','tecnico','derivados'].map(r=>`<button class="btn line" data-act="objetivo" data-track="${r}"><b>${t.objetivos[r][0]}</b><span>${t.objetivos[r][1]}</span></button>`).join('')}</div><div class="row"><button class="btn ghost" data-act="itinerarios">${t.itinVer}</button><button class="btn ghost" data-act="noobjetivo">${t.ahoraNo}</button></div></section>`;
+  if(!libre(S.track)&&!advancedOpen())return `<section class="gate"><p>${t.bloqueoRuta}</p><div class="row"><button class="btn line" data-act="track" data-track="basico">${t.irBasicos}</button>${S.placement?'':`<button class="btn line" data-act="test">${t.hacerTest}</button>`}<button class="btn ghost" data-act="skipbasics">${t.saltarBasicos}</button></div></section>`;
   if(S.track==='basico'&&!S.placement&&!Object.keys(S.done).length)return `<section class="test" aria-label="${t.testNivel}"><div><b>${t.testPregunta}</b><span>${t.testExplica(PLACEMENT.length)}</span></div><div class="row"><button class="btn primary" data-act="test">${t.hacerTest}</button><button class="btn ghost" data-act="notest">${t.desdeCero}</button></div></section>`;
   // Prueba de nivel de las rutas avanzadas: para quien aún no ha hecho ninguna lección de la ruta.
   if(S.track!=='basico'&&!S.pruebas[S.track]&&!TF.some(l=>S.done[l.id]))return `<section class="test" aria-label="${t.pruebaNivel}"><div><b>${t.nivelPregunta}</b><span>${t.nivelExplica}</span></div><div class="row"><button class="btn primary" data-act="nivel" data-track="${S.track}">${t.hacerPrueba}</button><button class="btn ghost" data-act="nonivel" data-track="${S.track}">${t.desdeCero}</button></div></section>`;
@@ -82,7 +82,7 @@ function hoyHTML(st,TF,dx){
   if(due)h+=`<div class="hoy-row srs"><div><b>${t.repasoDia}</b><span>${t.repasoPendiente(due)}${(n=>n?` · ${t.aprendidos(n)}`:'')(srsResumen().aprendidos)}</span></div><button class="btn ${sigue||(iti&&iti.sig)||(reto&&!hecho)?'line':'primary'}" data-act="srs">${t.repasar}</button></div>`;
   return h+'</section>';
 }
-const advancedOpenFor=r=>r==='basico'||advancedOpen();
+const advancedOpenFor=r=>libre(r)||advancedOpen();
 
 // Herramienta propia de la ruta: Operación de la semana (Técnico) o simulador de aportaciones (Pasiva).
 function herramientaHTML(){

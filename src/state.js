@@ -1,6 +1,6 @@
 // Progreso guardado en el dispositivo (localStorage): formato, migraciones, racha, rutas y repaso espaciado.
 import {KEY,today,yest,addDays} from './util.js';
-import {FLAT,EXBYID,trackOf} from './content.js';
+import {FLAT,EXBYID,trackOf,libre} from './content.js';
 
 // Versión del formato guardado. Cada cambio de formato añade un paso a MIGRAR (de la versión n a la n+1),
 // así el progreso de quien ya usa la app se convierte en vez de perderse.
@@ -67,7 +67,7 @@ export function advancedOpen(){
   // Las unidades básicas con gate:false (complementarias) no cuentan para abrir las otras rutas.
   const basic=FLAT.filter(l=>trackOf(l.unit)==='basico'&&l.unit.gate!==false);
   if(basic.every(l=>S.done[l.id]))return true;
-  return FLAT.some(l=>trackOf(l.unit)!=='basico'&&S.done[l.id]);
+  return FLAT.some(l=>!libre(trackOf(l.unit))&&S.done[l.id]);
 }
 // Estado de cada lección por id. Cada ruta tiene su propia lección actual.
 export function statuses(){
@@ -75,7 +75,7 @@ export function statuses(){
   FLAT.forEach(l=>{
     const t=trackOf(l.unit);
     if(S.done[l.id])st[l.id]='done';
-    else if(!cur[t]){cur[t]=1;st[l.id]=(t==='basico'||adv)?'current':'locked'}
+    else if(!cur[t]){cur[t]=1;st[l.id]=(libre(t)||adv)?'current':'locked'}
     else st[l.id]=S.all?'open':'locked';
   });
   return st;
