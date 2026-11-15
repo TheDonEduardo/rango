@@ -589,5 +589,9 @@
  {
   "termino": "volatilidad implícita",
   "d": "La volatilidad que descuenta el precio de las opciones: lo que el mercado espera que se mueva la acción hasta el vencimiento."
+ },
+ {
+  "termino": "call cubierta",
+  "d": "Estrategia de tener 100 acciones y vender una call sobre ellas: cobras la prima a cambio de comprometerte a vender al precio de ejercicio."
  }
 ]

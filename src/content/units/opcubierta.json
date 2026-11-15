@@ -1,0 +1,209 @@
+{
+  "n": 5,
+  "id": "opcubierta",
+  "track": "derivados",
+  "title": "Call cubierta",
+  "blurb": "Cobrar una prima por tus acciones a cambio de limitar la subida.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Qué es",
+      "texto": "Tienes 100 acciones y vendes una call sobre ellas. Cobras la prima hoy y te comprometes a vender al precio de ejercicio si la acción lo supera al vencimiento.",
+      "ejemplo": "100 acciones y una call vendida a 2 $: cobras 200 $."
+    },
+    {
+      "id": "g2",
+      "titulo": "Techo y equilibrio",
+      "texto": "La ganancia máxima es la subida hasta el ejercicio más la prima. El punto de equilibrio baja en lo que cobras: es todo lo que la prima amortigua.",
+      "ejemplo": "Compra a 50 $, ejercicio 55 $, prima 2 $: máximo 7 $ y equilibrio en 48 $.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Resultado de una call cubierta con compra a 50 $, ejercicio 55 $ y prima de 2 $: pierde por debajo de 48 $ y gana como máximo 7 $ desde 55 $.",
+        "series": [
+          {
+            "data": [-8,-3,2,7,7,7],
+            "tono": "ink"
+          }
+        ],
+        "margen": 140,
+        "h": 210,
+        "lineas": [
+          {
+            "y": 7,
+            "texto": "Ganancia máx.: 7 $",
+            "tono": "up"
+          },
+          {
+            "y": 0,
+            "texto": "Equilibrio: 48 $",
+            "tono": "acc"
+          }
+        ]
+      }
+    },
+    {
+      "id": "g3",
+      "titulo": "Lo que cedes",
+      "texto": "Si la acción se dispara, vendes al ejercicio y el resto de la subida es de quien compró la call. Cambias una ganancia incierta y grande por una pequeña y segura.",
+      "ejemplo": "La acción sube a 70 $: ganas 7 $ en lugar de 20 $."
+    },
+    {
+      "id": "g4",
+      "titulo": "No es una cobertura",
+      "texto": "Si la acción cae, pierdes casi lo mismo que sin la call. Úsala sobre acciones que venderías contento al ejercicio, no para proteger una posición.",
+      "ejemplo": "La acción cae a 40 $: pierdes 8 $ por acción, con prima incluida."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "op9",
+      "title": "Cobrar por tus acciones",
+      "ex": [
+        {
+          "id": "op9-1",
+          "t": "choice",
+          "q": "¿Qué es una call cubierta?",
+          "opts": [
+            "Tener 100 acciones y vender una call sobre ellas",
+            "Comprar una call y una put del mismo ejercicio",
+            "Comprar una call con dinero prestado del bróker",
+            "Vender una call sin tener las acciones en cartera"
+          ],
+          "a": 0,
+          "why": "Tienes las acciones y vendes a otro el derecho a comprártelas a un precio. Cobras la prima a cambio de comprometerte a vender si la acción supera el ejercicio.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Eso es comprar volatilidad con las dos opciones, no una call cubierta.",
+            "Ahí compras la call; en la cubierta la vendes, y con las acciones en cartera.",
+            "Sin las acciones es una call descubierta, con riesgo ilimitado."
+          ]
+        },
+        {
+          "id": "op9-2",
+          "t": "num",
+          "q": "Tienes 100 acciones compradas a 50 $ y vendes una call con ejercicio 55 $ y prima de 2 $. ¿Cuánto cobras?",
+          "unit": "$",
+          "a": 200,
+          "why": "100 acciones × 2 $ = 200 $. Los cobras hoy y son tuyos pase lo que pase después.",
+          "guia": "g1"
+        },
+        {
+          "id": "op9-3",
+          "t": "num",
+          "q": "Con esa call cubierta (acciones a 50 $, ejercicio 55 $, prima 2 $), la acción acaba en 53 $. ¿Cuánto ganas por acción en total?",
+          "unit": "$",
+          "a": 5,
+          "why": "3 $ de subida de la acción + 2 $ de prima = 5 $. La call vence sin valor porque la acción no ha superado los 55 $: conservas las acciones.",
+          "guia": "g2"
+        },
+        {
+          "id": "op9-4",
+          "t": "num",
+          "q": "Si la acción acaba en 62 $, te ejercen la call y vendes a 55 $. ¿Cuál es tu ganancia por acción, la máxima posible?",
+          "unit": "$",
+          "a": 7,
+          "why": "(55 − 50) + 2 = 7 $. Por mucho que suba la acción, vendes a 55 $: la ganancia tiene techo.",
+          "guia": "g2"
+        },
+        {
+          "id": "op9-5",
+          "t": "num",
+          "q": "¿A qué precio de la acción al vencimiento no ganas ni pierdes con esa call cubierta?",
+          "unit": "$",
+          "a": 48,
+          "why": "50 − 2 = 48 $. La prima cobrada rebaja tu precio de equilibrio en 2 $: es todo lo que amortigua una caída.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "op10",
+      "title": "Lo que cedes",
+      "ex": [
+        {
+          "id": "op10-1",
+          "t": "choice",
+          "q": "Vendiste la call de 55 $ y la acción se dispara a 70 $ por una oferta de compra. ¿Qué pasa?",
+          "opts": [
+            "Vendes a 55 $ y renuncias al resto de la subida",
+            "Vendes a 70 $ y además conservas la prima",
+            "La call se anula al haber una oferta de compra",
+            "Pierdes las acciones sin cobrar nada por ellas"
+          ],
+          "a": 0,
+          "why": "Te comprometiste a vender a 55 $. Ganas tus 7 $ por acción, pero los 15 $ que hay entre 55 y 70 se los lleva quien te compró la call.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Te comprometiste a vender a 55 $: la subida por encima no es tuya.",
+            "Una oferta de compra no anula las opciones: se ejercen igual.",
+            "Cobras los 55 $ del ejercicio y además te quedas la prima."
+          ]
+        },
+        {
+          "id": "op10-2",
+          "t": "num",
+          "q": "Con la acción en 70 $, ¿cuánto dejas de ganar por acción frente a no haber vendido la call?",
+          "unit": "$",
+          "a": 13,
+          "why": "Sin la call ganarías 70 − 50 = 20 $. Con ella ganas 7 $. La diferencia, 13 $, es el coste de haber limitado la subida.",
+          "guia": "g3"
+        },
+        {
+          "id": "op10-3",
+          "t": "num",
+          "q": "Cobras 2 $ de prima por una call a un mes sobre acciones que valen 50 $. ¿Qué rentabilidad es en ese mes?",
+          "unit": "%",
+          "a": 4,
+          "why": "2 ÷ 50 = 4 % en un mes. Suena muy alto, y por eso mismo indica riesgo: una prima generosa significa que el mercado espera movimientos grandes.",
+          "guia": "g4"
+        },
+        {
+          "id": "op10-4",
+          "t": "choice",
+          "q": "La acción cae de 50 $ a 40 $. ¿Cómo queda tu call cubierta?",
+          "opts": [
+            "Pierdes 8 $ por acción: la prima amortigua poco",
+            "No pierdes nada: la call te protege de la caída",
+            "Ganas 2 $: la prima compensa toda la bajada",
+            "Pierdes 12 $: la caída más la prima devuelta"
+          ],
+          "a": 0,
+          "why": "10 $ de caída − 2 $ de prima = 8 $ de pérdida. La call cubierta no es una cobertura: sigues teniendo casi todo el riesgo de la acción.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "La call vendida no protege: solo te deja la prima cobrada.",
+            "La prima son 2 $ y la caída 10 $: no la compensa.",
+            "La prima no se devuelve: reduce la pérdida a 8 $."
+          ]
+        },
+        {
+          "id": "op10-5",
+          "t": "slide",
+          "q": "Compraste a 50 $ y solo quieres comprometerte a vender al menos un 10 % por encima. Mueve el ejercicio mínimo de la call.",
+          "label": "Precio de ejercicio",
+          "min": 50,
+          "max": 60,
+          "step": 1,
+          "start": 51,
+          "a": 55,
+          "unit": "$",
+          "why": "50 × 1,10 = 55 $. Elige el ejercicio como un precio al que venderías contento: si te ejercen, ese será tu precio de venta.",
+          "show": [
+            {
+              "label": "Sobre tu precio de compra",
+              "k": 2,
+              "b": -100,
+              "unit": "%"
+            }
+          ],
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}
