@@ -1,0 +1,233 @@
+{
+  "n": 4,
+  "id": "prestamos",
+  "track": "personal",
+  "title": "El coche y los préstamos",
+  "blurb": "Lo que cuesta de verdad un coche y cómo comparar un préstamo.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "El coche pierde valor",
+      "texto": "Un coche nuevo pierde en torno a un 20 % el primer año y sigue cayendo después. Es su mayor coste y no aparece en ninguna factura. Uno de dos o tres años ya ha pasado lo peor.",
+      "ejemplo": "Coche de 24.000 €: 19.200 € un año después."
+    },
+    {
+      "id": "g2",
+      "titulo": "Financiar el coche",
+      "texto": "Multiplica la cuota por los meses para ver lo que pagas de verdad. Los descuentos por financiar suelen costar más de lo que ahorran: compara el total con el precio al contado.",
+      "ejemplo": "20.500 € más 3.200 € de intereses: 1.700 € más que los 22.000 € al contado."
+    },
+    {
+      "id": "g3",
+      "titulo": "Lo que cuesta al año",
+      "texto": "Suma la pérdida de valor, el seguro, el combustible, el mantenimiento y los impuestos. Ese es el coste real de tener coche, lo pagues como lo pagues.",
+      "ejemplo": "5.200 € al año: 433 € al mes."
+    },
+    {
+      "id": "g4",
+      "titulo": "Préstamos personales",
+      "texto": "Son más caros que una hipoteca porque no hay garantía. Elige el plazo más corto que puedas pagar con holgura, compara por la TAE y no pases del 35 % de tus ingresos entre todas tus deudas.",
+      "ejemplo": "6.000 € a 3 años con cuota de 185 €: 660 € de intereses."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "fp7",
+      "title": "El coche",
+      "ex": [
+        {
+          "id": "fp7-1",
+          "t": "num",
+          "q": "Un coche nuevo cuesta 24.000 € y pierde un 20 % de su valor el primer año. ¿Cuántos miles de euros vale después? Redondea a 1 decimal.",
+          "unit": "mil €",
+          "a": 19.2,
+          "why": "24.000 € × 80 % = 19.200 €. En un año ha perdido 4.800 € solo por dejar de ser nuevo: es el mayor coste de un coche, y no se ve.",
+          "tol": 0.06,
+          "guia": "g1"
+        },
+        {
+          "id": "fp7-2",
+          "t": "num",
+          "q": "Financias 15.000 € del coche a 5 años con una cuota de 290 €. ¿Cuántos miles de euros pagas de intereses? Redondea a 1 decimal.",
+          "unit": "mil €",
+          "a": 2.4,
+          "why": "290 € × 60 meses = 17.400 €. Menos los 15.000 € prestados: 2.400 € de intereses.",
+          "tol": 0.06,
+          "guia": "g2"
+        },
+        {
+          "id": "fp7-3",
+          "t": "num",
+          "q": "Al contado, el coche cuesta 22.000 €. Financiado te lo dejan en 20.500 €, pero pagas 3.200 € de intereses. ¿Cuántos miles de euros más pagas financiando? Redondea a 1 decimal.",
+          "unit": "mil €",
+          "a": 1.7,
+          "why": "20.500 + 3.200 = 23.700 €, frente a 22.000 €: 1.700 € más. El «descuento por financiar» suele costar más de lo que ahorra: compara siempre el total.",
+          "tol": 0.06,
+          "guia": "g2"
+        },
+        {
+          "id": "fp7-4",
+          "t": "num",
+          "q": "Coste anual de tener este coche. ¿Cuánto es al mes? Redondea a euros.",
+          "unit": "€",
+          "a": 433,
+          "table": {
+            "cols": [
+              "Coste",
+              "Al año"
+            ],
+            "rows": [
+              [
+                "Pérdida de valor",
+                "2.400 €"
+              ],
+              [
+                "Seguro",
+                "600 €"
+              ],
+              [
+                "Combustible",
+                "1.500 €"
+              ],
+              [
+                "Mantenimiento e impuestos",
+                "700 €"
+              ]
+            ]
+          },
+          "why": "2.400 + 600 + 1.500 + 700 = 5.200 € al año, y 5.200 ÷ 12 = 433 € al mes. La cuota del préstamo es solo una parte de lo que cuesta un coche.",
+          "guia": "g3"
+        },
+        {
+          "id": "fp7-5",
+          "t": "choice",
+          "q": "¿Qué compra evita la mayor parte de la pérdida de valor?",
+          "opts": [
+            "Un coche de segunda mano de dos o tres años",
+            "Un coche nuevo con todos los extras",
+            "Un coche nuevo, cambiándolo cada dos años",
+            "El modelo más caro, que se revaloriza"
+          ],
+          "a": 0,
+          "why": "La caída más fuerte se concentra en los primeros años. Un coche de dos o tres años ya la ha sufrido, y la ha pagado su primer dueño.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Los extras se pagan caros y casi no se recuperan al vender.",
+            "Cambiar cada dos años es pagar una y otra vez la caída más fuerte.",
+            "Los coches normales no se revalorizan: pierden valor."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "fp8",
+      "title": "Préstamos personales",
+      "ex": [
+        {
+          "id": "fp8-1",
+          "t": "choice",
+          "q": "¿Por qué un préstamo personal tiene un tipo más alto que una hipoteca?",
+          "opts": [
+            "No hay un inmueble que responda del impago",
+            "Porque se devuelve en un plazo más largo",
+            "Porque el importe prestado es mayor",
+            "Porque lleva más impuestos que la hipoteca"
+          ],
+          "a": 0,
+          "why": "En la hipoteca, el banco puede quedarse con la vivienda si no pagas. En el préstamo personal no tiene esa garantía, y cobra más por el riesgo.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Suele ser al revés: su plazo es mucho más corto.",
+            "El importe suele ser mucho menor que el de una hipoteca.",
+            "La diferencia está en el riesgo del banco, no en los impuestos."
+          ]
+        },
+        {
+          "id": "fp8-2",
+          "t": "num",
+          "q": "Pides 6.000 € a 3 años con una cuota de 185 €. ¿Cuántos euros pagas de intereses en total?",
+          "unit": "€",
+          "a": 660,
+          "why": "185 € × 36 meses = 6.660 €. Menos los 6.000 € prestados: 660 € de intereses.",
+          "guia": "g4"
+        },
+        {
+          "id": "fp8-3",
+          "t": "choice",
+          "q": "Alargas ese préstamo de 3 a 6 años para pagar menos cada mes. ¿Qué pasa con el coste total?",
+          "opts": [
+            "Sube: pagas intereses durante más tiempo",
+            "Baja: la cuota mensual es menor",
+            "No cambia: el tipo de interés es el mismo",
+            "Baja a la mitad, igual que la cuota"
+          ],
+          "a": 0,
+          "why": "Una cuota más baja se paga con más años de intereses. El plazo debe ser el más corto que tu presupuesto aguante con holgura.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "La cuota baja, pero el total pagado sube.",
+            "Con el mismo tipo, más años significan más intereses.",
+            "La cuota no cae a la mitad, y el coste total aumenta."
+          ]
+        },
+        {
+          "id": "fp8-4",
+          "t": "num",
+          "q": "El préstamo de 6.000 € tiene una comisión de apertura del 2 %. ¿Cuánto es?",
+          "unit": "€",
+          "a": 120,
+          "why": "6.000 € × 2 % = 120 €, que se pagan aunque el tipo parezca bajo. Por eso se compara por la TAE, que ya incluye las comisiones.",
+          "guia": "g4"
+        },
+        {
+          "id": "fp8-5",
+          "t": "choice",
+          "q": "Te ofrecen un préstamo al 8 % y piensas usarlo para invertir en bolsa. ¿Qué problema tiene?",
+          "opts": [
+            "El coste es seguro y la rentabilidad, incierta",
+            "Ninguno: la bolsa siempre rinde más del 8 %",
+            "Los préstamos no se pueden usar para invertir",
+            "Que el banco se queda con las ganancias"
+          ],
+          "a": 0,
+          "why": "Pagas el 8 % pase lo que pase, mientras la bolsa puede caer un 30 % ese año. Invertir con dinero prestado convierte una mala racha en un problema grave.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Hay muchos años en que la bolsa pierde, y el préstamo se paga igual.",
+            "Se puede, pero que se pueda no lo hace prudente.",
+            "El banco cobra sus intereses; las pérdidas y las ganancias son tuyas."
+          ]
+        },
+        {
+          "id": "fp8-6",
+          "t": "slide",
+          "q": "Ganas 2.000 € netos al mes y ya pagas 500 € de hipoteca. Para no pasar del 35 % en deudas, mueve la cuota máxima de un préstamo nuevo.",
+          "label": "Cuota del préstamo",
+          "min": 0,
+          "max": 600,
+          "step": 50,
+          "start": 450,
+          "a": 200,
+          "unit": "€",
+          "why": "2.000 € × 35 % = 700 €. Menos los 500 € de hipoteca, quedan 200 €. El límite cuenta todas las deudas juntas, no cada una por separado.",
+          "show": [
+            {
+              "label": "Deudas sobre ingresos",
+              "k": 0.05,
+              "b": 25,
+              "unit": "%",
+              "dec": 1
+            }
+          ],
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 6
+    }
+  ]
+}

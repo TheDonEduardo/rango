@@ -632,5 +632,9 @@
  {
   "termino": "diferencial",
   "d": "Lo que el banco suma al Euríbor en una hipoteca variable. Se pacta al firmar y no cambia."
+ },
+ {
+  "termino": "coste de oportunidad",
+  "d": "Lo que dejas de ganar por usar el dinero en una cosa en lugar de en otra."
  }
 ]

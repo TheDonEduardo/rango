@@ -1,0 +1,216 @@
+{
+  "n": 3,
+  "id": "comprar",
+  "track": "personal",
+  "title": "Comprar o alquilar",
+  "blurb": "Qué cuesta de verdad cada opción y cuántos años hacen falta para que comprar compense.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Costes que no vuelven",
+      "texto": "Quien compra también pierde dinero: intereses, IBI, comunidad y mantenimiento. Eso es lo que se compara con el alquiler. La parte de capital de la cuota no es un coste: es ahorro.",
+      "ejemplo": "4.800 € de intereses, 1.500 € de IBI y comunidad y 2.000 € de mantenimiento: 692 € al mes."
+    },
+    {
+      "id": "g2",
+      "titulo": "El coste de oportunidad",
+      "texto": "El dinero de la entrada y los gastos deja de estar invertido. Lo que habría rendido es un coste más de ser propietario.",
+      "ejemplo": "60.000 € al 4 %: 200 € al mes que dejas de ganar."
+    },
+    {
+      "id": "g3",
+      "titulo": "Precio frente a alquiler",
+      "texto": "Divide el precio del piso entre el alquiler anual de uno parecido. Cuanto más alto el resultado, más caro está comprar frente a alquilar en esa zona.",
+      "ejemplo": "200.000 € entre 10.200 € al año: 19,6 años de alquiler."
+    },
+    {
+      "id": "g4",
+      "titulo": "El horizonte manda",
+      "texto": "Comprar y vender cuesta entre un 10 y un 15 % del precio. Esos gastos solo se compensan si te quedas bastantes años. Si puedes mudarte pronto, alquila.",
+      "ejemplo": "Gastos de 28.000 € y un ahorro de 4.000 € al año: 7 años para compensar."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "fp5",
+      "title": "El coste real de cada opción",
+      "ex": [
+        {
+          "id": "fp5-1",
+          "t": "choice",
+          "q": "«Alquilar es tirar el dinero». ¿Qué falla en esa frase?",
+          "opts": [
+            "Comprar también tiene costes que no se recuperan",
+            "Nada: el alquiler es el único gasto perdido",
+            "El alquiler siempre sale más barato que comprar",
+            "Los pisos nunca suben de precio a largo plazo"
+          ],
+          "a": 0,
+          "why": "Quien compra paga intereses, impuestos, comunidad y mantenimiento, y nada de eso vuelve. Lo comparable con el alquiler no es la cuota entera, sino esos costes.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Los intereses, impuestos y el mantenimiento del propietario tampoco se recuperan.",
+            "Depende de precios y tipos: no hay una opción siempre más barata.",
+            "Los precios pueden subir, pero eso no convierte en gratis los costes de ser propietario."
+          ]
+        },
+        {
+          "id": "fp5-2",
+          "t": "num",
+          "q": "Costes anuales que no recupera el propietario de un piso de 200.000 €. ¿Cuánto suman al mes? Redondea a euros.",
+          "unit": "€",
+          "a": 692,
+          "table": {
+            "cols": [
+              "Coste",
+              "Al año"
+            ],
+            "rows": [
+              [
+                "Intereses de la hipoteca",
+                "4.800 €"
+              ],
+              [
+                "IBI y comunidad",
+                "1.500 €"
+              ],
+              [
+                "Mantenimiento",
+                "2.000 €"
+              ]
+            ]
+          },
+          "why": "4.800 + 1.500 + 2.000 = 8.300 € al año, y 8.300 ÷ 12 = 692 € al mes. La parte de capital de la cuota no está aquí: esa sí se recupera al vender.",
+          "guia": "g1"
+        },
+        {
+          "id": "fp5-3",
+          "t": "num",
+          "q": "Para comprar pones 60.000 € entre entrada y gastos. Invertidos al 4 % anual, ¿cuánto dejarían de rendirte al mes?",
+          "unit": "€",
+          "a": 200,
+          "why": "60.000 € × 4 % = 2.400 € al año, 200 € al mes. Es el coste de oportunidad: lo que ese dinero habría ganado si no estuviera en el piso.",
+          "guia": "g2"
+        },
+        {
+          "id": "fp5-4",
+          "t": "num",
+          "q": "Ser propietario cuesta 692 € al mes en gastos perdidos más 200 € de coste de oportunidad. Un piso igual se alquila por 850 €. ¿Cuánto más barato al mes sale alquilar?",
+          "unit": "€",
+          "a": 42,
+          "why": "692 + 200 = 892 €, frente a 850 € de alquiler: 42 € menos. Aquí están casi empatados; con otros precios y tipos, la balanza cambia.",
+          "guia": "g2"
+        },
+        {
+          "id": "fp5-5",
+          "t": "choice",
+          "q": "En la cuota de la hipoteca, ¿qué es la parte de capital?",
+          "opts": [
+            "Un ahorro forzoso que recuperas al vender",
+            "Un gasto perdido, igual que los intereses",
+            "Un impuesto que cobra el banco cada mes",
+            "El beneficio que obtiene el banco"
+          ],
+          "a": 0,
+          "why": "El capital que devuelves reduce tu deuda y aumenta la parte del piso que es tuya. Por eso la hipoteca obliga a ahorrar, algo que quien alquila tiene que hacer por su cuenta.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Los intereses se pierden; el capital reduce tu deuda y lo recuperas.",
+            "No es un impuesto: es devolver lo que te prestaron.",
+            "El beneficio del banco son los intereses, no el capital."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "fp6",
+      "title": "Decidir",
+      "ex": [
+        {
+          "id": "fp6-1",
+          "t": "num",
+          "q": "Un piso cuesta 200.000 € y uno igual se alquila por 850 € al mes. ¿Cuántos años de alquiler equivalen al precio? Redondea a 1 decimal.",
+          "unit": "años",
+          "a": 19.6,
+          "why": "850 × 12 = 10.200 € al año, y 200.000 ÷ 10.200 = 19,6 años. Cuanto más alta es esa relación, más caro está comprar frente a alquilar.",
+          "tol": 0.06,
+          "guia": "g3"
+        },
+        {
+          "id": "fp6-2",
+          "t": "choice",
+          "q": "Los gastos de comprar y luego vender rondan el 10-15 % del precio. ¿Qué implica?",
+          "opts": [
+            "Comprar solo compensa si vas a quedarte muchos años",
+            "Conviene comprar y vender a menudo para ganar",
+            "El alquiler deja de tener sentido a cualquier plazo",
+            "Los gastos se recuperan siempre con la subida"
+          ],
+          "a": 0,
+          "why": "Esos gastos se pagan una vez y hay que repartirlos entre los años que vivas allí. Con pocos años, pesan demasiado: alquilar suele salir mejor.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Cada compraventa repite los gastos: hacerlo a menudo los multiplica.",
+            "A pocos años, el alquiler suele salir mejor precisamente por esos gastos.",
+            "Una subida puede no llegar o no bastar, como en una venta a los tres años."
+          ]
+        },
+        {
+          "id": "fp6-3",
+          "t": "num",
+          "q": "Compras por 200.000 € más 20.000 € de gastos. A los 3 años vendes por 210.000 € y pagas 8.000 € de gastos de venta. ¿Cuántos miles de euros pierdes?",
+          "unit": "mil €",
+          "a": 18,
+          "why": "210 − 8 = 202 mil cobrados, frente a 220 mil pagados: pierdes 18.000 €, aunque el piso haya subido un 5 %.",
+          "guia": "g4"
+        },
+        {
+          "id": "fp6-4",
+          "t": "choice",
+          "q": "Tu trabajo puede llevarte a otra ciudad en dos años. ¿Qué pesa más en la decisión?",
+          "opts": [
+            "La flexibilidad: alquilar te deja moverte sin vender",
+            "La estabilidad: mejor comprar cuanto antes",
+            "El precio: comprar siempre es la mejor inversión",
+            "La cuota: da igual el tiempo que te quedes"
+          ],
+          "a": 0,
+          "why": "Comprar ata. Si es probable que te mudes pronto, tendrías que vender con prisa y asumiendo todos los gastos, o convertirte en casero a distancia.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Comprar ya te obligaría a vender con prisa justo cuando te mudes.",
+            "Con dos años de horizonte, los gastos de compra y venta se comen cualquier ventaja.",
+            "El tiempo que te quedas decide si los gastos se compensan."
+          ]
+        },
+        {
+          "id": "fp6-5",
+          "t": "slide",
+          "q": "Comprar y vender te cuesta 28.000 € en gastos, y cada año ahorras 4.000 € frente a alquilar. Mueve los años que tardas en compensarlos.",
+          "label": "Años en la vivienda",
+          "min": 1,
+          "max": 15,
+          "step": 1,
+          "start": 2,
+          "a": 7,
+          "unit": "años",
+          "why": "28.000 ÷ 4.000 = 7 años. Por debajo de ese plazo, alquilar habría salido mejor. Calcula tu propio punto de equilibrio antes de decidir.",
+          "show": [
+            {
+              "label": "Ahorro acumulado",
+              "k": 4,
+              "unit": "mil €"
+            }
+          ],
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}
