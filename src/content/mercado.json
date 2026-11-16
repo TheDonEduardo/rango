@@ -40,6 +40,15 @@
    "why": "1 − 1,1050 ÷ 1,1228 = 1,59 %. Un euro más débil suma rentabilidad a quien tiene inversiones en dólares sin cubrir."
   },
   {
+   "t": "num",
+   "caso": "Bitcoin",
+   "q": "El bitcoin cerró a 75.746,93 $ el 06/11/2026 y a 68.249,27 $ el 13/11/2026. ¿Cuánto cayó en la semana? Redondea a 2 decimales.",
+   "unit": "%",
+   "a": 9.9,
+   "tol": 0.006,
+   "why": "1 − 68.249,27 ÷ 75.746,93 = 9,90 %. Una semana es ruido: sirve para practicar el cálculo, no para sacar conclusiones."
+  },
+  {
    "t": "choice",
    "caso": "Cartera",
    "q": "Cierres de cuatro acciones al final de la semana anterior y de esta. ¿Cuál subió más en porcentaje?",
@@ -80,15 +89,6 @@
    ],
    "a": 1,
    "why": "Axon Enterprise: 0,78 %; Broadcom: 18,16 %; Meta Platforms: 5,17 %; NVIDIA: −12,75 %. Para comparar acciones de precios distintos hay que mirar el porcentaje, no los dólares."
-  },
-  {
-   "t": "num",
-   "caso": "IBEX 35",
-   "q": "El IBEX 35 cerró a 19.369,50 puntos el 06/11/2026 y a 20.020,10 puntos el 13/11/2026. ¿Cuánto subió en la semana? Redondea a 2 decimales.",
-   "unit": "%",
-   "a": 3.36,
-   "tol": 0.006,
-   "why": "20.020,10 ÷ 19.369,50 − 1 = 3,36 %. Una semana es ruido: sirve para practicar el cálculo, no para sacar conclusiones."
   }
  ]
 }

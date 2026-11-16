@@ -20,6 +20,7 @@ OUT = Path(__file__).resolve().parent.parent / "src" / "content" / "mercado.json
 MERCADOS = [
     ("^GSPC", "S&P 500", "El S&P 500", "puntos", 2),
     ("EUNL.DE", "MSCI World en euros", "El ETF iShares Core MSCI World (en euros)", "€", 2),
+    ("BTC-USD", "Bitcoin", "El bitcoin", "$", 2),
     ("^IBEX", "IBEX 35", "El IBEX 35", "puntos", 2),
     ("GC=F", "Oro", "El oro (futuro en dólares por onza)", "$", 2),
 ]
@@ -28,6 +29,7 @@ MERCADOS = [
 def semana_de(h):
     """(fecha y cierre del último día, fecha y cierre del último día de la semana ISO anterior) o None."""
     h = h.dropna()
+    h = h[[d.weekday() < 5 for d in h.index]]   # las criptomonedas cotizan también el fin de semana: se comparan viernes
     if len(h) < 6:
         return None
     fin = h.index[-1]
@@ -140,7 +142,7 @@ def generar():
     return ex, fechas
 
 
-ORDEN = ["S&P 500", "MSCI World en euros", "Bono de EE. UU. a 10 años", "Euro frente al dólar", "Cartera", "IBEX 35", "Oro"]
+ORDEN = ["S&P 500", "MSCI World en euros", "Bono de EE. UU. a 10 años", "Euro frente al dólar", "Bitcoin", "Cartera", "IBEX 35", "Oro"]
 
 
 def elegir(ex, n=6):

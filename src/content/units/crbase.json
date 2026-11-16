@@ -1,0 +1,226 @@
+{
+  "n": 1,
+  "id": "crbase",
+  "track": "cripto",
+  "title": "La cadena de bloques",
+  "blurb": "Qué es, quién la mantiene y por qué tus claves lo son todo.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Un libro compartido",
+      "texto": "Una cadena de bloques es un registro público de transacciones del que miles de ordenadores guardan copia. Cada bloque se enlaza con el anterior, y por eso el pasado no se puede reescribir.",
+      "ejemplo": "Cambiar un bloque antiguo obligaría a rehacer todos los siguientes."
+    },
+    {
+      "id": "g2",
+      "titulo": "Quién la mantiene",
+      "texto": "Los nodos verifican las reglas. Mineros o validadores proponen los bloques nuevos y cobran por ello, en parte con las comisiones que pagas, siempre en la moneda de la red.",
+      "ejemplo": "Comisión de 0,0002 BTC con el bitcoin a 100.000 $: 20 $."
+    },
+    {
+      "id": "g3",
+      "titulo": "Claves",
+      "texto": "La dirección pública sirve para recibir y se puede compartir. La clave privada permite gastar, y la frase semilla permite recuperarla: quien las tenga controla los fondos.",
+      "ejemplo": "Una frase de 12 o 24 palabras, guardada en papel y nunca en una foto."
+    },
+    {
+      "id": "g4",
+      "titulo": "Sin vuelta atrás",
+      "texto": "Nadie puede deshacer una transacción confirmada ni devolverte una clave perdida. Comprueba la dirección y la red, y prueba primero con una cantidad pequeña.",
+      "ejemplo": "Un envío a una dirección equivocada no tiene reclamación posible."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "cx1",
+      "title": "Un libro compartido",
+      "ex": [
+        {
+          "id": "cx1-1",
+          "t": "choice",
+          "q": "¿Qué es una cadena de bloques (blockchain)?",
+          "opts": [
+            "Un registro de transacciones compartido por miles de ordenadores",
+            "Una base de datos privada que gestiona un banco central",
+            "Un programa para comprar acciones desde el móvil",
+            "Una moneda digital emitida por una empresa"
+          ],
+          "a": 0,
+          "why": "Es un libro de cuentas público del que miles de ordenadores guardan una copia idéntica. Nadie lo controla en solitario: las reglas las aplica la red entera.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Es lo contrario: no depende de un banco ni de una autoridad central.",
+            "Eso es la aplicación de un bróker, no una cadena de bloques.",
+            "La cadena es el registro; las monedas son lo que se anota en él."
+          ]
+        },
+        {
+          "id": "cx1-2",
+          "t": "match",
+          "q": "Empareja cada pieza de la red con lo que hace.",
+          "pairs": [
+            [
+              "Bloque",
+              "Grupo de transacciones enlazado al anterior"
+            ],
+            [
+              "Nodo",
+              "Ordenador que guarda y verifica la cadena"
+            ],
+            [
+              "Minero o validador",
+              "Propone bloques nuevos y cobra por ello"
+            ],
+            [
+              "Comisión",
+              "Lo que pagas para que incluyan tu transacción"
+            ]
+          ],
+          "why": "Las transacciones se agrupan en bloques, cada bloque se enlaza con el anterior y los nodos comprueban que todo cumple las reglas.",
+          "guia": "g2"
+        },
+        {
+          "id": "cx1-3",
+          "t": "choice",
+          "q": "¿Por qué es tan difícil alterar una transacción antigua?",
+          "opts": [
+            "Habría que rehacer ese bloque y todos los posteriores",
+            "Porque los bloques antiguos se borran con el tiempo",
+            "Porque una empresa vigila cada una de las copias",
+            "Porque las transacciones están protegidas por contraseña"
+          ],
+          "a": 0,
+          "why": "Cada bloque contiene una huella del anterior. Cambiar uno rompe todos los siguientes, y la red rechaza esa versión salvo que el atacante controle la mayoría.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Los bloques no se borran: la cadena guarda toda la historia.",
+            "No hay ninguna empresa vigilando: la verificación la hacen los nodos.",
+            "No hay contraseñas: lo que la protege es el enlace entre bloques."
+          ]
+        },
+        {
+          "id": "cx1-4",
+          "t": "num",
+          "q": "Envías bitcoin y pagas una comisión de 0,0002 BTC. Si 1 BTC vale 100.000 $ en ese momento, ¿cuántos dólares pagas de comisión?",
+          "unit": "$",
+          "a": 20,
+          "why": "0,0002 × 100.000 $ = 20 $. La comisión se paga en la moneda de la red, así que su coste en dólares cambia con el precio.",
+          "guia": "g2"
+        },
+        {
+          "id": "cx1-5",
+          "t": "choice",
+          "q": "Envías fondos a una dirección equivocada y la transacción se confirma. ¿Qué puedes hacer?",
+          "opts": [
+            "Nada: las transacciones confirmadas no se deshacen",
+            "Reclamar la devolución al servicio de atención",
+            "Cancelarla durante las 24 horas siguientes",
+            "Pedir a tu banco que anule la operación"
+          ],
+          "a": 0,
+          "why": "No hay nadie con poder para revertir una transacción. Esa es la otra cara de no depender de intermediarios: los errores son definitivos.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "No existe un servicio con poder para revertir transacciones.",
+            "No hay plazo de cancelación: confirmada, es definitiva.",
+            "Tu banco no interviene en la red ni puede anular nada."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "cx2",
+      "title": "Claves y direcciones",
+      "ex": [
+        {
+          "id": "cx2-1",
+          "t": "choice",
+          "q": "¿Qué te da la clave privada?",
+          "opts": [
+            "El control de los fondos de esa dirección",
+            "Solo permiso para consultar el saldo",
+            "Un descuento en las comisiones de la red",
+            "Acceso a la cuenta de tu banco"
+          ],
+          "a": 0,
+          "why": "Quien tiene la clave privada puede mover los fondos. No hay «olvidé mi contraseña»: si la pierdes, nadie puede recuperarla por ti.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Consultar el saldo puede hacerlo cualquiera con la dirección pública.",
+            "Las comisiones no dependen de tu clave.",
+            "No tiene relación con tu cuenta bancaria."
+          ]
+        },
+        {
+          "id": "cx2-2",
+          "t": "choice",
+          "q": "¿Qué puedes compartir sin riesgo para que te envíen fondos?",
+          "opts": [
+            "Tu dirección pública",
+            "Tu clave privada",
+            "Tu frase semilla",
+            "El PIN de tu monedero"
+          ],
+          "a": 0,
+          "why": "La dirección funciona como un número de cuenta: sirve para recibir. La clave privada y la frase semilla sirven para gastar, y no se comparten jamás.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Con la clave privada, cualquiera puede gastar tus fondos.",
+            "Con la frase semilla se recuperan todas tus claves: es lo más sensible.",
+            "El PIN protege tu dispositivo: no es un dato para dar a nadie."
+          ]
+        },
+        {
+          "id": "cx2-3",
+          "t": "choice",
+          "q": "¿Qué es la frase semilla de un monedero?",
+          "opts": [
+            "Una lista de palabras que permite recuperar tus claves",
+            "La contraseña con la que entras en la plataforma",
+            "Un código que caduca cada treinta segundos",
+            "El nombre público con el que se ve tu monedero"
+          ],
+          "a": 0,
+          "why": "Son 12 o 24 palabras de las que se derivan todas tus claves. Sirve para recuperar los fondos si pierdes el dispositivo, y quien la vea puede vaciarlo.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "La contraseña de una plataforma se puede restablecer; la frase semilla, no.",
+            "Eso es un código de doble factor.",
+            "No es un nombre: es la copia de seguridad de tus claves."
+          ]
+        },
+        {
+          "id": "cx2-4",
+          "t": "order",
+          "q": "Ordena los pasos para hacer un envío importante con cuidado.",
+          "items": [
+            "Copiar la dirección del destinatario",
+            "Comprobar la red y los primeros y últimos caracteres",
+            "Enviar primero una cantidad pequeña de prueba",
+            "Confirmar que la prueba ha llegado",
+            "Enviar el resto"
+          ],
+          "why": "Como no hay vuelta atrás, se comprueba antes de enviar y se prueba con poco. Unos minutos de espera evitan un error irreparable.",
+          "guia": "g4"
+        },
+        {
+          "id": "cx2-5",
+          "t": "num",
+          "q": "Un bitcoin se divide en 100.000.000 de satoshis. ¿Cuántos satoshis son 0,000005 BTC?",
+          "unit": "sat",
+          "a": 500,
+          "why": "0,000005 × 100.000.000 = 500 satoshis. No hace falta comprar un bitcoin entero: se puede tener cualquier fracción.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

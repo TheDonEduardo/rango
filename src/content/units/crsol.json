@@ -1,0 +1,269 @@
+{
+  "n": 4,
+  "id": "crsol",
+  "track": "cripto",
+  "title": "Solana",
+  "blurb": "Velocidad y comisiones mínimas, y lo que se cede a cambio.",
+  "revisar": "2027-06",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Velocidad y comisiones",
+      "texto": "Solana procesa miles de transacciones por segundo en una sola cadena, con comisiones de fracciones de céntimo. Eso abre usos que en redes caras no tienen sentido.",
+      "ejemplo": "1.000 transacciones a 0,000005 SOL: 0,75 $ con el SOL a 150 $."
+    },
+    {
+      "id": "g2",
+      "titulo": "Prueba de historia",
+      "texto": "Un reloj criptográfico ordena las transacciones antes de validarlas. Combinado con la prueba de participación, permite un bloque cada 0,4 segundos.",
+      "ejemplo": "En los 12 segundos de un bloque de Ethereum, Solana produce 30."
+    },
+    {
+      "id": "g3",
+      "titulo": "El trilema",
+      "texto": "Seguridad, descentralización y capacidad compiten entre sí. Solana prioriza la capacidad: validar exige máquinas potentes y, por tanto, hay menos validadores.",
+      "ejemplo": "Bitcoin prioriza la seguridad; Solana, la velocidad. Solo Bitcoin tiene un límite fijo de monedas."
+    },
+    {
+      "id": "g4",
+      "titulo": "Los riesgos",
+      "texto": "La red ha sufrido varias interrupciones de horas, durante las que no se puede operar. Y su moneda es más volátil que Bitcoin: en los mercados bajistas cae más.",
+      "ejemplo": "De 260 $ a 10 $ entre 2021 y 2022: −96,2 %."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "cs1",
+      "title": "Rápida y barata",
+      "ex": [
+        {
+          "id": "cs1-1",
+          "t": "choice",
+          "q": "¿Qué intenta resolver Solana?",
+          "opts": [
+            "Muchas transacciones rápidas y casi gratis en una sola cadena",
+            "Un dinero escaso con una oferta fija de 21 millones",
+            "Una red privada pensada para uso de los bancos",
+            "Una moneda con precio estable frente al dólar"
+          ],
+          "a": 0,
+          "why": "Solana apuesta por el rendimiento: miles de transacciones por segundo con comisiones de fracciones de céntimo, sin repartir la actividad en capas 2.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Ese es el diseño de Bitcoin.",
+            "Es una red pública y abierta.",
+            "Eso es una moneda estable, no una red como Solana."
+          ]
+        },
+        {
+          "id": "cs1-2",
+          "t": "num",
+          "q": "La comisión base en Solana es de 0,000005 SOL. Haces 1.000 transacciones con el SOL a 150 $. ¿Cuántos dólares pagas en total? Redondea a 2 decimales.",
+          "unit": "$",
+          "a": 0.75,
+          "why": "1.000 × 0,000005 = 0,005 SOL, y 0,005 × 150 $ = 0,75 $. Mil operaciones cuestan menos que una sola en muchas otras redes.",
+          "tol": 0.006,
+          "guia": "g1"
+        },
+        {
+          "id": "cs1-3",
+          "t": "num",
+          "q": "Según la tabla, ¿cuántos bloques produce Solana en el tiempo que Ethereum produce uno?",
+          "table": {
+            "cols": [
+              "Red",
+              "Un bloque cada",
+              "Consenso"
+            ],
+            "rows": [
+              [
+                "Bitcoin",
+                "10 minutos",
+                "Prueba de trabajo"
+              ],
+              [
+                "Ethereum",
+                "12 segundos",
+                "Prueba de participación"
+              ],
+              [
+                "Solana",
+                "0,4 segundos",
+                "Prueba de participación"
+              ]
+            ],
+            "note": "Tiempos aproximados."
+          },
+          "unit": "bloques",
+          "a": 30,
+          "why": "12 ÷ 0,4 = 30 bloques. Esa rapidez es la que permite usos como pagos pequeños o aplicaciones con muchísimas operaciones.",
+          "guia": "g1"
+        },
+        {
+          "id": "cs1-4",
+          "t": "choice",
+          "q": "¿Qué aporta la «prueba de historia» de Solana?",
+          "opts": [
+            "Un reloj que ordena las transacciones antes de validarlas",
+            "Un límite al número total de monedas emitidas",
+            "Una copia de seguridad de las claves del usuario",
+            "Un seguro que cubre los fondos robados"
+          ],
+          "a": 0,
+          "why": "Es una marca de tiempo criptográfica: los validadores no tienen que ponerse de acuerdo en el orden de las transacciones, y eso acelera mucho el consenso.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "Solana no tiene un límite fijo de monedas.",
+            "No guarda claves: ordena transacciones en el tiempo.",
+            "Ninguna red asegura los fondos robados."
+          ]
+        },
+        {
+          "id": "cs1-5",
+          "t": "choice",
+          "q": "¿Para qué usos encaja mejor una red rápida y con comisiones mínimas?",
+          "opts": [
+            "Pagos pequeños y aplicaciones con muchas operaciones",
+            "Guardar ahorros durante décadas sin moverlos",
+            "Sustituir al notario en una compraventa",
+            "Emitir deuda pública de un país"
+          ],
+          "a": 0,
+          "why": "Cuando cada operación cuesta casi nada, tienen sentido los pagos de céntimos o las aplicaciones que hacen miles de movimientos. Con comisiones altas, eso es inviable.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Para guardar valor importan la seguridad y la escasez, no la velocidad.",
+            "Una red no sustituye la función legal de un notario.",
+            "La deuda pública no depende de la velocidad de una red."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "cs2",
+      "title": "Lo que se cede",
+      "ex": [
+        {
+          "id": "cs2-1",
+          "t": "choice",
+          "q": "¿Qué dice el «trilema» de las cadenas de bloques?",
+          "opts": [
+            "Seguridad, descentralización y capacidad compiten entre sí",
+            "Toda red acaba teniendo tres monedas propias",
+            "Solo pueden existir tres grandes redes a la vez",
+            "Hacen falta tres claves para firmar cada envío"
+          ],
+          "a": 0,
+          "why": "Mejorar la capacidad suele costar algo de descentralización o de seguridad. Cada red elige su equilibrio: Bitcoin prioriza seguridad; Solana, capacidad.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "No habla de monedas: habla de tres propiedades que compiten.",
+            "No limita cuántas redes pueden existir.",
+            "No tiene que ver con el número de claves."
+          ]
+        },
+        {
+          "id": "cs2-2",
+          "t": "choice",
+          "q": "Validar en Solana exige ordenadores muy potentes. ¿Qué consecuencia tiene?",
+          "opts": [
+            "Menos gente puede validar: la red se concentra más",
+            "La red se vuelve más lenta con el tiempo",
+            "Las comisiones se multiplican por diez",
+            "Cualquier móvil puede ser validador"
+          ],
+          "a": 0,
+          "why": "Cuanto más caro es participar, menos validadores hay y más pesa cada uno. Es el precio que Solana paga por su velocidad.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Las máquinas potentes la hacen más rápida, no más lenta.",
+            "Las comisiones de Solana siguen siendo mínimas.",
+            "Es lo contrario: hace falta un equipo caro."
+          ]
+        },
+        {
+          "id": "cs2-3",
+          "t": "choice",
+          "q": "Solana ha sufrido varias interrupciones de red de horas de duración. ¿Qué riesgo ilustra?",
+          "opts": [
+            "El operativo: durante la parada no puedes mover tus fondos",
+            "El de inflación: se emiten monedas nuevas sin control",
+            "El fiscal: Hacienda bloquea todas las operaciones",
+            "El de divisa: el dólar pierde valor durante esos días"
+          ],
+          "a": 0,
+          "why": "Una red parada no pierde tus fondos, pero no puedes vender ni mover nada mientras dura. En un mercado que no cierra nunca, eso importa.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Una parada no cambia la emisión de monedas.",
+            "Hacienda no interviene en el funcionamiento de la red.",
+            "No tiene relación con el tipo de cambio."
+          ]
+        },
+        {
+          "id": "cs2-4",
+          "t": "num",
+          "q": "Entre finales de 2021 y finales de 2022, el SOL cayó de unos 260 $ a unos 10 $. ¿Cuánto cayó? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 96.2,
+          "why": "1 − 10 ÷ 260 = 96,2 %. Las monedas más pequeñas que Bitcoin suelen caer todavía más que él en los mercados bajistas.",
+          "tol": 0.06,
+          "guia": "g4"
+        },
+        {
+          "id": "cs2-5",
+          "t": "choice",
+          "q": "De las tres redes, ¿cuál tiene un límite máximo de monedas fijado en su código?",
+          "table": {
+            "cols": [
+              "Red",
+              "Un bloque cada",
+              "Consenso"
+            ],
+            "rows": [
+              [
+                "Bitcoin",
+                "10 minutos",
+                "Prueba de trabajo"
+              ],
+              [
+                "Ethereum",
+                "12 segundos",
+                "Prueba de participación"
+              ],
+              [
+                "Solana",
+                "0,4 segundos",
+                "Prueba de participación"
+              ]
+            ],
+            "note": "Tiempos aproximados."
+          },
+          "opts": [
+            "Bitcoin",
+            "Ethereum",
+            "Solana",
+            "Las tres"
+          ],
+          "a": 0,
+          "why": "Solo Bitcoin tiene un tope fijo, de 21 millones. Ethereum y Solana emiten monedas nuevas para pagar a sus validadores, sin un máximo establecido.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Ethereum no tiene un tope fijo de monedas.",
+            "Solana tampoco: emite para pagar a sus validadores.",
+            "Solo una de las tres tiene límite."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

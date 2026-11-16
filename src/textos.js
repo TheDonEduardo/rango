@@ -8,7 +8,7 @@ export const t={
   continuar:'Continuar', volver:'Volver', volverInicio:'Volver al inicio', abrir:'Abrir', formacion:'Es formación, no una recomendación.',
 
   // Rutas y repasos
-  rutas:{basico:'Básico',personal:'Finanzas',pasiva:'Pasiva',fundamental:'Fundamental',tecnico:'Técnico',derivados:'Opciones'}, repasoUnidad:'Examen de la unidad', dominada:'Dominada', dominadaNota:'Examen sin un solo fallo: unidad dominada.', examenNota:'Apruébalo sin fallos para marcar la unidad como dominada.', nDominadas:n=>`${n} ${n===1?'unidad dominada':'unidades dominadas'}`,
+  rutas:{basico:'Básico',personal:'Finanzas',pasiva:'Pasiva',fundamental:'Fundamental',tecnico:'Técnico',derivados:'Opciones',cripto:'Cripto'}, repasoUnidad:'Examen de la unidad', dominada:'Dominada', dominadaNota:'Examen sin un solo fallo: unidad dominada.', examenNota:'Apruébalo sin fallos para marcar la unidad como dominada.', nDominadas:n=>`${n} ${n===1?'unidad dominada':'unidades dominadas'}`,
   // Gráficos
   graficoVelas:'Gráfico de velas', graficoPrecio:'Gráfico de precio', vol:'Vol.', despues:'Después', precio:'Precio', media30:'Media de 30 semanas',
 
@@ -20,7 +20,7 @@ export const t={
   protectores:(n,max)=>`Protectores de racha: ${n} de ${max}. Ganas uno cada 7 días seguidos; si un día no practicas, se gasta uno y la racha sigue.`,
   protectorUsado:'Usaste un protector: tu racha sigue.', protectorGanado:'¡7 días seguidos! Ganas un protector de racha.',
   objetivoTitulo:'¿Qué quieres aprender?', ahoraNo:'Ahora no',
-  objetivos:{basico:['Empezar desde cero','Qué es una acción, riesgo, ETF e impuestos'],personal:['Ordenar mis finanzas','Hipoteca, vivienda y decisiones del día a día'],pasiva:['Invertir a largo plazo','Fondos indexados, carteras y jubilación'],fundamental:['Analizar empresas','Beneficios, valoración y calidad'],tecnico:['Operar con gráficos','Velas, tendencia, riesgo y salidas'],derivados:['Operar con opciones','Call, put, primas y estrategias']},
+  objetivos:{basico:['Empezar desde cero','Qué es una acción, riesgo, ETF e impuestos'],personal:['Ordenar mis finanzas','Hipoteca, vivienda y decisiones del día a día'],pasiva:['Invertir a largo plazo','Fondos indexados, carteras y jubilación'],fundamental:['Analizar empresas','Beneficios, valoración y calidad'],tecnico:['Operar con gráficos','Velas, tendencia, riesgo y salidas'],derivados:['Operar con opciones','Call, put, primas y estrategias'],cripto:['Entender las criptomonedas','Blockchain, Bitcoin, Ethereum y Solana']},
   ruta:'Ruta',
   bloqueoRuta:'Esta ruta se abre al completar la ruta <b>Básico</b>.',
   irBasicos:'Ir a los básicos', saltarBasicos:'Ya opero: saltar los básicos',
@@ -55,7 +55,7 @@ export const t={
   // Avisos breves
   bloqueadaBasico:'Completa antes la ruta Básico.', bloqueadaAnterior:'Completa antes la lección anterior.',
   planGuardado:'Plan guardado. El sábado que viene verás el resultado.',
-  rutasAbiertas:'Rutas Pasiva, Fundamental, Técnico y Opciones abiertas.', instalada:'Rango instalado.',
+  rutasAbiertas:'Todas las rutas quedan abiertas.', instalada:'Rango instalado.',
 
   // Guía de la unidad
   guia:'Guía', verGuia:u=>`Guía de la unidad: ${u}`, guiaDe:u=>`Guía · ${u}`, progresoGuia:'Progreso de la guía',
@@ -109,7 +109,7 @@ export const t={
   notaRepaso:'Los que has acertado volverán dentro de unos días; los que has fallado, mañana.',
   notaVela:acc=>`El cuerpo de tu vela es proporcional a tu precisión. ${acc===1?'Vela llena: sin un solo fallo.':'Repite la lección para llenarla.'}`,
   testCompletado:'Test completado', aciertos:(a,n)=>`${a} de ${n} aciertos`, yaDominas:'Ya dominas',
-  testAbre:'Pasiva, Fundamental, Técnico y Opciones quedan abiertas. Puedes volver a los básicos cuando quieras.',
+  testAbre:'Todas las rutas quedan abiertas. Puedes volver a los básicos cuando quieras.',
   testDomina:'Las unidades que dominas quedan marcadas como completadas: sigue por la primera pendiente de Básico.',
   testNada:'Empieza por Básico: en pocas lecciones tendrás la base para el resto.',
   sinVidas:'Sin vidas', sinVidasExplica:'Has agotado los 3 fallos de esta lección.',

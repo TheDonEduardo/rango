@@ -22,7 +22,7 @@ HOY = dt.date.today().strftime("%d/%m/%Y")
 # Lecciones que reciben casos reales (una sola definición para casos_de y main).
 LECCIONES_CASOS = ("f1a", "f1b", "f2a", "f2b", "f3a", "f3b", "f5a", "f6a", "bg1", "pr1", "bh2", "f8b", "f9a",
                    "t1", "t2", "r1", "r2", "rs1", "g2", "dv1", "io2", "f7a", "f10b",
-                   "ba1", "bb1", "bd1", "zf1", "zf2")
+                   "ba1", "bb1", "bd1", "zf1", "zf2", "cb2", "ce2", "cs2")
 # Índices y fondos indexados para la ruta Pasiva: (ticker, etiqueta, descripción, unidad, desde, nota sobre dividendos).
 INDICES = [
     ("EUNL.DE", "iShares Core MSCI World (EUNL)", "el ETF iShares Core MSCI World de acumulación (en euros)", "€", None,
@@ -792,6 +792,51 @@ def casos_analisis(tk):
     return out
 
 
+CRIPTO = [("BTC-USD", "Bitcoin", "El bitcoin", "cb2"), ("ETH-USD", "Ethereum", "El ETH", "ce2"), ("SOL-USD", "Solana", "El SOL", "cs2")]
+
+
+def casos_cripto():
+    """Casos de la ruta Cripto: mayor caída desde un máximo y resultado del último año de BTC, ETH y SOL (en dólares)."""
+    out = {"cb2": [], "ce2": [], "cs2": []}
+    for tk, etiqueta, frase, leccion in CRIPTO:
+        try:
+            h = yf.Ticker(tk).history(period="max", interval="1d")["Close"].dropna()
+        except Exception:
+            continue
+        if len(h) < 400:
+            continue
+        caida = h / h.cummax() - 1
+        f_min = caida.idxmin()
+        f_max = h[:f_min].idxmax()
+        v_max, v_min = round(float(h[f_max]), 2), round(float(h[f_min]), 2)
+        d = round((1 - v_min / v_max) * 100, 1)
+        if 20 < d < 99.5:
+            out[leccion].append({
+                "t": "num", "caso": etiqueta,
+                "q": f"{frase} marcó un máximo de {es(v_max, 2)} $ el {fecha(f_max)} y cayó hasta {es(v_min, 2)} $ el {fecha(f_min)}. "
+                     f"¿Cuánto cayó? Redondea a 1 decimal.",
+                "unit": "%", "a": d, "tol": 0.06,
+                "why": f"1 − {es(v_min, 2)} ÷ {es(v_max, 2)} = {es(d)} %. Es su mayor caída de cierre a cierre desde el {fecha(h.index[0])}: "
+                       f"antes de decidir cuánto pones, piensa si aguantarías verla.",
+            })
+        fin_f, fin_v = h.index[-1], round(float(h.iloc[-1]), 2)
+        antes = h[h.index <= fin_f - dt.timedelta(days=365)]
+        if len(antes):
+            ini_f, ini_v = antes.index[-1], round(float(antes.iloc[-1]), 2)
+            g = round((fin_v / ini_v - 1) * 100, 1)
+            if 0.5 <= abs(g) < 900:
+                sube = g > 0
+                out[leccion].append({
+                    "t": "num", "caso": etiqueta,
+                    "q": f"{frase} cerró a {es(ini_v, 2)} $ el {fecha(ini_f)} y a {es(fin_v, 2)} $ el {fecha(fin_f)}. "
+                         f"¿Cuánto {'subió' if sube else 'cayó'} en ese año? Redondea a 1 decimal.",
+                    "unit": "%", "a": abs(g), "tol": 0.06,
+                    "why": (f"{es(fin_v, 2)} ÷ {es(ini_v, 2)} − 1 = {es(g)} %. " if sube else f"1 − {es(fin_v, 2)} ÷ {es(ini_v, 2)} = {es(abs(g))} %. ")
+                           + "Un año no dice nada del siguiente: en estos activos son normales cambios así en los dos sentidos.",
+                })
+    return out
+
+
 def casos_basico():
     """Casos de la ruta Básico: resultado de un año en una acción (ba1), cuánto hay que subir tras la mayor
     caída de un índice (bb1) y resultado de un año en un índice (bd1)."""
@@ -927,7 +972,7 @@ def main():
                     ex[k].extend(v)
             except Exception as e:  # un ticker sin datos no debe tumbar el resto
                 fallos.append(f"{tk}: {e}")
-    for nombre_f, fn in (("índices", casos_indices), ("básico", casos_basico), ("bonos", casos_bonos), ("divisa", casos_divisa), ("oro", casos_oro)):
+    for nombre_f, fn in (("índices", casos_indices), ("básico", casos_basico), ("cripto", casos_cripto), ("bonos", casos_bonos), ("divisa", casos_divisa), ("oro", casos_oro)):
         try:
             for k, v in fn().items():
                 ex[k].extend(v)

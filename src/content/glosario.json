@@ -659,5 +659,50 @@
  {
   "termino": "tasa de sustitución",
   "d": "Parte del último sueldo que reemplaza la pensión."
+ },
+ {
+  "termino": "cadena de bloques",
+  "alias": [
+   "blockchain"
+  ],
+  "d": "Registro público de transacciones del que miles de ordenadores guardan copia. Cada bloque se enlaza con el anterior, y por eso no se puede reescribir."
+ },
+ {
+  "termino": "halving",
+  "d": "Reducción a la mitad, cada unos cuatro años, de los bitcoins nuevos que reciben los mineros por bloque."
+ },
+ {
+  "termino": "prueba de trabajo",
+  "d": "Sistema en el que los mineros gastan energía compitiendo por añadir cada bloque. Protege a Bitcoin."
+ },
+ {
+  "termino": "prueba de participación",
+  "d": "Sistema en el que los validadores bloquean monedas como garantía y las pierden si hacen trampas. Lo usan Ethereum y Solana."
+ },
+ {
+  "termino": "staking",
+  "d": "Bloquear monedas para ayudar a validar una red y cobrar a cambio una recompensa en esa misma moneda."
+ },
+ {
+  "termino": "contrato inteligente",
+  "alias": [
+   "contratos inteligentes"
+  ],
+  "d": "Programa guardado en una cadena de bloques que se ejecuta solo, sin intermediarios."
+ },
+ {
+  "termino": "frase semilla",
+  "d": "Lista de 12 o 24 palabras de la que salen todas las claves de un monedero. Quien la tiene controla los fondos."
+ },
+ {
+  "termino": "clave privada",
+  "d": "Dato secreto que permite mover los fondos de una dirección. Si se pierde, nadie puede recuperarla."
+ },
+ {
+  "termino": "capa 2",
+  "alias": [
+   "capas 2"
+  ],
+  "d": "Red que funciona sobre otra, como Ethereum, agrupando transacciones para abaratarlas."
  }
 ]

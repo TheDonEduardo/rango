@@ -1,0 +1,209 @@
+{
+  "n": 3,
+  "id": "creth",
+  "track": "cripto",
+  "title": "Ethereum",
+  "blurb": "Contratos inteligentes, gas, staking y capas 2.",
+  "revisar": "2027-06",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Contratos inteligentes",
+      "texto": "Ethereum ejecuta programas guardados en su cadena. Hacen lo que dice su código, sin intermediarios: sobre ellos funcionan préstamos, intercambios y monedas estables. Un fallo en el código también se ejecuta.",
+      "ejemplo": "Un contrato que intercambia una moneda por otra sin pasar por una plataforma."
+    },
+    {
+      "id": "g2",
+      "titulo": "El gas",
+      "texto": "Cada operación consume gas y se paga en ETH: gas consumido por el precio del gas. Con la red congestionada, el precio sube y la misma operación cuesta más.",
+      "ejemplo": "21.000 de gas a 20 gwei: 420.000 gwei, 0,00042 ETH, 1,26 $ con el ETH a 3.000 $."
+    },
+    {
+      "id": "g3",
+      "titulo": "Participación y staking",
+      "texto": "Los validadores bloquean ETH como garantía y cobran una recompensa en ETH. El staking da más monedas, pero el riesgo de precio es el mismo.",
+      "ejemplo": "4 ETH al 3 %: 0,12 ETH al año. Si el precio cae a la mitad, pierdes un 48,5 % en dólares."
+    },
+    {
+      "id": "g4",
+      "titulo": "Capas 2 y oferta",
+      "texto": "Las capas 2 agrupan transacciones y abaratan las comisiones apoyándose en Ethereum. El ETH no tiene límite fijo: se emite a los validadores y se quema parte de las comisiones.",
+      "ejemplo": "La misma operación puede costar céntimos en una capa 2."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "ce1",
+      "title": "Contratos y gas",
+      "ex": [
+        {
+          "id": "ce1-1",
+          "t": "choice",
+          "q": "¿Qué es un contrato inteligente?",
+          "opts": [
+            "Un programa en la cadena que se ejecuta solo",
+            "Un documento legal firmado ante notario",
+            "Un acuerdo privado entre dos plataformas",
+            "Una orden de compra con precio límite"
+          ],
+          "a": 0,
+          "why": "Es código guardado en la cadena que cualquiera puede usar y que hace exactamente lo que está escrito, sin intermediarios. Si el código tiene un fallo, también lo ejecuta.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "No es un documento legal: es código, y no pasa por ningún notario.",
+            "No es privado: está en la cadena y cualquiera puede usarlo.",
+            "Eso es una orden limitada de bolsa."
+          ]
+        },
+        {
+          "id": "ce1-2",
+          "t": "choice",
+          "q": "¿Cuál es la diferencia principal entre Ethereum y Bitcoin?",
+          "opts": [
+            "Ethereum es una plataforma para ejecutar aplicaciones",
+            "Ethereum tiene un límite de 21 millones de monedas",
+            "Ethereum no tiene una moneda propia",
+            "Ethereum funciona sin comisiones"
+          ],
+          "a": 0,
+          "why": "Bitcoin se diseñó para ser dinero escaso. Ethereum, para ejecutar programas: préstamos, intercambios o monedas estables funcionan como contratos sobre su cadena.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Ese límite es el de Bitcoin; el ETH no tiene tope fijo.",
+            "Su moneda es el ETH, con la que se pagan las comisiones.",
+            "Cada operación paga gas."
+          ]
+        },
+        {
+          "id": "ce1-3",
+          "t": "num",
+          "q": "Una transferencia consume 21.000 unidades de gas y el gas está a 20 gwei. ¿Cuántos miles de gwei pagas de comisión?",
+          "unit": "mil gwei",
+          "a": 420,
+          "why": "21.000 × 20 = 420.000 gwei. La comisión es el gas que consume la operación por el precio del gas en ese momento.",
+          "guia": "g2"
+        },
+        {
+          "id": "ce1-4",
+          "t": "num",
+          "q": "Esos 420.000 gwei son 0,00042 ETH. Con el ETH a 3.000 $, ¿cuántos dólares pagas? Redondea a 2 decimales.",
+          "unit": "$",
+          "a": 1.26,
+          "why": "0,00042 × 3.000 $ = 1,26 $. Una operación compleja, como un intercambio en un contrato, consume varias veces más gas.",
+          "tol": 0.006,
+          "guia": "g2"
+        },
+        {
+          "id": "ce1-5",
+          "t": "choice",
+          "q": "La red está congestionada porque mucha gente quiere operar a la vez. ¿Qué pasa con las comisiones?",
+          "opts": [
+            "Suben: el precio del gas aumenta con la demanda",
+            "Bajan: la red reparte el coste entre más gente",
+            "No cambian: el gas tiene un precio fijo",
+            "Desaparecen hasta que pasa la congestión"
+          ],
+          "a": 0,
+          "why": "El espacio de cada bloque es limitado y se asigna a quien más paga. En momentos de mucha actividad, la misma operación puede costar diez veces más.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "El espacio es limitado: con más demanda, el precio sube.",
+            "El precio del gas cambia a cada bloque según la demanda.",
+            "Nunca desaparecen: en congestión son más altas."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "ce2",
+      "title": "Participación y capas",
+      "ex": [
+        {
+          "id": "ce2-1",
+          "t": "choice",
+          "q": "¿Cómo se protege Ethereum con la prueba de participación?",
+          "opts": [
+            "Los validadores bloquean ETH y lo pierden si hacen trampas",
+            "Los mineros gastan energía para resolver cálculos",
+            "Una fundación aprueba a mano cada bloque",
+            "Los usuarios votan cada transacción con su móvil"
+          ],
+          "a": 0,
+          "why": "Desde 2022, quien valida bloques deposita ETH como garantía. Si actúa mal, pierde parte. Sustituye el gasto en energía de la prueba de trabajo por capital en riesgo.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Eso es la prueba de trabajo, que Ethereum abandonó en 2022.",
+            "Ninguna entidad aprueba bloques a mano.",
+            "Los usuarios no votan transacciones: lo hacen los validadores."
+          ]
+        },
+        {
+          "id": "ce2-2",
+          "t": "num",
+          "q": "Pones 4 ETH en staking con una recompensa del 3 % anual. ¿Cuántos ETH ganas en un año?",
+          "unit": "ETH",
+          "a": 0.12,
+          "why": "4 × 3 % = 0,12 ETH. La recompensa se cobra en ETH, no en euros ni en dólares.",
+          "tol": 0.006,
+          "guia": "g3"
+        },
+        {
+          "id": "ce2-3",
+          "t": "num",
+          "q": "Tus 4 ETH valían 3.000 $ cada uno. Un año después tienes 4,12 ETH, pero el precio ha caído a 1.500 $. ¿Cuánto has perdido en dólares? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 48.5,
+          "why": "Antes: 4 × 3.000 = 12.000 $. Después: 4,12 × 1.500 = 6.180 $. 1 − 6.180 ÷ 12.000 = 48,5 %. El staking da más monedas, pero no protege del precio.",
+          "tol": 0.06,
+          "guia": "g3"
+        },
+        {
+          "id": "ce2-4",
+          "t": "choice",
+          "q": "¿Qué es una red de capa 2 sobre Ethereum?",
+          "opts": [
+            "Una red que agrupa transacciones para abaratarlas",
+            "Una copia de Ethereum con otra moneda distinta",
+            "El segundo monedero que abre un usuario",
+            "Una versión privada para grandes empresas"
+          ],
+          "a": 0,
+          "why": "Las capas 2 procesan muchas operaciones fuera de la cadena principal y anotan en ella el resultado. Así las comisiones bajan mucho apoyándose en la seguridad de Ethereum.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Una capa 2 se apoya en Ethereum: no es una copia independiente.",
+            "No tiene que ver con cuántos monederos tengas.",
+            "Son redes públicas, abiertas a cualquiera."
+          ]
+        },
+        {
+          "id": "ce2-5",
+          "t": "choice",
+          "q": "¿Tiene el ETH un límite máximo de monedas, como Bitcoin?",
+          "opts": [
+            "No: se emite a los validadores y se quema parte de las comisiones",
+            "Sí: tiene el mismo límite de 21 millones que Bitcoin",
+            "Sí: el límite lo decide cada año la fundación Ethereum",
+            "No: cada usuario puede crear sus propios ETH cuando quiera"
+          ],
+          "a": 0,
+          "why": "No hay tope fijo. Se crean ETH nuevos para pagar a los validadores y se destruye una parte de cada comisión: con mucha actividad, la oferta puede incluso reducirse.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Ese límite es el de Bitcoin.",
+            "Ninguna fundación fija un tope anual: lo determinan las reglas del protocolo.",
+            "Los usuarios no pueden crear ETH: solo el protocolo lo emite."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

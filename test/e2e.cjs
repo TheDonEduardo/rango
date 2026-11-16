@@ -199,7 +199,7 @@ async function cargaFallida(b, url) {
   else {
     // Muestra: la primera lección de cada ruta y una lección por cada tipo de ejercicio.
     const set = new Set();
-    for (const t of ['basico', 'personal', 'pasiva', 'fundamental', 'tecnico', 'derivados']) set.add(lecciones.find(l => l.track === t).id);
+    for (const t of ['basico', 'personal', 'pasiva', 'fundamental', 'tecnico', 'derivados', 'cripto']) set.add(lecciones.find(l => l.track === t).id);
     for (const t of new Set(exs.map(e => e.t))) { const l = lecciones.find(l => l.tipos.has(t)); if (l) set.add(l.id); }
     ids = [...set];
   }

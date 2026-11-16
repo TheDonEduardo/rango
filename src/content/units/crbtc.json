@@ -1,0 +1,231 @@
+{
+  "n": 2,
+  "id": "crbtc",
+  "track": "cripto",
+  "title": "Bitcoin",
+  "blurb": "Escasez programada, halving, prueba de trabajo y una volatilidad extrema.",
+  "revisar": "2027-06",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "21 millones",
+      "texto": "El código de Bitcoin fija un máximo de 21 millones de monedas. Nadie puede emitir más. Por esa escasez se le compara con el oro, aunque tiene pocos años de historia y es mucho más volátil.",
+      "ejemplo": "Con 19,9 millones emitidos, ya existe el 94,8 % del total."
+    },
+    {
+      "id": "g2",
+      "titulo": "El halving",
+      "texto": "Cada 210.000 bloques, unos cuatro años, la recompensa de los mineros se reduce a la mitad. La emisión se frena sola hasta agotarse hacia 2140.",
+      "ejemplo": "3,125 BTC por bloque desde 2024: 450 BTC nuevos al día. En 2028, 1,5625 BTC."
+    },
+    {
+      "id": "g3",
+      "titulo": "Prueba de trabajo",
+      "texto": "Los mineros compiten gastando energía para añadir cada bloque. Ese coste hace que atacar la red sea carísimo: es lo que la protege sin necesidad de una autoridad.",
+      "ejemplo": "Un bloque cada 10 minutos, 144 al día."
+    },
+    {
+      "id": "g4",
+      "titulo": "Sin rentas y muy volátil",
+      "texto": "Bitcoin no paga intereses ni dividendos: solo ganas si otro paga más. Ha caído más de un 70 % varias veces. Limita lo que pones a lo que aguantarías ver caer tres cuartas partes.",
+      "ejemplo": "De 69.000 $ a 16.000 $: −76,8 %. Con 1.000 € en una cartera de 20.000 €, pierdes 750 €."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "cb1",
+      "title": "Escasez programada",
+      "ex": [
+        {
+          "id": "cb1-1",
+          "t": "num",
+          "q": "Nunca habrá más de 21 millones de bitcoins. Si ya se han emitido unos 19,9 millones, ¿qué porcentaje del total existe? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 94.8,
+          "why": "19,9 ÷ 21 = 94,8 %. Casi todo el bitcoin que existirá ya está emitido; el resto se irá creando cada vez más despacio hasta el año 2140, aproximadamente.",
+          "tol": 0.06,
+          "guia": "g1"
+        },
+        {
+          "id": "cb1-2",
+          "t": "choice",
+          "q": "¿Qué es el halving de Bitcoin?",
+          "opts": [
+            "La recompensa por bloque se reduce a la mitad",
+            "El precio del bitcoin se divide entre dos",
+            "Cada bitcoin se parte en dos monedas nuevas",
+            "Las comisiones de la red bajan a la mitad"
+          ],
+          "a": 0,
+          "why": "Cada 210.000 bloques, unos cuatro años, los mineros reciben la mitad de bitcoins nuevos por bloque. Así la emisión se frena sola y el límite de 21 millones se cumple.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "El halving afecta a la emisión de monedas nuevas, no al precio.",
+            "Las monedas existentes no se dividen ni se duplican.",
+            "Las comisiones dependen de la demanda de espacio en los bloques."
+          ]
+        },
+        {
+          "id": "cb1-3",
+          "t": "num",
+          "q": "Según la tabla, ¿cuál será la recompensa por bloque tras el próximo halving, previsto para 2028?",
+          "table": {
+            "cols": [
+              "Halving",
+              "Recompensa por bloque"
+            ],
+            "rows": [
+              [
+                "2012",
+                "25 BTC"
+              ],
+              [
+                "2016",
+                "12,5 BTC"
+              ],
+              [
+                "2020",
+                "6,25 BTC"
+              ],
+              [
+                "2024",
+                "3,125 BTC"
+              ]
+            ],
+            "note": "Antes de 2012, la recompensa era de 50 BTC."
+          },
+          "unit": "BTC",
+          "a": 1.5625,
+          "tol": 0.006,
+          "why": "3,125 ÷ 2 = 1,5625 BTC. La recompensa se divide entre dos en cada halving: es una regla del código, no una decisión de nadie.",
+          "guia": "g2"
+        },
+        {
+          "id": "cb1-4",
+          "t": "num",
+          "q": "Se mina un bloque cada 10 minutos, 144 al día, con una recompensa de 3,125 BTC. ¿Cuántos bitcoins nuevos se crean al día?",
+          "unit": "BTC",
+          "a": 450,
+          "why": "144 × 3,125 = 450 BTC al día. Antes del halving de 2024 eran 900: la oferta nueva se redujo a la mitad de un día para otro.",
+          "guia": "g2"
+        },
+        {
+          "id": "cb1-5",
+          "t": "choice",
+          "q": "¿Qué hacen los mineros en la prueba de trabajo?",
+          "opts": [
+            "Gastan energía compitiendo por añadir cada bloque",
+            "Bloquean sus monedas como garantía de la red",
+            "Votan qué transacciones consideran válidas",
+            "Guardan las claves privadas de los usuarios"
+          ],
+          "a": 0,
+          "why": "Para añadir un bloque hay que resolver un problema que solo se resuelve a base de cálculo. Ese coste en energía es lo que hace carísimo atacar la red.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Eso es la prueba de participación, la de Ethereum o Solana.",
+            "No se vota: gana quien resuelve antes el problema de cálculo.",
+            "Las claves las guarda cada usuario, no los mineros."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "cb2",
+      "title": "Qué es y qué no es",
+      "ex": [
+        {
+          "id": "cb2-1",
+          "t": "choice",
+          "q": "¿De dónde sale la rentabilidad de tener bitcoin?",
+          "opts": [
+            "Solo de que otro pague más por él en el futuro",
+            "De los intereses que paga cada trimestre",
+            "De los beneficios de la empresa que lo emite",
+            "De un dividendo anual en bitcoin"
+          ],
+          "a": 0,
+          "why": "Bitcoin no genera rentas: no paga intereses ni dividendos y no hay empresa detrás. Su precio depende solo de la oferta, que es fija, y de la demanda, que no lo es.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Bitcoin no paga intereses.",
+            "No hay ninguna empresa emisora ni beneficios que repartir.",
+            "No existe ningún dividendo: tener bitcoin no genera más bitcoin."
+          ]
+        },
+        {
+          "id": "cb2-2",
+          "t": "num",
+          "q": "Entre finales de 2021 y finales de 2022, el bitcoin cayó de unos 69.000 $ a unos 16.000 $. ¿Cuánto cayó? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 76.8,
+          "why": "1 − 16.000 ÷ 69.000 = 76,8 %. No fue una excepción: Bitcoin ha sufrido varias caídas de más del 70 % en su historia.",
+          "tol": 0.06,
+          "guia": "g4"
+        },
+        {
+          "id": "cb2-3",
+          "t": "num",
+          "q": "Desde esos 16.000 $, ¿cuánto tenía que subir para volver a 69.000 $? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 331.3,
+          "why": "69.000 ÷ 16.000 − 1 = 331,3 %. Una caída del 76,8 % exige más que cuadruplicar el precio para recuperarse.",
+          "tol": 0.06,
+          "guia": "g4"
+        },
+        {
+          "id": "cb2-4",
+          "t": "choice",
+          "q": "A Bitcoin se le llama «oro digital». ¿En qué se diferencia del oro?",
+          "opts": [
+            "Tiene pocos años de historia y es mucho más volátil",
+            "No es escaso: puede emitirse sin ningún límite",
+            "Paga intereses a quien lo mantiene en cartera",
+            "Solo pueden comprarlo los bancos centrales"
+          ],
+          "a": 0,
+          "why": "Comparten la escasez y que no generan rentas. Pero el oro tiene miles de años como reserva de valor y Bitcoin, menos de veinte, con oscilaciones varias veces mayores.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Es escaso por diseño: 21 millones como máximo.",
+            "Ni el oro ni Bitcoin pagan intereses.",
+            "Cualquiera puede comprarlo, en cualquier cantidad."
+          ]
+        },
+        {
+          "id": "cb2-5",
+          "t": "slide",
+          "q": "Tu cartera es de 20.000 € y no quieres perder más de 750 € si el bitcoin cae un 75 %. Mueve lo máximo que pones en él.",
+          "label": "Inversión en bitcoin",
+          "min": 0,
+          "max": 5000,
+          "step": 250,
+          "start": 3000,
+          "a": 1000,
+          "unit": "€",
+          "why": "750 ÷ 75 % = 1.000 €, un 5 % de la cartera. En un activo que puede caer tres cuartas partes, el tamaño de la posición es la única protección real.",
+          "show": [
+            {
+              "label": "Pérdida si cae un 75 %",
+              "k": 0.75,
+              "unit": "€"
+            },
+            {
+              "label": "Peso en la cartera",
+              "k": 0.005,
+              "unit": "%",
+              "dec": 1
+            }
+          ],
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

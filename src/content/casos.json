@@ -1,6 +1,6 @@
 {
   "fuente": "Yahoo Finance",
-  "fecha": "14/11/2026",
+  "fecha": "15/11/2026",
   "ex": {
     "f1a": [
       {
@@ -388,11 +388,11 @@
       {
         "t": "num",
         "caso": "Microsoft (MSFT)",
-        "q": "Precio de Microsoft al cierre del 13/11/2026: 523,88 $. BPA estimado por los analistas para los próximos 12 meses: 24,19 $. ¿PER adelantado? Redondea a 1 decimal.",
+        "q": "Precio de Microsoft al cierre del 13/11/2026: 523,88 $. BPA estimado por los analistas para los próximos 12 meses: 24,20 $. ¿PER adelantado? Redondea a 1 decimal.",
         "unit": "",
-        "a": 21.7,
+        "a": 21.6,
         "tol": 0.06,
-        "why": "523,88 ÷ 24,19 = 21,7 veces. Ojo: el BPA estimado suele ser «ajustado» y el pasado, contable; no compares ambos PER sin saberlo."
+        "why": "523,88 ÷ 24,20 = 21,6 veces. Ojo: el BPA estimado suele ser «ajustado» y el pasado, contable; no compares ambos PER sin saberlo."
       },
       {
         "t": "num",
@@ -433,11 +433,11 @@
       {
         "t": "num",
         "caso": "Nu Holdings (NU)",
-        "q": "Precio de Nu Holdings al cierre del 13/11/2026: 13,22 $. BPA estimado por los analistas para los próximos 12 meses: 1,09 $. ¿PER adelantado? Redondea a 1 decimal.",
+        "q": "Precio de Nu Holdings al cierre del 13/11/2026: 13,22 $. BPA estimado por los analistas para los próximos 12 meses: 1,08 $. ¿PER adelantado? Redondea a 1 decimal.",
         "unit": "",
-        "a": 12.1,
+        "a": 12.2,
         "tol": 0.06,
-        "why": "13,22 ÷ 1,09 = 12,1 veces. Ojo: el BPA estimado suele ser «ajustado» y el pasado, contable; no compares ambos PER sin saberlo."
+        "why": "13,22 ÷ 1,08 = 12,2 veces. Ojo: el BPA estimado suele ser «ajustado» y el pasado, contable; no compares ambos PER sin saberlo."
       },
       {
         "t": "num",
@@ -469,11 +469,11 @@
       {
         "t": "num",
         "caso": "Meta Platforms (META)",
-        "q": "Precio de Meta Platforms al cierre del 13/11/2026: 641,69 $. BPA estimado por los analistas para los próximos 12 meses: 35,59 $. ¿PER adelantado? Redondea a 1 decimal.",
+        "q": "Precio de Meta Platforms al cierre del 13/11/2026: 641,69 $. BPA estimado por los analistas para los próximos 12 meses: 35,68 $. ¿PER adelantado? Redondea a 1 decimal.",
         "unit": "",
         "a": 18.0,
         "tol": 0.06,
-        "why": "641,69 ÷ 35,59 = 18,0 veces. Ojo: el BPA estimado suele ser «ajustado» y el pasado, contable; no compares ambos PER sin saberlo."
+        "why": "641,69 ÷ 35,68 = 18,0 veces. Ojo: el BPA estimado suele ser «ajustado» y el pasado, contable; no compares ambos PER sin saberlo."
       },
       {
         "t": "num",
@@ -597,20 +597,20 @@
       {
         "t": "num",
         "caso": "Meta Platforms (META)",
-        "q": "Meta Platforms al cierre del 13/11/2026: capitalización de 1.640.694 M$, deuda de 114.842 M$, caja de 82.449 M$ y EBITDA de los últimos 12 meses de 116.190 M$. ¿EV/EBITDA? Redondea a 1 decimal.",
+        "q": "Meta Platforms al cierre del 13/11/2026: capitalización de 1.640.314 M$, deuda de 114.842 M$, caja de 82.449 M$ y EBITDA de los últimos 12 meses de 116.190 M$. ¿EV/EBITDA? Redondea a 1 decimal.",
         "unit": "",
         "a": 14.4,
         "tol": 0.06,
-        "why": "EV = 1.640.694 + 114.842 − 82.449 = 1.673.087 M$; ÷ 116.190 = 14,4 veces."
+        "why": "EV = 1.640.314 + 114.842 − 82.449 = 1.672.707 M$; ÷ 116.190 = 14,4 veces."
       },
       {
         "t": "num",
         "caso": "Meta Platforms (META)",
-        "q": "Meta Platforms: flujo de caja libre de los 4 trimestres hasta el 30/09/2026: 28.649 M$. Capitalización al cierre del 13/11/2026: 1.640.694 M$. ¿Rentabilidad por flujo de caja libre? Redondea a 1 decimal.",
+        "q": "Meta Platforms: flujo de caja libre de los 4 trimestres hasta el 30/09/2026: 28.649 M$. Capitalización al cierre del 13/11/2026: 1.640.314 M$. ¿Rentabilidad por flujo de caja libre? Redondea a 1 decimal.",
         "unit": "%",
         "a": 1.7,
         "tol": 0.06,
-        "why": "28.649 ÷ 1.640.694 = 1,7 %: la caja que genera el negocio por cada 100 $ de capitalización."
+        "why": "28.649 ÷ 1.640.314 = 1,7 %: la caja que genera el negocio por cada 100 $ de capitalización."
       },
       {
         "t": "num",
@@ -2001,11 +2001,11 @@
       {
         "t": "num",
         "caso": "Eli Lilly and Company (LLY)",
-        "q": "El 04/02/2026, Eli Lilly and Company (LLY) abrió a 1.068,65 $ tras cerrar la sesión anterior a 997,43 $. Fue su mayor hueco al alza del último año. ¿De cuánto fue? Redondea a 1 decimal.",
+        "q": "El 04/02/2026, Eli Lilly and Company (LLY) abrió a 1.068,65 $ tras cerrar la sesión anterior a 997,42 $. Fue su mayor hueco al alza del último año. ¿De cuánto fue? Redondea a 1 decimal.",
         "unit": "%",
         "a": 7.1,
         "tol": 0.06,
-        "why": "1.068,65 ÷ 997,43 − 1 = 7,1 %. El 03/03/2026 el precio volvió a 997,43 $ y cerró el hueco."
+        "why": "1.068,65 ÷ 997,42 − 1 = 7,1 %. El 03/03/2026 el precio volvió a 997,42 $ y cerró el hueco."
       },
       {
         "t": "num",
@@ -2153,7 +2153,7 @@
       {
         "t": "num",
         "caso": "Broadcom (AVGO)",
-        "q": "Hace 90 días, el consenso de BPA ajustado de Broadcom para su año fiscal en curso era de 11,63 $; al 14/11/2026, es de 11,66 $. ¿Cuánto se ha revisado al alza? Redondea a 1 decimal.",
+        "q": "Hace 90 días, el consenso de BPA ajustado de Broadcom para su año fiscal en curso era de 11,63 $; al 15/11/2026, es de 11,66 $. ¿Cuánto se ha revisado al alza? Redondea a 1 decimal.",
         "unit": "%",
         "a": 0.3,
         "tol": 0.06,
@@ -2162,7 +2162,7 @@
       {
         "t": "num",
         "caso": "Broadcom (AVGO)",
-        "q": "En los 30 días hasta el 14/11/2026, 1 analista subió su estimación de BPA de Broadcom para el año fiscal en curso y 0 la bajaron. ¿Qué porcentaje de las revisiones fue al alza? Redondea a 1 decimal.",
+        "q": "En los 30 días hasta el 15/11/2026, 1 analista subió su estimación de BPA de Broadcom para el año fiscal en curso y 0 la bajaron. ¿Qué porcentaje de las revisiones fue al alza? Redondea a 1 decimal.",
         "unit": "%",
         "a": 100.0,
         "tol": 0.06,
@@ -2171,7 +2171,7 @@
       {
         "t": "num",
         "caso": "Alphabet (GOOGL)",
-        "q": "Hace 90 días, el consenso de BPA ajustado de Alphabet para su año fiscal en curso era de 20,59 $; al 14/11/2026, es de 19,56 $. ¿Cuánto se ha revisado a la baja? Redondea a 1 decimal.",
+        "q": "Hace 90 días, el consenso de BPA ajustado de Alphabet para su año fiscal en curso era de 20,59 $; al 15/11/2026, es de 19,56 $. ¿Cuánto se ha revisado a la baja? Redondea a 1 decimal.",
         "unit": "%",
         "a": 5.0,
         "tol": 0.06,
@@ -2180,7 +2180,7 @@
       {
         "t": "num",
         "caso": "Alphabet (GOOGL)",
-        "q": "En los 30 días hasta el 14/11/2026, 0 analistas subieron su estimación de BPA de Alphabet para el año fiscal en curso y 45 la bajaron. ¿Qué porcentaje de las revisiones fue al alza? Redondea a 1 decimal.",
+        "q": "En los 30 días hasta el 15/11/2026, 0 analistas subieron su estimación de BPA de Alphabet para el año fiscal en curso y 45 la bajaron. ¿Qué porcentaje de las revisiones fue al alza? Redondea a 1 decimal.",
         "unit": "%",
         "a": 0.0,
         "tol": 0.06,
@@ -2189,16 +2189,16 @@
       {
         "t": "num",
         "caso": "MercadoLibre (MELI)",
-        "q": "Hace 90 días, el consenso de BPA ajustado de MercadoLibre para su año fiscal en curso era de 38,31 $; al 14/11/2026, es de 36,28 $. ¿Cuánto se ha revisado a la baja? Redondea a 1 decimal.",
+        "q": "Hace 90 días, el consenso de BPA ajustado de MercadoLibre para su año fiscal en curso era de 38,31 $; al 15/11/2026, es de 36,30 $. ¿Cuánto se ha revisado a la baja? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 5.3,
+        "a": 5.2,
         "tol": 0.06,
-        "why": "36,28 ÷ 38,31 − 1 = −5,3 %. Los analistas esperan ahora menos beneficio que hace tres meses."
+        "why": "36,30 ÷ 38,31 − 1 = −5,2 %. Los analistas esperan ahora menos beneficio que hace tres meses."
       },
       {
         "t": "num",
         "caso": "MercadoLibre (MELI)",
-        "q": "En los 30 días hasta el 14/11/2026, 3 analistas subieron su estimación de BPA de MercadoLibre para el año fiscal en curso y 3 la bajaron. ¿Qué porcentaje de las revisiones fue al alza? Redondea a 1 decimal.",
+        "q": "En los 30 días hasta el 15/11/2026, 3 analistas subieron su estimación de BPA de MercadoLibre para el año fiscal en curso y 3 la bajaron. ¿Qué porcentaje de las revisiones fue al alza? Redondea a 1 decimal.",
         "unit": "%",
         "a": 50.0,
         "tol": 0.06,
@@ -2207,7 +2207,7 @@
       {
         "t": "num",
         "caso": "Microsoft (MSFT)",
-        "q": "Hace 90 días, el consenso de BPA ajustado de Microsoft para su año fiscal en curso era de 19,73 $; al 14/11/2026, es de 20,01 $. ¿Cuánto se ha revisado al alza? Redondea a 1 decimal.",
+        "q": "Hace 90 días, el consenso de BPA ajustado de Microsoft para su año fiscal en curso era de 19,73 $; al 15/11/2026, es de 20,01 $. ¿Cuánto se ha revisado al alza? Redondea a 1 decimal.",
         "unit": "%",
         "a": 1.4,
         "tol": 0.06,
@@ -2216,7 +2216,7 @@
       {
         "t": "num",
         "caso": "Microsoft (MSFT)",
-        "q": "En los 30 días hasta el 14/11/2026, 25 analistas subieron su estimación de BPA de Microsoft para el año fiscal en curso y 3 la bajaron. ¿Qué porcentaje de las revisiones fue al alza? Redondea a 1 decimal.",
+        "q": "En los 30 días hasta el 15/11/2026, 25 analistas subieron su estimación de BPA de Microsoft para el año fiscal en curso y 3 la bajaron. ¿Qué porcentaje de las revisiones fue al alza? Redondea a 1 decimal.",
         "unit": "%",
         "a": 89.3,
         "tol": 0.06,
@@ -2225,7 +2225,7 @@
       {
         "t": "num",
         "caso": "Eli Lilly and Company (LLY)",
-        "q": "Hace 90 días, el consenso de BPA ajustado de Eli Lilly and Company para su año fiscal en curso era de 36,73 $; al 14/11/2026, es de 35,39 $. ¿Cuánto se ha revisado a la baja? Redondea a 1 decimal.",
+        "q": "Hace 90 días, el consenso de BPA ajustado de Eli Lilly and Company para su año fiscal en curso era de 36,73 $; al 15/11/2026, es de 35,39 $. ¿Cuánto se ha revisado a la baja? Redondea a 1 decimal.",
         "unit": "%",
         "a": 3.6,
         "tol": 0.06,
@@ -2234,7 +2234,7 @@
       {
         "t": "num",
         "caso": "Eli Lilly and Company (LLY)",
-        "q": "En los 30 días hasta el 14/11/2026, 1 analista subió su estimación de BPA de Eli Lilly and Company para el año fiscal en curso y 24 la bajaron. ¿Qué porcentaje de las revisiones fue al alza? Redondea a 1 decimal.",
+        "q": "En los 30 días hasta el 15/11/2026, 1 analista subió su estimación de BPA de Eli Lilly and Company para el año fiscal en curso y 24 la bajaron. ¿Qué porcentaje de las revisiones fue al alza? Redondea a 1 decimal.",
         "unit": "%",
         "a": 4.0,
         "tol": 0.06,
@@ -2243,7 +2243,7 @@
       {
         "t": "num",
         "caso": "CrowdStrike Holdings (CRWD)",
-        "q": "Hace 90 días, el consenso de BPA ajustado de CrowdStrike Holdings para su año fiscal en curso era de 1,28 $; al 14/11/2026, es de 1,26 $. ¿Cuánto se ha revisado a la baja? Redondea a 1 decimal.",
+        "q": "Hace 90 días, el consenso de BPA ajustado de CrowdStrike Holdings para su año fiscal en curso era de 1,28 $; al 15/11/2026, es de 1,26 $. ¿Cuánto se ha revisado a la baja? Redondea a 1 decimal.",
         "unit": "%",
         "a": 1.6,
         "tol": 0.06,
@@ -2252,7 +2252,7 @@
       {
         "t": "num",
         "caso": "CrowdStrike Holdings (CRWD)",
-        "q": "En los 30 días hasta el 14/11/2026, 2 analistas subieron su estimación de BPA de CrowdStrike Holdings para el año fiscal en curso y 0 la bajaron. ¿Qué porcentaje de las revisiones fue al alza? Redondea a 1 decimal.",
+        "q": "En los 30 días hasta el 15/11/2026, 2 analistas subieron su estimación de BPA de CrowdStrike Holdings para el año fiscal en curso y 0 la bajaron. ¿Qué porcentaje de las revisiones fue al alza? Redondea a 1 decimal.",
         "unit": "%",
         "a": 100.0,
         "tol": 0.06,
@@ -2261,7 +2261,7 @@
       {
         "t": "num",
         "caso": "Nu Holdings (NU)",
-        "q": "Hace 90 días, el consenso de BPA ajustado de Nu Holdings para su año fiscal en curso era de 0,84 $; al 14/11/2026, es de 0,85 $. ¿Cuánto se ha revisado al alza? Redondea a 1 decimal.",
+        "q": "Hace 90 días, el consenso de BPA ajustado de Nu Holdings para su año fiscal en curso era de 0,84 $; al 15/11/2026, es de 0,85 $. ¿Cuánto se ha revisado al alza? Redondea a 1 decimal.",
         "unit": "%",
         "a": 1.2,
         "tol": 0.06,
@@ -2270,7 +2270,7 @@
       {
         "t": "num",
         "caso": "Nu Holdings (NU)",
-        "q": "En los 30 días hasta el 14/11/2026, 2 analistas subieron su estimación de BPA de Nu Holdings para el año fiscal en curso y 4 la bajaron. ¿Qué porcentaje de las revisiones fue al alza? Redondea a 1 decimal.",
+        "q": "En los 30 días hasta el 15/11/2026, 2 analistas subieron su estimación de BPA de Nu Holdings para el año fiscal en curso y 4 la bajaron. ¿Qué porcentaje de las revisiones fue al alza? Redondea a 1 decimal.",
         "unit": "%",
         "a": 33.3,
         "tol": 0.06,
@@ -2279,7 +2279,7 @@
       {
         "t": "num",
         "caso": "Axon Enterprise (AXON)",
-        "q": "Hace 90 días, el consenso de BPA ajustado de Axon Enterprise para su año fiscal en curso era de 7,71 $; al 14/11/2026, es de 7,11 $. ¿Cuánto se ha revisado a la baja? Redondea a 1 decimal.",
+        "q": "Hace 90 días, el consenso de BPA ajustado de Axon Enterprise para su año fiscal en curso era de 7,71 $; al 15/11/2026, es de 7,11 $. ¿Cuánto se ha revisado a la baja? Redondea a 1 decimal.",
         "unit": "%",
         "a": 7.8,
         "tol": 0.06,
@@ -2288,7 +2288,7 @@
       {
         "t": "num",
         "caso": "Axon Enterprise (AXON)",
-        "q": "En los 30 días hasta el 14/11/2026, 3 analistas subieron su estimación de BPA de Axon Enterprise para el año fiscal en curso y 11 la bajaron. ¿Qué porcentaje de las revisiones fue al alza? Redondea a 1 decimal.",
+        "q": "En los 30 días hasta el 15/11/2026, 3 analistas subieron su estimación de BPA de Axon Enterprise para el año fiscal en curso y 11 la bajaron. ¿Qué porcentaje de las revisiones fue al alza? Redondea a 1 decimal.",
         "unit": "%",
         "a": 21.4,
         "tol": 0.06,
@@ -2297,16 +2297,16 @@
       {
         "t": "num",
         "caso": "Meta Platforms (META)",
-        "q": "Hace 90 días, el consenso de BPA ajustado de Meta Platforms para su año fiscal en curso era de 31,79 $; al 14/11/2026, es de 29,12 $. ¿Cuánto se ha revisado a la baja? Redondea a 1 decimal.",
+        "q": "Hace 90 días, el consenso de BPA ajustado de Meta Platforms para su año fiscal en curso era de 31,79 $; al 15/11/2026, es de 29,06 $. ¿Cuánto se ha revisado a la baja? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 8.4,
+        "a": 8.6,
         "tol": 0.06,
-        "why": "29,12 ÷ 31,79 − 1 = −8,4 %. Los analistas esperan ahora menos beneficio que hace tres meses."
+        "why": "29,06 ÷ 31,79 − 1 = −8,6 %. Los analistas esperan ahora menos beneficio que hace tres meses."
       },
       {
         "t": "num",
         "caso": "Meta Platforms (META)",
-        "q": "En los 30 días hasta el 14/11/2026, 7 analistas subieron su estimación de BPA de Meta Platforms para el año fiscal en curso y 40 la bajaron. ¿Qué porcentaje de las revisiones fue al alza? Redondea a 1 decimal.",
+        "q": "En los 30 días hasta el 15/11/2026, 7 analistas subieron su estimación de BPA de Meta Platforms para el año fiscal en curso y 40 la bajaron. ¿Qué porcentaje de las revisiones fue al alza? Redondea a 1 decimal.",
         "unit": "%",
         "a": 14.9,
         "tol": 0.06,
@@ -2315,16 +2315,16 @@
       {
         "t": "num",
         "caso": "NVIDIA (NVDA)",
-        "q": "Hace 90 días, el consenso de BPA ajustado de NVIDIA para su año fiscal en curso era de 8,96 $; al 14/11/2026, es de 9,32 $. ¿Cuánto se ha revisado al alza? Redondea a 1 decimal.",
+        "q": "Hace 90 días, el consenso de BPA ajustado de NVIDIA para su año fiscal en curso era de 8,96 $; al 15/11/2026, es de 9,33 $. ¿Cuánto se ha revisado al alza? Redondea a 1 decimal.",
         "unit": "%",
-        "a": 4.0,
+        "a": 4.1,
         "tol": 0.06,
-        "why": "9,32 ÷ 8,96 − 1 = +4,0 %. Los analistas esperan ahora más beneficio que hace tres meses."
+        "why": "9,33 ÷ 8,96 − 1 = +4,1 %. Los analistas esperan ahora más beneficio que hace tres meses."
       },
       {
         "t": "num",
         "caso": "NVIDIA (NVDA)",
-        "q": "En los 30 días hasta el 14/11/2026, 2 analistas subieron su estimación de BPA de NVIDIA para el año fiscal en curso y 0 la bajaron. ¿Qué porcentaje de las revisiones fue al alza? Redondea a 1 decimal.",
+        "q": "En los 30 días hasta el 15/11/2026, 2 analistas subieron su estimación de BPA de NVIDIA para el año fiscal en curso y 0 la bajaron. ¿Qué porcentaje de las revisiones fue al alza? Redondea a 1 decimal.",
         "unit": "%",
         "a": 100.0,
         "tol": 0.06,
@@ -3076,7 +3076,7 @@
           "rows": [
             [
               "Capitalización (13/11/2026)",
-              "1.640.694 M$"
+              "1.640.314 M$"
             ],
             [
               "Deuda",
@@ -3096,7 +3096,7 @@
         "unit": "veces",
         "a": 58.4,
         "tol": 0.06,
-        "why": "Valor de empresa = 1.640.694 + 114.842 − 82.449 = 1.673.087 M$; ÷ 28.649 = 58,4 veces. Aquí el flujo no descuenta el pago en acciones: con él, el múltiplo sería más alto."
+        "why": "Valor de empresa = 1.640.314 + 114.842 − 82.449 = 1.672.707 M$; ÷ 28.649 = 58,4 veces. Aquí el flujo no descuenta el pago en acciones: con él, el múltiplo sería más alto."
       },
       {
         "t": "num",
@@ -3130,6 +3130,66 @@
         "a": 30.8,
         "tol": 0.06,
         "why": "Valor de empresa = 3.932.339 + 38.860 − 62.469 = 3.908.730 M$; ÷ 127.006 = 30,8 veces. Aquí el flujo no descuenta el pago en acciones: con él, el múltiplo sería más alto."
+      }
+    ],
+    "cb2": [
+      {
+        "t": "num",
+        "caso": "Bitcoin",
+        "q": "El bitcoin marcó un máximo de 19.497,40 $ el 16/12/2017 y cayó hasta 3.236,76 $ el 15/12/2018. ¿Cuánto cayó? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 83.4,
+        "tol": 0.06,
+        "why": "1 − 3.236,76 ÷ 19.497,40 = 83,4 %. Es su mayor caída de cierre a cierre desde el 17/09/2014: antes de decidir cuánto pones, piensa si aguantarías verla."
+      },
+      {
+        "t": "num",
+        "caso": "Bitcoin",
+        "q": "El bitcoin cerró a 95.549,15 $ el 15/11/2025 y a 64.955,81 $ el 15/11/2026. ¿Cuánto cayó en ese año? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 32.0,
+        "tol": 0.06,
+        "why": "1 − 64.955,81 ÷ 95.549,15 = 32,0 %. Un año no dice nada del siguiente: en estos activos son normales cambios así en los dos sentidos."
+      }
+    ],
+    "ce2": [
+      {
+        "t": "num",
+        "caso": "Ethereum",
+        "q": "El ETH marcó un máximo de 1.396,42 $ el 13/01/2018 y cayó hasta 84,31 $ el 14/12/2018. ¿Cuánto cayó? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 94.0,
+        "tol": 0.06,
+        "why": "1 − 84,31 ÷ 1.396,42 = 94,0 %. Es su mayor caída de cierre a cierre desde el 09/11/2017: antes de decidir cuánto pones, piensa si aguantarías verla."
+      },
+      {
+        "t": "num",
+        "caso": "Ethereum",
+        "q": "El ETH cerró a 3.166,63 $ el 15/11/2025 y a 1.816,78 $ el 15/11/2026. ¿Cuánto cayó en ese año? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 42.6,
+        "tol": 0.06,
+        "why": "1 − 1.816,78 ÷ 3.166,63 = 42,6 %. Un año no dice nada del siguiente: en estos activos son normales cambios así en los dos sentidos."
+      }
+    ],
+    "cs2": [
+      {
+        "t": "num",
+        "caso": "Solana",
+        "q": "El SOL marcó un máximo de 258,93 $ el 06/11/2021 y cayó hasta 9,65 $ el 29/12/2022. ¿Cuánto cayó? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 96.3,
+        "tol": 0.06,
+        "why": "1 − 9,65 ÷ 258,93 = 96,3 %. Es su mayor caída de cierre a cierre desde el 10/04/2020: antes de decidir cuánto pones, piensa si aguantarías verla."
+      },
+      {
+        "t": "num",
+        "caso": "Solana",
+        "q": "El SOL cerró a 139,54 $ el 15/11/2025 y a 71,84 $ el 15/11/2026. ¿Cuánto cayó en ese año? Redondea a 1 decimal.",
+        "unit": "%",
+        "a": 48.5,
+        "tol": 0.06,
+        "why": "1 − 71,84 ÷ 139,54 = 48,5 %. Un año no dice nada del siguiente: en estos activos son normales cambios así en los dos sentidos."
       }
     ]
   }
