@@ -1,0 +1,185 @@
+{
+  "n": 8,
+  "id": "banderas",
+  "track": "tecnico",
+  "title": "Banderas y triángulos",
+  "blurb": "Pausas dentro de una tendencia: cómo se forman, dónde se compra y hasta dónde llegan.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "La bandera",
+      "texto": "Tras una subida rápida con volumen, el mástil, el precio hace una pausa corta y ordenada que retrocede poco. Se compra al superar el máximo de la bandera.",
+      "ejemplo": "Mástil de 30 € a 42 €, un 40 %. Bandera de 42 € a 39 €: un 7,1 %."
+    },
+    {
+      "id": "g2",
+      "titulo": "Volumen y objetivo",
+      "texto": "El volumen se seca en la pausa y vuelve en la ruptura. El objetivo clásico proyecta la altura del mástil sobre la ruptura.",
+      "ejemplo": "Mástil de 12 € y ruptura a 42 €: objetivo en 54 €."
+    },
+    {
+      "id": "g3",
+      "titulo": "Triángulo ascendente",
+      "texto": "Resistencia plana y mínimos cada vez más altos: la demanda empuja contra una oferta fija. La ruptura sin volumen falla más a menudo.",
+      "ejemplo": "Resistencia en 50 € y primer mínimo en 44 €: objetivo en 56 €."
+    },
+    {
+      "id": "g4",
+      "titulo": "El plan",
+      "texto": "Entrada sobre la resistencia, stop bajo el último mínimo y tamaño desde el riesgo. Mide el objetivo en R antes de entrar.",
+      "ejemplo": "Entrada 50,20 €, stop 48,20 € y 300 € de riesgo: 150 acciones y 2,9R hasta 56 €."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "tb1",
+      "title": "Bandera alcista",
+      "ex": [
+        {
+          "id": "tb1-1",
+          "t": "choice",
+          "q": "¿Qué forma una bandera alcista?",
+          "opts": [
+            "Una subida rápida y un retroceso corto y ordenado",
+            "Una caída larga seguida de un rebote débil",
+            "Dos máximos iguales separados por una caída",
+            "Un rango ancho con mucho volumen en ambos lados"
+          ],
+          "a": 0,
+          "why": "El mástil es una subida rápida con volumen; la bandera, una pausa corta que retrocede poco. Es una figura de continuación: la tendencia descansa y sigue.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Eso describe un rebote en una tendencia bajista.",
+            "Eso es un doble techo.",
+            "Mucho volumen y rango ancho no son una pausa ordenada."
+          ]
+        },
+        {
+          "id": "tb1-2",
+          "t": "num",
+          "q": "El mástil de una bandera sube de 30 € a 42 €. ¿Cuánto sube?",
+          "unit": "%",
+          "a": 40,
+          "why": "42 ÷ 30 − 1 = 40 %. Las banderas más fiables nacen de subidas fuertes y rápidas, en pocas semanas.",
+          "guia": "g1"
+        },
+        {
+          "id": "tb1-3",
+          "t": "num",
+          "q": "La bandera retrocede de 42 € a 39 €. ¿Cuánto retrocede? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 7.1,
+          "why": "(42 − 39) ÷ 42 = 7,1 %. Un retroceso pequeño respecto a la subida indica que casi nadie quiere vender.",
+          "tol": 0.06,
+          "guia": "g1"
+        },
+        {
+          "id": "tb1-4",
+          "t": "num",
+          "q": "El mástil mide 12 € y la bandera rompe por arriba a 42 €. Con el objetivo clásico, que proyecta la altura del mástil, ¿hasta qué precio llegaría?",
+          "unit": "€",
+          "a": 54,
+          "why": "42 + 12 = 54 €. Es una referencia para planificar la salida, no una promesa: muchas rupturas se quedan antes.",
+          "guia": "g2"
+        },
+        {
+          "id": "tb1-5",
+          "t": "choice",
+          "q": "¿Qué volumen esperas mientras se forma la bandera?",
+          "opts": [
+            "Bajo y decreciente: casi nadie quiere vender",
+            "Más alto que el que hubo durante el mástil",
+            "Igual al de la subida, sin ningún cambio",
+            "Picos de volumen en cada una de las velas rojas"
+          ],
+          "a": 0,
+          "why": "El volumen se seca en la pausa y vuelve con fuerza en la ruptura. Mucho volumen en los retrocesos sería señal de distribución.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "Más volumen en la pausa que en la subida sería señal de venta.",
+            "Si el volumen no baja, la pausa no está agotando a los vendedores.",
+            "Volumen alto en las velas rojas indica distribución."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "tb2",
+      "title": "Triángulos",
+      "ex": [
+        {
+          "id": "tb2-1",
+          "t": "choice",
+          "q": "¿Qué es un triángulo ascendente?",
+          "opts": [
+            "Resistencia plana y mínimos cada vez más altos",
+            "Soporte plano y máximos cada vez más bajos",
+            "Máximos y mínimos que se separan",
+            "Un rango con techo y suelo paralelos"
+          ],
+          "a": 0,
+          "why": "Los compradores entran cada vez antes, a precios más altos, contra una oferta fija en la resistencia. Cuando esa oferta se agota, el precio rompe.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Eso es un triángulo descendente, una figura bajista.",
+            "Eso es un triángulo expansivo, de mucha volatilidad.",
+            "Eso es un rectángulo o rango lateral."
+          ]
+        },
+        {
+          "id": "tb2-2",
+          "t": "num",
+          "q": "Un triángulo ascendente tiene la resistencia en 50 € y su primer mínimo en 44 €. Proyectando su altura sobre la ruptura, ¿qué objetivo marca?",
+          "unit": "€",
+          "a": 56,
+          "why": "Altura: 50 − 44 = 6 €. Objetivo: 50 + 6 = 56 €.",
+          "guia": "g3"
+        },
+        {
+          "id": "tb2-3",
+          "t": "num",
+          "q": "Entras a 50,20 € con el stop bajo el último mínimo, en 48,20 €. Si arriesgas 300 €, ¿cuántas acciones compras?",
+          "unit": "acc.",
+          "a": 150,
+          "why": "Riesgo por acción: 50,20 − 48,20 = 2,00 €. 300 ÷ 2,00 = 150 acciones.",
+          "guia": "g4"
+        },
+        {
+          "id": "tb2-4",
+          "t": "choice",
+          "q": "El precio rompe la resistencia del triángulo con la mitad del volumen medio. ¿Qué haces?",
+          "opts": [
+            "Desconfiar: sin volumen la ruptura falla más",
+            "Comprar más: el volumen bajo es buena señal",
+            "Ignorar el volumen en los triángulos",
+            "Ponerte corto de inmediato"
+          ],
+          "a": 0,
+          "why": "Una ruptura de verdad atrae compradores. Sin volumen, las instituciones no están detrás y el precio suele volver al triángulo.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "El volumen bajo en la ruptura es una señal de debilidad.",
+            "El volumen importa en todas las rupturas.",
+            "Una ruptura débil no es motivo para abrir un corto."
+          ]
+        },
+        {
+          "id": "tb2-5",
+          "t": "num",
+          "q": "Con la entrada a 50,20 €, el stop en 48,20 € y el objetivo en 56 €, ¿cuántas R ofrece la operación? Redondea a 1 decimal.",
+          "unit": "R",
+          "a": 2.9,
+          "why": "(56 − 50,20) ÷ 2,00 = 2,9R. Por encima de 2R, la operación compensa aunque falles a menudo.",
+          "tol": 0.06,
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

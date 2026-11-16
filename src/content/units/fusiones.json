@@ -1,0 +1,184 @@
+{
+  "n": 20,
+  "id": "fusiones",
+  "track": "fundamental",
+  "title": "Fusiones y adquisiciones",
+  "blurb": "OPA, prima, fondo de comercio y por qué tantas compras salen caras.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "La OPA y su prima",
+      "texto": "Para comprar una empresa cotizada se ofrece más de lo que vale en bolsa: la prima. Mientras la oferta no se cierra, la acción cotiza algo por debajo del precio ofrecido.",
+      "ejemplo": "OPA a 26 € sobre 20 €: prima del 30 %. A 25,20 €, queda un 3,2 %."
+    },
+    {
+      "id": "g2",
+      "titulo": "Fondo de comercio y pago",
+      "texto": "Lo pagado por encima de los activos netos es fondo de comercio. Si se paga con acciones nuevas, los accionistas de la compradora se diluyen.",
+      "ejemplo": "Pagar 900 M€ por 600 M€ de activos netos: 300 M€ de fondo de comercio."
+    },
+    {
+      "id": "g3",
+      "titulo": "¿Crea valor?",
+      "texto": "Una compra crea valor si lo comprado rinde más que el coste del capital sobre todo lo pagado, prima incluida.",
+      "ejemplo": "60 M€ al año por 1.200 M€: un 5 %, por debajo de un coste del 8 %."
+    },
+    {
+      "id": "g4",
+      "titulo": "Promesas y crecimiento comprado",
+      "texto": "Las sinergias suelen quedarse cortas: ajústalas con el historial. Y si el BPA crece a base de compras pero la caja por acción no, el crecimiento es solo comprado.",
+      "ejemplo": "Prometen 50 M€ y suelen cumplir un 60 %: espera 30 M€."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "fq1",
+      "title": "Comprar empresas",
+      "ex": [
+        {
+          "id": "fq1-1",
+          "t": "choice",
+          "q": "¿Qué es la prima de una OPA?",
+          "opts": [
+            "Lo que se paga por encima del precio de mercado",
+            "La comisión del banco que asesora la compra",
+            "El dividendo extra que paga la compradora",
+            "La caída de la acción compradora ese día"
+          ],
+          "a": 0,
+          "why": "Para convencer a los accionistas de que vendan, la compradora ofrece más de lo que vale la acción en bolsa. Esa diferencia es la prima.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Las comisiones son otro coste, no la prima.",
+            "La prima la cobran los vendedores, no es un dividendo.",
+            "La reacción de la compradora no es la prima."
+          ]
+        },
+        {
+          "id": "fq1-2",
+          "t": "num",
+          "q": "Una acción cotiza a 20 € y lanzan una OPA a 26 €. ¿Qué prima ofrecen?",
+          "unit": "%",
+          "a": 30,
+          "why": "26 ÷ 20 − 1 = 30 %. Las primas habituales están entre el 20 y el 40 %: son lo que la compradora tiene que recuperar con la operación.",
+          "guia": "g1"
+        },
+        {
+          "id": "fq1-3",
+          "t": "num",
+          "q": "Una empresa paga 900 M€ por otra cuyos activos netos valen 600 M€. ¿Cuántos millones de fondo de comercio genera?",
+          "unit": "M€",
+          "a": 300,
+          "why": "900 − 600 = 300 M€. El fondo de comercio es lo pagado de más; si la compra sale mal, acaba en una pérdida contable.",
+          "guia": "g2"
+        },
+        {
+          "id": "fq1-4",
+          "t": "choice",
+          "q": "Si la compradora paga con acciones nuevas, ¿qué les pasa a sus accionistas?",
+          "opts": [
+            "Se diluyen: el negocio se reparte entre más acciones",
+            "Cobran un dividendo especial por la compra",
+            "No les afecta: solo cambia la empresa comprada",
+            "Reciben acciones gratis de la empresa comprada"
+          ],
+          "a": 0,
+          "why": "Pagar con acciones reparte la empresa resultante entre más accionistas. Solo compensa si lo comprado aporta más de lo que diluye.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "No hay ningún dividendo especial por comprar.",
+            "Les afecta: su parte de la empresa se reduce.",
+            "Reciben menos peso en la compradora, no acciones gratis."
+          ]
+        },
+        {
+          "id": "fq1-5",
+          "t": "num",
+          "q": "Tras anunciarse una OPA a 26 €, la acción cotiza a 25,20 €. ¿Qué diferencial queda hasta el precio de la oferta? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 3.2,
+          "why": "26 ÷ 25,20 − 1 = 3,2 %. Ese descuento refleja el riesgo de que la operación no se cierre, por ejemplo, porque la bloquee un regulador.",
+          "tol": 0.06,
+          "guia": "g1"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "fq2",
+      "title": "Juzgar una adquisición",
+      "ex": [
+        {
+          "id": "fq2-1",
+          "t": "choice",
+          "q": "¿Por qué muchas adquisiciones destruyen valor para la compradora?",
+          "opts": [
+            "Se paga de más y las sinergias se sobreestiman",
+            "Las empresas compradas siempre quiebran",
+            "Los reguladores bloquean el dinero de la compra",
+            "Las comisiones bancarias se lo comen todo"
+          ],
+          "a": 0,
+          "why": "La prima se paga hoy y con seguridad; las sinergias llegan más tarde y a menudo menos de lo prometido.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Muchas compradas funcionan bien; el problema suele ser el precio.",
+            "Los reguladores pueden bloquear compras, pero no explican la destrucción de valor.",
+            "Las comisiones pesan poco frente a una prima excesiva."
+          ]
+        },
+        {
+          "id": "fq2-2",
+          "t": "num",
+          "q": "Una compra costó 1.200 M€ y la empresa comprada aporta 60 M€ al año de beneficio operativo después de impuestos. ¿Qué rentabilidad obtiene sobre lo invertido?",
+          "unit": "%",
+          "a": 5,
+          "why": "60 ÷ 1.200 = 5 %. Es el ROIC de la adquisición: lo que rinde cada euro pagado.",
+          "guia": "g3"
+        },
+        {
+          "id": "fq2-3",
+          "t": "num",
+          "q": "Si el coste del capital es del 8 %, ¿cuántos puntos le faltan a ese 5 % para crear valor?",
+          "unit": "puntos",
+          "a": 3,
+          "why": "8 − 5 = 3 puntos. Mientras la compra rinda menos que su coste del capital, destruye valor, aunque haga crecer las ventas.",
+          "guia": "g3"
+        },
+        {
+          "id": "fq2-4",
+          "t": "choice",
+          "q": "Una empresa compra otras cada año y su BPA sube, pero su flujo de caja libre por acción no. ¿Cómo lo lees?",
+          "opts": [
+            "Desconfiar: el crecimiento puede ser solo comprado",
+            "Buena señal: el BPA es lo único que cuenta",
+            "Señal de que pronto pagará más dividendos",
+            "Es imposible: BPA y caja siempre van juntos"
+          ],
+          "a": 0,
+          "why": "Comprar empresas sube las cifras, pero si la caja por acción no crece, el accionista no está ganando más. Mira el crecimiento sin las compras.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "El BPA puede crecer sin que el accionista gane más.",
+            "Sin caja creciente, no habrá más dividendos sostenibles.",
+            "Pueden divergir, y aquí lo hacen."
+          ]
+        },
+        {
+          "id": "fq2-5",
+          "t": "num",
+          "q": "La dirección promete 50 M€ de sinergias al año y su historial muestra que logra el 60 % de lo prometido. ¿Cuántos millones esperas?",
+          "unit": "M€",
+          "a": 30,
+          "why": "50 × 60 % = 30 M€. Ajustar las promesas con el historial de cada equipo directivo es más realista que creerlas.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

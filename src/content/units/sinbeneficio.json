@@ -1,0 +1,184 @@
+{
+  "n": 21,
+  "id": "sinbeneficio",
+  "track": "fundamental",
+  "title": "Empresas que aún pierden dinero",
+  "blurb": "Cómo valorar el crecimiento sin beneficios y cuándo la caja se convierte en el problema.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Valorar sin beneficio",
+      "texto": "Sin beneficio no hay PER: se usa el valor de empresa entre ventas. Un múltiplo alto exige años de crecimiento muy rápido.",
+      "ejemplo": "6.000 M$ entre 400 M$ de ventas: 15 veces."
+    },
+    {
+      "id": "g2",
+      "titulo": "Buen camino",
+      "texto": "Margen bruto alto, pérdidas que bajan y una regla del 40 que se acerca a 40 indican que el negocio escala.",
+      "ejemplo": "Crece un 50 % con un margen de caja del −15 %: 35 puntos."
+    },
+    {
+      "id": "g3",
+      "titulo": "La caja manda",
+      "texto": "Divide la caja entre lo que quema cada trimestre. Con menos de un año, habrá ampliación de capital y dilución.",
+      "ejemplo": "300 M$ de caja y 75 M$ de quema: 4 trimestres. 25 millones de acciones nuevas sobre 100: un 20 % menos para cada accionista."
+    },
+    {
+      "id": "g4",
+      "titulo": "El riesgo del múltiplo",
+      "texto": "Si el crecimiento se frena o suben los tipos, el múltiplo puede desplomarse aunque las ventas no bajen.",
+      "ejemplo": "De 15 a 5 veces ventas: −66,7 %."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "fn1",
+      "title": "Crecer perdiendo",
+      "ex": [
+        {
+          "id": "fn1-1",
+          "t": "num",
+          "q": "Una empresa sin beneficios vale 6.000 M$ (valor de empresa) y vende 400 M$ al año. ¿A cuántas veces sus ventas cotiza?",
+          "unit": "veces",
+          "a": 15,
+          "why": "6.000 ÷ 400 = 15 veces. Sin beneficio no hay PER: se usa el valor de empresa entre ventas, y un múltiplo así exige muchos años de gran crecimiento.",
+          "guia": "g1"
+        },
+        {
+          "id": "fn1-2",
+          "t": "choice",
+          "q": "¿Qué indica que una empresa que aún pierde dinero va por buen camino?",
+          "opts": [
+            "Margen bruto alto y pérdidas que bajan cada año",
+            "Ventas que crecen captando clientes a pérdida",
+            "Muchas noticias y seguidores en redes sociales",
+            "Un precio por acción bajo, de céntimos"
+          ],
+          "a": 0,
+          "why": "Un margen bruto alto significa que cada venta deja dinero; si las pérdidas bajan mientras crece, el negocio escala. Crecer perdiendo en cada cliente no lleva a ninguna parte.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "Crecer perdiendo dinero en cada cliente no lleva al beneficio.",
+            "La popularidad no paga las facturas.",
+            "El precio de una acción no dice si la empresa es buena."
+          ]
+        },
+        {
+          "id": "fn1-3",
+          "t": "num",
+          "q": "Tiene 300 M$ de caja y quema 75 M$ por trimestre. ¿Cuántos trimestres puede aguantar sin financiación nueva?",
+          "unit": "trimestres",
+          "a": 4,
+          "why": "300 ÷ 75 = 4 trimestres. Con menos de un año de caja, una ampliación de capital es muy probable.",
+          "guia": "g3"
+        },
+        {
+          "id": "fn1-4",
+          "t": "num",
+          "q": "Su pérdida operativa es de 60 M$ con unas ventas de 400 M$. ¿Qué margen operativo negativo tiene? Responde sin el signo.",
+          "unit": "%",
+          "a": 15,
+          "why": "60 ÷ 400 = 15 %, es decir, −15 %. Lo importante es la tendencia: si cada año es menos negativo, va camino del beneficio.",
+          "guia": "g2"
+        },
+        {
+          "id": "fn1-5",
+          "t": "num",
+          "q": "Crece un 50 % y su margen de flujo de caja libre es del −15 %. ¿Cuánto suma en la regla del 40?",
+          "unit": "puntos",
+          "a": 35,
+          "why": "50 − 15 = 35 puntos. Por debajo de 40: crece mucho, pero todavía quema demasiado dinero para ese crecimiento.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "fn2",
+      "title": "Financiación y valoración",
+      "ex": [
+        {
+          "id": "fn2-1",
+          "t": "choice",
+          "q": "Una empresa con caja para 4 trimestres anuncia una ampliación de capital. ¿Qué suele pasar?",
+          "opts": [
+            "Diluye a los accionistas y la acción suele caer",
+            "Sube la acción porque entra dinero nuevo",
+            "No afecta a los accionistas actuales",
+            "La empresa deja de cotizar en bolsa"
+          ],
+          "a": 0,
+          "why": "Las acciones nuevas suelen venderse con descuento y repartir la empresa entre más accionistas. Es el precio de seguir financiando las pérdidas.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "La entrada de dinero se paga con dilución: la acción suele caer.",
+            "Les afecta: su parte de la empresa se reduce.",
+            "Ampliar capital no implica dejar de cotizar."
+          ]
+        },
+        {
+          "id": "fn2-2",
+          "t": "num",
+          "q": "La empresa tenía 100 millones de acciones y emite 25 millones nuevas. ¿Cuánto se reduce la parte de cada accionista?",
+          "unit": "%",
+          "a": 20,
+          "why": "1 − 100 ÷ 125 = 20 %. Cada acción representa ahora una quinta parte menos de la empresa.",
+          "guia": "g3"
+        },
+        {
+          "id": "fn2-3",
+          "t": "choice",
+          "q": "¿Qué múltiplo se usa para valorar una empresa que aún no gana dinero?",
+          "opts": [
+            "El valor de empresa entre ventas",
+            "El PER, como en cualquier otra empresa",
+            "La rentabilidad por dividendo",
+            "El precio entre beneficio por acción"
+          ],
+          "a": 0,
+          "why": "Sin beneficio, el PER no existe. Se compara el valor de empresa con las ventas y se mira cómo evolucionan los márgenes.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Sin beneficio, el PER no se puede calcular.",
+            "Estas empresas casi nunca pagan dividendos.",
+            "Es el PER otra vez: sin beneficio, no existe."
+          ]
+        },
+        {
+          "id": "fn2-4",
+          "t": "num",
+          "q": "Cotiza a 15 veces sus ventas y su sector, a 5. Si su crecimiento se frena hasta el del sector y el múltiplo se iguala, ¿cuánto caería la valoración, con las ventas iguales? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 66.7,
+          "why": "1 − 5 ÷ 15 = 66,7 %. En estas empresas, el precio depende de que el crecimiento continúe: si se frena, el múltiplo se desploma.",
+          "tol": 0.06,
+          "guia": "g4"
+        },
+        {
+          "id": "fn2-5",
+          "t": "choice",
+          "q": "¿Cuándo es más peligrosa una empresa de alto crecimiento sin beneficios?",
+          "opts": [
+            "Cuando suben los tipos y se cierra la financiación",
+            "Cuando el mercado está en máximos y hay euforia",
+            "Cuando sus ventas crecen más de lo previsto",
+            "Cuando anuncia un nuevo producto"
+          ],
+          "a": 0,
+          "why": "Su valor está en beneficios muy lejanos, que pesan menos con tipos altos, y necesita financiación que entonces cuesta más. Fue lo que pasó en 2022.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Con euforia, la financiación es fácil y barata.",
+            "Crecer más de lo previsto es una buena noticia.",
+            "Un producto nuevo no es en sí un riesgo."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

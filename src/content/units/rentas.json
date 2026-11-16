@@ -1,0 +1,183 @@
+{
+  "n": 8,
+  "id": "rentas",
+  "track": "pasiva",
+  "title": "Vivir de la cartera",
+  "blurb": "Dividendos o ventas, impuestos y cómo ordenar la retirada para que dure.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Dividendos o ventas",
+      "texto": "Cobrar un dividendo no es dinero gratis: el valor de la empresa baja en esa cantidad. Lo que importa es el total retirado y lo que pagas de impuestos.",
+      "ejemplo": "Cartera de 300.000 € al 3 %: 9.000 € de dividendos. Si necesitas 12.000 €, vendes 3.000 €."
+    },
+    {
+      "id": "g2",
+      "titulo": "Los impuestos",
+      "texto": "Al vender participaciones solo tributa la ganancia. El dividendo tributa entero. Por eso, en España, los fondos de acumulación suelen ser más eficientes para obtener rentas.",
+      "ejemplo": "Vender 8.000 € con la mitad de ganancia: 760 € de impuestos al 19 %."
+    },
+    {
+      "id": "g3",
+      "titulo": "Los cubos",
+      "texto": "Ten dos años de gastos en liquidez y el resto invertido. En una caída vives de la liquidez y no vendes acciones abajo.",
+      "ejemplo": "Gasto de 24.000 € al año: 48.000 € en liquidez, 24 meses sin vender."
+    },
+    {
+      "id": "g4",
+      "titulo": "Flexibilidad",
+      "texto": "La regla del 4 % fija la retirada inicial. Recortar algo tras un año malo es lo que más ayuda a que el dinero dure.",
+      "ejemplo": "Cartera de 500.000 €: 20.000 € el primer año."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "pi1",
+      "title": "Dividendos o ventas",
+      "ex": [
+        {
+          "id": "pi1-1",
+          "t": "choice",
+          "q": "Para vivir de la cartera, ¿mejor cobrar dividendos o vender participaciones?",
+          "opts": [
+            "Da igual en lo económico: importan el total y los impuestos",
+            "Los dividendos son dinero gratis que no reduce la cartera",
+            "Vender participaciones siempre destruye la cartera",
+            "Solo los dividendos son una renta de verdad"
+          ],
+          "a": 0,
+          "why": "Cuando una empresa paga un dividendo, su valor baja en esa cantidad. Cobrar 3 % o vender un 3 % deja tu patrimonio igual; cambian los impuestos y la flexibilidad.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "El dividendo reduce el valor de la empresa en la misma cantidad.",
+            "Vender una parte pequeña es la base de cualquier plan de retirada.",
+            "Vender participaciones también da una renta."
+          ]
+        },
+        {
+          "id": "pi1-2",
+          "t": "num",
+          "q": "Tu cartera de 300.000 € reparte un 3 % en dividendos. ¿Cuántos miles de euros cobras al año?",
+          "unit": "mil €",
+          "a": 9,
+          "why": "300.000 € × 3 % = 9.000 € al año, antes de impuestos.",
+          "guia": "g1"
+        },
+        {
+          "id": "pi1-3",
+          "t": "num",
+          "q": "Necesitas 12.000 € al año y los dividendos te dan 9.000 €. ¿Cuántos miles de euros tienes que vender?",
+          "unit": "mil €",
+          "a": 3,
+          "why": "12.000 − 9.000 = 3.000 €. Lo que falta se cubre vendiendo participaciones: la regla de retirada mira el total, no de dónde sale.",
+          "guia": "g2"
+        },
+        {
+          "id": "pi1-4",
+          "t": "num",
+          "q": "Con un fondo de acumulación vendes 8.000 € y la mitad es ganancia. Al 19 %, ¿cuántos euros pagas?",
+          "unit": "€",
+          "a": 760,
+          "why": "Solo tributa la ganancia: 4.000 € × 19 % = 760 €. Con dividendos, tributarían los 8.000 € enteros.",
+          "guia": "g2"
+        },
+        {
+          "id": "pi1-5",
+          "t": "choice",
+          "q": "¿Qué ventaja fiscal tiene vender participaciones frente a cobrar dividendos?",
+          "opts": [
+            "Solo tributa la ganancia, no todo lo que retiras",
+            "Las ventas de participaciones nunca tributan",
+            "Los dividendos tributan siempre al doble de tipo",
+            "Vender da derecho a una deducción en la renta"
+          ],
+          "a": 0,
+          "why": "Al vender, una parte de lo que retiras es tu propio dinero aportado, que no tributa. El dividendo tributa entero en el año en que lo cobras.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "Las ventas tributan por la ganancia.",
+            "Dividendos y ganancias van a la misma base del ahorro.",
+            "Vender no da ninguna deducción."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "pi2",
+      "title": "Ordenar la retirada",
+      "ex": [
+        {
+          "id": "pi2-1",
+          "t": "choice",
+          "q": "¿Qué es la estrategia de cubos para la jubilación?",
+          "opts": [
+            "Dos años de gastos en liquidez y el resto invertido",
+            "Invertirlo todo en bolsa y vender cuando suba",
+            "Tenerlo todo en depósitos por seguridad",
+            "Retirar solo cuando la bolsa marque máximos"
+          ],
+          "a": 0,
+          "why": "La liquidez cubre los gastos próximos y permite no vender acciones en una caída. El resto sigue invertido a largo plazo y va rellenando el cubo.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Vender solo cuando sube es intentar adivinar el mercado.",
+            "Todo en depósitos pierde frente a la inflación durante décadas.",
+            "Los gastos no esperan a que la bolsa marque máximos."
+          ]
+        },
+        {
+          "id": "pi2-2",
+          "t": "num",
+          "q": "Gastas 24.000 € al año y quieres dos años en liquidez. ¿Cuántos miles de euros apartas?",
+          "unit": "mil €",
+          "a": 48,
+          "why": "24.000 × 2 = 48.000 €. Es el colchón que evita vender en el peor momento.",
+          "guia": "g3"
+        },
+        {
+          "id": "pi2-3",
+          "t": "num",
+          "q": "La bolsa cae un 30 % y vives de la liquidez. Con 48.000 € y un gasto de 2.000 € al mes, ¿cuántos meses aguantas sin vender?",
+          "unit": "meses",
+          "a": 24,
+          "why": "48.000 ÷ 2.000 = 24 meses. La mayoría de las caídas fuertes se han recuperado en un plazo parecido, aunque no todas.",
+          "guia": "g3"
+        },
+        {
+          "id": "pi2-4",
+          "t": "num",
+          "q": "Tu cartera es de 500.000 € y sigues la regla del 4 %. ¿Cuántos miles de euros retiras el primer año?",
+          "unit": "mil €",
+          "a": 20,
+          "why": "500.000 × 4 % = 20.000 €. Después, esa cantidad se ajusta por inflación cada año.",
+          "guia": "g4"
+        },
+        {
+          "id": "pi2-5",
+          "t": "choice",
+          "q": "Tras un año muy malo en bolsa, ¿qué ayuda a que el dinero dure?",
+          "opts": [
+            "Recortar algo la retirada ese año",
+            "Retirar más para no perder la costumbre",
+            "Pasarlo todo a liquidez tras la caída",
+            "Ignorar la caída y subir el riesgo"
+          ],
+          "a": 0,
+          "why": "Gastar un poco menos tras un año malo reduce mucho el riesgo de quedarse sin dinero. Vender todo tras la caída convierte la pérdida en definitiva.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Retirar más tras una caída es lo que agota la cartera.",
+            "Pasarlo todo a liquidez tras la caída hace definitiva la pérdida.",
+            "Subir el riesgo en la jubilación puede salir muy caro."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

@@ -745,5 +745,17 @@
  {
   "termino": "alucinación",
   "d": "Cuando un asistente de IA inventa un dato, una cifra o una cita que suena convincente pero es falsa."
+ },
+ {
+  "termino": "OPA",
+  "d": "Oferta pública de adquisición: propuesta para comprar las acciones de una empresa cotizada, normalmente con una prima sobre su precio."
+ },
+ {
+  "termino": "sinergias",
+  "d": "Ahorros o ingresos extra que se espera conseguir al unir dos empresas. Suelen quedarse por debajo de lo prometido."
+ },
+ {
+  "termino": "bandera alcista",
+  "d": "Figura de continuación: tras una subida rápida, el precio hace una pausa corta y ordenada antes de seguir subiendo."
  }
 ]
