@@ -88,7 +88,7 @@
     {
       "id": "s1",
       "title": "Vender por partes",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "s1-1",
@@ -168,13 +168,22 @@
             "Bajar el stop es aumentar el riesgo; un stop de seguimiento solo sube.",
             "Sin stop puedes devolver toda la ganancia del último tercio."
           ]
+        },
+        {
+          "id": "s1-5",
+          "t": "num",
+          "q": "Tienes 300 acciones y vendes un tercio al llegar a 2R. ¿Cuántas acciones vendes?",
+          "unit": "acc.",
+          "a": 100,
+          "why": "300 ÷ 3 = 100 acciones. Aseguras parte de la ganancia y dejas el resto para un movimiento mayor.",
+          "guia": "g1"
         }
       ]
     },
     {
       "id": "s2",
       "title": "Vender en fuerza",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "s2-1",
@@ -225,6 +234,15 @@
             "Seguir el último tercio con la media de 50 sesiones"
           ],
           "why": "Primero limitas la pérdida, luego aseguras y eliminas el riesgo, y al final dejas correr lo que queda. Cada paso depende de que el anterior se haya cumplido.",
+          "guia": "g2"
+        },
+        {
+          "id": "s2-5",
+          "t": "num",
+          "q": "Entrada a 40 € y stop inicial en 37 €. Tras vender un tercio, subes el stop a la entrada. ¿Cuántos euros por acción arriesgas ahora?",
+          "unit": "€",
+          "a": 0,
+          "why": "Con el stop en 40 €, si salta sales sin perder: arriesgas 0 € por acción. La operación ya no puede acabar en pérdida, salvo por un hueco.",
           "guia": "g2"
         }
       ]

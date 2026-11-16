@@ -57,7 +57,7 @@
     {
       "id": "bt1",
       "title": "Medir un sistema",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "bt1-1",
@@ -117,13 +117,23 @@
             "Doblar el riesgo con una muestra tan pequeña es apostar por algo sin probar.",
             "Operarlo con todo el capital sin haberlo validado arriesga la cuenta entera."
           ]
+        },
+        {
+          "id": "bt1-5",
+          "t": "num",
+          "q": "Un sistema gana 40 operaciones con una media de 300 € y pierde 60 con una media de 150 €. ¿Cuál es su factor de beneficio? Redondea a 2 decimales.",
+          "unit": "",
+          "a": 1.33,
+          "why": "Ganancias: 40 × 300 = 12.000 €. Pérdidas: 60 × 150 = 9.000 €. 12.000 ÷ 9.000 = 1,33. Por encima de 1, el sistema gana dinero.",
+          "tol": 0.006,
+          "guia": "g1"
         }
       ]
     },
     {
       "id": "bt2",
       "title": "Trampas del backtest",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "bt2-1",
@@ -187,6 +197,15 @@
           "a": 23.1,
           "why": "150 ÷ (500 + 150) = 23,1 %. Muchas de esas empresas salieron por caer: dejarlas fuera hace que el sistema parezca mejor de lo que habría sido.",
           "tol": 0.06,
+          "guia": "g4"
+        },
+        {
+          "id": "bt2-5",
+          "t": "num",
+          "q": "Un backtest gana un 12 % anual con 200 operaciones al año. Si cada operación cuesta un 0,05 % en comisiones y deslizamiento, ¿qué rentabilidad queda?",
+          "unit": "%",
+          "a": 2,
+          "why": "200 × 0,05 % = 10 puntos de costes: 12 % − 10 % = 2 %. Un sistema que opera mucho puede quedarse sin ventaja por los costes.",
           "guia": "g4"
         }
       ]

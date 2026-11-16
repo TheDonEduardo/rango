@@ -222,7 +222,7 @@
     {
       "id": "t2",
       "title": "Trend Template",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "t2-1",
@@ -293,6 +293,15 @@
             "Precio bajo las medias y la de 200 a la baja: es una Fase 4, no una tendencia sana.",
             "Medias desordenadas y la de 200 plana: no hay tendencia clara."
           ]
+        },
+        {
+          "id": "t2-5",
+          "t": "num",
+          "q": "Máximo de 52 semanas: 120 €. Con el criterio de estar a no más de un 25 % del máximo, ¿cuál es el precio mínimo aceptable?",
+          "unit": "€",
+          "a": 90,
+          "why": "120 × (1 − 0,25) = 90 €. Por debajo, la acción está demasiado lejos de sus máximos para estar en una tendencia sana.",
+          "guia": "g3"
         }
       ]
     }

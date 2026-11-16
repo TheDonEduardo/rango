@@ -128,9 +128,18 @@
           "why": "(72 − 60) ÷ 72 = 16,7 %. Antes de comprar, pregúntate si aceptarías esa pérdida: el escenario base no es el único que puede pasar.",
           "tol": 0.06,
           "guia": "g2"
+        },
+        {
+          "id": "fva-5",
+          "t": "num",
+          "q": "Flujo de caja libre de 40 M€, crecimiento a perpetuidad del 3 % y tasa de descuento del 8 %. ¿Cuántos millones de euros vale la empresa?",
+          "unit": "M€",
+          "a": 800,
+          "why": "40 ÷ (8 % − 3 %) = 800 M€. Pequeños cambios en esos dos porcentajes mueven mucho el resultado.",
+          "guia": "g1"
         }
       ],
-      "ultimo": 4
+      "ultimo": 5
     },
     {
       "id": "fvb",
@@ -199,9 +208,18 @@
           ],
           "why": "Cada uno de estos errores empuja la valoración en la misma dirección: hace que una acción parezca más barata de lo que es.",
           "guia": "g4"
+        },
+        {
+          "id": "fvb-5",
+          "t": "num",
+          "q": "Flujo de caja operativo de 500 M€, capex de 150 M€ y pago en acciones de 100 M€. ¿Cuántos millones de caja libre de verdad quedan?",
+          "unit": "M€",
+          "a": 250,
+          "why": "500 − 150 − 100 = 250 M€. El pago en acciones no sale de la caja, pero diluye: hay que restarlo.",
+          "guia": "g3"
         }
       ],
-      "ultimo": 4
+      "ultimo": 5
     }
   ]
 }

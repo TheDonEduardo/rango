@@ -65,7 +65,7 @@
     {
       "id": "wd1",
       "title": "Distribución de Wyckoff",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "wd1-1",
@@ -152,13 +152,22 @@
               "why": "Altura = 17,00 − 15,20 = 1,80 €; objetivo = 15,20 − 1,80 = 13,40 €. Es la misma proyección de la acumulación, pero hacia abajo."
             }
           ]
+        },
+        {
+          "id": "wd1-5",
+          "t": "num",
+          "q": "En un rango de distribución entre 90 € y 100 €, el precio supera los 100 € hasta 102 € y vuelve dentro. ¿Cuánto superó la resistencia?",
+          "unit": "%",
+          "a": 2,
+          "why": "102 ÷ 100 − 1 = 2 %. Es un upthrust: una superación breve que atrapa compradores y vuelve al rango.",
+          "guia": "g2"
         }
       ]
     },
     {
       "id": "tf1",
       "title": "Semanal y diario",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "tf1-1",
@@ -232,6 +241,15 @@
             ]
           ],
           "why": "De arriba abajo: cuanto mayor es la temporalidad, más pesa en la decisión de si operar; cuanto menor, más precisa es la entrada.",
+          "guia": "g4"
+        },
+        {
+          "id": "tf1-5",
+          "t": "num",
+          "q": "La media de 30 semanas de Weinstein equivale aproximadamente a la media de cuántas sesiones diarias?",
+          "unit": "sesiones",
+          "a": 150,
+          "why": "30 semanas × 5 sesiones = 150 sesiones. Por eso se usa la media de 150 días en el gráfico diario.",
           "guia": "g4"
         }
       ]

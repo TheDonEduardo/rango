@@ -59,7 +59,7 @@
     {
       "id": "o1",
       "title": "Call y put",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "o1-1",
@@ -135,13 +135,22 @@
             null,
             "La prima no se devuelve: es el precio del seguro."
           ]
+        },
+        {
+          "id": "o1-5",
+          "t": "num",
+          "q": "Compras una put con ejercicio 70 € por 3 €. La acción acaba en 60 €. ¿Cuánto ganas por acción?",
+          "unit": "€",
+          "a": 7,
+          "why": "70 − 60 − 3 = 7 €. La put gana lo que la acción cae por debajo del ejercicio, menos la prima.",
+          "guia": "g2"
         }
       ]
     },
     {
       "id": "o2",
       "title": "Put de protección",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "o2-1",
@@ -188,6 +197,15 @@
           "unit": "%",
           "a": 8,
           "why": "4 × 2 % = 8 % al año: cubrirse siempre es caro. Las puts se usan en momentos concretos, como antes de unos resultados.",
+          "guia": "g4"
+        },
+        {
+          "id": "o2-5",
+          "t": "num",
+          "q": "Proteges 100 acciones con una put que cuesta 1,50 € por acción cada tres meses. ¿Cuántos euros te cuesta al año?",
+          "unit": "€",
+          "a": 600,
+          "why": "1,50 × 100 × 4 = 600 € al año. Cubrirse de forma permanente es caro: se usa en momentos concretos, no siempre.",
           "guia": "g4"
         }
       ]

@@ -219,9 +219,19 @@
           ],
           "why": "Las ondas 1, 3 y 5 impulsan; la 3 suele ser la más fuerte y la 5 avanza a menudo con menos volumen. Tras ellas llega la corrección A-B-C, que termina con la C.",
           "guia": "g1"
+        },
+        {
+          "id": "el1-5",
+          "t": "num",
+          "q": "La onda 1 sube de 20 € a 30 €. Si la onda 2 retrocede un 61,8 % de esa subida, ¿hasta qué precio cae?",
+          "unit": "€",
+          "a": 23.82,
+          "why": "10 € × 61,8 % = 6,18 €, y 30,00 − 6,18 = 23,82 €. Es un nivel habitual de retroceso, no una regla.",
+          "tol": 0.006,
+          "guia": "g3"
         }
       ],
-      "ultimo": 4
+      "ultimo": 5
     },
     {
       "id": "el2",
@@ -296,9 +306,18 @@
             null,
             "Aunque el recuento sea subjetivo, el nivel de invalidación es objetivo y sirve para colocar el stop."
           ]
+        },
+        {
+          "id": "el2-5",
+          "t": "num",
+          "q": "La onda 1 sube de 50 € a 60 €. Según las reglas de Elliott, ¿por debajo de qué precio no puede caer la onda 2?",
+          "unit": "€",
+          "a": 50,
+          "why": "La onda 2 nunca retrocede más del 100 % de la onda 1: no puede bajar de 50 €. Si lo hace, el recuento era erróneo.",
+          "guia": "g2"
         }
       ],
-      "ultimo": 4
+      "ultimo": 5
     }
   ]
 }

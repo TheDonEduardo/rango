@@ -191,7 +191,7 @@
     {
       "id": "f7b",
       "title": "Ventajas competitivas",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "f7b-1",
@@ -313,6 +313,16 @@
             null,
             "El margen bruto es justo donde se ve si la ventaja aguanta."
           ]
+        },
+        {
+          "id": "f7b-5",
+          "t": "num",
+          "q": "Una empresa sube sus precios un 6 % y mantiene el 98 % de sus clientes. ¿Cuánto cambian sus ingresos? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 3.9,
+          "why": "1,06 × 0,98 − 1 = 3,9 %. Subir precios sin perder clientes es la mejor prueba de una ventaja competitiva.",
+          "tol": 0.06,
+          "guia": "g4"
         }
       ]
     }

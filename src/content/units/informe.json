@@ -125,7 +125,7 @@
     {
       "id": "f5b",
       "title": "La cuenta de resultados",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "f5b-1",
@@ -204,6 +204,15 @@
             ]
           ],
           "why": "Cada margen sale de dividir su beneficio entre las ventas: bruto, operativo y neto. Si el bruto aguanta y el operativo cae, el problema está en los gastos, no en el producto.",
+          "guia": "g4"
+        },
+        {
+          "id": "f5b-5",
+          "t": "num",
+          "q": "Ventas de 800 M€ y coste de las ventas de 480 M€. ¿Qué margen bruto tiene la empresa?",
+          "unit": "%",
+          "a": 40,
+          "why": "(800 − 480) ÷ 800 = 40 %. Es lo primero de la cuenta de resultados: cuánto queda de cada venta tras producir.",
           "guia": "g4"
         }
       ]

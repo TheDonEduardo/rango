@@ -67,7 +67,7 @@
     {
       "id": "r1",
       "title": "Stop con ATR",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "r1-1",
@@ -169,6 +169,15 @@
             "Sí cambia: acciones = riesgo € ÷ distancia al stop, y la distancia se duplica.",
             "El precio de entrada no entra en la cuenta: solo el riesgo y la distancia al stop."
           ]
+        },
+        {
+          "id": "r1-5",
+          "t": "num",
+          "q": "Entrada a 60,00 € y ATR de 2,50 €. Con el stop a 2 ATR, ¿a qué precio lo colocas?",
+          "unit": "€",
+          "a": 55,
+          "why": "60,00 − 2 × 2,50 = 55,00 €. El stop queda fuera del ruido normal de la acción, que se mueve unos 2,50 € al día.",
+          "guia": "g2"
         }
       ]
     },

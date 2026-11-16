@@ -58,7 +58,7 @@
     {
       "id": "fsa",
       "title": "El ciclo de los chips",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "fsa-1",
@@ -118,13 +118,23 @@
           "a": 30,
           "why": "15.000 ÷ 50.000 = 30 %. Es un negocio muy intensivo en capital: el flujo de caja libre depende tanto de la inversión como del beneficio.",
           "guia": "g1"
+        },
+        {
+          "id": "fsa-5",
+          "t": "num",
+          "q": "Una empresa de chips recibe pedidos por 1.100 M$ y factura 1.000 M$. ¿Cuál es su book-to-bill? Redondea a 2 decimales.",
+          "unit": "",
+          "a": 1.1,
+          "why": "1.100 ÷ 1.000 = 1,10. Por encima de 1, entran más pedidos de los que se facturan: la demanda crece.",
+          "tol": 0.006,
+          "guia": "g2"
         }
       ]
     },
     {
       "id": "fsb",
       "title": "Leer el ciclo",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "fsb-1",
@@ -188,6 +198,16 @@
           "a": 12.5,
           "why": "25 % × 50 % = 12,5 %. La concentración de clientes es un riesgo propio del sector: un solo cambio de proveedor puede costar un trimestre.",
           "guia": "g4"
+        },
+        {
+          "id": "fsb-5",
+          "t": "num",
+          "q": "Los días de inventario de una empresa de chips pasan de 90 a 120. ¿Cuánto han subido? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 33.3,
+          "why": "120 ÷ 90 − 1 = 33,3 %. Inventario que se acumula suele anticipar descuentos y márgenes más bajos.",
+          "tol": 0.06,
+          "guia": "g3"
         }
       ]
     }

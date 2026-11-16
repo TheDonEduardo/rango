@@ -72,7 +72,7 @@
     {
       "id": "g1",
       "title": "Sectores y grupos líderes",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "g1-1",
@@ -171,13 +171,22 @@
           ],
           "why": "El mercado no sube todo a la vez: el dinero rota. Detectar a tiempo qué grupos pasan a liderar es tan importante como elegir la acción.",
           "guia": "g2"
+        },
+        {
+          "id": "g1-5",
+          "t": "num",
+          "q": "Cuatro de las cinco acciones de un grupo rompen máximos la misma semana. ¿Qué porcentaje del grupo acompaña?",
+          "unit": "%",
+          "a": 80,
+          "why": "4 ÷ 5 = 80 %. Una ruptura con el grupo detrás tiene más probabilidades de seguir que una en solitario.",
+          "guia": "g1"
         }
       ]
     },
     {
       "id": "g2",
       "title": "Tipos de gap",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "g2-1",
@@ -270,6 +279,15 @@
             "Cerrar el gap borra la ruptura: es una señal peor, no mejor.",
             "El volumen fue real; lo que falló es la demanda para sostener el precio."
           ]
+        },
+        {
+          "id": "g2-5",
+          "t": "num",
+          "q": "Una subida empieza en 40 € y hace un gap de huida de 50 € a 54 €. Si el gap marca la mitad del movimiento, ¿hasta qué precio llegaría?",
+          "unit": "€",
+          "a": 64,
+          "why": "Mitad del gap: 52 €. De 40 € a 52 € hay 12 €; proyectados desde 52 €, el objetivo es 64 €. Es una referencia, no una garantía.",
+          "guia": "g4"
         }
       ]
     }

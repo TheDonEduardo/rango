@@ -88,7 +88,7 @@
     {
       "id": "b1",
       "title": "Gaps de resultados",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "b1-1",
@@ -180,13 +180,22 @@
           "a": 3,
           "why": "(40,00 − 34,00) × 150 = 900 €: 3R en lugar de 1R. La orden stop se convierte en orden a mercado y se ejecuta al primer precio disponible.",
           "guia": "g2"
+        },
+        {
+          "id": "b1-5",
+          "t": "num",
+          "q": "Cierre de 30,00 € antes de resultados y apertura a 25,50 € al día siguiente. ¿De cuánto es el hueco bajista?",
+          "unit": "%",
+          "a": 15,
+          "why": "1 − 25,50 ÷ 30,00 = 15 %. Un stop por encima de 25,50 € no habría servido: la acción ya abrió por debajo.",
+          "guia": "g1"
         }
       ]
     },
     {
       "id": "b2",
       "title": "Sizing con riesgo binario",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "b2-1",
@@ -235,13 +244,22 @@
           "a": 4,
           "why": "Esperanza = 0,60 × 40 % − 0,40 × 70 % = 24 % − 28 % = −4 %: pierdes un 4 % de media. Acertar el 60 % de las veces no basta si la pérdida es mayor que la ganancia.",
           "guia": "g3"
+        },
+        {
+          "id": "b2-5",
+          "t": "num",
+          "q": "Capital de 20.000 € y riesgo máximo del 1 %. Si el peor hueco posible es una caída del 25 %, ¿cuántos euros puedes tener en la posición?",
+          "unit": "€",
+          "a": 800,
+          "why": "200 € ÷ 25 % = 800 €. Ante un dato binario, el tamaño se calcula con el peor hueco, no con el stop.",
+          "guia": "g3"
         }
       ]
     },
     {
       "id": "b3",
       "title": "Small caps: dilución y float",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "b3-1",
@@ -289,6 +307,16 @@
             "Sin caja no puede recomprar: necesita dinero, no gastarlo.",
             "Con caja para 3 meses no puede repartir dividendos extraordinarios."
           ]
+        },
+        {
+          "id": "b3-5",
+          "t": "num",
+          "q": "Una small cap con 30 millones de acciones emite 6 millones nuevas. ¿Cuánto se reduce el porcentaje de la empresa que tiene cada accionista? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 16.7,
+          "why": "1 − 30 ÷ 36 = 16,7 %. Cada acción vale ahora una parte más pequeña de la empresa, aunque el negocio no haya cambiado.",
+          "tol": 0.06,
+          "guia": "g4"
         }
       ]
     }

@@ -34,7 +34,7 @@
     {
       "id": "f4a",
       "title": "Construir la tesis",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "f4a-1",
@@ -110,13 +110,23 @@
             "Unas opciones a un mes caducan mucho antes que el catalizador.",
             "Promediar a la baja es aumentar una posición que va mal."
           ]
+        },
+        {
+          "id": "f4a-5",
+          "t": "num",
+          "q": "Tu tesis espera que el BPA pase de 3 € a 4 € y que el PER se mantenga en 20. ¿Qué potencial tiene la acción? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 33.3,
+          "why": "4 ÷ 3 − 1 = 33,3 %: con el PER constante, el precio sube lo mismo que el beneficio. Si el PER baja, el potencial es menor.",
+          "tol": 0.06,
+          "guia": "g3"
         }
       ]
     },
     {
       "id": "f4b",
       "title": "Invalidación y seguimiento",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "f4b-1",
@@ -179,6 +189,16 @@
           "unit": "R",
           "a": 1.5,
           "why": "(50,00 − 44,00) ÷ (50,00 − 46,00) = 6 ÷ 4 = 1,5R. Por eso, antes de resultados, el tamaño se calcula con el gap posible y no con el stop.",
+          "guia": "g4"
+        },
+        {
+          "id": "f4b-5",
+          "t": "num",
+          "q": "Tu tesis se invalida si las ventas crecen menos de un 15 %. Publican 480 M€ frente a 420 M€ hace un año. ¿Cuánto han crecido? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 14.3,
+          "why": "480 ÷ 420 − 1 = 14,3 %: por debajo del 15 %. La tesis queda invalidada aunque el precio no se haya movido aún.",
+          "tol": 0.06,
           "guia": "g4"
         }
       ]

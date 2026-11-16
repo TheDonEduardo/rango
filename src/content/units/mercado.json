@@ -91,7 +91,7 @@
     {
       "id": "m1",
       "title": "Días de distribución",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "m1-1",
@@ -196,13 +196,22 @@
               "why": "(4.000 − 3.984) ÷ 4.000 = 0,4 %. Supera el 0,2 % y con más volumen, así que cuenta como día de distribución."
             }
           ]
+        },
+        {
+          "id": "m1-5",
+          "t": "num",
+          "q": "Llevas 4 días de distribución en las últimas 25 sesiones y hoy el índice cae un 0,4 % con más volumen que ayer. ¿Cuántos tienes ahora?",
+          "unit": "días",
+          "a": 5,
+          "why": "Una caída de al menos un 0,2 % con más volumen que la sesión anterior cuenta: 4 + 1 = 5. Con 5 o 6, el mercado suele estar en apuros.",
+          "guia": "g1"
         }
       ]
     },
     {
       "id": "m2",
       "title": "Día de confirmación",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "m2-1",
@@ -265,6 +274,15 @@
           "unit": "%",
           "a": 75,
           "why": "25 % + 25 % + 25 % = 75 %. Aumentar la exposición solo cuando las primeras compras funcionan limita el daño si la confirmación resulta falsa.",
+          "guia": "g4"
+        },
+        {
+          "id": "m2-5",
+          "t": "num",
+          "q": "El intento de rebote empieza el lunes, que es el día 1. Según O'Neil, ¿a partir de qué día puede llegar el día de confirmación?",
+          "unit": "día",
+          "a": 4,
+          "why": "A partir del cuarto día del intento. Antes, una subida fuerte puede ser solo un rebote técnico.",
           "guia": "g4"
         }
       ]

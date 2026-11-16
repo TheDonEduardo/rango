@@ -34,7 +34,7 @@
     {
       "id": "fga",
       "title": "Directivos y accionistas",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "fga-1",
@@ -121,13 +121,22 @@
           ],
           "why": "Un buen gobierno corporativo hace que la dirección trabaje para los accionistas y rinda cuentas cuando se equivoca.",
           "guia": "g3"
+        },
+        {
+          "id": "fga-5",
+          "t": "num",
+          "q": "El consejero delegado compra 50.000 acciones de su empresa a 14 €. ¿Cuántos miles de euros invierte?",
+          "unit": "mil €",
+          "a": 700,
+          "why": "50.000 × 14 € = 700.000 €. Una compra grande con dinero propio es una señal más fuerte que cualquier declaración.",
+          "guia": "g1"
         }
       ]
     },
     {
       "id": "fgb",
       "title": "Incentivos y decisiones",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "fgb-1",
@@ -186,6 +195,16 @@
             null,
             "El tamaño de la sede no mide lo que rinde lo invertido."
           ]
+        },
+        {
+          "id": "fgb-5",
+          "t": "num",
+          "q": "Una empresa recompra acciones cuando cotiza a 30 veces beneficios. ¿Qué rentabilidad por beneficio obtiene con esas recompras? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 3.3,
+          "why": "1 ÷ 30 = 3,3 %. Recomprar caro rinde poco: la dirección asigna bien el capital si recompra cuando la acción está barata.",
+          "tol": 0.06,
+          "guia": "g4"
         }
       ]
     }

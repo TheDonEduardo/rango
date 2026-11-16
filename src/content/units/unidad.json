@@ -69,7 +69,7 @@
     {
       "id": "fua",
       "title": "Captar y retener",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "fua-1",
@@ -129,13 +129,22 @@
             "Si el producto fuera gratis, no habría margen que comparar.",
             "Sí dice mucho: si crecer crea o destruye valor."
           ]
+        },
+        {
+          "id": "fua-5",
+          "t": "num",
+          "q": "Una empresa gasta 300.000 € en marketing y consigue 1.500 clientes nuevos. ¿Cuál es su coste de captación por cliente?",
+          "unit": "€",
+          "a": 200,
+          "why": "300.000 ÷ 1.500 = 200 €. Hay que compararlo con lo que deja cada cliente a lo largo del tiempo.",
+          "guia": "g1"
         }
       ]
     },
     {
       "id": "fub",
       "title": "Recuperar la inversión",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "fub-1",
@@ -201,6 +210,15 @@
           ],
           "why": "Las cuatro juntas dicen si crecer crea o destruye valor, algo que la cuenta de resultados de una empresa joven no muestra.",
           "guia": "g2"
+        },
+        {
+          "id": "fub-5",
+          "t": "num",
+          "q": "Un cliente deja 25 € de margen al mes y cuesta 300 € captarlo. ¿En cuántos meses se recupera la inversión?",
+          "unit": "meses",
+          "a": 12,
+          "why": "300 ÷ 25 = 12 meses. Por encima de 18 o 24 meses, el crecimiento consume mucha caja.",
+          "guia": "g3"
         }
       ]
     }

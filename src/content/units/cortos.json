@@ -68,7 +68,7 @@
     {
       "id": "k1",
       "title": "Vender en corto",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "k1-1",
@@ -139,13 +139,22 @@
             "El bróker no lo paga por ti: lo carga en tu cuenta.",
             null
           ]
+        },
+        {
+          "id": "k1-5",
+          "t": "num",
+          "q": "Vendes en corto a 50 € y la acción sube a 80 €. ¿Cuánto pierdes por acción?",
+          "unit": "€",
+          "a": 30,
+          "why": "80 − 50 = 30 €, un 60 % de lo vendido. En un corto, la pérdida no tiene techo: por eso el stop es imprescindible.",
+          "guia": "g2"
         }
       ]
     },
     {
       "id": "k2",
       "title": "Fase 4",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "k2-1",
@@ -221,6 +230,15 @@
             null,
             "Salir de un índice no depende de cuántas acciones haya en corto."
           ]
+        },
+        {
+          "id": "k2-5",
+          "t": "num",
+          "q": "Una acción tiene 12 millones de acciones vendidas en corto y negocia 2 millones al día. ¿Cuántos días de volumen harían falta para recomprarlas?",
+          "unit": "días",
+          "a": 6,
+          "why": "12 ÷ 2 = 6 días. Cuantos más días, más violenta puede ser una subida si los bajistas tienen que cerrar a la vez.",
+          "guia": "g4"
         }
       ]
     }

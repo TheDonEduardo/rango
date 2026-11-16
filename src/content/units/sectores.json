@@ -57,7 +57,7 @@
     {
       "id": "f6a",
       "title": "Cíclicos, defensivos y sensibles",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "f6a-1",
@@ -128,13 +128,22 @@
             "Cuando todo el mundo habla de un sector, el precio suele estar ya alto.",
             "No hay que evitarlas: se compran en el momento adecuado del ciclo."
           ]
+        },
+        {
+          "id": "f6a-5",
+          "t": "num",
+          "q": "Una empresa cíclica gana 6 € por acción en lo más alto del ciclo y cotiza a 48 €. ¿Qué PER muestra?",
+          "unit": "veces",
+          "a": 8,
+          "why": "48 ÷ 6 = 8 veces. Un PER tan bajo en el pico del ciclo suele ser una trampa: el beneficio está a punto de caer.",
+          "guia": "g2"
         }
       ]
     },
     {
       "id": "f6b",
       "title": "Qué mirar en cada sector",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "f6b-1",
@@ -198,6 +207,16 @@
             null,
             "El PER sirve, pero comparando con empresas parecidas."
           ]
+        },
+        {
+          "id": "f6b-5",
+          "t": "num",
+          "q": "Un banco cotiza a 9 € con un valor contable de 12 € por acción. ¿A cuántas veces su valor contable cotiza? Redondea a 2 decimales.",
+          "unit": "veces",
+          "a": 0.75,
+          "why": "9 ÷ 12 = 0,75 veces. En bancos, se compara con el valor contable y con su rentabilidad sobre fondos propios.",
+          "tol": 0.006,
+          "guia": "g3"
         }
       ]
     }

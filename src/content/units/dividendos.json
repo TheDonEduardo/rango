@@ -154,7 +154,7 @@
     {
       "id": "f9b",
       "title": "Recompras",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "f9b-1",
@@ -203,6 +203,15 @@
             "Recomprar no obliga a subir el dividendo.",
             "Recomprar con la caja libre no lleva a salir de bolsa."
           ]
+        },
+        {
+          "id": "f9b-5",
+          "t": "num",
+          "q": "Una empresa que vale 10.000 M€ en bolsa recompra acciones por 300 M€ al año. Al precio actual, ¿qué porcentaje de sus acciones retira?",
+          "unit": "%",
+          "a": 3,
+          "why": "300 ÷ 10.000 = 3 %. Cada accionista pasa a tener un 3 % más de la empresa sin comprar nada.",
+          "guia": "g4"
         }
       ]
     }

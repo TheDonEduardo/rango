@@ -53,7 +53,7 @@
     {
       "id": "f3a",
       "title": "Deuda y solvencia",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "f3a-1",
@@ -148,6 +148,15 @@
             "Con la caja justa, lo probable es recortar el dividendo, no subirlo.",
             "Salir de un índice no es el riesgo principal; lo es pagar mucho más o diluir."
           ]
+        },
+        {
+          "id": "f3a-5",
+          "t": "num",
+          "q": "Beneficio operativo de 240 M€ y gastos por intereses de 30 M€. ¿Cuál es la cobertura de intereses?",
+          "unit": "veces",
+          "a": 8,
+          "why": "240 ÷ 30 = 8 veces. El negocio paga sus intereses con holgura: por debajo de 3 veces, empezaría a ser preocupante.",
+          "guia": "g2"
         }
       ]
     },

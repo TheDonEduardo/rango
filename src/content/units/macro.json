@@ -59,7 +59,7 @@
     {
       "id": "f8a",
       "title": "Tipos e inflación",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "f8a-1",
@@ -120,13 +120,23 @@
             "Las ventas no caen a cero; lo que cae es el margen.",
             "Sí le afecta: a través de sus costes."
           ]
+        },
+        {
+          "id": "f8a-5",
+          "t": "num",
+          "q": "El bono a 10 años paga un 4 % y la inflación es del 2,5 %. ¿Qué tipo real aproximado ofrece?",
+          "unit": "%",
+          "a": 1.5,
+          "why": "4 % − 2,5 % = 1,5 %. Los tipos reales son los que más pesan en la valoración de los beneficios futuros.",
+          "tol": 0.006,
+          "guia": "g1"
         }
       ]
     },
     {
       "id": "f8b",
       "title": "Curva de tipos y ciclo",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "f8b-1",
@@ -201,6 +211,15 @@
             "Doblar la posición con la macro empeorando aumenta el riesgo sin motivo.",
             "Quitar el stop te deja sin protección justo cuando el entorno empeora."
           ]
+        },
+        {
+          "id": "f8b-5",
+          "t": "num",
+          "q": "El bono a 10 años paga un 3,8 % y la letra a 3 meses, un 4,3 %. ¿Cuántos puntos básicos está invertida la curva?",
+          "unit": "pb",
+          "a": 50,
+          "why": "4,3 − 3,8 = 0,5 puntos, es decir, 50 puntos básicos. Una curva invertida ha precedido a muchas recesiones, aunque no siempre.",
+          "guia": "g4"
         }
       ]
     }

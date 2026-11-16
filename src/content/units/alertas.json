@@ -34,7 +34,7 @@
     {
       "id": "fa1",
       "title": "Cobros, inventario y caja",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "fa1-1",
@@ -94,13 +94,22 @@
           "a": 30,
           "why": "90 ÷ 300 = 30 %. Si se repite varios años, el beneficio contable no se está convirtiendo en dinero: revisa cobros, inventarios y ajustes.",
           "guia": "g3"
+        },
+        {
+          "id": "fa1-5",
+          "t": "num",
+          "q": "Las ventas crecen un 10 % y las cuentas por cobrar, un 35 %. ¿Cuántos puntos más deprisa crecen los cobros pendientes?",
+          "unit": "puntos",
+          "a": 25,
+          "why": "35 − 10 = 25 puntos. Vender sin cobrar puede inflar las ventas: es una señal de alerta a vigilar.",
+          "guia": "g1"
         }
       ]
     },
     {
       "id": "fa2",
       "title": "Ajustes y otras señales",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "fa2-1",
@@ -175,6 +184,15 @@
             null,
             "Cuando lo publique la prensa, el precio ya habrá caído."
           ]
+        },
+        {
+          "id": "fa2-5",
+          "t": "num",
+          "q": "Beneficio neto de 200 M€ y flujo de caja operativo de 80 M€. ¿Qué porcentaje del beneficio se convierte en caja?",
+          "unit": "%",
+          "a": 40,
+          "why": "80 ÷ 200 = 40 %. Un beneficio que no se convierte en caja hay que investigarlo: cobros, inventario o ajustes.",
+          "guia": "g3"
         }
       ]
     }

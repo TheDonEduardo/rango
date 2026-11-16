@@ -34,7 +34,7 @@
     {
       "id": "fra",
       "title": "Múltiplos frente a comparables",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "fra-1",
@@ -94,13 +94,22 @@
           "a": 25,
           "why": "(24 − 18) ÷ 24 = 25 %. Antes de verlo como oportunidad, busca la razón del descuento: suele haberla.",
           "guia": "g2"
+        },
+        {
+          "id": "fra-5",
+          "t": "num",
+          "q": "Tres comparables cotizan a 12, 15 y 18 veces su EV/EBITDA. Con la media, ¿qué múltiplo aplicas?",
+          "unit": "veces",
+          "a": 15,
+          "why": "(12 + 15 + 18) ÷ 3 = 15 veces. Después, ajusta por las diferencias de crecimiento y calidad.",
+          "guia": "g1"
         }
       ]
     },
     {
       "id": "frb",
       "title": "Elegir el múltiplo",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "frb-1",
@@ -175,6 +184,15 @@
             "Los tipos afectan a todo el sector; el riesgo de este método es comparar con un grupo caro.",
             "Sí tiene comparables: el problema es que todos están caros."
           ]
+        },
+        {
+          "id": "frb-5",
+          "t": "num",
+          "q": "Tu empresa cotiza a 18 veces y la media del sector, a 15. ¿Qué prima tiene?",
+          "unit": "%",
+          "a": 20,
+          "why": "18 ÷ 15 − 1 = 20 %. La prima solo está justificada si crece más o tiene mejor calidad que el resto.",
+          "guia": "g2"
         }
       ]
     }

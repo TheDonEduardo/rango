@@ -33,7 +33,7 @@
     {
       "id": "p1",
       "title": "Sesgos del operador",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "p1-1",
@@ -120,13 +120,22 @@
               "why": "270 ÷ 150 = 1,8R. Mover el stop convirtió una pérdida pequeña y prevista en una grande: la disciplina se mide en R."
             }
           ]
+        },
+        {
+          "id": "p1-5",
+          "t": "num",
+          "q": "Llevas 5 pérdidas seguidas con un sistema que acierta un 40 % de las veces. ¿Qué probabilidad tiene de acertar la siguiente?",
+          "unit": "%",
+          "a": 40,
+          "why": "Sigue siendo un 40 %: cada operación es independiente de las anteriores. Creer que «ya toca» es la falacia del jugador.",
+          "guia": "g2"
         }
       ]
     },
     {
       "id": "p2",
       "title": "Diario de operaciones",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "p2-1",
@@ -281,6 +290,15 @@
             "Una pérdida dentro del plan no dice nada del sistema; hacen falta muchas operaciones.",
             "Querer recuperarla rápido lleva a romper el plan."
           ]
+        },
+        {
+          "id": "p2-5",
+          "t": "num",
+          "q": "Tu diario recoge 30 operaciones, de las que 12 fueron ganadoras. ¿Qué porcentaje de aciertos tienes?",
+          "unit": "%",
+          "a": 40,
+          "why": "12 ÷ 30 = 40 %. Sin un diario no sabrías tu porcentaje real, ni podrías calcular tu expectativa.",
+          "guia": "g3"
         }
       ]
     }

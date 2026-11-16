@@ -49,7 +49,7 @@
     {
       "id": "c1",
       "title": "Riesgo abierto",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "c1-1",
@@ -110,13 +110,22 @@
           "tol": 0.06,
           "why": "1 − 0,98¹⁰ = 18,3 %. Con un 1 % por operación serían un 9,6 %: rachas así ocurren incluso con buenos sistemas, y el riesgo por operación decide cuánto duelen.",
           "guia": "g3"
+        },
+        {
+          "id": "c1-5",
+          "t": "num",
+          "q": "Tienes 5 posiciones abiertas y cada una arriesga un 1 % de la cuenta. ¿Qué riesgo abierto total tienes?",
+          "unit": "%",
+          "a": 5,
+          "why": "5 × 1 % = 5 %. Es lo que perderías si saltaran todos los stops a la vez, algo que pasa en las caídas fuertes del mercado.",
+          "guia": "g1"
         }
       ]
     },
     {
       "id": "c2",
       "title": "Exposición y mercado",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "c2-1",
@@ -200,6 +209,15 @@
             null,
             "No está equilibrada: tres cuartas partes dependen del mismo sector."
           ]
+        },
+        {
+          "id": "c2-5",
+          "t": "num",
+          "q": "Tres posiciones del mismo sector arriesgan un 1 % cada una. Si se mueven como una sola, ¿qué riesgo real tienes en ese sector?",
+          "unit": "%",
+          "a": 3,
+          "why": "3 × 1 % = 3 %. Tres acciones muy correlacionadas son, en la práctica, una sola apuesta tres veces mayor.",
+          "guia": "g2"
         }
       ]
     }

@@ -63,7 +63,7 @@
     {
       "id": "f1a",
       "title": "Crecimiento y aceleración",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "f1a-1",
@@ -188,13 +188,22 @@
             "El dividendo no aclara si el beneficio es sano; primero, su origen.",
             null
           ]
+        },
+        {
+          "id": "f1a-5",
+          "t": "num",
+          "q": "Ventas de 450 M$ este año frente a 360 M$ el año anterior. ¿Cuál es el crecimiento interanual?",
+          "unit": "%",
+          "a": 25,
+          "why": "450 ÷ 360 − 1 = 25 %. Justo el mínimo que pide O'Neil para el crecimiento de las ventas.",
+          "guia": "g1"
         }
       ]
     },
     {
       "id": "f1b",
       "title": "Calidad del beneficio",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "f1b-1",
@@ -269,6 +278,15 @@
             "No se compensan: la rebaja obliga a los analistas a recortar todo el año.",
             "El volumen no explica la reacción; la explica la nueva previsión."
           ]
+        },
+        {
+          "id": "f1b-5",
+          "t": "num",
+          "q": "Beneficio operativo de 90 M$ sobre unas ventas de 600 M$. ¿Qué margen operativo tiene?",
+          "unit": "%",
+          "a": 15,
+          "why": "90 ÷ 600 = 15 %. Si el margen sube trimestre a trimestre, el beneficio crece más deprisa que las ventas.",
+          "guia": "g3"
         }
       ]
     }

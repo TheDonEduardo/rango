@@ -49,7 +49,7 @@
     {
       "id": "rs1",
       "title": "Medir la fuerza relativa",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "rs1-1",
@@ -137,13 +137,22 @@
           ],
           "why": "La línea RS compara con el índice y el RS Rating con todas las demás acciones. Que la línea RS marque máximos antes que el precio es de las señales de liderazgo que más valoraba O'Neil.",
           "guia": "g2"
+        },
+        {
+          "id": "rs1-5",
+          "t": "num",
+          "q": "Tu acción sube un 18 % y el índice, un 6 % en el mismo periodo. ¿Cuántos puntos supera al índice?",
+          "unit": "puntos",
+          "a": 12,
+          "why": "18 − 6 = 12 puntos. La línea de fuerza relativa sube cuando la acción lo hace mejor que el mercado.",
+          "guia": "g1"
         }
       ]
     },
     {
       "id": "rs2",
       "title": "Comprar líderes",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "rs2-1",
@@ -237,6 +246,15 @@
             "Una acción en Fase 2 que sube no es un corto: va contra la tendencia.",
             "Esperar una caída del 50 % no tiene base: el problema es que rinde menos que otras."
           ]
+        },
+        {
+          "id": "rs2-5",
+          "t": "num",
+          "q": "El RS Rating de una acción es 85. ¿Qué porcentaje de las acciones lo ha hecho peor que ella?",
+          "unit": "%",
+          "a": 85,
+          "why": "Un RS Rating de 85 significa que lo ha hecho mejor que el 85 % de las acciones. Minervini y O'Neil buscan valores por encima de 70 u 80.",
+          "guia": "g2"
         }
       ]
     }

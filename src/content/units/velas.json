@@ -165,7 +165,7 @@
     {
       "id": "v1",
       "title": "Anatomía de una vela",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "v1-1",
@@ -245,6 +245,15 @@
             null,
             "Ninguna vela garantiza nada; esta solo muestra equilibrio entre compradores y vendedores."
           ]
+        },
+        {
+          "id": "v1-5",
+          "t": "num",
+          "q": "Una vela abre a 20,00 €, cierra a 21,50 €, y su máximo y su mínimo son 22,00 € y 19,50 €. ¿Qué porcentaje del rango ocupa el cuerpo?",
+          "unit": "%",
+          "a": 60,
+          "why": "Cuerpo: 21,50 − 20,00 = 1,50 €. Rango: 22,00 − 19,50 = 2,50 €. 1,50 ÷ 2,50 = 60 %. Un cuerpo grande respecto al rango indica que los compradores dominaron la sesión.",
+          "guia": "g1"
         }
       ]
     },

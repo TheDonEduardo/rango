@@ -346,7 +346,7 @@
     {
       "id": "w2",
       "title": "Esfuerzo y resultado (VSA)",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "w2-1",
@@ -427,6 +427,16 @@
           "a": 2.5,
           "why": "2.000.000 ÷ 800.000 = 2,5 veces la media. Weinstein pide al menos el doble en la ruptura; con menos, la ruptura es sospechosa.",
           "guia": "g4"
+        },
+        {
+          "id": "w2-5",
+          "t": "num",
+          "q": "Volumen medio de 1.200.000 acciones. Hoy se negocian 3.000.000. ¿Cuántas veces la media?",
+          "unit": "veces",
+          "a": 2.5,
+          "why": "3.000.000 ÷ 1.200.000 = 2,5 veces. Un volumen así indica un esfuerzo importante: hay que ver si el precio acompaña con su resultado.",
+          "tol": 0.006,
+          "guia": "g3"
         }
       ]
     }

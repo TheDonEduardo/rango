@@ -106,7 +106,7 @@
     {
       "id": "vcp1",
       "title": "Contracciones de volatilidad",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "vcp1-1",
@@ -177,6 +177,15 @@
           "a": 5.81,
           "tol": 0.02,
           "why": "Stop en 55,10 €: 58,50 − 55,10 = 3,40 €, y 3,40 ÷ 58,50 = 5,81 %. La contracción final estrecha es lo que permite un stop tan cercano.",
+          "guia": "g2"
+        },
+        {
+          "id": "vcp1-5",
+          "t": "num",
+          "q": "Una base hace tres contracciones: 24 %, 12 % y 6 %. Si la siguiente sigue la misma pauta, ¿de cuánto será?",
+          "unit": "%",
+          "a": 3,
+          "why": "6 % ÷ 2 = 3 %. Cada contracción, aproximadamente la mitad de la anterior: la oferta se va agotando.",
           "guia": "g2"
         }
       ]

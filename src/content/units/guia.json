@@ -126,7 +126,7 @@
     {
       "id": "f10b",
       "title": "Revisiones de estimaciones",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "f10b-1",
@@ -189,6 +189,15 @@
             ]
           ],
           "why": "El precio se mueve con lo que cambia frente a lo esperado: por eso importan tanto la guía, el consenso y sus revisiones.",
+          "guia": "g4"
+        },
+        {
+          "id": "f10b-5",
+          "t": "num",
+          "q": "El consenso de BPA pasa de 2,40 € a 2,64 € en tres meses. ¿Cuánto se ha revisado al alza?",
+          "unit": "%",
+          "a": 10,
+          "why": "2,64 ÷ 2,40 − 1 = 10 %. Las revisiones al alza continuadas suelen acompañar a las mejores subidas.",
           "guia": "g4"
         }
       ]
