@@ -704,5 +704,27 @@
    "capas 2"
   ],
   "d": "Red que funciona sobre otra, como Ethereum, agrupando transacciones para abaratarlas."
+ },
+ {
+  "termino": "moneda estable",
+  "alias": [
+   "monedas estables"
+  ],
+  "d": "Criptomoneda que intenta mantener un valor fijo, casi siempre 1 dólar, con reservas o con un mecanismo de mercado."
+ },
+ {
+  "termino": "DeFi",
+  "alias": [
+   "finanzas descentralizadas"
+  ],
+  "d": "Servicios financieros, como intercambios o préstamos, hechos con contratos inteligentes y sin un intermediario."
+ },
+ {
+  "termino": "pérdida impermanente",
+  "d": "Lo que pierde quien aporta dos monedas a un fondo de liquidez, frente a solo mantenerlas, cuando sus precios cambian."
+ },
+ {
+  "termino": "fondo de liquidez",
+  "d": "Reserva de dos monedas en un contrato que permite intercambiarlas; su proporción fija el precio."
  }
 ]

@@ -1,0 +1,212 @@
+{
+  "n": 5,
+  "id": "crestable",
+  "track": "cripto",
+  "title": "Monedas estables",
+  "blurb": "Dólares dentro de la cadena: cómo se sostienen y cuándo se rompen.",
+  "revisar": "2027-06",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Qué son",
+      "texto": "Criptomonedas que intentan valer siempre lo mismo, casi siempre 1 dólar. Se usan como dinero dentro de las cadenas de bloques, no para ganar con su precio.",
+      "ejemplo": "Para quien vive en euros, 1.000 USDC son 909,09 € con el euro a 1,10 $."
+    },
+    {
+      "id": "g2",
+      "titulo": "Qué las sostiene",
+      "texto": "Las respaldadas guardan dinero y deuda a corto plazo por cada moneda. Su fiabilidad depende de que esas reservas existan y estén auditadas.",
+      "ejemplo": "49.000 millones en reservas para 50.000 millones de monedas: 98 %."
+    },
+    {
+      "id": "g3",
+      "titulo": "Cuando se rompen",
+      "texto": "Si el mercado duda de las reservas, la moneda cae por debajo de 1 dólar. Las algorítmicas, sin reservas reales, pueden hundirse por completo.",
+      "ejemplo": "TerraUSD pasó de 1 $ a céntimos en pocos días de 2022."
+    },
+    {
+      "id": "g4",
+      "titulo": "Rentabilidades sospechosas",
+      "texto": "Una estable no genera rendimiento por sí misma. Si te ofrecen mucho más de lo que paga la deuda pública, alguien está asumiendo un riesgo alto con tu dinero.",
+      "ejemplo": "Un 15 % anual por depositar estables es una señal de alarma."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "cy1",
+      "title": "Un dólar en la cadena",
+      "ex": [
+        {
+          "id": "cy1-1",
+          "t": "choice",
+          "q": "¿Qué es una moneda estable?",
+          "opts": [
+            "Una cripto diseñada para valer siempre 1 dólar",
+            "Una cripto cuyo precio no puede bajar nunca",
+            "Una moneda oficial emitida por un banco central",
+            "Un fondo de inversión con garantía del Estado"
+          ],
+          "a": 0,
+          "why": "Es una criptomoneda que intenta mantener su valor fijo frente a otra moneda, casi siempre el dólar. Que lo intente no significa que lo consiga siempre.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Puede bajar si pierde la paridad, como ha pasado varias veces.",
+            "La emite una empresa, no un banco central.",
+            "No es un fondo ni tiene garantía pública."
+          ]
+        },
+        {
+          "id": "cy1-2",
+          "t": "choice",
+          "q": "¿Cómo mantiene su valor una moneda estable respaldada, como USDC?",
+          "opts": [
+            "Su emisor guarda un dólar en reservas por moneda",
+            "Un algoritmo crea y destruye monedas sin reservas",
+            "La Reserva Federal garantiza cada una de ellas",
+            "Los mineros compran monedas cuando baja el precio"
+          ],
+          "a": 0,
+          "why": "Por cada moneda en circulación, el emisor guarda dinero o deuda pública a corto plazo. Quien la tiene confía en poder canjearla por un dólar.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "Eso describe una estable algorítmica, sin reservas.",
+            "La Reserva Federal no garantiza ninguna moneda estable.",
+            "Las monedas estables no tienen mineros que defiendan su precio."
+          ]
+        },
+        {
+          "id": "cy1-3",
+          "t": "num",
+          "q": "Una moneda estable tiene 50.000 millones de monedas en circulación y 49.000 millones de dólares en reservas. ¿Qué porcentaje está respaldado?",
+          "unit": "%",
+          "a": 98,
+          "why": "49.000 ÷ 50.000 = 98 %. Si todos quisieran canjear a la vez, no habría para todos. Por eso importan las auditorías de las reservas.",
+          "guia": "g2"
+        },
+        {
+          "id": "cy1-4",
+          "t": "choice",
+          "q": "¿Para qué se usan sobre todo las monedas estables?",
+          "opts": [
+            "Para mover dólares dentro del mundo cripto",
+            "Para ganar con la subida de su precio",
+            "Para pagar los impuestos en España",
+            "Para recibir dividendos de empresas"
+          ],
+          "a": 0,
+          "why": "Sirven como dólar dentro de las cadenas de bloques: para salir de una posición sin pasar por un banco, pagar o usar aplicaciones. No están pensadas para subir.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "Están diseñadas para no subir: su precio objetivo es fijo.",
+            "Los impuestos se pagan en euros, no con criptomonedas.",
+            "No dan derecho a dividendos: no son acciones."
+          ]
+        },
+        {
+          "id": "cy1-5",
+          "t": "num",
+          "q": "Tienes 1.000 USDC y el euro está a 1,10 $. Si los cambias a euros, ¿cuántos euros tienes? Redondea a 2 decimales.",
+          "unit": "€",
+          "a": 909.09,
+          "why": "1.000 ÷ 1,10 = 909,09 €. Una moneda estable en dólares no es estable en euros: el riesgo de divisa sigue ahí.",
+          "tol": 0.006,
+          "guia": "g1"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "cy2",
+      "title": "Cuando se rompe la paridad",
+      "ex": [
+        {
+          "id": "cy2-1",
+          "t": "num",
+          "q": "Una moneda estable cotiza a 0,95 $. ¿Cuánto se ha separado de su paridad?",
+          "unit": "%",
+          "a": 5,
+          "why": "1 − 0,95 = 0,05 $, un 5 %. Cuando una estable pierde la paridad, suele ser porque el mercado duda de sus reservas.",
+          "guia": "g3"
+        },
+        {
+          "id": "cy2-2",
+          "t": "choice",
+          "q": "En 2022, la moneda estable algorítmica TerraUSD perdió casi todo su valor. ¿Por qué era frágil?",
+          "opts": [
+            "No tenía reservas: dependía de la confianza en otra cripto",
+            "Su emisor la convirtió en acciones de una empresa",
+            "La prohibió el Gobierno de Estados Unidos ese año",
+            "Su red dejó de funcionar durante varios meses"
+          ],
+          "a": 0,
+          "why": "Su paridad se sostenía con un mecanismo ligado a otra moneda, LUNA. Cuando cayó la confianza, las dos se hundieron juntas en pocos días.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "No se convirtió en acciones: se desplomó en el mercado.",
+            "No fue una prohibición lo que la hundió, sino la pérdida de confianza.",
+            "Su red no se paró meses: la caída fue de precio."
+          ]
+        },
+        {
+          "id": "cy2-3",
+          "t": "num",
+          "q": "Tenías 10.000 monedas de esa estable a 1 $ y cayó a 0,10 $. ¿Cuántos miles de dólares pierdes?",
+          "unit": "mil $",
+          "a": 9,
+          "why": "10.000 × (1 − 0,10) = 9.000 $. Ser «estable» es una promesa de diseño, no una garantía.",
+          "guia": "g3"
+        },
+        {
+          "id": "cy2-4",
+          "t": "choice",
+          "q": "Una plataforma te ofrece un 15 % anual por depositar monedas estables. ¿Qué debes pensar?",
+          "opts": [
+            "Que alguien asume un riesgo alto para pagar eso",
+            "Que es un depósito sin riesgo, como en un banco",
+            "Que la paridad con el dólar garantiza el interés",
+            "Que es la rentabilidad normal de una estable"
+          ],
+          "a": 0,
+          "why": "Si la deuda pública en dólares paga mucho menos, un 15 % solo sale de prestar a alguien arriesgado o de algo peor. Más rentabilidad prometida, más riesgo escondido.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "No es un depósito bancario ni tiene garantía de depósitos.",
+            "La paridad intenta fijar el precio, no garantiza ningún interés.",
+            "Una estable por sí sola no rinde nada."
+          ]
+        },
+        {
+          "id": "cy2-5",
+          "t": "match",
+          "q": "Empareja cada tipo de moneda estable con lo que la sostiene.",
+          "pairs": [
+            [
+              "Respaldada por dinero",
+              "Dólares y deuda a corto plazo en reservas"
+            ],
+            [
+              "Respaldada por cripto",
+              "Más cripto en garantía que monedas emitidas"
+            ],
+            [
+              "Algorítmica",
+              "Un mecanismo de mercado, sin reservas"
+            ],
+            [
+              "Paridad",
+              "El valor de 1 dólar que intenta mantener"
+            ]
+          ],
+          "why": "Cuanto más sólidas y verificables son las reservas, más fiable es la paridad. Las algorítmicas son las más frágiles.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

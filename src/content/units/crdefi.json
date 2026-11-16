@@ -1,0 +1,208 @@
+{
+  "n": 6,
+  "id": "crdefi",
+  "track": "cripto",
+  "title": "Finanzas descentralizadas",
+  "blurb": "Intercambios y préstamos sin bancos, y los riesgos que nadie te cubre.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Qué es DeFi",
+      "texto": "Servicios financieros hechos con contratos inteligentes: intercambiar, prestar o pedir prestado sin un banco. Cualquiera puede usarlos y nadie responde si algo sale mal.",
+      "ejemplo": "Un intercambio automático fija el precio con la proporción de su fondo: 300.000 USDC y 100 ETH, 3.000 $ por ETH."
+    },
+    {
+      "id": "g2",
+      "titulo": "Préstamos con garantía",
+      "texto": "Pides menos de lo que dejas en garantía. Si la garantía cae y el préstamo supera el límite, el contrato la liquida solo, sin avisar.",
+      "ejemplo": "Préstamo de 1.400 $ con 2.000 $ de garantía y límite del 80 %: te liquidan si cae un 12,5 %."
+    },
+    {
+      "id": "g3",
+      "titulo": "Los riesgos",
+      "texto": "Fallos de código, robos, liquidaciones y pérdida impermanente. No hay garantía de depósitos ni a quién reclamar. Comprueba auditorías e historial antes de entrar.",
+      "ejemplo": "Un contrato con un fallo puede vaciarse en minutos, y no hay devolución."
+    },
+    {
+      "id": "g4",
+      "titulo": "Promesas imposibles",
+      "texto": "Una rentabilidad muy alta y fija es la señal clásica de un esquema que paga con el dinero de los que llegan. Y limita lo que pones en DeFi a una parte pequeña.",
+      "ejemplo": "Un 1 % diario son 37,8 veces el capital en un año: ningún negocio real paga eso."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "cd1",
+      "title": "Sin bancos en medio",
+      "ex": [
+        {
+          "id": "cd1-1",
+          "t": "choice",
+          "q": "¿Qué son las finanzas descentralizadas (DeFi)?",
+          "opts": [
+            "Servicios financieros hechos con contratos inteligentes",
+            "Un banco tradicional que acepta criptomonedas",
+            "Una regulación europea de los mercados cripto",
+            "Una plataforma para comprar acciones con cripto"
+          ],
+          "a": 0,
+          "why": "Intercambiar, prestar o pedir prestado sin un banco en medio: lo hacen contratos que cualquiera puede usar. La contrapartida es que no hay nadie a quien reclamar.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Un banco que acepta cripto sigue siendo un intermediario.",
+            "Eso es la regulación MiCA, no DeFi.",
+            "Eso sería un bróker, no un servicio descentralizado."
+          ]
+        },
+        {
+          "id": "cd1-2",
+          "t": "choice",
+          "q": "¿Cómo fija el precio un intercambio automático (AMM)?",
+          "opts": [
+            "Con la proporción de las dos monedas en su fondo",
+            "Con las órdenes de compra y venta de los usuarios",
+            "Con el precio que decide su equipo cada hora",
+            "Con la cotización oficial de un banco central"
+          ],
+          "a": 0,
+          "why": "El fondo de liquidez guarda dos monedas y su proporción marca el precio. Cada compra cambia esa proporción y, con ella, el precio.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Eso es un libro de órdenes, el sistema de las bolsas tradicionales.",
+            "Nadie fija el precio a mano: lo marca el fondo.",
+            "No hay ninguna cotización oficial que lo determine."
+          ]
+        },
+        {
+          "id": "cd1-3",
+          "t": "num",
+          "q": "Un fondo de liquidez tiene 100 ETH y 300.000 USDC. ¿A cuántos miles de dólares por ETH equivale esa proporción?",
+          "unit": "mil $",
+          "a": 3,
+          "why": "300.000 ÷ 100 = 3.000 $ por ETH. Si alguien compra mucho ETH del fondo, quedan menos ETH y más USDC, y el precio sube.",
+          "guia": "g1"
+        },
+        {
+          "id": "cd1-4",
+          "t": "num",
+          "q": "Pides prestados 1.400 USDC dejando ETH por valor de 2.000 $ como garantía. ¿Qué porcentaje del valor de la garantía has pedido?",
+          "unit": "%",
+          "a": 70,
+          "why": "1.400 ÷ 2.000 = 70 %. En DeFi siempre se pide menos de lo que se deja en garantía: no hay estudio de solvencia, solo garantía.",
+          "guia": "g2"
+        },
+        {
+          "id": "cd1-5",
+          "t": "num",
+          "q": "La plataforma liquida tu garantía si el préstamo supera el 80 % de su valor. Con 1.400 $ prestados, ¿cuánto puede caer el ETH antes de que te liquiden? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 12.5,
+          "why": "Te liquidan cuando la garantía valga 1.400 ÷ 80 % = 1.750 $. De 2.000 $ a 1.750 $ hay una caída del 12,5 %. Con lo que se mueve el ETH, eso puede pasar en un día.",
+          "tol": 0.06,
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "cd2",
+      "title": "Los riesgos",
+      "ex": [
+        {
+          "id": "cd2-1",
+          "t": "choice",
+          "q": "Un contrato DeFi tiene un fallo y un atacante lo vacía. ¿Quién te devuelve el dinero?",
+          "opts": [
+            "Normalmente nadie: no hay garantía de depósitos",
+            "El fondo de garantía de depósitos de tu país",
+            "El banco central de la red donde estaba",
+            "La plataforma, porque la ley la obliga"
+          ],
+          "a": 0,
+          "why": "Los contratos ejecutan su código, también si tiene errores. No hay fondo de garantía ni autoridad que devuelva lo robado: ese riesgo es tuyo.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "El fondo de garantía cubre depósitos bancarios, no contratos DeFi.",
+            "Las redes no tienen banco central que responda.",
+            "No hay obligación legal: normalmente es una pérdida definitiva."
+          ]
+        },
+        {
+          "id": "cd2-2",
+          "t": "choice",
+          "q": "¿Qué es la pérdida impermanente?",
+          "opts": [
+            "Lo que pierdes frente a mantener las monedas si cambian de precio",
+            "La comisión que cobra la red por cada intercambio que haces",
+            "La caída del precio de una moneda en un solo día de mercado",
+            "El dinero que pierdes al enviar fondos a una dirección errónea"
+          ],
+          "a": 0,
+          "why": "Al aportar dos monedas a un fondo de liquidez, si una sube mucho acabas con menos de ella de la que tenías. Las comisiones cobradas pueden compensarlo o no.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Las comisiones de la red son otro coste distinto.",
+            "Eso es volatilidad, no pérdida impermanente.",
+            "Eso es un error de envío, sin relación con los fondos de liquidez."
+          ]
+        },
+        {
+          "id": "cd2-3",
+          "t": "num",
+          "q": "Una plataforma promete un 1 % diario. Con interés compuesto, ¿cuántas veces se multiplicaría tu capital en un año? Redondea a 1 decimal.",
+          "unit": "veces",
+          "a": 37.8,
+          "why": "1,01 elevado a 365 = 37,8 veces. Ningún negocio real paga eso: es la señal típica de un esquema que paga a unos con el dinero de otros.",
+          "tol": 0.06,
+          "guia": "g4"
+        },
+        {
+          "id": "cd2-4",
+          "t": "choice",
+          "q": "Antes de usar un protocolo DeFi, ¿qué comprobación tiene más sentido?",
+          "opts": [
+            "Si tiene auditorías y lleva tiempo sin incidentes",
+            "Si su rentabilidad es la más alta del mercado",
+            "Si su web tiene un diseño moderno y cuidado",
+            "Si tiene muchos seguidores en redes sociales"
+          ],
+          "a": 0,
+          "why": "Las auditorías de su código y años funcionando sin robos no eliminan el riesgo, pero lo reducen. La rentabilidad alta, el diseño o la fama no dicen nada de la seguridad.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "La rentabilidad más alta suele indicar más riesgo, no más seguridad.",
+            "Una web cuidada no dice nada de la seguridad del código.",
+            "Los seguidores pueden comprarse y no auditan nada."
+          ]
+        },
+        {
+          "id": "cd2-5",
+          "t": "slide",
+          "q": "Tu cartera cripto es de 5.000 € y decides no poner más del 20 % en DeFi. Mueve el importe máximo.",
+          "label": "Importe en DeFi",
+          "min": 0,
+          "max": 3000,
+          "step": 100,
+          "start": 2500,
+          "a": 1000,
+          "unit": "€",
+          "why": "5.000 € × 20 % = 1.000 €. Es una parte de algo que ya es arriesgado: limita lo que puedes perder por un fallo de código o una liquidación.",
+          "show": [
+            {
+              "label": "Peso en la cartera cripto",
+              "k": 0.02,
+              "unit": "%"
+            }
+          ],
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}
