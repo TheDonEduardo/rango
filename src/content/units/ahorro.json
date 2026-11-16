@@ -160,7 +160,7 @@
     {
       "id": "bl2",
       "title": "Pequeños gastos, grandes cifras",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "bl2-1",
@@ -209,6 +209,15 @@
             "Pedir prestado para invertir añade intereses y riesgo antes de tener lo básico.",
             "Nadie sabe cuándo llegará una caída; primero el colchón, luego invertir con regularidad."
           ]
+        },
+        {
+          "id": "bl2-5",
+          "t": "num",
+          "q": "Gastas 6 € al día en comer fuera, 22 días al mes. ¿Cuántos euros son al mes?",
+          "unit": "€",
+          "a": 132,
+          "why": "6 € × 22 = 132 € al mes, casi 1.600 € al año. No hay que eliminarlo, pero sí saber cuánto suma.",
+          "guia": "g3"
         }
       ]
     }

@@ -35,7 +35,7 @@
     {
       "id": "bm1",
       "title": "El coste de deber",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "bm1-1",
@@ -111,13 +111,22 @@
           ],
           "why": "La tarjeta de crédito pagada a fin de mes no suele cobrar intereses; la modalidad revolving puede superar el 20 % anual.",
           "guia": "g3"
+        },
+        {
+          "id": "bm1-5",
+          "t": "num",
+          "q": "Debes 3.000 € al 12 % anual y solo pagas los intereses. ¿Cuántos euros pagas al mes?",
+          "unit": "€",
+          "a": 30,
+          "why": "3.000 € × 12 % ÷ 12 = 30 € al mes, y la deuda sigue igual. Pagar solo intereses es mantener la deuda para siempre.",
+          "guia": "g2"
         }
       ]
     },
     {
       "id": "bm2",
       "title": "Revolving y prioridades",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "bm2-1",
@@ -176,6 +185,15 @@
             "Un ETF no rinde un 20 % seguro; la tarjeta te cobra un 20 % todos los años.",
             "No da igual: pagar la deuda rinde un 20 % sin riesgo."
           ]
+        },
+        {
+          "id": "bm2-5",
+          "t": "num",
+          "q": "Devolver una deuda al 9 % equivale a ganar un 9 % seguro. Si devuelves 2.000 €, ¿cuántos euros de intereses te ahorras el primer año?",
+          "unit": "€",
+          "a": 180,
+          "why": "2.000 € × 9 % = 180 €. Pocas inversiones garantizan un 9 %: devolver deuda cara suele ser la mejor rentabilidad disponible.",
+          "guia": "g1"
         }
       ]
     }

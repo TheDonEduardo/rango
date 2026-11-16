@@ -35,7 +35,7 @@
     {
       "id": "bi1",
       "title": "Errores con el dinero",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "bi1-1",
@@ -107,13 +107,33 @@
             "Las aportaciones planificadas a largo plazo son la forma sensata de invertir.",
             "Si ya tienes el colchón cubierto, lo que sobra sí se puede invertir."
           ]
+        },
+        {
+          "id": "bi1-5",
+          "t": "choice",
+          "q": "Pones toda tu cartera en la empresa en la que trabajas. ¿Qué riesgo corres?",
+          "opts": [
+            "Si va mal, pierdes el sueldo y el ahorro a la vez",
+            "Ninguno: conoces la empresa mejor que nadie",
+            "Que su acción no reparta dividendos ese año",
+            "Pagar más comisiones que con otros valores"
+          ],
+          "a": 0,
+          "why": "Tu sueldo ya depende de esa empresa. Si además tienes en ella tus ahorros, un mal momento te golpea dos veces. Conocerla no elimina ese riesgo.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "Conocer la empresa no evita que le vaya mal, y entonces pierdes por los dos lados.",
+            "Que no reparta dividendos es lo de menos frente a perderlo todo.",
+            "Las comisiones no cambian por el valor que compras."
+          ]
         }
       ]
     },
     {
       "id": "bi2",
       "title": "Errores al operar",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "bi2-1",
@@ -161,6 +181,15 @@
           "a": 600,
           "why": "10 × 12 × 5 = 600 € al año. Con una cartera de 6.000 €, eso es un 10 % que tienes que ganar solo para quedarte igual.",
           "guia": "g1"
+        },
+        {
+          "id": "bi2-5",
+          "t": "num",
+          "q": "Con un apalancamiento de 4 veces, ¿qué caída del precio borra todo tu dinero?",
+          "unit": "%",
+          "a": 25,
+          "why": "100 % ÷ 4 = 25 %. El apalancamiento multiplica las ganancias y las pérdidas por igual: una caída normal puede dejarte a cero.",
+          "guia": "g3"
         }
       ]
     }

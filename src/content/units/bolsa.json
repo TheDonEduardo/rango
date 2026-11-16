@@ -66,7 +66,7 @@
     {
       "id": "bj1",
       "title": "Mercado primario y secundario",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "bj1-1",
@@ -141,6 +141,15 @@
             "La CNMV supervisa, pero no fija precios.",
             "El valor contable es una referencia, pero el precio puede estar muy por encima o por debajo."
           ]
+        },
+        {
+          "id": "bj1-5",
+          "t": "num",
+          "q": "Una empresa vale 600 millones de euros en bolsa y tiene 40 millones de acciones. ¿A qué precio cotiza cada una?",
+          "unit": "€",
+          "a": 15,
+          "why": "600 ÷ 40 = 15 €. El precio de una acción solo no dice si la empresa es grande o pequeña: hay que multiplicarlo por el número de acciones.",
+          "guia": "g2"
         }
       ]
     },

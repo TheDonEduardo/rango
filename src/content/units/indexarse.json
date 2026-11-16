@@ -50,7 +50,7 @@
     {
       "id": "ix1",
       "title": "El juego de suma cero",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "ix1-1",
@@ -123,6 +123,16 @@
             "No hay ese reparto: a 15 años, en torno al 85-90 % queda por detrás.",
             "Pagar más no compra mejores resultados: los costes restan."
           ]
+        },
+        {
+          "id": "ix1-5",
+          "t": "num",
+          "q": "El mercado sube un 9 % y un fondo activo lo iguala antes de costes, pero cobra un 1,7 %. ¿Qué rentabilidad neta obtiene su partícipe?",
+          "unit": "%",
+          "a": 7.3,
+          "why": "9 % − 1,7 % = 7,3 %. Antes de costes, la media de los gestores es el mercado; después, queda por debajo exactamente lo que cobran.",
+          "tol": 0.06,
+          "guia": "g2"
         }
       ]
     },

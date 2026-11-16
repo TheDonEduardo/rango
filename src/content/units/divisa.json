@@ -34,7 +34,7 @@
     {
       "id": "dv1",
       "title": "Riesgo de divisa",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "dv1-1",
@@ -110,6 +110,16 @@
           ],
           "why": "Cubrir el dólar cuesta aproximadamente la diferencia entre los tipos de EE. UU. y los del euro, a veces más de 1 punto al año.",
           "guia": "g2"
+        },
+        {
+          "id": "dv1-5",
+          "t": "num",
+          "q": "Un ETF sube un 8 % en dólares y el dólar cae un 5 % frente al euro. ¿Cuánto ganas en euros? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 2.6,
+          "why": "1,08 × 0,95 − 1 = 2,6 %. La divisa se come buena parte de la subida: es el riesgo de invertir fuera de tu moneda.",
+          "tol": 0.06,
+          "guia": "g1"
         }
       ]
     },

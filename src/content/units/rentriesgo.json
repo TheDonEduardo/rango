@@ -58,7 +58,7 @@
     {
       "id": "bb1",
       "title": "Ganar y perder",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "bb1-1",
@@ -106,6 +106,16 @@
             "0,6 × 5 % = 3 % y 0,4 × 10 % = 4 %: el resultado no es cero, es −1 %.",
             "Has restado al revés: ganas un 3 % en los aciertos y pierdes un 4 % en los fallos."
           ]
+        },
+        {
+          "id": "bb1-5",
+          "t": "num",
+          "q": "Una acción cae un 40 %. ¿Cuánto tiene que subir para volver al precio inicial? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 66.7,
+          "why": "1 ÷ 0,60 − 1 = 66,7 %. Cuanto mayor es la caída, más desproporcionada es la subida necesaria para recuperarla.",
+          "tol": 0.06,
+          "guia": "g1"
         }
       ]
     },

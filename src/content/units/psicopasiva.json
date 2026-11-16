@@ -50,7 +50,7 @@
     {
       "id": "pp1",
       "title": "Quedarse invertido",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "pp1-1",
@@ -110,13 +110,23 @@
             null,
             "No hay ninguna norma que lo prohíba: es un consejo de conducta."
           ]
+        },
+        {
+          "id": "pp1-5",
+          "t": "num",
+          "q": "Tu cartera de 50.000 € tiene un 70 % en acciones y la bolsa cae un 30 %. ¿Cuántos miles de euros pierdes? Redondea a 1 decimal.",
+          "unit": "mil €",
+          "a": 10.5,
+          "why": "50.000 × 70 % × 30 % = 10.500 €. Saber de antemano cuánto puede caer en euros ayuda a no vender en pánico.",
+          "tol": 0.06,
+          "guia": "g2"
         }
       ]
     },
     {
       "id": "pp2",
       "title": "Decisiones del inversor pasivo",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "pp2-1",
@@ -190,6 +200,26 @@
             null,
             "Varias cuentas no te protegen de nada: primero hace falta el colchón.",
             "Las noticias del día no cambian lo que necesitas antes de invertir."
+          ]
+        },
+        {
+          "id": "pp2-5",
+          "t": "choice",
+          "q": "¿Qué dice la evidencia sobre invertir de golpe o poco a poco?",
+          "opts": [
+            "De golpe suele ganar; poco a poco duele menos",
+            "Poco a poco gana siempre a invertir de golpe",
+            "No hay ninguna diferencia en ningún caso",
+            "De golpe solo funciona si aciertas el mínimo"
+          ],
+          "a": 0,
+          "why": "Como la bolsa sube más años de los que baja, invertir de golpe suele salir mejor. Repartir la entrada reduce el arrepentimiento si cae justo después.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "No siempre: como la bolsa sube más años de los que baja, de golpe suele ganar.",
+            "Hay diferencia: invertir de golpe suele dar más rentabilidad media.",
+            "Invertir de golpe funciona sin acertar mínimos: el tiempo hace el trabajo."
           ]
         }
       ]

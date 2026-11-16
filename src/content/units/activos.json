@@ -35,7 +35,7 @@
     {
       "id": "bo1",
       "title": "Qué puedes comprar",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "bo1-1",
@@ -99,13 +99,22 @@
           "a": 3.09,
           "why": "30 / 970 = 3,09 %, algo más que el 3 % porque inviertes menos de 1.000 €.",
           "guia": "g2"
+        },
+        {
+          "id": "bo1-5",
+          "t": "num",
+          "q": "Compras una letra a 6 meses por 985 € y al vencer te devuelven 1.000 €. ¿Cuántos euros ganas?",
+          "unit": "€",
+          "a": 15,
+          "why": "1.000 − 985 = 15 €. Las letras no pagan intereses aparte: la ganancia es la diferencia entre lo que pagas y lo que te devuelven.",
+          "guia": "g2"
         }
       ]
     },
     {
       "id": "bo2",
       "title": "Riesgo y rentabilidad",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "bo2-1",
@@ -170,6 +179,15 @@
           "a": 680,
           "why": "6.000 × 10 % = 600 € y 4.000 × 2 % = 80 €: 680 € en total, un 6,8 %.",
           "guia": "g4"
+        },
+        {
+          "id": "bo2-5",
+          "t": "num",
+          "q": "Una acción cae un 60 %. ¿Cuánto tiene que subir para volver a su precio?",
+          "unit": "%",
+          "a": 150,
+          "why": "1 ÷ 0,40 − 1 = 150 %. Por eso un activo más arriesgado necesita rendir más: sus caídas cuestan mucho de recuperar.",
+          "guia": "g3"
         }
       ]
     }

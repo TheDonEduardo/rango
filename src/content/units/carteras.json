@@ -165,7 +165,7 @@
     {
       "id": "cm2",
       "title": "Elegir y mantener",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "cm2-1",
@@ -224,6 +224,15 @@
             "Elegir acciones por noticias es justo lo contrario de una cartera sencilla.",
             "Un ETF apalancado multiplica las caídas: no es para empezar."
           ]
+        },
+        {
+          "id": "cm2-5",
+          "t": "num",
+          "q": "Tienes la mitad en un MSCI World con un 70 % de EE. UU. y la otra mitad en un fondo europeo sin EE. UU. ¿Qué peso tiene EE. UU. en tu cartera?",
+          "unit": "%",
+          "a": 35,
+          "why": "50 % × 70 % = 35 %. Mirar dentro de cada fondo es la única forma de saber cuánto pesa cada país en tu cartera.",
+          "guia": "g4"
         }
       ]
     }

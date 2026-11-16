@@ -34,7 +34,7 @@
     {
       "id": "ba1",
       "title": "Qué es una acción",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "ba1-1",
@@ -105,13 +105,22 @@
             "Las acciones no pagan intereses: los intereses son de los bonos y los depósitos.",
             "La comisión es lo que pagas tú al bróker: es un coste, no una ganancia."
           ]
+        },
+        {
+          "id": "ba1-5",
+          "t": "num",
+          "q": "Compras 50 acciones a 12,00 € y la empresa reparte 0,60 € de dividendo por acción en el año. ¿Cuántos euros cobras?",
+          "unit": "€",
+          "a": 30,
+          "why": "50 × 0,60 € = 30 €, antes de impuestos. Es la otra fuente de rentabilidad de una acción, además de la subida del precio.",
+          "guia": "g2"
         }
       ]
     },
     {
       "id": "ba2",
       "title": "Órdenes y costes",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "ba2-1",
@@ -170,6 +179,15 @@
             "Quieres vender, no comprar: una compra a 27,00 € aumentaría tu posición.",
             "La orden stop existe justo para no tener que vigilar: se ejecuta sola."
           ]
+        },
+        {
+          "id": "ba2-5",
+          "t": "num",
+          "q": "Compras 200 acciones a 5,00 € con una comisión del 0,1 % y un mínimo de 4 €. ¿Cuántos euros pagas de comisión?",
+          "unit": "€",
+          "a": 4,
+          "why": "200 × 5,00 € = 1.000 €, y el 0,1 % son 1 €. Como no llega al mínimo, pagas 4 €: un 0,4 % de la compra. Con importes pequeños, el mínimo manda.",
+          "guia": "g4"
         }
       ]
     }

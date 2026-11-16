@@ -50,7 +50,7 @@
     {
       "id": "ob1",
       "title": "Plazo y activo",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "ob1-1",
@@ -125,6 +125,15 @@
           "unit": "€",
           "a": 400,
           "why": "Faltan 24.000 €: 24.000 / 60 = 400 € al mes.",
+          "guia": "g2"
+        },
+        {
+          "id": "ob1-5",
+          "t": "num",
+          "q": "Quieres reunir 12.000 € en 4 años sin contar rentabilidad. ¿Cuántos euros al mes ahorras?",
+          "unit": "€",
+          "a": 250,
+          "why": "12.000 ÷ 48 meses = 250 € al mes. A 4 años, ese dinero debe estar en productos sin riesgo de caída, así que la rentabilidad apenas ayuda.",
           "guia": "g2"
         }
       ]

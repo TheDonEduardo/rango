@@ -34,7 +34,7 @@
     {
       "id": "bf1",
       "title": "Elegir bróker",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "bf1-1",
@@ -105,6 +105,15 @@
             "Comprar acciones no lleva IVA.",
             "No hay una tasa por entrar en el mercado; el coste oculto es el cambio de divisa."
           ]
+        },
+        {
+          "id": "bf1-5",
+          "t": "num",
+          "q": "Tu bróker cobra 2 € por operación y haces 4 compras al mes. ¿Cuántos euros pagas al año?",
+          "unit": "€",
+          "a": 96,
+          "why": "2 € × 4 × 12 = 96 €. Con aportaciones pequeñas, conviene agrupar compras o elegir un bróker sin comisión fija.",
+          "guia": "g2"
         }
       ]
     },

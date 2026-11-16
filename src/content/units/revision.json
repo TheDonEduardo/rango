@@ -116,7 +116,7 @@
     {
       "id": "rv2",
       "title": "Ajustes con el tiempo",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "rv2-1",
@@ -177,6 +177,15 @@
             "Parar las aportaciones es perder la ocasión de comprar más barato.",
             "Cambiar el reparto por miedo es abandonar el plan en el peor momento."
           ]
+        },
+        {
+          "id": "rv2-5",
+          "t": "num",
+          "q": "Con la regla orientativa de renta fija igual a la edad menos 20, ¿qué porcentaje de renta fija le corresponde a alguien de 45 años?",
+          "unit": "%",
+          "a": 25,
+          "why": "45 − 20 = 25 %. Es una orientación para ir reduciendo riesgo con la edad, no una ley: depende de tu plazo y de tu tolerancia.",
+          "guia": "g3"
         }
       ]
     }

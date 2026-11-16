@@ -137,7 +137,7 @@
     {
       "id": "rt2",
       "title": "Riesgos de la retirada",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "rt2-1",
@@ -197,6 +197,16 @@
           "why": "20.000 ÷ 0,0325 = 615.385 €. Para horizontes más largos que los 30 años del estudio original se suele usar una tasa menor, y eso exige más capital.",
           "tol": 0.5,
           "guia": "g4"
+        },
+        {
+          "id": "rt2-5",
+          "t": "num",
+          "q": "Retiras 20.000 € el primer año y la inflación es del 3 %. Para mantener el poder de compra, ¿cuántos miles de euros retiras el segundo año? Redondea a 1 decimal.",
+          "unit": "mil €",
+          "a": 20.6,
+          "why": "20.000 € × 1,03 = 20.600 €. La regla del 4 % fija la retirada del primer año y después la ajusta por inflación.",
+          "tol": 0.06,
+          "guia": "g2"
         }
       ]
     }

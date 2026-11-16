@@ -34,7 +34,7 @@
     {
       "id": "bd1",
       "title": "Índices",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "bd1-1",
@@ -105,13 +105,23 @@
             null,
             "Más riesgo no arregla un resultado peor que el índice: aumenta lo que puedes perder."
           ]
+        },
+        {
+          "id": "bd1-5",
+          "t": "num",
+          "q": "Un índice tiene dos empresas: A vale 300 M€ y B, 100 M€. Si A cae un 10 % y B no se mueve, ¿cuánto cae el índice? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 7.5,
+          "why": "A pesa 300 ÷ 400 = 75 %, y 75 % × 10 % = 7,5 %. En los índices ponderados por capitalización, lo que hacen las más grandes decide casi todo.",
+          "tol": 0.06,
+          "guia": "g2"
         }
       ]
     },
     {
       "id": "bd2",
       "title": "ETF",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "bd2-1",
@@ -172,6 +182,15 @@
             "Las comisiones del bróker las pagas tú; el fondo no usa los dividendos para eso.",
             "Los dividendos son del fondo, es decir, de los partícipes, no de los gestores."
           ]
+        },
+        {
+          "id": "bd2-5",
+          "t": "num",
+          "q": "Un ETF cobra un 0,07 % anual. ¿Cuántos euros te cuesta al año sobre 20.000 €?",
+          "unit": "€",
+          "a": 14,
+          "why": "20.000 € × 0,07 % = 14 € al año. No te lo cobran aparte: se descuenta poco a poco del valor del ETF.",
+          "guia": "g3"
         }
       ]
     }

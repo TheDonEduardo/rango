@@ -35,7 +35,7 @@
     {
       "id": "be1",
       "title": "Plusvalías y dividendos",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "be1-1",
@@ -128,6 +128,15 @@
             "Con el W-8BEN firmado, el convenio rebaja la retención al 15 %.",
             "Ningún tipo es del 50 %, y lo retenido se puede deducir en el IRPF."
           ]
+        },
+        {
+          "id": "be1-5",
+          "t": "num",
+          "q": "Compras acciones por 3.000 € y las vendes por 3.450 €, con 10 € de comisiones en total. ¿Qué ganancia declaras?",
+          "unit": "€",
+          "a": 440,
+          "why": "3.450 − 3.000 − 10 = 440 €. Las comisiones de compra y venta reducen la ganancia que tributa.",
+          "guia": "g1"
         }
       ]
     },

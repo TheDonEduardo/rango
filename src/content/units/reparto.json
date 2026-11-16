@@ -138,7 +138,7 @@
     {
       "id": "pr2",
       "title": "Tolerancia y diversificación",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "pr2-1",
@@ -213,6 +213,15 @@
             null,
             "Los impuestos no dependen de cómo combines los activos."
           ]
+        },
+        {
+          "id": "pr2-5",
+          "t": "num",
+          "q": "Tienes un 60 % en acciones, que caen un 30 %, y un 40 % en bonos, que suben un 5 %. ¿Cuánto cae tu cartera?",
+          "unit": "%",
+          "a": 16,
+          "why": "0,60 × 30 % − 0,40 × 5 % = 18 % − 2 % = 16 %. Los bonos amortiguan la caída de las acciones.",
+          "guia": "g3"
         }
       ]
     }

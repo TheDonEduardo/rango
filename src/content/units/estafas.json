@@ -54,7 +54,7 @@
     {
       "id": "bq1",
       "title": "Señales de alarma",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "bq1-1",
@@ -130,13 +130,23 @@
             "Con un chiringuito, la «prueba» suele ir bien para que luego metas más.",
             "Los programas de acceso remoto les dan el control de tu ordenador y tus cuentas."
           ]
+        },
+        {
+          "id": "bq1-5",
+          "t": "num",
+          "q": "Te prometen un 5 % mensual «garantizado». Compuesto durante 12 meses, ¿qué rentabilidad anual sería? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 79.6,
+          "why": "1,05 elevado a 12 − 1 = 79,6 % al año. Ningún negocio real garantiza algo así: es la promesa típica de un fraude.",
+          "tol": 0.06,
+          "guia": "g2"
         }
       ]
     },
     {
       "id": "bq2",
       "title": "Cómo cae un Ponzi",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "bq2-1",
@@ -195,6 +205,26 @@
             "El FOGAIN no cubre que tus inversiones bajen de precio.",
             "Solo cubre entidades autorizadas; las estafas de chiringuitos no.",
             "Tiene un límite de 100.000 € por inversor y solo para la quiebra del intermediario."
+          ]
+        },
+        {
+          "id": "bq2-5",
+          "t": "choice",
+          "q": "¿Cómo compruebas si una empresa puede ofrecerte servicios de inversión en España?",
+          "opts": [
+            "Buscándola en los registros de la CNMV",
+            "Mirando si tiene una web profesional",
+            "Preguntando a sus propios comerciales",
+            "Leyendo las opiniones de su página"
+          ],
+          "a": 0,
+          "why": "La CNMV publica las entidades autorizadas y sus advertencias sobre las que no lo están. Una web cuidada o unas buenas opiniones se pueden falsificar.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Una web profesional cuesta poco y la usan también los fraudes.",
+            "Sus comerciales siempre dirán que está todo en regla.",
+            "Las opiniones de su propia página pueden ser inventadas."
           ]
         }
       ]

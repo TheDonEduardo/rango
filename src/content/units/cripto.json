@@ -35,7 +35,7 @@
     {
       "id": "br1",
       "title": "Qué son",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "br1-1",
@@ -99,6 +99,15 @@
           "a": 335,
           "why": "1 / 0,23 = 4,35 veces: una subida del 335 %.",
           "tol": 0.5,
+          "guia": "g3"
+        },
+        {
+          "id": "br1-5",
+          "t": "num",
+          "q": "Una criptomoneda pasa de 40 $ a 10 $. ¿Cuánto tiene que subir para volver a 40 $?",
+          "unit": "%",
+          "a": 300,
+          "why": "40 ÷ 10 − 1 = 300 %. Una caída del 75 % exige cuadruplicar el precio para recuperarse.",
           "guia": "g3"
         }
       ]

@@ -62,7 +62,7 @@
     {
       "id": "bk1",
       "title": "Interés simple y compuesto",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "bk1-1",
@@ -123,13 +123,22 @@
             "Los impuestos no tienen que ver con el interés compuesto.",
             "Funciona en cualquier ahorro o inversión que reinvierta lo ganado, no solo en hipotecas."
           ]
+        },
+        {
+          "id": "bk1-5",
+          "t": "num",
+          "q": "Con la regla del 72, ¿qué rentabilidad anual necesitas para duplicar tu dinero en 9 años?",
+          "unit": "%",
+          "a": 8,
+          "why": "72 ÷ 9 = 8 %. La regla sirve en los dos sentidos: años a partir del tipo, o tipo a partir de los años.",
+          "guia": "g2"
         }
       ]
     },
     {
       "id": "bk2",
       "title": "TIN, TAE e IPC",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "bk2-1",
@@ -192,6 +201,16 @@
           "unit": "%",
           "a": 4,
           "why": "(104 − 100) / 100 = 4 %: con los mismos euros compras un 4 % menos.",
+          "guia": "g4"
+        },
+        {
+          "id": "bk2-5",
+          "t": "num",
+          "q": "Con una inflación del 2 % anual, ¿cuánto poder de compra pierden 10.000 € parados en un año? Redondea a euros.",
+          "unit": "€",
+          "a": 196,
+          "why": "10.000 × (1 − 1 ÷ 1,02) = 196 €, cerca de los 200 € de la cuenta rápida. El dinero parado no se ve menguar, pero compra menos cada año.",
+          "tol": 0.6,
           "guia": "g4"
         }
       ]

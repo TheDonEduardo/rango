@@ -35,7 +35,7 @@
     {
       "id": "bp1",
       "title": "Titulares y cifras",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "bp1-1",
@@ -111,13 +111,22 @@
           "a": 2.25,
           "why": "25 puntos básicos = 0,25 puntos: 2,00 + 0,25 = 2,25 %.",
           "guia": "g2"
+        },
+        {
+          "id": "bp1-5",
+          "t": "num",
+          "q": "El S&P 500 está en 6.000 puntos y sube un 1,5 %. ¿Cuántos puntos sube?",
+          "unit": "puntos",
+          "a": 90,
+          "why": "6.000 × 1,5 % = 90 puntos. Los titulares dan a veces los puntos y a veces el porcentaje: el porcentaje es lo que permite comparar.",
+          "guia": "g1"
         }
       ]
     },
     {
       "id": "bp2",
       "title": "Ruido y señal",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "bp2-1",
@@ -186,6 +195,26 @@
             "Primero hay que saber quién lo dice y si tiene interés; meter dinero ya es dejarse llevar.",
             "Pedir prestado por una promesa así es arriesgar dinero que no tienes.",
             "Pensar en cuándo vender antes de saber si la promesa tiene base es empezar por el final."
+          ]
+        },
+        {
+          "id": "bp2-5",
+          "t": "choice",
+          "q": "Un vídeo dice que una acción «va a explotar» y el autor no dice si la tiene. ¿Qué haces?",
+          "opts": [
+            "Sospechar: puede querer vender la suya",
+            "Comprar rápido antes de que suba más",
+            "Confiar si el vídeo tiene muchas visitas",
+            "Pedir un préstamo para aprovecharlo"
+          ],
+          "a": 0,
+          "why": "Quien promociona un valor puede estar buscando compradores para su propia posición. Sin saber sus intereses, su opinión no vale nada.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Comprar con prisa por un vídeo es justo lo que busca quien promociona.",
+            "Las visitas no dicen nada de si el consejo es bueno o interesado.",
+            "Endeudarse por un consejo así multiplica el riesgo."
           ]
         }
       ]

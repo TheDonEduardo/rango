@@ -51,7 +51,7 @@
     {
       "id": "bn1",
       "title": "Cómo funciona un fondo",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "bn1-1",
@@ -127,13 +127,22 @@
             "La gestora no lo cubre con su dinero: simplemente, el fondo no es suyo.",
             "El depositario custodia los activos, pero no pasan a ser suyos."
           ]
+        },
+        {
+          "id": "bn1-5",
+          "t": "num",
+          "q": "Un fondo tiene un valor liquidativo de 25,00 € e inviertes 2.000 €. ¿Cuántas participaciones compras?",
+          "unit": "part.",
+          "a": 80,
+          "why": "2.000 ÷ 25,00 = 80 participaciones. Lo que ganes o pierdas dependerá de cómo cambie ese valor liquidativo.",
+          "guia": "g2"
         }
       ]
     },
     {
       "id": "bn2",
       "title": "Comisiones y tipos de fondo",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "bn2-1",
@@ -198,6 +207,15 @@
           ],
           "why": "De arriba abajo suele crecer el riesgo y la rentabilidad esperada; el mixto queda en medio según su reparto.",
           "guia": "g4"
+        },
+        {
+          "id": "bn2-5",
+          "t": "num",
+          "q": "Un fondo cobra un 1,8 % anual y otro, un 0,3 %. Sobre 15.000 €, ¿cuántos euros al año ahorras con el barato?",
+          "unit": "€",
+          "a": 225,
+          "why": "15.000 € × 1,5 % = 225 € al año, que además dejan de crecer con el interés compuesto.",
+          "guia": "g3"
         }
       ]
     }

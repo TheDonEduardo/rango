@@ -34,7 +34,7 @@
     {
       "id": "fc1",
       "title": "Qué es un factor",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "fc1-1",
@@ -109,6 +109,16 @@
             "Saltar de factor en factor suele llevar a comprar el que ya ha subido.",
             "Nada garantiza que gane al año siguiente: puede seguir mal varios años."
           ]
+        },
+        {
+          "id": "fc1-5",
+          "t": "num",
+          "q": "Un ETF de factor cobra un 0,35 % y uno del índice, un 0,12 %. ¿Cuántos puntos de prima anual necesita el factor solo para empatar?",
+          "unit": "puntos",
+          "a": 0.23,
+          "why": "0,35 − 0,12 = 0,23 puntos al año. La prima de un factor tiene que superar primero su coste extra.",
+          "tol": 0.006,
+          "guia": "g2"
         }
       ]
     },

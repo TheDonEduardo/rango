@@ -118,7 +118,7 @@
     {
       "id": "pd2",
       "title": "Elegir un fondo",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "pd2-1",
@@ -177,6 +177,15 @@
           "a": 900,
           "why": "3.600 × 25 % = 900 €. Un índice mundial también puede estar concentrado: conviene saber qué hay dentro.",
           "guia": "g4"
+        },
+        {
+          "id": "pd2-5",
+          "t": "num",
+          "q": "Compras 10.000 € de un ETF con una horquilla del 0,20 % y pagas la mitad al comprar y la otra mitad al vender. ¿Cuántos euros te cuesta entrar y salir una vez?",
+          "unit": "€",
+          "a": 20,
+          "why": "10.000 € × 0,10 % × 2 = 20 €. La horquilla no aparece en el TER, pero también es un coste.",
+          "guia": "g3"
         }
       ]
     }

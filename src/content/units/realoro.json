@@ -34,7 +34,7 @@
     {
       "id": "io1",
       "title": "SOCIMI y REIT",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "io1-1",
@@ -106,13 +106,23 @@
             "La CNMV no exige ningún peso en inmobiliario.",
             "Sí incluye: los REIT cotizados forman parte del índice."
           ]
+        },
+        {
+          "id": "io1-5",
+          "t": "num",
+          "q": "Un piso de 150.000 € se alquila por 700 € al mes. ¿Qué rentabilidad bruta da? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 5.6,
+          "why": "700 × 12 = 8.400 € al año, y 8.400 ÷ 150.000 = 5,6 %. Antes de impuestos, comunidad, reparaciones y meses vacío.",
+          "tol": 0.06,
+          "guia": "g2"
         }
       ]
     },
     {
       "id": "io2",
       "title": "Oro",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "io2-1",
@@ -176,6 +186,16 @@
           ],
           "why": "Las mineras amplifican los movimientos del oro porque sus costes son fijos: tenerlas no es lo mismo que tener oro.",
           "guia": "g3"
+        },
+        {
+          "id": "io2-5",
+          "t": "num",
+          "q": "Cartera de 40.000 € con un 10 % en oro. El oro sube un 50 % y lo demás no se mueve. ¿Qué peso tiene ahora el oro? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 14.3,
+          "why": "El oro pasa de 4.000 € a 6.000 € y la cartera, a 42.000 €: 6.000 ÷ 42.000 = 14,3 %. Toca rebalancear hacia el 10 %.",
+          "tol": 0.06,
+          "guia": "g4"
         }
       ]
     }

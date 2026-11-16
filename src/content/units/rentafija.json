@@ -58,7 +58,7 @@
     {
       "id": "bh1",
       "title": "Letras y bonos",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "bh1-1",
@@ -120,13 +120,22 @@
             "El Estado no cobra comisiones por sus bonos; la diferencia es el riesgo de no cobrar.",
             "El enunciado no habla de plazos; la diferencia del 6 % la explica la calidad crediticia."
           ]
+        },
+        {
+          "id": "bh1-5",
+          "t": "num",
+          "q": "Un bono de 1.000 € de nominal paga un cupón del 3 %. ¿Cuántos euros cobras al año?",
+          "unit": "€",
+          "a": 30,
+          "why": "1.000 € × 3 % = 30 € al año, sea cual sea el precio al que cotice el bono en el mercado.",
+          "guia": "g1"
         }
       ]
     },
     {
       "id": "bh2",
       "title": "Tipos y duración",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "bh2-1",
@@ -185,6 +194,15 @@
             "Los cupones se siguen cobrando cada año pase lo que pase con los tipos.",
             "El precio de mercado solo importa si vendes antes del vencimiento."
           ]
+        },
+        {
+          "id": "bh2-5",
+          "t": "num",
+          "q": "Un bono tiene una duración modificada de 5. Si los tipos bajan 1 punto, ¿cuánto sube su precio, aproximadamente?",
+          "unit": "%",
+          "a": 5,
+          "why": "5 × 1 = 5 %. La duración funciona en los dos sentidos: los tipos que bajan suben el precio de los bonos ya emitidos.",
+          "guia": "g3"
         }
       ]
     }

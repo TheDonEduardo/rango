@@ -35,7 +35,7 @@
     {
       "id": "pf1",
       "title": "Diferir impuestos",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "pf1-1",
@@ -95,6 +95,15 @@
             "No hay que esperar a perder: el traspaso permite cambiar sin tributar.",
             "Vender el fondo para comprar un ETF tributa la ganancia en ese momento."
           ]
+        },
+        {
+          "id": "pf1-5",
+          "t": "num",
+          "q": "Compraste participaciones a 10 € y después a 14 €. Vendes un lote a 15 €. Con FIFO, ¿qué ganancia por participación declaras?",
+          "unit": "€",
+          "a": 5,
+          "why": "Con FIFO se venden primero las más antiguas: 15 − 10 = 5 € por participación. Las compradas a 14 € quedan para después.",
+          "guia": "g2"
         }
       ]
     },

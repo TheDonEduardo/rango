@@ -45,7 +45,7 @@
     {
       "id": "in1",
       "title": "Rentabilidad real",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "in1-1",
@@ -106,13 +106,22 @@
             "No se mantiene: los precios suben más que tu dinero.",
             "Rentabilidad e inflación se restan, no se suman."
           ]
+        },
+        {
+          "id": "in1-5",
+          "t": "num",
+          "q": "Tu cartera rinde un 5 % y la inflación es del 2 %. ¿Qué rentabilidad real obtienes, aproximadamente?",
+          "unit": "%",
+          "a": 3,
+          "why": "5 % − 2 % = 3 %, aproximadamente. Es lo que crece de verdad tu poder de compra.",
+          "guia": "g1"
         }
       ]
     },
     {
       "id": "in2",
       "title": "Qué protege de la inflación",
-      "ultimo": 4,
+      "ultimo": 5,
       "ex": [
         {
           "id": "in2-1",
@@ -176,6 +185,15 @@
             "Hay muchos años en que los bonos rinden más; la ventaja es a largo plazo.",
             "Ninguna acción está garantizada por el Estado."
           ]
+        },
+        {
+          "id": "in2-5",
+          "t": "num",
+          "q": "Con una inflación del 4 % anual, ¿en cuántos años se duplican los precios según la regla del 72?",
+          "unit": "años",
+          "a": 18,
+          "why": "72 ÷ 4 = 18 años. En ese tiempo, el dinero parado compraría la mitad.",
+          "guia": "g2"
         }
       ]
     }
