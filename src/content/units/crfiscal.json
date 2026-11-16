@@ -1,0 +1,212 @@
+{
+  "n": 9,
+  "id": "crfiscal",
+  "track": "cripto",
+  "title": "Impuestos de las criptomonedas",
+  "blurb": "Permutas, FIFO, staking y qué declarar en España.",
+  "revisar": "2027-06",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Cuándo tributan",
+      "texto": "Tributas al vender, al cambiar una criptomoneda por otra o al pagar con ella. Mantenerlas sin operar no se declara en el IRPF. Las ganancias van a la base del ahorro.",
+      "ejemplo": "Cambiar 0,5 ETH comprados por 1.000 € por SOL que valen 1.600 €: 600 € de ganancia."
+    },
+    {
+      "id": "g2",
+      "titulo": "FIFO",
+      "texto": "Si compraste la misma moneda varias veces, al vender se consideran vendidas primero las más antiguas.",
+      "ejemplo": "Compras a 20.000 € y a 50.000 €; vendes a 60.000 €: ganas 40.000 €."
+    },
+    {
+      "id": "g3",
+      "titulo": "Staking",
+      "texto": "Las recompensas tributan al recibirlas, por su valor en euros de ese día. Ese valor es su precio de compra cuando las vendas.",
+      "ejemplo": "0,12 ETH con el ETH a 2.500 €: 300 € de rendimiento."
+    },
+    {
+      "id": "g4",
+      "titulo": "Compensar y declarar",
+      "texto": "Las pérdidas con cripto compensan ganancias con acciones y fondos. Con más de 50.000 € en plataformas extranjeras, presenta el modelo 721. Guarda tú el registro de cada operación.",
+      "ejemplo": "Ganas 900 € con acciones y pierdes 300 € con cripto: tributas por 600 €."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "cf1",
+      "title": "Cuándo tributan",
+      "ex": [
+        {
+          "id": "cf1-1",
+          "t": "choice",
+          "q": "Cambias 0,5 ETH por SOL, sin pasar por euros. ¿Tributa?",
+          "opts": [
+            "Sí: es una permuta y se calcula la ganancia",
+            "No: solo tributa cuando pasas a euros",
+            "Solo si el cambio supera los 1.000 €",
+            "No: entre criptomonedas no hay impuestos"
+          ],
+          "a": 0,
+          "why": "Cambiar una criptomoneda por otra es una permuta: la ganancia o la pérdida se calcula ese día y se declara en la base del ahorro, aunque no veas un euro.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "La permuta tributa aunque no pases a euros.",
+            "No hay un mínimo exento de 1.000 €.",
+            "Entre criptomonedas sí hay impuestos: cada cambio es una permuta."
+          ]
+        },
+        {
+          "id": "cf1-2",
+          "t": "num",
+          "q": "Compraste 0,5 ETH por 1.000 € y los cambias por SOL que valen 1.600 € en ese momento. ¿Qué ganancia declaras?",
+          "unit": "€",
+          "a": 600,
+          "why": "1.600 − 1.000 = 600 €. El valor en euros del día de la permuta es tu precio de venta del ETH y el precio de compra del SOL.",
+          "guia": "g1"
+        },
+        {
+          "id": "cf1-3",
+          "t": "num",
+          "q": "Compraste 1 BTC a 20.000 € y más tarde otro a 50.000 €. Vendes 1 BTC a 60.000 €. Con el método FIFO, ¿cuántos miles de euros ganas?",
+          "unit": "mil €",
+          "a": 40,
+          "why": "FIFO: el primero que entra es el primero que sale. Vendes el comprado a 20.000 €: 60.000 − 20.000 = 40.000 €.",
+          "guia": "g2"
+        },
+        {
+          "id": "cf1-4",
+          "t": "choice",
+          "q": "Compras bitcoin y lo mantienes sin venderlo ni cambiarlo. ¿Qué declaras en el IRPF?",
+          "opts": [
+            "Nada, mientras no vendas ni cambies",
+            "La subida del año, aunque no vendas",
+            "Un 1 % del valor a 31 de diciembre",
+            "La compra, como pérdida patrimonial"
+          ],
+          "a": 0,
+          "why": "Mantener no genera ganancia en el IRPF. Tributas cuando vendes, cambias por otra moneda o pagas algo con ella.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "La subida sin vender no tributa en el IRPF.",
+            "No existe un impuesto anual del 1 % en el IRPF.",
+            "Comprar no genera ni ganancia ni pérdida."
+          ]
+        },
+        {
+          "id": "cf1-5",
+          "t": "num",
+          "q": "Tu única renta del ahorro del año es una ganancia neta de 2.000 € con cripto. ¿Cuánto pagas?",
+          "unit": "€",
+          "a": 380,
+          "table": {
+            "cols": [
+              "Base del ahorro",
+              "Tipo"
+            ],
+            "rows": [
+              [
+                "Hasta 6.000 €",
+                "19 %"
+              ],
+              [
+                "De 6.000 a 50.000 €",
+                "21 %"
+              ]
+            ],
+            "note": "Primeros tramos del IRPF (base del ahorro). Compruébalos cada año."
+          },
+          "why": "2.000 € × 19 % = 380 €. Las ganancias con criptomonedas tributan con los mismos tramos que las de acciones y fondos.",
+          "guia": "g1"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "cf2",
+      "title": "Staking, compensar y declarar",
+      "ex": [
+        {
+          "id": "cf2-1",
+          "t": "choice",
+          "q": "¿Cómo tributan las recompensas de staking?",
+          "opts": [
+            "Como rendimiento del capital mobiliario al recibirlas",
+            "No tributan hasta que vendas la moneda principal",
+            "Como rendimiento del trabajo, igual que un sueldo",
+            "Están exentas si son menos de 1.000 € al año"
+          ],
+          "a": 0,
+          "why": "Las monedas recibidas por staking tributan cuando las recibes, por su valor en euros de ese día. Si después las vendes, su ganancia o pérdida se calcula aparte.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Tributan al recibirlas, no al vender.",
+            "No son un sueldo: no hay relación laboral.",
+            "No hay ninguna exención por cuantía."
+          ]
+        },
+        {
+          "id": "cf2-2",
+          "t": "num",
+          "q": "Recibes 0,12 ETH de staking cuando el ETH vale 2.500 €. ¿Qué rendimiento declaras?",
+          "unit": "€",
+          "a": 300,
+          "why": "0,12 × 2.500 € = 300 €. Ese valor es también el precio de compra de esos 0,12 ETH para cuando los vendas.",
+          "guia": "g3"
+        },
+        {
+          "id": "cf2-3",
+          "t": "num",
+          "q": "En el mismo año ganas 900 € vendiendo acciones y pierdes 300 € con criptomonedas. ¿Por cuánto tributas?",
+          "unit": "€",
+          "a": 600,
+          "why": "900 − 300 = 600 €. Las ganancias y pérdidas de criptomonedas se compensan con las de acciones y fondos dentro de la base del ahorro.",
+          "guia": "g4"
+        },
+        {
+          "id": "cf2-4",
+          "t": "choice",
+          "q": "¿Cuándo tienes que presentar el modelo 721?",
+          "opts": [
+            "Con más de 50.000 € en plataformas extranjeras",
+            "Siempre que compres cualquier criptomoneda",
+            "Solo si vendes con ganancias en el año",
+            "Cada trimestre en que hagas alguna operación"
+          ],
+          "a": 0,
+          "why": "Es una declaración informativa, sin pago, para quien tiene más de 50.000 € en criptomonedas custodiadas en el extranjero a 31 de diciembre. No presentarla se sanciona.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Comprar no obliga a presentarlo.",
+            "No depende de vender con ganancias.",
+            "Es anual, no trimestral."
+          ]
+        },
+        {
+          "id": "cf2-5",
+          "t": "choice",
+          "q": "Una plataforma extranjera no te da ningún informe fiscal. ¿Qué haces?",
+          "opts": [
+            "Guardar tú el registro de cada operación",
+            "Declarar solo lo que pasaste a tu banco",
+            "No declarar nada: Hacienda no lo sabe",
+            "Esperar a que la plataforma lo envíe"
+          ],
+          "a": 0,
+          "why": "Cada permuta y cada venta cuenta, aunque el dinero no salga de la plataforma. Guarda fechas, importes y valores en euros: sin ellos no puedes calcular bien.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Las permutas dentro de la plataforma también tributan.",
+            "Las obligaciones existen aunque Hacienda no tenga el dato.",
+            "Una plataforma extranjera puede no enviarlo nunca."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

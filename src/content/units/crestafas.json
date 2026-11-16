@@ -1,0 +1,223 @@
+{
+  "n": 8,
+  "id": "crestafas",
+  "track": "cripto",
+  "title": "Estafas cripto",
+  "blurb": "Las trampas más habituales y cómo reconocerlas antes de perder dinero.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Promesas imposibles",
+      "texto": "Rentabilidad garantizada, prisa y contacto por redes son la firma de casi todas las estafas. Si te prometen duplicar el dinero, no hay nada que pensar.",
+      "ejemplo": "Un 3 % semanal serían 4,7 veces el capital en un año."
+    },
+    {
+      "id": "g2",
+      "titulo": "Robo de claves",
+      "texto": "Webs y correos falsos piden la frase semilla o que conectes el monedero. Ninguna plataforma la necesita. Escribe tú la dirección de la web y no sigas enlaces.",
+      "ejemplo": "Quien pide la frase semilla te está robando, se presente como se presente."
+    },
+    {
+      "id": "g3",
+      "titulo": "Manipulación",
+      "texto": "En los «pump and dump» y los «rug pull», alguien infla una moneda y vende a quien llega. Comprar por lo que sube en redes es ponerse al final de la cola.",
+      "ejemplo": "De 0,40 $ a 0,06 $: una pérdida del 85 %."
+    },
+    {
+      "id": "g4",
+      "titulo": "Si ya ha pasado",
+      "texto": "Denuncia, avisa a la plataforma de destino y consulta la lista de advertencias de la CNMV. Desconfía de cualquiera que cobre por adelantado por recuperar tus fondos.",
+      "ejemplo": "Un recuperador falso convierte 5.000 € perdidos en 5.500 €."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "cq1",
+      "title": "Señales de alarma",
+      "ex": [
+        {
+          "id": "cq1-1",
+          "t": "choice",
+          "q": "Un «asesor» te escribe por Telegram y promete duplicar tu dinero en un mes con cripto. ¿Qué es?",
+          "opts": [
+            "Casi seguro una estafa: nadie garantiza eso",
+            "Una oportunidad si lo recomienda un famoso",
+            "Una inversión legal si te envía un contrato",
+            "Un riesgo normal en cualquier inversión"
+          ],
+          "a": 0,
+          "why": "Nadie puede garantizar rentabilidades así. El contacto por redes o mensajería, la prisa y la promesa de ganar mucho son las tres señales de casi todas las estafas.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Las imágenes de famosos se usan sin su permiso en estos fraudes.",
+            "Un contrato no hace legal una estafa.",
+            "Prometer duplicar el dinero en un mes no es un riesgo normal: es imposible."
+          ]
+        },
+        {
+          "id": "cq1-2",
+          "t": "choice",
+          "q": "Una web idéntica a tu plataforma te pide la frase semilla para «verificar» tu cuenta. ¿Qué haces?",
+          "opts": [
+            "No darla nunca: ninguna plataforma la pide",
+            "Darla solo si la web tiene candado",
+            "Darla si el correo parece oficial",
+            "Darla y cambiar la contraseña después"
+          ],
+          "a": 0,
+          "why": "Con tu frase semilla pueden vaciar el monedero en segundos. Ninguna plataforma ni soporte técnico la necesita: quien la pide te está robando.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "El candado indica una conexión cifrada, no una web legítima.",
+            "Los correos falsos copian el aspecto de los oficiales.",
+            "Con la frase semilla te vacían el monedero antes de que hagas nada."
+          ]
+        },
+        {
+          "id": "cq1-3",
+          "t": "choice",
+          "q": "Un proyecto nuevo sube un 500 % en una semana y sus creadores lo venden todo de golpe. ¿Cómo se llama?",
+          "opts": [
+            "Un rug pull: los creadores se llevan el dinero",
+            "Un halving programado de la moneda nueva",
+            "Una recompensa de staking a los fundadores",
+            "La pérdida de paridad de una moneda estable"
+          ],
+          "a": 0,
+          "why": "Los creadores atraen dinero, venden sus monedas a quienes compran y abandonan el proyecto. El precio se hunde y no queda nada detrás.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "El halving es una regla de Bitcoin, no una venta de los creadores.",
+            "El staking no consiste en vender todo de golpe.",
+            "Esto ocurre con una moneda nueva, no con una estable."
+          ]
+        },
+        {
+          "id": "cq1-4",
+          "t": "num",
+          "q": "Te ofrecen un 3 % semanal «garantizado». Con interés compuesto, ¿cuántas veces se multiplicaría el capital en un año de 52 semanas? Redondea a 1 decimal.",
+          "unit": "veces",
+          "a": 4.7,
+          "why": "1,03 elevado a 52 = 4,7 veces. Ningún negocio real crece así: es la forma de un esquema que paga a los primeros con el dinero de los siguientes.",
+          "tol": 0.06,
+          "guia": "g1"
+        },
+        {
+          "id": "cq1-5",
+          "t": "match",
+          "q": "Empareja cada señal de alarma con por qué lo es.",
+          "pairs": [
+            [
+              "Rentabilidad garantizada",
+              "Ninguna inversión real la ofrece"
+            ],
+            [
+              "Prisa para decidir",
+              "Para que no lo pienses ni preguntes"
+            ],
+            [
+              "Petición de claves",
+              "Con ellas pueden vaciar tu monedero"
+            ],
+            [
+              "Famoso que lo recomienda",
+              "Suele ser una imagen usada sin permiso"
+            ]
+          ],
+          "why": "Una sola de estas señales basta para alejarse. Juntas, son prácticamente una firma de estafa.",
+          "guia": "g3"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "cq2",
+      "title": "Manipulación y robos",
+      "ex": [
+        {
+          "id": "cq2-1",
+          "t": "choice",
+          "q": "¿Qué es una estafa de «pump and dump»?",
+          "opts": [
+            "Inflar una moneda pequeña y vender a quien llega",
+            "Una moneda que pierde su paridad con el dólar",
+            "Un fallo de código en un contrato inteligente",
+            "Un robo de claves mediante una web falsa"
+          ],
+          "a": 0,
+          "why": "Un grupo compra una moneda poco líquida, la promociona para que suba y vende a quienes entran atraídos por la subida. Los últimos en llegar se quedan con las pérdidas.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Eso es la pérdida de paridad de una moneda estable.",
+            "Eso es un fallo de un contrato, no una manipulación del precio.",
+            "Eso es un robo mediante phishing."
+          ]
+        },
+        {
+          "id": "cq2-2",
+          "t": "num",
+          "q": "Compras una moneda «de moda» a 0,40 $ y los organizadores venden: cae a 0,06 $. ¿Cuánto pierdes?",
+          "unit": "%",
+          "a": 85,
+          "why": "1 − 0,06 ÷ 0,40 = 85 %. En estas operaciones, quien compra tras ver la subida en redes suele ser quien paga la ganancia de los organizadores.",
+          "guia": "g3"
+        },
+        {
+          "id": "cq2-3",
+          "t": "choice",
+          "q": "Te han robado cripto con una web falsa. ¿Qué haces primero?",
+          "opts": [
+            "Denunciar y avisar a la plataforma de destino, si la hay",
+            "Pagar a quien promete recuperarlo por una comisión",
+            "Enviar más fondos para «desbloquear» los anteriores",
+            "Borrarlo todo para no dejar ningún rastro"
+          ],
+          "a": 0,
+          "why": "Denuncia y avisa a la plataforma a la que fueron los fondos, por si puede congelarlos. Los supuestos recuperadores que cobran por adelantado son casi siempre una segunda estafa.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Quien cobra por adelantado por recuperar fondos suele ser otro estafador.",
+            "Enviar más dinero es exactamente lo que buscan.",
+            "Borrar el rastro impide denunciar y que alguien pueda actuar."
+          ]
+        },
+        {
+          "id": "cq2-4",
+          "t": "choice",
+          "q": "¿Dónde compruebas si una entidad está en la lista de advertencias?",
+          "opts": [
+            "En la web de la CNMV",
+            "En los comentarios de la propia web",
+            "En el grupo de Telegram del proyecto",
+            "En un vídeo de un influencer"
+          ],
+          "a": 0,
+          "why": "La CNMV publica las entidades no autorizadas sobre las que avisa. Las opiniones de la propia web o de sus promotores no sirven: pueden ser falsas.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "La propia web puede inventarse las opiniones.",
+            "Los promotores de un proyecto nunca van a advertir contra él.",
+            "Un influencer puede estar cobrando por promocionarlo."
+          ]
+        },
+        {
+          "id": "cq2-5",
+          "t": "num",
+          "q": "Te robaron 5.000 € y un «recuperador» te pide 500 € por adelantado. Si también es una estafa, ¿cuántos miles de euros pierdes en total? Redondea a 1 decimal.",
+          "unit": "mil €",
+          "a": 5.5,
+          "why": "5.000 + 500 = 5.500 €. Las víctimas de una estafa son el objetivo favorito de la siguiente: nadie legítimo cobra por adelantado por recuperar fondos.",
+          "tol": 0.06,
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

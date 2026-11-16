@@ -1,0 +1,192 @@
+{
+  "n": 10,
+  "id": "crcaso",
+  "track": "cripto",
+  "title": "Tu primera cartera cripto",
+  "blurb": "Cuánto poner, cómo repartirlo, guardarlo y aguantar una caída.",
+  "caso": true,
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "El tamaño protege",
+      "texto": "Decide primero qué parte de tu patrimonio pones en cripto, pensando en que puede caer más de la mitad. Ese límite es tu verdadera protección.",
+      "ejemplo": "30.000 € invertidos y un 5 % en cripto: 1.500 €."
+    },
+    {
+      "id": "g2",
+      "titulo": "Reparto y compra",
+      "texto": "Prioriza las monedas más grandes y con más historia, y compra poco a poco. Nada de apalancamiento ni de monedas de moda.",
+      "ejemplo": "70 % BTC, 20 % ETH y 10 % SOL, en seis compras de 250 €."
+    },
+    {
+      "id": "g3",
+      "titulo": "Aguantar la caída",
+      "texto": "Con un tamaño pequeño, una caída fuerte apenas afecta al conjunto. Mantén el plan en lugar de vender por miedo o endeudarte para comprar más.",
+      "ejemplo": "Una caída del 54 % en cripto es un 2,7 % del patrimonio."
+    },
+    {
+      "id": "g4",
+      "titulo": "Custodia y registro",
+      "texto": "Pasa a un monedero propio lo que no usas para operar y guarda la frase semilla en papel. Anota cada operación para la declaración.",
+      "ejemplo": "Revisa el peso de la cripto una vez al año, no cada día."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "zc1",
+      "title": "Tamaño y reparto",
+      "ex": [
+        {
+          "id": "zc1-1",
+          "t": "num",
+          "q": "Caso de Pablo: tiene 30.000 € invertidos en fondos indexados y quiere que la cripto no pase del 5 %. ¿Cuántos miles de euros pone? Redondea a 1 decimal.",
+          "unit": "mil €",
+          "a": 1.5,
+          "why": "30.000 € × 5 % = 1.500 €. Es una cantidad que puede perder casi entera sin que cambie su plan de inversión.",
+          "tol": 0.06,
+          "guia": "g1"
+        },
+        {
+          "id": "zc1-2",
+          "t": "choice",
+          "q": "¿Cómo reparte esos 1.500 €?",
+          "opts": [
+            "La mayor parte en bitcoin y algo en ETH y SOL",
+            "Todo en la moneda nueva que más ha subido",
+            "Todo en una moneda estable que paga un 15 %",
+            "En la que recomienda un grupo de Telegram"
+          ],
+          "a": 0,
+          "why": "Las monedas más grandes y con más historia son las menos frágiles dentro de un mercado frágil. Las nuevas o las promesas de rentabilidad son las primeras en desaparecer.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "Las monedas nuevas son las más frágiles: muchas desaparecen.",
+            "Un 15 % por una estable es una señal de alarma, no un refugio.",
+            "Los grupos de mensajería son el terreno de los pump and dump."
+          ]
+        },
+        {
+          "id": "zc1-3",
+          "t": "num",
+          "q": "Reparte los 1.500 € en un 70 % de BTC, un 20 % de ETH y un 10 % de SOL. ¿Cuánto pone en ETH?",
+          "unit": "€",
+          "a": 300,
+          "why": "1.500 € × 20 % = 300 €. En BTC, 1.050 €, y en SOL, 150 €.",
+          "guia": "g1"
+        },
+        {
+          "id": "zc1-4",
+          "t": "choice",
+          "q": "¿Cómo hace la compra?",
+          "opts": [
+            "Aportando 250 € al mes durante seis meses",
+            "Todo hoy, porque lleva una semana cayendo",
+            "Todo con apalancamiento para ganar más",
+            "Esperando a que alguien en redes lo avise"
+          ],
+          "a": 0,
+          "why": "Repartir la compra en el tiempo evita entrar todo en un máximo. En un activo que puede moverse un 20 % en una semana, ayuda a dormir mejor.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "Una semana de caídas no dice nada sobre la siguiente.",
+            "Con apalancamiento, una caída normal lo borraría todo.",
+            "Esperar avisos en redes es exponerse a manipulaciones."
+          ]
+        },
+        {
+          "id": "zc1-5",
+          "t": "num",
+          "q": "Un año después, el BTC ha caído un 50 %, el ETH un 60 % y el SOL un 70 %. ¿Cuánto vale su cartera cripto?",
+          "unit": "€",
+          "a": 690,
+          "why": "1.050 × 0,5 + 300 × 0,4 + 150 × 0,3 = 525 + 120 + 45 = 690 €. Las monedas más pequeñas han caído más, como suele pasar en los mercados bajistas.",
+          "guia": "g3"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "zc2",
+      "title": "La caída y la custodia",
+      "ex": [
+        {
+          "id": "zc2-1",
+          "t": "num",
+          "q": "De 1.500 € a 690 €, ¿qué porcentaje ha perdido en cripto?",
+          "unit": "%",
+          "a": 54,
+          "why": "1 − 690 ÷ 1.500 = 54 %. Una caída así es normal en cripto: ha pasado varias veces en la historia del bitcoin.",
+          "guia": "g3"
+        },
+        {
+          "id": "zc2-2",
+          "t": "num",
+          "q": "Esa pérdida de 810 €, ¿qué porcentaje es de su patrimonio invertido de 30.000 €?",
+          "unit": "%",
+          "a": 2.7,
+          "why": "810 ÷ 30.000 = 2,7 %. Gracias al tamaño, perder más de la mitad en cripto apenas mueve el conjunto.",
+          "tol": 0.06,
+          "guia": "g3"
+        },
+        {
+          "id": "zc2-3",
+          "t": "choice",
+          "q": "Con la cripto un 54 % abajo, ¿qué hace Pablo?",
+          "opts": [
+            "Mantener el plan: el tamaño ya limitaba el daño",
+            "Vender todo y no volver a invertir nunca",
+            "Pedir un préstamo para comprar más barato",
+            "Pasarlo todo a la moneda que menos ha caído"
+          ],
+          "a": 0,
+          "why": "El tamaño se eligió pensando en una caída así. Vender convierte la pérdida en definitiva y endeudarse la multiplica.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Vender convierte una caída temporal en una pérdida definitiva.",
+            "Endeudarse para comprar multiplica el riesgo en el peor momento.",
+            "Perseguir lo que menos cae es cambiar el plan por miedo."
+          ]
+        },
+        {
+          "id": "zc2-4",
+          "t": "choice",
+          "q": "Tiene sus criptomonedas en una plataforma. ¿Qué hace con ellas?",
+          "opts": [
+            "Pasar lo que no usa a un monedero propio",
+            "Dejarlo todo en la plataforma que más paga",
+            "Compartir su frase semilla con un amigo",
+            "Hacer una foto de la frase semilla con el móvil"
+          ],
+          "a": 0,
+          "why": "Lo que no necesita para operar está más seguro en un monedero propio, con la frase semilla guardada en papel y en un lugar seguro.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "La plataforma que más paga suele ser la más arriesgada.",
+            "Quien tenga la frase semilla controla los fondos.",
+            "Una foto en el móvil puede acabar en la nube y ser robada."
+          ]
+        },
+        {
+          "id": "zc2-5",
+          "t": "order",
+          "q": "Ordena el plan de Pablo.",
+          "items": [
+            "Decidir el peso máximo en cripto",
+            "Elegir pocas monedas y repartir",
+            "Comprar poco a poco en una plataforma autorizada",
+            "Guardar las claves de forma segura",
+            "Anotar cada operación para Hacienda",
+            "Revisar el peso una vez al año"
+          ],
+          "why": "Primero el tamaño, que es lo que protege; después qué y cómo comprar; luego la custodia y los impuestos, y al final revisar sin reaccionar a cada caída.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

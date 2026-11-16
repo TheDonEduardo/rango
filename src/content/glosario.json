@@ -726,5 +726,20 @@
  {
   "termino": "fondo de liquidez",
   "d": "Reserva de dos monedas en un contrato que permite intercambiarlas; su proporción fija el precio."
+ },
+ {
+  "termino": "monedero frío",
+  "alias": [
+   "monedero caliente"
+  ],
+  "d": "Un monedero frío guarda las claves sin conexión a internet y es más seguro; uno caliente está conectado y es más cómodo para operar."
+ },
+ {
+  "termino": "rug pull",
+  "d": "Estafa en la que los creadores de una moneda nueva atraen dinero, venden todo de golpe y abandonan el proyecto."
+ },
+ {
+  "termino": "modelo 721",
+  "d": "Declaración informativa, sin pago, para quien tiene más de 50.000 € en criptomonedas custodiadas en el extranjero a 31 de diciembre."
  }
 ]

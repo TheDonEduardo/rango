@@ -1,0 +1,224 @@
+{
+  "n": 7,
+  "id": "crcustodia",
+  "track": "cripto",
+  "title": "Custodia y plataformas",
+  "blurb": "Dónde guardar tus criptomonedas, qué plataforma usar y lo que cuesta.",
+  "revisar": "2027-06",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Quién tiene las claves",
+      "texto": "En una plataforma, ella guarda tus claves: tienes una promesa de que te devolverá tus monedas. Si quiebra, puedes perderlas o tardar años en recuperarlas, como pasó con FTX.",
+      "ejemplo": "No hay fondo de garantía de depósitos para las criptomonedas."
+    },
+    {
+      "id": "g2",
+      "titulo": "Caliente y frío",
+      "texto": "Un monedero caliente está conectado y es cómodo; uno frío está desconectado y es más seguro. Deja en la plataforma solo lo que usas para operar.",
+      "ejemplo": "6.000 € en cripto: 600 € para operar y 5.400 € en frío."
+    },
+    {
+      "id": "g3",
+      "titulo": "Elegir plataforma",
+      "texto": "Comprueba que esté autorizada para operar en la UE y que no figure en la lista de advertencias de la CNMV. Suma el margen y la comisión para saber lo que pagas.",
+      "ejemplo": "Margen del 1,5 % y comisión del 0,5 %: 20 € por cada 1.000 €."
+    },
+    {
+      "id": "g4",
+      "titulo": "Nada de apalancamiento",
+      "texto": "Con apalancamiento, una caída pequeña borra todo tu dinero. En activos que caen un 20 % en pocos días, es la forma más rápida de perderlo todo.",
+      "ejemplo": "Con 5 veces, una caída del 20 % te deja a cero."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "ck1",
+      "title": "Quién tiene las claves",
+      "ex": [
+        {
+          "id": "ck1-1",
+          "t": "choice",
+          "q": "«Si no son tus claves, no son tus monedas». ¿Qué significa?",
+          "opts": [
+            "Si una plataforma guarda tus claves, dependes de ella",
+            "Que nadie puede perder sus criptomonedas nunca",
+            "Que hay que compartir las claves con la plataforma",
+            "Que las criptomonedas solo existen en papel"
+          ],
+          "a": 0,
+          "why": "Cuando compras en una plataforma, lo normal es que ella guarde las claves. Tienes una promesa de que te devolverá tus monedas, no las monedas en sí.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Sí se pueden perder: por una quiebra, un robo o unas claves perdidas.",
+            "Las claves no se comparten con nadie.",
+            "Existen como anotaciones en la cadena, no en papel."
+          ]
+        },
+        {
+          "id": "ck1-2",
+          "t": "match",
+          "q": "Empareja cada forma de guardar cripto con lo que la caracteriza.",
+          "pairs": [
+            [
+              "Monedero caliente",
+              "Conectado a internet, cómodo para operar"
+            ],
+            [
+              "Monedero frío",
+              "Desconectado, más seguro para guardar"
+            ],
+            [
+              "Plataforma",
+              "Guarda las claves por ti"
+            ],
+            [
+              "Frase semilla",
+              "Copia de seguridad de todas tus claves"
+            ]
+          ],
+          "why": "Cuanto más cómodo es el acceso, más expuesto está. Lo habitual es tener poco en caliente para operar y el resto en frío.",
+          "guia": "g2"
+        },
+        {
+          "id": "ck1-3",
+          "t": "choice",
+          "q": "En 2022 quebró la plataforma FTX. ¿Qué les pasó a muchos de sus clientes?",
+          "opts": [
+            "Perdieron el acceso a sus fondos durante años",
+            "Recuperaron todo al día siguiente sin problemas",
+            "Cobraron intereses extra por las molestias",
+            "Les devolvió el dinero el Banco de España"
+          ],
+          "a": 0,
+          "why": "Los fondos quedaron atrapados en la quiebra y la devolución tardó años. Una plataforma no es un banco: no hay fondo de garantía de depósitos para tus criptomonedas.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "La quiebra dejó los fondos atrapados durante mucho tiempo.",
+            "No hubo compensaciones: muchos recuperaron menos y tarde.",
+            "El Banco de España no cubre criptomonedas."
+          ]
+        },
+        {
+          "id": "ck1-4",
+          "t": "slide",
+          "q": "Tienes 6.000 € en cripto y solo quieres dejar en la plataforma un 10 % para operar. Mueve lo que pasas a un monedero frío.",
+          "label": "En monedero frío",
+          "min": 0,
+          "max": 6000,
+          "step": 300,
+          "start": 1200,
+          "a": 5400,
+          "unit": "€",
+          "why": "6.000 € × 90 % = 5.400 € en frío y 600 € en la plataforma. Si la plataforma quiebra o la atacan, solo arriesgas lo que dejaste allí.",
+          "show": [
+            {
+              "label": "Queda en la plataforma",
+              "k": -1,
+              "b": 6000,
+              "unit": "€"
+            }
+          ],
+          "guia": "g2"
+        },
+        {
+          "id": "ck1-5",
+          "t": "choice",
+          "q": "¿Qué riesgo tiene guardar tú mismo las claves?",
+          "opts": [
+            "Si pierdes la frase semilla, nadie te la recupera",
+            "Que la plataforma pueda congelar tus fondos",
+            "Que el banco te cobre comisiones por custodia",
+            "Ninguno: es la forma más segura en todo caso"
+          ],
+          "a": 0,
+          "why": "Te liberas del riesgo de la plataforma a cambio de asumir tú la custodia. Guarda la frase semilla en papel, en un lugar seguro y nunca en fotos ni en la nube.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Eso es un riesgo de dejar las monedas en la plataforma.",
+            "Tu banco no interviene en un monedero propio.",
+            "Tiene un riesgo claro: si pierdes la frase semilla, pierdes todo."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "ck2",
+      "title": "Elegir plataforma",
+      "ex": [
+        {
+          "id": "ck2-1",
+          "t": "choice",
+          "q": "¿Qué debes comprobar antes de usar una plataforma cripto en España?",
+          "opts": [
+            "Que esté autorizada para operar en la UE",
+            "Que ofrezca la rentabilidad más alta",
+            "Que tenga anuncios en redes sociales",
+            "Que admita registros sin identificación"
+          ],
+          "a": 0,
+          "why": "Con el reglamento europeo MiCA, las plataformas necesitan autorización para operar en la UE. La CNMV publica qué entidades están autorizadas y cuáles están en su lista de advertencias.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Una rentabilidad alta suele indicar más riesgo, no más fiabilidad.",
+            "La publicidad no dice nada de si está autorizada.",
+            "Una plataforma seria te identifica: sin identificación, desconfía."
+          ]
+        },
+        {
+          "id": "ck2-2",
+          "t": "num",
+          "q": "Compras 1.000 € de bitcoin con un margen del 1,5 % sobre el precio y una comisión del 0,5 %. ¿Cuánto pagas en costes?",
+          "unit": "€",
+          "a": 20,
+          "why": "1.000 € × (1,5 % + 0,5 %) = 20 €. Muchas plataformas «sin comisiones» cobran a través del margen: compara siempre el coste total.",
+          "guia": "g3"
+        },
+        {
+          "id": "ck2-3",
+          "t": "num",
+          "q": "Si repites esa compra de 1.000 € todos los meses, ¿cuánto pagas en costes al año?",
+          "unit": "€",
+          "a": 240,
+          "why": "20 € × 12 = 240 €. Sobre 12.000 € invertidos, un 2 % que se pierde antes de empezar.",
+          "guia": "g3"
+        },
+        {
+          "id": "ck2-4",
+          "t": "choice",
+          "q": "Una plataforma te ofrece operar con apalancamiento de 10 veces. Si el precio cae un 10 %, ¿qué te pasa?",
+          "opts": [
+            "Pierdes todo lo que pusiste",
+            "Pierdes un 10 % de lo que pusiste",
+            "Pierdes un 1 % de lo que pusiste",
+            "No pierdes nada hasta que vendas"
+          ],
+          "a": 0,
+          "why": "10 × 10 % = 100 %. Con apalancamiento, la plataforma cierra tu posición antes de que debas más de lo que pusiste. En activos tan volátiles, una caída así es habitual.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Con 10 veces, una caída del 10 % se lleva el 100 %.",
+            "Ese es el resultado sin apalancamiento.",
+            "El apalancamiento multiplica la pérdida, no la divide."
+          ]
+        },
+        {
+          "id": "ck2-5",
+          "t": "num",
+          "q": "Con un apalancamiento de 5 veces, ¿qué caída del precio borra todo tu dinero?",
+          "unit": "%",
+          "a": 20,
+          "why": "100 % ÷ 5 = 20 %. El bitcoin ha caído un 20 % en pocos días muchas veces: con apalancamiento, eso es perderlo todo.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}
