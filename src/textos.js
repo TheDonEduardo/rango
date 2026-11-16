@@ -80,6 +80,7 @@ export const t={
     resultados:['Lee unos resultados','Sorpresas, márgenes, guía y señales de alerta en un informe trimestral.'],
     riesgo:['Gestiona el riesgo','Stop, tamaño de posición, salidas, riesgo de cartera y disciplina.'],
     vivienda:['Compra tu primera vivienda','Hipoteca, comprar o alquilar, seguros y un plan completo para llegar a la entrada.'],
+    ia:['La IA en tus finanzas','Qué hace bien, cómo pedirle ayuda, cómo comprobarla y las estafas que usan IA.'],
     cripto:['Entra en cripto con cabeza','Cómo funciona, BTC y ETH, custodia, estafas e impuestos, y tu primera cartera.'],
     opciones:['Tus primeras opciones','De qué es una call a proteger una posición con un collar, impuestos incluidos.']},
   itinMeta:(h,n,r)=>`${h} de ${n} lecciones · ${r}`, itinSiguiendo:'Lo estás siguiendo', itinEmpezar:'Seguir este itinerario', itinRetomar:'Retomar este itinerario', itinDejar:'Dejar de seguirlo',
@@ -91,6 +92,7 @@ export const t={
     resultados:['Comparar las cifras con el consenso y con la guía','Distinguir beneficio ajustado, contable y caja','Detectar señales de alerta en cobros, inventario y ajustes'],
     riesgo:['Colocar el stop con el ATR y calcular el tamaño','Escalonar las salidas y medir el resultado en R','Limitar el riesgo total de la cartera y seguir tu plan'],
     vivienda:['Saber cuánto ahorro necesitas y qué cuota puedes asumir','Elegir entre hipoteca fija, variable o mixta','Decidir si te conviene comprar o seguir de alquiler'],
+    ia:['Pedir ayuda a la IA sin darle datos sensibles','Comprobar sus cifras antes de decidir','Reconocer vídeos falsos, voces clonadas y bots milagrosos'],
     cripto:['Entender la cadena de bloques, Bitcoin y Ethereum','Guardar tus claves y reconocer una estafa','Decidir cuánto poner y declararlo bien'],
     opciones:['Calcular el resultado y la pérdida máxima de una opción','Cobrar primas con call cubierta y put con garantía','Proteger una posición con un collar y declararlo bien']},
 

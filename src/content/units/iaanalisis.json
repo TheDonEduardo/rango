@@ -1,0 +1,227 @@
+{
+  "n": 10,
+  "id": "iaanalisis",
+  "track": "personal",
+  "title": "Analizar con IA",
+  "blurb": "Resumir resultados y comparar fondos con IA, comprobando cada cifra.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Resumir con IA",
+      "texto": "Un resumen de unos resultados te ahorra tiempo, pero ventas, beneficio y guía se comprueban en el informe original.",
+      "ejemplo": "Ventas de 800 a 900 millones: un 12,5 %, no un 15 %."
+    },
+    {
+      "id": "g2",
+      "titulo": "Rehacer las ratios",
+      "texto": "Los porcentajes y las ratios son donde más se equivoca. Rehazlos tú con las cifras: son cuentas sencillas.",
+      "ejemplo": "Precio de 50 € y BPA de 2 €: PER de 25, no de 20."
+    },
+    {
+      "id": "g3",
+      "titulo": "Preguntas sin sesgo",
+      "texto": "Si preguntas por qué va a subir, encontrará razones. Pregunta qué tendría que pasar para que la tesis falle.",
+      "ejemplo": "«¿Qué haría que esta inversión saliera mal?»"
+    },
+    {
+      "id": "g4",
+      "titulo": "La decisión es tuya",
+      "texto": "Compara costes con tus propias cuentas, desconfía de la rentabilidad pasada y recuerda que un asistente genérico no responde de sus consejos.",
+      "ejemplo": "Fondo al 1,50 % frente a uno al 0,20 %: 260 € al año sobre 20.000 €."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "ia5",
+      "title": "Resultados y ratios",
+      "ex": [
+        {
+          "id": "ia5-1",
+          "t": "choice",
+          "q": "Pides a la IA que resuma los resultados de una empresa. ¿Qué compruebas?",
+          "opts": [
+            "Las cifras clave en el informe original",
+            "Que el resumen sea corto y claro",
+            "Que use muchos términos técnicos",
+            "Que coincida con lo que esperabas"
+          ],
+          "a": 0,
+          "why": "El resumen te ahorra tiempo, pero ventas, beneficio y guía se comprueban en el informe: un número cambiado lo cambia todo.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Un resumen corto puede omitir o cambiar lo importante.",
+            "Más tecnicismos no lo hacen más fiable.",
+            "Comprobar que coincide con lo que esperabas es el sesgo de confirmación."
+          ]
+        },
+        {
+          "id": "ia5-2",
+          "t": "num",
+          "q": "La IA dice que las ventas crecieron un 15 %, de 800 a 900 millones. ¿Cuánto crecieron en realidad? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 12.5,
+          "why": "900 ÷ 800 − 1 = 12,5 %. La IA calculó la diferencia sobre la cifra final, no sobre la inicial. Rehaz siempre los porcentajes.",
+          "tol": 0.06,
+          "guia": "g2"
+        },
+        {
+          "id": "ia5-3",
+          "t": "num",
+          "q": "Te dice que una acción a 50 € con un BPA de 2 € tiene un PER de 20. ¿Cuál es el PER correcto?",
+          "unit": "",
+          "a": 25,
+          "why": "50 ÷ 2 = 25. Una ratio mal calculada puede hacer que una empresa parezca barata cuando no lo es.",
+          "guia": "g2"
+        },
+        {
+          "id": "ia5-4",
+          "t": "choice",
+          "q": "Le preguntas «¿por qué va a subir esta acción?». ¿Qué problema tiene la pregunta?",
+          "opts": [
+            "Da por hecho que subirá y la IA buscará razones",
+            "Ninguno: es la forma correcta de preguntar",
+            "Que la IA no sabe qué es una acción",
+            "Que solo funciona con acciones españolas"
+          ],
+          "a": 0,
+          "why": "Una pregunta sesgada produce una respuesta sesgada: encontrará argumentos para lo que ya diste por cierto.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Es una pregunta que ya da por hecha la respuesta.",
+            "Sabe qué es una acción: el problema es cómo preguntas.",
+            "El sesgo de la pregunta no depende del país de la empresa."
+          ]
+        },
+        {
+          "id": "ia5-5",
+          "t": "choice",
+          "q": "¿Qué pregunta ayuda más a evitar el sesgo de confirmación?",
+          "opts": [
+            "¿Qué tendría que pasar para que esta tesis falle?",
+            "¿Por qué esta empresa es la mejor del sector?",
+            "¿Cuánto puede llegar a subir la acción?",
+            "¿Qué opinan los que la recomiendan?"
+          ],
+          "a": 0,
+          "why": "Preguntar por lo que invalidaría la tesis te obliga a mirar los riesgos. Es la misma disciplina que escribir la tesis con su criterio de salida.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Pedir que confirme que es la mejor refuerza lo que ya crees.",
+            "Preguntar solo por la subida ignora los riesgos.",
+            "Escuchar solo a quien la recomienda es buscar confirmación."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "ia6",
+      "title": "Comparar y decidir",
+      "ex": [
+        {
+          "id": "ia6-1",
+          "t": "num",
+          "q": "La IA compara dos fondos que siguen el mismo índice. Comprueba su cuenta: ¿cuántos euros más al año cuesta el B sobre 20.000 €?",
+          "unit": "€",
+          "a": 260,
+          "table": {
+            "cols": [
+              "Fondo",
+              "Comisión anual"
+            ],
+            "rows": [
+              [
+                "A",
+                "0,20 %"
+              ],
+              [
+                "B",
+                "1,50 %"
+              ]
+            ]
+          },
+          "why": "20.000 € × (1,50 % − 0,20 %) = 260 € al año. Las comisiones son lo que más fácil se verifica y lo que más pesa a largo plazo.",
+          "guia": "g4"
+        },
+        {
+          "id": "ia6-2",
+          "t": "choice",
+          "q": "La IA recomienda un fondo «por su rentabilidad del 30 % el año pasado». ¿Qué falla?",
+          "opts": [
+            "La rentabilidad pasada no garantiza la futura",
+            "Nada: un 30 % es una gran rentabilidad",
+            "Que debería haber dicho un 40 %",
+            "Que no ha mencionado el logotipo"
+          ],
+          "a": 0,
+          "why": "Elegir por el último año es perseguir lo que ya subió. Importan los costes, lo que contiene el fondo y cómo encaja en tu plan.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Un año bueno no dice nada del siguiente.",
+            "Cambiar la cifra no arregla el razonamiento.",
+            "El logotipo no tiene nada que ver con la decisión."
+          ]
+        },
+        {
+          "id": "ia6-3",
+          "t": "num",
+          "q": "La IA estima que aportar 300 € al mes al 6 % durante 20 años da 138.000 €. Tú aportas 72.000 €. Según su cálculo, ¿cuántos miles de euros serían rendimientos?",
+          "unit": "mil €",
+          "a": 66,
+          "why": "138.000 − 72.000 = 66.000 €. La cifra de 138.000 € supone un 6 % constante, algo que nunca ocurre: tómalo como orientación, no como promesa.",
+          "guia": "g4"
+        },
+        {
+          "id": "ia6-4",
+          "t": "choice",
+          "q": "¿Quién responde si sigues un consejo de la IA y pierdes dinero?",
+          "opts": [
+            "Tú: la decisión y el riesgo son tuyos",
+            "La empresa que hizo la IA, por ley",
+            "La CNMV, que supervisa los asistentes",
+            "El banco donde tienes la cuenta"
+          ],
+          "a": 0,
+          "why": "Un asistente genérico no es un asesor autorizado y no responde de sus respuestas. Un asesor financiero autorizado sí tiene obligaciones contigo.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Un asistente genérico no asume responsabilidad legal por sus respuestas.",
+            "La CNMV no responde de tus pérdidas.",
+            "Tu banco no responde de un consejo que no te dio."
+          ]
+        },
+        {
+          "id": "ia6-5",
+          "t": "match",
+          "q": "Empareja cada tarea con lo bien que la hace una IA.",
+          "pairs": [
+            [
+              "Explicar un concepto",
+              "Buen uso: lo puedes comprobar"
+            ],
+            [
+              "Resumir un informe",
+              "Útil, revisando las cifras clave"
+            ],
+            [
+              "Elegir qué acción comprar",
+              "Mal uso: no puede saberlo"
+            ],
+            [
+              "Dar la cotización de hoy",
+              "Poco fiable: puede estar desfasada"
+            ]
+          ],
+          "why": "Úsala donde puedes comprobar lo que dice y donde te ahorra tiempo; desconfía cuando promete saber lo que nadie sabe.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

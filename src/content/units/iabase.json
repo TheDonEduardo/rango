@@ -1,0 +1,227 @@
+{
+  "n": 8,
+  "id": "iabase",
+  "track": "personal",
+  "title": "IA: qué hace bien y qué no",
+  "blurb": "Para qué sirve un asistente de IA en tus finanzas, y por qué hay que comprobarlo.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Lo que hace bien",
+      "texto": "Explicar conceptos, resumir textos largos y ayudarte a ordenar ideas. Son tareas en las que puedes comprobar lo que dice.",
+      "ejemplo": "Pedirle que te explique la TAE con un ejemplo es un buen uso."
+    },
+    {
+      "id": "g2",
+      "titulo": "Lo que hace mal",
+      "texto": "Puede inventar datos que suenan convincentes, equivocarse en cuentas y no conocer lo que pasó después de su fecha de corte. Nunca sabe qué va a subir.",
+      "ejemplo": "Calculó 15.000 € donde eran 16.289 €: usó interés simple."
+    },
+    {
+      "id": "g3",
+      "titulo": "Pedir bien",
+      "texto": "Da contexto sin datos personales, pide opciones con sus riesgos y pide siempre los argumentos en contra. Los asistentes tienden a darte la razón.",
+      "ejemplo": "«Tengo 20 años de plazo: ¿qué opciones hay y qué puede salir mal?»"
+    },
+    {
+      "id": "g4",
+      "titulo": "Comprobar y decidir",
+      "texto": "Revisa cifras, sumas y normas en la fuente. Lo que escribes puede guardarse, así que no compartas lo que no darías a un desconocido. La decisión es tuya.",
+      "ejemplo": "Ocio de 270 € sobre 900 € es un 30 %, no un 25 %."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "ia1",
+      "title": "Puntos fuertes y débiles",
+      "ex": [
+        {
+          "id": "ia1-1",
+          "t": "choice",
+          "q": "Le preguntas a un asistente de IA el precio actual de una acción. ¿Qué debes tener en cuenta?",
+          "opts": [
+            "Puede darte un dato antiguo o inventado: compruébalo",
+            "Siempre consulta la bolsa en tiempo real",
+            "Solo se equivoca con acciones extranjeras",
+            "Es más fiable que la web de la propia bolsa"
+          ],
+          "a": 0,
+          "why": "Muchos asistentes responden con lo que aprendieron hasta una fecha, y pueden inventar una cifra que suena bien. Los datos de mercado se miran en la fuente.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "Muchos asistentes no consultan la bolsa en tiempo real.",
+            "Puede equivocarse con cualquier acción, no solo con las extranjeras.",
+            "La fuente fiable es la bolsa o tu bróker, no el asistente."
+          ]
+        },
+        {
+          "id": "ia1-2",
+          "t": "choice",
+          "q": "¿En qué tarea suele ser más fiable un asistente de IA?",
+          "opts": [
+            "Explicar qué es un concepto, como la TAE",
+            "Decir qué acción va a subir el mes que viene",
+            "Dar la cotización exacta de este momento",
+            "Garantizar el resultado de una inversión"
+          ],
+          "a": 0,
+          "why": "Explicar conceptos conocidos es su punto fuerte, y además puedes comprobarlo. Predecir precios no lo puede hacer nadie, tampoco una IA.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Nadie puede saber qué acción subirá, tampoco una IA.",
+            "La cotización de este momento puede no conocerla o inventarla.",
+            "Ninguna herramienta puede garantizar un resultado."
+          ]
+        },
+        {
+          "id": "ia1-3",
+          "t": "num",
+          "q": "Una IA te dice que 10.000 € al 5 % compuesto durante 10 años se convierten en 15.000 €. ¿Cuántos miles de euros son en realidad? Redondea a 1 decimal.",
+          "unit": "mil €",
+          "a": 16.3,
+          "why": "10.000 × 1,05 elevado a 10 = 16.289 €, unos 16,3 mil. La IA calculó interés simple. Comprueba siempre las cuentas: una cifra bien redactada puede estar mal.",
+          "tol": 0.06,
+          "guia": "g2"
+        },
+        {
+          "id": "ia1-4",
+          "t": "match",
+          "q": "Empareja cada término con lo que significa al usar IA.",
+          "pairs": [
+            [
+              "Alucinación",
+              "Dato inventado que suena convincente"
+            ],
+            [
+              "Fecha de corte",
+              "Hasta cuándo conoce la información"
+            ],
+            [
+              "Instrucción",
+              "Lo que le pides y cómo se lo pides"
+            ],
+            [
+              "Fuente",
+              "Dónde comprobar lo que dice"
+            ]
+          ],
+          "why": "Saber que puede inventar, que su información tiene fecha y que cómo preguntas cambia la respuesta es lo básico para usarla bien.",
+          "guia": "g1"
+        },
+        {
+          "id": "ia1-5",
+          "t": "choice",
+          "q": "La IA te cita una norma fiscal con su número de artículo. ¿Qué haces?",
+          "opts": [
+            "Comprobar el texto en la fuente oficial",
+            "Darla por buena: cita un artículo concreto",
+            "Preguntarle si está segura y fiarte de lo que diga",
+            "Copiarla en tu declaración sin revisarla"
+          ],
+          "a": 0,
+          "why": "Un número de artículo da apariencia de precisión, pero puede estar inventado o desfasado. Las normas se comprueban en la fuente oficial.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Citar un número concreto no lo hace cierto: puede estar inventado.",
+            "Te dirá que sí con la misma seguridad aunque esté equivocada.",
+            "Un error en la declaración es responsabilidad tuya."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "ia2",
+      "title": "Pedir bien",
+      "ex": [
+        {
+          "id": "ia2-1",
+          "t": "choice",
+          "q": "¿Cómo pides ayuda a la IA para decidir dónde invertir?",
+          "opts": [
+            "Dar contexto y pedir opciones con sus riesgos",
+            "Solo «¿qué compro?», para que decida ella",
+            "Pedirle la inversión que más va a subir",
+            "Preguntarle cuál es la mejor del mundo"
+          ],
+          "a": 0,
+          "why": "Con tu plazo, tu dinero y tu tolerancia, puede explicarte opciones y sus pegas. Sin contexto, la respuesta será genérica, y nadie sabe qué va a subir.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Sin contexto, la respuesta será genérica y quizá no te encaje.",
+            "Nadie sabe qué va a subir: pedirlo es invitar a que invente.",
+            "No existe la mejor inversión: depende de tu plazo y tu riesgo."
+          ]
+        },
+        {
+          "id": "ia2-2",
+          "t": "choice",
+          "q": "Pides a la IA que compare dos fondos. ¿Qué le pides además para no quedarte solo con lo que te gusta oír?",
+          "opts": [
+            "Los argumentos en contra de cada uno",
+            "Que confirme que el que te gusta es mejor",
+            "Que resuma solo las ventajas",
+            "Que lo diga con más seguridad"
+          ],
+          "a": 0,
+          "why": "Los asistentes tienden a darte la razón. Pedir expresamente lo que falla en cada opción es la mejor defensa contra el sesgo de confirmación.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Pedir que confirme lo que piensas refuerza el sesgo.",
+            "Un resumen solo de ventajas es publicidad.",
+            "Más seguridad en el tono no significa más acierto."
+          ]
+        },
+        {
+          "id": "ia2-3",
+          "t": "num",
+          "q": "Le das tus gastos: 450 € de supermercado, 120 € de transporte, 60 € de suscripciones y 270 € de ocio. Te dice que el ocio es el 25 % del total. ¿Qué porcentaje es en realidad?",
+          "unit": "%",
+          "a": 30,
+          "why": "El total es 900 €, y 270 ÷ 900 = 30 %. Un error de cinco puntos cambia las conclusiones: revisa las sumas que te da.",
+          "guia": "g4"
+        },
+        {
+          "id": "ia2-4",
+          "t": "choice",
+          "q": "¿Qué puede pasar con lo que escribes en un asistente de IA?",
+          "opts": [
+            "Según el servicio, puede guardarse y revisarse",
+            "Se borra siempre en cuanto cierras la ventana",
+            "Solo lo lee tu banco para darte consejos",
+            "Nadie puede verlo bajo ninguna circunstancia"
+          ],
+          "a": 0,
+          "why": "Cada servicio tiene su política: algunos guardan las conversaciones o las usan para mejorar el modelo. Escribe como si pudiera leerlo otra persona.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "No todos los servicios borran las conversaciones.",
+            "Tu banco no lee tus conversaciones con un asistente.",
+            "Según la política del servicio, otras personas pueden revisarlas."
+          ]
+        },
+        {
+          "id": "ia2-5",
+          "t": "order",
+          "q": "Ordena cómo usar la IA para preparar una decisión de dinero.",
+          "items": [
+            "Explicar tu situación sin datos personales",
+            "Pedir opciones y sus riesgos",
+            "Pedir los argumentos en contra",
+            "Comprobar las cifras en fuentes oficiales",
+            "Decidir tú"
+          ],
+          "why": "La IA sirve para pensar mejor, no para decidir por ti. El último paso siempre es tuyo, y antes van las comprobaciones.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

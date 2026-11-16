@@ -11,6 +11,7 @@ export const ITINERARIOS=[
   {id:'resultados',pasos:['f5a','f5b','f1b','f10a','f10b','fa1','fa2']},
   {id:'riesgo',pasos:['r1','r2','s1','s2','c1','c2','p1','p2']},
   {id:'vivienda',pasos:['fp1','fp2','fp3','fp4','fp5','fp6','fp11','zr1','zr2']},
+  {id:'ia',pasos:['ia1','ia2','ia3','ia4','ia5','ia6','ia7','ia8']},
   {id:'cripto',pasos:['cx1','cx2','cb1','cb2','ce1','cy1','ck1','cq1','cf1','zc1','zc2']},
   {id:'opciones',pasos:['op1','op2','op3','op4','op9','op11','op15','op19','zo1','zo2']},
 ];

@@ -1,0 +1,217 @@
+{
+  "n": 11,
+  "id": "iariesgos",
+  "track": "personal",
+  "title": "IA: riesgos y estafas",
+  "blurb": "Vídeos falsos, voces clonadas, bots milagrosos y cuándo hace falta un asesor.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Caras y voces falsas",
+      "texto": "Con IA se falsifican vídeos de famosos y se clonan voces con unos segundos de audio. Comprueba siempre por un canal que tú controlas.",
+      "ejemplo": "Audio de tu hermano pidiendo 800 €: llámale a su número de siempre."
+    },
+    {
+      "id": "g2",
+      "titulo": "Bots milagrosos",
+      "texto": "«IA» se ha convertido en reclamo para estafas de siempre: rentabilidad fija, prisa y pagos irreversibles. Quien gestiona dinero ajeno debe estar autorizado.",
+      "ejemplo": "Un 2 % diario serían 1,8 veces el capital en 30 días."
+    },
+    {
+      "id": "g3",
+      "titulo": "Asesor o chat",
+      "texto": "Un asesor autorizado responde de su consejo y debe conocer tu situación. Un chat genérico no responde de nada.",
+      "ejemplo": "Pagar 20 € al mes por un asistente son 240 € al año."
+    },
+    {
+      "id": "g4",
+      "titulo": "La fuente manda",
+      "texto": "Ante cualquier contradicción, manda la fuente oficial. Usa la IA para entender y la fuente y tus cuentas para decidir.",
+      "ejemplo": "Al 7 %, el dinero se duplica en 10,3 años, no en 7."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "ia7",
+      "title": "Estafas con IA",
+      "ex": [
+        {
+          "id": "ia7-1",
+          "t": "choice",
+          "q": "Ves un vídeo de un famoso recomendando una plataforma que «multiplica tu dinero con IA». ¿Qué es lo más probable?",
+          "opts": [
+            "Un vídeo falso hecho con IA para captar víctimas",
+            "Una recomendación real que le han pagado",
+            "Una oportunidad limitada que hay que aprovechar",
+            "Un anuncio aprobado por la CNMV"
+          ],
+          "a": 0,
+          "why": "Con IA es fácil falsificar la cara y la voz de un famoso. Estos anuncios llevan a plataformas fraudulentas que piden un primer pago y luego más.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Los famosos rara vez anuncian plataformas así; lo habitual es que sea falso.",
+            "La urgencia es una técnica de presión.",
+            "La CNMV no aprueba anuncios de este tipo."
+          ]
+        },
+        {
+          "id": "ia7-2",
+          "t": "choice",
+          "q": "Recibes un audio con la voz de tu hermano pidiendo 800 € urgentes por Bizum. ¿Qué haces?",
+          "opts": [
+            "Llamarle a su número de siempre antes de pagar",
+            "Pagar: es su voz, no hay duda",
+            "Pagar solo la mitad por si acaso",
+            "Responder al audio pidiendo más datos"
+          ],
+          "a": 0,
+          "why": "Con unos segundos de grabación se puede clonar una voz. Comprueba por un canal que tú controlas antes de enviar nada.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "Una voz se puede clonar con unos segundos de audio.",
+            "Pagar la mitad sigue siendo pagar a un estafador.",
+            "Responder al mismo canal no comprueba nada."
+          ]
+        },
+        {
+          "id": "ia7-3",
+          "t": "num",
+          "q": "Un «bot de trading con IA» promete un 2 % diario. Con interés compuesto, ¿cuántas veces se multiplicaría el capital en 30 días? Redondea a 1 decimal.",
+          "unit": "veces",
+          "a": 1.8,
+          "why": "1,02 elevado a 30 = 1,8 veces en un mes. Ninguna estrategia real garantiza algo así: es la firma de un fraude.",
+          "tol": 0.06,
+          "guia": "g1"
+        },
+        {
+          "id": "ia7-4",
+          "t": "choice",
+          "q": "Una web ofrece un «asesor con IA» que gestiona tu dinero si le transfieres fondos. ¿Qué compruebas?",
+          "opts": [
+            "Que esté autorizada en la CNMV para gestionar",
+            "Que el chat responda de forma amable",
+            "Que la web hable de inteligencia artificial",
+            "Que tenga testimonios con fotos"
+          ],
+          "a": 0,
+          "why": "Gestionar dinero de otros exige autorización. «IA» en la publicidad no dice nada: compruébalo en los registros de la CNMV.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "La amabilidad del chat no dice nada de su autorización.",
+            "Mencionar la IA es un reclamo, no una garantía.",
+            "Los testimonios se pueden inventar."
+          ]
+        },
+        {
+          "id": "ia7-5",
+          "t": "match",
+          "q": "Empareja cada señal de una estafa con IA con por qué es peligrosa.",
+          "pairs": [
+            [
+              "Rentabilidad diaria fija",
+              "Ninguna estrategia real la garantiza"
+            ],
+            [
+              "Urgencia para pagar",
+              "Busca que no lo compruebes"
+            ],
+            [
+              "Famoso que lo anuncia",
+              "Puede ser un vídeo falso"
+            ],
+            [
+              "Pago por Bizum o cripto",
+              "Difícil de recuperar si es fraude"
+            ]
+          ],
+          "why": "La IA hace las estafas más convincentes, pero las señales son las de siempre: promesas imposibles, prisa y pagos difíciles de revertir.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "ia8",
+      "title": "Usarla con cabeza",
+      "ex": [
+        {
+          "id": "ia8-1",
+          "t": "choice",
+          "q": "¿Qué diferencia a un asesor financiero autorizado de un chat de IA genérico?",
+          "opts": [
+            "Responde legalmente de su consejo y te conoce",
+            "Siempre acierta qué acciones van a subir",
+            "Cobra menos que cualquier aplicación",
+            "No necesita conocer tu situación"
+          ],
+          "a": 0,
+          "why": "El asesor autorizado tiene obligaciones: conocer tu perfil y recomendar lo adecuado. Un chat genérico no asume ninguna responsabilidad.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Nadie acierta siempre qué acciones subirán.",
+            "El precio no es lo que los diferencia.",
+            "Es al revés: el asesor debe conocer tu situación."
+          ]
+        },
+        {
+          "id": "ia8-2",
+          "t": "num",
+          "q": "Pagas 20 € al mes por un asistente de IA que usas solo para tus finanzas. ¿Cuántos euros al año?",
+          "unit": "€",
+          "a": 240,
+          "why": "20 € × 12 = 240 € al año. Compáralo con lo que te aporta: si te ahorra suscripciones o comisiones, compensa; si no, es otro gasto fijo.",
+          "guia": "g4"
+        },
+        {
+          "id": "ia8-3",
+          "t": "choice",
+          "q": "La IA y la web de la Agencia Tributaria dicen cosas distintas sobre un impuesto. ¿A quién haces caso?",
+          "opts": [
+            "A la fuente oficial, y consultas si dudas",
+            "A la IA, porque responde más rápido",
+            "A la que dé la respuesta más favorable",
+            "A la que use un lenguaje más sencillo"
+          ],
+          "a": 0,
+          "why": "La fuente oficial manda. Si no entiendes la norma, pide a la IA que te la explique, pero sin sustituirla.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "La rapidez no la hace correcta.",
+            "Elegir la respuesta que más te conviene no la hace cierta.",
+            "Un lenguaje sencillo no la hace más fiable."
+          ]
+        },
+        {
+          "id": "ia8-4",
+          "t": "num",
+          "q": "La IA dice que al 7 % anual tu dinero se duplica en 7 años. Con la regla del 72, ¿cuántos años son? Redondea a 1 decimal.",
+          "unit": "años",
+          "a": 10.3,
+          "why": "72 ÷ 7 = 10,3 años. Confundió el tipo con los años. Comprobarlo con la regla del 72 lleva unos segundos.",
+          "tol": 0.06,
+          "guia": "g4"
+        },
+        {
+          "id": "ia8-5",
+          "t": "order",
+          "q": "Ordena cómo usar la IA para entender un producto financiero antes de contratarlo.",
+          "items": [
+            "Pedir que te explique cómo funciona",
+            "Pedir sus costes y riesgos principales",
+            "Comprobarlo en el documento oficial del producto",
+            "Hacer tus propias cuentas",
+            "Decidir y anotar por qué"
+          ],
+          "why": "La IA acelera la comprensión; el documento oficial y tus cuentas son los que mandan. Anotar el motivo te ayuda a revisarlo después.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

@@ -1,0 +1,197 @@
+{
+  "n": 9,
+  "id": "iapresu",
+  "track": "personal",
+  "title": "Tu presupuesto con IA",
+  "blurb": "Revisar gastos, encontrar ahorro y automatizar avisos sin exponer tus datos.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Qué darle y qué no",
+      "texto": "Para ayudarte con el presupuesto le bastan cifras y categorías. Nunca claves, número de cuenta completo ni documentos de identidad.",
+      "ejemplo": "Gastos por categoría: sí. IBAN y DNI: nunca."
+    },
+    {
+      "id": "g2",
+      "titulo": "Encontrar ahorro",
+      "texto": "Revisar tus movimientos con IA destapa suscripciones olvidadas y gastos que se repiten. Cada uno, invertido, se convierte en aportación.",
+      "ejemplo": "4 suscripciones de 9,99 €: 479,52 € al año."
+    },
+    {
+      "id": "g3",
+      "titulo": "Planes que se cumplen",
+      "texto": "Las reglas generales, como 50/30/20, son un punto de partida. Pide a la IA que las ajuste a tus gastos reales y sube el ahorro poco a poco.",
+      "ejemplo": "2.200 € netos: 440 € de ahorro con la regla del 20 %."
+    },
+    {
+      "id": "g4",
+      "titulo": "Apps y avisos",
+      "texto": "Las apps que se conectan a tu banco deben estar autorizadas y, mejor, solo poder leer. Los avisos sobre subidas o gastos raros te ayudan a reaccionar a tiempo.",
+      "ejemplo": "Luz de 60 € a 78 €: un 30 % más. Aviso a partir de 480 € en el supermercado."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "ia3",
+      "title": "Ordenar tus gastos",
+      "ex": [
+        {
+          "id": "ia3-1",
+          "t": "choice",
+          "q": "¿Qué datos no deberías darle nunca a un asistente de IA?",
+          "opts": [
+            "Tus claves, el IBAN completo y tu DNI",
+            "Tus gastos por categorías, en euros",
+            "Tus ingresos mensuales aproximados",
+            "El plazo de tus objetivos de ahorro"
+          ],
+          "a": 0,
+          "why": "Para ayudarte con un presupuesto le bastan cifras y categorías. Claves, números de cuenta o documentos de identidad no aportan nada y son lo que buscan los ladrones.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Los gastos por categoría son justo lo que necesita para ayudarte.",
+            "Unos ingresos aproximados no te identifican.",
+            "El plazo de tus objetivos es información útil y no sensible."
+          ]
+        },
+        {
+          "id": "ia3-2",
+          "t": "num",
+          "q": "La IA revisa tus gastos y encuentra 4 suscripciones de 9,99 € al mes que no usas. ¿Cuántos euros ahorras al año si las cancelas? Redondea a 2 decimales.",
+          "unit": "€",
+          "a": 479.52,
+          "why": "4 × 9,99 × 12 = 479,52 € al año. Es uno de los usos más rentables: revisar movimientos y encontrar lo que se paga por inercia.",
+          "tol": 0.006,
+          "guia": "g2"
+        },
+        {
+          "id": "ia3-3",
+          "t": "num",
+          "q": "La IA te propone la regla 50/30/20 para un sueldo de 2.200 € netos. ¿Cuántos euros van a ahorro?",
+          "unit": "€",
+          "a": 440,
+          "why": "2.200 € × 20 % = 440 €. Las reglas generales son un punto de partida: ajústalas a tu situación real.",
+          "guia": "g2"
+        },
+        {
+          "id": "ia3-4",
+          "t": "choice",
+          "q": "Le pides un presupuesto y te propone ahorrar el 40 % de tu sueldo, cuando ahora ahorras un 5 %. ¿Qué haces?",
+          "opts": [
+            "Ajustarlo a algo que puedas cumplir, como un 10 %",
+            "Aplicarlo tal cual desde el mes que viene",
+            "Descartar la IA para siempre por el error",
+            "Pedir un préstamo para poder cumplirlo"
+          ],
+          "a": 0,
+          "why": "Un plan que no puedes cumplir se abandona en dos meses. Pídele que lo ajuste a tus gastos reales y sube el ahorro poco a poco.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Pasar del 5 % al 40 % de golpe es un plan que se abandona enseguida.",
+            "Un plan poco realista no invalida la herramienta: pide que lo ajuste.",
+            "Endeudarse para ahorrar no tiene ningún sentido."
+          ]
+        },
+        {
+          "id": "ia3-5",
+          "t": "num",
+          "q": "La IA calcula que gastas 85 € al mes en comida a domicilio. Si lo reduces a la mitad e inviertes la diferencia, ¿cuántos euros aportas al año?",
+          "unit": "€",
+          "a": 510,
+          "why": "85 ÷ 2 = 42,50 € al mes, y 42,50 × 12 = 510 € al año. Pequeños cambios detectados con datos se convierten en aportaciones constantes.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "ia4",
+      "title": "Automatizar y vigilar",
+      "ex": [
+        {
+          "id": "ia4-1",
+          "t": "choice",
+          "q": "Una app con IA quiere acceso a tu cuenta bancaria para clasificar tus gastos. ¿Qué compruebas?",
+          "opts": [
+            "Que esté autorizada y solo pueda leer datos",
+            "Que tenga muchas descargas en la tienda",
+            "Que el diseño de la app sea moderno",
+            "Que prometa hacerte ganar dinero"
+          ],
+          "a": 0,
+          "why": "Las apps que se conectan a tu banco deben estar autorizadas para ello. Lo prudente es que solo puedan consultar, nunca mover dinero.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Las descargas no dicen nada de si está autorizada.",
+            "El diseño no protege tus datos.",
+            "Prometer ganancias es una señal de alarma, no de calidad."
+          ]
+        },
+        {
+          "id": "ia4-2",
+          "t": "num",
+          "q": "La IA te avisa de que tu factura de la luz ha pasado de 60 € a 78 €. ¿Cuánto ha subido?",
+          "unit": "%",
+          "a": 30,
+          "why": "78 ÷ 60 − 1 = 30 %. Las alertas sobre subidas te ayudan a revisar contratos a tiempo.",
+          "guia": "g4"
+        },
+        {
+          "id": "ia4-3",
+          "t": "choice",
+          "q": "La IA te sugiere pasar 3.000 € de la cuenta corriente a una cuenta remunerada al 2 %. ¿Qué compruebas antes?",
+          "opts": [
+            "La TAE real, las condiciones y la garantía de depósitos",
+            "Solo que la IA lo haya sugerido con seguridad",
+            "Que el banco tenga muchos anuncios",
+            "Que el 2 % sea mensual y no anual"
+          ],
+          "a": 0,
+          "why": "La sugerencia puede ser buena, pero las condiciones cambian: comprueba la TAE, los requisitos y que la entidad esté cubierta por el fondo de garantía.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "La seguridad del tono no sustituye a comprobar las condiciones.",
+            "Los anuncios no dicen nada de las condiciones.",
+            "Un 2 % mensual sería imposible: las cuentas dan la TAE anual."
+          ]
+        },
+        {
+          "id": "ia4-4",
+          "t": "num",
+          "q": "Esos 3.000 € al 2 % TAE, ¿cuántos euros generan en un año?",
+          "unit": "€",
+          "a": 60,
+          "why": "3.000 € × 2 % = 60 € al año, antes de impuestos. Dinero que, parado en la cuenta corriente, no daba nada.",
+          "guia": "g4"
+        },
+        {
+          "id": "ia4-5",
+          "t": "slide",
+          "q": "Quieres que la IA te avise cuando un gasto supere tu media en más de un 20 %. Tu media en supermercado es de 400 €. Mueve el umbral del aviso.",
+          "label": "Umbral del aviso",
+          "min": 400,
+          "max": 600,
+          "step": 10,
+          "start": 420,
+          "a": 480,
+          "unit": "€",
+          "why": "400 € × 1,20 = 480 €. Un aviso bien calibrado detecta lo raro sin molestarte cada semana.",
+          "show": [
+            {
+              "label": "Por encima de la media",
+              "k": 0.25,
+              "b": -100,
+              "unit": "%"
+            }
+          ],
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}
