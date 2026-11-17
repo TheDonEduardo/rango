@@ -1,0 +1,166 @@
+{
+  "n": 4,
+  "id": "eficiencia",
+  "track": "fundamental",
+  "title": "Eficiencia y capital circulante",
+  "blurb": "Rotación, ciclo de caja y de dónde sale de verdad la rentabilidad.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Rotación",
+      "texto": "Las ventas entre los activos dicen cuántas ventas genera cada euro invertido en el negocio. Un supermercado rota mucho; una eléctrica, poco.",
+      "ejemplo": "900 M€ de ventas con 600 M€ de activos: 1,5 veces."
+    },
+    {
+      "id": "g2",
+      "titulo": "El ciclo de caja",
+      "texto": "Días de cobro más días de inventario menos días de pago: el tiempo que el dinero pasa atrapado en el negocio. Cuanto más corto, menos dinero necesita para crecer.",
+      "ejemplo": "60,8 + 81,1 − 60,8 = 81,1 días."
+    },
+    {
+      "id": "g3",
+      "titulo": "Descomponer el ROE",
+      "texto": "El ROE es margen por rotación por apalancamiento. Descomponerlo dice si la rentabilidad sale del negocio o de la deuda.",
+      "ejemplo": "10 % × 1,5 × 2 = 30 %. Con apalancamiento de 1,2, solo un 18 %."
+    },
+    {
+      "id": "g4",
+      "titulo": "Calidad de la rentabilidad",
+      "texto": "Con el mismo ROE, mejor la empresa que menos deuda necesita. Y con márgenes pequeños, la rotación lo es todo.",
+      "ejemplo": "Margen del 3 % y rotación de 3: un 9 % sobre los activos."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "fw1",
+      "title": "Rotación y ciclo de caja",
+      "ex": [
+        {
+          "id": "fw1-1",
+          "t": "num",
+          "q": "Una empresa vende 900 M€ al año con 600 M€ de activos. ¿Cuál es su rotación de activos? Redondea a 1 decimal.",
+          "unit": "veces",
+          "a": 1.5,
+          "why": "900 ÷ 600 = 1,5 veces. Cada euro de activos genera 1,50 € de ventas al año.",
+          "tol": 0.06,
+          "guia": "g1"
+        },
+        {
+          "id": "fw1-2",
+          "t": "num",
+          "q": "Tiene 150 M€ pendientes de cobro con unas ventas de 900 M€. ¿Cuántos días tarda en cobrar? Usa 365 días y redondea a 1 decimal.",
+          "unit": "días",
+          "a": 60.8,
+          "why": "150 ÷ 900 × 365 = 60,8 días. Si este número crece año tras año, la empresa está financiando a sus clientes.",
+          "tol": 0.06,
+          "guia": "g2"
+        },
+        {
+          "id": "fw1-3",
+          "t": "num",
+          "q": "Tiene 120 M€ en inventario y su coste de ventas es de 540 M€. ¿Cuántos días de inventario tiene? Redondea a 1 decimal.",
+          "unit": "días",
+          "a": 81.1,
+          "why": "120 ÷ 540 × 365 = 81,1 días. Es lo que tarda, de media, en vender lo que tiene en el almacén.",
+          "tol": 0.06,
+          "guia": "g2"
+        },
+        {
+          "id": "fw1-4",
+          "t": "num",
+          "q": "Debe 90 M€ a sus proveedores con un coste de ventas de 540 M€. ¿Cuántos días tarda en pagarles? Redondea a 1 decimal.",
+          "unit": "días",
+          "a": 60.8,
+          "why": "90 ÷ 540 × 365 = 60,8 días. Pagar más tarde es una forma de financiarse con los proveedores.",
+          "tol": 0.06,
+          "guia": "g2"
+        },
+        {
+          "id": "fw1-5",
+          "t": "num",
+          "q": "Con 60,8 días de cobro, 81,1 de inventario y 60,8 de pago, ¿cuántos días dura su ciclo de caja? Redondea a 1 decimal.",
+          "unit": "días",
+          "a": 81.1,
+          "why": "60,8 + 81,1 − 60,8 = 81,1 días. Es el tiempo que el dinero pasa atrapado en el negocio antes de volver como caja.",
+          "tol": 0.06,
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "fw2",
+      "title": "De dónde sale la rentabilidad",
+      "ex": [
+        {
+          "id": "fw2-1",
+          "t": "choice",
+          "q": "Una empresa reduce su ciclo de caja de 80 a 50 días. ¿Qué significa?",
+          "opts": [
+            "Necesita menos dinero para crecer",
+            "Vende bastante menos que el año anterior",
+            "Tiene más deuda financiera que antes",
+            "Paga más impuestos sobre su beneficio"
+          ],
+          "a": 0,
+          "why": "Cuanto más corto es el ciclo de caja, menos dinero queda atrapado en cobros e inventario. Esa caja puede ir a crecer, a dividendos o a recompras.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "El ciclo de caja no mide las ventas.",
+            "Reducir el ciclo no implica más deuda.",
+            "No tiene relación directa con los impuestos."
+          ]
+        },
+        {
+          "id": "fw2-2",
+          "t": "num",
+          "q": "La rentabilidad sobre fondos propios se descompone en margen × rotación × apalancamiento. Con un margen del 10 %, una rotación de 1,5 y un apalancamiento de 2, ¿cuál es el ROE?",
+          "unit": "%",
+          "a": 30,
+          "why": "10 % × 1,5 × 2 = 30 %. Descomponerlo dice de dónde sale la rentabilidad: del negocio o de la deuda.",
+          "guia": "g3"
+        },
+        {
+          "id": "fw2-3",
+          "t": "num",
+          "q": "Con el mismo margen del 10 % y la rotación de 1,5, si el apalancamiento baja a 1,2, ¿cuál sería el ROE?",
+          "unit": "%",
+          "a": 18,
+          "why": "10 % × 1,5 × 1,2 = 18 %. Casi la mitad del ROE anterior venía de la deuda, no del negocio.",
+          "guia": "g3"
+        },
+        {
+          "id": "fw2-4",
+          "t": "choice",
+          "q": "Dos empresas tienen un ROE del 20 %: A con un apalancamiento de 1,2 y B con uno de 4. ¿Cuál es de más calidad?",
+          "opts": [
+            "A: su rentabilidad depende menos de la deuda",
+            "B: más deuda siempre significa mejor empresa",
+            "Son iguales porque tienen el mismo ROE",
+            "B, porque su balance es más grande"
+          ],
+          "a": 0,
+          "why": "A gana lo mismo con mucha menos deuda: su negocio es más rentable por sí mismo. B obtiene su ROE endeudándose, y eso aumenta el riesgo en una crisis.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Más deuda significa más riesgo, no más calidad.",
+            "El mismo ROE puede esconder riesgos muy distintos.",
+            "El tamaño del balance no dice nada de la calidad."
+          ]
+        },
+        {
+          "id": "fw2-5",
+          "t": "num",
+          "q": "Un supermercado tiene un margen del 3 % y una rotación de activos de 3. ¿Qué rentabilidad obtiene sobre sus activos?",
+          "unit": "%",
+          "a": 9,
+          "why": "3 % × 3 = 9 %. Con márgenes pequeños, la eficiencia lo es todo: el supermercado gana por volumen, no por precio.",
+          "guia": "g3"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

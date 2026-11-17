@@ -1,0 +1,190 @@
+{
+  "n": 5,
+  "id": "facturas",
+  "track": "personal",
+  "title": "Recortar facturas y plazos",
+  "blurb": "Gastos fijos, seguros y compras a plazos: lo que se paga de más sin darse cuenta.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Revisar lo fijo",
+      "texto": "Móvil, luz, seguros y suscripciones se pagan por inercia. Compararlos una vez al año es de lo que más ahorra con menos esfuerzo.",
+      "ejemplo": "Móvil de 55 € a 30 €: 300 € al año."
+    },
+    {
+      "id": "g2",
+      "titulo": "Negociar seguros",
+      "texto": "Antes de la renovación, busca ofertas con las mismas coberturas y negocia con ellas. Muchas compañías igualan para no perderte.",
+      "ejemplo": "Seguro de 480 € frente a uno de 390 €: un 18,8 % menos."
+    },
+    {
+      "id": "g3",
+      "titulo": "Pequeños ahorros, grandes cifras",
+      "texto": "Lo que dejas de pagar cada año, invertido, crece con el interés compuesto.",
+      "ejemplo": "390 € al año al 6 % durante 20 años: unos 14.300 €."
+    },
+    {
+      "id": "g4",
+      "titulo": "Pagos a plazos",
+      "texto": "«Sin intereses» no siempre es gratis: mira comisiones y recargos. Suma todas las cuotas: varias pequeñas son un gasto fijo grande.",
+      "ejemplo": "600 € en 12 cuotas de 55 €: 60 € más. Cuatro cuotas de 40 €: 160 € al mes."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "fx1",
+      "title": "Gastos fijos",
+      "ex": [
+        {
+          "id": "fx1-1",
+          "t": "num",
+          "q": "Pagas 55 € al mes de móvil y otra compañía ofrece lo mismo por 30 €. ¿Cuántos euros ahorras al año si cambias?",
+          "unit": "€",
+          "a": 300,
+          "why": "(55 − 30) × 12 = 300 € al año, por una gestión de diez minutos. Las tarifas antiguas suelen ser las más caras.",
+          "guia": "g1"
+        },
+        {
+          "id": "fx1-2",
+          "t": "num",
+          "q": "Tu seguro de coche cuesta 480 € y encuentras uno con las mismas coberturas por 390 €. ¿Qué porcentaje ahorras? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 18.8,
+          "why": "(480 − 390) ÷ 480 = 18,75 %, un 18,8 %. Las aseguradoras suben la prima a los clientes que no comparan.",
+          "tol": 0.06,
+          "guia": "g2"
+        },
+        {
+          "id": "fx1-3",
+          "t": "choice",
+          "q": "¿Cuándo es buen momento para renegociar un seguro?",
+          "opts": [
+            "Antes de la renovación, con otras ofertas en la mano",
+            "El día después de que te lo hayan renovado",
+            "Nunca: el precio de un seguro no se negocia",
+            "Solo si has tenido un accidente ese año"
+          ],
+          "a": 0,
+          "why": "Un mes antes de la renovación puedes cambiar sin penalización y tienes con qué negociar. Muchas compañías igualan la oferta si se la enseñas.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "Una vez renovado, cambiar puede costar penalizaciones.",
+            "Se negocia: muchas compañías bajan el precio para no perderte.",
+            "Con un accidente reciente tendrás menos margen, no más."
+          ]
+        },
+        {
+          "id": "fx1-4",
+          "t": "num",
+          "q": "Ahorras 390 € al año entre el móvil y el seguro y los inviertes al 6 % durante 20 años. ¿Cuántos miles de euros tendrías? Redondea a 1 decimal.",
+          "unit": "mil €",
+          "a": 14.3,
+          "why": "390 × (1,06 elevado a 20 − 1) ÷ 0,06 = 14.346 €. Los ahorros pequeños y repetidos, invertidos, se convierten en cantidades serias.",
+          "tol": 0.06,
+          "guia": "g3"
+        },
+        {
+          "id": "fx1-5",
+          "t": "match",
+          "q": "Empareja cada gasto con la forma de controlarlo.",
+          "pairs": [
+            [
+              "Compra impulsiva",
+              "Esperar 48 horas antes de pagar"
+            ],
+            [
+              "Suscripción olvidada",
+              "Revisar los cargos cada tres meses"
+            ],
+            [
+              "Tarifa antigua",
+              "Comparar ofertas cada año"
+            ],
+            [
+              "Garantía extendida",
+              "Rara vez compensa su precio"
+            ]
+          ],
+          "why": "No hace falta vivir peor: basta con revisar de vez en cuando lo que pagas por inercia.",
+          "guia": "g1"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "fx2",
+      "title": "Pagar a plazos",
+      "ex": [
+        {
+          "id": "fx2-1",
+          "t": "choice",
+          "q": "Una tienda ofrece «paga en 3 plazos sin intereses». ¿Qué compruebas?",
+          "opts": [
+            "Comisiones, recargos por retraso y si lo necesitas",
+            "Solo que no haya intereses en el anuncio",
+            "Que el plazo sea lo más largo posible",
+            "Que la tienda tenga buenas opiniones"
+          ],
+          "a": 0,
+          "why": "«Sin intereses» no siempre es gratis: puede haber comisiones de gestión o recargos si te retrasas. Y facilita comprar lo que no habrías comprado al contado.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Que no haya intereses no significa que no haya otros costes.",
+            "Un plazo largo alarga el compromiso, no lo abarata.",
+            "Las opiniones no dicen nada de las condiciones de financiación."
+          ]
+        },
+        {
+          "id": "fx2-2",
+          "t": "num",
+          "q": "Pagas algo de 600 € en 12 cuotas de 55 €. ¿Cuántos euros pagas de más?",
+          "unit": "€",
+          "a": 60,
+          "why": "55 × 12 = 660 €: 60 € más que al contado.",
+          "guia": "g4"
+        },
+        {
+          "id": "fx2-3",
+          "t": "num",
+          "q": "Esos 60 € de más sobre un precio de 600 €, ¿qué porcentaje suponen?",
+          "unit": "%",
+          "a": 10,
+          "why": "60 ÷ 600 = 10 % en un año. Y como devuelves el dinero poco a poco, el coste real equivale a un interés anual bastante mayor.",
+          "guia": "g4"
+        },
+        {
+          "id": "fx2-4",
+          "t": "choice",
+          "q": "Tienes 4 compras a plazos de 40 € al mes cada una. ¿Qué riesgo corres?",
+          "opts": [
+            "Que sumen 160 € fijos al mes sin notarlo",
+            "Ninguno: cada cuota por separado es pequeña",
+            "Que el banco te cobre por cada una de ellas",
+            "Que te bajen el límite de la cuenta corriente"
+          ],
+          "a": 0,
+          "why": "Cada cuota parece pequeña, pero juntas son un gasto fijo importante que reduce tu margen cada mes. Súmalas como si fueran una sola deuda.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Juntas suman 160 € fijos al mes: no es poco.",
+            "El problema no es lo que cobra el banco, sino lo que suman.",
+            "El riesgo es para tu presupuesto, no para el límite de la cuenta."
+          ]
+        },
+        {
+          "id": "fx2-5",
+          "t": "num",
+          "q": "Un retraso en una cuota de 50 € tiene un recargo de 15 €. ¿Qué porcentaje de la cuota es el recargo?",
+          "unit": "%",
+          "a": 30,
+          "why": "15 ÷ 50 = 30 %. Los recargos por retraso convierten una financiación «gratis» en una de las más caras.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

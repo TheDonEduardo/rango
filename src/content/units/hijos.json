@@ -1,0 +1,199 @@
+{
+  "n": 14,
+  "id": "hijos",
+  "track": "pasiva",
+  "title": "Invertir para los hijos",
+  "blurb": "Ahorrar para su futuro desde que nacen y enseñarles a manejar el dinero.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Empezar pronto",
+      "texto": "Con 18 años por delante, el interés compuesto hace gran parte del trabajo. Empezar tarde obliga a aportar mucho más cada mes.",
+      "ejemplo": "100 € al mes al 5 % desde que nacen: unos 34.500 €, de los que 12.900 € son rendimientos."
+    },
+    {
+      "id": "g2",
+      "titulo": "A tu nombre y con plazo",
+      "texto": "A tu nombre decides tú cuándo usarlo; a nombre del menor, será suyo a los 18. Como en cualquier objetivo con fecha, reduce el riesgo al acercarte.",
+      "ejemplo": "Más acciones al principio y más renta fija y liquidez en los últimos años."
+    },
+    {
+      "id": "g3",
+      "titulo": "Enseñar con práctica",
+      "texto": "Una paga con un porcentaje de ahorro y una inversión pequeña que revisáis juntos enseñan más que cualquier explicación.",
+      "ejemplo": "20 € a la semana con un 25 % de ahorro: 260 € al año."
+    },
+    {
+      "id": "g4",
+      "titulo": "El mejor regalo",
+      "texto": "El hábito de ahorrar y entender el interés compuesto vale más que una cifra. Muéstrale cómo crece su dinero con el tiempo.",
+      "ejemplo": "260 € al año al 6 % durante 10 años: unos 3.400 €."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "ph1",
+      "title": "Ahorrar para ellos",
+      "ex": [
+        {
+          "id": "ph1-1",
+          "t": "num",
+          "q": "Ahorras 100 € al mes desde que tu hijo nace hasta que cumple 18. ¿Cuántos miles de euros aportas? Redondea a 1 decimal.",
+          "unit": "mil €",
+          "a": 21.6,
+          "why": "100 € × 12 × 18 = 21.600 €. Es lo que pones tú; lo que valga al final depende de dónde lo inviertas.",
+          "tol": 0.06,
+          "guia": "g1"
+        },
+        {
+          "id": "ph1-2",
+          "t": "num",
+          "q": "Invertidos al 5 % anual, esos 100 € al mes durante 18 años llegan a unos 34.500 €. ¿Cuántos miles de euros son rendimientos? Redondea a 1 decimal.",
+          "unit": "mil €",
+          "a": 12.9,
+          "why": "34.500 − 21.600 = 12.900 €. Empezar al nacer da tiempo al interés compuesto: los rendimientos suman más de la mitad de lo aportado.",
+          "tol": 0.06,
+          "guia": "g1"
+        },
+        {
+          "id": "ph1-3",
+          "t": "choice",
+          "q": "¿A nombre de quién conviene guardar el ahorro para un hijo?",
+          "opts": [
+            "A tu nombre: sigues decidiendo cuándo y cómo usarlo",
+            "A nombre del hijo, que podrá gastarlo a los 18",
+            "En una cuenta sin titular, para que nadie lo toque",
+            "En efectivo en casa, para tenerlo a mano"
+          ],
+          "a": 0,
+          "why": "Lo que está a nombre del menor pasa a ser suyo y lo controla al cumplir 18. A tu nombre, decides tú cuándo usarlo, por ejemplo, para su formación.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "A nombre del menor, el dinero será suyo y lo controlará a los 18.",
+            "No existen cuentas sin titular.",
+            "El efectivo en casa pierde frente a la inflación y puede perderse."
+          ]
+        },
+        {
+          "id": "ph1-4",
+          "t": "choice",
+          "q": "Con 18 años de plazo para pagar la universidad, ¿qué reparto encaja mejor?",
+          "opts": [
+            "Más acciones al principio y menos al acercarse",
+            "Todo en depósitos desde el primer día",
+            "Todo en una sola acción tecnológica",
+            "Todo en bolsa hasta el último día"
+          ],
+          "a": 0,
+          "why": "Al principio hay tiempo para recuperarse de las caídas. A medida que se acerca la fecha, se pasa a activos que no puedan caer justo cuando necesitas el dinero.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "Todo en depósitos pierde frente a la inflación durante 18 años.",
+            "Una sola acción concentra todo el riesgo.",
+            "Todo en bolsa hasta el final arriesga una caída justo al necesitarlo."
+          ]
+        },
+        {
+          "id": "ph1-5",
+          "t": "num",
+          "q": "Empiezas tarde: quieres reunir 20.000 € en 8 años sin contar rentabilidad. ¿Cuántos euros al mes ahorras? Redondea a 1 decimal.",
+          "unit": "€",
+          "a": 208.3,
+          "why": "20.000 ÷ 96 meses = 208,3 € al mes, el doble que empezando al nacer. El tiempo es el ingrediente más barato.",
+          "tol": 0.06,
+          "guia": "g1"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "ph2",
+      "title": "Enseñarles",
+      "ex": [
+        {
+          "id": "ph2-1",
+          "t": "choice",
+          "q": "¿Cuál es una buena forma de enseñar a invertir a un adolescente?",
+          "opts": [
+            "Invertir juntos una cantidad pequeña y revisarla",
+            "Darle acceso a operar con apalancamiento",
+            "Prohibirle hablar de dinero hasta los 18",
+            "Comprarle la acción que esté de moda"
+          ],
+          "a": 0,
+          "why": "Con poco dinero y acompañado, puede ver caídas y subidas sin que duela. Lo que aprenda sobre paciencia vale más que la cantidad.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "El apalancamiento convierte cualquier error en una pérdida grande.",
+            "Prohibir el tema solo retrasa el aprendizaje.",
+            "Comprar lo que está de moda enseña a perseguir subidas."
+          ]
+        },
+        {
+          "id": "ph2-2",
+          "t": "num",
+          "q": "Le das 20 € de paga a la semana y ahorra el 25 %. ¿Cuántos euros ahorra al año?",
+          "unit": "€",
+          "a": 260,
+          "why": "20 × 25 % × 52 semanas = 260 € al año. El porcentaje importa más que la cantidad: es el hábito de pagarse primero.",
+          "guia": "g3"
+        },
+        {
+          "id": "ph2-3",
+          "t": "num",
+          "q": "Si invierte esos 260 € al final de cada año durante 10 años al 6 %, ¿cuántos miles de euros tendrá? Redondea a 1 decimal.",
+          "unit": "mil €",
+          "a": 3.4,
+          "why": "260 × (1,06 elevado a 10 − 1) ÷ 0,06 = 3.427 €, unos 3,4 mil, de los que aportó 2.600 €. Ver crecer su propio dinero enseña más que cualquier explicación.",
+          "tol": 0.06,
+          "guia": "g4"
+        },
+        {
+          "id": "ph2-4",
+          "t": "choice",
+          "q": "¿Qué es lo más valioso que puedes dejarle en lo económico?",
+          "opts": [
+            "El hábito de ahorrar y saber manejarlo",
+            "Una cifra grande sin saber manejarla",
+            "Una lista de acciones para comprar",
+            "Una tarjeta de crédito sin límite"
+          ],
+          "a": 0,
+          "why": "Sin hábitos, una cantidad grande se gasta pronto. Con ellos, cualquier cantidad crece.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Sin hábitos, una cifra grande se gasta pronto.",
+            "Una lista de acciones se queda vieja enseguida.",
+            "Una tarjeta sin límite enseña a endeudarse."
+          ]
+        },
+        {
+          "id": "ph2-5",
+          "t": "slide",
+          "q": "Quieres 15.000 € en 10 años y la cartera rinde un 5 % anual. Mueve la aportación mensual hasta llegar al objetivo.",
+          "label": "Aportación mensual",
+          "min": 0,
+          "max": 200,
+          "step": 10,
+          "start": 30,
+          "a": 100,
+          "unit": "€",
+          "why": "Cada euro al mes durante 10 años al 5 % se convierte en unos 154 €. Con 100 € al mes llegas a unos 15.400 €; con 90 €, te quedas en 13.900 €.",
+          "show": [
+            {
+              "label": "Valor en 10 años",
+              "k": 154.36,
+              "unit": "€"
+            }
+          ],
+          "guia": "g1"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

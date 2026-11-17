@@ -1,0 +1,187 @@
+{
+  "n": 10,
+  "id": "piramidar",
+  "track": "tecnico",
+  "title": "Añadir a una posición",
+  "blurb": "Piramidar sobre las ganadoras y por qué no se promedia a la baja.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Añadir a lo que funciona",
+      "texto": "Se añade cuando la posición ya gana y la acción confirma, por ejemplo, al superar una nueva base. Nunca para arreglar una que pierde.",
+      "ejemplo": "Compra inicial a 50 €; se añade al romper a 54 €."
+    },
+    {
+      "id": "g2",
+      "titulo": "La pirámide",
+      "texto": "Cada compra adicional es más pequeña que la anterior, para que el precio medio suba poco. Y al añadir, se sube el stop de toda la posición.",
+      "ejemplo": "200 acciones a 50 € y 100 a 54 €: precio medio de 51,33 €."
+    },
+    {
+      "id": "g3",
+      "titulo": "Promediar a la baja",
+      "texto": "Comprar más de lo que cae baja el precio medio pero dobla la apuesta en el peor momento. Si el stop salta, se vende.",
+      "ejemplo": "100 a 40 € y 100 a 32 €: precio medio de 36 €. Si cae a 24 €, pierdes 2.400 €."
+    },
+    {
+      "id": "g4",
+      "titulo": "Índice frente a acción",
+      "texto": "Aportar con regularidad a un índice diversificado no es promediar a la baja una acción: el índice se recupera con la economía; una acción puede no volver nunca.",
+      "ejemplo": "Aportación mensual al índice, sí. Rescatar una acción perdedora, no."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "tp1",
+      "title": "Añadir a las ganadoras",
+      "ex": [
+        {
+          "id": "tp1-1",
+          "t": "choice",
+          "q": "¿Cuándo se añade a una posición según el método de O'Neil y Minervini?",
+          "opts": [
+            "Cuando ya va en ganancias y confirma la tendencia",
+            "Cuando cae y se puede promediar a la baja",
+            "Al día siguiente de entrar, pase lo que pase",
+            "Solo cuando llega a su objetivo final"
+          ],
+          "a": 0,
+          "why": "Se añade a lo que funciona, no a lo que falla. Cada compra nueva llega cuando el mercado te ha dado la razón, por ejemplo, al superar una nueva base o un pivote.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Comprar lo que cae es promediar a la baja, lo contrario.",
+            "Añadir sin que el mercado confirme es solo agrandar la apuesta.",
+            "Al llegar al objetivo se vende, no se compra."
+          ]
+        },
+        {
+          "id": "tp1-2",
+          "t": "num",
+          "q": "Compras 200 acciones a 50 € y después añades 100 a 54 €. ¿Cuál es tu precio medio? Redondea a 2 decimales.",
+          "unit": "€",
+          "a": 51.33,
+          "why": "(200 × 50 + 100 × 54) ÷ 300 = 15.400 ÷ 300 = 51,33 €. Añadir más caro sube el precio medio: por eso la segunda compra es más pequeña.",
+          "tol": 0.006,
+          "guia": "g2"
+        },
+        {
+          "id": "tp1-3",
+          "t": "num",
+          "q": "Tras añadir, subes el stop de toda la posición a 50 €. Con 300 acciones a un precio medio de 51,33 €, ¿cuántos euros arriesgas en total? Redondea a euros.",
+          "unit": "€",
+          "a": 400,
+          "why": "(51,33 − 50) × 300 = 400 €. Subir el stop al añadir mantiene el riesgo bajo control aunque la posición crezca.",
+          "tol": 0.6,
+          "guia": "g2"
+        },
+        {
+          "id": "tp1-4",
+          "t": "choice",
+          "q": "¿Por qué cada compra adicional suele ser más pequeña que la anterior?",
+          "opts": [
+            "Para que el precio medio no suba demasiado",
+            "Porque el bróker limita las órdenes repetidas",
+            "Porque así se paga menos comisión",
+            "Para poder vender todo de una vez"
+          ],
+          "a": 0,
+          "why": "Es la pirámide: la base, la compra más barata, es la mayor. Si las compras crecieran, un retroceso pequeño te dejaría en pérdidas.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "El bróker no limita las órdenes de compra.",
+            "Las comisiones no dependen del tamaño de cada compra.",
+            "El tamaño de cada compra no tiene que ver con cómo vendes."
+          ]
+        },
+        {
+          "id": "tp1-5",
+          "t": "num",
+          "q": "Entraste con 200 acciones y un stop 1,50 € por debajo. Añades 100 acciones a 54 € con su stop en 52,50 €. ¿Cuántos euros de riesgo añade la nueva compra?",
+          "unit": "€",
+          "a": 150,
+          "why": "100 × (54 − 52,50) = 150 €. Cada compra tiene su propio riesgo: súmalo al total antes de añadir.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "tp2",
+      "title": "El error de promediar",
+      "ex": [
+        {
+          "id": "tp2-1",
+          "t": "choice",
+          "q": "Tu acción cae un 8 % desde la compra y toca el stop que habías fijado. ¿Qué haces?",
+          "opts": [
+            "Vender, como decía el plan",
+            "Comprar más para bajar el precio medio",
+            "Quitar el stop y esperar a que se recupere",
+            "Doblar la posición con apalancamiento"
+          ],
+          "a": 0,
+          "why": "El stop existe para este momento. Promediar a la baja aumenta la apuesta justo cuando el mercado te dice que te has equivocado.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Promediar a la baja aumenta la apuesta cuando el mercado te dice que te equivocaste.",
+            "Quitar el stop convierte una pérdida pequeña en una sin límite.",
+            "Apalancarse en una posición perdedora es la forma más rápida de arruinarse."
+          ]
+        },
+        {
+          "id": "tp2-2",
+          "t": "num",
+          "q": "Compras 100 acciones a 40 € y, cuando caen, otras 100 a 32 €. ¿Cuál es tu precio medio?",
+          "unit": "€",
+          "a": 36,
+          "why": "(100 × 40 + 100 × 32) ÷ 200 = 36 €. El precio medio baja, pero ahora tienes el doble de dinero en una acción que está cayendo.",
+          "guia": "g3"
+        },
+        {
+          "id": "tp2-3",
+          "t": "num",
+          "q": "Desde 32 €, ¿cuánto tiene que subir la acción para volver a tu precio medio de 36 €?",
+          "unit": "%",
+          "a": 12.5,
+          "why": "36 ÷ 32 − 1 = 12,5 %. Parece poco, pero la acción viene de caer un 20 % y nada garantiza que se recupere.",
+          "tol": 0.06,
+          "guia": "g3"
+        },
+        {
+          "id": "tp2-4",
+          "t": "num",
+          "q": "Si la acción sigue cayendo hasta 24 €, ¿cuántos miles de euros pierdes con 200 acciones a un precio medio de 36 €? Redondea a 1 decimal.",
+          "unit": "mil €",
+          "a": 2.4,
+          "why": "(36 − 24) × 200 = 2.400 €. Con la posición inicial y el stop habrías perdido mucho menos: promediar convierte un error pequeño en uno grande.",
+          "tol": 0.06,
+          "guia": "g3"
+        },
+        {
+          "id": "tp2-5",
+          "t": "choice",
+          "q": "¿En qué se diferencia aportar cada mes a un fondo indexado de promediar a la baja una acción?",
+          "opts": [
+            "Un índice diversificado; una acción puede hundirse",
+            "No hay ninguna diferencia entre ambas cosas",
+            "Promediar una acción es siempre más seguro",
+            "El fondo indexado nunca baja de precio"
+          ],
+          "a": 0,
+          "why": "Un índice amplio se recupera con la economía; una acción concreta puede no hacerlo nunca. Comprar más en las caídas tiene sentido en lo primero, no en lo segundo.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Sí la hay: un índice diversificado se recupera; una acción puede no hacerlo.",
+            "Es al revés: promediar una acción concentra el riesgo.",
+            "Los fondos indexados también caen, pero se recuperan con el mercado."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}
