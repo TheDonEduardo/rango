@@ -129,8 +129,9 @@ async function auditar(b, url) {
     const p = await b.newPage({viewport: {width: 390, height: 844}, colorScheme: scheme, reducedMotion: 'reduce', bypassCSP: true});
     await p.goto(url);
     await p.evaluate(s => { localStorage.clear(); if (Object.keys(s).length) localStorage.setItem('rango.v1', JSON.stringify(s)); }, st);
-    await p.reload(); await p.waitForSelector('#app *');
-    if (ir) await ir(p);
+    // Esperar al h1 de la pantalla y no a cualquier nodo: la pantalla de carga estática ya ocupa #app y axe la auditaría a ella.
+    await p.reload(); await p.waitForSelector('#app h1');
+    if (ir) { await ir(p); await p.waitForSelector('#app h1'); }
     await p.addScriptTag({content: AXE});
     const r = await p.evaluate(async () => (await axe.run(document, {runOnly: ['wcag2a', 'wcag2aa', 'wcag21aa', 'best-practice']})).violations.map(v => ({id: v.id, help: v.help, ej: v.nodes[0].target.join(' ')})));
     for (const v of r) (resumen[v.id] = resumen[v.id] || {help: v.help, donde: [], ej: v.ej}).donde.push(`${nom} (${scheme})`);
