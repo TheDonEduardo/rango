@@ -1,0 +1,197 @@
+{
+  "n": 17,
+  "id": "documentos",
+  "track": "basico",
+  "title": "Leer el KID y tu extracto",
+  "blurb": "Qué dicen los documentos del fondo y del bróker, y qué mirar en ellos.",
+  "gate": false,
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "El KID",
+      "texto": "El documento de datos fundamentales resume objetivo, riesgo, costes y escenarios en pocas páginas. Te lo tienen que entregar antes de invertir.",
+      "ejemplo": "Indicador de riesgo de 6 sobre 7: puede caer mucho en un mal año."
+    },
+    {
+      "id": "g2",
+      "titulo": "Costes en el KID",
+      "texto": "Suma los costes corrientes, los de operación y los de entrada o salida si los hay. Es la forma de comparar fondos parecidos.",
+      "ejemplo": "0,25 % + 0,05 % sobre 8.000 €: 24 € al año. Un 2 % de entrada sobre 5.000 €: 100 €."
+    },
+    {
+      "id": "g3",
+      "titulo": "Ganancias latentes",
+      "texto": "El extracto muestra lo que vale hoy lo que compraste. Mientras no vendas, la ganancia es latente: no tributa, pero tampoco está asegurada.",
+      "ejemplo": "Compraste por 4.000 € y vale 4.600 €: un 15 % latente."
+    },
+    {
+      "id": "g4",
+      "titulo": "Revisar el extracto",
+      "texto": "Una vez al mes, comprueba comisiones, dividendos y retenciones, y que no haya movimientos que no reconozcas.",
+      "ejemplo": "Dividendo de 120 € con un 19 % de retención: llegan 97,20 €."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "bx1",
+      "title": "El KID del fondo",
+      "ex": [
+        {
+          "id": "bx1-1",
+          "t": "choice",
+          "q": "¿Qué es el KID de un fondo o ETF?",
+          "opts": [
+            "Un documento breve con riesgo, costes y objetivo",
+            "El contrato que firmas con el banco",
+            "La lista de todas las acciones del fondo",
+            "El informe anual de la gestora"
+          ],
+          "a": 0,
+          "why": "Es el documento de datos fundamentales: unas pocas páginas con el objetivo, el riesgo, los costes y escenarios de rentabilidad. Te lo tienen que dar antes de invertir.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "El contrato es otro documento; el KID resume el producto.",
+            "La cartera completa está en los informes periódicos, no en el KID.",
+            "El informe anual es mucho más largo y técnico."
+          ]
+        },
+        {
+          "id": "bx1-2",
+          "t": "choice",
+          "q": "El KID marca un indicador de riesgo de 6 sobre 7. ¿Qué significa?",
+          "opts": [
+            "Riesgo alto: puede tener caídas fuertes",
+            "Riesgo bajo: casi no se mueve",
+            "Una rentabilidad garantizada del 6 %",
+            "Que está entre los 6 mejores fondos"
+          ],
+          "a": 0,
+          "why": "La escala va de 1, muy bajo, a 7, muy alto. Un fondo de acciones suele estar en 4 o más: puede caer bastante en un mal año.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "Un 6 sobre 7 es riesgo alto, no bajo.",
+            "El indicador no promete ninguna rentabilidad.",
+            "No es una clasificación de los mejores fondos."
+          ]
+        },
+        {
+          "id": "bx1-3",
+          "t": "num",
+          "q": "El KID indica unos costes corrientes del 0,25 % y unos costes de operación del 0,05 %. Sobre 8.000 €, ¿cuántos euros al año?",
+          "unit": "€",
+          "a": 24,
+          "why": "8.000 € × (0,25 % + 0,05 %) = 24 € al año. El KID suma todos los costes: es el lugar para compararlos entre fondos.",
+          "guia": "g2"
+        },
+        {
+          "id": "bx1-4",
+          "t": "num",
+          "q": "El fondo cobra un 2 % de comisión de entrada. Si inviertes 5.000 €, ¿cuántos euros pagas?",
+          "unit": "€",
+          "a": 100,
+          "why": "5.000 € × 2 % = 100 €, que se pierden antes de empezar. Muchos fondos no la cobran: búscalo en el KID.",
+          "guia": "g2"
+        },
+        {
+          "id": "bx1-5",
+          "t": "choice",
+          "q": "¿Qué son los escenarios de rentabilidad del KID?",
+          "opts": [
+            "Estimaciones de lo que podría pasar, no promesas",
+            "La rentabilidad garantizada por la gestora",
+            "Lo que ganó el fondo el año pasado",
+            "Solo aparecen en los fondos sin riesgo"
+          ],
+          "a": 0,
+          "why": "Muestran resultados posibles en situaciones buenas, normales y malas. Sirven para hacerse una idea del rango, nunca como garantía.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Ningún escenario está garantizado.",
+            "Son proyecciones, no el resultado pasado.",
+            "Aparecen en todos los fondos, con o sin riesgo."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "bx2",
+      "title": "Tu extracto",
+      "ex": [
+        {
+          "id": "bx2-1",
+          "t": "num",
+          "q": "El extracto muestra que compraste por 4.000 € y hoy tu posición vale 4.600 €. ¿Cuánto ganas, en porcentaje?",
+          "unit": "%",
+          "a": 15,
+          "why": "4.600 ÷ 4.000 − 1 = 15 %. Es una ganancia latente: existe en el papel, pero no tributa hasta que vendas.",
+          "guia": "g3"
+        },
+        {
+          "id": "bx2-2",
+          "t": "choice",
+          "q": "¿Qué es una plusvalía latente?",
+          "opts": [
+            "Una ganancia que aún no has realizado vendiendo",
+            "Una ganancia ya cobrada en efectivo en tu cuenta",
+            "Un impuesto que pagas a Hacienda cada año",
+            "La comisión de custodia que cobra el bróker"
+          ],
+          "a": 0,
+          "why": "Es lo que ganarías si vendieras hoy. Puede crecer, encogerse o desaparecer: solo se convierte en ganancia real al vender.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Una ganancia cobrada ya está realizada, no es latente.",
+            "No es un impuesto: no tributa hasta que vendas.",
+            "La custodia es una comisión, no una ganancia."
+          ]
+        },
+        {
+          "id": "bx2-3",
+          "t": "num",
+          "q": "Recibes un dividendo de 120 € con una retención del 19 %. ¿Cuántos euros llegan a tu cuenta? Redondea a 1 decimal.",
+          "unit": "€",
+          "a": 97.2,
+          "why": "120 × (1 − 0,19) = 97,20 €. La retención es un adelanto del impuesto que el extracto muestra aparte.",
+          "tol": 0.06,
+          "guia": "g4"
+        },
+        {
+          "id": "bx2-4",
+          "t": "num",
+          "q": "El extracto muestra cuatro compras de 250 € con 1 € de comisión cada una. ¿Qué porcentaje de lo invertido se va en comisiones? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 0.4,
+          "why": "4 ÷ 1.000 = 0,4 %. Revisar el extracto ayuda a ver lo que de verdad pagas.",
+          "tol": 0.06,
+          "guia": "g4"
+        },
+        {
+          "id": "bx2-5",
+          "t": "choice",
+          "q": "¿Cada cuánto conviene revisar el extracto del bróker?",
+          "opts": [
+            "Una vez al mes, para detectar cargos raros",
+            "Varias veces al día para seguir el precio",
+            "Nunca: el bróker ya lo revisa por ti",
+            "Solo cuando la bolsa cae mucho"
+          ],
+          "a": 0,
+          "why": "Una revisión mensual basta para ver comisiones, dividendos y movimientos que no reconozcas. Mirarlo a diario solo añade nervios.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Mirarlo a diario solo añade nervios.",
+            "El bróker no revisa por ti que los cargos sean correctos.",
+            "Los cargos raros pueden aparecer en cualquier momento."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

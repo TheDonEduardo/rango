@@ -1,0 +1,186 @@
+{
+  "n": 11,
+  "id": "multinac",
+  "track": "fundamental",
+  "title": "Divisas y multinacionales",
+  "blurb": "Cómo afecta el tipo de cambio a ventas, márgenes y beneficio.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Ventas en otra moneda",
+      "texto": "Lo que se vende fuera se convierte a la moneda de los resultados. Si esa moneda se debilita frente al euro, las ventas en euros bajan aunque el negocio no cambie.",
+      "ejemplo": "880 M$ son 800 M€ con el euro a 1,10 $ y 733,3 M€ con el euro a 1,20 $."
+    },
+    {
+      "id": "g2",
+      "titulo": "Tipo de cambio constante",
+      "texto": "Las empresas publican el crecimiento sin el efecto divisa. Es la cifra que dice cómo va el negocio.",
+      "ejemplo": "Crecimiento publicado del 3 % con 5 puntos de divisa en contra: un 8 % a tipo constante."
+    },
+    {
+      "id": "g3",
+      "titulo": "Márgenes y cobertura",
+      "texto": "Vender en una moneda y tener costes en otra mueve los márgenes con el tipo de cambio. La cobertura fija hoy el cambio futuro, a cambio de un coste.",
+      "ejemplo": "Costes en euros y ventas en dólares: un dólar fuerte sube el margen."
+    },
+    {
+      "id": "g4",
+      "titulo": "Visto desde Europa",
+      "texto": "Al invertir en una empresa extranjera, su crecimiento en euros depende también de la divisa.",
+      "ejemplo": "BPA un 10 % mayor en dólares con el dólar un 8 % más débil: un 1,2 % en euros."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "fd1",
+      "title": "El efecto divisa",
+      "ex": [
+        {
+          "id": "fd1-1",
+          "t": "num",
+          "q": "Una empresa europea vende 880 M$ en EE. UU. y el euro está a 1,10 $. ¿Cuántos millones de euros son?",
+          "unit": "M€",
+          "a": 800,
+          "why": "880 ÷ 1,10 = 800 M€. Las ventas en otra moneda se convierten a euros para publicar los resultados.",
+          "guia": "g1"
+        },
+        {
+          "id": "fd1-2",
+          "t": "num",
+          "q": "Al año siguiente vende lo mismo en dólares, pero el euro sube a 1,20 $. ¿Cuántos millones de euros son ahora? Redondea a 1 decimal.",
+          "unit": "M€",
+          "a": 733.3,
+          "why": "880 ÷ 1,20 = 733,3 M€. Vende lo mismo, pero en euros parece que vende menos.",
+          "tol": 0.06,
+          "guia": "g1"
+        },
+        {
+          "id": "fd1-3",
+          "t": "num",
+          "q": "De 800 M€ a 733,3 M€, ¿cuánto caen esas ventas en euros? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 8.3,
+          "why": "1 − 733,3 ÷ 800 = 8,3 %. Toda la caída es efecto de la divisa: el negocio en EE. UU. no ha cambiado.",
+          "tol": 0.06,
+          "guia": "g1"
+        },
+        {
+          "id": "fd1-4",
+          "t": "choice",
+          "q": "¿Qué es el crecimiento «a tipo de cambio constante»?",
+          "opts": [
+            "El crecimiento sin el efecto de la divisa",
+            "El crecimiento solo en el país de origen",
+            "El crecimiento de la propia moneda",
+            "El crecimiento previsto por la empresa"
+          ],
+          "a": 0,
+          "why": "Recalcula el periodo actual con los tipos de cambio del anterior. Así se ve cuánto ha crecido el negocio de verdad.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "No se limita al país de origen: incluye todas las ventas.",
+            "No mide la moneda: mide el negocio sin la moneda.",
+            "Es un dato del periodo pasado, no una previsión."
+          ]
+        },
+        {
+          "id": "fd1-5",
+          "t": "num",
+          "q": "Las ventas publicadas crecen un 3 %, pero la divisa resta 5 puntos. ¿Cuánto crecen a tipo de cambio constante?",
+          "unit": "%",
+          "a": 8,
+          "why": "3 + 5 = 8 %. El negocio crece bastante más de lo que dice el titular.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "fd2",
+      "title": "Márgenes y cobertura",
+      "ex": [
+        {
+          "id": "fd2-1",
+          "t": "choice",
+          "q": "Una empresa tiene sus costes en euros y vende en dólares. Si el dólar se fortalece, ¿qué pasa?",
+          "opts": [
+            "Mejoran sus márgenes en euros",
+            "Empeoran sus márgenes en euros",
+            "No le afecta en nada",
+            "Solo cambian sus impuestos"
+          ],
+          "a": 0,
+          "why": "Cada dólar vendido se convierte en más euros, mientras los costes no cambian. El margen sube sin haber hecho nada distinto.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Más euros por cada dólar vendido mejoran el margen, no lo empeoran.",
+            "Le afecta, y mucho, si vende en otra moneda.",
+            "El efecto principal está en ventas y márgenes, no en los impuestos."
+          ]
+        },
+        {
+          "id": "fd2-2",
+          "t": "choice",
+          "q": "¿Qué es la cobertura de divisa en una empresa?",
+          "opts": [
+            "Fijar hoy el cambio de cobros o pagos futuros",
+            "Cambiar de moneda la sede de la empresa",
+            "Pagar los dividendos en dólares",
+            "Comprar oro con la caja sobrante"
+          ],
+          "a": 0,
+          "why": "Con derivados, la empresa fija hoy el tipo de cambio de lo que cobrará o pagará. Reduce la sorpresa en los resultados, a cambio de un coste.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "No tiene que ver con dónde está la sede.",
+            "Pagar dividendos en otra moneda no cubre nada.",
+            "Comprar oro no fija ningún tipo de cambio."
+          ]
+        },
+        {
+          "id": "fd2-3",
+          "t": "num",
+          "q": "Una empresa de EE. UU. sube su BPA un 10 % en dólares y el dólar cae un 8 % frente al euro. Para un inversor europeo, ¿cuánto sube el BPA en euros? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 1.2,
+          "why": "1,10 × 0,92 − 1 = 1,2 %. La divisa se come casi todo el crecimiento visto desde Europa.",
+          "tol": 0.06,
+          "guia": "g4"
+        },
+        {
+          "id": "fd2-4",
+          "t": "num",
+          "q": "El 60 % de las ventas de una empresa son en monedas que caen un 10 % frente al euro. ¿Cuánto restan a sus ventas totales en euros?",
+          "unit": "%",
+          "a": 6,
+          "why": "60 % × 10 % = 6 puntos. Saber qué parte de las ventas está en otras monedas dice cuánto le afecta la divisa.",
+          "guia": "g4"
+        },
+        {
+          "id": "fd2-5",
+          "t": "choice",
+          "q": "Al analizar una multinacional, ¿qué compruebas en sus resultados?",
+          "opts": [
+            "El crecimiento a tipo de cambio constante",
+            "Solo el titular con el beneficio total",
+            "El color corporativo del informe",
+            "El número de páginas del informe"
+          ],
+          "a": 0,
+          "why": "Separar el efecto de la divisa del negocio evita confundir un dólar fuerte con buena gestión, o un euro fuerte con un mal año.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "El titular mezcla negocio y divisa.",
+            "El diseño del informe no dice nada del negocio.",
+            "La extensión del informe tampoco."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

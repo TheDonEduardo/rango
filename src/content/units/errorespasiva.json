@@ -1,0 +1,201 @@
+{
+  "n": 11,
+  "id": "errorespasiva",
+  "track": "pasiva",
+  "title": "Errores del inversor pasivo",
+  "blurb": "Lo que de verdad resta rentabilidad: comportamiento, no productos.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Demasiado de todo",
+      "texto": "Muchos fondos globales se solapan y solo complican. Dos o tres bien elegidos cubren el mundo entero.",
+      "ejemplo": "Nueve fondos globales casi idénticos: complicación sin diversificación."
+    },
+    {
+      "id": "g2",
+      "titulo": "Perseguir y cambiar",
+      "texto": "Cambiar al fondo que más subió y entrar y salir del mercado restan puntos de rentabilidad cada año.",
+      "ejemplo": "Un 1,5 % al año sobre 30.000 €: 450 €."
+    },
+    {
+      "id": "g3",
+      "titulo": "Pagar de más",
+      "texto": "Un fondo caro que se parece al índice cuesta mucho por nada. La comisión es lo único seguro.",
+      "ejemplo": "1,5 % frente a 0,2 % sobre 25.000 €: 325 € al año."
+    },
+    {
+      "id": "g4",
+      "titulo": "El error más caro",
+      "texto": "Vender en pánico o dejar de aportar en las caídas. Aportaciones automáticas, colchón y reglas escritas son la mejor defensa.",
+      "ejemplo": "Cartera 80/20 de 50.000 €: una caída del 30 % en acciones son 12.000 €."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "pe1",
+      "title": "Errores que cuestan",
+      "ex": [
+        {
+          "id": "pe1-1",
+          "t": "choice",
+          "q": "Tienes 9 fondos indexados globales distintos. ¿Qué problema hay?",
+          "opts": [
+            "Se solapan: casi todos tienen lo mismo",
+            "Estás muy bien diversificado así",
+            "Pagas menos comisiones así",
+            "Ninguno: más fondos, menos riesgo"
+          ],
+          "a": 0,
+          "why": "Nueve fondos globales repiten las mismas empresas. No añaden diversificación, solo complicación al rebalancear y declarar.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Más fondos parecidos no diversifican más.",
+            "Más fondos no reducen comisiones.",
+            "Si tienen lo mismo, no reducen el riesgo."
+          ]
+        },
+        {
+          "id": "pe1-2",
+          "t": "num",
+          "q": "Cambias cada año al fondo que más subió y eso te cuesta 1,5 puntos de rentabilidad entre horquillas y malas entradas. Sobre 30.000 €, ¿cuántos euros al año?",
+          "unit": "€",
+          "a": 450,
+          "why": "30.000 € × 1,5 % = 450 € al año. Perseguir lo que ya subió suele significar comprar caro.",
+          "guia": "g2"
+        },
+        {
+          "id": "pe1-3",
+          "t": "num",
+          "q": "El índice rinde un 7 % anual, pero por entrar y salir tú obtienes un 4,5 %. ¿Cuántos puntos pierdes al año?",
+          "unit": "puntos",
+          "a": 2.5,
+          "why": "7 − 4,5 = 2,5 puntos al año. Los estudios sobre el comportamiento de los inversores encuentran brechas así entre lo que rinde un fondo y lo que ganan sus partícipes.",
+          "tol": 0.06,
+          "guia": "g2"
+        },
+        {
+          "id": "pe1-4",
+          "t": "choice",
+          "q": "La bolsa lleva tres años subiendo. ¿Qué haces con tu plan?",
+          "opts": [
+            "Seguirlo y rebalancear si toca",
+            "Venderlo todo porque «ya ha subido mucho»",
+            "Pasar a un 100 % en acciones",
+            "Dejar de aportar hasta que caiga"
+          ],
+          "a": 0,
+          "why": "El plan no depende de lo que haya hecho la bolsa. Rebalancear ya vende un poco de lo que subió, sin necesidad de adivinar nada.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "Vender porque ha subido es intentar adivinar el mercado.",
+            "Subir el riesgo tras una racha es perseguir lo que sube.",
+            "Dejar de aportar es otra forma de intentar adivinar."
+          ]
+        },
+        {
+          "id": "pe1-5",
+          "t": "num",
+          "q": "Pagas un 1,5 % por un fondo activo que se parece mucho al índice, cuando un indexado cuesta un 0,2 %. Sobre 25.000 €, ¿cuántos euros de más al año?",
+          "unit": "€",
+          "a": 325,
+          "why": "25.000 € × 1,3 % = 325 € al año por algo que podrías tener casi igual mucho más barato.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "pe2",
+      "title": "Protegerte de ti mismo",
+      "ex": [
+        {
+          "id": "pe2-1",
+          "t": "match",
+          "q": "Empareja cada error con su consecuencia.",
+          "pairs": [
+            [
+              "Mirar la cartera a diario",
+              "Aumenta la tentación de vender"
+            ],
+            [
+              "Perseguir lo que sube",
+              "Comprar caro y tarde"
+            ],
+            [
+              "Demasiados fondos",
+              "Solapamiento y complicación"
+            ],
+            [
+              "Invertir sin colchón",
+              "Vender en la peor caída"
+            ]
+          ],
+          "why": "Casi todos los errores del inversor pasivo son de comportamiento, no de elección de producto.",
+          "guia": "g4"
+        },
+        {
+          "id": "pe2-2",
+          "t": "num",
+          "q": "Aportas 200 € al mes, pero lo paras durante 12 meses en una caída. ¿Cuántos miles de euros dejas de comprar a precios bajos? Redondea a 1 decimal.",
+          "unit": "mil €",
+          "a": 2.4,
+          "why": "200 × 12 = 2.400 €. Dejar de aportar en las caídas es renunciar a las compras más baratas de todo el plan.",
+          "tol": 0.06,
+          "guia": "g4"
+        },
+        {
+          "id": "pe2-3",
+          "t": "choice",
+          "q": "¿Qué protege mejor tu plan de tus propias emociones?",
+          "opts": [
+            "Aportaciones automáticas y reglas escritas",
+            "Revisar la cartera varias veces al día",
+            "Seguir las noticias económicas a diario",
+            "Cambiar de estrategia cada trimestre"
+          ],
+          "a": 0,
+          "why": "Lo automático no depende de tu estado de ánimo. Las reglas escritas en calma deciden por ti cuando el mercado da miedo.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Mirar a diario aumenta la tentación de actuar.",
+            "Las noticias diarias son sobre todo ruido.",
+            "Cambiar a menudo de estrategia es el error, no la defensa."
+          ]
+        },
+        {
+          "id": "pe2-4",
+          "t": "num",
+          "q": "Tu cartera 80/20 de 50.000 € sufre una caída del 30 % en la parte de acciones. ¿Cuántos miles de euros cae la cartera?",
+          "unit": "mil €",
+          "a": 12,
+          "why": "50.000 × 80 % × 30 % = 12.000 €. Saberlo en euros antes de que pase ayuda a no vender en pánico.",
+          "guia": "g4"
+        },
+        {
+          "id": "pe2-5",
+          "t": "choice",
+          "q": "¿Cuál suele ser el error más caro a largo plazo?",
+          "opts": [
+            "Vender en pánico y no volver a entrar",
+            "Pagar un 0,05 % más de comisión",
+            "Elegir un ETF en vez de un fondo",
+            "Invertir el día 2 en lugar del día 1"
+          ],
+          "a": 0,
+          "why": "Perderse la recuperación tras una caída puede costar años de rentabilidad. Los demás errores cuestan décimas.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Unas décimas de comisión pesan poco frente a perder la recuperación.",
+            "ETF y fondo indexado del mismo índice dan casi lo mismo.",
+            "Un día de diferencia no cambia nada a largo plazo."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

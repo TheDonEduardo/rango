@@ -1,0 +1,194 @@
+{
+  "n": 4,
+  "id": "liquidezmercado",
+  "track": "tecnico",
+  "title": "Horarios y liquidez",
+  "blurb": "Subastas, premercado, horquillas y qué orden usar según la liquidez.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Subastas y huecos",
+      "texto": "La apertura se fija en una subasta que cruza las órdenes acumuladas. Por eso los huecos aparecen justo al abrir.",
+      "ejemplo": "Cierre a 100 $ y premercado a 106 $: un hueco del 6 %."
+    },
+    {
+      "id": "g2",
+      "titulo": "Liquidez y horquilla",
+      "texto": "Con poco volumen, la horquilla se amplía y tus órdenes mueven el precio. La horquilla es un coste real cada vez que entras y sales.",
+      "ejemplo": "Horquilla de 0,10 € en 2.000 acciones: 200 €."
+    },
+    {
+      "id": "g3",
+      "titulo": "Qué orden usar",
+      "texto": "En valores poco líquidos, orden limitada. Un stop a mercado vende al primer precio tras un hueco; uno limitado no vende por debajo de su límite y puede dejarte dentro.",
+      "ejemplo": "Stop a mercado en 30 € y apertura a 27 €: 3 € más de pérdida."
+    },
+    {
+      "id": "g4",
+      "titulo": "Tamaño y volumen",
+      "texto": "No compres más de una pequeña parte del volumen diario. Y opera, si puedes, en las horas de más negociación.",
+      "ejemplo": "Con 16.000 acciones al día y un máximo del 5 %: 800 acciones."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "th1",
+      "title": "Subastas y premercado",
+      "ex": [
+        {
+          "id": "th1-1",
+          "t": "choice",
+          "q": "¿Qué ocurre en la subasta de apertura de la bolsa?",
+          "opts": [
+            "Se casan órdenes para fijar el precio de apertura",
+            "La bolsa cierra para reponer liquidez",
+            "Solo pueden operar los bancos centrales",
+            "Se cancelan todas las órdenes del día anterior"
+          ],
+          "a": 0,
+          "why": "Antes de abrir, las órdenes se acumulan y se cruzan a un único precio. Por eso los huecos aparecen justo en la apertura.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "La subasta sirve justo para abrir, no para cerrar.",
+            "Cualquier participante con acceso puede enviar órdenes.",
+            "Las órdenes vigentes siguen activas según sus condiciones."
+          ]
+        },
+        {
+          "id": "th1-2",
+          "t": "num",
+          "q": "Una acción de EE. UU. cierra a 100 $ y en el premercado cotiza a 106 $. ¿De cuánto es el hueco?",
+          "unit": "%",
+          "a": 6,
+          "why": "106 ÷ 100 − 1 = 6 %. El premercado anticipa el hueco, pero con poco volumen el precio puede cambiar mucho al abrir.",
+          "guia": "g2"
+        },
+        {
+          "id": "th1-3",
+          "t": "choice",
+          "q": "¿Por qué es arriesgado operar en el premercado?",
+          "opts": [
+            "Hay poca liquidez y horquillas más amplias",
+            "Las órdenes no llegan a ejecutarse nunca",
+            "Está prohibido operar para los particulares",
+            "Los precios de esas horas no cuentan"
+          ],
+          "a": 0,
+          "why": "Con pocos participantes, la diferencia entre compra y venta se amplía y una orden grande mueve el precio. Lo que pagas de más es un coste real.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Las órdenes sí se ejecutan, pero a peores precios.",
+            "Muchos brókeres permiten operar a particulares.",
+            "Los precios del premercado son operaciones reales."
+          ]
+        },
+        {
+          "id": "th1-4",
+          "t": "num",
+          "q": "Una acción negocia de media 50.000 acciones al día y quieres comprar 5.000. ¿Qué porcentaje del volumen diario supone tu orden?",
+          "unit": "%",
+          "a": 10,
+          "why": "5.000 ÷ 50.000 = 10 %. Con una orden así de grande frente al volumen, tu compra puede mover el precio en tu contra.",
+          "guia": "g2"
+        },
+        {
+          "id": "th1-5",
+          "t": "num",
+          "q": "La mejor oferta de compra está en 20,00 € y la de venta en 20,10 €. Compras y vendes 2.000 acciones al momento. ¿Cuántos euros te cuesta la horquilla?",
+          "unit": "€",
+          "a": 200,
+          "why": "2.000 × 0,10 € = 200 €. En valores poco líquidos, la horquilla puede costar más que la comisión.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "th2",
+      "title": "Órdenes y liquidez",
+      "ex": [
+        {
+          "id": "th2-1",
+          "t": "choice",
+          "q": "Quieres comprar una acción poco líquida con una horquilla amplia. ¿Qué orden usas?",
+          "opts": [
+            "Orden limitada para controlar el precio",
+            "Orden a mercado para entrar rápido",
+            "Orden stop a mercado sin límite",
+            "Comprar todo de golpe al abrir"
+          ],
+          "a": 0,
+          "why": "Con la limitada fijas el precio máximo. A mercado, en un valor poco líquido, puedes pagar mucho más de lo que esperabas.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "A mercado, en un valor poco líquido, puedes pagar mucho de más.",
+            "Un stop sin límite es para salir, no para entrar con control.",
+            "Comprar todo al abrir te expone a la horquilla de la subasta."
+          ]
+        },
+        {
+          "id": "th2-2",
+          "t": "num",
+          "q": "Tu stop a mercado está en 30 € y la acción abre con un hueco a 27 €. ¿Cuántos euros por acción pierdes de más sobre lo previsto?",
+          "unit": "€",
+          "a": 3,
+          "why": "30 − 27 = 3 € por acción. El stop a mercado se ejecuta al primer precio disponible, y tras un hueco ese precio es peor.",
+          "guia": "g3"
+        },
+        {
+          "id": "th2-3",
+          "t": "choice",
+          "q": "Pones un stop limitado con límite en 29,50 € y la acción abre a 27 €. ¿Se ejecuta?",
+          "opts": [
+            "No: el precio está por debajo del límite",
+            "Sí: un stop siempre se ejecuta al abrir",
+            "Sí, a 29,50 €, porque está garantizado",
+            "Sí, a 30 € como estaba previsto antes"
+          ],
+          "a": 0,
+          "why": "El stop limitado no vende por debajo de 29,50 €: con la acción a 27 €, la orden queda sin ejecutar y sigues dentro. Evita vender muy mal, pero puede dejarte atrapado.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Un stop limitado no vende por debajo de su límite.",
+            "Nada garantiza el precio si el mercado no llega a él.",
+            "El precio de 30 € ya no existe tras el hueco."
+          ]
+        },
+        {
+          "id": "th2-4",
+          "t": "num",
+          "q": "Una acción negocia 16.000 acciones al día y no quieres superar el 5 % del volumen. ¿Cuántas acciones puedes comprar como máximo al día?",
+          "unit": "acc.",
+          "a": 800,
+          "why": "16.000 × 5 % = 800 acciones. En valores pequeños, el tamaño de la posición lo limita la liquidez, no solo el riesgo.",
+          "guia": "g4"
+        },
+        {
+          "id": "th2-5",
+          "t": "choice",
+          "q": "¿Cuándo suele haber más volumen en una sesión?",
+          "opts": [
+            "En la primera y la última hora",
+            "A mitad de la sesión, a la hora de comer",
+            "Siempre igual durante todo el día",
+            "Solo en los días de resultados"
+          ],
+          "a": 0,
+          "why": "La apertura y el cierre concentran la mayor parte de la negociación. A mitad de sesión hay menos volumen y las horquillas pueden ampliarse.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "A mitad de sesión suele haber menos volumen.",
+            "El volumen cambia mucho durante el día.",
+            "Hay más volumen en resultados, pero también cada día en apertura y cierre."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}
