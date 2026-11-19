@@ -1,0 +1,179 @@
+{
+  "n": 9,
+  "id": "opmovimiento",
+  "track": "derivados",
+  "title": "Straddle y strangle",
+  "blurb": "Apostar a un movimiento grande sin saber la dirección, y su coste.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Straddle",
+      "texto": "Comprar una call y una put del mismo ejercicio. Gana si la acción se mueve mucho en cualquier dirección y pierde lo pagado si se queda quieta.",
+      "ejemplo": "Call y put de 100 $ por 7,50 $: equilibrios en 92,50 $ y 107,50 $."
+    },
+    {
+      "id": "g2",
+      "titulo": "Strangle",
+      "texto": "La call por encima del precio y la put por debajo. Cuesta menos que el straddle, pero necesita un movimiento mayor.",
+      "ejemplo": "Call de 110 $ y put de 90 $ por 2,70 $: gana por encima de 112,70 $."
+    },
+    {
+      "id": "g3",
+      "titulo": "El coste es el listón",
+      "texto": "No basta con que la acción se mueva: tiene que moverse más de lo que pagaste. Lo que cuesta el straddle es el movimiento que ya descuenta el mercado.",
+      "ejemplo": "Straddle de 7,50 $ con la acción a 100 $: un 7,5 % descontado."
+    },
+    {
+      "id": "g4",
+      "titulo": "Antes de resultados",
+      "texto": "Las primas suben antes de un dato y se desploman después. Comprar movimiento justo antes suele ser caro.",
+      "ejemplo": "Con la acción en 115 $, el straddle de 7,50 $ gana 7,50 $."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "op21",
+      "title": "Apostar por el movimiento",
+      "ex": [
+        {
+          "id": "op21-1",
+          "t": "choice",
+          "q": "¿Qué es un straddle comprado?",
+          "opts": [
+            "Comprar una call y una put del mismo ejercicio",
+            "Comprar una call y vender otra más arriba",
+            "Vender una put y guardar el efectivo",
+            "Comprar acciones y una put para protegerlas"
+          ],
+          "a": 0,
+          "why": "Ganas si la acción se mueve mucho en cualquier dirección: la call gana si sube y la put si baja. Pierdes si apenas se mueve.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Eso es un spread alcista, que apuesta a una subida.",
+            "Eso es una put vendida con garantía.",
+            "Eso es una put de protección, que necesita tener las acciones."
+          ]
+        },
+        {
+          "id": "op21-2",
+          "t": "num",
+          "q": "La acción cotiza a 100 $. Compras la call de 100 $ por 4 $ y la put de 100 $ por 3,50 $. ¿Cuánto pagas por acción?",
+          "unit": "$",
+          "a": 7.5,
+          "why": "4 + 3,50 = 7,50 $. Es el coste y la pérdida máxima, si al vencimiento la acción acaba justo en 100 $.",
+          "tol": 0.006,
+          "guia": "g1"
+        },
+        {
+          "id": "op21-3",
+          "t": "num",
+          "q": "Con ese straddle de 7,50 $ sobre el ejercicio de 100 $, ¿por encima de qué precio empiezas a ganar?",
+          "unit": "$",
+          "a": 107.5,
+          "why": "100 + 7,50 = 107,50 $. La acción tiene que subir más de lo que costaron las dos opciones.",
+          "tol": 0.006,
+          "guia": "g1"
+        },
+        {
+          "id": "op21-4",
+          "t": "num",
+          "q": "¿Y por debajo de qué precio empiezas a ganar?",
+          "unit": "$",
+          "a": 92.5,
+          "why": "100 − 7,50 = 92,50 $. Entre 92,50 $ y 107,50 $, el straddle pierde dinero al vencimiento.",
+          "tol": 0.006,
+          "guia": "g1"
+        },
+        {
+          "id": "op21-5",
+          "t": "num",
+          "q": "Al vencimiento, la acción está en 115 $. ¿Cuánto ganas por acción con el straddle?",
+          "unit": "$",
+          "a": 7.5,
+          "why": "La call vale 15 $ y la put, nada: 15 − 7,50 = 7,50 $. Hacía falta un movimiento del 15 % para doblar el coste.",
+          "tol": 0.006,
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "op22",
+      "title": "Strangle y volatilidad",
+      "ex": [
+        {
+          "id": "op22-1",
+          "t": "choice",
+          "q": "¿En qué se diferencia un strangle de un straddle?",
+          "opts": [
+            "Usa ejercicios distintos, fuera del dinero",
+            "Usa dos calls en lugar de una call y una put",
+            "Se vende en lugar de comprarse, siempre",
+            "Solo funciona con índices bursátiles"
+          ],
+          "a": 0,
+          "why": "En el strangle la call se compra por encima del precio y la put por debajo. Es más barato, pero necesita un movimiento mayor para ganar.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "Lleva una call y una put, como el straddle.",
+            "Se puede comprar o vender, como el straddle.",
+            "Funciona con acciones e índices."
+          ]
+        },
+        {
+          "id": "op22-2",
+          "t": "num",
+          "q": "La acción está a 100 $. Compras la call de 110 $ por 1,50 $ y la put de 90 $ por 1,20 $. ¿Cuánto pagas por acción?",
+          "unit": "$",
+          "a": 2.7,
+          "why": "1,50 + 1,20 = 2,70 $, bastante menos que el straddle de 7,50 $.",
+          "tol": 0.006,
+          "guia": "g2"
+        },
+        {
+          "id": "op22-3",
+          "t": "num",
+          "q": "Con ese strangle de 2,70 $, ¿por encima de qué precio empiezas a ganar?",
+          "unit": "$",
+          "a": 112.7,
+          "why": "110 + 2,70 = 112,70 $. La acción debe subir casi un 13 %: más barato a cambio de necesitar más movimiento.",
+          "tol": 0.006,
+          "guia": "g2"
+        },
+        {
+          "id": "op22-4",
+          "t": "choice",
+          "q": "¿Cuándo pierde dinero un straddle comprado aunque la acción se mueva?",
+          "opts": [
+            "Si el movimiento es menor que lo pagado",
+            "Si la acción sube más de un 20 %",
+            "Si la acción cae con mucha fuerza",
+            "Nunca: siempre gana con movimiento"
+          ],
+          "a": 0,
+          "why": "No basta con que se mueva: tiene que moverse más de lo que costaron las opciones. Antes de resultados, esas primas suelen estar caras.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Una subida grande hace ganar al straddle.",
+            "Una caída fuerte también le hace ganar.",
+            "Si se mueve poco, pierde lo pagado."
+          ]
+        },
+        {
+          "id": "op22-5",
+          "t": "num",
+          "q": "Antes de resultados, el straddle en el dinero cuesta 7,50 $ con la acción a 100 $. ¿Qué movimiento descuenta el mercado?",
+          "unit": "%",
+          "a": 7.5,
+          "why": "7,50 ÷ 100 = 7,5 %. Comprar el straddle es apostar a que se moverá más que eso; venderlo, a que se moverá menos.",
+          "tol": 0.006,
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

@@ -1,0 +1,191 @@
+{
+  "n": 6,
+  "id": "divisaviaje",
+  "track": "personal",
+  "title": "Pagar en otra moneda",
+  "blurb": "Datáfonos, tarjetas, cajeros y casas de cambio: dónde se pierde dinero al viajar.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Moneda local, siempre",
+      "texto": "Si el datáfono ofrece cobrarte en euros, el comercio aplica su propio cambio, casi siempre peor. Elige la moneda local.",
+      "ejemplo": "100 $ cobrados como 96 € cuando valen 90,91 €: un 5,6 % de más."
+    },
+    {
+      "id": "g2",
+      "titulo": "La tarjeta adecuada",
+      "texto": "Algunas tarjetas cobran un porcentaje por pagar en otra moneda. Para viajar, elige una que no lo cobre.",
+      "ejemplo": "Un 3 % sobre 800 € de gastos: 24 €."
+    },
+    {
+      "id": "g3",
+      "titulo": "Efectivo",
+      "texto": "Los cajeros suelen cobrar una parte fija y un porcentaje: saca pocas veces. Evita las casas de cambio de los aeropuertos.",
+      "ejemplo": "200 $ con 3 € fijos más un 2 %: 6,64 €."
+    },
+    {
+      "id": "g4",
+      "titulo": "Envíos al extranjero",
+      "texto": "Compara la comisión y el tipo de cambio que aplican: muchas veces el coste está escondido en el cambio.",
+      "ejemplo": "1.000 € con un 1 % más 2 €: 12 €."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "fy1",
+      "title": "Pagar con tarjeta",
+      "ex": [
+        {
+          "id": "fy1-1",
+          "t": "choice",
+          "q": "Pagas con tarjeta en el extranjero y el datáfono te pregunta si quieres pagar en euros o en la moneda local. ¿Qué eliges?",
+          "opts": [
+            "La moneda local: el cambio suele ser mejor",
+            "Euros: así sabes lo que pagas",
+            "Da igual: el cambio siempre es el mismo",
+            "Euros, porque así no hay comisión"
+          ],
+          "a": 0,
+          "why": "Si eliges euros, el comercio aplica su propio tipo de cambio, casi siempre peor. En moneda local, el cambio lo aplica tu tarjeta.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Pagar en euros deja el cambio en manos del comercio, que suele cobrar más.",
+            "El cambio varía según quién lo aplique.",
+            "Hay comisión, pero escondida en el tipo de cambio."
+          ]
+        },
+        {
+          "id": "fy1-2",
+          "t": "num",
+          "q": "Pagas 100 $ y el datáfono te ofrece cobrarte 96 € en euros. El cambio oficial es de 1,10 $ por euro. ¿Cuántos euros pagas de más? Redondea a 2 decimales.",
+          "unit": "€",
+          "a": 5.09,
+          "why": "100 ÷ 1,10 = 90,91 €. 96 − 90,91 = 5,09 € de más por aceptar el cambio del comercio.",
+          "tol": 0.006,
+          "guia": "g1"
+        },
+        {
+          "id": "fy1-3",
+          "t": "num",
+          "q": "¿Qué porcentaje de recargo supone pagar 96 € por algo que vale 90,91 €? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 5.6,
+          "why": "5,09 ÷ 90,91 = 5,6 %. En un viaje con muchos pagos, ese recargo se acumula.",
+          "tol": 0.06,
+          "guia": "g1"
+        },
+        {
+          "id": "fy1-4",
+          "t": "num",
+          "q": "Tu tarjeta cobra un 3 % por los pagos en otra moneda. Gastas el equivalente a 800 € en un viaje. ¿Cuántos euros de comisión pagas?",
+          "unit": "€",
+          "a": 24,
+          "why": "800 € × 3 % = 24 €. Hay tarjetas que no cobran esta comisión.",
+          "guia": "g2"
+        },
+        {
+          "id": "fy1-5",
+          "t": "choice",
+          "q": "¿Qué tarjeta conviene para viajar fuera de la zona euro?",
+          "opts": [
+            "Una sin comisión por pagar en otra divisa",
+            "La que dé más puntos de fidelidad",
+            "La de crédito con el límite más alto",
+            "Cualquiera: todas cobran lo mismo"
+          ],
+          "a": 0,
+          "why": "Las comisiones por divisa varían mucho entre tarjetas. Una sin esa comisión ahorra en cada pago.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "Los puntos rara vez compensan una comisión del 3 % en cada pago.",
+            "El límite no influye en lo que pagas de comisión.",
+            "Las comisiones varían mucho entre tarjetas."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "fy2",
+      "title": "Efectivo y envíos",
+      "ex": [
+        {
+          "id": "fy2-1",
+          "t": "num",
+          "q": "Sacas 200 $ de un cajero con el euro a 1,10 $. Te cobran 3 € fijos más un 2 % del importe. ¿Cuántos euros pagas de comisión? Redondea a 2 decimales.",
+          "unit": "€",
+          "a": 6.64,
+          "why": "200 ÷ 1,10 = 181,82 €. El 2 % son 3,64 €, más 3 € fijos: 6,64 €. Sacar más de una vez multiplica la parte fija.",
+          "tol": 0.006,
+          "guia": "g3"
+        },
+        {
+          "id": "fy2-2",
+          "t": "num",
+          "q": "Cambias 500 € en una casa de cambio que da 1,02 $ por euro cuando el cambio oficial es 1,10 $. ¿Cuántos dólares dejas de recibir?",
+          "unit": "$",
+          "a": 40,
+          "why": "500 × (1,10 − 1,02) = 40 $. Las casas de cambio cobran a través del tipo, aunque anuncien «sin comisión».",
+          "guia": "g3"
+        },
+        {
+          "id": "fy2-3",
+          "t": "choice",
+          "q": "¿Dónde suele salir peor cambiar moneda?",
+          "opts": [
+            "En las casas de cambio de los aeropuertos",
+            "Pagando con una tarjeta sin comisiones",
+            "Sacando con una tarjeta sin comisiones",
+            "Con una transferencia en la moneda local"
+          ],
+          "a": 0,
+          "why": "Los aeropuertos tienen clientes con prisa y sin alternativas: sus tipos de cambio suelen ser los peores.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Una tarjeta sin comisión suele dar el mejor cambio.",
+            "Sacar con una tarjeta sin comisión suele ser barato.",
+            "Una transferencia en moneda local suele salir mejor que una casa de cambio."
+          ]
+        },
+        {
+          "id": "fy2-4",
+          "t": "num",
+          "q": "Envías 1.000 € a un familiar en otro país y la empresa cobra un 1 % más 2 € fijos. ¿Cuántos euros de comisión pagas?",
+          "unit": "€",
+          "a": 12,
+          "why": "1.000 × 1 % + 2 = 12 €. Comprueba también el tipo de cambio que aplica: a veces el coste está escondido ahí.",
+          "guia": "g4"
+        },
+        {
+          "id": "fy2-5",
+          "t": "match",
+          "q": "Empareja cada situación con lo que conviene hacer.",
+          "pairs": [
+            [
+              "Conversión en el datáfono",
+              "Elegir siempre la moneda local"
+            ],
+            [
+              "Comisión por divisa",
+              "Usar una tarjeta que no la cobre"
+            ],
+            [
+              "Casa de cambio",
+              "Evitarla, sobre todo en aeropuertos"
+            ],
+            [
+              "Dinero en efectivo",
+              "Sacarlo pocas veces y en cantidad"
+            ]
+          ],
+          "why": "Pagar fuera de la zona euro tiene costes escondidos en el tipo de cambio y en comisiones fijas. Unas pocas reglas evitan casi todos.",
+          "guia": "g3"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

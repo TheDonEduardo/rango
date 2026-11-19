@@ -1,0 +1,187 @@
+{
+  "n": 10,
+  "id": "retroceso",
+  "track": "tecnico",
+  "title": "Comprar en el retroceso",
+  "blurb": "Entrar en la pausa de una tendencia, con el stop cerca, y saber cuándo no es una pausa.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Comprar lo que sube y descansa",
+      "texto": "En una acción en Fase 2, se espera a que corrija hacia un soporte o una media, como la de 50 sesiones, y se compra al retomar la subida.",
+      "ejemplo": "Precio a 60 € y media en 55 €: un retroceso del 8,3 % la tocaría."
+    },
+    {
+      "id": "g2",
+      "titulo": "Stop y tamaño",
+      "texto": "El stop va bajo el mínimo del retroceso. Al estar cerca, el tamaño puede ser mayor con el mismo riesgo.",
+      "ejemplo": "Entrada a 55,20 € y stop en 52,80 €: con 360 € de riesgo, 150 acciones."
+    },
+    {
+      "id": "g3",
+      "titulo": "Pausa sana",
+      "texto": "Volumen bajo y un retroceso moderado, de un 5 a un 15 %. Los niveles de Fibonacci, como el 50 %, son referencias.",
+      "ejemplo": "Subida de 40 € a 60 €: el 50 % está en 50 €."
+    },
+    {
+      "id": "g4",
+      "titulo": "Cuándo no es una pausa",
+      "texto": "Romper el soporte con volumen alto puede ser un giro. Comprar en el retroceso mejora las R, pero exige vigilar esa diferencia.",
+      "ejemplo": "Entrada a 66,30 €, stop en 64,40 € y objetivo en 72 €: 3,0R."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "tq1",
+      "title": "La pausa de la tendencia",
+      "ex": [
+        {
+          "id": "tq1-1",
+          "t": "choice",
+          "q": "¿Qué es comprar en un retroceso?",
+          "opts": [
+            "Comprar en la corrección de una tendencia alcista",
+            "Comprar lo que más ha caído en el año",
+            "Comprar después de cada caída de un 10 %",
+            "Vender cuando el precio vuelve a subir"
+          ],
+          "a": 0,
+          "why": "En una acción que sube, se espera a que corrija hacia un soporte o una media y se compra cuando retoma la subida. No es comprar lo que cae, sino lo que sube y descansa.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Comprar lo que más cae es buscar suelos, no seguir tendencias.",
+            "Una caída del 10 % sin tendencia alcista no es un retroceso.",
+            "Eso es vender, no comprar."
+          ]
+        },
+        {
+          "id": "tq1-2",
+          "t": "num",
+          "q": "Una acción en Fase 2 cotiza a 60 € y su media de 50 sesiones está en 55 €. ¿Cuánto tiene que caer para tocarla? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 8.3,
+          "why": "1 − 55 ÷ 60 = 8,3 %. En tendencias fuertes, la media de 50 sesiones suele hacer de soporte.",
+          "tol": 0.06,
+          "guia": "g1"
+        },
+        {
+          "id": "tq1-3",
+          "t": "num",
+          "q": "Compras en el rebote a 55,20 € con el stop bajo el mínimo del retroceso, en 52,80 €. ¿Cuántos euros arriesgas por acción?",
+          "unit": "€",
+          "a": 2.4,
+          "why": "55,20 − 52,80 = 2,40 €. El stop va donde el retroceso dejaría de ser un retroceso.",
+          "tol": 0.006,
+          "guia": "g2"
+        },
+        {
+          "id": "tq1-4",
+          "t": "num",
+          "q": "Con un riesgo máximo de 360 € y 2,40 € de riesgo por acción, ¿cuántas acciones compras?",
+          "unit": "acc.",
+          "a": 150,
+          "why": "360 ÷ 2,40 = 150 acciones. El tamaño sale del riesgo, como en cualquier entrada.",
+          "guia": "g2"
+        },
+        {
+          "id": "tq1-5",
+          "t": "choice",
+          "q": "¿Qué volumen esperas en un retroceso sano?",
+          "opts": [
+            "Bajo: los vendedores no tienen fuerza",
+            "Muy alto en cada una de las velas rojas",
+            "Igual que en la subida anterior",
+            "Ninguno: el volumen no importa aquí"
+          ],
+          "a": 0,
+          "why": "Un retroceso con poco volumen es una pausa. Si el volumen sube en la caída, puede ser distribución.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Volumen alto en la caída sería señal de distribución.",
+            "Igual volumen que en la subida indica que los vendedores tienen fuerza.",
+            "El volumen importa: distingue una pausa de un giro."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "tq2",
+      "title": "Pausa o giro",
+      "ex": [
+        {
+          "id": "tq2-1",
+          "t": "choice",
+          "q": "El precio cae con fuerza por debajo de la media de 50 sesiones y con volumen alto. ¿Qué indica?",
+          "opts": [
+            "Puede no ser un retroceso, sino un giro",
+            "Es la mejor oportunidad para comprar más",
+            "Indica que el volumen no importa nada",
+            "Es una señal de compra completamente segura"
+          ],
+          "a": 0,
+          "why": "Romper el soporte con volumen alto es lo contrario de una pausa sana. Si tenías posición, el stop decide; si no, se espera.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Comprar más en una ruptura bajista es promediar a la baja.",
+            "El volumen es justo lo que indica que es serio.",
+            "Ninguna señal es completamente segura."
+          ]
+        },
+        {
+          "id": "tq2-2",
+          "t": "num",
+          "q": "Una acción retrocede desde un máximo de 72 € hasta 66 €. ¿Cuánto retrocede? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 8.3,
+          "why": "1 − 66 ÷ 72 = 8,3 %. Retrocesos de entre un 5 y un 15 % son habituales en tendencias sanas.",
+          "tol": 0.06,
+          "guia": "g3"
+        },
+        {
+          "id": "tq2-3",
+          "t": "num",
+          "q": "Entras a 66,30 € con el stop en 64,40 € y el objetivo en el máximo anterior, 72 €. ¿Cuántas R ofrece? Redondea a 1 decimal.",
+          "unit": "R",
+          "a": 3,
+          "why": "(72 − 66,30) ÷ (66,30 − 64,40) = 5,70 ÷ 1,90 = 3,0R. Comprar en el retroceso suele dar mejor relación entre beneficio y riesgo que la ruptura.",
+          "tol": 0.06,
+          "guia": "g4"
+        },
+        {
+          "id": "tq2-4",
+          "t": "choice",
+          "q": "¿Qué ventaja tiene comprar en el retroceso frente a comprar en la ruptura?",
+          "opts": [
+            "Un stop más cercano y mejor relación riesgo",
+            "Que nunca falla si el mercado acompaña",
+            "Que no hace falta poner ningún stop",
+            "Que siempre se compra en el mínimo exacto"
+          ],
+          "a": 0,
+          "why": "Entrar cerca del soporte deja el stop cerca y mejora las R. A cambio, a veces el retroceso no llega o se convierte en un giro.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Ninguna entrada es infalible.",
+            "El stop sigue siendo imprescindible.",
+            "Nadie compra siempre en el mínimo."
+          ]
+        },
+        {
+          "id": "tq2-5",
+          "t": "num",
+          "q": "Una acción sube de 40 € a 60 €. ¿En qué precio está el retroceso del 50 % de esa subida?",
+          "unit": "€",
+          "a": 50,
+          "why": "60 − (60 − 40) × 50 % = 50 €. Los niveles de Fibonacci son referencias para vigilar, no órdenes de compra automáticas.",
+          "guia": "g3"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

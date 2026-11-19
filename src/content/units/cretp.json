@@ -1,0 +1,212 @@
+{
+  "n": 8,
+  "id": "cretp",
+  "track": "cripto",
+  "title": "Cripto en tu bróker",
+  "blurb": "ETP de bitcoin: invertir sin custodiar claves, con sus costes e impuestos.",
+  "revisar": "2027-06",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Qué es un ETP",
+      "texto": "Un producto que cotiza en bolsa y sigue el precio de una criptomoneda. Lo compras en tu bróker, sin claves ni plataformas cripto. El riesgo de precio es el mismo.",
+      "ejemplo": "El bitcoin sube un 40 % y el ETP cobra un 1,5 %: ganas un 38,5 %, aproximadamente."
+    },
+    {
+      "id": "g2",
+      "titulo": "Por qué no los ETF de EE. UU.",
+      "texto": "Los productos para particulares en la UE necesitan un KID. Los ETF de EE. UU. no lo suelen tener; en Europa se compran ETP europeos.",
+      "ejemplo": "Tu bróker te ofrecerá ETP cotizados en bolsas europeas."
+    },
+    {
+      "id": "g3",
+      "titulo": "Elegir",
+      "texto": "Compara la comisión anual y comprueba que esté respaldado por cripto real y quién la custodia.",
+      "ejemplo": "Un 0,25 % frente a un 1,50 % sobre 4.000 €: 50 € al año."
+    },
+    {
+      "id": "g4",
+      "titulo": "Impuestos y tamaño",
+      "texto": "Tributan como acciones: venderlos genera ganancia o pérdida y no se pueden traspasar sin impuestos. Y el tamaño sigue siendo tu protección.",
+      "ejemplo": "Ganancia de 600 € al 19 %: 114 €."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "cz1",
+      "title": "Qué es un ETP",
+      "ex": [
+        {
+          "id": "cz1-1",
+          "t": "choice",
+          "q": "¿Qué es un ETP de bitcoin?",
+          "opts": [
+            "Un producto cotizado que sigue su precio",
+            "Un monedero frío fabricado por un banco",
+            "Una moneda nueva basada en bitcoin",
+            "Un préstamo garantizado con bitcoin"
+          ],
+          "a": 0,
+          "why": "Es un producto que cotiza en bolsa y replica el precio del bitcoin. Lo compras en tu bróker, como un ETF, sin tener que guardar claves.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "No es un monedero: es un producto cotizado.",
+            "No crea ninguna moneda nueva.",
+            "No es un préstamo."
+          ]
+        },
+        {
+          "id": "cz1-2",
+          "t": "choice",
+          "q": "¿Qué ventaja tiene frente a comprar bitcoin directamente?",
+          "opts": [
+            "No gestionas claves ni plataformas cripto",
+            "Rinde siempre más que el propio bitcoin",
+            "No tiene ningún riesgo de caída",
+            "No tiene ninguna comisión anual"
+          ],
+          "a": 0,
+          "why": "Evitas el riesgo de perder claves o de que quiebre una plataforma cripto. El riesgo de precio es el mismo, y pagas una comisión anual.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Rinde algo menos que el bitcoin por su comisión.",
+            "Cae lo mismo que el bitcoin.",
+            "Cobra una comisión anual."
+          ]
+        },
+        {
+          "id": "cz1-3",
+          "t": "num",
+          "q": "Un ETP de bitcoin cobra un 1,5 % anual. Sobre 2.000 €, ¿cuántos euros te cuesta al año?",
+          "unit": "€",
+          "a": 30,
+          "why": "2.000 € × 1,5 % = 30 € al año. Es más que un fondo indexado de acciones: la custodia de cripto es más cara.",
+          "guia": "g1"
+        },
+        {
+          "id": "cz1-4",
+          "t": "num",
+          "q": "El bitcoin sube un 40 % en el año y el ETP cobra un 1,5 % anual. ¿Qué rentabilidad obtienes, aproximadamente?",
+          "unit": "%",
+          "a": 38.5,
+          "why": "40 % − 1,5 % = 38,5 %, aproximadamente. La comisión se descuenta del valor del ETP, suba o baje el bitcoin.",
+          "tol": 0.06,
+          "guia": "g1"
+        },
+        {
+          "id": "cz1-5",
+          "t": "choice",
+          "q": "¿Por qué un inversor particular de la UE no suele poder comprar los ETF de bitcoin de EE. UU.?",
+          "opts": [
+            "No tienen el documento KID que exige la UE",
+            "Están prohibidos para cualquier extranjero",
+            "Solo se venden en dólares y en efectivo",
+            "Solo pueden comprarlos los bancos centrales"
+          ],
+          "a": 0,
+          "why": "Los productos de inversión para particulares en la UE deben tener un KID. Los ETF de EE. UU. no lo suelen tener, así que los brókeres europeos no los ofrecen; sí hay ETP europeos.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "No están prohibidos a extranjeros en general: falta el documento europeo.",
+            "Se compran en bolsa, no en efectivo.",
+            "Los compran particulares en EE. UU.; el problema en la UE es el KID."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "cz2",
+      "title": "Comparar y declarar",
+      "ex": [
+        {
+          "id": "cz2-1",
+          "t": "num",
+          "q": "Dos ETP de bitcoin. ¿Cuántos euros más al año cuesta el B sobre 4.000 €?",
+          "unit": "€",
+          "a": 50,
+          "table": {
+            "cols": [
+              "ETP",
+              "Comisión anual"
+            ],
+            "rows": [
+              [
+                "A",
+                "0,25 %"
+              ],
+              [
+                "B",
+                "1,50 %"
+              ]
+            ]
+          },
+          "why": "4.000 € × (1,50 % − 0,25 %) = 50 € al año, por el mismo bitcoin.",
+          "guia": "g3"
+        },
+        {
+          "id": "cz2-2",
+          "t": "choice",
+          "q": "¿Qué compruebas en un ETP de cripto antes de comprarlo?",
+          "opts": [
+            "Que tenga cripto real detrás y quién la custodia",
+            "Que el precio de cada participación sea bajo",
+            "Que su logotipo se parezca al de Bitcoin",
+            "Que tenga muchos seguidores en las redes"
+          ],
+          "a": 0,
+          "why": "Un ETP físico guarda bitcoin real en un custodio. Comprueba ese respaldo y quién lo guarda: es lo que protege tu inversión si el emisor tiene problemas.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "El precio por participación no dice si es caro ni seguro.",
+            "El logotipo no dice nada del respaldo.",
+            "Los seguidores en redes no protegen tu inversión."
+          ]
+        },
+        {
+          "id": "cz2-3",
+          "t": "num",
+          "q": "Vendes un ETP de bitcoin con 600 € de ganancia, tu única renta del ahorro del año. Al 19 %, ¿cuánto pagas?",
+          "unit": "€",
+          "a": 114,
+          "why": "600 € × 19 % = 114 €. Tributa como ganancia patrimonial en la base del ahorro, igual que una acción.",
+          "guia": "g4"
+        },
+        {
+          "id": "cz2-4",
+          "t": "choice",
+          "q": "¿Se pueden traspasar los ETP de cripto sin tributar, como los fondos?",
+          "opts": [
+            "No: al venderlos tributas por la ganancia",
+            "Sí: igual que cualquier fondo de inversión",
+            "Sí, pero solo una vez al año",
+            "Solo si el bróker es español"
+          ],
+          "a": 0,
+          "why": "Los ETP cotizan como acciones: venderlos para cambiar a otro tributa. El traspaso sin impuestos es solo para fondos de inversión.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Los ETP no son fondos: no admiten traspaso.",
+            "No hay ningún traspaso anual permitido.",
+            "No depende del bróker: depende del tipo de producto."
+          ]
+        },
+        {
+          "id": "cz2-5",
+          "t": "num",
+          "q": "Tu cartera es de 25.000 € y quieres un 4 % en cripto a través de un ETP. ¿Cuántos miles de euros pones?",
+          "unit": "mil €",
+          "a": 1,
+          "why": "25.000 € × 4 % = 1.000 €. El producto cambia la custodia, no el riesgo: el tamaño sigue siendo tu protección.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}
