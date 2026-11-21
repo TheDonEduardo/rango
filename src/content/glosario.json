@@ -757,5 +757,32 @@
  {
   "termino": "bandera alcista",
   "d": "Figura de continuación: tras una subida rápida, el precio hace una pausa corta y ordenada antes de seguir subiendo."
+ },
+ {
+  "termino": "iron condor",
+  "alias": [
+   "condor",
+   "condors"
+  ],
+  "d": "Estrategia con opciones que vende un spread vertical de puts por debajo del precio y otro de calls por encima: gana si la acción se queda en un rango y su pérdida máxima está limitada."
+ },
+ {
+  "termino": "valoración totalmente diluida",
+  "d": "Precio de un token multiplicado por su oferta máxima futura, no solo por los tokens que circulan hoy."
+ },
+ {
+  "termino": "desbloqueo",
+  "alias": [
+   "desbloqueos"
+  ],
+  "d": "Liberación por fases de los tokens del equipo y de los primeros inversores. Aumenta la oferta que puede venderse."
+ },
+ {
+  "termino": "escala logarítmica",
+  "d": "Escala de un gráfico en la que cada tramo vertical vale el mismo porcentaje: duplicar ocupa siempre la misma altura."
+ },
+ {
+  "termino": "regla del 72",
+  "d": "Atajo para saber cuántos años tarda una inversión en duplicarse: 72 entre la rentabilidad anual (al 8 %, unos 9 años)."
  }
 ]

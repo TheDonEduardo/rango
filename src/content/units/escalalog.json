@@ -1,0 +1,184 @@
+{
+  "n": 19,
+  "id": "escalalog",
+  "track": "basico",
+  "title": "Gráficos a largo plazo",
+  "blurb": "Escala lineal o logarítmica, la regla del 72 y cómo comparar caídas de épocas distintas.",
+  "gate": false,
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Escala lineal",
+      "texto": "Cada tramo vertical vale los mismos puntos o euros. Sirve para periodos cortos, pero en décadas exagera los movimientos recientes y aplasta los antiguos.",
+      "ejemplo": "50 puntos son un 50 % desde 100 y solo un 5 % desde 1.000."
+    },
+    {
+      "id": "g2",
+      "titulo": "Escala logarítmica",
+      "texto": "Cada tramo vertical vale el mismo porcentaje. Pasar de 100 a 200 ocupa lo mismo que pasar de 500 a 1.000: las dos cosas son duplicar.",
+      "ejemplo": "100 → 200 → 400 → 800: tres tramos de la misma altura."
+    },
+    {
+      "id": "g3",
+      "titulo": "La regla del 72",
+      "texto": "Una rentabilidad constante dibuja una recta en escala logarítmica. La regla del 72 dice cuánto tarda en duplicarse: 72 entre la rentabilidad anual.",
+      "ejemplo": "Al 8 % anual, unos 9 años: de 100 € a 200, 400 y 800 € en 27 años."
+    },
+    {
+      "id": "g4",
+      "titulo": "Caídas en perspectiva",
+      "texto": "Una caída se mide en porcentaje, no en puntos. En escala lineal, las caídas antiguas parecen pequeñas aunque fueran enormes. Lo mismo vale después para el riesgo de una operación.",
+      "ejemplo": "De 1.500 a 750 y de 300 a 150: 750 y 150 puntos, pero las dos son un 50 %."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "bv1",
+      "title": "Lineal o logarítmica",
+      "ex": [
+        {
+          "id": "bv1-1",
+          "t": "num",
+          "q": "Un índice sube 50 puntos, de 100 a 150. ¿Cuánto sube, en porcentaje?",
+          "unit": "%",
+          "a": 50,
+          "why": "50 ÷ 100 = 50 %. Con el índice bajo, cada punto es mucho porcentaje.",
+          "guia": "g1"
+        },
+        {
+          "id": "bv1-2",
+          "t": "num",
+          "q": "Años después, el mismo índice sube otros 50 puntos, de 1.000 a 1.050. ¿Cuánto sube ahora, en porcentaje?",
+          "unit": "%",
+          "a": 5,
+          "why": "50 ÷ 1.000 = 5 %. Los mismos 50 puntos, pero diez veces menos subida.",
+          "guia": "g1"
+        },
+        {
+          "id": "bv1-3",
+          "t": "choice",
+          "q": "En escala logarítmica, ¿qué tramo ocupa la misma altura que pasar de 100 a 200?",
+          "opts": [
+            "Pasar de 500 a 600",
+            "Pasar de 200 a 300",
+            "Pasar de 500 a 1.000",
+            "Pasar de 1.000 a 1.100"
+          ],
+          "a": 2,
+          "why": "Los dos tramos son duplicar (+100 %). En escala logarítmica, la misma subida en porcentaje ocupa la misma altura.",
+          "guia": "g2",
+          "porque": [
+            "De 500 a 600 es un 20 %, no duplicar.",
+            "De 200 a 300 es un 50 %, no un 100 %.",
+            null,
+            "De 1.000 a 1.100 es solo un 10 %."
+          ]
+        },
+        {
+          "id": "bv1-4",
+          "t": "choice",
+          "q": "Quieres ver cómo ha ido un índice en los últimos 40 años. ¿Qué escala usas?",
+          "opts": [
+            "Lineal: muestra los puntos exactos",
+            "Logarítmica: compara bien porcentajes",
+            "Lineal: así el pasado se ve mejor",
+            "Da igual: dibujan la misma línea"
+          ],
+          "a": 1,
+          "why": "En décadas, la escala lineal aplasta los movimientos antiguos. La logarítmica permite comparar subidas y crisis de épocas distintas.",
+          "guia": "g2",
+          "porque": [
+            "En periodos largos importan los porcentajes, no los puntos exactos.",
+            null,
+            "Es al revés: la escala lineal aplasta los movimientos antiguos.",
+            "Con muchos años de datos, las dos escalas dibujan líneas muy distintas."
+          ]
+        },
+        {
+          "id": "bv1-5",
+          "t": "num",
+          "q": "Un índice cayó de 1.500 a 750 puntos. ¿Cuánto cayó, en porcentaje?",
+          "unit": "%",
+          "a": 50,
+          "why": "750 ÷ 1.500 = 0,5: cayó un 50 %. Una caída de 300 a 150 es el mismo 50 %, aunque solo sean 150 puntos.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "bv2",
+      "title": "Leer décadas",
+      "ex": [
+        {
+          "id": "bv2-1",
+          "t": "num",
+          "q": "Con la regla del 72, ¿en cuántos años se duplica una inversión que rinde un 8 % anual?",
+          "unit": "años",
+          "a": 9,
+          "why": "72 ÷ 8 = 9 años. Es una aproximación, pero muy buena para rentabilidades entre el 4 % y el 12 %.",
+          "guia": "g3"
+        },
+        {
+          "id": "bv2-2",
+          "t": "num",
+          "q": "¿Y si rinde un 6 % anual?",
+          "unit": "años",
+          "a": 12,
+          "why": "72 ÷ 6 = 12 años. Dos puntos menos de rentabilidad alargan tres años cada duplicación.",
+          "guia": "g3"
+        },
+        {
+          "id": "bv2-3",
+          "t": "choice",
+          "q": "En escala logarítmica, ¿cómo se ve una inversión que crece siempre al mismo porcentaje?",
+          "opts": [
+            "Una curva que se empina cada año",
+            "Una línea recta que sube",
+            "Una línea plana horizontal",
+            "Una línea que baja poco a poco"
+          ],
+          "a": 1,
+          "why": "El mismo porcentaje cada año ocupa la misma altura cada año: una recta. En escala lineal se vería como una curva cada vez más empinada.",
+          "guia": "g3",
+          "porque": [
+            "Esa curva es la que se ve en escala lineal.",
+            null,
+            "Una línea plana sería no crecer.",
+            "Una línea que baja sería perder valor cada año."
+          ]
+        },
+        {
+          "id": "bv2-4",
+          "t": "num",
+          "q": "Inviertes 100 € al 8 % anual. Con la regla del 72, ¿cuánto tienes tras 27 años?",
+          "unit": "€",
+          "a": 800,
+          "why": "27 ÷ 9 = 3 duplicaciones: 100 → 200 → 400 → 800 €.",
+          "guia": "g3"
+        },
+        {
+          "id": "bv2-5",
+          "t": "choice",
+          "q": "Un gráfico lineal de 50 años muestra una caída antigua casi invisible y una reciente que parece enorme. ¿Qué haces antes de compararlas?",
+          "opts": [
+            "Fiarte de la altura de cada caída",
+            "Mirar solo la caída más reciente",
+            "Comparar los puntos que perdió cada una",
+            "Calcular las dos caídas en porcentaje"
+          ],
+          "a": 3,
+          "why": "En escala lineal, la misma caída en porcentaje ocupa más altura cuando el índice está más alto. Solo el porcentaje, o la escala logarítmica, las hace comparables.",
+          "guia": "g4",
+          "porque": [
+            "En escala lineal, la altura depende del nivel del índice, no de lo grave que fue la caída.",
+            "Olvidar la antigua te quita la referencia histórica.",
+            "Con el índice más alto, cada punto es menos porcentaje: los puntos no sirven para comparar.",
+            null
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

@@ -1,0 +1,194 @@
+{
+  "n": 11,
+  "id": "opcondor",
+  "track": "derivados",
+  "title": "Iron condor",
+  "blurb": "Ganar si la acción se queda en un rango, con la pérdida máxima limitada desde el principio.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Dos spreads verticales vendidos",
+      "texto": "Un iron condor vende un spread vertical de puts por debajo del precio y otro de calls por encima. Cobras las dos primas y ganas si la acción se queda entre los ejercicios vendidos.",
+      "ejemplo": "Acción a 100 $: vendes la put 90 y compras la 85; vendes la call 110 y compras la 115. Cobras 2 $."
+    },
+    {
+      "id": "g2",
+      "titulo": "Ganancia y pérdida máximas",
+      "texto": "La ganancia máxima es el crédito cobrado. La pérdida máxima es el ancho de un spread vertical menos el crédito, por 100 acciones: solo un lado puede perder.",
+      "ejemplo": "Ancho de 5 $ y crédito de 2 $: ganas como mucho 200 $ y pierdes como mucho 300 $."
+    },
+    {
+      "id": "g3",
+      "titulo": "El rango de beneficio",
+      "texto": "Los puntos de equilibrio son el ejercicio de la put vendida menos el crédito y el de la call vendida más el crédito. Entre ambos, ganas al vencimiento.",
+      "ejemplo": "90 − 2 = 88 $ y 110 + 2 = 112 $."
+    },
+    {
+      "id": "g4",
+      "titulo": "Cuándo y cuánto",
+      "texto": "Encaja con la volatilidad implícita alta y sin resultados ni noticias antes del vencimiento. El tamaño se decide con la pérdida máxima, no con el crédito.",
+      "ejemplo": "Cartera de 60.000 $ y un 1 % de riesgo: 600 $, dos condors de 300 $."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "op25",
+      "title": "Cómo se monta",
+      "ex": [
+        {
+          "id": "op25-1",
+          "t": "choice",
+          "q": "¿Qué esperas que pase cuando abres un iron condor?",
+          "opts": [
+            "Que la acción suba con fuerza en pocos días",
+            "Que la acción se mueva poco hasta el vencimiento",
+            "Que la acción caiga mucho tras resultados",
+            "Que la volatilidad implícita se dispare"
+          ],
+          "a": 1,
+          "why": "Ganas si la acción se queda entre los ejercicios vendidos y el tiempo desgasta las primas. Un movimiento fuerte en cualquier sentido te perjudica.",
+          "guia": "g1",
+          "porque": [
+            "Una subida fuerte lleva el precio hacia la call vendida y hacia la pérdida.",
+            null,
+            "Una caída fuerte lleva el precio hacia la put vendida y hacia la pérdida.",
+            "Si sube la volatilidad implícita, se encarece lo que has vendido y pierdes."
+          ]
+        },
+        {
+          "id": "op25-2",
+          "t": "order",
+          "q": "Con la acción a 100 $, ordena las cuatro patas del iron condor de menor a mayor ejercicio.",
+          "items": [
+            "Compras la put 85",
+            "Vendes la put 90",
+            "Vendes la call 110",
+            "Compras la call 115"
+          ],
+          "why": "Las patas compradas quedan por fuera y limitan la pérdida; las vendidas, más cerca del precio, generan el crédito.",
+          "guia": "g1"
+        },
+        {
+          "id": "op25-3",
+          "t": "num",
+          "q": "Cobras 1,20 $ por el spread vertical de puts y 0,80 $ por el de calls. ¿Cuánto cobras en total por un condor de 100 acciones?",
+          "unit": "$",
+          "a": 200,
+          "why": "(1,20 + 0,80) × 100 = 200 $. Es la ganancia máxima: la consigues si la acción acaba entre 90 y 110 $.",
+          "guia": "g1"
+        },
+        {
+          "id": "op25-4",
+          "t": "num",
+          "q": "Cada spread vertical del condor tiene 5 $ de ancho y cobraste 2 $ en total. ¿Cuál es la pérdida máxima por condor?",
+          "unit": "$",
+          "a": 300,
+          "why": "Solo un lado puede perder a la vez: (5 − 2) × 100 = 300 $.",
+          "guia": "g2"
+        },
+        {
+          "id": "op25-5",
+          "t": "choice",
+          "q": "¿Por qué la pérdida máxima del condor se calcula con un solo spread vertical?",
+          "opts": [
+            "Porque el bróker cubre el otro lado",
+            "Porque las calls nunca pierden dinero",
+            "Porque el crédito anula un lado entero",
+            "La acción solo puede acabar en un lado"
+          ],
+          "a": 3,
+          "why": "Al vencimiento, la acción está por debajo de 90 $, por encima de 110 $ o entre medias: nunca en los dos extremos a la vez.",
+          "guia": "g2",
+          "porque": [
+            "El bróker no cubre nada: el riesgo de cada lado es tuyo.",
+            "Una call vendida pierde si la acción sube por encima de su ejercicio.",
+            "El crédito reduce la pérdida, pero no anula ningún lado.",
+            null
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "op26",
+      "title": "Rango, riesgo y tamaño",
+      "ex": [
+        {
+          "id": "op26-1",
+          "t": "num",
+          "q": "Put vendida a 90 $ y 2 $ de crédito total. ¿Cuál es el punto de equilibrio inferior?",
+          "unit": "$",
+          "a": 88,
+          "why": "90 − 2 = 88 $. Por debajo, el condor pierde al vencimiento.",
+          "guia": "g3"
+        },
+        {
+          "id": "op26-2",
+          "t": "num",
+          "q": "Call vendida a 110 $ y 2 $ de crédito total. ¿Cuál es el punto de equilibrio superior?",
+          "unit": "$",
+          "a": 112,
+          "why": "110 + 2 = 112 $. Entre 88 y 112 $, el condor gana al vencimiento.",
+          "guia": "g3"
+        },
+        {
+          "id": "op26-3",
+          "t": "num",
+          "q": "Condor con la call 110 vendida, la call 115 comprada y 2 $ de crédito. Al vencimiento la acción está en 113,50 $. ¿Cuánto pierdes por condor?",
+          "unit": "$",
+          "a": 150,
+          "why": "La call 110 vale 3,50 $ y la 115 no vale nada: (3,50 − 2) × 100 = 150 $ de pérdida.",
+          "guia": "g3"
+        },
+        {
+          "id": "op26-4",
+          "t": "slide",
+          "q": "Cartera de 60.000 $ y arriesgas el 1 % por operación. Cada condor puede perder 300 $. ¿Cuántos condors abres?",
+          "label": "Condors",
+          "min": 1,
+          "max": 10,
+          "step": 1,
+          "start": 7,
+          "a": 2,
+          "unit": "",
+          "why": "El 1 % de 60.000 $ son 600 $, y 600 ÷ 300 = 2 condors. El tamaño se decide con la pérdida máxima, no con el crédito.",
+          "show": [
+            {
+              "label": "Pérdida máxima",
+              "k": 300,
+              "unit": "$"
+            },
+            {
+              "label": "Riesgo de la cartera",
+              "k": 0.5,
+              "unit": "%",
+              "dec": 1
+            }
+          ],
+          "guia": "g4"
+        },
+        {
+          "id": "op26-5",
+          "t": "choice",
+          "q": "La empresa presenta resultados antes del vencimiento. ¿Abres el condor?",
+          "opts": [
+            "Sí: la volatilidad alta siempre te favorece",
+            "Sí: los resultados no mueven las opciones",
+            "No: un hueco puede saltarse todo el rango",
+            "Sí, pero con el doble de contratos"
+          ],
+          "a": 2,
+          "why": "La prima alta antes de resultados descuenta un movimiento grande. Si el hueco supera los ejercicios vendidos, puedes acabar cerca de la pérdida máxima.",
+          "guia": "g4",
+          "porque": [
+            "La volatilidad alta encarece las primas porque se espera un movimiento grande.",
+            "Los resultados mueven la acción y, con ella, las opciones.",
+            null,
+            "Doblar los contratos dobla la pérdida máxima ante un hueco."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

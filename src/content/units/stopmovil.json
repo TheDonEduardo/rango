@@ -1,0 +1,202 @@
+{
+  "n": 12,
+  "id": "stopmovil",
+  "track": "tecnico",
+  "title": "Mover el stop",
+  "blurb": "Cuándo subir el stop, con qué regla y lo que cuesta subirlo demasiado pronto.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "El stop solo sube",
+      "texto": "En una compra, el stop se mueve a favor, nunca en contra. Bajarlo para «darle aire» convierte una pérdida pequeña en una grande.",
+      "ejemplo": "Entrada a 50 € y stop en 47 €: 1R son 3 €. Bajarlo a 44 € duplica el riesgo hasta 2R."
+    },
+    {
+      "id": "g2",
+      "titulo": "Al punto de equilibrio, con calma",
+      "texto": "Subir el stop a la entrada demasiado pronto hace que el ruido normal te saque. Espera a ganar al menos 1R o a que el precio supere una resistencia.",
+      "ejemplo": "Entrada a 50 €, stop en 47 € y ATR de 1,50 €: con el precio en 53 € (+1R) ya puedes subirlo a 50 €."
+    },
+    {
+      "id": "g3",
+      "titulo": "Stop por ATR desde el máximo",
+      "texto": "Coloca el stop a un múltiplo del ATR por debajo del máximo más alto desde la entrada. Cuando el ATR crece, el stop no baja: solo sube.",
+      "ejemplo": "Máximo de 60 € y ATR de 2 €, a 3 ATR: stop en 54 €."
+    },
+    {
+      "id": "g4",
+      "titulo": "Bajo una media o un mínimo",
+      "texto": "En tendencia, el stop puede seguir una media de 10 o 50 sesiones o el último mínimo relevante. Cuanto más lenta la referencia, más ganancia devuelves y menos salidas falsas sufres.",
+      "ejemplo": "De 40 € a 52 €: con stop en 49 € conservas el 75 % de la subida; en 45 €, el 41,7 %."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "ts1",
+      "title": "Subir el stop",
+      "ex": [
+        {
+          "id": "ts1-1",
+          "t": "choice",
+          "q": "Compraste a 50 € con el stop en 47 €. El precio cae a 48 €. ¿Qué haces con el stop?",
+          "opts": [
+            "Lo dejas en 47 € como estaba previsto",
+            "Lo bajas a 45 € para darle aire",
+            "Lo quitas hasta que el precio se recupere",
+            "Lo bajas a 44 € y compras más"
+          ],
+          "a": 0,
+          "why": "El stop de una compra solo se mueve a favor. Bajarlo amplía la pérdida que decidiste aceptar al entrar.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Bajarlo amplía el riesgo de 3 € a 5 € por acción sin ningún motivo nuevo.",
+            "Sin stop, la pérdida no tiene límite.",
+            "Bajar el stop y comprar más multiplica la pérdida si la caída sigue."
+          ]
+        },
+        {
+          "id": "ts1-2",
+          "t": "num",
+          "q": "Entrada a 50 € y stop inicial en 47 €. Si bajas el stop a 44 €, ¿cuántos R arriesgas, medidos con el riesgo inicial?",
+          "unit": "R",
+          "a": 2,
+          "why": "(50 − 44) ÷ (50 − 47) = 6 ÷ 3 = 2R: el doble del riesgo que aceptaste al entrar.",
+          "guia": "g1"
+        },
+        {
+          "id": "ts1-3",
+          "t": "num",
+          "q": "Entrada a 50 € y stop inicial en 47 €. ¿A qué precio vas ganando 1R?",
+          "unit": "€",
+          "a": 53,
+          "why": "1R = 50 − 47 = 3 €. Ganas 1R cuando el precio llega a 50 + 3 = 53 €.",
+          "guia": "g2"
+        },
+        {
+          "id": "ts1-4",
+          "t": "choice",
+          "q": "Entrada a 50 €, stop en 47 € y ATR de 1,50 €. Al día siguiente el precio toca 51 €. ¿Subes ya el stop a 50 €?",
+          "opts": [
+            "Sí: así la operación ya no puede perder",
+            "No: 1 € es menos que el ruido de un día",
+            "Sí: hay que subirlo cada día que sube",
+            "No: un stop no se debe mover nunca"
+          ],
+          "a": 1,
+          "why": "Con un ATR de 1,50 €, una oscilación de 1 € es normal: un stop en la entrada te sacaría por ruido. Espera a ganar al menos 1R, en 53 €.",
+          "guia": "g2",
+          "porque": [
+            "Con el precio a 1 € de la entrada, un vaivén normal te sacará casi seguro.",
+            null,
+            "Subirlo cada día sin regla ignora cómo se mueve el precio.",
+            "Moverlo a favor con una regla es correcto; lo que no se hace es bajarlo."
+          ]
+        },
+        {
+          "id": "ts1-5",
+          "t": "slide",
+          "q": "Entrada a 50 €, stop inicial en 47 € y 200 acciones. El precio está en 56 € y decides subir el stop para asegurar +1R. ¿Dónde lo pones?",
+          "label": "Stop",
+          "min": 44,
+          "max": 56,
+          "step": 0.5,
+          "start": 47,
+          "a": 53,
+          "unit": "€",
+          "why": "1R = 3 €. Asegurar +1R es poner el stop en 50 + 3 = 53 €: si salta, ganas 3 € × 200 = 600 €.",
+          "show": [
+            {
+              "label": "Resultado si salta",
+              "k": 200,
+              "b": -10000,
+              "unit": "€"
+            }
+          ],
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "ts2",
+      "title": "Stops que siguen al precio",
+      "ex": [
+        {
+          "id": "ts2-1",
+          "t": "num",
+          "q": "Desde que compraste, el máximo más alto es 60 € y el ATR es de 2 €. Con un stop a 3 ATR del máximo, ¿dónde lo colocas?",
+          "unit": "€",
+          "a": 54,
+          "why": "60 − 3 × 2 = 54 €. Si el precio marca un máximo nuevo, el stop sube con él.",
+          "guia": "g3"
+        },
+        {
+          "id": "ts2-2",
+          "t": "choice",
+          "q": "Al día siguiente el precio cae a 57 € y el ATR sube a 2,50 €. Con la regla de 3 ATR desde el máximo de 60 €, ¿qué haces con el stop de 54 €?",
+          "opts": [
+            "Lo bajas a 52,50 € por el nuevo ATR",
+            "Lo subes a 57 €, al precio actual",
+            "Lo mantienes en 54 €: el stop no baja",
+            "Lo quitas hasta que vuelva a 60 €"
+          ],
+          "a": 2,
+          "why": "60 − 3 × 2,50 = 52,50 €, por debajo del stop actual. La regla solo sube el stop: se queda en 54 €.",
+          "guia": "g3",
+          "porque": [
+            "Bajar el stop porque sube el ATR devuelve riesgo que ya habías protegido.",
+            "Un stop pegado al precio te saca con el primer vaivén.",
+            null,
+            "Sin stop, una caída fuerte no tiene límite."
+          ]
+        },
+        {
+          "id": "ts2-3",
+          "t": "match",
+          "q": "Empareja cada referencia para el stop con su efecto.",
+          "pairs": [
+            [
+              "Media de 10 sesiones",
+              "Sigue de cerca: protege más y saca antes"
+            ],
+            [
+              "Media de 50 sesiones",
+              "Aguanta correcciones y devuelve más ganancia"
+            ],
+            [
+              "Último mínimo relevante",
+              "Sale si se rompe la estructura de subida"
+            ],
+            [
+              "Punto de equilibrio",
+              "Ya no pierdes, salvo por un hueco"
+            ]
+          ],
+          "why": "Cuanto más lenta es la referencia, menos salidas falsas y más ganancia devuelves. Elige según el plazo de la operación.",
+          "guia": "g4"
+        },
+        {
+          "id": "ts2-4",
+          "t": "num",
+          "q": "Compraste a 40 € y el precio llega a 52 €. Con el stop bajo la media de 10 sesiones, en 49 €, ¿qué porcentaje de la subida conservas si salta?",
+          "unit": "%",
+          "a": 75,
+          "why": "(49 − 40) ÷ (52 − 40) = 9 ÷ 12 = 75 % de la subida.",
+          "guia": "g4"
+        },
+        {
+          "id": "ts2-5",
+          "t": "num",
+          "q": "En la misma operación, con el stop bajo la media de 50 sesiones, en 45 €, ¿qué porcentaje de la subida conservas? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 41.7,
+          "why": "(45 − 40) ÷ 12 = 41,7 %. La media lenta devuelve más ganancia, pero aguanta correcciones que la rápida no aguanta.",
+          "tol": 0.06,
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

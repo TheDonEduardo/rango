@@ -1,0 +1,189 @@
+{
+  "n": 8,
+  "id": "crtokens",
+  "track": "cripto",
+  "title": "Cuántos tokens hay",
+  "blurb": "Capitalización, oferta futura, desbloqueos y emisión: lo que el precio de un token no cuenta.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Capitalización y oferta",
+      "texto": "La capitalización es el precio por los tokens en circulación. Un precio bajo no significa barato: lo que importa es cuántos tokens hay.",
+      "ejemplo": "0,40 $ × 2.000 millones = 800 millones de $."
+    },
+    {
+      "id": "g2",
+      "titulo": "Valoración totalmente diluida",
+      "texto": "Multiplica el precio por la oferta máxima futura. Si es mucho mayor que la capitalización, quedan muchos tokens por llegar al mercado.",
+      "ejemplo": "10.000 millones × 0,40 $ = 4.000 millones: cinco veces la capitalización."
+    },
+    {
+      "id": "g3",
+      "titulo": "Desbloqueos",
+      "texto": "Los tokens del equipo y de los primeros inversores se liberan por fases. Cada desbloqueo aumenta la oferta, y muchos de quienes los reciben venden porque los obtuvieron muy baratos.",
+      "ejemplo": "500 millones desbloqueados sobre 2.000 en circulación: un 25 % más de oferta."
+    },
+    {
+      "id": "g4",
+      "titulo": "Emisión y concentración",
+      "texto": "Algunas redes crean tokens nuevos cada año como recompensa, lo que diluye a quien no participa. Si pocas carteras tienen la mayoría, sus ventas mueven el precio.",
+      "ejemplo": "Con una emisión del 8 % anual, en un año tu parte de la red baja un 7,4 %."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "ct1",
+      "title": "Precio y oferta",
+      "ex": [
+        {
+          "id": "ct1-1",
+          "t": "num",
+          "q": "Un token cotiza a 0,40 $ y hay 2.000 millones en circulación. ¿Cuál es su capitalización, en millones de dólares?",
+          "unit": "mill. $",
+          "a": 800,
+          "why": "0,40 $ × 2.000 millones = 800 millones de $.",
+          "guia": "g1"
+        },
+        {
+          "id": "ct1-2",
+          "t": "choice",
+          "q": "El token A cuesta 0,40 $ y el token B, 40 $. ¿Cuál es más barato?",
+          "opts": [
+            "El A, porque su precio es cien veces menor",
+            "No se sabe sin saber cuántos tokens hay",
+            "El B, porque su precio es más alto",
+            "Los dos valen lo mismo para el mercado"
+          ],
+          "a": 1,
+          "why": "El precio por unidad no dice nada por sí solo. Con 2.000 millones de tokens, A vale 800 millones; si B tiene 10 millones, vale 400 millones.",
+          "guia": "g1",
+          "porque": [
+            "Un precio bajo puede esconder una oferta enorme y una capitalización alta.",
+            null,
+            "Un precio alto puede corresponder a pocos tokens y a una capitalización pequeña.",
+            "Sin la oferta de cada uno no se puede comparar lo que valen."
+          ]
+        },
+        {
+          "id": "ct1-3",
+          "t": "num",
+          "q": "La oferta máxima de ese token es de 10.000 millones a 0,40 $. ¿Cuál es su valoración totalmente diluida, en miles de millones de dólares?",
+          "unit": "mil mill. $",
+          "a": 4,
+          "why": "10.000 millones × 0,40 $ = 4.000 millones de $, es decir, 4 mil millones.",
+          "guia": "g2"
+        },
+        {
+          "id": "ct1-4",
+          "t": "num",
+          "q": "¿Cuántas veces es esa valoración totalmente diluida la capitalización actual de 800 millones de $?",
+          "unit": "",
+          "a": 5,
+          "why": "4.000 ÷ 800 = 5. Solo circula el 20 % de los tokens: el resto llegará al mercado.",
+          "guia": "g2"
+        },
+        {
+          "id": "ct1-5",
+          "t": "num",
+          "q": "Si llega al mercado toda la oferta y la capitalización sigue en 800 millones de $, ¿a qué precio queda el token?",
+          "unit": "$",
+          "a": 0.08,
+          "why": "800 millones ÷ 10.000 millones = 0,08 $. Para mantener los 0,40 $, la demanda tendría que multiplicarse por 5.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "ct2",
+      "title": "Desbloqueos y emisión",
+      "ex": [
+        {
+          "id": "ct2-1",
+          "t": "num",
+          "q": "Hay 2.000 millones de tokens en circulación y el mes que viene se desbloquean 500 millones del equipo. ¿Cuánto aumenta la oferta?",
+          "unit": "%",
+          "a": 25,
+          "why": "500 ÷ 2.000 = 25 % más de tokens que pueden venderse.",
+          "guia": "g3"
+        },
+        {
+          "id": "ct2-2",
+          "t": "choice",
+          "q": "¿Por qué los desbloqueos suelen presionar el precio a la baja?",
+          "opts": [
+            "Porque los tokens nuevos no se pueden vender",
+            "Porque la red cobra una comisión al desbloquear",
+            "Porque desbloquear borra los tokens antiguos",
+            "Quienes los reciben pagaron poco y venden"
+          ],
+          "a": 3,
+          "why": "El equipo y los primeros inversores obtuvieron sus tokens a una fracción del precio: cualquier venta les da beneficio. Por eso conviene mirar el calendario de desbloqueos antes de comprar.",
+          "guia": "g3",
+          "porque": [
+            "Si no se pudieran vender, no afectarían a la oferta del mercado.",
+            "El desbloqueo no tiene una comisión que mueva el precio.",
+            "Los tokens antiguos siguen existiendo: los nuevos se suman.",
+            null
+          ]
+        },
+        {
+          "id": "ct2-3",
+          "t": "num",
+          "q": "Una red emite cada año un 8 % de tokens nuevos como recompensa y tú no participas. ¿Cuánto baja tu porcentaje de la red en un año? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 7.4,
+          "why": "1 ÷ 1,08 = 0,926: tu parte baja un 7,4 %. Para no diluirte tendrías que hacer staking, con sus propios riesgos.",
+          "tol": 0.06,
+          "guia": "g4"
+        },
+        {
+          "id": "ct2-4",
+          "t": "match",
+          "q": "Empareja cada dato de un token con lo que te dice.",
+          "pairs": [
+            [
+              "Capitalización",
+              "Lo que vale hoy lo que circula"
+            ],
+            [
+              "Valoración totalmente diluida",
+              "Lo que valdría toda la oferta futura"
+            ],
+            [
+              "Calendario de desbloqueos",
+              "Cuándo llegará oferta nueva al mercado"
+            ],
+            [
+              "Reparto entre carteras",
+              "Si unos pocos pueden mover el precio"
+            ]
+          ],
+          "why": "El precio solo es la mitad de la historia: la otra mitad es cuántos tokens hay, cuántos llegarán y quién los tiene.",
+          "guia": "g2"
+        },
+        {
+          "id": "ct2-5",
+          "t": "choice",
+          "q": "Un token nuevo tiene un 10 % de su oferta en circulación y un 60 % en manos del equipo y de fondos. Se anuncia como «escaso». ¿Qué concluyes?",
+          "opts": [
+            "Es escaso de verdad: solo circula un 10 %",
+            "Al ser del equipo, esos tokens no se venden",
+            "La escasez es aparente: falta el 90 %",
+            "Cuantos menos circulen, más seguro es"
+          ],
+          "a": 2,
+          "why": "Con el 90 % de la oferta por llegar y la mayoría concentrada, cada desbloqueo puede pesar sobre el precio. La escasez se mide con la oferta total, no con la que circula hoy.",
+          "guia": "g4",
+          "porque": [
+            "Un 10 % en circulación significa que el 90 % llegará después.",
+            "El equipo y los fondos venden a menudo cuando se desbloquean sus tokens.",
+            null,
+            "Poca oferta en circulación y mucha pendiente es más riesgo, no menos."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}
