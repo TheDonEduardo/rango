@@ -1,0 +1,189 @@
+{
+  "n": 5,
+  "id": "flujocaja",
+  "track": "fundamental",
+  "title": "Leer el flujo de caja",
+  "blurb": "Del beneficio a la caja: amortizaciones, circulante, inversión y dividendos sostenibles.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Del beneficio a la caja",
+      "texto": "Al beneficio se suman las amortizaciones, que no son un pago, y se resta lo que queda atrapado en el capital circulante. El resultado es el flujo de explotación.",
+      "ejemplo": "100 + 40 − 20 = 120 M€."
+    },
+    {
+      "id": "g2",
+      "titulo": "Caja libre",
+      "texto": "Al flujo de explotación se le restan las inversiones. Separar las de mantenimiento muestra lo que el negocio genera sin crecer.",
+      "ejemplo": "120 − 70 = 50 M€; solo con mantenimiento, 90 M€."
+    },
+    {
+      "id": "g3",
+      "titulo": "El estado de flujos",
+      "texto": "Explotación, inversión y financiación dicen de dónde viene la caja y a dónde va. Si el beneficio sube y la caja baja, hay que investigar.",
+      "ejemplo": "Beneficio un 20 % mayor con menos caja: revisar cobros e inventario."
+    },
+    {
+      "id": "g4",
+      "titulo": "Dividendos sostenibles",
+      "texto": "Un dividendo debe pagarse con caja libre. Si se paga con deuda año tras año, no es sostenible.",
+      "ejemplo": "Dividendos de 60 M€ con 40 M€ de caja libre: faltan 20 M€."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "fk1",
+      "title": "Del beneficio a la caja",
+      "ex": [
+        {
+          "id": "fk1-1",
+          "t": "num",
+          "q": "Una empresa gana 100 M€, sus amortizaciones son de 40 M€ y su capital circulante aumenta 20 M€. ¿Qué flujo de caja de explotación genera?",
+          "unit": "M€",
+          "a": 120,
+          "why": "100 + 40 − 20 = 120 M€. Se suman las amortizaciones, que no son un pago, y se resta el dinero que queda atrapado en cobros e inventario.",
+          "guia": "g1"
+        },
+        {
+          "id": "fk1-2",
+          "t": "num",
+          "q": "Con un flujo de explotación de 120 M€ y unas inversiones de 70 M€, ¿cuál es el flujo de caja libre?",
+          "unit": "M€",
+          "a": 50,
+          "why": "120 − 70 = 50 M€. Es la caja que queda para dividendos, recompras o reducir deuda.",
+          "guia": "g2"
+        },
+        {
+          "id": "fk1-3",
+          "t": "choice",
+          "q": "¿Por qué se suman las amortizaciones al beneficio para llegar a la caja?",
+          "opts": [
+            "Restan beneficio pero no salen de la caja ese año",
+            "Porque son un ingreso extraordinario del año",
+            "Porque las paga otra empresa distinta del grupo",
+            "Porque Hacienda las devuelve al final del año"
+          ],
+          "a": 0,
+          "why": "La amortización reparte en varios años el coste de algo que se pagó antes. Reduce el beneficio contable, pero ese año no sale dinero.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "No son un ingreso: son un gasto que no se paga ese año.",
+            "Las amortizaciones son de la propia empresa.",
+            "Hacienda no devuelve las amortizaciones."
+          ]
+        },
+        {
+          "id": "fk1-4",
+          "t": "num",
+          "q": "De los 70 M€ de inversión, solo 30 M€ son para mantener el negocio. Si dejara de crecer, ¿cuánto flujo de caja libre generaría?",
+          "unit": "M€",
+          "a": 90,
+          "why": "120 − 30 = 90 M€. Separar la inversión de mantenimiento de la de crecimiento muestra lo que el negocio genera de verdad.",
+          "guia": "g2"
+        },
+        {
+          "id": "fk1-5",
+          "t": "num",
+          "q": "Con una capitalización de 1.500 M€ y esos 90 M€ de caja libre sin crecimiento, ¿qué rentabilidad por flujo de caja ofrece?",
+          "unit": "%",
+          "a": 6,
+          "why": "90 ÷ 1.500 = 6 %. Es lo que rendiría tu inversión si la empresa no creciera nada: un buen punto de partida para valorarla.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "fk2",
+      "title": "Leer el estado de flujos",
+      "ex": [
+        {
+          "id": "fk2-1",
+          "t": "match",
+          "q": "Empareja cada parte del estado de flujos con lo que recoge.",
+          "pairs": [
+            [
+              "Flujo de explotación",
+              "Caja que genera el negocio"
+            ],
+            [
+              "Flujo de inversión",
+              "Compras de activos y de empresas"
+            ],
+            [
+              "Flujo de financiación",
+              "Deuda, dividendos y recompras"
+            ],
+            [
+              "Flujo de caja libre",
+              "Explotación menos inversión necesaria"
+            ]
+          ],
+          "why": "El estado de flujos dice de dónde viene el dinero y a dónde va. Es más difícil de maquillar que la cuenta de resultados.",
+          "guia": "g3"
+        },
+        {
+          "id": "fk2-2",
+          "t": "choice",
+          "q": "El beneficio de una empresa sube un 20 %, pero su flujo de explotación cae. ¿Qué haces?",
+          "opts": [
+            "Investigar: cobros, inventario o ajustes",
+            "Comprar más: el beneficio es lo que manda",
+            "Ignorarlo: la caja no importa",
+            "Pensar que es normal siempre"
+          ],
+          "a": 0,
+          "why": "Si el beneficio no se convierte en caja, algo lo está reteniendo: clientes que no pagan, inventario acumulado o ajustes contables. Hay que averiguarlo.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Un beneficio que no se convierte en caja es una señal de alerta.",
+            "La caja es lo que paga dividendos y deuda.",
+            "No es normal: hay que buscar la causa."
+          ]
+        },
+        {
+          "id": "fk2-3",
+          "t": "num",
+          "q": "Una empresa paga 60 M€ en dividendos y genera 40 M€ de flujo de caja libre. ¿Cuántos millones le faltan?",
+          "unit": "M€",
+          "a": 20,
+          "why": "60 − 40 = 20 M€. Ese dinero tiene que salir de la caja que ya tenía o de nueva deuda.",
+          "guia": "g4"
+        },
+        {
+          "id": "fk2-4",
+          "t": "choice",
+          "q": "La empresa cubre esa diferencia pidiendo deuda cada año. ¿Qué significa?",
+          "opts": [
+            "Que el dividendo no es sostenible así",
+            "Que es una señal de fortaleza financiera",
+            "Que el dividendo le sale gratis",
+            "Que no afecta para nada al balance"
+          ],
+          "a": 0,
+          "why": "Pagar dividendos con deuda adelanta dinero a costa del futuro. Si no mejora la caja, tarde o temprano tendrá que recortarlo.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Endeudarse para pagar dividendos debilita el balance.",
+            "Nada es gratis: se paga con intereses y menos margen.",
+            "Afecta, y mucho: la deuda crece cada año."
+          ]
+        },
+        {
+          "id": "fk2-5",
+          "t": "num",
+          "q": "Una empresa genera 50 M€ de flujo de caja libre con unas ventas de 400 M€. ¿Qué margen de flujo de caja libre tiene? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 12.5,
+          "why": "50 ÷ 400 = 12,5 %. Comparar este margen con el operativo dice cuánto del beneficio se convierte en caja.",
+          "tol": 0.06,
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

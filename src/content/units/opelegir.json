@@ -1,0 +1,187 @@
+{
+  "n": 10,
+  "id": "opelegir",
+  "track": "derivados",
+  "title": "Elegir vencimiento y ejercicio",
+  "blurb": "Cuánto tiempo comprar, qué ejercicio usar y lo que cuesta cada elección.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Más tiempo del que crees",
+      "texto": "Elige un vencimiento con margen sobre tu previsión: el movimiento puede tardar más. Demasiado lejano encarece la prima sin necesidad.",
+      "ejemplo": "Para una subida en semanas: dos o tres meses."
+    },
+    {
+      "id": "g2",
+      "titulo": "El precio del tiempo",
+      "texto": "Más plazo cuesta más en total, pero menos por día, porque la theta se acelera al final. Puedes vender antes del vencimiento.",
+      "ejemplo": "Call a 30 días por 2 €: 6,7 céntimos al día. A 90 días por 3,50 €: 3,9."
+    },
+    {
+      "id": "g3",
+      "titulo": "Dentro o fuera del dinero",
+      "texto": "Dentro del dinero, la delta es alta y la call se mueve casi como la acción. Fuera, es barata y amplifica el porcentaje, pero muchas vencen sin valor.",
+      "ejemplo": "Delta 0,80: sube 4 € si la acción sube 5 €. Delta 0,25: sube 1,25 €."
+    },
+    {
+      "id": "g4",
+      "titulo": "Elegir según la idea",
+      "texto": "Si quieres algo parecido a la acción con menos capital, dentro del dinero. Si buscas un movimiento grande y aceptas perder la prima, fuera.",
+      "ejemplo": "Call de 1,50 € que sube 1,25 €: un 83,3 %."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "op23",
+      "title": "El vencimiento",
+      "ex": [
+        {
+          "id": "op23-1",
+          "t": "choice",
+          "q": "Esperas una subida en las próximas semanas. ¿Qué vencimiento eliges para comprar una call?",
+          "opts": [
+            "Uno con margen, de dos o tres meses",
+            "El que vence esta misma semana",
+            "El más lejano posible, a dos años",
+            "Da igual el vencimiento que elijas"
+          ],
+          "a": 0,
+          "why": "Darte más tiempo que tu previsión evita que la opción venza justo antes de que ocurra el movimiento. Demasiado lejano encarece la prima sin necesidad.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Con una semana, si el movimiento se retrasa, la opción vence sin valor.",
+            "A dos años pagas mucho tiempo que no necesitas.",
+            "El vencimiento cambia el precio y la probabilidad de acertar."
+          ]
+        },
+        {
+          "id": "op23-2",
+          "t": "num",
+          "q": "Una call a 30 días cuesta 2 €. ¿Cuántos céntimos de prima pagas por cada día? Redondea a 1 decimal.",
+          "unit": "cént.",
+          "a": 6.7,
+          "why": "200 céntimos ÷ 30 días = 6,7 céntimos al día. El tiempo se paga, y en las últimas semanas más caro.",
+          "tol": 0.06,
+          "guia": "g2"
+        },
+        {
+          "id": "op23-3",
+          "t": "num",
+          "q": "La misma call a 90 días cuesta 3,50 €. ¿Cuántos céntimos por día? Redondea a 1 decimal.",
+          "unit": "cént.",
+          "a": 3.9,
+          "why": "350 ÷ 90 = 3,9 céntimos al día. Más tiempo cuesta más en total, pero menos por cada día.",
+          "tol": 0.06,
+          "guia": "g2"
+        },
+        {
+          "id": "op23-4",
+          "t": "choice",
+          "q": "¿Por qué la call a 90 días cuesta menos por cada día que la de 30?",
+          "opts": [
+            "El valor temporal se pierde más deprisa al final",
+            "Porque tiene menos volatilidad implícita",
+            "Porque el bróker la subvenciona",
+            "Porque vence en un día festivo"
+          ],
+          "a": 0,
+          "why": "La theta se acelera cerca del vencimiento. Comprar más plazo y venderlo antes de las últimas semanas evita lo más caro del desgaste.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "La volatilidad implícita no explica el coste por día.",
+            "Ningún bróker subvenciona opciones.",
+            "Los festivos no cambian el coste del tiempo."
+          ]
+        },
+        {
+          "id": "op23-5",
+          "t": "num",
+          "q": "Compras la call de 90 días a 3,50 € y la vendes un mes después a 5,25 €. ¿Cuánto ganas, en porcentaje?",
+          "unit": "%",
+          "a": 50,
+          "why": "5,25 ÷ 3,50 − 1 = 50 %. No hace falta esperar al vencimiento: se puede cerrar en cuanto la operación cumple su objetivo.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "op24",
+      "title": "El ejercicio",
+      "ex": [
+        {
+          "id": "op24-1",
+          "t": "choice",
+          "q": "¿Qué call se mueve de forma más parecida a la acción?",
+          "opts": [
+            "La muy dentro del dinero, con delta alta",
+            "La muy fuera del dinero, más barata",
+            "La que tiene el vencimiento más cercano",
+            "Todas se mueven exactamente igual"
+          ],
+          "a": 0,
+          "why": "Muy dentro del dinero, la delta se acerca a 1: la call se comporta casi como la acción, con menos capital invertido.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Fuera del dinero la delta es baja: se mueve poco en euros.",
+            "El vencimiento cercano no hace que se mueva como la acción.",
+            "La delta cambia mucho según el ejercicio."
+          ]
+        },
+        {
+          "id": "op24-2",
+          "t": "num",
+          "q": "Una call dentro del dinero tiene una delta de 0,80. Si la acción sube 5 €, ¿cuántos euros sube la call, aproximadamente?",
+          "unit": "€",
+          "a": 4,
+          "why": "5 × 0,80 = 4 €. Sube casi como la acción.",
+          "guia": "g3"
+        },
+        {
+          "id": "op24-3",
+          "t": "num",
+          "q": "Una call fuera del dinero tiene una delta de 0,25. Si la acción sube 5 €, ¿cuántos euros sube, aproximadamente? Redondea a 2 decimales.",
+          "unit": "€",
+          "a": 1.25,
+          "why": "5 × 0,25 = 1,25 €. Se mueve menos en euros, pero cuesta mucho menos.",
+          "tol": 0.006,
+          "guia": "g3"
+        },
+        {
+          "id": "op24-4",
+          "t": "num",
+          "q": "Esa call fuera del dinero costaba 1,50 € y sube 1,25 €. ¿Cuánto gana en porcentaje? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 83.3,
+          "why": "1,25 ÷ 1,50 = 83,3 %. Las opciones fuera del dinero amplifican el porcentaje, en las ganancias y en las pérdidas.",
+          "tol": 0.06,
+          "guia": "g4"
+        },
+        {
+          "id": "op24-5",
+          "t": "choice",
+          "q": "¿Qué riesgo tiene preferir siempre las calls muy fuera del dinero?",
+          "opts": [
+            "Que muchas vencen sin ningún valor",
+            "Que su delta es demasiado alta",
+            "Que cuestan demasiado dinero",
+            "Que no se pueden vender antes"
+          ],
+          "a": 0,
+          "why": "Son baratas porque es poco probable que acaben dentro del dinero. Ganan mucho cuando aciertan, pero pierden la prima entera con frecuencia.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Su delta es baja, no alta.",
+            "Son baratas, no caras.",
+            "Se pueden vender antes del vencimiento."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

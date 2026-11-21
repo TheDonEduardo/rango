@@ -1,0 +1,202 @@
+{
+  "n": 5,
+  "id": "crciclos",
+  "track": "cripto",
+  "title": "Ciclos y emociones",
+  "blurb": "Los ciclos del mercado cripto, sus caídas y cómo no dejarse llevar.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Ciclos",
+      "texto": "Los grandes ciclos de cripto se han relacionado con el halving de bitcoin. Con tan pocos ejemplos, es una correlación, no una ley.",
+      "ejemplo": "Caídas del 75 % han sido habituales en cada ciclo bajista."
+    },
+    {
+      "id": "g2",
+      "titulo": "Recuperar cuesta",
+      "texto": "Tras una caída del 75 % hay que cuadruplicar el precio para volver. Comprar poco a poco en la caída baja el precio medio.",
+      "ejemplo": "Comprar a 40.000 $ y a 20.000 $: precio medio de 26.667 $."
+    },
+    {
+      "id": "g3",
+      "titulo": "Las emociones",
+      "texto": "Euforia, miedo a quedarse fuera, pánico y capitulación se repiten en cada ciclo. Que todo el mundo hable de cripto es una señal de euforia.",
+      "ejemplo": "Un familiar que nunca invierte recomienda una moneda: prudencia."
+    },
+    {
+      "id": "g4",
+      "titulo": "Reglas, no impulsos",
+      "texto": "Fija un peso máximo y rebalancea. Así vendes en la euforia y compras en el pánico sin tener que adivinar nada.",
+      "ejemplo": "De 1.000 € a 3.000 € en una cartera de 22.000 €: vender 1.900 € para volver al 5 %."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "cc1",
+      "title": "Ciclos de bitcoin",
+      "ex": [
+        {
+          "id": "cc1-1",
+          "t": "choice",
+          "q": "¿Con qué se suelen relacionar los ciclos de bitcoin?",
+          "opts": [
+            "El halving, cada unos cuatro años",
+            "Las elecciones de cada país europeo",
+            "Los resultados trimestrales de Bitcoin",
+            "Los dividendos que paga cada año"
+          ],
+          "a": 0,
+          "why": "Muchos inversores relacionan los grandes ciclos con el halving, que reduce la emisión nueva. Es una correlación con pocos ejemplos, no una ley.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Las elecciones no están ligadas a los ciclos de bitcoin.",
+            "Bitcoin no es una empresa: no publica resultados.",
+            "Bitcoin no paga dividendos."
+          ]
+        },
+        {
+          "id": "cc1-2",
+          "t": "num",
+          "q": "Una criptomoneda cae de 4.000 $ a 1.000 $ en un mercado bajista. ¿Cuánto cae?",
+          "unit": "%",
+          "a": 75,
+          "why": "1 − 1.000 ÷ 4.000 = 75 %. Caídas así han sido habituales en cripto en cada ciclo bajista.",
+          "guia": "g2"
+        },
+        {
+          "id": "cc1-3",
+          "t": "num",
+          "q": "Desde 1.000 $, ¿cuánto tiene que subir para volver a 4.000 $?",
+          "unit": "%",
+          "a": 300,
+          "why": "4.000 ÷ 1.000 − 1 = 300 %. Recuperar una caída del 75 % exige cuadruplicar el precio.",
+          "guia": "g2"
+        },
+        {
+          "id": "cc1-4",
+          "t": "choice",
+          "q": "¿Por qué no conviene confiar en que los ciclos se repitan?",
+          "opts": [
+            "Hay pocos ciclos y cada uno fue distinto",
+            "Porque los ciclos están prohibidos",
+            "Porque bitcoin ya no tiene halving",
+            "Porque los ciclos siempre son iguales"
+          ],
+          "a": 0,
+          "why": "Con tan pocos ejemplos, cualquier patrón puede ser casualidad. Además, cuando muchos esperan el mismo ciclo, el mercado se adelanta.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "No están prohibidos: simplemente no son una ley.",
+            "El halving sigue existiendo cada unos cuatro años.",
+            "Han sido distintos en duración y tamaño."
+          ]
+        },
+        {
+          "id": "cc1-5",
+          "t": "num",
+          "q": "Inviertes 100 $ con el bitcoin a 40.000 $ y otros 100 $ con el bitcoin a 20.000 $. ¿A qué precio medio compraste, en miles de dólares? Redondea a 1 decimal.",
+          "unit": "mil $",
+          "a": 26.7,
+          "why": "0,0025 + 0,005 = 0,0075 BTC por 200 $: 200 ÷ 0,0075 = 26.667 $. Comprar poco a poco en la caída baja el precio medio por debajo de la media de los dos precios.",
+          "tol": 0.06,
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "cc2",
+      "title": "Psicología del mercado",
+      "ex": [
+        {
+          "id": "cc2-1",
+          "t": "match",
+          "q": "Empareja cada fase emocional del mercado cripto con lo que se ve.",
+          "pairs": [
+            [
+              "Euforia",
+              "Todos hablan de cripto y nadie ve riesgos"
+            ],
+            [
+              "Pánico",
+              "Ventas en masa tras una caída fuerte"
+            ],
+            [
+              "Miedo a quedarse fuera",
+              "Comprar porque otros ya han ganado"
+            ],
+            [
+              "Capitulación",
+              "Abandonar justo cerca del suelo"
+            ]
+          ],
+          "why": "En cripto las emociones se amplifican porque el mercado no cierra nunca y los precios se mueven mucho. Reconocer la fase ayuda a no dejarse llevar.",
+          "guia": "g3"
+        },
+        {
+          "id": "cc2-2",
+          "t": "choice",
+          "q": "Un familiar que nunca ha invertido te recomienda una criptomoneda. ¿Qué te indica?",
+          "opts": [
+            "Señal de euforia: extrema la prudencia",
+            "Señal clara de que hay que comprar",
+            "Señal de que el mercado está en mínimos",
+            "No significa absolutamente nada"
+          ],
+          "a": 0,
+          "why": "Cuando quien nunca invierte habla de un activo, suele haber mucha gente ya dentro. Es una señal clásica de euforia, no de oportunidad.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Comprar por esa señal es entrar en plena euforia.",
+            "Los mínimos llegan con pánico, no con entusiasmo general.",
+            "Sí significa algo: suele indicar euforia."
+          ]
+        },
+        {
+          "id": "cc2-3",
+          "t": "num",
+          "q": "Tu cartera es de 20.000 € con 1.000 € en cripto. La cripto sube a 3.000 € y lo demás no se mueve. ¿Qué peso tiene ahora? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 13.6,
+          "why": "3.000 ÷ 22.000 = 13,6 %. Ha pasado del 5 % a casi el triple: el riesgo es mucho mayor del que elegiste.",
+          "tol": 0.06,
+          "guia": "g4"
+        },
+        {
+          "id": "cc2-4",
+          "t": "num",
+          "q": "Para volver a un 5 % en cripto con una cartera de 22.000 €, ¿cuántos miles de euros vendes? Redondea a 1 decimal.",
+          "unit": "mil €",
+          "a": 1.9,
+          "why": "El 5 % de 22.000 € son 1.100 €. Tienes 3.000 €: vendes 1.900 €. Rebalancear vende en la euforia sin tener que adivinarla.",
+          "tol": 0.06,
+          "guia": "g4"
+        },
+        {
+          "id": "cc2-5",
+          "t": "choice",
+          "q": "¿Qué protege mejor de las emociones al invertir en cripto?",
+          "opts": [
+            "Un peso máximo y rebalancear con reglas",
+            "Mirar el precio cada hora del día",
+            "Seguir a los influencers del sector",
+            "Usar un apalancamiento moderado"
+          ],
+          "a": 0,
+          "why": "Una regla fijada en calma decide por ti cuando el mercado sube o cae con violencia. Las demás opciones amplifican las emociones.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Mirar el precio cada hora aumenta las ganas de actuar.",
+            "Los influencers suelen avivar la euforia.",
+            "El apalancamiento multiplica el daño de cualquier error."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

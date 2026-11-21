@@ -1,0 +1,184 @@
+{
+  "n": 18,
+  "id": "ibex",
+  "track": "basico",
+  "title": "La bolsa española",
+  "blurb": "El IBEX 35, sus sectores y los dividendos de las empresas españolas.",
+  "gate": false,
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "El IBEX 35",
+      "texto": "Es el índice de los 35 valores más negociados de la bolsa española, ponderados por capitalización. Unos pocos sectores, como la banca, pesan mucho.",
+      "ejemplo": "Con la banca al 30 %, una caída del 10 % en los bancos resta 3 puntos al índice."
+    },
+    {
+      "id": "g2",
+      "titulo": "Sin dividendos",
+      "texto": "El IBEX que se publica no suma los dividendos, y las empresas españolas reparten bastante. Con ellos, la rentabilidad real es mucho mayor.",
+      "ejemplo": "Un 2 % del índice más un 4 % de dividendos: un 6 % en total."
+    },
+    {
+      "id": "g3",
+      "titulo": "Dividendos",
+      "texto": "La rentabilidad por dividendo es el dividendo anual entre el precio. El día en que deja de dar derecho al cobro, la acción baja más o menos esa cantidad.",
+      "ejemplo": "Acción a 20 € con 1 € de dividendo: un 5 %. 200 € brutos, 162 € netos."
+    },
+    {
+      "id": "g4",
+      "titulo": "Cuidado con el más alto",
+      "texto": "Un dividendo muy alto puede anunciar un recorte. Mira cuánto del beneficio reparte la empresa.",
+      "ejemplo": "Beneficio de 1,25 € y dividendo de 1 €: reparte el 80 %."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "bw1",
+      "title": "El IBEX 35",
+      "ex": [
+        {
+          "id": "bw1-1",
+          "t": "choice",
+          "q": "¿Qué es el IBEX 35?",
+          "opts": [
+            "Un índice de 35 valores de la bolsa española",
+            "Las 35 empresas más grandes de Europa",
+            "Un fondo de inversión del Estado",
+            "El tipo de interés de referencia"
+          ],
+          "a": 0,
+          "why": "Es el índice de referencia de la bolsa española: los 35 valores más negociados, ponderados por su capitalización.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Solo incluye empresas que cotizan en España.",
+            "Es un índice, no un fondo.",
+            "Eso es el Euríbor u otro tipo de referencia."
+          ]
+        },
+        {
+          "id": "bw1-2",
+          "t": "num",
+          "q": "En un índice, los bancos pesan un 30 %, la energía un 20 % y el resto un 50 %. Si los bancos caen un 10 % y lo demás no se mueve, ¿cuánto cae el índice?",
+          "unit": "%",
+          "a": 3,
+          "why": "30 % × 10 % = 3 %. En el IBEX, unos pocos sectores, como la banca, mueven mucho el índice.",
+          "guia": "g1"
+        },
+        {
+          "id": "bw1-3",
+          "t": "choice",
+          "q": "¿Por qué el IBEX 35 engaña cuando se mira su evolución a largo plazo?",
+          "opts": [
+            "Sus empresas reparten mucho y el índice no lo suma",
+            "Porque no incluye a las empresas más grandes",
+            "Porque solo cuenta los días en que sube",
+            "Porque se calcula en dólares"
+          ],
+          "a": 0,
+          "why": "El IBEX que se publica no incluye los dividendos, y las empresas españolas reparten bastante. Con ellos reinvertidos, la rentabilidad es mucho mejor.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "Incluye a las mayores empresas cotizadas en España.",
+            "Cuenta todos los días, suba o baje.",
+            "Se calcula en euros."
+          ]
+        },
+        {
+          "id": "bw1-4",
+          "t": "num",
+          "q": "El índice sube un 2 % en el año y sus empresas reparten un 4 % en dividendos. ¿Qué rentabilidad total obtiene, aproximadamente, quien los reinvierte?",
+          "unit": "%",
+          "a": 6,
+          "why": "2 % + 4 % = 6 %. Mirar solo el índice sin dividendos subestima lo que gana un inversor.",
+          "guia": "g2"
+        },
+        {
+          "id": "bw1-5",
+          "t": "num",
+          "q": "Toda tu cartera está en el IBEX y la banca pesa en él un 30 %. ¿Qué parte de tu dinero depende de los bancos?",
+          "unit": "%",
+          "a": 30,
+          "why": "Un 30 %. Invertir solo en el índice de tu país concentra el riesgo en unos pocos sectores; un índice mundial lo reparte.",
+          "guia": "g1"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "bw2",
+      "title": "Dividendos españoles",
+      "ex": [
+        {
+          "id": "bw2-1",
+          "t": "num",
+          "q": "Una acción cotiza a 20 € y paga 1 € de dividendo al año. ¿Qué rentabilidad por dividendo ofrece?",
+          "unit": "%",
+          "a": 5,
+          "why": "1 ÷ 20 = 5 %. Es lo que cobras cada año por cada euro invertido, si el dividendo se mantiene.",
+          "guia": "g3"
+        },
+        {
+          "id": "bw2-2",
+          "t": "num",
+          "q": "Cobras 200 € brutos de dividendos con una retención del 19 %. ¿Cuántos euros te llegan?",
+          "unit": "€",
+          "a": 162,
+          "why": "200 × (1 − 0,19) = 162 €. La retención es un adelanto del impuesto que se ajusta en la declaración.",
+          "guia": "g3"
+        },
+        {
+          "id": "bw2-3",
+          "t": "choice",
+          "q": "¿Qué suele pasar con la acción el día en que deja de dar derecho al dividendo?",
+          "opts": [
+            "Baja más o menos lo que paga el dividendo",
+            "Sube lo mismo que paga el dividendo",
+            "No pasa nada con el precio de la acción",
+            "La acción deja de cotizar ese día"
+          ],
+          "a": 0,
+          "why": "El dinero del dividendo sale de la empresa, así que su valor baja en esa cantidad. Por eso el dividendo no es dinero gratis.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "El precio baja, no sube: el dinero sale de la empresa.",
+            "El precio cambia: la empresa vale menos tras pagar.",
+            "La acción sigue cotizando con normalidad."
+          ]
+        },
+        {
+          "id": "bw2-4",
+          "t": "choice",
+          "q": "¿Por qué no basta con elegir las acciones que más dividendo pagan?",
+          "opts": [
+            "Un dividendo muy alto puede anticipar un recorte",
+            "Porque los dividendos no tributan en España",
+            "Porque las que más pagan siempre suben más",
+            "Porque el dividendo está prohibido en España"
+          ],
+          "a": 0,
+          "why": "Una rentabilidad muy alta suele deberse a que el precio ha caído por problemas. Si el beneficio no cubre el dividendo, acabará recortándolo.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Los dividendos tributan en la base del ahorro.",
+            "Las que más pagan no suben más: a menudo es al revés.",
+            "Los dividendos son perfectamente legales."
+          ]
+        },
+        {
+          "id": "bw2-5",
+          "t": "num",
+          "q": "Una empresa gana 1,25 € por acción y reparte 1 € de dividendo. ¿Qué porcentaje del beneficio reparte?",
+          "unit": "%",
+          "a": 80,
+          "why": "1 ÷ 1,25 = 80 %. Con un payout tan alto, queda poco para crecer y para aguantar un mal año.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}
