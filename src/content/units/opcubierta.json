@@ -104,7 +104,19 @@
           "unit": "$",
           "a": 7,
           "why": "(55 − 50) + 2 = 7 $. Por mucho que suba la acción, vendes a 55 $: la ganancia tiene techo.",
-          "guia": "g2"
+          "guia": "g2",
+          "variantes": [
+            {
+              "q": "Tienes acciones compradas a 40 $ y vendes una call de 44 $ por 1,5 $. Si te ejercen, ¿cuál es tu ganancia máxima por acción?",
+              "a": 5.5,
+              "why": "(44 − 40) + 1,5 = 5,5 $. Por mucho que suba, vendes a 44 $."
+            },
+            {
+              "q": "Tienes acciones compradas a 70 $ y vendes una call de 75 $ por 2 $. Si te ejercen, ¿cuál es tu ganancia máxima por acción?",
+              "a": 7,
+              "why": "(75 − 70) + 2 = 7 $. Por mucho que suba, vendes a 75 $."
+            }
+          ]
         },
         {
           "id": "op9-5",

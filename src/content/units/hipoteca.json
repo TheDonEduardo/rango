@@ -81,7 +81,19 @@
           "unit": "€",
           "a": 375,
           "why": "150.000 € × 3 % ÷ 12 = 375 €. Los intereses de cada mes se calculan sobre lo que debes en ese momento.",
-          "guia": "g1"
+          "guia": "g1",
+          "variantes": [
+            {
+              "q": "Debes 120.000 € al 3 % anual. ¿Cuántos intereses pagas el primer mes?",
+              "a": 300,
+              "why": "120.000 € × 3 % ÷ 12 = 300 €. Los intereses de cada mes se calculan sobre lo que debes en ese momento."
+            },
+            {
+              "q": "Debes 200.000 € al 2,4 % anual. ¿Cuántos intereses pagas el primer mes?",
+              "a": 400,
+              "why": "200.000 € × 2,4 % ÷ 12 = 400 €. Los intereses de cada mes se calculan sobre lo que debes en ese momento."
+            }
+          ]
         },
         {
           "id": "fp1-3",
@@ -136,7 +148,19 @@
           "unit": "€",
           "a": 840,
           "why": "2.400 € × 35 % = 840 €. Por encima de ese nivel, cualquier imprevisto o subida de tipos compromete el resto de tus gastos.",
-          "guia": "g4"
+          "guia": "g4",
+          "variantes": [
+            {
+              "q": "Tus ingresos netos son de 2.000 € al mes. Con la regla de no dedicar más del 35 % a deudas, ¿cuál es tu cuota máxima?",
+              "a": 700,
+              "why": "2.000 € × 35 % = 700 €. Por encima de ese nivel, cualquier imprevisto compromete el resto de tus gastos."
+            },
+            {
+              "q": "Tus ingresos netos son de 2.600 € al mes. Con la regla de no dedicar más del 35 % a deudas, ¿cuál es tu cuota máxima?",
+              "a": 910,
+              "why": "2.600 € × 35 % = 910,00 €. Por encima de ese nivel, cualquier imprevisto compromete el resto de tus gastos."
+            }
+          ]
         },
         {
           "id": "fp2-2",

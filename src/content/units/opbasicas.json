@@ -154,7 +154,19 @@
           "unit": "$",
           "a": 8,
           "why": "112 − 100 − 4 = 8 $. Ejerces para comprar a 100 $ lo que vale 112 $, y a esos 12 $ les restas los 4 $ que pagaste.",
-          "guia": "g3"
+          "guia": "g3",
+          "variantes": [
+            {
+              "q": "Compras una call con precio de ejercicio 50 $ y prima de 3 $. Al vencimiento la acción vale 60 $. ¿Cuánto ganas por acción?",
+              "a": 7,
+              "why": "60 − 50 − 3 = 7 $. Ejerces y restas la prima que pagaste."
+            },
+            {
+              "q": "Compras una call con precio de ejercicio 80 $ y prima de 5 $. Al vencimiento la acción vale 95 $. ¿Cuánto ganas por acción?",
+              "a": 10,
+              "why": "95 − 80 − 5 = 10 $. Ejerces y restas la prima que pagaste."
+            }
+          ]
         },
         {
           "id": "op2-2",

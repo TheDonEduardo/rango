@@ -51,7 +51,19 @@
           "unit": "M€",
           "a": 50,
           "why": "120 − 70 = 50 M€. Es la caja que queda para dividendos, recompras o reducir deuda.",
-          "guia": "g2"
+          "guia": "g2",
+          "variantes": [
+            {
+              "q": "Con un flujo de explotación de 300 M€ y unas inversiones de 120 M€, ¿cuál es el flujo de caja libre?",
+              "a": 180,
+              "why": "300 − 120 = 180 M€. Es la caja que queda para dividendos, recompras o deuda."
+            },
+            {
+              "q": "Con un flujo de explotación de 85 M€ y unas inversiones de 40 M€, ¿cuál es el flujo de caja libre?",
+              "a": 45,
+              "why": "85 − 40 = 45 M€. Es la caja que queda para dividendos, recompras o deuda."
+            }
+          ]
         },
         {
           "id": "fk1-3",

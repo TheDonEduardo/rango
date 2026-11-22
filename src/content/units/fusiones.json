@@ -62,7 +62,19 @@
           "unit": "%",
           "a": 30,
           "why": "26 ÷ 20 − 1 = 30 %. Las primas habituales están entre el 20 y el 40 %: son lo que la compradora tiene que recuperar con la operación.",
-          "guia": "g1"
+          "guia": "g1",
+          "variantes": [
+            {
+              "q": "Una acción cotiza a 40 € y lanzan una OPA a 50 €. ¿Qué prima ofrecen?",
+              "a": 25,
+              "why": "50 ÷ 40 − 1 = 25 %. Es lo que la compradora tendrá que recuperar."
+            },
+            {
+              "q": "Una acción cotiza a 15 € y lanzan una OPA a 18 €. ¿Qué prima ofrecen?",
+              "a": 20,
+              "why": "18 ÷ 15 − 1 = 20 %. Es lo que la compradora tendrá que recuperar."
+            }
+          ]
         },
         {
           "id": "fq1-3",

@@ -72,7 +72,19 @@
           "unit": "€",
           "a": 440,
           "why": "2.200 € × 20 % = 440 €. Las reglas generales son un punto de partida: ajústalas a tu situación real.",
-          "guia": "g2"
+          "guia": "g2",
+          "variantes": [
+            {
+              "q": "La IA te propone la regla 50/30/20 para un sueldo de 1.800 € netos. ¿Cuántos euros van a ahorro?",
+              "a": 360,
+              "why": "1.800 € × 20 % = 360 €. Las reglas generales son un punto de partida."
+            },
+            {
+              "q": "La IA te propone la regla 50/30/20 para un sueldo de 2.500 € netos. ¿Cuántos euros van a ahorro?",
+              "a": 500,
+              "why": "2.500 € × 20 % = 500 €. Las reglas generales son un punto de partida."
+            }
+          ]
         },
         {
           "id": "ia3-4",

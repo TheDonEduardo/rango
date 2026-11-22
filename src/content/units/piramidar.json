@@ -138,7 +138,19 @@
           "unit": "€",
           "a": 36,
           "why": "(100 × 40 + 100 × 32) ÷ 200 = 36 €. El precio medio baja, pero ahora tienes el doble de dinero en una acción que está cayendo.",
-          "guia": "g3"
+          "guia": "g3",
+          "variantes": [
+            {
+              "q": "Compras 100 acciones a 50 € y, cuando caen, otras 100 a 40 €. ¿Cuál es tu precio medio?",
+              "a": 45,
+              "why": "(50 + 40) ÷ 2 = 45 €. El precio medio baja, pero tienes el doble de dinero en una acción que cae."
+            },
+            {
+              "q": "Compras 100 acciones a 30 € y, cuando caen, otras 100 a 22 €. ¿Cuál es tu precio medio?",
+              "a": 26,
+              "why": "(30 + 22) ÷ 2 = 26 €. El precio medio baja, pero tienes el doble de dinero en una acción que cae."
+            }
+          ]
         },
         {
           "id": "tp2-3",
