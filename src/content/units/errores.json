@@ -142,7 +142,19 @@
           "unit": "€",
           "a": 15,
           "why": "(20 + 10) ÷ 2 = 15 €. Promediar a la baja dobla la apuesta en algo que va mal; hacerlo para «recuperar antes» es uno de los errores que más cuestan.",
-          "guia": "g3"
+          "guia": "g3",
+          "variantes": [
+            {
+              "q": "Compras acciones a 40 € y caen a 30 €. Compras la misma cantidad de acciones otra vez. ¿Cuál es tu precio medio?",
+              "a": 35,
+              "why": "(40 + 30) ÷ 2 = 35 €. Promediar a la baja dobla lo que tienes en una acción que cae."
+            },
+            {
+              "q": "Compras acciones a 16 € y caen a 10 €. Compras la misma cantidad de acciones otra vez. ¿Cuál es tu precio medio?",
+              "a": 13,
+              "why": "(16 + 10) ÷ 2 = 13 €. Promediar a la baja dobla lo que tienes en una acción que cae."
+            }
+          ]
         },
         {
           "id": "bi2-2",
@@ -151,7 +163,19 @@
           "unit": "%",
           "a": 80,
           "why": "10 × 8 % = 80 %. Con apalancamiento, un movimiento normal del mercado puede borrar casi todo tu dinero en días.",
-          "guia": "g3"
+          "guia": "g3",
+          "variantes": [
+            {
+              "q": "Operas con un apalancamiento de 5 veces y el precio cae un 6 %. ¿Qué porcentaje de tu dinero pierdes?",
+              "a": 30,
+              "why": "5 × 6 % = 30 %. El apalancamiento multiplica las pérdidas igual que las ganancias."
+            },
+            {
+              "q": "Operas con un apalancamiento de 20 veces y el precio cae un 3 %. ¿Qué porcentaje de tu dinero pierdes?",
+              "a": 60,
+              "why": "20 × 3 % = 60 %. El apalancamiento multiplica las pérdidas igual que las ganancias."
+            }
+          ]
         },
         {
           "id": "bi2-3",
@@ -180,7 +204,19 @@
           "unit": "€",
           "a": 600,
           "why": "10 × 12 × 5 = 600 € al año. Con una cartera de 6.000 €, eso es un 10 % que tienes que ganar solo para quedarte igual.",
-          "guia": "g1"
+          "guia": "g1",
+          "variantes": [
+            {
+              "q": "Haces 6 operaciones al mes y pagas 3 € por cada una. ¿Cuántos euros pagas al año en comisiones?",
+              "a": 216,
+              "why": "6 × 3 € × 12 = 216 €. Operar mucho tiene un coste fijo que se come la rentabilidad."
+            },
+            {
+              "q": "Haces 15 operaciones al mes y pagas 2 € por cada una. ¿Cuántos euros pagas al año en comisiones?",
+              "a": 360,
+              "why": "15 × 2 € × 12 = 360 €. Operar mucho tiene un coste fijo que se come la rentabilidad."
+            }
+          ]
         },
         {
           "id": "bi2-5",

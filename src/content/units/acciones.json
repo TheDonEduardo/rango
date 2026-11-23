@@ -84,7 +84,19 @@
           "unit": "%",
           "a": 12,
           "why": "(28,00 − 25,00) ÷ 25,00 = 12 %. En euros: 3,00 € × 40 = 120 € sobre 1.000 € invertidos.",
-          "guia": "g2"
+          "guia": "g2",
+          "variantes": [
+            {
+              "q": "Compras 30 acciones a 20,00 € y suben a 23,00 €. ¿Qué rentabilidad llevas?",
+              "a": 15,
+              "why": "23,00 ÷ 20,00 − 1 = 15 %. El número de acciones no cambia el porcentaje."
+            },
+            {
+              "q": "Compras 100 acciones a 8,00 € y suben a 9,00 €. ¿Qué rentabilidad llevas?",
+              "a": 12.5,
+              "why": "9,00 ÷ 8,00 − 1 = 12,5 %. El número de acciones no cambia el porcentaje."
+            }
+          ]
         },
         {
           "id": "ba1-4",
@@ -113,7 +125,19 @@
           "unit": "€",
           "a": 30,
           "why": "50 × 0,60 € = 30 €, antes de impuestos. Es la otra fuente de rentabilidad de una acción, además de la subida del precio.",
-          "guia": "g2"
+          "guia": "g2",
+          "variantes": [
+            {
+              "q": "Compras 80 acciones a 15,00 € y la empresa reparte 0,75 € de dividendo por acción en el año. ¿Cuántos euros cobras?",
+              "a": 60,
+              "why": "80 × 0,75 € = 60 € brutos. Hacienda retiene una parte antes de que lleguen a tu cuenta."
+            },
+            {
+              "q": "Compras 120 acciones a 20,00 € y la empresa reparte 0,50 € de dividendo por acción en el año. ¿Cuántos euros cobras?",
+              "a": 60,
+              "why": "120 × 0,50 € = 60 € brutos. Hacienda retiene una parte antes de que lleguen a tu cuenta."
+            }
+          ]
         }
       ]
     },

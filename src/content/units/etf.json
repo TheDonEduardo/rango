@@ -150,7 +150,19 @@
           "unit": "€",
           "a": 7,
           "why": "10.000 × 0,07 % = 7 € al año. Un fondo de gestión activa con un 1,5 % costaría 150 €, y esa diferencia se acumula año tras año.",
-          "guia": "g3"
+          "guia": "g3",
+          "variantes": [
+            {
+              "q": "Inviertes 25.000 € en un ETF con un coste anual (TER) del 0,12 %. ¿Cuántos € te cuesta al año?",
+              "a": 30,
+              "why": "25.000 € × 0,12 % = 30 €. El TER se descuenta del valor del fondo, no te llega factura."
+            },
+            {
+              "q": "Inviertes 5.000 € en un ETF con un coste anual (TER) del 0,2 %. ¿Cuántos € te cuesta al año?",
+              "a": 10,
+              "why": "5.000 € × 0,2 % = 10 €. El TER se descuenta del valor del fondo, no te llega factura."
+            }
+          ]
         },
         {
           "id": "bd2-3",

@@ -374,7 +374,19 @@
           "unit": "",
           "a": 3,
           "why": "(26,00 − 20,00) ÷ (20,00 − 18,00) = 6 ÷ 2 = 3: arriesgas 1 para ganar 3. En la ruta técnica lo llamarás 3R.",
-          "guia": "g4"
+          "guia": "g4",
+          "variantes": [
+            {
+              "q": "Entrada a 50,00 €, stop en 47,00 € y objetivo en 59,00 €. ¿Cuántas veces lo que arriesgas es lo que puedes ganar?",
+              "a": 3,
+              "why": "(59,00 − 50,00) ÷ (50,00 − 47,00) = 3. Es la relación beneficio/riesgo."
+            },
+            {
+              "q": "Entrada a 10,00 €, stop en 9,50 € y objetivo en 11,00 €. ¿Cuántas veces lo que arriesgas es lo que puedes ganar?",
+              "a": 2,
+              "why": "(11,00 − 10,00) ÷ (10,00 − 9,50) = 2. Es la relación beneficio/riesgo."
+            }
+          ]
         },
         {
           "id": "bc2-4",

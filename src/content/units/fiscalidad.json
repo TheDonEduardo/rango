@@ -152,7 +152,19 @@
           "unit": "€",
           "a": 500,
           "why": "900 − 400 = 500 €. Las pérdidas por venta compensan las ganancias del mismo año.",
-          "guia": "g4"
+          "guia": "g4",
+          "variantes": [
+            {
+              "q": "Este año ganas 1.500 € al vender unas acciones y pierdes 600 € con otras. ¿Por qué ganancia tributas?",
+              "a": 900,
+              "why": "1.500 − 600 = 900 €. Las pérdidas del año compensan las ganancias."
+            },
+            {
+              "q": "Este año ganas 700 € al vender unas acciones y pierdes 250 € con otras. ¿Por qué ganancia tributas?",
+              "a": 450,
+              "why": "700 − 250 = 450 €. Las pérdidas del año compensan las ganancias."
+            }
+          ]
         },
         {
           "id": "be2-2",

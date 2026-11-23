@@ -76,7 +76,19 @@
           "unit": "%",
           "a": 25,
           "why": "De 100 € a 80 €, recuperar 20 € sobre 80 € es un 25 %. La pérdida y la ganancia necesaria no son simétricas.",
-          "guia": "g1"
+          "guia": "g1",
+          "variantes": [
+            {
+              "q": "Pierdes un 30 %. ¿Cuánto necesitas ganar para recuperarte? Redondea a 1 decimal.",
+              "a": 42.9,
+              "why": "30 ÷ (100 − 30) = 42,9 %. Cuanto mayor es la caída, más cuesta salir de ella."
+            },
+            {
+              "q": "Pierdes un 10 %. ¿Cuánto necesitas ganar para recuperarte? Redondea a 1 decimal.",
+              "a": 11.1,
+              "why": "10 ÷ (100 − 10) = 11,1 %. Cuanto mayor es la caída, más cuesta salir de ella."
+            }
+          ]
         },
         {
           "id": "bb1-3",
@@ -85,7 +97,19 @@
           "unit": "€",
           "a": 210,
           "why": "Año 1: 1.000 × 1,10 = 1.100 €. Año 2: 1.100 × 1,10 = 1.210 €. Ganas 210 €, no 200: los beneficios también generan beneficios.",
-          "guia": "g2"
+          "guia": "g2",
+          "variantes": [
+            {
+              "q": "Inviertes 2.000 € al 5 % anual durante 2 años y reinviertes lo ganado. ¿Cuántos € has ganado en total?",
+              "a": 205,
+              "why": "2.000 × (1 + 5 %)² − 2.000 = 205 €. El segundo año ganas también sobre lo ganado el primero."
+            },
+            {
+              "q": "Inviertes 500 € al 20 % anual durante 2 años y reinviertes lo ganado. ¿Cuántos € has ganado en total?",
+              "a": 220,
+              "why": "500 × (1 + 20 %)² − 500 = 220 €. El segundo año ganas también sobre lo ganado el primero."
+            }
+          ]
         },
         {
           "id": "bb1-4",
@@ -160,7 +184,19 @@
           "unit": "€",
           "a": 50,
           "why": "5.000 × 1 % = 50 €. Con ese límite, ni diez pérdidas seguidas te quitan un 10 % del capital.",
-          "guia": "g4"
+          "guia": "g4",
+          "variantes": [
+            {
+              "q": "Tu capital es de 8.000 € y decides no perder más del 1 % en una operación. ¿Cuál es tu pérdida máxima?",
+              "a": 80,
+              "why": "8.000 € × 1 % = 80 €. Con esa cifra eliges cuántas acciones comprar."
+            },
+            {
+              "q": "Tu capital es de 12.000 € y decides no perder más del 0,5 % en una operación. ¿Cuál es tu pérdida máxima?",
+              "a": 60,
+              "why": "12.000 € × 0,5 % = 60 €. Con esa cifra eliges cuántas acciones comprar."
+            }
+          ]
         },
         {
           "id": "bb2-4",

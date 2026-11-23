@@ -84,7 +84,19 @@
           "unit": "€",
           "a": 40,
           "why": "20.000 × 0,2 % = 40 € al año, aunque no operes. Muchos brókeres ya no cobran custodia: compáralo antes de abrir la cuenta.",
-          "guia": "g2"
+          "guia": "g2",
+          "variantes": [
+            {
+              "q": "Tu bróker cobra una custodia del 0,15 % anual y tu cartera vale 40.000 €. ¿Cuánto pagas al año?",
+              "a": 60,
+              "why": "40.000 € × 0,15 % = 60 €. Muchos brókeres ya no cobran custodia: compáralo."
+            },
+            {
+              "q": "Tu bróker cobra una custodia del 0,3 % anual y tu cartera vale 10.000 €. ¿Cuánto pagas al año?",
+              "a": 30,
+              "why": "10.000 € × 0,3 % = 30 €. Muchos brókeres ya no cobran custodia: compáralo."
+            }
+          ]
         },
         {
           "id": "bf1-4",
