@@ -184,6 +184,32 @@ async function privacidadDirecta(b, url) {
   await p.close(); return errs.length;
 }
 
+// Bienvenida: la línea de privacidad de la lista de espera se ve solo cuando la lista está activa (con y sin LISTA_ESPERA/CONTACTO).
+async function bienvenidaPrivacidad(b, url) {
+  const errs = [];
+  const casos = [
+    ['desactivada', null, false],
+    ['con formulario', ['LISTA_ESPERA', 'https://example.com/f'], true],
+    ['con correo', ['CONTACTO', 'hola@example.com'], true]
+  ];
+  for (const [nom, extra, visible] of casos) {
+    const p = await b.newPage({viewport: {width: 390, height: 844}});
+    if (extra) await p.route('**/src/config.js', async r => {
+      const resp = await r.fetch(), txt = (await resp.text()).replace(`export const ${extra[0]}='';`, `export const ${extra[0]}='${extra[1]}';`);
+      await r.fulfill({response: resp, body: txt});
+    });
+    p.on('pageerror', e => errs.push('error de página: ' + e.message)); p.on('console', m => m.type() === 'error' && errs.push('consola: ' + m.text()));
+    await p.goto(url + 'bienvenida.html'); await p.waitForSelector('h1');
+    await p.waitForFunction(() => document.getElementById('espera-resp').textContent !== '', null, {timeout: 5000}).catch(() => errs.push('bienvenida.js no llega a rellenar el responsable'));
+    const vis = await p.locator('#espera-priv').isVisible();
+    if (vis !== visible) errs.push(`lista de espera ${nom}: la línea de privacidad ${vis ? 'se ve' : 'no se ve'} y ${visible ? 'debería verse' : 'debería ocultarse'}`);
+    if (visible && !(await p.locator('#espera-priv a[href="./?privacidad"]').isVisible())) errs.push(`lista de espera ${nom}: falta el enlace a la política`);
+    await p.close();
+  }
+  console.log('  ' + (errs.length ? errs.join('\n  ') : 'bien'));
+  return errs.length;
+}
+
 // Carga: mientras llega el contenido se ve la pantalla de carga; si no llega, un mensaje con «Reintentar» que funciona.
 async function cargaFallida(b, url) {
   const p = await b.newPage({viewport: {width: 390, height: 844}}), errs = [];
@@ -220,6 +246,7 @@ async function cargaFallida(b, url) {
   let fallos = await recorrer(b, url, ids, modos, dir);
   if (!has('--lecciones') && !has('--todas')) { console.log('Guía (teclado y dedo):'); fallos += await guiaNavegacion(b, url); }
   if (!has('--lecciones') && !has('--todas')) { console.log('Política de privacidad directa:'); fallos += await privacidadDirecta(b, url); }
+  if (!has('--lecciones') && !has('--todas')) { console.log('Bienvenida: privacidad de la lista de espera:'); fallos += await bienvenidaPrivacidad(b, url); }
   if (!has('--lecciones') && !has('--todas')) { console.log('Carga y fallo de carga:'); fallos += await cargaFallida(b, url); }
   if (!has('--sin-axe') && !has('--lecciones') && !has('--todas')) { console.log('Accesibilidad:'); fallos += await auditar(b, url); }
   await b.close(); s.close();
