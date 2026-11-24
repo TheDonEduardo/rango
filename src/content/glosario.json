@@ -806,5 +806,31 @@
  {
   "termino": "reparto proporcional",
   "d": "Repartir los gastos comunes de una pareja según los ingresos de cada uno, para que los dos dediquen el mismo porcentaje."
+ },
+ {
+  "termino": "explorador de bloques",
+  "d": "Web pública en la que cualquiera puede consultar las transacciones, direcciones y bloques de una cadena."
+ },
+ {
+  "termino": "confirmaciones",
+  "alias": [
+   "confirmación"
+  ],
+  "no": [
+   "día de confirmación",
+   "sesgo de confirmación"
+  ],
+  "d": "Bloques añadidos a la cadena después del que contiene una transacción. Cuantas más, más difícil es deshacerla."
+ },
+ {
+  "termino": "beta",
+  "d": "Cuánto se mueve una acción o una cartera frente a su índice: con beta 1,2, sube o baja de media un 20 % más que el índice."
+ },
+ {
+  "termino": "derecho de suscripción",
+  "alias": [
+   "derechos de suscripción"
+  ],
+  "d": "Derecho que recibe cada acción antigua en una ampliación para comprar acciones nuevas. Se puede usar o vender."
  }
 ]

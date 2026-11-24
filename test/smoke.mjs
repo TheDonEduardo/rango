@@ -287,7 +287,8 @@ for (const L of T.FLAT) {
 // Al fallar una pregunta con «porque», se explica por qué la opción elegida no es correcta.
 { const L = T.FLAT.find(l => l.kind === 'lesson' && l.ex.some(e => e.porque)), ex = L.ex.find(e => e.porque);
   T.startRun(Object.assign({}, L, {ex: [ex], casos: []})); const mala = (ex.a + 1) % ex.opts.length; T.setSel(mala); T.check();
-  if (!app.innerHTML.includes('class="porque"') || !app.innerHTML.includes(ex.porque[mala].slice(0, 20))) errs.push('el fallo no explica por qué la opción elegida no es correcta'); T.goHome(); }
+  // Se compara el texto sin etiquetas: el glosario convierte algunos términos de la explicación en botones.
+  if (!app.innerHTML.includes('class="porque"') || !app.innerHTML.replace(/<[^>]+>/g, '').includes(ex.porque[mala].slice(0, 20))) errs.push('el fallo no explica por qué la opción elegida no es correcta'); T.goHome(); }
 
 // 3) Pantalla sin vidas
 T.startRun(T.FLAT[0]);

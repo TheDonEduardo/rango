@@ -1,0 +1,173 @@
+{
+  "n": 15,
+  "id": "ampliaciones",
+  "track": "fundamental",
+  "title": "Ampliaciones de capital",
+  "blurb": "Derechos de suscripción, precio teórico, qué hacer con los derechos y qué dice el destino del dinero.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Acciones nuevas con descuento",
+      "texto": "En una ampliación con derechos, la empresa vende acciones nuevas a sus accionistas, normalmente por debajo del precio. Cada acción antigua recibe un derecho de suscripción.",
+      "ejemplo": "100 millones de acciones a 10 €: una nueva por cada 4 antiguas, a 6 €."
+    },
+    {
+      "id": "g2",
+      "titulo": "Precio teórico tras la ampliación",
+      "texto": "El precio se ajusta a la media ponderada de las acciones antiguas y las nuevas. La diferencia con el precio anterior es el valor teórico del derecho.",
+      "ejemplo": "(100 × 10 + 25 × 6) ÷ 125 = 9,20 €. Derecho: 10 − 9,20 = 0,80 €."
+    },
+    {
+      "id": "g3",
+      "titulo": "Acudir, vender o perder",
+      "texto": "Acudiendo o vendiendo los derechos, tu patrimonio no cambia. Si no haces nada y los derechos caducan, pierdes su valor.",
+      "ejemplo": "400 acciones: 400 derechos × 0,80 € = 320 € que no debes dejar perder."
+    },
+    {
+      "id": "g4",
+      "titulo": "Para qué es el dinero",
+      "texto": "Una ampliación para crecer con proyectos rentables puede crear valor. Una para pagar deuda o cubrir pérdidas suele indicar problemas. Si no acudes, tu participación se diluye.",
+      "ejemplo": "De 100 a 125 millones de acciones: tu parte baja un 20 %."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "fh1",
+      "title": "Derechos y precio",
+      "ex": [
+        {
+          "id": "fh1-1",
+          "t": "num",
+          "q": "Una empresa tiene 100 millones de acciones a 10 € y emite 1 nueva por cada 4 antiguas. ¿Cuántos millones de acciones nuevas emite?",
+          "unit": "mill.",
+          "a": 25,
+          "why": "100 ÷ 4 = 25 millones de acciones nuevas.",
+          "guia": "g1"
+        },
+        {
+          "id": "fh1-2",
+          "t": "num",
+          "q": "Las acciones nuevas se venden a 6 €. ¿Cuál es el precio teórico tras la ampliación? Redondea a 2 decimales.",
+          "unit": "€",
+          "a": 9.2,
+          "why": "(100 × 10 + 25 × 6) ÷ 125 = 1.150 ÷ 125 = 9,20 €.",
+          "tol": 0.01,
+          "guia": "g2"
+        },
+        {
+          "id": "fh1-3",
+          "t": "num",
+          "q": "Con ese precio teórico de 9,20 €, ¿cuál es el valor teórico de cada derecho?",
+          "unit": "€",
+          "a": 0.8,
+          "why": "10 − 9,20 = 0,80 €. También (9,20 − 6) ÷ 4 = 0,80 €: hacen falta 4 derechos para comprar una acción nueva a 6 €.",
+          "guia": "g2"
+        },
+        {
+          "id": "fh1-4",
+          "t": "choice",
+          "q": "¿Por qué baja el precio de la acción cuando empieza la ampliación?",
+          "opts": [
+            "Porque la empresa ha anunciado pérdidas",
+            "Porque el mercado castiga toda ampliación",
+            "Porque se reparte un dividendo extra",
+            "Entran acciones nuevas a un precio más bajo"
+          ],
+          "a": 3,
+          "why": "El precio se ajusta a la media entre las antiguas a 10 € y las nuevas a 6 €. Ese ajuste es técnico: el valor del derecho lo compensa.",
+          "guia": "g2",
+          "porque": [
+            "El ajuste es mecánico y ocurre aunque la empresa gane dinero.",
+            "El ajuste técnico no es un castigo: el derecho compensa la bajada.",
+            "No hay dividendo: la bajada viene de las acciones nuevas más baratas.",
+            null
+          ]
+        },
+        {
+          "id": "fh1-5",
+          "t": "num",
+          "q": "Tienes 400 acciones de esa empresa. ¿Cuántas acciones nuevas puedes suscribir con tus derechos?",
+          "unit": "",
+          "a": 100,
+          "why": "400 derechos ÷ 4 = 100 acciones nuevas.",
+          "guia": "g1"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "fh2",
+      "title": "Qué hacer con los derechos",
+      "ex": [
+        {
+          "id": "fh2-1",
+          "t": "num",
+          "q": "Con esas 400 acciones, ¿cuántos euros pagas por suscribir las 100 acciones nuevas a 6 €?",
+          "unit": "€",
+          "a": 600,
+          "why": "100 × 6 = 600 €. Tendrás 500 acciones a 9,20 €: 4.600 €, lo mismo que tenías (4.000 €) más lo que has pagado.",
+          "guia": "g3"
+        },
+        {
+          "id": "fh2-2",
+          "t": "num",
+          "q": "Si en lugar de acudir vendes tus 400 derechos a su valor teórico de 0,80 €, ¿cuánto cobras?",
+          "unit": "€",
+          "a": 320,
+          "why": "400 × 0,80 = 320 €. Con 400 acciones a 9,20 € (3.680 €) más 320 €, sigues teniendo 4.000 €.",
+          "guia": "g3"
+        },
+        {
+          "id": "fh2-3",
+          "t": "choice",
+          "q": "Tienes 400 acciones y no haces nada: los derechos caducan sin usarse ni venderse. ¿Qué pasa?",
+          "opts": [
+            "No pasa nada: el patrimonio no cambia",
+            "Ganas porque la acción vale menos",
+            "Pierdes el valor de los derechos: 320 €",
+            "La empresa te devuelve el dinero"
+          ],
+          "a": 2,
+          "why": "Tus 400 acciones pasan de 10 a 9,20 €: 320 € menos. Acudiendo o vendiendo los derechos lo compensas; sin hacer nada, se pierde.",
+          "guia": "g3",
+          "porque": [
+            "Las acciones bajan a 9,20 € y, sin derechos, nada lo compensa.",
+            "Que la acción valga menos no es una ganancia para ti.",
+            null,
+            "Los derechos caducados no se devuelven."
+          ]
+        },
+        {
+          "id": "fh2-4",
+          "t": "num",
+          "q": "Si no acudes, ¿cuánto baja tu porcentaje de la empresa al pasar de 100 a 125 millones de acciones?",
+          "unit": "%",
+          "a": 20,
+          "why": "1 − 100 ÷ 125 = 20 %. Tienes las mismas acciones, pero de una empresa dividida en más partes.",
+          "guia": "g4"
+        },
+        {
+          "id": "fh2-5",
+          "t": "choice",
+          "q": "Una empresa con caja para seis meses amplía capital para cubrir pérdidas. ¿Qué indica?",
+          "opts": [
+            "Problemas: necesita dinero para seguir",
+            "Crecimiento: tiene proyectos muy rentables",
+            "Nada: todas las ampliaciones son iguales",
+            "Que va a repartir más dividendos"
+          ],
+          "a": 0,
+          "why": "Ampliar para cubrir pérdidas significa que el negocio no genera la caja que necesita. Ampliar para financiar proyectos rentables es otra historia.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "El dinero va a cubrir pérdidas, no a proyectos nuevos.",
+            "El destino del dinero cambia por completo lo que significa.",
+            "Quien necesita caja para sobrevivir no reparte más dividendos."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "n": 9,
+  "id": "opindice",
+  "track": "derivados",
+  "title": "Cubrir la cartera con un índice",
+  "blurb": "Cuántas puts sobre un índice necesitas, cuánto cuestan, qué pagan en una caída y qué no cubren.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Lo que cubre un contrato",
+      "texto": "Una opción sobre un índice vale una cantidad fija de euros por cada punto. Lo que cubre un contrato es el nivel del índice por esos euros por punto.",
+      "ejemplo": "Índice a 5.000 puntos y 10 € por punto: cada contrato cubre 50.000 €."
+    },
+    {
+      "id": "g2",
+      "titulo": "Cuántos contratos",
+      "texto": "Divide el valor de la cartera entre lo que cubre un contrato. Si la cartera se mueve más que el índice (beta mayor que 1), multiplica antes por la beta.",
+      "ejemplo": "100.000 € ÷ 50.000 € = 2 contratos. Con una beta de 1,2: 2,4."
+    },
+    {
+      "id": "g3",
+      "titulo": "Coste y suelo",
+      "texto": "La prima se paga en puntos por los euros de cada punto. Una put un 10 % por debajo deja que la cartera pierda ese 10 % antes de que la cobertura empiece a pagar.",
+      "ejemplo": "Put 4.500 a 60 puntos: 600 € por contrato, 1.200 € por los dos, un 1,2 % de la cartera."
+    },
+    {
+      "id": "g4",
+      "titulo": "Lo que no cubre",
+      "texto": "La cobertura con un índice protege de una caída general, no de que tus acciones lo hagan peor que el índice.",
+      "ejemplo": "Índice −20 % y cartera −30 %: las puts solo responden a la caída del índice; el 10 % de más es tuyo."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "op27",
+      "title": "Dimensionar la cobertura",
+      "ex": [
+        {
+          "id": "op27-1",
+          "t": "num",
+          "q": "Un índice cotiza a 5.000 puntos y cada contrato de opciones vale 10 € por punto. ¿Cuántos miles de euros cubre un contrato?",
+          "unit": "mil €",
+          "a": 50,
+          "why": "5.000 × 10 = 50.000 €. Es lo que mueve un contrato por cada punto que sube o baja el índice, multiplicado por su nivel.",
+          "guia": "g1"
+        },
+        {
+          "id": "op27-2",
+          "t": "num",
+          "q": "Tu cartera de 100.000 € se mueve igual que el índice. ¿Cuántas puts de 50.000 € necesitas para cubrirla entera?",
+          "unit": "",
+          "a": 2,
+          "why": "100.000 ÷ 50.000 = 2 contratos.",
+          "guia": "g1"
+        },
+        {
+          "id": "op27-3",
+          "t": "num",
+          "q": "Si tu cartera tiene una beta de 1,2 frente al índice, ¿cuántos contratos equivalen a cubrirla? Redondea a 1 decimal.",
+          "unit": "",
+          "a": 2.4,
+          "why": "100.000 × 1,2 ÷ 50.000 = 2,4. Se redondea a 2 o a 3 según cuánta protección quieras pagar.",
+          "tol": 0.05,
+          "guia": "g2"
+        },
+        {
+          "id": "op27-4",
+          "t": "num",
+          "q": "Compras 2 puts con ejercicio 4.500 a 60 puntos cada una, a 10 € por punto. ¿Cuántos miles de euros pagas en total?",
+          "unit": "mil €",
+          "a": 1.2,
+          "why": "60 × 10 × 2 = 1.200 €.",
+          "guia": "g3"
+        },
+        {
+          "id": "op27-5",
+          "t": "num",
+          "q": "¿Qué porcentaje de la cartera de 100.000 € supone esa prima?",
+          "unit": "%",
+          "a": 1.2,
+          "why": "1.200 ÷ 100.000 = 1,2 %. Es el coste de tener un suelo durante el plazo de las puts.",
+          "guia": "g3"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "op28",
+      "title": "Cuando cae el mercado",
+      "ex": [
+        {
+          "id": "op28-1",
+          "t": "num",
+          "q": "El índice cae de 5.000 a 4.000 puntos al vencimiento. ¿Cuántos puntos vale cada put con ejercicio 4.500?",
+          "unit": "",
+          "a": 500,
+          "why": "4.500 − 4.000 = 500 puntos. Por encima de 4.500, la put no valdría nada.",
+          "guia": "g3"
+        },
+        {
+          "id": "op28-2",
+          "t": "num",
+          "q": "¿Cuántos miles de euros pagan en total las 2 puts, a 10 € por punto?",
+          "unit": "mil €",
+          "a": 10,
+          "why": "500 × 10 × 2 = 10.000 €.",
+          "guia": "g3"
+        },
+        {
+          "id": "op28-3",
+          "t": "num",
+          "q": "Tu cartera de 100.000 € cae lo mismo que el índice, un 20 %. Restando lo que pagan las puts y sumando la prima de 1.200 €, ¿cuántos miles de euros pierdes en total? Redondea a 1 decimal.",
+          "unit": "mil €",
+          "a": 11.2,
+          "why": "20.000 − 10.000 + 1.200 = 11.200 €, frente a 20.000 € sin cobertura. El primer 10 % de caída, hasta 4.500, no está cubierto.",
+          "tol": 0.05,
+          "guia": "g3"
+        },
+        {
+          "id": "op28-4",
+          "t": "choice",
+          "q": "El índice cae un 20 %, pero tus acciones caen un 30 %. ¿Qué parte de la pérdida no cubren las puts sobre el índice?",
+          "opts": [
+            "Ninguna: la put cubre toda la cartera",
+            "Lo que caen tus acciones de más",
+            "Toda: las puts del índice no pagan nada",
+            "Solo la prima que pagaste por las puts"
+          ],
+          "a": 1,
+          "why": "La put responde al índice, no a tus acciones. Si tu cartera lo hace peor que el índice, esa diferencia no tiene cobertura.",
+          "guia": "g4",
+          "porque": [
+            "La put sigue al índice: lo que tu cartera cae de más no está cubierto.",
+            null,
+            "Con el índice por debajo del ejercicio, las puts sí pagan.",
+            "Además de la prima, queda sin cubrir lo que tu cartera cae de más."
+          ]
+        },
+        {
+          "id": "op28-5",
+          "t": "choice",
+          "q": "¿Cuándo tiene más sentido cubrirse con puts sobre un índice en lugar de con puts de cada acción?",
+          "opts": [
+            "Con una sola acción que no está en el índice",
+            "Cuando temes un mal resultado de una empresa",
+            "Con una cartera diversificada como el índice",
+            "Cuando quieres ganar con la subida del índice"
+          ],
+          "a": 2,
+          "why": "Una sola put sobre el índice cubre muchas acciones a la vez y suele salir más barata que una por cada valor. Solo funciona si la cartera se parece al índice.",
+          "guia": "g4",
+          "porque": [
+            "Una acción fuera del índice puede moverse sin relación con él.",
+            "El riesgo de una empresa concreta se cubre con opciones sobre esa empresa.",
+            null,
+            "Las puts protegen de las caídas; para ganar con la subida se usan calls."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "n": 10,
+  "id": "crenvios",
+  "track": "cripto",
+  "title": "Enviar y recibir cripto",
+  "blurb": "Dirección y red, envío de prueba, comisiones y cómo seguir una transacción en el explorador.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Dirección y red",
+      "texto": "Para recibir das tu dirección pública, nunca tu frase semilla. La red debe coincidir: la misma moneda estable existe en varias redes y un envío por una red que el destino no admite puede perderse.",
+      "ejemplo": "Enviada por la red A a una plataforma que solo la admite por la red B: el saldo no llega."
+    },
+    {
+      "id": "g2",
+      "titulo": "Envío de prueba",
+      "texto": "Las transacciones no tienen vuelta atrás. Con importes grandes, envía primero una cantidad pequeña y comprueba que llega antes de mandar el resto.",
+      "ejemplo": "Prueba con 1 € de comisión antes de enviar 5.000 €: un 0,02 % del total."
+    },
+    {
+      "id": "g3",
+      "titulo": "Comisiones de red",
+      "texto": "Cada envío paga una comisión a la red, que depende de la red y de su congestión, no del importe. En envíos pequeños pesa mucho.",
+      "ejemplo": "Comisión de 3 €: un 5 % al enviar 60 € y un 0,1 % al enviar 3.000 €."
+    },
+    {
+      "id": "g4",
+      "titulo": "Confirmaciones y explorador",
+      "texto": "Una transacción se considera firme tras varias confirmaciones, los bloques añadidos después del suyo. Con su identificador puedes seguirla en un explorador de bloques, una web pública.",
+      "ejemplo": "Bitcoin añade un bloque cada unos 10 minutos: 6 confirmaciones, alrededor de una hora."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "cw1",
+      "title": "Antes de enviar",
+      "ex": [
+        {
+          "id": "cw1-1",
+          "t": "choice",
+          "q": "Una plataforma te pide un dato para enviarte bitcoin. ¿Cuál le das?",
+          "opts": [
+            "Tu frase semilla de 12 palabras",
+            "Tu dirección pública de bitcoin",
+            "Tu clave privada",
+            "La contraseña de tu monedero"
+          ],
+          "a": 1,
+          "why": "Para recibir solo hace falta la dirección pública. La frase semilla, la clave privada o la contraseña dan control sobre tus fondos: quien las pide para enviarte algo te está estafando.",
+          "guia": "g1",
+          "porque": [
+            "Con la frase semilla cualquiera puede vaciar tu monedero.",
+            null,
+            "La clave privada da control total sobre los fondos.",
+            "La contraseña protege tu monedero: nadie la necesita para enviarte nada."
+          ]
+        },
+        {
+          "id": "cw1-2",
+          "t": "choice",
+          "q": "Vas a enviar una moneda estable que existe en varias redes. ¿Qué compruebas además de la dirección?",
+          "opts": [
+            "Que la red de envío sea la que admite el destino",
+            "Que el envío se haga en horario de mercado",
+            "Que el importe sea un número redondo",
+            "Que el destino tenga el mismo logotipo"
+          ],
+          "a": 0,
+          "why": "La misma moneda puede circular por redes distintas. Si el destino no admite la red por la que envías, el saldo puede no llegar o perderse.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Las redes cripto funcionan a todas horas, sin horario de mercado.",
+            "Que el importe sea redondo no influye en que el envío llegue.",
+            "Un logotipo igual no garantiza que sea la misma red."
+          ]
+        },
+        {
+          "id": "cw1-3",
+          "t": "num",
+          "q": "Vas a enviar 5.000 € y primero mandas una prueba que paga 1 € de comisión. ¿Qué porcentaje del total supone ese coste? Redondea a 2 decimales.",
+          "unit": "%",
+          "a": 0.02,
+          "why": "1 ÷ 5.000 = 0,02 %. Un coste mínimo para comprobar dirección y red antes de arriesgar el resto.",
+          "guia": "g2"
+        },
+        {
+          "id": "cw1-4",
+          "t": "num",
+          "q": "Una comisión de red de 3 € para enviar 60 €. ¿Qué porcentaje del envío supone?",
+          "unit": "%",
+          "a": 5,
+          "why": "3 ÷ 60 = 5 %. En envíos pequeños, la comisión de red pesa mucho.",
+          "guia": "g3"
+        },
+        {
+          "id": "cw1-5",
+          "t": "num",
+          "q": "La misma comisión de 3 € para enviar 3.000 €. ¿Qué porcentaje supone ahora?",
+          "unit": "%",
+          "a": 0.1,
+          "why": "3 ÷ 3.000 = 0,1 %. La comisión depende de la red y de su congestión, no del importe enviado.",
+          "guia": "g3"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "cw2",
+      "title": "Seguir una transacción",
+      "ex": [
+        {
+          "id": "cw2-1",
+          "t": "num",
+          "q": "En bitcoin se añade un bloque cada unos 10 minutos. ¿Cuántos minutos tardan, de media, 6 confirmaciones?",
+          "unit": "min",
+          "a": 60,
+          "why": "6 × 10 = 60 minutos. Cada bloque nuevo hace más difícil deshacer la transacción.",
+          "guia": "g4"
+        },
+        {
+          "id": "cw2-2",
+          "t": "choice",
+          "q": "¿Qué es un explorador de bloques?",
+          "opts": [
+            "Un monedero que guarda tus claves",
+            "Una plataforma para comprar y vender",
+            "Una web pública que muestra transacciones",
+            "Un programa que mina bloques nuevos"
+          ],
+          "a": 2,
+          "why": "Cualquiera puede buscar una dirección o una transacción y ver su importe, su comisión y sus confirmaciones. Por eso las cadenas públicas no son anónimas.",
+          "guia": "g4",
+          "porque": [
+            "El monedero guarda claves; el explorador solo muestra datos públicos.",
+            "En un explorador no se compra ni se vende nada.",
+            null,
+            "Minar es añadir bloques; el explorador solo los muestra."
+          ]
+        },
+        {
+          "id": "cw2-3",
+          "t": "order",
+          "q": "Ordena los pasos para enviar una cantidad grande.",
+          "items": [
+            "Copias la dirección del destino y compruebas la red",
+            "Envías una cantidad pequeña de prueba",
+            "Compruebas en el explorador que ha llegado",
+            "Envías el resto",
+            "Esperas las confirmaciones antes de usar el saldo"
+          ],
+          "why": "La prueba y la comprobación van antes del envío grande: después ya no hay vuelta atrás.",
+          "guia": "g2"
+        },
+        {
+          "id": "cw2-4",
+          "t": "choice",
+          "q": "Alguien te dice que tu envío está «bloqueado» y que pagues una comisión para liberarlo. ¿Qué haces?",
+          "opts": [
+            "Pagar para no perder el envío",
+            "Enviarle tu frase semilla para que lo mire",
+            "Repetir el envío completo otra vez",
+            "Comprobarlo tú en el explorador y no pagar"
+          ],
+          "a": 3,
+          "why": "Las comisiones de red se pagan al enviar, nunca después a un tercero. El explorador muestra el estado real de la transacción.",
+          "guia": "g4",
+          "porque": [
+            "Las comisiones de red no se pagan a un tercero para liberar nada: es una estafa.",
+            "Con la frase semilla te vaciará el monedero.",
+            "Repetirlo duplica el envío sin saber qué pasó con el primero.",
+            null
+          ]
+        },
+        {
+          "id": "cw2-5",
+          "t": "match",
+          "q": "Empareja cada dato de una transacción con lo que significa.",
+          "pairs": [
+            [
+              "Identificador",
+              "El código para buscarla en el explorador"
+            ],
+            [
+              "Confirmaciones",
+              "Bloques añadidos después del suyo"
+            ],
+            [
+              "Comisión",
+              "Lo que se paga a la red por incluirla"
+            ],
+            [
+              "Dirección de destino",
+              "A quién llegan los fondos"
+            ]
+          ],
+          "why": "Con el identificador cualquiera puede comprobar en el explorador si una transacción existe, cuánto pagó y cuántas confirmaciones lleva.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

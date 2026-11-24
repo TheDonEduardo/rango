@@ -1,0 +1,441 @@
+{
+  "n": 9,
+  "id": "ficha",
+  "track": "basico",
+  "title": "Leer la ficha de una acción",
+  "blurb": "Precio y variación, rango de 52 semanas, capitalización, volumen, PER y dividendo.",
+  "gate": false,
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Precio y variación",
+      "texto": "La ficha muestra el último precio y cuánto ha cambiado frente al cierre anterior, en euros y en porcentaje.",
+      "ejemplo": "Cierre anterior de 25,00 € y precio actual de 24,50 €: −0,50 €, un −2 %."
+    },
+    {
+      "id": "g2",
+      "titulo": "El rango de 52 semanas",
+      "texto": "El máximo y el mínimo del último año sitúan el precio: cerca de máximos, la acción viene subiendo; cerca de mínimos, cayendo. Lo usarás después en los filtros de tendencia.",
+      "ejemplo": "Máximo de 30 €, mínimo de 20 € y precio de 24,50 €: un 18,3 % por debajo del máximo."
+    },
+    {
+      "id": "g3",
+      "titulo": "Capitalización y volumen",
+      "texto": "La capitalización es el precio por el número de acciones: lo que vale la empresa en bolsa. El volumen dice cuántas acciones han cambiado de manos hoy.",
+      "ejemplo": "24,50 € × 400 millones de acciones = 9.800 millones de euros."
+    },
+    {
+      "id": "g4",
+      "titulo": "PER y dividendo",
+      "texto": "El PER dice cuántos años de beneficio actual pagas. La rentabilidad por dividendo es el dividendo anual entre el precio. Ninguno de los dos basta para decidir.",
+      "ejemplo": "Dividendo de 0,98 € con el precio a 24,50 €: un 4 %."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "bu1",
+      "title": "Precio, variación y rango",
+      "ex": [
+        {
+          "id": "bu1-1",
+          "t": "num",
+          "q": "Mira la ficha de la tabla. ¿Cuánto ha caído hoy la acción, en porcentaje?",
+          "unit": "%",
+          "a": 2,
+          "why": "(25,00 − 24,50) ÷ 25,00 = 2 %. La variación del día se mide siempre frente al cierre anterior.",
+          "table": {
+            "cols": [
+              "Dato",
+              "Valor"
+            ],
+            "rows": [
+              [
+                "Cierre anterior",
+                "25,00 €"
+              ],
+              [
+                "Último precio",
+                "24,50 €"
+              ],
+              [
+                "Máximo de 52 semanas",
+                "30,00 €"
+              ],
+              [
+                "Mínimo de 52 semanas",
+                "20,00 €"
+              ],
+              [
+                "Acciones",
+                "400 millones"
+              ],
+              [
+                "Dividendo anual",
+                "0,98 €"
+              ],
+              [
+                "PER",
+                "14"
+              ]
+            ],
+            "note": "Empresa ficticia."
+          },
+          "guia": "g1"
+        },
+        {
+          "id": "bu1-2",
+          "t": "num",
+          "q": "Con la ficha de la tabla, ¿cuántos euros ha caído hoy cada acción?",
+          "unit": "€",
+          "a": 0.5,
+          "why": "25,00 − 24,50 = 0,50 € por acción.",
+          "table": {
+            "cols": [
+              "Dato",
+              "Valor"
+            ],
+            "rows": [
+              [
+                "Cierre anterior",
+                "25,00 €"
+              ],
+              [
+                "Último precio",
+                "24,50 €"
+              ],
+              [
+                "Máximo de 52 semanas",
+                "30,00 €"
+              ],
+              [
+                "Mínimo de 52 semanas",
+                "20,00 €"
+              ],
+              [
+                "Acciones",
+                "400 millones"
+              ],
+              [
+                "Dividendo anual",
+                "0,98 €"
+              ],
+              [
+                "PER",
+                "14"
+              ]
+            ],
+            "note": "Empresa ficticia."
+          },
+          "guia": "g1"
+        },
+        {
+          "id": "bu1-3",
+          "t": "num",
+          "q": "Según la ficha, ¿cuánto está el último precio por debajo del máximo de 52 semanas? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 18.3,
+          "why": "1 − 24,50 ÷ 30,00 = 18,3 % por debajo del máximo del último año.",
+          "table": {
+            "cols": [
+              "Dato",
+              "Valor"
+            ],
+            "rows": [
+              [
+                "Cierre anterior",
+                "25,00 €"
+              ],
+              [
+                "Último precio",
+                "24,50 €"
+              ],
+              [
+                "Máximo de 52 semanas",
+                "30,00 €"
+              ],
+              [
+                "Mínimo de 52 semanas",
+                "20,00 €"
+              ],
+              [
+                "Acciones",
+                "400 millones"
+              ],
+              [
+                "Dividendo anual",
+                "0,98 €"
+              ],
+              [
+                "PER",
+                "14"
+              ]
+            ],
+            "note": "Empresa ficticia."
+          },
+          "tol": 0.06,
+          "guia": "g2"
+        },
+        {
+          "id": "bu1-4",
+          "t": "num",
+          "q": "Según la ficha, ¿cuánto está el último precio por encima del mínimo de 52 semanas? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 22.5,
+          "why": "24,50 ÷ 20,00 − 1 = 22,5 % por encima del mínimo del último año.",
+          "table": {
+            "cols": [
+              "Dato",
+              "Valor"
+            ],
+            "rows": [
+              [
+                "Cierre anterior",
+                "25,00 €"
+              ],
+              [
+                "Último precio",
+                "24,50 €"
+              ],
+              [
+                "Máximo de 52 semanas",
+                "30,00 €"
+              ],
+              [
+                "Mínimo de 52 semanas",
+                "20,00 €"
+              ],
+              [
+                "Acciones",
+                "400 millones"
+              ],
+              [
+                "Dividendo anual",
+                "0,98 €"
+              ],
+              [
+                "PER",
+                "14"
+              ]
+            ],
+            "note": "Empresa ficticia."
+          },
+          "tol": 0.06,
+          "guia": "g2"
+        },
+        {
+          "id": "bu1-5",
+          "t": "choice",
+          "q": "Una acción cotiza a 29,50 € con un máximo de 52 semanas de 30 € y un mínimo de 20 €. ¿Qué indica?",
+          "opts": [
+            "Que está barata porque bajará pronto",
+            "Que viene subiendo: está cerca de máximos",
+            "Que está en mínimos del año",
+            "Que hoy ha subido mucho"
+          ],
+          "a": 1,
+          "why": "A 29,50 € está a menos de un 2 % del máximo del año: la tendencia de los últimos meses ha sido alcista. El rango de 52 semanas no dice nada de lo que pasó hoy.",
+          "guia": "g2",
+          "porque": [
+            "El rango no dice si está barata ni anticipa lo que hará.",
+            null,
+            "Está cerca del máximo del año, no del mínimo.",
+            "El rango del año no informa de la variación del día."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "bu2",
+      "title": "Capitalización, PER y dividendo",
+      "ex": [
+        {
+          "id": "bu2-1",
+          "t": "num",
+          "q": "Con la ficha de la tabla, ¿cuál es la capitalización de la empresa, en miles de millones de euros? Redondea a 1 decimal.",
+          "unit": "mil mill. €",
+          "a": 9.8,
+          "why": "24,50 € × 400 millones = 9.800 millones de euros: 9,8 mil millones.",
+          "table": {
+            "cols": [
+              "Dato",
+              "Valor"
+            ],
+            "rows": [
+              [
+                "Cierre anterior",
+                "25,00 €"
+              ],
+              [
+                "Último precio",
+                "24,50 €"
+              ],
+              [
+                "Máximo de 52 semanas",
+                "30,00 €"
+              ],
+              [
+                "Mínimo de 52 semanas",
+                "20,00 €"
+              ],
+              [
+                "Acciones",
+                "400 millones"
+              ],
+              [
+                "Dividendo anual",
+                "0,98 €"
+              ],
+              [
+                "PER",
+                "14"
+              ]
+            ],
+            "note": "Empresa ficticia."
+          },
+          "tol": 0.05,
+          "guia": "g3"
+        },
+        {
+          "id": "bu2-2",
+          "t": "num",
+          "q": "Con la ficha de la tabla, ¿cuál es la rentabilidad por dividendo?",
+          "unit": "%",
+          "a": 4,
+          "why": "0,98 ÷ 24,50 = 4 % al año, si la empresa mantiene el dividendo.",
+          "table": {
+            "cols": [
+              "Dato",
+              "Valor"
+            ],
+            "rows": [
+              [
+                "Cierre anterior",
+                "25,00 €"
+              ],
+              [
+                "Último precio",
+                "24,50 €"
+              ],
+              [
+                "Máximo de 52 semanas",
+                "30,00 €"
+              ],
+              [
+                "Mínimo de 52 semanas",
+                "20,00 €"
+              ],
+              [
+                "Acciones",
+                "400 millones"
+              ],
+              [
+                "Dividendo anual",
+                "0,98 €"
+              ],
+              [
+                "PER",
+                "14"
+              ]
+            ],
+            "note": "Empresa ficticia."
+          },
+          "guia": "g4"
+        },
+        {
+          "id": "bu2-3",
+          "t": "num",
+          "q": "Con el PER de la ficha, ¿qué beneficio por acción tiene la empresa? Redondea a 2 decimales.",
+          "unit": "€",
+          "a": 1.75,
+          "why": "24,50 ÷ 14 = 1,75 € por acción. El PER es el precio entre el beneficio por acción.",
+          "table": {
+            "cols": [
+              "Dato",
+              "Valor"
+            ],
+            "rows": [
+              [
+                "Cierre anterior",
+                "25,00 €"
+              ],
+              [
+                "Último precio",
+                "24,50 €"
+              ],
+              [
+                "Máximo de 52 semanas",
+                "30,00 €"
+              ],
+              [
+                "Mínimo de 52 semanas",
+                "20,00 €"
+              ],
+              [
+                "Acciones",
+                "400 millones"
+              ],
+              [
+                "Dividendo anual",
+                "0,98 €"
+              ],
+              [
+                "PER",
+                "14"
+              ]
+            ],
+            "note": "Empresa ficticia."
+          },
+          "tol": 0.01,
+          "guia": "g4"
+        },
+        {
+          "id": "bu2-4",
+          "t": "match",
+          "q": "Empareja cada dato de la ficha con lo que te dice.",
+          "pairs": [
+            [
+              "Capitalización",
+              "Lo que vale la empresa entera en bolsa"
+            ],
+            [
+              "Volumen",
+              "Cuántas acciones cambian de manos hoy"
+            ],
+            [
+              "PER",
+              "Cuántos años de beneficio actual pagas"
+            ],
+            [
+              "Rentabilidad por dividendo",
+              "Qué parte del precio cobras al año en dividendos"
+            ]
+          ],
+          "why": "Cada dato responde a una pregunta distinta; ninguno basta por sí solo para decidir una compra.",
+          "guia": "g3"
+        },
+        {
+          "id": "bu2-5",
+          "t": "choice",
+          "q": "La acción A cotiza a 5 € y la B a 200 €. ¿Qué dato necesitas para saber cuál vale más como empresa?",
+          "opts": [
+            "El precio de cada una de las acciones",
+            "El volumen negociado hoy",
+            "La capitalización de cada una",
+            "La variación del día"
+          ],
+          "a": 2,
+          "why": "El precio por acción no dice nada por sí solo: depende de cuántas acciones haya. La capitalización multiplica los dos.",
+          "guia": "g3",
+          "porque": [
+            "El precio depende de cuántas acciones haya emitido cada empresa.",
+            "El volumen mide la actividad del día, no el tamaño de la empresa.",
+            null,
+            "La variación del día dice cuánto se movió, no cuánto vale."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}
