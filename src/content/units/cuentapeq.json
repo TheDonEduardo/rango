@@ -1,0 +1,177 @@
+{
+  "n": 16,
+  "id": "cuentapeq",
+  "track": "tecnico",
+  "title": "Operar con una cuenta pequeña",
+  "blurb": "El riesgo en euros, el peso de las comisiones, las acciones caras y por qué no subir el riesgo para compensar.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "El riesgo en euros",
+      "texto": "Con una cuenta pequeña, el 1 % es poco dinero. Calcula siempre el riesgo en euros y compáralo con lo que cuestan las comisiones.",
+      "ejemplo": "Cuenta de 3.000 € y un 1 % de riesgo: 30 € por operación."
+    },
+    {
+      "id": "g2",
+      "titulo": "Comisiones frente al riesgo",
+      "texto": "Si comprar y vender cuesta una parte grande de tu riesgo, una operación que sale bien apenas gana. Busca comisiones que pesen poco frente a lo que arriesgas.",
+      "ejemplo": "5 € al comprar y 5 € al vender: 10 € frente a 30 € de riesgo, un tercio."
+    },
+    {
+      "id": "g3",
+      "titulo": "Acciones caras",
+      "texto": "Con precios altos y sin fracciones, el número de acciones se queda en una o dos y el riesgo se descuadra. Busca otra operación antes que forzar un stop sin sentido.",
+      "ejemplo": "Acción a 400 € con el stop a 20 €: una sola acción ya arriesga 20 €."
+    },
+    {
+      "id": "g4",
+      "titulo": "No subir el riesgo para compensar",
+      "texto": "La tentación es arriesgar un 5 % para que «merezca la pena». Con ese riesgo, una racha normal de pérdidas destroza la cuenta. Hazla crecer con aportaciones, no con apuestas mayores.",
+      "ejemplo": "8 pérdidas seguidas al 5 %: la cuenta cae un 33,7 %. Al 1 %: un 7,7 %."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "tk1",
+      "title": "Riesgo y comisiones",
+      "ex": [
+        {
+          "id": "tk1-1",
+          "t": "num",
+          "q": "Tu cuenta es de 3.000 € y arriesgas el 1 % por operación. ¿Cuántos euros arriesgas en cada una?",
+          "unit": "€",
+          "a": 30,
+          "why": "El 1 % de 3.000 € son 30 €.",
+          "guia": "g1"
+        },
+        {
+          "id": "tk1-2",
+          "t": "num",
+          "q": "Compras con el stop a 1,50 € de la entrada. Con un riesgo de 30 €, ¿cuántas acciones puedes comprar?",
+          "unit": "acc.",
+          "a": 20,
+          "why": "30 ÷ 1,50 = 20 acciones.",
+          "guia": "g1"
+        },
+        {
+          "id": "tk1-3",
+          "t": "num",
+          "q": "Tu bróker cobra 5 € al comprar y 5 € al vender. ¿Qué porcentaje de tu riesgo de 30 € se va en comisiones? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 33.3,
+          "why": "10 ÷ 30 = 33,3 %. Un tercio de lo que arriesgas se va en costes, ganes o pierdas.",
+          "tol": 0.06,
+          "guia": "g2"
+        },
+        {
+          "id": "tk1-4",
+          "t": "num",
+          "q": "Una operación sale bien y gana 2R, es decir, 60 €. Restando las comisiones de 10 €, ¿cuántos R netos ganas? Redondea a 2 decimales.",
+          "unit": "R",
+          "a": 1.67,
+          "why": "(60 − 10) ÷ 30 = 1,67R. Las comisiones se comen un tercio de R en cada operación.",
+          "tol": 0.01,
+          "guia": "g2"
+        },
+        {
+          "id": "tk1-5",
+          "t": "choice",
+          "q": "Las comisiones se comen un tercio de tu riesgo por operación. ¿Qué haces?",
+          "opts": [
+            "Subir el riesgo al 5 % para compensar",
+            "Buscar un bróker con comisiones más bajas",
+            "Operar más veces al día",
+            "Quitar el stop para ahorrar la venta"
+          ],
+          "a": 1,
+          "why": "Con 10 € de comisiones frente a 30 € de riesgo, la ventaja se va en costes. Bajar las comisiones arregla el problema sin aumentar el riesgo.",
+          "guia": "g2",
+          "porque": [
+            "Más riesgo por operación pone la cuenta en peligro con una racha normal.",
+            null,
+            "Más operaciones multiplican las comisiones.",
+            "Sin stop, una pérdida puede ser mucho mayor que lo ahorrado en la venta."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "tk2",
+      "title": "Acciones caras y rachas",
+      "ex": [
+        {
+          "id": "tk2-1",
+          "t": "num",
+          "q": "Con 30 € de riesgo, una acción a 400 € tiene su stop lógico a 20 € de la entrada y tu bróker no permite fracciones. ¿Cuántas acciones enteras compras?",
+          "unit": "acc.",
+          "a": 1,
+          "why": "30 ÷ 20 = 1,5: una acción entera, que arriesga 20 €. Sin fracciones no se puede ajustar mejor.",
+          "guia": "g3"
+        },
+        {
+          "id": "tk2-2",
+          "t": "choice",
+          "q": "Una sola acción de la empresa que te gusta arriesgaría 60 €, el doble de tu riesgo máximo. ¿Qué haces?",
+          "opts": [
+            "Comprar una igualmente, solo es una",
+            "Poner el stop más cerca aunque no tenga sentido",
+            "Buscar otra operación que encaje en tu riesgo",
+            "Comprarla con un préstamo del bróker"
+          ],
+          "a": 2,
+          "why": "Si la operación no cabe en tu riesgo, no es para tu cuenta ahora. Un stop sin sentido técnico solo te saca por ruido.",
+          "guia": "g3",
+          "porque": [
+            "Una sola acción ya duplica tu riesgo máximo.",
+            "Un stop puesto por el dinero y no por el gráfico salta con el ruido normal.",
+            null,
+            "Pedir prestado aumenta el riesgo justo donde ya era demasiado."
+          ]
+        },
+        {
+          "id": "tk2-3",
+          "t": "num",
+          "q": "Arriesgas el 5 % de la cuenta en cada operación y sufres 8 pérdidas seguidas. ¿Cuánto cae la cuenta? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 33.7,
+          "why": "1 − 0,95⁸ = 33,7 %. Para recuperarlo harían falta más de un 50 % de subida.",
+          "tol": 0.06,
+          "guia": "g4"
+        },
+        {
+          "id": "tk2-4",
+          "t": "num",
+          "q": "Arriesgando un 1 % por operación, ¿cuánto cae la cuenta tras esas mismas 8 pérdidas seguidas? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 7.7,
+          "why": "1 − 0,99⁸ = 7,7 %. Una racha que es un desastre al 5 % es un mal mes al 1 %.",
+          "tol": 0.06,
+          "guia": "g4"
+        },
+        {
+          "id": "tk2-5",
+          "t": "slide",
+          "q": "Cuenta de 3.000 €. Quieres que 10 pérdidas seguidas no te quiten más de 300 €. ¿Qué riesgo fijo por operación eliges, en euros?",
+          "label": "Riesgo por operación",
+          "min": 10,
+          "max": 150,
+          "step": 10,
+          "start": 120,
+          "a": 30,
+          "unit": "€",
+          "why": "300 ÷ 10 = 30 € por operación, un 1 % de la cuenta. Rachas así pueden ocurrir incluso con un sistema que gana.",
+          "show": [
+            {
+              "label": "Pérdida tras 10 fallos",
+              "k": 10,
+              "unit": "€"
+            }
+          ],
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

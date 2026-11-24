@@ -1,0 +1,195 @@
+{
+  "n": 4,
+  "id": "escalera",
+  "track": "pasiva",
+  "title": "Escalera de renta fija",
+  "blurb": "Repartir los vencimientos de bonos o depósitos: liquidez cada año, tipos que suben o bajan y mantener hasta el vencimiento.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Vencimientos escalonados",
+      "texto": "Una escalera reparte el dinero en bonos o depósitos que vencen en años distintos. Cada año vence un tramo: tienes liquidez sin vender nada.",
+      "ejemplo": "50.000 € en cinco tramos de 10.000 €, con vencimientos de 1 a 5 años."
+    },
+    {
+      "id": "g2",
+      "titulo": "Reinvertir en el peldaño más largo",
+      "texto": "Al vencer un tramo, lo reinviertes al plazo más largo de la escalera. Así cada tramo acaba rindiendo el tipo del plazo largo, que suele ser algo mayor.",
+      "ejemplo": "Al vencer el de 1 año, lo pones a 5 años: la escalera sigue con cinco peldaños."
+    },
+    {
+      "id": "g3",
+      "titulo": "Tipos que suben o bajan",
+      "texto": "Si los tipos suben, cada tramo que vence se reinvierte mejor; si bajan, solo una parte se reinvierte peor. Repartir los vencimientos evita apostarlo todo a un momento.",
+      "ejemplo": "Del 3 % al 4 %: el tramo de 10.000 € pasa a rendir 400 € en vez de 300 € al año."
+    },
+    {
+      "id": "g4",
+      "titulo": "Mantener hasta el vencimiento",
+      "texto": "Un bono mantenido hasta su vencimiento devuelve su nominal aunque su precio haya caído entretanto, salvo impago del emisor. Un fondo de renta fija no vence nunca.",
+      "ejemplo": "Bono de 10.000 € que cotiza a 9.600 € tras subir los tipos: si esperas, cobras 10.000 €."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "pz1",
+      "title": "Montar la escalera",
+      "ex": [
+        {
+          "id": "pz1-1",
+          "t": "num",
+          "q": "Repartes 50.000 € en cinco tramos iguales que vencen de 1 a 5 años. ¿Cuántos miles de euros tiene cada tramo?",
+          "unit": "mil €",
+          "a": 10,
+          "why": "50.000 ÷ 5 = 10.000 € por tramo.",
+          "guia": "g1"
+        },
+        {
+          "id": "pz1-2",
+          "t": "num",
+          "q": "Los tramos rinden un 2,5 %, 2,8 %, 3,0 %, 3,2 % y 3,4 %. ¿Cuál es la rentabilidad media de la escalera? Redondea a 2 decimales.",
+          "unit": "%",
+          "a": 2.98,
+          "why": "(2,5 + 2,8 + 3,0 + 3,2 + 3,4) ÷ 5 = 2,98 %. Algo menos que todo a 5 años, a cambio de tener un vencimiento cada año.",
+          "tol": 0.01,
+          "guia": "g1"
+        },
+        {
+          "id": "pz1-3",
+          "t": "num",
+          "q": "¿Cuántos euros de intereses al año da el tramo de 10.000 € a 5 años, al 3,4 %?",
+          "unit": "€",
+          "a": 340,
+          "why": "10.000 × 3,4 % = 340 € al año.",
+          "guia": "g1"
+        },
+        {
+          "id": "pz1-4",
+          "t": "choice",
+          "q": "Vence el tramo de 1 año. ¿Dónde lo reinviertes para mantener la escalera?",
+          "opts": [
+            "En otro bono a 1 año",
+            "En un bono nuevo a 5 años",
+            "En acciones, para variar",
+            "Lo dejas en la cuenta corriente"
+          ],
+          "a": 1,
+          "why": "Reinvertir en el peldaño más largo mantiene los cinco vencimientos, uno cada año, y aprovecha el tipo del plazo largo.",
+          "guia": "g2",
+          "porque": [
+            "A 1 año, la escalera se encoge y pierde el tipo del plazo largo.",
+            null,
+            "Pasar la renta fija a acciones cambia el reparto de la cartera.",
+            "En la cuenta corriente el dinero no rinde y la escalera se rompe."
+          ]
+        },
+        {
+          "id": "pz1-5",
+          "t": "choice",
+          "q": "¿Qué ventaja tiene la escalera frente a meterlo todo a 5 años?",
+          "opts": [
+            "Cada año vence un tramo y tienes liquidez",
+            "Siempre rinde más que el plazo largo",
+            "Elimina el riesgo de impago del emisor",
+            "No paga impuestos por los intereses"
+          ],
+          "a": 0,
+          "why": "Con todo a 5 años no tendrías liquidez sin vender. La escalera da un vencimiento al año y reparte el momento de invertir.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Al principio rinde algo menos que todo a 5 años, porque tiene plazos más cortos.",
+            "El riesgo de impago depende del emisor, no de los plazos.",
+            "Los intereses tributan igual en la escalera."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "pz2",
+      "title": "Tipos y vencimiento",
+      "ex": [
+        {
+          "id": "pz2-1",
+          "t": "num",
+          "q": "Los tipos suben del 3 % al 4 %. ¿Cuántos euros más al año rinde el tramo de 10.000 € que se reinvierte?",
+          "unit": "€",
+          "a": 100,
+          "why": "10.000 × 4 % = 400 € frente a 300 €: 100 € más al año.",
+          "guia": "g3"
+        },
+        {
+          "id": "pz2-2",
+          "t": "choice",
+          "q": "Los tipos bajan con fuerza. ¿Qué parte de la escalera se reinvierte este año al tipo más bajo?",
+          "opts": [
+            "Toda la escalera de golpe",
+            "Los tramos más largos primero",
+            "Solo el tramo que vence este año",
+            "Ninguna parte, los bonos no cambian"
+          ],
+          "a": 2,
+          "why": "Los demás tramos conservan el tipo con el que se compraron hasta su vencimiento. La bajada de tipos entra poco a poco.",
+          "guia": "g3",
+          "porque": [
+            "Solo se reinvierte lo que vence; el resto sigue con su tipo.",
+            "Los tramos largos son los últimos en vencer.",
+            null,
+            "El tramo que vence sí se reinvierte al tipo nuevo, más bajo."
+          ]
+        },
+        {
+          "id": "pz2-3",
+          "t": "num",
+          "q": "Tras una subida de tipos, un bono de 10.000 € de nominal cotiza a 9.600 €. ¿Cuánto cae su precio, en porcentaje?",
+          "unit": "%",
+          "a": 4,
+          "why": "1 − 9.600 ÷ 10.000 = 4 %.",
+          "guia": "g4"
+        },
+        {
+          "id": "pz2-4",
+          "t": "choice",
+          "q": "Mantienes ese bono hasta su vencimiento y el emisor paga. ¿Cuánto cobras?",
+          "opts": [
+            "9.600 €, su último precio",
+            "Lo que valga ese día en bolsa",
+            "Nada: la caída es definitiva",
+            "Su nominal, 10.000 €"
+          ],
+          "a": 3,
+          "why": "Al vencimiento, el emisor devuelve el nominal. La caída de precio solo se hace real si vendes antes.",
+          "guia": "g4",
+          "porque": [
+            "La caída de precio solo se hace real si vendes antes del vencimiento.",
+            "Al vencimiento no se vende en bolsa: el emisor devuelve el nominal.",
+            "La caída de precio no cambia lo que el emisor debe pagar al vencimiento.",
+            null
+          ]
+        },
+        {
+          "id": "pz2-5",
+          "t": "choice",
+          "q": "¿En qué se diferencia una escalera de bonos de un fondo de renta fija?",
+          "opts": [
+            "El fondo no tiene riesgo de tipos de interés",
+            "En la escalera los bonos vencen; el fondo nunca",
+            "La escalera no puede sufrir ningún impago",
+            "El fondo siempre rinde más que la escalera"
+          ],
+          "a": 1,
+          "why": "El fondo reinvierte sin parar y su valor depende siempre de los tipos. En la escalera sabes qué cobras y cuándo, si el emisor paga.",
+          "guia": "g4",
+          "porque": [
+            "El fondo sí sufre cuando suben los tipos: su valor baja.",
+            null,
+            "Si un emisor no paga, la escalera también pierde.",
+            "Ninguno rinde siempre más: depende de los tipos y de los costes."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

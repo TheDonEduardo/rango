@@ -832,5 +832,20 @@
    "derechos de suscripción"
   ],
   "d": "Derecho que recibe cada acción antigua en una ampliación para comprar acciones nuevas. Se puede usar o vender."
+ },
+ {
+  "termino": "escalera de renta fija",
+  "alias": [
+   "escalera"
+  ],
+  "d": "Reparto del dinero en bonos o depósitos que vencen en años distintos, para tener un vencimiento cada año."
+ },
+ {
+  "termino": "fianza",
+  "d": "Dinero que entrega el inquilino al firmar, un mes en vivienda, para responder de daños o impagos. Se devuelve al terminar si no los hay."
+ },
+ {
+  "termino": "garantía adicional",
+  "d": "Depósito extra que puede pedir el casero además de la fianza. En vivienda habitual, como mucho dos meses de alquiler."
  }
 ]

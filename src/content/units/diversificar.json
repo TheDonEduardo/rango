@@ -1,0 +1,189 @@
+{
+  "n": 15,
+  "id": "diversificar",
+  "track": "basico",
+  "title": "Repartir el riesgo",
+  "blurb": "Por qué no poner todo en una empresa, lo que la diversificación no evita y cómo detectar la falsa diversificación.",
+  "gate": false,
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Una sola empresa",
+      "texto": "Si todo tu dinero está en una acción, su mala noticia es tu pérdida entera. Repartirlo en muchas reduce el daño de cada tropiezo.",
+      "ejemplo": "Una acción cae un 50 %: con todo en ella pierdes un 50 %; si pesa un 5 % de la cartera, un 2,5 %."
+    },
+    {
+      "id": "g2",
+      "titulo": "Lo que no se diversifica",
+      "texto": "Repartir entre muchas empresas elimina el riesgo de cada una, pero no el del mercado: en una crisis general casi todo cae a la vez.",
+      "ejemplo": "El mercado cae un 30 %: una cartera de 30 acciones bien repartida cae algo parecido."
+    },
+    {
+      "id": "g3",
+      "titulo": "Falsa diversificación",
+      "texto": "Tener muchos productos no es diversificar si todos tienen lo mismo dentro: cinco bancos de un país, o tres fondos que siguen el mismo índice.",
+      "ejemplo": "Tres fondos del mismo índice: tres nombres, una sola cartera."
+    },
+    {
+      "id": "g4",
+      "titulo": "Diversificar barato",
+      "texto": "Un fondo indexado o un ETF de un índice amplio reparte tu dinero entre cientos o miles de empresas de una vez. Lo verás a fondo en la ruta de inversión pasiva.",
+      "ejemplo": "1.000 € en un fondo de 500 empresas: unos 2 € en cada una."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "bz1",
+      "title": "Por qué repartir",
+      "ex": [
+        {
+          "id": "bz1-1",
+          "t": "num",
+          "q": "Tienes todo tu dinero en una acción y cae un 50 %. ¿Cuánto pierde tu cartera?",
+          "unit": "%",
+          "a": 50,
+          "why": "Con todo en una acción, su caída es la tuya entera.",
+          "guia": "g1"
+        },
+        {
+          "id": "bz1-2",
+          "t": "num",
+          "q": "Si esa acción solo pesa un 5 % de tu cartera, ¿cuánto pierde la cartera por su caída del 50 %? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 2.5,
+          "why": "5 % × 50 % = 2,5 %. El mismo tropiezo, veinte veces menos daño.",
+          "guia": "g1"
+        },
+        {
+          "id": "bz1-3",
+          "t": "num",
+          "q": "Repartes la cartera en 20 acciones a partes iguales. ¿Qué peso tiene cada una?",
+          "unit": "%",
+          "a": 5,
+          "why": "100 ÷ 20 = 5 % cada una.",
+          "guia": "g1"
+        },
+        {
+          "id": "bz1-4",
+          "t": "num",
+          "q": "Una de esas 20 acciones quiebra y pierde el 100 %. ¿Cuánto pierde la cartera?",
+          "unit": "%",
+          "a": 5,
+          "why": "5 % × 100 % = 5 %. Doloroso, pero la cartera sigue en pie.",
+          "guia": "g1"
+        },
+        {
+          "id": "bz1-5",
+          "t": "choice",
+          "q": "El mercado entero cae un 30 % en una crisis. ¿Qué le pasa a una cartera de 30 acciones bien repartida?",
+          "opts": [
+            "No cae: la diversificación lo impide",
+            "Sube, porque unas compensan a otras",
+            "Cae algo parecido: no evita la caída general",
+            "Cae el doble por tener más acciones"
+          ],
+          "a": 2,
+          "why": "Repartir elimina el riesgo de cada empresa, pero no el del mercado: en una crisis general casi todo cae a la vez.",
+          "guia": "g2",
+          "porque": [
+            "Diversificar reduce el riesgo de cada empresa, no el del mercado.",
+            "En una crisis general casi todas las acciones caen a la vez.",
+            null,
+            "Más acciones no multiplican la caída; la reparten."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "bz2",
+      "title": "Diversificar bien",
+      "ex": [
+        {
+          "id": "bz2-1",
+          "t": "choice",
+          "q": "¿Cuál de estas carteras está mejor diversificada?",
+          "opts": [
+            "Cinco bancos del mismo país",
+            "Tres fondos que siguen el mismo índice",
+            "Un fondo indexado mundial",
+            "Diez empresas tecnológicas"
+          ],
+          "a": 2,
+          "why": "Un fondo indexado mundial reparte el dinero entre más de mil empresas de muchos sectores y países. Las otras concentran el riesgo aunque parezcan variadas.",
+          "guia": "g3",
+          "porque": [
+            "Cinco bancos de un país sufren a la vez los mismos problemas.",
+            "Tres fondos del mismo índice tienen las mismas acciones dentro.",
+            null,
+            "Diez empresas de un sector caen juntas cuando ese sector va mal."
+          ]
+        },
+        {
+          "id": "bz2-2",
+          "t": "num",
+          "q": "Inviertes 1.000 € en un fondo indexado de 500 empresas a partes iguales. ¿Cuántos euros pones, de media, en cada una?",
+          "unit": "€",
+          "a": 2,
+          "why": "1.000 ÷ 500 = 2 € por empresa. Con poco dinero ya repartes mucho.",
+          "guia": "g4"
+        },
+        {
+          "id": "bz2-3",
+          "t": "match",
+          "q": "Empareja cada cartera con su problema.",
+          "pairs": [
+            [
+              "Todo en la empresa donde trabajas",
+              "Si va mal, pierdes sueldo y ahorros a la vez"
+            ],
+            [
+              "Cinco bancos españoles",
+              "Un solo sector y un solo país"
+            ],
+            [
+              "Tres fondos del mismo índice",
+              "Las mismas acciones repetidas"
+            ],
+            [
+              "Una sola acción",
+              "Una mala noticia es tu pérdida entera"
+            ]
+          ],
+          "why": "Diversificar es repartir entre cosas que no van mal por el mismo motivo, no tener muchos nombres.",
+          "guia": "g3"
+        },
+        {
+          "id": "bz2-4",
+          "t": "num",
+          "q": "Tienes 10.000 € y 6.000 € son acciones de la empresa donde trabajas. ¿Qué porcentaje de tu cartera es?",
+          "unit": "%",
+          "a": 60,
+          "why": "6.000 ÷ 10.000 = 60 %. Si la empresa va mal, peligran a la vez tu sueldo y tus ahorros.",
+          "guia": "g1"
+        },
+        {
+          "id": "bz2-5",
+          "t": "choice",
+          "q": "¿Qué reduce de verdad el riesgo de esa cartera?",
+          "opts": [
+            "Repartir parte en un fondo amplio",
+            "Comprar más acciones de tu empresa",
+            "Esperar a que suba para diversificar",
+            "Añadir otra acción del mismo sector"
+          ],
+          "a": 0,
+          "why": "Con un 60 % en tu empresa, sueldo y ahorros dependen de lo mismo. Pasar parte a un fondo amplio reduce ese riesgo concentrado.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Concentra todavía más: sueldo y ahorros en la misma empresa.",
+            "Esperar a que suba no reduce el riesgo mientras tanto.",
+            "Otra acción del mismo sector sufre con los mismos problemas."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

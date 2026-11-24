@@ -1,0 +1,196 @@
+{
+  "n": 4,
+  "id": "alquiler",
+  "track": "personal",
+  "title": "Tu primer alquiler",
+  "blurb": "Cuánto alquiler puedes pagar, el dinero de la entrada, cuánto dura el contrato y cómo recuperar la fianza.",
+  "revisar": "2027-11",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Cuánto alquiler puedes pagar",
+      "texto": "Una referencia habitual es no dedicar al alquiler más del 30 % de los ingresos netos, para que quede margen para ahorrar y para imprevistos.",
+      "ejemplo": "Con 1.600 € netos al mes, como mucho 480 € de alquiler."
+    },
+    {
+      "id": "g2",
+      "titulo": "El dinero de la entrada",
+      "texto": "Al firmar se suele pagar la fianza legal de un mes, el primer mes y, a veces, una garantía adicional, que en vivienda habitual no puede pasar de dos meses. Compruébalo con la norma vigente.",
+      "ejemplo": "Alquiler de 700 €: 700 de fianza, 700 del primer mes y 1.400 de garantía: 2.800 €."
+    },
+    {
+      "id": "g3",
+      "titulo": "Cuánto dura el contrato",
+      "texto": "Si el casero es una persona física, puedes prorrogar el contrato de vivienda habitual hasta 5 años; si es una empresa, hasta 7. Tú puedes irte antes, normalmente tras seis meses y avisando con uno.",
+      "ejemplo": "Contrato de un año con un particular: puedes renovarlo hasta cumplir 5."
+    },
+    {
+      "id": "g4",
+      "titulo": "Recuperar la fianza",
+      "texto": "Haz fotos e inventario al entrar y al salir. El casero puede descontar de la fianza los daños o impagos, no el desgaste normal por el uso.",
+      "ejemplo": "Fianza de 700 € y una puerta rota de 150 €: te devuelven 550 €."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "fl1",
+      "title": "Cuánto puedes pagar",
+      "ex": [
+        {
+          "id": "fl1-1",
+          "t": "num",
+          "q": "Cobras 1.600 € netos al mes y no quieres dedicar más del 30 % al alquiler. ¿Cuál es el máximo?",
+          "unit": "€",
+          "a": 480,
+          "why": "El 30 % de 1.600 € son 480 €.",
+          "guia": "g1"
+        },
+        {
+          "id": "fl1-2",
+          "t": "num",
+          "q": "Compartes un piso de 900 € con dos personas más, a partes iguales. ¿Qué porcentaje de tus 1.600 € te cuesta tu parte?",
+          "unit": "%",
+          "a": 18.75,
+          "why": "900 ÷ 3 = 300 €, y 300 ÷ 1.600 = 18,75 %. Compartir deja margen para ahorrar.",
+          "tol": 0.06,
+          "guia": "g1"
+        },
+        {
+          "id": "fl1-3",
+          "t": "num",
+          "q": "Un estudio para ti solo cuesta 700 € al mes. ¿Qué porcentaje de tus 1.600 € supone? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 43.75,
+          "why": "700 ÷ 1.600 = 43,75 %, muy por encima del 30 % de referencia.",
+          "tol": 0.06,
+          "guia": "g1"
+        },
+        {
+          "id": "fl1-4",
+          "t": "choice",
+          "q": "Con 1.600 € netos, te encanta un piso de 700 €. ¿Qué te dice la regla del 30 %?",
+          "opts": [
+            "Que es perfecto si te gusta mucho",
+            "Que se lleva casi un 44 %: queda poco margen",
+            "Que debes pedir un préstamo para la fianza",
+            "Que el porcentaje no importa si ahorras algo"
+          ],
+          "a": 1,
+          "why": "Con casi la mitad del sueldo en el alquiler, queda poco para ahorrar y para imprevistos. La regla del 30 % es una referencia para no ir justo cada mes.",
+          "guia": "g1",
+          "porque": [
+            "Que te guste no cambia cuánto queda cada mes para lo demás.",
+            null,
+            "Endeudarse para entrar empeora el problema, no lo resuelve.",
+            "Con un 44 % en alquiler, cualquier imprevisto rompe el presupuesto."
+          ]
+        },
+        {
+          "id": "fl1-5",
+          "t": "num",
+          "q": "Alquiler de 700 €: fianza de un mes, primer mes por adelantado y una garantía adicional de dos meses. ¿Cuántos miles de euros pagas al firmar?",
+          "unit": "mil €",
+          "a": 2.8,
+          "why": "700 + 700 + 1.400 = 2.800 €. Cuenta con ese dinero antes de buscar piso.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "fl2",
+      "title": "Contrato y fianza",
+      "ex": [
+        {
+          "id": "fl2-1",
+          "t": "choice",
+          "q": "Tu casero es una persona física y firmáis un contrato de vivienda habitual por un año. ¿Hasta cuándo puedes prorrogarlo?",
+          "opts": [
+            "Solo 1 año, lo firmado",
+            "Hasta 3 años",
+            "Hasta 5 años",
+            "Para siempre"
+          ],
+          "a": 2,
+          "why": "Con un casero particular, el inquilino puede prorrogar año a año hasta 5 años; si es una empresa, hasta 7. Compruébalo con la norma vigente.",
+          "guia": "g3",
+          "porque": [
+            "La ley permite prorrogar más allá del primer año.",
+            "Tres años era el plazo antiguo; hoy es más largo.",
+            null,
+            "La prórroga obligatoria tiene un límite de años."
+          ]
+        },
+        {
+          "id": "fl2-2",
+          "t": "num",
+          "q": "Fianza de 700 €. Al salir hay una puerta rota que cuesta 150 € arreglar. ¿Cuánto te deben devolver?",
+          "unit": "€",
+          "a": 550,
+          "why": "700 − 150 = 550 €. El casero descuenta los daños, justificados, no el desgaste normal.",
+          "guia": "g4"
+        },
+        {
+          "id": "fl2-3",
+          "t": "choice",
+          "q": "Al salir, el casero quiere quedarse la fianza porque la pintura está algo gastada tras tres años. ¿Puede?",
+          "opts": [
+            "No: el desgaste normal por el uso no se descuenta",
+            "Sí: la fianza es suya al terminar",
+            "Sí: puede quedársela sin explicar por qué",
+            "No: la fianza nunca se puede descontar"
+          ],
+          "a": 0,
+          "why": "La fianza responde de daños e impagos, no del desgaste lógico de vivir en el piso. Las fotos de la entrada ayudan a demostrarlo.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "La fianza garantiza tus obligaciones; si las cumpliste, se devuelve.",
+            "Debe justificar cualquier descuento con daños o deudas reales.",
+            "Sí puede descontar daños o impagos, pero no el desgaste normal."
+          ]
+        },
+        {
+          "id": "fl2-4",
+          "t": "order",
+          "q": "Ordena lo que conviene hacer para recuperar la fianza.",
+          "items": [
+            "Haces fotos e inventario al entrar",
+            "Pagas el alquiler y cuidas la vivienda",
+            "Avisas de tu salida con el plazo del contrato",
+            "Haces fotos al salir y entregas las llaves",
+            "Reclamas la fianza si no te la devuelven"
+          ],
+          "why": "Las pruebas se preparan al entrar, no al discutir al salir.",
+          "guia": "g4"
+        },
+        {
+          "id": "fl2-5",
+          "t": "match",
+          "q": "Empareja cada concepto del alquiler con su descripción.",
+          "pairs": [
+            [
+              "Fianza",
+              "Un mes de alquiler que garantiza tus obligaciones"
+            ],
+            [
+              "Garantía adicional",
+              "Un depósito extra, como mucho de dos meses"
+            ],
+            [
+              "Prórroga",
+              "Seguir en el piso año a año hasta el límite legal"
+            ],
+            [
+              "Inventario",
+              "Lista con fotos del estado del piso al entrar"
+            ]
+          ],
+          "why": "Conocer estos conceptos antes de firmar evita pagar de más y discutir al salir. Compruébalos con la norma vigente.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}
