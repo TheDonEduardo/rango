@@ -47,7 +47,7 @@
         {
           "id": "fz1-2",
           "t": "num",
-          "q": "Los gastos comunes son 2.000 € al mes. Con ese reparto, ¿cuánto aporta quien gana 2.000 €?",
+          "q": "Una pareja ingresa 3.000 € y 2.000 € al mes y reparte 2.000 € de gastos comunes según sus ingresos. ¿Cuánto aporta quien gana 2.000 €?",
           "unit": "€",
           "a": 800,
           "why": "El 40 % de 2.000 € son 800 €. Quien gana 3.000 € aporta 1.200 €.",
@@ -56,7 +56,7 @@
         {
           "id": "fz1-3",
           "t": "num",
-          "q": "Si los repartieran a medias, ¿qué porcentaje de sus ingresos dedicaría a los gastos comunes quien gana 2.000 €?",
+          "q": "Una pareja ingresa 3.000 € y 2.000 € y tiene 2.000 € de gastos comunes al mes. Si los repartieran a medias, ¿qué porcentaje de sus ingresos dedicaría a esos gastos quien gana 2.000 €?",
           "unit": "%",
           "a": 50,
           "why": "1.000 ÷ 2.000 = 50 %, frente al 33,3 % de quien gana 3.000 €. Con el reparto proporcional, los dos dedican el 40 %.",
@@ -73,7 +73,7 @@
             "Que se ahorre más sin gastar menos"
           ],
           "a": 2,
-          "why": "Cada uno dedica el mismo porcentaje de sus ingresos a lo común: el 40 % en el ejemplo. Pagar lo mismo pesaría más a quien gana menos.",
+          "why": "Cada uno dedica el mismo porcentaje de sus ingresos a lo común: con ingresos de 3.000 y 2.000 € y 2.000 € de gastos, el 40 % cada uno. Pagar lo mismo pesaría más a quien gana menos.",
           "guia": "g2",
           "porque": [
             "Pagar lo mismo es el reparto a medias, que pesa más a quien gana menos.",
@@ -155,7 +155,7 @@
         {
           "id": "fz2-4",
           "t": "num",
-          "q": "Si repartís ese ahorro como los gastos, 60 % y 40 %, ¿cuánto aporta cada mes quien gana 2.000 €?",
+          "q": "Ahorráis 500 € al mes para la entrada de un piso y lo repartís como los gastos: 60 % quien gana 3.000 € y 40 % quien gana 2.000 €. ¿Cuánto aporta cada mes quien gana 2.000 €?",
           "unit": "€",
           "a": 200,
           "why": "El 40 % de 500 € son 200 €. Quien gana 3.000 € aporta 300 €.",

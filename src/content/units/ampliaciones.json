@@ -47,7 +47,7 @@
         {
           "id": "fh1-2",
           "t": "num",
-          "q": "Las acciones nuevas se venden a 6 €. ¿Cuál es el precio teórico tras la ampliación? Redondea a 2 decimales.",
+          "q": "Una empresa con 100 millones de acciones a 10 € emite 1 nueva por cada 4 antiguas, a 6 €. ¿Cuál es el precio teórico tras la ampliación? Redondea a 2 decimales.",
           "unit": "€",
           "a": 9.2,
           "why": "(100 × 10 + 25 × 6) ÷ 125 = 1.150 ÷ 125 = 9,20 €.",
@@ -57,7 +57,7 @@
         {
           "id": "fh1-3",
           "t": "num",
-          "q": "Con ese precio teórico de 9,20 €, ¿cuál es el valor teórico de cada derecho?",
+          "q": "Una acción cotizaba a 10 € y su precio teórico tras una ampliación es de 9,20 €. ¿Cuál es el valor teórico de cada derecho?",
           "unit": "€",
           "a": 0.8,
           "why": "10 − 9,20 = 0,80 €. También (9,20 − 6) ÷ 4 = 0,80 €: hacen falta 4 derechos para comprar una acción nueva a 6 €.",
@@ -86,7 +86,7 @@
         {
           "id": "fh1-5",
           "t": "num",
-          "q": "Tienes 400 acciones de esa empresa. ¿Cuántas acciones nuevas puedes suscribir con tus derechos?",
+          "q": "Tienes 400 acciones y la ampliación da 1 acción nueva por cada 4 antiguas. ¿Cuántas acciones nuevas puedes suscribir con tus derechos?",
           "unit": "",
           "a": 100,
           "why": "400 derechos ÷ 4 = 100 acciones nuevas.",
@@ -120,7 +120,7 @@
         {
           "id": "fh2-3",
           "t": "choice",
-          "q": "Tienes 400 acciones y no haces nada: los derechos caducan sin usarse ni venderse. ¿Qué pasa?",
+          "q": "Tienes 400 acciones. Con la ampliación pasan de 10 a 9,20 € y cada derecho vale 0,80 €. No haces nada y los derechos caducan sin usarse ni venderse. ¿Qué pasa?",
           "opts": [
             "No pasa nada: el patrimonio no cambia",
             "Ganas porque la acción vale menos",

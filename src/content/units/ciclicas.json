@@ -67,7 +67,7 @@
         {
           "id": "fe1-3",
           "t": "num",
-          "q": "Con ese mismo efecto, si las ventas caen un 15 %, ¿cuánto cae el beneficio operativo?",
+          "q": "El beneficio operativo de una cíclica se mueve 4 puntos por cada punto de ventas. Si las ventas caen un 15 %, ¿cuánto cae el beneficio operativo?",
           "unit": "%",
           "a": 60,
           "why": "15 × 4 = 60 %. Es una aproximación, pero muestra el riesgo de un negocio con muchos costes fijos.",
@@ -110,7 +110,7 @@
         {
           "id": "fe2-2",
           "t": "num",
-          "q": "Con el precio a 40 €, ¿cuál es su PER sobre ese beneficio normalizado?",
+          "q": "Una cíclica tiene un BPA normalizado de 4 € y cotiza a 40 €. ¿Cuál es su PER sobre ese beneficio normalizado?",
           "unit": "",
           "a": 10,
           "why": "40 ÷ 4 = 10. Ni el 5 del pico ni el 40 del valle: el PER normalizado es la referencia estable.",

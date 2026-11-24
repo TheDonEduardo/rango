@@ -76,7 +76,7 @@
         {
           "id": "ct1-4",
           "t": "num",
-          "q": "¿Cuántas veces es esa valoración totalmente diluida la capitalización actual de 800 millones de $?",
+          "q": "Un token tiene una valoración totalmente diluida de 4.000 millones de $ y una capitalización de 800 millones de $. ¿Cuántas veces la capitalización es esa valoración?",
           "unit": "",
           "a": 5,
           "why": "4.000 ÷ 800 = 5. Solo circula el 20 % de los tokens: el resto llegará al mercado.",
@@ -85,7 +85,7 @@
         {
           "id": "ct1-5",
           "t": "num",
-          "q": "Si llega al mercado toda la oferta y la capitalización sigue en 800 millones de $, ¿a qué precio queda el token?",
+          "q": "Un token tiene una capitalización de 800 millones de $ y una oferta máxima de 10.000 millones de tokens. Si llega al mercado toda la oferta y la capitalización no cambia, ¿a qué precio queda el token?",
           "unit": "$",
           "a": 0.08,
           "why": "800 millones ÷ 10.000 millones = 0,08 $. Para mantener los 0,40 $, la demanda tendría que multiplicarse por 5.",

@@ -76,7 +76,7 @@
         {
           "id": "pa1-4",
           "t": "num",
-          "q": "Si en cambio lo repartes en 12 meses y la bolsa cae un 20 % el primer mes, ¿cuántos euros pierdes de lo invertido?",
+          "q": "Tienes 12.000 € y los repartes en 12 compras mensuales iguales. Si la bolsa cae un 20 % el primer mes, ¿cuántos euros pierdes de lo invertido?",
           "unit": "€",
           "a": 200,
           "why": "Solo estaban invertidos 1.000 €: el 20 % son 200 €. El resto compra después a precios más bajos.",
@@ -121,7 +121,7 @@
         {
           "id": "pa2-2",
           "t": "num",
-          "q": "¿A qué precio medio has comprado esas 30 participaciones? Redondea a 2 decimales.",
+          "q": "Inviertes 100 € a 10 € por participación y otros 100 € a 5 €. ¿A qué precio medio has comprado? Redondea a 2 decimales.",
           "unit": "€",
           "a": 6.67,
           "why": "200 € ÷ 30 = 6,67 €, por debajo de la media de los dos precios (7,50 €): con la misma cantidad compras más cuando está barato.",

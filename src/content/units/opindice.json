@@ -56,7 +56,7 @@
         {
           "id": "op27-3",
           "t": "num",
-          "q": "Si tu cartera tiene una beta de 1,2 frente al índice, ¿cuántos contratos equivalen a cubrirla? Redondea a 1 decimal.",
+          "q": "Tu cartera de 100.000 € tiene una beta de 1,2 frente al índice y cada contrato de opciones cubre 50.000 €. ¿Cuántos contratos equivalen a cubrirla? Redondea a 1 decimal.",
           "unit": "",
           "a": 2.4,
           "why": "100.000 × 1,2 ÷ 50.000 = 2,4. Se redondea a 2 o a 3 según cuánta protección quieras pagar.",
@@ -75,7 +75,7 @@
         {
           "id": "op27-5",
           "t": "num",
-          "q": "¿Qué porcentaje de la cartera de 100.000 € supone esa prima?",
+          "q": "Pagas 1.200 € de prima por las puts que cubren tu cartera de 100.000 €. ¿Qué porcentaje de la cartera supone?",
           "unit": "%",
           "a": 1.2,
           "why": "1.200 ÷ 100.000 = 1,2 %. Es el coste de tener un suelo durante el plazo de las puts.",
@@ -100,7 +100,7 @@
         {
           "id": "op28-2",
           "t": "num",
-          "q": "¿Cuántos miles de euros pagan en total las 2 puts, a 10 € por punto?",
+          "q": "El índice cierra en 4.000 puntos al vencimiento. ¿Cuántos miles de euros pagan en total 2 puts con ejercicio 4.500, a 10 € por punto?",
           "unit": "mil €",
           "a": 10,
           "why": "500 × 10 × 2 = 10.000 €.",
@@ -109,7 +109,7 @@
         {
           "id": "op28-3",
           "t": "num",
-          "q": "Tu cartera de 100.000 € cae lo mismo que el índice, un 20 %. Restando lo que pagan las puts y sumando la prima de 1.200 €, ¿cuántos miles de euros pierdes en total? Redondea a 1 decimal.",
+          "q": "Tu cartera de 100.000 € cae un 20 %, lo mismo que el índice (de 5.000 a 4.000 puntos). Tus 2 puts con ejercicio 4.500 pagan 10.000 € y te costaron 1.200 €. ¿Cuántos miles de euros pierdes en total? Redondea a 1 decimal.",
           "unit": "mil €",
           "a": 11.2,
           "why": "20.000 − 10.000 + 1.200 = 11.200 €, frente a 20.000 € sin cobertura. El primer 10 % de caída, hasta 4.500, no está cubierto.",
@@ -119,7 +119,7 @@
         {
           "id": "op28-4",
           "t": "choice",
-          "q": "El índice cae un 20 %, pero tus acciones caen un 30 %. ¿Qué parte de la pérdida no cubren las puts sobre el índice?",
+          "q": "El índice cae un 20 %, pero tus acciones caen un 30 %. Aparte de la prima y del tramo hasta el ejercicio, ¿qué parte de la pérdida no cubren las puts sobre el índice?",
           "opts": [
             "Ninguna: la put cubre toda la cartera",
             "Lo que caen tus acciones de más",

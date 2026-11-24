@@ -122,7 +122,7 @@
         {
           "id": "bv2-2",
           "t": "num",
-          "q": "¿Y si rinde un 6 % anual?",
+          "q": "Con la regla del 72, ¿en cuántos años se duplica una inversión que rinde un 6 % anual?",
           "unit": "años",
           "a": 12,
           "why": "72 ÷ 6 = 12 años. Dos puntos menos de rentabilidad alargan tres años cada duplicación.",

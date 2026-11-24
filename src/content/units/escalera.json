@@ -66,7 +66,7 @@
         {
           "id": "pz1-4",
           "t": "choice",
-          "q": "Vence el tramo de 1 año. ¿Dónde lo reinviertes para mantener la escalera?",
+          "q": "Tu escalera de renta fija tiene tramos que vencen de 1 a 5 años. Vence el de 1 año. ¿Dónde lo reinviertes para mantener la escalera?",
           "opts": [
             "En otro bono a 1 año",
             "En un bono nuevo a 5 años",
@@ -151,7 +151,7 @@
         {
           "id": "pz2-4",
           "t": "choice",
-          "q": "Mantienes ese bono hasta su vencimiento y el emisor paga. ¿Cuánto cobras?",
+          "q": "Un bono de 10.000 € de nominal cotiza a 9.600 € tras una subida de tipos. Si lo mantienes hasta su vencimiento y el emisor paga, ¿cuánto cobras?",
           "opts": [
             "9.600 €, su último precio",
             "Lo que valga ese día en bolsa",

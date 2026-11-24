@@ -58,7 +58,7 @@
         {
           "id": "fl1-3",
           "t": "num",
-          "q": "Un estudio para ti solo cuesta 700 € al mes. ¿Qué porcentaje de tus 1.600 € supone? Redondea a 1 decimal.",
+          "q": "Un estudio para ti solo cuesta 700 € al mes. ¿Qué porcentaje de tus 1.600 € netos supone?",
           "unit": "%",
           "a": 43.75,
           "why": "700 ÷ 1.600 = 43,75 %, muy por encima del 30 % de referencia.",

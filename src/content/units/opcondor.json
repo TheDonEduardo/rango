@@ -74,7 +74,7 @@
           "q": "Cobras 1,20 $ por el spread vertical de puts y 0,80 $ por el de calls. ¿Cuánto cobras en total por un condor de 100 acciones?",
           "unit": "$",
           "a": 200,
-          "why": "(1,20 + 0,80) × 100 = 200 $. Es la ganancia máxima: la consigues si la acción acaba entre 90 y 110 $.",
+          "why": "(1,20 + 0,80) × 100 = 200 $. Es la ganancia máxima: la consigues si la acción acaba entre los dos ejercicios vendidos.",
           "guia": "g1"
         },
         {

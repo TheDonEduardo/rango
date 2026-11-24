@@ -152,7 +152,7 @@
         {
           "id": "tk2-5",
           "t": "slide",
-          "q": "Cuenta de 3.000 €. Quieres que 10 pérdidas seguidas no te quiten más de 300 €. ¿Qué riesgo fijo por operación eliges, en euros?",
+          "q": "Cuenta de 3.000 €. Quieres que 10 pérdidas seguidas no te quiten más de 300 €. ¿Cuál es el máximo riesgo fijo por operación que lo cumple, en euros?",
           "label": "Riesgo por operación",
           "min": 10,
           "max": 150,

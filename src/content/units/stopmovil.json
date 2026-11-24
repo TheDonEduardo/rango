@@ -188,7 +188,7 @@
         {
           "id": "ts2-5",
           "t": "num",
-          "q": "En la misma operación, con el stop bajo la media de 50 sesiones, en 45 €, ¿qué porcentaje de la subida conservas? Redondea a 1 decimal.",
+          "q": "Compraste a 40 € y el precio llega a 52 €. Con el stop bajo la media de 50 sesiones, en 45 €, ¿qué porcentaje de la subida conservas si salta? Redondea a 1 decimal.",
           "unit": "%",
           "a": 41.7,
           "why": "(45 − 40) ÷ 12 = 41,7 %. La media lenta devuelve más ganancia, pero aguanta correcciones que la rápida no aguanta.",

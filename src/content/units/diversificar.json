@@ -66,7 +66,7 @@
         {
           "id": "bz1-4",
           "t": "num",
-          "q": "Una de esas 20 acciones quiebra y pierde el 100 %. ¿Cuánto pierde la cartera?",
+          "q": "Tu cartera tiene 20 acciones a partes iguales y una de ellas quiebra y pierde el 100 %. ¿Cuánto pierde la cartera?",
           "unit": "%",
           "a": 5,
           "why": "5 % × 100 % = 5 %. Doloroso, pero la cartera sigue en pie.",
@@ -165,7 +165,7 @@
         {
           "id": "bz2-5",
           "t": "choice",
-          "q": "¿Qué reduce de verdad el riesgo de esa cartera?",
+          "q": "El 60 % de tu cartera son acciones de la empresa donde trabajas. ¿Qué reduce de verdad su riesgo?",
           "opts": [
             "Repartir parte en un fondo amplio",
             "Comprar más acciones de tu empresa",
