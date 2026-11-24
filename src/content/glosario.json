@@ -906,5 +906,43 @@
    "rentabilidad sobre tu coste"
   ],
   "d": "Dividendo anual actual dividido entre tu precio de compra. Sube si el dividendo crece."
+ },
+ {
+  "termino": "mariposa",
+  "alias": [
+   "mariposas"
+  ],
+  "d": "Estrategia con tres ejercicios: compras uno bajo y uno alto y vendes dos del centro. Gana si la acción acaba cerca del centro."
+ },
+ {
+  "termino": "puente",
+  "alias": [
+   "puentes"
+  ],
+  "d": "Servicio que bloquea monedas en una cadena de bloques y emite en otra un token que las representa."
+ },
+ {
+  "termino": "token envuelto",
+  "alias": [
+   "tokens envueltos",
+   "envuelto",
+   "envueltos"
+  ],
+  "d": "Token que representa en una red una moneda de otra, guardada por un puente. Vale lo que ese respaldo."
+ },
+ {
+  "termino": "IVA",
+  "d": "Impuesto sobre el valor añadido. El autónomo lo cobra en sus facturas y lo ingresa a Hacienda cada trimestre."
+ },
+ {
+  "termino": "retención",
+  "alias": [
+   "retenciones"
+  ],
+  "d": "Parte de un pago que quien paga ingresa a Hacienda a tu nombre como anticipo del IRPF."
+ },
+ {
+  "termino": "base imponible",
+  "d": "Importe sobre el que se calculan los impuestos: en una factura, el precio sin IVA."
  }
 ]

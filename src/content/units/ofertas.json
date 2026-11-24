@@ -1,0 +1,196 @@
+{
+  "n": 9,
+  "id": "ofertas",
+  "track": "personal",
+  "title": "Comparar ofertas de trabajo",
+  "blurb": "Pasar cada oferta a cifras comparables: bruto anual, pagas, variable, beneficios y el coste de ir a trabajar.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "El bruto anual",
+      "texto": "Compara el bruto anual, no la nómina de un mes. Con 14 pagas, el mensual es menor, pero el año puede salir mejor. Repartir las pagas extra en 12 nóminas no cambia el total.",
+      "ejemplo": "2.000 € en 14 pagas son 28.000 € al año; 2.300 € en 12 pagas, 27.600 €."
+    },
+    {
+      "id": "g2",
+      "titulo": "El variable, con descuento",
+      "texto": "El variable no está garantizado. Pregunta cuánto cobró de verdad la plantilla en los últimos años y cuenta eso, no el máximo.",
+      "ejemplo": "26.000 € fijos y hasta 4.000 € de variable que se cobra al 50 %: 26.000 + 2.000 = 28.000 €."
+    },
+    {
+      "id": "g3",
+      "titulo": "Beneficios y costes",
+      "texto": "Un beneficio vale lo que te ahorra, no lo que cuesta a la empresa. El transporte y los gastos de ir a la oficina se restan.",
+      "ejemplo": "Transporte de 90 € al mes durante 11 meses: 990 € al año. Con 28.000 € brutos te quedan 27.010 € para comparar."
+    },
+    {
+      "id": "g4",
+      "titulo": "Euros por hora",
+      "texto": "Divide lo que cobras entre las horas reales que te pide la oferta, trayecto incluido. Así se comparan jornadas y distancias distintas.",
+      "ejemplo": "28.000 € con 1.760 horas de trabajo y 220 de trayecto: 28.000 ÷ 1.980 = 14,14 € por hora."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "ow1",
+      "title": "Del mensual al anual",
+      "ex": [
+        {
+          "id": "ow1-1",
+          "t": "num",
+          "q": "Una oferta paga 2.000 € brutos al mes en 14 pagas. ¿Cuántos miles de euros brutos cobras al año?",
+          "unit": "mil €",
+          "a": 28,
+          "why": "2.000 × 14 = 28.000 €, es decir, 28 mil €. Compara siempre el bruto anual, no la nómina de un mes.",
+          "guia": "g1"
+        },
+        {
+          "id": "ow1-2",
+          "t": "choice",
+          "q": "Oferta A: 2.000 € brutos al mes en 14 pagas. Oferta B: 2.300 € brutos al mes en 12 pagas. ¿Cuál paga más al año?",
+          "opts": [
+            "La B, por 300 € al mes",
+            "Las dos pagan lo mismo al año",
+            "La A, por 400 € al año",
+            "La B, por 3.600 € al año"
+          ],
+          "a": 2,
+          "why": "2.000 × 14 = 28.000 € y 2.300 × 12 = 27.600 €. La A paga 400 € más al año aunque su nómina mensual sea menor.",
+          "guia": "g1",
+          "porque": [
+            "La B no tiene pagas extra: al año cobra 27.600 €, menos que los 28.000 € de la A.",
+            "2.000 × 14 = 28.000 € y 2.300 × 12 = 27.600 €: hay 400 € de diferencia.",
+            null,
+            "300 € por 12 meses son 3.600 €, pero la A cobra dos pagas extra de 2.000 € y gana."
+          ]
+        },
+        {
+          "id": "ow1-3",
+          "t": "num",
+          "q": "Te ofrecen 26.000 € fijos y un variable de hasta 4.000 €. En los últimos años, la plantilla cobró de media la mitad del variable. ¿Cuántos miles de euros brutos al año deberías contar?",
+          "unit": "mil €",
+          "a": 28,
+          "why": "26.000 + 4.000 × 50 % = 28.000 €. El variable máximo no está garantizado: cuenta lo que se cobra de verdad.",
+          "guia": "g2"
+        },
+        {
+          "id": "ow1-4",
+          "t": "choice",
+          "q": "Te ofrecen un fijo más bajo a cambio de un variable alto. ¿Qué preguntas antes de comparar?",
+          "opts": [
+            "Cuál es el variable máximo que se puede cobrar",
+            "Qué día del mes se ingresa el variable",
+            "Cuánto variable cobró de verdad la plantilla",
+            "Si el variable sale en la misma nómina"
+          ],
+          "a": 2,
+          "why": "Lo que importa es lo que se cobra de media, no el tope. Un variable de hasta 4.000 € que se cobra a medias vale 2.000 € al año.",
+          "guia": "g2",
+          "porque": [
+            "El máximo es un tope que quizá nadie alcance; no dice lo que cobrarás.",
+            "La fecha de cobro no cambia cuánto dinero recibirás al año.",
+            null,
+            "Cómo se paga no cambia cuánto se cobra de media."
+          ]
+        },
+        {
+          "id": "ow1-5",
+          "t": "choice",
+          "q": "Tu empresa reparte las dos pagas extra entre las 12 nóminas del año. ¿Qué cambia en tu sueldo bruto anual?",
+          "opts": [
+            "Cobras dos pagas más al año",
+            "Pierdes las dos pagas extra",
+            "Nada: lo cobras en 12 meses",
+            "Cobras un mes de sueldo más"
+          ],
+          "a": 2,
+          "why": "Prorratear las pagas solo cambia el calendario: 28.000 € en 14 pagas o en 12 siguen siendo 28.000 € al año.",
+          "guia": "g1",
+          "porque": [
+            "Las pagas no se multiplican: las mismas 14 se reparten en 12 nóminas.",
+            "No se pierden: su importe va incluido en cada una de las 12 nóminas.",
+            null,
+            "El total del año es el mismo: solo cambia cuándo lo cobras."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "ow2",
+      "title": "Beneficios, costes y tiempo",
+      "ex": [
+        {
+          "id": "ow2-1",
+          "t": "num",
+          "q": "Una oferta exige ir a la oficina y el transporte te cuesta 90 € al mes durante 11 meses de trabajo. ¿Cuánto te cuesta al año?",
+          "unit": "€",
+          "a": 990,
+          "why": "90 × 11 = 990 € al año, que salen de tu bolsillo. Réstalos al comparar con una oferta en teletrabajo.",
+          "guia": "g3"
+        },
+        {
+          "id": "ow2-2",
+          "t": "choice",
+          "q": "Una oferta incluye un seguro médico privado que tú nunca contratarías por tu cuenta. ¿Cuánto vale para ti al comparar?",
+          "opts": [
+            "Lo mismo que le cuesta a la empresa",
+            "Lo que dice el folleto de la oferta",
+            "Menos de lo que cuesta, a veces nada",
+            "Lo que cuesta el seguro más caro"
+          ],
+          "a": 2,
+          "why": "Un beneficio vale lo que te ahorra: si no lo pagarías nunca, no te ahorra nada. Si ya lo pagas, vale lo que dejas de pagar.",
+          "guia": "g3",
+          "porque": [
+            "A la empresa le cuesta dinero, pero si tú no lo usarías, no te ahorra nada.",
+            "El folleto da el precio del seguro, no lo que vale para ti.",
+            null,
+            "Un precio de mercado no es un ahorro si nunca lo ibas a pagar."
+          ]
+        },
+        {
+          "id": "ow2-3",
+          "t": "num",
+          "q": "Oferta A: 28.000 € brutos al año, 1.760 horas de trabajo y 220 horas de trayecto. ¿Cuántos euros brutos ganas por hora, contando el trayecto?",
+          "unit": "€",
+          "a": 14.14,
+          "why": "28.000 ÷ (1.760 + 220) = 28.000 ÷ 1.980 = 14,14 € por hora. El trayecto es tiempo que la oferta te pide.",
+          "tol": 0.01,
+          "guia": "g4"
+        },
+        {
+          "id": "ow2-4",
+          "t": "num",
+          "q": "Oferta B: 27.000 € brutos al año en teletrabajo, sin trayecto, con 1.760 horas de trabajo. ¿Cuántos euros brutos ganas por hora?",
+          "unit": "€",
+          "a": 15.34,
+          "why": "27.000 ÷ 1.760 = 15,34 € por hora: más que los 14,14 € de una oferta de 28.000 € con 220 horas de trayecto.",
+          "tol": 0.01,
+          "guia": "g4"
+        },
+        {
+          "id": "ow2-5",
+          "t": "choice",
+          "q": "Oferta A: 28.000 € brutos, 990 € al año de transporte y 220 horas de trayecto. Oferta B: 27.200 € brutos en teletrabajo. ¿Qué es cierto?",
+          "opts": [
+            "La A deja más dinero, pero menos tiempo",
+            "Las dos dejan el mismo dinero al año",
+            "La A gana a la B por 800 € al año",
+            "La B deja más dinero y más tiempo libre"
+          ],
+          "a": 3,
+          "why": "28.000 − 990 = 27.010 €, menos que los 27.200 € de la B. Y la B te ahorra además 220 horas al año.",
+          "guia": "g3",
+          "porque": [
+            "Tras restar el transporte, la A deja 27.010 €, menos que los 27.200 € de la B.",
+            "27.010 € frente a 27.200 €: la B deja 190 € más.",
+            "Los 800 € son la diferencia en bruto; al restar 990 € de transporte, la A queda por detrás.",
+            null
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

@@ -1,0 +1,193 @@
+{
+  "n": 14,
+  "id": "opmariposa",
+  "track": "derivados",
+  "title": "Mariposa con calls",
+  "blurb": "Apostar a que la acción acaba cerca de un precio concreto, con poco dinero y la pérdida limitada.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "La estructura 1-2-1",
+      "texto": "Compras una call de ejercicio bajo, vendes dos del ejercicio central y compras una de ejercicio alto, a la misma distancia. Las vendidas pagan casi todo lo comprado.",
+      "ejemplo": "Acción a 100 $: compras la 95 por 6,50 $, vendes dos 100 a 3,50 $ y compras la 105 por 1,50 $. Pagas 6,50 − 7 + 1,50 = 1 $."
+    },
+    {
+      "id": "g2",
+      "titulo": "Ganancia y pérdida máximas",
+      "texto": "La pérdida máxima es lo pagado por 100 acciones. La ganancia máxima es la distancia entre ejercicios menos lo pagado, y solo llega si la acción acaba justo en el centro.",
+      "ejemplo": "Pierdes como mucho 1 × 100 = 100 $ y ganas como mucho (5 − 1) × 100 = 400 $."
+    },
+    {
+      "id": "g3",
+      "titulo": "El rango de beneficio",
+      "texto": "Los puntos de equilibrio son el ejercicio bajo más lo pagado y el alto menos lo pagado. Dentro, ganas al vencimiento; fuera, pierdes lo pagado.",
+      "ejemplo": "95 + 1 = 96 $ y 105 − 1 = 104 $. Con la acción en 102 $: la call 95 vale 7 $, las dos 100 restan 4 $, y ganas (3 − 1) × 100 = 200 $."
+    },
+    {
+      "id": "g4",
+      "titulo": "Tamaño y salida",
+      "texto": "El tamaño se decide con la pérdida máxima. Como la ganancia máxima solo llega en un punto, lo habitual es cerrar antes con parte de ella.",
+      "ejemplo": "Cartera de 20.000 $ y un 1 % de riesgo: 200 $, dos mariposas de 100 $. Si una vale 3 $ y pagaste 1 $, cerrar asegura 200 $."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "op31",
+      "title": "Cómo se monta",
+      "ex": [
+        {
+          "id": "op31-1",
+          "t": "choice",
+          "q": "¿Qué esperas que pase cuando abres una mariposa con calls 95-100-105?",
+          "opts": [
+            "Que la acción se aleje mucho de 100 $",
+            "Que la volatilidad implícita se dispare",
+            "Que la acción acabe cerca de 100 $",
+            "Que la acción suba sin ningún límite"
+          ],
+          "a": 2,
+          "why": "La mariposa gana lo máximo si la acción acaba justo en el ejercicio central. Cuanto más se aleja, menos gana, hasta perder lo pagado.",
+          "guia": "g1",
+          "porque": [
+            "Si la acción se aleja de 100 $ y sale de 95-105 $, pierdes todo lo pagado.",
+            "Una subida de la volatilidad implícita suele perjudicar a la mariposa, que vende dos opciones del centro.",
+            null,
+            "Por encima de 105 $ las calls vendidas anulan las compradas y pierdes lo pagado."
+          ]
+        },
+        {
+          "id": "op31-2",
+          "t": "order",
+          "q": "Mariposa 95-100-105 con calls: ordena sus patas de menor a mayor ejercicio.",
+          "items": [
+            "Compras una call 95",
+            "Vendes dos calls 100",
+            "Compras una call 105"
+          ],
+          "why": "Las dos calls compradas quedan en los extremos, a 5 $ del centro, y las dos vendidas, en el centro. Es la estructura 1-2-1.",
+          "guia": "g1"
+        },
+        {
+          "id": "op31-3",
+          "t": "num",
+          "q": "Compras la call 95 por 6,50 $, vendes dos calls 100 a 3,50 $ cada una y compras la call 105 por 1,50 $. ¿Cuánto pagas por acción por la mariposa?",
+          "unit": "$",
+          "a": 1,
+          "why": "6,50 − 2 × 3,50 + 1,50 = 1,00 $. Las dos calls vendidas pagan casi todo lo que cuestan las compradas.",
+          "guia": "g1"
+        },
+        {
+          "id": "op31-4",
+          "t": "num",
+          "q": "Pagaste 1 $ por acción por una mariposa 95-100-105 con calls. ¿Cuál es la pérdida máxima por mariposa de 100 acciones?",
+          "unit": "$",
+          "a": 100,
+          "why": "1 × 100 = 100 $. La pierdes entera si la acción acaba por debajo de 95 $ o por encima de 105 $.",
+          "guia": "g2"
+        },
+        {
+          "id": "op31-5",
+          "t": "choice",
+          "q": "En una mariposa 95-100-105 con calls, ¿qué cubre las dos calls 100 vendidas?",
+          "opts": [
+            "Solo la call 95 que has comprado",
+            "Las acciones que tienes en la cartera",
+            "La garantía que te pide el bróker",
+            "Las calls 95 y 105 que has comprado"
+          ],
+          "a": 3,
+          "why": "Por cada call vendida hay una comprada: la 95 cubre una y la 105 cubre la otra. Por eso la pérdida queda limitada a lo pagado.",
+          "guia": "g1",
+          "porque": [
+            "La call 95 cubre solo una de las dos vendidas; la otra la cubre la call 105.",
+            "Es una estrategia solo con opciones: no hace falta tener acciones en cartera.",
+            "La garantía es dinero inmovilizado, no una opción que limite la pérdida.",
+            null
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "op32",
+      "title": "Rango, riesgo y tamaño",
+      "ex": [
+        {
+          "id": "op32-1",
+          "t": "num",
+          "q": "Pagaste 1 $ por acción por una mariposa 95-100-105 con calls. ¿Cuál es la ganancia máxima por mariposa de 100 acciones?",
+          "unit": "$",
+          "a": 400,
+          "why": "(5 − 1) × 100 = 400 $, si la acción acaba justo en 100 $: la call 95 vale 5 $ y las demás no valen nada.",
+          "guia": "g2"
+        },
+        {
+          "id": "op32-2",
+          "t": "num",
+          "q": "Mariposa 95-100-105 con calls, pagada a 1 $ por acción. ¿Cuál es su punto de equilibrio inferior al vencimiento?",
+          "unit": "$",
+          "a": 96,
+          "why": "95 + 1 = 96 $. El superior es 105 − 1 = 104 $: entre 96 y 104 $, la mariposa gana al vencimiento.",
+          "guia": "g3"
+        },
+        {
+          "id": "op32-3",
+          "t": "num",
+          "q": "Mariposa 95-100-105 con calls, pagada a 1 $ por acción. Al vencimiento la acción está en 102 $. ¿Cuánto ganas por mariposa de 100 acciones?",
+          "unit": "$",
+          "a": 200,
+          "why": "La call 95 vale 7 $, las dos 100 te cuestan 2 $ cada una y la 105 no vale nada: 7 − 4 = 3 $. (3 − 1) × 100 = 200 $.",
+          "guia": "g3"
+        },
+        {
+          "id": "op32-4",
+          "t": "slide",
+          "q": "Cartera de 20.000 $ y arriesgas el 1 % por operación. Cada mariposa puede perder 100 $. ¿Cuántas mariposas abres?",
+          "label": "Mariposas",
+          "min": 1,
+          "max": 10,
+          "step": 1,
+          "start": 7,
+          "a": 2,
+          "unit": "",
+          "why": "El 1 % de 20.000 $ son 200 $, y 200 ÷ 100 = 2 mariposas. El tamaño se decide con la pérdida máxima.",
+          "show": [
+            {
+              "label": "Pérdida máxima",
+              "k": 100,
+              "unit": "$"
+            },
+            {
+              "label": "Riesgo de la cartera",
+              "k": 0.5,
+              "unit": "%",
+              "dec": 1
+            }
+          ],
+          "guia": "g4"
+        },
+        {
+          "id": "op32-5",
+          "t": "choice",
+          "q": "Pagaste 1 $ por una mariposa 95-100-105 con calls. A 10 días del vencimiento, la acción está en 100,50 $ y la mariposa vale 3 $. ¿Qué es lo más prudente?",
+          "opts": [
+            "Esperar al vencimiento a por los 400 $",
+            "Comprar otra mariposa para doblar",
+            "Cerrar y asegurar 200 $ por mariposa",
+            "Vender las calls compradas y ahorrar"
+          ],
+          "a": 2,
+          "why": "(3 − 1) × 100 = 200 $ de ganancia. Los 400 $ exigen que la acción acabe justo en 100 $, y un movimiento pequeño en 10 días los reduce mucho.",
+          "guia": "g4",
+          "porque": [
+            "Los 400 $ exigen que acabe justo en 100 $; en 10 días puede moverse y quedarte con menos.",
+            "Doblar la posición dobla el riesgo justo cuando ya tienes la ganancia en la mano.",
+            null,
+            "Sin las compradas, las dos calls vendidas quedan descubiertas y la pérdida deja de tener límite."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

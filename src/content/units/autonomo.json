@@ -1,0 +1,218 @@
+{
+  "n": 10,
+  "id": "autonomo",
+  "track": "personal",
+  "title": "Facturar como autónomo",
+  "blurb": "Separar lo que no es tuyo: el IVA, la retención y la cuota, y un colchón para los ingresos irregulares.",
+  "revisar": "2027-11",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "La factura por dentro",
+      "texto": "A la base le sumas el 21 % de IVA. Si tu actividad es profesional y el cliente es una empresa o un profesional, le restas además la retención del 15 %. Los dos se calculan sobre la base.",
+      "ejemplo": "Base de 500 €: IVA de 105 € y retención de 75 €. El cliente te ingresa 530 €."
+    },
+    {
+      "id": "g2",
+      "titulo": "El IVA no es tuyo",
+      "texto": "Lo cobras para Hacienda. Cada trimestre ingresas el IVA repercutido en tus facturas menos el soportado en gastos de la actividad. Apártalo en cuanto cobras.",
+      "ejemplo": "Cobras 840 € de IVA y pagas 190 € en gastos: ingresas 840 − 190 = 650 €."
+    },
+    {
+      "id": "g3",
+      "titulo": "La retención es un anticipo",
+      "texto": "El cliente la ingresa a tu nombre y se resta en tu declaración de la renta. El profesional que empieza aplica el 7 % el año de alta y los dos siguientes. Compruébalo con la norma vigente.",
+      "ejemplo": "Base de 500 € al 7 %: retención de 35 €. Cobras 500 + 105 − 35 = 570 €."
+    },
+    {
+      "id": "g4",
+      "titulo": "Ingresos irregulares",
+      "texto": "La cuota de autónomos depende de tus rendimientos y se paga cada mes, cobres o no. Planifica con un mes flojo y guarda un colchón de varios meses de gasto.",
+      "ejemplo": "Ingresos de 1.000, 4.000 y 1.000 €: media de 2.000 €. Con 1.500 € de gasto, 6 meses de colchón son 9.000 €."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "au1",
+      "title": "La factura y el IVA",
+      "ex": [
+        {
+          "id": "au1-1",
+          "t": "num",
+          "q": "Eres profesional y facturas 500 € de base a una empresa, con un 21 % de IVA y un 15 % de retención. ¿Cuánto te ingresa el cliente?",
+          "unit": "€",
+          "a": 530,
+          "why": "500 + 105 de IVA − 75 de retención = 530 €. El IVA y la retención se calculan sobre la base de 500 €.",
+          "guia": "g1"
+        },
+        {
+          "id": "au1-2",
+          "t": "choice",
+          "q": "¿Sobre qué cantidad se calcula la retención de una factura?",
+          "opts": [
+            "Sobre el total con el IVA incluido",
+            "Sobre lo que te queda tras los gastos",
+            "Sobre la base, sin contar el IVA",
+            "Sobre lo que facturaste el año pasado"
+          ],
+          "a": 2,
+          "why": "IVA y retención se calculan los dos sobre la base. En una factura de 500 €: 21 % de IVA, 105 €; 15 % de retención, 75 €.",
+          "guia": "g1",
+          "porque": [
+            "Si se calculara con el IVA, retendrías impuestos sobre un impuesto: va sobre la base.",
+            "Los gastos cuentan en la renta del año, no en la retención de cada factura.",
+            null,
+            "Cada factura se calcula con su propia base, no con lo del año pasado."
+          ]
+        },
+        {
+          "id": "au1-3",
+          "t": "num",
+          "q": "En el trimestre cobras 840 € de IVA en tus facturas y pagas 190 € de IVA en gastos de tu actividad. ¿Cuánto IVA ingresas a Hacienda?",
+          "unit": "€",
+          "a": 650,
+          "why": "840 − 190 = 650 €. Ingresas el IVA que cobraste menos el que pagaste en gastos de la actividad.",
+          "guia": "g2"
+        },
+        {
+          "id": "au1-4",
+          "t": "choice",
+          "q": "Cobras una factura de 500 € de base más su IVA del 21 %. ¿Qué haces con los 105 € de IVA?",
+          "opts": [
+            "Los gasto: son parte de mis ingresos",
+            "Los resto de mi cuota de autónomos",
+            "Los aparto para la declaración del IVA",
+            "Los guardo para pagar la renta"
+          ],
+          "a": 2,
+          "why": "El IVA lo cobras para Hacienda: no es tuyo. Apártalo en cuanto cobras para ingresarlo en la declaración del trimestre.",
+          "guia": "g2",
+          "porque": [
+            "El IVA cobrado no es un ingreso: lo cobras para Hacienda y lo ingresas cada trimestre.",
+            "La cuota de autónomos es otra obligación: el IVA no se resta de ella.",
+            null,
+            "La renta es el IRPF; el IVA va en su propia declaración trimestral."
+          ]
+        },
+        {
+          "id": "au1-5",
+          "t": "match",
+          "q": "Empareja cada concepto de una factura con lo que es.",
+          "pairs": [
+            [
+              "Base imponible",
+              "El precio de tu trabajo sin impuestos"
+            ],
+            [
+              "IVA repercutido",
+              "El IVA que cobras en tus facturas"
+            ],
+            [
+              "IVA soportado",
+              "El IVA que pagas en gastos de la actividad"
+            ],
+            [
+              "Retención",
+              "Anticipo de tu IRPF que ingresa el cliente"
+            ]
+          ],
+          "why": "La base es lo tuyo; el IVA repercutido menos el soportado va a Hacienda cada trimestre; y la retención es un anticipo del IRPF.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "au2",
+      "title": "Retención, cuota y colchón",
+      "ex": [
+        {
+          "id": "au2-1",
+          "t": "num",
+          "q": "Empiezas como profesional autónomo y aplicas la retención reducida del 7 %. Facturas 500 € de base a una empresa con un 21 % de IVA. ¿Cuánto te ingresa el cliente?",
+          "unit": "€",
+          "a": 570,
+          "why": "500 + 105 de IVA − 35 de retención = 570 €. Con el 15 %, serían 530 €.",
+          "guia": "g3"
+        },
+        {
+          "id": "au2-2",
+          "t": "choice",
+          "q": "¿Qué es la retención que te descuenta el cliente en la factura?",
+          "opts": [
+            "Un impuesto que se suma a tu IRPF",
+            "Una comisión que se queda tu cliente",
+            "Un anticipo de tu IRPF del año",
+            "La parte del IVA que no pagas"
+          ],
+          "a": 2,
+          "why": "El cliente la ingresa en Hacienda a tu nombre. En la declaración de la renta se resta de lo que te toca pagar: puede salir a pagar o a devolver.",
+          "guia": "g3",
+          "porque": [
+            "No es un impuesto aparte: se resta de lo que te toque pagar en la renta.",
+            "El cliente no se queda nada: la ingresa en Hacienda a tu nombre.",
+            null,
+            "El IVA se suma a la factura; la retención es del IRPF y se resta."
+          ]
+        },
+        {
+          "id": "au2-3",
+          "t": "choice",
+          "q": "¿Qué profesional puede aplicar en sus facturas la retención reducida del 7 % en lugar del 15 %?",
+          "opts": [
+            "Cualquier autónomo que lo pida",
+            "Quien solo trabaja para particulares",
+            "Quien empieza: el año de alta y dos más",
+            "Quien lleva más de diez años de alta"
+          ],
+          "a": 2,
+          "why": "Los profesionales que inician su actividad aplican el 7 % el año de alta y los dos siguientes, si no ejercieron una actividad profesional el año anterior. Compruébalo con la norma vigente.",
+          "guia": "g3",
+          "porque": [
+            "No basta con pedirlo: es solo para quien inicia su actividad.",
+            "Los particulares no practican retención: el 7 % lo aplica quien empieza.",
+            null,
+            "Es al revés: es para los primeros años de actividad, no para los veteranos."
+          ]
+        },
+        {
+          "id": "au2-4",
+          "t": "num",
+          "q": "Tus ingresos de tres meses son 1.000 €, 4.000 € y 1.000 €. ¿Cuánto por debajo de la media mensual queda un mes de 1.000 €, en porcentaje?",
+          "unit": "%",
+          "a": 50,
+          "why": "La media es 6.000 ÷ 3 = 2.000 €, y (2.000 − 1.000) ÷ 2.000 = 50 %. Planifica tus gastos con un mes flojo, no con la media.",
+          "guia": "g4"
+        },
+        {
+          "id": "au2-5",
+          "t": "slide",
+          "q": "Eres autónomo, gastas 1.500 € al mes y quieres un colchón de 6 meses de gasto. Ya tienes 3.000 € ahorrados. ¿Cuántos meses de gasto te faltan por ahorrar?",
+          "label": "Meses",
+          "min": 0,
+          "max": 12,
+          "step": 1,
+          "start": 10,
+          "a": 4,
+          "unit": "",
+          "why": "6 × 1.500 = 9.000 € de colchón. Tienes 3.000 €, que son 2 meses: te faltan 4 meses, 6.000 €.",
+          "show": [
+            {
+              "label": "Por ahorrar",
+              "k": 1500,
+              "unit": "€"
+            },
+            {
+              "label": "Colchón total",
+              "k": 1500,
+              "b": 3000,
+              "unit": "€"
+            }
+          ],
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}
