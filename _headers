@@ -1,0 +1,19 @@
+# Cabeceras de Cloudflare Pages (https://developers.cloudflare.com/pages/configuration/headers/).
+# La política de seguridad repite la etiqueta meta de index.html y bienvenida.html (mantenlas iguales) y añade
+# frame-ancestors, que solo funciona como cabecera: nadie puede meter Rango en un iframe ajeno.
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self' https://*.supabase.co; form-action 'self' https:; base-uri 'self'; object-src 'none'; frame-ancestors 'none'
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  Strict-Transport-Security: max-age=31536000
+
+# El service worker se revisa siempre: así cada versión nueva de la app llega en cuanto se publica.
+/sw.js
+  Cache-Control: no-cache
+
+# Las fuentes y los iconos no cambian de nombre al actualizarse; un día de caché basta.
+/fonts/*
+  Cache-Control: public, max-age=86400
+/icons/*
+  Cache-Control: public, max-age=86400

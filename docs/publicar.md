@@ -12,8 +12,18 @@ Rango vive en `rango/` dentro del repositorio del bot. Para separarlo:
 3. Mueve los dos workflows a `.github/workflows/` del nuevo repositorio y quita el prefijo `rango/`:
    - `rango_test.yml`: borra `defaults.run.working-directory` y los filtros `paths`.
    - `rango_casos.yml`: cambia `rango/tools/...` por `tools/...` y `rango/src/content/...` por `src/content/...`; quita `working-directory: rango`.
-4. Valores de los casos reales: sin el bot al lado, crea `tools/tickers.txt` (un ticker por línea) o define la variable `RANGO_TICKERS` en el workflow. `tools/casos.py` y `tools/semana.py` los leen en ese orden antes de buscar `../portfolio_manager.py`.
-5. Nada más depende del bot.
+4. Valores de los casos reales: `tools/tickers.txt` ya existe (misma lista que el bot) (un ticker por línea) o define la variable `RANGO_TICKERS` en el workflow. `tools/casos.py` y `tools/semana.py` los leen en ese orden antes de buscar `../portfolio_manager.py`.
+5. Copia `.claude/` de la raíz y quita el prefijo `rango/` de sus rutas (`extraer.py`, `recuentos.py`, `corregir.py`, `plantilla.py`, `SKILL.md`, `verificador-cifras.md` y la expresión del hook `empaquetar.mjs`).
+6. Nada más depende del bot. Comprueba en la copia: `npm test`, `python -I tools/test_casos.py`, `python -I tools/test_semana.py`, `node test/e2e.cjs` y `python .claude/skills/nueva-unidad/recuentos.py --comprobar`.
+
+## 1 bis. Web en Cloudflare Pages
+
+1. En dash.cloudflare.com → Workers y Pages → Crear → Pages → Conectar con Git, elige este repositorio y la rama `main`.
+2. Configuración de compilación: sin framework, **sin comando de compilación** y directorio de salida `/` (la app ya es estática).
+3. Cada push a `main` publica la web; cada rama o pull request tiene su propia dirección de vista previa.
+4. Las cabeceras de seguridad y de caché están en `_headers`. Si cambias la política de seguridad de index.html o bienvenida.html, cámbiala también allí.
+5. Dominio propio: en el proyecto de Pages → Dominios personalizados → añade el dominio (y `www`). Si el dominio está en Cloudflare, los registros DNS se crean solos; si no, añade el registro CNAME que te indique Cloudflare en tu registrador.
+6. Con la dirección definitiva, ponla en Supabase (Authentication → URL Configuration: Site URL y Redirect URLs).
 
 Al tener dominio: en index.html y bienvenida.html, cambia `og:image` a la dirección completa (`https://tu-dominio/icons/og.png`) para que la vista previa salga en todas las redes.
 

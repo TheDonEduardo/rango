@@ -1,0 +1,11 @@
+# Valores de los casos reales, la Operación de la semana y el Mercado de la semana (uno por línea).
+AVGO
+GOOGL
+MELI
+MSFT
+LLY
+CRWD
+NU
+AXON
+META
+NVDA
