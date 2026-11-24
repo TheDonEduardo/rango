@@ -2,10 +2,11 @@
 // Para traducir la app: copia este archivo (p. ej. textos.en.js) con las mismas claves y elige cuál importar.
 // Los textos con datos son funciones; los plurales se resuelven aquí, no en las vistas.
 const pl=(n,uno,varios)=>n===1?uno:varios;
+const FORMACION='Es formación, no una recomendación.';
 
 export const t={
   // Comunes
-  continuar:'Continuar', volver:'Volver', volverInicio:'Volver al inicio', abrir:'Abrir', formacion:'Es formación, no una recomendación.',
+  continuar:'Continuar', volver:'Volver', volverInicio:'Volver al inicio', abrir:'Abrir', formacion:FORMACION,
 
   // Rutas y repasos
   rutas:{basico:'Básico',personal:'Finanzas',pasiva:'Pasiva',fundamental:'Fundamental',tecnico:'Técnico',derivados:'Opciones',cripto:'Cripto'}, repasoUnidad:'Examen de la unidad', dominada:'Dominada', dominadaNota:'Examen sin un solo fallo: unidad dominada.', examenNota:'Apruébalo sin fallos para marcar la unidad como dominada.', nDominadas:n=>`${n} ${n===1?'unidad dominada':'unidades dominadas'}`,
@@ -35,7 +36,8 @@ export const t={
   siguienteLeccion:'Siguiente lección', unidadN:n=>`Unidad ${n}`, casoFinal:'Caso final',
   retoDia:'Reto del día', retoExplica:'Una pregunta de lo ya estudiado · 20 XP', retoHecho:ok=>ok?'Hecho: acertado a la primera. Mañana, otro.':'Hecho. Mañana, otro.', responder:'Responder', retoCompletado:'Reto completado',
   mercadoTitulo:'Mercado de la semana', mercadoExplica:(n,f)=>`${n} preguntas con lo que pasó hasta el ${f}`, mercadoHecho:(ok,n)=>`Hecho: ${ok} de ${n} a la primera. El sábado, otro.`,
-  mercadoCompletado:'Mercado de la semana completado', notaMercado:'Datos reales de la semana. Es práctica de cálculo, no una recomendación: el sábado habrá preguntas nuevas.',
+  mercadoCompletado:'Mercado de la semana completado', notaMercado:(fu,f)=>`Datos reales de la semana, de ${fu} a ${f}. Es práctica de cálculo, no una recomendación: el sábado habrá preguntas nuevas.`,
+  fuenteMercado:(fu,f)=>`Datos de ${fu} hasta el ${f}. ${FORMACION}`,
   notaReto:ok=>ok?'Acertado a la primera: lo tienes asentado.':'Lo has fallado a la primera: volverá en tu repaso de mañana.',
   repasoDia:'Repaso del día', aprendidos:n=>`${n} ${n===1?'aprendido':'aprendidos'}`,
   repasoTitulo:'Repaso espaciado', enRepaso:'En repaso', aprendidosT:'Aprendidos',
@@ -43,6 +45,7 @@ export const t={
   proximamente:'Próximamente', completada:'Completada', plegar:'Plegar', verLecciones:'Ver lecciones',
   precision:p=>`Precisión ${p} %`, superadaTest:'Superada en el test', bloqueada:'Bloqueada', nEjercicios:n=>`${n} ${pl(n,'ejercicio','ejercicios')}`,
   estadoNodo:{done:'completada',locked:'bloqueada',current:'disponible',open:'disponible'},
+  fuenteCaso:(f,d)=>`Datos de ${f} a ${d}. ${FORMACION}`,
   fuenteCasos:(f,d)=>`Casos reales con datos de ${f} a ${d}. Es formación, no una recomendación de inversión.`,
   pie:'Prototipo. El progreso se guarda solo en este navegador.', avisoLegal:'Aviso legal',
   instalar:'Instalar Rango en este dispositivo', instalarIos:'Para instalar Rango en tu iPhone: botón Compartir y «Añadir a pantalla de inicio».',
@@ -119,16 +122,56 @@ export const t={
   sinVidas:'Sin vidas', sinVidasExplica:'Has agotado los 3 fallos de esta lección.',
   sinVidasNota:'Repasa las explicaciones y vuelve a intentarlo. Las preguntas se barajan de nuevo.', reintentar:'Reintentar lección',
 
-  // Política de privacidad (borrador: revísala con un profesional antes de publicar)
-  privacidad:'Privacidad', privTitulo:'Política de privacidad',
-  privTexto:[
-    '<b>Sin cuenta, tus datos no salen de tu dispositivo.</b> Tu progreso, tu racha y tus estadísticas se guardan solo en este navegador. Rango no usa cookies de terceros ni rastreadores, y la app no pide nada a otros servidores: hasta las fuentes van incluidas.',
-    '<b>Si creas una cuenta</b>, guardamos tu correo electrónico y tu progreso para sincronizarlo entre dispositivos. Se alojan en Supabase, en servidores de la Unión Europea (Fráncfort). Los usamos solo para darte ese servicio, que es la base legal del tratamiento, y los conservamos mientras tengas la cuenta. «Borrar cuenta», en Tu progreso, los elimina del servidor.',
-    '<b>Medición anónima</b>: solo si la activas en Tu progreso. Envía qué lecciones terminas o dejas a medias y qué preguntas fallas, sin tu nombre, tu correo ni ningún identificador. Puedes desactivarla cuando quieras.',
-    '<b>Avisos de errores</b>: si nos escribes desde «¿Ves un error?», recibimos lo que pongas en el mensaje y la dirección desde la que lo envías.',
-    '<b>Tus derechos</b>: puedes acceder a tus datos, corregirlos, borrarlos, llevártelos (Descargar copia, en Tu progreso) u oponerte a su uso. Si crees que no los tratamos bien, puedes reclamar ante la Agencia Española de Protección de Datos (aepd.es).',
+  // Política de privacidad en dos capas (borrador: revísala con un profesional antes de publicar).
+  // Los plazos y textos de aquí son propuestas del desarrollo que debe confirmar el titular.
+  privacidad:'Privacidad', privTitulo:'Política de privacidad', privPendiente:'(pendiente de completar)',
+  titularLinea:(n,id,d,c)=>`${n}, NIF ${id}, ${d}. Correo: ${c}`,
+  privCapa1:'Lo esencial',
+  privResumen:(titular,c)=>[
+    `<b>Responsable:</b> ${titular}.`,
+    '<b>Para qué:</b> darte el servicio de Rango; sincronizar tu progreso si creas una cuenta; medir el uso de forma anónima si lo activas; atender los avisos de errores; y avisarte del lanzamiento si te apuntas a la lista de espera.',
+    '<b>Base jurídica:</b> la ejecución del servicio que solicitas (la cuenta), tu consentimiento (medición y lista de espera) y el interés legítimo en corregir el contenido (avisos de errores).',
+    '<b>Destinatarios:</b> solo los proveedores que nos prestan el servicio: Supabase, Cloudflare y el del correo. No vendemos ni cedemos tus datos.',
+    `<b>Tus derechos:</b> acceder, rectificar, borrar, llevarte tus datos, oponerte y limitar su uso, escribiendo a ${c}. Puedes reclamar ante la Agencia Española de Protección de Datos (aepd.es).`,
+    'Sin cuenta, tus datos no salen de tu dispositivo. Debajo tienes la información completa, tratamiento por tratamiento.',
   ],
-  privContacto:c=>c?`Para cualquier duda o para ejercer tus derechos, escribe a ${c}.`:'Para cualquier duda o para ejercer tus derechos, usa «¿Ves un error?» en cualquier ejercicio.',
+  privCapa2:'Información completa',
+  privSecciones:[
+    ['Sin cuenta',[
+      'Tu progreso, tu racha, tus estadísticas y lo que escribes en los simuladores se guardan solo en este navegador. Rango no usa cookies de terceros ni rastreadores, y la app no pide nada a otros servidores: hasta las fuentes van incluidas. Puedes borrarlo cuando quieras desde los ajustes del navegador.',
+    ]],
+    ['Con cuenta',[
+      '<b>Datos:</b> tu correo electrónico y todo el estado de la app: progreso, XP y racha, estadísticas, preferencias, lo que has introducido en los simuladores (capital, aportaciones, años…) y tus planes de la Operación de la semana.',
+      '<b>Para qué y base jurídica:</b> sincronizarlo entre tus dispositivos. Es la ejecución del servicio que solicitas (art. 6.1.b del RGPD).',
+      '<b>Conservación:</b> mientras tengas la cuenta. Al borrarla («Borrar cuenta», en Tu progreso) se elimina del servidor; las copias de seguridad del proveedor se sobrescriben en su ciclo, según el proveedor.',
+    ]],
+    ['Medición anónima',[
+      '<b>Datos:</b> qué lecciones terminas o dejas a medias y qué preguntas fallas, sin tu nombre, tu correo ni ningún identificador.',
+      '<b>Base jurídica:</b> tu consentimiento. Está desactivada por defecto: la activas tú en Tu progreso y puedes desactivarla cuando quieras.',
+      '<b>Conservación:</b> 24 meses, en agregado.',
+    ]],
+    ['Avisos de errores',[
+      '<b>Datos:</b> si nos escribes desde «¿Ves un error?», recibimos tu correo, lo que pongas en el mensaje y el código del ejercicio.',
+      '<b>Base jurídica:</b> el interés legítimo en corregir el contenido.',
+      '<b>Conservación:</b> hasta resolver el aviso y, como máximo, 12 meses.',
+    ]],
+    ['Lista de espera',[
+      '<b>Datos:</b> tu correo, si lo dejas en la página de presentación.',
+      '<b>Para qué y base jurídica:</b> avisarte del lanzamiento en las tiendas de aplicaciones, con tu consentimiento.',
+      '<b>Conservación:</b> hasta el lanzamiento o hasta que pidas la baja.',
+    ]],
+    ['Proveedores y transferencias',[
+      'Nos prestan servicio, como encargados del tratamiento: Supabase (alojamiento de las cuentas, en la Unión Europea, Fráncfort), Cloudflare (alojamiento de la web; guarda registros técnicos con tu dirección IP) y el proveedor del correo con el que se envían los enlaces de acceso y se reciben los avisos.',
+      'Son empresas de EE. UU.: las transferencias se amparan en el Marco de Privacidad de Datos UE-EE. UU. o en las cláusulas contractuales tipo de la Comisión Europea.',
+    ]],
+    ['Edad',[
+      'La cuenta es para mayores de 14 años.',
+    ]],
+    ['Tus derechos',[
+      'Puedes acceder a tus datos, rectificarlos, borrarlos, llevártelos (Descargar copia, en Tu progreso), oponerte a su tratamiento y pedir que se limite. Escribe al correo del responsable y te respondemos en un mes como máximo.',
+      'Si crees que no tratamos bien tus datos, puedes reclamar ante la Agencia Española de Protección de Datos (aepd.es).',
+    ]],
+  ],
 
   // Aviso legal
   legalPrimero:'Antes de empezar', legalEntendido:'Entendido, empezar',
@@ -139,6 +182,7 @@ export const t={
     'La información fiscal es general y simplificada: las normas cambian y dependen de tu situación. Consulta con un profesional antes de decidir.',
     'Las decisiones de inversión son tuyas y bajo tu responsabilidad.',
   ],
+  legalTitular:(n,id,d,c)=>`<b>Titular:</b> ${n}, NIF ${id}, ${d}. <b>Contacto:</b> ${c}.`,
 
   // Operación de la semana
   simTitulo:'Operación de la semana', simResTitulo:'Resultado de la semana pasada',
@@ -152,7 +196,7 @@ export const t={
   planGuardadoCard:n=>`Tu plan para ${n} está guardado. El resultado, el próximo sábado.`,
   montaPlan:(n,tk)=>`Monta tu operación sobre el gráfico real de ${n} (${tk}).`, verCambiar:'Ver o cambiar', empezar:'Empezar',
   simAlt:n=>`Gráfico diario de ${n} con las líneas de tu plan`, simResAlt:n=>`Gráfico diario de ${n} con tu plan y las sesiones posteriores`,
-  simIntro:'Plan de compra en ruptura: coloca la entrada por encima del último cierre, el stop y el objetivo. El sábado que viene verás qué habría pasado con las velas reales.',
+  simIntro:`Plan de compra en ruptura: coloca la entrada por encima del último cierre, el stop y el objetivo. El sábado que viene verás qué habría pasado con las velas reales. ${FORMACION}`,
   simFuente:(f,d,c)=>`Velas diarias de ${f} hasta el ${d}. Último cierre: ${c}. Es formación, no una recomendación.`,
   guardarCambios:'Guardar cambios', guardarPlan:'Guardar mi plan',
   sesionN:i=>`la sesión ${i}`,

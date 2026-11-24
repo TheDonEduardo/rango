@@ -172,6 +172,18 @@ async function guiaNavegacion(b, url) {
   await p.close(); return errs.length;
 }
 
+// Enlace directo a la política (desde bienvenida.html): «./?privacidad» la abre sin aviso legal previo y «Volver» lleva al aviso.
+async function privacidadDirecta(b, url) {
+  const p = await b.newPage({viewport: {width: 390, height: 844}}), errs = [];
+  await p.goto(url + '?privacidad');
+  await p.waitForSelector('.legal', {timeout: 5000}).catch(() => errs.push('?privacidad no abre nada'));
+  if (!(await p.locator('h1').innerText()).includes('Política de privacidad')) errs.push('?privacidad no abre la política de privacidad');
+  await p.click('[data-act=privvolver]');
+  if (!(await p.locator('h1').innerText()).includes('Antes de empezar')) errs.push('tras la política, un usuario nuevo no ve el aviso legal');
+  console.log('  ' + (errs.length ? errs.join('\n  ') : 'bien'));
+  await p.close(); return errs.length;
+}
+
 // Carga: mientras llega el contenido se ve la pantalla de carga; si no llega, un mensaje con «Reintentar» que funciona.
 async function cargaFallida(b, url) {
   const p = await b.newPage({viewport: {width: 390, height: 844}}), errs = [];
@@ -207,6 +219,7 @@ async function cargaFallida(b, url) {
   console.log(`Recorrido de ${ids.length} lecciones en ${modos.length} modo(s):`);
   let fallos = await recorrer(b, url, ids, modos, dir);
   if (!has('--lecciones') && !has('--todas')) { console.log('Guía (teclado y dedo):'); fallos += await guiaNavegacion(b, url); }
+  if (!has('--lecciones') && !has('--todas')) { console.log('Política de privacidad directa:'); fallos += await privacidadDirecta(b, url); }
   if (!has('--lecciones') && !has('--todas')) { console.log('Carga y fallo de carga:'); fallos += await cargaFallida(b, url); }
   if (!has('--sin-axe') && !has('--lecciones') && !has('--todas')) { console.log('Accesibilidad:'); fallos += await auditar(b, url); }
   await b.close(); s.close();

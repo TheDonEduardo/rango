@@ -570,7 +570,7 @@ def casos_tecnicos(tk, indice=None):
         elif encima:
             lectura = "Precio por encima, pero la media aún baja: no cumple las dos condiciones de la Fase 2."
         else:
-            lectura = "Precio por debajo de la media: Weinstein no compra en esa situación."
+            lectura = "Precio por debajo de la media: no cumple la primera condición de la Fase 2 de Weinstein, que pide el precio por encima."
         out["t1"].append({**base,
             "q": f"Al cierre del {fecha(f)}, {nombre} cotizaba a {u(c)} y su media de 150 sesiones (unas 30 semanas) estaba en {u(m)}. "
                  f"¿A qué distancia porcentual está el precio de la media? Redondea a 1 decimal.",
@@ -608,7 +608,7 @@ def casos_tecnicos(tk, indice=None):
         stop = round(c - dist, 2)
         if 0 < stop < 1000:
             out["r1"].append({**base,
-                "q": f"{nombre} cerró a {u(c)} el {fecha(f)} con un ATR(14) de {u(atr)}. Si compras al cierre con el stop a 2 ATR, "
+                "q": f"{nombre} cerró a {u(c)} el {fecha(f)} con un ATR(14) de {u(atr)}. Si se comprara al cierre con el stop a 2 ATR, "
                      f"¿a qué precio va el stop?",
                 "unit": cur if cur in ("€", "$") else "", "a": stop, "tol": 0.011,
                 "why": f"2 × {es(atr, 2)} = {es(dist, 2)}; {es(c, 2)} − {es(dist, 2)} = {es(stop, 2)}. "
@@ -617,8 +617,8 @@ def casos_tecnicos(tk, indice=None):
         n = math.floor(RIESGO_ATR / dist + 1e-9)
         if 1 <= n < 1000:
             out["r2"].append({**base,
-                "q": f"Quieres arriesgar {es(RIESGO_ATR, 0)} {cur} en {nombre}, con el stop a 2 ATR. Su ATR(14) al {fecha(f)} es de {u(atr)}. "
-                     f"¿Cuántas acciones compras como máximo?",
+                "q": f"Con un riesgo máximo de {es(RIESGO_ATR, 0)} {cur} en {nombre} y el stop a 2 ATR (supuesto), su ATR(14) al {fecha(f)} es de {u(atr)}. "
+                     f"¿Cuántas acciones permitiría comprar como máximo ese riesgo?",
                 "unit": "", "a": n, "tol": 0.01,
                 "why": f"Distancia al stop: 2 × {es(atr, 2)} = {es(dist, 2)}. {es(RIESGO_ATR, 0)} ÷ {es(dist, 2)} = {es(math.floor(RIESGO_ATR / dist * 100) / 100, 2)}: "
                        f"{n} {'acción' if n == 1 else 'acciones'}, redondeando hacia abajo para no pasar del riesgo.",

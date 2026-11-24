@@ -363,6 +363,9 @@ $app.addEventListener('pointerup',e=>{
 });
 
 simRecord();
+// Enlace directo a la política de privacidad (desde bienvenida.html): «./?privacidad» la abre sin pedir antes el aviso legal.
+// «Volver» lleva al inicio, que sí pide aceptar el aviso. Va en la query, no en el fragmento, que usa el retorno de la cuenta.
+if(typeof location!=='undefined'&&/[?&]privacidad\b/.test(location.search||'')){ses.view='privacidad';ses.privDesde='home'}
 render();
 
 // Cuenta: al volver del enlace del correo se guarda la sesión; con sesión, se fusiona con lo guardado en el servidor.
@@ -389,4 +392,4 @@ export const api={sumarRacha,glos,openGlosario:()=>{ses.view='glosario';render()
   openStats:()=>{ses.view='stats';render()},act:(a,ds={})=>ACCIONES[a]({dataset:ds}),getView:()=>ses.view,startWeak:()=>startRun(STATS_L),
   simDraftSet:p=>{ses.simDraft=p},simSave,goHome:()=>{ses.view='home';render()},startTest:()=>startRun(TEST_L),startNivel:tr=>startRun({id:'nivel-'+tr,title:t.pruebaNivel,kind:'nivel',track:tr}),srsDue,
   acceptLegal:()=>{S.legal=LEGAL_V},startSrs:()=>startRun(SRS_L),startReto:()=>startRun(RETO_L),retoHoy,ordenFijo,fusionar,configurar,enviarEnlace,leerRetorno,sincronizar,cerrarSesion,borrarCuenta,sesion,setTrack:id=>{S.track=id},skipBasics:()=>{S.skipBasics=true},
-  homeHTML,startRun,lessonHTML,check,next,resultHTML,failHTML,render,getRun:()=>ses.run,setSel:v=>{ses.run.sel=v},setVal:v=>{ses.run.val=v},getState:()=>S};
+  homeHTML,privacidadHTML,legalHTML,startRun,lessonHTML,check,next,resultHTML,failHTML,render,getRun:()=>ses.run,setSel:v=>{ses.run.sel=v},setVal:v=>{ses.run.val=v},getState:()=>S};

@@ -352,6 +352,7 @@ if (fs.existsSync(semPath)) {
   if (sem.prev && (!okVelas(sem.prev.data) || !okVelas(sem.prev.despues) || sem.prev.despues.length > 5)) errs.push('semana.json: semana anterior mal formada');
   T.openSim();
   if (!app.innerHTML.includes('Operación de la semana') || !/class="svg\s+plan"/.test(app.innerHTML)) errs.push('la vista del simulador no se dibuja');
+  if (!app.innerHTML.includes('no una recomendación') || !app.innerHTML.includes('Plan de compra en ruptura')) errs.push('la intro de la Operación de la semana no lleva el aviso de formación');
   const c = sem.data[sem.data.length - 1][3];
   T.simDraftSet({entry: c * 1.02, stop: c * 0.95, target: c * 1.1}); T.simSave();
   if (!T.getState().sim[sem.semana]) errs.push('el plan de la semana no se guarda');
@@ -560,10 +561,12 @@ T.setTrack('pasiva'); T.skipBasics();
     T.act('home');
     if (!T.homeHTML().includes('data-act="mercado"')) errs.push('el inicio no ofrece el mercado de la semana');
     T.act('mercado');
+    if (!app.innerHTML.includes(T.MERCADO.fuente) || !app.innerHTML.includes('no una recomendación')) errs.push('el mercado de la semana no muestra fuente y aviso de formación');
     let g = 0;
     while (g++ < 30 && T.getView() === 'lesson') { const ex = T.getRun().queue[0]; give(ex, right(ex)); T.check(); T.next(); }
     if (!st.mercado || st.mercado.semana !== T.MERCADO.semana || st.mercado.ok !== T.MERCADO.ex.length) errs.push('el mercado de la semana no queda hecho: ' + JSON.stringify(st.mercado));
     if (!app.innerHTML.includes('Mercado de la semana completado')) errs.push('el resultado del mercado de la semana no se dibuja');
+    if (!app.innerHTML.includes(T.MERCADO.fuente + ' a ')) errs.push('la nota del mercado no indica la fuente y la fecha');
     if (Object.keys(st.srs).length !== nSrs) errs.push('el mercado de la semana entra en el repaso');
     T.act('home');
     if (T.homeHTML().includes('data-act="mercado"') || !T.homeHTML().includes('El sábado, otro')) errs.push('el mercado de la semana hecho se sigue ofreciendo');
@@ -665,6 +668,7 @@ if (casos) for (const L of T.FLAT.filter(l => l.casos && l.casos.length)) for (c
   give(ex, right(ex)); T.check();
   if (!T.getRun().ok) errs.push('caso real rechazado: ' + ex.q);
   if (/undefined|NaN|\[object/.test(T.lessonHTML())) errs.push('HTML roto en caso ' + ex.caso);
+  if (!T.lessonHTML().includes(casos.fuente) || !T.lessonHTML().includes(casos.fecha) || !T.lessonHTML().includes('no una recomendación')) errs.push('el caso real no muestra fuente, fecha y aviso de formación: ' + ex.caso);
 }
 
 // Contenido con fecha de revisión («revisar»: "AAAA-MM» en la unidad o en el ejercicio): normas fiscales, garantías,
@@ -688,6 +692,19 @@ if (caducados.length) console.warn('AVISO: contenido pendiente de revisar (norma
   T.act('privvolver'); if (T.getView() !== 'home') errs.push('privacidad: «Volver» no regresa al inicio');
   T.openStats(); T.act('privacidad'); T.act('privvolver'); if (T.getView() !== 'stats') errs.push('privacidad: «Volver» no regresa a Tu progreso');
   T.goHome();
+  // Dos capas: lo esencial arriba y el detalle por tratamiento debajo; la cuenta dice que incluye los simuladores.
+  T.goHome(); T.act('privacidad');
+  for (const x of ['Lo esencial', 'Información completa', 'Responsable', 'art. 6.1.b', 'simuladores', 'Operación de la semana', '24 meses', '12 meses', 'mayores de 14', 'Marco de Privacidad de Datos'])
+    if (!app.innerHTML.includes(x)) errs.push('la política de privacidad no menciona: ' + x);
+  T.act('privvolver'); T.goHome();
+  // Datos del titular (config.js): si faltan, la política lo dice y el test avisa sin fallar.
+  const {titularFalta, LEGAL_V} = await import(pathToFileURL(path.join(root, 'src/views/legal.js')));
+  const falta = titularFalta();
+  if (falta.length && !T.privacidadHTML().includes('(pendiente de completar)')) errs.push('la política no marca los datos del titular que faltan');
+  if (!falta.length && T.privacidadHTML().includes('(pendiente de completar)')) errs.push('la política marca como pendiente un dato del titular ya relleno');
+  if (LEGAL_V < 2) errs.push('LEGAL_V debe ser 2 o más: el aviso legal ahora incluye al titular');
+  if (!T.legalHTML(false).includes('Titular')) errs.push('el aviso legal no incluye al titular');
+  if (falta.length) console.warn('AVISO: faltan datos del titular en src/config.js (TITULAR): ' + falta.join(', ') + '. Rellénalos antes de publicar.');
 }
 
 // Cuentas (src/sync.js): sin proyecto configurado no se ofrece nada; la fusión no pierde progreso de ningún

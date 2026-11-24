@@ -12,3 +12,6 @@ export const MEDICION_URL='';
 // y docs/supabase.sql). La clave «anon» es pública por diseño; la de servicio no va nunca aquí. Vacías: sin cuentas.
 export const SUPABASE_URL='';
 export const SUPABASE_ANON='';
+// TITULAR: datos del responsable del tratamiento (aviso legal y política de privacidad). Rellenar antes de publicar.
+// Si falta alguno, la política muestra «(pendiente de completar)» y `npm test` avisa. Si `correo` está vacío se usa CONTACTO.
+export const TITULAR={nombre:'', nif:'', domicilio:'', correo:''};
