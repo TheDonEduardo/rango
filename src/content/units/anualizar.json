@@ -1,0 +1,191 @@
+{
+  "n": 3,
+  "id": "anualizar",
+  "track": "basico",
+  "title": "Rentabilidad acumulada y anual",
+  "blurb": "Pasar de lo ganado en total a lo ganado por año, por qué no se divide y cómo pesan las caídas.",
+  "gate": false,
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Acumulada y anual",
+      "texto": "La rentabilidad acumulada es lo ganado en todo el periodo; la anual dice cuánto equivale cada año. Para comparar inversiones de plazos distintos, usa siempre la anual.",
+      "ejemplo": "Un 61 % en 5 años es un 10 % anual: 1,10⁵ = 1,61."
+    },
+    {
+      "id": "g2",
+      "titulo": "No se divide entre los años",
+      "texto": "La anual compuesta no es la acumulada entre los años, porque cada año se gana sobre lo ganado antes. Dividir exagera la rentabilidad.",
+      "ejemplo": "Un 100 % en 10 años no es un 10 % anual, sino un 7,2 %: 1,072¹⁰ ≈ 2."
+    },
+    {
+      "id": "g3",
+      "titulo": "Las caídas pesan más",
+      "texto": "Un −50 % seguido de un +50 % no te deja igual: pierdes un 25 %. La media de los porcentajes engaña; cuenta lo que pasa con el dinero.",
+      "ejemplo": "1.000 € → 500 € → 750 €."
+    },
+    {
+      "id": "g4",
+      "titulo": "Compara igual con igual",
+      "texto": "Fíjate en el plazo, en si incluye dividendos y en si descuenta comisiones. Lo usarás después para comparar un fondo con su índice.",
+      "ejemplo": "Fondo +40 % en 5 años frente a índice +50 %: el fondo ganó menos."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "by1",
+      "title": "Acumulada o anual",
+      "ex": [
+        {
+          "id": "by1-1",
+          "t": "num",
+          "q": "Inviertes 1.000 € y a los 5 años tienes 1.610 €. ¿Cuál es la rentabilidad acumulada?",
+          "unit": "%",
+          "a": 61,
+          "why": "1.610 ÷ 1.000 − 1 = 61 % en los 5 años.",
+          "guia": "g1"
+        },
+        {
+          "id": "by1-2",
+          "t": "num",
+          "q": "Una inversión gana un 10 % cada año durante 5 años. ¿Cuánto gana en total, en porcentaje? Redondea a entero.",
+          "unit": "%",
+          "a": 61,
+          "why": "1,10⁵ = 1,61: un 61 % en total, más que 5 × 10 = 50 %, porque cada año ganas también sobre lo ganado antes.",
+          "tol": 0.6,
+          "guia": "g1"
+        },
+        {
+          "id": "by1-3",
+          "t": "choice",
+          "q": "Un fondo ganó un 100 % en 10 años. ¿Qué rentabilidad anual compuesta es?",
+          "opts": [
+            "Un 10 % al año",
+            "Un 7,2 % al año",
+            "Un 100 % al año",
+            "Un 20 % al año"
+          ],
+          "a": 1,
+          "why": "1,072¹⁰ ≈ 2: un 7,2 % anual. Dividir 100 entre 10 ignora que cada año se gana sobre lo ganado antes.",
+          "guia": "g2",
+          "porque": [
+            "Un 10 % anual compuesto daría un 159 % en 10 años, no un 100 %.",
+            null,
+            "Un 100 % es lo acumulado en los 10 años, no cada año.",
+            "Un 20 % anual multiplicaría el dinero por más de 6 en 10 años."
+          ]
+        },
+        {
+          "id": "by1-4",
+          "t": "choice",
+          "q": "El fondo A gana un 30 % en 3 años (un 9,1 % al año) y el fondo B, un 40 % en 5 años (un 7,0 % al año). ¿Cuál rindió más?",
+          "opts": [
+            "El A, que gana más cada año",
+            "El B, porque su cifra total es mayor",
+            "Los dos igual: ambos ganan dinero",
+            "No se puede comparar sin más datos"
+          ],
+          "a": 0,
+          "why": "Para comparar plazos distintos se mira la rentabilidad anual: 9,1 % frente a 7,0 %. El 40 % de B es mayor solo porque abarca más años.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "La cifra total de B es mayor porque abarca más años, no porque rinda más.",
+            "Ganar dinero los dos no significa que rindan igual: A gana más cada año.",
+            "Con la rentabilidad anual de cada uno basta para compararlos."
+          ]
+        },
+        {
+          "id": "by1-5",
+          "t": "num",
+          "q": "Tu inversión gana un 8 % el primer año y otro 8 % el segundo. ¿Cuánto ha ganado en total? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 16.6,
+          "why": "1,08 × 1,08 = 1,1664: un 16,6 %, algo más que 8 + 8, porque el segundo año ganas también sobre lo ganado el primero.",
+          "tol": 0.06,
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "by2",
+      "title": "Las caídas y las comparaciones",
+      "ex": [
+        {
+          "id": "by2-1",
+          "t": "num",
+          "q": "Tienes 1.000 €. Pierdes un 50 % un año y ganas un 50 % el siguiente. ¿Cuántos euros tienes al final?",
+          "unit": "€",
+          "a": 750,
+          "why": "1.000 × 0,5 = 500 €, y 500 × 1,5 = 750 €. Una caída y una subida del mismo porcentaje no se compensan.",
+          "guia": "g3"
+        },
+        {
+          "id": "by2-2",
+          "t": "num",
+          "q": "Una inversión pierde un 50 %. ¿Cuánto tiene que subir después para volver a su valor inicial?",
+          "unit": "%",
+          "a": 100,
+          "why": "De 500 € hay que volver a 1.000 €: 1.000 ÷ 500 − 1 = 100 %. Las caídas grandes cuestan mucho de recuperar.",
+          "guia": "g3"
+        },
+        {
+          "id": "by2-3",
+          "t": "choice",
+          "q": "Un fondo anuncia una «media del 10 % anual» tras ganar un 60 % un año y perder un 40 % el siguiente. ¿Qué ha pasado con tu dinero?",
+          "opts": [
+            "Has ganado un 20 % en los dos años",
+            "Has ganado un 10 % cada año",
+            "Has perdido un 4 % en los dos años",
+            "Estás exactamente igual que al principio"
+          ],
+          "a": 2,
+          "why": "1,60 × 0,60 = 0,96: pierdes un 4 %. La media de +60 % y −40 % es un 10 %, pero no dice lo que pasó con tu dinero.",
+          "guia": "g3",
+          "porque": [
+            "+60 y −40 suman 20 puntos, pero la caída se aplica sobre más dinero.",
+            "La media de los porcentajes no es lo que gana tu dinero.",
+            null,
+            "La caída del 40 % pesa más que la subida del 60 %: acabas por debajo."
+          ]
+        },
+        {
+          "id": "by2-4",
+          "t": "num",
+          "q": "Un fondo ganó un 40 % en 5 años y su índice de referencia, un 50 % en esos mismos 5 años. ¿Cuántos puntos se quedó por detrás?",
+          "unit": "puntos",
+          "a": 10,
+          "why": "50 − 40 = 10 puntos. Aunque un 40 % parezca mucho, el fondo rindió menos que su índice: es la comparación que importa.",
+          "guia": "g4"
+        },
+        {
+          "id": "by2-5",
+          "t": "match",
+          "q": "Empareja cada dato de rentabilidad con lo que tienes que comprobar.",
+          "pairs": [
+            [
+              "Rentabilidad acumulada",
+              "En cuántos años se consiguió"
+            ],
+            [
+              "Rentabilidad de un índice",
+              "Si incluye o no los dividendos"
+            ],
+            [
+              "Rentabilidad de un fondo",
+              "Si ya descuenta las comisiones"
+            ],
+            [
+              "Media de varios años",
+              "Si es simple o compuesta"
+            ]
+          ],
+          "why": "Una cifra de rentabilidad sin su plazo, sus dividendos y sus costes no sirve para comparar.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

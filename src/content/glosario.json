@@ -876,5 +876,35 @@
  {
   "termino": "poder de compra",
   "d": "Lo que puedes comprar con tu dinero. Baja cuando los precios suben más que tus ingresos o tus ahorros."
+ },
+ {
+  "termino": "rentabilidad acumulada",
+  "d": "Lo que gana una inversión en todo un periodo, sin repartirlo por años."
+ },
+ {
+  "termino": "sesgo local",
+  "d": "Tendencia a invertir sobre todo en el propio país, muy por encima de su peso en el mundo."
+ },
+ {
+  "termino": "emergentes",
+  "alias": [
+   "mercados emergentes"
+  ],
+  "d": "Países de crecimiento rápido pero con más riesgo político y de divisa, como China, India o Brasil."
+ },
+ {
+  "termino": "extendida",
+  "no": [
+   "garantía extendida",
+   "Garantía extendida"
+  ],
+  "d": "Acción que se ha alejado mucho de su base o de su media: comprarla ahí exige un stop lejano y más riesgo."
+ },
+ {
+  "termino": "rentabilidad sobre coste",
+  "alias": [
+   "rentabilidad sobre tu coste"
+  ],
+  "d": "Dividendo anual actual dividido entre tu precio de compra. Sube si el dividendo crece."
  }
 ]

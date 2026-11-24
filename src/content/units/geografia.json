@@ -1,0 +1,189 @@
+{
+  "n": 6,
+  "id": "geografia",
+  "track": "pasiva",
+  "title": "Reparto geográfico",
+  "blurb": "Cómo reparte un índice mundial, el sesgo local, los emergentes y la concentración en pocas empresas.",
+  "revisar": "2027-11",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "El índice mundial pesa por tamaño",
+      "texto": "Un fondo indexado mundial reparte según el valor en bolsa de cada país. Hoy EE. UU. pesa en torno al 70 % y España, menos del 1 %.",
+      "ejemplo": "10.000 € en un fondo mundial: unos 7.000 € en empresas de EE. UU."
+    },
+    {
+      "id": "g2",
+      "titulo": "El sesgo local",
+      "texto": "Muchos inversores ponen la mayor parte en su propio país porque lo conocen. Así concentran el riesgo en una economía de la que ya dependen su sueldo y su vivienda.",
+      "ejemplo": "Un 40 % en España frente a un 0,8 % en el índice: 50 veces su peso."
+    },
+    {
+      "id": "g3",
+      "titulo": "Emergentes",
+      "texto": "Países como China, India o Brasil pueden crecer más, pero con más riesgo político y de divisa. Un fondo de todo el mundo los incluye en torno al 10 %.",
+      "ejemplo": "Con un 10 % en emergentes, una caída del 30 % en ellos resta 3 puntos a la cartera."
+    },
+    {
+      "id": "g4",
+      "titulo": "Concentración",
+      "texto": "Diversificar por países no es diversificar por empresas: las mayores del índice pesan mucho. Si quieres corregir algún peso, fija el reparto y mantenlo.",
+      "ejemplo": "Diez empresas que pesan un 20 % y caen un 30 %: la cartera pierde 6 puntos."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "pg1",
+      "title": "Cómo reparte el índice",
+      "ex": [
+        {
+          "id": "pg1-1",
+          "t": "num",
+          "q": "Inviertes 10.000 € en un fondo mundial en el que EE. UU. pesa un 70 %. ¿Cuántos miles de euros van a empresas de EE. UU.?",
+          "unit": "mil €",
+          "a": 7,
+          "why": "10.000 × 70 % = 7.000 €. El índice reparte según el valor en bolsa de cada país.",
+          "guia": "g1"
+        },
+        {
+          "id": "pg1-2",
+          "t": "num",
+          "q": "Un índice mundial da a España un peso del 0,8 % y tú tienes un 40 % de tu cartera en bolsa española. ¿Cuántas veces su peso en el índice tienes?",
+          "unit": "veces",
+          "a": 50,
+          "why": "40 ÷ 0,8 = 50 veces. Es el sesgo local: invertir sobre todo en lo que conoces.",
+          "guia": "g2"
+        },
+        {
+          "id": "pg1-3",
+          "t": "choice",
+          "q": "¿Qué problema tiene concentrar la cartera en la bolsa de tu propio país?",
+          "opts": [
+            "Que tributa más que la bolsa extranjera",
+            "El riesgo se suma al de tu sueldo y tu casa",
+            "Que no se puede comprar en euros",
+            "Que no paga nunca dividendos"
+          ],
+          "a": 1,
+          "why": "Si la economía de tu país va mal, pueden caer a la vez tu empleo, el valor de tu casa y tu cartera. Repartir por el mundo evita depender de una sola economía.",
+          "guia": "g2",
+          "porque": [
+            "Tributa igual o menos: los dividendos extranjeros sufren además retención en origen.",
+            null,
+            "Se compra en euros sin problema; el riesgo está en concentrarlo todo.",
+            "Las empresas españolas también pagan dividendos."
+          ]
+        },
+        {
+          "id": "pg1-4",
+          "t": "num",
+          "q": "Una cartera tiene un 90 % en países desarrollados y un 10 % en emergentes. Si los emergentes caen un 30 % y el resto no se mueve, ¿cuánto cae la cartera?",
+          "unit": "%",
+          "a": 3,
+          "why": "10 % × 30 % = 3 %. Un peso pequeño limita el daño de un mercado más arriesgado.",
+          "guia": "g3"
+        },
+        {
+          "id": "pg1-5",
+          "t": "num",
+          "q": "En una cartera de 20.000 €, ¿cuántos miles de euros son un 10 % en emergentes?",
+          "unit": "mil €",
+          "a": 2,
+          "why": "20.000 × 10 % = 2.000 €.",
+          "guia": "g3"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "pg2",
+      "title": "Corregir o no el índice",
+      "ex": [
+        {
+          "id": "pg2-1",
+          "t": "choice",
+          "q": "Crees que EE. UU. pesa demasiado en el índice mundial. ¿Qué opción es más coherente?",
+          "opts": [
+            "Cambiar de país cada vez que uno lo hace mejor",
+            "Vender todo lo de EE. UU. tras una mala semana",
+            "Fijar un reparto propio y mantenerlo con disciplina",
+            "Elegir el país que más subió el año pasado"
+          ],
+          "a": 2,
+          "why": "Puedes corregir el índice, pero con un reparto fijado de antemano y rebalanceado. Cambiar según lo que sube es perseguir rentabilidades pasadas.",
+          "guia": "g4",
+          "porque": [
+            "Cambiar según lo que sube es perseguir rentabilidades pasadas.",
+            "Vender por una mala semana es reaccionar al ruido.",
+            null,
+            "Lo que más subió el año pasado no dice nada del siguiente."
+          ]
+        },
+        {
+          "id": "pg2-2",
+          "t": "num",
+          "q": "Tu cartera tiene un 60 % en un fondo mundial y un 40 % en uno europeo. Si el mundial tiene un 70 % en EE. UU. y el europeo nada, ¿qué peso tiene EE. UU. en tu cartera?",
+          "unit": "%",
+          "a": 42,
+          "why": "60 % × 70 % = 42 %. Combinando fondos puedes ajustar el peso de un país sin elegir empresas.",
+          "guia": "g4"
+        },
+        {
+          "id": "pg2-3",
+          "t": "num",
+          "q": "Diez empresas pesan un 20 % de tu cartera y caen un 30 %, mientras el resto no se mueve. ¿Cuántos puntos pierde la cartera?",
+          "unit": "puntos",
+          "a": 6,
+          "why": "20 % × 30 % = 6 puntos. Repartir por países no evita que unas pocas empresas grandes pesen mucho.",
+          "guia": "g4"
+        },
+        {
+          "id": "pg2-4",
+          "t": "match",
+          "q": "Empareja cada fondo con lo que te da.",
+          "pairs": [
+            [
+              "Fondo mundial",
+              "Miles de empresas por su tamaño en bolsa"
+            ],
+            [
+              "Fondo de emergentes",
+              "Más crecimiento, con más riesgo político"
+            ],
+            [
+              "Fondo de un solo país",
+              "Concentración en una economía"
+            ],
+            [
+              "Fondo europeo",
+              "Menos peso de EE. UU. que el mundial"
+            ]
+          ],
+          "why": "Cada fondo cambia el reparto de la cartera. Lo importante es saber qué peso acabas teniendo en cada zona.",
+          "guia": "g1"
+        },
+        {
+          "id": "pg2-5",
+          "t": "choice",
+          "q": "Un inversor pasivo quiere un reparto simple y barato. ¿Qué hace con el peso de España en su fondo mundial?",
+          "opts": [
+            "Lo acepta: ya va dentro del índice",
+            "Lo sube al 50 % porque es su país",
+            "Lo quita porque es muy pequeño",
+            "Lo compra aparte cada mes"
+          ],
+          "a": 0,
+          "why": "Con un fondo mundial, España ya está representada por su tamaño. Añadir más concentra el riesgo; quitarla complica la cartera sin motivo.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "Subirlo al 50 % concentra el riesgo en una sola economía.",
+            "Quitar un país pequeño complica la cartera sin apenas cambiar nada.",
+            "Comprarlo aparte duplica un peso que el índice ya incluye."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

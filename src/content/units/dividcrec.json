@@ -1,0 +1,179 @@
+{
+  "n": 15,
+  "id": "dividcrec",
+  "track": "fundamental",
+  "title": "Dividendos que crecen",
+  "blurb": "Rentabilidad sobre tu coste, crecimiento compuesto del dividendo y cuándo ese crecimiento es sostenible.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Rentabilidad sobre tu coste",
+      "texto": "Si el dividendo crece cada año, lo que cobras sobre tu precio de compra sube aunque la rentabilidad actual de la acción no cambie.",
+      "ejemplo": "Compras a 50 € con un dividendo de 2 €: un 4 %. Con el dividendo en 3 €, cobras un 6 % sobre tu coste."
+    },
+    {
+      "id": "g2",
+      "titulo": "Crecimiento compuesto del dividendo",
+      "texto": "Un dividendo que crece un 7 % al año se duplica en unos 10 años. La regla del 72 también sirve aquí.",
+      "ejemplo": "2 € × 1,07¹⁰ = 3,93 €."
+    },
+    {
+      "id": "g3",
+      "titulo": "Sostenible o no",
+      "texto": "Un dividendo crece de forma sana si lo hace el beneficio y el payout no se dispara. Si el dividendo sube más que el beneficio, el payout acaba en el 100 %.",
+      "ejemplo": "Payout del 60 % y dividendo un 25 % más alto con el mismo beneficio: un 75 %."
+    },
+    {
+      "id": "g4",
+      "titulo": "Alta hoy o creciente",
+      "texto": "Una rentabilidad alta que no crece puede rendir menos a largo plazo que una baja que crece deprisa.",
+      "ejemplo": "3 % creciendo un 10 % anual: en 10 años, un 7,8 % sobre tu coste."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "fo1",
+      "title": "Sobre tu coste",
+      "ex": [
+        {
+          "id": "fo1-1",
+          "t": "num",
+          "q": "Compras una acción a 50 € que paga un dividendo anual de 2 €. ¿Qué rentabilidad por dividendo obtienes?",
+          "unit": "%",
+          "a": 4,
+          "why": "2 ÷ 50 = 4 % al año.",
+          "guia": "g1"
+        },
+        {
+          "id": "fo1-2",
+          "t": "num",
+          "q": "Compraste una acción a 50 € y, años después, su dividendo anual es de 3 €. ¿Qué rentabilidad obtienes sobre tu precio de compra?",
+          "unit": "%",
+          "a": 6,
+          "why": "3 ÷ 50 = 6 % sobre tu coste. Si el dividendo crece, lo que cobras sobre lo que pagaste sube cada año.",
+          "guia": "g1"
+        },
+        {
+          "id": "fo1-3",
+          "t": "num",
+          "q": "Un dividendo de 2 € crece un 7 % al año durante 10 años. ¿Cuántos euros paga al final? Redondea a 2 decimales.",
+          "unit": "€",
+          "a": 3.93,
+          "why": "2 × 1,07¹⁰ = 3,93 €: casi el doble, como predice la regla del 72 (72 ÷ 7 ≈ 10 años).",
+          "tol": 0.01,
+          "guia": "g2"
+        },
+        {
+          "id": "fo1-4",
+          "t": "num",
+          "q": "Con la regla del 72, ¿en cuántos años se duplica un dividendo que crece un 8 % al año?",
+          "unit": "años",
+          "a": 9,
+          "why": "72 ÷ 8 = 9 años.",
+          "guia": "g2"
+        },
+        {
+          "id": "fo1-5",
+          "t": "choice",
+          "q": "Una empresa sube su dividendo un 10 % al año, pero su beneficio solo crece un 3 %. ¿Qué indica?",
+          "opts": [
+            "Que la empresa está cada vez más sana",
+            "Que el beneficio crecerá pronto un 10 %",
+            "Nada: el dividendo no depende del beneficio",
+            "Que el ritmo no es sostenible a largo plazo"
+          ],
+          "a": 3,
+          "why": "Si el dividendo crece más deprisa que el beneficio, cada año se reparte una parte mayor. Tarde o temprano el payout llega al 100 % y la subida se para o el dividendo se recorta.",
+          "guia": "g3",
+          "porque": [
+            "Repartir más de lo que crece el beneficio no es salud: consume el margen.",
+            "Nada garantiza que el beneficio acelere para alcanzar al dividendo.",
+            "El dividendo sale del beneficio: sin él, se paga con caja o deuda.",
+            null
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "fo2",
+      "title": "Rentabilidad y crecimiento",
+      "ex": [
+        {
+          "id": "fo2-1",
+          "t": "num",
+          "q": "Una acción rinde un 3 % por dividendo y lo sube un 10 % al año. ¿Qué rentabilidad sobre tu coste tendrás en 10 años? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 7.8,
+          "why": "3 % × 1,10¹⁰ = 7,8 % sobre lo que pagaste, si el crecimiento se mantiene.",
+          "tol": 0.06,
+          "guia": "g4"
+        },
+        {
+          "id": "fo2-2",
+          "t": "choice",
+          "q": "La acción A rinde un 8 % por dividendo y no lo sube. La B rinde un 3 % y lo sube un 10 % al año. A 15 años, ¿cuál paga más sobre tu coste?",
+          "opts": [
+            "La A, porque empieza más alta",
+            "La B, por el crecimiento compuesto",
+            "Las dos pagan igual siempre",
+            "No se puede saber con estos datos"
+          ],
+          "a": 1,
+          "why": "3 % × 1,10¹⁵ = 12,5 % sobre tu coste, frente al 8 % fijo de A. Siempre que B pueda mantener ese crecimiento.",
+          "guia": "g4",
+          "porque": [
+            "A no crece: en 15 años sigue en el 8 %, y B ya rinde un 12,5 %.",
+            null,
+            "El crecimiento de B hace que su rentabilidad sobre el coste suba cada año.",
+            "Con los datos basta: 3 × 1,10¹⁵ = 12,5 %."
+          ]
+        },
+        {
+          "id": "fo2-3",
+          "t": "num",
+          "q": "El payout de una empresa es del 60 %. Si su beneficio no cambia y sube el dividendo un 25 %, ¿cuál será el payout?",
+          "unit": "%",
+          "a": 75,
+          "why": "60 % × 1,25 = 75 %. Subir el dividendo sin que crezca el beneficio consume el margen de seguridad.",
+          "guia": "g3"
+        },
+        {
+          "id": "fo2-4",
+          "t": "num",
+          "q": "Una empresa gana 4 € por acción y paga 2,40 € de dividendo. ¿Cuál es su payout?",
+          "unit": "%",
+          "a": 60,
+          "why": "2,40 ÷ 4 = 60 %: le queda un 40 % del beneficio para reinvertir o para seguir subiendo el dividendo.",
+          "guia": "g3"
+        },
+        {
+          "id": "fo2-5",
+          "t": "match",
+          "q": "Empareja cada señal con lo que indica sobre el dividendo.",
+          "pairs": [
+            [
+              "Beneficio y dividendo crecen juntos",
+              "Crecimiento sostenible"
+            ],
+            [
+              "Payout cercano al 100 %",
+              "Ya reparte casi todo lo que gana"
+            ],
+            [
+              "Dividendo pagado con deuda",
+              "Se paga con dinero que no ha ganado"
+            ],
+            [
+              "Rentabilidad muy alta tras una caída",
+              "Ha caído el precio, no ha subido el dividendo"
+            ]
+          ],
+          "why": "Un dividendo que crece de verdad se apoya en un beneficio que crece. Lo demás es adelantar dinero a costa del futuro.",
+          "guia": "g3"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "n": 12,
+  "id": "extendida",
+  "track": "tecnico",
+  "title": "Comprar extendido",
+  "blurb": "Cuándo una acción está demasiado lejos de su base o de su media y por qué perseguirla empeora el riesgo.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Extendida",
+      "texto": "Una acción está extendida cuando se ha alejado mucho de su base o de su media. Comprar ahí obliga a poner el stop lejos o a aceptar más riesgo por acción.",
+      "ejemplo": "Pivote en 50 € y precio en 56 €: un 12 % por encima del punto de compra."
+    },
+    {
+      "id": "g2",
+      "titulo": "La regla del 5 %",
+      "texto": "Minervini y O'Neil evitan comprar más de un 5 % por encima del pivote: más arriba, una corrección normal te saca.",
+      "ejemplo": "Pivote en 50 €: compra como mucho hasta 52,50 €."
+    },
+    {
+      "id": "g3",
+      "titulo": "Distancia a la media",
+      "texto": "Medir cuántos ATR está el precio sobre su media de 10 o 21 sesiones indica si va demasiado deprisa. A más distancia, más probable una pausa.",
+      "ejemplo": "Precio a 60 €, media de 21 sesiones en 52 € y ATR de 2 €: 4 ATR por encima."
+    },
+    {
+      "id": "g4",
+      "titulo": "Esperar el retroceso",
+      "texto": "Si se te escapa la compra, espera una pausa o una nueva base. Perseguir el precio sube el riesgo por acción y reduce la posición que puedes tomar.",
+      "ejemplo": "Stop en 47 €: comprando a 50 € arriesgas 3 €; a 56 €, 9 €, el triple."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "tx1",
+      "title": "Lejos del pivote",
+      "ex": [
+        {
+          "id": "tx1-1",
+          "t": "num",
+          "q": "El pivote de una base está en 50 € y la acción cotiza a 56 €. ¿Cuánto está por encima del pivote?",
+          "unit": "%",
+          "a": 12,
+          "why": "56 ÷ 50 − 1 = 12 %. Está extendida: lejos del punto de compra de menor riesgo.",
+          "guia": "g1"
+        },
+        {
+          "id": "tx1-2",
+          "t": "num",
+          "q": "Con el pivote en 50 € y la regla de no comprar más de un 5 % por encima, ¿cuál es el precio máximo de compra?",
+          "unit": "€",
+          "a": 52.5,
+          "why": "50 × 1,05 = 52,50 €. Por encima, una corrección normal te saca de la operación.",
+          "guia": "g2"
+        },
+        {
+          "id": "tx1-3",
+          "t": "num",
+          "q": "Pivote en 50 € y stop en 47 €. ¿Cuántos euros por acción arriesgas si compras a 56 € en lugar de a 50 €?",
+          "unit": "€",
+          "a": 9,
+          "why": "56 − 47 = 9 € frente a 3 € comprando en el pivote: el triple de riesgo por acción.",
+          "guia": "g4"
+        },
+        {
+          "id": "tx1-4",
+          "t": "num",
+          "q": "Arriesgas 300 € por operación con el stop en 47 €. ¿Cuántas acciones compras si entras a 56 €? Redondea a la baja.",
+          "unit": "acc.",
+          "a": 33,
+          "why": "300 ÷ 9 = 33,3: 33 acciones, frente a 100 comprando a 50 € (300 ÷ 3). El mismo riesgo compra mucha menos posición.",
+          "guia": "g4"
+        },
+        {
+          "id": "tx1-5",
+          "t": "choice",
+          "q": "Una acción rompió su base hace una semana y ya está un 15 % por encima del pivote. ¿Qué haces?",
+          "opts": [
+            "Comprar ya para no perder la subida",
+            "Esperar a una pausa o a una nueva base",
+            "Comprar el doble para recuperar el tiempo",
+            "Poner el stop más cerca para encajar el riesgo"
+          ],
+          "a": 1,
+          "why": "Un 15 % sobre el pivote está muy lejos del punto de menor riesgo. Si se te escapó, espera una pausa o una nueva base con su propio pivote.",
+          "guia": "g4",
+          "porque": [
+            "Perseguir el precio te obliga a un stop lejano o a un mal R.",
+            null,
+            "Más tamaño en el peor punto multiplica el riesgo.",
+            "Un stop pegado al precio sin razón técnica salta con el ruido normal."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "tx2",
+      "title": "Lejos de la media",
+      "ex": [
+        {
+          "id": "tx2-1",
+          "t": "num",
+          "q": "El precio está a 60 €, su media de 21 sesiones en 52 € y el ATR es de 2 €. ¿Cuántos ATR está por encima de la media?",
+          "unit": "ATR",
+          "a": 4,
+          "why": "(60 − 52) ÷ 2 = 4 ATR. Cuanto más lejos de su media, más probable es una pausa.",
+          "guia": "g3"
+        },
+        {
+          "id": "tx2-2",
+          "t": "choice",
+          "q": "Tras una subida vertical, una acción está a 6 ATR de su media de 21 sesiones. ¿Qué es más probable a corto plazo?",
+          "opts": [
+            "Una pausa o un retroceso hacia la media",
+            "Que siga subiendo igual de rápido",
+            "Que caiga un 50 % al día siguiente",
+            "Que la media alcance al precio en un día"
+          ],
+          "a": 0,
+          "why": "Tan lejos de la media, el precio suele pausarse o volver hacia ella. No es una señal para ponerse corto: es una razón para no comprar ahí.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Las subidas verticales rara vez siguen al mismo ritmo.",
+            "Una caída así no es lo habitual: lo normal es una pausa o un retroceso moderado.",
+            "La media se mueve despacio: no alcanza al precio en un día."
+          ]
+        },
+        {
+          "id": "tx2-3",
+          "t": "num",
+          "q": "El precio está a 58 €, su media de 10 sesiones en 55 € y el ATR es de 1,50 €. ¿Cuántos ATR está por encima de la media?",
+          "unit": "ATR",
+          "a": 2,
+          "why": "(58 − 55) ÷ 1,50 = 2 ATR: una distancia normal en una tendencia sana.",
+          "guia": "g3"
+        },
+        {
+          "id": "tx2-4",
+          "t": "order",
+          "q": "Ordena qué haces cuando se te escapa una compra.",
+          "items": [
+            "Anotas el pivote y el stop que habías planeado",
+            "Compruebas cuánto está por encima del pivote",
+            "Si pasa del 5 %, no compras",
+            "Esperas una pausa o una nueva base",
+            "Planificas la nueva entrada con su stop"
+          ],
+          "why": "Medir antes de actuar evita comprar por miedo a quedarte fuera. Una nueva base da un nuevo pivote y un stop cercano.",
+          "guia": "g4"
+        },
+        {
+          "id": "tx2-5",
+          "t": "slide",
+          "q": "Pivote en 40 € y no compras más de un 5 % por encima. ¿Cuál es el precio máximo de compra?",
+          "label": "Precio máximo",
+          "min": 38,
+          "max": 48,
+          "step": 0.5,
+          "start": 46,
+          "a": 42,
+          "unit": "€",
+          "why": "40 × 1,05 = 42 €. Por encima, el stop bajo la base queda demasiado lejos.",
+          "show": [
+            {
+              "label": "Por encima del pivote",
+              "b": -100,
+              "k": 2.5,
+              "unit": "%",
+              "dec": 1
+            }
+          ],
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}
