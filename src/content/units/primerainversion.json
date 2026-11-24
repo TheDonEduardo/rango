@@ -43,7 +43,7 @@
           "unit": "meses",
           "a": 5,
           "why": "6.000 € ÷ 1.200 € = 5 meses. Antes de invertir conviene saber cuánto tiempo aguantarías sin ingresos: ese es tu colchón.",
-          "guia": "g1"
+          "guia": "g2"
         },
         {
           "id": "zb1-2",
@@ -68,7 +68,7 @@
         {
           "id": "zb1-3",
           "t": "num",
-          "q": "Paga los 900 € de la tarjeta y aparta un colchón de 4 meses de gastos. ¿Cuánto le queda de los 6.000 € para invertir?",
+          "q": "Lucía gasta 1.200 € al mes y tiene 6.000 € ahorrados. Paga los 900 € de su tarjeta y aparta un colchón de 4 meses de gastos. ¿Cuánto le queda para invertir?",
           "unit": "€",
           "a": 300,
           "why": "Colchón: 4 × 1.200 € = 4.800 €. Quedan 6.000 − 900 − 4.800 = 300 €. Parece poco, pero ahora cada euro que ahorre puede ir a invertir.",
@@ -77,7 +77,7 @@
         {
           "id": "zb1-4",
           "t": "num",
-          "q": "Cada mes le sobran 300 € y decide invertir 150 €. ¿Qué porcentaje de sus ingresos invierte?",
+          "q": "Lucía gana 1.500 € netos al mes, le sobran 300 € y decide invertir 150 €. ¿Qué porcentaje de sus ingresos invierte?",
           "unit": "%",
           "a": 10,
           "why": "150 € ÷ 1.500 € = 10 %. Fijar un porcentaje y automatizarlo el día de cobro funciona mejor que invertir «lo que sobre».",
@@ -175,7 +175,7 @@
         {
           "id": "zb2-4",
           "t": "num",
-          "q": "Ha invertido 300 € y tiene 35 participaciones. ¿Cuál es su precio medio de compra? Redondea a 2 decimales.",
+          "q": "Lucía compró 150 € a 10,00 € y 150 € a 7,50 €: tiene 35 participaciones por 300 €. ¿Cuál es su precio medio de compra? Redondea a 2 decimales.",
           "unit": "€",
           "a": 8.57,
           "why": "300 € ÷ 35 = 8,57 €. Queda por debajo de la media de los dos precios (8,75 €) porque compró más participaciones cuando estaban baratas.",

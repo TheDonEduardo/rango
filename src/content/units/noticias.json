@@ -151,7 +151,7 @@
         {
           "id": "bp2-2",
           "t": "num",
-          "q": "Esa empresa gana 500 millones, un 20 % menos que el año anterior. ¿Cuántos millones ganó el año anterior?",
+          "q": "Una empresa gana 500 millones, un 20 % menos que el año anterior. ¿Cuántos millones ganó el año anterior?",
           "unit": "",
           "a": 625,
           "why": "500 / 0,80 = 625 millones; comprobación: 625 × 0,8 = 500.",

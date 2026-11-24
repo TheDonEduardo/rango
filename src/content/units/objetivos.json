@@ -121,7 +121,7 @@
         {
           "id": "ob1-4",
           "t": "num",
-          "q": "Mismo objetivo de 30.000 € en 5 años, pero ya tienes 6.000 € ahorrados. ¿Cuánto al mes?",
+          "q": "Quieres reunir 30.000 € en 5 años y ya tienes 6.000 € ahorrados. ¿Cuánto tienes que ahorrar al mes?",
           "unit": "€",
           "a": 400,
           "why": "Faltan 24.000 €: 24.000 / 60 = 400 € al mes.",
@@ -133,7 +133,7 @@
           "q": "Quieres reunir 12.000 € en 4 años sin contar rentabilidad. ¿Cuántos euros al mes ahorras?",
           "unit": "€",
           "a": 250,
-          "why": "12.000 ÷ 48 meses = 250 € al mes. A 4 años, ese dinero debe estar en productos sin riesgo de caída, así que la rentabilidad apenas ayuda.",
+          "why": "12.000 ÷ 48 meses = 250 € al mes. A 4 años, ese dinero debe estar en renta fija corta o en productos con poco riesgo de caída, así que la rentabilidad apenas ayuda.",
           "guia": "g2"
         }
       ]

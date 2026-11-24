@@ -31,6 +31,7 @@
       "ejemplo": "Beneficio de 1,25 € y dividendo de 1 €: reparte el 80 %."
     }
   ],
+  "revisar": "2027-11",
   "lessons": [
     {
       "id": "bw1",
@@ -125,7 +126,7 @@
           "q": "Cobras 200 € brutos de dividendos con una retención del 19 %. ¿Cuántos euros te llegan?",
           "unit": "€",
           "a": 162,
-          "why": "200 × (1 − 0,19) = 162 €. La retención es un adelanto del impuesto que se ajusta en la declaración.",
+          "why": "200 × (1 − 0,19) = 162 €. La retención es un adelanto del impuesto que se ajusta en la declaración. Compruébalo con la norma vigente.",
           "guia": "g3"
         },
         {

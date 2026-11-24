@@ -48,7 +48,7 @@
         {
           "id": "zr1-2",
           "t": "num",
-          "q": "Quieren un colchón de 6 meses de gastos. ¿Cuántos miles de euros son? Redondea a 1 decimal.",
+          "q": "Una pareja gasta 2.700 € al mes y quiere un colchón de 6 meses de gastos. ¿Cuántos miles de euros son? Redondea a 1 decimal.",
           "unit": "mil €",
           "a": 16.2,
           "why": "6 × 2.700 € = 16.200 €. Ese dinero no se toca para la entrada: comprar sin colchón deja a la familia sin margen ante cualquier imprevisto.",
@@ -104,7 +104,7 @@
         {
           "id": "zr2-2",
           "t": "num",
-          "q": "Con una variable, si los tipos subieran dos puntos la cuota sería de 842 €. ¿Qué porcentaje de sus ingresos supondría? Redondea a 1 decimal.",
+          "q": "Con una variable, si los tipos subieran dos puntos la cuota sería de 842 €. ¿Qué porcentaje de sus ingresos de 3.600 € supondría? Redondea a 1 decimal.",
           "unit": "%",
           "a": 23.4,
           "why": "842 ÷ 3.600 = 23,4 %. Podrían pagarla, así que la variable no sería una temeridad. Eligen la fija porque prefieren saber lo que pagarán.",

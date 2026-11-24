@@ -62,7 +62,7 @@
           "q": "Tu sueldo bruto es de 2.500 € al mes y cotizas un 6,5 % a la Seguridad Social. ¿Cuánto te descuentan por ese concepto? Redondea a 1 decimal.",
           "unit": "€",
           "a": 162.5,
-          "why": "2.500 € × 6,5 % = 162,50 €. Con ello pagas tu parte de la pensión, el desempleo y la formación. La empresa cotiza por ti bastante más, aparte de tu bruto.",
+          "why": "2.500 € × 6,5 % = 162,50 €. Con ello pagas tu parte de la pensión, el desempleo y la formación. La empresa cotiza por ti bastante más, aparte de tu bruto. Compruébalo con la norma vigente.",
           "tol": 0.06,
           "guia": "g2"
         },
@@ -174,7 +174,7 @@
           "unit": "€",
           "a": 700,
           "why": "1.000 € × (1 − 30 %) = 700 €. El tipo de tu último tramo, el marginal, es el que se aplica a cada euro adicional que ganas.",
-          "guia": "g3"
+          "guia": "g4"
         },
         {
           "id": "fp10-4",

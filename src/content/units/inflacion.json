@@ -110,10 +110,10 @@
         {
           "id": "in1-5",
           "t": "num",
-          "q": "Tu cartera rinde un 5 % y la inflación es del 2 %. ¿Qué rentabilidad real obtienes, aproximadamente?",
+          "q": "Tu cartera rinde un 8 % y la inflación es del 3,5 %. ¿Qué rentabilidad real obtienes, aproximadamente?",
           "unit": "%",
-          "a": 3,
-          "why": "5 % − 2 % = 3 %, aproximadamente. Es lo que crece de verdad tu poder de compra.",
+          "a": 4.5,
+          "why": "8 % − 3,5 % = 4,5 %, aproximadamente. Es lo que crece de verdad tu poder de compra.",
           "guia": "g1"
         }
       ]
@@ -189,11 +189,11 @@
         {
           "id": "in2-5",
           "t": "num",
-          "q": "Con una inflación del 4 % anual, ¿en cuántos años se duplican los precios según la regla del 72?",
+          "q": "Con una inflación del 3 % anual, ¿en cuántos años se duplican los precios según la regla del 72?",
           "unit": "años",
-          "a": 18,
-          "why": "72 ÷ 4 = 18 años. En ese tiempo, el dinero parado compraría la mitad.",
-          "guia": "g2"
+          "a": 24,
+          "why": "72 ÷ 3 = 24 años. En ese tiempo, el dinero parado compraría la mitad.",
+          "guia": "g4"
         }
       ]
     }

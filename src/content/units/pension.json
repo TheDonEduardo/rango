@@ -72,7 +72,7 @@
           "porque": [
             "Con 5 años no se alcanza el mínimo.",
             null,
-            "El mínimo es menor; 25 años son los que se usan para calcular la base.",
+            "El mínimo es menor: con 15 años cotizados ya hay derecho.",
             "37 años son los necesarios para el 100 %, no para tener derecho."
           ]
         },
@@ -91,7 +91,7 @@
           "q": "Desde 2027 hacen falta 37 años cotizados para cobrar el 100 %. Si empiezas a cotizar a los 26 y no paras, ¿a qué edad los alcanzas?",
           "unit": "años",
           "a": 63,
-          "why": "26 + 37 = 63 años. Empezar tarde o tener años sin cotizar retrasa ese momento o reduce el porcentaje.",
+          "why": "26 + 37 = 63 años. Empezar tarde o tener años sin cotizar retrasa ese momento o reduce el porcentaje. Compruébalo con la norma vigente.",
           "guia": "g2"
         },
         {
@@ -105,7 +105,7 @@
             "63 años, con al menos 15 cotizados"
           ],
           "a": 0,
-          "why": "La edad general es de 67 años. Quien tenga 38 años y 6 meses cotizados puede jubilarse a los 65 con la pensión completa.",
+          "why": "La edad general es de 67 años. Quien tenga 38 años y 6 meses cotizados puede jubilarse a los 65 con la pensión completa. Compruébalo con la norma vigente.",
           "guia": "g1",
           "porque": [
             null,

@@ -10,7 +10,7 @@
       "id": "g1",
       "titulo": "Diferir impuestos",
       "texto": "Pagar impuestos al final, no cada año, deja que lo que habrías pagado siga rindiendo. Por eso un fondo de acumulación suele acabar con más que uno de distribución.",
-      "ejemplo": "10.000 € al 7 % durante 20 años: tributando solo al final acabas con un 10,8 % más que pagando cada año."
+      "ejemplo": "10.000 € al 7 % durante 20 años, con un 20 % de impuesto sobre la ganancia: tributando solo al final acabas con un 10,8 % más que pagando cada año."
     },
     {
       "id": "g2",
@@ -141,7 +141,7 @@
             "No admite aportaciones periódicas"
           ],
           "a": 2,
-          "why": "El dinero queda inmovilizado salvo supuestos concretos, como desempleo de larga duración, enfermedad grave o aportaciones con más de 10 años de antigüedad. Comprueba las condiciones cada año.",
+          "why": "El dinero queda inmovilizado salvo supuestos concretos, como desempleo de larga duración, enfermedad grave o aportaciones con más de 10 años de antigüedad. Compruébalo con la norma vigente.",
           "guia": "g4",
           "porque": [
             "Un plan de pensiones puede invertir en acciones.",
@@ -165,7 +165,7 @@
             ],
             [
               "Fondo de inversión",
-              "Admite traspasos sin tributar"
+              "Traspasos entre fondos sin tributar ni bloqueo"
             ],
             [
               "ETF",

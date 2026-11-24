@@ -96,7 +96,7 @@
           },
           "unit": "€",
           "a": 166,
-          "why": "877 − 711 = 166 € más cada mes. casi 2.000 € al año. Antes de firmar una variable, comprueba que podrías pagar la cuota con dos puntos más.",
+          "why": "877 − 711 = 166 € más cada mes: casi 2.000 € al año. Antes de firmar una variable, comprueba que podrías pagar la cuota con dos puntos más.",
           "guia": "g2"
         },
         {
@@ -233,7 +233,7 @@
         {
           "id": "fp4-5",
           "t": "num",
-          "q": "Tu contrato cobra una comisión del 0,25 % por amortizar. ¿Cuánto pagas por amortizar 10.000 €?",
+          "q": "Amortizas 10.000 € de una hipoteca al 3 % y tu contrato cobra una comisión del 0,25 % por amortizar. ¿Cuánto pagas de comisión?",
           "unit": "€",
           "a": 25,
           "why": "10.000 € × 0,25 % = 25 €. Frente a los 300 € de intereses que ahorras solo el primer año, compensa de sobra. Mira siempre la comisión de tu escritura.",

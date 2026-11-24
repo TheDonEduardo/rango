@@ -80,7 +80,7 @@
         {
           "id": "bd1-3",
           "t": "num",
-          "q": "Mismo índice: A (60 % del peso) sube un 10 % y B y C no se mueven. ¿Cuánto sube el índice?",
+          "q": "En un índice, la empresa A pesa un 60 %. Si A sube un 10 % y el resto de empresas no se mueve, ¿cuánto sube el índice?",
           "unit": "%",
           "a": 6,
           "why": "60 % × 10 % = 6 %. Por eso unas pocas empresas grandes pueden hacer subir el índice aunque la mayoría de sus valores no suba.",

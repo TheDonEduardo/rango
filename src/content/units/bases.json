@@ -36,7 +36,7 @@
         "lineas": [
           {
             "y": 49.5,
-            "texto": "Pivote 49,50",
+            "texto": "Compra 49,50",
             "tono": "acc"
           }
         ]
@@ -158,7 +158,7 @@
             "Es una segunda taza, aún más fiable"
           ],
           "a": 1,
-          "why": "Un asa baja indica que la demanda no ha podido recuperar la caída. O'Neil pedía que el asa estuviera en la mitad superior de la taza y por encima de la media de 200 sesiones.",
+          "why": "Un asa baja indica que la demanda no ha podido recuperar la caída. O'Neil pedía que el asa estuviera en la mitad superior de la taza y por encima de su media de 10 semanas.",
           "guia": "g2",
           "porque": [
             "Un asa baja no da más recorrido: indica que la demanda no ha recuperado la caída.",

@@ -195,7 +195,7 @@
         {
           "id": "bj2-3",
           "t": "num",
-          "q": "Con esa horquilla, compras y vendes al instante 1.000 acciones. ¿Cuántos euros pierdes solo por la horquilla?",
+          "q": "La mejor oferta de venta está a 10,05 € y la de compra, a 10,00 €. Compras y vendes al instante 1.000 acciones. ¿Cuántos euros pierdes solo por la horquilla?",
           "unit": "€",
           "a": 50,
           "why": "1.000 × 0,05 € = 50 €, aunque el precio no se haya movido.",

@@ -158,7 +158,7 @@
             {
               "q": "Tus ingresos netos son de 2.600 € al mes. Con la regla de no dedicar más del 35 % a deudas, ¿cuál es tu cuota máxima?",
               "a": 910,
-              "why": "2.600 € × 35 % = 910,00 €. Por encima de ese nivel, cualquier imprevisto compromete el resto de tus gastos."
+              "why": "2.600 € × 35 % = 910 €. Por encima de ese nivel, cualquier imprevisto compromete el resto de tus gastos."
             }
           ]
         },

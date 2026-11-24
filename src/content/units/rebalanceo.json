@@ -79,7 +79,7 @@
         {
           "id": "rb1-2",
           "t": "num",
-          "q": "Con esa cartera de 11.800 €, ¿cuántos euros de acciones vendes para volver al 60 %?",
+          "q": "Tu cartera vale 11.800 €: 7.800 € en acciones y 4.000 € en bonos. ¿Cuántos euros de acciones vendes para volver al 60 %?",
           "unit": "€",
           "a": 720,
           "why": "Objetivo: 11.800 × 60 % = 7.080 € en acciones. Tienes 7.800 €: vendes 720 € y los pasas a bonos.",
@@ -108,7 +108,7 @@
         {
           "id": "rb1-4",
           "t": "choice",
-          "q": "Tu regla es rebalancear cuando un activo se desvía más de 5 puntos. Objetivo: 60 % en acciones; ahora tienen un 63 %. ¿Qué haces?",
+          "q": "Tu regla es rebalancear cuando un activo se desvía más de 5 puntos. Objetivo: 60 % en acciones; ahora tienes un 63 %. ¿Qué haces?",
           "opts": [
             "Rebalancear ya, sin esperar",
             "Nada: está dentro del margen",

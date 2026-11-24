@@ -61,7 +61,7 @@
           "q": "La IA dice que las ventas crecieron un 15 %, de 800 a 900 millones. ¿Cuánto crecieron en realidad? Redondea a 1 decimal.",
           "unit": "%",
           "a": 12.5,
-          "why": "900 ÷ 800 − 1 = 12,5 %. La IA calculó la diferencia sobre la cifra final, no sobre la inicial. Rehaz siempre los porcentajes.",
+          "why": "900 ÷ 800 − 1 = 12,5 %. La IA se equivocó en la cuenta. Rehaz siempre los porcentajes.",
           "tol": 0.06,
           "guia": "g2"
         },

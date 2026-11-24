@@ -66,7 +66,7 @@
           "t": "choice",
           "q": "¿Qué es un ETF «smart beta» o de factores?",
           "opts": [
-            "Un índice que no pondera por capitalización",
+            "Un indexado que elige o pondera por un factor",
             "Un fondo con gestor que elige valores a diario",
             "Un ETF apalancado que duplica el índice",
             "Un fondo garantizado"
@@ -139,7 +139,7 @@
         {
           "id": "fc2-2",
           "t": "num",
-          "q": "Mismo reparto, pero el ETF de valor rinde un 2 % y el World, un 6 %. ¿Cuánto rinde la cartera?",
+          "q": "Cartera: 80 % MSCI World y 20 % ETF de valor. El ETF de valor rinde un 2 % y el World, un 6 %. ¿Cuánto rinde la cartera?",
           "unit": "%",
           "a": 5.2,
           "why": "0,8 × 6 + 0,2 × 2 = 4,8 + 0,4 = 5,2 %: el factor resta 0,8 puntos ese año.",

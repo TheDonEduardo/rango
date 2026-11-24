@@ -88,7 +88,7 @@
         {
           "id": "bk1-2",
           "t": "num",
-          "q": "Ahora al 5 % compuesto durante 3 años. ¿Cuántos euros de intereses cobras? (dos decimales)",
+          "q": "Depositas 1.000 € al 5 % de interés compuesto durante 3 años. ¿Cuántos euros de intereses cobras? (dos decimales)",
           "unit": "€",
           "a": 157.63,
           "why": "1.000 × 1,05³ = 1.157,63 €: 7,63 € más que con interés simple, porque los intereses también rinden.",

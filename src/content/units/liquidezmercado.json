@@ -62,7 +62,7 @@
           "unit": "%",
           "a": 6,
           "why": "106 ÷ 100 − 1 = 6 %. El premercado anticipa el hueco, pero con poco volumen el precio puede cambiar mucho al abrir.",
-          "guia": "g2"
+          "guia": "g1"
         },
         {
           "id": "th1-3",
@@ -91,7 +91,7 @@
           "unit": "%",
           "a": 10,
           "why": "5.000 ÷ 50.000 = 10 %. Con una orden así de grande frente al volumen, tu compra puede mover el precio en tu contra.",
-          "guia": "g2"
+          "guia": "g4"
         },
         {
           "id": "th1-5",
@@ -141,7 +141,7 @@
         {
           "id": "th2-3",
           "t": "choice",
-          "q": "Pones un stop limitado con límite en 29,50 € y la acción abre a 27 €. ¿Se ejecuta?",
+          "q": "Pones un stop limitado: activación en 30 € y límite en 29,50 €. La acción abre con un hueco a 27 €. ¿Se ejecuta?",
           "opts": [
             "No: el precio está por debajo del límite",
             "Sí: un stop siempre se ejecuta al abrir",

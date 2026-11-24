@@ -47,6 +47,7 @@
       "ejemplo": "Con un ETF, cambiar de producto obliga a vender y tributar; con un fondo, no hasta que retiras el dinero."
     }
   ],
+  "revisar": "2027-11",
   "lessons": [
     {
       "id": "bn1",
@@ -102,10 +103,10 @@
         {
           "id": "bn1-3",
           "t": "num",
-          "q": "Un año después, el valor liquidativo es de 16,50 €. ¿Cuánto has ganado, en %?",
+          "q": "Compras participaciones de un fondo a un valor liquidativo de 15 € y un año después vale 16,50 €. ¿Cuánto has ganado, en %?",
           "unit": "%",
           "a": 10,
-          "why": "(16,50 − 15) / 15 = 10 %: tus 100 participaciones valen 1.650 €.",
+          "why": "(16,50 − 15) / 15 = 10 %.",
           "guia": "g2"
         },
         {
@@ -156,7 +157,7 @@
         {
           "id": "bn2-2",
           "t": "num",
-          "q": "Un indexado cobra un 0,2 % sobre esos 10.000 €. ¿Cuántos euros ahorras al año?",
+          "q": "Tienes 10.000 € en un fondo que cobra un 1,5 % al año, y un indexado cobra un 0,2 %. ¿Cuántos euros al año ahorras con el indexado?",
           "unit": "€",
           "a": 130,
           "why": "10.000 × 0,2 % = 20 €; 150 − 20 = 130 € al año.",

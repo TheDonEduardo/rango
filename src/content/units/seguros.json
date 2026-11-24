@@ -30,6 +30,7 @@
       "ejemplo": "Asegurar 100.000 € de 200.000 €: de un daño de 30.000 € cobras 15.000 €."
     }
   ],
+  "revisar": "2027-11",
   "lessons": [
     {
       "id": "fp11",
@@ -52,7 +53,7 @@
             null,
             "Los gastos pequeños se pagan mejor con el colchón que con primas.",
             "Asegurarlo todo cuesta más de lo que evita.",
-            "Hay riesgos graves que la ley no obliga a asegurar, como tu vivienda."
+            "Hay riesgos graves que la ley no obliga a asegurar, como tu vida o tu responsabilidad civil familiar."
           ]
         },
         {
@@ -104,7 +105,7 @@
             "Elegir siempre el que tenga la prima más alta"
           ],
           "a": 0,
-          "why": "Puedes contratar el seguro con otra compañía. El del banco a veces rebaja el tipo de la hipoteca: suma la prima y el ahorro en intereses para ver qué opción cuesta menos.",
+          "why": "Puedes contratar el seguro con otra compañía. El del banco a veces rebaja el tipo de la hipoteca: suma la prima y el ahorro en intereses para ver qué opción cuesta menos. Compruébalo con la norma vigente.",
           "guia": "g2",
           "porque": [
             null,

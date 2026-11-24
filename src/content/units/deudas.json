@@ -140,7 +140,7 @@
         {
           "id": "bm2-2",
           "t": "num",
-          "q": "Si pagas una cuota de 70 € ese mes, ¿cuántos euros de deuda reduces?",
+          "q": "Debes 3.000 € en una tarjeta revolving al 2 % mensual. Si pagas una cuota de 70 € ese mes, ¿cuántos euros de deuda reduces?",
           "unit": "€",
           "a": 10,
           "why": "70 − 60 = 10 €: casi toda la cuota se va en intereses.",
@@ -157,7 +157,7 @@
             "Porque caduca cada mes"
           ],
           "a": 0,
-          "why": "Con 10 € de amortización al mes, devolver 3.000 € llevaría años y costaría varias veces la deuda inicial.",
+          "why": "Con 10 € de amortización al mes, devolver 3.000 € llevaría unos 8 años y acabarías pagando más del doble de lo que debías.",
           "guia": "g3",
           "porque": [
             null,

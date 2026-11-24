@@ -30,6 +30,7 @@
       "ejemplo": "50.000 € con un 10 % en oro; el oro sube un 20 %: pesa un 11,76 %. Para volver al 10 %, vendes 900 €."
     }
   ],
+  "revisar": "2027-11",
   "lessons": [
     {
       "id": "io1",
@@ -47,7 +48,7 @@
             "Un depósito ligado a la vivienda"
           ],
           "a": 0,
-          "why": "Es la versión española de los REIT: cotiza en bolsa y debe repartir como dividendo al menos el 80 % del beneficio del alquiler.",
+          "why": "Es la versión española de los REIT: cotiza en bolsa y debe repartir como dividendo al menos el 80 % del beneficio del alquiler. Compruébalo con la norma vigente.",
           "revisar": "2027-06",
           "guia": "g1",
           "porque": [
@@ -156,7 +157,7 @@
         {
           "id": "io2-3",
           "t": "num",
-          "q": "Mismo caso: para volver al 10 % de oro, ¿cuántos euros de oro vendes?",
+          "q": "Cartera de 50.000 € con un 10 % en oro. El oro sube un 20 % y el resto queda igual. Para volver al 10 % de oro, ¿cuántos euros de oro vendes?",
           "unit": "€",
           "a": 900,
           "why": "El 10 % de 51.000 € son 5.100 €: vendes 6.000 − 5.100 = 900 €.",

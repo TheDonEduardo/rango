@@ -86,7 +86,7 @@
         ],
         "marcas": [
           {
-            "i": 5,
+            "i": 10,
             "y": 46.2,
             "texto": "Ruptura",
             "lado": "i"
@@ -231,7 +231,7 @@
             "alt": "Gráfico de velas con volumen y tres niveles marcados"
           },
           "a": "B",
-          "why": "El pivote es el máximo de la última contracción, 55,60 €: comprando a 55,70 € con stop en 52,20 € (0,10 € bajo su mínimo) arriesgas 3,50 €. Esperar al máximo de la base (A, 60,00 €) obliga a arriesgar 7,80 € con el mismo stop.",
+          "why": "El pivote es el máximo de la última contracción, 55,60 €: comprando a 55,70 € con stop en 52,20 € (0,10 € bajo su mínimo) arriesgas 3,50 €. Esperar al máximo de la base (A, 60,00 €) (comprando a 60,10 €) obliga a arriesgar 7,90 € con el mismo stop.",
           "guia": "g3"
         },
         {

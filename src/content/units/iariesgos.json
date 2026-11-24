@@ -27,7 +27,7 @@
       "id": "g4",
       "titulo": "La fuente manda",
       "texto": "Ante cualquier contradicción, manda la fuente oficial. Usa la IA para entender y la fuente y tus cuentas para decidir.",
-      "ejemplo": "Al 7 %, el dinero se duplica en 10,3 años, no en 7."
+      "ejemplo": "Con la regla del 72, al 7 % el dinero se duplica en unos 10,3 años, no en 7."
     }
   ],
   "lessons": [
@@ -67,7 +67,7 @@
           ],
           "a": 0,
           "why": "Con unos segundos de grabación se puede clonar una voz. Comprueba por un canal que tú controlas antes de enviar nada.",
-          "guia": "g2",
+          "guia": "g1",
           "porque": [
             null,
             "Una voz se puede clonar con unos segundos de audio.",
@@ -83,7 +83,7 @@
           "a": 1.8,
           "why": "1,02 elevado a 30 = 1,8 veces en un mes. Ninguna estrategia real garantiza algo así: es la firma de un fraude.",
           "tol": 0.06,
-          "guia": "g1"
+          "guia": "g2"
         },
         {
           "id": "ia7-4",
@@ -164,7 +164,7 @@
           "unit": "€",
           "a": 240,
           "why": "20 € × 12 = 240 € al año. Compáralo con lo que te aporta: si te ahorra suscripciones o comisiones, compensa; si no, es otro gasto fijo.",
-          "guia": "g4"
+          "guia": "g3"
         },
         {
           "id": "ia8-3",

@@ -229,7 +229,7 @@
         {
           "id": "b2-3",
           "t": "num",
-          "q": "Mismo valor (12,00 €, ATR 0,60 €), pero dimensionas por stop a 2×ATR: 250 ÷ 1,20 = 208 acciones. La FDA rechaza y abre un 70 % abajo. ¿Cuántos R pierdes? Redondea a 1 decimal.",
+          "q": "Una biotecnológica cotiza a 12,00 € (ATR 0,60 €) antes de la decisión de la FDA. Con 1R = 250 €, dimensionas por stop a 2×ATR: 250 ÷ 1,20 = 208 acciones. La FDA rechaza y abre un 70 % abajo. ¿Cuántos R pierdes? Redondea a 1 decimal.",
           "unit": "R",
           "a": 7,
           "tol": 0.05,

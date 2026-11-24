@@ -149,7 +149,7 @@
         {
           "id": "t1-3",
           "t": "choice",
-          "q": "¿Y esta?",
+          "q": "¿En qué fase de Weinstein está esta otra acción?",
           "chart": {
             "type": "line",
             "data": [60,58,59,56,54,55,52,50,51,48,46,47,44,42],
@@ -195,7 +195,7 @@
         {
           "id": "t1-5",
           "t": "match",
-          "q": "Empareja cada fase de Weinstein con su gráfico.",
+          "q": "Empareja cada fase de Weinstein con su descripción.",
           "pairs": [
             [
               "Fase 1",
@@ -297,10 +297,10 @@
         {
           "id": "t2-5",
           "t": "num",
-          "q": "Máximo de 52 semanas: 120 €. Con el criterio de estar a no más de un 25 % del máximo, ¿cuál es el precio mínimo aceptable?",
+          "q": "Máximo de 52 semanas: 64 €. Con el criterio de estar a no más de un 25 % del máximo, ¿cuál es el precio mínimo aceptable?",
           "unit": "€",
-          "a": 90,
-          "why": "120 × (1 − 0,25) = 90 €. Por debajo, la acción está demasiado lejos de sus máximos para estar en una tendencia sana.",
+          "a": 48,
+          "why": "64 × (1 − 0,25) = 48 €. Por debajo, la acción está demasiado lejos de sus máximos para estar en una tendencia sana.",
           "guia": "g3"
         }
       ]

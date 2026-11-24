@@ -145,7 +145,7 @@
         {
           "id": "ia4-2",
           "t": "num",
-          "q": "La IA te avisa de que tu factura de la luz ha pasado de 60 € a 78 €. ¿Cuánto ha subido?",
+          "q": "La IA te avisa de que tu factura de la luz ha pasado de 60 € a 78 €. ¿Qué porcentaje ha subido?",
           "unit": "%",
           "a": 30,
           "why": "78 ÷ 60 − 1 = 30 %. Las alertas sobre subidas te ayudan a revisar contratos a tiempo.",
@@ -174,7 +174,7 @@
         {
           "id": "ia4-4",
           "t": "num",
-          "q": "Esos 3.000 € al 2 % TAE, ¿cuántos euros generan en un año?",
+          "q": "Pasas 3.000 € a una cuenta remunerada al 2 % TAE. ¿Cuántos euros generan en un año?",
           "unit": "€",
           "a": 60,
           "why": "3.000 € × 2 % = 60 € al año, antes de impuestos. Dinero que, parado en la cuenta corriente, no daba nada.",

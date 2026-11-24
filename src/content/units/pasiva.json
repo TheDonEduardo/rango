@@ -44,7 +44,7 @@
     {
       "id": "g4",
       "titulo": "Fondos, ETF y pensiones",
-      "texto": "Fondos indexados y ETF copian un índice por muy poco. En España, entre fondos puedes traspasar sin tributar. Los planes de pensiones reducen impuestos hoy, pero el dinero queda bloqueado.",
+      "texto": "Fondos indexados y ETF copian un índice por muy poco. En España, entre fondos puedes traspasar sin tributar. Los planes de pensiones reducen impuestos hoy, pero el dinero queda bloqueado salvo casos tasados.",
       "ejemplo": "Aportar 1.500 € a un plan con un tipo marginal del 30 % te ahorra 450 € en la renta."
     }
   ],
@@ -155,7 +155,7 @@
           "q": "Aportas 1.500 € a un plan de pensiones y tu tipo marginal del IRPF es del 30 %. ¿Cuánto te ahorras este año en la declaración?",
           "unit": "€",
           "a": 450,
-          "why": "La aportación reduce tu base imponible: 1.500 × 30 % = 450 €. Al rescatarlo tributa como rendimiento del trabajo, así que es un aplazamiento, no un regalo. Comprueba cada año el límite de aportación.",
+          "why": "La aportación reduce tu base imponible: 1.500 × 30 % = 450 €. Al rescatarlo tributa como rendimiento del trabajo, así que es un aplazamiento, no un regalo. Compruébalo con la norma vigente.",
           "revisar": "2027-06",
           "guia": "g4"
         },

@@ -50,6 +50,7 @@
       "ejemplo": "Con un chiringuito no autorizado, no te cubre ningún fondo de garantía."
     }
   ],
+  "revisar": "2027-11",
   "lessons": [
     {
       "id": "bq1",
@@ -160,7 +161,7 @@
         {
           "id": "bq2-2",
           "t": "num",
-          "q": "Si cada mes solo entran 8.000 € nuevos, ¿cuántos miles de euros le faltan al mes?",
+          "q": "Un esquema Ponzi debe pagar 10.000 € al mes en «intereses» y solo entran 8.000 € nuevos. ¿Cuántos miles de euros le faltan al mes?",
           "unit": "",
           "a": 2,
           "why": "10.000 − 8.000 = 2.000 € de agujero cada mes, y crece con cada nuevo partícipe.",

@@ -21,7 +21,7 @@
     {
       "id": "g3",
       "titulo": "Dividendos",
-      "texto": "Al cobrar un dividendo, te retienen un 19 % a cuenta y lo descuentas en la declaración. En EE. UU. retienen un 15 % si firmas el W-8BEN; parte se recupera por doble imposición.",
+      "texto": "Al cobrar un dividendo, te retienen un 19 % a cuenta y lo descuentas en la declaración. En EE. UU. retienen un 15 % si firmas el W-8BEN, que se deduce en tu IRPF por doble imposición.",
       "ejemplo": "Dividendo español de 100 €: cobras 81 € y los 19 € retenidos cuentan como ya pagados."
     },
     {

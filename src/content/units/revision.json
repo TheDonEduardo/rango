@@ -30,6 +30,7 @@
       "ejemplo": "Ahorras un 0,10 % sobre 50.000 € (50 € al año) pero vender tributa 950 €: tardarías 19 años en recuperarlo."
     }
   ],
+  "revisar": "2027-11",
   "lessons": [
     {
       "id": "rv1",
@@ -105,7 +106,7 @@
         {
           "id": "rv1-4",
           "t": "num",
-          "q": "Mismo caso: ¿cuántos miles de euros de acciones pasas a bonos para volver al 70/30?",
+          "q": "Objetivo 70/30. Tienes 78.000 € en acciones y 22.000 € en bonos. ¿Cuántos miles de euros de acciones pasas a bonos para volver al 70/30?",
           "unit": "",
           "a": 8,
           "why": "El 70 % de 100.000 € son 70.000 €: pasas 78.000 − 70.000 = 8.000 € a bonos.",
@@ -138,7 +139,7 @@
             "Comprar los dos a medias"
           ],
           "a": 0,
-          "why": "Vender un ETF tributa la plusvalía; en fondos de inversión el traspaso no tributa. Compara el impuesto con el ahorro anual.",
+          "why": "Vender un ETF tributa la plusvalía; en fondos de inversión el traspaso no tributa. Compara el impuesto con el ahorro anual. Compruébalo con la norma vigente.",
           "revisar": "2027-06",
           "guia": "g4",
           "porque": [

@@ -30,6 +30,7 @@
       "ejemplo": "Cartera de 500.000 €: 20.000 € el primer año."
     }
   ],
+  "revisar": "2027-11",
   "lessons": [
     {
       "id": "pi1",
@@ -71,7 +72,7 @@
           "unit": "mil €",
           "a": 3,
           "why": "12.000 − 9.000 = 3.000 €. Lo que falta se cubre vendiendo participaciones: la regla de retirada mira el total, no de dónde sale.",
-          "guia": "g2"
+          "guia": "g1"
         },
         {
           "id": "pi1-4",
@@ -79,7 +80,7 @@
           "q": "Con un fondo de acumulación vendes 8.000 € y la mitad es ganancia. Al 19 %, ¿cuántos euros pagas?",
           "unit": "€",
           "a": 760,
-          "why": "Solo tributa la ganancia: 4.000 € × 19 % = 760 €. Con dividendos, tributarían los 8.000 € enteros.",
+          "why": "Solo tributa la ganancia: 4.000 € × 19 % = 760 €. Con dividendos, tributarían los 8.000 € enteros. Compruébalo con la norma vigente.",
           "guia": "g2"
         },
         {

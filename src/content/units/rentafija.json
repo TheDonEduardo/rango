@@ -94,7 +94,7 @@
         {
           "id": "bh1-3",
           "t": "num",
-          "q": "Ese bono cotiza ahora a 950 €. ¿Qué rentabilidad por cupón obtienes si lo compras a ese precio (cupón ÷ precio)? Redondea a 2 decimales.",
+          "q": "Un bono de 1.000 € de nominal con un cupón del 4 % cotiza ahora a 950 €. ¿Qué rentabilidad por cupón obtienes si lo compras a ese precio (cupón ÷ precio)? Redondea a 2 decimales.",
           "unit": "%",
           "a": 4.21,
           "tol": 0.02,
@@ -118,7 +118,7 @@
             null,
             "Que la empresa gane más no hace que su bono pague más: lo que paga el riesgo es la posibilidad de impago.",
             "El Estado no cobra comisiones por sus bonos; la diferencia es el riesgo de no cobrar.",
-            "El enunciado no habla de plazos; la diferencia del 6 % la explica la calidad crediticia."
+            "El enunciado no habla de plazos; la diferencia de 6 puntos la explica la calidad crediticia."
           ]
         },
         {
@@ -160,7 +160,7 @@
         {
           "id": "bh2-2",
           "t": "num",
-          "q": "Un bono tiene una duración modificada de 7. Si los tipos suben un 1 %, ¿cuánto cae su precio aproximadamente?",
+          "q": "Un bono tiene una duración modificada de 7. Si los tipos suben 1 punto, ¿cuánto cae su precio aproximadamente?",
           "unit": "%",
           "a": 7,
           "why": "Caída ≈ duración × subida de tipos = 7 × 1 % = 7 %. La duración mide cuánto sufre el precio de un bono con los tipos.",
@@ -169,7 +169,7 @@
         {
           "id": "bh2-3",
           "t": "num",
-          "q": "Otro bono tiene una duración de 2 y los tipos suben un 1,5 %. ¿Cuánto cae su precio aproximadamente?",
+          "q": "Otro bono tiene una duración de 2 y los tipos suben 1,5 puntos. ¿Cuánto cae su precio aproximadamente?",
           "unit": "%",
           "a": 3,
           "why": "2 × 1,5 % = 3 %. Cuanto más corto es el bono, menos le afectan las subidas de tipos: por eso las letras apenas se mueven.",

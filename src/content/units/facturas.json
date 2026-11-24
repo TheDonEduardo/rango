@@ -103,7 +103,7 @@
             ],
             [
               "Garantía extendida",
-              "Rara vez compensa su precio"
+              "Rechazarla salvo que compense su precio"
             ]
           ],
           "why": "No hace falta vivir peor: basta con revisar de vez en cuando lo que pagas por inercia.",
@@ -148,7 +148,7 @@
         {
           "id": "fx2-3",
           "t": "num",
-          "q": "Esos 60 € de más sobre un precio de 600 €, ¿qué porcentaje suponen?",
+          "q": "Pagas a plazos un producto de 600 € y, en un año, acabas pagando 60 € de más. ¿Qué porcentaje del precio suponen?",
           "unit": "%",
           "a": 10,
           "why": "60 ÷ 600 = 10 % en un año. Y como devuelves el dinero poco a poco, el coste real equivale a un interés anual bastante mayor.",

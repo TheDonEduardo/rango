@@ -94,7 +94,7 @@
         {
           "id": "bo1-4",
           "t": "num",
-          "q": "¿Y qué rentabilidad es esa ganancia sobre lo invertido? (dos decimales)",
+          "q": "Compras una letra por 970 € y al vencer te devuelven 1.000 €. ¿Qué rentabilidad obtienes sobre lo invertido? (dos decimales)",
           "unit": "%",
           "a": 3.09,
           "why": "30 / 970 = 3,09 %, algo más que el 3 % porque inviertes menos de 1.000 €.",

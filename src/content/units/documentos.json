@@ -31,6 +31,7 @@
       "ejemplo": "Dividendo de 120 € con un 19 % de retención: llegan 97,20 €."
     }
   ],
+  "revisar": "2027-11",
   "lessons": [
     {
       "id": "bx1",
@@ -68,7 +69,7 @@
           ],
           "a": 0,
           "why": "La escala va de 1, muy bajo, a 7, muy alto. Un fondo de acciones suele estar en 4 o más: puede caer bastante en un mal año.",
-          "guia": "g2",
+          "guia": "g1",
           "porque": [
             null,
             "Un 6 sobre 7 es riesgo alto, no bajo.",
@@ -156,7 +157,7 @@
           "q": "Recibes un dividendo de 120 € con una retención del 19 %. ¿Cuántos euros llegan a tu cuenta? Redondea a 1 decimal.",
           "unit": "€",
           "a": 97.2,
-          "why": "120 × (1 − 0,19) = 97,20 €. La retención es un adelanto del impuesto que el extracto muestra aparte.",
+          "why": "120 × (1 − 0,19) = 97,20 €. La retención es un adelanto del impuesto que el extracto muestra aparte. Compruébalo con la norma vigente.",
           "tol": 0.06,
           "guia": "g4"
         },

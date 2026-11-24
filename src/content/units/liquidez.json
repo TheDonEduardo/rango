@@ -71,7 +71,7 @@
           "q": "Una cuenta paga un 2 % anual, pero solo sobre los primeros 10.000 €. Tienes 15.000 €. ¿Cuántos euros de intereses brutos recibes en un año?",
           "unit": "€",
           "a": 200,
-          "why": "10.000 × 2 % = 200 €: los 5.000 € restantes no rinden nada. Sobre los 15.000 €, la rentabilidad real es del 1,33 %. Lee siempre el límite y las condiciones.",
+          "why": "10.000 × 2 % = 200 €: los 5.000 € restantes no rinden nada. Sobre los 15.000 €, la rentabilidad efectiva es del 1,33 %. Lee siempre el límite y las condiciones.",
           "guia": "g2"
         },
         {
