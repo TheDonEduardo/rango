@@ -489,6 +489,22 @@ if (fs.existsSync(semPath)) {
   T.goHome();
 }
 
+// Una copia con escalares manipulados se lee sin error, queda saneada (valores por defecto) y no inyecta marcado.
+{
+  const antes = JSON.parse(JSON.stringify(T.getState()));
+  const mala = T.leerCopia(JSON.stringify({app: 'rango', fecha: '<img src=x>', estado: {xp: 5, done: {}, fecha: '<img src=x>', track: '"><b>x', meta: '40" onmouseover="x', streak: '<b>', protector: 99, last: '<img src=x>', day: 'x', dayXp: -3}}));
+  const e = mala && mala.estado;
+  if (!e || e.track !== 'basico' || e.meta !== 40 || e.streak !== 0 || e.protector !== 0 || e.last !== null || e.day !== null || e.dayXp !== 0 || mala.resumen.fecha !== '' || e.xp !== 5) errs.push('copia: los escalares manipulados no se sanean');
+  const ok = T.leerCopia(JSON.stringify({app: 'rango', fecha: '2026-11-01', estado: {xp: 7, done: {}, track: 'cripto', meta: 80, streak: 3, protector: 1, last: '2026-11-01', day: '2026-11-01', dayXp: 20}}));
+  if (!ok || ok.estado.track !== 'cripto' || ok.estado.meta !== 80 || ok.estado.streak !== 3 || ok.estado.protector !== 1 || ok.estado.last !== '2026-11-01' || ok.resumen.fecha !== '2026-11-01') errs.push('copia: se descartan escalares válidos');
+  if (e) {
+    T.importar(e);
+    const h = T.homeHTML();
+    if (/<img|onmouseover|"><b>x/.test(h)) errs.push('copia: el inicio inyecta marcado de una copia manipulada');
+    T.importar(antes);
+  }
+}
+
 // 8) Inicio con progreso: atajo «Continuar» y unidades completadas plegadas.
 {
   const st = T.getState(); const antes = st.done; st.done = {}; st.skipBasics = true; T.setTrack('tecnico');
@@ -711,9 +727,26 @@ if (caducados.length) console.warn('AVISO: contenido pendiente de revisar (norma
   T.configurar({url: 'https://x.supabase.co/', anon: 'ANON'});
   await T.enviarEnlace('a@b.es', 'https://rango.app/');
   if (!llamadas[0][1].startsWith('/auth/v1/otp?redirect_to=https%3A%2F%2Frango.app%2F') || llamadas[0][2].apikey !== 'ANON') errs.push('cuenta: el enlace no se pide bien');
+  if (!store['rango.pendiente']) errs.push('cuenta: enviar el enlace no deja la marca de petición pendiente');
   let limpio = false;
-  if (!(await T.leerRetorno('#access_token=T1&refresh_token=R1&expires_in=3600&token_type=bearer', () => { limpio = true; })) || !limpio || T.sesion().user.id !== 'u1') errs.push('cuenta: no se lee la sesión al volver del correo');
+  const ret = '#access_token=T1&refresh_token=R1&expires_in=3600&token_type=bearer';
+  // Sin marca (enlace ajeno): se rechaza, se limpia la dirección y no hay sesión.
+  const marca = store['rango.pendiente']; delete store['rango.pendiente'];
+  if ((await T.leerRetorno(ret, () => { limpio = true; })) !== 'rechazado' || !limpio || T.sesion()) errs.push('cuenta: un retorno sin marca abre sesión o no limpia la dirección');
+  // Marca de hace más de una hora: rechazada y gastada.
+  store['rango.pendiente'] = String(Date.now() - 3600001);
+  if ((await T.leerRetorno(ret)) !== 'rechazado' || T.sesion() || store['rango.pendiente']) errs.push('cuenta: se acepta una marca caducada');
+  // Marca reciente: aceptada y borrada; un segundo uso se rechaza.
+  store['rango.pendiente'] = marca; limpio = false;
+  if ((await T.leerRetorno(ret, () => { limpio = true; })) !== true || !limpio || T.sesion().user.id !== 'u1' || store['rango.pendiente']) errs.push('cuenta: no se lee la sesión al volver del correo');
+  if ((await T.leerRetorno(ret)) !== 'rechazado') errs.push('cuenta: la marca se puede usar dos veces');
   if (await T.leerRetorno('#otra=cosa')) errs.push('cuenta: un fragmento cualquiera abre sesión');
+  // Sesión de otro usuario: no se sustituye sin confirmar.
+  { const prev = T.sesion(); store['rango.sesion'] = JSON.stringify({...prev, user: {id: 'u0', email: 'otro@b.es'}});
+    store['rango.pendiente'] = String(Date.now());
+    if ((await T.leerRetorno(ret, null, () => false)) !== 'rechazado' || T.sesion().user.id !== 'u0') errs.push('cuenta: se cambia de cuenta sin confirmar');
+    store['rango.pendiente'] = String(Date.now());
+    if ((await T.leerRetorno(ret, null, () => true)) !== true || T.sesion().user.id !== 'u1') errs.push('cuenta: no se cambia de cuenta al confirmar'); }
   const xpLocal = st.xp, cambio = await T.sincronizar(), S2 = T.getState();
   if (!cambio || S2.xp !== 99999 || !S2.done.zz || Object.keys(copia.done).some(k => !S2.done[k])) errs.push('cuenta: la sincronización no fusiona lo local con lo guardado');
   if (!guardado || guardado.xp !== 99999 || !guardado.done.zz) errs.push('cuenta: no se sube el estado fusionado');

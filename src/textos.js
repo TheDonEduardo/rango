@@ -195,6 +195,8 @@ export const t={
   cuentaError:'No se ha podido conectar. Tu progreso sigue guardado aquí; inténtalo más tarde.',
   cuentaConectado:e=>`Conectado como ${e}.`, cuentaSincronizado:h=>`Sincronizado a las ${h}.`, cuentaPendiente:'Se sincroniza cada vez que avanzas.',
   cuentaCerrar:'Cerrar sesión', cuentaBorrar:'Borrar cuenta', cuentaBorrarConfirma:'Pulsa de nuevo para borrarla', cuentaBorrada:'Cuenta borrada. Tu progreso sigue en este dispositivo.',
+  cuentaAjena:'Ese enlace no se pidió desde este navegador. Pide uno nuevo desde «Tu cuenta» y ábrelo en el mismo navegador.',
+  cuentaCambiar:(a,b)=>`Ya tienes la sesión de ${a} iniciada. ¿Cambiar a la cuenta ${b}?`,
   cuentaCerrada:'Sesión cerrada. Tu progreso sigue en este dispositivo.', cuentaHecha:'Sesión iniciada: tu progreso se sincroniza.',
   copiaTitulo:'Copia de seguridad', copiaNotaCuenta:'Tu progreso se guarda en tu cuenta. Si quieres, descarga también una copia en un archivo.', copiaNota:'Tu progreso se guarda solo en este navegador. Descarga una copia para no perderlo o para pasarlo a otro dispositivo.',
   copiaGuardar:'Descargar copia', copiaRecuperar:'Recuperar copia', copiaSustituir:'Sustituir mi progreso', cancelar:'Cancelar',

@@ -5,8 +5,9 @@
 // y se sube unos segundos después de cada cambio; al entrar desde otro dispositivo, los dos estados se fusionan.
 import {SUPABASE_URL,SUPABASE_ANON} from './config.js';
 import {S,STATE_V,completar,importar,alGuardar} from './state.js';
+import {t} from './textos.js';
 
-const CLAVE='rango.sesion', ESPERA=5000;
+const CLAVE='rango.sesion', PENDIENTE='rango.pendiente', VALIDEZ=3600000, ESPERA=5000;
 let cfg={url:SUPABASE_URL.replace(/\/$/,''),anon:SUPABASE_ANON}, temporizador=null;
 export const cuentaActiva=()=>!!(cfg.url&&cfg.anon);
 export function configurar(c){cfg={url:c.url.replace(/\/$/,''),anon:c.anon}}  // para los tests
@@ -23,16 +24,28 @@ async function pedir(ruta,{method='GET',body,token,headers={}}={}){
 }
 
 // Envía el enlace de acceso; al pulsarlo, Supabase vuelve a esta página con la sesión en el fragmento (#access_token=…).
-export function enviarEnlace(email,volver){
-  return pedir('/auth/v1/otp?redirect_to='+encodeURIComponent(volver),{method:'POST',body:{email,create_user:true}});
+// Deja una marca de petición pendiente (en localStorage, porque el enlace se abre en otra pestaña): sin ella,
+// al volver no se acepta ninguna sesión, así un enlace con los tokens de otra cuenta no sirve.
+export async function enviarEnlace(email,volver){
+  await pedir('/auth/v1/otp?redirect_to='+encodeURIComponent(volver),{method:'POST',body:{email,create_user:true}});
+  try{localStorage.setItem(PENDIENTE,String(Date.now()))}catch(e){}
 }
-// Lee la sesión que trae la dirección al volver del correo y limpia el fragmento.
-export async function leerRetorno(hash,limpiar){
+// Lee la sesión que trae la dirección al volver del correo y limpia el fragmento. Solo la acepta si este
+// navegador pidió el enlace hace menos de una hora (lo que dura el enlace de Supabase); la marca se gasta siempre.
+// Devuelve true (sesión guardada), false (nada que leer) o 'rechazado' (enlace ajeno, caducado o sin confirmar).
+// confirmar(mensaje) decide si se cambia una sesión de otro usuario; sin ella, no se cambia.
+export async function leerRetorno(hash,limpiar,confirmar){
   const p=new URLSearchParams((hash||'').replace(/^#/,''));
   if(!p.get('access_token')||!p.get('refresh_token'))return false;
-  const token=p.get('access_token'),u=await pedir('/auth/v1/user',{token});
-  guardarSesion({access_token:token,refresh_token:p.get('refresh_token'),expires_at:Date.now()+(+p.get('expires_in')||3600)*1000,user:{id:u.id,email:u.email}});
+  let marca=0;
+  try{marca=+localStorage.getItem(PENDIENTE)||0;localStorage.removeItem(PENDIENTE)}catch(e){}
   if(limpiar)limpiar();
+  const ahora=Date.now();
+  if(!marca||marca>ahora+60000||ahora-marca>VALIDEZ)return 'rechazado';
+  const token=p.get('access_token'),u=await pedir('/auth/v1/user',{token});
+  const previa=leerSesion();
+  if(previa&&previa.user&&previa.user.id!==u.id&&!(confirmar&&confirmar(t.cuentaCambiar(previa.user.email,u.email))))return 'rechazado';
+  guardarSesion({access_token:token,refresh_token:p.get('refresh_token'),expires_at:ahora+(+p.get('expires_in')||3600)*1000,user:{id:u.id,email:u.email}});
   return true;
 }
 // Token válido, renovándolo si caduca en menos de un minuto.

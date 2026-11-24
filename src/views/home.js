@@ -14,7 +14,7 @@ const DEV=typeof location!=='undefined'&&/[?&]dev\b/.test(location.search||'');
 
 export function homeHTML(){
   const st=statuses(),sk=streakNow(),dx=dayXpNow();
-  let h=`<header class="top"><h1 class="brand">${LOGO}<span>Rango</span></h1><div class="stats"><span class="chip fire" aria-label="${t.racha(sk)}">${ico('flame')}<b>${sk}</b></span><span class="chip xp" aria-label="${t.xpTotal(S.xp)}">${ico('bolt')}<b>${S.xp}</b></span><button class="chip vstat" data-act="stats" aria-label="${t.verProgreso}">${ico('bars')}</button></div></header><div class="home"><div class="lado">`;
+  let h=`<header class="top"><h1 class="brand">${LOGO}<span>Rango</span></h1><div class="stats"><span class="chip fire" aria-label="${t.racha(sk)}">${ico('flame')}<b>${esc(sk)}</b></span><span class="chip xp" aria-label="${t.xpTotal(S.xp)}">${ico('bolt')}<b>${S.xp}</b></span><button class="chip vstat" data-act="stats" aria-label="${t.verProgreso}">${ico('bars')}</button></div></header><div class="home"><div class="lado">`;
   h+=`<nav class="tracks" aria-label="${t.ruta}">${TRACKS.map(r=>`<button data-act="track" data-track="${r.id}" aria-pressed="${S.track===r.id}">${r.title}</button>`).join('')}</nav>`;
   const TF=FLAT.filter(l=>trackOf(l.unit)===S.track);
   // Orden fijo: como mucho un aviso (objetivo, ruta cerrada, test o prueba de nivel), después «Hoy» y la herramienta de la ruta.
@@ -55,7 +55,7 @@ function avisoHTML(TF){
   if(!libre(S.track)&&!advancedOpen())return `<section class="gate"><p>${t.bloqueoRuta}</p><div class="row"><button class="btn line" data-act="track" data-track="basico">${t.irBasicos}</button>${S.placement?'':`<button class="btn line" data-act="test">${t.hacerTest}</button>`}<button class="btn ghost" data-act="skipbasics">${t.saltarBasicos}</button></div></section>`;
   if(S.track==='basico'&&!S.placement&&!Object.keys(S.done).length)return `<section class="test" aria-label="${t.testNivel}"><div><b>${t.testPregunta}</b><span>${t.testExplica(PLACEMENT.length)}</span></div><div class="row"><button class="btn primary" data-act="test">${t.hacerTest}</button><button class="btn ghost" data-act="notest">${t.desdeCero}</button></div></section>`;
   // Prueba de nivel de las rutas avanzadas: para quien aún no ha hecho ninguna lección de la ruta.
-  if(S.track!=='basico'&&!S.pruebas[S.track]&&!TF.some(l=>S.done[l.id]))return `<section class="test" aria-label="${t.pruebaNivel}"><div><b>${t.nivelPregunta}</b><span>${t.nivelExplica}</span></div><div class="row"><button class="btn primary" data-act="nivel" data-track="${S.track}">${t.hacerPrueba}</button><button class="btn ghost" data-act="nonivel" data-track="${S.track}">${t.desdeCero}</button></div></section>`;
+  if(S.track!=='basico'&&!S.pruebas[S.track]&&!TF.some(l=>S.done[l.id]))return `<section class="test" aria-label="${t.pruebaNivel}"><div><b>${t.nivelPregunta}</b><span>${t.nivelExplica}</span></div><div class="row"><button class="btn primary" data-act="nivel" data-track="${esc(S.track)}">${t.hacerPrueba}</button><button class="btn ghost" data-act="nonivel" data-track="${esc(S.track)}">${t.desdeCero}</button></div></section>`;
   return '';
 }
 
@@ -68,7 +68,7 @@ function hoyHTML(st,TF,dx){
   const reto=retoHoy(),hecho=retoHecho();
   const iti=itinActual();
   if(!S.xp&&!due&&!sigue&&!iti)return '';
-  let h=`<section class="hoy" aria-label="${t.hoy}"><div class="goal"><div class="goal-h"><span>${t.metaHoy}</span><span>${Math.min(dx,S.meta)} / ${S.meta} XP</span></div><div class="bar" role="progressbar" aria-label="${t.metaHoy}" aria-valuemin="0" aria-valuemax="${S.meta}" aria-valuenow="${Math.min(dx,S.meta)}"><i style="width:${Math.min(100,dx/S.meta*100)}%"></i></div></div>`;
+  let h=`<section class="hoy" aria-label="${t.hoy}"><div class="goal"><div class="goal-h"><span>${t.metaHoy}</span><span>${Math.min(dx,S.meta)} / ${esc(S.meta)} XP</span></div><div class="bar" role="progressbar" aria-label="${t.metaHoy}" aria-valuemin="0" aria-valuemax="${esc(S.meta)}" aria-valuenow="${Math.min(dx,S.meta)}"><i style="width:${Math.min(100,dx/S.meta*100)}%"></i></div></div>`;
   if(sigue)h+=`<div class="hoy-row cont"><div><span>${t.unidadN(cur.unit.n)} · ${esc(cur.unit.title)}</span><b>${esc(cur.title)}</b></div><button class="btn primary" data-act="open" data-id="${cur.id}">${t.continuar}</button></div>`;
   if(iti)h+=iti.sig?`<div class="hoy-row itin-r"><div><span>${t.itinPaso(esc(t.itin[iti.it.id][0]),iti.hechas+1,iti.total)}</span><b>${esc(iti.sig.title)}</b></div><button class="btn ${sigue?'line':'primary'}" data-act="itinsig">${t.itinSeguir}</button></div>`
     :`<div class="hoy-row itin-r"><div><b>${t.itinHecho}</b><span>${esc(t.itin[iti.it.id][0])}</span></div><button class="btn ${sigue?'line':'primary'}" data-act="itinerarios">${t.itinResumen}</button></div>`;

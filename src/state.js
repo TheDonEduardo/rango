@@ -1,11 +1,13 @@
 // Progreso guardado en el dispositivo (localStorage): formato, migraciones, racha, rutas y repaso espaciado.
 import {KEY,today,yest,addDays} from './util.js';
-import {FLAT,EXBYID,trackOf,libre} from './content.js';
+import {FLAT,EXBYID,TRACKS,trackOf,libre} from './content.js';
 
 // Versión del formato guardado. Cada cambio de formato añade un paso a MIGRAR (de la versión n a la n+1),
 // así el progreso de quien ya usa la app se convierte en vez de perderse.
 export const STATE_V=2;
 export const DEF=()=>({v:STATE_V,xp:0,streak:0,last:null,day:null,dayXp:0,done:{},all:false,track:'basico',skipBasics:false,legal:0,srs:{},sim:{},calc:null,itin:null,mercado:null,stats:{ex:{},min:0},guias:{},aprendidos:{},dominadas:{},pruebas:{},meta:40,protector:0,objetivo:null,medir:false,reto:null,mod:0});
+// Meta diaria elegible y máximo de protectores (antes de load(), que sanea el estado al leerlo).
+export const META_OPC=[20,40,80], PROTECTOR_MAX=2;
 const MIGRAR={
   // 1 → 2: el repaso espaciado identificaba los ejercicios por posición («lección#índice», desde 0);
   // ahora cada ejercicio tiene un id estable («lección-n», desde 1).
@@ -17,7 +19,20 @@ export function migrar(j){
   j.v=STATE_V;return j;
 }
 // Estado completo a partir de lo guardado (cualquier versión): rellena lo que falte con los valores por defecto.
-export const completar=j=>{const s=Object.assign(DEF(),migrar(j));s.stats=Object.assign({ex:{},min:0},s.stats);return s};
+export const completar=j=>{const s=Object.assign(DEF(),migrar(j));s.stats=Object.assign({ex:{},min:0},s.stats);return limpiarEscalares(s)};
+// Los escalares de una copia o de un estado remoto acaban en el HTML: solo se aceptan valores de su tipo y rango;
+// lo demás vuelve al valor por defecto (como calcLimpio en views/calc.js).
+const FECHA=/^\d{4}-\d{2}-\d{2}$/;
+export const fechaValida=v=>typeof v==='string'&&FECHA.test(v);
+export function limpiarEscalares(s){
+  const d=DEF(),ent=(v,max)=>typeof v==='number'&&Number.isInteger(v)&&v>=0&&(max==null||v<=max);
+  for(const k of ['xp','streak','dayXp','legal','mod'])if(!ent(s[k]))s[k]=d[k];
+  if(!ent(s.protector,PROTECTOR_MAX))s.protector=d.protector;
+  for(const k of ['last','day'])if(s[k]!==null&&!fechaValida(s[k]))s[k]=d[k];
+  if(!TRACKS.some(r=>r.id===s.track))s.track=d.track;
+  if(!META_OPC.includes(s.meta))s.meta=d.meta;
+  return s;
+}
 function load(){
   try{const j=JSON.parse(localStorage.getItem(KEY));if(j&&typeof j==='object')return completar(j)}catch(e){}
   return DEF();
@@ -40,15 +55,14 @@ export function leerCopia(texto){
     // Copia hecha con una versión más nueva de Rango: no se puede convertir hacia atrás.
     if((e.v||1)>STATE_V)return 'nueva';
     const estado=completar(JSON.parse(JSON.stringify(j.estado)));
-    return {estado,resumen:{fecha:j.fecha||'',xp:estado.xp,lecciones:Object.keys(estado.done).length}};
+    return {estado,resumen:{fecha:fechaValida(j.fecha)?j.fecha:'',xp:estado.xp,lecciones:Object.keys(estado.done).length}};
   }catch(e){return null}
 }
 export function importar(estado){S=estado;save()}
 
 // Racha: sigue viva si practicaste hoy o ayer, o anteayer con un protector disponible (se gastará al practicar).
 export const streakNow=()=>(S.last===today()||S.last===yest()||(S.last===addDays(-2)&&S.protector>0))?S.streak:0;
-// Meta diaria elegible y protectores de racha: uno por cada 7 días seguidos, como mucho PROTECTOR_MAX guardados.
-export const META_OPC=[20,40,80], PROTECTOR_MAX=2;
+// Protectores de racha: uno por cada 7 días seguidos, como mucho PROTECTOR_MAX guardados.
 export function sumarRacha(){
   const hoy=today();if(S.last===hoy)return {};
   let usado=false,ganado=false;

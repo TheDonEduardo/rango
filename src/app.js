@@ -369,8 +369,8 @@ render();
 // Solo se vuelve a dibujar si cambió algo y no hay una lección en curso.
 const redibujar=c=>{if(c&&['home','stats'].includes(ses.view))render()};
 if(cuentaActiva()&&typeof location!=='undefined'){
-  leerRetorno(location.hash,()=>history.replaceState(null,'',location.pathname+location.search))
-    .then(nueva=>{if(nueva)toast(t.cuentaHecha);return sesion()?sincronizar():false})
+  leerRetorno(location.hash,()=>history.replaceState(null,'',location.pathname+location.search),m=>confirm(m))
+    .then(nueva=>{if(nueva==='rechazado')toast(t.cuentaAjena);else if(nueva)toast(t.cuentaHecha);return sesion()?sincronizar():false})
     .then(c=>redibujar(c||ses.view==='stats'),()=>{if(ses.view==='stats')render()});
 }
 

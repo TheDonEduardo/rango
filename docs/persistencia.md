@@ -9,6 +9,8 @@
 5. Personaliza el correo del enlace en Authentication → Email Templates (en español) y, antes de abrirlo al público, configura un SMTP propio: el de Supabase solo envía unos pocos correos por hora.
 6. Revisa con un profesional la política de privacidad de la app (Privacidad, en el pie del inicio): ya explica qué guarda la cuenta y dónde.
 
+Seguridad del acceso: al pedir el enlace, la app guarda en `localStorage` una marca (`rango.pendiente`). Al volver, solo acepta la sesión del fragmento si la marca tiene menos de una hora; la borra siempre y rechaza el enlace si no existe, así un enlace con los tokens de otra cuenta no sirve. Por eso hay que abrir el enlace en el mismo navegador donde se pidió. Si ya hay una sesión de otro usuario, pide confirmación antes de cambiar. Las copias y los estados remotos se sanean antes de aplicarlos (`limpiarEscalares` en `src/state.js`).
+
 Pendiente: avisos de racha (web push), que necesitan una función programada en el servidor.
 
 Estado actual: todo el progreso (XP, racha, lecciones hechas, repaso espaciado) vive en `localStorage` (`rango.v1`). Se pierde al borrar los datos del navegador o cambiar de dispositivo, y no permite avisos de racha.
