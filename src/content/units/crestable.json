@@ -21,7 +21,7 @@
     {
       "id": "g3",
       "titulo": "Cuando se rompen",
-      "texto": "Si el mercado duda de las reservas, la moneda cae por debajo de 1 dólar. Las algorítmicas, sin reservas reales, pueden hundirse por completo.",
+      "texto": "Si el mercado duda de las reservas, la moneda cae por debajo de 1 dólar. Las algorítmicas, sin reservas suficientes, pueden hundirse por completo.",
       "ejemplo": "TerraUSD pasó de 1 $ a céntimos en pocos días de 2022."
     },
     {
@@ -97,7 +97,7 @@
           ],
           "a": 0,
           "why": "Sirven como dólar dentro de las cadenas de bloques: para salir de una posición sin pasar por un banco, pagar o usar aplicaciones. No están pensadas para subir.",
-          "guia": "g2",
+          "guia": "g1",
           "porque": [
             null,
             "Están diseñadas para no subir: su precio objetivo es fijo.",
@@ -136,7 +136,7 @@
           "t": "choice",
           "q": "En 2022, la moneda estable algorítmica TerraUSD perdió casi todo su valor. ¿Por qué era frágil?",
           "opts": [
-            "No tenía reservas: dependía de la confianza en otra cripto",
+            "Su paridad dependía de otra cripto, LUNA",
             "Su emisor la convirtió en acciones de una empresa",
             "La prohibió el Gobierno de Estados Unidos ese año",
             "Su red dejó de funcionar durante varios meses"
@@ -154,7 +154,7 @@
         {
           "id": "cy2-3",
           "t": "num",
-          "q": "Tenías 10.000 monedas de esa estable a 1 $ y cayó a 0,10 $. ¿Cuántos miles de dólares pierdes?",
+          "q": "Tenías 10.000 monedas de una estable algorítmica a 1 $ y cayó a 0,10 $. ¿Cuántos miles de dólares pierdes?",
           "unit": "mil $",
           "a": 9,
           "why": "10.000 × (1 − 0,10) = 9.000 $. Ser «estable» es una promesa de diseño, no una garantía.",
@@ -183,7 +183,7 @@
         {
           "id": "cy2-5",
           "t": "match",
-          "q": "Empareja cada tipo de moneda estable con lo que la sostiene.",
+          "q": "Empareja cada concepto de las monedas estables con su descripción.",
           "pairs": [
             [
               "Respaldada por dinero",

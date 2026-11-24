@@ -163,7 +163,7 @@
         {
           "id": "fb2-2",
           "t": "choice",
-          "q": "Ese banco cotiza a 0,8 veces su valor contable y su ROE es del 5 %. ¿Cómo lo lees?",
+          "q": "Un banco cotiza a 0,8 veces su valor contable, su ROE es del 5 % y sus accionistas exigen un 10 %. ¿Cómo lo lees?",
           "opts": [
             "Ganga segura: cotiza por debajo de su valor en libros",
             "Puede ser justo: gana menos de lo que cuesta su capital",

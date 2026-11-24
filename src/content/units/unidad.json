@@ -104,7 +104,7 @@
         {
           "id": "fua-3",
           "t": "num",
-          "q": "Con ese LTV de 480 € y un coste de captación de 300 €, ¿cuál es la relación LTV/CAC?",
+          "q": "Con un LTV de 480 € y un coste de captación de 300 €, ¿cuál es la relación LTV/CAC?",
           "unit": "",
           "a": 1.6,
           "why": "480 ÷ 300 = 1,6: cada euro gastado en captar devuelve 1,60 € de margen, antes de cubrir el resto de gastos.",
@@ -173,7 +173,7 @@
           "opts": [
             "Que la empresa pierde clientes cada año",
             "Que el precio baja cada año",
-            "Que crece sin captar clientes nuevos",
+            "Que puede crecer sin captar clientes nuevos",
             "Nada útil para el inversor"
           ],
           "a": 2,

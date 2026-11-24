@@ -19,7 +19,7 @@
     {
       "id": "g3",
       "titulo": "Fase 4",
-      "texto": "Tras un techo con la media aplanándose, el precio rompe el soporte y la media gira a la baja. La mejor entrada en corto suele ser el rebote al soporte roto.",
+      "texto": "Tras un techo con la media aplanándose, el precio rompe el soporte y la media gira a la baja. La entrada es la ruptura; el rebote al soporte roto da una segunda oportunidad con el stop más cerca.",
       "figura": {
         "type": "velas",
         "alt": "Techo, ruptura del soporte de 40 € y rebote hasta 39,60 €, que es la entrada en corto",
@@ -188,7 +188,7 @@
           "q": "Según Weinstein, ¿dónde está la mejor entrada en corto?",
           "opts": [
             "En la ruptura del soporte de la Fase 3",
-            "En el rebote desde el soporte de la Fase 3",
+            "Antes de romper, cuando rebota en el soporte",
             "En una Fase 2 que ha subido mucho",
             "En cualquier sesión con vela roja"
           ],

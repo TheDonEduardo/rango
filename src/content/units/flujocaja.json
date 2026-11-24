@@ -88,7 +88,7 @@
         {
           "id": "fk1-4",
           "t": "num",
-          "q": "De los 70 M€ de inversión, solo 30 M€ son para mantener el negocio. Si dejara de crecer, ¿cuánto flujo de caja libre generaría?",
+          "q": "Una empresa genera 120 M€ de flujo de explotación e invierte 70 M€, de los que solo 30 M€ son para mantener el negocio. Si dejara de crecer, ¿cuánto flujo de caja libre generaría?",
           "unit": "M€",
           "a": 90,
           "why": "120 − 30 = 90 M€. Separar la inversión de mantenimiento de la de crecimiento muestra lo que el negocio genera de verdad.",
@@ -97,7 +97,7 @@
         {
           "id": "fk1-5",
           "t": "num",
-          "q": "Con una capitalización de 1.500 M€ y esos 90 M€ de caja libre sin crecimiento, ¿qué rentabilidad por flujo de caja ofrece?",
+          "q": "Con una capitalización de 1.500 M€ y 90 M€ de caja libre sin crecimiento, ¿qué rentabilidad por flujo de caja ofrece?",
           "unit": "%",
           "a": 6,
           "why": "90 ÷ 1.500 = 6 %. Es lo que rendiría tu inversión si la empresa no creciera nada: un buen punto de partida para valorarla.",
@@ -113,7 +113,7 @@
         {
           "id": "fk2-1",
           "t": "match",
-          "q": "Empareja cada parte del estado de flujos con lo que recoge.",
+          "q": "Empareja cada flujo con lo que recoge.",
           "pairs": [
             [
               "Flujo de explotación",
@@ -167,7 +167,7 @@
         {
           "id": "fk2-4",
           "t": "choice",
-          "q": "La empresa cubre esa diferencia pidiendo deuda cada año. ¿Qué significa?",
+          "q": "Una empresa paga más dividendo que la caja libre que genera y cubre la diferencia pidiendo deuda cada año. ¿Qué significa?",
           "opts": [
             "Que el dividendo no es sostenible así",
             "Que es una señal de fortaleza financiera",

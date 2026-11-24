@@ -75,7 +75,7 @@
         {
           "id": "c1-2",
           "t": "num",
-          "q": "Capital de 15.000 € y esas 5 posiciones son todas de semiconductores. Si el sector cae y saltan los cinco stops, ¿cuántos € pierdes?",
+          "q": "Capital de 15.000 € y 5 posiciones de semiconductores que arriesgan un 1 % cada una. Si el sector cae y saltan los cinco stops, ¿cuántos € pierdes?",
           "unit": "€",
           "a": 750,
           "why": "15.000 × 5 % = 750 €. Cinco posiciones del mismo sector se mueven como una sola posición grande: en una caída del sector saltan juntas.",
@@ -114,10 +114,10 @@
         {
           "id": "c1-5",
           "t": "num",
-          "q": "Tienes 5 posiciones abiertas y cada una arriesga un 1 % de la cuenta. ¿Qué riesgo abierto total tienes?",
+          "q": "Tu límite de riesgo abierto es del 6 % y tienes 4 posiciones que arriesgan un 1 % cada una. ¿Cuánto riesgo te queda libre?",
           "unit": "%",
-          "a": 5,
-          "why": "5 × 1 % = 5 %. Es lo que perderías si saltaran todos los stops a la vez, algo que pasa en las caídas fuertes del mercado.",
+          "a": 2,
+          "why": "6 % − 4 × 1 % = 2 %: margen para una o dos posiciones más. El límite te protege de que salten todos los stops a la vez en una caída fuerte.",
           "guia": "g1"
         }
       ]

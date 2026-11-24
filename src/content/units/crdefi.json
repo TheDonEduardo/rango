@@ -96,7 +96,7 @@
         {
           "id": "cd1-5",
           "t": "num",
-          "q": "La plataforma liquida tu garantía si el préstamo supera el 80 % de su valor. Con 1.400 $ prestados, ¿cuánto puede caer el ETH antes de que te liquiden? Redondea a 1 decimal.",
+          "q": "La plataforma liquida tu garantía si el préstamo supera el 80 % de su valor. Con 2.000 $ de ETH en garantía y 1.400 $ prestados, ¿cuánto puede caer el ETH antes de que te liquiden? Redondea a 1 decimal.",
           "unit": "%",
           "a": 12.5,
           "why": "Te liquidan cuando la garantía valga 1.400 ÷ 80 % = 1.750 $. De 2.000 $ a 1.750 $ hay una caída del 12,5 %. Con lo que se mueve el ETH, eso puede pasar en un día.",

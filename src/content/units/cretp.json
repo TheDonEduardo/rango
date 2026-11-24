@@ -59,7 +59,7 @@
         {
           "id": "cz1-2",
           "t": "choice",
-          "q": "¿Qué ventaja tiene frente a comprar bitcoin directamente?",
+          "q": "¿Qué ventaja tiene un ETP de bitcoin frente a comprar bitcoin directamente?",
           "opts": [
             "No gestionas claves ni plataformas cripto",
             "Rinde siempre más que el propio bitcoin",
@@ -88,7 +88,7 @@
         {
           "id": "cz1-4",
           "t": "num",
-          "q": "El bitcoin sube un 40 % en el año y el ETP cobra un 1,5 % anual. ¿Qué rentabilidad obtienes, aproximadamente?",
+          "q": "El bitcoin sube un 40 % en el año y el ETP cobra un 1,5 % anual. Restando la comisión a la subida, ¿qué rentabilidad aproximada obtienes?",
           "unit": "%",
           "a": 38.5,
           "why": "40 % − 1,5 % = 38,5 %, aproximadamente. La comisión se descuenta del valor del ETP, suba o baje el bitcoin.",

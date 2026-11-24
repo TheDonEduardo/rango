@@ -20,7 +20,7 @@
       "id": "g3",
       "titulo": "El diario",
       "texto": "Anota cada operación: el plan, el resultado en R, si seguiste las reglas y qué sentiste. Con él calculas tu esperanza real.",
-      "ejemplo": "10 operaciones que suman +3,5R: +0,35R por operación. Ganancia media de 2,25R frente a pérdidas de 1R."
+      "ejemplo": "10 operaciones que suman +3,5R: +0,35R por operación. Ganancia media de 2,25R frente a pérdidas medias de 0,92R."
     },
     {
       "id": "g4",

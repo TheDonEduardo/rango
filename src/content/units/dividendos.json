@@ -85,7 +85,7 @@
         {
           "id": "f9a-2",
           "t": "num",
-          "q": "Su BPA es de 3,00 $ y reparte 2,40 $ por acción. ¿Qué porcentaje del beneficio reparte (payout)?",
+          "q": "Una empresa tiene un BPA de 3,00 $ y reparte 2,40 $ por acción. ¿Qué porcentaje del beneficio reparte (payout)?",
           "unit": "%",
           "a": 80,
           "why": "2,40 ÷ 3,00 = 80 %. Le queda solo un 20 % para reinvertir o reducir deuda: con payouts altos, el dividendo crece poco.",
@@ -210,7 +210,7 @@
           "q": "Una empresa que vale 10.000 M€ en bolsa recompra acciones por 300 M€ al año. Al precio actual, ¿qué porcentaje de sus acciones retira?",
           "unit": "%",
           "a": 3,
-          "why": "300 ÷ 10.000 = 3 %. Cada accionista pasa a tener un 3 % más de la empresa sin comprar nada.",
+          "why": "300 ÷ 10.000 = 3 %. Cada accionista pasa a tener algo más de un 3 % más de la empresa (1 ÷ 0,97 = 1,031) sin comprar nada.",
           "guia": "g4"
         }
       ]

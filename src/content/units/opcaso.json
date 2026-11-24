@@ -31,6 +31,7 @@
       "ejemplo": "Ganancias de la put y de la call: a la base del ahorro de este año."
     }
   ],
+  "revisar": "2027-11",
   "lessons": [
     {
       "id": "zo1",
@@ -48,7 +49,7 @@
         {
           "id": "zo1-2",
           "t": "choice",
-          "q": "Atlas publica resultados en tres semanas. Marta no quiere vender, porque tributaría por la ganancia, ni pagar mucho por protegerse. ¿Qué estrategia encaja?",
+          "q": "Marta tiene 200 acciones de Atlas, que publica resultados en tres semanas. No quiere vender, porque tributaría por la ganancia, ni pagar mucho por protegerse. ¿Qué estrategia encaja?",
           "opts": [
             "Un collar: comprar una put y vender una call",
             "Comprar calls para ganar más si sube",
@@ -161,7 +162,7 @@
         {
           "id": "zo2-5",
           "t": "choice",
-          "q": "Marta conserva las acciones. ¿Qué declara este año por la operación?",
+          "q": "Marta ha cerrado con ganancia la put y la call de su collar y conserva las acciones. ¿Qué declara este año por la operación?",
           "opts": [
             "Las ganancias de la put y de la call",
             "La pérdida de las acciones, aunque no venda",
@@ -169,7 +170,7 @@
             "Solo la prima que pagó por la put"
           ],
           "a": 0,
-          "why": "La put y la call ya están cerradas: sus ganancias son patrimoniales y van a la base del ahorro de este año. La caída de las acciones no cuenta hasta que las venda.",
+          "why": "La put y la call ya están cerradas: sus ganancias son patrimoniales y van a la base del ahorro de este año. La caída de las acciones no cuenta hasta que las venda. Compruébalo con la norma vigente.",
           "guia": "g4",
           "porque": [
             null,

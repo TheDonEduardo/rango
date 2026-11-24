@@ -15,7 +15,7 @@
       "id": "g2",
       "titulo": "Tipos y valoración",
       "texto": "El valor de una empresa es el de sus beneficios futuros descontados. Con tipos más altos, los beneficios lejanos valen menos: las empresas de crecimiento sufren más.",
-      "ejemplo": "100 € dentro de 10 años valen 74 € al 3 % y 56 € al 6 %: un 24 % menos."
+      "ejemplo": "100 € dentro de 10 años valen 74 € al 3 % y 56 € al 6 %: un 25 % menos."
     },
     {
       "id": "g3",
@@ -94,11 +94,11 @@
         {
           "id": "f8a-3",
           "t": "num",
-          "q": "Un beneficio de 100 € dentro de 10 años vale hoy 74 € descontado al 3 %, y 56 € descontado al 6 %. ¿Cuánto cae su valor actual? Redondea a 1 decimal.",
+          "q": "Un beneficio de 100 € dentro de 10 años vale hoy 74,41 € descontado al 3 % y 55,84 € descontado al 6 %. ¿Cuánto cae su valor actual? Redondea a 1 decimal.",
           "unit": "%",
-          "a": 24.3,
+          "a": 25.0,
           "tol": 0.06,
-          "why": "1 − 56 ÷ 74 = 24,3 %. Duplicar el tipo de descuento recorta casi una cuarta parte del valor de un beneficio lejano: así golpean los tipos a las empresas de crecimiento.",
+          "why": "1 − 55,84 ÷ 74,41 = 25,0 %. Duplicar el tipo de descuento recorta casi una cuarta parte del valor de un beneficio lejano: así golpean los tipos a las empresas de crecimiento.",
           "guia": "g2"
         },
         {

@@ -180,7 +180,7 @@
         {
           "id": "op2-3",
           "t": "num",
-          "q": "Si al vencimiento la acción está en 95 $, ¿cuánto pierdes por acción con esa call?",
+          "q": "Compras una call con ejercicio 100 $ y una prima de 4 $. Si al vencimiento la acción está en 95 $, ¿cuánto pierdes por acción?",
           "unit": "$",
           "a": 4,
           "why": "Por debajo de 100 $ no te conviene ejercer: la call vence sin valor y pierdes la prima entera, 4 $. Es tu pérdida máxima, caiga lo que caiga la acción.",

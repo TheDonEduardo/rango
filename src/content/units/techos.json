@@ -246,10 +246,10 @@
         {
           "id": "tf1-5",
           "t": "num",
-          "q": "La media de 30 semanas de Weinstein equivale aproximadamente a la media de cuántas sesiones diarias?",
+          "q": "¿A cuántas sesiones diarias equivale aproximadamente la media de 10 semanas?",
           "unit": "sesiones",
-          "a": 150,
-          "why": "30 semanas × 5 sesiones = 150 sesiones. Por eso se usa la media de 150 días en el gráfico diario.",
+          "a": 50,
+          "why": "10 semanas × 5 sesiones = 50 sesiones. Es la media que O'Neil y Minervini vigilan en el gráfico diario.",
           "guia": "g4"
         }
       ]

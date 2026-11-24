@@ -192,7 +192,7 @@
         {
           "id": "bt2-4",
           "t": "num",
-          "q": "Pruebas un sistema con las 500 empresas que forman hoy el S&P 500. Supón que en esos 15 años salieron del índice otras 150. ¿Qué porcentaje del universo real quedó fuera de tu prueba? Redondea a 1 decimal.",
+          "q": "Pruebas un sistema de 15 años con las 500 empresas que forman hoy el S&P 500. Supón que en ese periodo salieron del índice otras 150. ¿Qué porcentaje del universo real quedó fuera de tu prueba? Redondea a 1 decimal.",
           "unit": "%",
           "a": 23.1,
           "why": "150 ÷ (500 + 150) = 23,1 %. Muchas de esas empresas salieron por caer: dejarlas fuera hace que el sistema parezca mejor de lo que habría sido.",

@@ -140,19 +140,19 @@
         {
           "id": "zt1-3",
           "t": "num",
-          "q": "El pivote de A está en 40,00 € y colocas el stop en 37,60 €. ¿Qué porcentaje arriesgas por acción?",
+          "q": "El pivote de compra está en 40,00 € y colocas el stop en 37,60 €. ¿Qué porcentaje arriesgas por acción?",
           "unit": "%",
           "a": 6,
           "why": "(40,00 − 37,60) ÷ 40,00 = 6 %. Está dentro del límite del 7-8 %: si el stop lógico quedara más lejos, la entrada estaría demasiado extendida.",
           "guia": "g2",
           "variantes": [
             {
-              "q": "El pivote de A está en 50,00 € y colocas el stop en 46,50 €. ¿Qué porcentaje arriesgas por acción?",
+              "q": "El pivote de compra está en 50,00 € y colocas el stop en 46,50 €. ¿Qué porcentaje arriesgas por acción?",
               "a": 7,
               "why": "(50,00 − 46,50) ÷ 50,00 = 7 %. Está dentro del límite del 7-8 %: si el stop lógico quedara más lejos, la entrada estaría demasiado extendida."
             },
             {
-              "q": "El pivote de A está en 25,00 € y colocas el stop en 23,75 €. ¿Qué porcentaje arriesgas por acción?",
+              "q": "El pivote de compra está en 25,00 € y colocas el stop en 23,75 €. ¿Qué porcentaje arriesgas por acción?",
               "a": 5,
               "why": "(25,00 − 23,75) ÷ 25,00 = 5 %. Está dentro del límite del 7-8 %: si el stop lógico quedara más lejos, la entrada estaría demasiado extendida."
             }
@@ -170,7 +170,7 @@
         {
           "id": "zt1-5",
           "t": "num",
-          "q": "Compras 83 acciones a 40,00 €. ¿Qué porcentaje de la cuenta ocupa la posición? Redondea a 1 decimal.",
+          "q": "Con una cuenta de 20.000 €, compras 83 acciones a 40,00 €. ¿Qué porcentaje de la cuenta ocupa la posición? Redondea a 1 decimal.",
           "unit": "%",
           "a": 16.6,
           "why": "83 × 40,00 € = 3.320 €, y 3.320 ÷ 20.000 = 16,6 %. El tamaño sale del riesgo y del stop, no de cuánto «te gusta» la acción.",

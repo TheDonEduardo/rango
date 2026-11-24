@@ -43,7 +43,7 @@
     {
       "id": "g3",
       "titulo": "Cada sector, su métrica",
-      "texto": "No hay una métrica universal. En software importan el crecimiento, la retención de ingresos y la «regla del 40»; en bancos, el capital y el valor contable.",
+      "texto": "No hay una métrica universal. En software importan el crecimiento, la retención de ingresos y la «regla del 40»; en bancos, el margen de intereses, la morosidad y el capital.",
       "ejemplo": "Crece un 25 % con un margen de caja libre del 18 %: 25 + 18 = 43, por encima de 40."
     },
     {

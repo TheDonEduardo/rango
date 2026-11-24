@@ -68,7 +68,7 @@
         {
           "id": "op23-3",
           "t": "num",
-          "q": "La misma call a 90 días cuesta 3,50 €. ¿Cuántos céntimos por día? Redondea a 1 decimal.",
+          "q": "Una call a 90 días sobre la misma acción cuesta 3,50 €. ¿Cuántos céntimos por día? Redondea a 1 decimal.",
           "unit": "cént.",
           "a": 3.9,
           "why": "350 ÷ 90 = 3,9 céntimos al día. Más tiempo cuesta más en total, pero menos por cada día.",

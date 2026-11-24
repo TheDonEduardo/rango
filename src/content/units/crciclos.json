@@ -15,7 +15,7 @@
       "id": "g2",
       "titulo": "Recuperar cuesta",
       "texto": "Tras una caída del 75 % hay que cuadruplicar el precio para volver. Comprar poco a poco en la caída baja el precio medio.",
-      "ejemplo": "Comprar a 40.000 $ y a 20.000 $: precio medio de 26.667 $."
+      "ejemplo": "Invertir lo mismo a 40.000 $ y a 20.000 $: precio medio de 26.667 $."
     },
     {
       "id": "g3",
@@ -168,7 +168,7 @@
         {
           "id": "cc2-4",
           "t": "num",
-          "q": "Para volver a un 5 % en cripto con una cartera de 22.000 €, ¿cuántos miles de euros vendes? Redondea a 1 decimal.",
+          "q": "Tu cartera es de 22.000 €, con 3.000 € en cripto. Para volver a un 5 % en cripto, ¿cuántos miles de euros vendes? Redondea a 1 decimal.",
           "unit": "mil €",
           "a": 1.9,
           "why": "El 5 % de 22.000 € son 1.100 €. Tienes 3.000 €: vendes 1.900 €. Rebalancear vende en la euforia sin tener que adivinarla.",

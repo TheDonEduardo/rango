@@ -154,7 +154,7 @@
         {
           "id": "fq2-3",
           "t": "num",
-          "q": "Si el coste del capital es del 8 %, ¿cuántos puntos le faltan a ese 5 % para crear valor?",
+          "q": "Una compra rinde un 5 % sobre lo pagado y el coste del capital es del 8 %. ¿Cuántos puntos le faltan para crear valor?",
           "unit": "puntos",
           "a": 3,
           "why": "8 − 5 = 3 puntos. Mientras la compra rinda menos que su coste del capital, destruye valor, aunque haga crecer las ventas.",

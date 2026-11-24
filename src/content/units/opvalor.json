@@ -72,7 +72,7 @@
         {
           "id": "op3-3",
           "t": "num",
-          "q": "Y de esos 7 $ de prima, ¿cuánto es valor temporal?",
+          "q": "Una call con ejercicio 50 $ cotiza a 7 $ con la acción a 54 $. ¿Cuánto de esa prima es valor temporal?",
           "unit": "$",
           "a": 3,
           "why": "7 − 4 = 3 $. El valor temporal es lo que pagas por la posibilidad de que la acción siga moviéndose a tu favor antes del vencimiento. Al vencer, es cero.",

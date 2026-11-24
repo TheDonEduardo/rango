@@ -164,7 +164,7 @@
         {
           "id": "o2-2",
           "t": "num",
-          "q": "Con esa cobertura, ¿a qué precio tiene que estar la acción al vencimiento para no perder dinero?",
+          "q": "Tienes acciones compradas a 50 $ y una put de 45 $ que te costó 1,50 $ por acción. ¿A qué precio tiene que estar la acción al vencimiento para no perder dinero?",
           "unit": "$",
           "a": 51.5,
           "why": "50 + 1,50 = 51,50 $: la acción tiene que subir lo que costó la prima. La cobertura limita la pérdida, pero encarece el punto de equilibrio.",

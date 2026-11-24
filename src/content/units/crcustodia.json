@@ -88,7 +88,7 @@
           "opts": [
             "Perdieron el acceso a sus fondos durante años",
             "Recuperaron todo al día siguiente sin problemas",
-            "Cobraron intereses extra por las molestias",
+            "Recibieron sus monedas al precio de hoy",
             "Les devolvió el dinero el Banco de España"
           ],
           "a": 0,
@@ -97,7 +97,7 @@
           "porque": [
             null,
             "La quiebra dejó los fondos atrapados durante mucho tiempo.",
-            "No hubo compensaciones: muchos recuperaron menos y tarde.",
+            "Se les devolvió el valor en dólares de 2022, muy por debajo de lo que valían sus monedas después.",
             "El Banco de España no cubre criptomonedas."
           ]
         },
@@ -182,7 +182,7 @@
         {
           "id": "ck2-3",
           "t": "num",
-          "q": "Si repites esa compra de 1.000 € todos los meses, ¿cuánto pagas en costes al año?",
+          "q": "Compras 1.000 € de bitcoin cada mes con un margen del 1,5 % y una comisión del 0,5 %. ¿Cuánto pagas en costes al año?",
           "unit": "€",
           "a": 240,
           "why": "20 € × 12 = 240 €. Sobre 12.000 € invertidos, un 2 % que se pierde antes de empezar.",
@@ -203,8 +203,8 @@
           "guia": "g4",
           "porque": [
             null,
-            "Con 10 veces, una caída del 10 % se lleva el 100 %.",
-            "Ese es el resultado sin apalancamiento.",
+            "Ese sería el resultado sin apalancamiento; con 10 veces es el 100 %.",
+            "Eso sería dividir la caída entre 10, no multiplicarla.",
             "El apalancamiento multiplica la pérdida, no la divide."
           ]
         },

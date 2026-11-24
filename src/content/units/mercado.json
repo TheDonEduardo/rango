@@ -280,7 +280,7 @@
           "id": "m2-5",
           "t": "num",
           "q": "El intento de rebote empieza el lunes, que es el día 1. Según O'Neil, ¿a partir de qué día puede llegar el día de confirmación?",
-          "unit": "día",
+          "unit": "",
           "a": 4,
           "why": "A partir del cuarto día del intento. Antes, una subida fuerte puede ser solo un rebote técnico.",
           "guia": "g4"

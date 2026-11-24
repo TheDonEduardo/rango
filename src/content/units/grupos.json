@@ -14,7 +14,7 @@
       "id": "g2",
       "titulo": "Ruptura acompañada",
       "texto": "Una ruptura que acompaña su grupo tiene detrás dinero entrando en el sector. Si las demás caen, desconfía.",
-      "ejemplo": "El dinero rota: detectar a tiempo qué grupos pasan a liderar es media ventaja."
+      "ejemplo": "Rompe tu acción y 4 de las 5 de su grupo marcan máximos: ruptura acompañada."
     },
     {
       "id": "g3",
@@ -283,7 +283,7 @@
         {
           "id": "g2-5",
           "t": "num",
-          "q": "Una subida empieza en 40 € y hace un gap de huida de 50 € a 54 €. Si el gap marca la mitad del movimiento, ¿hasta qué precio llegaría?",
+          "q": "Una subida empieza en 40 € y hace un gap de continuación de 50 € a 54 €, con su mitad en 52 €. Si el gap marca la mitad del movimiento, ¿hasta qué precio llegaría?",
           "unit": "€",
           "a": 64,
           "why": "Mitad del gap: 52 €. De 40 € a 52 € hay 12 €; proyectados desde 52 €, el objetivo es 64 €. Es una referencia, no una garantía.",

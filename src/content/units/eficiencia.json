@@ -58,7 +58,7 @@
         {
           "id": "fw1-3",
           "t": "num",
-          "q": "Tiene 120 M€ en inventario y su coste de ventas es de 540 M€. ¿Cuántos días de inventario tiene? Redondea a 1 decimal.",
+          "q": "Tiene 120 M€ en inventario y su coste de ventas es de 540 M€. ¿Cuántos días de inventario tiene? Usa 365 días y redondea a 1 decimal.",
           "unit": "días",
           "a": 81.1,
           "why": "120 ÷ 540 × 365 = 81,1 días. Es lo que tarda, de media, en vender lo que tiene en el almacén.",
@@ -68,7 +68,7 @@
         {
           "id": "fw1-4",
           "t": "num",
-          "q": "Debe 90 M€ a sus proveedores con un coste de ventas de 540 M€. ¿Cuántos días tarda en pagarles? Redondea a 1 decimal.",
+          "q": "Debe 90 M€ a sus proveedores con un coste de ventas de 540 M€. ¿Cuántos días tarda en pagarles? Usa 365 días y redondea a 1 decimal.",
           "unit": "días",
           "a": 60.8,
           "why": "90 ÷ 540 × 365 = 60,8 días. Pagar más tarde es una forma de financiarse con los proveedores.",
@@ -124,10 +124,10 @@
         {
           "id": "fw2-3",
           "t": "num",
-          "q": "Con el mismo margen del 10 % y la rotación de 1,5, si el apalancamiento baja a 1,2, ¿cuál sería el ROE?",
+          "q": "Con un margen del 10 % y la rotación de 1,5, si el apalancamiento baja a 1,2, ¿cuál sería el ROE?",
           "unit": "%",
           "a": 18,
-          "why": "10 % × 1,5 × 1,2 = 18 %. Casi la mitad del ROE anterior venía de la deuda, no del negocio.",
+          "why": "10 % × 1,5 × 1,2 = 18 %. Frente al 30 % con un apalancamiento de 2, un 40 % de aquel ROE venía de la deuda, no del negocio.",
           "guia": "g3"
         },
         {
@@ -157,7 +157,7 @@
           "unit": "%",
           "a": 9,
           "why": "3 % × 3 = 9 %. Con márgenes pequeños, la eficiencia lo es todo: el supermercado gana por volumen, no por precio.",
-          "guia": "g3"
+          "guia": "g4"
         }
       ],
       "ultimo": 5

@@ -130,7 +130,7 @@
         {
           "id": "zf1-6",
           "t": "num",
-          "q": "Paga 60 M€ al año a sus empleados en acciones. ¿Cuál es el flujo de caja libre ajustado por ese pago?",
+          "q": "Nébula genera 180 M€ de flujo de caja libre y paga 60 M€ al año a sus empleados en acciones. ¿Cuál es el flujo de caja libre ajustado por ese pago?",
           "unit": "M€",
           "a": 120,
           "why": "180 − 60 = 120 M€. El pago en acciones no sale de la caja, pero diluye al accionista: es un coste real y conviene restarlo.",
@@ -175,10 +175,10 @@
         {
           "id": "zf2-4",
           "t": "num",
-          "q": "Si en tres años el valor de empresa es de 5.180 M€ (207 M€ a 25 veces) frente a 3.600 M€ hoy, ¿cuánto se revaloriza? Redondea a 1 decimal.",
+          "q": "Si en tres años el valor de empresa es de 5.175 M€ (207 M€ a 25 veces) frente a 3.600 M€ hoy, ¿cuánto se revaloriza? Redondea a 1 decimal.",
           "unit": "%",
-          "a": 43.9,
-          "why": "(5.180 − 3.600) ÷ 3.600 = 43,9 % en tres años, cerca de un 13 % anual. El múltiplo baja de 30 a 25: lo normal cuando el crecimiento madura.",
+          "a": 43.8,
+          "why": "(5.175 − 3.600) ÷ 3.600 = 43,8 % en tres años, cerca de un 13 % anual. El múltiplo baja de 30 a 25: lo normal cuando el crecimiento madura.",
           "tol": 0.06,
           "guia": "g4"
         },
@@ -207,7 +207,7 @@
         {
           "id": "zf2-6",
           "t": "choice",
-          "q": "Escribes la tesis. ¿Qué dato la invalidaría y te haría vender?",
+          "q": "Tu tesis sobre Nébula se apoya en clientes que se quedan y gastan más. ¿Qué dato la invalidaría y te haría vender?",
           "opts": [
             "Que la acción caiga un 10 % en una semana",
             "Que la retención neta baje de 100 % y el crecimiento se frene",

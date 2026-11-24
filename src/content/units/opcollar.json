@@ -102,7 +102,7 @@
         {
           "id": "op15-4",
           "t": "num",
-          "q": "¿Y cuál es la ganancia máxima por acción de ese collar?",
+          "q": "Tienes acciones a 80 $, una put de 72 $ comprada y una call de 90 $ vendida, con un coste neto de 0,50 $. ¿Cuál es la ganancia máxima por acción de ese collar?",
           "unit": "$",
           "a": 9.5,
           "why": "(90 − 80) − 0,50 = 9,50 $. Por encima de 90 $ te ejercen la call y vendes a ese precio.",
@@ -129,7 +129,7 @@
         {
           "id": "op16-1",
           "t": "num",
-          "q": "La acción se hunde a 60 $. Con el collar pierdes 8,50 $ por acción. ¿Cuánto te ahorra frente a no tenerlo?",
+          "q": "Tus acciones valían 80 $ y tienes un collar. La acción se hunde a 60 $ y con el collar pierdes 8,50 $ por acción. ¿Cuánto te ahorra frente a no tenerlo?",
           "unit": "$",
           "a": 11.5,
           "why": "Sin collar perderías 80 − 60 = 20 $. Con él, 8,50 $. La diferencia, 11,50 $, es lo que vale la put cuando más falta hace.",
@@ -139,7 +139,7 @@
         {
           "id": "op16-2",
           "t": "choice",
-          "q": "La acción sube a 110 $ con tu collar puesto. ¿Qué ocurre?",
+          "q": "Collar sobre acciones a 80 $: put de 72 $ comprada, call de 90 $ vendida y 0,50 $ de coste neto. La acción sube a 110 $. ¿Qué ocurre?",
           "opts": [
             "Vendes a 90 $ y ganas 9,50 $ por acción",
             "Vendes a 110 $ y ganas 30 $ por acción",
@@ -199,7 +199,7 @@
         {
           "id": "op16-5",
           "t": "slide",
-          "q": "Tus acciones valen 80 $ y quieres que la caída hasta el suelo no pase del 10 %. Mueve el ejercicio de la put.",
+          "q": "Tus acciones valen 80 $ y quieres que la caída hasta el suelo no pase del 10 %. Mueve el ejercicio de la put al más bajo que lo cumpla.",
           "label": "Ejercicio de la put",
           "min": 60,
           "max": 80,

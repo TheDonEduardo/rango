@@ -47,7 +47,7 @@
         {
           "id": "fd1-2",
           "t": "num",
-          "q": "Al año siguiente vende lo mismo en dólares, pero el euro sube a 1,20 $. ¿Cuántos millones de euros son ahora? Redondea a 1 decimal.",
+          "q": "Una empresa europea vende 880 M$ en EE. UU. y el euro sube de 1,10 $ a 1,20 $. ¿Cuántos millones de euros son ahora? Redondea a 1 decimal.",
           "unit": "M€",
           "a": 733.3,
           "why": "880 ÷ 1,20 = 733,3 M€. Vende lo mismo, pero en euros parece que vende menos.",

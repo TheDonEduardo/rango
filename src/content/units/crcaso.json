@@ -49,7 +49,7 @@
         {
           "id": "zc1-2",
           "t": "choice",
-          "q": "¿Cómo reparte esos 1.500 €?",
+          "q": "¿Cómo reparte Pablo sus 1.500 € en cripto?",
           "opts": [
             "La mayor parte en bitcoin y algo en ETH y SOL",
             "Todo en la moneda nueva que más ha subido",
@@ -78,7 +78,7 @@
         {
           "id": "zc1-4",
           "t": "choice",
-          "q": "¿Cómo hace la compra?",
+          "q": "¿Cómo compra Pablo sus 1.500 € en cripto?",
           "opts": [
             "Aportando 250 € al mes durante seis meses",
             "Todo hoy, porque lleva una semana cayendo",
@@ -98,7 +98,7 @@
         {
           "id": "zc1-5",
           "t": "num",
-          "q": "Un año después, el BTC ha caído un 50 %, el ETH un 60 % y el SOL un 70 %. ¿Cuánto vale su cartera cripto?",
+          "q": "Pablo tiene 1.050 € en BTC, 300 € en ETH y 150 € en SOL. Un año después, el BTC ha caído un 50 %, el ETH un 60 % y el SOL un 70 %. ¿Cuánto vale su cartera cripto?",
           "unit": "€",
           "a": 690,
           "why": "1.050 × 0,5 + 300 × 0,4 + 150 × 0,3 = 525 + 120 + 45 = 690 €. Las monedas más pequeñas han caído más, como suele pasar en los mercados bajistas.",
@@ -142,7 +142,7 @@
           ],
           "a": 0,
           "why": "El tamaño se eligió pensando en una caída así. Vender convierte la pérdida en definitiva y endeudarse la multiplica.",
-          "guia": "g4",
+          "guia": "g3",
           "porque": [
             null,
             "Vender convierte una caída temporal en una pérdida definitiva.",
@@ -179,7 +179,7 @@
             "Elegir pocas monedas y repartir",
             "Comprar poco a poco en una plataforma autorizada",
             "Guardar las claves de forma segura",
-            "Anotar cada operación para Hacienda",
+            "Declarar las operaciones en la renta",
             "Revisar el peso una vez al año"
           ],
           "why": "Primero el tamaño, que es lo que protege; después qué y cómo comprar; luego la custodia y los impuestos, y al final revisar sin reaccionar a cada caída.",

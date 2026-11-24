@@ -142,7 +142,7 @@
           },
           "unit": "€",
           "a": 285,
-          "why": "1.500 € × 19 % = 285 €. Hasta 6.000 € todo va al primer tramo.",
+          "why": "1.500 € × 19 % = 285 €. Hasta 6.000 € todo va al primer tramo. Compruébalo con la norma vigente.",
           "guia": "g3"
         },
         {
@@ -176,12 +176,12 @@
             "Esperar a traer el dinero a un banco español"
           ],
           "a": 0,
-          "why": "Cada compra y cada venta se convierte a euros con el tipo de cambio de su día. Un bróker extranjero no suele enviar tus datos fiscales a Hacienda: los cálculos son cosa tuya.",
+          "why": "Cada compra y cada venta se convierte a euros con el tipo de cambio de su día. Aunque el bróker informe de saldos e ingresos, la ganancia la calculas y la declaras tú. Compruébalo con la norma vigente.",
           "guia": "g4",
           "porque": [
             null,
             "Cada operación se convierte con el cambio de su día, no el saldo final.",
-            "Un bróker extranjero no suele enviar tus datos fiscales a Hacienda.",
+            "Aunque informe de saldos e ingresos brutos, la ganancia la calculas y la declaras tú.",
             "Tributas al cerrar la operación, traigas o no el dinero a España."
           ]
         },
@@ -196,7 +196,7 @@
           "start": 200,
           "a": 760,
           "unit": "€",
-          "why": "4.000 € × 19 % = 760 €. Apártalo cuando cierras la operación: en junio del año siguiente habrá que pagarlo, hayas ganado o perdido después.",
+          "why": "4.000 € × 19 % = 760 €. Apártalo cuando cierras la operación: en junio del año siguiente habrá que pagarlo, aunque para entonces ya hayas gastado ese dinero.",
           "show": [
             {
               "label": "Sobre la ganancia",

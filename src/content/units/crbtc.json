@@ -10,7 +10,7 @@
       "id": "g1",
       "titulo": "21 millones",
       "texto": "El código de Bitcoin fija un máximo de 21 millones de monedas. Nadie puede emitir más. Por esa escasez se le compara con el oro, aunque tiene pocos años de historia y es mucho más volátil.",
-      "ejemplo": "Con 19,9 millones emitidos, ya existe el 94,8 % del total."
+      "ejemplo": "Con 20,1 millones emitidos, ya existe el 95,7 % del total."
     },
     {
       "id": "g2",
@@ -39,10 +39,10 @@
         {
           "id": "cb1-1",
           "t": "num",
-          "q": "Nunca habrá más de 21 millones de bitcoins. Si ya se han emitido unos 19,9 millones, ¿qué porcentaje del total existe? Redondea a 1 decimal.",
+          "q": "Nunca habrá más de 21 millones de bitcoins. Si ya se han emitido unos 20,1 millones, ¿qué porcentaje del total existe? Redondea a 1 decimal.",
           "unit": "%",
-          "a": 94.8,
-          "why": "19,9 ÷ 21 = 94,8 %. Casi todo el bitcoin que existirá ya está emitido; el resto se irá creando cada vez más despacio hasta el año 2140, aproximadamente.",
+          "a": 95.7,
+          "why": "20,1 ÷ 21 = 95,7 %. Casi todo el bitcoin que existirá ya está emitido; el resto se irá creando cada vez más despacio hasta el año 2140, aproximadamente.",
           "tol": 0.06,
           "guia": "g1"
         },

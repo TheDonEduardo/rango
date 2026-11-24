@@ -47,7 +47,7 @@
             "El gráfico está en Fase 2 con volumen creciente y medias alineadas, así que el mercado ya reconoce que el negocio va bien"
           ],
           "a": 2,
-          "why": "Solo la C tiene motor medible (ventas +40 %), catalizador con fecha (la planta en el 2T) e invalidación concreta (margen por debajo del 56 %). Las demás son relatos razonables, pero no dicen cuándo te equivocas.",
+          "why": "Solo la de las ventas de centros de datos tiene motor medible (ventas +40 %), catalizador con fecha (la planta en el 2T) e invalidación concreta (margen por debajo del 56 %). Las demás son relatos razonables, pero no dicen cuándo te equivocas.",
           "guia": "g1",
           "porque": [
             "No tiene ningún dato medible ni nada que la invalide: es una opinión.",
@@ -119,7 +119,7 @@
           "a": 33.3,
           "why": "4 ÷ 3 − 1 = 33,3 %: con el PER constante, el precio sube lo mismo que el beneficio. Si el PER baja, el potencial es menor.",
           "tol": 0.06,
-          "guia": "g3"
+          "guia": "g2"
         }
       ]
     },

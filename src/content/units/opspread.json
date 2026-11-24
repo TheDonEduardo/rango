@@ -100,7 +100,7 @@
         {
           "id": "op13-4",
           "t": "num",
-          "q": "¿A qué precio de la acción al vencimiento no ganas ni pierdes con ese spread alcista?",
+          "q": "Compras la call de 100 $ y vendes la de 110 $ con un coste neto de 3 $. ¿A qué precio de la acción al vencimiento no ganas ni pierdes con ese spread alcista?",
           "unit": "$",
           "a": 103,
           "why": "100 + 3 = 103 $. Es el ejercicio de la call comprada más el coste neto. La call sola, a 5 $, necesitaría 105 $.",
@@ -109,7 +109,7 @@
         {
           "id": "op13-5",
           "t": "num",
-          "q": "La acción acaba en 106 $ al vencimiento. ¿Cuánto ganas por acción con el spread alcista de 100 $ y 110 $?",
+          "q": "La acción acaba en 106 $ al vencimiento. ¿Cuánto ganas por acción con el spread alcista de 100 $ y 110 $, que te costó 3 $?",
           "unit": "$",
           "a": 3,
           "why": "La call de 100 $ vale 6 $ y la de 110 $ vence sin valor: 6 − 3 de coste = 3 $.",
@@ -145,7 +145,7 @@
         {
           "id": "op14-3",
           "t": "choice",
-          "q": "¿Para qué sirve la put de 45 $ que compras en ese spread de crédito?",
+          "q": "Vendes la put de 50 $ y compras la de 45 $ por 0,80 $ en un spread de crédito. ¿Para qué sirve la put de 45 $?",
           "opts": [
             "Limita la pérdida si la acción se hunde",
             "Aumenta la prima que cobras al abrirlo",

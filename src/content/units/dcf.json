@@ -103,7 +103,7 @@
         {
           "id": "f11a-4",
           "t": "num",
-          "q": "Ese valor de 800 M$, menos 200 M$ de deuda neta, entre 50 M de acciones. ¿Valor por acción?",
+          "q": "Una empresa vale 800 M$, tiene 200 M$ de deuda neta y 50 M de acciones. ¿Valor por acción?",
           "unit": "$",
           "a": 12,
           "why": "(800 − 200) ÷ 50 = 12 $. La deuda es de los acreedores: el accionista solo se queda con lo que sobra.",
@@ -150,7 +150,7 @@
         {
           "id": "f11b-2",
           "t": "num",
-          "q": "Y si en lugar de eso supones un crecimiento del 4 % (con el 8 % exigido), ¿cuánto sube el valor frente a los 800 M$?",
+          "q": "Una empresa con un flujo de 40 M$ el próximo año, un crecimiento del 3 % y un 8 % exigido vale 800 M$. Si supones un crecimiento del 4 %, ¿cuánto sube su valor?",
           "unit": "%",
           "a": 25,
           "why": "40 ÷ (0,08 − 0,04) = 1.000 M$: un 25 % más por un punto de crecimiento. Pequeños cambios en los supuestos mueven mucho el resultado.",
@@ -188,20 +188,20 @@
         {
           "id": "f11b-5",
           "t": "slide",
-          "q": "Estimas un valor de 80 € por acción y exiges un margen de seguridad del 25 %. Elige el precio máximo que pagarías.",
+          "q": "Estimas un valor de 120 € por acción y exiges un margen de seguridad del 30 %. Elige el precio máximo que pagarías.",
           "label": "Precio máximo",
-          "min": 40,
-          "max": 100,
+          "min": 60,
+          "max": 150,
           "step": 1,
-          "start": 75,
-          "a": 60,
+          "start": 110,
+          "a": 84,
           "unit": "€",
-          "why": "80 × (1 − 0,25) = 60 €: pagando 60 € tienes un 25 % de colchón por si tu estimación del valor es demasiado optimista.",
+          "why": "120 × (1 − 0,30) = 84 €: pagando 84 € tienes un 30 % de colchón por si tu estimación del valor es demasiado optimista.",
           "show": [
             {
               "label": "Descuento sobre el valor",
               "b": 100,
-              "k": -1.25,
+              "k": -0.8333,
               "unit": "%"
             }
           ],

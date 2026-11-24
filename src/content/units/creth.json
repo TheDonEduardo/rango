@@ -155,7 +155,7 @@
         {
           "id": "ce2-3",
           "t": "num",
-          "q": "Tus 4 ETH valían 3.000 $ cada uno. Un año después tienes 4,12 ETH, pero el precio ha caído a 1.500 $. ¿Cuánto has perdido en dólares? Redondea a 1 decimal.",
+          "q": "Tus 4 ETH valían 3.000 $ cada uno. Un año después tienes 4,12 ETH, pero el precio ha caído a 1.500 $. ¿Qué porcentaje has perdido, medido en dólares? Redondea a 1 decimal.",
           "unit": "%",
           "a": 48.5,
           "why": "Antes: 4 × 3.000 = 12.000 $. Después: 4,12 × 1.500 = 6.180 $. 1 − 6.180 ÷ 12.000 = 48,5 %. El staking da más monedas, pero no protege del precio.",

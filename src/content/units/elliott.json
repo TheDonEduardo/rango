@@ -188,7 +188,7 @@
         {
           "id": "el1-3",
           "t": "num",
-          "q": "Con esa onda 1 de 12,00 € y la onda 2 terminada en 44,60 €, ¿dónde acabaría una onda 3 que midiera 1,618 veces la onda 1?",
+          "q": "Con una onda 1 de 12,00 € y la onda 2 terminada en 44,60 €, ¿dónde acabaría una onda 3 que midiera 1,618 veces la onda 1?",
           "unit": "€",
           "a": 64.02,
           "why": "1,618 × 12,00 = 19,42 €; 44,60 + 19,42 = 64,02 €. Es un objetivo de referencia para vender una parte, no un precio garantizado.",

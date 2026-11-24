@@ -60,7 +60,7 @@
         {
           "id": "f2a-2",
           "t": "num",
-          "q": "Misma acción a 90,00 $. Los analistas estiman un BPA de 4,50 $ para los próximos 12 meses. ¿PER adelantado?",
+          "q": "Una acción cotiza a 90,00 $ con un BPA de 3,00 $ en los últimos 12 meses, y los analistas estiman 4,50 $ para los próximos 12. ¿PER adelantado?",
           "unit": "",
           "a": 20,
           "why": "90,00 ÷ 4,50 = 20 veces, frente a 30 con el BPA pasado. Si el beneficio crece un 50 % como se espera, la misma acción pasa a ser bastante más barata.",
@@ -110,7 +110,7 @@
             "Las tres por igual"
           ],
           "a": 0,
-          "why": "PEG: A 40 ÷ 50 = 0,8; B 15 ÷ 5 = 3; C 25 ÷ 10 = 2,5. El PER más alto es el más barato por unidad de crecimiento: por eso los líderes de Minervini rara vez tienen PER bajo.",
+          "why": "PEG: A 40 ÷ 50 = 0,8; B 15 ÷ 5 = 3; C 25 ÷ 10 = 2,5. Aquí, la del PER más alto es la más barata por unidad de crecimiento: por eso los líderes de Minervini rara vez tienen PER bajo.",
           "guia": "g2",
           "porque": [
             null,

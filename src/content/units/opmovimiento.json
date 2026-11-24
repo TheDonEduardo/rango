@@ -27,7 +27,7 @@
       "id": "g4",
       "titulo": "Antes de resultados",
       "texto": "Las primas suben antes de un dato y se desploman después. Comprar movimiento justo antes suele ser caro.",
-      "ejemplo": "Con la acción en 115 $, el straddle de 7,50 $ gana 7,50 $."
+      "ejemplo": "Una prima inflada antes del dato exige un movimiento mayor para ganar."
     }
   ],
   "lessons": [
@@ -78,7 +78,7 @@
         {
           "id": "op21-4",
           "t": "num",
-          "q": "¿Y por debajo de qué precio empiezas a ganar?",
+          "q": "Pagas 7,50 $ por un straddle con ejercicio 100 $. ¿Por debajo de qué precio empiezas a ganar?",
           "unit": "$",
           "a": 92.5,
           "why": "100 − 7,50 = 92,50 $. Entre 92,50 $ y 107,50 $, el straddle pierde dinero al vencimiento.",
@@ -88,7 +88,7 @@
         {
           "id": "op21-5",
           "t": "num",
-          "q": "Al vencimiento, la acción está en 115 $. ¿Cuánto ganas por acción con el straddle?",
+          "q": "Pagaste 7,50 $ por un straddle con ejercicio 100 $. Al vencimiento, la acción está en 115 $. ¿Cuánto ganas por acción?",
           "unit": "$",
           "a": 7.5,
           "why": "La call vale 15 $ y la put, nada: 15 − 7,50 = 7,50 $. Hacía falta un movimiento del 15 % para doblar el coste.",
@@ -128,14 +128,14 @@
           "q": "La acción está a 100 $. Compras la call de 110 $ por 1,50 $ y la put de 90 $ por 1,20 $. ¿Cuánto pagas por acción?",
           "unit": "$",
           "a": 2.7,
-          "why": "1,50 + 1,20 = 2,70 $, bastante menos que el straddle de 7,50 $.",
+          "why": "1,50 + 1,20 = 2,70 $, bastante menos que un straddle en el dinero.",
           "tol": 0.006,
           "guia": "g2"
         },
         {
           "id": "op22-3",
           "t": "num",
-          "q": "Con ese strangle de 2,70 $, ¿por encima de qué precio empiezas a ganar?",
+          "q": "Con la acción a 100 $, compras la call de 110 $ y la put de 90 $ por 2,70 $ en total. ¿Por encima de qué precio empiezas a ganar con ese strangle?",
           "unit": "$",
           "a": 112.7,
           "why": "110 + 2,70 = 112,70 $. La acción debe subir casi un 13 %: más barato a cambio de necesitar más movimiento.",
@@ -170,7 +170,7 @@
           "a": 7.5,
           "why": "7,50 ÷ 100 = 7,5 %. Comprar el straddle es apostar a que se moverá más que eso; venderlo, a que se moverá menos.",
           "tol": 0.006,
-          "guia": "g4"
+          "guia": "g3"
         }
       ],
       "ultimo": 5

@@ -155,7 +155,7 @@
         {
           "id": "tp2-3",
           "t": "num",
-          "q": "Desde 32 €, ¿cuánto tiene que subir la acción para volver a tu precio medio de 36 €?",
+          "q": "Compraste a 40 € y a 32 €, con un precio medio de 36 €. Desde 32 €, ¿cuánto tiene que subir la acción para volver a tu precio medio?",
           "unit": "%",
           "a": 12.5,
           "why": "36 ÷ 32 − 1 = 12,5 %. Parece poco, pero la acción viene de caer un 20 % y nada garantiza que se recupere.",

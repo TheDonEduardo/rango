@@ -138,7 +138,7 @@
             "Están exentas si son menos de 1.000 € al año"
           ],
           "a": 0,
-          "why": "Las monedas recibidas por staking tributan cuando las recibes, por su valor en euros de ese día. Si después las vendes, su ganancia o pérdida se calcula aparte.",
+          "why": "Las monedas recibidas por staking tributan cuando las recibes, por su valor en euros de ese día. Si después las vendes, su ganancia o pérdida se calcula aparte. Es el criterio de Hacienda: compruébalo con la norma vigente.",
           "guia": "g3",
           "porque": [
             null,

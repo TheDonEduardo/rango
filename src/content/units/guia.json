@@ -140,7 +140,7 @@
         {
           "id": "f10b-2",
           "t": "num",
-          "q": "La acción sigue cotizando a 88 $. ¿Cuál es su PER adelantado con la nueva estimación de 4,40 $?",
+          "q": "Una acción cotiza a 88 $ y el consenso de BPA sube de 4,00 $ a 4,40 $. ¿Cuál es su PER adelantado ahora?",
           "unit": "",
           "a": 20,
           "why": "88 ÷ 4,40 = 20, frente a 88 ÷ 4,00 = 22 hace tres meses. Sin moverse el precio, la acción se ha abaratado.",
