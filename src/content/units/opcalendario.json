@@ -1,0 +1,193 @@
+{
+  "n": 11,
+  "id": "opcalendario",
+  "track": "derivados",
+  "title": "Spread de calendario",
+  "blurb": "Vender una opción cercana y comprar la misma a más plazo: cuándo gana, cuánto se puede perder y cómo gestionarlo.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Vender tiempo corto, comprar tiempo largo",
+      "texto": "Un spread de calendario vende una opción de vencimiento cercano y compra otra del mismo ejercicio a más plazo. Pagas la diferencia.",
+      "ejemplo": "Vendes la call 100 a 30 días por 2,50 $ y compras la de 90 días por 5,00 $: pagas 2,50 $."
+    },
+    {
+      "id": "g2",
+      "titulo": "Por qué puede ganar",
+      "texto": "La opción cercana pierde su valor temporal más deprisa. Si el precio se queda cerca del ejercicio, la vendida vence sin valor y la comprada conserva buena parte del suyo.",
+      "ejemplo": "Al vencer la corta con la acción a 100 $, la larga vale 4,00 $: ganas 1,50 $."
+    },
+    {
+      "id": "g3",
+      "titulo": "Pérdida máxima y riesgo",
+      "texto": "Lo más que pierdes es lo pagado. Un movimiento fuerte en cualquier sentido te perjudica: las dos opciones acaban valiendo casi lo mismo.",
+      "ejemplo": "2,50 $ × 100 = 250 $ por contrato como máximo. Con la acción a 120 $, pierdes 150 $."
+    },
+    {
+      "id": "g4",
+      "titulo": "Volatilidad y gestión",
+      "texto": "La opción larga gana más con una subida de la volatilidad implícita. Cuando vence la corta, cierras o vendes otra opción corta.",
+      "ejemplo": "Con 25.000 $ y un 2 % de riesgo: 500 $, dos contratos de 250 $."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "op29",
+      "title": "Cómo funciona",
+      "ex": [
+        {
+          "id": "op29-1",
+          "t": "num",
+          "q": "Vendes una call 100 a 30 días por 2,50 $ y compras la call 100 a 90 días por 5,00 $. ¿Cuánto pagas por contrato de 100 acciones?",
+          "unit": "$",
+          "a": 250,
+          "why": "(5,00 − 2,50) × 100 = 250 $. Es también lo máximo que puedes perder.",
+          "guia": "g1"
+        },
+        {
+          "id": "op29-2",
+          "t": "choice",
+          "q": "¿Por qué la call a 30 días pierde valor más deprisa que la de 90 días?",
+          "opts": [
+            "Porque tiene un ejercicio distinto",
+            "Porque es una put y la otra una call",
+            "La theta se acelera cerca del vencimiento",
+            "Porque la de 90 días no tiene theta"
+          ],
+          "a": 2,
+          "why": "Cuanto más cerca está el vencimiento, más deprisa se pierde el valor temporal. El spread de calendario vende ese desgaste rápido y compra uno más lento.",
+          "guia": "g2",
+          "porque": [
+            "Las dos opciones tienen el mismo ejercicio, 100 $.",
+            "Las dos opciones son calls.",
+            null,
+            "La de 90 días también pierde valor temporal, pero más despacio."
+          ]
+        },
+        {
+          "id": "op29-3",
+          "t": "num",
+          "q": "Al vencer la call corta, la acción está en 100 $ y la call larga vale 4,00 $. ¿Cuánto ganas por contrato?",
+          "unit": "$",
+          "a": 150,
+          "why": "La corta vence sin valor y la larga vale 4,00 $: (4,00 − 2,50) × 100 = 150 $.",
+          "guia": "g2"
+        },
+        {
+          "id": "op29-4",
+          "t": "num",
+          "q": "¿Qué porcentaje supone esa ganancia de 150 $ sobre los 250 $ pagados?",
+          "unit": "%",
+          "a": 60,
+          "why": "150 ÷ 250 = 60 %.",
+          "guia": "g2"
+        },
+        {
+          "id": "op29-5",
+          "t": "choice",
+          "q": "¿Qué escenario busca un spread de calendario?",
+          "opts": [
+            "Que el precio se quede cerca del ejercicio",
+            "Una subida muy fuerte de la acción",
+            "Una caída muy fuerte de la acción",
+            "Que la volatilidad implícita se hunda"
+          ],
+          "a": 0,
+          "why": "Con el precio en el ejercicio, la opción vendida vence sin valor y la comprada conserva la mayor parte de su valor temporal.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "Con una subida fuerte, las dos calls valen casi lo mismo y pierdes.",
+            "Con una caída fuerte, las dos calls valen casi cero y pierdes lo pagado.",
+            "Si cae la volatilidad implícita, la opción larga pierde más valor que la corta."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "op30",
+      "title": "Riesgos y gestión",
+      "ex": [
+        {
+          "id": "op30-1",
+          "t": "num",
+          "q": "Al vencer la corta, la acción está en 120 $: la call corta vale 20 $ y la larga 21 $. ¿Cuánto pierdes por contrato?",
+          "unit": "$",
+          "a": 150,
+          "why": "La posición vale 21 − 20 = 1 $ y pagaste 2,50 $: pierdes 1,50 × 100 = 150 $.",
+          "guia": "g3"
+        },
+        {
+          "id": "op30-2",
+          "t": "num",
+          "q": "Si en cambio la acción cae a 80 $, la corta vence sin valor y la larga vale 0,50 $. ¿Cuánto pierdes por contrato?",
+          "unit": "$",
+          "a": 200,
+          "why": "(2,50 − 0,50) × 100 = 200 $. Lejos del ejercicio, en cualquier sentido, el spread de calendario pierde.",
+          "guia": "g3"
+        },
+        {
+          "id": "op30-3",
+          "t": "choice",
+          "q": "¿Cómo afecta al spread de calendario una subida de la volatilidad implícita?",
+          "opts": [
+            "Le perjudica siempre: vende volatilidad",
+            "Le beneficia: la opción larga gana más",
+            "No le afecta: las dos se compensan",
+            "Solo le afecta el día del vencimiento"
+          ],
+          "a": 1,
+          "why": "La opción a más plazo tiene más vega: una subida de la volatilidad implícita le suma más valor del que añade a la corta.",
+          "guia": "g4",
+          "porque": [
+            "La opción comprada, a más plazo, tiene más vega que la vendida.",
+            null,
+            "No se compensan: la larga es más sensible a la volatilidad.",
+            "La volatilidad implícita mueve el valor cada día, no solo al vencimiento."
+          ]
+        },
+        {
+          "id": "op30-4",
+          "t": "slide",
+          "q": "Cartera de 25.000 $ y arriesgas un 2 % por operación. Cada spread de calendario puede perder 250 $. ¿Cuántos abres?",
+          "label": "Contratos",
+          "min": 1,
+          "max": 8,
+          "step": 1,
+          "start": 6,
+          "a": 2,
+          "unit": "",
+          "why": "El 2 % de 25.000 $ son 500 $, y 500 ÷ 250 = 2. El tamaño se decide con lo pagado, que es la pérdida máxima.",
+          "show": [
+            {
+              "label": "Pérdida máxima",
+              "k": 250,
+              "unit": "$"
+            },
+            {
+              "label": "Riesgo de la cartera",
+              "k": 1,
+              "unit": "%"
+            }
+          ],
+          "guia": "g3"
+        },
+        {
+          "id": "op30-5",
+          "t": "order",
+          "q": "Ordena la vida de un spread de calendario que sale bien.",
+          "items": [
+            "Vendes la call corta y compras la larga",
+            "La acción se mantiene cerca del ejercicio",
+            "La call corta vence sin valor",
+            "Cierras la larga o vendes otra corta"
+          ],
+          "why": "El beneficio llega cuando vence la corta. Después decides: cerrar la larga o vender otra opción corta sobre ella.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

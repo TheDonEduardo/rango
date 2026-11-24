@@ -1,0 +1,204 @@
+{
+  "n": 13,
+  "id": "crfirmas",
+  "track": "cripto",
+  "title": "Firmar con cuidado",
+  "blurb": "Permisos de gasto, direcciones envenenadas y un monedero aparte para conectarte a aplicaciones.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Firmar es autorizar",
+      "texto": "Cada firma con tu monedero autoriza algo: un envío, un permiso a un contrato o un mensaje. Lee qué te pide antes de aceptar: una firma no se deshace.",
+      "ejemplo": "«Permitir gastar tus monedas estables» no es una consulta: da acceso a tu saldo."
+    },
+    {
+      "id": "g2",
+      "titulo": "Permisos exactos, no ilimitados",
+      "texto": "Muchas aplicaciones piden permiso ilimitado para gastar un token. Si el contrato falla o lo atacan, puede vaciar ese saldo. Limítalo a lo que vas a usar y revoca los permisos viejos.",
+      "ejemplo": "Saldo de 8.000 $ y operación de 500 $: con permiso exacto arriesgas 500 $."
+    },
+    {
+      "id": "g3",
+      "titulo": "Direcciones envenenadas",
+      "texto": "Los estafadores envían cantidades mínimas desde direcciones casi iguales a las tuyas para que las copies del historial. Copia la dirección de la fuente original y compárala entera.",
+      "ejemplo": "Coinciden los 4 primeros y los 4 últimos caracteres, pero el resto es distinto."
+    },
+    {
+      "id": "g4",
+      "titulo": "Un monedero para el día a día",
+      "texto": "Usa un monedero con poco saldo para conectarte a aplicaciones y guarda el resto en otro que nunca firma con ellas.",
+      "ejemplo": "10.000 € en cripto: unos 500 € en el de uso diario."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "cg1",
+      "title": "Permisos",
+      "ex": [
+        {
+          "id": "cg1-1",
+          "t": "choice",
+          "q": "Una aplicación te pide «permitir gastar tus monedas estables» sin límite. ¿Qué significa?",
+          "opts": [
+            "Que solo quiere consultar tu saldo actual",
+            "Que te va a ingresar monedas de regalo",
+            "Su contrato podrá mover todo ese saldo",
+            "Que es una firma sin ningún efecto real"
+          ],
+          "a": 2,
+          "why": "Un permiso de gasto autoriza a un contrato a mover tus monedas sin volver a preguntarte. Si es ilimitado, alcanza a todo el saldo de ese token.",
+          "guia": "g1",
+          "porque": [
+            "Consultar un saldo público no requiere firmar nada.",
+            "Para recibir monedas no hace falta dar permisos.",
+            null,
+            "Un permiso de gasto tiene efecto hasta que lo revocas."
+          ]
+        },
+        {
+          "id": "cg1-2",
+          "t": "num",
+          "q": "Tienes 8.000 $ en monedas estables y vas a usar 500 $ en una aplicación. Con un permiso ilimitado, ¿cuántos miles de dólares podría llevarse su contrato si lo atacan?",
+          "unit": "mil $",
+          "a": 8,
+          "why": "El permiso ilimitado alcanza todo el saldo de ese token: 8.000 $.",
+          "guia": "g2"
+        },
+        {
+          "id": "cg1-3",
+          "t": "num",
+          "q": "¿Y cuántos dólares, si limitas el permiso a lo que vas a usar?",
+          "unit": "$",
+          "a": 500,
+          "why": "Con un permiso exacto, el contrato solo puede mover los 500 $ autorizados.",
+          "guia": "g2"
+        },
+        {
+          "id": "cg1-4",
+          "t": "num",
+          "q": "Revocar cada permiso antiguo cuesta 0,40 $ de comisión. ¿Cuánto pagas por revocar 6?",
+          "unit": "$",
+          "a": 2.4,
+          "why": "6 × 0,40 = 2,40 $. Muy poco frente a lo que esos permisos podían mover.",
+          "guia": "g2"
+        },
+        {
+          "id": "cg1-5",
+          "t": "choice",
+          "q": "¿Cuándo conviene revocar un permiso de gasto?",
+          "opts": [
+            "Cuando ya no usas esa aplicación",
+            "Nunca: revocar es peligroso",
+            "Solo si la aplicación ya ha sido atacada",
+            "Cada vez que el precio sube"
+          ],
+          "a": 0,
+          "why": "Un permiso olvidado sigue activo años después. Revocarlo cuesta poco y cierra una puerta que ya no usas.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "Revocar solo quita permisos; no pone en riesgo tus fondos.",
+            "Si esperas al ataque, puede que ya sea tarde.",
+            "El precio no tiene nada que ver con los permisos."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "cg2",
+      "title": "Direcciones y monederos",
+      "ex": [
+        {
+          "id": "cg2-1",
+          "t": "choice",
+          "q": "Vas a enviar fondos a una dirección de tu historial que coincide en los 4 primeros y los 4 últimos caracteres. ¿Qué haces?",
+          "opts": [
+            "Enviar: si coinciden los extremos, es la buena",
+            "Copiarla del historial, que es más cómodo",
+            "Enviar todo de una vez para ahorrar comisión",
+            "Copiarla de la fuente original y compararla entera"
+          ],
+          "a": 3,
+          "why": "Los estafadores crean direcciones con los mismos extremos y te envían cantidades mínimas para que aparezcan en tu historial. Solo la fuente original es fiable.",
+          "guia": "g3",
+          "porque": [
+            "Los estafadores crean direcciones con los mismos extremos a propósito.",
+            "El historial es justo donde aparecen las direcciones envenenadas.",
+            "Si la dirección es falsa, enviarlo todo de una vez lo pierde todo.",
+            null
+          ]
+        },
+        {
+          "id": "cg2-2",
+          "t": "num",
+          "q": "Tienes 10.000 € en cripto y dejas un 5 % en el monedero de uso diario. ¿Cuántos euros tiene ese monedero?",
+          "unit": "€",
+          "a": 500,
+          "why": "El 5 % de 10.000 € son 500 €. Si algo sale mal al firmar, es lo único expuesto.",
+          "guia": "g4"
+        },
+        {
+          "id": "cg2-3",
+          "t": "order",
+          "q": "Ordena los pasos antes de firmar en una aplicación nueva.",
+          "items": [
+            "Compruebas que la web es la oficial",
+            "Conectas el monedero de uso diario",
+            "Lees qué autoriza exactamente la firma",
+            "Limitas el permiso a lo que vas a usar",
+            "Firmas y revisas el resultado en el explorador"
+          ],
+          "why": "Cada paso cierra una vía de robo: la web falsa, el saldo expuesto, la firma que no entiendes y el permiso de más.",
+          "guia": "g1"
+        },
+        {
+          "id": "cg2-4",
+          "t": "match",
+          "q": "Empareja cada riesgo con su defensa.",
+          "pairs": [
+            [
+              "Permiso ilimitado",
+              "Limitarlo y revocarlo al terminar"
+            ],
+            [
+              "Dirección envenenada",
+              "Copiarla de la fuente original"
+            ],
+            [
+              "Web falsa de una aplicación",
+              "Entrar desde un enlace guardado"
+            ],
+            [
+              "Firma que no entiendes",
+              "No firmar hasta saber qué autoriza"
+            ]
+          ],
+          "why": "La mayoría de los robos no rompen la cadena: aprovechan una firma o una dirección que el usuario no comprobó.",
+          "guia": "g2"
+        },
+        {
+          "id": "cg2-5",
+          "t": "choice",
+          "q": "Un mensaje urgente te pide firmar para «verificar tu monedero» o perderás tus fondos. ¿Qué haces?",
+          "opts": [
+            "No firmar: es un intento de robo",
+            "Firmar rápido para no perder los fondos",
+            "Firmar con el monedero principal",
+            "Enviar la frase semilla en lugar de firmar"
+          ],
+          "a": 0,
+          "why": "Ningún monedero necesita que lo «verifiques» con una firma. La urgencia busca que firmes sin leer lo que autorizas.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "La urgencia es la herramienta del estafador para que no leas qué firmas.",
+            "Firmar con el monedero principal expone todo tu saldo.",
+            "La frase semilla nunca se envía a nadie."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

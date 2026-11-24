@@ -1,0 +1,189 @@
+{
+  "n": 26,
+  "id": "escisiones",
+  "track": "fundamental",
+  "title": "Escisiones",
+  "blurb": "Cuando una empresa se parte en dos: el ajuste del precio, la suma de partes, las ventas forzadas y la deuda cargada.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Una empresa se parte en dos",
+      "texto": "En una escisión, la matriz reparte entre sus accionistas acciones de una filial, que pasa a cotizar por separado. El valor total no cambia ese día: se reparte.",
+      "ejemplo": "Una acción de la filial por cada 2 de la matriz: con 300 acciones recibes 150."
+    },
+    {
+      "id": "g2",
+      "titulo": "El precio se ajusta",
+      "texto": "La matriz baja lo que vale la parte entregada. Tu patrimonio es el mismo, ahora repartido en dos acciones.",
+      "ejemplo": "Matriz a 50 € y filial a 20 €, una por cada 2: la matriz pasa a 50 − 20 ÷ 2 = 40 €."
+    },
+    {
+      "id": "g3",
+      "titulo": "Suma de partes",
+      "texto": "Los conglomerados a veces cotizan por menos que la suma de sus negocios. Separarlos puede cerrar ese descuento.",
+      "ejemplo": "Negocios de 3.000 y 2.000 millones menos 500 de deuda: 4.500. Si cotiza a 3.600, descuento del 20 %."
+    },
+    {
+      "id": "g4",
+      "titulo": "Ventas forzadas y deuda",
+      "texto": "Muchos fondos venden la filial porque no encaja en su índice o en su mandato, y eso puede abaratarla las primeras semanas. Vigila si la matriz le ha cargado deuda al separarla.",
+      "ejemplo": "Filial con deuda neta de 5 veces su EBITDA: la matriz se ha limpiado a su costa."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "fj1",
+      "title": "Qué pasa en una escisión",
+      "ex": [
+        {
+          "id": "fj1-1",
+          "t": "num",
+          "q": "Tienes 300 acciones de una matriz que entrega 1 acción de su filial por cada 2. ¿Cuántas acciones de la filial recibes?",
+          "unit": "acc.",
+          "a": 150,
+          "why": "300 ÷ 2 = 150 acciones de la filial.",
+          "guia": "g1"
+        },
+        {
+          "id": "fj1-2",
+          "t": "num",
+          "q": "La matriz cotizaba a 50 € y la filial empieza a cotizar a 20 €, una por cada 2 acciones de la matriz. ¿A qué precio teórico queda la matriz?",
+          "unit": "€",
+          "a": 40,
+          "why": "50 − 20 ÷ 2 = 40 €. La matriz baja lo que vale la parte que ha entregado.",
+          "guia": "g2"
+        },
+        {
+          "id": "fj1-3",
+          "t": "num",
+          "q": "Con 300 acciones de la matriz a 40 € y 150 de la filial a 20 €, ¿cuántos miles de euros tienes?",
+          "unit": "mil €",
+          "a": 15,
+          "why": "300 × 40 + 150 × 20 = 12.000 + 3.000 = 15.000 €.",
+          "guia": "g2"
+        },
+        {
+          "id": "fj1-4",
+          "t": "choice",
+          "q": "Antes de la escisión tenías 300 acciones a 50 €. ¿Qué ha pasado con tu patrimonio?",
+          "opts": [
+            "Has ganado: ahora tienes dos empresas",
+            "Has perdido: la matriz vale menos",
+            "No ha cambiado: se ha repartido en dos",
+            "Han subido tus acciones de la matriz"
+          ],
+          "a": 2,
+          "why": "300 × 50 = 15.000 € antes y 15.000 € después. La escisión reparte el valor; ganar o perder depende de cómo coticen las dos después.",
+          "guia": "g2",
+          "porque": [
+            "Tener dos empresas no añade valor por sí mismo: es lo mismo dividido.",
+            "La matriz baja, pero la filial recibida lo compensa.",
+            null,
+            "La matriz baja de precio: lo que vale la filial sale de ella."
+          ]
+        },
+        {
+          "id": "fj1-5",
+          "t": "choice",
+          "q": "¿Por qué una empresa decide escindir uno de sus negocios?",
+          "opts": [
+            "Para que cada negocio se valore por separado",
+            "Para que sus acciones bajen de precio",
+            "Para pagar menos dividendos a sus accionistas",
+            "Para ocultar sus pérdidas a los inversores"
+          ],
+          "a": 0,
+          "why": "Separados, cada negocio tiene sus propios inversores, directivos e incentivos, y el mercado puede valorarlo con los múltiplos de su sector.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "La bajada de precio es un ajuste técnico, no el objetivo.",
+            "La escisión no tiene que ver con los dividendos.",
+            "Las dos empresas siguen obligadas a publicar sus cuentas."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "fj2",
+      "title": "Valor oculto y riesgos",
+      "ex": [
+        {
+          "id": "fj2-1",
+          "t": "num",
+          "q": "Un conglomerado tiene dos negocios que valen 3.000 y 2.000 millones de euros, y 500 millones de deuda neta. ¿Cuántos miles de millones vale la suma de partes?",
+          "unit": "mil mill. €",
+          "a": 4.5,
+          "why": "3.000 + 2.000 − 500 = 4.500 millones: 4,5 mil millones.",
+          "tol": 0.05,
+          "guia": "g3"
+        },
+        {
+          "id": "fj2-2",
+          "t": "num",
+          "q": "Si su capitalización es de 3.600 millones, ¿qué descuento tiene frente a esa suma de partes de 4.500 millones?",
+          "unit": "%",
+          "a": 20,
+          "why": "1 − 3.600 ÷ 4.500 = 20 %. Una escisión puede cerrar ese descuento, aunque no siempre ocurre.",
+          "guia": "g3"
+        },
+        {
+          "id": "fj2-3",
+          "t": "choice",
+          "q": "Tras la escisión, la filial cae un 15 % en sus primeras semanas sin ninguna noticia. ¿Qué explicación es habitual?",
+          "opts": [
+            "Que el negocio de la filial ha quebrado",
+            "Ventas de fondos que no pueden tenerla",
+            "Que la matriz ha recomprado sus acciones",
+            "Que la escisión se ha anulado por ley"
+          ],
+          "a": 1,
+          "why": "Muchos fondos venden la filial porque no está en su índice o es pequeña para su mandato. Esa presión no tiene que ver con el negocio y puede ser temporal.",
+          "guia": "g4",
+          "porque": [
+            "Sin noticias, una quiebra no explica la caída.",
+            null,
+            "Una recompra de la matriz no hace caer a la filial.",
+            "Si la escisión se anulara, la filial dejaría de cotizar."
+          ]
+        },
+        {
+          "id": "fj2-4",
+          "t": "num",
+          "q": "La filial nace con 1.000 millones de deuda neta y un EBITDA de 200 millones. ¿Cuántas veces el EBITDA es su deuda?",
+          "unit": "",
+          "a": 5,
+          "why": "1.000 ÷ 200 = 5 veces. Una señal de que la matriz le ha pasado deuda para quedarse ella más limpia.",
+          "guia": "g4"
+        },
+        {
+          "id": "fj2-5",
+          "t": "match",
+          "q": "Empareja cada señal de una escisión con lo que suele indicar.",
+          "pairs": [
+            [
+              "Deuda cargada a la filial",
+              "La matriz se limpia a costa de la nueva"
+            ],
+            [
+              "Directivos que se van a la filial",
+              "Confían en el negocio separado"
+            ],
+            [
+              "Descuento sobre la suma de partes",
+              "Valor que la separación puede aflorar"
+            ],
+            [
+              "Ventas de fondos indexados",
+              "Presión temporal ajena al negocio"
+            ]
+          ],
+          "why": "En una escisión se mira quién se queda con la deuda, adónde van los directivos y si hay ventas que no responden al negocio.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

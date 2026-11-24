@@ -847,5 +847,34 @@
  {
   "termino": "garantía adicional",
   "d": "Depósito extra que puede pedir el casero además de la fianza. En vivienda habitual, como mucho dos meses de alquiler."
+ },
+ {
+  "termino": "escisión",
+  "alias": [
+   "escisiones"
+  ],
+  "d": "Separación de un negocio de una empresa, cuyas acciones se reparten entre los accionistas y pasan a cotizar por su cuenta."
+ },
+ {
+  "termino": "suma de partes",
+  "d": "Valor de una empresa calculado sumando lo que vale cada uno de sus negocios por separado, menos la deuda neta."
+ },
+ {
+  "termino": "spread de calendario",
+  "alias": [
+   "spreads de calendario"
+  ],
+  "d": "Estrategia con opciones que vende una de vencimiento cercano y compra otra del mismo ejercicio a más plazo. Gana si el precio se queda cerca del ejercicio."
+ },
+ {
+  "termino": "permiso de gasto",
+  "alias": [
+   "permisos de gasto"
+  ],
+  "d": "Autorización que das con tu monedero para que un contrato mueva tus tokens sin volver a preguntarte. Se puede limitar y revocar."
+ },
+ {
+  "termino": "poder de compra",
+  "d": "Lo que puedes comprar con tu dinero. Baja cuando los precios suben más que tus ingresos o tus ahorros."
  }
 ]
