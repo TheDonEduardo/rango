@@ -1,0 +1,172 @@
+{
+  "n": 9,
+  "id": "ciclicas",
+  "track": "fundamental",
+  "title": "Empresas cíclicas",
+  "blurb": "Beneficios que suben y bajan con la economía, la trampa del PER bajo y cómo valorar a lo largo del ciclo.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "El beneficio sigue a la economía",
+      "texto": "Acero, química, automóvil o materias primas ganan mucho en la parte alta del ciclo y poco o nada en la baja. Sus costes fijos amplifican cada cambio en las ventas.",
+      "ejemplo": "Ventas +10 % y beneficio operativo +40 %: cada punto de ventas mueve 4 de beneficio."
+    },
+    {
+      "id": "g2",
+      "titulo": "La trampa del PER bajo",
+      "texto": "En el pico del ciclo el beneficio es máximo y el PER parece barato. Cuando el beneficio cae, ese PER se dispara.",
+      "ejemplo": "Precio de 40 € y BPA de 8 €: PER 5. Si el BPA baja a 2 €, PER 20 al mismo precio."
+    },
+    {
+      "id": "g3",
+      "titulo": "Beneficio normalizado",
+      "texto": "Valora una cíclica con el beneficio medio de un ciclo completo, no con el del último año.",
+      "ejemplo": "BPA de 8, 2, 1, 5 y 4 € en cinco años: media de 4 €. A 40 €, PER normalizado de 10."
+    },
+    {
+      "id": "g4",
+      "titulo": "El valle y la deuda",
+      "texto": "Las cíclicas suelen tocar fondo en bolsa cuando los beneficios aún caen y el PER parece caro. La deuda decide quién sobrevive al valle.",
+      "ejemplo": "Deuda neta de 1 vez el EBITDA en el pico: si el EBITDA cae un 75 %, pasa a 4 veces."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "fe1",
+      "title": "El ciclo y el beneficio",
+      "ex": [
+        {
+          "id": "fe1-1",
+          "t": "choice",
+          "q": "¿Cuál de estos negocios es más cíclico?",
+          "opts": [
+            "Una eléctrica regulada",
+            "Una empresa de alimentación básica",
+            "Una siderúrgica",
+            "Una farmacéutica de genéricos"
+          ],
+          "a": 2,
+          "why": "La demanda de acero depende de la construcción y la industria, que caen con fuerza en las recesiones. Las otras venden productos que se compran igual en cualquier fase.",
+          "guia": "g1",
+          "porque": [
+            "Su demanda y sus tarifas apenas cambian con la economía.",
+            "La comida básica se compra igual en una recesión.",
+            null,
+            "Los medicamentos se consumen con independencia del ciclo."
+          ]
+        },
+        {
+          "id": "fe1-2",
+          "t": "num",
+          "q": "Las ventas de una cíclica suben un 10 % y su beneficio operativo, un 40 %. ¿Cuántos puntos de beneficio mueve cada punto de ventas?",
+          "unit": "",
+          "a": 4,
+          "why": "40 ÷ 10 = 4. Los costes fijos amplifican el ciclo: al alza y también a la baja.",
+          "guia": "g1"
+        },
+        {
+          "id": "fe1-3",
+          "t": "num",
+          "q": "Con ese mismo efecto, si las ventas caen un 15 %, ¿cuánto cae el beneficio operativo?",
+          "unit": "%",
+          "a": 60,
+          "why": "15 × 4 = 60 %. Es una aproximación, pero muestra el riesgo de un negocio con muchos costes fijos.",
+          "guia": "g1"
+        },
+        {
+          "id": "fe1-4",
+          "t": "num",
+          "q": "En el pico del ciclo, la acción cotiza a 40 € con un BPA de 8 €. ¿Cuál es su PER?",
+          "unit": "",
+          "a": 5,
+          "why": "40 ÷ 8 = 5. Parece muy barata.",
+          "guia": "g2"
+        },
+        {
+          "id": "fe1-5",
+          "t": "num",
+          "q": "Llega la recesión, el BPA cae a 2 € y el precio sigue en 40 €. ¿Cuál es ahora el PER?",
+          "unit": "",
+          "a": 20,
+          "why": "40 ÷ 2 = 20. El PER de 5 medía un beneficio de pico que no iba a durar.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "fe2",
+      "title": "Valorar a lo largo del ciclo",
+      "ex": [
+        {
+          "id": "fe2-1",
+          "t": "num",
+          "q": "Una cíclica ganó 8, 2, 1, 5 y 4 € por acción en los últimos cinco años. ¿Cuál es su BPA medio?",
+          "unit": "€",
+          "a": 4,
+          "why": "(8 + 2 + 1 + 5 + 4) ÷ 5 = 4 €. Es el beneficio normalizado: el que gana de media en un ciclo.",
+          "guia": "g3"
+        },
+        {
+          "id": "fe2-2",
+          "t": "num",
+          "q": "Con el precio a 40 €, ¿cuál es su PER sobre ese beneficio normalizado?",
+          "unit": "",
+          "a": 10,
+          "why": "40 ÷ 4 = 10. Ni el 5 del pico ni el 40 del valle: el PER normalizado es la referencia estable.",
+          "guia": "g3"
+        },
+        {
+          "id": "fe2-3",
+          "t": "choice",
+          "q": "Una cíclica cotiza con PER 4, en máximos de beneficio y con el precio de su producto en récord. ¿Qué concluyes?",
+          "opts": [
+            "Está barata: su PER es de los más bajos",
+            "Hay que comprar antes de que el PER suba",
+            "El PER bajo asegura un buen dividendo",
+            "Puede ser una trampa: beneficio de pico"
+          ],
+          "a": 3,
+          "why": "Con el precio del producto en récord, lo normal es que el beneficio baje. El mercado lo descuenta y por eso paga tan poco por el beneficio actual.",
+          "guia": "g2",
+          "porque": [
+            "El PER es bajo porque el mercado no espera que ese beneficio dure.",
+            "El PER puede subir porque baje el beneficio, no porque suba el precio.",
+            "Con un beneficio de pico, el dividendo puede recortarse cuando llegue el valle.",
+            null
+          ]
+        },
+        {
+          "id": "fe2-4",
+          "t": "num",
+          "q": "En el pico, la deuda neta es 1 vez el EBITDA. Si el EBITDA cae un 75 % y la deuda no cambia, ¿cuántas veces el EBITDA será la deuda?",
+          "unit": "",
+          "a": 4,
+          "why": "1 ÷ 0,25 = 4 veces. Una deuda cómoda en el pico puede ser peligrosa en el valle.",
+          "guia": "g4"
+        },
+        {
+          "id": "fe2-5",
+          "t": "choice",
+          "q": "¿Cuándo suelen tocar fondo en bolsa las empresas cíclicas?",
+          "opts": [
+            "Cuando el beneficio ya vuelve a máximos",
+            "Cuando el beneficio aún cae y el PER es alto",
+            "Cuando el PER es el más bajo del ciclo",
+            "Cuando la economía crece con más fuerza"
+          ],
+          "a": 1,
+          "why": "La bolsa se anticipa: compra cuando ve el final de la caída, aunque los beneficios del momento aún sean malos y el PER salga alto.",
+          "guia": "g4",
+          "porque": [
+            "Con el beneficio en máximos, la bolsa ya suele haber subido mucho.",
+            null,
+            "El PER más bajo suele coincidir con el pico del beneficio, no con el valle.",
+            "Con la economía en su mejor momento, las cíclicas suelen estar cerca de su pico en bolsa."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

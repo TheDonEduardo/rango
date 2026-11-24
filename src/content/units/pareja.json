@@ -1,0 +1,188 @@
+{
+  "n": 10,
+  "id": "pareja",
+  "track": "personal",
+  "title": "Dinero en pareja",
+  "blurb": "Hablar de dinero, repartir los gastos según los ingresos, cuentas comunes y propias y metas compartidas.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Hablar de dinero",
+      "texto": "Antes de juntar gastos, poned sobre la mesa ingresos, deudas, ahorros y objetivos. Las sorpresas con el dinero generan más conflictos que las propias cifras.",
+      "ejemplo": "Una deuda de 6.000 € al 20 % que uno no había contado cambia el plan de ahorro de los dos."
+    },
+    {
+      "id": "g2",
+      "titulo": "Reparto proporcional",
+      "texto": "Repartir los gastos comunes a medias es sencillo, pero pesa más a quien gana menos. Repartirlos según los ingresos iguala el esfuerzo.",
+      "ejemplo": "Ingresos de 3.000 y 2.000 €: aportan el 60 % y el 40 %. Con 2.000 € de gastos comunes, 1.200 y 800 €."
+    },
+    {
+      "id": "g3",
+      "titulo": "Tuyo, mío y nuestro",
+      "texto": "Un modelo habitual: una cuenta común para los gastos y objetivos compartidos, y una cuenta propia de cada uno para sus gastos personales, sin dar explicaciones.",
+      "ejemplo": "Cada uno ingresa su parte en la común; lo que queda en la propia es suyo."
+    },
+    {
+      "id": "g4",
+      "titulo": "Colchón y metas comunes",
+      "texto": "Calculad el fondo de emergencia con los gastos de la casa. Las metas compartidas, como la entrada de un piso, llevan importe y plazo.",
+      "ejemplo": "2.000 € de gastos comunes × 6 meses = 12.000 €. Entrada de 24.000 € en 4 años: 500 € al mes."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "fz1",
+      "title": "Repartir los gastos",
+      "ex": [
+        {
+          "id": "fz1-1",
+          "t": "num",
+          "q": "Una pareja ingresa 3.000 € y 2.000 € al mes. Con un reparto proporcional a los ingresos, ¿qué porcentaje de los gastos comunes paga quien gana 3.000 €?",
+          "unit": "%",
+          "a": 60,
+          "why": "3.000 ÷ (3.000 + 2.000) = 60 %. Quien gana 2.000 € paga el 40 %.",
+          "guia": "g2"
+        },
+        {
+          "id": "fz1-2",
+          "t": "num",
+          "q": "Los gastos comunes son 2.000 € al mes. Con ese reparto, ¿cuánto aporta quien gana 2.000 €?",
+          "unit": "€",
+          "a": 800,
+          "why": "El 40 % de 2.000 € son 800 €. Quien gana 3.000 € aporta 1.200 €.",
+          "guia": "g2"
+        },
+        {
+          "id": "fz1-3",
+          "t": "num",
+          "q": "Si los repartieran a medias, ¿qué porcentaje de sus ingresos dedicaría a los gastos comunes quien gana 2.000 €?",
+          "unit": "%",
+          "a": 50,
+          "why": "1.000 ÷ 2.000 = 50 %, frente al 33,3 % de quien gana 3.000 €. Con el reparto proporcional, los dos dedican el 40 %.",
+          "guia": "g2"
+        },
+        {
+          "id": "fz1-4",
+          "t": "choice",
+          "q": "¿Qué consigue el reparto proporcional a los ingresos?",
+          "opts": [
+            "Que los dos paguen la misma cantidad",
+            "Que quien gana más no pague nada",
+            "Que los dos hagan el mismo esfuerzo",
+            "Que se ahorre más sin gastar menos"
+          ],
+          "a": 2,
+          "why": "Cada uno dedica el mismo porcentaje de sus ingresos a lo común: el 40 % en el ejemplo. Pagar lo mismo pesaría más a quien gana menos.",
+          "guia": "g2",
+          "porque": [
+            "Pagar lo mismo es el reparto a medias, que pesa más a quien gana menos.",
+            "Los dos pagan; solo cambia la proporción.",
+            null,
+            "El reparto no cambia cuánto se gasta ni cuánto se ahorra en total."
+          ]
+        },
+        {
+          "id": "fz1-5",
+          "t": "match",
+          "q": "Empareja cada cuenta con su uso.",
+          "pairs": [
+            [
+              "Cuenta común",
+              "Alquiler, compra y facturas de la casa"
+            ],
+            [
+              "Cuenta propia",
+              "Gastos personales sin dar explicaciones"
+            ],
+            [
+              "Fondo de emergencia",
+              "Imprevistos de la casa, como una avería"
+            ],
+            [
+              "Cuenta de objetivos",
+              "La entrada de un piso dentro de cuatro años"
+            ]
+          ],
+          "why": "Separar el dinero por uso evita discusiones: lo común se paga de la común, y cada uno decide sobre lo suyo.",
+          "guia": "g3"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "fz2",
+      "title": "Planes en común",
+      "ex": [
+        {
+          "id": "fz2-1",
+          "t": "choice",
+          "q": "Vais a juntar los gastos. ¿Qué conviene hacer primero?",
+          "opts": [
+            "Abrir una cuenta común y ver qué pasa",
+            "Que lo gestione quien sepa más de dinero",
+            "Juntar todo el dinero sin más",
+            "Contaros ingresos, deudas, ahorros y metas"
+          ],
+          "a": 3,
+          "why": "Sin conocer la situación de los dos no se puede decidir cómo repartir ni cuánto ahorrar. Una deuda que aparece después cambia todos los planes.",
+          "guia": "g1",
+          "porque": [
+            "Sin información, la cuenta común se llena de malentendidos.",
+            "Aunque uno lleve las cuentas, los dos deben conocer la situación.",
+            "Juntarlo todo sin hablar oculta deudas y objetivos distintos.",
+            null
+          ]
+        },
+        {
+          "id": "fz2-2",
+          "t": "num",
+          "q": "Los gastos comunes son 2.000 € al mes. ¿Cuántos miles de euros debería tener el fondo de emergencia de la pareja para 6 meses?",
+          "unit": "mil €",
+          "a": 12,
+          "why": "2.000 € × 6 meses = 12.000 €. Se calcula con los gastos de la casa, no con los de cada uno.",
+          "guia": "g4"
+        },
+        {
+          "id": "fz2-3",
+          "t": "num",
+          "q": "Queréis juntar 24.000 € para la entrada de un piso en 4 años. ¿Cuánto tenéis que ahorrar entre los dos cada mes?",
+          "unit": "€",
+          "a": 500,
+          "why": "24.000 ÷ 48 meses = 500 € al mes, sin contar rentabilidad. Una meta con importe y plazo se convierte en una aportación fija.",
+          "guia": "g4"
+        },
+        {
+          "id": "fz2-4",
+          "t": "num",
+          "q": "Si repartís ese ahorro como los gastos, 60 % y 40 %, ¿cuánto aporta cada mes quien gana 2.000 €?",
+          "unit": "€",
+          "a": 200,
+          "why": "El 40 % de 500 € son 200 €. Quien gana 3.000 € aporta 300 €.",
+          "guia": "g2"
+        },
+        {
+          "id": "fz2-5",
+          "t": "choice",
+          "q": "Uno de los dos tiene una deuda de 6.000 € en la tarjeta al 20 % anual. ¿Qué es lo más sensato para los planes de la pareja?",
+          "opts": [
+            "Priorizar pagarla antes que la meta del piso",
+            "Ignorarla: es una deuda de uno solo",
+            "Pagar el mínimo y ahorrar para el piso",
+            "Invertir el ahorro para pagarla con beneficios"
+          ],
+          "a": 0,
+          "why": "Ningún ahorro ni inversión rinde de forma segura un 20 %: cada euro que amortiza esa deuda gana ese 20 %. Después, el ahorro va al piso.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Afecta a cuánto puede ahorrar la pareja para sus metas comunes.",
+            "Pagar el mínimo mantiene un interés del 20 % mientras el ahorro rinde mucho menos.",
+            "Ninguna inversión rinde de forma segura un 20 % anual."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

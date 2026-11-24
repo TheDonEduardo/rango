@@ -784,5 +784,27 @@
  {
   "termino": "regla del 72",
   "d": "Atajo para saber cuántos años tarda una inversión en duplicarse: 72 entre la rentabilidad anual (al 8 %, unos 9 años)."
+ },
+ {
+  "termino": "ruptura fallida",
+  "alias": [
+   "rupturas fallidas"
+  ],
+  "d": "Ruptura en la que el precio vuelve a cerrar dentro de la base poco después de salir. Se corta pronto, con una regla fijada antes de entrar."
+ },
+ {
+  "termino": "empresa cíclica",
+  "alias": [
+   "empresas cíclicas"
+  ],
+  "d": "Empresa cuyo beneficio sube y baja con la economía, como el acero, la química o el automóvil."
+ },
+ {
+  "termino": "beneficio normalizado",
+  "d": "Beneficio medio de un ciclo económico completo. Sirve para valorar empresas cíclicas sin dejarse engañar por un año de pico o de valle."
+ },
+ {
+  "termino": "reparto proporcional",
+  "d": "Repartir los gastos comunes de una pareja según los ingresos de cada uno, para que los dos dediquen el mismo porcentaje."
  }
 ]

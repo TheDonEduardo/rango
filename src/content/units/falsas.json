@@ -1,0 +1,218 @@
+{
+  "n": 10,
+  "id": "falsas",
+  "track": "tecnico",
+  "title": "Rupturas fallidas",
+  "blurb": "Reconocer cuándo una ruptura ha fallado, salir con poco daño y volver a intentarlo con el riesgo limitado.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Cuándo ha fallado",
+      "texto": "Una ruptura falla cuando el precio vuelve a cerrar dentro de la base poco después de salir. Decide la regla antes de entrar: un cierre por debajo del techo es la señal más habitual.",
+      "ejemplo": "Techo en 50 €: ruptura hasta 51 € y, dos días después, cierre en 49,30 €."
+    },
+    {
+      "id": "g2",
+      "titulo": "Salir pronto cuesta poco",
+      "texto": "Si sales en cuanto falla, pierdes una fracción de R. Si esperas al stop inicial, pierdes 1R entero.",
+      "ejemplo": "Entrada a 51 € y stop en 48 €: salir a 49,50 € cuesta 0,5R."
+    },
+    {
+      "id": "g3",
+      "titulo": "Señales de una ruptura débil",
+      "texto": "Volumen bajo el día de la ruptura, mercado general en corrección o una base ancha y desordenada aumentan las probabilidades de fallo.",
+      "ejemplo": "600.000 acciones frente a una media de 1 millón: un 40 % por debajo."
+    },
+    {
+      "id": "g4",
+      "titulo": "Volver a intentarlo",
+      "texto": "Una ruptura fallida no invalida la acción. Si rehace la base y vuelve a romper, puedes entrar de nuevo, con el riesgo total sobre la idea limitado de antemano.",
+      "ejemplo": "Primer intento: −0,5R. Segundo: +4R. Neto: +3,5R."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "tr1",
+      "title": "Detectar el fallo",
+      "ex": [
+        {
+          "id": "tr1-1",
+          "t": "tap",
+          "q": "La base tiene su techo en 50 € y la sexta vela rompe al alza. Toca la primera vela que vuelve a cerrar dentro de la base.",
+          "chart": {
+            "type": "candles",
+            "data": [
+              [48.5,49.6,48.2,49.2],
+              [49.2,49.8,48.6,48.9],
+              [48.9,49.7,48.4,49.5],
+              [49.5,49.9,48.8,49.1],
+              [49.1,49.8,48.7,49.6],
+              [49.6,51.4,49.5,51.0],
+              [51.0,51.2,49.9,50.2],
+              [50.2,50.4,49.0,49.3],
+              [49.3,49.6,48.5,48.8]
+            ],
+            "vol": [80,70,75,60,70,65,60,95,90],
+            "h": 270,
+            "lines": [
+              {
+                "y": 50,
+                "label": ""
+              }
+            ],
+            "alt": "Gráfico de nueve velas con volumen y una línea horizontal en el techo de la base"
+          },
+          "a": 7,
+          "why": "Vela 8: cierra en 49,30 €, de nuevo por debajo del techo de 50 €. La vela 7 retrocede, pero aún cierra por encima, en 50,20 €.",
+          "guia": "g1"
+        },
+        {
+          "id": "tr1-2",
+          "t": "choice",
+          "q": "Compras en la ruptura de una base con el techo en 50 €. ¿Qué regla de salida por fallo fijas antes de entrar?",
+          "opts": [
+            "Salir si toca 50 € durante la sesión",
+            "Esperar siempre al stop inicial",
+            "Salir si cierra de nuevo por debajo de 50 €",
+            "Salir si un día cierra en negativo"
+          ],
+          "a": 2,
+          "why": "Un cierre dentro de la base indica que la ruptura no ha atraído compradores. Un toque durante la sesión es ruido frecuente, y esperar al stop inicial cuesta 1R entero.",
+          "guia": "g1",
+          "porque": [
+            "Volver a tocar el techo durante la sesión es normal: muchas rupturas lo hacen y siguen subiendo.",
+            "Esperar al stop entrega 1R entero cuando la ruptura ya ha fallado.",
+            null,
+            "Un día en negativo es ruido: no dice nada de la base."
+          ]
+        },
+        {
+          "id": "tr1-3",
+          "t": "num",
+          "q": "Entrada a 51 € y stop inicial en 48 €. Sales a 49,50 € cuando la ruptura falla. ¿Cuántos R pierdes?",
+          "unit": "R",
+          "a": 0.5,
+          "why": "(51 − 49,50) ÷ (51 − 48) = 1,50 ÷ 3 = 0,5R. Salir con la regla de fallo ahorra la mitad del riesgo.",
+          "guia": "g2"
+        },
+        {
+          "id": "tr1-4",
+          "t": "num",
+          "q": "Con 300 acciones, ¿cuántos euros ahorras saliendo a 49,50 € en vez de esperar al stop de 48 €?",
+          "unit": "€",
+          "a": 450,
+          "why": "(49,50 − 48) × 300 = 450 €.",
+          "guia": "g2"
+        },
+        {
+          "id": "tr1-5",
+          "t": "choice",
+          "q": "La ruptura cierra por encima del techo, pero con un volumen un 40 % inferior a la media. ¿Qué indica?",
+          "opts": [
+            "Fuerza: rompió sin necesidad de volumen",
+            "Interés débil: más riesgo de que falle",
+            "Nada: el volumen no importa al romper",
+            "Que conviene comprar el doble"
+          ],
+          "a": 1,
+          "why": "Una ruptura sana suele llegar con volumen claramente superior a la media. Con poco volumen faltan los compradores grandes que la sostienen.",
+          "guia": "g3",
+          "porque": [
+            "Sin volumen no hay demanda nueva que sostenga el precio fuera de la base.",
+            null,
+            "El volumen es una de las mejores pistas de si hay demanda detrás.",
+            "Ante una señal débil se reduce la posición o no se entra; no se dobla."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "tr2",
+      "title": "Señales y segundo intento",
+      "ex": [
+        {
+          "id": "tr2-1",
+          "t": "num",
+          "q": "El día de la ruptura se negocian 600.000 acciones y la media de 50 sesiones es de 1 millón. ¿Cuánto por debajo de la media está el volumen?",
+          "unit": "%",
+          "a": 40,
+          "why": "1 − 600.000 ÷ 1.000.000 = 40 % por debajo de la media.",
+          "guia": "g3"
+        },
+        {
+          "id": "tr2-2",
+          "t": "match",
+          "q": "Empareja cada situación con lo que suele indicar sobre una ruptura.",
+          "pairs": [
+            [
+              "Volumen un 50 % sobre la media",
+              "Demanda real detrás de la ruptura"
+            ],
+            [
+              "Mercado general en corrección",
+              "Más rupturas fallidas en todo el mercado"
+            ],
+            [
+              "Base ancha y desordenada",
+              "Oferta sin absorber dentro de la base"
+            ],
+            [
+              "Cierre en el mínimo del día",
+              "Vendedores esperando sobre el techo"
+            ]
+          ],
+          "why": "Ninguna señal es segura por sí sola, pero varias en contra a la vez justifican reducir el tamaño o no entrar.",
+          "guia": "g3"
+        },
+        {
+          "id": "tr2-3",
+          "t": "order",
+          "q": "Ordena el proceso ante una ruptura que falla.",
+          "items": [
+            "Fijas la regla de fallo antes de entrar",
+            "La ruptura vuelve a cerrar dentro de la base",
+            "Sales con una pérdida pequeña",
+            "Vigilas si la acción rehace la base",
+            "Entras de nuevo si vuelve a romper"
+          ],
+          "why": "La regla se decide antes, sin presión. Salir pronto deja capital y cabeza para el segundo intento.",
+          "guia": "g4"
+        },
+        {
+          "id": "tr2-4",
+          "t": "num",
+          "q": "Primer intento: pierdes 0,5R. Segundo intento: ganas 4R. ¿Cuál es el resultado neto, en R?",
+          "unit": "R",
+          "a": 3.5,
+          "why": "−0,5 + 4 = 3,5R. Las rupturas fallidas cortadas a tiempo cuestan poco frente a la que funciona.",
+          "guia": "g4"
+        },
+        {
+          "id": "tr2-5",
+          "t": "slide",
+          "q": "Limitas a 1,5R el riesgo total sobre la misma idea y ya perdiste 0,5R en el primer intento. Si cada intento arriesga 0,5R, ¿cuántos intentos más permites?",
+          "label": "Intentos más",
+          "min": 0,
+          "max": 6,
+          "step": 1,
+          "start": 5,
+          "a": 2,
+          "unit": "",
+          "why": "1,5R − 0,5R = 1R disponible, y 1R ÷ 0,5R = 2 intentos más. Con el límite fijado de antemano, una idea que no funciona no se lleva la cartera.",
+          "show": [
+            {
+              "label": "Riesgo total en la idea",
+              "k": 0.5,
+              "b": 0.5,
+              "unit": "R",
+              "dec": 1
+            }
+          ],
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

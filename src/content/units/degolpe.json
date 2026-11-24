@@ -1,0 +1,190 @@
+{
+  "n": 11,
+  "id": "degolpe",
+  "track": "pasiva",
+  "title": "De golpe o poco a poco",
+  "blurb": "Qué hacer con una cantidad grande: lo que dice la historia, el arrepentimiento y un plan con fecha de fin.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Lo que dice la historia",
+      "texto": "Como la bolsa sube más años de los que baja, invertir todo de golpe ha dado más rentabilidad en la mayoría de los periodos. Esperar tiene un coste: el dinero en efectivo rinde menos.",
+      "ejemplo": "Con la bolsa subiendo un 8 % en el año, 12.000 € invertidos el primer día ganan 960 €."
+    },
+    {
+      "id": "g2",
+      "titulo": "Poco a poco reduce el arrepentimiento",
+      "texto": "Repartir la entrada en varios meses rinde algo menos de media, pero evita invertirlo todo justo antes de una caída. Su valor es psicológico: que puedas seguir el plan.",
+      "ejemplo": "Caída del 20 % al mes siguiente: de golpe pierdes 2.400 €; repartido en 12 meses, 200 €."
+    },
+    {
+      "id": "g3",
+      "titulo": "Misma cantidad, precio medio más bajo",
+      "texto": "Con la misma cantidad cada mes compras más participaciones cuando el precio baja. Tu precio medio queda por debajo de la media de los precios.",
+      "ejemplo": "100 € a 10 € y 100 € a 5 €: 30 participaciones a 6,67 €, no a 7,50 €."
+    },
+    {
+      "id": "g4",
+      "titulo": "Un plan con fecha de fin",
+      "texto": "Si eliges poco a poco, fija importe, día y número de meses, y automatízalo. Los plazos muy largos solo alargan el tiempo en efectivo.",
+      "ejemplo": "12.000 € en 6 meses: 2.000 € el mismo día de cada mes."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "pa1",
+      "title": "Todo junto o repartido",
+      "ex": [
+        {
+          "id": "pa1-1",
+          "t": "choice",
+          "q": "Según la historia de la bolsa, ¿qué ha dado más rentabilidad en la mayoría de los periodos?",
+          "opts": [
+            "Repartirlo en 12 meses",
+            "Invertir todo de golpe",
+            "Esperar a una caída del 20 %",
+            "Repartirlo en cinco años"
+          ],
+          "a": 1,
+          "why": "La bolsa sube más años de los que baja: cuanto antes se invierte, más tiempo trabaja el dinero. Repartir la entrada gana algo menos de media.",
+          "guia": "g1",
+          "porque": [
+            "Rinde algo menos de media, porque parte del dinero espera en efectivo.",
+            null,
+            "La caída puede tardar años o no llegar nunca al nivel esperado.",
+            "Cinco años con parte del dinero en efectivo pierden mucho rendimiento esperado."
+          ]
+        },
+        {
+          "id": "pa1-2",
+          "t": "num",
+          "q": "Tienes 12.000 € y la bolsa sube un 8 % ese año. Si lo inviertes todo el primer día, ¿cuánto ganas?",
+          "unit": "€",
+          "a": 960,
+          "why": "El 8 % de 12.000 € son 960 €. Repartido en 12 meses, cada parte está invertida menos tiempo y gana bastante menos.",
+          "guia": "g1"
+        },
+        {
+          "id": "pa1-3",
+          "t": "num",
+          "q": "Inviertes los 12.000 € de golpe y al mes siguiente la bolsa cae un 20 %. ¿Cuántos miles de euros pierdes, de momento?",
+          "unit": "mil €",
+          "a": 2.4,
+          "why": "El 20 % de 12.000 € son 2.400 €. Es una pérdida temporal si mantienes, pero es la que hace abandonar a muchos.",
+          "guia": "g2"
+        },
+        {
+          "id": "pa1-4",
+          "t": "num",
+          "q": "Si en cambio lo repartes en 12 meses y la bolsa cae un 20 % el primer mes, ¿cuántos euros pierdes de lo invertido?",
+          "unit": "€",
+          "a": 200,
+          "why": "Solo estaban invertidos 1.000 €: el 20 % son 200 €. El resto compra después a precios más bajos.",
+          "guia": "g2"
+        },
+        {
+          "id": "pa1-5",
+          "t": "choice",
+          "q": "Te preocupa invertir de golpe y abandonar si la bolsa cae. ¿Qué haces?",
+          "opts": [
+            "Esperar en efectivo a que el mercado caiga",
+            "Invertirlo todo y no mirar nunca la cartera",
+            "Repartirlo en pocos meses con un plan fijo",
+            "Dejarlo en la cuenta hasta estar seguro"
+          ],
+          "a": 2,
+          "why": "Si invertir de golpe te haría abandonar, repartirlo con fecha de fin es lo mejor para ti: rinde algo menos de media, pero lo vas a mantener.",
+          "guia": "g4",
+          "porque": [
+            "Nadie sabe cuándo llegará la caída: puedes pasar años en efectivo.",
+            "Prometer no mirar no suele funcionar cuando llega una caída de verdad.",
+            null,
+            "Ese momento de seguridad no llega nunca: siempre hay motivos para esperar."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "pa2",
+      "title": "Aportaciones periódicas",
+      "ex": [
+        {
+          "id": "pa2-1",
+          "t": "num",
+          "q": "Inviertes 100 € a 10 € por participación y otros 100 € a 5 €. ¿Cuántas participaciones tienes?",
+          "unit": "",
+          "a": 30,
+          "why": "100 ÷ 10 = 10 y 100 ÷ 5 = 20: 30 participaciones.",
+          "guia": "g3"
+        },
+        {
+          "id": "pa2-2",
+          "t": "num",
+          "q": "¿A qué precio medio has comprado esas 30 participaciones? Redondea a 2 decimales.",
+          "unit": "€",
+          "a": 6.67,
+          "why": "200 € ÷ 30 = 6,67 €, por debajo de la media de los dos precios (7,50 €): con la misma cantidad compras más cuando está barato.",
+          "tol": 0.01,
+          "guia": "g3"
+        },
+        {
+          "id": "pa2-3",
+          "t": "choice",
+          "q": "Ahorras 300 € de tu nómina cada mes. ¿Tienes que decidir entre invertirlos de golpe o poco a poco?",
+          "opts": [
+            "Sí: mejor juntarlos y entrar una vez al año",
+            "No: los inviertes en cuanto los tienes",
+            "Sí: espera a que la bolsa caiga para entrar",
+            "No: el ahorro mensual no se invierte"
+          ],
+          "a": 1,
+          "why": "Esa duda solo aparece con una cantidad grande que ya tienes. Lo que ahorras cada mes se invierte al recibirlo.",
+          "guia": "g1",
+          "porque": [
+            "Juntarlo un año deja el dinero esperando en efectivo sin motivo.",
+            null,
+            "Esperar caídas es intentar adivinar el mercado.",
+            "El ahorro mensual es justo lo que construye la cartera a largo plazo."
+          ]
+        },
+        {
+          "id": "pa2-4",
+          "t": "slide",
+          "q": "Recibes 12.000 € y decides invertirlos en 6 meses con la misma cantidad. ¿Cuánto inviertes cada mes?",
+          "label": "Cada mes",
+          "min": 500,
+          "max": 4000,
+          "step": 250,
+          "start": 3500,
+          "a": 2000,
+          "unit": "€",
+          "why": "12.000 ÷ 6 = 2.000 € al mes. Con importe, día y número de meses fijos, el plan termina solo.",
+          "show": [
+            {
+              "label": "Invertido tras 6 meses",
+              "k": 6,
+              "unit": "€"
+            }
+          ],
+          "guia": "g4"
+        },
+        {
+          "id": "pa2-5",
+          "t": "order",
+          "q": "Ordena los pasos para invertir poco a poco una cantidad grande.",
+          "items": [
+            "Decides el reparto de activos de la cartera",
+            "Fijas el número de meses y el importe",
+            "Programas las compras automáticas",
+            "Inviertes cada mes sin mirar el precio",
+            "Al terminar, compruebas que el reparto es el previsto"
+          ],
+          "why": "Primero el destino, después el calendario. Automatizarlo evita reabrir la decisión cada mes según las noticias.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}
