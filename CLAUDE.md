@@ -10,6 +10,7 @@ App web gamificada tipo Duolingo para **inversores que ya operan** (bolsa, anál
 - CI: `.github/workflows/rango_test.yml` (raíz del repo) ejecuta `npm test`, el test de los generadores y `npm run e2e` en cada cambio de `rango/`.
 - `/nueva-unidad [N] [rutas]` (habilidad en `.claude/skills/nueva-unidad/` de la raíz del repo): flujo completo para añadir unidades, con plantilla, `recuentos.py` (actualiza las cifras de CLAUDE.md, README y bienvenida; `--comprobar` solo verifica) y publicación del artefacto. El subagente `verificador-cifras` (`.claude/agents/`) recalcula las respuestas, explicaciones y ejemplos de la guía de las unidades nuevas antes del commit; usa `extraer.py` de la habilidad, que vuelca las unidades y avisa del formato numérico. Un hook (`.claude/settings.json` y `.claude/hooks/empaquetar.mjs`) regenera `units.json` cada vez que se edita a mano un archivo de `src/content/units/`.
 - `python -I tools/test_casos.py`: prueba el generador de casos con datos simulados (sin red).
+- `python -I tools/test_semana.py`: prueba el generador de la Operación de la semana con datos simulados (sin red; escribe en un archivo temporal).
 - `python tools/semana.py [--fecha AAAA-MM-DD]`: genera la Operación de la semana (`semana.json`); con `--fecha` la prepara como si fuera ese día.
 - `python tools/casos.py` (requiere `pip install yfinance`): regenera los casos reales. GitHub Actions lo hace cada sábado (`.github/workflows/rango_casos.yml` en la raíz del repo) y sube el resultado solo si `npm test` pasa.
 

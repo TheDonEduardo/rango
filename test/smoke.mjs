@@ -612,6 +612,13 @@ if (!app.innerHTML.includes('¿Cuánto tendrías?') || !app.innerHTML.includes('
 }
 T.getState().calc.cmp = true; T.openCalc();
 if (!app.innerHTML.includes('class="cv-b"') || !app.innerHTML.includes('menos que con')) errs.push('la comparación de carteras no se dibuja');
+// Un estado manipulado (copia de seguridad o servidor) no puede colar marcado por los valores del simulador.
+{
+  const c = T.getState().calc;
+  c.mensual = '"><b id="inyectado">x</b>'; c.cmp = 'sí'; T.openCalc();
+  if (app.innerHTML.includes('id="inyectado"')) errs.push('el simulador pinta valores del estado sin limpiar');
+  if (T.getState().calc.mensual !== 200 || T.getState().calc.cmp !== false) errs.push('el simulador no restablece los valores no válidos');
+}
 T.goHome(); T.setTrack('tecnico');
 
 // 5) Test de nivel: todo bien abre las rutas y marca Básico; solo una unidad bien marca solo esa unidad.

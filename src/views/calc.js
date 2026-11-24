@@ -18,6 +18,12 @@ export function aportaciones({inicial,mensual,anos,rent,ter,caida=0,anoCaida=0})
   return {aportado:inicial+mensual*anos*12,final:v,sinComision:vb,serie};
 }
 const CALC_DEF={inicial:0,mensual:200,anos:20,rent:6,ter:0.2,cmp:false,ter2:1.8,crash:false,caida:30,anoCaida:10,hist:false,peso:60,eur:false};
+// Los valores del simulador se pintan en atributos del HTML: solo se aceptan números y casillas verdadero/falso.
+// Una copia de seguridad o un estado sincronizado manipulado no puede así colar marcado en la página.
+export const calcLimpio=c=>Object.fromEntries(Object.entries(CALC_DEF).map(([k,d])=>{
+  const v=(c||{})[k];
+  return [k,typeof d==='boolean'?v===true:(typeof v==='number'&&Number.isFinite(v)?v:d)];
+}));
 export const CALC_CTRL=[
   ['inicial',t.calcCtrl.inicial,0,50000,1000,v=>fmt(v,0)+' €'],
   ['mensual',t.calcCtrl.mensual,0,2000,25,v=>fmt(v,0)+' €'],
@@ -86,7 +92,7 @@ export function histOutHTML(){
 }
 const ccHTML=([k,l,mi,ma,st,f])=>`<label class="cc" for="calc-${k}"><span>${l}</span><output id="out-${k}">${f(S.calc[k])}</output><input type="range" id="calc-${k}" data-calc="${k}" min="${mi}" max="${ma}" step="${st}" value="${S.calc[k]}"></label>`;
 export function calcHTML(){
-  S.calc=Object.assign({},CALC_DEF,S.calc);
+  S.calc=calcLimpio(S.calc);
   return `<div class="lesson sim-view"><div class="lbar"><button class="x" data-act="home" aria-label="${t.volverInicio}">${icoX}</button><p class="kind">${t.calcTitulo}</p></div>
   <div class="qwrap"><h1 class="q">${t.calcPregunta}</h1>
   <div class="calc">${CALC_CTRL.filter(c=>!['ter2','caida','anoCaida','peso'].includes(c[0])).map(ccHTML).join('')}
