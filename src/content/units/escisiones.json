@@ -65,7 +65,7 @@
         {
           "id": "fj1-4",
           "t": "choice",
-          "q": "Antes de la escisión tenías 300 acciones a 50 €. ¿Qué ha pasado con tu patrimonio?",
+          "q": "Tenías 300 acciones a 50 €. Tras la escisión tienes 300 de la matriz a 40 € y 150 de la filial a 20 €. ¿Qué ha pasado con tu patrimonio?",
           "opts": [
             "Has ganado: ahora tienes dos empresas",
             "Has perdido: la matriz vale menos",

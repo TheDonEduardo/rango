@@ -86,7 +86,7 @@
         {
           "id": "fi1-5",
           "t": "num",
-          "q": "El resto de tu gasto, el 60 %, sube un 2 %. ¿Cuál es tu inflación personal total? Redondea a 1 decimal.",
+          "q": "El alquiler, que es el 40 % de tu gasto, sube un 8 %, y el resto, el 60 %, sube un 2 %. ¿Cuál es tu inflación personal total? Redondea a 1 decimal.",
           "unit": "%",
           "a": 4.4,
           "why": "3,2 + 60 % × 2 % = 3,2 + 1,2 = 4,4 %. Puede ser muy distinta del IPC, que mide una cesta media.",

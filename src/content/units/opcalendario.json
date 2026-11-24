@@ -67,7 +67,7 @@
         {
           "id": "op29-3",
           "t": "num",
-          "q": "Al vencer la call corta, la acción está en 100 $ y la call larga vale 4,00 $. ¿Cuánto ganas por contrato?",
+          "q": "Pagaste 2,50 $ por un spread de calendario: vendiste la call 100 a 30 días y compraste la de 90 días. Al vencer la corta, la acción está en 100 $ y la call larga vale 4,00 $. ¿Cuánto ganas por contrato?",
           "unit": "$",
           "a": 150,
           "why": "La corta vence sin valor y la larga vale 4,00 $: (4,00 − 2,50) × 100 = 150 $.",
@@ -112,7 +112,7 @@
         {
           "id": "op30-1",
           "t": "num",
-          "q": "Al vencer la corta, la acción está en 120 $: la call corta vale 20 $ y la larga 21 $. ¿Cuánto pierdes por contrato?",
+          "q": "Pagaste 2,50 $ por un spread de calendario de la call 100. Al vencer la corta, la acción está en 120 $: la call corta vale 20 $ y la larga 21 $. ¿Cuánto pierdes por contrato?",
           "unit": "$",
           "a": 150,
           "why": "La posición vale 21 − 20 = 1 $ y pagaste 2,50 $: pierdes 1,50 × 100 = 150 $.",
@@ -121,7 +121,7 @@
         {
           "id": "op30-2",
           "t": "num",
-          "q": "Si en cambio la acción cae a 80 $, la corta vence sin valor y la larga vale 0,50 $. ¿Cuánto pierdes por contrato?",
+          "q": "Pagaste 2,50 $ por un spread de calendario de la call 100. La acción cae a 80 $, la corta vence sin valor y la larga vale 0,50 $. ¿Cuánto pierdes por contrato?",
           "unit": "$",
           "a": 200,
           "why": "(2,50 − 0,50) × 100 = 200 $. Lejos del ejercicio, en cualquier sentido, el spread de calendario pierde.",

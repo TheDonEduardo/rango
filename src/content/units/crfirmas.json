@@ -67,7 +67,7 @@
         {
           "id": "cg1-3",
           "t": "num",
-          "q": "¿Y cuántos dólares, si limitas el permiso a lo que vas a usar?",
+          "q": "Tienes 8.000 $ en monedas estables y vas a usar 500 $ en una aplicación. Si limitas el permiso de gasto a esa cantidad, ¿cuántos dólares podría llevarse su contrato si lo atacan?",
           "unit": "$",
           "a": 500,
           "why": "Con un permiso exacto, el contrato solo puede mover los 500 $ autorizados.",
