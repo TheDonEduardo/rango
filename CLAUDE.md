@@ -235,6 +235,11 @@ Decisiones tomadas:
 
 ## Convenciones de trabajo
 
+- **Reparto de trabajo con subagentes (`.claude/agents/`)**: el agente principal planifica y coordina; no lee, no busca y no escribe código él mismo.
+  - Cualquier lectura o búsqueda en el repositorio (localizar código, entender un flujo, comprobar si un tema existe, reunir contexto) se delega en `explore` (solo lectura).
+  - Cualquier escritura de código (funciones, correcciones, refactorizaciones, tests, scripts, contenido con `tools/contenido.py`) se delega en `implementer`, con instrucciones concretas: archivos, cambio y criterio de aceptación.
+  - El agente principal reparte las tareas, revisa los informes, decide y se encarga de git (commit, push, PR) y de publicar el artefacto. La verificación de cifras sigue en `verificador-cifras`.
+
 - Responde en español, directo, con datos y sin relleno.
 - Entrega archivos completos listos para pegar cuando se pida código.
 - Antes de dar una tarea por terminada: `npm test` en verde y revisión visual en móvil (390 px) y en escritorio, en claro y oscuro.
