@@ -7,12 +7,12 @@ App web gamificada tipo Duolingo para **inversores que ya operan** (bolsa, anál
 - `npm run dev`: servidor estático en http://localhost:5173 (hace falta servidor: los módulos ES y el `fetch` del JSON no funcionan desde `file://`).
 - `npm test`: valida el contenido (unidades y `casos.json`), las rutas, los textos y recorre todas las lecciones (y los repasos) simulando respuestas correctas, incorrectas y la pantalla "Sin vidas"; comprueba además cada caso real, la migración del estado y las estadísticas. Avisa (sin fallar) del contenido con fecha de revisión vencida. Ejecútalo tras cualquier cambio en `src/` o en el contenido.
 - `npm run e2e` (`node test/e2e.cjs`): navegador real (Playwright + Chromium) con su propio servidor. Sin opciones, juega una lección de cada ruta y de cada tipo de ejercicio en móvil y escritorio, claro y oscuro, comprueba la pantalla de carga y el mensaje de fallo de carga, y audita la accesibilidad con axe-core (con las animaciones desactivadas y saltándose la política de seguridad solo para inyectar axe). `--lecciones a,b` juega esas; `--todas` juega todas en móvil claro; `--capturas DIR` guarda capturas. Necesita `playwright` y `axe-core` instalados (en CI se instalan sin tocar package.json; sin axe-core se omite la auditoría).
-- CI: `.github/workflows/rango_test.yml` (raíz del repo) ejecuta `npm test`, el test de los generadores y `npm run e2e` en cada cambio de `rango/`.
-- `/nueva-unidad [N] [rutas]` (habilidad en `.claude/skills/nueva-unidad/` de la raíz del repo): flujo completo para añadir unidades, con plantilla, `estado.py` (unidades por ruta, última tanda, buscar temas y prefijos libres), `artefacto.py` (qué archivos publicar y sus hashes), `corregir.py` (aplica correcciones), `recuentos.py` (actualiza las cifras de CLAUDE.md, README y bienvenida; `--comprobar` solo verifica) y publicación del artefacto. El subagente `verificador-cifras` (`.claude/agents/`) recalcula las respuestas, explicaciones y ejemplos de la guía de las unidades nuevas antes del commit; usa `extraer.py` de la habilidad, que vuelca las unidades y avisa del formato numérico. Un hook (`.claude/settings.json` y `.claude/hooks/empaquetar.mjs`) regenera `units.json` cada vez que se edita a mano un archivo de `src/content/units/`.
+- CI: `.github/workflows/rango_test.yml` ejecuta `npm test`, el test de los generadores y `npm run e2e` en cada push y pull request.
+- `/nueva-unidad [N] [rutas]` (habilidad en `.claude/skills/nueva-unidad/`): flujo completo para añadir unidades, con plantilla, `estado.py` (unidades por ruta, última tanda, buscar temas y prefijos libres), `artefacto.py` (qué archivos publicar y sus hashes), `corregir.py` (aplica correcciones), `recuentos.py` (actualiza las cifras de CLAUDE.md, README y bienvenida; `--comprobar` solo verifica) y publicación del artefacto. El subagente `verificador-cifras` (`.claude/agents/`) recalcula las respuestas, explicaciones y ejemplos de la guía de las unidades nuevas antes del commit; usa `extraer.py` de la habilidad, que vuelca las unidades y avisa del formato numérico. Un hook (`.claude/settings.json` y `.claude/hooks/empaquetar.mjs`) regenera `units.json` cada vez que se edita a mano un archivo de `src/content/units/`.
 - `python -I tools/test_casos.py`: prueba el generador de casos con datos simulados (sin red).
 - `python -I tools/test_semana.py`: prueba el generador de la Operación de la semana con datos simulados (sin red; escribe en un archivo temporal).
 - `python tools/semana.py [--fecha AAAA-MM-DD]`: genera la Operación de la semana retrospectiva (`semana.json`: 30 sesiones que acaban 5 sesiones antes del último cierre y esas 5 siguientes, `despues`); con `--fecha` la prepara como si fuera ese día (el corte se cuenta desde esa fecha).
-- `python tools/casos.py` (requiere `pip install yfinance`): regenera los casos reales. GitHub Actions lo hace cada sábado (`.github/workflows/rango_casos.yml` en la raíz del repo) y sube el resultado solo si `npm test` pasa.
+- `python tools/casos.py` (requiere `pip install yfinance`): regenera los casos reales. GitHub Actions lo hace cada sábado (`.github/workflows/rango_casos.yml`) y hace commit del resultado en `main` (permiso `contents: write`) solo si `npm test` pasa.
 
 ## Estructura
 
@@ -49,7 +49,7 @@ tools/contenido.py      ayudas para escribir contenido: nueva_unidad, anadir (as
 tools/empaquetar.mjs    genera src/content/units.json a partir de src/content/units/
 tools/historico.py      genera historico.json (rentabilidades anuales de SPY e IEF) para el simulador con datos reales
 tools/mercado.py        genera mercado.json («Mercado de la semana») con los cierres semanales de Yahoo Finance
-tools/casos.py          genera casos.json con Yahoo Finance para los tickers de ../portfolio_manager.py
+tools/casos.py          genera casos.json con Yahoo Finance para los tickers de tools/tickers.txt (o de RANGO_TICKERS)
 test/smoke.mjs          lint de contenido + test de humo sin navegador
 test/e2e.cjs            navegador real + accesibilidad (test/contenido.cjs lee el contenido desde Node)
 manifest.webmanifest    manifiesto de la PWA (nombre, colores, iconos)
@@ -134,6 +134,12 @@ Sistema de tokens en `src/styles.css` (`:root`, con variante oscura por `prefers
 - Movimiento (bloque final de styles.css, solo con `prefers-reduced-motion: no-preference`): la barra de progreso crece desde donde estaba (`--de`), el enunciado entra con un fundido al cambiar de pregunta (`.qwrap.entra`), el panel de explicación sube, la opción acertada late y la fallada tiembla; en el resultado, la vela aparece y los XP cuentan desde 0 (`contar()` en app.js). Vibración breve al comprobar donde el dispositivo la admite. Todo por debajo de medio segundo: nada decorativo ni en bucle.
 - Accesibilidad (auditoría con axe-core sin incidencias en 15 pantallas, claro y oscuro): `#app` es la región principal (`<main>`); cada pantalla tiene un `h1` (el nombre en el inicio, el enunciado en lecciones y simuladores); barras de progreso con nombre; un gráfico con controles dentro es `role="group"`, no `img`. Texto de color sobre el fondo o con etiqueta: usa las variantes `--up-ink`/`--down-ink` (contraste ≥ 4,5), no `--up`/`--down`.
 
+## Publicación en GitHub Pages
+
+- La web se sirve desde la rama `main`, carpeta raíz (Settings → Pages), en `https://thedoneduardo.github.io/rango/`: la app vive en un subdirectorio, por eso todas las rutas (index.html, manifiesto, service worker, `fetch` del contenido, enlaces de bienvenida.html y `./?privacidad`) son relativas. No uses rutas que empiecen por `/`.
+- `.nojekyll` en la raíz evita que Pages procese los archivos con Jekyll. `_headers` solo lo usa Cloudflare Pages; en GitHub Pages la política de seguridad ya va en la meta `Content-Security-Policy` de cada HTML.
+- Cada push a `main` publica. Con dominio propio, pon `og:image` absoluto y revisa la URL de retorno de Supabase.
+
 ## Estado actual y limitaciones conocidas
 
 - Progreso, XP, racha y meta diaria (40 XP) en `localStorage` (clave `rango.v1`). Las vidas son por lección (3 fallos).
@@ -181,12 +187,12 @@ Hecho: siete rutas (31 unidades en Básico, 26 en Finanzas, 31 en Pasiva, 38 en 
 - Cada ruta termina con una unidad de caso completo, marcada con `caso: true` en su JSON (el inicio le pone el distintivo «Caso final»; ids `primerainversion`, `tucartera`, `analisis`, `operacion`): un único caso con los mismos números de principio a fin. Las unidades nuevas van antes de ella.
 
 Traspaso (24 nov 2026), para la siguiente sesión:
-- Rama de trabajo: `ccr-ba71d480-tbig3e` (PR #1 contra `main`, CI en verde). El bot corregido y su nueva hora (22:07 UTC) solo se ejecutan solos cuando se fusione el PR: las tareas programadas de GitHub salen de `main`.
-- Repositorio propio de Rango: preparado y probado, pero falta que el propietario cree un repositorio vacío (p. ej. `TheDonEduardo/rango`, privado, sin README). Después: `git subtree split --prefix=rango`, adaptar workflows y `.claude/` (pasos en `docs/publicar.md`, sección 1), conectar el repo a la sesión con permiso de escritura y subir como `main`. `_headers` (Cloudflare Pages) y `tools/tickers.txt` ya están en `rango/`.
+- Rama de trabajo: `main` del repositorio propio (https://github.com/TheDonEduardo/rango), con historial heredado de la carpeta `rango/` del repositorio del bot. Las tareas programadas de GitHub (casos de los sábados) salen de `main`.
+- Repositorio propio de Rango: separado del bot con `git subtree split` y adaptado (workflows y `.claude/` en la raíz, sin dependencias del bot: la lista de valores está en `tools/tickers.txt`, copia de la cartera del bot que hay que actualizar a mano si cambia). `_headers` (Cloudflare Pages) se conserva aunque GitHub Pages no lo use.
 - Web: el propietario quiere dominio propio en Cloudflare Pages. `rango.es` y `rango.app` están ocupados; libres al 24/11: `rangoapp.es`, `aprenderango.es`, `aprenderango.com`, `rangoapp.net`. Supabase: plan gratuito para probar y Pro (25 $/mes) al lanzar; falta que cree el proyecto (Frankfurt), ejecute `docs/supabase.sql` y pase la URL y la clave anon.
 - Monetización recomendada: suscripción con Básico y Finanzas gratis y las rutas avanzadas, casos reales y simuladores de pago (5-8 €/mes o 40-60 €/año); evitar afiliación con brókeres y publicidad. Antes de cobrar: cuentas, datos con licencia, revisión legal y Stripe.
 - Contenido: toda la app revisada con `verificador-cifras` (153 unidades más las catorce últimas tandas: `opmariposa`, `crpuentes`, `ofertas`, `autonomo`, `perfil`, `gestionauto`, `gordon`, `correlacion`, `banco`, `opparidad`, `crcartera`, `mirentabilidad`, `caidas`, `vencimientos`, `stoptiempo`, `crcapas`, `reunificacion`, `opestilo`, `rfondos`, `pvc`, `dividbasico`, `medias`, `craidrops`, `irregulares`, `elliott2`, `letrapequena`, `redteam`, `interescorto`, `planejecucion`, `unfondo`, `opleaps`, `sostenible`, `negociar`, `crherencia`, `crecvalor`, `supervivencia`, `automatizar`, `pocketpivot`, `opdiagonal`, `crconsenso`, `costecoche`, `saas`, `acumulacion`, `volatilidad`, `primermes`, `opplazo`, `croraculos`, `segundamano`, `organico`, `rfplazo`, `climax`, `primerfondo`, `objetivofecha`, `opsesgo`, `crnft` y `ajustado`). Las unidades nuevas se escriben con `/nueva-unidad` y se verifican antes del commit.
-- Pendiente del propietario: anular en Google AI Studio la clave antigua de Gemini (sigue en el historial de `alpha-portfolio-bot`). ECC está instalado en su Claude Code local, no en las sesiones en la nube.
+- Pendiente del propietario: anular en Google AI Studio la clave antigua de Gemini (sigue en el historial del repositorio del bot, no en este). ECC está instalado en su Claude Code local, no en las sesiones en la nube.
 
 Pendiente (por orden sugerido):
 1. Decisiones del propietario: activar las cuentas (ya programadas: crear el proyecto de Supabase y seguir los pasos de `docs/persistencia.md`) y, después, monetización. Los avisos de racha (push) necesitan una función programada en el servidor.
@@ -195,7 +201,7 @@ Pendiente (por orden sugerido):
 4. Mantenimiento anual: el test avisa del contenido con `revisar` vencido (fiscalidad, FOGAIN, SOCIMI, SPIVA).
 5. Ideas: avisos por Telegram con el bot del repo; bono español a 10 años si aparece una fuente fiable; más figuras en las guías donde un dibujo aclare.
 6. Traducción: textos de interfaz en `src/textos.js`; el contenido es específico de España (ver `docs/publicar.md`).
-7. Fuera de Rango, en el bot del repo: se ha quitado Gemini de `portfolio_manager.py` (ahora envía a Telegram el cierre y la variación del día de cada valor y de la cartera ponderada). Falta que el propietario anule la clave antigua en Google AI Studio (sigue en el historial de git) y fusione el cambio en `main`. La lista `PORTFOLIO` la usa tools/casos.py: no la quites.
+7. Fuera de Rango (en el repositorio del bot): falta que el propietario anule la clave antigua de Gemini en Google AI Studio. `tools/tickers.txt` es una copia de la lista `PORTFOLIO` del bot: si cambia allí, actualízala aquí.
 
 ## Ruta fundamental
 
@@ -225,7 +231,7 @@ Unidades (2 lecciones × 4 ejercicios cada una, como la ruta técnica):
 
 Decisiones tomadas:
 - Ruta separada con selector Técnico / Fundamental: quien viene a por fundamental no pasa antes por la técnica, y cada ruta guarda su progreso.
-- Dos capas por lección: ejercicios fijos con números limpios para enseñar el concepto (en `src/content/units/`) y, al final, un caso real de los valores de la cartera del bot (en `casos.json`).
+- Dos capas por lección: ejercicios fijos con números limpios para enseñar el concepto (en `src/content/units/`) y, al final, un caso real de los valores de `tools/tickers.txt` (en `casos.json`).
 - Los casos reales son solo de cálculo y se generan con código: la respuesta se calcula con las mismas cifras redondeadas que ve el usuario y el `why` solo afirma hechos verificables con los datos (comparaciones con umbrales del marco o con el trimestre anterior). Nada de valoraciones ni de «compra/vende»: cada caso indica fuente y fecha y lo marca como formación, tanto en el inicio de Fundamental como bajo «Caso real: …» en cada ejercicio (`fuenteHTML` en views/lesson.js). Los enunciados de `casos.py` van en hipotético («Si se comprara…», «¿Cuántas acciones permitiría comprar…?»), nunca en imperativo sobre un valor real.
 - Si una plantilla puede dar un resultado negativo, se reformula o se descarta el caso (ver regla de `num`).
 - Filtra los datos absurdos o distorsionados en vez de explicarlos: PER mayor de 200 (BPA casi nulo), EV/EBITDA de 100 o más, rentabilidad por flujo de caja libre de 8 % o más (en negocios financieros el flujo operativo incluye fondos de clientes). El flujo de caja libre se suma de 4 trimestres consecutivos del estado de flujos, no del campo `freeCashflow` de Yahoo, que no es fiable. La cobertura de intereses usa el beneficio operativo, no el «EBIT» de Yahoo (incluye plusvalías). Las plantillas de F3 excluyen el sector financiero: en bancos, deuda y caja son la materia prima del negocio.

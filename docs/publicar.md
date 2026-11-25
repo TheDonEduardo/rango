@@ -4,17 +4,11 @@ Pasos que dependen de decisiones o cuentas del propietario. El código ya está 
 
 ## 1. Repositorio propio
 
-Rango vive en `rango/` dentro del repositorio del bot. Para separarlo:
+Hecho: Rango vive en https://github.com/TheDonEduardo/rango (historial separado con `git subtree split --prefix=rango`). Los workflows están en `.github/workflows/`, `.claude/` en la raíz y los generadores leen los valores de `RANGO_TICKERS` o de `tools/tickers.txt` (copia de la lista del bot). Comprobación tras cualquier cambio: `npm test`, `python -I tools/test_casos.py`, `python -I tools/test_semana.py`, `node test/e2e.cjs` y `python .claude/skills/nueva-unidad/recuentos.py --comprobar`.
 
-1. Crea un repositorio nuevo en GitHub (por ejemplo, `rango`), privado.
-2. Copia el contenido de `rango/` a la raíz del nuevo repositorio. Para conservar el historial:
-   `git subtree split --prefix=rango -b rango-solo` en este repositorio y sube esa rama al nuevo como `main`.
-3. Mueve los dos workflows a `.github/workflows/` del nuevo repositorio y quita el prefijo `rango/`:
-   - `rango_test.yml`: borra `defaults.run.working-directory` y los filtros `paths`.
-   - `rango_casos.yml`: cambia `rango/tools/...` por `tools/...` y `rango/src/content/...` por `src/content/...`; quita `working-directory: rango`.
-4. Valores de los casos reales: `tools/tickers.txt` ya existe (misma lista que el bot) (un ticker por línea) o define la variable `RANGO_TICKERS` en el workflow. `tools/casos.py` y `tools/semana.py` los leen en ese orden antes de buscar `../portfolio_manager.py`.
-5. Copia `.claude/` de la raíz y quita el prefijo `rango/` de sus rutas (`extraer.py`, `recuentos.py`, `corregir.py`, `plantilla.py`, `SKILL.md`, `verificador-cifras.md` y la expresión del hook `empaquetar.mjs`).
-6. Nada más depende del bot. Comprueba en la copia: `npm test`, `python -I tools/test_casos.py`, `python -I tools/test_semana.py`, `node test/e2e.cjs` y `python .claude/skills/nueva-unidad/recuentos.py --comprobar`.
+## 1 ter. Web en GitHub Pages
+
+Settings → Pages → Deploy from a branch → `main` y carpeta `/ (root)`. La web queda en `https://thedoneduardo.github.io/rango/`. `.nojekyll` desactiva Jekyll. Un repositorio privado necesita un plan de GitHub que admita Pages privado; si no, hay que hacerlo público (comprueba antes que no hay datos que no quieras publicar).
 
 ## 1 bis. Web en Cloudflare Pages
 
