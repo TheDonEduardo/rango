@@ -44,7 +44,8 @@ const simLast=()=>SEMANA.data[SEMANA.data.length-1][3];
 const fechaES=iso=>iso.split('-').reverse().join('/');
 function simStart(){
   const c=simLast(),st=SEMANA.step,sn=v=>Math.round(Math.round(v/st)*st*100)/100;
-  return {entry:sn(c*1.03),stop:sn(c*0.95),target:sn(c*1.12)};
+  let entry=sn(c*1.01);if(entry<=c)entry=sn(c+st);
+  return {entry,stop:sn(c*0.95),target:sn(c*1.12)};
 }
 export function simValid(p){return p.stop<p.entry&&p.entry<p.target&&p.entry>simLast()}
 function simInfoHTML(){
