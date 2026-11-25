@@ -1,0 +1,198 @@
+{
+  "n": 24,
+  "id": "volatilidad",
+  "track": "tecnico",
+  "title": "Operar según la volatilidad",
+  "blurb": "El índice de volatilidad como termómetro del miedo: menos acciones con stops más anchos, rupturas que fallan más y por qué la calma no es seguridad.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "El termómetro del miedo",
+      "texto": "El índice de volatilidad sale de los precios de las opciones sobre un índice bursátil: es la volatilidad que espera el mercado para el próximo mes, expresada en tasa anual. Sube cuando cae. Dividido entre 16, da el movimiento diario aproximado.",
+      "ejemplo": "Índice en 32: unos 2 % diarios. En 16: un 1 %."
+    },
+    {
+      "id": "g2",
+      "titulo": "Menos acciones, mismo riesgo",
+      "texto": "Si sube la volatilidad, el ATR crece y el stop se aleja. Con el mismo riesgo en euros compras menos acciones y baja la exposición. Mantener el tamaño duplicaría el riesgo.",
+      "ejemplo": "Capital de 20.000 €, riesgo de 200 €, stop a 2 ATR, acción de 50 €. ATR de 1,00 €: 100 acciones. ATR de 2,00 €: 50 (12,5 % del capital, antes 25 %). Con 100, arriesgas 400 €."
+    },
+    {
+      "id": "g3",
+      "titulo": "Rupturas en mercados nerviosos",
+      "texto": "Las oscilaciones grandes devuelven el precio dentro de la base y saltan stops cercanos: las rupturas fallan más. Con la misma recompensa, menos aciertos bajan mucho lo que esperas ganar.",
+      "ejemplo": "Gana 3R y pierde 1R. Acierta 6 de 10: 1,4R por operación. Acierta 4 de 10: 0,6R."
+    },
+    {
+      "id": "g4",
+      "titulo": "Calma no es seguridad",
+      "texto": "Con volatilidad baja el ATR es pequeño: el stop queda cerca y compras muchas acciones. Si llega un hueco, el stop no garantiza el precio y la pérdida supera lo previsto.",
+      "ejemplo": "Con 20.000 €, 200 acciones a 50 € con stop en 49 €: arriesgas 200 € (1 %). Si abre a 46 €, pierdes 800 €: un 4 % del capital."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "vo1",
+      "title": "Leer el termómetro y ajustar el tamaño",
+      "ex": [
+        {
+          "id": "vo1-1",
+          "t": "choice",
+          "q": "¿Qué mide el índice de volatilidad de un mercado bursátil?",
+          "opts": [
+            "El volumen total negociado en el índice durante el último mes",
+            "Cuántas acciones del índice cierran en rojo cada día",
+            "La volatilidad que descuentan las opciones del índice para el próximo mes",
+            "La rentabilidad media que ha dado el índice el último año"
+          ],
+          "a": 2,
+          "why": "Sale de los precios de las opciones sobre el índice: es volatilidad implícita. Suele subir cuando cae el mercado, por eso se llama el termómetro del miedo.",
+          "guia": "g1",
+          "porque": [
+            "Falso: el índice de volatilidad no mide volumen, sino lo que descuentan las opciones sobre el índice.",
+            "Falso: no cuenta acciones que cierran en rojo, sino la volatilidad que descuentan las opciones.",
+            null,
+            "Falso: no mira el pasado, sino lo que espera el mercado hacia delante, a partir de las opciones."
+          ]
+        },
+        {
+          "id": "vo1-2",
+          "t": "num",
+          "q": "El índice de volatilidad marca 32 (volatilidad anual, en %). Como aproximación, divídelo entre 16 para estimar el movimiento diario del índice. ¿Cuántos % se espera que se mueva el índice en un día?",
+          "unit": "%",
+          "a": 2,
+          "why": "32 ÷ 16 = 2 %. El 16 es, aproximadamente, la raíz cuadrada de las 252 sesiones del año. Con el índice en 16, serían un 1 % diario.",
+          "guia": "g1"
+        },
+        {
+          "id": "vo1-3",
+          "t": "num",
+          "q": "Tienes 20.000 € y arriesgas un 1 % (200 €) por operación con el stop a 2 ATR. En calma, el ATR de una acción era 1,00 € y comprabas 100 acciones. Con el mercado nervioso su ATR es 2,00 €. ¿Cuántas acciones compras ahora con el mismo riesgo?",
+          "unit": "",
+          "a": 50,
+          "why": "El stop pasa a 2 × 2,00 = 4 € de distancia, y 200 ÷ 4 = 50 acciones: la mitad. Con 100 acciones y ese stop arriesgarías 400 €, el 2 % del capital.",
+          "guia": "g2"
+        },
+        {
+          "id": "vo1-4",
+          "t": "num",
+          "q": "En calma comprabas 100 acciones a 50 € con un capital de 20.000 € (un 25 % del capital). Con el mercado nervioso compras solo 50 acciones a 50 €. ¿Qué % del capital ocupa ahora la posición? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 12.5,
+          "why": "50 × 50 € = 2.500 €, y 2.500 ÷ 20.000 = 12,5 %. Con stops más anchos y el mismo riesgo en euros, la exposición baja a la mitad.",
+          "tol": 0.06,
+          "guia": "g2"
+        },
+        {
+          "id": "vo1-5",
+          "t": "slide",
+          "q": "Tu capital es de 20.000 € y arriesgas un 1 % (200 €) por operación. Con el mercado nervioso, el ATR de una acción de 50 € es 2,00 € y pones el stop a 2 ATR (4 €). Elige cuántas acciones compras sin pasar de 200 € de riesgo.",
+          "label": "Acciones",
+          "min": 0,
+          "max": 150,
+          "step": 10,
+          "start": 100,
+          "a": 50,
+          "unit": "",
+          "why": "200 ÷ 4 = 50 acciones. Con más, el stop de 4 € arriesgaría más de 200 €: con 100, serían 400 €.",
+          "show": [
+            {
+              "label": "Pérdida si salta el stop",
+              "k": 4,
+              "b": 0,
+              "unit": "€"
+            },
+            {
+              "label": "Peso en la cartera",
+              "k": 0.25,
+              "b": 0,
+              "unit": "%",
+              "dec": 1
+            }
+          ],
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "vo2",
+      "title": "Rupturas, calma engañosa y límites",
+      "ex": [
+        {
+          "id": "vo2-1",
+          "t": "choice",
+          "q": "¿Por qué fallan más rupturas cuando el mercado está nervioso?",
+          "opts": [
+            "Porque las bases solo se forman cuando el mercado está en calma",
+            "Las oscilaciones grandes devuelven el precio a la base y saltan stops cercanos",
+            "Porque el volumen sube tanto que impide cualquier ruptura",
+            "Porque en mercados nerviosos las acciones dejan de tener resistencias"
+          ],
+          "a": 1,
+          "why": "Con oscilaciones diarias mayores, el precio puede volver dentro de la base o tocar un stop corto aunque la idea siga siendo válida.",
+          "guia": "g3",
+          "porque": [
+            "Falso: las bases se forman también en mercados nerviosos; el problema es que ruptura y stop se ven más sacudidos.",
+            null,
+            "Falso: el volumen no impide las rupturas; ocurren, pero con más sacudidas que las devuelven a la base.",
+            "Falso: las resistencias siguen existiendo; lo que cambia es que el precio oscila más alrededor de ellas."
+          ]
+        },
+        {
+          "id": "vo2-2",
+          "t": "num",
+          "q": "Una estrategia de rupturas gana 3R cuando acierta y pierde 1R cuando falla. Con el mercado en calma acierta 6 de cada 10 veces; con el mercado nervioso, solo 4 de cada 10. ¿Cuántos R espera ganar por operación en el mercado nervioso? Redondea a 1 decimal.",
+          "unit": "R",
+          "a": 0.6,
+          "why": "0,4 × 3R − 0,6 × 1R = 0,6R por operación. En calma serían 0,6 × 3 − 0,4 × 1 = 1,4R: menos de la mitad.",
+          "tol": 0.06,
+          "guia": "g3"
+        },
+        {
+          "id": "vo2-3",
+          "t": "choice",
+          "q": "El índice de volatilidad lleva meses en mínimos y las acciones de tu cartera casi no se mueven. ¿Qué conclusión es correcta?",
+          "opts": [
+            "Hay calma, pero no seguridad: un hueco puede saltar tus stops y perder más de lo previsto",
+            "El riesgo es bajo, así que puedes duplicar el riesgo por operación",
+            "El mercado no puede caer ni un 5 % en una sola sesión",
+            "Un índice de volatilidad bajo anuncia subidas durante los próximos meses"
+          ],
+          "a": 0,
+          "why": "La volatilidad baja refleja la calma reciente y la que se espera, pero no impide un hueco. Con stops cercanos compras muchas acciones, y un hueco te hace perder más de lo previsto.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Falso: la calma no reduce el riesgo de un hueco; subir el riesgo por operación lo multiplicaría.",
+            "Falso: la volatilidad baja no impide una caída fuerte en una sola sesión; los huecos ocurren.",
+            "Falso: el índice no anuncia subidas; solo refleja lo que descuentan las opciones."
+          ]
+        },
+        {
+          "id": "vo2-4",
+          "t": "num",
+          "q": "Con 20.000 € de capital, compras 200 acciones a 50,00 € con el stop en 49,00 € (arriesgas 200 €, un 1 %). Al día siguiente la acción abre con un hueco a 46,00 € y vendes ahí. ¿Qué % del capital pierdes?",
+          "unit": "%",
+          "a": 4,
+          "why": "(50 − 46) × 200 = 800 €, y 800 ÷ 20.000 = 4 %: cuatro veces el 1 % previsto. El stop no garantiza el precio de salida.",
+          "guia": "g4"
+        },
+        {
+          "id": "vo2-5",
+          "t": "order",
+          "q": "Ordena los pasos para ajustar tu tamaño cuando el mercado se pone nervioso.",
+          "items": [
+            "El índice de volatilidad sube y el mercado se pone nervioso",
+            "Miras el ATR actual de la acción",
+            "Pones el stop a un múltiplo de ese ATR",
+            "Calculas las acciones: riesgo en euros entre la distancia al stop"
+          ],
+          "why": "El ATR más alto aleja el stop y, al dividir tu riesgo en euros entre esa distancia, compras menos acciones.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

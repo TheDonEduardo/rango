@@ -1,0 +1,203 @@
+{
+  "n": 19,
+  "id": "acumulacion",
+  "track": "pasiva",
+  "title": "Acumulación o distribución",
+  "blurb": "Fondos y ETF que reparten los dividendos frente a los que los reinvierten: efecto fiscal para un residente en España, lo que se pierde en 20 años y cuándo conviene repartir.",
+  "revisar": "2027-11",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Dos formas de cobrar",
+      "texto": "Un fondo de distribución ingresa los dividendos en tu cuenta; uno de acumulación los reinvierte dentro. El reparto baja el precio de la participación lo que se paga: no es dinero extra.",
+      "ejemplo": "10.000 € en un fondo que rinde un 6 %: un 2 % en dividendos y un 4 % de subida del precio. Distribución: 200 € al año en tu cuenta."
+    },
+    {
+      "id": "g2",
+      "titulo": "Cuándo tributa en España",
+      "texto": "Para un residente, los repartos tributan al cobrarse; en acumulación, el impuesto se difiere hasta vender. Compruébalo con la norma vigente. Aquí, un 19 % simplificado sobre cada reparto, sin tramos.",
+      "ejemplo": "19 % de 200 € = 38 €; reinviertes 162 €. Rentabilidad neta: 4 + 1,62 = 5,62 %, frente al 6 % de acumulación."
+    },
+    {
+      "id": "g3",
+      "titulo": "Veinte años",
+      "texto": "El impuesto pagado cada año deja de rendir y se acumula. Al vender, la acumulación paga sobre una ganancia mayor, así que la ventaja baja, pero sigue. Con más años, crece.",
+      "ejemplo": "20 años: 32.071 € frente a 29.849 € (+7,4 %). Tras vender, con 19 % sobre la ganancia: 27.878 € frente a 27.164 € (+2,6 %). A 40 años, antes de vender, +15,4 %."
+    },
+    {
+      "id": "g4",
+      "titulo": "Cuándo repartir",
+      "texto": "La distribución tiene sentido si necesitas una renta regular sin ordenar ventas. Si no necesitas el dinero, la acumulación suele ser más eficiente: difiere el impuesto.",
+      "ejemplo": "30.000 € al 2 %: 600 € brutos; con el 19 %, 114 € de impuesto y 486 € netos."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "ac1",
+      "title": "Cobrar o reinvertir",
+      "ex": [
+        {
+          "id": "ac1-1",
+          "t": "choice",
+          "q": "Dos fondos siguen el mismo índice: A reparte los dividendos en tu cuenta y B los reinvierte por dentro. ¿Qué ocurre con el precio de la participación de cada uno?",
+          "opts": [
+            "Tras cada reparto, la de B baja lo repartido y la de A sigue subiendo",
+            "Tras cada reparto, la de A baja lo repartido y la de B sigue subiendo",
+            "La de A sube más, porque cobras el dividendo y su precio no baja",
+            "Las dos valen siempre lo mismo, porque siguen el mismo índice"
+          ],
+          "a": 1,
+          "why": "Un reparto saca dinero del fondo, y el precio baja lo pagado. El que reinvierte no lo reparte y su precio sube con ese dinero.",
+          "guia": "g1",
+          "porque": [
+            "Al revés: es la participación de A, que reparte, la que baja tras cada reparto.",
+            null,
+            "Falso: el precio de A baja lo que reparte; ese dinero lo cobras, pero ya no está dentro del fondo.",
+            "Falso: sin contar el reparto, el precio de A queda por debajo del de B, aunque el índice sea el mismo."
+          ]
+        },
+        {
+          "id": "ac1-2",
+          "t": "num",
+          "q": "Inviertes 10.000 € en un fondo de distribución que reparte un 2 % al año en dividendos. Para un residente en España los repartos tributan al cobrarse; supón un 19 % sobre cada uno, sin tramos. ¿Cuántos euros pagas de impuesto el primer año?",
+          "unit": "€",
+          "a": 38,
+          "why": "2 % de 10.000 € = 200 € de reparto, y el 19 % de 200 € son 38 €. Te quedan 162 € para reinvertir. Compruébalo con la norma vigente.",
+          "guia": "g2"
+        },
+        {
+          "id": "ac1-3",
+          "t": "num",
+          "q": "Un fondo rinde un 6 % al año: un 2 % en dividendos y un 4 % de subida del precio. Si reparte y reinviertes lo que te queda tras pagar un 19 % sobre el dividendo, ¿qué rentabilidad neta consigues al año? Redondea a 2 decimales.",
+          "unit": "%",
+          "a": 5.62,
+          "why": "El 2 % de dividendo se queda en 2 × 0,81 = 1,62 %. Con el 4 % de precio: 5,62 %, frente al 6 % del fondo de acumulación.",
+          "tol": 0.01,
+          "guia": "g2"
+        },
+        {
+          "id": "ac1-4",
+          "t": "choice",
+          "q": "Eres residente fiscal en España. En términos generales, ¿cuándo tributa un fondo o ETF de distribución y cuándo uno de acumulación?",
+          "opts": [
+            "Los dos, solo cuando se venden",
+            "Los dos, cada año, aunque no cobres nada",
+            "El de acumulación, cada año; el de distribución, al vender",
+            "El de distribución, al cobrar los repartos; el de acumulación, al vender"
+          ],
+          "a": 3,
+          "why": "Los repartos de un ETF de distribución tributan en el año en que los cobras; en uno de acumulación, la ganancia no tributa hasta que vendes. Compruébalo con la norma vigente.",
+          "guia": "g2",
+          "porque": [
+            "Falso: los repartos de distribución tributan en el año en que los cobras, sin esperar a la venta.",
+            "Falso: el de acumulación no reparte nada, así que no hay nada que tributar cada año.",
+            "Al revés: es el fondo de distribución el que tributa cada año, y el de acumulación al vender.",
+            null
+          ]
+        },
+        {
+          "id": "ac1-5",
+          "t": "match",
+          "q": "Empareja cada concepto con lo que significa para un residente en España.",
+          "pairs": [
+            [
+              "Fondo de distribución",
+              "Te ingresa en la cuenta lo que reparten las empresas"
+            ],
+            [
+              "Fondo de acumulación",
+              "Lo reinvierte por dentro y su participación sube"
+            ],
+            [
+              "Dividendo cobrado",
+              "Tributa en el año en que lo recibes"
+            ],
+            [
+              "Plusvalía latente",
+              "Ganancia aún sin vender: de momento no tributa"
+            ]
+          ],
+          "why": "El de distribución paga al cobrar y el de acumulación difiere el impuesto: la plusvalía latente no tributa hasta la venta. Compruébalo con la norma vigente.",
+          "guia": "g1"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "ac2",
+      "title": "Veinte años y cuándo repartir",
+      "ex": [
+        {
+          "id": "ac2-1",
+          "t": "num",
+          "q": "Inviertes 10.000 € durante 20 años en un fondo que rinde un 6 % al año. Si acumula, llegas a 32.071 €; si reparte un 2 % de dividendos y reinviertes lo que queda tras un 19 % sobre cada uno, rindes un 5,62 % y llegas a 29.849 €. Antes de vender, ¿cuánto más tienes con acumulación, en %? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 7.4,
+          "why": "32.071 ÷ 29.849 = 1,074: un 7,4 % más. El impuesto de cada reparto, que dejó de rendir durante años, es lo que se pierde.",
+          "tol": 0.06,
+          "guia": "g3"
+        },
+        {
+          "id": "ac2-2",
+          "t": "num",
+          "q": "Inviertes 10.000 € durante 20 años al 6 % (un 2 % repartido). Al final vendes y pagas un 19 % sobre la ganancia. Acumulación: te quedan 27.878 €. Distribución, con los repartos reinvertidos sumados al coste de compra: 27.164 €. ¿Cuánto más tienes con acumulación tras vender, en %? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 2.6,
+          "why": "27.878 ÷ 27.164 = 1,026: un 2,6 % más. La ventaja baja del 7,4 % porque la acumulación paga al vender una ganancia mayor, pero sigue por delante.",
+          "tol": 0.06,
+          "guia": "g3"
+        },
+        {
+          "id": "ac2-3",
+          "t": "choice",
+          "q": "Inviertes 10.000 € a un 6 % anual, con un 2 % de reparto y un 19 % de impuesto sobre cada reparto. ¿Qué pasa con la ventaja de la acumulación si el plazo pasa de 20 a 40 años?",
+          "opts": [
+            "Crece en ambos casos: el impuesto no pagado rinde más años",
+            "Desaparece, porque al vender se paga todo lo diferido",
+            "Se mantiene igual, porque no depende del plazo",
+            "Se invierte: con más años gana la distribución"
+          ],
+          "a": 0,
+          "why": "Antes de vender, la ventaja pasa del 7,4 % a 20 años al 15,4 % a 40 (102.857 € frente a 89.094 €) y tras vender, del 2,6 % al 8,7 % (85.214 € frente a 78.398 €): el diferimiento se compone.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Falso: al vender se paga sobre la ganancia, pero el diferimiento ya rindió durante todos esos años.",
+            "Falso: depende del plazo: cuantos más años, más rinde el impuesto no pagado.",
+            "Falso: con más años, la ventaja de la acumulación crece, no se invierte."
+          ]
+        },
+        {
+          "id": "ac2-4",
+          "t": "choice",
+          "q": "¿En qué caso tiene más sentido un fondo de distribución?",
+          "opts": [
+            "Si quieres que lo que cobras no tribute en ningún caso",
+            "Si buscas dividendos extra que no reducen el valor del fondo",
+            "Si necesitas una renta periódica sin tener que vender participaciones",
+            "Si el fondo te asegura un reparto fijo todos los años"
+          ],
+          "a": 2,
+          "why": "Sirve para vivir de las rentas con comodidad, aceptando que los repartos tributan al cobrarse. No son dinero extra: bajan el valor del fondo.",
+          "guia": "g4",
+          "porque": [
+            "Falso: los repartos de un fondo de distribución tributan al cobrarse para un residente en España.",
+            "Falso: un reparto baja el precio de la participación lo que se paga, así que no es dinero extra.",
+            null,
+            "Falso: ningún fondo asegura un reparto fijo; lo reparten las empresas y puede cambiar."
+          ]
+        },
+        {
+          "id": "ac2-5",
+          "t": "num",
+          "q": "Tienes 30.000 € en un fondo de distribución que reparte un 2 % al año. Supón un impuesto del 19 % sobre cada reparto. ¿Cuántos euros netos cobras al año?",
+          "unit": "€",
+          "a": 486,
+          "why": "2 % de 30.000 € = 600 € brutos; el 19 % son 114 €, y quedan 486 €. Compruébalo con la norma vigente.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

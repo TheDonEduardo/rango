@@ -1,0 +1,194 @@
+{
+  "n": 6,
+  "id": "costecoche",
+  "track": "personal",
+  "title": "Cuánto cuesta cada kilómetro",
+  "blurb": "Suma todo lo que cuesta tener coche, divídelo entre los kilómetros y compáralo con otras formas de moverte.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Suma todo lo que cuesta",
+      "texto": "Suma pérdida de valor, seguro, combustible, mantenimiento, impuestos y aparcamiento. Lo que más pesa suele ser lo que no sale en ninguna factura: la pérdida de valor.",
+      "ejemplo": "Un coche de 12.000 € vale 10.000 € un año después: 2.000 €. Con 600 € de seguro, 1.050 € de combustible, 650 € de mantenimiento, 100 € de impuestos y 600 € de plaza: 5.000 € al año."
+    },
+    {
+      "id": "g2",
+      "titulo": "Fijos y variables",
+      "texto": "Los costes fijos se pagan igual con el coche parado; los variables crecen con los kilómetros. Si ya tienes el coche, para un viaje extra solo cuenta el coste marginal: lo variable.",
+      "ejemplo": "Fijos: 3.300 €. Variables: 1.700 € por 10.000 km, 17 céntimos por km (7 litros por 100 km a 1,50 € son 10,50 € cada 100 km). Viaje extra de 200 km: 34 €."
+    },
+    {
+      "id": "g3",
+      "titulo": "Coste por kilómetro",
+      "texto": "Divide el coste total del año entre los kilómetros que haces. Cuantos menos kilómetros, más caro sale cada uno, porque los costes fijos se reparten entre menos.",
+      "ejemplo": "5.000 € entre 10.000 km: 50 céntimos por km. Con 5.000 km, los fijos siguen en 3.300 € y los variables bajan a 850 €: 4.150 € entre 5.000 km, 83 céntimos por km."
+    },
+    {
+      "id": "g4",
+      "titulo": "Compara con alternativas",
+      "texto": "Calcula lo que costaría moverte sin coche: transporte público, coche compartido o alquiler puntual. Busca el punto de equilibrio, donde ambas opciones cuestan igual.",
+      "ejemplo": "Con 5.000 km: abono de 480 € más 12 días de alquiler a 60 €: 1.200 € al año, frente a 4.150 €. Un coche compartido a 47 céntimos por km iguala al propio a 11.000 km."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "kc1",
+      "title": "Sumar lo que cuesta el coche",
+      "ex": [
+        {
+          "id": "kc1-1",
+          "t": "num",
+          "q": "Un coche vale 12.000 € y un año después vale 10.000 €. ¿Qué porcentaje de su valor pierde en ese año? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 16.7,
+          "why": "Pierde 2.000 € (12.000 − 10.000), y 2.000 ÷ 12.000 = 16,7 %. Es un coste real aunque no salga de tu cuenta.",
+          "tol": 0.06,
+          "guia": "g1"
+        },
+        {
+          "id": "kc1-2",
+          "t": "num",
+          "q": "Un coche gasta 7 litros cada 100 km y el litro de combustible cuesta 1,50 €. ¿Cuántos euros cuesta el combustible de cada 100 km? Redondea a 1 decimal.",
+          "unit": "€",
+          "a": 10.5,
+          "why": "7 litros × 1,50 € = 10,50 € cada 100 km, es decir, 10,5 céntimos por kilómetro. Es un coste variable: crece con los kilómetros.",
+          "tol": 0.06,
+          "guia": "g2"
+        },
+        {
+          "id": "kc1-3",
+          "t": "num",
+          "q": "Tener un coche te cuesta cada año: pérdida de valor, 2.000 €; seguro, 600 €; combustible, 1.050 €; mantenimiento, 650 €; impuestos, 100 €; aparcamiento, 600 €. ¿Cuántos miles de euros suma al año?",
+          "unit": "mil €",
+          "a": 5,
+          "why": "2.000 + 600 + 1.050 + 650 + 100 + 600 = 5.000 €. Solo el combustible es lo que se nota cada semana; el resto suma casi el 80 %.",
+          "guia": "g1"
+        },
+        {
+          "id": "kc1-4",
+          "t": "choice",
+          "q": "Un coche pasa un año entero en el garaje, sin moverse. ¿Qué costes sigues teniendo?",
+          "opts": [
+            "Solo el combustible, que se paga aunque no arranques",
+            "Seguro, impuestos, plaza y pérdida de valor",
+            "Ninguno: un coche parado no genera ningún gasto",
+            "Solo los peajes y el aparcamiento por horas"
+          ],
+          "a": 1,
+          "why": "Seguro, impuestos y plaza se pagan igual, y el coche sigue perdiendo valor con los años: son costes fijos.",
+          "guia": "g2",
+          "porque": [
+            "Falso: sin kilómetros no hay gasto de combustible. Lo que sigues pagando es lo fijo: seguro, impuestos y plaza.",
+            null,
+            "Falso: aunque no se use, el seguro, los impuestos y la plaza se pagan y el coche pierde valor.",
+            "Falso: los peajes dependen de circular. Al no moverte no los pagas, pero el seguro y los impuestos sí."
+          ]
+        },
+        {
+          "id": "kc1-5",
+          "t": "match",
+          "q": "Empareja cada coste del coche con cómo se comporta.",
+          "pairs": [
+            [
+              "Seguro e impuestos",
+              "Se pagan igual aunque no arranques"
+            ],
+            [
+              "Combustible",
+              "Aumenta con cada kilómetro recorrido"
+            ],
+            [
+              "Pérdida de valor",
+              "Diferencia entre el precio de compra y el de reventa"
+            ]
+          ],
+          "why": "Seguro e impuestos son costes fijos; el combustible es variable; y la pérdida de valor es lo que cuesta el coche entre que lo compras y lo vendes.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "kc2",
+      "title": "Coste por kilómetro y alternativas",
+      "ex": [
+        {
+          "id": "kc2-1",
+          "t": "num",
+          "q": "Tener un coche te cuesta 5.000 € al año y haces 10.000 km. ¿Cuántos céntimos cuesta cada kilómetro? Responde en céntimos.",
+          "unit": "",
+          "a": 50,
+          "why": "5.000 € ÷ 10.000 km = 0,50 € por km, es decir, 50 céntimos. Es más de lo que parece mirando solo el combustible, que son 10,5 céntimos.",
+          "guia": "g3"
+        },
+        {
+          "id": "kc2-2",
+          "t": "num",
+          "q": "De los 5.000 € anuales de un coche, 3.300 € son fijos (pérdida de valor, seguro, impuestos y aparcamiento) y 1.700 € dependen de los 10.000 km (combustible y mantenimiento). Si haces solo 5.000 km, los fijos no cambian y los variables bajan a la mitad. ¿Cuántos céntimos cuesta ahora cada kilómetro?",
+          "unit": "",
+          "a": 83,
+          "why": "Cuesta 3.300 + 850 = 4.150 € al año, y 4.150 ÷ 5.000 km = 0,83 €. Con la mitad de kilómetros, el coste por km sube de 50 a 83 céntimos.",
+          "guia": "g3"
+        },
+        {
+          "id": "kc2-3",
+          "t": "num",
+          "q": "Hacer 5.000 km con tu coche cuesta 4.150 € al año. Sin coche, usarías un abono de transporte de 480 € al año y alquilarías un coche 12 días al año a 60 € el día. ¿Cuántos euros al mes cuesta esa alternativa?",
+          "unit": "€",
+          "a": 100,
+          "why": "480 + 12 × 60 = 1.200 € al año, y 1.200 ÷ 12 = 100 € al mes. Con 5.000 km, el coche propio cuesta unos 346 € al mes (4.150 ÷ 12).",
+          "guia": "g4"
+        },
+        {
+          "id": "kc2-4",
+          "t": "slide",
+          "q": "Un coche propio cuesta 3.300 € fijos al año más 17 céntimos por km. Un coche compartido cuesta 47 céntimos por km y ninguna cuota fija. Elige los miles de km al año con los que ambos cuestan lo mismo.",
+          "label": "Miles de km al año",
+          "min": 2,
+          "max": 20,
+          "step": 1,
+          "start": 4,
+          "a": 11,
+          "unit": "mil km",
+          "why": "3.300 ÷ (0,47 − 0,17) = 11.000 km: con esos km los dos cuestan 5.170 €. Con menos km sale más barato el coche compartido; con más, el propio.",
+          "show": [
+            {
+              "label": "Coche propio",
+              "k": 170,
+              "b": 3300,
+              "unit": "€"
+            },
+            {
+              "label": "Coche compartido",
+              "k": 470,
+              "b": 0,
+              "unit": "€"
+            }
+          ],
+          "guia": "g4"
+        },
+        {
+          "id": "kc2-5",
+          "t": "choice",
+          "q": "Ya tienes un coche que cuesta de media 0,50 € por km, pero solo 0,17 € por km cambian con lo que recorres (los demás costes no varían). ¿Qué coste cuenta al decidir un viaje extra de 200 km?",
+          "opts": [
+            "El medio, 0,50 € por km: unos 100 € el viaje",
+            "Ninguno: como el coche ya está pagado, el viaje sale gratis",
+            "El variable, 0,17 € por km: unos 34 € el viaje",
+            "Solo el seguro, repartido entre los kilómetros del viaje"
+          ],
+          "a": 2,
+          "why": "Solo cambia lo que depende de los km: 200 × 0,17 € = 34 €. Es el coste marginal del viaje, mucho menor que el coste medio por kilómetro.",
+          "guia": "g2",
+          "porque": [
+            "No: 0,50 € incluye costes fijos que ya pagas, tengas o no el viaje. Para el viaje solo cuenta lo que cambia.",
+            "No: el coche ya está pagado, pero el combustible y el desgaste del viaje sí cuestan: 0,17 € por km.",
+            null,
+            "No: el seguro es fijo y no cambia por hacer un viaje. Lo que cambia es el combustible y el desgaste."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

@@ -1401,5 +1401,66 @@
    "grupos de minería"
   ],
   "d": "Conjunto de mineros que suman su potencia y se reparten la recompensa. Si pocos grupos suman la mayoría, la red se concentra."
+ },
+ {
+  "termino": "coste fijo",
+  "alias": [
+   "costes fijos"
+  ],
+  "d": "Gasto que pagas igual uses o no el coche (o el servicio): seguro, impuestos, plaza de garaje."
+ },
+ {
+  "termino": "coste variable",
+  "alias": [
+   "costes variables"
+  ],
+  "d": "Gasto que crece con el uso: en un coche, el combustible y parte del mantenimiento, según los kilómetros."
+ },
+ {
+  "termino": "coste marginal",
+  "d": "Lo que cuesta de más una unidad adicional, como un kilómetro extra con el coche que ya tienes. Solo cuenta lo que cambia."
+ },
+ {
+  "termino": "ARR",
+  "d": "Ingresos recurrentes anuales: las cuotas mensuales de los clientes activos multiplicadas por 12. No es ingreso reconocido ni caja."
+ },
+ {
+  "termino": "retención neta de ingresos",
+  "alias": [
+   "NRR",
+   "retención neta"
+  ],
+  "d": "Lo que pagan hoy los clientes de hace un año, con ampliaciones, bajas y rebajas, en % de lo que pagaban entonces. Por encima del 100 %, los clientes actuales gastan más."
+ },
+ {
+  "termino": "retención bruta de ingresos",
+  "alias": [
+   "retención bruta"
+  ],
+  "d": "Como la retención neta, pero sin contar ampliaciones: solo mide lo que se pierde. Nunca supera el 100 %."
+ },
+ {
+  "termino": "regla del 40",
+  "d": "Crecimiento anual de ingresos (en %) más margen de flujo de caja libre (en %). En el software de suscripción, 40 o más se considera una referencia sana."
+ },
+ {
+  "termino": "fondo de acumulación",
+  "alias": [
+   "ETF de acumulación",
+   "fondos de acumulación"
+  ],
+  "d": "Fondo o ETF que reinvierte los dividendos dentro: no los paga y su participación sube con ellos."
+ },
+ {
+  "termino": "fondo de distribución",
+  "alias": [
+   "ETF de distribución",
+   "fondos de distribución"
+  ],
+  "d": "Fondo o ETF que reparte los dividendos en tu cuenta. Tras cada reparto, el precio de la participación baja lo pagado."
+ },
+ {
+  "termino": "índice de volatilidad",
+  "d": "Mide la volatilidad anual que descuentan las opciones sobre un índice bursátil para el próximo mes. Suele subir cuando el mercado cae: el termómetro del miedo."
  }
 ]

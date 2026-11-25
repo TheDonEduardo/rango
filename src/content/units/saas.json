@@ -1,0 +1,198 @@
+{
+  "n": 34,
+  "id": "saas",
+  "track": "fundamental",
+  "title": "Empresas de suscripción",
+  "blurb": "ARR, retención neta, margen bruto y regla del 40: cómo leer una empresa de software por suscripción sin dejarte engañar por el pago en acciones.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "ARR",
+      "texto": "El ARR son las cuotas mensuales de los clientes activos multiplicadas por 12. Mira hacia delante: no es ingreso reconocido ni caja, y deja fuera los pagos puntuales.",
+      "ejemplo": "Una empresa cobra 4,5 M$ al mes: 4,5 × 12 = 54 M$ de ARR."
+    },
+    {
+      "id": "g2",
+      "titulo": "Retención de ingresos",
+      "texto": "La retención neta compara lo que pagan hoy los clientes de hace un año con lo que pagaban, contando ampliaciones, bajas y rebajas. Sobre el 100 % crece sin clientes nuevos. La bruta no cuenta ampliaciones.",
+      "ejemplo": "De 80 M$: +18 de ampliaciones, −5 de bajas y −3 de rebajas dan 90 M$. Neta: 112,5 %. Bruta: 72 ÷ 80 = 90 %."
+    },
+    {
+      "id": "g3",
+      "titulo": "Margen bruto",
+      "texto": "Es lo que queda de los ingresos tras el coste de servir al cliente: alojamiento y soporte. Un margen bruto alto deja mucho para ventas, desarrollo y beneficio, y permite escalar.",
+      "ejemplo": "Ingresos de 200 M$ y 50 M$ de coste de servir: (200 − 50) ÷ 200 = 75 %."
+    },
+    {
+      "id": "g4",
+      "titulo": "Regla del 40 y pago en acciones",
+      "texto": "La regla del 40 suma el crecimiento y el margen de caja libre, ambos en %. Si pagan sueldos en acciones, réstalo antes: es un coste real que la caja no muestra.",
+      "ejemplo": "Crece un 30 % y genera 30 M$ de caja sobre 200 M$ (15 %): 45. Con 36 M$ de pago en acciones (18 % de los ingresos), el margen es −3 %: 27 puntos."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "sa1",
+      "title": "ARR y retención de ingresos",
+      "ex": [
+        {
+          "id": "sa1-1",
+          "t": "num",
+          "q": "Una empresa de suscripción cobra 4,5 M$ al mes en cuotas de clientes activos. Su ARR (ingresos recurrentes anuales) son esas cuotas mensuales multiplicadas por 12. ¿Cuántos millones de dólares de ARR tiene?",
+          "unit": "mill. $",
+          "a": 54,
+          "why": "4,5 × 12 = 54 M$. El ARR no es ingreso reconocido ni caja: es lo que facturaría en un año si no cambiara nada.",
+          "guia": "g1"
+        },
+        {
+          "id": "sa1-2",
+          "t": "num",
+          "q": "Hace un año, los clientes de una empresa de suscripción pagaban 80 M$ al año. Hoy esos mismos clientes pagan 18 M$ más por ampliaciones, 5 M$ menos por clientes que se fueron y 3 M$ menos por rebajas. Sin contar clientes nuevos, ¿cuál es su retención neta de ingresos (NRR), en %? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 112.5,
+          "why": "80 + 18 − 5 − 3 = 90 M$, y 90 ÷ 80 = 112,5 %. Por encima del 100 %, los clientes actuales gastan más que hace un año.",
+          "tol": 0.06,
+          "guia": "g2"
+        },
+        {
+          "id": "sa1-3",
+          "t": "num",
+          "q": "Hace un año, los clientes de una empresa de suscripción pagaban 80 M$ al año. Hoy esos mismos clientes pagan 18 M$ más por ampliaciones, 5 M$ menos por clientes que se fueron y 3 M$ menos por rebajas. ¿Cuál es su retención bruta de ingresos, que no cuenta las ampliaciones, en %?",
+          "unit": "%",
+          "a": 90,
+          "why": "(80 − 5 − 3) ÷ 80 = 72 ÷ 80 = 90 %. La bruta solo mide lo que se pierde, así que nunca supera el 100 %; la neta, 112,5 %, añade las ampliaciones.",
+          "guia": "g2"
+        },
+        {
+          "id": "sa1-4",
+          "t": "choice",
+          "q": "Dos empresas de suscripción hacen crecer su ARR un 30 % al año. La A tiene una retención neta de ingresos del 95 % y la B, del 118 %. ¿Qué diferencia hay entre ellas?",
+          "opts": [
+            "B crece con sus clientes actuales; A depende de captar nuevos",
+            "A pierde cada año el 95 % de sus clientes y B solo pierde el 18 %",
+            "B cobra a sus clientes un 18 % menos que A cuando renuevan",
+            "A es siempre más rentable que B porque su retención neta es menor"
+          ],
+          "a": 0,
+          "why": "Con una NRR del 95 %, A pierde un 5 % de lo que cobraba y tiene que captar más para crecer un 30 %. B ya crece un 18 % solo con sus clientes.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "Falso: una NRR del 95 % significa que conserva el 95 % de lo que cobraba, no que pierda el 95 % de sus clientes.",
+            "Falso: una NRR del 118 % significa que los clientes actuales pagan un 18 % más, no que cobre un 18 % menos.",
+            "Falso: una NRR menor es peor señal, no mejor, y nada dice de la rentabilidad."
+          ]
+        },
+        {
+          "id": "sa1-5",
+          "t": "match",
+          "q": "Empareja cada medida de una empresa de suscripción con lo que mide.",
+          "pairs": [
+            [
+              "ARR",
+              "Cuotas mensuales de los clientes activos llevadas a un año"
+            ],
+            [
+              "Retención neta (NRR)",
+              "Lo que pagan hoy los clientes de hace un año, con ampliaciones, en % de lo que pagaban"
+            ],
+            [
+              "Retención bruta",
+              "Lo que conservas de lo que pagaban, sin ampliaciones: tope del 100 %"
+            ],
+            [
+              "Ingresos reconocidos",
+              "Lo que ya se anota como venta por el servicio prestado"
+            ]
+          ],
+          "why": "El ARR mira hacia delante; la retención neta incluye ampliaciones y la bruta no; los ingresos reconocidos son lo ya servido, que es lo que ves en la cuenta de resultados.",
+          "guia": "g1"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "sa2",
+      "title": "Margen bruto, regla del 40 y pago en acciones",
+      "ex": [
+        {
+          "id": "sa2-1",
+          "t": "num",
+          "q": "Una empresa de suscripción ingresa 200 M$ al año y gasta 50 M$ en servir a sus clientes (alojamiento y soporte). ¿Cuál es su margen bruto, en %?",
+          "unit": "%",
+          "a": 75,
+          "why": "(200 − 50) ÷ 200 = 75 %. Con un margen bruto alto, cada euro de ingresos nuevos deja mucho para pagar ventas y desarrollo.",
+          "guia": "g3"
+        },
+        {
+          "id": "sa2-2",
+          "t": "num",
+          "q": "Una empresa de suscripción ingresa 200 M$ al año y paga 36 M$ de sueldos en acciones. ¿Qué porcentaje de los ingresos suponen esos pagos en acciones?",
+          "unit": "%",
+          "a": 18,
+          "why": "36 ÷ 200 = 18 %. No sale caja, pero las acciones nuevas diluyen a los accionistas: es un coste real.",
+          "guia": "g4"
+        },
+        {
+          "id": "sa2-3",
+          "t": "num",
+          "q": "Una empresa de suscripción crece un 30 % al año, ingresa 200 M$ y genera 30 M$ de flujo de caja libre, pero paga 36 M$ en acciones a sus empleados. ¿Cuántos puntos saca en la regla del 40 si cuentas ese pago como un coste (crecimiento en % más margen de caja libre en % tras restarlo)?",
+          "unit": "",
+          "a": 27,
+          "why": "(30 − 36) ÷ 200 = −3 % de margen. Con el crecimiento: 30 − 3 = 27 puntos, no los 45 de antes de restar el pago en acciones (30 + 15).",
+          "guia": "g4"
+        },
+        {
+          "id": "sa2-4",
+          "t": "choice",
+          "q": "Una empresa de software presenta un margen de flujo de caja libre del 15 % antes de contar el pago en acciones, que suma el 18 % de sus ingresos. ¿Qué lectura es correcta?",
+          "opts": [
+            "El pago en acciones no cuesta nada, porque no sale dinero de la caja",
+            "El 15 % ya incluye el pago en acciones, así que el margen real es del 15 %",
+            "El pago en acciones solo importa si la empresa tiene pérdidas",
+            "Es un coste real: tras restarlo, el margen de caja libre es del −3 %"
+          ],
+          "a": 3,
+          "why": "15 % − 18 % = −3 %. Si la empresa pagara ese sueldo en efectivo, tendría caja negativa.",
+          "guia": "g4",
+          "porque": [
+            "Falso: aunque no salga caja, las acciones nuevas diluyen a los accionistas y se pagan con su valor.",
+            "Falso: el enunciado dice que el 15 % es antes de contar el pago en acciones, que no está incluido.",
+            "Falso: es un coste igual de real con beneficios o con pérdidas.",
+            null
+          ]
+        },
+        {
+          "id": "sa2-5",
+          "t": "slide",
+          "q": "Una empresa de suscripción crece un 30 % al año, ingresa 200 M$ y genera 30 M$ de flujo de caja libre antes de pagar en acciones. Elige el pago en acciones máximo, en M$, con el que todavía saca al menos 40 puntos en la regla del 40 contando ese pago como coste.",
+          "label": "Pago en acciones (M$)",
+          "min": 0,
+          "max": 50,
+          "step": 5,
+          "start": 35,
+          "a": 10,
+          "unit": "M$",
+          "why": "Con 10 M$: margen de (30 − 10) ÷ 200 = 10 %, y 30 + 10 = 40 puntos. Con más pago en acciones, baja de 40.",
+          "show": [
+            {
+              "label": "Margen de caja libre tras el pago",
+              "k": -0.5,
+              "b": 15,
+              "unit": "%",
+              "dec": 1
+            },
+            {
+              "label": "Puntos en la regla del 40",
+              "k": -0.5,
+              "b": 45,
+              "dec": 1
+            }
+          ],
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}
