@@ -4,13 +4,13 @@
 // por usuario, protegida para que cada uno lea y escriba solo la suya. Sin conexión primero: localStorage manda
 // y se sube unos segundos después de cada cambio; al entrar desde otro dispositivo, los dos estados se fusionan.
 import {SUPABASE_URL,SUPABASE_ANON} from './config.js';
-import {S,STATE_V,completar,importar,alGuardar} from './state.js';
+import {S,STATE_V,completar,reemplazar,soloLectura,alGuardar} from './state.js';
 import {t} from './textos.js';
 
-const CLAVE='rango.sesion', PENDIENTE='rango.pendiente', VALIDEZ=3600000, ESPERA=5000;
-let cfg={url:SUPABASE_URL.replace(/\/$/,''),anon:SUPABASE_ANON}, temporizador=null;
+const CLAVE='rango.sesion', PENDIENTE='rango.pendiente', SUBIR='rango.subirPendiente', VALIDEZ=3600000;
+let cfg={url:SUPABASE_URL.replace(/\/$/,''),anon:SUPABASE_ANON}, temporizador=null, espera=5000;
 export const cuentaActiva=()=>!!(cfg.url&&cfg.anon);
-export function configurar(c){cfg={url:c.url.replace(/\/$/,''),anon:c.anon}}  // para los tests
+export function configurar(c){cfg={url:c.url.replace(/\/$/,''),anon:c.anon};if(c.espera!=null)espera=c.espera}  // para los tests
 export const estadoCuenta={ultima:null,error:false};
 
 const leerSesion=()=>{try{return JSON.parse(localStorage.getItem(CLAVE))}catch(e){return null}};
@@ -72,6 +72,13 @@ export function fusionar(a,b){
   // Racha: la del dispositivo que practicó más recientemente.
   const ra=(a.last||'')>(b.last||'')||((a.last||'')===(b.last||'')&&(a.streak||0)>=(b.streak||0))?a:b;
   for(const c of ['streak','last','day','dayXp','protector'])r[c]=ra[c];
+  // Contadores del día: si los dos son del mismo día, no se pierde lo ganado en ninguno.
+  if(a.day&&a.day===b.day)r.dayXp=Math.max(a.dayXp||0,b.dayXp||0);
+  // Reto y mercado: gana la fecha (o semana) más reciente; si coinciden, hecho en cualquiera = hecho (y el mejor resultado).
+  const reto=[a.reto,b.reto].filter(x=>x&&x.fecha);
+  if(reto.length){const f=reto.map(x=>x.fecha).sort().pop(),m=reto.filter(x=>x.fecha===f);r.reto={fecha:f,ok:m.some(x=>x.ok)}}
+  const mer=[a.mercado,b.mercado].filter(x=>x&&x.semana!=null);
+  if(mer.length){const w=mer.map(x=>String(x.semana)).sort().pop(),m=mer.filter(x=>String(x.semana)===w);r.mercado=m.reduce((p,x)=>(x.ok||0)>(p.ok||0)?x:p,m[0])}
   r.skipBasics=!!(a.skipBasics||b.skipBasics);r.legal=Math.max(a.legal||0,b.legal||0);
   r.placement=r.placement||otro.placement||null;r.objetivo=r.objetivo||otro.objetivo||null;
   r.mod=Math.max(a.mod||0,b.mod||0);
@@ -79,7 +86,20 @@ export function fusionar(a,b){
 }
 
 // Baja el estado guardado, lo fusiona con el local, lo aplica y sube el resultado. Devuelve true si cambió algo.
-export async function sincronizar(){
+// Solo hay una a la vez: si llega otra petición mientras tanto, se repite al terminar (para no perder cambios).
+let enCurso=null, repetir=false, fusionado=false, version=0;
+export function sincronizar(){
+  if(enCurso){repetir=true;return enCurso}
+  enCurso=(async()=>{
+    let cambio=false;
+    try{do{repetir=false;cambio=(await sincronizarUna())||cambio}while(repetir)}
+    finally{enCurso=null}
+    return cambio;
+  })();
+  return enCurso;
+}
+async function sincronizarUna(){
+  if(soloLectura())return false;
   const s=await token();if(!s)return false;
   try{
     const filas=await pedir('/rest/v1/progreso?select=estado&user_id=eq.'+s.user.id,{token:s.access_token});
@@ -87,22 +107,40 @@ export async function sincronizar(){
     if(remoto&&(remoto.v||1)>STATE_V){estadoCuenta.error=true;return false}  // copia de una versión más nueva: no tocar
     const antes=JSON.stringify(S),nuevo=remoto?fusionar(S,completar(remoto)):S;
     const cambio=JSON.stringify(nuevo)!==antes;
-    if(cambio){alGuardar.delete(programar);importar(nuevo);alGuardar.add(programar)}
+    if(cambio)reemplazar(nuevo);  // conserva `mod` (el máximo de ambos) y no programa otra subida
+    fusionado=true;
     await subir(s);
     return cambio;
   }catch(e){estadoCuenta.error=true;throw e}
 }
+const pendiente=()=>{try{return localStorage.getItem(SUBIR)==='1'}catch(e){return false}};
+const marcar=b=>{try{b?localStorage.setItem(SUBIR,'1'):localStorage.removeItem(SUBIR)}catch(e){}};
 async function subir(s){
-  s=s||await token();if(!s)return;
+  s=s||await token();if(!s||soloLectura())return;
+  const v=version;
   await pedir('/rest/v1/progreso',{method:'POST',token:s.access_token,headers:{Prefer:'resolution=merge-duplicates'},
     body:{user_id:s.user.id,estado:S,actualizado:new Date().toISOString()}});
+  if(v===version)marcar(false);  // si se guardó algo mientras subía, sigue pendiente
   estadoCuenta.ultima=new Date();estadoCuenta.error=false;
 }
-// Tras cada guardado, sube el estado con unos segundos de espera para agrupar cambios.
+// Al cerrar o ocultar la página: sube lo pendiente con keepalive. Solo si en esta sesión ya se fusionó con el
+// servidor (si no, se podría pisar lo de otro dispositivo) y con el token aún válido (no se puede renovar aquí).
+export function subirAlSalir(){
+  const s=cuentaActiva()?leerSesion():null;
+  if(!s||!fusionado||!pendiente()||soloLectura()||!(s.expires_at>Date.now()))return;
+  try{
+    fetch(cfg.url+'/rest/v1/progreso',{method:'POST',keepalive:true,headers:{apikey:cfg.anon,'Content-Type':'application/json',Authorization:'Bearer '+s.access_token,Prefer:'resolution=merge-duplicates'},
+      body:JSON.stringify({user_id:s.user.id,estado:S,actualizado:new Date().toISOString()})}).then(r=>{if(r.ok)marcar(false)},()=>{});
+  }catch(e){}
+}
+export const hayPendiente=()=>!!sesion()&&pendiente();
+// Tras cada guardado: queda marcado como pendiente y, tras unos segundos (para agrupar cambios), se sincroniza
+// (baja, fusiona y sube), de modo que nunca se sube una fila entera sin haber leído antes la del servidor.
 function programar(){
-  if(!sesion())return;
+  if(!sesion()||soloLectura())return;
+  version++;marcar(true);
   clearTimeout(temporizador);
-  temporizador=setTimeout(()=>subir().catch(()=>{estadoCuenta.error=true}),ESPERA);
+  temporizador=setTimeout(()=>sincronizar().catch(()=>{estadoCuenta.error=true}),espera);
 }
 alGuardar.add(programar);
 

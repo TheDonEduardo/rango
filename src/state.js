@@ -23,6 +23,17 @@ export function migrar(j){
 }
 // Estado completo a partir de lo guardado (cualquier versión): rellena lo que falte con los valores por defecto.
 export const completar=j=>{const s=Object.assign(DEF(),migrar(j));s.stats=Object.assign({ex:{},min:0},s.stats);return limpiarEscalares(s)};
+const obj=v=>!!v&&typeof v==='object'&&!Array.isArray(v), num=v=>typeof v==='number'&&Number.isFinite(v);
+// Colección de entradas: se descartan las que no cumplen `ok` (en vez de fallar al usarlas) y las claves peligrosas.
+const filtrar=(o,ok)=>{const r={};if(obj(o))for(const k of Object.keys(o))if(k!=='__proto__'&&ok(o[k]))r[k]=o[k];return r};
+// Saneado común de las colecciones que la app recorre al arrancar (load, leerCopia y estado remoto pasan por aquí).
+function limpiarColecciones(s){
+  s.srs=filtrar(s.srs,v=>obj(v)&&Number.isInteger(v.step)&&v.step>=0&&fechaValida(v.due));
+  s.done=filtrar(s.done,v=>obj(v)&&num(v.acc)&&v.acc>=0&&v.acc<=1);
+  s.aprendidos=filtrar(s.aprendidos,fechaValida);
+  const st=obj(s.stats)?s.stats:{};
+  s.stats=Object.assign({},st,{ex:filtrar(st.ex,v=>obj(v)&&num(v.n)&&v.n>=0&&num(v.f)&&v.f>=0&&num(v.u)),min:num(st.min)&&st.min>=0?st.min:0});
+}
 // Los escalares de una copia o de un estado remoto acaban en el HTML: solo se aceptan valores de su tipo y rango;
 // lo demás vuelve al valor por defecto (como calcLimpio en views/calc.js).
 const FECHA=/^\d{4}-\d{2}-\d{2}$/;
@@ -34,17 +45,44 @@ export function limpiarEscalares(s){
   for(const k of ['last','day'])if(s[k]!==null&&!fechaValida(s[k]))s[k]=d[k];
   if(!TRACKS.some(r=>r.id===s.track))s.track=d.track;
   if(!META_OPC.includes(s.meta))s.meta=d.meta;
+  limpiarColecciones(s);
   return s;
 }
+// Si lo guardado no se puede leer, se copia el texto crudo antes de que un guardado lo pise. El primer respaldo
+// no se sobrescribe (es el más cercano a lo que se perdió); si ya hay uno distinto, el nuevo va a un segundo hueco.
+export const RESPALDO=KEY+'.respaldo';
+function respaldar(crudo){
+  try{
+    const a=localStorage.getItem(RESPALDO);
+    if(a==null)localStorage.setItem(RESPALDO,crudo);
+    else if(a!==crudo)localStorage.setItem(RESPALDO+'2',crudo);
+  }catch(e){}
+}
+// Solo lectura: lo guardado es de una versión más nueva de Rango. Se arranca con un estado vacío en memoria pero
+// sin escribir (ni subir a la cuenta) hasta que el usuario importe una copia o reinicie; así no se degrada su progreso.
+let soloLect=false;
+export const soloLectura=()=>soloLect;
 function load(){
-  try{const j=JSON.parse(localStorage.getItem(KEY));if(j&&typeof j==='object')return completar(j)}catch(e){}
+  let crudo=null;
+  try{crudo=localStorage.getItem(KEY)}catch(e){}
+  if(crudo==null)return DEF();
+  try{
+    const j=JSON.parse(crudo);
+    if(obj(j)){
+      if((j.v||1)>STATE_V){respaldar(crudo);soloLect=true;return DEF()}
+      return completar(j);
+    }
+  }catch(e){}
+  respaldar(crudo);
   return DEF();
 }
 export let S=load();
 // alGuardar: funciones que se avisan tras cada guardado (la sincronización con la cuenta, si está activa).
 export const alGuardar=new Set();
-export function save(){S.mod=Date.now();try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}alGuardar.forEach(f=>f())}
-export function resetState(){S=DEF();save()}
+export function save(){if(soloLect)return;S.mod=Date.now();try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}alGuardar.forEach(f=>f())}
+export function resetState(){soloLect=false;S=DEF();save()}
+// Aplica un estado fusionado con la cuenta: se guarda tal cual (conserva su `mod`) y no dispara la subida.
+export function reemplazar(estado){if(soloLect)return;S=estado;try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
 
 // Copia de seguridad: archivo JSON con el estado y su versión. Se puede recuperar en otro dispositivo.
 export const exportar=()=>JSON.stringify({app:'rango',v:STATE_V,fecha:today(),estado:S});
@@ -61,7 +99,7 @@ export function leerCopia(texto){
     return {estado,resumen:{fecha:fechaValida(j.fecha)?j.fecha:'',xp:estado.xp,lecciones:Object.keys(estado.done).length}};
   }catch(e){return null}
 }
-export function importar(estado){S=estado;save()}
+export function importar(estado){soloLect=false;S=estado;save()}
 
 // Racha: sigue viva si practicaste hoy o ayer, o anteayer con un protector disponible (se gastará al practicar).
 export const streakNow=()=>(S.last===today()||S.last===yest()||(S.last===addDays(-2)&&S.protector>0))?S.streak:0;
@@ -102,7 +140,7 @@ export function statuses(){
 export const SRS_STEPS=[1,3,7,14], SRS_MAX=10;
 export function srsDue(){
   const t=today();
-  return Object.keys(S.srs).filter(u=>S.srs[u].due<=t&&EXBYID.has(u)).map(u=>EXBYID.get(u));
+  return Object.keys(S.srs).filter(u=>S.srs[u]&&S.srs[u].due<=t&&EXBYID.has(u)).map(u=>EXBYID.get(u));
 }
 // Reto del día: una pregunta (de elegir o calcular) de las lecciones que ya has completado, la misma todo el día.
 // Se elige con la fecha, así no hace falta guardarla; S.reto = {fecha, ok} anota que hoy ya está hecho.

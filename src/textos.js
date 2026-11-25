@@ -244,6 +244,6 @@ export const t={
   copiaTitulo:'Copia de seguridad', copiaNotaCuenta:'Tu progreso se guarda en tu cuenta. Si quieres, descarga también una copia en un archivo.', copiaNota:'Tu progreso se guarda solo en este navegador. Descarga una copia para no perderlo o para pasarlo a otro dispositivo.',
   copiaGuardar:'Descargar copia', copiaRecuperar:'Recuperar copia', copiaSustituir:'Sustituir mi progreso', cancelar:'Cancelar',
   copiaResumen:(f,xp,l)=>`Copia del ${f}: ${xp} XP y ${l} lecciones completadas. Sustituirá tu progreso actual.`,
-  copiaMala:'Ese archivo no es una copia de Rango.', copiaNueva:'Esa copia es de una versión más nueva de Rango: actualiza la app antes de recuperarla.', copiaHecha:'Progreso recuperado.', copiaDescargada:'Copia descargada.',
+  copiaMala:'Ese archivo no es una copia de Rango.', copiaGrande:'Ese archivo es demasiado grande para ser una copia de Rango (máximo 5 MB).', copiaNueva:'Esa copia es de una versión más nueva de Rango: actualiza la app antes de recuperarla.', copiaHecha:'Progreso recuperado.', copiaDescargada:'Copia descargada.',
   statsNota:'Estadísticas guardadas solo en este dispositivo. Cuentan desde que se añadieron, no desde tu primera lección.',
 };

@@ -845,6 +845,74 @@ if (caducados.length) console.warn('AVISO: contenido pendiente de revisar (norma
   T.importar(copia); st.xp = xpLocal; T.configurar({url: '', anon: ''}); globalThis.fetch = fetchAntes;
 }
 
+// Robustez del estado guardado: carga con JSON corrupto o de una versión más nueva, entradas malformadas, simulador y fusión.
+{
+  const stUrl = pathToFileURL(path.join(root, 'src/state.js')).href, KEY = 'rango.v1', RES = KEY + '.respaldo';
+  const guardadoAntes = store[KEY], respAntes = store[RES];
+  // JSON corrupto: se arranca vacío, pero el texto original se conserva en el respaldo y no se pisa antes de guardar.
+  store[KEY] = '{"xp":12,"done":{'; delete store[RES];
+  const m1 = await import(stUrl + '?corrupto');
+  if (m1.S.xp !== 0 || store[RES] !== '{"xp":12,"done":{') errs.push('carga: un JSON corrupto no deja respaldo');
+  // v > STATE_V: no se migra ni se reescribe; save() no escribe hasta importar o reiniciar.
+  const nueva = JSON.stringify({v: 999, xp: 777, done: {}});
+  store[KEY] = nueva; delete store[RES];
+  const m2 = await import(stUrl + '?nueva');
+  m2.save();
+  if (!m2.soloLectura() || store[KEY] !== nueva || store[RES] !== nueva) errs.push('carga: un estado de versión más nueva se reescribe o no se respalda');
+  m2.importar(m2.DEF());
+  if (m2.soloLectura() || JSON.parse(store[KEY]).v !== m2.STATE_V) errs.push('carga: importar no sale del modo solo lectura');
+  // Entradas malformadas: se descartan y el inicio no falla.
+  store[KEY] = JSON.stringify({v: m2.STATE_V, xp: 1, srs: {a: null, b: {step: 'x', due: 'ayer'}, c: {step: 1.5, due: '2026-01-01'}, ok: {step: 1, due: '2026-01-01'}},
+    done: {a: null, b: {acc: 'x'}, c: {acc: 5}, ok: {acc: 0.5}}, stats: {ex: {a: null, b: {n: 'x', f: 1, u: 1}, ok: {n: 1, f: 0, u: 1}}, min: 'x'},
+    aprendidos: {a: 5, ok: '2026-01-01'}});
+  const m3 = await import(stUrl + '?malo'), x = m3.S;
+  if (Object.keys(x.srs).join() !== 'ok' || Object.keys(x.done).join() !== 'ok' || Object.keys(x.stats.ex).join() !== 'ok' || Object.keys(x.aprendidos).join() !== 'ok' || x.stats.min !== 0) errs.push('carga: no se descartan las entradas malformadas');
+  try { m3.srsDue(); } catch (e) { errs.push('srsDue falla con entradas malformadas: ' + e.message); }
+  m3.S.srs.n = null;
+  try { m3.srsDue(); } catch (e) { errs.push('srsDue falla con una entrada nula: ' + e.message); }
+  const cp = m3.leerCopia(JSON.stringify({app: 'rango', estado: {xp: 1, done: {}, srs: {a: {step: 1}}}}));
+  if (!cp || Object.keys(cp.estado.srs).length) errs.push('copia: no se descartan repasos sin fecha');
+  if (guardadoAntes === undefined) delete store[KEY]; else store[KEY] = guardadoAntes;
+  if (respAntes === undefined) delete store[RES]; else store[RES] = respAntes;
+  delete store[RES + '2'];
+  // Simulador: valores acotados a los controles y años enteros.
+  const {calcLimpio} = await import(pathToFileURL(path.join(root, 'src/views/calc.js')));
+  const cl = calcLimpio({anos: 9999, mensual: -5, rent: 50, ter: -1, anoCaida: 3.4, peso: 500, inicial: 1e12, caida: 0});
+  if (cl.anos !== 40 || cl.mensual !== 0 || cl.rent !== 10 || cl.ter !== 0 || cl.anoCaida !== 3 || cl.peso !== 100 || cl.inicial !== 50000 || cl.caida !== 10) errs.push('calcLimpio no acota los valores: ' + JSON.stringify(cl));
+  if (calcLimpio({anos: 7.6}).anos !== 8 || calcLimpio({anos: 'x'}).anos !== 20) errs.push('calcLimpio: años no enteros o texto');
+  // Fusión: reto hecho y XP del día.
+  const hoy = '2026-11-20';
+  const f1 = T.fusionar({xp: 1, mod: 5, day: hoy, dayXp: 10, reto: {fecha: hoy, ok: false}, mercado: {semana: '2026-W46', ok: 1, total: 6}},
+    {xp: 1, mod: 3, day: hoy, dayXp: 30, reto: {fecha: hoy, ok: true}, mercado: {semana: '2026-W46', ok: 4, total: 6}});
+  if (f1.dayXp !== 30 || !f1.reto || f1.reto.ok !== true || f1.mercado.ok !== 4 || f1.mod !== 5) errs.push('fusión: reto, mercado, XP del día o mod mal conservados');
+  const f2 = T.fusionar({xp: 1, mod: 1, reto: {fecha: '2026-11-19', ok: true}}, {xp: 1, mod: 2, reto: {fecha: hoy, ok: false}});
+  if (f2.reto.fecha !== hoy || f2.reto.ok !== false) errs.push('fusión: un reto antiguo gana al de hoy');
+}
+
+// Subida: antes de subir se baja el remoto y se fusiona (no se pisa lo de otro dispositivo); lo pendiente se marca y se borra al subir.
+{
+  const st = T.getState(), copia = JSON.parse(JSON.stringify(st));
+  let guardado = {v: st.v, xp: 5, done: {remoto1: {acc: 1}}, srs: {}, mod: 1}, gets = 0;
+  const fetchAntes = globalThis.fetch;
+  globalThis.fetch = async (url, o = {}) => {
+    const ok = (d, s = 200) => ({ok: s < 300, status: s, text: async () => d == null ? '' : JSON.stringify(d)});
+    if (url.includes('/rest/v1/progreso?select')) { gets++; return ok([{estado: guardado}]); }
+    if (url.endsWith('/rest/v1/progreso')) { guardado = JSON.parse(o.body).estado; return ok(null, 201); }
+    return ok(null, 404);
+  };
+  T.configurar({url: 'https://x.supabase.co/', anon: 'ANON', espera: 20});
+  store['rango.sesion'] = JSON.stringify({access_token: 'T1', refresh_token: 'R1', expires_at: Date.now() + 3600000, user: {id: 'u1', email: 'a@b.es'}});
+  st.done.local1 = {acc: 1};
+  T.importar(st);  // guarda y programa la subida
+  if (store['rango.subirPendiente'] !== '1') errs.push('cuenta: guardar no marca la subida como pendiente');
+  await new Promise(r => setTimeout(r, 300));
+  if (!gets || !guardado.done.remoto1 || !guardado.done.local1) errs.push('cuenta: la subida programada no baja y fusiona antes de subir');
+  if (!T.getState().done.remoto1) errs.push('cuenta: lo bajado no se aplica en local');
+  if (store['rango.subirPendiente']) errs.push('cuenta: la marca de subida pendiente no se borra tras subir');
+  delete store['rango.sesion']; delete store['rango.subirPendiente'];
+  T.importar(copia); T.configurar({url: '', anon: ''}); globalThis.fetch = fetchAntes;
+}
+
 if (errs.length) { console.error('FALLOS:\n- ' + errs.join('\n- ')); process.exit(1); }
 const nc = casos ? Object.values(casos.ex).reduce((n, l) => n + l.length, 0) : 0;
 console.log(`OK: ${T.FLAT.length} lecciones, ${nc} casos reales, XP total ${T.getState().xp}`);

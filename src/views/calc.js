@@ -20,9 +20,16 @@ export function aportaciones({inicial,mensual,anos,rent,ter,caida=0,anoCaida=0})
 const CALC_DEF={inicial:0,mensual:200,anos:20,rent:6,ter:0.2,cmp:false,ter2:1.8,crash:false,caida:30,anoCaida:10,hist:false,peso:60,eur:false};
 // Los valores del simulador se pintan en atributos del HTML: solo se aceptan números y casillas verdadero/falso.
 // Una copia de seguridad o un estado sincronizado manipulado no puede así colar marcado en la página.
+const CALC_ENTEROS=['anos','anoCaida'];
 export const calcLimpio=c=>Object.fromEntries(Object.entries(CALC_DEF).map(([k,d])=>{
   const v=(c||{})[k];
-  return [k,typeof d==='boolean'?v===true:(typeof v==='number'&&Number.isFinite(v)?v:d)];
+  if(typeof d==='boolean')return [k,v===true];
+  if(typeof v!=='number'||!Number.isFinite(v))return [k,d];
+  const ctrl=CALC_CTRL.find(x=>x[0]===k);
+  if(!ctrl)return [k,v];
+  const x=Math.min(ctrl[3],Math.max(ctrl[2],v));
+  // Años y año de la caída son enteros (se redondea); el resto, el valor acotado a su control.
+  return [k,CALC_ENTEROS.includes(k)?Math.round(x):x];
 }));
 export const CALC_CTRL=[
   ['inicial',t.calcCtrl.inicial,0,50000,1000,v=>fmt(v,0)+' €'],

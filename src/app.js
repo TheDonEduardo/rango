@@ -8,7 +8,7 @@ import {setPlanCtx} from './drag.js';
 import {TIPOS} from './exercises/index.js';
 import {ordenFijo} from './exercises/choice.js';
 import {CONTACTO} from './config.js';
-import {cuentaActiva,enviarEnlace,leerRetorno,sincronizar,cerrarSesion,borrarCuenta,sesion,fusionar,configurar} from './sync.js';
+import {cuentaActiva,enviarEnlace,leerRetorno,sincronizar,cerrarSesion,borrarCuenta,sesion,fusionar,configurar,subirAlSalir} from './sync.js';
 import {compartirLogro} from './compartir.js';
 import {medir} from './medicion.js';
 import {homeHTML} from './views/home.js';
@@ -304,9 +304,11 @@ $app.addEventListener('click',e=>{
   if(accionEjercicio(a,b))return;
   if(ACCIONES[a])ACCIONES[a](b);
 });
+const COPIA_MAX=5*1024*1024;  // una copia de seguridad real pesa unos KB: más de 5 MB no es de Rango
 $app.addEventListener('change',e=>{
   if(e.target.dataset&&e.target.dataset.calc&&ses.view==='calc'){save();return}
   if(e.target.id!=='imp-file'||!e.target.files||!e.target.files[0])return;
+  if(e.target.files[0].size>COPIA_MAX){toast(t.copiaGrande);e.target.value='';return}
   const r=new FileReader();
   r.onload=()=>{const c=leerCopia(String(r.result));if(c==='nueva'){toast(t.copiaNueva);return}if(!c){toast(t.copiaMala);return}ses.copia=c;render();const b=$app.querySelector('[data-act=impok]');if(b)b.focus({preventScroll:true})};
   r.readAsText(e.target.files[0]);
@@ -375,6 +377,12 @@ if(cuentaActiva()&&typeof location!=='undefined'){
   leerRetorno(location.hash,()=>history.replaceState(null,'',location.pathname+location.search),m=>confirm(m))
     .then(nueva=>{if(nueva==='rechazado')toast(t.cuentaAjena);else if(nueva)toast(t.cuentaHecha);return sesion()?sincronizar():false})
     .then(c=>redibujar(c||ses.view==='stats'),()=>{if(ses.view==='stats')render()});
+  // Al volver a la app se baja, fusiona y sube (otro dispositivo pudo cambiar el progreso); al ocultarla o cerrarla, se intenta subir lo pendiente.
+  document.addEventListener('visibilitychange',()=>{
+    if(document.visibilityState==='visible'){if(sesion())sincronizar().then(redibujar,()=>{})}
+    else subirAlSalir();
+  });
+  if(typeof window.addEventListener==='function')window.addEventListener('pagehide',subirAlSalir);
 }
 
 // PWA: el service worker solo se registra servido por http(s) (no en file:// ni en los tests).
