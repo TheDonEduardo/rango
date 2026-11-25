@@ -145,8 +145,11 @@ if (casos) {
 // PWA: todo lo que precarga el service worker y los iconos del manifiesto deben existir.
 const sw = fs.readFileSync(path.join(root, 'sw.js'), 'utf8');
 const pre = JSON.parse(sw.match(/const PRECACHE = (\[[\s\S]*?\]);/)[1].replace(/'/g, '"'));
-for (const f of pre) if (f !== './' && !fs.existsSync(path.join(root, f))) errs.push('sw.js precarga un archivo que no existe: ' + f);
-for (const f of fs.readdirSync(path.join(root, 'src'), {recursive: true}).map(f => f.split(path.sep).join('/')).filter(f => /\.(js|css)$/.test(f))) if (!pre.includes('src/' + f)) errs.push('sw.js no precarga src/' + f);
+const preOpc = JSON.parse(sw.match(/const OPCIONALES = (\[[\s\S]*?\]);/)[1].replace(/'/g, '"'));
+for (const f of pre) if (f !== './' && !fs.existsSync(path.join(root, f))) errs.push('sw.js precarga un archivo obligatorio que no existe: ' + f);
+for (const f of preOpc) if (pre.includes(f)) errs.push('sw.js: ' + f + ' está en PRECACHE y en OPCIONALES');
+// Los opcionales (la app los trata como ausentes si faltan) se precargan aparte; los archivos de src/ cuentan en cualquiera de las dos listas.
+for (const f of fs.readdirSync(path.join(root, 'src'), {recursive: true}).map(f => f.split(path.sep).join('/')).filter(f => /\.(js|css)$/.test(f))) if (!pre.includes('src/' + f) && !preOpc.includes('src/' + f)) errs.push('sw.js no precarga src/' + f);
 const man = JSON.parse(fs.readFileSync(path.join(root, 'manifest.webmanifest'), 'utf8'));
 for (const ic of man.icons) if (!fs.existsSync(path.join(root, ic.src))) errs.push('icono del manifiesto inexistente: ' + ic.src);
 if (!man.icons.some(i => i.purpose === 'maskable')) errs.push('falta icono maskable en el manifiesto');
@@ -342,6 +345,8 @@ const casosSim = [
   ['hueco al alza: entra a la apertura', [[10.5, 11, 10.4, 10.8]], 'abierta', 0.3],
   ['hueco bajo el stop: sale a la apertura', [[9.8, 10.2, 9.9, 10.1], [8.5, 8.8, 8.2, 8.6]], 'stop', -1.5],
   ['stop y objetivo el mismo día: cuenta el stop', [[9.8, 10.2, 9.9, 10.1], [10, 12.5, 8.9, 11]], 'stop', -1],
+  ['abre sobre el objetivo y cierra debajo: sale a la apertura', [[12.5, 13, 11.5, 12.2]], 'objetivo', 0],
+  ['abre y cierra sobre el objetivo: sale a la apertura', [[12.5, 13, 12.3, 12.8]], 'objetivo', 0],
   ['stop el mismo día de la entrada', [[9.9, 10.2, 8.8, 9]], 'stop', -1],
 ];
 for (const [nom, velas, estado, r] of casosSim) {

@@ -46,9 +46,6 @@ const PRECACHE = [
   'src/content/units.json',
   'src/content/glosario.json',
   'src/content/casos.json',
-  'src/content/semana.json',
-  'src/content/historico.json',
-  'src/content/mercado.json',
   'fonts/fuentes.css',
   'fonts/bricolage-grotesque-latin.woff2',
   'fonts/ibm-plex-sans-latin.woff2',
@@ -57,11 +54,18 @@ const PRECACHE = [
   'icons/maskable-512.png',
   'icons/apple-touch-icon.png'
 ];
+// Opcionales: la app funciona sin ellos (si faltan en el servidor, no debe fallar la instalación).
+const OPCIONALES = [
+  'src/content/semana.json',
+  'src/content/historico.json',
+  'src/content/mercado.json'
+];
 
 self.addEventListener('install', e => {
   // cache: 'reload' salta la caché HTTP del navegador: la precarga guarda siempre la versión del servidor.
   e.waitUntil(caches.open(CACHE)
-    .then(c => c.addAll(PRECACHE.map(u => new Request(u, {cache: 'reload'}))))
+    .then(c => c.addAll(PRECACHE.map(u => new Request(u, {cache: 'reload'})))
+      .then(() => Promise.allSettled(OPCIONALES.map(u => c.add(new Request(u, {cache: 'reload'}))))))
     .then(() => self.skipWaiting()));
 });
 
@@ -79,7 +83,8 @@ self.addEventListener('fetch', e => {
   if (url.origin !== location.origin) return;
 
   // Página, código y contenido: red primero (siempre la misma versión de todo); sin conexión, la copia guardada.
-  e.respondWith(fetch(req)
+  // no-cache: revalida con el servidor (ETag) en vez de usar la caché HTTP, que podría mezclar versiones.
+  e.respondWith(fetch(req, {cache: 'no-cache'})
     .then(res => { if (res.ok) { const copia = res.clone(); caches.open(CACHE).then(c => c.put(req, copia)); } return res; })
     .catch(() => caches.match(req, {ignoreSearch: true})
       .then(m => m || (req.mode === 'navigate' ? caches.match('./') : Response.error()))));

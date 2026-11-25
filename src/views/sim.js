@@ -19,6 +19,7 @@ export function simSave(){
 }
 // Simula un plan de compra en ruptura sobre las sesiones posteriores. Reglas conservadoras:
 // la entrada se activa al tocarla (si abre por encima con hueco, a la apertura); el stop y el objetivo igual;
+// si abre ya por encima del objetivo, entra y sale a la apertura (r = 0, aunque luego cierre más abajo);
 // si un mismo día toca stop y objetivo, cuenta el stop; si sigue abierta al final, se valora al último cierre.
 export function simulate(plan,velas){
   const {entry,stop,target}=plan,risk=entry-stop;let fill=null,dEnt=null;
@@ -28,7 +29,7 @@ export function simulate(plan,velas){
       if(h<entry)continue;
       fill=o>entry?o:entry;dEnt=i;
       if(l<=stop)return {estado:'stop',fill,exit:stop,dEnt,dSal:i,r:(stop-fill)/risk};
-      if(c>=target&&o>=target)return {estado:'objetivo',fill,exit:o,dEnt,dSal:i,r:(o-fill)/risk};
+      if(fill>=target)return {estado:'objetivo',fill,exit:fill,dEnt,dSal:i,r:0};
       if(h>=target)return {estado:'objetivo',fill,exit:target,dEnt,dSal:i,r:(target-fill)/risk};
       continue;
     }

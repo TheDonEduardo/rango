@@ -28,7 +28,7 @@ jobs:
 
       - name: Generadores (con datos simulados)
         run: |
-          python -m pip install --quiet pandas
+          python -m pip install --quiet pandas==3.0.5 numpy==2.5.3
           python -I tools/test_casos.py
           python -I tools/test_semana.py
 
