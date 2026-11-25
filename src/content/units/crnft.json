@@ -1,0 +1,218 @@
+{
+  "n": 12,
+  "id": "crnft",
+  "track": "cripto",
+  "title": "Tokens no fungibles (NFT)",
+  "blurb": "Qué es un NFT, qué compras de verdad, por qué la imagen puede desaparecer y cómo evitar las estafas habituales.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Qué es un token no fungible",
+      "texto": "Un token no fungible (NFT) es un registro único en una cadena de bloques que apunta a un contenido: una imagen, un vídeo o una entrada. «No fungible» significa que cada uno es distinto y no se puede cambiar por otro igual.",
+      "ejemplo": "Un euro vale lo mismo que otro: es fungible. Una colección de 1.000 NFT tiene 1.000 registros distintos, cada uno con su número."
+    },
+    {
+      "id": "g2",
+      "titulo": "Qué compras de verdad",
+      "texto": "Normalmente compras el registro, no los derechos de autor ni el archivo: los derechos suelen seguir siendo del creador, salvo que las condiciones digan otra cosa. La imagen casi nunca está en la cadena: está en un servidor y el registro guarda un enlace. Si cierra, el registro apunta a nada.",
+      "ejemplo": "Pagas 150 € por un NFT y su imagen se pierde: sigues teniendo el registro, pero no la imagen."
+    },
+    {
+      "id": "g3",
+      "titulo": "Liquidez",
+      "texto": "Un NFT es único y suele haber pocos compradores. El precio pedido es lo que quiere el vendedor; la mejor oferta, lo que paga un comprador. Si necesitas vender pronto, aceptas la oferta y la diferencia es lo que dejas de cobrar.",
+      "ejemplo": "Un NFT en venta a 400 € con una mejor oferta de 150 €: si vendes hoy, cobras 150 €, un 62,5 % menos."
+    },
+    {
+      "id": "g4",
+      "titulo": "Estafas habituales",
+      "texto": "Copia: otra cuenta crea un NFT casi idéntico al de un autor y lo vende como original. Comprueba en el registro quién lo creó. Venta falsa: las mismas cuentas se compran y venden el NFT entre sí a precios crecientes para parecer valioso.",
+      "ejemplo": "Un NFT «vendido» tres veces entre dos cuentas, de 100 a 300 y a 900 €: sube un 800 %, pero no entra ningún comprador nuevo."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "nf1",
+      "title": "Qué es y qué compras",
+      "ex": [
+        {
+          "id": "nf1-1",
+          "t": "choice",
+          "q": "¿Qué significa que un token sea «no fungible»?",
+          "opts": [
+            "Que no se puede vender ni transferir a otra persona",
+            "Que cada token es único y no se puede cambiar por otro igual",
+            "Que su precio no puede variar mientras exista",
+            "Que solo existe fuera de una cadena de bloques"
+          ],
+          "a": 1,
+          "why": "No fungible es lo contrario de intercambiable: cada token tiene su identidad, como una entrada con su número de asiento.",
+          "guia": "g1",
+          "porque": [
+            "Un NFT se puede vender y transferir: no fungible no quiere decir intransferible.",
+            null,
+            "El precio de un NFT cambia con la oferta y la demanda, como el de cualquier activo.",
+            "Los NFT viven en una cadena de bloques: es allí donde está su registro."
+          ]
+        },
+        {
+          "id": "nf1-2",
+          "t": "choice",
+          "q": "Compras un NFT de una ilustración y las condiciones de la venta no dicen nada más. ¿Qué compras normalmente?",
+          "opts": [
+            "Los derechos de autor y de reproducción de la ilustración",
+            "El archivo original, que se borra de internet y queda solo contigo",
+            "El derecho a cobrar cada vez que alguien la vea",
+            "El registro único que apunta a la ilustración, no sus derechos de autor"
+          ],
+          "a": 3,
+          "why": "Lo habitual es comprar el registro; los derechos de autor suelen seguir siendo del creador y cualquiera puede ver o copiar la imagen.",
+          "guia": "g2",
+          "porque": [
+            "Normalmente los derechos de autor siguen siendo del creador salvo que las condiciones digan lo contrario.",
+            "El archivo no queda solo contigo ni se borra de internet: cualquiera puede verlo o copiarlo.",
+            "Un NFT no da derecho a cobrar por cada vez que alguien ve la imagen, salvo que las condiciones lo digan.",
+            null
+          ]
+        },
+        {
+          "id": "nf1-3",
+          "t": "choice",
+          "q": "El enlace del registro de tu NFT apunta a una imagen guardada en un servidor que cierra. ¿Qué ocurre?",
+          "opts": [
+            "El NFT se borra de la cadena y recuperas lo pagado",
+            "La imagen pasa a guardarse sola dentro de la cadena",
+            "Sigues teniendo el registro, pero ya no hay imagen a la que apunte",
+            "El registro vuelve al creador, que pasa a ser su dueño"
+          ],
+          "a": 2,
+          "why": "El registro está en la cadena; la imagen, fuera. Si el enlace se rompe, queda un registro que apunta a nada.",
+          "guia": "g2",
+          "porque": [
+            "Si el servidor cierra, el registro no se borra ni se devuelve el dinero: lo que desaparece es la imagen.",
+            "La imagen no pasa sola a la cadena: pesa demasiado y no se mueve sin que alguien la suba.",
+            null,
+            "El registro no vuelve al creador: sigue siendo tuyo, aunque apunte a un enlace roto."
+          ]
+        },
+        {
+          "id": "nf1-4",
+          "t": "num",
+          "q": "Compras 4 NFT de una colección a 150 € cada uno, con las imágenes guardadas en un solo servidor que cierra y se pierden todas. ¿Cuántos euros has pagado por registros cuya imagen ya no existe?",
+          "unit": "€",
+          "a": 600,
+          "why": "4 NFT × 150 € = 600 €: el registro sigue en la cadena, pero la imagen guardada fuera se ha perdido.",
+          "guia": "g2"
+        },
+        {
+          "id": "nf1-5",
+          "t": "match",
+          "q": "Empareja cada elemento de un NFT con lo que suele ocurrir con él.",
+          "pairs": [
+            [
+              "El registro",
+              "Es lo único que normalmente pasa a ser tuyo"
+            ],
+            [
+              "La imagen",
+              "Suele estar guardada fuera de la cadena"
+            ],
+            [
+              "Los derechos de autor",
+              "Normalmente siguen siendo del creador"
+            ]
+          ],
+          "why": "Compras el registro único de la cadena; la imagen suele estar fuera y los derechos de autor no se transmiten salvo que las condiciones lo digan.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "nf2",
+      "title": "Liquidez y estafas",
+      "ex": [
+        {
+          "id": "nf2-1",
+          "t": "num",
+          "q": "Un NFT se ofrece a 400 € y la mejor oferta que recibe es de 150 €. Si vendes hoy a esa oferta, ¿qué porcentaje por debajo del precio pedido cobras?",
+          "unit": "%",
+          "a": 62.5,
+          "why": "400 € − 150 € = 250 € menos, y 250 ÷ 400 = 62,5 %: hay pocos compradores y el precio pedido no es lo que te pagan.",
+          "tol": 0.06,
+          "guia": "g3"
+        },
+        {
+          "id": "nf2-2",
+          "t": "choice",
+          "q": "Compras un NFT por 400 €, el precio pedido en la venta, y mañana necesitas el dinero. ¿Qué riesgo concreto tienes?",
+          "opts": [
+            "Que la cadena de bloques no permita transferirlo a un comprador",
+            "Que el precio pedido se convierta automáticamente en el precio de venta",
+            "Que el creador tenga que recomprarlo al precio original",
+            "Que haya pocos compradores y tengas que aceptar una oferta mucho más baja"
+          ],
+          "a": 3,
+          "why": "Con pocos compradores, el precio pedido es solo una petición: vender rápido suele exigir aceptar la mejor oferta, aunque sea mucho menor.",
+          "guia": "g3",
+          "porque": [
+            "Un NFT se transfiere con normalidad: el problema es encontrar quien lo compre al precio pedido.",
+            "El precio pedido es solo lo que quiere el vendedor: no se convierte en precio de venta por sí solo.",
+            "Nadie obliga al creador a recomprar el NFT al precio original.",
+            null
+          ]
+        },
+        {
+          "id": "nf2-3",
+          "t": "choice",
+          "q": "Ves un NFT casi idéntico a la obra de un artista conocido, pero creado por una cuenta distinta y a mitad de precio. ¿Qué haces?",
+          "opts": [
+            "Comprarlo: al ser más barato, tiene más margen de subida",
+            "Comprobar en el registro quién lo creó y desconfiar si no es el artista original",
+            "Comprarlo si el vendedor jura que es auténtico",
+            "Dar por válida cualquier copia, porque todas apuntan a la misma imagen"
+          ],
+          "a": 1,
+          "why": "Una copia es otro registro que apunta a una imagen parecida: lo que cuenta es la cuenta que creó el original, que se ve en el registro.",
+          "guia": "g4",
+          "porque": [
+            "Que sea más barato no lo hace mejor: una copia no tiene el valor de la obra original.",
+            null,
+            "La palabra del vendedor no demuestra nada: solo el registro dice quién lo creó.",
+            "Una copia es otro registro distinto, creado por otra cuenta, aunque la imagen sea parecida."
+          ]
+        },
+        {
+          "id": "nf2-4",
+          "t": "num",
+          "q": "Un NFT se «vende» tres veces entre las mismas dos cuentas, de 100 € a 300 € y a 900 €. ¿En qué porcentaje ha subido el precio desde la primera venta hasta la última?",
+          "unit": "%",
+          "a": 800,
+          "why": "900 ÷ 100 − 1 = 800 %, pero no ha entrado ningún comprador nuevo: es una venta falsa entre cuentas propias.",
+          "guia": "g4"
+        },
+        {
+          "id": "nf2-5",
+          "t": "choice",
+          "q": "¿Qué señal sugiere una venta falsa entre cuentas propias para inflar el precio de un NFT?",
+          "opts": [
+            "Las mismas cuentas se pasan el NFT a precios cada vez más altos",
+            "El NFT ha cambiado de dueño más de una vez",
+            "El vendedor acepta una oferta por debajo del precio pedido",
+            "El precio sube cuando se anuncia una colección nueva"
+          ],
+          "a": 0,
+          "why": "El patrón es que no entra nadie de fuera: las mismas cuentas se pasan el NFT a precios crecientes para parecer valioso.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Que un NFT cambie de dueño varias veces es normal: lo sospechoso es que sean las mismas cuentas.",
+            "Aceptar una oferta menor al precio pedido es habitual y no indica nada de una venta falsa.",
+            "Un anuncio puede subir el precio de forma real: no indica que las ventas sean falsas."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

@@ -1507,5 +1507,46 @@
  {
   "termino": "réplica sintética",
   "d": "Forma de seguir un índice mediante un contrato con un banco que paga su rentabilidad. Añade el riesgo de que el banco no cumpla."
+ },
+ {
+  "termino": "fuera del dinero",
+  "d": "Opción sin valor intrínseco: una call con ejercicio por encima del precio de la acción o una put con ejercicio por debajo."
+ },
+ {
+  "termino": "sesgo de volatilidad",
+  "d": "Diferencia de volatilidad implícita entre ejercicios del mismo vencimiento: las puts fuera del dinero suelen tener más que las calls a la misma distancia."
+ },
+ {
+  "termino": "NFT",
+  "alias": [
+   "token no fungible",
+   "tokens no fungibles",
+   "NFTs"
+  ],
+  "d": "Token no fungible: registro único en una cadena de bloques que apunta a un contenido. Cada uno es distinto y no se cambia por otro igual."
+ },
+ {
+  "termino": "reestructuración",
+  "alias": [
+   "reestructuraciones"
+  ],
+  "d": "Reorganización de una empresa con costes puntuales, como despidos o cierre de centros."
+ },
+ {
+  "termino": "deterioro de un activo",
+  "alias": [
+   "deterioros de activos",
+   "deterioro de activos"
+  ],
+  "d": "Rebaja contable del valor de un activo porque ya no vale lo que figuraba en el balance. Es un gasto que no sale de caja."
+ },
+ {
+  "termino": "partida no recurrente",
+  "alias": [
+   "partidas no recurrentes",
+   "no recurrente",
+   "no recurrentes"
+  ],
+  "d": "Ingreso o gasto que la empresa dice que no se repetirá. Se excluye del beneficio ajustado; conviene comprobar si de verdad es puntual."
  }
 ]

@@ -1,0 +1,198 @@
+{
+  "n": 11,
+  "id": "objetivofecha",
+  "track": "personal",
+  "title": "Ahorrar para una meta con fecha",
+  "blurb": "Cuánto apartar al mes, dónde guardarlo según el plazo y qué hacer si te retrasas.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Cuánto apartar al mes",
+      "texto": "Divide lo que te falta entre los meses que quedan. Sin contar rentabilidad es una división simple y es la cifra prudente. Si ya tienes algo ahorrado, réstalo de la meta antes de dividir.",
+      "ejemplo": "Meta de 7.200 € en 3 años (36 meses): 200 € al mes. Con 1.800 € ya ahorrados, faltan 5.400 €: 150 € al mes."
+    },
+    {
+      "id": "g2",
+      "titulo": "Si cuentas con la rentabilidad",
+      "texto": "Si el dinero rinde algo, necesitas apartar menos, pero esa cuenta la hace una calculadora y la rentabilidad puede no llegar. Úsala como margen: calcula con la división simple y deja que lo que rinda te adelante.",
+      "ejemplo": "Con un 3 % anual, una calculadora da 192 € al mes: en 36 meses reúnes unos 7.223 €, de los que 311 € son rentabilidad."
+    },
+    {
+      "id": "g3",
+      "titulo": "Dónde guardarlo según el plazo",
+      "texto": "Como regla orientativa, lo que necesitas en menos de 2 años va a liquidez (cuentas remuneradas, depósitos, monetarios); de 2 a 5, sobre todo renta fija corta; la bolsa, solo a largo plazo.",
+      "ejemplo": "A un año de la fecha tienes 6.000 € en bolsa y cae un 20 %: quedan 4.800 €. Para volver a 6.000 € hay que subir un 25 %."
+    },
+    {
+      "id": "g4",
+      "titulo": "Si te retrasas",
+      "texto": "Si vas por debajo del plan, recalcula con lo que falta y los meses que quedan. Tienes tres palancas: aportar más, alargar la fecha o rebajar la meta. No uses el colchón: es para imprevistos.",
+      "ejemplo": "Tras 12 meses de 150 € tienes 1.800 € de 7.200 €. Faltan 5.400 € en 24 meses: 225 € al mes; o 36 meses desde hoy (12 más de lo previsto) a 150 €."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "of1",
+      "title": "Cuánto apartar y dónde guardarlo",
+      "ex": [
+        {
+          "id": "of1-1",
+          "t": "num",
+          "q": "Quieres reunir 7.200 € en 3 años para reformar la cocina. No cuentas con rentabilidad y no tienes nada ahorrado. ¿Cuántos euros apartas al mes?",
+          "unit": "€",
+          "a": 200,
+          "why": "7.200 € entre 36 meses = 200 € al mes. Sin rentabilidad es una división simple.",
+          "guia": "g1"
+        },
+        {
+          "id": "of1-2",
+          "t": "num",
+          "q": "Quieres reunir 7.200 € en 3 años y ya tienes 1.800 € ahorrados. No cuentas con rentabilidad. ¿Cuántos euros apartas al mes?",
+          "unit": "€",
+          "a": 150,
+          "why": "Faltan 7.200 − 1.800 = 5.400 €, y 5.400 € entre 36 meses = 150 € al mes.",
+          "guia": "g1"
+        },
+        {
+          "id": "of1-3",
+          "t": "choice",
+          "q": "Necesitas 6.000 € dentro de 18 meses para una boda con fecha fija y sigues la regla de llevar a liquidez lo que necesitas en menos de 2 años. ¿Dónde los guardas?",
+          "opts": [
+            "En un fondo de acciones mundiales, porque año y medio basta para recuperar cualquier caída",
+            "En una cuenta remunerada o un depósito, donde no hay riesgo de caída",
+            "En criptomonedas, que rinden más que la bolsa en plazos cortos",
+            "En un fondo de acciones y, si cae, retrasas la boda hasta que se recupere"
+          ],
+          "a": 1,
+          "why": "A 18 meses (menos de 2 años) la fecha no se mueve y una caída puede no recuperarse a tiempo: va a liquidez, en una cuenta remunerada o un depósito.",
+          "guia": "g3",
+          "porque": [
+            "Año y medio basta para recuperar cualquier caída es falso: una caída fuerte puede tardar más y la fecha de la boda no se mueve.",
+            null,
+            "Las criptomonedas oscilan mucho más que la bolsa y nadie garantiza que rindan más en plazos cortos: no son una opción para esta fecha.",
+            "La boda tiene fecha fija, así que retrasarla no es una opción. El plan debe funcionar aunque la bolsa caiga."
+          ]
+        },
+        {
+          "id": "of1-4",
+          "t": "num",
+          "q": "A un año de la fecha de tu meta tienes 6.000 € en bolsa y esta cae un 20 %. ¿Qué subida, en %, necesitas después para volver a 6.000 €?",
+          "unit": "%",
+          "a": 25,
+          "why": "Con la caída del 20 % quedan 4.800 €, y 6.000 ÷ 4.800 − 1 = 25 %. A un año de la fecha no da tiempo a esperarla.",
+          "guia": "g3"
+        },
+        {
+          "id": "of1-5",
+          "t": "slide",
+          "q": "Tu meta es de 9.000 € dentro de 5 años (60 meses) y no cuentas con rentabilidad. Elige cuánto apartas al mes para llegar justo.",
+          "label": "Aportación mensual",
+          "min": 50,
+          "max": 300,
+          "step": 10,
+          "start": 100,
+          "a": 150,
+          "unit": "€",
+          "why": "9.000 € entre 60 meses = 150 € al mes: 150 × 60 = 9.000 €.",
+          "show": [
+            {
+              "label": "Reunido en 5 años",
+              "k": 60,
+              "b": 0,
+              "unit": "€"
+            }
+          ],
+          "guia": "g1"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "of2",
+      "title": "Rentabilidad, retrasos y colchón",
+      "ex": [
+        {
+          "id": "of2-1",
+          "t": "num",
+          "q": "Con una rentabilidad del 3 % anual, apartar 192 € al mes durante 36 meses reúne unos 7.223 €. ¿Cuántos euros de ese total salen de la rentabilidad y no de tus aportaciones?",
+          "unit": "€",
+          "a": 311,
+          "why": "Tus aportaciones suman 192 × 36 = 6.912 €. Los otros 7.223 − 6.912 = 311 € son rentabilidad.",
+          "guia": "g2"
+        },
+        {
+          "id": "of2-2",
+          "t": "choice",
+          "q": "Guardas el dinero de una meta con fecha en un fondo cuya rentabilidad cambia cada año. ¿Cómo la tratas al calcular cuánto apartar?",
+          "opts": [
+            "Como un dato seguro: la incluyes siempre para apartar lo menos posible",
+            "Como una obligación del fondo: si no llega, la gestora te cubre la diferencia",
+            "Como un extra: calculas la aportación sin ella y, si llega, te adelantas",
+            "Como un dato irrelevante: solo los depósitos tienen rentabilidad"
+          ],
+          "a": 2,
+          "why": "Esa rentabilidad no está garantizada: si no llega, faltaría dinero. Calculas con la división simple y lo que rinda es margen.",
+          "guia": "g2",
+          "porque": [
+            "La rentabilidad de ese fondo cambia cada año: si no llega, te faltaría dinero en la fecha.",
+            "Ninguna gestora garantiza la rentabilidad de un fondo ni cubre la diferencia si no llega.",
+            null,
+            "También hay rentabilidad en fondos, y no es irrelevante: es un extra que puede ayudar, pero no se da por segura."
+          ]
+        },
+        {
+          "id": "of2-3",
+          "t": "num",
+          "q": "Tu meta es de 7.200 € y llevas 1.800 € ahorrados. Quieres mantener la meta, pero solo puedes seguir apartando 150 € al mes. ¿Cuántos meses necesitas desde hoy?",
+          "unit": "meses",
+          "a": 36,
+          "why": "Faltan 7.200 − 1.800 = 5.400 €, y 5.400 € entre 150 € al mes = 36 meses desde hoy: alargas la fecha.",
+          "guia": "g4"
+        },
+        {
+          "id": "of2-4",
+          "t": "slide",
+          "q": "Tu meta es de 7.200 € y has reunido 1.800 €. Quedan 24 meses hasta la fecha y no quieres moverla. Elige cuánto apartas al mes para llegar justo.",
+          "label": "Aportación mensual",
+          "min": 100,
+          "max": 400,
+          "step": 25,
+          "start": 150,
+          "a": 225,
+          "unit": "€",
+          "why": "Faltan 5.400 € y quedan 24 meses: 5.400 ÷ 24 = 225 € al mes. 1.800 + 225 × 24 = 7.200 €.",
+          "show": [
+            {
+              "label": "Reunido en la fecha",
+              "k": 24,
+              "b": 1800,
+              "unit": "€"
+            }
+          ],
+          "guia": "g4"
+        },
+        {
+          "id": "of2-5",
+          "t": "choice",
+          "q": "Vas retrasado en una meta con fecha fija y tienes aparte un colchón de emergencia. ¿Qué haces?",
+          "opts": [
+            "Cubres lo que falta con el colchón, que ya está ahorrado",
+            "Llevas el dinero de la meta a bolsa para recuperar el retraso con la rentabilidad",
+            "Esperas a la fecha: lo que falte lo compensará el interés",
+            "Subes la aportación, alargas la fecha o rebajas la meta, sin tocar el colchón"
+          ],
+          "a": 3,
+          "why": "Las tres palancas son aportar más, alargar la fecha o rebajar la meta; el colchón es para imprevistos y la meta es un gasto previsto.",
+          "guia": "g4",
+          "porque": [
+            "El colchón es para imprevistos; usarlo para una meta previsible te deja sin protección.",
+            "Llevar a bolsa dinero con fecha cercana aumenta el riesgo de que una caída te deje sin la meta.",
+            "Esperar sin hacer nada no cierra la brecha: lo que falta hay que apartarlo o ajustar el plan.",
+            null
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

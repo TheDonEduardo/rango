@@ -1,0 +1,220 @@
+{
+  "n": 24,
+  "id": "ajustado",
+  "track": "fundamental",
+  "title": "Beneficio ajustado y partidas no recurrentes",
+  "blurb": "Qué se excluye del beneficio ajustado, cuándo ayuda, cuándo se abusa de él y cómo compararlo con el contable.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Partidas no recurrentes",
+      "texto": "Ingresos o gastos que la empresa dice que no se repetirán: reestructuraciones (despidos, cierre de fábricas), deterioros de activos (rebajar su valor anotado porque vale menos) y ventas de activos (plusvalías o pérdidas únicas). El contable las incluye; el ajustado las quita.",
+      "ejemplo": "Contable de 120 M$ con una plusvalía de 30 M$ y 50 M$ de reestructuración, netos de impuestos: ajustado = 120 − 30 + 50 = 140 M$."
+    },
+    {
+      "id": "g2",
+      "titulo": "Por qué puede ser más útil",
+      "texto": "Quita lo puntual y muestra lo que el negocio genera cada año: sirve para comparar trimestres y proyectar. Una plusvalía de un solo año no debe repetirse en las proyecciones ni en el PER.",
+      "ejemplo": "140 M$ y 100 M de acciones: BPA ajustado de 1,40 $, frente a 1,20 $ del contable. Con la acción a 28 $, el PER es 20 con el ajustado y 23,3 con el contable."
+    },
+    {
+      "id": "g3",
+      "titulo": "Cuando se abusa",
+      "texto": "Un gasto «extraordinario» que aparece todos los años es un coste normal. Mira varios años: si lo excluido es grande y constante, el ajustado infla el beneficio.",
+      "ejemplo": "Reestructuración excluida: 40, 35, 45 y 40 M$ en cuatro años: 40 M$ de media. Sobre un ajustado de 200 M$, un 20 % que se repite."
+    },
+    {
+      "id": "g4",
+      "titulo": "Pago en acciones y comparar",
+      "texto": "Muchas empresas excluyen el pago en acciones a empleados del ajustado, pero es un coste real: se paga con dilución. Para comparar, parte del ajustado y resta lo que, a tu juicio, sea recurrente.",
+      "ejemplo": "Ajustado de 200 M$, con 40 M$ de reestructuración que se repite y 30 M$ de pago en acciones: 200 − 40 − 30 = 130 M$."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "aj1",
+      "title": "Qué se excluye y por qué",
+      "ex": [
+        {
+          "id": "aj1-1",
+          "t": "num",
+          "q": "El beneficio contable de una empresa es de 120 M$ y, neto de impuestos, incluye una plusvalía de 30 M$ por vender un edificio y 50 M$ de gastos de reestructuración. ¿Cuántos M$ es el beneficio ajustado?",
+          "unit": "M$",
+          "a": 140,
+          "why": "120 − 30 de la plusvalía + 50 de la reestructuración = 140 M$: el ajustado quita lo puntual, sea ganancia o coste.",
+          "guia": "g1"
+        },
+        {
+          "id": "aj1-2",
+          "t": "choice",
+          "q": "¿Cuál de estas partidas suele excluir una empresa del beneficio ajustado por considerarla no recurrente?",
+          "opts": [
+            "Los costes de cerrar una fábrica y despedir a su plantilla",
+            "El coste de las materias primas que usa cada año",
+            "Los sueldos de la plantilla fija",
+            "Las ventas de su producto principal"
+          ],
+          "a": 0,
+          "why": "Un cierre de fábrica es una reestructuración puntual. Materias primas, sueldos fijos y ventas del producto principal son el negocio de cada año.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Ese coste es el del negocio de cada año: las empresas no lo excluyen del ajustado.",
+            "La plantilla fija cobra cada año: es un gasto recurrente que se queda en el ajustado.",
+            "Las ventas del producto principal son el negocio habitual: no son una partida puntual."
+          ]
+        },
+        {
+          "id": "aj1-3",
+          "t": "num",
+          "q": "Una empresa tiene un beneficio ajustado de 140 M$ y 100 M de acciones. Cotiza a 28 $. ¿Qué PER sale con el beneficio ajustado?",
+          "unit": "",
+          "a": 20,
+          "why": "BPA ajustado = 140 ÷ 100 = 1,40 $, y 28 ÷ 1,40 = 20. Con el contable de 1,20 $ saldría 23,3.",
+          "guia": "g2"
+        },
+        {
+          "id": "aj1-4",
+          "t": "choice",
+          "q": "El beneficio contable de una empresa incluye una plusvalía puntual por vender un edificio. ¿Por qué conviene quitarla para proyectar el beneficio futuro?",
+          "opts": [
+            "Porque las plusvalías no se cobran en dinero",
+            "Porque no se repetirá y proyectarla inflaría el beneficio esperado",
+            "Porque la ley obliga a excluirlas del beneficio contable",
+            "Porque el beneficio ajustado siempre sale menor que el contable"
+          ],
+          "a": 1,
+          "why": "La venta del edificio ocurre una vez: si la mantienes en la proyección, supones que se repetirá cada año.",
+          "guia": "g2",
+          "porque": [
+            "Las plusvalías sí se cobran: el problema no es la forma de cobro, sino que son puntuales.",
+            null,
+            "La ley no obliga a excluirlas del contable: este incluye las plusvalías; el ajustado es una cifra de la empresa.",
+            "El ajustado puede ser mayor o menor que el contable: depende de si lo excluido son costes o ganancias."
+          ]
+        },
+        {
+          "id": "aj1-5",
+          "t": "match",
+          "q": "Empareja cada partida con su descripción.",
+          "pairs": [
+            [
+              "Reestructuración",
+              "Despidos y cierre de centros: un coste puntual"
+            ],
+            [
+              "Deterioro de un activo",
+              "Rebaja de su valor anotado porque vale menos"
+            ],
+            [
+              "Venta de un activo",
+              "Ganancia o pérdida única frente a su valor anotado"
+            ]
+          ],
+          "why": "Las tres suelen excluirse del ajustado: reestructuración (costes de cierre y despidos), deterioro (valor anotado que se rebaja) y venta (resultado único).",
+          "guia": "g1"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "aj2",
+      "title": "Cuando se abusa y cómo compararlo",
+      "ex": [
+        {
+          "id": "aj2-1",
+          "t": "num",
+          "q": "Una empresa excluye cada año de su beneficio ajustado unos «gastos extraordinarios de reestructuración»: 40 M$ en 2022, 35 en 2023, 45 en 2024 y 40 en 2025. ¿Cuántos M$ excluye de media al año?",
+          "unit": "M$",
+          "a": 40,
+          "why": "(40 + 35 + 45 + 40) ÷ 4 = 160 ÷ 4 = 40 M$ al año: cuatro años seguidos, de importe parecido.",
+          "table": {
+            "cols": [
+              "Año",
+              "Reestructuración excluida (M$)"
+            ],
+            "rows": [
+              [
+                "2022",
+                "40"
+              ],
+              [
+                "2023",
+                "35"
+              ],
+              [
+                "2024",
+                "45"
+              ],
+              [
+                "2025",
+                "40"
+              ]
+            ],
+            "note": "Empresa ficticia."
+          },
+          "guia": "g3"
+        },
+        {
+          "id": "aj2-2",
+          "t": "num",
+          "q": "Una empresa tiene un beneficio ajustado de 200 M$ y excluye de media 40 M$ al año de «reestructuración extraordinaria» desde hace cuatro años. ¿Qué porcentaje del ajustado supone esa exclusión?",
+          "unit": "%",
+          "a": 20,
+          "why": "40 ÷ 200 = 20 %: una quinta parte del ajustado es un gasto que se repite.",
+          "guia": "g3"
+        },
+        {
+          "id": "aj2-3",
+          "t": "choice",
+          "q": "Una empresa excluye de su beneficio ajustado una «reestructuración extraordinaria» de importe parecido cuatro años seguidos. ¿Qué lectura es más razonable?",
+          "opts": [
+            "Es un coste normal: lo restas para ver el beneficio que de verdad se repite",
+            "Es extraordinaria por definición: lo correcto es ignorarla siempre",
+            "Es una buena señal, porque demuestra que la empresa se reorganiza",
+            "Prueba que el beneficio contable es el que está maquillado"
+          ],
+          "a": 0,
+          "why": "Un gasto que aparece cuatro años seguidos no es extraordinario: es recurrente y debe restarse para medir el beneficio habitual.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Una partida no es extraordinaria por definirla así: si se repite cuatro años, es recurrente.",
+            "Repetir una reestructuración cada año no es una señal positiva: es un coste continuado.",
+            "El contable incluye el gasto real. Lo que se cuestiona aquí es el ajustado, que lo excluye."
+          ]
+        },
+        {
+          "id": "aj2-4",
+          "t": "num",
+          "q": "El beneficio ajustado de una empresa es de 200 M$. Excluye 40 M$ de una reestructuración que se repite cada año y 30 M$ de pago en acciones a empleados. Sin contar impuestos, si los tratas como costes reales, ¿cuántos M$ de beneficio quedan?",
+          "unit": "M$",
+          "a": 130,
+          "why": "200 − 40 − 30 = 130 M$: restas del ajustado los dos costes que dejaba fuera.",
+          "guia": "g4"
+        },
+        {
+          "id": "aj2-5",
+          "t": "choice",
+          "q": "¿Por qué se considera el pago en acciones a empleados un coste real aunque se excluya del beneficio ajustado?",
+          "opts": [
+            "Porque se paga en efectivo al empleado un año después",
+            "Porque la ley obliga a contarlo siempre en el beneficio ajustado",
+            "Porque reduce el número de acciones en circulación",
+            "Porque se paga con más acciones y diluye a los accionistas actuales"
+          ],
+          "a": 3,
+          "why": "No sale de caja, pero entrega acciones nuevas: cada accionista pasa a tener una parte menor de la empresa.",
+          "guia": "g4",
+          "porque": [
+            "No hay pago en efectivo: el empleado recibe acciones, no dinero un año después.",
+            "La ley no obliga a incluirlo en el ajustado: es la empresa quien decide qué excluye.",
+            "Al contrario: entrega acciones nuevas, así que el número de acciones aumenta.",
+            null
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

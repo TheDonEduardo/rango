@@ -1,0 +1,192 @@
+{
+  "n": 12,
+  "id": "opsesgo",
+  "track": "derivados",
+  "title": "El sesgo de volatilidad",
+  "blurb": "Por qué las puts de abajo cotizan con más volatilidad implícita y cómo encarece coberturas, collares y spreads verticales de puts.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "El sesgo de volatilidad",
+      "texto": "Con el mismo vencimiento, la volatilidad implícita varía según el ejercicio. Las puts fuera del dinero (ejercicio por debajo del precio) suelen tener más que las calls a la misma distancia: es el sesgo. Sin él, sería plana: igual para todos.",
+      "ejemplo": "Acción a 100 $, 3 meses: put de 90 $ con un 34 % y call de 110 $ con un 28 %: la put tiene 6 puntos más."
+    },
+    {
+      "id": "g2",
+      "titulo": "Por qué existe",
+      "texto": "Mucha gente compra puts para cubrir su cartera y esa demanda las encarece. Además, la bolsa suele caer de golpe más que subir de golpe, y quien vende puts cobra por asumir ese riesgo. Cuanto más abajo, más volatilidad.",
+      "ejemplo": "Acción a 100 $: call de 110 $ con un 28 %, put de 95 $ con un 31 % y put de 90 $ con un 34 %."
+    },
+    {
+      "id": "g3",
+      "titulo": "Coberturas más caras",
+      "texto": "Cubrirte con una put lejana se paga con su volatilidad alta: cuesta más que con la de una call a la misma distancia. Cada contrato cubre 100 acciones.",
+      "ejemplo": "Put de 90 $ a 3 meses con el 34 %: 2,63 $ por acción; con el 28 %, 1,73 $. Cubrir 200 acciones: 2 contratos × 100 × 2,63 = 526 $."
+    },
+    {
+      "id": "g4",
+      "titulo": "Collar y spread vertical de puts",
+      "texto": "En un collar, la put comprada lleva más volatilidad que la call que vendes: suele tener coste, o un crédito menor que sin sesgo. En un spread vertical de crédito con puts, la lejana cuesta más: cobras menos.",
+      "ejemplo": "Put de 90 $ (2,63 $), call de 110 $ (2,16 $): collar de 0,47 $. Vendes la put de 95 $ (3,85 $), compras la de 90 $: cobras 1,22 $."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "op43",
+      "title": "Qué es y por qué existe",
+      "ex": [
+        {
+          "id": "op43-1",
+          "t": "choice",
+          "q": "¿Qué es el sesgo de volatilidad en las opciones de un mismo vencimiento?",
+          "opts": [
+            "Que la volatilidad implícita de cualquier opción sube cada día hasta el vencimiento",
+            "Que una call y una put con el mismo ejercicio y vencimiento tienen siempre la misma prima",
+            "Que las puts fuera del dinero suelen tener más volatilidad implícita que las calls a su misma distancia",
+            "Que el comprador de una opción elige qué volatilidad implícita paga"
+          ],
+          "a": 2,
+          "why": "El sesgo es esa diferencia: la put de abajo se negocia con más volatilidad implícita que la call de arriba a la misma distancia.",
+          "guia": "g1",
+          "porque": [
+            "Eso no es cierto: la volatilidad implícita cambia con el mercado y no sube sola cada día. Tampoco describe una diferencia entre ejercicios.",
+            "Con el mismo ejercicio y vencimiento, call y put valen distinto salvo coincidencia; y no es lo que describe el sesgo.",
+            null,
+            "La volatilidad implícita sale del precio que fija el mercado: nadie la elige al comprar."
+          ]
+        },
+        {
+          "id": "op43-2",
+          "t": "num",
+          "q": "La acción cotiza a 100 $ y las opciones vencen a 3 meses. La put de 90 $ tiene una volatilidad implícita del 34 % y la call de 110 $, del 28 %. ¿Cuántos puntos de volatilidad más tiene la put?",
+          "unit": "puntos",
+          "a": 6,
+          "why": "34 % − 28 % = 6 puntos. A la misma distancia (un 10 %), la put fuera del dinero lleva más volatilidad.",
+          "guia": "g1"
+        },
+        {
+          "id": "op43-3",
+          "t": "choice",
+          "q": "¿Por qué suelen tener más volatilidad implícita las puts fuera del dinero que las calls a su misma distancia?",
+          "opts": [
+            "Porque una put vence siempre antes que una call del mismo ejercicio",
+            "Porque hay mucha demanda de puts para cubrirse y quien las vende cobra el riesgo de caídas bruscas",
+            "Porque las calls fuera del dinero no se pueden negociar en el mercado",
+            "Porque la volatilidad implícita de una put se mide con más días que la de una call"
+          ],
+          "a": 1,
+          "why": "La demanda de cobertura encarece las puts y la bolsa suele caer de golpe más que subir de golpe: quien vende puts pide más por ese riesgo.",
+          "guia": "g2",
+          "porque": [
+            "Las puts y las calls del mismo vencimiento vencen a la vez: la diferencia no viene del plazo.",
+            null,
+            "Las calls fuera del dinero se negocian con normalidad; su volatilidad es menor, no inexistente.",
+            "La volatilidad implícita no se mide con días distintos según el tipo de opción: sale del precio de cada opción."
+          ]
+        },
+        {
+          "id": "op43-4",
+          "t": "num",
+          "q": "La acción cotiza a 100 $ y compras la put de 90 $ a 3 meses. Con la volatilidad del 34 % de esa put cuesta 2,63 $, y con el 28 % de una call a su misma distancia costaría 1,73 $. ¿Cuántos dólares por acción encarece el sesgo esa cobertura?",
+          "unit": "$",
+          "a": 0.9,
+          "why": "2,63 $ − 1,73 $ = 0,90 $ por acción: la cobertura se paga con la volatilidad alta de la put.",
+          "tol": 0.01,
+          "guia": "g3"
+        },
+        {
+          "id": "op43-5",
+          "t": "num",
+          "q": "Tienes 200 acciones a 100 $ y las cubres con la put de 90 $ a 3 meses, que cuesta 2,63 $ por acción. Cada contrato cubre 100 acciones. ¿Cuántos dólares pagas en total por la cobertura?",
+          "unit": "$",
+          "a": 526,
+          "why": "200 acciones son 2 contratos: 2 × 100 × 2,63 $ = 526 $.",
+          "guia": "g3"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "op44",
+      "title": "Collares y spreads verticales de puts",
+      "ex": [
+        {
+          "id": "op44-1",
+          "t": "num",
+          "q": "Tienes acciones a 100 $. Compras la put de 90 $ a 3 meses por 2,63 $ y vendes la call de 110 $ a 3 meses por 2,16 $. ¿Cuántos dólares por acción te cuesta el collar?",
+          "unit": "$",
+          "a": 0.47,
+          "why": "2,63 $ pagados − 2,16 $ cobrados = 0,47 $ por acción de coste neto.",
+          "tol": 0.01,
+          "guia": "g4"
+        },
+        {
+          "id": "op44-2",
+          "t": "choice",
+          "q": "Compras la put de 90 $ y vendes la call de 110 $ sobre acciones a 100 $, ambas a 3 meses y a un 10 % de distancia. ¿Por qué ese collar tiene un coste en vez de darte un pequeño crédito?",
+          "opts": [
+            "Porque las calls fuera del dinero no tienen valor temporal",
+            "Porque la put vence antes que la call del collar",
+            "Porque una put cuesta siempre el doble que una call",
+            "Porque la put lleva más volatilidad implícita que la call que cobras"
+          ],
+          "a": 3,
+          "why": "A la misma distancia, la put que compras (2,63 $) lleva más volatilidad que la call que vendes (2,16 $): el collar cuesta 0,47 $ en vez de dar un crédito de 0,43 $ (1,73 $ de put con el 28 % menos 2,16 $ de call).",
+          "guia": "g4",
+          "porque": [
+            "Una call fuera del dinero a 3 meses sí tiene valor temporal: su prima de 2,16 $ es solo valor temporal.",
+            "Ambas vencen a 3 meses, a la vez: la diferencia de coste no viene del plazo.",
+            "No es una regla: depende de la volatilidad de cada una. Aquí la put cuesta 2,63 $ y la call 2,16 $, no el doble.",
+            null
+          ]
+        },
+        {
+          "id": "op44-3",
+          "t": "num",
+          "q": "Vendes la put de 95 $ por 3,85 $ y compras la de 90 $ por 2,63 $, ambas a 3 meses, en un spread vertical de crédito. ¿Cuántos dólares por acción cobras?",
+          "unit": "$",
+          "a": 1.22,
+          "why": "3,85 $ cobrados − 2,63 $ pagados = 1,22 $ por acción.",
+          "tol": 0.01,
+          "guia": "g4"
+        },
+        {
+          "id": "op44-4",
+          "t": "num",
+          "q": "Con la volatilidad plana del 31 % en las dos puts, el spread vertical de crédito de 95 $ y 90 $ a 3 meses cobraría 1,68 $ por acción en lugar de los 1,22 $ reales. ¿Cuántos dólares menos cobras por el sesgo?",
+          "unit": "$",
+          "a": 0.46,
+          "why": "1,68 $ − 1,22 $ = 0,46 $: la put de 90 $ que compras lleva más volatilidad (34 %) y cuesta más.",
+          "tol": 0.01,
+          "guia": "g4"
+        },
+        {
+          "id": "op44-5",
+          "t": "match",
+          "q": "Empareja cada pieza con el efecto del sesgo de volatilidad.",
+          "pairs": [
+            [
+              "Put que compras en un collar",
+              "Se paga con volatilidad alta"
+            ],
+            [
+              "Call que vendes en un collar",
+              "Se cobra con volatilidad más baja"
+            ],
+            [
+              "Spread vertical de crédito con puts",
+              "Cobras menos que sin sesgo"
+            ],
+            [
+              "Collar con ejercicios a la misma distancia",
+              "Cuesta más que sin sesgo"
+            ]
+          ],
+          "why": "La put de abajo lleva más volatilidad que la call de arriba: el collar cuesta y el crédito del spread vertical con puts sale menor.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}
