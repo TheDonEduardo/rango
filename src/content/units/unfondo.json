@@ -1,0 +1,220 @@
+{
+  "n": 11,
+  "id": "unfondo",
+  "track": "pasiva",
+  "title": "Una cartera en un solo fondo",
+  "blurb": "Fondos mixtos indexados: reparto fijo, rebalanceo automático, coste y límites.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Un fondo, un reparto",
+      "texto": "Un fondo mixto indexado mantiene un reparto fijo entre renta variable y renta fija, como 60/40 u 80/20, y replica índices. En lugar de comprar y rebalancear dos fondos, compras uno.",
+      "ejemplo": "Con 10.000 € en un 60/40: 6.000 € en renta variable y 4.000 € en renta fija."
+    },
+    {
+      "id": "g2",
+      "titulo": "Rebalancea solo",
+      "texto": "Cuando la bolsa sube o cae, el fondo vuelve al reparto: vende lo que sube y compra lo que cae, sin que decidas nada. Evita que el miedo te haga vender en el peor momento.",
+      "ejemplo": "Un 60/40 con 10.000 €: la renta variable cae un 30 % y valen 4.200 € y 4.000 €. El fondo compra 720 € de renta variable para volver al 60 %."
+    },
+    {
+      "id": "g3",
+      "titulo": "El coste",
+      "texto": "El fondo mixto suele costar algo más que dos fondos simples. Compara el TER medio de los dos con el del mixto y calcula la diferencia en euros.",
+      "ejemplo": "Un 80/20 con dos fondos: 0,15 % y 0,10 % dan un 0,14 % medio. Con un TER del 0,30 %, el mixto cuesta 32 € más al año por cada 20.000 €."
+    },
+    {
+      "id": "g4",
+      "titulo": "Límites y ciclo de vida",
+      "texto": "Pierdes control: el reparto lo fija el fondo y solo lo ajustas combinándolo con otro. Los fondos de ciclo de vida bajan la renta variable con los años a un ritmo genérico.",
+      "ejemplo": "8.750 € en un 80/20 y 1.250 € en renta fija dan un 70/30. Un ciclo de vida del 90 % que baja 2 puntos al año tiene un 50 % a 20 años."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "uf1",
+      "title": "Un fondo, un reparto",
+      "ex": [
+        {
+          "id": "uf1-1",
+          "t": "match",
+          "q": "Empareja cada concepto de los fondos mixtos con su significado.",
+          "pairs": [
+            [
+              "Reparto fijo",
+              "Porcentaje de bolsa y de bonos que el fondo se compromete a mantener, como un 80/20"
+            ],
+            [
+              "Rebalanceo interno",
+              "Venta de lo que sube y compra de lo que se queda atrás, hecha por el fondo y no por ti"
+            ],
+            [
+              "Ciclo de vida",
+              "Fondo que baja el peso de la bolsa según se acerca la fecha en que necesitas el dinero"
+            ]
+          ],
+          "why": "Un fondo mixto indexado mantiene un reparto fijo y lo rebalancea por dentro; el de ciclo de vida cambia ese reparto con los años.",
+          "guia": "g1"
+        },
+        {
+          "id": "uf1-2",
+          "t": "num",
+          "q": "Un fondo mixto mantiene un 60 % en renta variable y un 40 % en renta fija. Con 10.000 € dentro, la renta variable cae un 30 % y la renta fija no varía. ¿Cuántos euros de renta variable compra el fondo para volver al 60 %?",
+          "unit": "€",
+          "a": 720,
+          "why": "Quedan 4.200 € en renta variable y 4.000 € en renta fija: 8.200 €. El 60 % de 8.200 es 4.920 €, así que compra 4.920 − 4.200 = 720 € sin que tú muevas nada.",
+          "guia": "g2"
+        },
+        {
+          "id": "uf1-3",
+          "t": "choice",
+          "q": "¿Qué ventaja da un fondo mixto indexado frente a montar tú el mismo reparto con dos fondos?",
+          "opts": [
+            "Garantiza una rentabilidad mínima, porque lleva una parte en renta fija",
+            "Rebalancea solo, sin que tengas que decidir ni vender en plena caída",
+            "Elimina el riesgo de pérdidas en los años en que cae la bolsa",
+            "Te deja cambiar el reparto a tu gusto cuando quieras dentro del fondo"
+          ],
+          "a": 1,
+          "why": "El fondo rebalancea por ti: compra bolsa cuando cae y vende cuando sube, sin que dependa de tu disciplina ni de tus nervios.",
+          "guia": "g2",
+          "porque": [
+            "La renta fija amortigua las caídas, pero ningún fondo mixto garantiza una rentabilidad mínima.",
+            null,
+            "Con una parte en renta variable, un mal año da pérdidas; el fondo mixto solo las suaviza.",
+            "El reparto lo fija el fondo; cambiarlo a tu gusto exige combinarlo con otro fondo."
+          ]
+        },
+        {
+          "id": "uf1-4",
+          "t": "choice",
+          "q": "Un fondo de ciclo de vida con fecha objetivo dentro de 30 años, ¿qué hace con su reparto a medida que pasan los años?",
+          "opts": [
+            "Mantiene el mismo reparto durante los 30 años",
+            "Aumenta la renta variable según se acerca la fecha",
+            "Pasa todo a renta variable en el último año",
+            "Reduce poco a poco la renta variable y sube la renta fija"
+          ],
+          "a": 3,
+          "why": "Al acercarse la fecha en que necesitas el dinero, baja la renta variable para reducir el riesgo y sube la renta fija.",
+          "guia": "g4",
+          "porque": [
+            "Eso es un fondo de reparto fijo; el de ciclo de vida cambia su reparto con el tiempo.",
+            "Al revés: al acercarse la fecha reduce el riesgo bajando la renta variable.",
+            "Al final busca estabilidad, no más riesgo: lo que baja es la renta variable.",
+            null
+          ]
+        },
+        {
+          "id": "uf1-5",
+          "t": "num",
+          "q": "Un fondo de ciclo de vida empieza con un 90 % en renta variable y baja 2 puntos porcentuales cada año, de forma lineal. ¿Qué porcentaje de renta variable tendrá dentro de 20 años?",
+          "unit": "%",
+          "a": 50,
+          "why": "20 años × 2 puntos = 40 puntos menos: 90 − 40 = 50 %.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "uf2",
+      "title": "Coste y límites",
+      "ex": [
+        {
+          "id": "uf2-1",
+          "t": "num",
+          "q": "Montas un reparto 80/20 con dos fondos indexados: el de renta variable (80 % de tu dinero) cobra un TER del 0,15 % y el de renta fija (20 %), un 0,10 %. ¿Qué TER medio pagas? Redondea a 2 decimales.",
+          "unit": "%",
+          "a": 0.14,
+          "why": "0,80 × 0,15 % + 0,20 × 0,10 % = 0,12 % + 0,02 % = 0,14 %. Es el coste medio ponderado por lo que pones en cada fondo.",
+          "tol": 0.01,
+          "guia": "g3"
+        },
+        {
+          "id": "uf2-2",
+          "t": "num",
+          "q": "Con 20.000 € invertidos, un fondo mixto indexado 80/20 cobra un TER del 0,30 % y montar ese mismo reparto con dos fondos cuesta un 0,14 % de media. ¿Cuántos euros más al año pagas por el fondo mixto?",
+          "unit": "€",
+          "a": 32,
+          "why": "La diferencia es 0,30 % − 0,14 % = 0,16 %; 20.000 € × 0,16 % = 32 € al año. Es el precio de la comodidad.",
+          "guia": "g3"
+        },
+        {
+          "id": "uf2-3",
+          "t": "choice",
+          "q": "Un fondo mixto indexado mantiene un reparto fijo del 80/20. ¿Qué límite tiene para ti?",
+          "opts": [
+            "No puedes aportar dinero cada mes, solo hacer una compra única",
+            "No rebalancea: tienes que vender tú lo que más sube",
+            "No puedes cambiar su reparto por tu cuenta: lo fija el fondo",
+            "No puedes venderlo antes de una fecha fijada de antemano"
+          ],
+          "a": 2,
+          "why": "El reparto lo decide el fondo. Si quieres otro, tienes que combinarlo con un segundo fondo o cambiar de producto.",
+          "guia": "g4",
+          "porque": [
+            "Los fondos mixtos admiten aportaciones periódicas como cualquier otro fondo.",
+            "Sí rebalancea: es justo una de sus ventajas, porque lo hace el propio fondo.",
+            null,
+            "Se puede reembolsar cuando quieras; la fecha fija es de otros productos, no del mixto."
+          ]
+        },
+        {
+          "id": "uf2-4",
+          "t": "slide",
+          "q": "Tienes 10.000 € y quieres un reparto 70/30 entre renta variable y renta fija. Combinas un fondo mixto 80/20 con un fondo de renta fija pura (100 % renta fija). Elige cuántos euros pones en el fondo mixto.",
+          "label": "En el fondo mixto",
+          "min": 0,
+          "max": 10000,
+          "step": 250,
+          "start": 5000,
+          "a": 8750,
+          "unit": "€",
+          "why": "El mixto aporta un 80 % de renta variable: 0,8 × x = 70 % de 10.000 = 7.000 €, así que x = 8.750 €. Los 1.250 € restantes van al fondo de renta fija.",
+          "show": [
+            {
+              "label": "Renta variable total",
+              "k": 0.8,
+              "unit": "€"
+            },
+            {
+              "label": "Peso de la renta variable",
+              "k": 0.008,
+              "unit": "%",
+              "dec": 1
+            },
+            {
+              "label": "En el fondo de renta fija",
+              "k": -1,
+              "b": 10000,
+              "unit": "€"
+            }
+          ],
+          "guia": "g4"
+        },
+        {
+          "id": "uf2-5",
+          "t": "choice",
+          "q": "Un fondo de inversión de ciclo de vida baja la renta variable cada año. ¿Qué límite tiene para ti?",
+          "opts": [
+            "Solo puedes aportar mientras falten más de 10 años para la fecha",
+            "No admite reembolsos: el dinero queda bloqueado hasta la fecha objetivo",
+            "Su ritmo es genérico: puede no encajar con tu riesgo ni con tu fecha real",
+            "Aumenta el riesgo cada año, porque envejece junto con tu cartera"
+          ],
+          "a": 2,
+          "why": "El fondo sigue una trayectoria para un inversor medio. Si tu tolerancia al riesgo o tu fecha son distintas, ese ritmo no es el tuyo.",
+          "guia": "g4",
+          "porque": [
+            "No hay un límite de aportaciones por plazo; el problema es el ritmo de la trayectoria.",
+            "Un fondo de inversión se puede reembolsar cuando quieras: la fecha objetivo orienta el reparto, no bloquea el dinero.",
+            null,
+            "Al revés: con los años el riesgo baja, porque se reduce la renta variable."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

@@ -1288,5 +1288,42 @@
  {
   "termino": "short squeeze",
   "d": "Subida brusca en la que los cortos recompran para cortar pérdidas y esas compras empujan el precio aún más."
+ },
+ {
+  "termino": "fondo mixto",
+  "alias": [
+   "fondos mixtos"
+  ],
+  "d": "Fondo que reparte su dinero entre renta variable y renta fija con un porcentaje fijo, como 60/40, y lo mantiene rebalanceando por dentro."
+ },
+ {
+  "termino": "fondo de ciclo de vida",
+  "alias": [
+   "ciclo de vida",
+   "fondos de ciclo de vida"
+  ],
+  "d": "Fondo con una fecha objetivo que reduce poco a poco la renta variable y sube la renta fija según se acerca esa fecha."
+ },
+ {
+  "termino": "LEAPS",
+  "d": "Opciones con vencimiento de uno o dos años o más. Su theta diaria es baja en porcentaje, pero la prima total es mayor."
+ },
+ {
+  "termino": "ESG",
+  "alias": [
+   "criterios ESG"
+  ],
+  "d": "Criterios ambientales, sociales y de gobierno con los que se evalúa una empresa. Son información adicional, no una garantía."
+ },
+ {
+  "termino": "SFDR",
+  "d": "Reglamento de divulgación de la UE sobre finanzas sostenibles. Clasifica los fondos, por ejemplo en «artículo 8» y «artículo 9». Compruébalo con la norma vigente."
+ },
+ {
+  "termino": "lavado verde",
+  "alias": [
+   "greenwashing"
+  ],
+  "d": "Presentar un producto como más sostenible de lo que realmente es."
  }
 ]

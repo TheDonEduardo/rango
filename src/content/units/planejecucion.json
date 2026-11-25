@@ -1,0 +1,215 @@
+{
+  "n": 33,
+  "id": "planejecucion",
+  "track": "tecnico",
+  "title": "Del análisis a la orden",
+  "blurb": "Peso máximo, tramos, stop y alertas: cómo se convierte un plan en una orden.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Peso máximo según el perfil",
+      "texto": "Antes de calcular nada, fija cuánto puede pesar el activo en la cartera. Referencias orientativas del método: especulativo, 2-4 %; crecimiento, 5-8 %; consolidado, 8-12 %. Cuanto más binario el negocio, menos peso.",
+      "ejemplo": "Cuenta de 20.000 € y empresa especulativa con tope del 4 %: como máximo 800 €."
+    },
+    {
+      "id": "g2",
+      "titulo": "El menor de los dos límites",
+      "texto": "Calcula las acciones que permite el riesgo y las que permite el peso máximo, y compra el menor. Con un stop cercano suele mandar el peso; con uno lejano, el riesgo.",
+      "ejemplo": "Con 20.000 €, entrada a 25 € y stop a 23 €, el 1 % de riesgo permite 100 acciones y el 8 % de peso, 64. Compras 64 y arriesgas 128 €, el 0,64 %."
+    },
+    {
+      "id": "g3",
+      "titulo": "Dos tramos y dos niveles",
+      "texto": "Entra con la mitad al confirmar y con la otra mitad al romper el pivote con volumen. El stop cierra todo; «no añadir más» solo congela la posición. No promedies a la baja.",
+      "ejemplo": "Dos tramos iguales, a 25 € y a 26,50 €: precio medio de 25,75 €. Con 30 acciones a 25 €, stop en 21 € y «no añadir» en 23 €, a 22,80 € no compras más."
+    },
+    {
+      "id": "g4",
+      "titulo": "Resultados y alertas",
+      "texto": "Si faltan menos de 14 días para resultados, espera al cierre posterior o reduce el tramo: un hueco salta el stop. Programa tres alertas: activación, invalidación y fecha de resultados.",
+      "ejemplo": "Un tramo de 32 acciones reducido a 16: si abre a 20 € desde 25 €, pierdes 80 € en vez de 160 €."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "ej1",
+      "title": "Cuánto comprar: peso y riesgo",
+      "ex": [
+        {
+          "id": "ej1-1",
+          "t": "choice",
+          "q": "Según las referencias orientativas del método (especulativo, 2-4 %; crecimiento, 5-8 %; consolidado, 8-12 %), ¿qué activo lleva el peso máximo más bajo en la cartera?",
+          "opts": [
+            "Un negocio rentable, con caja positiva y baja probabilidad de dilución",
+            "Una empresa en fuerte expansión, con visibilidad operativa y riesgo moderado",
+            "Una empresa sin ingresos, con pérdidas profundas y riesgo serio de dilución",
+            "Un valor de calidad con ventaja competitiva duradera y caja holgada"
+          ],
+          "a": 2,
+          "why": "Sin ingresos, con pérdidas y riesgo de dilución, el perfil es especulativo: 2-4 %. El crecimiento admite 5-8 % y lo consolidado, 8-12 %.",
+          "guia": "g1",
+          "porque": [
+            "Un negocio rentable y con caja puede llegar al 8-12 %: es el tope más alto de las tres referencias.",
+            "El crecimiento con riesgo moderado admite un 5-8 %, más que el 2-4 % de una tesis especulativa.",
+            null,
+            "Con una ventaja duradera y caja holgada el riesgo es bajo, así que el tope es mayor que el especulativo."
+          ]
+        },
+        {
+          "id": "ej1-2",
+          "t": "num",
+          "q": "Tu cuenta es de 20.000 €. Una empresa especulativa tiene un peso máximo del 4 % de la cartera. ¿Cuántos euros como máximo puedes tener en ella?",
+          "unit": "€",
+          "a": 800,
+          "why": "20.000 € × 4 % = 800 €. Aunque el stop esté cerca, el perfil especulativo limita cuánto capital le dedicas.",
+          "guia": "g1"
+        },
+        {
+          "id": "ej1-3",
+          "t": "slide",
+          "q": "Cuenta de 20.000 €. Arriesgas como máximo un 1 % por operación y la posición no puede pasar del 8 % de la cuenta. Entrada a 25 € y stop a 23 €. Elige cuántas acciones compras.",
+          "label": "Acciones",
+          "min": 0,
+          "max": 120,
+          "step": 4,
+          "start": 100,
+          "a": 64,
+          "unit": "",
+          "why": "Riesgo: 1 % de 20.000 = 200 €; a 2 € por acción, 100 acciones. Peso: 8 % = 1.600 €; a 25 €, 64 acciones. Compras el menor de los dos: 64 (128 € de riesgo y un 8,0 % de peso).",
+          "show": [
+            {
+              "label": "Riesgo total",
+              "k": 2,
+              "unit": "€"
+            },
+            {
+              "label": "Peso en la cuenta",
+              "k": 0.125,
+              "unit": "%",
+              "dec": 1
+            }
+          ],
+          "guia": "g2"
+        },
+        {
+          "id": "ej1-4",
+          "t": "num",
+          "q": "Cuenta de 20.000 €. Compras 64 acciones a 25 € con el stop en 23 €. ¿Qué porcentaje de la cuenta arriesgas? Redondea a 2 decimales.",
+          "unit": "%",
+          "a": 0.64,
+          "why": "64 × 2 € = 128 € de riesgo; 128 ÷ 20.000 = 0,64 %. Es menos del 1 % porque aquí manda el peso máximo, no el riesgo.",
+          "tol": 0.01,
+          "guia": "g2"
+        },
+        {
+          "id": "ej1-5",
+          "t": "choice",
+          "q": "Cuenta de 20.000 €, riesgo del 1 % por operación y peso máximo del 8 %. Entrada a 25 € y stop a 24,50 €. ¿Qué límite fija el tamaño de la posición?",
+          "opts": [
+            "El peso máximo: el riesgo permitiría 400 acciones, 10.000 € de posición",
+            "El riesgo del 1 %: con 64 acciones arriesgarías más de 200 €",
+            "Ninguno de los dos: con un stop tan cerca no hace falta límite",
+            "Los dos a la vez: coinciden en el mismo número de acciones"
+          ],
+          "a": 0,
+          "why": "Riesgo: 200 € ÷ 0,50 € = 400 acciones (10.000 €, la mitad de la cuenta). Peso: 8 % = 1.600 € ÷ 25 € = 64 acciones. Compras el menor: 64.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "Con 64 acciones y 0,50 € de riesgo por acción arriesgas 32 €, muy por debajo de los 200 € permitidos.",
+            "Un stop cercano reduce el riesgo por acción, pero el peso máximo sigue vigente y limita la posición.",
+            "No coinciden: el riesgo permite 400 acciones (200 ÷ 0,50) y el peso solo 64 (1.600 ÷ 25)."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "ej2",
+      "title": "Entrar por tramos y con alertas",
+      "ex": [
+        {
+          "id": "ej2-1",
+          "t": "num",
+          "q": "Tu posición objetivo son 64 acciones. Compras 32 a 25 € al confirmar la entrada y otras 32 a 26,50 € al romper el pivote con volumen. ¿Cuál es tu precio medio? Redondea a 2 decimales.",
+          "unit": "€",
+          "a": 25.75,
+          "why": "(32 × 25 + 32 × 26,50) ÷ 64 = (800 + 848) ÷ 64 = 25,75 €. Como los dos tramos son iguales, es la media de ambos precios.",
+          "tol": 0.01,
+          "guia": "g3"
+        },
+        {
+          "id": "ej2-2",
+          "t": "choice",
+          "q": "Tienes 30 acciones compradas a 25 € por tesis de largo plazo. Tu stop de salida total está en 21 € y tu nivel de «no añadir más», en 23 €. El precio cae a 22,80 €. ¿Qué haces?",
+          "opts": [
+            "Vendes todo ahora, porque ya has perdido el nivel de 23 €",
+            "No compras más, pero mantienes las 30 acciones mientras no toque 21 €",
+            "Compras más para bajar el precio medio, porque aún no llegó a 21 €",
+            "Vendes la mitad ahora y dejas la otra mitad sin stop"
+          ],
+          "a": 1,
+          "why": "El nivel de 23 € solo congela las compras; la salida total es el stop de 21 €. Hasta entonces mantienes lo que tienes y no promedias a la baja.",
+          "guia": "g3",
+          "porque": [
+            "El nivel de 23 € solo congela las compras; la salida total es el stop de 21 €.",
+            null,
+            "Promediar a la baja con la estructura rota está prohibido: añadir bajo 23 € agranda la pérdida.",
+            "El plan no prevé salidas parciales en ese nivel, y quitar el stop deja la pérdida sin límite."
+          ]
+        },
+        {
+          "id": "ej2-3",
+          "t": "choice",
+          "q": "Tu plan de entrada se activa hoy, 3 de diciembre, y la empresa publica resultados el 12 de diciembre. ¿Qué haces?",
+          "opts": [
+            "Entras con el tramo completo: el stop te protege de cualquier hueco",
+            "Entras con el tramo completo la víspera de resultados, para anticipar la subida",
+            "Quitas el stop hasta resultados para que el ruido no lo active",
+            "Esperas a después de resultados o reduces el tramo: un hueco salta el stop"
+          ],
+          "a": 3,
+          "why": "Faltan 9 días naturales, menos de 14. Un hueco tras resultados puede saltarse el stop, así que esperas al cierre posterior o reduces el primer tramo.",
+          "guia": "g4",
+          "porque": [
+            "Un hueco a la apertura puede saltarse el stop y ejecutarlo mucho más abajo, con una pérdida mayor que la prevista.",
+            "Entrar la víspera es apostar a un resultado que no controlas; el riesgo binario es justo lo que el plan evita.",
+            "Sin stop, un mal resultado deja una pérdida sin límite; el ruido se evita con un tamaño ajustado, no sin stop.",
+            null
+          ]
+        },
+        {
+          "id": "ej2-4",
+          "t": "num",
+          "q": "Planeabas comprar 32 acciones a 25 €, con el stop en 23 €. Pero faltan 10 días para resultados y reduces el tramo a 16 acciones. Si la empresa abre al día siguiente a 20 € y el stop se ejecuta a ese precio, ¿cuántos euros pierdes menos que con las 32 acciones?",
+          "unit": "€",
+          "a": 80,
+          "why": "Con 32 acciones pierdes 32 × 5 = 160 €; con 16, 16 × 5 = 80 €. El tramo reducido evita 80 € de pérdida por el hueco.",
+          "guia": "g4"
+        },
+        {
+          "id": "ej2-5",
+          "t": "match",
+          "q": "Empareja cada alerta que programas con el momento en que se dispara.",
+          "pairs": [
+            [
+              "Activación",
+              "El precio rompe el pivote con volumen: toca valorar el segundo tramo"
+            ],
+            [
+              "Invalidación",
+              "El precio pierde el soporte crítico: el plan deja de valer"
+            ],
+            [
+              "Fecha de resultados",
+              "Quedan 14 días para el dato: toca decidir si esperas o reduces el tramo"
+            ]
+          ],
+          "why": "Las tres alertas del plan son: activación (rotura del pivote), invalidación (pérdida del soporte crítico) y fecha de resultados, 14 días antes.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

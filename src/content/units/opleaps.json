@@ -1,0 +1,181 @@
+{
+  "n": 14,
+  "id": "opleaps",
+  "track": "derivados",
+  "title": "Calls a largo plazo",
+  "blurb": "Una call a uno o dos años como sustituta de las acciones: capital, theta y límites.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Una call en lugar de acciones",
+      "texto": "Las opciones a largo plazo (LEAPS) vencen en uno o dos años o más. Una call muy dentro del dinero, con delta alta, se mueve casi como la acción y cuesta una parte de su precio.",
+      "ejemplo": "Acción a 20 $: 100 acciones cuestan 2.000 $. Una call a 2 años con ejercicio 16 $ cuesta 6 $: 600 $, un 30 %."
+    },
+    {
+      "id": "g2",
+      "titulo": "Apalancamiento",
+      "texto": "Con delta 0,80, el contrato equivale a unas 80 acciones y gana más en porcentaje, pero también pierde más. Compara siempre el capital que arriesgas.",
+      "ejemplo": "La acción sube de 20 a 22 $, un 10 %: la call gana unos 1,60 $ de 6 $, un 26,7 %. Para 400 acciones equivalentes, 5 contratos cuestan 3.000 $, no 8.000 $."
+    },
+    {
+      "id": "g3",
+      "titulo": "El tiempo cuesta menos por día",
+      "texto": "La prima incluye valor temporal, que se pierde con el tiempo. En un plazo largo la theta diaria es baja en porcentaje, pero el valor temporal pagado sigue siendo un coste.",
+      "ejemplo": "Valor temporal: 6 − 4 = 2 $ por acción, 200 $ por contrato. La call a 30 días pierde un 2,5 % al día; la de 2 años, un 0,03 %."
+    },
+    {
+      "id": "g4",
+      "titulo": "Los límites",
+      "texto": "Tu pérdida máxima es la prima, y la pierdes entera si la acción acaba bajo el ejercicio. La call no cobra dividendos. Si la acción cae mucho, pierdes menos que con las acciones.",
+      "ejemplo": "Con la acción a 14 $ al vencimiento, pierdes 600 $ con la call y 600 $ con las acciones. Dividendos de 0,50 $ al año: 100 $ en 2 años que no cobras."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "op37",
+      "title": "Una call en lugar de acciones",
+      "ex": [
+        {
+          "id": "op37-1",
+          "t": "num",
+          "q": "Una acción cotiza a 20 $: 100 acciones cuestan 2.000 $. Una call a 2 años con ejercicio 16 $ cuesta 6 $ por acción (un contrato cubre 100 acciones). ¿Qué porcentaje del coste de las 100 acciones cuesta ese contrato?",
+          "unit": "%",
+          "a": 30,
+          "why": "El contrato cuesta 6 $ × 100 = 600 $, y 600 ÷ 2.000 = 30 %. Controlas el movimiento de 100 acciones con menos capital.",
+          "guia": "g1"
+        },
+        {
+          "id": "op37-2",
+          "t": "num",
+          "q": "Una acción cotiza a 20 $ y una call a 2 años con ejercicio 16 $ cuesta 6 $ por acción. ¿Cuántos dólares por contrato (100 acciones) pagas de valor temporal?",
+          "unit": "$",
+          "a": 200,
+          "why": "El valor intrínseco es 20 − 16 = 4 $. El resto, 6 − 4 = 2 $ por acción, es valor temporal: 200 $ por contrato, que se pierde con el tiempo.",
+          "guia": "g3"
+        },
+        {
+          "id": "op37-3",
+          "t": "choice",
+          "q": "Quieres sustituir 100 acciones por una call y eliges una muy dentro del dinero, con delta 0,80 (acción a 20 $, ejercicio 16 $, prima 6 $), en lugar de una fuera del dinero. ¿Qué ganas con esa elección?",
+          "opts": [
+            "Cuesta menos que una fuera del dinero, porque tiene menos valor intrínseco",
+            "Gana más en porcentaje que una fuera del dinero cuando la acción sube",
+            "Se mueve casi como la acción y gran parte de su prima es valor intrínseco",
+            "Garantiza que no pierdas dinero si la acción cae"
+          ],
+          "a": 2,
+          "why": "Con delta 0,80 la call sube unos 0,80 $ por cada 1 $ de la acción, y de sus 6 $ de prima, 4 $ son valor intrínseco. Es lo más parecido a las acciones.",
+          "guia": "g2",
+          "porque": [
+            "Al revés: tiene más valor intrínseco y por eso cuesta más que una fuera del dinero.",
+            "Las fuera del dinero amplifican más el porcentaje; la dentro del dinero se parece a la acción.",
+            null,
+            "Si la acción cae, la call pierde valor y puedes perder toda la prima."
+          ]
+        },
+        {
+          "id": "op37-4",
+          "t": "num",
+          "q": "Una acción cotiza a 20 $ y una call a 2 años con ejercicio 16 $ y delta 0,80 cuesta 6 $. Si la acción sube a 22 $ (un 10 %), la call sube unos 1,60 $ (delta × 2 $), suponiendo que la delta no cambia. ¿Qué porcentaje gana la call? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 26.7,
+          "why": "La call gana 0,80 × 2 = 1,60 $ sobre 6 $: 26,7 %, frente al 10 % de la acción. Ese es el apalancamiento, que también multiplica las pérdidas en porcentaje.",
+          "tol": 0.06,
+          "guia": "g2"
+        },
+        {
+          "id": "op37-5",
+          "t": "slide",
+          "q": "Quieres una exposición parecida a 400 acciones (8.000 $ a 20 $ cada una) usando calls con delta 0,80, que equivalen a 80 acciones por contrato y cuestan 600 $. Elige cuántos contratos compras.",
+          "label": "Contratos",
+          "min": 0,
+          "max": 8,
+          "step": 1,
+          "start": 1,
+          "a": 5,
+          "unit": "",
+          "why": "400 ÷ 80 = 5 contratos. Cuestan 5 × 600 = 3.000 $ frente a 8.000 $ de comprar las acciones: menos capital para un movimiento parecido.",
+          "show": [
+            {
+              "label": "Acciones equivalentes",
+              "k": 80,
+              "unit": ""
+            },
+            {
+              "label": "Coste de los contratos",
+              "k": 600,
+              "unit": "$"
+            }
+          ],
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "op38",
+      "title": "El tiempo y los límites",
+      "ex": [
+        {
+          "id": "op38-1",
+          "t": "num",
+          "q": "Una call a 30 días con ejercicio 20 $ cuesta 0,80 $ y pierde 0,02 $ al día por el paso del tiempo (theta). ¿Qué porcentaje de su prima pierde cada día?",
+          "unit": "%",
+          "a": 2.5,
+          "why": "0,02 ÷ 0,80 = 2,5 % al día. Si la theta no cambiara, en 30 días perdería 0,02 × 30 = 0,60 $ de los 0,80 $; en realidad crece al acercarse el vencimiento, así que se come buena parte de la prima.",
+          "tol": 0.06,
+          "guia": "g3"
+        },
+        {
+          "id": "op38-2",
+          "t": "num",
+          "q": "Una call a 2 años con ejercicio 16 $ cuesta 6 $ y pierde 0,002 $ al día por theta. ¿Qué porcentaje de su prima pierde cada día? Redondea a 2 decimales.",
+          "unit": "%",
+          "a": 0.03,
+          "why": "0,002 ÷ 6 = 0,033 %, unos 0,03 % al día: mucho menos que el 2,5 % de la de 30 días. El valor temporal pagado sigue siendo un coste.",
+          "tol": 0.01,
+          "guia": "g3"
+        },
+        {
+          "id": "op38-3",
+          "t": "num",
+          "q": "Compras un contrato de la call a 2 años con ejercicio 16 $ por 6 $ por acción, o 100 acciones a 20 $. Al vencimiento, ¿a qué precio de la acción pierdes lo mismo con la call que con las acciones? Supón que no hay dividendos.",
+          "unit": "$",
+          "a": 14,
+          "why": "A 14 $ la call vale 0 y pierdes 600 $; las acciones pierden (20 − 14) × 100 = 600 $. Bajo 14 $ pierdes menos con la call, pero nunca más de 600 $.",
+          "guia": "g4"
+        },
+        {
+          "id": "op38-4",
+          "t": "num",
+          "q": "Una acción paga 0,50 $ de dividendo por acción al año. Si tienes un contrato de call en lugar de 100 acciones durante 2 años, ¿cuántos dólares de dividendos dejas de cobrar?",
+          "unit": "$",
+          "a": 100,
+          "why": "0,50 $ × 100 acciones × 2 años = 100 $. La call no da derecho a dividendos, sea cual sea su delta.",
+          "guia": "g4"
+        },
+        {
+          "id": "op38-5",
+          "t": "choice",
+          "q": "Compras una call a 2 años en lugar de 100 acciones. ¿Qué afirmación sobre ella es correcta?",
+          "opts": [
+            "Cobras los dividendos y tu pérdida máxima es la prima",
+            "Tu pérdida máxima es lo que valen 100 acciones, igual que si las compras",
+            "Solo pierde valor temporal en el último mes antes del vencimiento",
+            "Pierdes como máximo la prima pagada, pero no cobras dividendos"
+          ],
+          "a": 3,
+          "why": "La pérdida máxima es la prima (600 $ en el ejemplo) y la call no cobra dividendos, que es parte del coste de sustituir las acciones.",
+          "guia": "g4",
+          "porque": [
+            "La call no cobra dividendos; solo el titular de las acciones los recibe.",
+            "La pérdida máxima es la prima pagada, no el valor de las acciones.",
+            "Pierde valor temporal durante toda su vida, aunque cada día sea poco.",
+            null
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

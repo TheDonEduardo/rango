@@ -1,0 +1,218 @@
+{
+  "n": 17,
+  "id": "sostenible",
+  "track": "basico",
+  "title": "Inversión sostenible",
+  "blurb": "Exclusiones, criterios ESG, fondos «artículo 8» y «artículo 9» y cómo detectar el lavado verde.",
+  "gate": false,
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Criterios ESG",
+      "texto": "ESG son criterios ambientales, sociales y de gobierno: emisiones, trato a empleados, consejo y derechos del accionista. Un fondo los usa como información adicional para elegir empresas, no como garantía.",
+      "ejemplo": "Una empresa mide bien sus emisiones, pero su fundador controla el consejo: falla el criterio de gobierno."
+    },
+    {
+      "id": "g2",
+      "titulo": "Exclusiones",
+      "texto": "Un fondo puede dejar fuera sectores concretos. Lo excluido se reparte entre el resto, que pesa más, y el fondo ya no replica exactamente el índice original.",
+      "ejemplo": "Tabaco y armas pesan un 4 % y el carbón un 3 %: queda el 93 %. Una empresa que pesaba un 2,8 % pasa a pesar un 3,0 %."
+    },
+    {
+      "id": "g3",
+      "titulo": "Artículo 8 y artículo 9",
+      "texto": "En la UE, el reglamento de divulgación (SFDR) clasifica los fondos: el «artículo 8» promueve características ambientales o sociales y el «artículo 9» tiene un objetivo de inversión sostenible. Es información, no un sello de calidad. Compruébalo con la norma vigente: puede cambiar.",
+      "ejemplo": "El artículo 9 describe un objetivo; no garantiza rentabilidad ni comisión baja."
+    },
+    {
+      "id": "g4",
+      "titulo": "Lavado verde y coste",
+      "texto": "El lavado verde presenta un producto como más sostenible de lo que es. Comprueba el folleto y el porcentaje real. La etiqueta no garantiza rentabilidad ni coste bajo: compara el TER.",
+      "ejemplo": "Un fondo anuncia un 80 % sostenible, pero cumplen 150 de 200 posiciones, un 75 %. TER del 0,45 % frente al 0,20 %: 25 € más al año con 10.000 €."
+    }
+  ],
+  "revisar": "2027-05",
+  "lessons": [
+    {
+      "id": "so1",
+      "title": "Criterios y exclusiones",
+      "ex": [
+        {
+          "id": "so1-1",
+          "t": "match",
+          "q": "Empareja cada criterio de inversión sostenible con lo que mira.",
+          "pairs": [
+            [
+              "Exclusión",
+              "Dejar fuera del fondo sectores concretos, como el tabaco o el carbón"
+            ],
+            [
+              "Criterio ambiental",
+              "Emisiones, consumo de energía y gestión del agua de una empresa"
+            ],
+            [
+              "Criterio social",
+              "Trato a empleados, seguridad laboral y relación con clientes"
+            ],
+            [
+              "Criterio de gobierno",
+              "Independencia del consejo, pagos a directivos y derechos de los accionistas"
+            ]
+          ],
+          "why": "Los criterios ESG son ambientales, sociales y de gobierno; la exclusión es distinta: deja fuera sectores enteros.",
+          "guia": "g1"
+        },
+        {
+          "id": "so1-2",
+          "t": "choice",
+          "q": "Un fondo usa criterios ESG (ambientales, sociales y de gobierno) para elegir sus empresas. ¿Qué papel tienen esos criterios?",
+          "opts": [
+            "Garantizan que ninguna empresa del fondo tendrá problemas ambientales",
+            "Son información adicional sobre la empresa, junto con el análisis financiero",
+            "Sustituyen al análisis financiero, que ya no hace falta",
+            "Aseguran una rentabilidad superior a la del índice tradicional"
+          ],
+          "a": 1,
+          "why": "Los criterios ESG añaden información sobre riesgos y prácticas de la empresa. No sustituyen al análisis financiero ni garantizan nada.",
+          "guia": "g1",
+          "porque": [
+            "Los criterios ESG informan, no garantizan: ninguna empresa está libre de problemas ambientales.",
+            null,
+            "Los criterios ESG complementan el análisis financiero; no lo reemplazan.",
+            "Ningún criterio asegura batir al índice tradicional; la rentabilidad no está garantizada."
+          ]
+        },
+        {
+          "id": "so1-3",
+          "t": "num",
+          "q": "Un índice reparte el 100 % de su peso: tabaco y armas pesan un 4 % y el carbón, un 3 %. Si un fondo excluye esos sectores, ¿qué porcentaje del índice original le queda para invertir?",
+          "unit": "%",
+          "a": 93,
+          "why": "100 − 4 − 3 = 93 %. El fondo invierte en el resto, así que su cartera ya no coincide exactamente con el índice.",
+          "guia": "g2"
+        },
+        {
+          "id": "so1-4",
+          "t": "num",
+          "q": "Un fondo excluye sectores que pesan un 7 % del índice y reparte el resto de forma proporcional. ¿Qué peso pasa a tener una empresa que pesaba un 2,8 %? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 3.0,
+          "why": "Queda el 93 % del índice: 2,8 ÷ 0,93 = 3,01 %, unos 3,0 %. Al excluir, las demás empresas pesan algo más.",
+          "tol": 0.06,
+          "guia": "g2"
+        },
+        {
+          "id": "so1-5",
+          "t": "choice",
+          "q": "Una empresa mide bien sus emisiones, pero su fundador controla el consejo y cobra un bono que el resto de accionistas no puede votar. ¿Qué criterio falla?",
+          "opts": [
+            "El ambiental, porque no reduce más sus emisiones",
+            "El social, porque afecta a las ventas a clientes",
+            "Ninguno, porque cumple el criterio ambiental",
+            "El de gobierno: consejo y derechos del accionista"
+          ],
+          "a": 3,
+          "why": "El control del consejo y un bono sin voto de los accionistas son asuntos de gobierno. Cumplir en lo ambiental no compensa un fallo de gobierno.",
+          "guia": "g1",
+          "porque": [
+            "Medir bien sus emisiones es cumplir en lo ambiental; el fallo descrito es otro.",
+            "Un bono sin voto de los accionistas no es un asunto de trato a clientes ni de empleados.",
+            "Cumplir un criterio no compensa fallar en otro; aquí falla el de gobierno.",
+            null
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "so2",
+      "title": "Etiquetas y letra pequeña",
+      "ex": [
+        {
+          "id": "so2-1",
+          "t": "choice",
+          "q": "En la Unión Europea, el reglamento de divulgación de finanzas sostenibles (SFDR) clasifica los fondos. ¿Qué distingue a un fondo «artículo 9» de uno «artículo 8»?",
+          "opts": [
+            "El 9 cobra por ley una comisión menor, porque el regulador la limita para esos fondos",
+            "El 9 tiene un objetivo de inversión sostenible; el 8 promueve características ambientales o sociales",
+            "El 9 garantiza una rentabilidad mínima, y el 8 solo informa del riesgo",
+            "El 8 invierte únicamente en empresas con cero emisiones, y el 9 en cualquiera"
+          ],
+          "a": 1,
+          "why": "Es una clasificación de divulgación de la UE: el artículo 9 tiene un objetivo sostenible y el 8 promueve características. Compruébalo con la norma vigente, porque puede cambiar.",
+          "guia": "g3",
+          "porque": [
+            "Ni el artículo 8 ni el 9 limitan las comisiones: la clasificación no fija costes.",
+            null,
+            "Ninguna categoría garantiza rentabilidad; la clasificación solo obliga a explicar cómo se integra la sostenibilidad.",
+            "Ninguna categoría exige cero emisiones; el artículo 8 promueve características, no impone ese requisito."
+          ]
+        },
+        {
+          "id": "so2-2",
+          "t": "match",
+          "q": "Empareja cada término de las etiquetas sostenibles con su significado.",
+          "pairs": [
+            [
+              "Artículo 8",
+              "Fondo que promueve características ambientales o sociales"
+            ],
+            [
+              "Artículo 9",
+              "Fondo con un objetivo de inversión sostenible"
+            ],
+            [
+              "Lavado verde",
+              "Presentar un producto como más sostenible de lo que realmente es"
+            ],
+            [
+              "TER",
+              "Coste anual total del fondo, en porcentaje de lo invertido"
+            ]
+          ],
+          "why": "Los artículos 8 y 9 son categorías de divulgación de la UE; el lavado verde es publicidad engañosa y el TER es el coste que sí puedes comparar.",
+          "guia": "g3"
+        },
+        {
+          "id": "so2-3",
+          "t": "num",
+          "q": "Un fondo sostenible cobra un TER del 0,45 % y otro fondo de cartera equivalente, sin etiqueta sostenible, un 0,20 %. Con 10.000 € invertidos, ¿cuántos euros más al año pagas por el fondo sostenible?",
+          "unit": "€",
+          "a": 25,
+          "why": "La diferencia es 0,45 % − 0,20 % = 0,25 %; 10.000 € × 0,25 % = 25 € al año. La etiqueta no asegura un coste bajo.",
+          "guia": "g4"
+        },
+        {
+          "id": "so2-4",
+          "t": "num",
+          "q": "Un fondo anuncia que al menos el 80 % de su cartera cumple sus criterios sostenibles. Tiene 200 posiciones del mismo peso y comprobamos que 150 los cumplen. ¿Qué porcentaje real de la cartera los cumple?",
+          "unit": "%",
+          "a": 75,
+          "why": "150 ÷ 200 = 75 %, por debajo del 80 % anunciado. Comprobar el dato real frente al anuncio es la defensa contra el lavado verde.",
+          "guia": "g4"
+        },
+        {
+          "id": "so2-5",
+          "t": "choice",
+          "q": "Un fondo se anuncia como sostenible y se clasifica como artículo 8 o 9. ¿Qué te asegura esa clasificación sobre su rentabilidad y su coste?",
+          "opts": [
+            "Que rinde más que su índice tradicional, porque ha pasado un filtro",
+            "Que su comisión es menor, porque el regulador la revisa",
+            "Nada: ni más rentabilidad ni menos comisión, así que compara el TER",
+            "Que su rentabilidad está garantizada por quien lo comercializa"
+          ],
+          "a": 2,
+          "why": "La clasificación describe objetivos y divulgación, no rentabilidad ni coste. Compara el TER y lee el folleto como en cualquier otro fondo.",
+          "guia": "g4",
+          "porque": [
+            "La etiqueta no depende de batir al índice y no asegura mayor rentabilidad.",
+            "El regulador no limita comisiones por etiqueta; cada fondo fija su TER.",
+            null,
+            "Ninguna etiqueta garantiza rentabilidad: depende del mercado y puede ser negativa."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}
