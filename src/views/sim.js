@@ -1,4 +1,5 @@
-// Operación de la semana: plan de compra en ruptura sobre velas reales (semana.json) y resultado la semana siguiente.
+// Operación de la semana: ejercicio retrospectivo. El gráfico real (semana.json) se corta 5 sesiones antes de su último cierre;
+// el usuario coloca entrada (compra en ruptura), stop y objetivo y, al comprobar, ve al instante las sesiones siguientes (`despues`).
 import {fmt,esc,today} from '../util.js';
 import {icoX} from '../icons.js';
 import {candlesSVG} from '../charts.js';
@@ -9,8 +10,13 @@ import {fineHTML} from '../drag.js';
 import {t} from '../textos.js';
 
 export const SIM_PLACE=[{id:'entry',label:t.entrada},{id:'stop',label:t.stop},{id:'target',label:t.objetivo}];
-// Guarda el plan en edición para la semana actual.
-export function simSave(){S.sim[SEMANA.semana]={ticker:SEMANA.ticker,plan:Object.assign({},ses.simDraft),fecha:today()};save()}
+// Comprueba el plan en edición: simula las sesiones siguientes y guarda plan y resultado (una vez por semana ISO).
+export function simSave(){
+  const k=SEMANA.semana;if(S.sim[k])return S.sim[k];
+  const plan=Object.assign({},ses.simDraft),r=simulate(plan,SEMANA.despues);
+  S.sim[k]={ticker:SEMANA.ticker,plan,fecha:today(),res:{estado:r.estado,r:Math.round(r.r*100)/100,nombre:SEMANA.nombre,sesiones:SEMANA.despues.length}};
+  save();return S.sim[k];
+}
 // Simula un plan de compra en ruptura sobre las sesiones posteriores. Reglas conservadoras:
 // la entrada se activa al tocarla (si abre por encima con hueco, a la apertura); el stop y el objetivo igual;
 // si un mismo día toca stop y objetivo, cuenta el stop; si sigue abierta al final, se valora al último cierre.
@@ -52,14 +58,6 @@ export function simInfo(){
   const box=$app.querySelector('#simInfo');if(box)box.innerHTML=simInfoHTML();
   const b=$app.querySelector('[data-act=simsave]');if(b)b.disabled=!simValid(ses.simDraft);
 }
-// Guarda el resultado de la semana anterior en su plan: semana.json solo trae una semana pasada,
-// así que el historial (R acumulado) se construye en el dispositivo semana a semana.
-export function simRecord(){
-  const P=SEMANA&&SEMANA.prev,g=P&&S.sim[P.semana];
-  if(!g||g.ticker!==P.ticker||!P.despues||!P.despues.length)return;
-  const r=simulate(g.plan,P.despues),res={estado:r.estado,r:Math.round(r.r*100)/100,nombre:P.nombre,sesiones:P.despues.length};
-  if(!g.res||g.res.r!==res.r||g.res.estado!==res.estado||g.res.sesiones!==res.sesiones){g.res=res;save()}
-}
 export const simHist=()=>Object.keys(S.sim).sort().filter(k=>S.sim[k].res).map(k=>Object.assign({semana:k},S.sim[k].res));
 function simHistHTML(full){
   const hs=simHist(),con=hs.filter(x=>x.estado!=='sin entrada');
@@ -70,27 +68,27 @@ function simHistHTML(full){
   return h;
 }
 export function simCardHTML(){
-  const P=SEMANA.prev,mio=P&&S.sim[P.semana];
+  const mio=S.sim[SEMANA.semana];
   let h=`<section class="sim" aria-label="${t.simTitulo}"><b>${t.simTitulo}</b>`;
-  if(mio&&P.despues&&P.despues.length){const r=simulate(mio.plan,P.despues);h+=`<div class="simrow"><span>${t.semanaPasada(esc(P.nombre))}<b class="${r.r>0?'up':r.r<0?'dn':''}">${r.estado==='sin entrada'?t.sinEntrada:fR(r.r)}</b></span><button class="btn ghost" data-act="simres">${t.verResultado}</button></div>`}
-  const guardado=S.sim[SEMANA.semana];
-  h+=`<div class="simrow"><span>${guardado?t.planGuardadoCard(esc(SEMANA.nombre)):t.montaPlan(esc(SEMANA.nombre),esc(SEMANA.ticker))}</span><button class="btn ${guardado?'ghost':'line'}" data-act="sim">${guardado?t.verCambiar:t.empezar}</button></div>`;
+  if(mio){const r=simulate(mio.plan,SEMANA.despues);h+=`<div class="simrow"><span>${t.simHecha(esc(SEMANA.nombre))}<b class="${r.r>0?'up':r.r<0?'dn':''}">${r.estado==='sin entrada'?t.sinEntrada:fR(r.r)}</b></span><button class="btn ghost" data-act="sim">${t.verResultado}</button></div>`}
+  else h+=`<div class="simrow"><span>${t.practica(esc(SEMANA.nombre),esc(SEMANA.ticker),fechaES(SEMANA.hasta))}</span><button class="btn line" data-act="sim">${t.empezar}</button></div>`;
   return h+simHistHTML(false)+'</section>';
 }
 export function simHTML(){
-  const W=SEMANA,g=S.sim[W.semana];
-  if(!ses.simDraft)ses.simDraft=g?Object.assign({},g.plan):simStart();
+  const W=SEMANA;
+  if(S.sim[W.semana])return simResHTML();
+  if(!ses.simDraft)ses.simDraft=simStart();
   const sp={type:'candles',data:W.data,vol:W.vol,h:300,alt:t.simAlt(W.nombre)};
   return `<div class="lesson sim-view"><div class="lbar"><button class="x" data-act="home" aria-label="${t.volverInicio}">${icoX}</button><p class="kind">${t.simTitulo}</p></div>
   <div class="qwrap"><h1 class="q">${esc(W.nombre)} (${esc(W.ticker)})</h1>
-  <p class="intro">${t.simIntro}</p>
+  <p class="intro">${t.simIntro(esc(W.nombre),esc(W.ticker),fechaES(W.hasta),W.despues.length)}</p>
   <figure class="chart">${candlesSVG(sp,{mode:'plan',vals:ses.simDraft,checked:false,place:SIM_PLACE})}</figure>${fineHTML(SIM_PLACE)}
   <div id="simInfo" class="siminfo" aria-live="polite">${simInfoHTML()}</div>
   <p class="src">${t.simFuente(esc(W.fuente),fechaES(W.hasta),fmt(simLast())+' '+W.moneda)}</p></div>
-  <div><button class="btn primary" data-act="simsave"${simValid(ses.simDraft)?'':' disabled'}>${g?t.guardarCambios:t.guardarPlan}</button></div></div>`;
+  <div><button class="btn primary" data-act="simsave"${simValid(ses.simDraft)?'':' disabled'}>${t.comprobar}</button></div></div>`;
 }
 export function simResHTML(){
-  const P=SEMANA.prev,plan=S.sim[P.semana].plan,r=simulate(plan,P.despues),m=P.moneda;
+  const P=SEMANA,plan=S.sim[P.semana].plan,r=simulate(plan,P.despues),m=P.moneda;
   const dia=i=>t.sesionN(i+1),pr=v=>fmt(v)+' '+m;
   const txt=r.estado==='sin entrada'?t.resSinEntrada(pr(plan.entry))
     :r.estado==='stop'?t.resStop(pr(r.fill),dia(r.dEnt),dia(r.dSal),pr(r.exit))
@@ -101,6 +99,6 @@ export function simResHTML(){
   <div class="qwrap"><h1 class="q">${esc(P.nombre)} (${esc(P.ticker)}): <span class="${r.r>0?'up':r.r<0?'dn':''}">${r.estado==='sin entrada'?t.sinEntrada:fR(r.r)}</span></h1>
   <figure class="chart">${candlesSVG(sp,{mode:'plan',vals:plan,fijo:true,place:SIM_PLACE})}</figure>
   <p class="intro">${txt}</p>
-  <p class="src">${t.resNota(P.despues.length,fechaES(P.hasta))}</p>${simHistHTML(true)}</div>
+  <p class="src">${t.resNota(P.despues.length,fechaES(P.hasta),esc(P.fuente))}</p>${simHistHTML(true)}</div>
   <div><button class="btn primary" data-act="home">${t.continuar}</button></div></div>`;
 }

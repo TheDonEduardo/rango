@@ -325,8 +325,12 @@ if (T.getState().done.srs) errs.push('el repaso del día se guarda como lección
 // Migración del estado guardado: la versión 1 (repaso por posición) pasa a ids estables.
 {
   const m = T.migrar({xp: 50, srs: {'ba1#0': {step: 1, due: '2026-01-01'}, 'r2#4': {step: 0, due: '2026-01-02'}}});
-  if (m.v !== 2 || !m.srs['ba1-1'] || m.srs['ba1-1'].step !== 1 || !m.srs['r2-5'] || m.srs['ba1#0'] || m.xp !== 50) errs.push('la migración del estado 1 → 2 falla: ' + JSON.stringify(m));
+  if (m.v !== 3 || !m.srs['ba1-1'] || m.srs['ba1-1'].step !== 1 || !m.srs['r2-5'] || m.srs['ba1#0'] || m.xp !== 50) errs.push('la migración del estado 1 → 2 falla: ' + JSON.stringify(m));
   if (Object.keys(m.srs).some(k => !exIds.has(k))) errs.push('la migración deja ids de repaso inexistentes');
+  // 2 → 3: los planes de la Operación de la semana sin resultado (versión anterior) se descartan; los resueltos se conservan.
+  const m3 = T.migrar({v: 2, sim: {'2026-W40': {ticker: 'A', plan: {}, res: {estado: 'stop', r: -1, nombre: 'A'}}, '2026-W45': {ticker: 'B', plan: {entry: 1, stop: 0.5, target: 2}}}});
+  if (m3.v !== 3 || !m3.sim['2026-W40'] || m3.sim['2026-W45']) errs.push('la migración 2 → 3 no descarta los planes pendientes: ' + JSON.stringify(m3.sim));
+  if (T.migrar({v: 1, sim: []}).sim === undefined || Array.isArray(T.migrar({v: 1, sim: []}).sim)) errs.push('la migración deja un sim no válido');
   if (T.migrar({v: 2, srs: {'ba1-1': {}}}).srs['ba1-1'] === undefined) errs.push('la migración toca un estado ya actualizado');
 }
 
@@ -349,31 +353,30 @@ if (fs.existsSync(semPath)) {
   const sem = JSON.parse(fs.readFileSync(semPath, 'utf8'));
   const okVelas = d => Array.isArray(d) && d.every(c => c.length === 4 && c[1] >= Math.max(c[0], c[3]) && c[2] <= Math.min(c[0], c[3]));
   if (!/^\d{4}-W\d{2}$/.test(sem.semana) || !okVelas(sem.data) || sem.data.length !== 30 || !(sem.step > 0) || sem.vol.length !== 30) errs.push('semana.json mal formado');
-  if (sem.prev && (!okVelas(sem.prev.data) || !okVelas(sem.prev.despues) || sem.prev.despues.length > 5)) errs.push('semana.json: semana anterior mal formada');
+  if (!okVelas(sem.despues) || !sem.despues.length || sem.despues.length > 5 || sem.prev || !sem.fuente) errs.push('semana.json: sesiones siguientes mal formadas');
   T.openSim();
   if (!app.innerHTML.includes('Operación de la semana') || !/class="svg\s+plan"/.test(app.innerHTML)) errs.push('la vista del simulador no se dibuja');
-  if (!app.innerHTML.includes('no una recomendación') || !app.innerHTML.includes('Plan de compra en ruptura')) errs.push('la intro de la Operación de la semana no lleva el aviso de formación');
-  const c = sem.data[sem.data.length - 1][3];
-  T.simDraftSet({entry: c * 1.02, stop: c * 0.95, target: c * 1.1}); T.simSave();
-  if (!T.getState().sim[sem.semana]) errs.push('el plan de la semana no se guarda');
-  if (sem.prev) {
-    T.getState().sim[sem.prev.semana] = {plan: {entry: 1, stop: 0.5, target: 2}};
-    T.openSimRes();
-    if (!app.innerHTML.includes('Resultado de la semana pasada') || !app.innerHTML.includes('class="split"')) errs.push('la vista del resultado no se dibuja');
-    // Historial: el resultado se guarda en el plan y, con dos semanas o más, se resume en la tarjeta.
-    const st = T.getState(), P = sem.prev, cp = P.data[P.data.length - 1][3];
-    st.sim[P.semana] = {ticker: P.ticker, plan: {entry: cp * 0.5, stop: cp * 0.4, target: cp * 10}};
-    T.simRecord();
-    const r0 = st.sim[P.semana].res, esp = T.simulate(st.sim[P.semana].plan, P.despues);
-    if (!r0 || r0.estado !== esp.estado || Math.abs(r0.r - esp.r) > 0.01) errs.push('el resultado de la semana pasada no se guarda bien');
-    st.sim['2000-W01'] = {ticker: 'X', plan: {}, res: {estado: 'stop', r: -1, nombre: 'Prueba'}};
-    if (T.simHist().length !== 2) errs.push('el historial del simulador no reúne las semanas');
-    T.setTrack('tecnico'); st.skipBasics = true;
-    if (!T.homeHTML().includes('Tu historial')) errs.push('la tarjeta no muestra el historial');
-    T.openSimRes();
-    if (!app.innerHTML.includes('class="histl"')) errs.push('el resultado no lista el historial');
-    delete st.sim['2000-W01'];
-  }
+  if (!app.innerHTML.includes('no una recomendación') || !app.innerHTML.includes('Ejercicio con datos históricos') || !app.innerHTML.includes('Yahoo Finance')) errs.push('la intro de la Operación de la semana no lleva el aviso de formación y la fuente');
+  if (/Plan de compra en ruptura|Monta tu operación|class="split"/.test(app.innerHTML)) errs.push('antes de comprobar se ven las sesiones siguientes o el texto antiguo');
+  // Flujo retrospectivo: plan → resultado inmediato, una sola vez por semana, con historial.
+  const st = T.getState(), c = sem.data[sem.data.length - 1][3];
+  T.simDraftSet({entry: c * 1.02, stop: c * 0.95, target: c * 1.1}); T.act('simsave');
+  const g = st.sim[sem.semana], esp = T.simulate({entry: c * 1.02, stop: c * 0.95, target: c * 1.1}, sem.despues);
+  if (!g || !g.res || g.res.estado !== esp.estado || Math.abs(g.res.r - esp.r) > 0.01) errs.push('al comprobar no se guarda el plan con su resultado');
+  if (!app.innerHTML.includes('Resultado de tu operación') || !app.innerHTML.includes('class="split"')) errs.push('al comprobar no se ve el resultado con las sesiones siguientes');
+  T.simDraftSet({entry: c * 1.01, stop: c * 0.5, target: c * 3}); T.simSave();
+  if (Math.abs(st.sim[sem.semana].plan.entry - c * 1.02) > 1e-9) errs.push('la operación de la semana se puede repetir');
+  T.openSim();
+  if (!app.innerHTML.includes('Resultado de tu operación')) errs.push('con la semana hecha, la vista no muestra el resultado');
+  st.sim['2000-W01'] = {ticker: 'X', plan: {}, res: {estado: 'stop', r: -1, nombre: 'Prueba'}};
+  if (T.simHist().length !== 2) errs.push('el historial del simulador no reúne las semanas');
+  T.setTrack('tecnico'); st.skipBasics = true;
+  const hh = T.homeHTML();
+  if (!hh.includes('Tu historial') || !hh.includes('Ver resultado')) errs.push('la tarjeta no muestra el resultado y el historial');
+  T.openSim();
+  if (!app.innerHTML.includes('class="histl"')) errs.push('el resultado no lista el historial');
+  delete st.sim['2000-W01']; delete st.sim[sem.semana];
+  if (!T.homeHTML().includes('Practica con el gráfico de')) errs.push('la tarjeta no ofrece el ejercicio');
   T.goHome();
 }
 

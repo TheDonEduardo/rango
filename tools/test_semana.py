@@ -61,42 +61,43 @@ for precio, esperado in ((100, 0.2), (400, 1), (20, 0.05)):
     if mod.paso(precio) != esperado:
         fallos.append(f"paso({precio}) = {mod.paso(precio)}, se esperaba {esperado}")
 
-# 2) Gráfico: 30 sesiones hasta la fecha de corte, con volumen en miles y nombre limpio.
+# 2) Gráfico retrospectivo: 30 sesiones y las 5 siguientes (ya conocidas), con el corte 5 sesiones antes de la fecha.
 g = mod.grafico("AAA", "2026-04-10")
 if not g or len(g["data"]) != mod.SESIONES or len(g["vol"]) != mod.SESIONES:
     fallos.append("grafico no devuelve 30 sesiones con su volumen")
-elif g["hasta"] != "2026-04-10" or g["nombre"] != "AAA" or g["moneda"] != "$" or g["vol"][0] < 1000:
-    fallos.append(f"grafico con datos inesperados: hasta {g['hasta']}, nombre {g['nombre']}, moneda {g['moneda']}")
+elif g["nombre"] != "AAA" or g["moneda"] != "$" or g["vol"][0] < 1000:
+    fallos.append(f"grafico con datos inesperados: nombre {g['nombre']}, moneda {g['moneda']}")
+elif g["hasta"] != "2026-04-03" or len(g["despues"]) != mod.DESPUES:
+    fallos.append(f"el corte no queda 5 sesiones antes: hasta {g['hasta']}, {len(g.get('despues', []))} sesiones después")
+elif g["despues"][0][3] <= g["data"][-1][3]:
+    fallos.append("las sesiones de después no son posteriores a las del gráfico")
 
-# 3) Sin moneda conocida o con menos de 30 sesiones: no hay gráfico.
+# 3) Sin moneda conocida o con menos de 35 sesiones: no hay gráfico.
 if cargar(fake_yf(datos, moneda="JPY"), tmp).grafico("AAA", "2026-04-10") is not None:
     fallos.append("grafico acepta una moneda sin símbolo")
-mod = cargar(fake_yf({"AAA": historia("2026-01-05", 20)}), tmp)
+mod = cargar(fake_yf({"AAA": historia("2026-01-05", 34)}), tmp)
 if mod.grafico("AAA", None) is not None:
-    fallos.append("grafico acepta menos de 30 sesiones")
+    fallos.append("grafico acepta menos de 35 sesiones")
 
-# 4) Primera semana: sin «prev».
+# 4) Primera semana: formato plano, sin «prev», con «despues».
 mod = cargar(fake_yf(datos), tmp)
 s1 = ejecutar(mod, "2026-04-10")
 if "prev" in s1 or s1.get("semana") != "2026-W15" or s1.get("ticker") not in datos:
     fallos.append(f"primera semana inesperada: {s1.get('semana')} {s1.get('ticker')} prev={'prev' in s1}")
+elif not 1 <= len(s1.get("despues", [])) <= mod.DESPUES or s1.get("fuente") != "Yahoo Finance":
+    fallos.append("la semana no trae las sesiones siguientes o la fuente")
 
-# 5) Semana siguiente: la anterior pasa a «prev» con hasta 5 sesiones posteriores, y no repite valor.
+# 5) Semana siguiente: otro valor, también retrospectivo y sin «prev».
 s2 = ejecutar(mod, "2026-04-17")
-prev = s2.get("prev") or {}
-if prev.get("semana") != s1["semana"] or prev.get("ticker") != s1["ticker"]:
-    fallos.append("la semana anterior no pasa a prev")
-elif not 1 <= len(prev.get("despues", [])) <= mod.DESPUES:
-    fallos.append(f"prev con {len(prev.get('despues', []))} sesiones después (se esperaban de 1 a {mod.DESPUES})")
-elif prev["despues"][0][3] <= prev["data"][-1][3]:
-    fallos.append("las sesiones de después no son posteriores a las del gráfico")
 if s2.get("ticker") == s1["ticker"]:
     fallos.append("repite el valor de la semana anterior")
+if "prev" in s2 or s2["hasta"] <= s1["hasta"] or len(s2["despues"]) != mod.DESPUES:
+    fallos.append("la segunda semana no es un tramo pasado nuevo")
 
-# 6) Misma semana regenerada: conserva la anterior.
+# 6) Misma semana regenerada: mismo valor.
 s3 = ejecutar(mod, "2026-04-16")
-if (s3.get("prev") or {}).get("semana") != s1["semana"]:
-    fallos.append("al regenerar la misma semana se pierde prev")
+if s3.get("ticker") != s2["ticker"]:
+    fallos.append("al regenerar la misma semana cambia el valor")
 
 # 7) Sin datos de ningún valor: sale con error y no sobrescribe el archivo.
 antes = tmp.read_text(encoding="utf-8")
@@ -112,4 +113,4 @@ if tmp.read_text(encoding="utf-8") != antes:
 if fallos:
     print("FALLOS:\n- " + "\n- ".join(fallos))
     sys.exit(1)
-print("OK: generador de la operación de la semana (paso, gráfico, semana nueva, prev con sesiones posteriores, sin datos)")
+print("OK: generador de la operación de la semana (paso, gráfico, semana nueva, tramo pasado con sesiones siguientes, sin datos)")

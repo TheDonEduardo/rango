@@ -113,6 +113,7 @@ async function auditar(b, url) {
     ['lección slide', {...base, track: 'tecnico'}, async p => abrirHasta(p, conTipo('tecnico', 'slide'), '#slIn')],
     ['feedback', {...base, track: 'basico'}, async p => { await p.click('[data-act=open][data-id=ba1]'); const n = p.locator('#numIn'); if (await n.count()) await n.fill('1'); else await p.locator('[data-act=pick]').first().click(); await p.click('[data-act=check]'); }],
     ['simulador semana', {...base, track: 'tecnico'}, async p => { await p.click('[data-act=sim]'); }],
+    ['simulador semana resultado', {...base, track: 'tecnico'}, async p => { await p.click('[data-act=sim]'); await p.click('[data-act=simsave]'); }],
     ['simulador aportaciones', {...base, track: 'pasiva', calc: {cmp: true}}, async p => { await p.click('[data-act=calc]'); }],
     ['estadísticas', {...base, track: 'tecnico'}, async p => { if (await p.locator('[data-act=stats]').count()) await p.click('[data-act=stats]'); }],
     ['guía', {...base, guias: {}, track: 'basico'}, async p => { await p.click('[data-act=open][data-id=ba1]'); await p.click('[data-act=guianext]'); }],

@@ -4,7 +4,7 @@ import {FLAT,EXBYID,TRACKS,trackOf,libre} from './content.js';
 
 // Versión del formato guardado. Cada cambio de formato añade un paso a MIGRAR (de la versión n a la n+1),
 // así el progreso de quien ya usa la app se convierte en vez de perderse.
-export const STATE_V=2;
+export const STATE_V=3;
 export const DEF=()=>({v:STATE_V,xp:0,streak:0,last:null,day:null,dayXp:0,done:{},all:false,track:'basico',skipBasics:false,legal:0,srs:{},sim:{},calc:null,itin:null,mercado:null,stats:{ex:{},min:0},guias:{},aprendidos:{},dominadas:{},pruebas:{},meta:40,protector:0,objetivo:null,medir:false,reto:null,mod:0});
 // Meta diaria elegible y máximo de protectores (antes de load(), que sanea el estado al leerlo).
 export const META_OPC=[20,40,80], PROTECTOR_MAX=2;
@@ -12,6 +12,9 @@ const MIGRAR={
   // 1 → 2: el repaso espaciado identificaba los ejercicios por posición («lección#índice», desde 0);
   // ahora cada ejercicio tiene un id estable («lección-n», desde 1).
   1:j=>{const srs={};for(const k in j.srs||{}){const m=/^(.+)#(\d+)$/.exec(k);srs[m?m[1]+'-'+(+m[2]+1):k]=j.srs[k]}j.srs=srs;return j},
+  // 2 → 3: la Operación de la semana pasa a ser retrospectiva y se resuelve al comprobar (el plan lleva siempre `res`).
+  // Los planes pendientes de la versión anterior (sin resultado) se descartan: ya no hay datos para resolverlos.
+  2:j=>{const sim={};if(j.sim&&typeof j.sim==='object'&&!Array.isArray(j.sim))for(const k in j.sim){const g=j.sim[k];if(g&&typeof g==='object'&&g.res)sim[k]=g}j.sim=sim;return j},
 };
 export function migrar(j){
   let v=j.v||1;

@@ -57,7 +57,6 @@ export const t={
 
   // Avisos breves
   bloqueadaBasico:'Completa antes la ruta Básico.', bloqueadaAnterior:'Completa antes la lección anterior.',
-  planGuardado:'Plan guardado. El sábado que viene verás el resultado.',
   rutasAbiertas:'Todas las rutas quedan abiertas.', instalada:'Rango instalado.',
 
   // Guía de la unidad
@@ -185,26 +184,24 @@ export const t={
   legalTitular:(n,id,d,c)=>`<b>Titular:</b> ${n}, NIF ${id}, ${d}. <b>Contacto:</b> ${c}.`,
 
   // Operación de la semana
-  simTitulo:'Operación de la semana', simResTitulo:'Resultado de la semana pasada',
+  simTitulo:'Operación de la semana', simResTitulo:'Resultado de tu operación',
   entrada:'Entrada', stop:'Stop', objetivo:'Objetivo',
   simOrden:'Coloca el stop por debajo de la entrada y el objetivo por encima.',
-  simRuptura:c=>`La entrada es una compra en ruptura: ponla por encima del último cierre (${c}).`,
+  simRuptura:c=>`En este ejercicio la entrada es una orden de compra en ruptura: va por encima del último cierre mostrado (${c}).`,
   riesgoAccion:'Riesgo por acción', benefRiesgo:'Beneficio/riesgo',
   historial:(s,n,p,tot)=>`Tu historial: ${s} semanas, ${n} ${pl(n,'operación','operaciones')} con entrada, ${p} en positivo. Total: ${tot}`,
   semanaN:(a,w)=>`${a} · semana ${w}`, sinEntrada:'sin entrada',
-  semanaPasada:n=>`Semana pasada, ${n}: `, verResultado:'Ver resultado',
-  planGuardadoCard:n=>`Tu plan para ${n} está guardado. El resultado, el próximo sábado.`,
-  montaPlan:(n,tk)=>`Monta tu operación sobre el gráfico real de ${n} (${tk}).`, verCambiar:'Ver o cambiar', empezar:'Empezar',
-  simAlt:n=>`Gráfico diario de ${n} con las líneas de tu plan`, simResAlt:n=>`Gráfico diario de ${n} con tu plan y las sesiones posteriores`,
-  simIntro:`Plan de compra en ruptura: coloca la entrada por encima del último cierre, el stop y el objetivo. El sábado que viene verás qué habría pasado con las velas reales. ${FORMACION}`,
-  simFuente:(f,d,c)=>`Velas diarias de ${f} hasta el ${d}. Último cierre: ${c}. Es formación, no una recomendación.`,
-  guardarCambios:'Guardar cambios', guardarPlan:'Guardar mi plan',
+  simHecha:n=>`Tu operación sobre ${n}: `, verResultado:'Ver resultado',
+  practica:(n,tk,d)=>`Practica con el gráfico de ${n} (${tk}) hasta el ${d}. El sábado, otro.`, empezar:'Empezar',
+  simAlt:n=>`Gráfico diario de ${n} con las líneas de tu plan`, simResAlt:n=>`Gráfico diario de ${n} con tu plan y las sesiones siguientes`,
+  simIntro:(n,tk,d,k)=>`Ejercicio con datos históricos: el gráfico de ${n} (${tk}) se corta el ${d}. ¿Dónde habrías puesto la entrada, el stop y el objetivo? Al comprobar verás lo que pasó en las ${k} sesiones siguientes. ${FORMACION}`,
+  simFuente:(f,d,c)=>`Velas diarias de ${f} hasta el ${d}. Último cierre mostrado: ${c}. Datos históricos; es formación, no una recomendación.`,
   sesionN:i=>`la sesión ${i}`,
-  resSinEntrada:e=>`El precio no llegó a tu entrada de ${e}: la orden no se ejecutó. Ni ganas ni pierdes.`,
-  resStop:(f,d1,d2,x)=>`Entraste a ${f} en ${d1} y saltó el stop en ${d2}, a ${x}.`,
-  resObjetivo:(f,d1,d2,x)=>`Entraste a ${f} en ${d1} y alcanzaste el objetivo en ${d2}, a ${x}.`,
-  resAbierta:(f,d1,x)=>`Entraste a ${f} en ${d1} y al último cierre (${x}) la operación seguía abierta.`,
-  resNota:(n,d)=>`${n} sesiones reales después del ${d}. Si un día tocaba stop y objetivo, se cuenta el stop; con hueco, se ejecuta a la apertura.`,
+  resSinEntrada:e=>`El precio no llegó a tu entrada de ${e}: la orden no se habría ejecutado. Ni ganas ni pierdes.`,
+  resStop:(f,d1,d2,x)=>`Tu entrada se habría ejecutado a ${f} en ${d1} y habría saltado el stop en ${d2}, a ${x}.`,
+  resObjetivo:(f,d1,d2,x)=>`Tu entrada se habría ejecutado a ${f} en ${d1} y se habría alcanzado el objetivo en ${d2}, a ${x}.`,
+  resAbierta:(f,d1,x)=>`Tu entrada se habría ejecutado a ${f} en ${d1} y al último cierre (${x}) la operación seguía abierta.`,
+  resNota:(n,d,fu)=>`Datos históricos reales de ${fu}: las ${n} sesiones siguientes al ${d}. Si un día tocaba stop y objetivo, se cuenta el stop; con hueco, se ejecuta a la apertura. Es formación, no una recomendación.`,
 
   // Simulador de aportaciones
   calcPregunta:'¿Cuánto tendrías?',
