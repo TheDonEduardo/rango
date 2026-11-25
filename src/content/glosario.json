@@ -1093,5 +1093,75 @@
  {
   "termino": "conocimiento cero",
   "d": "Tipo de prueba matemática que demuestra que un cálculo es correcto sin repetirlo. La usan algunos rollups."
+ },
+ {
+  "termino": "reunificación de deudas",
+  "alias": [
+   "reunificar",
+   "reunificas",
+   "reunificación"
+  ],
+  "d": "Juntar varias deudas en un solo préstamo, con una sola cuota. La cuota suele bajar porque se alarga el plazo; el total pagado puede subir."
+ },
+ {
+  "termino": "garantía hipotecaria",
+  "d": "Tu vivienda responde de la deuda: si dejas de pagar, el banco puede ejecutar la hipoteca y quedarse con ella."
+ },
+ {
+  "termino": "comisión de apertura",
+  "d": "Porcentaje del capital que cobra el prestamista por conceder el préstamo. Se paga al principio y se suma al coste total."
+ },
+ {
+  "termino": "opción americana",
+  "alias": [
+   "opciones americanas",
+   "call americana",
+   "calls americanas"
+  ],
+  "d": "Opción que se puede ejercer cualquier día hasta el vencimiento. La europea solo se ejerce en la fecha de vencimiento."
+ },
+ {
+  "termino": "opción europea",
+  "alias": [
+   "opciones europeas",
+   "call europea"
+  ],
+  "d": "Opción que solo se puede ejercer en la fecha de vencimiento. Las opciones sobre índices suelen ser europeas."
+ },
+ {
+  "termino": "fecha ex-dividendo",
+  "d": "Primer día en que quien compra la acción ya no cobra el próximo dividendo. Ese día el precio de la acción baja aproximadamente lo que vale el dividendo."
+ },
+ {
+  "termino": "liquidación en efectivo",
+  "d": "Al vencer la opción se cobra o se paga la diferencia en dinero, en lugar de entregar o recibir acciones."
+ },
+ {
+  "termino": "fondo de bonos",
+  "alias": [
+   "fondos de bonos"
+  ],
+  "d": "Fondo que reparte el dinero entre muchos bonos. No vence: repone los que van venciendo y mantiene su duración."
+ },
+ {
+  "termino": "impago",
+  "alias": [
+   "impagos"
+  ],
+  "d": "Cuando el emisor de un bono no paga los cupones o el nominal en la fecha prevista."
+ },
+ {
+  "termino": "valor contable",
+  "alias": [
+   "valor contable por acción"
+  ],
+  "d": "Patrimonio neto de la empresa (activos menos deudas). Dividido entre las acciones, es el valor contable por acción."
+ },
+ {
+  "termino": "P/VC",
+  "alias": [
+   "precio sobre valor contable"
+  ],
+  "d": "Precio de la acción entre su valor contable por acción. Por debajo de 1, cotiza bajo su patrimonio; solo es barato si el ROE lo justifica."
  }
 ]

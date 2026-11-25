@@ -1,0 +1,205 @@
+{
+  "n": 23,
+  "id": "pvc",
+  "track": "fundamental",
+  "title": "Precio sobre valor contable",
+  "blurb": "Qué mide el P/VC, cómo se relaciona con el ROE y cuándo engaña.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Valor contable y P/VC",
+      "texto": "El valor contable es el patrimonio neto (activos menos deudas). Dividido entre las acciones da el valor contable por acción; el P/VC es el precio entre ese valor.",
+      "ejemplo": "Patrimonio de 2.400 M€ y 300 M de acciones: 8 € por acción. A 6 €, el P/VC es 0,75."
+    },
+    {
+      "id": "g2",
+      "titulo": "P/VC y ROE",
+      "texto": "Para una empresa estable que reparte su beneficio, P/VC ≈ ROE ÷ rentabilidad exigida (aproximación). Con ROE igual a lo exigido, vale 1 vez su patrimonio; con menos ROE, menos.",
+      "ejemplo": "ROE del 12 % y exigencia del 10 %: 1,2 veces. ROE del 4 %: 0,4 veces; a 0,6 sigue siendo cara."
+    },
+    {
+      "id": "g3",
+      "titulo": "Dónde sirve",
+      "texto": "Es útil en bancos y aseguradoras, con activos financieros cercanos a su valor de mercado. En empresas con marcas, software o patentes, el balance recoge poco de su valor.",
+      "ejemplo": "Patrimonio de 500 M$ y capitalización de 5.000 M$: P/VC de 10; el balance explica el 10 %."
+    },
+    {
+      "id": "g4",
+      "titulo": "Recompras",
+      "texto": "Las recompras reducen patrimonio y acciones, así que cambian el valor contable por acción y el P/VC sin cambiar el negocio. Compara siempre con el ROE.",
+      "ejemplo": "Patrimonio de 1.000 M€ y 100 M de acciones: 10 €. Recompra de 20 M por 300 M€: 700 ÷ 80 = 8,75 €."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "pc1",
+      "title": "P/VC y ROE",
+      "ex": [
+        {
+          "id": "pc1-1",
+          "t": "num",
+          "q": "Una empresa ficticia tiene un patrimonio neto de 2.400 M€ y 300 M de acciones. ¿Cuál es su valor contable por acción, en euros?",
+          "unit": "€",
+          "a": 8,
+          "why": "2.400 ÷ 300 = 8 € por acción: lo que valdría cada acción si se liquidara el patrimonio contable.",
+          "guia": "g1"
+        },
+        {
+          "id": "pc1-2",
+          "t": "num",
+          "q": "Una acción cotiza a 6 € y su valor contable es de 8 € por acción. ¿A cuántas veces su valor contable cotiza (P/VC)? Redondea a 2 decimales.",
+          "unit": "veces",
+          "a": 0.75,
+          "why": "6 ÷ 8 = 0,75 veces: cotiza con un 25 % de descuento sobre su patrimonio contable.",
+          "tol": 0.01,
+          "guia": "g1"
+        },
+        {
+          "id": "pc1-3",
+          "t": "num",
+          "q": "Una empresa estable tiene un ROE del 12 % y sus accionistas exigen un 10 % anual. Con la aproximación P/VC ≈ ROE ÷ rentabilidad exigida (válida para empresas estables que reparten su beneficio), ¿qué P/VC tiene sentido? Redondea a 1 decimal.",
+          "unit": "veces",
+          "a": 1.2,
+          "why": "12 ÷ 10 = 1,2 veces. Si el ROE supera lo que exigen los accionistas, el negocio merece valer más que su patrimonio.",
+          "tol": 0.06,
+          "guia": "g2"
+        },
+        {
+          "id": "pc1-4",
+          "t": "choice",
+          "q": "Una empresa cotiza a 0,6 veces su valor contable, tiene un ROE del 4 % y sus accionistas exigen un 10 %. Con P/VC ≈ ROE ÷ rentabilidad exigida (aproximación para empresas estables), ¿cómo la lees?",
+          "opts": [
+            "Barata, porque cotiza por debajo de 1 vez su valor contable",
+            "Barata, porque un P/VC bajo siempre indica una ganga",
+            "No se puede valorar, porque el P/VC no tiene relación con el ROE",
+            "Cara, porque el P/VC que justifica su ROE sería de 0,4 y cotiza a 0,6"
+          ],
+          "a": 3,
+          "why": "P/VC justificado ≈ 4 ÷ 10 = 0,4. Cotiza a 0,6, un 50 % por encima: bajo no significa barato si el ROE es bajo.",
+          "guia": "g2",
+          "porque": [
+            "Cotizar por debajo de 1 no basta: con ROE bajo, el patrimonio no merece valer tanto.",
+            "Un P/VC bajo puede reflejar un ROE bajo: no siempre es una ganga.",
+            "El P/VC justificado depende directamente del ROE y de la rentabilidad exigida.",
+            null
+          ]
+        },
+        {
+          "id": "pc1-5",
+          "t": "slide",
+          "q": "Una empresa estable cotiza a 1,5 veces su valor contable y sus accionistas exigen un 8 % anual. Con P/VC ≈ ROE ÷ rentabilidad exigida (aproximación), mueve el ROE hasta el que justifica ese precio.",
+          "label": "ROE (%)",
+          "min": 2,
+          "max": 20,
+          "step": 1,
+          "start": 6,
+          "a": 12,
+          "unit": "%",
+          "why": "ROE ÷ 8 % = 1,5 → ROE = 12 %. Con menos ROE, el P/VC justificado sería menor y 1,5 veces sería caro.",
+          "show": [
+            {
+              "label": "P/VC justificado",
+              "k": 0.125,
+              "b": 0,
+              "unit": "veces",
+              "dec": 2
+            }
+          ],
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "pc2",
+      "title": "Cuándo sirve y cuándo engaña",
+      "ex": [
+        {
+          "id": "pc2-1",
+          "t": "choice",
+          "q": "¿En qué empresas es más útil el P/VC?",
+          "opts": [
+            "En empresas de software, porque su valor está en el código",
+            "En empresas con grandes marcas y patentes, porque el balance las recoge bien",
+            "En bancos y aseguradoras, cuyo balance es en gran parte financiero",
+            "En cualquier empresa por igual, porque el patrimonio mide su valor"
+          ],
+          "a": 2,
+          "why": "En bancos y aseguradoras el balance está hecho de activos financieros, cerca de su valor de mercado. En intangibles, el patrimonio recoge poco.",
+          "guia": "g3",
+          "porque": [
+            "En software el valor está en intangibles que el balance recoge poco: el P/VC dice poco.",
+            "Marcas y patentes casi no figuran en el balance: el patrimonio infravalora a esas empresas.",
+            null,
+            "El patrimonio mide mal el valor de las empresas de intangibles: no sirve por igual en todas."
+          ]
+        },
+        {
+          "id": "pc2-2",
+          "t": "num",
+          "q": "Una empresa de software (ficticia) tiene un patrimonio de 500 M$ y una capitalización de 5.000 M$. ¿Qué porcentaje de su valor en bolsa recoge su patrimonio contable?",
+          "unit": "%",
+          "a": 10,
+          "why": "500 ÷ 5.000 = 10 %. Con un P/VC de 10, el 90 % del valor son intangibles y crecimiento que el balance no recoge.",
+          "guia": "g3"
+        },
+        {
+          "id": "pc2-3",
+          "t": "num",
+          "q": "Una empresa tiene 1.000 M€ de patrimonio y 100 M de acciones. Recompra 20 M de acciones por 300 M€ en total, por lo que su patrimonio baja a 700 M€. ¿Cuál es su nuevo valor contable por acción, en euros?",
+          "unit": "€",
+          "a": 8.75,
+          "why": "Quedan 80 M de acciones y 700 M€: 700 ÷ 80 = 8,75 €, frente a los 10 € de antes (1.000 ÷ 100).",
+          "tol": 0.01,
+          "guia": "g4"
+        },
+        {
+          "id": "pc2-4",
+          "t": "choice",
+          "q": "Una empresa con 1.000 M€ de patrimonio y 100 M de acciones cotiza a 15 € (P/VC de 1,5). Recompra 20 M de acciones por 300 M€ y su patrimonio baja a 700 M€. Si el precio sigue en 15 € y el negocio no cambia, ¿qué ha pasado con su P/VC?",
+          "opts": [
+            "Su negocio ha mejorado, porque el P/VC ha subido de 1,5 a 1,7 veces",
+            "El P/VC sube porque baja el patrimonio por acción, no por un mejor negocio",
+            "Ha perdido valor, porque tiene menos acciones en circulación",
+            "Nada: la recompra no cambia el valor contable por acción"
+          ],
+          "a": 1,
+          "why": "El valor contable por acción baja de 10 a 8,75 € y el P/VC sube de 1,5 a 15 ÷ 8,75 ≈ 1,7 sin que el negocio cambie. Hay que mirar el ROE.",
+          "guia": "g4",
+          "porque": [
+            "El negocio no ha cambiado: el P/VC sube porque baja el patrimonio por acción.",
+            null,
+            "Tener menos acciones no destruye valor por sí mismo; lo que cambia es el patrimonio por acción.",
+            "Sí cambia: baja de 10 a 8,75 € por acción y el P/VC sube."
+          ]
+        },
+        {
+          "id": "pc2-5",
+          "t": "match",
+          "q": "Empareja cada medida con su significado.",
+          "pairs": [
+            [
+              "Valor contable por acción",
+              "Patrimonio neto entre número de acciones"
+            ],
+            [
+              "P/VC",
+              "Precio de la acción entre su valor contable por acción"
+            ],
+            [
+              "ROE",
+              "Beneficio neto entre patrimonio"
+            ],
+            [
+              "Rentabilidad exigida",
+              "Lo mínimo que piden los accionistas por el riesgo"
+            ]
+          ],
+          "why": "El P/VC compara el precio con el patrimonio; el ROE mide lo que rinde ese patrimonio y la rentabilidad exigida es la vara de medir.",
+          "guia": "g1"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

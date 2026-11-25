@@ -1,0 +1,224 @@
+{
+  "n": 5,
+  "id": "rfondos",
+  "track": "pasiva",
+  "title": "Renta fija: fondos o bonos",
+  "blurb": "Un fondo no vence y un bono sí: efecto de los tipos, impagos y costes.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "El bono vence, el fondo no",
+      "texto": "Un bono individual vence: si no hay impago, recuperas el nominal y cobras los cupones. Un fondo de bonos no vence: repone los que vencen y su duración se mantiene.",
+      "ejemplo": "Compras un bono a 6 años y un fondo de duración 6. A los 3 años, al bono le quedan 3; el fondo sigue en 6."
+    },
+    {
+      "id": "g2",
+      "titulo": "Subida de tipos",
+      "texto": "Pérdida ≈ duración × subida de tipos (aproximación). Con un bono mantenido hasta el vencimiento y sin impago, recuperas el nominal; con un fondo no hay fecha de recuperación.",
+      "ejemplo": "Duración 6 y tipos +1,5 puntos: 6 × 1,5 = 9 %. Duración 5 y +2 puntos: 10 %."
+    },
+    {
+      "id": "g3",
+      "titulo": "Impagos y costes",
+      "texto": "Un fondo reparte el riesgo de impago entre muchos emisores, pero cobra una comisión anual. Un bono suelto no cobra gestión, pero concentra el riesgo en un emisor.",
+      "ejemplo": "10.000 € en 50 bonos de 200 €: un impago con recuperación del 40 % cuesta 120 €. Con un solo bono, 6.000 €. Fondo: 3,2 % − 0,6 % = 2,6 %."
+    },
+    {
+      "id": "g4",
+      "titulo": "Fondos con fecha",
+      "texto": "Algunos fondos compran bonos que vencen hacia una fecha y se liquidan entonces. Su duración baja con el tiempo, como la de un bono, pero no garantizan el capital: un impago puede costar dinero.",
+      "ejemplo": "Necesitas 20.000 € en 5 años: bonos que venzan entonces o un fondo con vencimiento ese año encajan mejor que uno sin fecha."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "rf1",
+      "title": "Bono suelto o fondo",
+      "ex": [
+        {
+          "id": "rf1-1",
+          "t": "choice",
+          "q": "Un bono individual y un fondo de bonos tienen la misma duración hoy. ¿Qué diferencia hay a largo plazo?",
+          "opts": [
+            "El fondo devuelve el nominal en una fecha fija",
+            "El bono se renueva solo al vencer y sigue indefinidamente",
+            "El bono vence y devuelve su nominal si no hay impago; el fondo no vence",
+            "Los dos devuelven el nominal al vencimiento si el emisor paga"
+          ],
+          "a": 2,
+          "why": "El bono tiene fecha y devuelve el nominal si el emisor paga. El fondo repone los bonos que vencen: su duración se mantiene y no hay fecha de devolución.",
+          "guia": "g1",
+          "porque": [
+            "El fondo no tiene fecha de vencimiento: repone los bonos que vencen y no promete devolver el nominal en una fecha.",
+            "Un bono individual vence y se acaba; seguir en renta fija exigiría comprar otro.",
+            null,
+            "Solo el bono vence; el fondo no tiene fecha y su precio sigue las cotizaciones."
+          ]
+        },
+        {
+          "id": "rf1-2",
+          "t": "num",
+          "q": "Un fondo de bonos tiene una duración de 6 y los tipos de interés suben 1,5 puntos. Con la aproximación pérdida ≈ duración × subida, ¿qué porcentaje cae su precio?",
+          "unit": "%",
+          "a": 9,
+          "why": "6 × 1,5 = 9 %. Es una aproximación: la duración mide bien subidas pequeñas y se queda corta o larga en las grandes.",
+          "guia": "g2"
+        },
+        {
+          "id": "rf1-3",
+          "t": "choice",
+          "q": "Compras hoy un bono que vence en 6 años y un fondo de bonos con duración 6. Pasan 3 años sin cambios en los tipos. ¿Qué ocurre con su sensibilidad a los tipos?",
+          "opts": [
+            "Los dos son más sensibles porque pasa el tiempo",
+            "El fondo, menos; el bono, igual que el primer día",
+            "Ninguno: los dos pierden toda sensibilidad a los tipos",
+            "El bono, menos, porque le quedan 3 años; el fondo, igual"
+          ],
+          "a": 3,
+          "why": "Al bono le quedan 3 años y su duración baja; el fondo sigue comprando bonos largos y mantiene la suya.",
+          "guia": "g1",
+          "porque": [
+            "El paso del tiempo acorta el bono: no lo hace más sensible, y el fondo mantiene la suya.",
+            "Es al revés: al bono le queda menos plazo y es el fondo el que mantiene su duración.",
+            "El fondo mantiene su duración y al bono aún le quedan 3 años: ninguno pierde toda su sensibilidad.",
+            null
+          ]
+        },
+        {
+          "id": "rf1-4",
+          "t": "slide",
+          "q": "Quieres que, si los tipos suben 2 puntos, un fondo de bonos no pierda más del 10 % (aproximación: pérdida ≈ duración × subida). Mueve la duración al valor más alto que cumple.",
+          "label": "Duración (años)",
+          "min": 1,
+          "max": 10,
+          "step": 1,
+          "start": 8,
+          "a": 5,
+          "unit": "años",
+          "why": "5 × 2 = 10 %. Con duración 6, la pérdida aproximada sería 12 %: demasiado.",
+          "show": [
+            {
+              "label": "Pérdida aproximada con +2 puntos",
+              "k": 2,
+              "b": 0,
+              "unit": "%"
+            }
+          ],
+          "guia": "g2"
+        },
+        {
+          "id": "rf1-5",
+          "t": "match",
+          "q": "Empareja cada concepto de renta fija con su significado.",
+          "pairs": [
+            [
+              "Bono individual",
+              "Vence y, sin impago, devuelve el nominal"
+            ],
+            [
+              "Fondo de bonos",
+              "No vence: repone los bonos que van venciendo"
+            ],
+            [
+              "Duración",
+              "Aproxima cuánto cae el precio por cada punto que suben los tipos"
+            ],
+            [
+              "Impago",
+              "El emisor no paga los cupones o el nominal"
+            ]
+          ],
+          "why": "El bono tiene fecha y el fondo no; la duración mide la sensibilidad a los tipos y el impago es el riesgo de que el emisor no pague.",
+          "guia": "g1"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "rf2",
+      "title": "Impagos, costes y fechas",
+      "ex": [
+        {
+          "id": "rf2-1",
+          "t": "num",
+          "q": "Repartes 10.000 € en un fondo con 50 bonos de emisores distintos, a partes iguales (200 € cada uno). Un emisor no paga y recuperas el 40 % de lo invertido en su bono. ¿Cuántos euros pierdes?",
+          "unit": "€",
+          "a": 120,
+          "why": "200 € × (100 % − 40 %) = 120 €, el 1,2 % de los 10.000 €. Con un solo bono por 10.000 €, la misma situación costaría 6.000 €.",
+          "guia": "g3"
+        },
+        {
+          "id": "rf2-2",
+          "t": "choice",
+          "q": "Un fondo de bonos reparte su dinero entre 50 emisores y uno de ellos no paga. ¿Qué efecto tiene en el fondo?",
+          "opts": [
+            "El fondo se liquida y los partícipes pierden todo su dinero",
+            "Una pérdida pequeña, porque ese emisor pesa poco en el fondo",
+            "Ninguno: los fondos de bonos garantizan siempre el nominal",
+            "Pierde la mitad, porque un impago contagia al resto de bonos"
+          ],
+          "a": 1,
+          "why": "Cada emisor pesa en torno al 2 % del fondo, así que un impago resta poco. Repartir entre muchos emisores es la ventaja del fondo.",
+          "guia": "g3",
+          "porque": [
+            "Un impago no liquida el fondo: ese emisor es solo una parte pequeña de la cartera.",
+            null,
+            "Ningún fondo de bonos garantiza el nominal: el valor depende de las cotizaciones y de los impagos.",
+            "Un impago afecta solo a ese bono; no arrastra a los otros 49 emisores."
+          ]
+        },
+        {
+          "id": "rf2-3",
+          "t": "num",
+          "q": "Un fondo de bonos rinde un 3,2 % bruto al año y cobra una comisión anual del 0,6 %. ¿Qué rentabilidad neta anual te queda? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 2.6,
+          "why": "3,2 % − 0,6 % = 2,6 %. La comisión se resta cada año, aunque el fondo gane poco.",
+          "tol": 0.06,
+          "guia": "g3"
+        },
+        {
+          "id": "rf2-4",
+          "t": "choice",
+          "q": "¿Qué es un fondo de bonos con fecha de vencimiento?",
+          "opts": [
+            "Uno que garantiza devolver a esa fecha todo lo invertido",
+            "Uno cuya duración se mantiene constante hasta esa fecha",
+            "Uno con bonos que vencen hacia esa fecha y que se liquida entonces",
+            "Uno sin riesgo de tipos de interés porque vence"
+          ],
+          "a": 2,
+          "why": "Compra bonos que vencen cerca de su fecha y se liquida entonces: su duración baja con el tiempo, como en un bono, pero sin garantía de capital.",
+          "guia": "g4",
+          "porque": [
+            "No garantiza nada: devuelve el valor de los bonos en ese momento, que puede ser menor si hubo impagos.",
+            "Al acercarse la fecha, su duración baja, porque los bonos que tiene van venciendo.",
+            null,
+            "Mientras sus bonos no venzan, un cambio de tipos sigue moviendo su precio."
+          ]
+        },
+        {
+          "id": "rf2-5",
+          "t": "choice",
+          "q": "Necesitas 20.000 € dentro de 5 años y quieres que el dinero esté lo más ligado posible a esa fecha. ¿Qué encaja mejor?",
+          "opts": [
+            "Un fondo de bonos sin fecha, porque siempre devuelve el nominal a los 5 años",
+            "Un fondo de bonos con duración 10, porque la mayor duración da más seguridad",
+            "Bonos que venzan en 5 años, o un fondo con vencimiento en ese año",
+            "Un fondo monetario, porque su duración se alarga hasta los 5 años"
+          ],
+          "a": 2,
+          "why": "Con una fecha fija, lo que vence cuando lo necesitas ata el dinero a ese momento. Un fondo sin fecha puede estar perdiendo valor justo entonces.",
+          "guia": "g4",
+          "porque": [
+            "Un fondo sin fecha no devuelve el nominal en ninguna fecha: su precio puede estar bajo justo a los 5 años.",
+            "Mayor duración significa mayor sensibilidad a los tipos, no más seguridad.",
+            null,
+            "Un fondo monetario mantiene duración muy corta; no se alarga hasta los 5 años."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

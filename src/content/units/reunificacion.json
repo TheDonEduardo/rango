@@ -1,0 +1,218 @@
+{
+  "n": 6,
+  "id": "reunificacion",
+  "track": "personal",
+  "title": "Reunificar deudas",
+  "blurb": "Una sola cuota: cuándo baja el coste y cuándo solo se alarga la deuda.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Cuota baja, plazo largo",
+      "texto": "Reunificar es juntar varias deudas en un préstamo. La cuota baja porque se reparte en más meses, no porque debas menos.",
+      "ejemplo": "Pagas 390 € al mes durante 30 meses; el préstamo nuevo, 210 € durante 60 meses."
+    },
+    {
+      "id": "g2",
+      "titulo": "Compara el total",
+      "texto": "Multiplica cuota por meses y compáralo con lo que te queda por pagar hoy. Con un tipo parecido, alargar el plazo hace pagar más.",
+      "ejemplo": "390 × 30 = 11.700 €; 210 × 60 = 12.600 €: 900 € más. Con una cuota de 195 € durante 60 meses, empatas."
+    },
+    {
+      "id": "g3",
+      "titulo": "Comisiones y gastos",
+      "texto": "Abrir el préstamo y cancelar las deudas antiguas puede costar comisiones. Se suman al total: pide el coste con todo incluido.",
+      "ejemplo": "2 % de 10.000 € = 200 €, más 1 % de 6.000 € por cancelar = 60 €: 260 € antes de empezar."
+    },
+    {
+      "id": "g4",
+      "titulo": "Cuándo sí y cuándo no",
+      "texto": "Compensa si el tipo baja mucho, el plazo casi no crece y dejas de usar las tarjetas. Con deudas dentro de la hipoteca, además, tu casa responde.",
+      "ejemplo": "4.000 € al 20 % pasados al 8 % ahorran 480 € el primer año, si no devuelves capital ese año. 25.000 € en la hipoteca: 42.000 € frente a 30.000 €."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "re1",
+      "title": "Cuota baja, total alto",
+      "ex": [
+        {
+          "id": "re1-1",
+          "t": "choice",
+          "q": "Al reunificar varias deudas en un préstamo, la cuota mensual suele bajar. ¿Por qué?",
+          "opts": [
+            "Porque el banco perdona parte del capital que debes",
+            "Porque los intereses dejan de cobrarse al juntar las deudas",
+            "Porque las deudas antiguas desaparecen sin que nadie las pague",
+            "Porque el plazo se alarga y el capital se reparte en más cuotas"
+          ],
+          "a": 3,
+          "why": "La cuota baja al repartir lo que debes en más meses, no porque debas menos. Un plazo mayor suele significar más intereses en total.",
+          "guia": "g1",
+          "porque": [
+            "El banco te presta dinero para pagar tus deudas; el capital que debes sigue igual, no se perdona nada.",
+            "Los intereses se siguen cobrando en el préstamo nuevo; juntar las deudas no los elimina.",
+            "El préstamo nuevo paga las deudas antiguas, pero esa cantidad pasa a ser lo que debes al nuevo prestamista.",
+            null
+          ]
+        },
+        {
+          "id": "re1-2",
+          "t": "num",
+          "q": "Hoy pagas 390 € al mes durante 30 meses entre tus deudas. Un préstamo de reunificación te deja una cuota de 210 € al mes durante 60 meses. ¿Cuántos euros más pagas en total con el préstamo nuevo?",
+          "unit": "€",
+          "a": 900,
+          "why": "Hoy: 390 × 30 = 11.700 €. Con el préstamo: 210 × 60 = 12.600 €. La cuota baja 180 € al mes, pero pagas 900 € más en total.",
+          "guia": "g2"
+        },
+        {
+          "id": "re1-3",
+          "t": "slide",
+          "q": "Hoy pagas 390 € al mes durante 30 meses (11.700 € en total). Te ofrecen un préstamo de reunificación con una cuota de 195 € al mes. Mueve el plazo hasta el máximo de meses con el que no pagas más en total que ahora.",
+          "label": "Plazo (meses)",
+          "min": 12,
+          "max": 84,
+          "step": 6,
+          "start": 36,
+          "a": 60,
+          "unit": "meses",
+          "why": "195 × 60 = 11.700 €, lo mismo que pagas hoy. Con más de 60 meses pagarías más en total; con menos, menos.",
+          "show": [
+            {
+              "label": "Total que pagarías",
+              "k": 195,
+              "b": 0,
+              "unit": "€"
+            },
+            {
+              "label": "Frente a los 11.700 € de hoy",
+              "k": 195,
+              "b": -11700,
+              "unit": "€"
+            }
+          ],
+          "guia": "g2"
+        },
+        {
+          "id": "re1-4",
+          "t": "num",
+          "q": "Un préstamo de reunificación de 10.000 € cobra una comisión de apertura del 2 %. Además, cancelar antes de tiempo una deuda de 6.000 € tiene una comisión del 1 %. ¿Cuántos euros pagas en comisiones?",
+          "unit": "€",
+          "a": 260,
+          "why": "2 % de 10.000 € = 200 €, más 1 % de 6.000 € = 60 €: 260 € que pagas antes de empezar y que se suman al coste de reunificar.",
+          "guia": "g3"
+        },
+        {
+          "id": "re1-5",
+          "t": "choice",
+          "q": "Te ofrecen reunificar tus deudas con una cuota mucho más baja. ¿Qué compruebas antes de firmar?",
+          "opts": [
+            "Solo la cuota mensual, porque es lo que sale de tu cuenta cada mes",
+            "Solo el tipo de interés, sin sumar comisiones ni gastos",
+            "El total que pagarás con comisiones y gastos, frente a lo que pagas hoy",
+            "Que la oferta caduque pronto, porque así decides sin dudar"
+          ],
+          "a": 2,
+          "why": "Lo que decide si compensa es el total: cuotas por meses más comisiones y gastos, comparado con lo que te queda por pagar de las deudas actuales.",
+          "guia": "g3",
+          "porque": [
+            "La cuota baja si alargas el plazo, aunque el total suba: sola no dice si compensa.",
+            "Con comisiones y gastos el coste real sube; el tipo solo no incluye lo que cobran por abrir o cancelar.",
+            null,
+            "Una oferta con prisa es una señal de alerta: conviene comparar con calma antes de decidir."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "re2",
+      "title": "Cuándo compensa y qué se arriesga",
+      "ex": [
+        {
+          "id": "re2-1",
+          "t": "num",
+          "q": "Tienes 4.000 € en una tarjeta al 20 % anual. Un préstamo al 8 % anual te permitiría pagarla. Suponiendo que en ese primer año no devuelves capital (simplificación), ¿cuántos euros de intereses ahorras?",
+          "unit": "€",
+          "a": 480,
+          "why": "Tarjeta: 4.000 × 20 % = 800 €. Préstamo: 4.000 × 8 % = 320 €. Ahorras 480 € en el primer año, porque el tipo baja mucho.",
+          "guia": "g4"
+        },
+        {
+          "id": "re2-2",
+          "t": "choice",
+          "q": "Metes 25.000 € de deudas de consumo en tu hipoteca. ¿Qué riesgo nuevo asumes?",
+          "opts": [
+            "Que, si dejas de pagar, el banco pueda ejecutar la hipoteca y quedarte sin la vivienda",
+            "Ninguno nuevo, porque la hipoteca ya existía",
+            "Que Hacienda cobre impuestos por las deudas que ya pagaste",
+            "Que los intereses pasen a calcularse sobre el valor de la casa, no sobre lo que debes"
+          ],
+          "a": 0,
+          "why": "Una deuda de consumo no tiene garantía; al meterla en la hipoteca, tu vivienda responde de ella. Si no pagas, puedes perder la casa.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Sí hay un riesgo nuevo: una deuda sin garantía pasa a estar respaldada por tu casa.",
+            "Pagar deudas no genera impuestos; el riesgo es otro: la garantía sobre la vivienda.",
+            "Los intereses se calculan sobre el capital pendiente. Lo que cambia es que la vivienda responde del pago."
+          ]
+        },
+        {
+          "id": "re2-3",
+          "t": "num",
+          "q": "Tienes 25.000 € de deudas de consumo que acabarías de pagar con cuotas de 500 € al mes durante 60 meses. Si las metes en la hipoteca, pagarías 140 € más al mes durante 300 meses (25 años). ¿Cuántos miles de euros más pagas en total?",
+          "unit": "mil €",
+          "a": 12,
+          "why": "Antes: 500 × 60 = 30.000 €. En la hipoteca: 140 × 300 = 42.000 €. Son 12.000 € más (12 mil €), y además la casa responde.",
+          "guia": "g4"
+        },
+        {
+          "id": "re2-4",
+          "t": "choice",
+          "q": "¿Cuándo tiene más sentido reunificar deudas?",
+          "opts": [
+            "Cuando el nuevo tipo es más alto, pero tendrás un solo recibo",
+            "Cuando el tipo baja mucho, el plazo casi no se alarga y dejas de usar las tarjetas",
+            "Cuando así liberas las tarjetas y puedes volver a gastar con ellas",
+            "Cuando la comisión de apertura es mayor que lo que ahorras en intereses"
+          ],
+          "a": 1,
+          "why": "Compensa si el coste total baja: un tipo claramente menor, sin alargar mucho el plazo y sin volver a endeudarte con las tarjetas.",
+          "guia": "g4",
+          "porque": [
+            "Un tipo más alto significa pagar más intereses; tener un solo recibo es comodidad, no ahorro.",
+            null,
+            "Volver a gastar con las tarjetas libres suele duplicar la deuda: la reunificación solo funciona si dejas de endeudarte.",
+            "Si la comisión supera el ahorro en intereses, pierdes dinero con la operación."
+          ]
+        },
+        {
+          "id": "re2-5",
+          "t": "match",
+          "q": "Empareja cada término de un préstamo con lo que significa.",
+          "pairs": [
+            [
+              "Cuota",
+              "Lo que pagas cada mes"
+            ],
+            [
+              "Plazo",
+              "Los meses que tardas en devolver la deuda"
+            ],
+            [
+              "Comisión de apertura",
+              "Un porcentaje del capital que cobran por conceder el préstamo"
+            ],
+            [
+              "Garantía hipotecaria",
+              "Tu vivienda responde si dejas de pagar"
+            ]
+          ],
+          "why": "La cuota y el plazo dan el total que pagas; la comisión se suma al coste y la garantía hipotecaria pone la casa en juego.",
+          "guia": "g1"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

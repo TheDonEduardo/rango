@@ -1,0 +1,223 @@
+{
+  "n": 17,
+  "id": "opestilo",
+  "track": "derivados",
+  "title": "Americanas y europeas",
+  "blurb": "Cuándo se puede ejercer una opción y por qué casi nunca conviene hacerlo antes.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Americana y europea",
+      "texto": "La americana se puede ejercer cualquier día hasta el vencimiento; la europea, solo en esa fecha. Ejercer es usar tu derecho: comprar (call) o vender (put) 100 acciones al precio de ejercicio.",
+      "ejemplo": "Call con ejercicio de 50 $ y la acción a 58 $: la americana te deja ejercer hoy; la europea, solo al vencer."
+    },
+    {
+      "id": "g2",
+      "titulo": "Ejercer antes pierde valor temporal",
+      "texto": "Una call dentro del dinero vale su valor intrínseco más el temporal. Si la ejerces, cobras solo el intrínseco; si la vendes, también el temporal. Sin dividendos, casi nunca compensa ejercerla antes.",
+      "ejemplo": "Acción a 58 $, ejercicio 50 $, call a 9,50 $: intrínseco 8 $, temporal 1,50 $. Ejercer y vender deja 800 $; vender la call, 950 $: pierdes 150 $."
+    },
+    {
+      "id": "g3",
+      "titulo": "La excepción del dividendo",
+      "texto": "Quien tiene la acción cobra el dividendo; quien tiene la call, no. Ejercer justo antes de la fecha ex-dividendo puede compensar si el dividendo supera el valor temporal que pierdes, frente a mantener la call pasada esa fecha.",
+      "ejemplo": "Dividendo de 1,20 $ y valor temporal de 0,40 $: ejercer gana (1,20 − 0,40) × 100 = 80 $ por contrato frente a conservar la call, sin contar intereses ni comisiones."
+    },
+    {
+      "id": "g4",
+      "titulo": "Asignación e índices",
+      "texto": "Si vendes una call americana, te pueden asignar antes del vencimiento, sobre todo antes de un dividendo. Las opciones sobre índices suelen ser europeas y con liquidación en efectivo: sin asignación anticipada.",
+      "ejemplo": "Índice ficticio, ejercicio de 500 puntos, cierre en 508 y 100 $ por punto: cobras 8 × 100 = 800 $ en efectivo."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "op35",
+      "title": "Ejercer o vender",
+      "ex": [
+        {
+          "id": "op35-1",
+          "t": "choice",
+          "q": "¿Cuándo puede ejercerse una opción americana?",
+          "opts": [
+            "Solo el día del vencimiento",
+            "En cualquier momento hasta el vencimiento",
+            "Solo durante la última semana antes de vencer",
+            "Solo cuando está fuera del dinero"
+          ],
+          "a": 1,
+          "why": "La americana se puede ejercer cualquier día hasta el vencimiento; la europea, solo en la fecha de vencimiento.",
+          "guia": "g1",
+          "porque": [
+            "Eso describe una opción europea; la americana permite ejercer antes.",
+            null,
+            "No hay una ventana de una semana: la americana se puede ejercer en cualquier momento.",
+            "Fuera del dinero ejercer sería perder dinero, pero el derecho existe dentro y fuera del dinero."
+          ]
+        },
+        {
+          "id": "op35-2",
+          "t": "num",
+          "q": "Una call americana con precio de ejercicio de 50 $ sobre una acción que cotiza a 58 $ vale 9,50 $. Su valor intrínseco es de 8 $ por acción. ¿Cuántos dólares por acción vale su valor temporal?",
+          "unit": "$",
+          "a": 1.5,
+          "why": "Valor temporal = prima − valor intrínseco = 9,50 − 8,00 = 1,50 $ por acción: lo que pagas por el tiempo que queda.",
+          "guia": "g2"
+        },
+        {
+          "id": "op35-3",
+          "t": "num",
+          "q": "Una call americana con ejercicio de 50 $ sobre una acción a 58 $ cotiza a 9,50 $. Podrías venderla o ejercerla y vender las 100 acciones a 58 $. ¿Cuántos dólares pierdes por contrato si la ejerces en vez de venderla? Sin contar comisiones.",
+          "unit": "$",
+          "a": 150,
+          "why": "Ejercer y vender: (58 − 50) × 100 = 800 $. Vender la call: 9,50 × 100 = 950 $. Pierdes 150 $: el valor temporal de 1,50 $ por acción.",
+          "guia": "g2"
+        },
+        {
+          "id": "op35-4",
+          "t": "choice",
+          "q": "Una call americana dentro del dinero sobre una acción que no paga dividendos. ¿Por qué casi nunca conviene ejercerla antes del vencimiento?",
+          "opts": [
+            "Porque el ejercicio anticipado está prohibido en las opciones americanas",
+            "Porque el valor temporal de una call dentro del dinero es negativo",
+            "Porque al ejercer se pierde el valor temporal que todavía tiene la opción",
+            "Porque las acciones recibidas no se pueden vender el mismo día"
+          ],
+          "a": 2,
+          "why": "Vendiéndola cobras valor intrínseco más valor temporal; ejerciéndola, solo el intrínseco. Sin dividendos, no hay nada que compense esa pérdida.",
+          "guia": "g2",
+          "porque": [
+            "Sí se puede ejercer antes: es justo lo que distingue a la americana de la europea.",
+            "El valor temporal nunca es negativo: una opción vale al menos su valor intrínseco.",
+            null,
+            "Las acciones recibidas se pueden vender cuando quieras; ese no es el motivo."
+          ]
+        },
+        {
+          "id": "op35-5",
+          "t": "match",
+          "q": "Empareja cada concepto sobre ejercer una opción con su significado.",
+          "pairs": [
+            [
+              "Opción americana",
+              "Se puede ejercer cualquier día hasta el vencimiento"
+            ],
+            [
+              "Opción europea",
+              "Solo se puede ejercer en la fecha de vencimiento"
+            ],
+            [
+              "Valor temporal",
+              "Parte de la prima por encima del valor intrínseco"
+            ],
+            [
+              "Ejercer antes",
+              "Renunciar al valor temporal que quede"
+            ]
+          ],
+          "why": "La americana da más libertad de ejercicio que la europea, pero ejercer antes de tiempo renuncia al valor temporal que queda.",
+          "guia": "g1"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "op36",
+      "title": "Dividendos, asignación e índices",
+      "ex": [
+        {
+          "id": "op36-1",
+          "t": "num",
+          "q": "Una call americana con ejercicio de 50 $ sobre una acción a 58 $ tiene 0,40 $ de valor temporal. Mañana es la fecha ex-dividendo y el dividendo es de 1,20 $ por acción. Si la ejerces hoy para cobrarlo, ¿cuántos dólares ganas por contrato frente a conservar la call después de la fecha ex-dividendo? Sin contar intereses ni comisiones (regla aproximada).",
+          "unit": "$",
+          "a": 80,
+          "why": "Ejercer deja 800 $ (acciones 5.680 + 120 de dividendo − 5.000 pagados). La call, que pierde unos 1,20 $ cuando la acción baja por el dividendo, quedaría en 720 $: 80 $ menos, o (1,20 − 0,40) × 100. Venderla hoy (840 $) sería aún mejor, porque conserva el valor temporal.",
+          "guia": "g3"
+        },
+        {
+          "id": "op36-2",
+          "t": "choice",
+          "q": "¿En qué caso puede convenir ejercer antes del vencimiento una call americana dentro del dinero?",
+          "opts": [
+            "Cuando falta mucho para el vencimiento y su valor temporal es alto",
+            "Después de la fecha ex-dividendo, para cobrar el dividendo ya pagado",
+            "Cuando el dividendo es menor que el valor temporal que se pierde",
+            "Justo antes de la fecha ex-dividendo, si el dividendo supera su valor temporal"
+          ],
+          "a": 3,
+          "why": "Solo antes de la fecha ex-dividendo y si el dividendo supera el valor temporal que pierdes al ejercer.",
+          "guia": "g3",
+          "porque": [
+            "Con mucho valor temporal, ejercer lo regala: es mejor vender la call y cobrarlo.",
+            "Tras la fecha ex-dividendo, el dividendo ya no corresponde a quien ejerce.",
+            "Si el dividendo es menor que el valor temporal que pierdes, ejercer sale a pérdida.",
+            null
+          ]
+        },
+        {
+          "id": "op36-3",
+          "t": "slide",
+          "q": "Una call americana dentro del dinero tiene 0,40 $ de valor temporal por acción. Mañana es la fecha ex-dividendo. Mueve el dividendo hasta el más bajo (en pasos de 0,10 $) con el que ejercer da una ganancia positiva frente a conservarla después de la fecha ex-dividendo. Sin contar intereses ni comisiones.",
+          "label": "Dividendo por acción",
+          "min": 0,
+          "max": 2,
+          "step": 0.1,
+          "start": 1.5,
+          "a": 0.5,
+          "unit": "$",
+          "why": "Con 0,40 $ no ganas ni pierdes; con 0,50 $ ganas (0,50 − 0,40) × 100 = 10 $ por contrato. Hace falta que el dividendo supere el valor temporal.",
+          "show": [
+            {
+              "label": "Ganancia por contrato al ejercer",
+              "k": 100,
+              "b": -40,
+              "unit": "$"
+            }
+          ],
+          "guia": "g3"
+        },
+        {
+          "id": "op36-4",
+          "t": "choice",
+          "q": "Has vendido una call americana dentro del dinero sobre una acción que va a pagar dividendo mañana (fecha ex-dividendo). ¿Qué riesgo corres?",
+          "opts": [
+            "Ninguno: una call vendida solo se asigna el día del vencimiento",
+            "Que te asignen antes de vencer y tengas que entregar 100 acciones por contrato",
+            "Que te asignen y recibas 100 acciones, pagando el precio de ejercicio",
+            "Que el comprador no ejerza y te devuelva la prima"
+          ],
+          "a": 1,
+          "why": "La americana vendida puede asignarse en cualquier momento, y es más probable antes de un dividendo: entregas 100 acciones por contrato.",
+          "guia": "g4",
+          "porque": [
+            "Una americana vendida puede asignarse en cualquier momento, no solo al vencer.",
+            null,
+            "Con una call vendida entregas acciones, no las recibes: cobras el precio de ejercicio.",
+            "La prima que cobraste es tuya; el comprador no la devuelve aunque no ejerza."
+          ]
+        },
+        {
+          "id": "op36-5",
+          "t": "choice",
+          "q": "Una call sobre un índice ficticio es europea y con liquidación en efectivo: ejercicio de 500 puntos y 100 $ por punto. Al vencer, el índice cierra en 508. ¿Qué ocurre?",
+          "opts": [
+            "Recibes 100 acciones de cada empresa del índice, valoradas a 500",
+            "La call vence sin valor porque los índices no se pueden ejercer",
+            "Cobras 800 $ en efectivo, sin recibir ninguna acción",
+            "Pagas 50.000 $ y recibes el índice completo"
+          ],
+          "a": 2,
+          "why": "Las opciones sobre índices suelen ser europeas y con liquidación en efectivo: (508 − 500) × 100 = 800 $, sin acciones ni asignación anticipada.",
+          "guia": "g4",
+          "porque": [
+            "En una opción sobre índice con liquidación en efectivo no se entregan acciones.",
+            "Los índices sí tienen opciones: se ejercen cobrando la diferencia en efectivo.",
+            null,
+            "No pagas el valor del índice ni lo recibes: solo cobras la diferencia en dinero."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}
