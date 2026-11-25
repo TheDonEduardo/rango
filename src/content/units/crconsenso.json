@@ -1,0 +1,201 @@
+{
+  "n": 5,
+  "id": "crconsenso",
+  "track": "cripto",
+  "title": "Trabajo o participación",
+  "blurb": "Quién valida los bloques, cuánto cuesta atacar la red, qué penaliza el mal comportamiento y quién acaba mandando.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Dos formas de validar",
+      "texto": "En la prueba de trabajo, los mineros gastan electricidad y máquinas compitiendo por añadir el bloque. En la de participación, los validadores depositan monedas como garantía y la red elige a uno, en proporción a lo depositado.",
+      "ejemplo": "Con 1.000 monedas depositadas de 100.000 en total, un validador tiene un 1 % de las opciones de ser elegido."
+    },
+    {
+      "id": "g2",
+      "titulo": "Coste de atacar y slashing",
+      "texto": "Los ataques más graves exigen controlar la mayoría de lo que protege la red: potencia de cálculo o monedas depositadas. En participación, además, el validador tramposo pierde parte del depósito: es el slashing.",
+      "ejemplo": "Controlar el 51 % de 400 millones de $ depositados cuesta 204 millones de $. En una red ficticia, un validador con 50 monedas pierde 5 por hacer trampas: un 10 %."
+    },
+    {
+      "id": "g3",
+      "titulo": "Quién acaba mandando",
+      "texto": "Ambos sistemas se concentran: los grupos de minería suman la potencia de muchos mineros y las plataformas de staking, las monedas de muchos usuarios. La energía de la prueba de trabajo es un debate: coste de seguridad o desperdicio.",
+      "ejemplo": "Tres plataformas con el 20 %, el 18 % y el 17 % de lo depositado suman el 55 %: más de la mitad."
+    },
+    {
+      "id": "g4",
+      "titulo": "Staking: emisión y dilución",
+      "texto": "El pago del staking sale en buena parte de monedas nuevas: la oferta crece. Quien no hace staking se diluye. Para estimar lo que ganas de verdad, resta ese crecimiento de la oferta.",
+      "ejemplo": "Pago del 5 % con el 60 % de las monedas en staking: la oferta crece un 3 %. Quien hace staking gana en torno a un 2 % de peso (5 − 3)."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "cu1",
+      "title": "Cómo se valida y se ataca",
+      "ex": [
+        {
+          "id": "cu1-1",
+          "t": "choice",
+          "q": "En una red de prueba de participación, ¿qué pone en juego un validador para poder validar bloques?",
+          "opts": [
+            "Máquinas que compiten resolviendo un cálculo",
+            "Una cuota de entrada que nunca recupera",
+            "Monedas depositadas como garantía",
+            "Su identidad personal ante un supervisor"
+          ],
+          "a": 2,
+          "why": "El validador bloquea monedas como garantía y la red elige a quien valida según lo depositado.",
+          "guia": "g1",
+          "porque": [
+            "Eso es la prueba de trabajo, no la de participación: allí la garantía es el capital, no las máquinas.",
+            "El depósito no es una cuota que se pierda: se recupera si el validador se porta bien.",
+            null,
+            "No se identifica ante ningún supervisor: lo que cuenta es el depósito de monedas."
+          ]
+        },
+        {
+          "id": "cu1-2",
+          "t": "match",
+          "q": "Empareja cada concepto con lo que significa.",
+          "pairs": [
+            [
+              "Prueba de trabajo",
+              "Compiten gastando electricidad con máquinas"
+            ],
+            [
+              "Prueba de participación",
+              "Se elige a quien deposita monedas como garantía"
+            ],
+            [
+              "Slashing",
+              "Se pierde parte del depósito por hacer trampas"
+            ],
+            [
+              "Plataforma de staking",
+              "Agrupa monedas de muchos usuarios y valida por ellos"
+            ]
+          ],
+          "why": "Trabajo: coste en energía. Participación: coste en capital en riesgo. El slashing castiga y la plataforma de staking concentra.",
+          "guia": "g1"
+        },
+        {
+          "id": "cu1-3",
+          "t": "num",
+          "q": "En una red pequeña y ficticia de prueba de participación hay 400 millones de $ depositados. ¿Cuántos millones de $ habría que controlar para tener el 51 % de lo depositado? Responde en millones de $.",
+          "unit": "mill. $",
+          "a": 204,
+          "why": "400 × 0,51 = 204 millones de $. Y comprarlos sube su precio: el ataque se encarece mientras compras.",
+          "guia": "g2"
+        },
+        {
+          "id": "cu1-4",
+          "t": "num",
+          "q": "En una red ficticia, un validador tiene 50 monedas depositadas y pierde 5 de ellas por firmar dos bloques contradictorios. ¿Qué porcentaje de su depósito pierde?",
+          "unit": "%",
+          "a": 10,
+          "why": "5 ÷ 50 = 0,10: un 10 % del depósito. Ese slashing hace caro el mal comportamiento.",
+          "tol": 0.005,
+          "guia": "g2"
+        },
+        {
+          "id": "cu1-5",
+          "t": "choice",
+          "q": "¿Por qué atacar una red de prueba de participación puede salir caro aunque se logre comprar la mayoría de las monedas?",
+          "opts": [
+            "Porque las monedas depositadas no se pueden comprar en ninguna plataforma",
+            "Porque comprar tantas monedas sube su precio y, si se detecta el ataque, el depósito puede perderse",
+            "Porque los validadores honestos cobran el doble por cada bloque durante el ataque",
+            "Porque la red desactiva automáticamente las monedas de quien tenga más del 10 %"
+          ],
+          "a": 1,
+          "why": "El atacante paga un precio creciente por comprar y arriesga perder el depósito si lo castigan.",
+          "guia": "g2",
+          "porque": [
+            "Las monedas depositadas son monedas normales: se pueden comprar como cualquier otra.",
+            null,
+            "Los validadores honestos no cobran el doble: la recompensa por bloque no cambia por el ataque.",
+            "Las redes no desactivan monedas por tener más del 10 %: no existe esa regla automática."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "cu2",
+      "title": "Quién manda y qué rinde",
+      "ex": [
+        {
+          "id": "cu2-1",
+          "t": "choice",
+          "q": "Dos grupos de minería suman el 60 % de la potencia de una red de prueba de trabajo. ¿Qué riesgo supone?",
+          "opts": [
+            "Que los bloques dejen de tener recompensa",
+            "Que podrían coordinarse y controlar la mayoría de la red",
+            "Que la red pase sola a prueba de participación",
+            "Ninguno: un grupo de minería no puede coordinarse"
+          ],
+          "a": 1,
+          "why": "Con más de la mitad de la potencia, dos grupos coordinados podrían falsear la cadena: la concentración es un riesgo.",
+          "guia": "g3",
+          "porque": [
+            "La recompensa por bloque sigue existiendo; el problema es quién controla la red, no cuánto se paga.",
+            null,
+            "Una red de prueba de trabajo no cambia sola de sistema: eso requiere una decisión de la comunidad.",
+            "Los grupos de minería sí pueden coordinarse, y eso es justo el riesgo de la concentración."
+          ]
+        },
+        {
+          "id": "cu2-2",
+          "t": "num",
+          "q": "Tres plataformas de staking reúnen el 20 %, el 18 % y el 17 % de las monedas depositadas en una red. ¿Qué porcentaje de lo depositado suman las tres? Responde en %.",
+          "unit": "%",
+          "a": 55,
+          "why": "20 + 18 + 17 = 55 %: más de la mitad en tres manos. La participación también tiende a concentrarse.",
+          "guia": "g3"
+        },
+        {
+          "id": "cu2-3",
+          "t": "choice",
+          "q": "¿Qué afirmación sobre el consumo de energía de las dos pruebas es correcta?",
+          "opts": [
+            "La prueba de participación consume tanta electricidad como la de trabajo",
+            "La prueba de trabajo no consume energía: solo usa memoria",
+            "El consumo de las redes de cadena de bloques no se puede medir",
+            "La de trabajo se protege gastando energía y la de participación gasta mucho menos"
+          ],
+          "a": 3,
+          "why": "Es el debate: para unos, la energía es el coste que protege la red; para otros, un desperdicio que la participación evita.",
+          "guia": "g3",
+          "porque": [
+            "Falso: la prueba de participación no depende de gastar electricidad en cálculos y consume mucho menos.",
+            "Falso: la prueba de trabajo consume mucha electricidad; ahí está su coste de seguridad.",
+            "Falso: el consumo se estima con la potencia de las máquinas y su electricidad, aunque con márgenes de error.",
+            null
+          ]
+        },
+        {
+          "id": "cu2-4",
+          "t": "num",
+          "q": "Una red paga un 5 % anual a quien hace staking y el 60 % de las monedas está en staking. Todo el pago sale de monedas nuevas. ¿En qué porcentaje crece la oferta total al año? Responde en %.",
+          "unit": "%",
+          "a": 3,
+          "why": "5 % × 60 % = 3 %: la oferta crece un 3 %. La rentabilidad del staking es en buena parte emisión nueva.",
+          "guia": "g4"
+        },
+        {
+          "id": "cu2-5",
+          "t": "num",
+          "q": "Con la oferta total creciendo un 3 % y un pago del 5 % por staking, ¿en qué porcentaje aumenta aproximadamente tu parte del total si haces staking? Responde en % (aproximación: 5 − 3).",
+          "unit": "%",
+          "a": 2,
+          "why": "Aproximación: 5 − 3 = 2 %. Exacto: 1,05 ÷ 1,03 − 1 ≈ 1,9 %. Quien no hace staking pierde en torno al 3 % de peso: se diluye.",
+          "guia": "g4",
+          "tol": 0.1
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

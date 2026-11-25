@@ -183,7 +183,8 @@
    "spread de crédito",
    "spread de débito",
    "spread vertical",
-   "un spread"
+   "un spread",
+   "spread diagonal"
   ]
  },
  {
@@ -1361,5 +1362,44 @@
  {
   "termino": "sesgo de supervivencia",
   "d": "Error de mirar solo lo que sigue existiendo (fondos, empresas, personas con éxito) y olvidar lo que desapareció: los resultados parecen mejores de lo que fueron."
+ },
+ {
+  "termino": "orden periódica",
+  "alias": [
+   "órdenes periódicas"
+  ],
+  "d": "Orden que se repite sola, el mismo día de cada mes y por un importe fijo: una transferencia o una compra de un fondo."
+ },
+ {
+  "termino": "pivote de bolsillo",
+  "alias": [
+   "pivotes de bolsillo"
+  ],
+  "d": "Día alcista cuyo volumen supera al del mayor día bajista de las 10 sesiones anteriores. Criterio de Morales y Kacher para entrar antes de la ruptura."
+ },
+ {
+  "termino": "spread diagonal",
+  "alias": [
+   "spreads diagonales"
+  ],
+  "d": "Estrategia con opciones que compra una call a largo plazo y vende calls a corto plazo con un ejercicio más alto. Su pérdida máxima es lo pagado neto."
+ },
+ {
+  "termino": "slashing",
+  "d": "Penalización en la prueba de participación: el validador que hace trampas pierde parte de su depósito."
+ },
+ {
+  "termino": "validador",
+  "alias": [
+   "validadores"
+  ],
+  "d": "En la prueba de participación, quien deposita monedas como garantía para validar bloques y cobra una recompensa."
+ },
+ {
+  "termino": "grupo de minería",
+  "alias": [
+   "grupos de minería"
+  ],
+  "d": "Conjunto de mineros que suman su potencia y se reparten la recompensa. Si pocos grupos suman la mayoría, la red se concentra."
  }
 ]

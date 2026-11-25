@@ -1,0 +1,211 @@
+{
+  "n": 15,
+  "id": "automatizar",
+  "track": "basico",
+  "title": "Automatiza tu aportación",
+  "blurb": "Una orden periódica el día siguiente a cobrar: pagarte primero, el efecto del tiempo y cuándo tocar el plan.",
+  "gate": false,
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Págate primero con una orden periódica",
+      "texto": "Una orden periódica mueve dinero sola, el mismo día de cada mes. Prográmala el día siguiente a cobrar: el dinero sale antes de que puedas gastarlo.",
+      "ejemplo": "Cobras 2.000 € el día 1 y programas 100 € el día 2: el 5 % se invierte antes de gastar nada."
+    },
+    {
+      "id": "g2",
+      "titulo": "Importe fijo y una sola decisión",
+      "texto": "Elige un importe que no te agobie y no lo decidas cada mes. Automatizar quita la emoción: ni esperas el mejor momento ni dudas cuando cae la bolsa.",
+      "ejemplo": "100 € al mes durante 10 años: 12.000 € aportados sin una sola decisión mensual."
+    },
+    {
+      "id": "g3",
+      "titulo": "El tiempo hace el trabajo",
+      "texto": "Con una aportación fija, parte de lo que acabas teniendo son ganancias, y pesan más cuanto más dura el plan. Supone una rentabilidad constante, que en la realidad no existe.",
+      "ejemplo": "Con 100 € al mes (5 % anual, con interés mensual) tienes unos 15.500 € a 10 años (3.500 € de ganancia) y unos 41.100 € a 20 años (17.100 €)."
+    },
+    {
+      "id": "g4",
+      "titulo": "Sube con tu sueldo y revisa cada año",
+      "texto": "Cuando cobres más, sube la orden en la misma proporción. Revisa importe, costes y reparto una vez al año; no lo toques por los titulares.",
+      "ejemplo": "Sueldo de 2.000 € a 2.200 €: el 5 % pasa de 100 € a 110 €."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "am1",
+      "title": "Que se haga solo",
+      "ex": [
+        {
+          "id": "am1-1",
+          "t": "choice",
+          "q": "Cobras tu nómina el día 1 de cada mes y quieres aportar sin depender de tu fuerza de voluntad. ¿Qué día programas la orden periódica?",
+          "opts": [
+            "El día 28, cuando ya sabes lo que te ha sobrado",
+            "El día 15, a mitad de mes, cuando pasan las facturas",
+            "El día 2, justo después de cobrar",
+            "Ninguno: la haces a mano cada mes si te acuerdas"
+          ],
+          "a": 2,
+          "why": "Programada el día 2, la aportación sale antes de que el dinero se gaste: te pagas primero.",
+          "guia": "g1",
+          "porque": [
+            "Al final del mes casi nunca sobra nada: el dinero ya se ha gastado y la aportación se queda sin hacer.",
+            "A mitad de mes ya has pagado parte de los gastos; el ahorro compite con ellos en lugar de salir primero.",
+            null,
+            "Depende de tu memoria y de tu ánimo cada mes; una orden periódica elimina esa decisión."
+          ]
+        },
+        {
+          "id": "am1-2",
+          "t": "num",
+          "q": "Cobras 2.000 € netos al mes y programas una orden periódica de 100 €. ¿Qué porcentaje de tu sueldo aportas? Responde en %.",
+          "unit": "%",
+          "a": 5,
+          "why": "100 ÷ 2.000 = 0,05: aportas el 5 % de lo que cobras, una cifra que cuesta poco notar.",
+          "guia": "g1"
+        },
+        {
+          "id": "am1-3",
+          "t": "slide",
+          "q": "Cobras 2.000 € netos al mes y quieres aportar el 5 % con una orden periódica. Elige el importe mensual de la orden.",
+          "label": "Orden mensual",
+          "min": 0,
+          "max": 400,
+          "step": 20,
+          "start": 40,
+          "a": 100,
+          "unit": "€",
+          "why": "El 5 % de 2.000 € son 100 € al mes, 1.200 € al año.",
+          "show": [
+            {
+              "label": "Porcentaje del sueldo",
+              "k": 0.05,
+              "b": 0,
+              "unit": "%",
+              "dec": 1
+            },
+            {
+              "label": "Aportado al año",
+              "k": 12,
+              "b": 0,
+              "unit": "€"
+            }
+          ],
+          "guia": "g1"
+        },
+        {
+          "id": "am1-4",
+          "t": "num",
+          "q": "Programas una orden periódica de 100 € al mes y la mantienes 10 años sin tocarla. ¿Cuántos miles de euros habrás aportado en total?",
+          "unit": "mil €",
+          "a": 12,
+          "why": "100 € × 12 meses × 10 años = 12.000 €, es decir, 12 mil €, sin una sola decisión mensual.",
+          "guia": "g2"
+        },
+        {
+          "id": "am1-5",
+          "t": "choice",
+          "q": "Una orden periódica de importe fijo se ejecuta cada mes, suba o baje la bolsa. ¿Qué evita sobre todo?",
+          "opts": [
+            "Que el fondo caiga de valor cuando la bolsa baja",
+            "Decidir cada mes por miedo o por euforia",
+            "Pagar impuestos cuando el fondo gana",
+            "Tener que elegir un fondo"
+          ],
+          "a": 1,
+          "why": "Automatizar quita la decisión mensual: no esperas el mejor momento ni te frena una mala racha.",
+          "guia": "g2",
+          "porque": [
+            "La orden no impide las caídas: el fondo sigue bajando cuando la bolsa baja, pero compras más barato.",
+            null,
+            "Las ganancias del fondo siguen tributando igual, con orden periódica o sin ella.",
+            "El fondo hay que elegirlo antes de programar la orden; automatizar no lo hace por ti."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "am2",
+      "title": "Con los años y los cambios",
+      "ex": [
+        {
+          "id": "am2-1",
+          "t": "num",
+          "q": "Aportas 100 € al mes durante 10 años: 12.000 € en total. Con una rentabilidad constante (5 % anual, con interés mensual; simplificación: en la realidad cambia cada año) acabas con unos 15.500 €. ¿Cuántos miles de euros de ganancia son? Un decimal.",
+          "unit": "mil €",
+          "a": 3.5,
+          "why": "15.500 − 12.000 = 3.500 €, es decir, 3,5 mil €. Cifras redondeadas y rentabilidad no garantizada.",
+          "tol": 0.06,
+          "guia": "g3"
+        },
+        {
+          "id": "am2-2",
+          "t": "num",
+          "q": "Aportas 100 € al mes durante 20 años: 24.000 € en total. Con la misma rentabilidad constante (5 % anual, con interés mensual) acabas con unos 41.100 €. ¿Cuántos miles de euros de ganancia son? Un decimal.",
+          "unit": "mil €",
+          "a": 17.1,
+          "why": "41.100 − 24.000 = 17.100 €. Doblar el plazo multiplica la ganancia casi por 5 (de 3,5 a 17,1 mil €), porque lo ganado también rinde. Cifras redondeadas.",
+          "tol": 0.06,
+          "guia": "g3"
+        },
+        {
+          "id": "am2-3",
+          "t": "num",
+          "q": "Tu sueldo neto sube de 2.000 € a 2.200 € al mes y sigues aportando el 5 % de lo que cobras. ¿A cuántos euros al mes subes la orden periódica?",
+          "unit": "€",
+          "a": 110,
+          "why": "2.200 × 0,05 = 110 €. Subirla en la misma proporción que el sueldo mantiene el esfuerzo igual y hace crecer el ahorro.",
+          "guia": "g4"
+        },
+        {
+          "id": "am2-4",
+          "t": "choice",
+          "q": "La bolsa cae un 10 % en un mes y los titulares hablan de crisis. Tus ingresos y gastos no han cambiado y tienes una orden periódica de 100 € al mes hacia un fondo indexado. ¿Qué haces?",
+          "opts": [
+            "La pausas hasta que los titulares mejoren",
+            "Cambias el importe cada mes según el titular",
+            "La cancelas y guardas el dinero en efectivo",
+            "La dejas como está y la revisas una vez al año"
+          ],
+          "a": 3,
+          "why": "Si tu situación no ha cambiado, el plan tampoco: mientras dure la caída, la orden compra más barato y la revisión es anual.",
+          "guia": "g4",
+          "porque": [
+            "Pausarla por un titular es decidir con miedo: dejas de comprar justo cuando el precio está más bajo.",
+            "Cambiar el importe cada mes según las noticias recupera la emoción que la orden periódica quería quitar.",
+            "Cancelar y pasar a efectivo convierte una caída temporal en una decisión de vender sin que haya cambiado tu situación.",
+            null
+          ]
+        },
+        {
+          "id": "am2-5",
+          "t": "match",
+          "q": "Empareja cada situación con lo que haces con tu orden periódica.",
+          "pairs": [
+            [
+              "Cobras más que el año pasado",
+              "Subir la orden en la misma proporción"
+            ],
+            [
+              "Un titular alarmista sobre la bolsa",
+              "Dejarla como está"
+            ],
+            [
+              "Ha pasado un año",
+              "Revisar importe, costes y reparto"
+            ],
+            [
+              "Un gasto imprevisto grande",
+              "Pagarlo con el colchón y seguir con el plan"
+            ]
+          ],
+          "why": "Solo cambian la orden tu situación y tus metas (sueldo, gastos, un año de plan), no el ruido de los mercados.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

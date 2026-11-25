@@ -1,0 +1,194 @@
+{
+  "n": 15,
+  "id": "opdiagonal",
+  "track": "derivados",
+  "title": "Spread diagonal",
+  "blurb": "Una call a largo plazo y calls vendidas cada mes: ingreso frente a theta, techo y diferencias con las acciones.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "La estructura",
+      "texto": "Un spread diagonal compra una call a largo plazo, muy dentro del dinero, y vende cada mes una call fuera del dinero a 30-45 días. Lo máximo que pierdes es lo pagado neto.",
+      "ejemplo": "Acción a 30 $. Compras la call de 24 $ a 18 meses por 7,50 $ y vendes la de 33 $ a 30 días por 0,50 $: pagas 7,00 $, 700 $ por contrato."
+    },
+    {
+      "id": "g2",
+      "titulo": "Ingreso frente a theta",
+      "texto": "La call vendida cobra prima y pierde valor deprisa; la larga también pierde, pero despacio. Si la prima mensual supera la theta mensual de la larga, el spread diagonal rinde cada mes.",
+      "ejemplo": "Prima de 0,50 $; la larga pierde 0,005 $ al día, 0,15 $ al mes. Neto: 0,35 $, 35 $ por contrato, un 5 % de 700 $."
+    },
+    {
+      "id": "g3",
+      "titulo": "Si sube: techo y rolar",
+      "texto": "Por encima del ejercicio vendido, lo que gana la larga lo pierde la corta: el techo ronda la diferencia entre ejercicios más el valor temporal de la larga (aquí 1 $). Puedes rolarla.",
+      "ejemplo": "Corta de 33 $ al vencer: con la acción en 39 $, 16 − 6 = 10 $; en 45 $, 22 − 12 = 10 $. Máximo, con esa simplificación: 300 $."
+    },
+    {
+      "id": "g4",
+      "titulo": "No es una call cubierta",
+      "texto": "Con acciones pones mucho más capital y cobras dividendos. El spread diagonal usa menos, pero no cobra dividendos y la call larga caduca.",
+      "ejemplo": "100 acciones a 30 $ cuestan 3.000 $; el spread diagonal, 700 $ (23,3 %). Dividendo de 0,60 $: 60 $ al año que no cobras."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "op39",
+      "title": "Montar el spread diagonal",
+      "ex": [
+        {
+          "id": "op39-1",
+          "t": "num",
+          "q": "Una acción cotiza a 30 $. Compras una call con ejercicio 24 $ a 18 meses por 7,50 $ y vendes una call con ejercicio 33 $ a 30 días por 0,50 $ (cada contrato cubre 100 acciones). Si la acción se hunde y la call larga acaba sin valor, ¿cuántos dólares pierdes como máximo por contrato, contando solo la prima de este primer mes? Responde en $.",
+          "unit": "$",
+          "a": 700,
+          "why": "Pagas 7,50 − 0,50 = 7,00 $ por acción, 700 $ por contrato. Es lo máximo que pierdes con ese spread diagonal.",
+          "guia": "g1"
+        },
+        {
+          "id": "op39-2",
+          "t": "choice",
+          "q": "¿Qué compras y qué vendes en un spread diagonal con calls?",
+          "opts": [
+            "Compras 100 acciones y vendes una call a 30 días",
+            "Compras una call a 30 días y vendes una call a 18 meses con el mismo ejercicio",
+            "Compras una call y una put con el mismo ejercicio y vencimiento",
+            "Compras una call a 1-2 años muy dentro del dinero y vendes una call fuera del dinero a 30-45 días"
+          ],
+          "a": 3,
+          "why": "La call larga hace de sustituta de las acciones y la corta, más alta y cercana, cobra una prima cada mes.",
+          "guia": "g1",
+          "porque": [
+            "Eso es una call cubierta: usa acciones, no una call larga, y no es un spread diagonal.",
+            "Está al revés: el spread diagonal compra el plazo largo y vende el corto, y con ejercicios distintos.",
+            "Eso es un straddle: dos opciones de distinto tipo, no un spread diagonal.",
+            null
+          ]
+        },
+        {
+          "id": "op39-3",
+          "t": "num",
+          "q": "Vendes cada mes la call de 33 $ por 0,50 $. Tu call larga pierde 0,005 $ al día por theta (30 días al mes). ¿Cuántos dólares netos ingresas al mes por contrato de 100 acciones? Responde en $.",
+          "unit": "$",
+          "a": 35,
+          "why": "La larga pierde 0,005 × 30 = 0,15 $ al mes. Neto: 0,50 − 0,15 = 0,35 $ por acción, 35 $ por contrato.",
+          "guia": "g2"
+        },
+        {
+          "id": "op39-4",
+          "t": "num",
+          "q": "Ese spread diagonal te costó 700 $ por contrato y ingresas 35 $ netos al mes. ¿Qué porcentaje de lo pagado ganas al mes? Responde en %.",
+          "unit": "%",
+          "a": 5,
+          "why": "35 ÷ 700 = 0,05: un 5 % al mes. Solo si la prima vendida sigue superando la theta de la larga.",
+          "guia": "g2"
+        },
+        {
+          "id": "op39-5",
+          "t": "choice",
+          "q": "¿Qué tiene que ocurrir para que un spread diagonal rinda cada mes?",
+          "opts": [
+            "Que la call vendida valga cada vez más durante el mes",
+            "Que la acción baje con fuerza durante el mes",
+            "Que la prima cobrada supere lo que pierde la call larga por theta",
+            "Que las dos calls tengan el mismo vencimiento"
+          ],
+          "a": 2,
+          "why": "La larga pierde poco al día y la corta cobra mucho más: la diferencia es tu ingreso neto mensual.",
+          "guia": "g2",
+          "porque": [
+            "Una call vendida que gana valor te hace perder dinero: lo que buscas es que pierda valor.",
+            "Una caída fuerte reduce el valor de la call larga más de lo que cobras con la corta.",
+            null,
+            "Si tuvieran el mismo vencimiento sería un spread vertical, no un spread diagonal."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "op40",
+      "title": "Techo, rolar y frente a las acciones",
+      "ex": [
+        {
+          "id": "op40-1",
+          "t": "num",
+          "q": "Al vencer la call vendida de 33 $, la acción está en 39 $. Tu call larga de 24 $ vale 16 $ (simplificación: el valor temporal de la larga se queda en 1 $) y la corta vale 6 $. Si cierras las dos, ¿cuántos dólares por acción vale ese spread diagonal? Responde en $.",
+          "unit": "$",
+          "a": 10,
+          "why": "Vendes la larga por 16 $ y recompras la corta por 6 $: 16 − 6 = 10 $ por acción.",
+          "guia": "g3"
+        },
+        {
+          "id": "op40-2",
+          "t": "num",
+          "q": "Ese spread diagonal te costó 7,00 $ por acción y ahora vale 10 $. ¿Cuántos dólares ganas por contrato de 100 acciones? Responde en $.",
+          "unit": "$",
+          "a": 300,
+          "why": "(10 − 7) × 100 = 300 $. Aproximación, con el valor temporal de la larga en 1 $ y sin contar las primas de meses anteriores ni comisiones.",
+          "guia": "g3"
+        },
+        {
+          "id": "op40-3",
+          "t": "choice",
+          "q": "Con la acción en 45 $ al vencer la call vendida de 33 $, la larga de 24 $ vale 22 $ (simplificación: el valor temporal de la larga se queda en 1 $) y la corta, 12 $: el spread diagonal vale 10 $, igual que con la acción en 39 $. ¿Qué indica?",
+          "opts": [
+            "Que la call larga ha dejado de subir con la acción",
+            "Que por encima del ejercicio vendido la ganancia deja de crecer: hay un techo",
+            "Que la call vendida no puede ejercerse sobre ti",
+            "Que la ganancia sigue creciendo un dólar por cada dólar que sube la acción"
+          ],
+          "a": 1,
+          "why": "Lo que gana la larga al subir, lo pierde la corta: el techo ronda 9 $ de diferencia entre ejercicios más 1 $ de valor temporal.",
+          "guia": "g3",
+          "porque": [
+            "Falso: la larga pasa de 16 a 22 $ al subir la acción; es la corta la que compensa esa subida.",
+            null,
+            "Falso: la call vendida puede ejercerse sobre ti; por eso la ganancia tiene techo y conviene rolar.",
+            "Falso: con la acción en 45 $ el valor sigue en 10 $; ya no gana nada más por subir."
+          ]
+        },
+        {
+          "id": "op40-4",
+          "t": "choice",
+          "q": "Tienes un spread diagonal sobre una acción que paga 0,60 $ de dividendo al año por acción. Cuesta 700 $ por contrato; 100 acciones, 3.000 $. ¿Qué diferencia hay con una call cubierta sobre 100 acciones?",
+          "opts": [
+            "Ninguna: la call larga se comporta exactamente como las acciones",
+            "Usa menos capital, pero no cobra dividendos y la larga caduca",
+            "El spread diagonal no tiene pérdida máxima y la call cubierta sí",
+            "La call cubierta puede ejercerse y el spread diagonal no"
+          ],
+          "a": 1,
+          "why": "700 ÷ 3.000 = 23,3 % del capital. A cambio, no cobras el dividendo (60 $ al año) y la larga caduca; las acciones no.",
+          "guia": "g4",
+          "porque": [
+            "Falso: la call larga no cobra dividendos, caduca y, con la acción en caída, se acerca a cero.",
+            null,
+            "Falso: el spread diagonal tiene pérdida máxima, lo pagado neto (700 $ por contrato).",
+            "Falso: la call vendida de ambas estrategias puede ejercerse, y la larga también."
+          ]
+        },
+        {
+          "id": "op40-5",
+          "t": "choice",
+          "q": "La acción ha subido a 40 $ y tu call vendida de 33 $ vale mucho a pocos días de vencer. ¿Qué es rolarla para seguir con el spread diagonal?",
+          "opts": [
+            "Vender la call larga y quedarte solo con la corta",
+            "Esperar a que la acción baje hasta el ejercicio sin tocar nada",
+            "Ejercer la call larga para cobrar la prima de la corta",
+            "Recomprar la call de 33 $ y vender otra posterior, normalmente más alta"
+          ],
+          "a": 3,
+          "why": "Rolar es cerrar la corta y abrir otra posterior; con la acción arriba, un ejercicio más alto sube el techo, aunque recomprar cuesta dinero.",
+          "guia": "g3",
+          "porque": [
+            "Eso deja la call corta sin cubrir: aumentaría el riesgo, no sería rolar.",
+            "Sin recomprar, la call vendida sigue dentro del dinero y puede ejercerse sobre ti.",
+            "Ejercer la larga pierde su valor temporal y no cobra ninguna prima de la corta.",
+            null
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

@@ -1,0 +1,232 @@
+{
+  "n": 13,
+  "id": "pocketpivot",
+  "track": "tecnico",
+  "title": "Pivote de bolsillo",
+  "blurb": "Una entrada temprana dentro de la base, antes de la ruptura: la regla del volumen de Morales y Kacher y dónde no vale.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "La regla del volumen",
+      "texto": "Según Morales y Kacher, un pivote de bolsillo es un día alcista cuyo volumen supera al del mayor día bajista de las 10 sesiones anteriores. Es una entrada temprana, antes de la ruptura.",
+      "ejemplo": "El mayor día bajista de las 10 sesiones previas tuvo 180.000 acciones. Hoy, día alcista con 210.000: cumple. Con 150.000, no."
+    },
+    {
+      "id": "g2",
+      "titulo": "Dónde se busca",
+      "texto": "El método lo busca dentro de una base y cerca de la media de 10 o de 50 sesiones, no tras una subida larga. Cerca de la media, el stop puede ir justo debajo.",
+      "ejemplo": "Cierre a 50,40 € con la media de 10 sesiones en 50,00 €: un 0,8 % por encima de ella."
+    },
+    {
+      "id": "g3",
+      "titulo": "Ventaja y límite",
+      "texto": "Entras antes que quien espera la ruptura y con el stop más cerca. A cambio, la señal está menos confirmada: el precio aún no ha superado el pivote.",
+      "ejemplo": "Pivote en 52,00 € y stop en 48,90 €. Desde 50,40 € arriesgas 1,50 € por acción; comprando la ruptura a 52,10 €, 3,20 €."
+    },
+    {
+      "id": "g4",
+      "titulo": "Cuándo no vale",
+      "texto": "No vale en una acción extendida, muy por encima de su media, ni en tendencia bajista, bajo una media de 50 sesiones que apunta abajo. Ahí un día de volumen alto suele ser un rebote.",
+      "ejemplo": "Cierre a 56,00 € con la media de 10 sesiones en 50,00 €: un 12 % por encima. Aunque el volumen cumpla, no cuenta."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "pk1",
+      "title": "La regla del volumen",
+      "ex": [
+        {
+          "id": "pk1-1",
+          "t": "tap",
+          "q": "Una acción lleva 15 sesiones en una base, cerca de su media de 10 sesiones. Toca la vela que cumple la regla del pivote de bolsillo: día alcista con más volumen que el mayor día bajista de las 10 sesiones anteriores.",
+          "chart": {
+            "type": "candles",
+            "data": [
+              [51.0,51.1,50.2,50.4],
+              [50.4,50.9,50.3,50.7],
+              [50.7,50.8,50.1,50.2],
+              [50.2,50.6,50.1,50.5],
+              [50.5,51.2,50.4,51.0],
+              [51.0,51.1,50.2,50.3],
+              [50.3,50.8,50.2,50.6],
+              [50.6,50.7,49.9,50.0],
+              [50.0,50.5,49.9,50.3],
+              [50.3,50.4,49.7,49.8],
+              [49.8,49.9,49.3,49.5],
+              [49.5,49.9,49.4,49.7],
+              [49.7,50.7,49.6,50.6],
+              [50.6,50.7,50.1,50.2],
+              [50.2,50.6,50.1,50.5]
+            ],
+            "vol": [260,120,150,130,230,180,140,160,125,110,100,150,210,120,160],
+            "h": 270,
+            "alt": "Gráfico de quince velas con barras de volumen bajo el precio"
+          },
+          "a": 12,
+          "why": "Vela 13: sube con 210, por encima del mayor día bajista de sus 10 sesiones previas (180, vela 6). La vela 5 tiene más volumen (230), pero entre sus sesiones previas está la caída de 260 de la vela 1.",
+          "guia": "g1"
+        },
+        {
+          "id": "pk1-2",
+          "t": "choice",
+          "q": "Según el método de Morales y Kacher, ¿qué define un pivote de bolsillo?",
+          "opts": [
+            "Un día alcista con más volumen que la media de 50 sesiones, sin mirar los días bajistas",
+            "Un día alcista cuyo volumen supera al mayor día bajista de las 10 sesiones anteriores",
+            "Una ruptura del máximo de la base con el doble del volumen medio",
+            "Un día bajista con el mayor volumen de las últimas 10 sesiones"
+          ],
+          "a": 1,
+          "why": "La regla compara el volumen del día alcista con el del mayor día bajista de las 10 sesiones anteriores.",
+          "guia": "g1",
+          "porque": [
+            "Esa es una condición de la ruptura, no del pivote de bolsillo: aquí la referencia son los días bajistas de las 10 sesiones previas.",
+            null,
+            "Eso describe una ruptura confirmada; el pivote de bolsillo se produce antes, dentro de la base.",
+            "Un día bajista con mucho volumen es justo la referencia que el día alcista debe superar, no la señal."
+          ]
+        },
+        {
+          "id": "pk1-3",
+          "t": "num",
+          "q": "Entre los días bajistas de las 10 sesiones anteriores, el de mayor volumen tuvo 180.000 acciones. Hoy la acción sube con 210.000 acciones. ¿En qué porcentaje supera hoy ese volumen? Un decimal.",
+          "unit": "%",
+          "a": 16.7,
+          "why": "(210.000 − 180.000) ÷ 180.000 = 0,167: un 16,7 % más. Supera la referencia, así que cumple la regla del volumen.",
+          "tol": 0.06,
+          "guia": "g1"
+        },
+        {
+          "id": "pk1-4",
+          "t": "choice",
+          "q": "Los días bajistas de las 10 sesiones anteriores tuvieron 120.000, 180.000 y 140.000 acciones. Hoy la acción sube con 150.000 acciones. ¿Cumple la regla del volumen del pivote de bolsillo?",
+          "opts": [
+            "No: 150.000 no supera los 180.000 del mayor día bajista",
+            "Sí: supera el volumen de dos de los tres días bajistas",
+            "Sí: basta con que el día sea alcista y el volumen sea alto",
+            "Sí: supera la media de los tres días bajistas"
+          ],
+          "a": 0,
+          "why": "El listón es el mayor día bajista (180.000), no la media ni la mayoría; 150.000 se queda por debajo.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Superar a dos de los tres no basta: la regla exige superar al mayor de los días bajistas.",
+            "No basta con ser alcista y de volumen alto: tiene que superar al mayor día bajista previo.",
+            "La media (146.667) no es la referencia: el listón es el volumen más alto, 180.000."
+          ]
+        },
+        {
+          "id": "pk1-5",
+          "t": "choice",
+          "q": "¿Para qué sirve un pivote de bolsillo en el método de Morales y Kacher?",
+          "opts": [
+            "Para confirmar una ruptura que ya ha ocurrido con el doble del volumen medio",
+            "Para vender cuando el volumen alcista supera al de los días bajistas",
+            "Para entrar antes de la ruptura, con el stop más cerca del precio",
+            "Para comprar un rebote cuando el precio cae bajo su media de 50 sesiones"
+          ],
+          "a": 2,
+          "why": "Es una entrada temprana dentro de la base: se compra antes del pivote y el stop queda cerca de la media.",
+          "guia": "g3",
+          "porque": [
+            "Confirmar una ruptura que ya ocurrió es otra señal; el pivote de bolsillo llega antes de ella.",
+            "No es una señal de venta: es una señal de entrada.",
+            null,
+            "Un rebote bajo la media de 50 sesiones no es el contexto del método: se busca dentro de una base."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "pk2",
+      "title": "Dónde vale y dónde no",
+      "ex": [
+        {
+          "id": "pk2-1",
+          "t": "num",
+          "q": "Una acción cierra a 50,40 € y su media de 10 sesiones está en 50,00 €. ¿A qué porcentaje por encima de la media está? Un decimal.",
+          "unit": "%",
+          "a": 0.8,
+          "why": "(50,40 − 50,00) ÷ 50,00 = 0,008: un 0,8 %. Tan cerca de la media, el stop puede ir justo debajo.",
+          "tol": 0.06,
+          "guia": "g2"
+        },
+        {
+          "id": "pk2-2",
+          "t": "num",
+          "q": "El pivote de una base está en 52,00 € y el stop, en 48,90 €. Entrar con un pivote de bolsillo a 50,40 € o comprar la ruptura a 52,10 €: ¿cuántos euros por acción arriesgas de más en la ruptura? Responde en €.",
+          "unit": "€",
+          "a": 1.7,
+          "why": "Pivote de bolsillo: 50,40 − 48,90 = 1,50 €. Ruptura: 52,10 − 48,90 = 3,20 €. Diferencia: 1,70 €; con el pivote de bolsillo arriesgas menos de la mitad.",
+          "tol": 0.01,
+          "guia": "g3"
+        },
+        {
+          "id": "pk2-3",
+          "t": "slide",
+          "q": "Arriesgas 150 € en la operación, con entrada en 50,40 € y stop en 48,90 € (1,50 € por acción). Elige cuántas acciones compras.",
+          "label": "Acciones",
+          "min": 0,
+          "max": 200,
+          "step": 10,
+          "start": 40,
+          "a": 100,
+          "unit": "acciones",
+          "why": "150 € ÷ 1,50 € por acción = 100 acciones. En la ruptura, con 3,20 € por acción, solo caben 46.",
+          "show": [
+            {
+              "label": "Riesgo total",
+              "k": 1.5,
+              "b": 0,
+              "unit": "€"
+            }
+          ],
+          "guia": "g3"
+        },
+        {
+          "id": "pk2-4",
+          "t": "choice",
+          "q": "Una acción cierra a 56,00 € tras una subida larga y su media de 10 sesiones está en 50,00 €. Hoy sube con más volumen que cualquier día bajista de las 10 sesiones anteriores. ¿Cuenta como pivote de bolsillo?",
+          "opts": [
+            "Sí: cuanto más lejos de la media, más fuerte es la señal",
+            "No: está extendida, un 12 % por encima de su media de 10 sesiones",
+            "Sí: cumple el volumen y eso basta",
+            "Sí, pero solo si cierra bajo su media de 50 sesiones"
+          ],
+          "a": 1,
+          "why": "56 ÷ 50 = 1,12: un 12 % sobre la media. El pivote de bolsillo se busca cerca de ella; lejos, es una acción extendida.",
+          "guia": "g4",
+          "porque": [
+            "Es al revés: cuanto más lejos de la media, más extendida está y peor es el contexto.",
+            null,
+            "Cumplir el volumen no basta: también hay que estar cerca de la media y dentro de una base.",
+            "Estar bajo la media de 50 sesiones apunta a tendencia bajista, que es donde el método no lo usa."
+          ]
+        },
+        {
+          "id": "pk2-5",
+          "t": "choice",
+          "q": "Una acción lleva tres meses cayendo y cotiza bajo su media de 50 sesiones, que apunta hacia abajo. Hoy sube con más volumen que cualquier día bajista de las 10 sesiones anteriores. ¿Cómo lo tratas según el método?",
+          "opts": [
+            "Como un pivote de bolsillo válido: el volumen cumple la regla",
+            "Como una ruptura confirmada por el volumen",
+            "Como un rebote en tendencia bajista, no como un pivote de bolsillo",
+            "Como una señal para añadir más acciones a una posición ya abierta"
+          ],
+          "a": 2,
+          "why": "La regla general del método lo busca en tendencia alcista y dentro de una base; en una caída lo trata como rebote.",
+          "guia": "g4",
+          "porque": [
+            "El volumen cumple, pero el contexto no: sin tendencia alcista ni base, la regla no se aplica.",
+            "No hay ruptura: el precio sigue bajo su media y lejos de cualquier base.",
+            null,
+            "Añadir a una posición abierta exige que ya gane; una acción en caída no es ese caso."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}
