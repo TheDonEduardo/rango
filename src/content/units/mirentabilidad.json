@@ -1,0 +1,203 @@
+{
+  "n": 25,
+  "id": "mirentabilidad",
+  "track": "pasiva",
+  "title": "Mide tu rentabilidad",
+  "blurb": "Rentabilidad por tiempo y por dinero, por qué la tuya puede ser peor que la del fondo y con qué compararla.",
+  "revisar": "2027-11",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Dos rentabilidades",
+      "texto": "La ponderada por tiempo encadena los rendimientos de cada periodo e ignora tus aportaciones: mide al fondo. La ponderada por dinero (TIR) cuenta cuándo y cuánto aportaste: mide cómo te ha ido a ti.",
+      "ejemplo": "10.000 € con +20 %, aportas 12.000 € y −10 %: 1,20 × 0,90 = +8 % por tiempo."
+    },
+    {
+      "id": "g2",
+      "titulo": "Por qué la tuya puede ser peor",
+      "texto": "Si aportas más dinero antes de una caída, esa caída pesa más en tu resultado que la subida anterior. Si aportas tras una subida y luego llega una caída, te perjudica.",
+      "ejemplo": "Has puesto 22.000 € y tienes 21.600 €: pierdes 400 € aunque el fondo ganó un 8 %."
+    },
+    {
+      "id": "g3",
+      "titulo": "Compara con el índice correcto",
+      "texto": "La referencia debe tener los mismos activos que tu cartera y los dividendos reinvertidos. Comparar con otro mercado o con bonos no dice nada.",
+      "ejemplo": "Con una TIR de −1,3 % y un +8 % por tiempo, la diferencia son 9,3 puntos: tus aportaciones, no el fondo."
+    },
+    {
+      "id": "g4",
+      "titulo": "Costes e impuestos",
+      "texto": "Mide siempre en neto: los costes ya van dentro del valor del fondo, y al vender tributas la ganancia. Compruébalo con la norma vigente.",
+      "ejemplo": "5.000 € al +7 % dan 350 €; con un 19 % de impuesto quedan 283,50 €."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "mr1",
+      "title": "Dos formas de medir",
+      "ex": [
+        {
+          "id": "mr1-1",
+          "t": "choice",
+          "q": "¿Qué mide la rentabilidad ponderada por tiempo?",
+          "opts": [
+            "Lo que ganas tú en euros, según cuándo aportaste",
+            "Lo que rinde la inversión, sin contar tus aportaciones",
+            "Solo lo ganado durante el último año",
+            "La rentabilidad después de impuestos"
+          ],
+          "a": 1,
+          "why": "Encadena los rendimientos de cada periodo y no depende de cuándo metiste o sacaste dinero. Por eso sirve para juzgar al fondo.",
+          "guia": "g1",
+          "porque": [
+            "Eso describe la ponderada por dinero, que sí depende de tus aportaciones.",
+            null,
+            "No se limita a un año: encadena todos los periodos.",
+            "No descuenta impuestos: mide el rendimiento antes de ellos."
+          ]
+        },
+        {
+          "id": "mr1-2",
+          "t": "num",
+          "q": "Empiezas con 10.000 € en un fondo. El primer año sube un 20 %; entonces aportas 12.000 € más y el segundo año baja un 10 %. ¿Cuál es la rentabilidad ponderada por tiempo de los dos años, en %?",
+          "unit": "%",
+          "a": 8,
+          "why": "1,20 × 0,90 = 1,08: un 8 %. Es lo que ha rendido el fondo, aportaras lo que aportaras.",
+          "guia": "g1"
+        },
+        {
+          "id": "mr1-3",
+          "t": "num",
+          "q": "Empiezas con 10.000 € en un fondo. El primer año sube un 20 %; entonces aportas 12.000 € más y el segundo año baja un 10 %. ¿Cuántos miles de euros tienes al final?",
+          "unit": "mil €",
+          "a": 21.6,
+          "why": "10.000 × 1,20 = 12.000; más 12.000 = 24.000; × 0,90 = 21.600 €, es decir, 21,6 mil €.",
+          "tol": 0.06,
+          "guia": "g2"
+        },
+        {
+          "id": "mr1-4",
+          "t": "num",
+          "q": "Has aportado 10.000 € y luego 12.000 € a un fondo, 22.000 € en total, y al final tienes 21.600 €. ¿Cuántos euros has perdido?",
+          "unit": "€",
+          "a": 400,
+          "why": "22.000 − 21.600 = 400 €. El fondo ganó un 8 % ponderado por tiempo, pero tú perdiste dinero.",
+          "guia": "g2"
+        },
+        {
+          "id": "mr1-5",
+          "t": "choice",
+          "q": "Empiezas con 10.000 €, el fondo sube un 20 %, aportas 12.000 € y baja un 10 %. Gana un 8 % ponderado por tiempo y tú pierdes dinero. ¿Qué ha pasado?",
+          "opts": [
+            "Que el fondo te cobra comisiones dobles",
+            "Que esa medida ignora el primer año",
+            "Que aportaste más dinero justo antes de la caída, y pesó más",
+            "Que la inflación se resta de tu cuenta y no de la del fondo"
+          ],
+          "a": 2,
+          "why": "La mayor aportación (12.000 €) llegó antes del −10 %. Tu rentabilidad pondera por dinero: la caída afectó a más euros que la subida.",
+          "guia": "g2",
+          "porque": [
+            "No hay comisiones dobles: el −10 % y el +20 % ya incluyen los costes.",
+            "La ponderada por tiempo usa los dos años: 1,20 × 0,90.",
+            null,
+            "La inflación no explica la diferencia: ambos cálculos son nominales."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "mr2",
+      "title": "Tu rentabilidad de verdad",
+      "ex": [
+        {
+          "id": "mr2-1",
+          "t": "choice",
+          "q": "Para saber cómo te ha ido a ti con tus aportaciones, ¿qué miras?",
+          "opts": [
+            "La ponderada por tiempo, porque cuenta tus aportaciones",
+            "La rentabilidad del índice, sin más",
+            "La ponderada por dinero (TIR), que tiene en cuenta cuándo aportaste",
+            "La del último mes"
+          ],
+          "a": 2,
+          "why": "La TIR cuenta cuánto dinero había en cada momento. La ponderada por tiempo no depende de tus aportaciones, y el índice ni siquiera es tuyo.",
+          "guia": "g1",
+          "porque": [
+            "La ponderada por tiempo no depende de tus aportaciones.",
+            "El índice no mide tus aportaciones ni tu cartera.",
+            null,
+            "Un mes es demasiado corto y no cuenta tus aportaciones."
+          ]
+        },
+        {
+          "id": "mr2-2",
+          "t": "num",
+          "q": "Tu ponderada por tiempo es del +8 % y tu ponderada por dinero, calculada con una calculadora financiera, del −1,3 %. ¿Cuántos puntos porcentuales las separan?",
+          "unit": "puntos",
+          "a": 9.3,
+          "why": "8 − (−1,3) = 9,3 puntos. La diferencia viene de cuándo y cuánto aportaste, no del fondo.",
+          "tol": 0.06,
+          "guia": "g3"
+        },
+        {
+          "id": "mr2-3",
+          "t": "choice",
+          "q": "Tu cartera es solo de acciones de todo el mundo, con los dividendos reinvertidos. ¿Con qué índice la comparas?",
+          "opts": [
+            "Con un índice de bonos del Tesoro",
+            "Con un índice mundial de acciones de rentabilidad total",
+            "Con el IBEX 35, aunque no tengas empresas españolas",
+            "Con el índice que más haya subido este año"
+          ],
+          "a": 1,
+          "why": "Compara con un índice con los mismos activos y con dividendos reinvertidos. Uno de bonos, otro mercado o el mejor del año no miden lo mismo.",
+          "guia": "g3",
+          "porque": [
+            "Los bonos no tienen los mismos activos que una cartera de acciones.",
+            null,
+            "El IBEX 35 es solo España: no se parece a una cartera de acciones mundiales.",
+            "Elegir el que más sube sesga la comparación a tu favor o en contra."
+          ]
+        },
+        {
+          "id": "mr2-4",
+          "t": "num",
+          "q": "Inviertes 5.000 € en un fondo que sube un 7 % en el año, con los costes ya descontados, y vendes todo. En España tributas un 19 % de la ganancia (tramo de hasta 6.000 €). ¿Cuántos euros te quedan de ganancia neta?",
+          "unit": "€",
+          "a": 283.5,
+          "why": "5.000 × 7 % = 350 €; 350 × (1 − 0,19) = 283,50 €. Mide siempre después de costes e impuestos.",
+          "tol": 0.06,
+          "guia": "g4"
+        },
+        {
+          "id": "mr2-5",
+          "t": "match",
+          "q": "Empareja cada medida con lo que responde.",
+          "pairs": [
+            [
+              "Ponderada por tiempo",
+              "Cómo lo ha hecho la inversión, sin contar tus aportaciones"
+            ],
+            [
+              "Ponderada por dinero (TIR)",
+              "Cómo te ha ido a ti, contando cuándo aportaste"
+            ],
+            [
+              "Índice de referencia",
+              "Con qué comparar, con los mismos activos que tu cartera"
+            ],
+            [
+              "Rentabilidad neta",
+              "Lo que queda después de costes e impuestos"
+            ]
+          ],
+          "why": "Cada medida responde a una pregunta distinta: el fondo, tú, la referencia y lo que de verdad te llevas.",
+          "guia": "g3"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

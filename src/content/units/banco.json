@@ -1,0 +1,201 @@
+{
+  "n": 9,
+  "id": "banco",
+  "track": "personal",
+  "title": "La cuenta bancaria por dentro",
+  "blurb": "Qué cuesta tu cuenta, cuánto pesa el descubierto, cómo comparar una cuenta remunerada y qué cubre el fondo de garantía.",
+  "revisar": "2027-11",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Qué cuesta la cuenta",
+      "texto": "Muchas cuentas cobran comisión de mantenimiento y de tarjeta, y la quitan si domicilias la nómina y algunos recibos. Suma todo al año, no al mes.",
+      "ejemplo": "3 € al mes de mantenimiento y 12 € de tarjeta: 3 × 12 + 12 = 48 € al año."
+    },
+    {
+      "id": "g2",
+      "titulo": "El descubierto",
+      "texto": "Estar en números rojos es un préstamo caro: se pagan intereses por cada día y, a menudo, una comisión por descubierto. Antes de usarlo, busca una alternativa más barata. Compruébalo con la norma vigente.",
+      "ejemplo": "500 € en descubierto un mes al 0,6 % mensual (7,2 % anual): 3 € de intereses."
+    },
+    {
+      "id": "g3",
+      "titulo": "Remunerada: mira la TAE",
+      "texto": "La TAE incluye comisiones y la frecuencia de pago; el TIN no. Con ella compara cuentas y calcula lo que ganas de verdad.",
+      "ejemplo": "TIN 2,4 % pagado cada mes = TAE 2,43 %: sobre 5.000 €, 121,5 €. Con TIN 2,5 % y 30 € de comisión sobre 3.000 €, quedan 45 €."
+    },
+    {
+      "id": "g4",
+      "titulo": "Fondo de garantía",
+      "texto": "En España el Fondo de Garantía de Depósitos cubre hasta 100.000 € por titular y entidad. No cubre fondos de inversión. Compruébalo con la norma vigente.",
+      "ejemplo": "80.000 € en cuenta y 50.000 € en depósito de la misma entidad: se cubren 100.000 €. Con otra entidad, otros 100.000 €."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "cn1",
+      "title": "Comisiones y descubierto",
+      "ex": [
+        {
+          "id": "cn1-1",
+          "t": "choice",
+          "q": "¿Qué suele hacer falta para que una cuenta no cobre comisión de mantenimiento?",
+          "opts": [
+            "Tener la cuenta abierta desde hace más de un año",
+            "Sacar siempre el dinero en ventanilla, en efectivo",
+            "Domiciliar la nómina y recibos, si la entidad lo exige",
+            "Que el Banco de España fije una comisión única"
+          ],
+          "a": 2,
+          "why": "Muchas entidades eximen de la comisión a quien domicilia la nómina y unos cuantos recibos. Las condiciones las fija cada entidad: léelas antes de abrir la cuenta.",
+          "guia": "g1",
+          "porque": [
+            "Un año de antigüedad por sí solo no suele eximir de la comisión.",
+            "Sacar efectivo en ventanilla no elimina la comisión de mantenimiento.",
+            null,
+            "La comisión la fija cada entidad: no hay una comisión única."
+          ]
+        },
+        {
+          "id": "cn1-2",
+          "t": "num",
+          "q": "Una cuenta cobra 3 € al mes de mantenimiento y 12 € al año por la tarjeta. ¿Cuántos euros te cuesta al año?",
+          "unit": "€",
+          "a": 48,
+          "why": "3 € × 12 meses = 36 €, más 12 € de la tarjeta = 48 €. Una comisión pequeña al mes pesa bastante al año.",
+          "guia": "g1"
+        },
+        {
+          "id": "cn1-3",
+          "t": "num",
+          "q": "Estás en descubierto 500 € durante un mes y la entidad cobra un 0,6 % mensual (un 7,2 % anual). ¿Cuántos euros de intereses pagas?",
+          "unit": "€",
+          "a": 3,
+          "why": "500 € × 0,6 % = 3 €. Parece poco, pero el coste suele venir también de una comisión por descubierto, que se suma a los intereses.",
+          "guia": "g2"
+        },
+        {
+          "id": "cn1-4",
+          "t": "choice",
+          "q": "¿Cómo conviene ver un descubierto en la cuenta?",
+          "opts": [
+            "Como un regalo del banco hasta fin de mes",
+            "Como un ahorro que rinde un interés alto",
+            "Como un depósito cubierto por el fondo de garantía",
+            "Como un préstamo muy caro, con intereses por cada día en rojo"
+          ],
+          "a": 3,
+          "why": "Gastar más de lo que hay es pedir dinero prestado, y los intereses del descubierto son de los más altos. Si te falta liquidez, suele salir mejor un préstamo pactado o ajustar gastos.",
+          "guia": "g2",
+          "porque": [
+            "El descubierto no es un regalo: genera intereses por cada día.",
+            "Estar en descubierto no ahorra nada: es una deuda, no un ahorro.",
+            "Un descubierto es una deuda, no un depósito: el fondo de garantía no lo cubre.",
+            null
+          ]
+        },
+        {
+          "id": "cn1-5",
+          "t": "match",
+          "q": "Empareja cada término de la cuenta con su significado.",
+          "pairs": [
+            [
+              "Comisión de mantenimiento",
+              "Lo que cobra el banco por tener la cuenta abierta"
+            ],
+            [
+              "Domiciliar",
+              "Hacer que un cobro o un pago pase por tu cuenta de forma automática"
+            ],
+            [
+              "Descubierto",
+              "Gastar más dinero del que hay en la cuenta"
+            ],
+            [
+              "Saldo medio",
+              "Promedio de lo que tienes en la cuenta durante un periodo"
+            ]
+          ],
+          "why": "Cada término es una pieza del coste o de las condiciones de la cuenta: mantenimiento, domiciliaciones, saldo medio y descubierto.",
+          "guia": "g1"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "cn2",
+      "title": "Cuenta remunerada y garantía",
+      "ex": [
+        {
+          "id": "cn2-1",
+          "t": "choice",
+          "q": "¿Qué cifra usas para comparar dos cuentas remuneradas?",
+          "opts": [
+            "El TIN, porque ya incluye todas las comisiones",
+            "La TAE, que incluye comisiones y la frecuencia de pago",
+            "Los años que lleva abierta la entidad",
+            "El número de oficinas de la entidad"
+          ],
+          "a": 1,
+          "why": "La TAE refleja lo que de verdad ganas en un año, con comisiones y con intereses pagados cada cierto tiempo. El TIN no incluye comisiones.",
+          "guia": "g3",
+          "porque": [
+            "El TIN no incluye las comisiones, por eso no basta.",
+            null,
+            "La antigüedad de la entidad no dice cuánto rinde tu dinero.",
+            "El número de oficinas no tiene relación con la rentabilidad."
+          ]
+        },
+        {
+          "id": "cn2-2",
+          "t": "num",
+          "q": "Una cuenta remunerada paga un 2,4 % de TIN con intereses abonados cada mes, lo que da una TAE del 2,43 %. Si mantienes 5.000 € durante un año, ¿cuántos euros de intereses cobras con esa TAE, antes de impuestos?",
+          "unit": "€",
+          "a": 121.5,
+          "why": "5.000 € × 2,43 % = 121,5 €. Con el TIN a secas habrías contado 120 €: la TAE añade el efecto de cobrar los intereses cada mes y reinvertirlos.",
+          "tol": 0.06,
+          "guia": "g3"
+        },
+        {
+          "id": "cn2-3",
+          "t": "num",
+          "q": "Una cuenta paga un 2,5 % de TIN, sin pagos intermedios, y cobra 30 € al año de comisión. Con 3.000 € ahorrados durante un año, ¿cuántos euros te quedan de ganancia neta, antes de impuestos?",
+          "unit": "€",
+          "a": 45,
+          "why": "3.000 € × 2,5 % = 75 €; menos 30 € de comisión = 45 €. La comisión se come 30 de 75 euros: por eso se compara con la TAE.",
+          "guia": "g3"
+        },
+        {
+          "id": "cn2-4",
+          "t": "num",
+          "q": "Tienes en la misma entidad, a tu nombre, una cuenta con 80.000 € y un depósito con 50.000 €. Si la entidad quiebra, ¿cuántos miles de euros cubre como máximo el Fondo de Garantía de Depósitos en España?",
+          "unit": "mil €",
+          "a": 100,
+          "why": "Se suman tus depósitos en la entidad: 130.000 €. El fondo cubre hasta 100.000 € por titular y entidad, así que quedan 30.000 € sin cubrir.",
+          "guia": "g4"
+        },
+        {
+          "id": "cn2-5",
+          "t": "choice",
+          "q": "Tienes 120.000 € en cuentas de un solo banco. ¿Qué hace que todo ese dinero esté cubierto por el fondo de garantía?",
+          "opts": [
+            "Repartirlo entre entidades distintas, cada una con su límite",
+            "Abrir una segunda cuenta a tu nombre en el mismo banco",
+            "Pasarlo a un fondo de inversión del mismo banco",
+            "Nada: el fondo cubre todo si el banco quiebra"
+          ],
+          "a": 0,
+          "why": "El límite es por titular y entidad: con dos entidades distintas, cada una cubre hasta 100.000 €. Repartir en el mismo banco no cambia el límite. Ojo: dos marcas de la misma entidad comparten límite.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Otra cuenta en el mismo banco suma al mismo límite de 100.000 € por titular y entidad.",
+            "Un fondo de inversión no está cubierto por el fondo de garantía de depósitos.",
+            "Solo cubre hasta 100.000 € por titular y entidad."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

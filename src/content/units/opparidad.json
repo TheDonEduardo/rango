@@ -1,0 +1,184 @@
+{
+  "n": 7,
+  "id": "opparidad",
+  "track": "derivados",
+  "title": "Paridad put-call",
+  "blurb": "La relación entre call, put y acción: opciones sintéticas, precios incoherentes y por qué el arbitraje casi nunca queda para ti.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "La paridad",
+      "texto": "Para opciones europeas, call y put con el mismo ejercicio y vencimiento sobre la misma acción cumplen C − P = S − K, sin intereses ni dividendos.",
+      "ejemplo": "Acción a 54 $ y call 50 a 6,50 $: la put 50 vale 6,50 − 4 = 2,50 $."
+    },
+    {
+      "id": "g2",
+      "titulo": "Con tipos de interés",
+      "texto": "Con tipos positivos, el ejercicio se descuenta hasta hoy: se usa K descontado en lugar de K. La relación es la misma con un ajuste pequeño. Aquí trabajamos sin tipos.",
+      "ejemplo": "Pagar 50 $ dentro de un año al 4 % equivale a unos 48,08 $ hoy."
+    },
+    {
+      "id": "g3",
+      "titulo": "Posiciones sintéticas",
+      "texto": "Despejando la paridad, una posición se replica con otras: acción más put es una call, y call comprada más put vendida es la acción a precio de ejercicio.",
+      "ejemplo": "Acción a 54 $ más put 50 por 2,50 $: pierdes como máximo 6,50 $, lo que cuesta la call."
+    },
+    {
+      "id": "g4",
+      "titulo": "Precios incoherentes",
+      "texto": "Si C − P no coincide con S − K hay un arbitraje, pero comisiones y horquilla de cada operación lo consumen y los profesionales lo cierran al instante.",
+      "ejemplo": "S 62, ejercicio 60, call 4,80 y put 1,30: 1,50 $ de diferencia, 150 $ por contrato; con 45 $ por operación quedan 15 $."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "op33",
+      "title": "La paridad",
+      "ex": [
+        {
+          "id": "op33-1",
+          "t": "choice",
+          "q": "¿Qué dice la paridad put-call, sin intereses ni dividendos, para opciones europeas?",
+          "opts": [
+            "Call menos put equivale al precio de la acción menos el ejercicio",
+            "La call y la put del mismo ejercicio cuestan siempre lo mismo",
+            "Call más put es igual al precio de la acción en cualquier momento",
+            "La put vale siempre el doble que la call del mismo ejercicio"
+          ],
+          "a": 0,
+          "why": "Es C − P = S − K: comprar la call y vender la put equivale a comprar la acción al precio de ejercicio.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Con el mismo ejercicio, call y put solo valen lo mismo si la acción cotiza en el ejercicio.",
+            "La suma no da el precio de la acción: es la diferencia la que se relaciona con S − K.",
+            "No hay ninguna regla que fije un doble: depende del precio de la acción."
+          ]
+        },
+        {
+          "id": "op33-2",
+          "t": "num",
+          "q": "Una acción cotiza a 54 $. Una call europea con ejercicio 50 $ vale 6,50 $. Sin intereses ni dividendos, ¿cuánto vale la put europea con el mismo ejercicio y vencimiento, por acción?",
+          "unit": "$",
+          "a": 2.5,
+          "why": "P = C − (S − K) = 6,50 − (54 − 50) = 2,50 $.",
+          "guia": "g1"
+        },
+        {
+          "id": "op33-3",
+          "t": "num",
+          "q": "Una acción cotiza a 48 $. Una put europea con ejercicio 50 $ vale 4,20 $. Sin intereses ni dividendos, ¿cuánto vale la call europea con el mismo ejercicio y vencimiento, por acción?",
+          "unit": "$",
+          "a": 2.2,
+          "why": "C = P + (S − K) = 4,20 + (48 − 50) = 2,20 $.",
+          "guia": "g1"
+        },
+        {
+          "id": "op33-4",
+          "t": "num",
+          "q": "Al vencimiento una acción cotiza a 57 $. Tienes una call comprada y una put vendida, ambas con ejercicio 50 $. ¿Cuántos dólares por acción vale tu posición en ese momento?",
+          "unit": "$",
+          "a": 7,
+          "why": "La call vale 57 − 50 = 7 $ y la put vendida no te cuesta nada: 7 $. Es lo mismo que haber comprado la acción a 50 $.",
+          "guia": "g3"
+        },
+        {
+          "id": "op33-5",
+          "t": "choice",
+          "q": "Con tipos de interés positivos, ¿qué cambia en la paridad put-call?",
+          "opts": [
+            "La call desaparece de la fórmula y queda solo la put",
+            "La put pasa a valer cero en todos los casos",
+            "Se usa el ejercicio descontado hasta hoy",
+            "La paridad deja de tener sentido con tipos positivos"
+          ],
+          "a": 2,
+          "why": "Pagar K dentro de un año vale menos hoy, así que se usa K descontado. La relación sigue en pie con ese ajuste pequeño.",
+          "guia": "g2",
+          "porque": [
+            "La call sigue en la fórmula: sin ella no habría paridad.",
+            "La put no vale cero: depende del precio de la acción y del ejercicio.",
+            null,
+            "La paridad se mantiene: solo cambia el ejercicio, descontado."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "op34",
+      "title": "Sintéticas y precios incoherentes",
+      "ex": [
+        {
+          "id": "op34-1",
+          "t": "num",
+          "q": "Compras la acción a 54 $ y una put con ejercicio 50 $ por 2,50 $. Si la acción se hunde, ejerces la put y vendes a 50 $. ¿Cuántos dólares por acción pierdes como máximo?",
+          "unit": "$",
+          "a": 6.5,
+          "why": "54 + 2,50 − 50 = 6,50 $. Es justo lo que cuesta la call 50 del mismo vencimiento: acción más put se comporta como una call.",
+          "guia": "g3"
+        },
+        {
+          "id": "op34-2",
+          "t": "match",
+          "q": "Empareja cada posición sintética con la posición que replica.",
+          "pairs": [
+            [
+              "Acción comprada + put comprada",
+              "Se comporta como una call comprada"
+            ],
+            [
+              "Acción vendida + call comprada",
+              "Se comporta como una put comprada"
+            ],
+            [
+              "Call comprada + put vendida",
+              "Se comporta como comprar la acción al precio de ejercicio"
+            ]
+          ],
+          "why": "Despejando la paridad, cada combinación equivale a otra posición: acción más put es una call; acción vendida más call, una put; call menos put, la acción.",
+          "guia": "g3"
+        },
+        {
+          "id": "op34-3",
+          "t": "num",
+          "q": "Una acción cotiza a 62 $. Con ejercicio 60 $ y el mismo vencimiento, la call europea vale 4,80 $ y la put europea, 1,30 $. Sin intereses ni dividendos, ¿cuántos dólares se separa C − P de S − K?",
+          "unit": "$",
+          "a": 1.5,
+          "why": "C − P = 4,80 − 1,30 = 3,50 $ y S − K = 62 − 60 = 2 $. Se separan 1,50 $: los precios son incoherentes.",
+          "guia": "g4"
+        },
+        {
+          "id": "op34-4",
+          "t": "num",
+          "q": "Con la acción a 62 $, la call europea 60 a 4,80 $ y la put europea 60 a 1,30 $, vendes la call, compras la put y compras la acción. Al vencimiento acabas vendiendo la acción a 60 $ pase lo que pase. ¿Cuántos dólares ganas por contrato de 100 acciones, sin costes?",
+          "unit": "$",
+          "a": 150,
+          "why": "Pagas 62 + 1,30 − 4,80 = 58,50 $ y cobras 60 $: 1,50 $ por acción, 150 $ por contrato de 100 acciones.",
+          "guia": "g4"
+        },
+        {
+          "id": "op34-5",
+          "t": "choice",
+          "q": "Esa incoherencia deja 150 $ por contrato antes de costes. ¿Por qué a un particular no le suele compensar aprovecharla?",
+          "opts": [
+            "Porque la paridad no se cumple nunca en el mercado",
+            "Porque la ley prohíbe operar con la acción y sus opciones a la vez",
+            "Porque los precios de call y put los fija el regulador",
+            "Porque comisiones y horquilla de tres operaciones se comen casi todo el margen"
+          ],
+          "a": 3,
+          "why": "Si cada una de las tres operaciones cuesta 45 $ entre comisión y horquilla, se van 135 $ de 150 y quedan 15 $ (150 − 3 × 45). No se lo comen todo, pero el margen es mínimo y los profesionales, con costes bajísimos, lo cierran en segundos.",
+          "guia": "g4",
+          "porque": [
+            "Al contrario: la paridad se cumple de forma muy aproximada.",
+            "Operar con la acción y sus opciones es legal y habitual.",
+            "Los precios los fija el mercado, no el regulador.",
+            null
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

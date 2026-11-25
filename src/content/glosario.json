@@ -982,5 +982,69 @@
    "una correlación"
   ],
   "d": "Cuánto se mueven juntas dos posiciones, de −1 (en sentido contrario) a +1 (a la vez). Cuanto más cerca de +1, menos diversifican."
+ },
+ {
+  "termino": "comisión de mantenimiento",
+  "alias": [
+   "comisiones de mantenimiento"
+  ],
+  "d": "Lo que cobra el banco por tener la cuenta abierta. Muchas entidades la quitan si domicilias la nómina y algunos recibos."
+ },
+ {
+  "termino": "descubierto",
+  "d": "Gastar más dinero del que hay en la cuenta. Es un préstamo con intereses muy altos por cada día en rojo."
+ },
+ {
+  "termino": "cuenta remunerada",
+  "alias": [
+   "cuentas remuneradas"
+  ],
+  "d": "Cuenta que paga intereses por el saldo, a veces con condiciones como domiciliar la nómina. Se compara con la TAE."
+ },
+ {
+  "termino": "Fondo de Garantía de Depósitos",
+  "alias": [
+   "FGD"
+  ],
+  "d": "Cubre los depósitos de una entidad que quiebra, hasta 100.000 € por titular y entidad en España. No cubre fondos de inversión."
+ },
+ {
+  "termino": "paridad put-call",
+  "d": "Relación entre call, put y acción con el mismo ejercicio y vencimiento: C − P = S − K, sin intereses ni dividendos y para opciones europeas."
+ },
+ {
+  "termino": "posición sintética",
+  "alias": [
+   "posiciones sintéticas",
+   "call sintética",
+   "put sintética"
+  ],
+  "d": "Combinación de acción y opciones que se comporta como otra posición. Por ejemplo, acción más put compradas se comporta como una call."
+ },
+ {
+  "termino": "arbitraje",
+  "d": "Operación que aprovecha precios incoherentes para ganar sin riesgo. Con comisiones y horquilla, casi nunca queda beneficio para un particular."
+ },
+ {
+  "termino": "rentabilidad ponderada por tiempo",
+  "alias": [
+   "TWR"
+  ],
+  "d": "Rendimiento de la inversión en cada periodo, encadenado, sin que cuenten tus aportaciones. Mide al fondo, no a ti."
+ },
+ {
+  "termino": "rentabilidad ponderada por dinero",
+  "alias": [
+   "TIR",
+   "MWR"
+  ],
+  "d": "Tasa interna de retorno: tiene en cuenta cuándo y cuánto aportaste. Mide cómo te ha ido a ti."
+ },
+ {
+  "termino": "colchón de emergencia",
+  "alias": [
+   "colchón"
+  ],
+  "d": "Ahorro líquido, de unos meses de gastos, para imprevistos. No se invierte en activos que puedan caer."
  }
 ]

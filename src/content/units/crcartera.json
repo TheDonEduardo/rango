@@ -1,0 +1,214 @@
+{
+  "n": 6,
+  "id": "crcartera",
+  "track": "cripto",
+  "title": "Cripto en tu cartera",
+  "blurb": "Cuánto peso darle, cuánto riesgo aporta de verdad, cuándo rebalancear y por qué no sale del colchón.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Un peso pequeño y decidido",
+      "texto": "Fija el peso antes de comprar, con una cantidad que puedas perder sin cambiar tus planes. Como ilustración, entre el 1 % y el 5 % de la cartera; no es una recomendación.",
+      "ejemplo": "En 20.000 €, un 2 % son 400 € y un 4 % son 800 €."
+    },
+    {
+      "id": "g2",
+      "titulo": "El riesgo aportado",
+      "texto": "Una posición pequeña pero muy volátil pesa mucho en la oscilación total. Cálculo simple: euros × oscilación anual típica, y se suman.",
+      "ejemplo": "800 € al 75 % = 600 €; 19.200 € al 12,5 % = 2.400 €. La cripto es el 4 % del dinero y el 20 % de la oscilación."
+    },
+    {
+      "id": "g3",
+      "titulo": "Rebalanceo y correlación",
+      "texto": "Si la cripto se dispara, su peso crece: vendes lo que sobra para volver al objetivo, y puede tributar. En caídas fuertes de la bolsa suele caer a la vez.",
+      "ejemplo": "300 € de 6.000 € (5 %) se multiplican por 4 y pesan un 17,4 %. Para volver al 5 % vendes 855 €."
+    },
+    {
+      "id": "g4",
+      "titulo": "El colchón es otra cosa",
+      "texto": "Primero un colchón de emergencia y sin deudas caras. La cripto sale de dinero nuevo que puedas perder, nunca del colchón.",
+      "ejemplo": "6 meses de 1.200 € son 7.200 €: se quedan intactos y los 800 € salen de ahorro aparte."
+    }
+  ],
+  "revisar": "2027-11",
+  "lessons": [
+    {
+      "id": "cj1",
+      "title": "Peso y riesgo aportado",
+      "ex": [
+        {
+          "id": "cj1-1",
+          "t": "choice",
+          "q": "¿Cómo conviene decidir cuánto de la cartera va a cripto?",
+          "opts": [
+            "Fijar de antemano un peso pequeño, p. ej. entre el 1 % y el 5 %",
+            "Poner más cuanto más haya subido el último mes",
+            "Poner todo lo que se pueda perder para ganar más",
+            "Dejar que el peso lo decida el último consejo que leas"
+          ],
+          "a": 0,
+          "why": "Decide el peso antes de comprar, con una cantidad que puedas perder sin cambiar tus planes. El rango del 1 % al 5 % es solo ilustrativo, no una recomendación.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Perseguir lo que ha subido sube el peso en el peor momento.",
+            "Poner todo lo que se pueda perder no es un plan: no fija ningún peso.",
+            "Un consejo suelto no es un plan: el peso se decide antes y con tus datos."
+          ]
+        },
+        {
+          "id": "cj1-2",
+          "t": "num",
+          "q": "Tienes una cartera de 20.000 €: 800 € en cripto, que oscila un 75 % al año, y 19.200 € en fondos, que oscilan un 12,5 %. ¿Cuántos euros de oscilación anual típica aporta la cripto (euros × oscilación)?",
+          "unit": "€",
+          "a": 600,
+          "why": "800 € × 75 % = 600 €. Es una medida simple de lo que puede moverse esa posición en un año.",
+          "guia": "g1"
+        },
+        {
+          "id": "cj1-3",
+          "t": "num",
+          "q": "Cartera de 20.000 €: 800 € en cripto (oscila un 75 % al año) y 19.200 € en fondos (oscilan un 12,5 %). Con un cálculo simple (euros × oscilación, sin contar la diversificación) y sumando la oscilación de las dos partes, ¿qué porcentaje del total aporta la cripto?",
+          "unit": "%",
+          "a": 20,
+          "why": "Cripto: 800 × 75 % = 600 €. Fondos: 19.200 × 12,5 % = 2.400 €. Total 3.000 €; 600 ÷ 3.000 = 20 %, con solo un 4 % del dinero.",
+          "guia": "g2"
+        },
+        {
+          "id": "cj1-4",
+          "t": "choice",
+          "q": "Con un 4 % del dinero, la cripto aporta un 20 % de la oscilación total. ¿Qué indica?",
+          "opts": [
+            "Que pesa lo mismo en riesgo que en euros",
+            "Que su riesgo es menor que el del resto de la cartera",
+            "Que no puede afectar al resultado de la cartera",
+            "Que su peso en el riesgo es mucho mayor que su peso en euros"
+          ],
+          "a": 3,
+          "why": "Una posición pequeña pero muy volátil pesa mucho en la oscilación total: cinco veces más en riesgo (20 %) que en dinero (4 %).",
+          "guia": "g2",
+          "porque": [
+            "El 20 % frente al 4 % muestra que no pesa lo mismo en riesgo que en euros.",
+            "Su oscilación es mayor: 75 % frente a 12,5 %.",
+            "Aporta una quinta parte de la oscilación total: puede afectar al resultado.",
+            null
+          ]
+        },
+        {
+          "id": "cj1-5",
+          "t": "slide",
+          "q": "Tu cartera vale 20.000 € y quieres que la cripto pese un 2 %. La cripto oscila un 75 % al año. ¿Cuántos euros pones?",
+          "label": "Euros en cripto",
+          "min": 0,
+          "max": 2000,
+          "step": 50,
+          "start": 1200,
+          "a": 400,
+          "unit": "€",
+          "why": "2 % de 20.000 € = 400 €. Su oscilación típica es 400 × 75 % = 300 €.",
+          "show": [
+            {
+              "label": "Peso en la cartera",
+              "k": 0.005,
+              "unit": " %",
+              "dec": 1
+            },
+            {
+              "label": "Oscilación anual típica",
+              "k": 0.75,
+              "unit": " €"
+            }
+          ],
+          "guia": "g1"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "cj2",
+      "title": "Rebalanceo, caídas y colchón",
+      "ex": [
+        {
+          "id": "cj2-1",
+          "t": "num",
+          "q": "Tu cartera de 6.000 € tiene 5.700 € en fondos y 300 € en cripto (un 5 %). La cripto se multiplica por 4 y los fondos no cambian. ¿Qué porcentaje de la cartera pesa ahora la cripto? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 17.4,
+          "why": "La cripto vale 300 × 4 = 1.200 € y la cartera, 5.700 + 1.200 = 6.900 €. 1.200 ÷ 6.900 = 17,4 %.",
+          "tol": 0.06,
+          "guia": "g3"
+        },
+        {
+          "id": "cj2-2",
+          "t": "num",
+          "q": "La cripto de una cartera vale ahora 1.200 € y la cartera entera, 6.900 €. Para que vuelva a pesar un 5 %, ¿cuántos euros de cripto vendes?",
+          "unit": "€",
+          "a": 855,
+          "why": "El 5 % de 6.900 € son 345 €. Si tienes 1.200 €, vendes 1.200 − 345 = 855 €.",
+          "guia": "g3"
+        },
+        {
+          "id": "cj2-3",
+          "t": "choice",
+          "q": "Al rebalancear vendes cripto con ganancia. ¿Qué tienes en cuenta?",
+          "opts": [
+            "Que vender para rebalancear nunca tributa",
+            "Que puede tributar en España: calculas el impuesto",
+            "Que solo tributa si reinviertes en más cripto",
+            "Que solo tributa lo que dejas sin reinvertir"
+          ],
+          "a": 1,
+          "why": "Vender cripto por euros con ganancia puede tributar en España aunque sea para ajustar la cartera, y cambiar una cripto por otra también. Calcula el impuesto antes de vender. Compruébalo con la norma vigente.",
+          "guia": "g3",
+          "porque": [
+            "Vender cripto con ganancia puede tributar aunque sea para rebalancear.",
+            null,
+            "Reinvertir no cambia que la venta con ganancia pueda tributar.",
+            "Puede tributar la ganancia de lo vendido, no solo lo que no reinviertes."
+          ]
+        },
+        {
+          "id": "cj2-4",
+          "t": "choice",
+          "q": "Cuando la bolsa cae con fuerza, ¿qué suele pasar con la cripto?",
+          "opts": [
+            "Suele caer también, a veces más, justo cuando buscabas diversificar",
+            "Sube con tanta fuerza que compensa la caída de la bolsa",
+            "No se mueve, porque no depende de la bolsa",
+            "Se mueve al revés que la bolsa en cada caída"
+          ],
+          "a": 0,
+          "why": "En las caídas fuertes la correlación con la bolsa suele subir, así que diversifica menos de lo que parece cuando más hace falta.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "No compensa la caída: en las caídas fuertes ha caído también.",
+            "La cripto sí se ha movido con la bolsa en las caídas fuertes.",
+            "No va al revés en cada caída: la correlación suele subir."
+          ]
+        },
+        {
+          "id": "cj2-5",
+          "t": "choice",
+          "q": "Tu colchón de emergencia son 7.200 € (6 meses de gastos de 1.200 €) y no tienes más ahorros. Quieres empezar con 800 € en cripto. ¿Qué haces?",
+          "opts": [
+            "Sacas los 800 € del colchón y los repones si la cripto sube",
+            "Pides los 800 € con la tarjeta de crédito",
+            "Esperas a ahorrar esos 800 € aparte, sin tocar el colchón",
+            "Vendes parte de tus fondos de ahorro para la jubilación"
+          ],
+          "a": 2,
+          "why": "El colchón cubre imprevistos y no se arriesga. Con 7.200 € completos, los 800 € salen de ahorro nuevo que puedas perder sin cambiar tus planes.",
+          "guia": "g4",
+          "porque": [
+            "Sacarlo del colchón lo deja sin cubrir imprevistos: quedan 6.400 €.",
+            "Pedirlo con tarjeta añade intereses caros a un activo muy volátil.",
+            null,
+            "Vender ahorro de largo plazo para cripto mezcla objetivos y arriesga lo que ya tenías."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}
