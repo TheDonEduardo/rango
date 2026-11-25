@@ -1,0 +1,291 @@
+{
+  "n": 19,
+  "id": "primerfondo",
+  "track": "basico",
+  "title": "Elegir tu primer fondo indexado",
+  "blurb": "Qué mirar en la ficha de un fondo de índice y cómo comparar dos con una tabla.",
+  "gate": false,
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Qué índice sigue",
+      "texto": "Un fondo mundial reparte tu dinero entre miles de empresas de muchos países; uno de un solo país depende de esa economía. Para el primero, diversificar pesa más que acertar el país. Una caída pesa según el peso del país en el fondo.",
+      "ejemplo": "País con un 4 % del fondo mundial que cae un 30 %: el fondo cae 1,2 %; un fondo solo de ese país, un 30 %."
+    },
+    {
+      "id": "g2",
+      "titulo": "Coste total y tamaño",
+      "texto": "El TER es lo que cuesta el fondo cada año, en % de lo que tienes dentro. El coste total suma lo que cobre tu bróker al comprar y vender. El patrimonio es el dinero total que gestiona el fondo: uno muy pequeño puede cerrar y devolverte el dinero cuando no te conviene.",
+      "ejemplo": "20.000 € al 0,20 %: 40 € al año; al 0,12 %, 24 €: 16 € menos."
+    },
+    {
+      "id": "g3",
+      "titulo": "Réplica y dividendos",
+      "texto": "Réplica física: el fondo compra las acciones del índice o una muestra. Réplica sintética: consigue su rentabilidad con un contrato con un banco, y añade el riesgo de ese banco. Acumulación: reinvierte los dividendos dentro. Distribución: te los ingresa. Sin necesitar rentas, la acumulación es más sencilla.",
+      "ejemplo": "Con 10.000 € y un 2 % de dividendos: distribución, 200 € en tu cuenta; acumulación, se reinvierten."
+    },
+    {
+      "id": "g4",
+      "titulo": "Divisa y comparar",
+      "texto": "Cuenta la divisa de las inversiones, no la del fondo: uno en euros con acciones en dólares tiene riesgo de dólar. Efecto ≈ peso en esa divisa × variación. Para comparar, usa una tabla: índice, coste, tamaño y dividendos; descarta los que no cumplan lo que buscas.",
+      "ejemplo": "60 % en dólares y el dólar cae un 10 %: resta 6 puntos al fondo."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "pq1",
+      "title": "Índice, coste y tamaño",
+      "ex": [
+        {
+          "id": "pq1-1",
+          "t": "choice",
+          "q": "Eres principiante y quieres un único fondo para invertir durante 20 años. ¿Qué índice te da más diversificación?",
+          "opts": [
+            "Uno de un solo país, con sus grandes empresas",
+            "Uno de un solo sector, que concentra lo mejor",
+            "Uno mundial, con miles de empresas de muchos países",
+            "Uno de unas 20 empresas elegidas por un gestor"
+          ],
+          "a": 2,
+          "why": "Un índice mundial reparte el dinero entre muchos países y sectores: ninguna caída local pesa demasiado.",
+          "guia": "g1",
+          "porque": [
+            "Depende de una sola economía: si falla, cae casi todo el fondo.",
+            "Un solo sector concentra el riesgo: si le va mal, cae todo.",
+            null,
+            "Con 20 empresas hay poca diversificación y además no es un índice."
+          ]
+        },
+        {
+          "id": "pq1-2",
+          "t": "num",
+          "q": "Un país pesa un 4 % en un fondo mundial. Si su bolsa cae un 30 % y el resto del fondo no se mueve, ¿cuánto cae el fondo mundial, en %?",
+          "unit": "%",
+          "a": 1.2,
+          "why": "4 % × 30 % = 1,2 %. En un fondo que invierte solo en ese país, la caída sería del 30 %.",
+          "guia": "g1"
+        },
+        {
+          "id": "pq1-3",
+          "t": "num",
+          "q": "Puedes elegir entre dos fondos del mismo índice: uno cobra un TER del 0,20 % y el otro, del 0,12 %. Con 20.000 € invertidos, ¿cuántos euros al año ahorras con el más barato?",
+          "unit": "€",
+          "a": 16,
+          "why": "20.000 € × 0,20 % = 40 € y 20.000 € × 0,12 % = 24 €: 16 € al año menos, a igual índice.",
+          "guia": "g2"
+        },
+        {
+          "id": "pq1-4",
+          "t": "choice",
+          "q": "Dos fondos mundiales cuestan lo mismo, pero uno gestiona 6.000 M€ y el otro, 25 M€. ¿Qué riesgo añade el pequeño?",
+          "opts": [
+            "Que sus empresas son siempre peores que las del grande",
+            "Que deja de seguir su índice desde el primer día",
+            "Que cobra una comisión de compra en todos los casos",
+            "Que puede cerrarse y devolverte el dinero cuando no te conviene"
+          ],
+          "a": 3,
+          "why": "Un fondo muy pequeño es poco rentable para su gestora y puede cerrarse. Con 6.000 M€ el riesgo es mucho menor.",
+          "guia": "g2",
+          "porque": [
+            "Las empresas son las mismas si siguen el mismo índice: el tamaño no cambia lo que contienen.",
+            "Un fondo pequeño puede seguir bien su índice: no es el problema.",
+            "Las comisiones de compra las fija tu bróker, no el tamaño del fondo.",
+            null
+          ]
+        },
+        {
+          "id": "pq1-5",
+          "t": "match",
+          "q": "Empareja cada término de la ficha de un fondo con su significado.",
+          "pairs": [
+            [
+              "TER",
+              "Cuánto cuesta el fondo cada año, en % de lo que tienes dentro"
+            ],
+            [
+              "Patrimonio",
+              "Dinero total que gestiona el fondo"
+            ],
+            [
+              "Comisión del bróker",
+              "Lo que te cobran por comprar o vender participaciones"
+            ],
+            [
+              "Coste total",
+              "Suma de lo que pagas cada año y de lo que te cobran al entrar y salir"
+            ]
+          ],
+          "why": "El TER es el coste anual; el patrimonio, el tamaño. Al TER se añade lo que cobre tu bróker por comprar y vender.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "pq2",
+      "title": "Réplica, dividendos, divisa y comparar",
+      "ex": [
+        {
+          "id": "pq2-1",
+          "t": "choice",
+          "q": "¿Qué hace un fondo de réplica sintética?",
+          "opts": [
+            "Compra una a una todas las acciones del índice",
+            "Cambia de índice cada año para rendir más",
+            "Copia el índice mediante un contrato con un banco",
+            "Garantiza que el partícipe nunca pierda dinero"
+          ],
+          "a": 2,
+          "why": "Firma un contrato con un banco que le paga la rentabilidad del índice. Añade el riesgo de que ese banco no cumpla.",
+          "guia": "g3",
+          "porque": [
+            "Eso es la réplica física: compra las acciones del índice.",
+            "Un fondo indexado sigue siempre el mismo índice.",
+            null,
+            "Ningún fondo garantiza no perder: sigue al índice y puede caer con él."
+          ]
+        },
+        {
+          "id": "pq2-2",
+          "t": "choice",
+          "q": "Eres principiante, invertirás 20 años y no necesitas cobrar rentas ni quieres reinvertir los dividendos a mano. ¿Qué opción de dividendos encaja?",
+          "opts": [
+            "Acumulación: el fondo reinvierte los dividendos por ti",
+            "Distribución: te los ingresan y tú decides qué hacer con ellos",
+            "Ninguna: los fondos de índice no reciben dividendos",
+            "Distribución, porque la acumulación los pierde"
+          ],
+          "a": 0,
+          "why": "La acumulación reinvierte los dividendos dentro del fondo sin que hagas nada, que es lo que buscas.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Con distribución tendrías que reinvertir tú los dividendos, justo lo que no quieres.",
+            "Sí reciben dividendos: las empresas del índice los pagan.",
+            "La acumulación no los pierde: los reinvierte dentro del fondo."
+          ]
+        },
+        {
+          "id": "pq2-3",
+          "t": "num",
+          "q": "Un fondo mundial cotiza en euros y tiene un 60 % de sus inversiones en dólares. Si el dólar cae un 10 % frente al euro y lo demás no varía, ¿cuántos puntos resta el dólar a la rentabilidad del fondo?",
+          "unit": "puntos",
+          "a": 6,
+          "why": "60 % × 10 % = 6 puntos. Lo que cuenta es la divisa de las inversiones, aunque el fondo cotice en euros.",
+          "guia": "g4"
+        },
+        {
+          "id": "pq2-4",
+          "t": "choice",
+          "q": "Eres principiante, quieres que el fondo reinvierta los dividendos por ti y quieres un índice mundial en un fondo con más de 1.000 M€ de patrimonio. Según la tabla, ¿qué fondo cumple las tres condiciones?",
+          "opts": [
+            "Fondo A",
+            "Fondo B",
+            "Fondo C",
+            "Fondo D"
+          ],
+          "a": 1,
+          "table": {
+            "cols": [
+              "Fondo",
+              "Índice",
+              "TER",
+              "Patrimonio",
+              "Dividendos"
+            ],
+            "rows": [
+              [
+                "A",
+                "Mundial",
+                "0,12 %",
+                "25 M€",
+                "Acumula"
+              ],
+              [
+                "B",
+                "Mundial",
+                "0,20 %",
+                "6.000 M€",
+                "Acumula"
+              ],
+              [
+                "C",
+                "Un país",
+                "0,10 %",
+                "3.000 M€",
+                "Acumula"
+              ],
+              [
+                "D",
+                "Mundial",
+                "0,15 %",
+                "4.000 M€",
+                "Distribuye"
+              ]
+            ],
+            "note": "Fondos ficticios. Todos copian su índice con réplica física y cotizan en euros."
+          },
+          "why": "B es mundial, acumula y tiene 6.000 M€. A tiene solo 25 M€, C sigue un solo país y D reparte los dividendos.",
+          "guia": "g4",
+          "porque": [
+            "A tiene solo 25 M€: menos de 1.000 M€.",
+            null,
+            "C sigue un solo país, no es mundial.",
+            "D reparte los dividendos y buscas uno que los reinvierta."
+          ]
+        },
+        {
+          "id": "pq2-5",
+          "t": "num",
+          "q": "Con 15.000 € y según la tabla, ¿cuántos euros al año te cuesta de más el TER del fondo B que el del fondo A?",
+          "unit": "€",
+          "a": 12,
+          "table": {
+            "cols": [
+              "Fondo",
+              "Índice",
+              "TER",
+              "Patrimonio",
+              "Dividendos"
+            ],
+            "rows": [
+              [
+                "A",
+                "Mundial",
+                "0,12 %",
+                "25 M€",
+                "Acumula"
+              ],
+              [
+                "B",
+                "Mundial",
+                "0,20 %",
+                "6.000 M€",
+                "Acumula"
+              ],
+              [
+                "C",
+                "Un país",
+                "0,10 %",
+                "3.000 M€",
+                "Acumula"
+              ],
+              [
+                "D",
+                "Mundial",
+                "0,15 %",
+                "4.000 M€",
+                "Distribuye"
+              ]
+            ],
+            "note": "Fondos ficticios. Todos copian su índice con réplica física y cotizan en euros."
+          },
+          "why": "B cobra 0,20 % y A, 0,12 %: 0,08 % × 15.000 € = 12 € al año. Es el precio de un fondo mucho mayor.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

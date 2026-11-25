@@ -1,0 +1,222 @@
+{
+  "n": 15,
+  "id": "climax",
+  "track": "tecnico",
+  "title": "Vender en la subida climática",
+  "blurb": "Cuándo una subida parabólica avisa del final y cómo vender una parte en fuerza.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "La subida climática",
+      "texto": "Es el final de una tendencia larga: el precio se acelera en vertical y la acción parece imparable. O'Neil y Minervini la tratan como señal de agotamiento: casi todos los que querían comprar ya lo han hecho. No es momento de comprar más, sino de plantearse vender una parte.",
+      "ejemplo": "Tras 14 meses al alza, sube un 22 % en una semana, el doble que su mejor semana previa (11 %)."
+    },
+    {
+      "id": "g2",
+      "titulo": "Tres señales",
+      "texto": "Señales orientativas: 1) mayor subida semanal desde el inicio de la tendencia; 2) 7 o más de las últimas 10 sesiones al alza; 3) mayor volumen del tramo, a menudo con un hueco de agotamiento (la apertura salta sobre el máximo anterior). Las tres: clímax; una sola: subida fuerte.",
+      "ejemplo": "+22 % tras una mejor semana de +11 %, 8 de 10 sesiones al alza y volumen récord: 3 de 3."
+    },
+    {
+      "id": "g3",
+      "titulo": "Vender en fuerza o esperar",
+      "texto": "Vender una parte en la subida asegura beneficio; esperar al stop devuelve parte. Mide ambos en R (1R = entrada − stop inicial). Vender en fuerza renuncia a lo que siga subiendo. Al resto, un stop que siga al precio.",
+      "ejemplo": "Entrada 40 €, stop 38 € (1R = 2 €). A 62 €, +11R; a 54 €, +7R. Mitad en cada una: 9R, frente a 7R si esperas."
+    },
+    {
+      "id": "g4",
+      "titulo": "No es una ruptura temprana",
+      "texto": "La misma aceleración justo tras salir de una base es una ruptura con fuerza, no un clímax: aún queda recorrido. El clímax llega tras una tendencia larga y mucha subida desde el último pivote. Mide cuánto ha subido desde él.",
+      "ejemplo": "+20 % a los 8 días de romper, un 12 % sobre el pivote: temprana. +20 % tras 14 meses y +150 % sobre el pivote: climática."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "xk1",
+      "title": "Reconocer la subida climática",
+      "ex": [
+        {
+          "id": "xk1-1",
+          "t": "tap",
+          "q": "Tras una tendencia alcista larga, estas son las últimas 16 sesiones. Toca la vela que reúne las señales de la subida climática: la mayor subida de todo el tramo, el mayor volumen y un hueco al alza tras varias sesiones al alza.",
+          "chart": {
+            "type": "candles",
+            "data": [
+              [50.0,50.8,49.8,50.6],
+              [50.6,51.4,50.4,51.2],
+              [51.2,51.6,50.6,50.9],
+              [50.9,51.9,50.8,51.7],
+              [51.7,52.6,51.5,52.4],
+              [52.4,52.9,51.9,52.2],
+              [52.2,53.5,52.1,53.3],
+              [53.3,55.6,53.2,55.4],
+              [55.4,56.2,55.0,55.8],
+              [55.8,56.0,54.9,55.2],
+              [55.2,56.4,55.1,56.2],
+              [56.2,57.8,56.1,57.6],
+              [57.6,59.4,57.5,59.2],
+              [59.2,61.2,59.0,61.0],
+              [61.0,63.2,60.9,63.0],
+              [66.0,68.4,65.8,68.0]
+            ],
+            "vol": [100,90,85,95,110,80,105,200,120,90,110,140,170,210,250,330],
+            "h": 270,
+            "alt": "Gráfico de dieciséis velas diarias con barras de volumen bajo el precio"
+          },
+          "a": 15,
+          "why": "La vela 16 abre con hueco sobre el máximo anterior (63,20 €), sube un 7,9 %, más del doble que cualquier otra sesión, con el mayor volumen (330) y tras cinco sesiones seguidas al alza. La vela 8 tiene volumen alto (200), pero sube un 3,9 % y sin hueco.",
+          "guia": "g2"
+        },
+        {
+          "id": "xk1-2",
+          "t": "choice",
+          "q": "Una acción lleva 14 meses subiendo. Esta semana sube un 22 %, el doble que su mejor semana anterior (11 %), con 8 de las últimas 10 sesiones al alza y el mayor volumen de toda la tendencia. ¿Cómo se lee según las señales orientativas de la guía?",
+          "opts": [
+            "Como el inicio de la tendencia: conviene comprar más acciones",
+            "Como posible agotamiento: es momento de plantearse vender una parte",
+            "Como una ruptura temprana de una base recién formada",
+            "Como una señal sin valor porque solo cubre una semana"
+          ],
+          "a": 1,
+          "why": "Tras una tendencia larga, una aceleración con récord de subida y de volumen cumple las tres señales orientativas: casi todos los compradores ya han entrado.",
+          "guia": "g2",
+          "porque": [
+            "Al revés: tras una tendencia larga, una aceleración así es final de movimiento, no inicio.",
+            null,
+            "Una ruptura temprana sale de una base recién formada; aquí hay 14 meses de subida.",
+            "Cubre una semana, pero la combinan con 14 meses de tendencia, sesiones al alza y volumen récord."
+          ]
+        },
+        {
+          "id": "xk1-3",
+          "t": "num",
+          "q": "Una acción sube un 9 % en una semana, su mayor subida semanal desde que empezó la tendencia, pero solo cierra al alza 4 de las últimas 10 sesiones y su volumen es normal. ¿Cuántas de las tres señales de subida climática cumple?",
+          "unit": "",
+          "a": 1,
+          "why": "Solo cumple la primera: mayor subida semanal. Con 4 de 10 sesiones al alza (menos de 7) y volumen normal, no hay clímax: es una subida fuerte.",
+          "guia": "g2"
+        },
+        {
+          "id": "xk1-4",
+          "t": "match",
+          "q": "Empareja cada término de la subida climática con su significado.",
+          "pairs": [
+            [
+              "Subida climática",
+              "Aceleración vertical al final de una tendencia larga"
+            ],
+            [
+              "Hueco de agotamiento",
+              "La apertura salta por encima del máximo anterior, a menudo con volumen récord"
+            ],
+            [
+              "Mayor subida semanal",
+              "La más fuerte desde que empezó el movimiento"
+            ],
+            [
+              "Subida fuerte",
+              "Cumple solo una de las tres señales orientativas"
+            ]
+          ],
+          "why": "La subida climática es la aceleración final, con la mayor subida semanal y a menudo un hueco de agotamiento; una subida fuerte cumple solo una de las tres señales.",
+          "guia": "g2"
+        },
+        {
+          "id": "xk1-5",
+          "t": "num",
+          "q": "Compraste a 40 € con el stop inicial en 38 € y la acción cotiza ahora a 62 €. ¿Cuántos R de ganancia llevas?",
+          "unit": "R",
+          "a": 11,
+          "why": "1R son 40 − 38 = 2 €. La ganancia es 62 − 40 = 22 € por acción: 22 ÷ 2 = 11R.",
+          "guia": "g3"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "xk2",
+      "title": "Vender en fuerza o esperar al stop",
+      "ex": [
+        {
+          "id": "xk2-1",
+          "t": "num",
+          "q": "Compraste a 40 € con el stop inicial en 38 €. En una subida climática vendes la mitad a 62 € y el resto salta después en un stop a 54 €. ¿Cuántos R ganas de media en la operación?",
+          "unit": "R",
+          "a": 9,
+          "why": "A 62 €: (62 − 40) ÷ 2 = 11R. A 54 €: (54 − 40) ÷ 2 = 7R. Media: (11 + 7) ÷ 2 = 9R, frente a 7R si hubieras esperado al stop con todo.",
+          "guia": "g3"
+        },
+        {
+          "id": "xk2-2",
+          "t": "num",
+          "q": "Compraste a 40 € con el stop inicial en 38 €. Vendes la mitad a 62 € y la acción sigue subiendo hasta 80 €, donde sale la otra mitad con un stop. ¿Cuántos R más habrías ganado esperando con todo hasta 80 €?",
+          "unit": "R",
+          "a": 4.5,
+          "why": "Todo a 80 €: (80 − 40) ÷ 2 = 20R. Mitad a 62 € y mitad a 80 €: (11 + 20) ÷ 2 = 15,5R. Diferencia: 4,5R. Es lo que cuesta vender en fuerza si la subida continúa.",
+          "guia": "g3"
+        },
+        {
+          "id": "xk2-3",
+          "t": "choice",
+          "q": "¿Qué ventaja da vender una parte en la subida climática frente a esperar solo al stop?",
+          "opts": [
+            "Garantiza vender en el máximo de la tendencia",
+            "Asegura ganancia antes de que un giro brusco la devuelva",
+            "Evita perderse cualquier subida posterior del precio",
+            "Hace innecesario poner stop a lo que queda"
+          ],
+          "a": 1,
+          "why": "Vender una parte convierte parte de la ganancia en segura; el resto sigue protegido por un stop y puede seguir ganando.",
+          "guia": "g3",
+          "porque": [
+            "El método no pretende vender en el máximo: ese momento solo se conoce después.",
+            null,
+            "Si la subida continúa, la parte vendida ya no gana: es el coste de vender en fuerza.",
+            "El resto de la posición sigue necesitando un stop."
+          ]
+        },
+        {
+          "id": "xk2-4",
+          "t": "choice",
+          "q": "Dos acciones suben un 20 % en una semana con volumen récord. La A salió de una base hace 8 días y está un 12 % sobre su pivote. La B lleva 14 meses subiendo y está un 150 % sobre el pivote de su última base. ¿Cuál es candidata a subida climática?",
+          "opts": [
+            "La A",
+            "La B",
+            "Las dos",
+            "Ninguna"
+          ],
+          "a": 1,
+          "why": "La B combina tendencia larga y mucha subida desde el pivote. La A acaba de romper su base: aún le queda recorrido y es una ruptura temprana.",
+          "guia": "g4",
+          "porque": [
+            "La A acaba de romper su base y solo está un 12 % sobre el pivote: temprana.",
+            null,
+            "La A no cumple: la ruptura es reciente y queda recorrido.",
+            "La B cumple las condiciones: tendencia larga, +150 % sobre el pivote y volumen récord."
+          ]
+        },
+        {
+          "id": "xk2-5",
+          "t": "choice",
+          "q": "Has vendido la mitad de la posición en la subida climática. ¿Qué haces con la otra mitad?",
+          "opts": [
+            "La dejas sin stop, porque ya has asegurado parte de la ganancia",
+            "Compras más acciones en la subida para recuperar lo vendido",
+            "Subes el stop para que siga al precio y la dejas correr hasta que salte",
+            "La vendes entera al día siguiente sea cual sea el precio"
+          ],
+          "a": 2,
+          "why": "El resto sigue protegido por un stop que sube con el precio: así captura lo que siga subiendo y limita lo que devuelve si gira.",
+          "guia": "g3",
+          "porque": [
+            "Sin stop, una caída podría devolver toda la ganancia que aún no has asegurado.",
+            "El método no compra más en el clímax: añade riesgo justo cuando el movimiento puede agotarse.",
+            null,
+            "Vender todo al día siguiente sin criterio renuncia a la subida que pueda continuar."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

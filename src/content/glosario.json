@@ -1477,5 +1477,35 @@
  {
   "termino": "precio medio",
   "d": "Lo que te ha costado de media cada acción, comisión incluida: el total pagado entre las acciones compradas."
+ },
+ {
+  "termino": "crecimiento orgánico",
+  "d": "Lo que crecen las ventas del negocio que la empresa ya tenía, sin contar compras de otras empresas ni el efecto de las divisas."
+ },
+ {
+  "termino": "ventas comparables",
+  "alias": [
+   "tiendas comparables"
+  ],
+  "d": "Ventas de las tiendas que estaban abiertas en los dos periodos que se comparan: dejan fuera las abiertas o cerradas durante ese tiempo."
+ },
+ {
+  "termino": "subida climática",
+  "d": "Aceleración vertical del precio al final de una tendencia larga, con la mayor subida y el mayor volumen del tramo. Según O'Neil y Minervini, avisa de agotamiento."
+ },
+ {
+  "termino": "hueco de agotamiento",
+  "alias": [
+   "gap de agotamiento"
+  ],
+  "d": "Hueco al alza al final de una subida larga, con volumen récord. Suele marcar el final del movimiento."
+ },
+ {
+  "termino": "réplica física",
+  "d": "Forma de seguir un índice comprando sus acciones o una muestra representativa de ellas."
+ },
+ {
+  "termino": "réplica sintética",
+  "d": "Forma de seguir un índice mediante un contrato con un banco que paga su rentabilidad. Añade el riesgo de que el banco no cumpla."
  }
 ]

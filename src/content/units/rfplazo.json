@@ -1,0 +1,243 @@
+{
+  "n": 6,
+  "id": "rfplazo",
+  "track": "pasiva",
+  "title": "Renta fija: corto o largo plazo",
+  "blurb": "Elegir la duración de un fondo de renta fija según cuándo necesitas el dinero.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Duración baja y alta",
+      "texto": "Un fondo a corto plazo tiene duración baja (1-2) y su precio cambia poco con los tipos; uno a largo plazo tiene duración alta (7-10) y cambia mucho. Pérdida ≈ duración × subida de tipos. El corto cae poco, pero no es cero. Horizonte: cuándo necesitarás el dinero.",
+      "ejemplo": "Tipos +1 punto: duración 2, el precio cae un 2 %; duración 8, un 8 %: 6 puntos más."
+    },
+    {
+      "id": "g2",
+      "titulo": "Qué ganas a cambio",
+      "texto": "Normalmente el fondo largo rinde más por año: es su compensación. Años para compensar ≈ puntos de pérdida de más ÷ ventaja anual de rentabilidad, sin contar que, tras subir los tipos, los fondos rinden más.",
+      "ejemplo": "A: 2,5 %, duración 2. B: 3,5 %, duración 8. Tipos +1 punto: B pierde 6 puntos más y gana 1 más al año: 6 ÷ 1 = 6 años."
+    },
+    {
+      "id": "g3",
+      "titulo": "Duración parecida a tu horizonte",
+      "texto": "Elige una duración parecida a cuándo necesitas el dinero. Si los tipos suben, el precio cae hoy, pero el fondo reinvierte a tipos mayores y, pasada la duración, se compensa en gran parte (aproximación). Si la duración supera mucho tu horizonte, puedes vender con pérdida.",
+      "ejemplo": "Necesitas el dinero en 3 años y los tipos suben 1 punto: duración 3, cae un 3 %; duración 8, un 8 %."
+    },
+    {
+      "id": "g4",
+      "titulo": "Dinero para cada plazo",
+      "texto": "Para un año o menos, o para tu colchón: liquidez o duración muy baja, aunque rinda menos. Para 3-5 años: duración de 3 a 5, o un fondo con fecha. Cuanto más lejos el horizonte, más duración puedes asumir.",
+      "ejemplo": "Colchón de emergencia: monetario o duración menor de 1. Entrada de piso en 4 años: duración en torno a 4."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "rp1",
+      "title": "Duración baja y alta",
+      "ex": [
+        {
+          "id": "rp1-1",
+          "t": "match",
+          "q": "Empareja cada concepto de los fondos de renta fija con su significado.",
+          "pairs": [
+            [
+              "Fondo a corto plazo",
+              "Su precio casi no se mueve cuando cambian los tipos"
+            ],
+            [
+              "Fondo a largo plazo",
+              "Su precio se mueve mucho con los tipos y suele rendir más por año"
+            ],
+            [
+              "Duración",
+              "Caída aproximada del precio, en %, por cada punto que suben los tipos"
+            ],
+            [
+              "Horizonte",
+              "Cuándo necesitarás el dinero que has invertido"
+            ]
+          ],
+          "why": "El corto apenas reacciona a los tipos y el largo mucho; la duración mide esa reacción y el horizonte es tu plazo.",
+          "guia": "g1"
+        },
+        {
+          "id": "rp1-2",
+          "t": "num",
+          "q": "Dos fondos de renta fija: A tiene duración 2 y B, duración 8. Los tipos de interés suben 1,5 puntos. Con la aproximación pérdida ≈ duración × subida, ¿cuántos puntos de precio pierde B más que A?",
+          "unit": "puntos",
+          "a": 9,
+          "why": "B pierde 8 × 1,5 = 12 % y A, 2 × 1,5 = 3 %: 12 − 3 = 9 puntos más.",
+          "guia": "g1"
+        },
+        {
+          "id": "rp1-3",
+          "t": "num",
+          "q": "Fondo A: rentabilidad del 2,5 % anual y duración 2. Fondo B: rentabilidad del 3,5 % anual y duración 8. Si los tipos suben 1 punto, B pierde 6 puntos más de precio que A. ¿Cuántos años tarda B en compensarlo con su ventaja de rentabilidad? (Sin contar la mejora posterior de la rentabilidad.)",
+          "unit": "años",
+          "a": 6,
+          "table": {
+            "cols": [
+              "Fondo",
+              "Rentabilidad anual",
+              "Duración"
+            ],
+            "rows": [
+              [
+                "A (corto plazo)",
+                "2,5 %",
+                "2"
+              ],
+              [
+                "B (largo plazo)",
+                "3,5 %",
+                "8"
+              ]
+            ],
+            "note": "Fondos ficticios. Pérdida de precio ≈ duración × subida de tipos."
+          },
+          "why": "La ventaja de B es 3,5 − 2,5 = 1 punto al año. Para recuperar 6 puntos de más: 6 ÷ 1 = 6 años.",
+          "guia": "g2"
+        },
+        {
+          "id": "rp1-4",
+          "t": "choice",
+          "q": "Los fondos de renta fija a largo plazo pierden más precio que los de corto plazo cuando suben los tipos. ¿Qué suelen ofrecer a cambio?",
+          "opts": [
+            "La garantía de recuperar siempre todo el capital invertido",
+            "Un precio que sube cuando suben los tipos de interés",
+            "Una rentabilidad por año normalmente mayor que la del corto plazo",
+            "La ausencia total de riesgo de impago de los emisores"
+          ],
+          "a": 2,
+          "why": "Es su compensación: a más duración, más riesgo de tipos y normalmente más rentabilidad anual.",
+          "guia": "g2",
+          "porque": [
+            "No hay garantía: el precio baja si suben los tipos y un emisor puede no pagar.",
+            "Al revés: cuando suben los tipos, el precio de los bonos existentes baja.",
+            null,
+            "El riesgo de impago existe en cualquier fondo de bonos, sea corto o largo."
+          ]
+        },
+        {
+          "id": "rp1-5",
+          "t": "choice",
+          "q": "Un amigo dice que un fondo de renta fija de duración 1 es una inversión sin ningún riesgo. ¿Qué le respondes?",
+          "opts": [
+            "Que tiene razón: con duración 1 el precio no puede bajar nunca",
+            "Que su precio puede caer algo si suben los tipos o un emisor no paga",
+            "Que solo se arriesga con fondos de duración superior a 10",
+            "Que el riesgo depende solo del banco donde lo compre"
+          ],
+          "a": 1,
+          "why": "Con duración 1, una subida de tipos de 1 punto baja el precio en torno a un 1 %, y un impago puede costar más. Cae poco, pero no es cero.",
+          "guia": "g1",
+          "porque": [
+            "Con duración 1 el precio baja en torno a un 1 % por cada punto que suben los tipos.",
+            null,
+            "El riesgo de tipos crece con la duración, pero también existe con duración baja.",
+            "Cuenta quién emite los bonos y su duración, no dónde compras el fondo."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "rp2",
+      "title": "Tu horizonte manda",
+      "ex": [
+        {
+          "id": "rp2-1",
+          "t": "choice",
+          "q": "Necesitas 30.000 € dentro de 3 años para la entrada de una vivienda y los inviertes en un fondo de renta fija. ¿Qué duración encaja mejor?",
+          "opts": [
+            "De 10 años, para ganar más cada año",
+            "Da igual: la duración no influye en el precio",
+            "En torno a 3 años, parecida a tu horizonte",
+            "Cuanto más alta, más seguro está el capital a los 3 años"
+          ],
+          "a": 2,
+          "why": "Con duración cercana al horizonte, una subida de tipos se compensa casi del todo cuando necesitas el dinero.",
+          "guia": "g3",
+          "porque": [
+            "Con duración 10 una subida de tipos pesaría mucho cuando necesites el dinero a los 3 años.",
+            "Influye: la duración mide cuánto cae el precio cuando suben los tipos.",
+            null,
+            "Una duración alta es más sensible a los tipos, no más segura."
+          ]
+        },
+        {
+          "id": "rp2-2",
+          "t": "num",
+          "q": "Necesitas el dinero dentro de 3 años y comparas un fondo de duración 3 con otro de duración 8. Si los tipos suben 1 punto, ¿cuántos puntos más de precio pierde el de duración 8 que el de duración 3?",
+          "unit": "puntos",
+          "a": 5,
+          "why": "8 × 1 = 8 % frente a 3 × 1 = 3 %: 5 puntos más, y tendrías que venderlo a los 3 años sin que se haya compensado.",
+          "guia": "g3"
+        },
+        {
+          "id": "rp2-3",
+          "t": "choice",
+          "q": "Los tipos suben mucho el año antes de que necesites el dinero. ¿Por qué perjudica más un fondo con una duración muy superior a tu horizonte?",
+          "opts": [
+            "Porque el fondo deja de pagar intereses hasta que los tipos vuelven a bajar",
+            "Porque vence antes que tu horizonte y devuelve menos del nominal",
+            "Porque puedes tener que vender con el precio caído antes de que se compense",
+            "Porque una duración alta obliga a pagar una comisión de salida"
+          ],
+          "a": 2,
+          "why": "La caída es inmediata, pero la compensación por reinvertir a tipos mayores tarda tantos años como la duración: si vendes antes, te quedas con la pérdida.",
+          "guia": "g3",
+          "porque": [
+            "El fondo sigue pagando intereses; lo que cae es el precio de los bonos que ya tiene.",
+            "Un fondo de duración alta vence más tarde, no antes: el problema es su caída si suben los tipos.",
+            null,
+            "No hay comisión de salida por tener duración alta: es el precio lo que cae."
+          ]
+        },
+        {
+          "id": "rp2-4",
+          "t": "slide",
+          "q": "Necesitas el dinero dentro de 4 años y eliges un fondo de renta fija por su duración. Mueve la duración al valor que mejor encaja con tu horizonte.",
+          "label": "Duración",
+          "min": 1,
+          "max": 10,
+          "step": 1,
+          "start": 9,
+          "a": 4,
+          "unit": "años",
+          "why": "Con duración 4, igual que tu horizonte, una subida de tipos de 1 punto baja el precio un 4 %, y se compensa hacia el momento en que necesitas el dinero. Con 9, la caída sería de un 9 %.",
+          "show": [
+            {
+              "label": "Caída aprox. si los tipos suben 1 punto",
+              "k": 1,
+              "b": 0,
+              "unit": "%"
+            }
+          ],
+          "guia": "g3"
+        },
+        {
+          "id": "rp2-5",
+          "t": "choice",
+          "q": "Guardas tu colchón de emergencia, que puedes necesitar en cualquier momento. ¿Qué renta fija encaja mejor?",
+          "opts": [
+            "Un fondo de duración 10, para que rinda más cada año",
+            "Un fondo de duración 6, porque el colchón dura varios años",
+            "Un fondo de duración 8, mientras los tipos estén bajando",
+            "Liquidez o un fondo de duración muy baja, aunque rinda menos"
+          ],
+          "a": 3,
+          "why": "Si necesitas el dinero sin avisar, no puedes esperar a que se compense una caída de precio: prima la estabilidad sobre la rentabilidad.",
+          "guia": "g4",
+          "porque": [
+            "Con duración 10, una subida de tipos de 1 punto bajaría el precio un 10 % justo cuando puedes necesitarlo.",
+            "El colchón se usa sin aviso: no puedes esperar años a compensar una caída.",
+            "Los tipos pueden cambiar de sentido y un colchón no debe depender de acertarlo.",
+            null
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

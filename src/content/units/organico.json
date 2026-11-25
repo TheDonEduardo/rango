@@ -1,0 +1,199 @@
+{
+  "n": 16,
+  "id": "organico",
+  "track": "fundamental",
+  "title": "Crecimiento orgánico",
+  "blurb": "Cuánto crece una empresa por sí sola, sin compras ni divisa, y por qué el mercado lo paga más.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Tres fuentes de crecimiento",
+      "texto": "Las ventas pueden crecer por tres vías: orgánico (el negocio que ya tenía, con más volumen o mejores precios), adquisiciones (ventas de empresas compradas) y efecto divisa (conversión de otras monedas). Solo el orgánico dice cómo va el negocio de siempre.",
+      "ejemplo": "De 1.000 M€ a 1.120 M€ es un 12 %: 4 % orgánico + 6 % compras + 2 % divisa."
+    },
+    {
+      "id": "g2",
+      "titulo": "Calcular el orgánico",
+      "texto": "Resta compras y divisa al crecimiento total, en puntos. Si la divisa resta, el orgánico sale mayor. En comercio se mira el de tiendas comparables: las abiertas en los dos periodos, sin las nuevas.",
+      "ejemplo": "12 − 6 − 2 = 4 %. Compras +2 y divisa −4 sobre un +3 %: 3 − 2 + 4 = 5 %. Tiendas comparables de 800 a 840 M€: un 5 %."
+    },
+    {
+      "id": "g3",
+      "titulo": "Por qué se paga más",
+      "texto": "Comprar ventas cuesta dinero: precio pagado ÷ ventas compradas. El orgánico no exige pagar cada año, y el mercado suele dar un múltiplo mayor a quien crece por dentro, porque su crecimiento se repite sin gastar capital.",
+      "ejemplo": "Una compra de 280 M€ aporta 70 M€ de ventas: 4 € pagados por cada 1 € de ventas. Son 7 puntos sobre 1.000 M€."
+    },
+    {
+      "id": "g4",
+      "titulo": "Señales de alerta",
+      "texto": "Crecer comprando sin crecer por dentro: orgánico cercano a 0 % o negativo con ventas totales al alza, compras año tras año y fondo de comercio creciente. Pide siempre el desglose: la cifra total sola no lo enseña.",
+      "ejemplo": "Ventas +10 % con orgánico −1 % y compras +11 %: el negocio de siempre se encoge y la subida es comprada."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "og1",
+      "title": "Descomponer el crecimiento",
+      "ex": [
+        {
+          "id": "og1-1",
+          "t": "num",
+          "q": "Una empresa vendió 1.000 M€ el año pasado y 1.120 M€ este año. Las compras de otras empresas aportan 6 puntos de crecimiento y la divisa, 2 puntos (todo medido sobre las ventas del año anterior). ¿Qué crecimiento orgánico tiene, en %?",
+          "unit": "%",
+          "a": 4,
+          "why": "Crecimiento total: 120 ÷ 1.000 = 12 %. Orgánico: 12 − 6 − 2 = 4 %. El negocio de siempre crece un 4 %, no un 12 %.",
+          "guia": "g2"
+        },
+        {
+          "id": "og1-2",
+          "t": "match",
+          "q": "Empareja cada término del crecimiento de las ventas con su significado.",
+          "pairs": [
+            [
+              "Crecimiento orgánico",
+              "Lo que sube el negocio de siempre, sin compras ni cambios de moneda"
+            ],
+            [
+              "Crecimiento por adquisiciones",
+              "Lo que suman las empresas que se han comprado"
+            ],
+            [
+              "Efecto divisa",
+              "Cambio en lo vendido por pasar otras monedas al euro"
+            ],
+            [
+              "Ventas comparables",
+              "Solo cuentan las tiendas abiertas en los dos periodos"
+            ]
+          ],
+          "why": "El orgánico deja fuera compras y divisa; las ventas comparables dejan fuera las tiendas nuevas.",
+          "guia": "g2"
+        },
+        {
+          "id": "og1-3",
+          "t": "choice",
+          "q": "Una cadena abre 40 tiendas nuevas este año y sus ventas totales suben un 10 %. ¿Qué cifra mide mejor si el negocio que ya tenía crece?",
+          "opts": [
+            "Las ventas totales de la cadena, tiendas nuevas incluidas",
+            "El número de tiendas que tiene la cadena ahora",
+            "Las ventas de las tiendas abiertas en los dos años",
+            "Las ventas que aportan las 40 tiendas nuevas"
+          ],
+          "a": 2,
+          "why": "Las ventas comparables solo cuentan las tiendas que ya existían el año anterior: así se ve si el negocio de siempre vende más.",
+          "guia": "g2",
+          "porque": [
+            "Incluyen las 40 tiendas nuevas: las ventas pueden subir sin que el negocio que ya existía crezca.",
+            "Más tiendas no dicen si cada una vende más o menos que antes.",
+            null,
+            "Miden solo lo nuevo: no dicen si las tiendas de siempre venden más."
+          ]
+        },
+        {
+          "id": "og1-4",
+          "t": "num",
+          "q": "Una cadena tiene 500 tiendas abiertas desde hace más de un año, que vendieron 800 M€ el año pasado y 840 M€ este año. Además abrió 30 tiendas nuevas que vendieron 50 M€. ¿Cuánto crecen las ventas en tiendas comparables, en %?",
+          "unit": "%",
+          "a": 5,
+          "why": "840 ÷ 800 = 1,05: un 5 %. Las ventas totales suben más, (840 + 50) ÷ 800 = 11,25 %, porque suman las 30 tiendas nuevas, que no son comparables.",
+          "guia": "g2"
+        },
+        {
+          "id": "og1-5",
+          "t": "num",
+          "q": "Las ventas de una empresa europea crecen un 3 % en euros. Las compras aportan 2 puntos y el dólar más débil resta 4 puntos (sobre las ventas del año anterior). ¿Qué crecimiento orgánico tiene, en %?",
+          "unit": "%",
+          "a": 5,
+          "why": "3 − 2 − (−4) = 5 %. La divisa restó 4 puntos, así que sin ella el negocio habría crecido más que el 3 % publicado.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "og2",
+      "title": "Por qué importa y qué vigilar",
+      "ex": [
+        {
+          "id": "og2-1",
+          "t": "num",
+          "q": "Una empresa vendió 1.000 M€ el año pasado. Este año compra otra empresa por 280 M€ y esa compra aporta 70 M€ de ventas al año. ¿Cuántos euros pagó por cada euro de ventas compradas?",
+          "unit": "€",
+          "a": 4,
+          "why": "280 ÷ 70 = 4 € por cada euro de ventas. Esos 70 M€ son 7 puntos sobre 1.000 M€: crecer comprando cuesta capital.",
+          "guia": "g3"
+        },
+        {
+          "id": "og2-2",
+          "t": "choice",
+          "q": "Dos empresas del mismo sector crecen un 8 % en ventas: A, casi todo por crecimiento orgánico y B, casi todo por compras. ¿Por qué suele pagar el mercado un múltiplo mayor por A?",
+          "opts": [
+            "Porque las ventas compradas no se pueden sumar en la cuenta de resultados",
+            "Porque su crecimiento se repite sin gastar capital en cada compra",
+            "Porque una empresa que compra no puede aumentar nunca su beneficio",
+            "Porque el crecimiento orgánico es siempre mayor que el comprado"
+          ],
+          "a": 1,
+          "why": "A crece con el negocio que ya tiene; B tiene que pagar cada punto de crecimiento con dinero, deuda o acciones nuevas, y eso no se puede repetir sin límite.",
+          "guia": "g3",
+          "porque": [
+            "Sí se suman: las ventas de lo comprado entran en la cuenta de resultados desde que se compra.",
+            null,
+            "Una empresa que compra puede aumentar su beneficio, pero tiene que pagar cada compra.",
+            "No siempre: el orgánico puede ser menor, como en B. Lo que cambia es que se repite sin gastar capital."
+          ]
+        },
+        {
+          "id": "og2-3",
+          "t": "num",
+          "q": "Una empresa crece un 9 % en ventas (de 2.000 M€ a 2.180 M€). Las compras aportan 7,5 puntos y la divisa, 0,5 puntos. ¿Qué crecimiento orgánico tiene, en %?",
+          "unit": "%",
+          "a": 1,
+          "why": "9 − 7,5 − 0,5 = 1 %. Casi todo el crecimiento se ha comprado: por dentro la empresa apenas avanza.",
+          "guia": "g2"
+        },
+        {
+          "id": "og2-4",
+          "t": "choice",
+          "q": "Cuatro empresas crecen un 10 % en ventas, con este desglose. ¿Cuál enseña la señal de alerta de crecer comprando sin crecer por dentro?",
+          "opts": [
+            "Ventas +10 %: orgánico +9 % y compras +1 %",
+            "Ventas +10 %: orgánico +6 % y divisa +4 %",
+            "Ventas +10 %: orgánico −1 % y compras +11 %",
+            "Ventas +10 %: orgánico +7 % y compras +3 %"
+          ],
+          "a": 2,
+          "why": "El orgánico es −1 %: sin las compras, las ventas del negocio de siempre bajarían. En las demás, la mayor parte del 10 % viene de dentro o de la divisa.",
+          "guia": "g4",
+          "porque": [
+            "Es una empresa sana: casi todo el crecimiento es orgánico.",
+            "Parte del crecimiento viene de la divisa, no de comprar, y 6 puntos son orgánicos.",
+            null,
+            "Casi todo es orgánico, con una compra pequeña de 3 puntos."
+          ]
+        },
+        {
+          "id": "og2-5",
+          "t": "choice",
+          "q": "Una empresa publica «ventas +9 %» sin más datos. ¿Qué pides para saber cómo crece el negocio que ya tenía?",
+          "opts": [
+            "El precio al que cotiza hoy su acción en la bolsa",
+            "El número de empleados que tiene ahora la empresa",
+            "El desglose entre orgánico, compras y divisa",
+            "La fecha de la próxima junta de accionistas"
+          ],
+          "a": 2,
+          "why": "Con el desglose restas las compras y la divisa al 9 % y ves lo que crece el negocio de siempre. Las demás cifras no lo dicen.",
+          "guia": "g1",
+          "porque": [
+            "El precio de la acción no dice de dónde sale el crecimiento de las ventas.",
+            "El número de empleados no descompone el 9 %.",
+            null,
+            "La fecha de la junta no dice nada sobre el crecimiento."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}
