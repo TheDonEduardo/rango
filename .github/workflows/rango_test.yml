@@ -1,0 +1,39 @@
+name: Rango · tests
+
+# Valida el contenido y recorre la app en un navegador real en cada cambio.
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Contenido y recorrido simulado
+        run: npm test
+
+      - name: Generadores (con datos simulados)
+        run: |
+          python -m pip install --quiet pandas
+          python -I tools/test_casos.py
+          python -I tools/test_semana.py
+
+      - name: Navegador y accesibilidad
+        run: |
+          npm install --no-save playwright@1.63.0 axe-core@4.10.2
+          npx playwright install --with-deps chromium
+          node test/e2e.cjs
