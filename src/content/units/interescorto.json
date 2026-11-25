@@ -1,0 +1,196 @@
+{
+  "n": 21,
+  "id": "interescorto",
+  "track": "tecnico",
+  "title": "Interés en corto",
+  "blurb": "Short float, días para cubrir, short squeeze y por qué los datos llegan tarde.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Interés en corto",
+      "texto": "El interés en corto mide qué parte del float está vendida en corto (short float). Un porcentaje alto indica escepticismo: hay quien apuesta a que baja. No es una señal de compra ni de caída segura.",
+      "ejemplo": "12 millones de acciones en corto sobre un float de 80 millones: un 15 %."
+    },
+    {
+      "id": "g2",
+      "titulo": "Días para cubrir",
+      "texto": "Días para cubrir = acciones en corto ÷ volumen medio diario. Indica cuántas sesiones de volumen harían falta para recomprarlas todas. Cuanto más alto, más difícil salir de golpe. Si el volumen cae, sube.",
+      "ejemplo": "9 millones en corto y 1,2 millones de volumen: 7,5 días. Con 0,9 millones de volumen, 10 días."
+    },
+    {
+      "id": "g3",
+      "titulo": "Short squeeze y comprador tardío",
+      "texto": "Un short squeeze ocurre cuando una subida obliga a los cortos a recomprar, y esas compras empujan el precio aún más. Un gap puede saltarse el stop. Quien llega tarde compra velas extendidas: no persigas, espera una pausa.",
+      "ejemplo": "Corto a 20 € con stop en 22 €: un gap a 26 € pierde 6 €, es decir, 3R."
+    },
+    {
+      "id": "g4",
+      "titulo": "Los datos llegan tarde",
+      "texto": "El interés en corto se publica con retraso de días o semanas. Es una foto antigua: los cortos pueden haberse cerrado o aumentado desde entonces. Úsalo como contexto y riesgo, nunca como señal exacta de hoy.",
+      "ejemplo": "Informe: 12 millones en corto sobre 80 (15 %). Se cierran 4 y se abren 2: ahora son 10 millones, un 12,5 %."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "ic1",
+      "title": "Medir el interés en corto",
+      "ex": [
+        {
+          "id": "ic1-1",
+          "t": "num",
+          "q": "Una acción tiene un float de 80 millones de acciones y 12 millones están vendidas en corto. ¿Qué porcentaje del float está en corto?",
+          "unit": "%",
+          "a": 15,
+          "why": "12 ÷ 80 = 0,15, es decir, un 15 % del float. Es el interés en corto (short float).",
+          "guia": "g1"
+        },
+        {
+          "id": "ic1-2",
+          "t": "choice",
+          "q": "Una acción tiene el 25 % de su float vendido en corto. ¿Cómo lo interpretas?",
+          "opts": [
+            "Hay mucho escepticismo, pero no es una señal de compra ni de caída segura",
+            "Que va a subir: los cortos tendrán que recomprar y la impulsarán",
+            "Que va a quebrar: los cortos siempre acaban acertando",
+            "Que no puede caer más: ya hay demasiados cortos para que baje"
+          ],
+          "a": 0,
+          "why": "Un interés en corto alto indica que muchos apuestan a la baja. Es contexto y riesgo, no una señal de compra ni de caída segura.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Los cortos pueden recomprar, pero no se sabe cuándo: no es una señal de compra.",
+            "Muchos cortos no garantizan una quiebra: la acción puede subir y los cortos pierden.",
+            "Mucho interés en corto no impide que caiga ni que suba: no es un suelo."
+          ]
+        },
+        {
+          "id": "ic1-3",
+          "t": "num",
+          "q": "Una acción tiene 9 millones de acciones vendidas en corto y negocia una media de 1,2 millones al día. ¿Cuántos días de volumen harían falta para recomprarlas todas? Redondea a 1 decimal.",
+          "unit": "",
+          "a": 7.5,
+          "why": "9 ÷ 1,2 = 7,5 días para cubrir. Cuantos más días, más difícil es que los cortos salgan de golpe sin mover el precio.",
+          "tol": 0.06,
+          "guia": "g2"
+        },
+        {
+          "id": "ic1-4",
+          "t": "num",
+          "q": "Con 9 millones de acciones en corto, el volumen medio diario de una acción baja de 1,2 a 0,9 millones. ¿Cuántos días para cubrir hay ahora?",
+          "unit": "",
+          "a": 10,
+          "why": "9 ÷ 0,9 = 10 días, frente a 7,5 con 1,2 millones. Si el volumen cae, los días para cubrir suben aunque no cambie el número de cortos.",
+          "guia": "g2"
+        },
+        {
+          "id": "ic1-5",
+          "t": "choice",
+          "q": "Valor A: 20 % del float en corto y 1,5 días para cubrir. Valor B: 8 % del float en corto y 12 días para cubrir. ¿En cuál sería más difícil que los cortos recompren de golpe sin mover el precio?",
+          "opts": [
+            "En A: el porcentaje del float es más alto, y eso decide",
+            "En ambos igual: solo importa el número de acciones vendidas",
+            "En ninguno: el interés en corto no afecta a la recompra",
+            "En B: aunque tiene menos porcentaje, necesitaría 12 días de volumen"
+          ],
+          "a": 3,
+          "why": "Los días para cubrir miden la dificultad de salir: B necesita 12 sesiones de volumen; A, solo 1,5. El porcentaje solo no basta.",
+          "guia": "g2",
+          "porque": [
+            "El porcentaje importa, pero 1,5 días de volumen cubren A con facilidad.",
+            "El número de acciones sin el volumen no dice cuánto cuesta salir.",
+            "Sí afecta: cuantos más días para cubrir, más cuesta recomprar sin mover el precio.",
+            null
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "ic2",
+      "title": "Squeeze y datos con retraso",
+      "ex": [
+        {
+          "id": "ic2-1",
+          "t": "choice",
+          "q": "Una acción con mucho interés en corto sube un 30 % en tres sesiones tras una noticia. ¿Por qué puede seguir subiendo?",
+          "opts": [
+            "Los cortos cobran el dividendo de las acciones que recompran",
+            "Los cortos recompran para cortar pérdidas y esas compras empujan el precio",
+            "Los cortos ganan con la subida y por eso compran más acciones",
+            "Una subida del 30 % nunca puede continuar: ya ha ido demasiado lejos"
+          ],
+          "a": 1,
+          "why": "Al subir, los cortos pierden y sus stops se activan: para cerrar hay que comprar, y esas compras elevan el precio. Eso es un short squeeze.",
+          "guia": "g3",
+          "porque": [
+            "Los cortos no cobran dividendos: los pagan a quien les prestó las acciones.",
+            null,
+            "Los cortos ganan cuando baja: al subir pierden y cierran, no añaden.",
+            "No hay un límite para una subida: depende de la oferta y la demanda."
+          ]
+        },
+        {
+          "id": "ic2-2",
+          "t": "num",
+          "q": "Vendes en corto a 20,00 € con el stop en 22,00 €. La acción abre con un gap a 26,00 € y cierras ahí. ¿Cuántos R pierdes?",
+          "unit": "R",
+          "a": 3,
+          "why": "Riesgo previsto: 22 − 20 = 2 € por acción (1R). Pérdida real: 26 − 20 = 6 €. 6 ÷ 2 = 3R: un gap salta el stop.",
+          "guia": "g3"
+        },
+        {
+          "id": "ic2-3",
+          "t": "choice",
+          "q": "Tras un short squeeze, una acción pasa de 20 a 35 € en cinco sesiones con velas muy largas. ¿Qué dice la regla de no perseguir velas extendidas?",
+          "opts": [
+            "Comprar ya con medio tamaño y el stop en el inicio de la subida, 20 €",
+            "Vender en corto ya: lo que sube tanto siempre vuelve al origen",
+            "No perseguirla: esperar una pausa o un retroceso con un stop cercano",
+            "Añadir cada día más acciones mientras los cortos sigan recomprando"
+          ],
+          "a": 2,
+          "why": "En una vela extendida el stop razonable queda lejos y el riesgo por acción se dispara. Quien llega tarde compra el final de la subida: espera una pausa.",
+          "guia": "g3",
+          "porque": [
+            "Con el stop en 20 €, arriesgas 15 € por acción: demasiado para media posición.",
+            "Lo que sube mucho no siempre vuelve al origen: vender en corto ahí es otro riesgo.",
+            null,
+            "Añadir cada día es perseguir velas extendidas y subir el riesgo, justo lo que evita la regla."
+          ]
+        },
+        {
+          "id": "ic2-4",
+          "t": "choice",
+          "q": "Hoy consultas el interés en corto de una acción en un informe publicado hace diez días. ¿Cómo usas ese dato?",
+          "opts": [
+            "Como una foto antigua: los cortos pueden haber cambiado desde entonces",
+            "Como el dato de hoy: los informes se actualizan cada sesión",
+            "Como una señal de compra puntual si el porcentaje es alto",
+            "No lo usas: un dato con retraso nunca aporta contexto"
+          ],
+          "a": 0,
+          "why": "El interés en corto se publica con retraso de días o semanas. Sirve como contexto, pero la situación de hoy puede ser distinta.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Los informes de interés en corto no se actualizan cada sesión: llegan con retraso.",
+            "Un dato antiguo no es una señal puntual de compra.",
+            "Un dato con retraso aporta contexto si se lee como lo que es."
+          ]
+        },
+        {
+          "id": "ic2-5",
+          "t": "num",
+          "q": "El último informe decía que 12 millones de acciones estaban en corto sobre un float de 80 millones. Desde entonces se han cerrado 4 millones de cortos y se han abierto 2 millones nuevos. ¿Qué porcentaje del float está hoy en corto? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 12.5,
+          "why": "12 − 4 + 2 = 10 millones; 10 ÷ 80 = 12,5 %, frente al 15 % del informe. Por eso un dato con retraso puede no reflejar hoy.",
+          "tol": 0.06,
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

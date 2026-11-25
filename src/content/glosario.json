@@ -1197,5 +1197,96 @@
  {
   "termino": "fondo de gastos irregulares",
   "d": "Ahorro aparte para gastos previstos que no son mensuales (seguros, ITV, regalos, vacaciones), que se rellena cada mes."
+ },
+ {
+  "termino": "zigzag",
+  "d": "Corrección de Elliott en tres ondas (5-3-5): brusca y profunda."
+ },
+ {
+  "termino": "corrección plana",
+  "d": "Corrección lateral de Elliott en tres ondas (3-3-5): la onda B recupera casi toda la A."
+ },
+ {
+  "termino": "triángulo de Elliott",
+  "d": "Corrección de cinco tramos (3-3-3-3-3) que se estrecha; aparece en la onda 4 o en la B."
+ },
+ {
+  "termino": "backlog",
+  "d": "Cartera de pedidos que anuncia la empresa. Solo es ingreso contratado lo que obliga al cliente a pagar, con penalización si cancela."
+ },
+ {
+  "termino": "acuerdo marco",
+  "d": "Contrato que fija precios y condiciones, pero sin obligar a comprar una cantidad mínima."
+ },
+ {
+  "termino": "MOU",
+  "d": "Memorando de entendimiento: declaración de intenciones entre dos partes, sin obligación de comprar."
+ },
+ {
+  "termino": "LOI",
+  "d": "Carta de intención: expresa interés en un acuerdo futuro, sin obligar a cerrarlo."
+ },
+ {
+  "termino": "parte vinculada",
+  "alias": [
+   "partes vinculadas"
+  ],
+  "d": "Cliente, proveedor o socio con un vínculo con la empresa (accionista, directivo o filial). Sus operaciones pueden no reflejar un mercado independiente."
+ },
+ {
+  "termino": "acciones preferentes",
+  "alias": [
+   "preferentes"
+  ],
+  "d": "Acciones que cobran dividendos y, en una liquidación, antes que las comunes, pero después de la deuda."
+ },
+ {
+  "termino": "bono convertible",
+  "alias": [
+   "bonos convertibles"
+  ],
+  "d": "Deuda que se puede canjear por acciones a un precio fijado. Al convertirse, aumenta el número de acciones."
+ },
+ {
+  "termino": "warrant",
+  "alias": [
+   "warrants"
+  ],
+  "d": "Derecho a comprar acciones nuevas a un precio fijo. Al ejercerlo, aumenta el número de acciones."
+ },
+ {
+  "termino": "acciones diluidas",
+  "d": "Acciones comunes más las que aparecerían si se convirtiera y ejerciera todo (convertibles, warrants, opciones)."
+ },
+ {
+  "termino": "runway",
+  "d": "Meses que la liquidez libre cubre la quema operativa más el capex previsto, sin financiación nueva."
+ },
+ {
+  "termino": "ATM",
+  "d": "Programa «at the market»: la empresa vende acciones nuevas en el mercado poco a poco, sin ampliación anunciada. Diluye de forma continua."
+ },
+ {
+  "termino": "pre-mortem",
+  "d": "Imaginar antes de comprar que la inversión ha fracasado y explicar por qué, para detectar los riesgos y sus señales."
+ },
+ {
+  "termino": "valor esperado",
+  "d": "Media de los valores de cada escenario ponderada por su probabilidad: Σ p × V. No es un precio objetivo."
+ },
+ {
+  "termino": "short float",
+  "alias": [
+   "interés en corto"
+  ],
+  "d": "Porcentaje de las acciones que flotan que están vendidas en corto. Un porcentaje alto indica escepticismo, no una señal de compra."
+ },
+ {
+  "termino": "días para cubrir",
+  "d": "Acciones en corto entre el volumen medio diario: sesiones de volumen necesarias para recomprarlas todas."
+ },
+ {
+  "termino": "short squeeze",
+  "d": "Subida brusca en la que los cortos recompran para cortar pérdidas y esas compras empujan el precio aún más."
  }
 ]

@@ -1,0 +1,237 @@
+{
+  "n": 8,
+  "id": "redteam",
+  "track": "fundamental",
+  "title": "Tesis bajista y escenarios",
+  "blurb": "Pre-mortem, hitos, escenarios con probabilidades y del valor de empresa al valor por acción.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Pre-mortem: cuatro formas de perderlo casi todo",
+      "texto": "Imagina que dentro de dos años la acción ha perdido entre el 50 % y el 100 % y explica por qué. Los mecanismos típicos: insolvencia, reestructuración con los acreedores por delante, obsolescencia y dilución perpetua.",
+      "ejemplo": "Compras a 20 $ y una reestructuración deja cada acción en 3 $: pierdes el 85 %."
+    },
+    {
+      "id": "g2",
+      "titulo": "Hipótesis frágil e hitos",
+      "texto": "Busca el pilar que, si falla, derrumba el caso aunque los demás se cumplan: la hipótesis más frágil. Y fija hitos con fecha: qué dato valida la tesis y cuál la invalida.",
+      "ejemplo": "Ordanis necesita 24 meses para llegar al equilibrio y su liquidez libre da 14: lo frágil es financiar los 10 meses restantes."
+    },
+    {
+      "id": "g3",
+      "titulo": "Escenarios con probabilidades",
+      "texto": "Da un valor por acción en tres escenarios (pesimista, base, optimista) con probabilidades que sumen 100 %. Valor esperado = Σ p × V, no un precio objetivo. El margen de seguridad se mide frente al base: (V base − precio) ÷ V base.",
+      "ejemplo": "2 $ (40 %), 14 $ (40 %), 36 $ (20 %): 13,6 $. Precio 10 $: (14 − 10) ÷ 14 = 28,6 %."
+    },
+    {
+      "id": "g4",
+      "titulo": "Del valor de empresa a la acción",
+      "texto": "Al valor de empresa suma la caja libre y resta la deuda y las preferentes. Divide entre las acciones diluidas proyectadas. Si sale negativo, el suelo es 0: el accionista no pierde más que lo invertido.",
+      "ejemplo": "1.000 + 200 − 400 − 150 = 650 mill. $; entre 130 millones de acciones: 5 $."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "rm1",
+      "title": "El pre-mortem",
+      "ex": [
+        {
+          "id": "rm1-1",
+          "t": "match",
+          "q": "Empareja cada mecanismo por el que el accionista común puede perderlo casi todo con su descripción.",
+          "pairs": [
+            [
+              "Insolvencia",
+              "La liquidez se acaba antes del equilibrio y nadie financia"
+            ],
+            [
+              "Reestructuración",
+              "Los acreedores cobran primero o toman el capital: el común conserva una fracción"
+            ],
+            [
+              "Obsolescencia",
+              "Un sustituto más barato deja la tecnología sin clientes"
+            ],
+            [
+              "Dilución perpetua",
+              "Emisiones constantes reparten el valor entre cada vez más acciones"
+            ]
+          ],
+          "why": "Son cuatro caminos hacia una pérdida del 50-100 % del accionista común: sin liquidez, con los acreedores por delante, sin clientes o con cada vez más acciones.",
+          "guia": "g1"
+        },
+        {
+          "id": "rm1-2",
+          "t": "choice",
+          "q": "Antes de comprar Ordanis imaginas que, dentro de dos años, la acción ha perdido el 80 %. ¿Qué haces con ese ejercicio?",
+          "opts": [
+            "Lo descartas: si la tesis es buena, ese escenario no puede ocurrir",
+            "Compras más acciones, porque ese escenario ya está descontado",
+            "Anotas los mecanismos más plausibles y qué dato los anticiparía",
+            "Lo repites solo si la acción cae, para entender qué pasó"
+          ],
+          "a": 2,
+          "why": "El pre-mortem se hace antes: escribes cómo podría fallar la tesis y qué señal lo anunciaría, para detectarlo a tiempo y reducir o salir.",
+          "guia": "g1",
+          "porque": [
+            "Descartarlo es el error que el pre-mortem evita: sin escribir los fallos, no los vigilas.",
+            "Un escenario no está descontado por imaginarlo; comprar más aumenta el riesgo sin base.",
+            null,
+            "Hacerlo después no sirve: el valor está en prepararlo antes, con señales que anticipen el fallo."
+          ]
+        },
+        {
+          "id": "rm1-3",
+          "t": "choice",
+          "q": "Ordanis necesita 24 meses para llegar al equilibrio, pero su liquidez libre solo da para 14. ¿Cuál es la hipótesis más frágil de su tesis?",
+          "opts": [
+            "Que el sector del almacenamiento de energía siga existiendo dentro de 24 meses",
+            "Que la acción no baje durante los próximos 24 meses",
+            "Que la empresa publique sus resultados cada trimestre",
+            "Que consiga financiar los 10 meses restantes sin una dilución que arruine la tesis"
+          ],
+          "a": 3,
+          "why": "Faltan 24 − 14 = 10 meses de caja. Si la financiación no llega o llega muy diluida, caen los demás pilares aunque el producto funcione.",
+          "guia": "g2",
+          "porque": [
+            "Que el sector exista no es lo frágil: su caja, con 10 meses sin cubrir, sí lo es.",
+            "El precio no es una hipótesis del negocio; lo frágil es la financiación que falta.",
+            "Publicar resultados es rutina y no hunde la tesis; los 10 meses sin caja, sí.",
+            null
+          ]
+        },
+        {
+          "id": "rm1-4",
+          "t": "num",
+          "q": "En el pre-mortem de Ordanis, una reestructuración deja cada acción que compraste a 20 $ en 3 $. ¿Qué porcentaje pierdes?",
+          "unit": "%",
+          "a": 85,
+          "why": "20 − 3 = 17 $ de pérdida por acción; 17 ÷ 20 = 85 %. Está dentro del rango del 50-100 % que busca el pre-mortem.",
+          "guia": "g1"
+        },
+        {
+          "id": "rm1-5",
+          "t": "choice",
+          "q": "Según la tabla de hitos de Ordanis, el 2.º trimestre publica un margen bruto del −14 %. ¿Qué haces con la tesis?",
+          "opts": [
+            "Se valida: el margen sigue siendo negativo, como se esperaba",
+            "Se invalida el primer hito: reduces o sales, aunque el precio no haya caído",
+            "Queda en suspenso hasta el cierre de financiación del 3.º T",
+            "Se valida si el cliente principal renueva en el 4.º T"
+          ],
+          "a": 1,
+          "why": "Un margen bruto inferior a −10 % invalida el primer hito. Los hitos posteriores no lo compensan: cada uno valida o invalida su parte de la tesis.",
+          "table": {
+            "cols": [
+              "Hito",
+              "Valida",
+              "Invalida"
+            ],
+            "rows": [
+              [
+                "Margen bruto, 2.º T",
+                "≥ 0 %",
+                "< −10 %"
+              ],
+              [
+                "Financiación, 3.º T",
+                "≥ 150 mill. $",
+                "Solo ATM"
+              ],
+              [
+                "Cliente, 4.º T",
+                "Contrato",
+                "Solo MOU"
+              ]
+            ],
+            "note": "Ordanis, empresa ficticia. Financiación sin warrants; contrato vinculante."
+          },
+          "guia": "g2",
+          "porque": [
+            "Se esperaba un margen cercano a 0 %: el −14 % es peor que el −10 % que invalida el hito.",
+            null,
+            "Cada hito se juzga por separado: el 3.º T no puede esperar para cerrar el 1.º.",
+            "Un contrato posterior no compensa un margen bruto que ya invalida el primer hito."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "rm2",
+      "title": "Escenarios y del valor de empresa a la acción",
+      "ex": [
+        {
+          "id": "rm2-1",
+          "t": "num",
+          "q": "Escenarios de una acción de Ordanis: pesimista, 2 $ (40 %); base, 14 $ (40 %); optimista, 36 $ (20 %). ¿Cuál es el valor esperado, en dólares por acción? Redondea a 1 decimal.",
+          "unit": "$",
+          "a": 13.6,
+          "why": "2 × 0,40 + 14 × 0,40 + 36 × 0,20 = 0,8 + 5,6 + 7,2 = 13,6 $. Las probabilidades suman 100 %.",
+          "tol": 0.06,
+          "guia": "g3"
+        },
+        {
+          "id": "rm2-2",
+          "t": "num",
+          "q": "El escenario base de Ordanis vale 14 $ por acción y cotiza a 10 $. ¿Qué margen de seguridad tiene frente al escenario base? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 28.6,
+          "why": "(14 − 10) ÷ 14 = 28,6 %. El margen se mide frente al escenario base, no frente al optimista (que daría 72,2 %).",
+          "tol": 0.06,
+          "guia": "g3"
+        },
+        {
+          "id": "rm2-3",
+          "t": "choice",
+          "q": "Ordanis tiene escenarios de 2 $ (40 %), 14 $ (40 %) y 36 $ (20 %), con un valor esperado de 13,6 $. ¿Cómo lo interpretas?",
+          "opts": [
+            "Como una media ponderada, no como un precio al que llegará",
+            "Como el precio al que llegará la acción dentro de un año",
+            "Como el valor del escenario más probable",
+            "Como el mínimo que garantiza el escenario pesimista"
+          ],
+          "a": 0,
+          "why": "Es una media ponderada por probabilidad: ninguno de los tres escenarios vale 13,6 $. Sirve para comparar con el precio, no para predecirlo.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Es una media, no una predicción: ningún escenario vale 13,6 $.",
+            "Los escenarios más probables son el pesimista y el base, con un 40 % cada uno, y 13,6 $ no coincide con ninguno: es una media.",
+            "El pesimista (2 $) no garantiza nada: los escenarios son hipótesis con probabilidad."
+          ]
+        },
+        {
+          "id": "rm2-4",
+          "t": "num",
+          "q": "En el escenario base, Ordanis tiene un valor de empresa de 1.000 mill. $, caja libre de 200 mill. $, deuda de 400 mill. $ y preferentes de 150 mill. $, con 130 millones de acciones diluidas proyectadas. ¿Cuánto vale cada acción, en dólares?",
+          "unit": "$",
+          "a": 5,
+          "why": "1.000 + 200 − 400 − 150 = 650 mill. $ para el accionista común; 650 ÷ 130 = 5 $. La deuda y las preferentes se restan una sola vez.",
+          "guia": "g4"
+        },
+        {
+          "id": "rm2-5",
+          "t": "choice",
+          "q": "En el escenario pesimista, Ordanis tiene un valor de empresa de 300 mill. $, caja libre de 200 mill. $, deuda de 450 mill. $ y preferentes de 150 mill. $, con 130 millones de acciones diluidas. ¿Qué valor por acción asignas?",
+          "opts": [
+            "−0,77 $: el resultado negativo se reparte entre los accionistas",
+            "0 $: el accionista común no pierde más que lo invertido",
+            "0,38 $: se ignoran las preferentes en el escenario pesimista",
+            "2,31 $: es el valor de empresa entre las acciones, sin restar nada"
+          ],
+          "a": 1,
+          "why": "300 + 200 − 450 − 150 = −100 mill. $. El accionista no responde de más que su inversión: el suelo es 0 $.",
+          "guia": "g4",
+          "porque": [
+            "Un valor negativo por acción no existe: el accionista no responde de más que lo invertido.",
+            null,
+            "Las preferentes cobran antes que el accionista común: hay que restarlas.",
+            "Sin restar la deuda ni las preferentes, das al accionista un valor que es de los acreedores."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

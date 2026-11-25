@@ -1,0 +1,392 @@
+{
+  "n": 27,
+  "id": "elliott2",
+  "track": "tecnico",
+  "title": "Elliott en la práctica",
+  "blurb": "Zigzag, plana y triángulo, alternancia, dos recuentos con su invalidación y cuándo no operar.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Zigzag, plana y triángulo",
+      "texto": "Una corrección no siempre es un A-B-C simple. El zigzag (5-3-5) cae en seco. La corrección plana (3-3-5) se queda de lado: la B recupera casi toda la A. El triángulo de Elliott (3-3-3-3-3) se estrecha en cinco tramos y aparece en la onda 4 o en la B.",
+      "ejemplo": "Tras un máximo de 100 €, la A baja a 90 €: en una plana, la B sube a 99,50 €.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Dos correcciones desde el mismo máximo: el zigzag cae en tres ondas hasta un mínimo muy inferior; la corrección plana baja menos, rebota casi hasta el inicio y vuelve a caer.",
+        "series": [
+          {
+            "data": [100,88,94,80],
+            "texto": "Zigzag",
+            "tono": "dn"
+          },
+          {
+            "data": [100,90,99.5,88],
+            "texto": "Plana",
+            "tono": "sel"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 2,
+            "y": 99.5,
+            "texto": "B casi en 100",
+            "lado": "d"
+          }
+        ],
+        "h": 210
+      }
+    },
+    {
+      "id": "g2",
+      "titulo": "Alternancia entre la 2 y la 4",
+      "texto": "Si una de las dos correcciones es brusca y profunda, la otra suele ser lateral y superficial. Es la regla de alternancia: una pauta, no una ley. Te ayuda a anticipar la onda 4 al ver cómo fue la 2.",
+      "ejemplo": "Onda 2 de 60 a 53,82 € (61,8 %). Si la 4 alterna, retrocede un 38,2 % de la onda 3 (de 53,82 a 70,00 €): hasta 63,82 €.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Impulso de cinco ondas: la onda 2 es una corrección brusca y profunda y la onda 4, una lateral y superficial.",
+        "series": [
+          {
+            "data": [50,60,53.82,70,63.82,73.82],
+            "tono": "sel"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 1,
+            "y": 60,
+            "texto": "1"
+          },
+          {
+            "i": 2,
+            "y": 53.82,
+            "texto": "2",
+            "lado": "i"
+          },
+          {
+            "i": 3,
+            "y": 70,
+            "texto": "3"
+          },
+          {
+            "i": 4,
+            "y": 63.82,
+            "texto": "4",
+            "lado": "i"
+          },
+          {
+            "i": 5,
+            "y": 73.82,
+            "texto": "5"
+          }
+        ],
+        "zonas": [
+          {
+            "i1": 2,
+            "i2": 2,
+            "texto": "Brusca"
+          },
+          {
+            "i1": 4,
+            "i2": 4,
+            "texto": "Lateral"
+          }
+        ],
+        "h": 210
+      }
+    },
+    {
+      "id": "g3",
+      "titulo": "Recuento principal y alternativo",
+      "texto": "Lleva siempre dos recuentos, cada uno con su nivel de invalidación. El principal es el más probable; el alternativo, tu plan B. Si el precio pierde el nivel del principal, cambias de escenario sin improvisar.",
+      "ejemplo": "Principal: la onda 2 acabó en 53,82 €; se invalida bajo ese nivel. Alternativo: la 2 sigue y se invalida bajo 50,00 €.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Onda 1 hasta 60 €, onda 2 hasta 53,82 € y un rebote; dos niveles de invalidación: el del recuento principal, en el mínimo de la onda 2, y el del alternativo, en el inicio de la onda 1.",
+        "series": [
+          {
+            "data": [50,60,53.82,58],
+            "tono": "sel"
+          },
+          {
+            "data": [53.82,53.82,53.82,53.82],
+            "texto": "Principal 53,82",
+            "tono": "acc"
+          },
+          {
+            "data": [50,50,50,50],
+            "texto": "Alternativo 50",
+            "tono": "dn"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 1,
+            "y": 60,
+            "texto": "1"
+          }
+        ],
+        "h": 210
+      }
+    },
+    {
+      "id": "g4",
+      "titulo": "La onda 3 y cuándo no operar",
+      "texto": "La onda 3 suele medir 1,618 veces la 1, pero puede extenderse a 2,618 o más: son guías, no reglas. Si hay dos recuentos igual de válidos, o el nivel de invalidación queda lejos, el recuento es ambiguo y lo correcto es no operar.",
+      "ejemplo": "Onda 1 de 10 € (de 50 a 60) y onda 2 en 53,82 €: 1,618 lleva a 70,00 € y 2,618, a 80,00 €.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Dos posibles onda 3 desde el final de la onda 2: una de 1,618 veces la onda 1, que llega a 70 €, y otra extendida de 2,618 veces, que llega a 80 €.",
+        "series": [
+          {
+            "data": [50,60,53.82,70],
+            "texto": "1,618: 70",
+            "tono": "sel"
+          },
+          {
+            "data": [50,60,53.82,80],
+            "texto": "2,618: 80",
+            "tono": "acc"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 1,
+            "y": 60,
+            "texto": "1"
+          },
+          {
+            "i": 2,
+            "y": 53.82,
+            "texto": "2",
+            "lado": "i"
+          }
+        ],
+        "h": 210
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "ew1",
+      "title": "Correcciones y alternancia",
+      "ex": [
+        {
+          "id": "ew1-1",
+          "t": "match",
+          "q": "Empareja cada tipo de corrección de Elliott con su estructura.",
+          "pairs": [
+            [
+              "Zigzag",
+              "Tres ondas 5-3-5, brusca y profunda"
+            ],
+            [
+              "Corrección plana",
+              "Tres ondas 3-3-5, lateral, con la B cerca del inicio de la A"
+            ],
+            [
+              "Triángulo",
+              "Cinco tramos 3-3-3-3-3 que se estrechan"
+            ]
+          ],
+          "why": "El zigzag (5-3-5) cae en seco; la plana (3-3-5) se queda de lado porque la B recupera casi toda la A; el triángulo (3-3-3-3-3) comprime el rango en cinco tramos.",
+          "guia": "g1"
+        },
+        {
+          "id": "ew1-2",
+          "t": "choice",
+          "q": "En la teoría de Elliott, ¿dónde aparece con más frecuencia un triángulo de corrección (3-3-3-3-3)?",
+          "opts": [
+            "En la onda 3, el tramo más fuerte de la tendencia",
+            "En la onda 1, al arrancar una tendencia nueva",
+            "En la onda 4 o en la B, antes del último tramo",
+            "En la onda 5, como último impulso de la tendencia"
+          ],
+          "a": 2,
+          "why": "Un triángulo es una pausa que comprime el precio: encaja en la onda 4 (antes de la 5) o en la B (antes de la C). Las ondas 1, 3 y 5 son impulsos. No lo confundas con la cuña o diagonal final, que también se divide en 3-3-3-3-3 pero aparece en la onda 5 o en la C.",
+          "guia": "g1",
+          "porque": [
+            "La onda 3 es un impulso de cinco tramos, no una pausa que se estrecha.",
+            "La onda 1 puede arrancar con una diagonal inicial, pero es un impulso: no es un triángulo de corrección.",
+            null,
+            "En la onda 5 puede aparecer una cuña, un impulso final que se estrecha, no un triángulo de corrección."
+          ]
+        },
+        {
+          "id": "ew1-3",
+          "t": "num",
+          "q": "Una corrección plana empieza tras un máximo de 100 €. La onda A baja a 90 €. Si la B recupera el 95 % de la caída de A, ¿hasta qué precio sube?",
+          "unit": "€",
+          "a": 99.5,
+          "why": "La caída de A es de 10 €; el 95 % son 9,50 €. 90 + 9,50 = 99,50 €: en una plana la B termina cerca del inicio de la A.",
+          "guia": "g1"
+        },
+        {
+          "id": "ew1-4",
+          "t": "choice",
+          "q": "La onda 2 fue un zigzag brusco que retrocedió el 61,8 % de la onda 1. Según la alternancia, ¿qué es más probable en la onda 4?",
+          "opts": [
+            "Otro zigzag igual de brusco, porque la alternancia exige repetir el patrón",
+            "Una corrección más lateral y superficial, como una plana o un triángulo",
+            "Ninguna: tras un zigzag en la onda 2, la 4 no existe",
+            "Una caída más profunda que la de la 2, hasta perder el inicio de la 1"
+          ],
+          "a": 1,
+          "why": "La alternancia dice que, si una de las dos correcciones es brusca y profunda, la otra suele ser lateral y superficial. Es una pauta, no una regla.",
+          "guia": "g2",
+          "porque": [
+            "La alternancia dice lo contrario: si la 2 fue brusca, la 4 suele ser distinta, no igual.",
+            null,
+            "La onda 4 existe siempre en un impulso de cinco ondas; el tipo de la 2 no la elimina.",
+            "Perder el inicio de la onda 1 rompe una de las tres reglas y anula el recuento: no es lo esperado."
+          ]
+        },
+        {
+          "id": "ew1-5",
+          "t": "num",
+          "q": "La onda 1 sube de 50 a 60 €, la onda 2 baja un 61,8 % hasta 53,82 € y la onda 3 sube hasta 70,00 €. Si la onda 4 alterna y retrocede solo un 38,2 % de la onda 3, ¿hasta qué precio baja? Redondea a 2 decimales.",
+          "unit": "€",
+          "a": 63.82,
+          "why": "La onda 3 mide 70,00 − 53,82 = 16,18 €; el 38,2 % son 6,18 €. 70,00 − 6,18 = 63,82 €, por encima de 60,00 €: no entra en el terreno de la onda 1.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "ew2",
+      "title": "Dos recuentos y la onda 3",
+      "ex": [
+        {
+          "id": "ew2-1",
+          "t": "level",
+          "q": "Cuentas la onda 1 de 50,00 a 60,00 € y la onda 2 hasta 53,82 €. Recuento principal: la onda 2 ya terminó y empieza la 3. Recuento alternativo: la 2 aún no ha terminado y se invalida bajo el inicio de la onda 1. Toca el nivel cuya pérdida invalida solo el recuento principal.",
+          "chart": {
+            "type": "candles",
+            "data": [
+              [50.4,51.6,50.0,51.3],
+              [51.3,53.2,51.1,52.9],
+              [52.9,53.4,52.0,52.3],
+              [52.3,55.6,52.2,55.3],
+              [55.3,57.8,55.0,57.4],
+              [57.4,58.1,56.4,56.9],
+              [56.9,60.0,56.7,59.6],
+              [59.6,59.8,57.4,57.9],
+              [57.9,58.2,55.9,56.2],
+              [56.2,56.7,54.8,55.1],
+              [55.1,55.8,53.82,54.6],
+              [54.6,56.2,54.4,55.9],
+              [55.9,57.6,55.7,57.4]
+            ],
+            "h": 260,
+            "levels": [
+              {
+                "id": "A",
+                "y": 55.0
+              },
+              {
+                "id": "B",
+                "y": 50.0
+              },
+              {
+                "id": "C",
+                "y": 53.82
+              }
+            ],
+            "alt": "Gráfico de velas con una subida, un retroceso y un rebote, y tres líneas horizontales marcadas A, B y C"
+          },
+          "a": "C",
+          "why": "Bajo 53,82 € la onda 2 no terminó ahí y el recuento principal falla, pero el alternativo sigue vivo hasta 50,00 €, el inicio de la onda 1. El 55,00 € es solo el retroceso del 50 %: perderlo no invalida nada.",
+          "guia": "g3"
+        },
+        {
+          "id": "ew2-2",
+          "t": "plan",
+          "q": "Compras a 61,00 € la ruptura del techo de la onda 1 (60,00 €). Tu recuento principal se invalida bajo el mínimo de la onda 2, 53,82 €. Coloca el stop 0,12 € por debajo de ese mínimo.",
+          "chart": {
+            "type": "candles",
+            "data": [
+              [50.4,51.6,50.0,51.3],
+              [51.3,53.2,51.1,52.9],
+              [52.9,53.4,52.0,52.3],
+              [52.3,55.6,52.2,55.3],
+              [55.3,57.8,55.0,57.4],
+              [57.4,58.1,56.4,56.9],
+              [56.9,60.0,56.7,59.6],
+              [59.6,59.8,57.4,57.9],
+              [57.9,58.2,55.9,56.2],
+              [56.2,56.7,54.8,55.1],
+              [55.1,55.8,53.82,54.6],
+              [54.6,56.2,54.4,55.9],
+              [55.9,57.6,55.7,57.4],
+              [57.4,58.6,57.1,58.3],
+              [58.3,59.9,58.0,59.5],
+              [59.5,61.3,59.4,61.0]
+            ],
+            "h": 260,
+            "lines": [
+              {
+                "y": 61.0,
+                "label": "Entrada 61,00"
+              }
+            ],
+            "alt": "Gráfico de velas con una subida, un retroceso y una ruptura al alza, con la entrada marcada y una línea para colocar"
+          },
+          "place": [
+            {
+              "id": "stop",
+              "label": "Stop",
+              "a": 53.7,
+              "start": 57.0
+            }
+          ],
+          "why": "53,82 − 0,12 = 53,70 €. Riesgo por acción: 61,00 − 53,70 = 7,30 €. Si pierde ese nivel, la onda 2 no terminó ahí y el recuento principal falla.",
+          "guia": "g3"
+        },
+        {
+          "id": "ew2-3",
+          "t": "order",
+          "q": "Ordena cómo trabajas con dos recuentos de Elliott.",
+          "items": [
+            "Cuentas las ondas y eliges el recuento principal",
+            "Marcas el nivel que invalida ese recuento",
+            "Escribes un recuento alternativo con su propio nivel",
+            "Operas con el stop en el nivel de invalidación",
+            "Si el precio rompe ese nivel, cambias de escenario"
+          ],
+          "why": "Primero el recuento y su invalidación; después el plan B con su nivel; solo entonces operas, con el stop en el nivel que rompe tu escenario, y cambias de recuento si se rompe.",
+          "guia": "g3"
+        },
+        {
+          "id": "ew2-4",
+          "t": "num",
+          "q": "La onda 1 sube de 50 a 60 € y la onda 2 termina en 53,82 €. Si la onda 3 se extiende y mide 2,618 veces la onda 1, ¿hasta qué precio llega?",
+          "unit": "€",
+          "a": 80,
+          "why": "2,618 × 10 = 26,18 €; 53,82 + 26,18 = 80,00 €. Con 1,618 llegaría a 70,00 €: Fibonacci da referencias, no un objetivo seguro.",
+          "guia": "g4"
+        },
+        {
+          "id": "ew2-5",
+          "t": "choice",
+          "q": "Tienes dos recuentos igual de válidos: el alcista se invalida bajo 50 € y el bajista, sobre 62 €. El precio está en 56 €, entre los dos niveles. ¿Qué haces?",
+          "opts": [
+            "Compras con el stop en 50 €: el recuento alcista es el que prefieres",
+            "No operas hasta que el precio rompa uno de los dos niveles",
+            "Compras y vendes en corto a la vez, con un stop en cada nivel",
+            "Eliges el recuento con más ondas y operas con tamaño doble"
+          ],
+          "a": 1,
+          "why": "Con dos recuentos igual de válidos y el precio entre sus niveles de invalidación no hay ventaja: lo correcto es esperar a que el precio elija.",
+          "guia": "g4",
+          "porque": [
+            "Preferir un recuento no lo hace más probable: con ambos igual de válidos no hay ventaja que justifique el riesgo.",
+            null,
+            "Abrir las dos posiciones anula la ventaja y paga comisiones: acabas con riesgo y sin dirección.",
+            "Más ondas no dan más probabilidad, y doblar el tamaño en un caso ambiguo multiplica el riesgo."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

@@ -1,0 +1,189 @@
+{
+  "n": 7,
+  "id": "letrapequena",
+  "track": "fundamental",
+  "title": "La letra pequeña de una tesis",
+  "blurb": "Backlog, clientes, capital oculto y runway: lo que esconde una empresa que escala.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Fase y backlog",
+      "texto": "Ubica la empresa en una de cinco fases: pre-ingresos, escalado industrial temprano, crecimiento consolidado, turnaround o situación especial. Del backlog, solo es ingreso contratado el pedido vinculante con penalización. Un acuerdo marco sin compra mínima, un MOU o una LOI no obligan a comprar.",
+      "ejemplo": "Ordanis (ficticia): ventas de 80 mill. $ y margen bruto del −10 %: escalado temprano. De 900 mill. $ de backlog, 200 son vinculantes: 22,2 %."
+    },
+    {
+      "id": "g2",
+      "titulo": "Concentración y partes vinculadas",
+      "texto": "Si un cliente compra la mayor parte de las ventas, perderlo o reducir sus pedidos hunde los ingresos. Si además es accionista o socio financiero (parte vinculada), la demanda puede depender de esa relación, no de un mercado independiente.",
+      "ejemplo": "Un cliente compra el 60 % de unas ventas de 80 mill. $. Si recorta sus pedidos a la mitad, las ventas caen 24 mill. $: un 30 %."
+    },
+    {
+      "id": "g3",
+      "titulo": "Capital oculto",
+      "texto": "Antes del accionista común cobran la deuda y las acciones preferentes. Además, los bonos convertibles y los warrants crean acciones nuevas al ejercerse. Cuenta las acciones diluidas: comunes, conversión y warrants.",
+      "ejemplo": "100 millones de comunes, 200 mill. $ convertibles a 10 $ (20 millones) y 10 millones de warrants: 130 millones diluidas."
+    },
+    {
+      "id": "g4",
+      "titulo": "Runway real y ATM",
+      "texto": "Runway = liquidez libre ÷ (quema operativa + capex previsto). La caja restringida no cuenta. Un programa ATM vende acciones nuevas en el mercado poco a poco: es dilución continua, sin ampliación anunciada.",
+      "ejemplo": "Caja 330 − 120 restringidos = 210; quema 120 + capex 60 = 180 al año: 14 meses. ATM de 200 mill. $ a 10 $: 20 millones de acciones nuevas."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "lp1",
+      "title": "Fase, backlog y clientes",
+      "ex": [
+        {
+          "id": "lp1-1",
+          "t": "choice",
+          "q": "Ordanis (empresa ficticia) fabrica módulos de almacenamiento de energía, no ha tenido beneficios desde que se fundó, hace seis años, y acaba de vender 80 mill. $ con un margen bruto del −10 %. ¿En qué fase de madurez encaja?",
+          "opts": [
+            "Pre-ingresos: aún no vende nada y depende de permisos",
+            "Crecimiento consolidado: márgenes positivos y estables",
+            "Escalado industrial temprano: ventas iniciales con margen bruto negativo",
+            "Turnaround: negocio que fue rentable y ahora se reestructura"
+          ],
+          "a": 2,
+          "why": "Vende (no es pre-ingresos), pierde dinero por unidad (no es consolidada) y nunca ha ganado (no es turnaround): ventas iniciales con margen bruto negativo es escalado industrial temprano.",
+          "guia": "g1",
+          "porque": [
+            "Ya vende 80 mill. $: no está en pre-ingresos.",
+            "Con margen bruto negativo y pérdidas, los márgenes no son positivos ni estables.",
+            null,
+            "Nunca ha ganado dinero: no es una empresa rentable que se reestructure."
+          ]
+        },
+        {
+          "id": "lp1-2",
+          "t": "num",
+          "q": "Ordanis anuncia un backlog de 900 mill. $: 200 mill. $ en contratos vinculantes con penalización por cancelar, 300 mill. $ en un acuerdo marco sin compra mínima y 400 mill. $ en MOU y LOI. ¿Qué porcentaje del backlog es ingreso contratado en firme? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 22.2,
+          "why": "Solo los 200 mill. $ vinculantes obligan al cliente. 200 ÷ 900 = 22,2 %. El acuerdo marco, el MOU y la LOI son intención, no ingreso contratado.",
+          "tol": 0.06,
+          "guia": "g1"
+        },
+        {
+          "id": "lp1-3",
+          "t": "match",
+          "q": "Empareja cada documento con lo que compromete al cliente.",
+          "pairs": [
+            [
+              "Contrato vinculante con penalización",
+              "Obliga a pagar o indemnizar si cancela"
+            ],
+            [
+              "Acuerdo marco sin compra mínima",
+              "Fija precios y condiciones para pedidos futuros"
+            ],
+            [
+              "MOU o LOI",
+              "Expresa interés, sin obligar a comprar"
+            ]
+          ],
+          "why": "Solo el contrato vinculante con penalización es ingreso contratado. El acuerdo marco fija condiciones sin cantidad mínima; el MOU y la LOI solo declaran intención.",
+          "guia": "g1"
+        },
+        {
+          "id": "lp1-4",
+          "t": "num",
+          "q": "Un cliente, que además es accionista de Ordanis, compra el 60 % de sus ventas de 80 mill. $. Si recorta sus pedidos a la mitad, ¿qué porcentaje caen las ventas totales?",
+          "unit": "%",
+          "a": 30,
+          "why": "0,60 × 80 = 48 mill. $; la mitad son 24 mill. $ menos de ventas, y 24 ÷ 80 = 30 %. Un solo cliente mueve casi un tercio del negocio.",
+          "guia": "g2"
+        },
+        {
+          "id": "lp1-5",
+          "t": "choice",
+          "q": "El mayor cliente de Ordanis es también uno de sus accionistas y le financió la fábrica. ¿Qué riesgo añade esa relación?",
+          "opts": [
+            "Que sus compras no puedan contabilizarse como ingresos de la empresa",
+            "Que el cliente quede obligado a seguir comprando aunque suba el precio",
+            "Que la empresa deba repartir dividendos preferentes a ese cliente",
+            "Que sus pedidos dependan de la relación financiera, no de una demanda independiente"
+          ],
+          "a": 3,
+          "why": "Una parte vinculada puede comprar por su relación con la empresa, no por la demanda real del mercado. Si esa relación cambia, los pedidos pueden desaparecer.",
+          "guia": "g2",
+          "porque": [
+            "Una parte vinculada sigue generando ingresos; el riesgo es que dependan de la relación, no de la demanda.",
+            "Ser accionista no obliga a comprar: el cliente puede reducir pedidos cuando quiera.",
+            "Los dividendos preferentes dependen de las acciones que se tengan, no del hecho de ser cliente.",
+            null
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "lp2",
+      "title": "Capital oculto y runway",
+      "ex": [
+        {
+          "id": "lp2-1",
+          "t": "num",
+          "q": "Ordanis tiene 100 millones de acciones comunes, bonos convertibles de 200 mill. $ con conversión a 10 $ por acción y 10 millones de warrants, con la acción por encima de su precio de ejercicio. Si se convierte y se ejerce todo, ¿cuántos millones de acciones diluidas habría? Simplificación: no cuentes el dinero que entra por los warrants.",
+          "unit": "",
+          "a": 130,
+          "why": "200 mill. $ ÷ 10 $ = 20 millones de acciones por la conversión. 100 + 20 + 10 = 130 millones de acciones diluidas.",
+          "guia": "g3"
+        },
+        {
+          "id": "lp2-2",
+          "t": "order",
+          "q": "Ordena quién cobra primero si Ordanis se liquida, del primero al último.",
+          "items": [
+            "Acreedores con deuda",
+            "Accionistas preferentes",
+            "Accionistas comunes"
+          ],
+          "why": "Primero cobra la deuda, después las acciones preferentes y, con lo que quede, el accionista común: por eso puede quedarse sin nada aunque la empresa aún valga algo.",
+          "guia": "g3"
+        },
+        {
+          "id": "lp2-3",
+          "t": "num",
+          "q": "Ordanis tiene 330 mill. $ de caja, de los que 120 mill. $ están restringidos como garantía de un préstamo. Quema 120 mill. $ al año en operaciones y prevé 60 mill. $ de capex en los próximos 12 meses. ¿Cuántos meses de runway tiene, sin financiación nueva?",
+          "unit": "",
+          "a": 14,
+          "why": "Liquidez libre: 330 − 120 = 210 mill. $. Gasto anual: 120 + 60 = 180. 210 ÷ 180 × 12 = 14 meses. Con toda la caja y sin capex saldrían 33.",
+          "guia": "g4"
+        },
+        {
+          "id": "lp2-4",
+          "t": "choice",
+          "q": "Ordanis tiene abierto un programa ATM de 200 mill. $. ¿Cómo afecta a sus accionistas?",
+          "opts": [
+            "Recompra acciones en el mercado y reduce el número de acciones",
+            "Vende acciones nuevas en el mercado poco a poco: diluye de forma continua",
+            "Reparte warrants gratis a los accionistas, sin diluir a nadie",
+            "Emite deuda a tipo fijo, así que el número de acciones no cambia"
+          ],
+          "a": 1,
+          "why": "Un ATM vende acciones nuevas al precio del momento, sin ampliación anunciada: cada venta reparte la empresa entre más acciones.",
+          "guia": "g4",
+          "porque": [
+            "Eso es una recompra, justo lo contrario de un ATM, que emite acciones nuevas.",
+            null,
+            "Un ATM no regala warrants: vende acciones nuevas por dinero y diluye.",
+            "Un ATM vende acciones, no emite deuda: el número de acciones sí crece."
+          ]
+        },
+        {
+          "id": "lp2-5",
+          "t": "num",
+          "q": "Ordanis tiene 100 millones de acciones y agota un programa ATM de 200 mill. $ vendiendo a 10 $ por acción. ¿Qué porcentaje de la empresa pasa a ser de los nuevos compradores? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 16.7,
+          "why": "200 mill. $ ÷ 10 $ = 20 millones de acciones nuevas. 20 ÷ (100 + 20) = 16,7 %: los accionistas de antes conservan el 83,3 %.",
+          "tol": 0.06,
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}
