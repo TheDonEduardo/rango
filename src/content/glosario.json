@@ -1163,5 +1163,39 @@
    "precio sobre valor contable"
   ],
   "d": "Precio de la acción entre su valor contable por acción. Por debajo de 1, cotiza bajo su patrimonio; solo es barato si el ROE lo justifica."
+ },
+ {
+  "termino": "rentabilidad por dividendo",
+  "d": "Dividendo anual por acción entre el precio de la acción, en %."
+ },
+ {
+  "termino": "fecha de pago",
+  "d": "Día en que el dividendo llega a la cuenta de quien tenía derecho a cobrarlo, días o semanas después de la fecha ex-dividendo."
+ },
+ {
+  "termino": "media móvil",
+  "alias": [
+   "medias móviles"
+  ],
+  "d": "Promedio de los últimos cierres, recalculado cada sesión. Suaviza el precio, pero va retrasada."
+ },
+ {
+  "termino": "cruce dorado",
+  "d": "La media de 50 sesiones cruza hacia arriba la de 200. Confirma un giro que ya ha ocurrido."
+ },
+ {
+  "termino": "cruz de la muerte",
+  "d": "La media de 50 sesiones cruza hacia abajo la de 200. Llega con retraso, cuando el precio ya ha caído."
+ },
+ {
+  "termino": "airdrop",
+  "alias": [
+   "airdrops"
+  ],
+  "d": "Reparto gratuito de tokens entre usuarios de un proyecto. También lo usan los estafadores como cebo."
+ },
+ {
+  "termino": "fondo de gastos irregulares",
+  "d": "Ahorro aparte para gastos previstos que no son mensuales (seguros, ITV, regalos, vacaciones), que se rellena cada mes."
  }
 ]

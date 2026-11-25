@@ -1,0 +1,218 @@
+{
+  "n": 17,
+  "id": "craidrops",
+  "track": "cripto",
+  "title": "Airdrops y tokens regalados",
+  "blurb": "Cuándo un reparto gratuito de tokens es legítimo, por qué un token que no pediste puede ser una trampa y qué pasa después del reparto.",
+  "revisar": "2027-11",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Qué es un airdrop",
+      "texto": "Es un reparto gratuito de tokens entre usuarios de un proyecto, para atraerlos y repartir la propiedad. El legítimo lo anuncia el proyecto en sus canales oficiales y no pide tu frase semilla.",
+      "ejemplo": "10 millones de tokens entre 20.000 monederos: 500 tokens cada uno."
+    },
+    {
+      "id": "g2",
+      "titulo": "El token que no pediste",
+      "texto": "Un token desconocido en tu monedero suele ser cebo. Verlo no cuesta; venderlo o aprobarlo, sí: te piden un permiso de gasto que da acceso a tus fondos. Ignóralo.",
+      "ejemplo": "Para «venderlo» te piden firmar un permiso disfrazado de venta: puede dar acceso a otros tokens tuyos, no solo a ese."
+    },
+    {
+      "id": "g3",
+      "titulo": "Webs falsas",
+      "texto": "Los anuncios y mensajes con enlaces «para reclamar» llevan a copias de la web real. Entra siempre desde la web oficial o una dirección guardada. Si piden la frase semilla, es una estafa. Prueba con un monedero aparte.",
+      "ejemplo": "150 € de 3.000 € en un monedero aparte: expones un 5 %."
+    },
+    {
+      "id": "g4",
+      "titulo": "Después del reparto",
+      "texto": "Muchos receptores venden lo que les ha salido gratis y el precio suele caer. Además, un airdrop puede tributar: guarda fecha y valor. Compruébalo con la norma vigente.",
+      "ejemplo": "1.000 millones de tokens, 10 % repartido: si se vende el 60 %, salen 60 millones al mercado."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "ad1",
+      "title": "Airdrops legítimos y tokens que no pediste",
+      "ex": [
+        {
+          "id": "ad1-1",
+          "t": "num",
+          "q": "Un proyecto reparte 10 millones de tokens a partes iguales entre 20.000 monederos que usaron su servicio. ¿Cuántos tokens recibe cada monedero?",
+          "unit": "",
+          "a": 500,
+          "why": "10.000.000 ÷ 20.000 = 500 tokens por monedero. Un airdrop reparte tokens gratis entre usuarios para atraerlos y repartir la propiedad.",
+          "guia": "g1"
+        },
+        {
+          "id": "ad1-2",
+          "t": "choice",
+          "q": "¿Cuál es un rasgo de un airdrop legítimo?",
+          "opts": [
+            "Te avisa un mensaje privado de alguien que no conoces, con un enlace urgente",
+            "Lo anuncia el proyecto en sus canales oficiales y se reclama sin dar tu frase semilla",
+            "Exige un pequeño pago previo para liberar los tokens",
+            "Te pide la frase semilla para comprobar que eres el titular"
+          ],
+          "a": 1,
+          "why": "Lo legítimo se anuncia en canales oficiales y nunca necesita tu frase semilla.",
+          "guia": "g1",
+          "porque": [
+            "Los estafadores usan mensajes privados y urgencia, no canales oficiales.",
+            null,
+            "Un reparto legítimo no exige pagar nada.",
+            "Nadie legítimo necesita tu frase semilla: da acceso a todo."
+          ]
+        },
+        {
+          "id": "ad1-3",
+          "t": "choice",
+          "q": "Aparece en tu monedero un token desconocido que nadie te ha avisado de enviar, con un nombre que promete mucho valor. ¿Qué es lo más prudente?",
+          "opts": [
+            "Venderlo cuanto antes en el primer sitio que lo admita, antes de que baje",
+            "Entrar en la web del token y conectar el monedero para ver cuánto vale",
+            "Ignorarlo: no venderlo, no aprobar nada y no entrar en la web que anuncia",
+            "Preguntar a quien te escribe por mensaje privado diciendo que es del proyecto"
+          ],
+          "a": 2,
+          "why": "Verlo en el monedero no cuesta nada; interactuar con él sí, porque puede pedirte firmas que den acceso a tus fondos.",
+          "guia": "g2",
+          "porque": [
+            "Para venderlo suelen pedirte permisos peligrosos: es un cebo.",
+            "La web del token puede pedirte firmas que den acceso a tus fondos.",
+            null,
+            "Quien te escribe por privado no es del proyecto: es el cebo."
+          ]
+        },
+        {
+          "id": "ad1-4",
+          "t": "match",
+          "q": "Empareja cada situación con su riesgo.",
+          "pairs": [
+            [
+              "Reclamar desde un anuncio o enlace recibido",
+              "Puede ser una copia de la web real"
+            ],
+            [
+              "Vender un token que no pediste",
+              "Te piden aprobar permisos sobre tus fondos"
+            ],
+            [
+              "Una web que pide tu frase semilla",
+              "Estafa: ningún reparto legítimo la necesita"
+            ]
+          ],
+          "why": "Las tres rutas acaban igual: una firma o una frase semilla entregadas a un estafador pueden vaciar tu monedero.",
+          "guia": "g2"
+        },
+        {
+          "id": "ad1-5",
+          "t": "choice",
+          "q": "El token desconocido de tu monedero te invita a «venderlo» y para ello la web te pide aprobar un permiso de gasto. ¿Qué riesgo corres al firmarlo?",
+          "opts": [
+            "Ninguno: firmar solo confirma que eres el titular del token",
+            "Perder únicamente el token regalado, que no vale nada",
+            "Dar acceso a mover otros tokens de tu monedero, no solo ese",
+            "Pagar la comisión de red, que es el único coste posible"
+          ],
+          "a": 2,
+          "why": "La web puede pedirte aprobar permisos sobre otros tokens tuyos, disfrazados de venta: si firmas, el estafador puede vaciar ese saldo.",
+          "guia": "g2",
+          "porque": [
+            "Aprobar un permiso es autorizar un gasto, no confirmar nada.",
+            "El permiso puede alcanzar otros tokens del monedero.",
+            null,
+            "Hay un coste mayor que la comisión: el acceso a tus fondos."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "ad2",
+      "title": "Webs falsas y qué pasa después",
+      "ex": [
+        {
+          "id": "ad2-1",
+          "t": "choice",
+          "q": "Un anuncio patrocinado te enlaza a una web para reclamar un airdrop «solo hoy». ¿Cómo compruebas que es legítimo?",
+          "opts": [
+            "Si el anuncio tiene muchos comentarios positivos de otros usuarios, es legítimo",
+            "Entrando por la web oficial o una dirección guardada, no por el anuncio",
+            "Si la web copia el logo y los colores del proyecto, es la web oficial",
+            "Si pide conectar el monedero, es segura porque ya lo has hecho en otras webs"
+          ],
+          "a": 1,
+          "why": "Un anuncio puede enlazar a una copia: comprueba el reparto en los canales oficiales y entra desde una dirección fiable.",
+          "guia": "g3",
+          "porque": [
+            "Los comentarios se compran o se falsean fácilmente.",
+            null,
+            "Copiar logo y colores es lo más fácil de falsificar.",
+            "Conectar el monedero a una web falsa es justo lo que buscan."
+          ]
+        },
+        {
+          "id": "ad2-2",
+          "t": "num",
+          "q": "Reservas un monedero aparte con 150 € para reclamar airdrops, de un total de 3.000 € en cripto. Si te estafan y lo pierdes entero, ¿qué porcentaje de tu cripto pierdes?",
+          "unit": "%",
+          "a": 5,
+          "why": "150 ÷ 3.000 = 0,05: un 5 %. Un monedero aparte con poco saldo limita lo que puede robarte una firma mala.",
+          "guia": "g3"
+        },
+        {
+          "id": "ad2-3",
+          "t": "num",
+          "q": "Un proyecto emite 1.000 millones de tokens y reparte el 10 % en un airdrop. Si los receptores venden el 60 % de lo que reciben en la primera semana, ¿cuántos millones de tokens salen al mercado?",
+          "unit": "",
+          "a": 60,
+          "why": "1.000 × 10 % = 100 millones repartidos; 100 × 60 % = 60 millones a la venta. Mucha oferta de golpe empuja el precio a la baja.",
+          "guia": "g4"
+        },
+        {
+          "id": "ad2-4",
+          "t": "choice",
+          "q": "Tras un airdrop, el precio del token cae un 40 % en la primera semana. ¿Cuál es la explicación más habitual?",
+          "opts": [
+            "El proyecto ha quemado todos los tokens repartidos",
+            "Muchos receptores venden de golpe tokens que les han salido gratis",
+            "Los tokens repartidos quedan bloqueados para siempre",
+            "La ley obliga a mantener el token un año tras el reparto"
+          ],
+          "a": 1,
+          "why": "Quien recibe gratis tiene poco que perder al vender; si muchos lo hacen a la vez, la oferta supera a la demanda.",
+          "guia": "g4",
+          "porque": [
+            "Quemar los tokens repartidos retiraría oferta y no hundiría el precio.",
+            null,
+            "Los tokens de un airdrop suelen poder venderse; si no, no habría caída.",
+            "No existe esa obligación legal."
+          ]
+        },
+        {
+          "id": "ad2-5",
+          "t": "choice",
+          "q": "Eres residente fiscal en España y recibes un airdrop. ¿Qué frase sobre impuestos es correcta?",
+          "opts": [
+            "Al ser gratis, nunca tributa y no hay que declararlo ante Hacienda",
+            "Tributa un 50 % del valor en todos los casos, tengas lo que tengas",
+            "Puede tributar: guarda fecha y valor al recibirlo y comprueba la norma vigente",
+            "Solo tributa si su valor supera un millón de euros en un año"
+          ],
+          "a": 2,
+          "why": "Que sea gratis no lo libra de impuestos. Guarda la fecha y el valor. Compruébalo con la norma vigente.",
+          "guia": "g4",
+          "porque": [
+            "Gratis no es sinónimo de exento; puede tributar.",
+            "No hay un tipo fijo del 50 % por recibir un airdrop.",
+            null,
+            "No hay un umbral de un millón que lo exima o lo grave."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

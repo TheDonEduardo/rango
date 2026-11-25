@@ -1,0 +1,219 @@
+{
+  "n": 12,
+  "id": "dividbasico",
+  "track": "basico",
+  "title": "Dividendos desde cero",
+  "blurb": "Qué es un dividendo, cuándo hay que tener la acción para cobrarlo y cuánto te llega después de la retención.",
+  "revisar": "2027-11",
+  "gate": false,
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Qué es un dividendo",
+      "texto": "Es la parte del beneficio que una empresa reparte a sus accionistas, por acción. No todas reparten: las que crecen deprisa suelen reinvertir. Cobras según las acciones que tengas.",
+      "ejemplo": "Con 300 acciones y 0,40 € por acción, cobras 120 € brutos."
+    },
+    {
+      "id": "g2",
+      "titulo": "Fechas y precio",
+      "texto": "Para cobrar hay que comprar antes de la fecha ex-dividendo (de corte). El dinero llega en la fecha de pago, después. Ese día el precio baja más o menos lo que se paga: no es dinero gratis.",
+      "ejemplo": "Con la ex-dividendo el día 12, comprar en la sesión del 11 da derecho a cobrar; el 12, no. A 40,00 € y 1,00 € de dividendo, abre cerca de 39,00 €."
+    },
+    {
+      "id": "g3",
+      "titulo": "Rentabilidad por dividendo",
+      "texto": "Es el dividendo anual entre el precio. Si el precio cae y el dividendo no, el porcentaje sube, y eso no es buena señal: puede avisar de dudas y de un recorte futuro.",
+      "ejemplo": "A 25,00 € con 1,00 € al año: 4 %. Si el precio cae a la mitad, se dobla sin que la empresa pague más."
+    },
+    {
+      "id": "g4",
+      "titulo": "Retención en España",
+      "texto": "Al residente en España le retienen un 19 % del dividendo y es un adelanto. El impuesto final sube por tramos (19 % hasta 6.000 € de rendimientos del ahorro, orientativo). Compruébalo con la norma vigente.",
+      "ejemplo": "Dividendo de 300 € con retención del 19 %: te llegan 243 €."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "db1",
+      "title": "Cobrar un dividendo",
+      "ex": [
+        {
+          "id": "db1-1",
+          "t": "num",
+          "q": "Tienes 300 acciones de una empresa que paga 0,40 € de dividendo por acción. ¿Cuántos euros brutos cobras, antes de impuestos?",
+          "unit": "€",
+          "a": 120,
+          "why": "300 × 0,40 € = 120 € brutos. El dividendo se paga por cada acción que tienes.",
+          "guia": "g1"
+        },
+        {
+          "id": "db1-2",
+          "t": "choice",
+          "q": "Una empresa joven que crece muy deprisa no reparte dividendo. ¿Cuál es el motivo más probable?",
+          "opts": [
+            "La ley prohíbe a las empresas jóvenes repartir dividendos",
+            "Reinvierte el beneficio en crecer en lugar de repartirlo",
+            "Sus acciones no dan derecho a ningún dividendo",
+            "Solo reparten dividendo las empresas que pierden dinero"
+          ],
+          "a": 1,
+          "why": "Repartir es una decisión de la empresa: si cree que gana más reinvirtiendo, retiene el beneficio.",
+          "guia": "g1",
+          "porque": [
+            "Ninguna ley lo prohíbe: repartir depende de cada empresa.",
+            null,
+            "Todas las acciones ordinarias pueden recibir dividendo si la empresa lo reparte.",
+            "Reparte quien gana dinero; una empresa con pérdidas no suele repartir."
+          ]
+        },
+        {
+          "id": "db1-3",
+          "t": "choice",
+          "q": "Una empresa fija la fecha ex-dividendo el día 12 del mes. ¿Cuándo tienes que haber comprado la acción para cobrar ese dividendo?",
+          "opts": [
+            "Comprando el día 12 o después, hasta la fecha de pago",
+            "Basta con tenerla el día del pago, aunque la compres ese mismo día",
+            "Antes del día 12: comprando en la sesión anterior (el 11, si es hábil) ya cobras",
+            "Solo si ya eras accionista un año antes del reparto"
+          ],
+          "a": 2,
+          "why": "La fecha ex-dividendo es el primer día en que quien compra ya no cobra: hay que comprar antes de ese día.",
+          "guia": "g2",
+          "porque": [
+            "Desde el día 12 ya no cobras ese dividendo, aunque la fecha de pago llegue después.",
+            "El derecho depende de comprar antes de la fecha ex-dividendo, no del día del pago.",
+            null,
+            "No hace falta antigüedad: basta con comprar antes de la fecha ex-dividendo."
+          ]
+        },
+        {
+          "id": "db1-4",
+          "t": "order",
+          "q": "Ordena de primero a último los momentos de un dividendo.",
+          "items": [
+            "Anuncio del dividendo",
+            "Último día para comprar y tener derecho a cobrar",
+            "Fecha ex-dividendo",
+            "Fecha de pago"
+          ],
+          "why": "Se anuncia, se puede comprar hasta el día anterior a la fecha ex-dividendo y el dinero llega en la fecha de pago, días o semanas después.",
+          "guia": "g2"
+        },
+        {
+          "id": "db1-5",
+          "t": "choice",
+          "q": "Compras una acción a 40,00 € el día antes de la fecha ex-dividendo, con un dividendo de 1,00 € por acción. Si nada más cambia y sin contar impuestos, ¿qué pasa con tu patrimonio?",
+          "opts": [
+            "Sube 1,00 € por acción: cobras y el precio no se mueve",
+            "No cambia en esencia: la acción baja a unos 39,00 € y tú cobras 1,00 €",
+            "Baja 1,00 € por acción, porque cobrar el dividendo te resta valor",
+            "Sube 2,00 € por acción: el dividendo se cobra dos veces"
+          ],
+          "a": 1,
+          "why": "El dividendo sale del valor de la empresa: el precio baja más o menos lo que se paga. Pierdes 1,00 € de cotización y cobras 1,00 €.",
+          "guia": "g2",
+          "porque": [
+            "El precio no se mueve: baja más o menos lo que se paga.",
+            null,
+            "No pierdes valor por cobrar: la caída del precio se compensa con el cobro.",
+            "El dividendo se cobra una vez, no dos."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "db2",
+      "title": "Cuánto rinde y cuánto te queda",
+      "ex": [
+        {
+          "id": "db2-1",
+          "t": "num",
+          "q": "Una acción cotiza a 25,00 € y paga 1,00 € de dividendo al año. ¿Qué rentabilidad por dividendo tiene?",
+          "unit": "%",
+          "a": 4,
+          "why": "1,00 ÷ 25,00 = 0,04: un 4 %. Es el dividendo anual entre el precio.",
+          "guia": "g3"
+        },
+        {
+          "id": "db2-2",
+          "t": "slide",
+          "q": "Quieres cobrar 120 € brutos al año en dividendos de una acción que paga 0,60 € por acción al año. Elige cuántas acciones necesitas.",
+          "label": "Acciones",
+          "min": 0,
+          "max": 400,
+          "step": 20,
+          "start": 40,
+          "a": 200,
+          "unit": "acc.",
+          "why": "120 ÷ 0,60 = 200 acciones. Con 40 solo cobrarías 24 €.",
+          "show": [
+            {
+              "label": "Dividendo bruto al año",
+              "k": 0.6,
+              "b": 0,
+              "unit": "€",
+              "dec": 0
+            }
+          ],
+          "guia": "g3"
+        },
+        {
+          "id": "db2-3",
+          "t": "choice",
+          "q": "Una acción tenía una rentabilidad por dividendo del 3 %. Su precio cae a la mitad por dudas sobre el negocio y el dividendo no cambia: ahora muestra un 6 %. ¿Qué conclusión es correcta?",
+          "opts": [
+            "La empresa ha doblado su dividendo y el negocio va mejor que antes",
+            "Cobrarás el doble con seguridad: el 6 % está garantizado por la empresa",
+            "El porcentaje sube porque el precio cae, y el pago podría recortarse",
+            "Un 6 % es mejor que un 3 % para quien cobra, sea cual sea el motivo"
+          ],
+          "a": 2,
+          "why": "Con el mismo dividendo y la mitad de precio, el porcentaje se dobla sin que la empresa pague más. Mira por qué cae el precio.",
+          "guia": "g3",
+          "porque": [
+            "El dividendo no ha cambiado: lo que se ha movido es el precio.",
+            "Ningún dividendo está garantizado: la empresa puede recortarlo.",
+            null,
+            "Un 6 % por caída del precio puede avisar de un recorte, no de algo mejor."
+          ]
+        },
+        {
+          "id": "db2-4",
+          "t": "num",
+          "q": "Eres residente fiscal en España y cobras 300 € brutos de dividendos de una empresa española, con una retención del 19 %. ¿Cuántos euros te llegan a la cuenta?",
+          "unit": "€",
+          "a": 243,
+          "why": "300 × (1 − 0,19) = 243 €. Los 57 € retenidos son un adelanto de tu impuesto, que se ajusta en la declaración.",
+          "guia": "g4"
+        },
+        {
+          "id": "db2-5",
+          "t": "match",
+          "q": "Empareja cada término con lo que significa para un residente en España.",
+          "pairs": [
+            [
+              "Dividendo bruto",
+              "Lo que paga la empresa antes de retenciones"
+            ],
+            [
+              "Retención",
+              "Adelanto del impuesto que ingresan a tu nombre"
+            ],
+            [
+              "Dividendo neto",
+              "Lo que llega a tu cuenta tras la retención"
+            ],
+            [
+              "Tramo del 19 %",
+              "Tipo orientativo de los primeros 6.000 € de rendimientos del ahorro al año"
+            ]
+          ],
+          "why": "El bruto se reduce con la retención hasta el neto. El tipo del impuesto sube por tramos: compruébalo con la norma vigente.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

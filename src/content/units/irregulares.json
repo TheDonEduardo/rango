@@ -1,0 +1,209 @@
+{
+  "n": 8,
+  "id": "irregulares",
+  "track": "personal",
+  "title": "Gastos que no son mensuales",
+  "blurb": "Seguros anuales, impuestos, regalos y vacaciones: súmalos, prorratéalos al mes y apártalos en una cuenta aparte.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Gastos que sorprenden",
+      "texto": "Seguros anuales, ITV, impuestos municipales, regalos o vacaciones no salen cada mes, pero se sabe que llegan: no son imprevistos. Lista los del año pasado.",
+      "ejemplo": "Seguro 420 €, impuesto municipal 150 €, ITV 60 €, regalos 270 € y vacaciones 1.200 €: 2.100 € al año."
+    },
+    {
+      "id": "g2",
+      "titulo": "Suma y prorratea",
+      "texto": "Suma lo que pagaste en el año y divídelo entre 12. Aparta esa cantidad cada mes, aunque ese mes no pagues nada. Así, cuando llega el cobro, el dinero ya está.",
+      "ejemplo": "2.100 € al año entre 12: 175 € al mes. Un seguro de 420 € a 6 meses: 70 € al mes."
+    },
+    {
+      "id": "g3",
+      "titulo": "Una cuenta aparte",
+      "texto": "Abre una cuenta separada, el fondo de gastos irregulares, con una transferencia automática el día que cobras y págalos desde ahí. No es el colchón de emergencia: ese es para imprevistos y no se gasta en gastos previstos.",
+      "ejemplo": "175 € al mes: a los 4 meses hay 700 €; pagas un seguro de 420 € y quedan 280 €."
+    },
+    {
+      "id": "g4",
+      "titulo": "Si no los prevés",
+      "texto": "Si el gasto llega sin dinero apartado, acabas pagando a plazos, con la tarjeta o con un préstamo. Los intereses y recargos encarecen un gasto que podías haber pagado de contado.",
+      "ejemplo": "Vacaciones de 1.200 € en 12 cuotas de 106 €: pagas 1.272 €, 72 € de más."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "ir1",
+      "title": "Sumar y prorratear",
+      "ex": [
+        {
+          "id": "ir1-1",
+          "t": "num",
+          "q": "Estos gastos llegan una vez al año: seguro del coche, 420 €; impuesto municipal, 150 €; ITV, 60 €; regalos, 270 €; vacaciones, 1.200 €. ¿Cuántos euros al mes tienes que apartar para cubrirlos todos?",
+          "unit": "€",
+          "a": 175,
+          "why": "420 + 150 + 60 + 270 + 1.200 = 2.100 € al año; 2.100 ÷ 12 = 175 € al mes.",
+          "guia": "g1"
+        },
+        {
+          "id": "ir1-2",
+          "t": "choice",
+          "q": "¿Cuál de estos gastos es irregular pero previsible, y no un imprevisto?",
+          "opts": [
+            "Un robo en casa",
+            "Una reparación urgente del coche por una avería",
+            "La ITV del coche, cuya fecha marca el calendario",
+            "Una factura médica por una caída"
+          ],
+          "a": 2,
+          "why": "La ITV, el seguro o el impuesto municipal tienen fecha y cuantía conocidas. Un robo, una avería o una caída no se saben de antemano.",
+          "guia": "g2",
+          "porque": [
+            "Un robo no se sabe cuándo llega.",
+            "Una avería no tiene fecha ni importe conocidos.",
+            null,
+            "Una caída es un imprevisto."
+          ]
+        },
+        {
+          "id": "ir1-3",
+          "t": "slide",
+          "q": "El seguro del coche, de 420 €, vence dentro de 6 meses. Apartas la misma cantidad cada mes y quieres llegar justo a 420 €. ¿Cuánto apartas al mes?",
+          "label": "Apartado al mes",
+          "min": 0,
+          "max": 200,
+          "step": 10,
+          "start": 20,
+          "a": 70,
+          "unit": "€",
+          "why": "420 ÷ 6 = 70 € al mes. Con 20 € al mes solo tendrías 120 € al llegar el cobro.",
+          "show": [
+            {
+              "label": "Reunido en 6 meses",
+              "k": 6,
+              "b": 0,
+              "unit": "€",
+              "dec": 0
+            }
+          ],
+          "guia": "g2"
+        },
+        {
+          "id": "ir1-4",
+          "t": "num",
+          "q": "El año pasado pagaste seguro del hogar, 240 €; ITV, 45 €; impuesto de circulación, 105 €, y regalos de Navidad, 210 €. Si todo cuesta lo mismo este año, ¿cuántos euros al mes tienes que apartar?",
+          "unit": "€",
+          "a": 50,
+          "why": "240 + 45 + 105 + 210 = 600 € al año; 600 ÷ 12 = 50 € al mes.",
+          "guia": "g2"
+        },
+        {
+          "id": "ir1-5",
+          "t": "choice",
+          "q": "¿Por qué conviene dividir los gastos del año entre 12 y apartarlos cada mes?",
+          "opts": [
+            "Porque así el seguro anual sale más barato que pagándolo de golpe",
+            "Porque la ley obliga a pagar los seguros anuales en 12 cuotas",
+            "Porque el dinero ya está cuando llega el cobro y ningún mes se descuadra",
+            "Porque el banco paga más intereses por apartar una cantidad cada mes"
+          ],
+          "a": 2,
+          "why": "Apartar cada mes reparte el golpe: el gasto grande llega con el dinero ya reunido.",
+          "guia": "g2",
+          "porque": [
+            "Prorratear no cambia el precio del seguro.",
+            "Ninguna ley impone 12 cuotas.",
+            null,
+            "Apartar no genera más intereses por sí solo."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "ir2",
+      "title": "Cuenta aparte y qué pasa si no se prevén",
+      "ex": [
+        {
+          "id": "ir2-1",
+          "t": "choice",
+          "q": "Tienes un colchón de emergencia de 9.000 € y un fondo de gastos irregulares con 700 €. Te llega el seguro anual del coche, de 420 €, que sabías que vencía. ¿Con qué lo pagas?",
+          "opts": [
+            "Con el colchón de emergencia, aunque tengas el fondo de gastos irregulares",
+            "Con el fondo de gastos irregulares, y dejas intacto el colchón",
+            "A plazos, para no tocar ningún ahorro y no usar ninguno de los fondos",
+            "Lo dejas sin pagar hasta que se acabe el mes, sin tocar ahorros"
+          ],
+          "a": 1,
+          "why": "El colchón es para imprevistos de verdad; un gasto previsto sale del fondo irregular, que se vacía y se rellena cada año.",
+          "guia": "g3",
+          "porque": [
+            "Gastar el colchón en algo previsto te deja sin red para lo imprevisto, aunque el fondo cubra el seguro.",
+            null,
+            "Pagar a plazos añade intereses a un gasto previsible.",
+            "Dejarlo sin pagar deja sin cobertura el coche."
+          ]
+        },
+        {
+          "id": "ir2-2",
+          "t": "num",
+          "q": "Apartas 175 € al mes en una cuenta aparte para gastos irregulares. Tras 4 meses llega un seguro de 420 € y lo pagas de ahí. ¿Cuántos euros quedan en la cuenta?",
+          "unit": "€",
+          "a": 280,
+          "why": "175 × 4 = 700 € reunidos; 700 − 420 = 280 € quedan.",
+          "guia": "g3"
+        },
+        {
+          "id": "ir2-3",
+          "t": "match",
+          "q": "Empareja cada fondo con su uso.",
+          "pairs": [
+            [
+              "Colchón de emergencia",
+              "Imprevistos: perder el empleo o una avería grande"
+            ],
+            [
+              "Fondo de gastos irregulares",
+              "Gastos previstos que no son mensuales: seguro, ITV, regalos"
+            ],
+            [
+              "Cuenta corriente del mes",
+              "Gastos del día a día y recibos mensuales"
+            ]
+          ],
+          "why": "Cada dinero con su función: mezclar el colchón con los gastos previstos te deja sin red.",
+          "guia": "g3"
+        },
+        {
+          "id": "ir2-4",
+          "t": "num",
+          "q": "No tienes ahorrado el dinero de unas vacaciones de 1.200 € y las pagas en 12 cuotas de 106 €. ¿Cuántos euros pagas de más frente a haberlas pagado de contado?",
+          "unit": "€",
+          "a": 72,
+          "why": "106 × 12 = 1.272 €; 1.272 − 1.200 = 72 € de más. Es un ejemplo con cuotas fijas: el coste real depende de la financiación.",
+          "guia": "g4"
+        },
+        {
+          "id": "ir2-5",
+          "t": "choice",
+          "q": "Llega el seguro de 420 € en un mes con la cuenta ajustada y no tienes fondo para gastos irregulares. ¿Qué consecuencia es más probable de no haberlo previsto?",
+          "opts": [
+            "Acabas pagándolo a plazos o con deuda, y los intereses lo encarecen",
+            "El seguro baja de precio por pagarlo con retraso al asegurador",
+            "Hacienda cubre la diferencia entre lo que tienes y lo que cuesta",
+            "No pasa nada: pagar a plazos o con deuda nunca cuesta nada extra"
+          ],
+          "a": 0,
+          "why": "Sin dinero reunido, el gasto se financia: cuotas, tarjeta o préstamo, con intereses o recargos.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Los seguros no se abaratan por pagar tarde.",
+            "Hacienda no cubre ningún gasto privado de este tipo.",
+            "Pagar a plazos suele tener intereses o recargos."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "n": 27,
+  "id": "medias",
+  "track": "tecnico",
+  "title": "Medias móviles",
+  "blurb": "La media como soporte dinámico en una tendencia y lo que dicen, y lo que no, los cruces entre medias.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Qué es una media móvil",
+      "texto": "Es el promedio de los últimos cierres, recalculado cada sesión. Suaviza el ruido, pero va por detrás del precio: cuantas más sesiones promedia, más lenta es.",
+      "ejemplo": "Cierres de 20, 22, 21, 23 y 24 €: media de 5 sesiones, 22,00 €. Si mañana cierra a 26 € y sale el de 20 €, pasa a 23,2 €."
+    },
+    {
+      "id": "g2",
+      "titulo": "Soporte dinámico",
+      "texto": "En una tendencia alcista, el precio suele retroceder hasta una media ascendente y rebotar. Es una zona, no una línea exacta. Si cierra claramente por debajo con volumen, deja de servir.",
+      "ejemplo": "Media de 50 sesiones en 80,00 €, ATR de 2,00 €: stop en 78,00 €. Comprando a 82,00 €, arriesgas 4,00 € por acción."
+    },
+    {
+      "id": "g3",
+      "titulo": "Cruces entre medias",
+      "texto": "Cuando la media de 50 sesiones cruza hacia arriba la de 200 se habla de cruce dorado; hacia abajo, de cruz de la muerte. Confirman un giro que ya ha ocurrido: llegan tarde.",
+      "ejemplo": "Mínimo en 80,00 € y cruce con el precio en 100,00 €: ya ha subido un 25 %."
+    },
+    {
+      "id": "g4",
+      "titulo": "Úsalas como filtro",
+      "texto": "Sirven para saber si hay tendencia (media inclinada), no para entrar al segundo. Con la media plana, los cruces son ruido y generan pérdidas pequeñas repetidas. La media corta reacciona antes y falla más.",
+      "ejemplo": "En un lateral, 4 cruces pierden 2,00 € y 2 ganan 1,00 €: pierdes 6,00 € por acción."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "mm1",
+      "title": "La media como soporte",
+      "ex": [
+        {
+          "id": "mm1-1",
+          "t": "num",
+          "q": "Los cierres de las últimas 5 sesiones de una acción son 20,00 €, 22,00 €, 21,00 €, 23,00 € y 24,00 €. ¿Cuál es su media móvil de 5 sesiones?",
+          "unit": "€",
+          "a": 22,
+          "why": "(20 + 22 + 21 + 23 + 24) ÷ 5 = 110 ÷ 5 = 22,00 €.",
+          "guia": "g1"
+        },
+        {
+          "id": "mm1-2",
+          "t": "num",
+          "q": "Una media móvil de 5 sesiones vale 22,00 € (suma de cierres: 110,00 €). Mañana la acción cierra a 26,00 € y sale de la ventana el cierre más antiguo, de 20,00 €. ¿Cuál es la nueva media? Redondea a 1 decimal.",
+          "unit": "€",
+          "a": 23.2,
+          "why": "(110 − 20 + 26) ÷ 5 = 116 ÷ 5 = 23,2 €. La media sigue al precio, pero con retraso.",
+          "tol": 0.06,
+          "guia": "g1"
+        },
+        {
+          "id": "mm1-3",
+          "t": "choice",
+          "q": "Una acción sube con su media de 50 sesiones ascendente y retrocede hasta tocarla con volumen bajo. ¿Cómo se lee según el método?",
+          "opts": [
+            "Como un soporte garantizado: el precio no puede cerrar por debajo",
+            "Como una zona donde pueden aparecer compradores: se vigila si rebota, sin darlo por hecho",
+            "Como el final de la tendencia, porque un precio sano nunca toca su media",
+            "Como una orden de venta inmediata, porque el precio ha bajado"
+          ],
+          "a": 1,
+          "why": "Una media ascendente actúa de soporte dinámico: es una zona, no una línea exacta. Si rebota se confirma; si no, se sale con el stop.",
+          "guia": "g2",
+          "porque": [
+            "Ningún soporte está garantizado: el precio puede cerrar por debajo.",
+            null,
+            "En una tendencia, tocar la media es normal; no la termina por sí solo.",
+            "Que el precio baje hasta la media no es motivo de venta por sí solo."
+          ]
+        },
+        {
+          "id": "mm1-4",
+          "t": "slide",
+          "q": "Una acción retrocede hasta su media de 50 sesiones, que hoy está en 80,00 €. Compras a 82,00 € y colocas el stop 1 ATR por debajo de la media, con un ATR de 2,00 €. ¿A qué precio va el stop?",
+          "label": "Precio del stop",
+          "min": 74,
+          "max": 82,
+          "step": 0.5,
+          "start": 81,
+          "a": 78,
+          "unit": "€",
+          "why": "80,00 − 2,00 = 78,00 €. El riesgo es 82,00 − 78,00 = 4,00 € por acción.",
+          "show": [
+            {
+              "label": "Riesgo por acción desde 82,00 €",
+              "k": -1,
+              "b": 82,
+              "unit": "€",
+              "dec": 2
+            }
+          ],
+          "guia": "g2"
+        },
+        {
+          "id": "mm1-5",
+          "t": "choice",
+          "q": "Una acción que se apoyó varias veces en su media de 50 sesiones cierra un 3 % por debajo de ella, con más volumen del habitual. ¿Qué indica?",
+          "opts": [
+            "Que la media sigue siendo un soporte válido, porque lo fue otras veces",
+            "Que el rebote del día siguiente es seguro",
+            "Que la media está mal calculada",
+            "Que la media puede dejar de funcionar como soporte: toca revisar el stop y la tendencia"
+          ],
+          "a": 3,
+          "why": "Un cierre claro bajo la media con volumen la invalida como soporte. Que lo fuera antes no garantiza que lo siga siendo.",
+          "guia": "g2",
+          "porque": [
+            "Con el cierre por debajo y más volumen, el pasado no garantiza nada.",
+            "Ningún rebote es seguro.",
+            "La media es un cálculo simple y no falla; lo que cambia es el precio.",
+            null
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "mm2",
+      "title": "Cruces y su retraso",
+      "ex": [
+        {
+          "id": "mm2-1",
+          "t": "match",
+          "q": "Empareja cada término de las medias móviles con su significado.",
+          "pairs": [
+            [
+              "Cruce dorado",
+              "La media de 50 sesiones cruza hacia arriba la de 200"
+            ],
+            [
+              "Cruz de la muerte",
+              "La media de 50 sesiones cruza hacia abajo la de 200"
+            ],
+            [
+              "Media de 10 sesiones frente a la de 50",
+              "Reacciona antes al precio, pero da más señales falsas"
+            ]
+          ],
+          "why": "Los cruces se nombran por la media corta frente a la larga. Cuanto más corta la media, más rápida y más ruidosa.",
+          "guia": "g3"
+        },
+        {
+          "id": "mm2-2",
+          "t": "num",
+          "q": "Una acción toca su mínimo en 80,00 € y el cruce de medias que confirma el giro llega con el precio en 100,00 €. ¿Qué porcentaje ha subido ya desde el mínimo cuando llega la señal?",
+          "unit": "%",
+          "a": 25,
+          "why": "(100 − 80) ÷ 80 = 0,25: un 25 %. Los cruces llegan tarde porque las medias van retrasadas.",
+          "guia": "g3"
+        },
+        {
+          "id": "mm2-3",
+          "t": "choice",
+          "q": "En un rango lateral entre 48,00 € y 52,00 €, el precio cruza una y otra vez su media de 20 sesiones, que está plana. ¿Qué significan esos cruces?",
+          "opts": [
+            "Cada cruce es una señal fiable de nueva tendencia",
+            "Ruido: con la media plana, los cruces dan muchas señales falsas",
+            "Que el volumen va a subir seguro en los próximos días",
+            "Que la media está mal calculada y hay que cambiarla por otra"
+          ],
+          "a": 1,
+          "why": "Una media plana indica que no hay tendencia: el precio la cruza sin dirección y cada señal se anula con la siguiente.",
+          "guia": "g4",
+          "porque": [
+            "Con la media plana no hay tendencia: los cruces se anulan entre sí.",
+            null,
+            "Los cruces no dicen nada sobre el volumen futuro.",
+            "La media está bien calculada: es el mercado el que no tiene dirección."
+          ]
+        },
+        {
+          "id": "mm2-4",
+          "t": "num",
+          "q": "Una estrategia de cruces da 6 señales en un lateral: 4 pierden 2,00 € por acción y 2 ganan 1,00 € por acción. ¿Cuántos euros por acción pierdes en total?",
+          "unit": "€",
+          "a": 6,
+          "why": "4 × 2,00 = 8,00 € perdidos y 2 × 1,00 = 2,00 € ganados: 8 − 2 = 6,00 € de pérdida neta.",
+          "guia": "g4"
+        },
+        {
+          "id": "mm2-5",
+          "t": "order",
+          "q": "Ordena estas medias de la que reacciona más rápido al precio a la más lenta.",
+          "items": [
+            "Media de 10 sesiones",
+            "Media de 50 sesiones",
+            "Media de 100 sesiones",
+            "Media de 200 sesiones"
+          ],
+          "why": "Cuantas más sesiones promedia, más pesa el pasado y más tarda en seguir al precio.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}
