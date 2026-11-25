@@ -1,8 +1,7 @@
 """Genera src/content/casos.json: ejercicios de «caso real» con datos de Yahoo Finance.
 
 Uso:  pip install yfinance && python tools/casos.py
-Los tickers salen de la cartera del bot (../portfolio_manager.py, lista PORTFOLIO);
-si no se encuentra, se usa FALLBACK. Solo genera ejercicios de cálculo: la respuesta
+Los tickers salen de RANGO_TICKERS o de tools/tickers.txt; si no hay ninguno, se usa FALLBACK. Solo genera ejercicios de cálculo: la respuesta
 se calcula con las mismas cifras redondeadas que ve el usuario en el enunciado.
 """
 import datetime as dt
@@ -17,7 +16,6 @@ import yfinance as yf
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "src" / "content" / "casos.json"
-BOT = ROOT.parent / "portfolio_manager.py"
 HOY = dt.date.today().strftime("%d/%m/%Y")
 # Lecciones que reciben casos reales (una sola definición para casos_de y main).
 LECCIONES_CASOS = ("f1a", "f1b", "f2a", "f2b", "f3a", "f3b", "f5a", "f6a", "bg1", "pr1", "bh2", "f8b", "f9a",
@@ -53,8 +51,7 @@ LECTURA = {"Cíclico": "su beneficio depende mucho de cómo vaya la economía",
 
 def tickers():
     """Valores de los casos. Por orden: variable RANGO_TICKERS («NVDA,MSFT,...»), tools/tickers.txt
-    (uno por línea; permite separar Rango del repositorio del bot), la cartera de ../portfolio_manager.py
-    y, si nada de eso existe, FALLBACK."""
+    (uno por línea) y, si nada de eso existe, FALLBACK."""
     env = [x.strip().upper() for x in os.environ.get("RANGO_TICKERS", "").split(",") if x.strip()]
     if env:
         return env
@@ -63,10 +60,6 @@ def tickers():
         lst = [x.strip().upper() for x in fichero.read_text(encoding="utf-8").splitlines() if x.strip() and not x.strip().startswith("#")]
         if lst:
             return lst
-    if BOT.exists():
-        found = re.findall(r'"ticker"\s*:\s*"([A-Z.\-]+)"', BOT.read_text(encoding="utf-8"))
-        if found:
-            return found
     return FALLBACK
 
 
