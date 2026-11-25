@@ -41,8 +41,8 @@
           "q": "¿Qué mide el índice de volatilidad de un mercado bursátil?",
           "opts": [
             "El volumen total negociado en el índice durante el último mes",
-            "Cuántas acciones del índice cierran en rojo cada día",
-            "La volatilidad que descuentan las opciones del índice para el próximo mes",
+            "Cuántas acciones del índice cierran en rojo cada día de negociación",
+            "La volatilidad que esperan las opciones del índice a un mes",
             "La rentabilidad media que ha dado el índice el último año"
           ],
           "a": 2,
@@ -154,9 +154,9 @@
           "t": "choice",
           "q": "El índice de volatilidad lleva meses en mínimos y las acciones de tu cartera casi no se mueven. ¿Qué conclusión es correcta?",
           "opts": [
-            "Hay calma, pero no seguridad: un hueco puede saltar tus stops y perder más de lo previsto",
+            "Hay calma, pero no seguridad: un hueco puede saltarte el stop",
             "El riesgo es bajo, así que puedes duplicar el riesgo por operación",
-            "El mercado no puede caer ni un 5 % en una sola sesión",
+            "El mercado no puede caer más de un 5 % en una sola sesión de bolsa",
             "Un índice de volatilidad bajo anuncia subidas durante los próximos meses"
           ],
           "a": 0,

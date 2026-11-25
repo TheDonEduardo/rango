@@ -50,7 +50,7 @@
           "guia": "g1",
           "porque": [
             "Eso no es cierto: la volatilidad implícita cambia con el mercado y no sube sola cada día. Tampoco describe una diferencia entre ejercicios.",
-            "Con el mismo ejercicio y vencimiento, call y put valen distinto salvo coincidencia; y no es lo que describe el sesgo.",
+            "Con el mismo ejercicio y vencimiento, call y put suelen tener primas distintas, y eso no es el sesgo, que compara ejercicios.",
             null,
             "La volatilidad implícita sale del precio que fija el mercado: nadie la elige al comprar."
           ]
@@ -131,7 +131,7 @@
             "Porque la put lleva más volatilidad implícita que la call que cobras"
           ],
           "a": 3,
-          "why": "A la misma distancia, la put que compras (2,63 $) lleva más volatilidad que la call que vendes (2,16 $): el collar cuesta 0,47 $ en vez de dar un crédito de 0,43 $ (1,73 $ de put con el 28 % menos 2,16 $ de call).",
+          "why": "A la misma distancia, la put que compras (2,63 $) lleva más volatilidad que la call que vendes (2,16 $): el collar cuesta 0,47 $ en vez de dar un crédito de 0,43 $ (2,16 $ de call menos 1,73 $ de put con el 28 %).",
           "guia": "g4",
           "porque": [
             "Una call fuera del dinero a 3 meses sí tiene valor temporal: su prima de 2,16 $ es solo valor temporal.",

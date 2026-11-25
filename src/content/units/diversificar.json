@@ -77,10 +77,10 @@
           "t": "choice",
           "q": "El mercado entero cae un 30 % en una crisis. ¿Qué le pasa a una cartera de 30 acciones bien repartida?",
           "opts": [
-            "No cae: la diversificación lo impide",
-            "Sube, porque unas compensan a otras",
-            "Cae algo parecido: no evita la caída general",
-            "Cae el doble por tener más acciones"
+            "No cae: la diversificación lo impide por completo",
+            "Sube, porque unas acciones compensan a las otras",
+            "Cae algo parecido: no evita la caída",
+            "Cae el doble por tener muchas más acciones"
           ],
           "a": 2,
           "why": "Repartir elimina el riesgo de cada empresa, pero no el del mercado: en una crisis general casi todo cae a la vez.",
