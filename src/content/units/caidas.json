@@ -1,0 +1,203 @@
+{
+  "n": 24,
+  "id": "caidas",
+  "track": "basico",
+  "title": "Cuando la bolsa cae",
+  "blurb": "Cuánto y cada cuánto caen los índices, qué cuesta recuperarlo y qué hacer con tu plan mientras tanto.",
+  "gate": false,
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Las caídas son habituales",
+      "texto": "Una caída del 10 % desde máximos, o corrección, llega de media cada año o dos; una del 20 %, o mercado bajista, cada pocos años. Son cifras orientativas, no un calendario.",
+      "ejemplo": "Con 10.000 € en un índice, una caída del 10 % lo deja en 9.000 € y una del 20 %, en 8.000 €."
+    },
+    {
+      "id": "g2",
+      "titulo": "Recuperar cuesta más",
+      "texto": "Si pierdes un porcentaje, recuperarlo exige una subida mayor, porque partes de una base más pequeña. Cuanto más profunda es la caída, más desproporcionada es la subida.",
+      "ejemplo": "Con 500 € que caen un 20 % hasta 400 €, hay que subir 25 % para volver a 500 €. Tras un −50 %, hace falta +100 %."
+    },
+    {
+      "id": "g3",
+      "titulo": "Vender en pánico",
+      "texto": "Vender tras la caída convierte una pérdida temporal en definitiva y te deja fuera del rebote, que casi nunca avisa. Mantener el plan es la opción que no exige adivinar.",
+      "ejemplo": "Con 500 € que caen a 400 €: si vendes y el fondo sube un 25 %, sigues con 400 €. Si mantienes, vuelves a 500 €."
+    },
+    {
+      "id": "g4",
+      "titulo": "Aportar y revisar",
+      "texto": "Con aportaciones fijas, una caída te hace comprar más participaciones por el mismo dinero. Y si te quita el sueño, revisa con calma si tu reparto tenía más bolsa de la que toleras.",
+      "ejemplo": "Con 200 € al mes a 50, 40 y 25 € por participación compras 4, 5 y 8: 17 en total, a 35,3 € de media."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "ca1",
+      "title": "Cuánto cae y cuánto cuesta recuperar",
+      "ex": [
+        {
+          "id": "ca1-1",
+          "t": "choice",
+          "q": "¿Qué describe mejor una caída del 10 % de un índice amplio de bolsa desde su máximo?",
+          "opts": [
+            "Algo raro que solo ocurre en las grandes crisis, una vez por generación",
+            "Algo habitual: se repite con frecuencia a lo largo de las décadas",
+            "Un aviso de que el índice ya no volverá a subir",
+            "Un error de precio que se corrige solo en el mismo día"
+          ],
+          "a": 1,
+          "why": "Las caídas del 10 % desde máximos son habituales, de media una cada año o dos. Las del 20 %, menos frecuentes, también llegan cada pocos años.",
+          "guia": "g1",
+          "porque": [
+            "Las caídas del 10 % no necesitan una gran crisis: son habituales y se repiten con frecuencia.",
+            null,
+            "Un índice amplio ha seguido subiendo a largo plazo tras caídas mucho mayores; una del 10 % no anuncia el fin de las subidas.",
+            "Es una caída real de los precios de las empresas y puede durar semanas o meses; no es un error de cotización."
+          ]
+        },
+        {
+          "id": "ca1-2",
+          "t": "num",
+          "q": "Supón que una caída del 10 % del índice llega de media una vez cada 2 años (cifra de ejemplo, no un calendario). ¿Cuántas caídas así vivirías en 30 años?",
+          "unit": "",
+          "a": 15,
+          "why": "30 ÷ 2 = 15. Por eso conviene tener un plan para la caída antes de que llegue, no improvisarlo cuando ocurra.",
+          "guia": "g1"
+        },
+        {
+          "id": "ca1-3",
+          "t": "num",
+          "q": "Tu cartera cae un 30 % desde su máximo. ¿Qué subida necesita para volver a ese máximo? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 42.9,
+          "why": "Con base 100 quedas en 70, y 100 ÷ 70 = 1,429: hace falta un +42,9 %. La subida necesaria siempre es mayor que la caída.",
+          "tol": 0.06,
+          "guia": "g2"
+        },
+        {
+          "id": "ca1-4",
+          "t": "slide",
+          "q": "Tu fondo vale 500 € y cae un 20 % hasta 400 €. Elige la subida que necesita desde 400 € para volver a 500 €.",
+          "label": "Subida desde 400 €",
+          "min": 0,
+          "max": 60,
+          "step": 5,
+          "start": 10,
+          "a": 25,
+          "unit": "%",
+          "why": "400 × 1,25 = 500 €. Una caída del 20 % pide una subida del 25 %, no del 20 %.",
+          "show": [
+            {
+              "label": "Valor del fondo",
+              "k": 4,
+              "b": 400,
+              "unit": "€"
+            }
+          ],
+          "guia": "g2"
+        },
+        {
+          "id": "ca1-5",
+          "t": "order",
+          "q": "Ordena de menor a mayor la subida necesaria para recuperar cada caída.",
+          "items": [
+            "Recuperar una caída del 10 %",
+            "Recuperar una caída del 20 %",
+            "Recuperar una caída del 50 %"
+          ],
+          "why": "Las subidas necesarias son +11,1 %, +25 % y +100 %. Cuanto mayor es la caída, más desproporcionada es la subida que la recupera.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "ca2",
+      "title": "Qué hacer mientras cae",
+      "ex": [
+        {
+          "id": "ca2-1",
+          "t": "choice",
+          "q": "Aportas 200 € al mes a un fondo indexado con un plan a 20 años y la bolsa cae un 20 %. ¿Qué es lo más coherente con tu plan?",
+          "opts": [
+            "Parar las aportaciones hasta que la bolsa vuelva a subir",
+            "Vender todo y volver a entrar cuando se calme",
+            "Seguir aportando: con precios más bajos compras más participaciones",
+            "Triplicar la aportación pidiendo un préstamo para aprovechar la caída"
+          ],
+          "a": 2,
+          "why": "Con el plan a 20 años, los mismos 200 € compran más participaciones cuando el precio baja. Cambiar el plan por el miedo, o por la euforia, es el error.",
+          "guia": "g4",
+          "porque": [
+            "Parar justo cuando los precios bajan te hace dejar de comprar barato y rompe la regularidad del plan.",
+            "Vender convierte la pérdida en definitiva, y acertar el momento de volver a entrar es muy difícil.",
+            null,
+            "Endeudarte para invertir añade un riesgo que tu plan no contempla: la aportación fija es la que decidiste."
+          ]
+        },
+        {
+          "id": "ca2-2",
+          "t": "num",
+          "q": "Aportas 200 € al mes a un fondo indexado. Las tres primeras compras salen a 50 €, 40 € y 25 € por participación. ¿Cuántas participaciones tienes en total?",
+          "unit": "",
+          "a": 17,
+          "why": "200 ÷ 50 = 4, 200 ÷ 40 = 5 y 200 ÷ 25 = 8: 17 participaciones por 600 €, a 35,3 € de media. Compraste más cuanto más bajó el precio.",
+          "guia": "g4"
+        },
+        {
+          "id": "ca2-3",
+          "t": "num",
+          "q": "Tienes 500 € en un fondo que cae un 20 % y, asustado, vendes y te quedas en efectivo. Después el fondo sube un 25 %. ¿Cuántos euros tendrías de más si no hubieras vendido?",
+          "unit": "€",
+          "a": 100,
+          "why": "Vendiste con 400 €. Si hubieras mantenido, 400 × 1,25 = 500 €, otra vez tu inversión inicial. 500 − 400 = 100 €: vender fijó la pérdida y te dejó fuera del rebote.",
+          "guia": "g3"
+        },
+        {
+          "id": "ca2-4",
+          "t": "choice",
+          "q": "Tras una caída del 25 % de la bolsa, una inversora no duerme por su cartera. ¿Qué conviene concluir?",
+          "opts": [
+            "Que no hay nada que revisar: el sueño perdido no tiene relación con la cartera",
+            "Que quizá su reparto tenía más bolsa de la que tolera, y toca revisarlo con calma",
+            "Que debe vender todo de inmediato, antes de revisar nada",
+            "Que la bolsa no sirve a ningún inversor y debe abandonarla"
+          ],
+          "a": 1,
+          "why": "Si una caída normal te quita el sueño, quizá tenías más bolsa de la que toleras. Se revisa el reparto con calma y se ajusta; no se vende todo en pleno pánico.",
+          "guia": "g4",
+          "porque": [
+            "Si una caída normal te quita el sueño, tu tolerancia real al riesgo sí está relacionada con tu cartera.",
+            null,
+            "Vender todo en pleno pánico fija la pérdida; la revisión del reparto se hace con calma, no a la carrera.",
+            "La bolsa ha servido a largo plazo a muchos inversores; el problema aquí es el reparto, no la bolsa."
+          ]
+        },
+        {
+          "id": "ca2-5",
+          "t": "slide",
+          "q": "Tienes 1.000 € y aguantarías perder como máximo 200 € si la bolsa cae un 40 %. Supón que el resto está en efectivo y no pierde nada. ¿Cuántos euros pones en bolsa?",
+          "label": "En bolsa",
+          "min": 0,
+          "max": 1000,
+          "step": 50,
+          "start": 800,
+          "a": 500,
+          "unit": "€",
+          "why": "200 ÷ 0,40 = 500 €. Con 500 € en bolsa, una caída del 40 % te cuesta 200 €, justo lo que aguantas. Es una simplificación: el efectivo no pierde nada.",
+          "show": [
+            {
+              "label": "Pérdida si la bolsa cae un 40 %",
+              "k": 0.4,
+              "b": 0,
+              "unit": "€"
+            }
+          ],
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

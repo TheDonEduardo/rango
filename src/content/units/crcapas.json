@@ -1,0 +1,208 @@
+{
+  "n": 13,
+  "id": "crcapas",
+  "track": "cripto",
+  "title": "Capas 2 y rollups",
+  "blurb": "Por qué existen, cómo abaratan las comisiones, qué plazo tiene retirar y qué riesgos añaden.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Por qué existen",
+      "texto": "La red principal procesa pocas operaciones por segundo y, con mucha demanda, la comisión sube. Una capa 2 ejecuta las operaciones fuera y se apoya en la red principal para la seguridad.",
+      "ejemplo": "Una operación cuesta 8 € en la red principal y 0,10 € en una capa 2: 80 veces menos (cifras de ejemplo)."
+    },
+    {
+      "id": "g2",
+      "titulo": "Qué es un rollup",
+      "texto": "Un rollup agrupa cientos de operaciones en un lote y publica en la red principal lo necesario para comprobarlo. La comisión de publicar se reparte entre todas.",
+      "ejemplo": "Publicar un lote cuesta 50 € y reúne 500 operaciones: 0,10 € por operación."
+    },
+    {
+      "id": "g3",
+      "titulo": "Optimista o conocimiento cero",
+      "texto": "El optimista da el lote por bueno salvo que alguien lo impugne en un plazo de reto. El de conocimiento cero adjunta una prueba matemática de que es correcto y no necesita plazo largo.",
+      "ejemplo": "Con un plazo de reto de 7 días, retirar al día 13 deja el dinero en la red principal el día 20 (cifras de ejemplo)."
+    },
+    {
+      "id": "g4",
+      "titulo": "Los riesgos",
+      "texto": "Un puente concentra fondos bloqueados y es objetivo de ataques. Un secuenciador centralizado puede caerse o retrasar tus operaciones. Ahorras comisión, pero asumes más piezas.",
+      "ejemplo": "Si llevas 2.000 € por un puente y lo atacan, el riesgo es perder 2.000 €, no los 0,10 € de comisión."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "cl1",
+      "title": "Por qué existen y qué ahorran",
+      "ex": [
+        {
+          "id": "cl1-1",
+          "t": "choice",
+          "q": "¿Por qué existen las capas 2 sobre Ethereum?",
+          "opts": [
+            "Para sustituir a Ethereum y que ninguna aplicación dependa de ella",
+            "Para que las operaciones sean anónimas y nadie pueda rastrearlas jamás",
+            "Para procesar más operaciones con menos comisión sin saturar la red principal",
+            "Para que la red principal no necesite validadores ni nodos"
+          ],
+          "a": 2,
+          "why": "La red principal procesa pocas operaciones y, con mucha demanda, las comisiones suben. Una capa 2 ejecuta las operaciones fuera y apoya su seguridad en la red principal.",
+          "guia": "g1",
+          "porque": [
+            "Una capa 2 se apoya en Ethereum para su seguridad: no la sustituye ni la hace innecesaria.",
+            "La mayoría de capas 2 no buscan anonimato; sus operaciones suelen ser públicas y rastreables.",
+            null,
+            "La red principal sigue necesitando validadores; una capa 2 no los elimina."
+          ]
+        },
+        {
+          "id": "cl1-2",
+          "t": "num",
+          "q": "Una operación cuesta 8 € en la red principal de Ethereum y 0,10 € en una capa 2 (cifras de ejemplo). ¿Cuántas veces más barata es en la capa 2?",
+          "unit": "",
+          "a": 80,
+          "why": "8 ÷ 0,10 = 80. La capa 2 reparte el coste entre muchas operaciones, de ahí la diferencia.",
+          "guia": "g1"
+        },
+        {
+          "id": "cl1-3",
+          "t": "num",
+          "q": "Haces 20 operaciones al mes: cada una cuesta 8 € en la red principal y 0,10 € en una capa 2 (cifras de ejemplo). ¿Cuántos euros ahorras al mes usando la capa 2?",
+          "unit": "€",
+          "a": 158,
+          "why": "(8 − 0,10) × 20 = 158 €. Es solo comisión: no incluye lo que cuesta llevar los fondos a la capa 2.",
+          "guia": "g2"
+        },
+        {
+          "id": "cl1-4",
+          "t": "choice",
+          "q": "¿Qué hace un rollup?",
+          "opts": [
+            "Envía cada operación por separado a la red principal pagando su comisión completa",
+            "Agrupa muchas operaciones en un lote y publica en la red principal lo necesario para comprobarlas",
+            "Copia entera la red principal en cada una de las operaciones",
+            "Crea monedas nuevas para pagar las comisiones del lote"
+          ],
+          "a": 1,
+          "why": "El rollup ejecuta las operaciones fuera y publica en la red principal un resumen del lote. Ese coste se reparte entre todas las operaciones del lote.",
+          "guia": "g2",
+          "porque": [
+            "Eso es justo lo que el rollup evita: agrupa para no pagar una comisión completa por operación.",
+            null,
+            "Copiar la red entera en cada operación sería carísimo; el rollup publica solo lo necesario.",
+            "Las comisiones se pagan en monedas existentes; el rollup no crea monedas nuevas."
+          ]
+        },
+        {
+          "id": "cl1-5",
+          "t": "slide",
+          "q": "Un rollup agrupa 500 operaciones en un lote. Quiere que cada operación pague 0,10 € por publicar el lote en la red principal. ¿Cuánto puede costar publicar el lote como máximo?",
+          "label": "Coste del lote",
+          "min": 10,
+          "max": 100,
+          "step": 10,
+          "start": 90,
+          "a": 50,
+          "unit": "€",
+          "why": "500 × 0,10 = 50 €. Cuantas más operaciones agrupa el lote, menos paga cada una por publicarlo.",
+          "show": [
+            {
+              "label": "Comisión por operación",
+              "k": 0.002,
+              "b": 0,
+              "unit": "€",
+              "dec": 2
+            }
+          ],
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "cl2",
+      "title": "Tipos, plazos y riesgos",
+      "ex": [
+        {
+          "id": "cl2-1",
+          "t": "choice",
+          "q": "¿Qué diferencia a un rollup optimista de uno de conocimiento cero?",
+          "opts": [
+            "El optimista adjunta una prueba matemática y el de conocimiento cero espera impugnaciones",
+            "El de conocimiento cero no publica nada en la red principal",
+            "El optimista da el lote por válido salvo impugnación en un plazo; el otro adjunta una prueba",
+            "El optimista funciona sin la red principal y el otro depende de ella"
+          ],
+          "a": 2,
+          "why": "El optimista confía salvo que alguien presente una prueba de fraude en el plazo de reto. El de conocimiento cero demuestra con matemáticas que el lote es correcto.",
+          "guia": "g3",
+          "porque": [
+            "Está al revés: el optimista no adjunta prueba matemática y el de conocimiento cero no espera impugnaciones.",
+            "Ambos publican datos en la red principal, que es de donde obtienen su seguridad.",
+            null,
+            "Los dos tipos dependen de la red principal para publicar y comprobar los lotes."
+          ]
+        },
+        {
+          "id": "cl2-2",
+          "t": "num",
+          "q": "Necesitas tener el dinero en la red principal el día 20. En una capa 2 optimista, el dinero llega a la red principal 7 días después del día en que pides la retirada. ¿Qué día del mes es el último para pedirla?",
+          "unit": "",
+          "a": 13,
+          "why": "20 − 7 = 13: pidiéndola el día 13, el dinero llega el 20. El plazo de reto es el precio de la seguridad del rollup optimista: la retirada nativa no es inmediata (el de conocimiento cero suele tardar horas).",
+          "guia": "g3"
+        },
+        {
+          "id": "cl2-3",
+          "t": "num",
+          "q": "Haces 12 operaciones al mes durante un año. Cada una cuesta 5 € en la red principal y 0,25 € en una capa 2 (cifras de ejemplo). ¿Cuántos euros ahorras al año?",
+          "unit": "€",
+          "a": 684,
+          "why": "(5 − 0,25) × 12 × 12 = 4,75 × 144 = 684 €. Es solo la diferencia de comisiones, sin contar el coste de entrar y salir.",
+          "guia": "g1"
+        },
+        {
+          "id": "cl2-4",
+          "t": "choice",
+          "q": "¿Qué es el secuenciador centralizado de una capa 2?",
+          "opts": [
+            "El minero o validador que confirma los bloques de la red principal",
+            "El operador único que ordena las operaciones y puede detenerlas o retrasarlas",
+            "La clave secreta que protege la frase semilla de tu monedero",
+            "Un puente automático que mueve tus fondos entre dos redes distintas"
+          ],
+          "a": 1,
+          "why": "Muchas capas 2 usan un único operador para ordenar las operaciones. Si se cae, se detiene la red; si las retrasa o censura, tu operación espera, aunque tus fondos sigan en la capa 2.",
+          "guia": "g4",
+          "porque": [
+            "Los mineros o validadores de la red principal no son el secuenciador de la capa 2.",
+            null,
+            "La frase semilla protege tu monedero y no tiene relación con el orden de las operaciones.",
+            "Un puente mueve fondos entre redes; el secuenciador ordena las operaciones dentro de la capa 2."
+          ]
+        },
+        {
+          "id": "cl2-5",
+          "t": "choice",
+          "q": "Quieres llevar 2.000 € a una capa 2 por un puente. ¿Cuál es un riesgo real?",
+          "opts": [
+            "Que la red principal borre tu saldo al enviarlo",
+            "Que el puente tenga derecho a quedarse con la mitad",
+            "Que un fallo o un ataque al puente bloquee o pierda esos fondos",
+            "Que tengas que entregar tu frase semilla para usarlo"
+          ],
+          "a": 2,
+          "why": "Los puentes guardan los fondos bloqueados y han sufrido algunos de los mayores robos del sector cripto. El riesgo es perder los 2.000 €, no solo pagar comisión.",
+          "guia": "g4",
+          "porque": [
+            "La red principal no borra saldos: el riesgo está en el puente, no en ella.",
+            "Un puente no tiene ningún derecho a quedarse con parte de tus fondos.",
+            null,
+            "Ningún puente legítimo necesita tu frase semilla; pedírtela es una estafa."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

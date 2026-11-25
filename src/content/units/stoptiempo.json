@@ -1,0 +1,198 @@
+{
+  "n": 15,
+  "id": "stoptiempo",
+  "track": "tecnico",
+  "title": "Stop por tiempo",
+  "blurb": "Salir de una operación que no avanza: reglas en sesiones y en R, y el coste del capital atado.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Salir si no avanza",
+      "texto": "Una operación que no avanza ata capital y deja sin cumplir lo que esperabas. El stop por tiempo fija de antemano cuántas sesiones le das para llegar a un nivel en R.",
+      "ejemplo": "Compras a 50 € con stop en 48 €: R = 2 €. Regla: si en 10 sesiones no ha llegado a +1R (52 €), sales."
+    },
+    {
+      "id": "g2",
+      "titulo": "El coste de oportunidad",
+      "texto": "El capital de una operación parada no puede usarse en otra. Salir antes permite más intentos al año con el mismo dinero.",
+      "ejemplo": "Un año tiene unas 250 sesiones: con operaciones estancadas de 25 sesiones caben 10; con 10 sesiones, 25."
+    },
+    {
+      "id": "g3",
+      "titulo": "Tres salidas, una sola gana",
+      "texto": "El stop de precio, el objetivo y el stop por tiempo conviven: vale la que ocurra primero. La del tiempo suele cerrar con poca pérdida o poca ganancia.",
+      "ejemplo": "Entrada 50 €, stop 48 €, objetivo 56 € (3R). Si en la sesión 10 cotiza a 49 €, sales con −0,5R en lugar de −1R."
+    },
+    {
+      "id": "g4",
+      "titulo": "Reglas concretas",
+      "texto": "Fija las sesiones y el umbral en R antes de entrar, según el tipo de operación, y no las cambies a mitad. Mide en R, no en euros: así sirve para cualquier tamaño.",
+      "ejemplo": "Regla: 10 sesiones y +1R. En la sesión 10 cotiza a 50,80 €: 0,8 ÷ 2 = 0,4R. No llega y sales."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "st1",
+      "title": "La regla del tiempo",
+      "ex": [
+        {
+          "id": "st1-1",
+          "t": "choice",
+          "q": "¿Qué hace un stop por tiempo?",
+          "opts": [
+            "Cierra la operación si no ha avanzado lo exigido en un número fijo de sesiones",
+            "Sube el stop de precio un poco cada sesión hasta que el precio lo toca",
+            "Impide abrir operaciones nuevas durante un número fijo de sesiones",
+            "Cierra todas las operaciones abiertas cuando termina cada semana"
+          ],
+          "a": 0,
+          "why": "Fija de antemano cuántas sesiones das a la operación para avanzar lo exigido. Si no lo hace, sales aunque el stop de precio no se haya tocado.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Eso describe un stop móvil, que cambia el nivel del precio; el de tiempo no toca el precio, mide las sesiones.",
+            "El stop por tiempo no impide entrar en nuevas operaciones; cierra la que no avanza.",
+            "No cierra por calendario semanal, sino cuando una operación concreta no avanza en sus sesiones."
+          ]
+        },
+        {
+          "id": "st1-2",
+          "t": "num",
+          "q": "Compras a 80 € con el stop en 76 €. Tu regla: si en 10 sesiones no ha llegado a +1R, sales. ¿A qué precio como mínimo tiene que estar en la sesión 10 para seguir?",
+          "unit": "€",
+          "a": 84,
+          "why": "R = 80 − 76 = 4 €. +1R son 80 + 4 = 84 €. Por debajo de 84 € en la sesión 10, la regla manda salir.",
+          "guia": "g1"
+        },
+        {
+          "id": "st1-3",
+          "t": "num",
+          "q": "Compras a 50 € con el stop en 48 €. En la sesión 10 cotiza a 50,80 €. ¿Cuántas R lleva la operación?",
+          "unit": "R",
+          "a": 0.4,
+          "why": "R = 50 − 48 = 2 €. La ganancia es 50,80 − 50 = 0,80 € y 0,80 ÷ 2 = 0,4R: no llega a +1R, así que salirías.",
+          "guia": "g1"
+        },
+        {
+          "id": "st1-4",
+          "t": "num",
+          "q": "Operas un único valor cada vez con todo tu capital y un año tiene 250 sesiones. Si cada operación estancada dura 10 sesiones en lugar de 25, ¿cuántas operaciones más caben en el año? (Simplificación: todas duran lo mismo.)",
+          "unit": "",
+          "a": 15,
+          "why": "250 ÷ 10 = 25 operaciones frente a 250 ÷ 25 = 10: caben 15 más. Es el coste de oportunidad del capital atado en una operación que no avanza.",
+          "guia": "g2"
+        },
+        {
+          "id": "st1-5",
+          "t": "choice",
+          "q": "¿Cuál es una buena razón para usar un stop por tiempo?",
+          "opts": [
+            "Garantiza que ninguna operación acabe nunca con pérdida, pase lo que pase",
+            "Evita tener que fijar un stop de precio en el momento de la entrada",
+            "El capital parado en una operación sin avance se libera para otras",
+            "Asegura que el precio llegará al objetivo, aunque tarde más de lo previsto"
+          ],
+          "a": 2,
+          "why": "Una operación estancada ocupa capital y riesgo sin aportar. Liberarlo permite buscar otra con más posibilidades; el stop de precio sigue siendo necesario.",
+          "guia": "g2",
+          "porque": [
+            "Ninguna salida garantiza no perder: el stop por tiempo puede cerrar con pérdida.",
+            "El stop de precio sigue siendo necesario: limita la pérdida si el precio cae antes del plazo.",
+            null,
+            "No asegura nada sobre el objetivo; al contrario, sale cuando no avanza."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "st2",
+      "title": "Tiempo, stop y objetivo",
+      "ex": [
+        {
+          "id": "st2-1",
+          "t": "num",
+          "q": "Compras a 50 € con el stop en 48 € y el objetivo en 56 €. ¿A cuántas R está el objetivo?",
+          "unit": "R",
+          "a": 3,
+          "why": "R = 50 − 48 = 2 € y el objetivo está a 56 − 50 = 6 €: 6 ÷ 2 = 3R. Es la ganancia que buscas si el precio no se estanca.",
+          "guia": "g3"
+        },
+        {
+          "id": "st2-2",
+          "t": "match",
+          "q": "Empareja cada salida con lo que hace.",
+          "pairs": [
+            [
+              "Stop de precio",
+              "Cierra la operación si el precio llega al nivel de pérdida fijado"
+            ],
+            [
+              "Objetivo",
+              "Cierra la operación con ganancia al llegar al nivel previsto"
+            ],
+            [
+              "Stop por tiempo",
+              "Cierra la operación si pasan N sesiones sin el avance exigido"
+            ]
+          ],
+          "why": "Son tres salidas posibles y vale la que ocurra primero: pérdida de 1R en el stop, ganancia en el objetivo, o salida por falta de avance.",
+          "guia": "g3"
+        },
+        {
+          "id": "st2-3",
+          "t": "num",
+          "q": "Compras a 50 € con el stop en 48 €. Tu regla: si en 10 sesiones no está en +1R, sales. En la sesión 10 cotiza a 49 € y sales. ¿Cuántas R pierdes?",
+          "unit": "R",
+          "a": 0.5,
+          "why": "R = 2 € y pierdes 50 − 49 = 1 €: 1 ÷ 2 = 0,5R. Sales con la mitad de lo que habrías perdido en el stop de precio.",
+          "guia": "g4"
+        },
+        {
+          "id": "st2-4",
+          "t": "slide",
+          "q": "Compras a 50 € con el stop en 48 €. Exiges llevar +1,5R en la sesión 10 para seguir. ¿A qué precio tiene que cotizar en esa sesión?",
+          "label": "Precio exigido",
+          "min": 48,
+          "max": 58,
+          "step": 0.5,
+          "start": 49,
+          "a": 53,
+          "unit": "€",
+          "why": "R = 2 €; 1,5R = 3 € y 50 + 3 = 53 €. A ese precio la operación lleva +1,5R.",
+          "show": [
+            {
+              "label": "R en ese precio",
+              "k": 0.5,
+              "b": -25,
+              "unit": "R",
+              "dec": 1
+            }
+          ],
+          "guia": "g4"
+        },
+        {
+          "id": "st2-5",
+          "t": "choice",
+          "q": "Compras a 50 € con el stop a 48 €, el objetivo a 56 € y la regla de salir si en 10 sesiones no llegas a +1R. En la sesión 6 cotiza a 50,50 €. ¿Qué dice la regla?",
+          "opts": [
+            "Cerrar ya, porque todavía no ha llegado a +1R y el tiempo corre",
+            "Subir el objetivo para compensar la falta de avance de la operación",
+            "Mantener: aún no han pasado las 10 sesiones ni se ha tocado ningún nivel",
+            "Bajar el stop para darle más margen a la operación y que respire"
+          ],
+          "a": 2,
+          "why": "La regla se evalúa en la sesión 10. En la 6, 50,50 € son +0,25R (0,50 ÷ 2), lejos de +1R, pero no hay señal de salida: ni stop, ni objetivo, ni plazo cumplido. Cambiar niveles a mitad rompe el plan.",
+          "guia": "g4",
+          "porque": [
+            "En la sesión 6 todavía no se ha cumplido el plazo de 10 sesiones: no toca evaluar.",
+            "Mover el objetivo a mitad de la operación rompe el plan sin motivo.",
+            null,
+            "Alejar el stop aumenta el riesgo por encima de 1R, que fijaste al entrar."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

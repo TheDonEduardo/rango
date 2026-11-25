@@ -1,0 +1,202 @@
+{
+  "n": 30,
+  "id": "vencimientos",
+  "track": "fundamental",
+  "title": "Vencimientos de la deuda",
+  "blurb": "Cuándo hay que devolver la deuda, qué pasa si refinanciar sale más caro y si la caja llega.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "El calendario de vencimientos",
+      "texto": "La memoria anual detalla cuánta deuda vence cada año. Importa menos la deuda total que cuánta vence pronto: es lo que hay que pagar o refinanciar.",
+      "ejemplo": "Ámbar debe 900 M€: vencen 100 M€ en el año 1, 150 M€ en el 2 y 650 M€ después. En 2 años vence el 27,8 % (250 ÷ 900)."
+    },
+    {
+      "id": "g2",
+      "titulo": "Refinanciar con tipos más altos",
+      "texto": "Al vencer, la deuda se paga con deuda nueva al tipo del momento. Si los tipos han subido, los mismos euros cuestan más de intereses aunque el negocio no cambie.",
+      "ejemplo": "400 M€ al 3 % cuestan 12 M€ al año; renovados al 7 %, 28 M€. Son 16 M€ más cada año."
+    },
+    {
+      "id": "g3",
+      "titulo": "Tipo fijo o variable",
+      "texto": "Con tipo fijo, el coste se conoce hasta el vencimiento, pero se paga el tipo nuevo al refinanciar. Con tipo variable, el coste sube con los tipos en cuanto se revisa.",
+      "ejemplo": "500 M€ a tipo variable con los tipos subiendo del 3 % al 5 %: 500 × 2 % = 10 M€ más al año."
+    },
+    {
+      "id": "g4",
+      "titulo": "Caja y señales de alerta",
+      "texto": "Compara la caja más el flujo de caja libre de 2 años con lo que vence. Alertas: vencimientos concentrados, caja insuficiente y depender de refinanciar cada año.",
+      "ejemplo": "Caja de 120 M€ más 2 × 50 M€ de flujo de caja libre: 220 M€ frente a 250 M€ que vencen. Faltan 30 M€."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "vd1",
+      "title": "Calendario y refinanciación",
+      "ex": [
+        {
+          "id": "vd1-1",
+          "t": "choice",
+          "q": "Dos empresas tienen 900 M€ de deuda. En A todo vence dentro de 1 año; en B vence una décima parte cada año durante 10 años. ¿Cuál tiene menos riesgo de refinanciación?",
+          "opts": [
+            "La A, porque salda toda la deuda de una sola vez",
+            "La B, porque cada año solo tiene que devolver o refinanciar 90 M€",
+            "Las dos igual, porque la deuda total es la misma",
+            "Ninguna: el riesgo de refinanciación solo depende del PER"
+          ],
+          "a": 1,
+          "why": "En B vence 900 ÷ 10 = 90 M€ al año; en A, 900 M€ en un año. A igual deuda total, lo que importa es cuánto vence pronto.",
+          "guia": "g1",
+          "porque": [
+            "Salda la deuda solo si tiene el dinero; si no lo tiene, tendrá que refinanciar 900 M€ de golpe, lo que aumenta el riesgo.",
+            null,
+            "A igual deuda total, el calendario cambia mucho el riesgo: A debe 900 M€ en un año y B, 90 M€.",
+            "El PER mide el precio de la acción frente al beneficio; el riesgo de refinanciación depende de los vencimientos."
+          ]
+        },
+        {
+          "id": "vd1-2",
+          "t": "num",
+          "q": "La empresa Ámbar (ficticia) debe 900 M€: vencen 100 M€ en el año 1, 150 M€ en el año 2 y 650 M€ después. ¿Qué porcentaje de la deuda vence en los próximos 2 años? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 27.8,
+          "why": "(100 + 150) ÷ 900 = 0,2778: un 27,8 %. Esa es la parte de la deuda que tendrá que pagar o refinanciar pronto.",
+          "tol": 0.06,
+          "guia": "g1"
+        },
+        {
+          "id": "vd1-3",
+          "t": "num",
+          "q": "Una empresa tiene que refinanciar 400 M€ de deuda que pagaba al 3 % y la renovará al 7 %. ¿Cuántos M€ más pagará de intereses al año?",
+          "unit": "M€",
+          "a": 16,
+          "why": "Antes, 400 × 3 % = 12 M€; ahora, 400 × 7 % = 28 M€. La diferencia es 16 M€ al año, sin que el negocio haya cambiado.",
+          "guia": "g2"
+        },
+        {
+          "id": "vd1-4",
+          "t": "slide",
+          "q": "Una empresa debe refinanciar 400 M€ y puede dedicar como máximo 24 M€ al año a intereses (simplificación: es el tope que le permite su beneficio operativo). ¿Cuál es el tipo de interés más alto que puede pagar?",
+          "label": "Tipo de interés",
+          "min": 2,
+          "max": 10,
+          "step": 1,
+          "start": 9,
+          "a": 6,
+          "unit": "%",
+          "why": "24 ÷ 400 = 6 %. Por encima de ese tipo, los intereses superan lo que el negocio puede pagar.",
+          "show": [
+            {
+              "label": "Intereses al año",
+              "k": 4,
+              "b": 0,
+              "unit": "M€"
+            }
+          ],
+          "guia": "g2"
+        },
+        {
+          "id": "vd1-5",
+          "t": "match",
+          "q": "Empareja cada término de la deuda con su significado.",
+          "pairs": [
+            [
+              "Vencimiento",
+              "Fecha en la que hay que devolver el capital"
+            ],
+            [
+              "Refinanciar",
+              "Pagar una deuda que vence con una deuda nueva"
+            ],
+            [
+              "Tipo fijo",
+              "Interés que no cambia hasta el vencimiento"
+            ],
+            [
+              "Tipo variable",
+              "Interés que se revisa según los tipos de mercado"
+            ]
+          ],
+          "why": "Refinanciar es sustituir una deuda por otra al tipo del momento. Con tipo fijo el coste se conoce hasta el vencimiento; con tipo variable cambia con el mercado.",
+          "guia": "g3"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "vd2",
+      "title": "Tipo fijo o variable, y caja",
+      "ex": [
+        {
+          "id": "vd2-1",
+          "t": "num",
+          "q": "Una empresa tiene 500 M€ de deuda a tipo variable y los tipos de mercado suben del 3 % al 5 %. ¿Cuántos M€ más paga de intereses al año, suponiendo que no devuelve nada?",
+          "unit": "M€",
+          "a": 10,
+          "why": "500 × 2 % = 10 M€ al año. A tipo variable, la subida se nota en cuanto se revisa el tipo.",
+          "guia": "g3"
+        },
+        {
+          "id": "vd2-2",
+          "t": "choice",
+          "q": "Una empresa tiene toda su deuda a tipo fijo hasta dentro de 4 años y los tipos de mercado suben 3 puntos hoy. ¿Qué pasa con sus intereses durante esos 4 años?",
+          "opts": [
+            "Suben 3 puntos desde mañana, como los de mercado",
+            "Bajan, porque la deuda fija pierde valor cuando suben los tipos",
+            "Desaparecen hasta el vencimiento de cada préstamo",
+            "Se mantienen, y el problema llegará al refinanciar a tipos más altos"
+          ],
+          "a": 3,
+          "why": "El tipo fijo protege hasta el vencimiento. Al refinanciar, la empresa pagará el tipo nuevo: la protección es un aplazamiento, no una exención.",
+          "guia": "g3",
+          "porque": [
+            "Los tipos fijos no cambian con el mercado hasta el vencimiento: de ahí su nombre.",
+            "El valor de mercado de la deuda cambia, pero la empresa sigue pagando los mismos intereses fijos.",
+            "Los intereses se pagan hasta el vencimiento; no desaparecen.",
+            null
+          ]
+        },
+        {
+          "id": "vd2-3",
+          "t": "num",
+          "q": "Una empresa tiene 120 M€ de caja y generará 50 M€ de flujo de caja libre al año. En los próximos 2 años vencen 250 M€ de deuda. Si no paga dividendos ni refinancia, ¿cuántos M€ le faltan?",
+          "unit": "M€",
+          "a": 30,
+          "why": "120 + 2 × 50 = 220 M€ disponibles frente a 250 M€ que vencen: faltan 30 M€, que tendrá que refinanciar o conseguir con una ampliación.",
+          "guia": "g4"
+        },
+        {
+          "id": "vd2-4",
+          "t": "choice",
+          "q": "¿Cuál de estas situaciones es una señal de alerta en la deuda de una empresa?",
+          "opts": [
+            "La mayor parte de su deuda vence dentro de más de 8 años",
+            "Sus intereses son una parte pequeña del beneficio operativo",
+            "Los vencimientos de 2 años superan su caja más su flujo de caja libre",
+            "Tiene más caja que la deuda que vence en los próximos 2 años"
+          ],
+          "a": 2,
+          "why": "Si lo que vence en 2 años supera la caja y el flujo de caja libre, depende de refinanciar. Las otras tres situaciones indican margen.",
+          "guia": "g4",
+          "porque": [
+            "Un vencimiento lejano da margen para refinanciar con calma: no es una alerta.",
+            "Intereses pequeños frente al beneficio operativo indican holgura, no riesgo.",
+            null,
+            "Más caja que los vencimientos de 2 años es justo lo contrario de una alerta."
+          ]
+        },
+        {
+          "id": "vd2-5",
+          "t": "num",
+          "q": "Una empresa tiene un beneficio operativo de 90 M€ al año. Tras refinanciar, paga 36 M€ de intereses al año. ¿Qué porcentaje de su beneficio operativo se va en intereses?",
+          "unit": "%",
+          "a": 40,
+          "why": "36 ÷ 90 = 0,40: un 40 %. Cuando los intereses absorben una parte grande del beneficio, queda poco margen ante un mal año.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

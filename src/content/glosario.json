@@ -1046,5 +1046,52 @@
    "colchón"
   ],
   "d": "Ahorro líquido, de unos meses de gastos, para imprevistos. No se invierte en activos que puedan caer."
+ },
+ {
+  "termino": "mercado bajista",
+  "alias": [
+   "mercados bajistas"
+  ],
+  "d": "Caída del 20 % o más de un índice desde su máximo. Una caída del 10 % se llama corrección."
+ },
+ {
+  "termino": "refinanciar",
+  "alias": [
+   "refinanciación"
+  ],
+  "d": "Pagar una deuda que vence con otra deuda nueva, al tipo de interés del momento."
+ },
+ {
+  "termino": "tipo fijo",
+  "alias": [
+   "a tipo fijo"
+  ],
+  "d": "Interés de una deuda que no cambia hasta su vencimiento."
+ },
+ {
+  "termino": "tipo variable",
+  "alias": [
+   "a tipo variable"
+  ],
+  "d": "Interés de una deuda que se revisa según los tipos de mercado."
+ },
+ {
+  "termino": "stop por tiempo",
+  "d": "Salida que cierra la operación si no ha avanzado lo exigido en un número fijo de sesiones."
+ },
+ {
+  "termino": "rollup",
+  "alias": [
+   "rollups"
+  ],
+  "d": "Capa 2 que ejecuta muchas operaciones fuera de la red principal y publica en ella un resumen del lote."
+ },
+ {
+  "termino": "secuenciador",
+  "d": "Operador que ordena las operaciones de una capa 2. Si es único y centralizado, puede caerse o retrasarlas."
+ },
+ {
+  "termino": "conocimiento cero",
+  "d": "Tipo de prueba matemática que demuestra que un cálculo es correcto sin repetirlo. La usan algunos rollups."
  }
 ]
