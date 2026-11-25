@@ -1,0 +1,188 @@
+{
+  "n": 19,
+  "id": "gordon",
+  "track": "fundamental",
+  "title": "Valorar por dividendos",
+  "blurb": "El modelo de Gordon: valor, rentabilidad exigida implícita y cuándo no sirve.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "La fórmula",
+      "texto": "Si el dividendo del próximo año (D1) crece a un ritmo constante g para siempre, la acción vale D1 entre la diferencia entre lo que exiges (r) y g.",
+      "ejemplo": "D1 de 2 €, g del 3 % y r del 8 %: P = 2 ÷ 0,05 = 40 €."
+    },
+    {
+      "id": "g2",
+      "titulo": "g menor que r",
+      "texto": "Si g alcanza a r, el valor se dispara: una empresa no crece más que la economía para siempre. Usa siempre el dividendo del próximo año, no el último.",
+      "ejemplo": "Pagó 1,50 € y crece un 4 %: D1 = 1,56 €. Con r del 9 %: 1,56 ÷ 0,05 = 31,2 €."
+    },
+    {
+      "id": "g3",
+      "titulo": "Sensibilidad",
+      "texto": "Como r − g suele ser pequeño, un punto cambia mucho el valor. Pide margen de seguridad.",
+      "ejemplo": "Con D1 = 2 € y g = 3 %: r del 7 % da 50 €; r del 8 %, 40 €: un 20 % menos. Con r del 10 %, pasar g de 3 % a 4 % sube el valor un 16,7 %."
+    },
+    {
+      "id": "g4",
+      "titulo": "Rentabilidad implícita y límites",
+      "texto": "Si das el precio por bueno, r = D1 ÷ P + g es la rentabilidad que esperas. El modelo no sirve en empresas sin dividendo estable: sin dividendo no hay nada que descontar.",
+      "ejemplo": "A 40 € con D1 de 2 € y g del 3 %: 5 % + 3 % = 8 %."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "gd1",
+      "title": "El modelo de Gordon",
+      "ex": [
+        {
+          "id": "gd1-1",
+          "t": "num",
+          "q": "Una empresa pagará un dividendo de 2 € el próximo año y lo subirá un 3 % anual para siempre. Exiges un 8 %. ¿Cuánto vale la acción según el modelo de Gordon, en €?",
+          "unit": "€",
+          "a": 40,
+          "why": "P = D1 ÷ (r − g) = 2 ÷ (0,08 − 0,03) = 2 ÷ 0,05 = 40 €.",
+          "guia": "g1"
+        },
+        {
+          "id": "gd1-2",
+          "t": "choice",
+          "q": "En el modelo de Gordon, ¿por qué el crecimiento del dividendo (g) tiene que ser menor que la rentabilidad exigida (r)?",
+          "opts": [
+            "Porque r es el crecimiento de la economía y g el de la empresa",
+            "Si g alcanza o supera a r, el denominador es cero o negativo y no hay valor",
+            "Porque el dividendo no puede crecer más de un 3 %",
+            "Porque r es un importe en euros y g, un porcentaje"
+          ],
+          "a": 1,
+          "why": "Con g ≥ r el denominador se anula o se vuelve negativo. Ninguna empresa crece para siempre más que la economía.",
+          "guia": "g2",
+          "porque": [
+            "r es lo que exiges a la inversión, no el crecimiento de la economía; el límite es matemático: r − g debe ser positivo.",
+            null,
+            "No hay un tope fijo del 3 %: el dividendo puede crecer más, siempre que g quede por debajo de r.",
+            "Los dos son porcentajes anuales; la restricción es matemática, no de unidades."
+          ]
+        },
+        {
+          "id": "gd1-3",
+          "t": "num",
+          "q": "Una empresa acaba de pagar 1,50 € por acción y su dividendo crece un 4 % al año. Exiges un 9 %. ¿Cuánto vale la acción, en €? Usa el dividendo del próximo año.",
+          "unit": "€",
+          "a": 31.2,
+          "why": "D1 = 1,50 × 1,04 = 1,56 €; P = 1,56 ÷ (0,09 − 0,04) = 1,56 ÷ 0,05 = 31,2 €.",
+          "tol": 0.06,
+          "guia": "g2"
+        },
+        {
+          "id": "gd1-4",
+          "t": "slide",
+          "q": "El dividendo del próximo año es de 2 € y exiges un 8 %. ¿Qué crecimiento anual del dividendo hace que la acción valga 50 €?",
+          "label": "Crecimiento del dividendo (g)",
+          "min": 0,
+          "max": 6,
+          "step": 0.5,
+          "start": 1,
+          "a": 4,
+          "unit": "%",
+          "why": "2 ÷ 50 = 4 %: la diferencia r − g debe ser del 4 %, así que g = 8 − 4 = 4 %.",
+          "show": [
+            {
+              "label": "Diferencia r − g",
+              "k": -1,
+              "b": 8,
+              "unit": "%",
+              "dec": 1
+            }
+          ],
+          "guia": "g3"
+        },
+        {
+          "id": "gd1-5",
+          "t": "num",
+          "q": "Una acción paga 2 € el próximo año y su dividendo crece un 3 % anual. Si tu rentabilidad exigida sube del 7 % al 8 %, ¿cuánto cae su valor, en %?",
+          "unit": "%",
+          "a": 20,
+          "why": "Con un 7 % vale 2 ÷ 0,04 = 50 €; con un 8 %, 2 ÷ 0,05 = 40 €. Cae 10 € sobre 50 €: un 20 %.",
+          "guia": "g3"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "gd2",
+      "title": "Rentabilidad implícita y límites",
+      "ex": [
+        {
+          "id": "gd2-1",
+          "t": "num",
+          "q": "Una acción cotiza a 40 €, pagará 2 € el próximo año y su dividendo crecerá un 3 % anual. ¿Qué rentabilidad exigida implícita, en %, tiene ese precio?",
+          "unit": "%",
+          "a": 8,
+          "why": "r = D1 ÷ P + g = 2 ÷ 40 + 3 % = 5 % + 3 % = 8 %.",
+          "guia": "g4"
+        },
+        {
+          "id": "gd2-2",
+          "t": "num",
+          "q": "Una acción cotiza a 50 €, pagará 2,50 € el próximo año y su dividendo crecerá un 4 % anual. ¿Qué rentabilidad total esperas, en %?",
+          "unit": "%",
+          "a": 9,
+          "why": "r = 2,50 ÷ 50 + 4 % = 5 % + 4 % = 9 %: dividendo más crecimiento.",
+          "guia": "g4"
+        },
+        {
+          "id": "gd2-3",
+          "t": "choice",
+          "q": "Quieres valorar una empresa con el modelo de Gordon. ¿En cuál de estas no sirve?",
+          "opts": [
+            "Una eléctrica madura con dividendo estable que crece un 3 %",
+            "Una empresa de consumo que paga y sube el dividendo cada año",
+            "Una tecnológica que reinvierte todo y no paga dividendo",
+            "Una empresa de bebidas con dividendo estable desde hace veinte años"
+          ],
+          "a": 2,
+          "why": "Sin dividendo no hay nada que descontar. El modelo funciona con dividendos estables y predecibles.",
+          "guia": "g4",
+          "porque": [
+            "Es el caso típico donde el modelo funciona: dividendo estable y crecimiento moderado.",
+            "Pagar y subir el dividendo cada año es justo lo que el modelo necesita.",
+            null,
+            "Veinte años de dividendo estable es un buen punto de partida para el modelo."
+          ]
+        },
+        {
+          "id": "gd2-4",
+          "t": "choice",
+          "q": "Una acción da un 5 % de dividendo sobre su precio (D1 ÷ P). Con g = 3 % la rentabilidad implícita es del 8 % y con g = 6 %, del 11 %. ¿Qué indica?",
+          "opts": [
+            "Que el resultado depende sobre todo del crecimiento que supones",
+            "Que el dividendo del próximo año ha cambiado",
+            "Que el modelo da siempre el mismo valor con cualquier g",
+            "Que con g = 6 % la empresa es siempre más barata"
+          ],
+          "a": 0,
+          "why": "Con el dividendo y el precio fijos, solo cambia g: tres puntos más de crecimiento suponen tres puntos más de rentabilidad esperada.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "El dividendo y el precio son los mismos en los dos cálculos; solo cambia el supuesto de g.",
+            "Con otro g el modelo da otro valor: el supuesto de crecimiento pesa mucho.",
+            "Un g mayor es un supuesto más optimista sobre el futuro, no una prueba de que la empresa esté más barata."
+          ]
+        },
+        {
+          "id": "gd2-5",
+          "t": "num",
+          "q": "Una acción paga 2 € el próximo año y exiges un 10 %. Si supones un crecimiento del 4 % en lugar del 3 %, ¿cuánto sube su valor, en %? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 16.7,
+          "why": "Con g = 3 %: 2 ÷ 0,07 = 28,57 €. Con g = 4 %: 2 ÷ 0,06 = 33,33 €. Sube un 16,7 %.",
+          "tol": 0.06,
+          "guia": "g3"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

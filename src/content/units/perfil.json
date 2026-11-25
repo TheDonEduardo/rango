@@ -1,0 +1,231 @@
+{
+  "n": 8,
+  "id": "perfil",
+  "track": "basico",
+  "title": "Tu perfil de inversor",
+  "blurb": "Horizonte, aguante y objetivo: el cuestionario del bróker y cuánto poner en bolsa.",
+  "gate": false,
+  "revisar": "2027-11",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Horizonte y objetivo",
+      "texto": "El horizonte de inversión es cuándo necesitarás el dinero; el objetivo, qué quieres lograr y con cuánto. Cuanto más corto el plazo, menos bolsa.",
+      "ejemplo": "Para una entrada de 20.000 € dentro de 2 años, una caída del 30 % la dejaría en 14.000 €."
+    },
+    {
+      "id": "g2",
+      "titulo": "Capacidad y tolerancia",
+      "texto": "La capacidad es lo que puedes perder sin cambiar tu vida; la tolerancia, lo que aguantas sin vender en pánico. Vale la menor de las dos, y en euros.",
+      "ejemplo": "Con 40.000 € y un tope de pérdida de 8.000 €, aguantas un 20 %. Con 30.000 € en bolsa, un 40 % de caída cuesta 12.000 €."
+    },
+    {
+      "id": "g3",
+      "titulo": "El cuestionario del bróker",
+      "texto": "Las entidades que prestan servicios de inversión en la UE deben comprobar, en muchos productos, por la normativa MiFID, que te convienen. Si te asesoran o te gestionan la cartera, hacen el test de idoneidad; si compras por tu cuenta un producto complejo, el de conveniencia. Responde con sinceridad.",
+      "ejemplo": "Si exageras tu experiencia, te dejarán contratar algo que no entiendes. Compruébalo con la norma vigente."
+    },
+    {
+      "id": "g4",
+      "titulo": "Del perfil al peso en bolsa",
+      "texto": "Divide la caída que aceptas entre la que puede sufrir la bolsa: ese es tu peso máximo. El resto va a renta fija y liquidez.",
+      "ejemplo": "Aceptas perder un 18 % y la bolsa puede caer un 40 %: 18 ÷ 40 = 45 %. Con 50.000 € y un tope de 10.000 €: 50 % en bolsa."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "pv1",
+      "title": "Las piezas de tu perfil",
+      "ex": [
+        {
+          "id": "pv1-1",
+          "t": "choice",
+          "q": "Necesitarás 20.000 € dentro de 2 años para la entrada de un piso. ¿Cómo encaja ese dinero en tu perfil de inversor?",
+          "opts": [
+            "Horizonte largo: puedes ponerlo entero en bolsa y esperar a que se recupere",
+            "Horizonte corto: casi nada en bolsa, porque una caída te pillaría necesitándolo",
+            "El horizonte no cuenta: solo importa cuánto subió la bolsa el año pasado",
+            "Da igual: ese dinero está a salvo en cualquier inversión"
+          ],
+          "a": 1,
+          "why": "Con solo 2 años el plazo es corto: una caída del 30 % dejaría 14.000 € justo cuando los necesitas.",
+          "guia": "g1",
+          "porque": [
+            "Con solo dos años, una caída del 30 % podría llegar justo antes de necesitarlo y no habría tiempo de recuperarlo.",
+            null,
+            "El pasado reciente no dice cuándo necesitarás el dinero; el plazo sí marca cuánto riesgo puedes asumir.",
+            "Ninguna inversión con riesgo está a salvo: en plazos cortos la bolsa puede estar muy por debajo de lo aportado."
+          ]
+        },
+        {
+          "id": "pv1-2",
+          "t": "match",
+          "q": "Empareja cada pieza de tu perfil de inversor con lo que mide.",
+          "pairs": [
+            [
+              "Horizonte",
+              "Cuándo necesitarás el dinero"
+            ],
+            [
+              "Capacidad",
+              "Cuánto puedes perder sin cambiar tu vida"
+            ],
+            [
+              "Tolerancia",
+              "Cuánto aguantas de verdad sin vender en pánico"
+            ],
+            [
+              "Objetivo",
+              "Qué quieres lograr, con qué cantidad y para cuándo"
+            ]
+          ],
+          "why": "Son cuatro piezas distintas: el plazo, el dinero que puedes perder, lo que soportas por dentro y la meta.",
+          "guia": "g1"
+        },
+        {
+          "id": "pv1-3",
+          "t": "num",
+          "q": "Tienes 40.000 € invertidos y no podrías soportar perder más de 8.000 €. ¿Qué caída máxima, en %, puede tener tu cartera sin que te pases?",
+          "unit": "%",
+          "a": 20,
+          "why": "8.000 ÷ 40.000 = 20 %. Es tu capacidad de pérdida: si aguantas menos, manda lo que aguantas.",
+          "guia": "g2"
+        },
+        {
+          "id": "pv1-4",
+          "t": "num",
+          "q": "Tienes 30.000 € en bolsa y una crisis fuerte puede hacerla caer un 40 %. ¿Cuántos miles de euros perderías en esa caída?",
+          "unit": "mil €",
+          "a": 12,
+          "why": "30.000 × 0,40 = 12.000 €. Con la cifra en euros, no en porcentaje, ves si de verdad lo aguantarías.",
+          "guia": "g2"
+        },
+        {
+          "id": "pv1-5",
+          "t": "choice",
+          "q": "Dices en un cuestionario que aguantas caídas del 30 %, pero cuando tu cartera baja un 15 % apenas duermes y quieres vender. ¿Qué perfil te describe mejor?",
+          "opts": [
+            "El que dijiste en el cuestionario, porque tus emociones no cuentan en el perfil",
+            "Uno dinámico, porque las caídas son siempre una oportunidad de compra",
+            "El que muestra tu reacción real: tu aguante está por debajo del 30 %",
+            "Ninguno: el perfil solo depende de tu edad y de tu sueldo"
+          ],
+          "a": 2,
+          "why": "Con una caída del 15 % ya quieres vender: tu aguante real es menor que el 30 % declarado. Ajusta el perfil a eso.",
+          "guia": "g2",
+          "porque": [
+            "Tus emociones sí cuentan: si vendes en pánico en la caída, conviertes la pérdida en definitiva.",
+            "Una caída no es una oportunidad si no la aguantas: acabarías vendiendo en el peor momento.",
+            null,
+            "La edad y el sueldo influyen, pero no bastan: cuenta también lo que aguantas de verdad."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "pv2",
+      "title": "El cuestionario y tu peso en bolsa",
+      "ex": [
+        {
+          "id": "pv2-1",
+          "t": "choice",
+          "q": "Tu entidad te pide responder un cuestionario antes de contratar ciertos productos. ¿Para qué sirve, según la normativa europea MiFID?",
+          "opts": [
+            "Para garantizarte que no perderás dinero con lo que contrates",
+            "Para decidir la comisión que te cobrarán según lo que ganes",
+            "Para comprobar que el producto es adecuado para ti",
+            "Para informar a Hacienda de tu patrimonio y tus inversiones"
+          ],
+          "a": 2,
+          "why": "La norma europea MiFID, que se aplica a las entidades que prestan servicios de inversión en la UE, obliga, en muchos casos, a comprobar si el producto te conviene.",
+          "guia": "g3",
+          "porque": [
+            "Nadie puede garantizarlo: la bolsa y los fondos pueden perder, y el cuestionario no cambia ese riesgo.",
+            "La comisión la fija el contrato de la entidad, no el cuestionario; este sirve para valorar si el producto te conviene.",
+            null,
+            "El cuestionario no se envía a Hacienda: su fin es protegerte, no informar de tu patrimonio."
+          ]
+        },
+        {
+          "id": "pv2-2",
+          "t": "choice",
+          "q": "Para llegar antes a un producto complejo, respondes en el cuestionario que tienes mucha experiencia, aunque no es verdad. ¿Qué riesgo corres?",
+          "opts": [
+            "Ninguno: es un trámite y no cambia lo que puedes contratar",
+            "Que Hacienda te cobre un impuesto extra por declarar mal tu experiencia",
+            "Ninguno: si pierdes, la entidad te devolverá el dinero igualmente",
+            "Que te dejen contratar algo que no entiendes y pierdas más de lo que aguantas"
+          ],
+          "a": 3,
+          "why": "El cuestionario existe para frenarte ante lo que no entiendes. Si lo falseas, el aviso no salta y la pérdida es tuya.",
+          "guia": "g3",
+          "porque": [
+            "Sí cambia: según tus respuestas la entidad avisa o limita lo que puedes contratar.",
+            "No hay ningún impuesto por responder mal al cuestionario; el riesgo es de inversión, no fiscal.",
+            "La entidad no te cubre las pérdidas de una inversión: el riesgo es tuyo, respondas como respondas.",
+            null
+          ]
+        },
+        {
+          "id": "pv2-3",
+          "t": "choice",
+          "q": "Compras por tu cuenta, sin asesoramiento, un producto complejo. ¿Qué evalúa la entidad en el test de conveniencia?",
+          "opts": [
+            "Solo si tienes saldo suficiente en la cuenta para pagarlo",
+            "Tus conocimientos y tu experiencia con ese tipo de producto",
+            "Tu edad: a partir de cierta edad no puedes invertir en bolsa",
+            "Cuánto te falta para jubilarte y cuánto cobrarás de pensión"
+          ],
+          "a": 1,
+          "why": "La conveniencia mira conocimientos y experiencia. Si te asesoran o te gestionan la cartera, el test de idoneidad añade tu situación financiera y tus objetivos.",
+          "guia": "g3",
+          "porque": [
+            "El saldo importa para pagar, pero la conveniencia mira lo que sabes del producto, no lo que tienes en la cuenta.",
+            null,
+            "No hay una edad que te prohíba invertir en bolsa; la edad entra, como mucho, en el perfil.",
+            "La pensión entra en el test de idoneidad, no en el de conveniencia, que mira solo conocimientos y experiencia."
+          ]
+        },
+        {
+          "id": "pv2-4",
+          "t": "num",
+          "q": "Aceptas perder como máximo un 18 % de tu cartera. En una crisis la bolsa cae un 40 % y supones que la renta fija no pierde nada. ¿Qué porcentaje de la cartera puedes tener en bolsa?",
+          "unit": "%",
+          "a": 45,
+          "why": "18 ÷ 40 = 0,45: un 45 % en bolsa. Con eso, una caída del 40 % de la bolsa resta el 18 % a la cartera entera.",
+          "guia": "g4"
+        },
+        {
+          "id": "pv2-5",
+          "t": "slide",
+          "q": "Tu cartera es de 50.000 € y no soportarías perder más de 10.000 € si la bolsa cae un 40 %. ¿Qué porcentaje pones en bolsa como máximo?",
+          "label": "Peso en bolsa",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "start": 90,
+          "a": 50,
+          "unit": "%",
+          "why": "Con un 50 % hay 25.000 € en bolsa y una caída del 40 % cuesta 10.000 €. Con más, te pasarías de tu tope.",
+          "show": [
+            {
+              "label": "En bolsa",
+              "k": 500,
+              "b": 0,
+              "unit": "€"
+            },
+            {
+              "label": "Pierdes si cae un 40 %",
+              "k": 200,
+              "b": 0,
+              "unit": "€"
+            }
+          ],
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

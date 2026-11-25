@@ -1,0 +1,214 @@
+{
+  "n": 9,
+  "id": "gestionauto",
+  "track": "pasiva",
+  "title": "Gestión automatizada",
+  "blurb": "Qué hace un gestor automatizado, cuánto cuesta en total y cuándo compensa.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Qué hace un gestor automatizado",
+      "texto": "Reparte tu dinero en fondos indexados según tu perfil, invierte tus aportaciones y rebalancea cuando el reparto se desvía. No elige valores ni garantiza rentabilidad.",
+      "ejemplo": "Tu cartera de 5.000 € debe ser 70/30. Si la bolsa pasa a pesar un 80 %, vende 500 € de bolsa."
+    },
+    {
+      "id": "g2",
+      "titulo": "El coste total",
+      "texto": "Suma tres cosas: la comisión de gestión, la custodia y el TER de los fondos. El TER no sale en el recibo del gestor, pero lo pagas igual.",
+      "ejemplo": "0,25 % + 0,10 % + 0,20 % = 0,55 % al año. Con 30.000 €, son 165 € al año."
+    },
+    {
+      "id": "g3",
+      "titulo": "A 25 años",
+      "texto": "Los costes se restan de la rentabilidad. Una diferencia pequeña de coste, repetida cada año, se convierte en mucho dinero por el interés compuesto.",
+      "ejemplo": "20.000 € al 6 % bruto durante 25 años: con un 0,20 % de costes quedan unos 81.879 €; con un 0,55 %, unos 75.369 €. Son 6.510 € de diferencia."
+    },
+    {
+      "id": "g4",
+      "titulo": "Qué mirar",
+      "texto": "Compara el coste total, los fondos que usa y si está autorizado por un supervisor. Paga un gestor solo si te evita errores, no por promesas.",
+      "ejemplo": "Con 30.000 € y un tope de 150 € al año, tu coste máximo es el 0,5 %."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "ga1",
+      "title": "Qué hace y qué cuesta",
+      "ex": [
+        {
+          "id": "ga1-1",
+          "t": "match",
+          "q": "Empareja cada concepto de un gestor automatizado con su significado.",
+          "pairs": [
+            [
+              "Comisión de gestión",
+              "Lo que cobra el gestor por montar y mantener tu cartera"
+            ],
+            [
+              "Custodia",
+              "Lo que cobra la entidad que guarda tus fondos"
+            ],
+            [
+              "TER",
+              "Coste anual de cada fondo, ya descontado de su precio"
+            ],
+            [
+              "Rebalanceo",
+              "Vender lo que pesa de más y comprar lo que pesa de menos"
+            ]
+          ],
+          "why": "Los tres primeros son costes distintos que se suman; el rebalanceo es la tarea que el gestor hace por ti.",
+          "guia": "g1"
+        },
+        {
+          "id": "ga1-2",
+          "t": "choice",
+          "q": "Contratas un gestor automatizado. ¿Qué hace por ti?",
+          "opts": [
+            "Elige cada mes las acciones que más subirán y te garantiza ganar",
+            "Te asegura una rentabilidad mínima al año aunque la bolsa caiga",
+            "Compra y vende a diario para batir al mercado con tu dinero",
+            "Invierte tus aportaciones en fondos indexados y rebalancea según tu perfil"
+          ],
+          "a": 3,
+          "why": "Su trabajo es mecánico: reparte tu dinero en fondos indexados según tu perfil y lo devuelve a ese reparto. No garantiza nada.",
+          "guia": "g1",
+          "porque": [
+            "No elige acciones ni garantiza ganar: usa fondos indexados y no puede asegurar el resultado.",
+            "Ningún gestor puede asegurarte una rentabilidad mínima; si la bolsa cae, tu cartera cae.",
+            "No intenta batir al mercado: replica índices y evita operar a diario.",
+            null
+          ]
+        },
+        {
+          "id": "ga1-3",
+          "t": "num",
+          "q": "Un gestor automatizado cobra un 0,25 % de gestión y un 0,10 % de custodia, y sus fondos tienen un TER medio del 0,20 %. ¿Qué coste total anual supone, en %?",
+          "unit": "%",
+          "a": 0.55,
+          "why": "0,25 + 0,10 + 0,20 = 0,55 % al año. El TER no sale en el recibo del gestor, pero lo pagas.",
+          "tol": 0.01,
+          "guia": "g2"
+        },
+        {
+          "id": "ga1-4",
+          "t": "num",
+          "q": "Con un coste total del 0,55 % anual y 30.000 € invertidos, ¿cuántos euros pagas al año en costes?",
+          "unit": "€",
+          "a": 165,
+          "why": "30.000 × 0,0055 = 165 € al año, aunque solo veas en el recibo la parte del gestor.",
+          "guia": "g2"
+        },
+        {
+          "id": "ga1-5",
+          "t": "choice",
+          "q": "Un gestor anuncia «solo un 0,30 % de comisión». ¿Qué más debes sumar para saber cuánto pagas en realidad?",
+          "opts": [
+            "Un porcentaje de las ganancias, que todos los gestores cobran siempre",
+            "El impuesto sobre tus ganancias, que el gestor paga siempre por ti",
+            "El TER de los fondos en los que invierte y la custodia, si se cobra aparte",
+            "Nada: la comisión de un gestor siempre incluye todos los costes"
+          ],
+          "a": 2,
+          "why": "El 0,30 % es solo la parte del gestor. El TER de cada fondo y la custodia, si va aparte, se suman al coste real.",
+          "guia": "g2",
+          "porque": [
+            "Los gestores de fondos indexados no cobran un porcentaje de las ganancias; cobran un porcentaje del capital.",
+            "El impuesto sobre tus ganancias lo pagas tú, no el gestor.",
+            null,
+            "Falso: el TER de cada fondo y la custodia, si va aparte, suelen sumarse a la comisión del gestor."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "ga2",
+      "title": "A 25 años: tú o el gestor",
+      "ex": [
+        {
+          "id": "ga2-1",
+          "t": "num",
+          "q": "Inviertes 20.000 € durante 25 años con una rentabilidad bruta del 6 % anual. Resta los costes a la rentabilidad: 5,80 % y 5,45 % netos. ¿Cuántos miles de euros más tendrías si pagas un 0,20 % anual de costes en lugar de un 0,55 %? Redondea a 1 decimal.",
+          "unit": "mil €",
+          "a": 6.5,
+          "why": "Al 5,80 % neto, 20.000 € pasan a unos 81.879 €; al 5,45 %, a unos 75.369 €. Diferencia: unos 6.510 €, es decir, 6,5 mil €.",
+          "tol": 0.06,
+          "guia": "g3"
+        },
+        {
+          "id": "ga2-2",
+          "t": "num",
+          "q": "Tu cartera vale 5.000 € y debe ser 70 % bolsa y 30 % bonos. Tras una subida, la bolsa pesa un 80 %. ¿Cuántos euros de bolsa vende el gestor para rebalancear?",
+          "unit": "€",
+          "a": 500,
+          "why": "El 80 % de 5.000 € son 4.000 € y el 70 % son 3.500 €: vende 500 € de bolsa y compra bonos con ellos.",
+          "guia": "g1"
+        },
+        {
+          "id": "ga2-3",
+          "t": "choice",
+          "q": "Piensas en pagar un gestor automatizado en lugar de gestionar tú tus fondos. ¿Cuándo tiene más sentido?",
+          "opts": [
+            "Cuando quieres que bata al mercado todos los años con tu dinero",
+            "Cuando su coste extra te evita errores caros, como vender en pánico",
+            "Cuando necesitas una rentabilidad garantizada que un fondo no da",
+            "Siempre: pagar más garantiza una cartera mejor"
+          ],
+          "a": 1,
+          "why": "Un gestor no bate al mercado ni garantiza nada. Compensa si su coste es menor que lo que te costarían tus errores.",
+          "guia": "g4",
+          "porque": [
+            "Ningún gestor bate al mercado cada año; la gestión automatizada replica índices.",
+            null,
+            "Ningún gestor ni fondo garantiza una rentabilidad; el gestor no la ofrece.",
+            "Pagar más no garantiza nada: un coste alto resta rentabilidad cada año."
+          ]
+        },
+        {
+          "id": "ga2-4",
+          "t": "slide",
+          "q": "Quieres que tus costes no pasen de 150 € al año con 30.000 € invertidos. ¿Qué coste total anual máximo, en %, aceptas?",
+          "label": "Coste total anual",
+          "min": 0,
+          "max": 1.5,
+          "step": 0.1,
+          "start": 1.2,
+          "a": 0.5,
+          "unit": "%",
+          "why": "150 ÷ 30.000 = 0,5 %. Con un 0,55 % pagarías 165 € y te pasarías.",
+          "show": [
+            {
+              "label": "Pagas al año",
+              "k": 300,
+              "b": 0,
+              "unit": "€"
+            }
+          ],
+          "guia": "g2"
+        },
+        {
+          "id": "ga2-5",
+          "t": "choice",
+          "q": "Vas a comparar dos gestores automatizados. ¿Qué miras antes de contratar?",
+          "opts": [
+            "Solo la rentabilidad que anuncian para el último año",
+            "Cuántas veces sale su publicidad en las redes sociales",
+            "Que prometan batir al índice todos los años",
+            "Coste total, fondos que usa y si está autorizado por un supervisor"
+          ],
+          "a": 3,
+          "why": "Lo que controlas es el coste, los fondos y la autorización. La rentabilidad pasada y las promesas no predicen nada.",
+          "guia": "g4",
+          "porque": [
+            "La rentabilidad de un año no predice nada y no dice cuánto pagas.",
+            "La publicidad no dice nada de su coste, de sus fondos ni de su autorización.",
+            "Ningún gestor puede prometer batir al índice cada año; una promesa así es una señal de alarma.",
+            null
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

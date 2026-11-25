@@ -1,0 +1,219 @@
+{
+  "n": 17,
+  "id": "correlacion",
+  "track": "tecnico",
+  "title": "Posiciones que se mueven juntas",
+  "blurb": "Correlación, riesgo agrupado y un tope de riesgo por sector.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Correlación",
+      "texto": "Mide de −1 a +1 cuánto se mueven juntas dos posiciones. Cerca de +1, son casi una sola apuesta; cerca de 0, independientes. Las del mismo sector suelen compartir riesgos.",
+      "ejemplo": "Tienes 8 posiciones y 6 son del mismo grupo: no son 8 apuestas, sino unas 3."
+    },
+    {
+      "id": "g2",
+      "titulo": "Riesgo agrupado",
+      "texto": "Suma el riesgo de las posiciones que se mueven juntas: es lo que pierdes con un solo golpe.",
+      "ejemplo": "Capital de 25.000 € y cuatro posiciones del sector que arriesgan 200 € cada una: 800 €, un 3,2 %."
+    },
+    {
+      "id": "g3",
+      "titulo": "Crisis y ETF",
+      "texto": "En una caída fuerte casi todo cae a la vez: la correlación sube. Y un ETF ya contiene sus mayores acciones: sumarlas concentra, no reparte.",
+      "ejemplo": "Un ETF tecnológico más tres de sus mayores acciones: el mismo riesgo, apilado."
+    },
+    {
+      "id": "g4",
+      "titulo": "Tope por sector",
+      "texto": "Pon un tope de riesgo a cada sector y repártelo entre sus posiciones. Al añadir otra, calcula lo que queda.",
+      "ejemplo": "Con 50.000 € y un tope del 2 %: 1.000 €, o 5 posiciones de 200 €. Con 750 € usados quedan 250 €: a 25,00 € y stop en 23,00 €, 125 acciones."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "co1",
+      "title": "Mismo golpe",
+      "ex": [
+        {
+          "id": "co1-1",
+          "t": "choice",
+          "q": "Tienes una fabricante de chips en cartera y quieres añadir otra posición. ¿Cuál se moverá más junto a ella?",
+          "opts": [
+            "Una eléctrica regulada con un dividendo estable",
+            "Una cadena de supermercados de alimentación",
+            "Una distribuidora de agua con tarifa regulada",
+            "Otra fabricante de chips que vende a los mismos clientes"
+          ],
+          "a": 3,
+          "why": "Las empresas del mismo sector comparten clientes, ciclo y noticias, así que suben y bajan juntas.",
+          "guia": "g1",
+          "porque": [
+            "Una eléctrica regulada depende de sus tarifas, no del ciclo de los chips: se mueve distinto.",
+            "Los supermercados venden alimentación y su ciclo poco tiene que ver con el de los chips.",
+            "Una distribuidora de agua con tarifa regulada depende de otro negocio y de otros clientes.",
+            null
+          ]
+        },
+        {
+          "id": "co1-2",
+          "t": "num",
+          "q": "Tu capital es de 25.000 € y cada posición arriesga 200 € hasta su stop. Cuatro de tus posiciones son del mismo sector y se mueven como una sola. Si saltan sus cuatro stops, ¿qué % del capital pierdes?",
+          "unit": "%",
+          "a": 3.2,
+          "why": "4 × 200 = 800 €, y 800 ÷ 25.000 = 3,2 %. Es un solo golpe, no cuatro pérdidas independientes.",
+          "guia": "g2"
+        },
+        {
+          "id": "co1-3",
+          "t": "choice",
+          "q": "En una caída fuerte del mercado, ¿qué suele ocurrir con la correlación entre acciones de sectores distintos?",
+          "opts": [
+            "Baja a cero: cada acción cae por su cuenta",
+            "Sube: casi todas caen a la vez y diversificar protege menos",
+            "Se vuelve negativa: lo que cae un sector lo sube otro",
+            "No cambia: es una constante fija de cada acción"
+          ],
+          "a": 1,
+          "why": "En las crisis se vende de todo a la vez: la correlación sube y el riesgo de varias posiciones se parece al de una sola.",
+          "guia": "g3",
+          "porque": [
+            "En una crisis la correlación sube, no baja: el pánico afecta a casi todo.",
+            null,
+            "No se vuelve negativa: la mayoría de las acciones caen juntas en una crisis.",
+            "Cambia con el momento: sube en las caídas fuertes."
+          ]
+        },
+        {
+          "id": "co1-4",
+          "t": "num",
+          "q": "Tienes 8 posiciones. Seis son del mismo grupo y se mueven como una sola; las otras dos son de sectores distintos. ¿Cuántas apuestas independientes tienes aproximadamente?",
+          "unit": "",
+          "a": 3,
+          "why": "Las seis del grupo cuentan como una apuesta, más las dos distintas: 1 + 2 = 3, no 8.",
+          "guia": "g1"
+        },
+        {
+          "id": "co1-5",
+          "t": "match",
+          "q": "Empareja cada correlación con lo que significa.",
+          "pairs": [
+            [
+              "Cerca de +1",
+              "Se mueven casi a la vez y en la misma dirección"
+            ],
+            [
+              "Cerca de 0",
+              "Sus movimientos casi no guardan relación"
+            ],
+            [
+              "Cerca de −1",
+              "Cuando una sube, la otra suele bajar"
+            ],
+            [
+              "Mismo sector",
+              "Suelen compartir riesgos, así que su correlación suele ser alta"
+            ]
+          ],
+          "why": "La correlación va de −1 a +1: cuanto más cerca de +1, menos diversifica sumar la otra posición.",
+          "guia": "g1"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "co2",
+      "title": "Un tope por sector",
+      "ex": [
+        {
+          "id": "co2-1",
+          "t": "num",
+          "q": "Tu capital es de 50.000 € y limitas a un 2 % del capital el riesgo de cada sector. Cada operación arriesga 250 €. ¿Cuántas operaciones del mismo sector puedes abrir como máximo?",
+          "unit": "",
+          "a": 4,
+          "why": "2 % de 50.000 = 1.000 €, y 1.000 ÷ 250 = 4 operaciones.",
+          "guia": "g4"
+        },
+        {
+          "id": "co2-2",
+          "t": "slide",
+          "q": "Tu capital es de 50.000 € y el límite de riesgo del sector es del 2 %. Vas a abrir 5 posiciones del mismo sector con el mismo riesgo. ¿Cuántos euros arriesga cada una?",
+          "label": "Riesgo por posición",
+          "min": 50,
+          "max": 500,
+          "step": 25,
+          "start": 400,
+          "a": 200,
+          "unit": "€",
+          "why": "2 % de 50.000 = 1.000 €; entre 5 posiciones, 200 € cada una. Con 400 € cada una, el sector arriesgaría 2.000 €, un 4 %.",
+          "show": [
+            {
+              "label": "Riesgo total del sector",
+              "k": 5,
+              "b": 0,
+              "unit": "€"
+            },
+            {
+              "label": "Sobre el capital",
+              "k": 0.01,
+              "b": 0,
+              "unit": "%",
+              "dec": 1
+            }
+          ],
+          "guia": "g4"
+        },
+        {
+          "id": "co2-3",
+          "t": "choice",
+          "q": "Vas a abrir una segunda posición en un sector donde ya tienes una, con correlación alta. ¿Cómo ajustas el tamaño?",
+          "opts": [
+            "Doblas el tamaño de la segunda, porque confirma la tesis de la primera",
+            "Mantienes los dos tamaños: el riesgo se reparte solo entre las dos",
+            "Reduces el riesgo de cada una para que juntas no pasen el límite del sector",
+            "Quitas los stops de ambas: con dos posiciones ya estás diversificado"
+          ],
+          "a": 2,
+          "why": "Si se mueven juntas, el riesgo suma. Reparte el tope del sector entre las dos en lugar de duplicarlo.",
+          "guia": "g4",
+          "porque": [
+            "Duplicar el tamaño duplica el riesgo de un mismo golpe: la confirmación no reduce la correlación.",
+            "El riesgo no se reparte solo: si saltan los dos stops, pierdes la suma.",
+            null,
+            "Quitar el stop elimina el límite de pérdida; dos posiciones correlacionadas no están diversificadas."
+          ]
+        },
+        {
+          "id": "co2-4",
+          "t": "choice",
+          "q": "Compras un ETF de empresas tecnológicas y, además, tres de sus mayores acciones. ¿Qué has hecho con el riesgo?",
+          "opts": [
+            "Has repartido el riesgo entre cuatro apuestas independientes",
+            "Lo has concentrado: esas acciones ya están dentro del ETF",
+            "Te has cubierto: el ETF compensa las caídas de las acciones",
+            "Has reducido el riesgo, porque el ETF tiene comisiones bajas"
+          ],
+          "a": 1,
+          "why": "Las acciones ya forman parte del ETF: al comprarlas apilas más peso en lo mismo, no lo repartes.",
+          "guia": "g3",
+          "porque": [
+            "Las acciones están dentro del ETF: no son apuestas independientes.",
+            null,
+            "El ETF contiene esas acciones: si caen, el ETF cae con ellas y no las compensa.",
+            "El coste del ETF no cambia que repitas el mismo riesgo."
+          ]
+        },
+        {
+          "id": "co2-5",
+          "t": "num",
+          "q": "El límite de riesgo de un sector es de 1.000 € y ya arriesgas 750 € en él. Quieres comprar a 25,00 € con el stop en 23,00 €. ¿Cuántas acciones puedes comprar como máximo?",
+          "unit": "",
+          "a": 125,
+          "why": "Te quedan 250 € de riesgo y cada acción arriesga 2,00 €: 250 ÷ 2 = 125 acciones.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

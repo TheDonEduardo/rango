@@ -944,5 +944,43 @@
  {
   "termino": "base imponible",
   "d": "Importe sobre el que se calculan los impuestos: en una factura, el precio sin IVA."
+ },
+ {
+  "termino": "perfil de inversor",
+  "d": "Resumen de tu horizonte, tu capacidad y tu tolerancia a las pérdidas y tu objetivo: decide cuánto riesgo te conviene."
+ },
+ {
+  "termino": "horizonte de inversión",
+  "d": "Tiempo que falta hasta que necesitarás el dinero invertido. Cuanto más corto, menos renta variable conviene."
+ },
+ {
+  "termino": "MiFID",
+  "d": "Normativa europea de los mercados financieros. Obliga a las entidades que prestan servicios de inversión a comprobar si un producto es adecuado para ti."
+ },
+ {
+  "termino": "test de conveniencia",
+  "d": "Cuestionario que mide tus conocimientos y tu experiencia antes de contratar por tu cuenta un producto complejo."
+ },
+ {
+  "termino": "test de idoneidad",
+  "d": "Cuestionario que, cuando te asesoran o gestionan tu cartera, mide además tu situación financiera, tu objetivo y tu tolerancia al riesgo."
+ },
+ {
+  "termino": "gestor automatizado",
+  "alias": [
+   "gestores automatizados"
+  ],
+  "d": "Servicio que reparte tu dinero en fondos indexados según tu perfil, rebalancea y reinvierte tus aportaciones a cambio de una comisión."
+ },
+ {
+  "termino": "modelo de Gordon",
+  "d": "Fórmula que valora una acción por sus dividendos: P = D1 ÷ (r − g), con un dividendo que crece a un ritmo constante g menor que r."
+ },
+ {
+  "termino": "correlación",
+  "no": [
+   "una correlación"
+  ],
+  "d": "Cuánto se mueven juntas dos posiciones, de −1 (en sentido contrario) a +1 (a la vez). Cuanto más cerca de +1, menos diversifican."
  }
 ]
