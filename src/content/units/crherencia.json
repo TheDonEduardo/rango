@@ -1,0 +1,222 @@
+{
+  "n": 19,
+  "id": "crherencia",
+  "track": "cripto",
+  "title": "Herencia y acceso a tus criptomonedas",
+  "blurb": "Qué pasa si nadie puede acceder a tus claves: plan por escrito, copias en sitios distintos, multifirma y plataforma o monedero propio.",
+  "revisar": "2027-11",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Sin claves, sin acceso",
+      "texto": "Si guardas tus criptomonedas en un monedero propio y nadie conoce tus claves, tus herederos no pueden moverlas y nadie puede recuperarlas por ellos: no hay soporte al que reclamar.",
+      "ejemplo": "Con 40.000 € en un monedero propio y sin plan, el valor sigue en la cadena, pero nadie puede usarlo."
+    },
+    {
+      "id": "g2",
+      "titulo": "Plan por escrito y copias",
+      "texto": "Deja instrucciones: qué tienes, dónde están las copias y qué pasos seguir. La frase semilla va en papel o metal, nunca en un archivo, correo o foto, y lejos de las instrucciones. Más copias en sitios distintos reducen el riesgo de perderlo todo.",
+      "ejemplo": "Si cada copia tiene un 10 % de perderse en un año: con una, 10 %; con dos, 1 %; con tres, 0,1 %."
+    },
+    {
+      "id": "g3",
+      "titulo": "Multifirma 2 de 3",
+      "texto": "Un monedero multifirma exige varias claves para mover fondos. Repartidas en personas y sitios distintos, perder una no bloquea el acceso y que roben una no basta para vaciarlo. Es más complejo de montar.",
+      "ejemplo": "Con 2 de 3 puedes perder 1 clave y seguir accediendo; con 3 de 5, puedes perder 2."
+    },
+    {
+      "id": "g4",
+      "titulo": "Plataforma o monedero propio",
+      "texto": "En una plataforma autorizada, tus herederos pueden reclamar acreditando el fallecimiento y la herencia, pero dependes de la empresa. En un monedero propio solo funciona tu plan. Heredar cripto puede tener efectos fiscales: compruébalo con la norma vigente.",
+      "ejemplo": "Tus 40.000 € pasan a tus herederos solo si pueden acceder y acreditar la herencia."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "hr1",
+      "title": "Si nadie puede acceder",
+      "ex": [
+        {
+          "id": "hr1-1",
+          "t": "choice",
+          "q": "Tienes 40.000 € en criptomonedas en un monedero propio y falleces sin dejar claves ni instrucciones. ¿Qué pasa con esos fondos?",
+          "opts": [
+            "La red los devuelve automáticamente a tus herederos",
+            "El fabricante del monedero los abre con el certificado de defunción",
+            "Tus herederos pueden quedarse sin acceso y nadie podrá recuperarlos",
+            "Pasan a tu cuenta bancaria tras un año sin movimientos"
+          ],
+          "a": 2,
+          "why": "En un monedero propio solo mueve los fondos quien tiene las claves. Sin ellas, los 40.000 € siguen en la cadena de bloques, pero nadie puede usarlos ni pedir ayuda a nadie.",
+          "guia": "g1",
+          "porque": [
+            "La red no devuelve nada: no existe nadie que pueda revertir ni redirigir fondos.",
+            "En un monedero propio el fabricante no guarda tus claves y no puede abrirlo por tus herederos.",
+            null,
+            "Los fondos no pasan a ninguna cuenta bancaria: siguen en la cadena de bloques."
+          ]
+        },
+        {
+          "id": "hr1-2",
+          "t": "choice",
+          "q": "Para que tu familia pueda acceder, guardas la frase semilla de tu monedero en una nota del móvil que se sincroniza en la nube. ¿Qué riesgo tiene?",
+          "opts": [
+            "Ninguno, porque las notas de la nube nunca se pueden robar",
+            "Que la frase semilla caduque al sincronizarse",
+            "Que el monedero se bloquee al copiar la frase",
+            "Quien entre en esa cuenta o en esa nube puede vaciar tu monedero"
+          ],
+          "a": 3,
+          "why": "La frase semilla da control total de los fondos. En un archivo digital, una cuenta comprometida basta para perderlo todo: se anota en papel o metal.",
+          "guia": "g2",
+          "porque": [
+            "Una cuenta en la nube puede ser atacada o accedida por terceros.",
+            "La frase semilla no caduca al sincronizarse: el problema es quién puede leerla.",
+            "Copiar la frase no bloquea el monedero: lo que hace falta evitar es quién puede leerla.",
+            null
+          ]
+        },
+        {
+          "id": "hr1-3",
+          "t": "num",
+          "q": "Cada copia en papel de tu frase semilla tiene un 10 % de probabilidad de perderse en un año, y cada una se pierde con independencia de las demás (supuesto simplificado). Con dos copias en lugares distintos, ¿cuál es la probabilidad de perder las dos, en %?",
+          "unit": "%",
+          "a": 1,
+          "why": "10 % × 10 % = 1 %. Con tres copias sería un 0,1 %: cada copia en otro lugar reduce el riesgo de perderlo todo, pero no lo elimina.",
+          "guia": "g2"
+        },
+        {
+          "id": "hr1-4",
+          "t": "match",
+          "q": "Empareja cada pieza de un plan de acceso con su función.",
+          "pairs": [
+            [
+              "Frase semilla",
+              "Se anota en papel o metal, nunca en un archivo"
+            ],
+            [
+              "Carta de instrucciones",
+              "Explica qué tienes y qué pasos seguir, sin copiar tus claves"
+            ],
+            [
+              "Segunda copia",
+              "Se guarda en otro sitio para que un incendio no se lleve las dos"
+            ],
+            [
+              "Persona de confianza",
+              "Sabe dónde están las instrucciones antes de que hagan falta"
+            ]
+          ],
+          "why": "Cada pieza cubre un fallo distinto: el secreto fuera de lo digital, el plan escrito, la protección contra pérdidas y alguien que sepa dónde mirar.",
+          "guia": "g2"
+        },
+        {
+          "id": "hr1-5",
+          "t": "choice",
+          "q": "Guardas la frase semilla y la carta con las instrucciones de acceso en el mismo sobre. ¿Qué ocurre si alguien lo encuentra?",
+          "opts": [
+            "Nada, porque las instrucciones cifran la frase",
+            "Sabe qué es y puede vaciar el monedero sin tu permiso",
+            "La frase deja de funcionar al guardarla junto a un texto",
+            "Solo puede ver el saldo, pero no moverlo"
+          ],
+          "a": 1,
+          "why": "La carta explica qué es la frase, y la frase da control total. Por eso se guardan en lugares distintos: quien encuentre una no debe tener la otra.",
+          "guia": "g2",
+          "porque": [
+            "Las instrucciones no cifran nada: solo explican qué es la frase.",
+            null,
+            "La frase sigue funcionando igual junto a un texto.",
+            "Con la frase se mueve el saldo, no solo se ve."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "hr2",
+      "title": "Multifirma y custodia",
+      "ex": [
+        {
+          "id": "hr2-1",
+          "t": "num",
+          "q": "Un monedero multifirma 2 de 3 necesita 2 de sus 3 claves para mover fondos. ¿Cuántas claves puedes perder y seguir accediendo?",
+          "unit": "",
+          "a": 1,
+          "why": "Con 3 claves y 2 necesarias: 3 − 2 = 1. Si pierdes una, siguen las otras dos; si pierdes dos, ya no llegas al mínimo.",
+          "guia": "g3"
+        },
+        {
+          "id": "hr2-2",
+          "t": "choice",
+          "q": "Tienes un monedero multifirma 2 de 3 y un ladrón consigue una sola de las tres claves. ¿Qué puede hacer con ella?",
+          "opts": [
+            "Vaciar el monedero, porque una firma basta",
+            "Cambiar las reglas a 1 de 3 sin permiso del resto",
+            "Deducir las otras dos claves a partir de la suya",
+            "No puede mover los fondos: necesita una segunda clave"
+          ],
+          "a": 3,
+          "why": "En un 2 de 3 hacen falta dos firmas. Una clave robada no basta, y por eso conviene repartirlas en personas y lugares distintos.",
+          "guia": "g3",
+          "porque": [
+            "Con 2 de 3, una sola firma no basta para mover fondos.",
+            "Cambiar las reglas del monedero también exige las firmas necesarias.",
+            "Las claves son independientes: una no revela las otras.",
+            null
+          ]
+        },
+        {
+          "id": "hr2-3",
+          "t": "num",
+          "q": "Un monedero multifirma 3 de 5 necesita 3 de sus 5 claves para mover fondos. ¿Cuántas claves puedes perder y seguir accediendo?",
+          "unit": "",
+          "a": 2,
+          "why": "5 − 3 = 2. Con más claves y un mínimo mayor se aguanta más pérdidas y se exigen más firmas para un robo, a costa de más complejidad.",
+          "guia": "g3"
+        },
+        {
+          "id": "hr2-4",
+          "t": "choice",
+          "q": "Tus criptomonedas están en una plataforma autorizada en la UE. ¿Qué ventaja tiene para la herencia frente a un monedero propio sin plan?",
+          "opts": [
+            "La plataforma entrega las claves a cualquier familiar que las pida",
+            "Tus herederos pueden reclamar acreditando el fallecimiento y la herencia",
+            "Tus herederos no necesitan acreditar nada ante la plataforma",
+            "La plataforma devuelve el 100 % como un banco con garantía de depósitos"
+          ],
+          "a": 1,
+          "why": "La plataforma tiene tus claves y puede atender a tus herederos con documentos. Dependes de ella: no hay fondo de garantía de depósitos para las criptomonedas.",
+          "guia": "g4",
+          "porque": [
+            "La plataforma no entrega claves: transfiere el saldo a quien acredita el fallecimiento y la herencia.",
+            null,
+            "La plataforma exige acreditar el fallecimiento y la herencia.",
+            "No hay fondo de garantía de depósitos para las criptomonedas: depende de la empresa."
+          ]
+        },
+        {
+          "id": "hr2-5",
+          "t": "choice",
+          "q": "Tu hijo hereda tus criptomonedas. ¿Qué debe saber sobre los efectos fiscales?",
+          "opts": [
+            "Que no hay ninguno, porque las criptomonedas nunca tributan al heredarlas",
+            "Que son los mismos en todos los países, así que no hace falta comprobar",
+            "Que puede haberlos y conviene comprobarlos con la norma vigente",
+            "Que el monedero los calcula y los declara solo"
+          ],
+          "a": 2,
+          "why": "Heredar o transmitir criptomonedas puede tener efectos fiscales que dependen de tu caso y de dónde residas. Compruébalo con la norma vigente.",
+          "guia": "g4",
+          "porque": [
+            "Heredar cripto puede tener efectos fiscales: no se pueden dar por inexistentes.",
+            "Las normas fiscales cambian según el país y el caso.",
+            null,
+            "Un monedero no calcula ni declara tus impuestos."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

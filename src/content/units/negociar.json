@@ -1,0 +1,185 @@
+{
+  "n": 15,
+  "id": "negociar",
+  "track": "personal",
+  "title": "Negociar tu sueldo con datos",
+  "blurb": "Rango de mercado, bruto anual, subida frente a precios, contraoferta, beneficios en euros y cuándo conviene cambiar de empresa.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "El rango del mercado",
+      "texto": "Antes de pedir, busca cuánto se paga por tu puesto, tu experiencia y tu ciudad: ofertas publicadas, estudios salariales y gente del sector. Tu cifra se apoya en ese rango, no en lo que necesitas.",
+      "ejemplo": "Rango de 30.000 a 38.000 € brutos al año: el punto medio es 34.000 €."
+    },
+    {
+      "id": "g2",
+      "titulo": "Bruto anual y subida real",
+      "texto": "Negocia en bruto anual, con pagas y variable incluidos, para que nadie compare cifras distintas. Mide la subida frente a los precios: lo que importa es tu sueldo real.",
+      "ejemplo": "De 30.000 a 32.400 € es un +8 %. Con precios +3 %: 1,08 ÷ 1,03 − 1 = +4,9 % real."
+    },
+    {
+      "id": "g3",
+      "titulo": "Contraoferta y beneficios",
+      "texto": "Si la empresa no llega a tu cifra, haz una contraoferta con datos. Si no hay más sueldo, pide beneficios con su valor en euros: lo que te ahorran, no lo que cuestan.",
+      "ejemplo": "Pides 36.000 € y ofrecen 33.000 €: la cifra intermedia es 34.500 €. Formación de 600 € y seguro de 300 €: 900 € de beneficios."
+    },
+    {
+      "id": "g4",
+      "titulo": "Subir o cambiar de empresa",
+      "texto": "Una subida interna suele ser pequeña; cambiar de empresa puede dar un salto mayor, pero pierdes antigüedad y estabilidad y puedes empezar con un periodo de prueba. Compara el salto con lo que pierdes.",
+      "ejemplo": "Subida interna del 3 % sobre 30.000 €: 900 € más. Una oferta de 34.500 €: un 15 % más, 4.500 €."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "ng1",
+      "title": "Qué pedir y cómo decirlo",
+      "ex": [
+        {
+          "id": "ng1-1",
+          "t": "num",
+          "q": "El rango de mercado para tu puesto y tu experiencia es de 30.000 a 38.000 € brutos al año. ¿Cuál es su punto medio, en miles de euros?",
+          "unit": "mil €",
+          "a": 34,
+          "why": "(30.000 + 38.000) ÷ 2 = 34.000 €. Es una referencia con datos: dónde te sitúas dentro del rango depende de tu experiencia y de tus logros.",
+          "guia": "g1"
+        },
+        {
+          "id": "ng1-2",
+          "t": "choice",
+          "q": "¿Por qué conviene apoyar tu cifra en el rango de mercado de tu puesto?",
+          "opts": [
+            "Porque la empresa está obligada a pagar el punto medio del rango",
+            "Porque con un rango ya no hace falta explicar tus logros",
+            "Porque la empresa puede comprobar los datos y no es solo tu opinión",
+            "Porque el rango asegura que la empresa aceptará tu cifra"
+          ],
+          "a": 2,
+          "why": "Un rango de mercado es un dato que la empresa puede contrastar. Con 30.000 a 38.000 € como referencia, tu cifra deja de ser una opinión, aunque no obligue a nadie.",
+          "guia": "g1",
+          "porque": [
+            "Nadie está obligado a pagar el punto medio: el rango es una referencia, no una norma.",
+            "Tus logros siguen haciendo falta para justificar dónde te sitúas dentro del rango.",
+            null,
+            "Un rango da un argumento, no una garantía: la empresa puede no aceptar."
+          ]
+        },
+        {
+          "id": "ng1-3",
+          "t": "num",
+          "q": "Cobras 30.000 € brutos al año y te suben el sueldo a 32.400 € brutos al año. ¿Qué porcentaje de subida es?",
+          "unit": "%",
+          "a": 8,
+          "why": "(32.400 − 30.000) ÷ 30.000 = 2.400 ÷ 30.000 = 8 %. Habla siempre de la subida en euros brutos al año y en porcentaje.",
+          "guia": "g2"
+        },
+        {
+          "id": "ng1-4",
+          "t": "num",
+          "q": "Te suben el sueldo de 30.000 a 32.400 € brutos al año, un 8 %, y los precios han subido un 3 %. ¿Cuánto sube tu sueldo real? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 4.9,
+          "why": "1,08 ÷ 1,03 − 1 = 4,9 %. Una subida del 8 % con precios al 3 % te da un 4,9 % más de poder de compra, no un 5 % exacto.",
+          "tol": 0.06,
+          "guia": "g2"
+        },
+        {
+          "id": "ng1-5",
+          "t": "choice",
+          "q": "¿Qué cifra conviene dar al hablar de sueldo en una negociación?",
+          "opts": [
+            "El neto de un mes, porque equivale al bruto anual entre 12",
+            "Un bruto anual con pagas y variable incluidos, para comparar lo mismo",
+            "Solo el fijo, porque el variable y las pagas no cuentan en el sueldo",
+            "El tipo de IRPF, porque es lo que determina tu sueldo bruto"
+          ],
+          "a": 1,
+          "why": "El bruto anual junta fijo, pagas y variable en una sola cifra que se puede comparar. El neto mensual cambia con las pagas y con tu situación.",
+          "guia": "g2",
+          "porque": [
+            "El neto de un mes es menor que el bruto anual entre 12: no son la misma cifra.",
+            null,
+            "Las pagas y el variable forman parte de lo que cobras al año: hay que contarlos.",
+            "El IRPF se descuenta del bruto que pactas; no lo determina."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "ng2",
+      "title": "Contraoferta y cambiar de empresa",
+      "ex": [
+        {
+          "id": "ng2-1",
+          "t": "num",
+          "q": "Pides 36.000 € brutos al año y la empresa ofrece 33.000 €. Si pactáis la cifra intermedia, ¿cuántos miles de euros brutos al año serán?",
+          "unit": "mil €",
+          "a": 34.5,
+          "why": "(36.000 + 33.000) ÷ 2 = 34.500 €: 1.500 € más que su primera oferta. Una contraoferta con datos suele mover la cifra.",
+          "tol": 0.01,
+          "guia": "g3"
+        },
+        {
+          "id": "ng2-2",
+          "t": "num",
+          "q": "Pides 36.000 € brutos al año y la empresa no pasa de 33.000 €. Te compensa con una formación de 600 € que ibas a pagar tú y un seguro médico que valoras en 300 €. ¿Cuántos euros al año valen esos beneficios para ti?",
+          "unit": "€",
+          "a": 900,
+          "why": "600 + 300 = 900 €. Aun así, tu cifra queda a 2.100 € (3.000 − 900): los beneficios compensan una parte, no todo.",
+          "guia": "g3"
+        },
+        {
+          "id": "ng2-3",
+          "t": "choice",
+          "q": "La empresa ofrece 33.000 € brutos al año y tu cifra era 36.000 €. ¿Qué haces?",
+          "opts": [
+            "Aceptar ya: la primera oferta es siempre la definitiva",
+            "Retirarte, porque pedir más que la oferta ofende a la empresa",
+            "Pedir el doble sin datos: la empresa acabará subiendo su oferta",
+            "Contraofertar con una cifra intermedia y razonarla con datos"
+          ],
+          "a": 3,
+          "why": "Entre 33.000 y 36.000 € hay 3.000 € de margen. Una contraoferta con datos (34.500 € como cifra intermedia) mantiene la conversación y justifica por qué la mereces.",
+          "guia": "g3",
+          "porque": [
+            "La primera oferta no es definitiva: suele dejar margen para negociar.",
+            "Contraofertar con datos es habitual en una negociación y no ofende.",
+            "Sin datos no hay argumento, y una cifra desmedida puede cerrar la conversación.",
+            null
+          ]
+        },
+        {
+          "id": "ng2-4",
+          "t": "num",
+          "q": "Cobras 30.000 € brutos al año. Tu empresa te sube un 3 % y otra empresa te ofrece 34.500 € brutos al año. ¿Qué porcentaje más que tu sueldo actual supone la oferta de la otra empresa?",
+          "unit": "%",
+          "a": 15,
+          "why": "34.500 ÷ 30.000 − 1 = 15 %: 4.500 € más al año, frente a los 900 € de la subida del 3 %. Compara el salto con lo que pierdes al irte.",
+          "guia": "g4"
+        },
+        {
+          "id": "ng2-5",
+          "t": "choice",
+          "q": "Otra empresa te ofrece un 15 % más de sueldo bruto que la tuya. ¿Qué compruebas antes de aceptar?",
+          "opts": [
+            "Nada más: con un 15 % más, cambiar siempre compensa",
+            "Solo si la nueva empresa es más grande que la actual",
+            "Si el salto compensa lo que pierdes: antigüedad y estabilidad",
+            "Solo el nombre del puesto, porque el sueldo ya está decidido"
+          ],
+          "a": 2,
+          "why": "Un 15 % más de bruto pesa, pero cambiar puede suponer un periodo de prueba, perder antigüedad y quizá beneficios que hoy tienes. Compara el salto con todo eso.",
+          "guia": "g4",
+          "porque": [
+            "Un 15 % más no siempre compensa: hay antigüedad, estabilidad y beneficios en juego.",
+            "El tamaño de la empresa no decide si el salto compensa lo que pierdes.",
+            null,
+            "El sueldo se puede negociar y el nombre del puesto no lo hace mejor."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

@@ -1,0 +1,192 @@
+{
+  "n": 26,
+  "id": "crecvalor",
+  "track": "fundamental",
+  "title": "Crecimiento frente a valor",
+  "blurb": "Qué descuenta el precio de cada estilo, cuánto crecimiento justifica un PER, la trampa de valor, los tipos de interés y por qué ningún estilo gana siempre.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Qué descuenta cada estilo",
+      "texto": "Una acción de crecimiento cotiza a un PER alto: descuenta beneficios futuros mayores. Una acción de valor, a un PER bajo: descuenta poco crecimiento. El PEG (PER ÷ crecimiento en %) las compara. Es una regla aproximada: supone que se cumple el crecimiento esperado.",
+      "ejemplo": "BPA de 2,00 $: a 80 $ (PER 40, crece un 20 %), PEG 2; a 20 $ (PER 10, crece un 2 %), PEG 5."
+    },
+    {
+      "id": "g2",
+      "titulo": "Cuánto crecimiento justifica un PER",
+      "texto": "Simplificación: con el precio quieto, el PER baja a medida que crece el BPA. Cuanto más alto es el PER, más años de crecimiento hacen falta para llegar a uno normal; si decepciona, el PER se comprime y cae el precio.",
+      "ejemplo": "A 80 $ con un BPA de 2,00 $ (PER 40): con un 20 % al año durante 4 años, el BPA es 4,15 $ y el PER, 19,3."
+    },
+    {
+      "id": "g3",
+      "titulo": "La trampa de valor",
+      "texto": "Una trampa de valor es una acción con PER bajo que refleja un negocio que se deteriora: barata por un motivo. Si el beneficio cae y el precio no, el PER sube y deja de parecer barata.",
+      "ejemplo": "A 12 $ con un BPA de 2,00 $ (PER 6): si el BPA cae un 15 % al año, a los 2 años es 1,45 $ y el PER sube a 8,3."
+    },
+    {
+      "id": "g4",
+      "titulo": "Tipos y épocas",
+      "texto": "Con tipos más altos, los beneficios lejanos valen menos hoy, así que las acciones de crecimiento suelen sufrir más. Ningún estilo gana siempre: se alternan por épocas.",
+      "ejemplo": "100 € dentro de 10 años: 67,56 € hoy al 4 % y 55,84 € al 6 % (−17,3 %). A 2 años: 92,46 € y 89,00 € (−3,7 %)."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "cv1",
+      "title": "Qué descuenta cada precio",
+      "ex": [
+        {
+          "id": "cv1-1",
+          "t": "match",
+          "q": "Empareja cada idea con lo que significa para el precio de una acción.",
+          "pairs": [
+            [
+              "Acción de crecimiento",
+              "Paga hoy un múltiplo alto por beneficios que se esperan mucho mayores"
+            ],
+            [
+              "Acción de valor",
+              "Cotiza a un PER bajo porque se espera poco aumento del beneficio"
+            ],
+            [
+              "Trampa de valor",
+              "Su PER bajo oculta un negocio que va a peor"
+            ],
+            [
+              "Subida de los tipos de descuento",
+              "Recorta más el valor actual de lo que se cobra más tarde"
+            ]
+          ],
+          "why": "El PER refleja lo que el mercado espera del beneficio. Un PER alto descuenta mucho aumento, uno bajo descuenta poco, y no siempre por buenas razones.",
+          "guia": "g1"
+        },
+        {
+          "id": "cv1-2",
+          "t": "choice",
+          "q": "Dos empresas ganan 2,00 $ por acción. La A cotiza a 80 $ y la B a 20 $. ¿Qué implica que el PER de A (40) sea mucho mayor que el de B (10)?",
+          "opts": [
+            "Que el beneficio por acción de A es hoy cuatro veces el de B",
+            "Que A cotiza a 20 $ por acción y B a 80 $",
+            "Que se espera que el beneficio de A crezca mucho más que el de B",
+            "Que B gana cuatro veces más por acción que A"
+          ],
+          "a": 2,
+          "why": "Ambas ganan lo mismo hoy (2,00 $): A cuesta cuatro veces más porque el mercado espera que su beneficio crezca mucho más que el de B.",
+          "guia": "g1",
+          "porque": [
+            "Los dos ganan 2,00 $ por acción: su beneficio actual es el mismo.",
+            "Es al revés: A cotiza a 80 $ y B a 20 $.",
+            null,
+            "Los dos ganan 2,00 $ por acción: B no gana más que A."
+          ]
+        },
+        {
+          "id": "cv1-3",
+          "t": "num",
+          "q": "Una empresa cotiza a 80,00 $ con un BPA de 2,00 $ (PER 40). Si su BPA crece un 20 % al año durante 4 años y el precio no se mueve (simplificación), ¿qué PER tendrá entonces? Redondea a 1 decimal.",
+          "unit": "",
+          "a": 19.3,
+          "why": "2,00 × 1,20⁴ = 4,15 $ de BPA; 80 ÷ 4,15 = 19,3. Un PER alto se «digiere» creciendo: cuanto más alto, más años de crecimiento hacen falta para llegar a uno normal.",
+          "tol": 0.06,
+          "guia": "g2"
+        },
+        {
+          "id": "cv1-4",
+          "t": "num",
+          "q": "Una empresa de valor cotiza a 20,00 $ con un BPA de 2,00 $ y se espera que su BPA crezca un 2 % al año. ¿Qué PEG tiene (PER entre crecimiento esperado en %)?",
+          "unit": "",
+          "a": 5,
+          "why": "PER 10 ÷ 2 = 5. La de crecimiento (PER 40 con un 20 %) tiene un PEG de 2: paga menos por cada punto de crecimiento. Un PER bajo no basta para decir que algo es barato.",
+          "guia": "g1"
+        },
+        {
+          "id": "cv1-5",
+          "t": "num",
+          "q": "Una empresa de crecimiento cotiza a 80,00 $ con un BPA de 2,00 $. Si el crecimiento decepciona y el mercado solo le paga un PER de 20 con el mismo BPA, ¿cuánto cae su precio, en %?",
+          "unit": "%",
+          "a": 50,
+          "why": "A PER 20 valdría 20 × 2,00 = 40 $, y 40 ÷ 80 − 1 = −50 %. Con un PER alto, el precio depende de que se cumpla el crecimiento esperado.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "cv2",
+      "title": "Trampas, tipos y épocas",
+      "ex": [
+        {
+          "id": "cv2-1",
+          "t": "choice",
+          "q": "Una acción cotiza a PER 6 porque su principal cliente se ha ido y sus ventas caen cada año. ¿Cómo la lees?",
+          "opts": [
+            "Es una ganga segura, porque un PER bajo es lo único que importa",
+            "Puede ser una trampa de valor: es barata por un motivo",
+            "Es una acción de crecimiento, porque su PER es bajo",
+            "Es mejor que una de PER 40, porque el PER más bajo gana siempre"
+          ],
+          "a": 1,
+          "why": "Un PER bajo con ventas cayendo suele ser una trampa de valor: barata por un motivo. Antes de comprar, pregunta por qué cotiza así y si el beneficio va a aguantar.",
+          "guia": "g3",
+          "porque": [
+            "Un PER bajo no basta: aquí hay un motivo que explica el precio.",
+            null,
+            "Su PER es bajo y sus ventas caen: no es una empresa de crecimiento.",
+            "Un PER más bajo no gana siempre: depende de por qué es bajo."
+          ]
+        },
+        {
+          "id": "cv2-2",
+          "t": "num",
+          "q": "Una acción cotiza a 12,00 $ con un BPA de 2,00 $ (PER 6). Su BPA cae un 15 % al año y el precio no se mueve. ¿Qué PER tiene tras dos años? Redondea a 1 decimal.",
+          "unit": "",
+          "a": 8.3,
+          "why": "2,00 × 0,85² = 1,445 $ de BPA; 12 ÷ 1,445 = 8,3. Parecía barata a PER 6, y con el beneficio cayendo lo es cada vez menos.",
+          "tol": 0.06,
+          "guia": "g3"
+        },
+        {
+          "id": "cv2-3",
+          "t": "num",
+          "q": "Descuentas flujos al 4 % y el tipo sube al 6 %. ¿Cuánto cae, en %, el valor actual de 100 € que cobrarás dentro de 10 años? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 17.3,
+          "why": "100 ÷ 1,04¹⁰ = 67,56 € y 100 ÷ 1,06¹⁰ = 55,84 €: −17,3 %. Cuanto más lejos está el cobro, más pesa el tipo de descuento.",
+          "tol": 0.06,
+          "guia": "g4"
+        },
+        {
+          "id": "cv2-4",
+          "t": "num",
+          "q": "Descuentas flujos al 4 % y el tipo sube al 6 %. ¿Cuánto cae, en %, el valor actual de 100 € que cobrarás dentro de 2 años? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 3.7,
+          "why": "100 ÷ 1,04² = 92,46 € y 100 ÷ 1,06² = 89,00 €: −3,7 %. Frente al −17,3 % a 10 años, los beneficios cercanos sufren mucho menos con los tipos.",
+          "tol": 0.06,
+          "guia": "g4"
+        },
+        {
+          "id": "cv2-5",
+          "t": "choice",
+          "q": "Durante varios años las acciones de crecimiento han batido a las de valor, y en otras épocas ha ocurrido lo contrario. ¿Qué conclusión es correcta?",
+          "opts": [
+            "El estilo que ha ganado los últimos cinco años ganará los cinco siguientes",
+            "Las acciones de valor ganan en todas las épocas si esperas lo bastante",
+            "Las acciones de crecimiento ganan siempre, porque sus empresas crecen más",
+            "Ningún estilo gana en todas las épocas: se alternan"
+          ],
+          "a": 3,
+          "why": "Cada estilo tiene épocas favorables y desfavorables, según tipos, ciclo y expectativas. Por eso no conviene apostar todo al que acaba de ganar.",
+          "guia": "g4",
+          "porque": [
+            "El estilo ganador de una época no está obligado a repetir.",
+            "Las de valor tienen épocas malas y no hay garantía de que ganen siempre.",
+            "Sus empresas crecen más, pero el precio ya lo descuenta: pueden quedarse atrás.",
+            null
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

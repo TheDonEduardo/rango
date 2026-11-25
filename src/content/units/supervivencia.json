@@ -1,0 +1,189 @@
+{
+  "n": 20,
+  "id": "supervivencia",
+  "track": "pasiva",
+  "title": "El sesgo de supervivencia",
+  "blurb": "Los fondos que cierran desaparecen de las estadísticas: cómo exagera las medias, las comparaciones con índices y las historias de éxito.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Los fondos que desaparecen",
+      "texto": "Un fondo con malos resultados suele cerrarse o fusionarse con otro, y su historial deja de salir en las estadísticas. Quedan los supervivientes, que parecen mejores que el grupo que empezó: es el sesgo de supervivencia.",
+      "ejemplo": "100 fondos empiezan hace 10 años y 20 cierran: los 80 que siguen rinden un 6,0 % al año y los 20 cerrados, un 2,0 %."
+    },
+    {
+      "id": "g2",
+      "titulo": "La media exagera",
+      "texto": "La media de los que siguen ignora a quien cayó por el camino. La del grupo completo pondera a todos los que empezaron. Con interés compuesto, una diferencia pequeña al año se vuelve grande.",
+      "ejemplo": "(80 × 6,0 + 20 × 2,0) ÷ 100 = 5,2 %: los que siguen exageran 0,8 puntos. En 10 años, 5.000 € dan 653 € de diferencia."
+    },
+    {
+      "id": "g3",
+      "titulo": "Activos frente a índices",
+      "texto": "Si comparas solo con los que siguen abiertos, los fondos activos parecen batir al índice; con todos los que empezaron, el resultado cambia.",
+      "ejemplo": "Índice al 5,5 %, si ninguno de los 20 cerrados lo batió: los 80 (6,0 %) lo baten, pero los 100 (5,2 %) quedan 0,3 puntos por detrás. Y el 70 % de 80 son 56 fondos: el 56 % de los 100."
+    },
+    {
+      "id": "g4",
+      "titulo": "Historias de éxito",
+      "texto": "Quien lo logró cuenta su historia; quien no, desaparece. Entre muchos que lo intentan, el azar produce ganadores sin habilidad: pregunta cuántos lo intentaron.",
+      "ejemplo": "1.000 gestores con un 50 % de batir al mercado cada año, solo por azar: 3 años seguidos lo logran 1.000 ÷ 8 = 125."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "sv1",
+      "title": "Los fondos que desaparecen",
+      "ex": [
+        {
+          "id": "sv1-1",
+          "t": "num",
+          "q": "Hace 10 años empezaron 100 fondos. Han cerrado o se han fusionado 20: los 80 que siguen rindieron de media un 6,0 % al año y los 20 que cerraron, un 2,0 %. ¿Qué rentabilidad media anual obtuvieron los 100 que empezaron?",
+          "unit": "%",
+          "a": 5.2,
+          "why": "(80 × 6,0 + 20 × 2,0) ÷ 100 = (480 + 40) ÷ 100 = 5,2 %. Es la media de todo el grupo inicial, incluidos los que desaparecieron.",
+          "guia": "g2"
+        },
+        {
+          "id": "sv1-2",
+          "t": "num",
+          "q": "Hace 10 años empezaron 100 fondos. Los 80 que siguen rindieron de media un 6,0 % al año y los 100 juntos, un 5,2 %. ¿Cuántos puntos exagera la media de los que siguen?",
+          "unit": "",
+          "a": 0.8,
+          "why": "6,0 − 5,2 = 0,8 puntos al año. Es el sesgo de supervivencia: la media de los que quedan olvida a quien se cayó por el camino.",
+          "guia": "g2"
+        },
+        {
+          "id": "sv1-3",
+          "t": "choice",
+          "q": "Un informe calcula la rentabilidad media de «los fondos de renta variable» solo con los que siguen existiendo tras 10 años. ¿Por qué suele salir exagerada?",
+          "opts": [
+            "Porque los fondos que cierran siempre fueron los de mejores resultados",
+            "Porque los fondos con peores resultados cerraron y ya no cuentan",
+            "Porque los que siguen tienen siempre las comisiones más bajas",
+            "Porque los fondos que siguen invierten en empresas más grandes"
+          ],
+          "a": 1,
+          "why": "Los fondos con malos resultados suelen cerrarse o fusionarse y su historial desaparece. Quedan los que lo hicieron mejor, y su media parece mejor que la del grupo que empezó.",
+          "guia": "g1",
+          "porque": [
+            "Los fondos que cierran suelen ser los de peores resultados, no los mejores.",
+            null,
+            "Las comisiones no explican el sesgo: lo explica quién queda en la muestra.",
+            "El tamaño no explica el sesgo: lo explica quién queda en la muestra."
+          ]
+        },
+        {
+          "id": "sv1-4",
+          "t": "num",
+          "q": "Hace 10 años empezaron 100 fondos que rindieron de media un 5,2 % al año. Su índice de referencia rindió un 5,5 %. ¿Cuántos puntos al año quedaron los 100 fondos por detrás del índice?",
+          "unit": "",
+          "a": 0.3,
+          "why": "5,5 − 5,2 = 0,3 puntos al año. Los 80 supervivientes (6,0 %) parecían batirlo por 0,5; con los 100 que empezaron, lo pierden.",
+          "guia": "g3"
+        },
+        {
+          "id": "sv1-5",
+          "t": "match",
+          "q": "Empareja cada situación con su efecto en las estadísticas de fondos.",
+          "pairs": [
+            [
+              "Cierre de un fondo",
+              "Sus resultados dejan de salir en los rankings actuales"
+            ],
+            [
+              "Fusión con otro fondo",
+              "El historial del absorbido suele perderse en la estadística"
+            ],
+            [
+              "Fondo que sigue abierto",
+              "Permanece en la muestra y suele estar entre los mejores"
+            ],
+            [
+              "Sesgo de supervivencia",
+              "Mirar solo a quien llegó al final y creer que todos eran así"
+            ]
+          ],
+          "why": "Quien sale de la muestra no puede empeorar la media: por eso las estadísticas de fondos vivos parecen mejores de lo que fue el camino real.",
+          "guia": "g1"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "sv2",
+      "title": "Comparaciones e historias de éxito",
+      "ex": [
+        {
+          "id": "sv2-1",
+          "t": "choice",
+          "q": "Un anuncio dice que el 70 % de los fondos de una lista bate a su índice a 10 años, pero la lista solo incluye fondos que siguen existiendo hoy. ¿Qué falta para que la comparación sea justa?",
+          "opts": [
+            "Incluir solo los fondos más grandes de hoy",
+            "Quitar el índice y comparar los fondos entre sí",
+            "Usar solo el último año, que es el más reciente",
+            "Incluir los fondos que cerraron o se fusionaron"
+          ],
+          "a": 3,
+          "why": "Una comparación justa parte de todos los fondos que empezaron. Quitar los cerrados deja solo a los que lo hicieron bien y hace que el 70 % parezca más de lo que es.",
+          "guia": "g3",
+          "porque": [
+            "Quedarse solo con los fondos más grandes de hoy añade más sesgo de supervivencia.",
+            "Sin índice no sabes si los fondos aportan algo frente a copiar el mercado.",
+            "Un solo año no dice nada sobre un periodo de 10 años.",
+            null
+          ]
+        },
+        {
+          "id": "sv2-2",
+          "t": "num",
+          "q": "Un informe dice que el 70 % de los 80 fondos que siguen abiertos bate a su índice. Hace 10 años empezaron 100 fondos y los 20 que cerraron no lo batieron. ¿Qué porcentaje de los 100 que empezaron batió al índice?",
+          "unit": "%",
+          "a": 56,
+          "why": "70 % × 80 = 56 fondos; 56 ÷ 100 = 56 %. El 70 % anunciado baja 14 puntos al contar a los que desaparecieron.",
+          "guia": "g3"
+        },
+        {
+          "id": "sv2-3",
+          "t": "num",
+          "q": "1.000 gestores intentan batir al mercado cada año y, solo por azar, cada uno tiene un 50 % de probabilidad de lograrlo, con independencia de los demás y de los años (supuesto simplificado). ¿Cuántos lo baten 3 años seguidos?",
+          "unit": "",
+          "a": 125,
+          "why": "1.000 × 0,5 × 0,5 × 0,5 = 125. Sin ninguna habilidad, 125 gestores tendrían un historial «de éxito» que contar.",
+          "guia": "g4"
+        },
+        {
+          "id": "sv2-4",
+          "t": "choice",
+          "q": "Un libro cuenta cómo cinco inversores se hicieron ricos con la misma estrategia. ¿Qué dato necesitas para juzgarla?",
+          "opts": [
+            "Cuántos ejemplares ha vendido el libro, que mide su calidad",
+            "Cuántos años lleva el autor en bolsa, lo que prueba que funciona",
+            "Cuántos la usaron y perdieron, porque esos no escriben libros",
+            "Cuántos seguidores tiene el autor, que prueban la estrategia"
+          ],
+          "a": 2,
+          "why": "Los que fracasaron no cuentan su historia. Sin saber cuántos lo intentaron, cinco éxitos pueden estar entre los 125 que el azar deja entre 1.000.",
+          "guia": "g4",
+          "porque": [
+            "Las ventas de un libro no miden si la estrategia funciona.",
+            "Los años en bolsa no prueban que una estrategia funcione.",
+            null,
+            "Los seguidores no son una prueba de la estrategia."
+          ]
+        },
+        {
+          "id": "sv2-5",
+          "t": "num",
+          "q": "Si inviertes 5.000 € durante 10 años, calculas con la media de los supervivientes (6,0 % anual) en lugar de con la de los 100 fondos que empezaron (5,2 % anual). ¿Cuántos euros más creerías tener al final? Redondea a euros.",
+          "unit": "€",
+          "a": 653,
+          "why": "5.000 × 1,06¹⁰ = 8.954 € y 5.000 × 1,052¹⁰ = 8.301 €: 653 € de diferencia. Un sesgo de 0,8 puntos al año pesa mucho con el interés compuesto.",
+          "tol": 0.5,
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

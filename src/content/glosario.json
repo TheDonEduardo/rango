@@ -1325,5 +1325,41 @@
    "greenwashing"
   ],
   "d": "Presentar un producto como más sostenible de lo que realmente es."
+ },
+ {
+  "termino": "contraoferta",
+  "alias": [
+   "contraofertar"
+  ],
+  "d": "Respuesta a la oferta de la otra parte con una cifra distinta. En un sueldo, se razona con datos del mercado y suele quedar entre tu cifra y la suya."
+ },
+ {
+  "termino": "multifirma",
+  "alias": [
+   "monedero multifirma"
+  ],
+  "d": "Monedero que exige varias claves para mover fondos, por ejemplo 2 de 3. Perder una no bloquea el acceso y que roben una no basta."
+ },
+ {
+  "termino": "acción de crecimiento",
+  "alias": [
+   "acciones de crecimiento"
+  ],
+  "d": "Empresa cuyo precio descuenta beneficios mucho mayores en el futuro, por eso cotiza a un PER alto."
+ },
+ {
+  "termino": "acción de valor",
+  "alias": [
+   "acciones de valor"
+  ],
+  "d": "Empresa que cotiza a un PER bajo porque el mercado espera poco aumento de su beneficio. Barata no es lo mismo que buena."
+ },
+ {
+  "termino": "trampa de valor",
+  "d": "Acción con un PER bajo que parece barata pero lo es por un motivo: su negocio se deteriora y el beneficio cae."
+ },
+ {
+  "termino": "sesgo de supervivencia",
+  "d": "Error de mirar solo lo que sigue existiendo (fondos, empresas, personas con éxito) y olvidar lo que desapareció: los resultados parecen mejores de lo que fueron."
  }
 ]
