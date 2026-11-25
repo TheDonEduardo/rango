@@ -1,0 +1,283 @@
+{
+  "n": 27,
+  "id": "igualpeso",
+  "track": "pasiva",
+  "title": "Ponderar por tamaño o a partes iguales",
+  "blurb": "Qué pesa cada empresa en un índice, qué cambia si todas pesan lo mismo y por qué ninguno gana siempre.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Ponderar por capitalización",
+      "texto": "En un índice ponderado por capitalización, cada empresa pesa según lo que vale en bolsa respecto al total. La subida del índice es la de cada empresa multiplicada por su peso.",
+      "ejemplo": "A, B, C y D valen 500, 300, 150 y 50 M€: total 1.000 M€. B pesa un 30 %. Si A sube un 20 %: 20 % × 50 % = 10 % de subida del índice."
+    },
+    {
+      "id": "g2",
+      "titulo": "Pocas empresas mandan",
+      "texto": "Las empresas mayores mandan: si caen, arrastran al índice. Los pesos se mueven solos con los precios: lo que sube, pesa más, sin que el índice venda nada.",
+      "ejemplo": "A pesa un 50 %; si cae un 30 %, el índice cae un 15 %. Tras subir A un 20 %, su peso pasa a 600 ÷ 1.100 = 54,5 %."
+    },
+    {
+      "id": "g3",
+      "titulo": "A partes iguales",
+      "texto": "Un índice de igual ponderación da el mismo peso a cada empresa (con cuatro, un 25 %). Pesa más a las pequeñas y rebalancea: vende lo que subió y compra lo que bajó.",
+      "ejemplo": "2.000 €: 500 € en cada una. Si A sube un 20 %, vale 600 € y el total, 2.100 €. Cada una debe tener 525 €: vende 75 € de A. Sube un 5 %."
+    },
+    {
+      "id": "g4",
+      "titulo": "Ninguno gana siempre",
+      "texto": "Cada uno va por delante en épocas distintas: el de capitalización cuando mandan las grandes y el de igual ponderación cuando mandan las pequeñas. Este último suele costar más, por las operaciones.",
+      "ejemplo": "TER del 0,35 % frente al 0,20 %: 0,15 puntos más. Con 20.000 €, 30 € más al año. Elegir por lo que ganó el último decenio es perseguir al último ganador."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "ig1",
+      "title": "Pesar según el tamaño",
+      "ex": [
+        {
+          "id": "ig1-1",
+          "t": "num",
+          "q": "Un índice pondera por capitalización cuatro empresas con el valor en bolsa de la tabla. ¿Qué peso, en %, tiene la empresa B?",
+          "unit": "%",
+          "a": 30,
+          "why": "El total es 500 + 300 + 150 + 50 = 1.000 M€. B vale 300, así que pesa 300 ÷ 1.000 = 30 %.",
+          "table": {
+            "cols": [
+              "Empresa",
+              "Valor en bolsa"
+            ],
+            "rows": [
+              [
+                "A",
+                "500 M€"
+              ],
+              [
+                "B",
+                "300 M€"
+              ],
+              [
+                "C",
+                "150 M€"
+              ],
+              [
+                "D",
+                "50 M€"
+              ]
+            ],
+            "note": "Empresas ficticias. M€ = millones de euros."
+          },
+          "guia": "g1"
+        },
+        {
+          "id": "ig1-2",
+          "t": "choice",
+          "q": "¿Qué determina el peso de cada empresa en un índice ponderado por capitalización?",
+          "opts": [
+            "El número de empleados que tiene la empresa",
+            "Lo que vale la empresa en bolsa respecto al total del índice",
+            "Un porcentaje igual para todas, sea cual sea su tamaño",
+            "Los dividendos que reparte cada año"
+          ],
+          "a": 1,
+          "why": "Cada empresa pesa lo que vale en bolsa dividido entre el valor de todas: por eso las más grandes pesan más.",
+          "guia": "g1",
+          "porque": [
+            "Los empleados no cuentan: el peso sale de lo que vale la empresa en bolsa.",
+            null,
+            "Eso es la igual ponderación, no la ponderación por capitalización.",
+            "Los dividendos no determinan el peso: cuenta el valor en bolsa."
+          ]
+        },
+        {
+          "id": "ig1-3",
+          "t": "num",
+          "q": "Un índice pondera por capitalización cuatro empresas con el valor en bolsa de la tabla. Si A sube un 20 % y las otras tres no cambian, ¿cuánto sube el índice, en %?",
+          "unit": "%",
+          "a": 10,
+          "why": "A pasa de 500 a 600 M€ y el total, de 1.000 a 1.100 M€: sube un 10 %. Es su subida por su peso: 20 % × 50 % = 10 %.",
+          "table": {
+            "cols": [
+              "Empresa",
+              "Valor en bolsa"
+            ],
+            "rows": [
+              [
+                "A",
+                "500 M€"
+              ],
+              [
+                "B",
+                "300 M€"
+              ],
+              [
+                "C",
+                "150 M€"
+              ],
+              [
+                "D",
+                "50 M€"
+              ]
+            ],
+            "note": "Empresas ficticias. M€ = millones de euros."
+          },
+          "guia": "g1"
+        },
+        {
+          "id": "ig1-4",
+          "t": "num",
+          "q": "Un índice pondera por capitalización cuatro empresas con el valor en bolsa de la tabla. Si A cae un 30 % y las otras tres no cambian, ¿cuánto cae el índice, en %?",
+          "unit": "%",
+          "a": 15,
+          "why": "A pesa un 50 %, así que arrastra al índice: 30 % × 50 % = 15 %. Con pocas empresas muy grandes, el índice depende mucho de ellas.",
+          "table": {
+            "cols": [
+              "Empresa",
+              "Valor en bolsa"
+            ],
+            "rows": [
+              [
+                "A",
+                "500 M€"
+              ],
+              [
+                "B",
+                "300 M€"
+              ],
+              [
+                "C",
+                "150 M€"
+              ],
+              [
+                "D",
+                "50 M€"
+              ]
+            ],
+            "note": "Empresas ficticias. M€ = millones de euros."
+          },
+          "guia": "g2"
+        },
+        {
+          "id": "ig1-5",
+          "t": "choice",
+          "q": "Tienes un fondo que sigue un índice ponderado por capitalización. Este año las dos mayores empresas suben mucho y las demás no. ¿Qué pasa con el peso de esas dos en el índice?",
+          "opts": [
+            "Baja, porque el índice vende lo que ha subido para repartir",
+            "Se queda fijo hasta que el índice se revisa una vez al año",
+            "Aumenta: lo que sube pesa más sin que haya que comprar nada",
+            "Pasa a ser igual para todas las empresas del índice"
+          ],
+          "a": 2,
+          "why": "Al subir su valor en bolsa, su parte del total crece. El índice no vende lo que sube: sus pesos se mueven solos con los precios.",
+          "guia": "g2",
+          "porque": [
+            "El índice no vende lo que sube: sus pesos cambian solos con los precios.",
+            "Los pesos se mueven a diario con los precios, no una vez al año.",
+            null,
+            "Eso ocurre en la igual ponderación, no en la ponderación por capitalización."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "ig2",
+      "title": "Todas con el mismo peso",
+      "ex": [
+        {
+          "id": "ig2-1",
+          "t": "num",
+          "q": "Un índice de igual ponderación da el mismo peso a cada una de las cuatro empresas de la tabla. Si A sube un 20 % y las otras tres no cambian, ¿cuánto sube el índice, en %?",
+          "unit": "%",
+          "a": 5,
+          "why": "Cada empresa pesa 100 % ÷ 4 = 25 %. El índice sube 20 % × 25 % = 5 %, la mitad que el ponderado por capitalización, donde A pesaba un 50 %.",
+          "table": {
+            "cols": [
+              "Empresa",
+              "Valor en bolsa"
+            ],
+            "rows": [
+              [
+                "A",
+                "500 M€"
+              ],
+              [
+                "B",
+                "300 M€"
+              ],
+              [
+                "C",
+                "150 M€"
+              ],
+              [
+                "D",
+                "50 M€"
+              ]
+            ],
+            "note": "Empresas ficticias. M€ = millones de euros."
+          },
+          "guia": "g3"
+        },
+        {
+          "id": "ig2-2",
+          "t": "choice",
+          "q": "Dos índices incluyen las mismas empresas: uno pondera por capitalización y otro da el mismo peso a cada una. ¿Cuál da más peso a las pequeñas?",
+          "opts": [
+            "El ponderado por capitalización, porque reparte según el tamaño",
+            "Los dos por igual, porque incluyen las mismas empresas",
+            "Ninguno, porque el peso de una empresa no depende de su tamaño",
+            "El de igual ponderación, porque cada empresa pesa lo mismo"
+          ],
+          "a": 3,
+          "why": "Con igual ponderación, una empresa pequeña pesa lo mismo que una grande. Con capitalización, pesa menos cuanto menos vale.",
+          "guia": "g3",
+          "porque": [
+            "Es al revés: con capitalización, las pequeñas pesan menos.",
+            "Los pesos son distintos: cambia cómo se reparte el peso entre las mismas empresas.",
+            "El peso depende del método: con capitalización sí depende del tamaño.",
+            null
+          ]
+        },
+        {
+          "id": "ig2-3",
+          "t": "num",
+          "q": "Un fondo sigue un índice de igual ponderación de cuatro empresas y tienes 2.000 €: 500 € en cada una. A sube un 20 % y las otras tres no cambian. Para volver al mismo peso, ¿cuántos € vende de A al rebalancear?",
+          "unit": "€",
+          "a": 75,
+          "why": "A vale 600 € y el total, 2.100 €. Cada empresa debe tener 2.100 ÷ 4 = 525 €, así que vende 600 − 525 = 75 € de A y los reparte entre las otras tres.",
+          "guia": "g3"
+        },
+        {
+          "id": "ig2-4",
+          "t": "num",
+          "q": "Un fondo de igual ponderación cobra un TER del 0,35 % y uno ponderado por capitalización, del 0,20 %. Con 20.000 € en cada uno, ¿cuántos € más pagas al año por el primero?",
+          "unit": "€",
+          "a": 30,
+          "why": "La diferencia es 0,35 − 0,20 = 0,15 puntos, y 0,15 % de 20.000 € son 30 € al año. Rebalancear exige más compras y ventas, y eso se paga.",
+          "guia": "g4"
+        },
+        {
+          "id": "ig2-5",
+          "t": "choice",
+          "q": "Durante diez años, el índice ponderado por capitalización ha rendido más que el de igual ponderación. ¿Qué conclusión es razonable?",
+          "opts": [
+            "Que el de igual ponderación está mal diseñado y conviene descartarlo",
+            "Solo describe ese periodo: con las pequeñas por delante, podría pasar al revés",
+            "Que el ponderado por capitalización ganará también los próximos diez años",
+            "Que el de igual ponderación no puede volver a superarlo en el futuro"
+          ],
+          "a": 1,
+          "why": "Cada índice gana en épocas distintas: cuando mandan las grandes, el de capitalización; cuando mandan las pequeñas, el de igual ponderación. Elegir por el pasado reciente es perseguir al último ganador.",
+          "guia": "g4",
+          "porque": [
+            "Un periodo no demuestra un mal diseño: el índice cumple lo que promete.",
+            null,
+            "Un decenio de ventaja no garantiza otro: las épocas cambian.",
+            "Nada impide que vuelva a ir por delante cuando las pequeñas lideren."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

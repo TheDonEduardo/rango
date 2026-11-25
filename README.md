@@ -2,7 +2,7 @@
 
 Web: https://thedoneduardo.github.io/rango/
 
-App gamificada tipo Duolingo para aprender a invertir, con siete rutas y 209 unidades: Básico, Finanzas personales, Inversión pasiva, Análisis fundamental, Análisis técnico, Opciones y Cripto. Incluye casos con datos reales, simuladores, repaso espaciado y estadísticas.
+App gamificada tipo Duolingo para aprender a invertir, con siete rutas y 213 unidades: Básico, Finanzas personales, Inversión pasiva, Análisis fundamental, Análisis técnico, Opciones y Cripto. Incluye casos con datos reales, simuladores, repaso espaciado y estadísticas.
 
 ## Ejecutar y probar
 

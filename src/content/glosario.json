@@ -1548,5 +1548,34 @@
    "no recurrentes"
   ],
   "d": "Ingreso o gasto que la empresa dice que no se repetirá. Se excluye del beneficio ajustado; conviene comprobar si de verdad es puntual."
+ },
+ {
+  "termino": "volatilidad histórica",
+  "alias": [
+   "volatilidad realizada"
+  ],
+  "d": "Cuánto se movió el precio en un periodo pasado, en tasa anual. Se calcula con los cambios diarios ya ocurridos."
+ },
+ {
+  "termino": "cambio de polaridad",
+  "d": "Un techo roto con fuerza que pasa a actuar como soporte al volver el precio, o un soporte perdido que pasa a actuar como resistencia."
+ },
+ {
+  "termino": "igual ponderación",
+  "d": "Índice en el que todas las empresas pesan lo mismo, sea cual sea su tamaño. Exige rebalancear para mantener ese reparto."
+ },
+ {
+  "termino": "ponderado por capitalización",
+  "alias": [
+   "ponderación por capitalización"
+  ],
+  "d": "Índice en el que cada empresa pesa según lo que vale en bolsa: las más grandes pesan más y los pesos se mueven solos con los precios."
+ },
+ {
+  "termino": "comisión de custodia",
+  "alias": [
+   "comisiones de custodia"
+  ],
+  "d": "Porcentaje anual que cobra el bróker por guardar tus valores. Muchos ya no la cobran."
  }
 ]

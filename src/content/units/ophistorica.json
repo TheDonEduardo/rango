@@ -1,0 +1,207 @@
+{
+  "n": 5,
+  "id": "ophistorica",
+  "track": "derivados",
+  "title": "Volatilidad histórica e implícita",
+  "blurb": "Mirar atrás o mirar adelante: cómo comparar lo que se movió con lo que descuentan las primas y qué decir de las dos.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Mirar atrás",
+      "texto": "La volatilidad histórica mide cuánto se movió el precio: la desviación típica de sus cambios diarios, cuánto se apartan de lo normal. Se anualiza × 16 (aprox. √252) y se calcula sobre una ventana de 20 o 60 sesiones: un salto cuenta mientras esté dentro.",
+      "ejemplo": "Cambios diarios con desviación del 1,5 %: 1,5 × 16 = 24 % de volatilidad histórica anual."
+    },
+    {
+      "id": "g2",
+      "titulo": "Mirar adelante y comparar",
+      "texto": "La implícita sale del precio de las opciones y mira al futuro. Para compararla con la histórica, divide una entre otra: si el ratio supera 1, las opciones descuentan más movimiento que el reciente. No dice nada sobre la dirección.",
+      "ejemplo": "Implícita del 30 % e histórica del 24 %: 30 ÷ 24 = 1,25, un 25 % más de volatilidad."
+    },
+    {
+      "id": "g3",
+      "titulo": "¿Caras o baratas?",
+      "texto": "El movimiento en un plazo es la volatilidad × √plazo en años: a tres meses, × 0,5. Implícita sobre la histórica: primas caras frente a lo vivido; bajo ella, baratas. Un dato próximo, como resultados, puede justificar una implícita alta.",
+      "ejemplo": "30 % y 24 % a tres meses: 15 % frente a 12 %, 3 puntos más. Antes de resultados, 45 % frente a 25 % puede ser lógico."
+    },
+    {
+      "id": "g4",
+      "titulo": "Por qué suele ser mayor",
+      "texto": "Quien vende opciones asume saltos bruscos y cobra un extra, como un seguro: por eso la implícita suele superar a la realizada, la volatilidad que luego se mueve de verdad. Solo en promedio: en una sacudida, la realizada puede ser mayor.",
+      "ejemplo": "A tres meses: implícita 36 % y realizada 28 %: 18 % frente a 14 %. Con 25 % y 44 %: 12,5 % frente a 22 %."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "op45",
+      "title": "Atrás y adelante",
+      "ex": [
+        {
+          "id": "op45-1",
+          "t": "choice",
+          "q": "¿Qué mide la volatilidad histórica de una acción?",
+          "opts": [
+            "Cuánto descuenta el mercado que se moverá hasta el vencimiento",
+            "Cuánto se movió su precio durante un periodo pasado",
+            "El precio que cobra el mercado por una call",
+            "El movimiento que tendrá la acción el próximo mes"
+          ],
+          "a": 1,
+          "why": "Se calcula con los cambios de precio ya ocurridos. Mirar adelante es la volatilidad implícita, que sale del precio de las opciones.",
+          "guia": "g1",
+          "porque": [
+            "Eso es la volatilidad implícita, que mira al futuro.",
+            null,
+            "Eso es el precio de la opción, no una volatilidad.",
+            "Ningún dato del pasado puede medir el movimiento del próximo mes."
+          ]
+        },
+        {
+          "id": "op45-2",
+          "t": "num",
+          "q": "Los cambios diarios de una acción tienen una desviación típica del 1,5 %. Para anualizarla, multiplica por 16, que es aproximadamente √252 (las sesiones de un año). ¿Cuál es su volatilidad histórica anual, en %?",
+          "unit": "%",
+          "a": 24,
+          "why": "1,5 % × 16 = 24 %. Es una medida del pasado: cuánto se movió la acción, expresado en tasa anual.",
+          "guia": "g1"
+        },
+        {
+          "id": "op45-3",
+          "t": "choice",
+          "q": "Una acción dio un salto del 12 % hace 10 sesiones y desde entonces apenas se mueve. ¿Qué pasa con su volatilidad histórica calculada con las últimas 20 sesiones?",
+          "opts": [
+            "Cae a cero enseguida, porque ahora se mueve poco",
+            "Sigue alta mientras el salto siga dentro de esas 20 sesiones",
+            "Ignora el salto, porque fue un dato aislado",
+            "Se calcula con el precio de las opciones, no con esos cambios"
+          ],
+          "a": 1,
+          "why": "El salto sigue dentro de la ventana de 20 sesiones y pesa en el cálculo. Saldrá de ella dentro de diez sesiones y entonces la histórica bajará.",
+          "guia": "g1",
+          "porque": [
+            "Mientras el salto esté en la ventana, sigue pesando en el cálculo.",
+            null,
+            "Un salto, aunque sea único, entra igual en el cálculo.",
+            "La histórica usa los precios de la acción, no el de las opciones."
+          ]
+        },
+        {
+          "id": "op45-4",
+          "t": "num",
+          "q": "Una acción tiene una volatilidad implícita del 30 % y una histórica del 24 %. ¿Cuánto vale el ratio de la implícita entre la histórica?",
+          "unit": "",
+          "a": 1.25,
+          "why": "30 ÷ 24 = 1,25. Las opciones descuentan un 25 % más de volatilidad que la que tuvo la acción.",
+          "tol": 0.005,
+          "guia": "g2"
+        },
+        {
+          "id": "op45-5",
+          "t": "choice",
+          "q": "La volatilidad implícita de una acción es del 30 % y su histórica a 60 sesiones, del 24 %. ¿Qué indica comparar ambas?",
+          "opts": [
+            "Que las opciones descuentan más movimiento del que hubo",
+            "Que la acción va a subir un 6 % hasta el vencimiento",
+            "Que la histórica está mal calculada y hay que ignorarla",
+            "Que las calls cuestan 6 $ más que las puts"
+          ],
+          "a": 0,
+          "why": "Un ratio superior a 1 dice que el precio de las opciones espera más movimiento que el reciente. No dice nada sobre la dirección.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "El ratio compara movimientos, no predice una subida.",
+            "La histórica es un cálculo correcto de lo ocurrido.",
+            "Comparar volatilidades no dice nada sobre el precio de las calls."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "op46",
+      "title": "¿Caras o baratas?",
+      "ex": [
+        {
+          "id": "op46-1",
+          "t": "num",
+          "q": "Una acción tiene una volatilidad implícita del 30 % y una histórica del 24 %. A tres meses, el movimiento es la volatilidad × 0,5. ¿Cuántos puntos más de movimiento que el histórico descuentan las opciones?",
+          "unit": "puntos",
+          "a": 3,
+          "why": "Implícita: 30 % × 0,5 = 15 %. Histórica: 24 % × 0,5 = 12 %. La diferencia es 15 − 12 = 3 puntos.",
+          "guia": "g3"
+        },
+        {
+          "id": "op46-2",
+          "t": "choice",
+          "q": "Antes de resultados, la volatilidad implícita de una acción es del 45 % y su histórica, del 25 %. ¿Qué lectura es más razonable?",
+          "opts": [
+            "Las opciones están baratas porque la implícita es la mayor",
+            "Es lógico: el precio descuenta un salto por el dato que la histórica aún no incluye",
+            "La acción tiene que caer, porque una implícita alta anticipa caídas",
+            "La histórica está mal calculada y hay que ignorarla"
+          ],
+          "a": 1,
+          "why": "La histórica mira atrás y no incluye aún el dato. La implícita sube por esa cita y por eso no es una señal de que las primas estén caras por sí sola.",
+          "guia": "g3",
+          "porque": [
+            "Una implícita alta encarece las primas, no las abarata.",
+            null,
+            "La implícita no indica dirección: sube con el riesgo de movimiento, sea al alza o a la baja.",
+            "La histórica está bien calculada: solo mira un periodo sin el dato."
+          ]
+        },
+        {
+          "id": "op46-3",
+          "t": "choice",
+          "q": "Una acción tiene una volatilidad implícita del 22 % y una histórica a 60 sesiones del 35 %. ¿Qué implican las primas frente al pasado reciente?",
+          "opts": [
+            "Son caras, porque la histórica es la mayor de las dos",
+            "Garantizan una ganancia a quien las compre",
+            "Parecen baratas, salvo que la acción se haya calmado",
+            "No se pueden comparar: no se miden en la misma unidad"
+          ],
+          "a": 2,
+          "why": "La implícita es menor, así que las opciones parecen baratas frente a lo vivido. Pero la acción puede haberse calmado, y la comparación no garantiza ninguna ganancia.",
+          "guia": "g3",
+          "porque": [
+            "La implícita es menor, así que las primas no son caras frente a lo vivido.",
+            "Ninguna comparación de volatilidades garantiza una ganancia.",
+            null,
+            "Las dos son tasas anuales en %: se pueden comparar directamente."
+          ]
+        },
+        {
+          "id": "op46-4",
+          "t": "choice",
+          "q": "¿Por qué la volatilidad implícita suele ser algo mayor que la que luego se mueve de verdad?",
+          "opts": [
+            "Quien vende opciones cobra un extra por asumir saltos, como un seguro",
+            "Porque la histórica siempre se calcula con errores a la baja",
+            "Porque la ley fija las primas un 20 % por encima",
+            "Porque quien compra opciones nunca acierta"
+          ],
+          "a": 0,
+          "why": "Vender opciones expone a movimientos bruscos y el mercado paga por asumir ese riesgo, igual que una aseguradora cobra más de lo que espera pagar. Es una media, no una regla.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "La histórica se calcula con los precios ya ocurridos, sin sesgo a la baja.",
+            "Ninguna ley fija las primas: las fija el mercado.",
+            "Muchos compradores aciertan: el precio solo descuenta un riesgo medio."
+          ]
+        },
+        {
+          "id": "op46-5",
+          "t": "num",
+          "q": "Pagaste unas primas con volatilidad implícita del 25 % y luego la acción se movió con una volatilidad realizada del 44 %. A tres meses (volatilidad × 0,5), ¿cuántos puntos más se movió de lo que descontaba la prima?",
+          "unit": "puntos",
+          "a": 9.5,
+          "why": "Descontado: 25 % × 0,5 = 12,5 %. Real: 44 % × 0,5 = 22 %. La diferencia es 22 − 12,5 = 9,5 puntos: esta vez, la prima resultó barata.",
+          "tol": 0.05,
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

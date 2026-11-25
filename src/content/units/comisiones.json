@@ -1,0 +1,230 @@
+{
+  "n": 20,
+  "id": "comisiones",
+  "track": "basico",
+  "title": "Lo que se comen las comisiones",
+  "blurb": "Cuánto pesa un punto de coste a 30 años y cómo sumar en euros lo que te cuesta cada año.",
+  "gate": false,
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Un punto de más",
+      "texto": "El coste se cobra cada año sobre todo lo acumulado, y ese dinero ya no rinde. Por el interés compuesto, 1 punto de coste de más pesa mucho a 30 años.",
+      "ejemplo": "200 € al mes durante 30 años, con rentabilidad constante y capitalización mensual: al 6 % acabas con unos 200,9 mil €; al 5 %, 166,5 mil €. Son 34,4 mil € menos, un 17,1 %."
+    },
+    {
+      "id": "g2",
+      "titulo": "Qué cobra cada parte",
+      "texto": "La comisión de custodia es un % anual por guardar tus valores. La de compraventa se cobra por orden, a veces con mínimo. El cambio de divisa, cada vez que conviertes. El TER va dentro del fondo.",
+      "ejemplo": "Con 2 € por orden y 100 € al mes: 24 € sobre 1.200 € (2 %). Cambiar 1.000 € con un 0,25 % cuesta 2,50 €: ida y vuelta, 5 €."
+    },
+    {
+      "id": "g3",
+      "titulo": "Suma en euros",
+      "texto": "Calcula con tu uso: custodia = % × cartera; compraventa = órdenes × coste (o el mínimo); divisa = % × lo cambiado; más el TER. El más barato depende de cómo operas.",
+      "ejemplo": "10.000 € y 12 compras de 150 €. A: 24 €. B: 20 € de custodia + 12 × 1 € (mínimo) = 32 €. Con TER del 0,20 %, +20 €: A, 44 €."
+    },
+    {
+      "id": "g4",
+      "titulo": "En % y qué reducir",
+      "texto": "Divide el coste anual entre tu cartera para ver su %. Para bajarlo, ataca lo mayor: junta las aportaciones en menos órdenes, evita cambiar divisa sin necesidad y compara el TER.",
+      "ejemplo": "44 € sobre 10.000 €: 0,44 % al año. Con A, 4 compras de 450 € en vez de 12 de 150 €: 8 € en vez de 24 €. Ahorras 16 €."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "ci1",
+      "title": "Un punto de más",
+      "ex": [
+        {
+          "id": "ci1-1",
+          "t": "num",
+          "q": "Aportas 200 € al mes durante 30 años, con rentabilidad constante y capitalización mensual. Al 6 % anual acabas con unos 200,9 mil €; si los costes te quitan 1 punto y la rentabilidad es del 5 %, unos 166,5 mil €. ¿Cuántos mil € menos tienes por ese punto de coste?",
+          "unit": "mil €",
+          "a": 34.4,
+          "why": "Resta 200,9 − 166,5 = 34,4 mil €. Aportaste 72 mil € en total (200 × 360 meses): ese punto de coste se lleva casi la mitad de lo que aportaste.",
+          "guia": "g1",
+          "tol": 0.11
+        },
+        {
+          "id": "ci1-2",
+          "t": "num",
+          "q": "Aportas 200 € al mes durante 30 años, con rentabilidad constante y capitalización mensual: al 6 % acabas con unos 200,9 mil € y al 5 %, unos 166,5 mil €. ¿Qué % de los 200,9 mil € se pierde por ese punto de coste?",
+          "unit": "%",
+          "a": 17.1,
+          "why": "La diferencia es 34,4 mil € y 34,4 ÷ 200,9 = 17,1 %. Un punto parece poco, pero a 30 años quita casi una sexta parte del resultado.",
+          "tol": 0.06,
+          "guia": "g1"
+        },
+        {
+          "id": "ci1-3",
+          "t": "choice",
+          "q": "¿Por qué 1 punto de coste de más al año resta tanto a 30 años?",
+          "opts": [
+            "Porque el coste solo se cobra al final, sobre el total",
+            "Porque el coste sube un punto más cada año",
+            "Porque solo afecta a los años en que la bolsa sube",
+            "Se cobra cada año sobre todo el saldo y ese dinero ya no rinde"
+          ],
+          "a": 3,
+          "why": "El coste se cobra cada año sobre todo el saldo. Lo que se lleva deja de generar rentabilidad en los años siguientes: es el interés compuesto al revés.",
+          "guia": "g1",
+          "porque": [
+            "El coste se cobra cada año, no solo al final.",
+            "El coste anual es un % fijo: no sube cada año por sí solo.",
+            "El coste se cobra siempre, suba o baje la bolsa.",
+            null
+          ]
+        },
+        {
+          "id": "ci1-4",
+          "t": "num",
+          "q": "Un bróker cobra 2 € fijos por cada compra e inviertes 100 € cada mes. ¿Qué % de lo que inviertes en el año se va en comisiones de compra?",
+          "unit": "%",
+          "a": 2,
+          "why": "Haces 12 compras: 12 × 2 = 24 € al año sobre 1.200 € invertidos. 24 ÷ 1.200 = 2 %. Con importes pequeños, un coste fijo pesa mucho.",
+          "guia": "g2"
+        },
+        {
+          "id": "ci1-5",
+          "t": "match",
+          "q": "Empareja cada cobro con lo que es.",
+          "pairs": [
+            [
+              "Custodia",
+              "Cobro anual por guardar tus valores"
+            ],
+            [
+              "Compraventa",
+              "Cobro por cada orden que ejecutas"
+            ],
+            [
+              "Cambio de divisa",
+              "Cobro por convertir euros a dólares"
+            ],
+            [
+              "TER",
+              "Coste anual del fondo, ya incluido en su precio"
+            ]
+          ],
+          "why": "La custodia se cobra una vez al año; la compraventa, por orden; el cambio de divisa, cada vez que conviertes moneda, y el TER ya va descontado del precio del fondo.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "ci2",
+      "title": "Suma tus costes en euros",
+      "ex": [
+        {
+          "id": "ci2-1",
+          "t": "num",
+          "q": "Tienes una cartera de 10.000 € y haces 12 compras al año de 150 € cada una. ¿Cuántos € más al año cuesta el bróker B que el A de la tabla?",
+          "unit": "€",
+          "a": 8,
+          "why": "A: 12 × 2 = 24 €. B: custodia 0,20 % × 10.000 = 20 € y 12 compras con mínimo de 1 € (0,10 % de 150 son 0,15 €): 12 €. Total 32 €. 32 − 24 = 8 €.",
+          "table": {
+            "cols": [
+              "Concepto",
+              "Bróker A",
+              "Bróker B"
+            ],
+            "rows": [
+              [
+                "Custodia",
+                "0 %",
+                "0,20 %"
+              ],
+              [
+                "Compra",
+                "2 €",
+                "0,10 %, mín. 1 €"
+              ]
+            ],
+            "note": "Brókers ficticios. Custodia al año sobre la cartera; compra, por orden. Cartera de 10.000 €."
+          },
+          "guia": "g3"
+        },
+        {
+          "id": "ci2-2",
+          "t": "num",
+          "q": "Tu bróker cobra un 0,25 % cada vez que cambias euros a dólares o dólares a euros. Cambias 1.000 € para comprar y, al vender, vuelves a cambiar 1.000 €. ¿Cuántos € cuesta el cambio de ida y vuelta?",
+          "unit": "€",
+          "a": 5,
+          "why": "0,25 % de 1.000 € son 2,50 € en cada cambio. Dos cambios: 2 × 2,50 = 5 €. Si compras en euros, no pagas este coste.",
+          "guia": "g3"
+        },
+        {
+          "id": "ci2-3",
+          "t": "num",
+          "q": "Con el bróker A de la tabla haces 12 compras al año de 150 €, y tienes 10.000 € en un fondo con un TER del 0,20 %. ¿Cuántos € pagas en total al año entre compras y TER?",
+          "unit": "€",
+          "a": 44,
+          "why": "Compras: 12 × 2 = 24 €. TER: 0,20 % × 10.000 = 20 €. Suma: 24 + 20 = 44 € al año.",
+          "table": {
+            "cols": [
+              "Concepto",
+              "Bróker A",
+              "Bróker B"
+            ],
+            "rows": [
+              [
+                "Custodia",
+                "0 %",
+                "0,20 %"
+              ],
+              [
+                "Compra",
+                "2 €",
+                "0,10 %, mín. 1 €"
+              ]
+            ],
+            "note": "Brókers ficticios. Custodia al año sobre la cartera; compra, por orden. Cartera de 10.000 €."
+          },
+          "guia": "g3"
+        },
+        {
+          "id": "ci2-4",
+          "t": "num",
+          "q": "Pagas 44 € al año en costes con una cartera de 10.000 €. ¿Qué % de tu cartera es ese coste anual?",
+          "unit": "%",
+          "a": 0.44,
+          "why": "44 ÷ 10.000 = 0,0044, es decir, 0,44 % al año. Comparado en %, puedes ver si tu coste es alto frente a otras opciones.",
+          "tol": 0.005,
+          "guia": "g4"
+        },
+        {
+          "id": "ci2-5",
+          "t": "num",
+          "q": "Con el bróker A de la tabla, aportas 1.800 € al año: o 12 compras de 150 € al mes, o 4 compras de 450 € cada trimestre. ¿Cuántos € ahorras al año con la segunda opción?",
+          "unit": "€",
+          "a": 16,
+          "why": "12 × 2 = 24 € frente a 4 × 2 = 8 €. Ahorras 24 − 8 = 16 € al año, solo por juntar las aportaciones en menos órdenes.",
+          "table": {
+            "cols": [
+              "Concepto",
+              "Bróker A",
+              "Bróker B"
+            ],
+            "rows": [
+              [
+                "Custodia",
+                "0 %",
+                "0,20 %"
+              ],
+              [
+                "Compra",
+                "2 €",
+                "0,10 %, mín. 1 €"
+              ]
+            ],
+            "note": "Brókers ficticios. Custodia al año sobre la cartera; compra, por orden. Cartera de 10.000 €."
+          },
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}
