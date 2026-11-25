@@ -1,0 +1,184 @@
+{
+  "n": 10,
+  "id": "croraculos",
+  "track": "cripto",
+  "title": "Oráculos: los datos de fuera",
+  "blurb": "Cómo llega un precio a un contrato, qué pasa si es erróneo o manipulado y cómo se defienden.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "El contrato no ve el mundo",
+      "texto": "Un contrato inteligente solo ve lo que hay en su cadena. Todos los nodos deben obtener el mismo resultado, y si cada uno consultara una web podrían ver datos distintos. No sabe el precio de una moneda ni el tiempo que hace.",
+      "ejemplo": "Un préstamo con garantía necesita el precio de la garantía: ese dato no está en la cadena hasta que alguien lo escribe."
+    },
+    {
+      "id": "g2",
+      "titulo": "Qué es un oráculo",
+      "texto": "Un oráculo trae datos de fuera, como un precio, y los escribe en la cadena para que los contratos los lean. El contrato se fía de él. Un préstamo vende (liquida) la garantía si la deuda supera el 75 % de su valor.",
+      "ejemplo": "3.000 $ con 100 monedas ALFA a 50 $ (5.000 $): deuda del 60 %. Se liquida por debajo de 40 $ (3.000 ÷ 0,75 ÷ 100)."
+    },
+    {
+      "id": "g3",
+      "titulo": "Si el dato es erróneo",
+      "texto": "Si el oráculo da un precio erróneo, el contrato liquida garantías que no debía, y no hay a quién reclamar. La penalización de liquidación (aquí, un 10 % de la deuda) se cobra igual.",
+      "ejemplo": "Marca ALFA a 38 $ siendo 50 $: 3.000 ÷ 3.800 = 78,9 %, pasa del 75 %. Te liquidan y pierdes 300 $ de penalización (10 % de 3.000 $)."
+    },
+    {
+      "id": "g4",
+      "titulo": "Poca liquidez y varias fuentes",
+      "texto": "Si el oráculo lee un solo mercado con poca liquidez, una compra pequeña mueve el precio y se puede pedir de más. Defensa: varias fuentes y su mediana (valor central).",
+      "ejemplo": "Mercados a 50 $, 51 $ y 76 $: con 76 $, 100 ALFA parecen 7.600 $ y, prestando el 75 %, te dan 5.700 $, siendo 5.000 $ reales. Mediana: 51 $."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "or1",
+      "title": "El contrato ciego",
+      "ex": [
+        {
+          "id": "or1-1",
+          "t": "choice",
+          "q": "¿Por qué un contrato inteligente no puede consultar por sí mismo el precio de una moneda en una página web?",
+          "opts": [
+            "Porque la cadena no admite ningún dato numérico en sus contratos",
+            "Porque todos los nodos deben coincidir y una web puede dar datos distintos a cada uno",
+            "Porque las webs de precios cobran en criptomonedas y el contrato no tiene fondos",
+            "Porque los contratos solo se ejecutan una vez al año, en una fecha fija"
+          ],
+          "a": 1,
+          "why": "Cada nodo ejecuta el contrato y todos deben obtener lo mismo; un dato de fuera, que puede variar, rompería ese acuerdo.",
+          "guia": "g1",
+          "porque": [
+            "Los contratos manejan números sin problema; los precios y los saldos son datos numéricos.",
+            null,
+            "El problema no es el pago: es que la información externa no es igual para todos los nodos.",
+            "Los contratos se ejecutan cuando alguien los llama, no una vez al año."
+          ]
+        },
+        {
+          "id": "or1-2",
+          "t": "choice",
+          "q": "¿Qué es un oráculo en una cadena de bloques?",
+          "opts": [
+            "Un contrato que predice si una moneda va a subir o a bajar",
+            "Un validador que decide qué transacciones entran en el siguiente bloque",
+            "Un servicio que escribe en la cadena datos de fuera, como un precio",
+            "Un monedero que firma las transacciones de varios usuarios a la vez"
+          ],
+          "a": 2,
+          "why": "El oráculo lleva el dato de fuera a la cadena: sin él, un préstamo no sabría cuánto vale su garantía.",
+          "guia": "g2",
+          "porque": [
+            "Un oráculo no predice nada: solo lleva a la cadena un dato que ya existe fuera.",
+            "Decidir qué transacciones entran en un bloque es trabajo de un validador, no de un oráculo.",
+            null,
+            "Firmar por varios usuarios es una función de monedero, no de oráculo."
+          ]
+        },
+        {
+          "id": "or1-3",
+          "t": "num",
+          "q": "Pides un préstamo de 3.000 $ dejando 100 monedas ALFA, que valen 50 $ cada una, como garantía. ¿Qué porcentaje del valor de la garantía has pedido prestado?",
+          "unit": "%",
+          "a": 60,
+          "why": "100 × 50 $ = 5.000 $ de garantía, y 3.000 ÷ 5.000 = 60 %.",
+          "guia": "g2"
+        },
+        {
+          "id": "or1-4",
+          "t": "num",
+          "q": "Un préstamo de 3.000 $ con 100 monedas ALFA en garantía se liquida si la deuda supera el 75 % del valor de la garantía. ¿Por debajo de qué precio por moneda, en dólares, se liquida?",
+          "unit": "$",
+          "a": 40,
+          "why": "La garantía debe valer al menos 3.000 ÷ 0,75 = 4.000 $, es decir, 40 $ por moneda.",
+          "guia": "g2"
+        },
+        {
+          "id": "or1-5",
+          "t": "choice",
+          "q": "El oráculo de un préstamo da un precio de la garantía mucho más bajo que el real. ¿Qué puede ocurrir?",
+          "opts": [
+            "El contrato corrige solo el precio porque conoce el valor real",
+            "El contrato ignora el dato, porque solo acepta precios correctos",
+            "El contrato liquida una garantía que, con el precio real, estaría a salvo",
+            "El contrato devuelve al usuario la diferencia sin que haga nada"
+          ],
+          "a": 2,
+          "why": "El contrato no sabe si el dato es falso: se fía del oráculo y ejecuta lo que dice su código.",
+          "guia": "g3",
+          "porque": [
+            "El contrato solo conoce el dato que le da el oráculo: no tiene otra forma de saber el valor real.",
+            "El contrato no sabe si el dato es correcto: ejecuta lo que dice el oráculo.",
+            null,
+            "Una liquidación equivocada no se reembolsa sola: no hay a quién reclamar."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "or2",
+      "title": "Precios erróneos y manipulados",
+      "ex": [
+        {
+          "id": "or2-1",
+          "t": "num",
+          "q": "Tu garantía son 100 monedas ALFA y debes 3.000 $. Un oráculo con error marca ALFA a 38 $ cuando su precio real es 50 $. Según ese dato, ¿qué porcentaje del valor de la garantía supone tu deuda? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 78.9,
+          "why": "100 × 38 $ = 3.800 $, y 3.000 ÷ 3.800 = 78,9 %: supera el 75 %, aunque con el precio real sería un 60 %.",
+          "tol": 0.06,
+          "guia": "g3"
+        },
+        {
+          "id": "or2-2",
+          "t": "num",
+          "q": "Un contrato liquida tu garantía de 100 monedas ALFA porque, con el precio erróneo de 38 $ (el real es 50 $), tu deuda de 3.000 $ pasa del 75 % del valor. Cobra una penalización del 10 % de la deuda. ¿Cuántos dólares pierdes por esa penalización?",
+          "unit": "$",
+          "a": 300,
+          "why": "10 % × 3.000 $ = 300 $, perdidos por un error del oráculo.",
+          "guia": "g3"
+        },
+        {
+          "id": "or2-3",
+          "t": "choice",
+          "q": "¿Por qué es más fácil manipular el precio de un oráculo que lee un solo mercado donde casi no se negocia?",
+          "opts": [
+            "Porque en esos mercados el precio no puede cambiar sin permiso del oráculo",
+            "Porque una compra pequeña basta para mover el precio de ese mercado y el oráculo lo copia",
+            "Porque los mercados con poca liquidez no registran las compras que se hacen en ellos",
+            "Porque el oráculo cobra más comisión cuanto menos se negocia en el mercado"
+          ],
+          "a": 1,
+          "why": "En un mercado con poca liquidez, pocas órdenes mueven mucho el precio, y el oráculo lo traslada a la cadena.",
+          "guia": "g4",
+          "porque": [
+            "El precio de un mercado cambia con sus compras y ventas, sin permiso de nadie.",
+            null,
+            "Esos mercados sí registran las compras; lo frágil es que pocas órdenes mueven mucho el precio.",
+            "El oráculo no cobra por lo que se negocia; lo que cambia es lo fácil que es mover el precio."
+          ]
+        },
+        {
+          "id": "or2-4",
+          "t": "num",
+          "q": "Dejas 100 monedas ALFA, que valen 50 $ cada una, como garantía de un préstamo que llega al 75 % del valor que marca el oráculo. Un oráculo manipulado marca 76 $. ¿Cuántos dólares pides prestados por encima de lo que valen realmente tus monedas?",
+          "unit": "$",
+          "a": 700,
+          "why": "100 × 76 $ × 0,75 = 5.700 $ prestados, frente a 5.000 $ de valor real: 700 $ de más.",
+          "guia": "g4"
+        },
+        {
+          "id": "or2-5",
+          "t": "num",
+          "q": "Tres mercados dan para la moneda ALFA los precios 50 $, 51 $ y 76 $, y el último está manipulado. ¿Qué precio, en dólares, da la mediana de los tres?",
+          "unit": "$",
+          "a": 51,
+          "why": "Ordenados, el valor central es 51 $: el precio manipulado apenas la mueve. La media, en cambio, sube a 59 $.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

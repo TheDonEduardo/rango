@@ -24,7 +24,7 @@
       "texto": "Siempre hay un precio al que te venden y otro, algo menor, al que te compran. La diferencia es la horquilla: un coste que pagas aunque el precio no se mueva.",
       "figura": {
         "type": "velas",
-        "alt": "Siempre hay un precio de venta algo mayor que el de compra; la diferencia es la horquilla",
+        "alt": "Siempre puedes comprar algo más caro de lo que puedes vender; la diferencia es la horquilla",
         "data": [
           [10.01,10.08,9.96,10.04],
           null,
@@ -59,7 +59,7 @@
       "id": "g4",
       "titulo": "Órdenes en valores poco líquidos",
       "texto": "Una orden a mercado asegura que compras, pero no el precio. Con horquillas anchas, usa una limitada para controlar lo que pagas.",
-      "ejemplo": "Horquilla de 10,00 / 10,40 €: a mercado pagarías un 4 % por encima del precio de compra."
+      "ejemplo": "Horquilla de 10,00 / 10,40 €: a mercado pagarías 10,40 €, un 4 % por encima de los 10,00 € a los que podrías vender."
     }
   ],
   "lessons": [
@@ -173,7 +173,7 @@
             ],
             [
               "Horquilla (spread)",
-              "Diferencia entre precio de compra y de venta"
+              "Diferencia entre el precio al que compras y al que vendes"
             ],
             [
               "Subasta de apertura",
@@ -212,11 +212,11 @@
             "Ninguna: no se puede comprar"
           ],
           "a": 0,
-          "why": "A mercado pagarías 10,40 €, un 4 % por encima del precio de compra; con una limitada controlas lo que pagas.",
+          "why": "A mercado pagarías 10,40 €, un 4 % por encima de los 10,00 € a los que podrías vender; con una limitada controlas lo que pagas.",
           "guia": "g4",
           "porque": [
             null,
-            "A mercado pagarías 10,40 €, un 4 % más que el precio de compra.",
+            "A mercado pagarías 10,40 €, un 4 % más que los 10,00 € a los que podrías vender.",
             "Con horquillas anchas el tipo de orden importa mucho.",
             "Sí se puede comprar; solo conviene controlar el precio."
           ]

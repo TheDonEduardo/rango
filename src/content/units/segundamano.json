@@ -1,0 +1,173 @@
+{
+  "n": 7,
+  "id": "segundamano",
+  "track": "personal",
+  "title": "Segunda mano frente a nuevo",
+  "blurb": "Cuánto pierde de valor lo nuevo, qué cuesta cada año de uso y cuándo conviene lo usado o lo nuevo.",
+  "revisar": "2027-11",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Lo nuevo pierde valor deprisa",
+      "texto": "Lo nuevo pierde valor sobre todo los primeros años, sin que lo veas en ninguna factura. Lo que guardas sin usar también lo pierde: venderlo pronto recupera más.",
+      "ejemplo": "Coche de 15.000 € que vale 9.000 € a los 3 años: pierde 6.000 € (40 %). Móvil de 600 € que vale 360 € a los 2 años: 240 €. Bici de 220 € que guardada vale 160 €: 60 €."
+    },
+    {
+      "id": "g2",
+      "titulo": "Coste por año de uso",
+      "texto": "Coste por año de uso = pérdida de valor (o precio) ÷ años de uso. Un precio bajo engaña: si lo usado dura poco, puede salir más caro por año.",
+      "ejemplo": "Móvil: 240 € ÷ 2 años = 120 € al año. Lavadora nueva: 500 € ÷ 10 años = 50 € al año; usada: 200 € ÷ 3 años = 67 €."
+    },
+    {
+      "id": "g3",
+      "titulo": "Riesgos de comprar usado",
+      "texto": "Usado trae más desgaste y menos garantía: pruébalo, pide justificante y no pagues por adelantado. Si el vendedor es profesional hay garantía legal; entre particulares, mucha menos. Compruébalo con la norma vigente. Reserva parte del ahorro para una reparación. Un precio muy bajo con prisa por cobrar es señal de estafa.",
+      "ejemplo": "Móvil nuevo, 600 €. Usado: 360 € más 90 € reservados = 450 €. Ahorras 150 €."
+    },
+    {
+      "id": "g4",
+      "titulo": "Cuándo compensa lo nuevo",
+      "texto": "Nuevo compensa si ahorra dinero (energía) o protege, como un casco: un golpe previo no siempre se ve. Años para compensar = coste ÷ ahorro anual.",
+      "ejemplo": "Frigorífico de 240 €: gasta 180 kWh en vez de 420, a 0,20 € el kWh. Ahorra 48 € al año y se paga en 5 años."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "sm1",
+      "title": "Lo que pierde lo nuevo",
+      "ex": [
+        {
+          "id": "sm1-1",
+          "t": "num",
+          "q": "Un coche nuevo cuesta 15.000 € y a los 3 años vale 9.000 €. ¿Qué porcentaje de su precio ha perdido?",
+          "unit": "%",
+          "a": 40,
+          "why": "15.000 € − 9.000 € = 6.000 €, y 6.000 ÷ 15.000 = 40 %.",
+          "guia": "g1"
+        },
+        {
+          "id": "sm1-2",
+          "t": "num",
+          "q": "Un móvil nuevo cuesta 600 € y a los 2 años se vende por 360 €. ¿Cuántos euros ha perdido de valor?",
+          "unit": "€",
+          "a": 240,
+          "why": "600 € − 360 € = 240 €.",
+          "guia": "g1"
+        },
+        {
+          "id": "sm1-3",
+          "t": "num",
+          "q": "Tienes una bici sin usar que hoy se vendería por 220 € y que, guardada dos años más, valdrá 160 €. ¿Cuántos euros pierdes por esperar a venderla?",
+          "unit": "€",
+          "a": 60,
+          "why": "220 € − 160 € = 60 €: lo que no usas también pierde valor.",
+          "guia": "g1"
+        },
+        {
+          "id": "sm1-4",
+          "t": "num",
+          "q": "Un móvil pierde 240 € de valor en 2 años de uso. ¿Cuántos euros pierde por cada año de uso?",
+          "unit": "€",
+          "a": 120,
+          "why": "240 € ÷ 2 años = 120 € por año.",
+          "guia": "g2"
+        },
+        {
+          "id": "sm1-5",
+          "t": "choice",
+          "q": "Una lavadora nueva de 500 € dura 10 años y una usada de 200 € dura 3 años más. Sin contar reparaciones ni el valor final, ¿qué sale más barata por año de uso?",
+          "opts": [
+            "La usada, porque cuesta menos de la mitad que la nueva",
+            "Salen igual, porque el coste por año no depende de cuánto dure",
+            "La nueva: 50 € al año frente a unos 67 € de la usada",
+            "La usada, porque la nueva pierde todo su valor el primer año"
+          ],
+          "a": 2,
+          "why": "500 € ÷ 10 años = 50 € al año; 200 € ÷ 3 años = 66,67 € al año. Un precio bajo no basta si dura poco.",
+          "guia": "g2",
+          "porque": [
+            "Cuesta menos, pero por año sale peor: 200 € ÷ 3 años son 67 €, frente a 50 € de la nueva.",
+            "El coste por año sí depende de cuánto dura: es el precio dividido entre los años de uso.",
+            null,
+            "La nueva no pierde todo su valor el primer año; dura 10 años, a 50 € al año."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "sm2",
+      "title": "Comprar usado y cuándo compensa lo nuevo",
+      "ex": [
+        {
+          "id": "sm2-1",
+          "t": "choice",
+          "q": "Vas a comprar un móvil de segunda mano a un particular. ¿Qué haces antes de pagar?",
+          "opts": [
+            "Pagas por adelantado para que te lo reserve, si el precio es muy bajo",
+            "Lo pruebas delante del vendedor y pides un justificante de la compra",
+            "Te fías del precio: si es mucho más bajo que el del mercado, es una ganga segura",
+            "No compruebas nada, porque un móvil usado siempre tiene la misma garantía que uno nuevo"
+          ],
+          "a": 1,
+          "why": "Con un particular no hay tienda a la que reclamar: probarlo, tener justificante y no pagar por adelantado reduce el riesgo.",
+          "guia": "g3",
+          "porque": [
+            "Una forma habitual de estafa: pagas y el vendedor desaparece.",
+            null,
+            "Un precio muy por debajo del mercado con prisa por cobrar suele ser señal de estafa, no una ganga segura.",
+            "La garantía de un usado puede ser menor que la de uno nuevo; conviene comprobar la vigente."
+          ]
+        },
+        {
+          "id": "sm2-2",
+          "t": "num",
+          "q": "Un móvil nuevo cuesta 600 € y uno usado, 360 €. Reservas 90 € por si hay que repararlo. ¿Cuántos euros ahorras frente al nuevo aun contando esa reserva?",
+          "unit": "€",
+          "a": 150,
+          "why": "360 € + 90 € = 450 € de coste previsto, y 600 € − 450 € = 150 €.",
+          "guia": "g3"
+        },
+        {
+          "id": "sm2-3",
+          "t": "num",
+          "q": "Un frigorífico viejo gasta 420 kWh al año y uno nuevo eficiente, 180 kWh. Con el kWh a 0,20 €, ¿cuántos euros al año ahorra el nuevo?",
+          "unit": "€",
+          "a": 48,
+          "why": "(420 − 180) kWh × 0,20 € = 48 € al año.",
+          "guia": "g4"
+        },
+        {
+          "id": "sm2-4",
+          "t": "num",
+          "q": "Un frigorífico nuevo cuesta 240 € y ahorra 48 € al año de electricidad frente a tu frigorífico viejo. ¿En cuántos años el ahorro paga ese coste? Responde en años.",
+          "unit": "",
+          "a": 5,
+          "why": "240 € ÷ 48 € al año = 5 años.",
+          "guia": "g4"
+        },
+        {
+          "id": "sm2-5",
+          "t": "choice",
+          "q": "¿En cuál de estos productos compensa más comprar nuevo en lugar de usado?",
+          "opts": [
+            "Una silla de madera, porque la madera usada deja de aguantar peso",
+            "Un libro de texto vigente, porque usado siempre está desactualizado",
+            "Un casco de moto, porque un golpe previo puede dañarlo sin que se vea",
+            "Una mesa de oficina, porque una mesa usada nunca llega a ser fiable"
+          ],
+          "a": 2,
+          "why": "En un casco la seguridad es lo que pagas, y un golpe anterior no siempre se ve. En los demás, lo usado funciona igual.",
+          "guia": "g4",
+          "porque": [
+            "La madera usada aguanta peso si está sana; no hay motivo de seguridad para exigirla nueva.",
+            "Un libro vigente usado tiene el mismo contenido; no está desactualizado por ser usado.",
+            null,
+            "Una mesa de oficina usada puede ser perfectamente fiable; no hay riesgo oculto de seguridad."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

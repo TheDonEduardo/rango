@@ -1,0 +1,176 @@
+{
+  "n": 11,
+  "id": "opplazo",
+  "track": "derivados",
+  "title": "Proteger con puts: qué plazo comprar",
+  "blurb": "Puts a 1 mes renovadas frente a una a 12 meses, qué ejercicio elegir y cuándo compensa cada plazo.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Plazo corto o largo",
+      "texto": "Con puts a 1 mes pagas una prima nueva cada mes; con una a 12 meses, una sola. Suma las doce primas y compáralas con la larga, en % del valor de las acciones.",
+      "ejemplo": "Acciones a 80 €, ejercicio 72 €: put a 1 mes, 0,60 €; a 12 meses, 4,00 €. Doce de 1 mes: 7,20 € (9 %). La de 12 meses: 5 %."
+    },
+    {
+      "id": "g2",
+      "titulo": "El tiempo se come antes a la corta",
+      "texto": "Cuanto menos plazo queda, más valor temporal pierde la put cada día. Si renuevas cada mes, siempre pagas el tramo que se evapora más deprisa.",
+      "ejemplo": "Put a 1 mes: 0,60 € en 30 días, 2 céntimos por día. Put a 12 meses: 4,00 € en 360 días, 1,1 céntimos por día."
+    },
+    {
+      "id": "g3",
+      "titulo": "Elegir el ejercicio",
+      "texto": "Un ejercicio más cercano cuesta más y deja menos pérdida máxima; uno más lejano es más barato, pero la acción cae más antes de que proteja. Pérdida máxima por acción = precio − ejercicio + prima (al vencimiento, sin dividendos).",
+      "ejemplo": "Acciones a 80 €, put a 1 mes: 72 € y 0,60 €, pérdida 8,60 €; 76 € y 1,40 €, 5,40 €; 80 € y 2,60 €, 2,60 €."
+    },
+    {
+      "id": "g4",
+      "titulo": "Evento o protección permanente",
+      "texto": "Ante un evento concreto, una put que lo cubra basta y cuesta poco. Proteger todo el año con puts de 1 mes sale caro: se suman las primas. Una put larga cuesta menos por año, pero pagas más de golpe.",
+      "ejemplo": "Resultados en 3 semanas: put a 1 mes de 0,60 €, un 0,75 % de 80 €. Doce seguidas, un 9 %; una de 12 meses, un 5 %."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "op41",
+      "title": "Corto o largo plazo",
+      "ex": [
+        {
+          "id": "op41-1",
+          "t": "num",
+          "q": "Tienes 100 acciones compradas a 80 €. Compras una put de ejercicio 72 € a 1 mes por 0,60 € por acción y la renuevas cada mes del año con la misma prima. ¿Cuántos euros por acción pagas en primas al cabo de 12 meses?",
+          "unit": "€",
+          "a": 7.2,
+          "why": "12 × 0,60 € = 7,20 € por acción.",
+          "tol": 0.01,
+          "guia": "g1"
+        },
+        {
+          "id": "op41-2",
+          "t": "num",
+          "q": "Pagas 7,20 € por acción en primas de puts a 1 mes durante un año, sobre acciones que valen 80 € cada una. ¿Qué porcentaje del valor de las acciones supone ese coste anual?",
+          "unit": "%",
+          "a": 9,
+          "why": "7,20 € ÷ 80 € = 9 % del valor de las acciones al año.",
+          "guia": "g1"
+        },
+        {
+          "id": "op41-3",
+          "t": "num",
+          "q": "Doce puts de 1 mes cuestan en un año 7,20 € por acción; una put de 12 meses con el mismo ejercicio cuesta 4,00 €. Con 100 acciones, ¿cuántos euros más pagas con las puts de 1 mes?",
+          "unit": "€",
+          "a": 320,
+          "why": "(7,20 € − 4,00 €) × 100 acciones = 320 €. La de 12 meses sale a un 5 % anual y las de 1 mes, a un 9 %.",
+          "guia": "g1"
+        },
+        {
+          "id": "op41-4",
+          "t": "num",
+          "q": "Una put a 1 mes vale 0,60 € por acción y, si la acción no se mueve, pierde todo su valor temporal en 30 días. ¿Cuántos céntimos por día pierde de media?",
+          "unit": "",
+          "a": 2,
+          "why": "0,60 € ÷ 30 días = 0,02 € al día, es decir, 2 céntimos.",
+          "guia": "g2"
+        },
+        {
+          "id": "op41-5",
+          "t": "choice",
+          "q": "La acción no se mueve. ¿Por qué una put a 1 mes pierde cada día más valor temporal que una put a 12 meses con el mismo ejercicio?",
+          "opts": [
+            "Porque la put a 12 meses no tiene valor temporal, solo intrínseco",
+            "Porque el bróker cobra una comisión diaria por mantener las puts cortas",
+            "Porque su valor temporal se evapora más deprisa cuanto menos plazo queda",
+            "Porque la put a 1 mes tiene siempre un ejercicio más bajo que la larga"
+          ],
+          "a": 2,
+          "why": "La put a 1 mes pierde 0,60 € en 30 días (2 céntimos al día); la de 12 meses, 4,00 € en 360 días (1,1 céntimos al día).",
+          "guia": "g2",
+          "porque": [
+            "Una put a 12 meses también tiene valor temporal: es la mayor parte de su prima de 4,00 €.",
+            "Las puts no cobran comisión diaria por mantenerlas; lo que se pierde cada día es el valor temporal.",
+            null,
+            "El ejercicio es el mismo en las dos, así que no explica la diferencia por día."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "op42",
+      "title": "Ejercicio y evento",
+      "ex": [
+        {
+          "id": "op42-1",
+          "t": "num",
+          "q": "Tienes acciones compradas a 80 € y una put a 1 mes de ejercicio 76 € que te costó 1,40 € por acción. Si la ejerces al vencimiento, ¿cuál es tu pérdida máxima por acción, contando la prima? Supón que no hay dividendos ni comisiones.",
+          "unit": "€",
+          "a": 5.4,
+          "why": "(80 € − 76 €) + 1,40 € = 5,40 € por acción.",
+          "tol": 0.01,
+          "guia": "g3"
+        },
+        {
+          "id": "op42-2",
+          "t": "choice",
+          "q": "Acciones a 80 €. Una put a 1 mes de ejercicio 76 € cuesta 1,40 € y otra de ejercicio 72 € cuesta 0,60 €. ¿Qué diferencia hay entre las dos?",
+          "opts": [
+            "La de 72 € cuesta más porque cubre una caída mayor",
+            "Las dos dejan la misma pérdida máxima, pero la de 72 € es más barata",
+            "La de 76 € cuesta menos y deja una pérdida máxima menor",
+            "La de 76 € cuesta más y deja una pérdida máxima menor"
+          ],
+          "a": 3,
+          "why": "Con la de 76 € la pérdida máxima es 4 € + 1,40 € = 5,40 €; con la de 72 €, 8 € + 0,60 € = 8,60 €. La más cercana cuesta más y protege más.",
+          "guia": "g3",
+          "porque": [
+            "La de 72 € cubre una caída menor, porque protege desde más abajo; por eso cuesta menos (0,60 €).",
+            "Las pérdidas máximas son distintas: 8,60 € con la de 72 € y 5,40 € con la de 76 €.",
+            "La de 76 € está más cerca del precio y cuesta más (1,40 €), no menos.",
+            null
+          ]
+        },
+        {
+          "id": "op42-3",
+          "t": "num",
+          "q": "Tienes acciones compradas a 80 € y compras una put a 1 mes de ejercicio 80 € por 2,60 € por acción. Si la ejerces al vencimiento, ¿cuál es tu pérdida máxima por acción, contando la prima? Supón que no hay dividendos ni comisiones.",
+          "unit": "€",
+          "a": 2.6,
+          "why": "(80 € − 80 €) + 2,60 € = 2,60 € por acción: la más cara es la que más protege.",
+          "tol": 0.01,
+          "guia": "g3"
+        },
+        {
+          "id": "op42-4",
+          "t": "num",
+          "q": "Tus acciones valen 80 € y publican resultados dentro de 3 semanas. Una put a 1 mes de ejercicio 72 € cuesta 0,60 € por acción. ¿Qué porcentaje del valor de las acciones pagas por cubrir ese evento? Redondea a 2 decimales.",
+          "unit": "%",
+          "a": 0.75,
+          "why": "0,60 € ÷ 80 € = 0,75 %, frente al 9 % de renovar doce puts.",
+          "tol": 0.01,
+          "guia": "g4"
+        },
+        {
+          "id": "op42-5",
+          "t": "choice",
+          "q": "Quieres protegerte solo ante unos resultados que se publican dentro de tres semanas y luego dejar las acciones sin protección. ¿Qué plazo encaja mejor?",
+          "opts": [
+            "Una put a 12 meses, porque siempre sale más barata en euros",
+            "Doce puts de 1 mes seguidas, para tener la protección más cara posible",
+            "Ninguna: una put solo se puede comprar a 12 meses",
+            "Una put a 1 mes, que cubre el evento y se paga una sola vez"
+          ],
+          "a": 3,
+          "why": "La put a 1 mes cubre los resultados por 0,60 € por acción. La de 12 meses cuesta 4,00 €, mucho más en euros.",
+          "guia": "g4",
+          "porque": [
+            "La put a 12 meses cuesta 4,00 €, mucho más que los 0,60 € de la de 1 mes, aunque salga más barata por año.",
+            "Doce puts de 1 mes suman 7,20 € y protegen todo el año, no solo el evento.",
+            "Las puts se pueden comprar a muchos vencimientos, como 1 mes, y no solo a 12.",
+            null
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

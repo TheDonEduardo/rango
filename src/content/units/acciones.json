@@ -26,7 +26,7 @@
     {
       "id": "g4",
       "titulo": "Lo que cuesta operar",
-      "texto": "Cada operación tiene costes: la comisión del bróker y el spread, la diferencia entre el precio de compra y el de venta. Con importes pequeños pesan mucho.",
+      "texto": "Cada operación tiene costes: la comisión del bróker y el spread, la diferencia entre el precio al que puedes comprar y el que puedes vender. Con importes pequeños pesan mucho.",
       "ejemplo": "100 acciones a 15 € con 5 € de comisión al comprar y 5 € al vender: necesitas que suba a 15,10 € solo para no perder."
     }
   ],
@@ -169,7 +169,7 @@
         {
           "id": "ba2-2",
           "t": "num",
-          "q": "Precio de compra (bid): 9,95 €. Precio de venta (ask): 10,05 €. ¿Cuál es el spread?",
+          "q": "Precio al que puedes vender (bid): 9,95 €. Precio al que puedes comprar (ask): 10,05 €. ¿Cuál es el spread?",
           "unit": "€",
           "a": 0.1,
           "why": "10,05 − 9,95 = 0,10 €. Si compras a mercado y vendes al instante, pierdes esos 0,10 € por acción; en valores poco negociados el spread es mayor.",

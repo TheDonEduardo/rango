@@ -1,0 +1,176 @@
+{
+  "n": 25,
+  "id": "primermes",
+  "track": "basico",
+  "title": "Tu primer mes en el bróker",
+  "blurb": "Qué mirar tras tu primera compra, cómo leer el resultado y por qué empieza en rojo.",
+  "gate": false,
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Mira lo que ya ha pasado",
+      "texto": "Tras comprar, revisa la orden ejecutada: cuántas acciones, a qué precio y con qué comisión. En el extracto verás el precio medio: lo que te ha costado cada acción, comisión incluida. Son datos fijos; la cotización cambia cada segundo.",
+      "ejemplo": "25 acciones a 20,04 € y 2 € de comisión: 501 € + 2 € = 503 €. Precio medio: 503 ÷ 25 = 20,12 €."
+    },
+    {
+      "id": "g2",
+      "titulo": "Lee el resultado en euros y en %",
+      "texto": "Resultado en euros = lo que podrías vender hoy (sin la comisión de venta) − lo que pagaste en total. En % = resultado ÷ lo que pagaste. No mires la cotización a diario: revisa el extracto una vez al mes.",
+      "ejemplo": "Costaron 503 €; hoy podrías vender a 20,60 €: 25 × 20,60 € = 515 €. Ganas 12 €, y 12 ÷ 503 = 2,4 %."
+    },
+    {
+      "id": "g3",
+      "titulo": "Por qué empieza en rojo",
+      "texto": "Hay dos costes de entrada: la comisión y la horquilla (compras más caro de lo que te darían por vender). Por eso empiezas en rojo sin que el precio se mueva. Al vender hay otra comisión.",
+      "ejemplo": "Compras a 20,04 € y podrías vender a 19,96 €: 25 × 0,08 € = 2 €, más 2 € de comisión: −4 €. Vender sin perder: 20,20 € (505 ÷ 25)."
+    },
+    {
+      "id": "g4",
+      "titulo": "Si cae un 10 %",
+      "texto": "Una caída del 10 % en el primer mes es habitual. Pregúntate si ha cambiado tu plan (objetivo, plazo, dinero que necesitarás), no qué hace el precio. Si no ha cambiado, no hagas nada.",
+      "ejemplo": "De 20,00 € a 18,00 €: 25 × 18 € = 450 €, frente a 503 € pagados: −53 € sin haber vendido (−10,5 %)."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "pm1",
+      "title": "Qué mirar y cómo leerlo",
+      "ex": [
+        {
+          "id": "pm1-1",
+          "t": "choice",
+          "q": "Acabas de hacer tu primera compra de acciones. ¿Qué rutina te conviene durante el primer mes?",
+          "opts": [
+            "Abrir la app cada hora y vender si el precio baja más de un 1 %, para no perder dinero",
+            "Mirar solo la cotización y no leer nunca el extracto, porque la comisión no se ve en él",
+            "Comprobar la orden ejecutada y leer el extracto a fin de mes, sin vigilar el precio a diario",
+            "Cambiar de acción cada semana, para que la compra del primer mes no acabe en rojo"
+          ],
+          "a": 2,
+          "why": "Lo fijo es lo que importa: la orden ejecutada y el extracto, una vez al mes. La cotización de cada día es ruido que invita a decidir por impulso.",
+          "guia": "g2",
+          "porque": [
+            "Vigilar cada hora y vender por un 1 % convierte el ruido en pérdidas con comisiones; el plan no se decide por la cotización.",
+            "El extracto sí muestra las comisiones cobradas, y leerlo es parte de la rutina mensual.",
+            null,
+            "Cambiar de acción cada semana multiplica las comisiones y la horquilla; el primer mes rojo se debe a ellas."
+          ]
+        },
+        {
+          "id": "pm1-2",
+          "t": "num",
+          "q": "Compras 25 acciones y la orden se ejecuta a 20,04 € por acción, con 2 € de comisión. ¿Cuántos euros te cuesta la compra en total, comisión incluida?",
+          "unit": "€",
+          "a": 503,
+          "why": "25 × 20,04 € = 501 €; con los 2 € de comisión, 503 €.",
+          "guia": "g1"
+        },
+        {
+          "id": "pm1-3",
+          "t": "num",
+          "q": "Una compra de 25 acciones te ha costado 503 € en total, comisión incluida. ¿Cuál es tu precio medio por acción? Responde en euros, redondeando a 2 decimales.",
+          "unit": "€",
+          "a": 20.12,
+          "why": "503 ÷ 25 = 20,12 €: algo más que los 20,04 € de la orden, porque el precio medio incluye la comisión.",
+          "tol": 0.01,
+          "guia": "g1"
+        },
+        {
+          "id": "pm1-4",
+          "t": "num",
+          "q": "Tus 25 acciones te costaron 503 € en total. Hoy podrías venderlas a 20,60 € cada una. ¿Cuántos euros ganas, sin haber vendido todavía y sin contar la comisión de venta?",
+          "unit": "€",
+          "a": 12,
+          "why": "25 × 20,60 € = 515 €, y 515 € − 503 € = 12 €.",
+          "guia": "g2"
+        },
+        {
+          "id": "pm1-5",
+          "t": "num",
+          "q": "Tus 25 acciones te costaron 503 € en total y hoy podrías venderlas por 515 € (20,60 € cada una). ¿Qué porcentaje ganas sobre lo que pagaste? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 2.4,
+          "why": "12 € ÷ 503 € = 2,39 %, que redondeado es 2,4 %. El porcentaje se calcula sobre lo pagado.",
+          "tol": 0.06,
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "pm2",
+      "title": "Rojo por costes y caídas",
+      "ex": [
+        {
+          "id": "pm2-1",
+          "t": "choice",
+          "q": "Compras una acción y, un minuto después, tu posición aparece en rojo aunque el precio de mercado no se ha movido. ¿Cuál es la causa más probable?",
+          "opts": [
+            "El bróker cobra una comisión por cada minuto que la posición está abierta",
+            "Pagaste una comisión y la horquilla: compras algo más caro de lo que te darían por venderla",
+            "La bolsa corrige siempre a la baja justo después de cada compra pequeña",
+            "Tu orden se ha ejecutado dos veces por error y el extracto lo corregirá solo"
+          ],
+          "a": 1,
+          "why": "La comisión y la horquilla son costes de entrada: el resultado empieza por debajo de cero aunque el precio no cambie.",
+          "guia": "g3",
+          "porque": [
+            "El bróker cobra comisión por operación, no por minuto de posición abierta.",
+            null,
+            "La bolsa no corrige a la baja por cada compra pequeña; no hay ningún patrón así.",
+            "Una orden ejecutada dos veces se vería en el extracto, y no es la causa habitual de un primer mes en rojo."
+          ]
+        },
+        {
+          "id": "pm2-2",
+          "t": "num",
+          "q": "Compras 25 acciones a 20,04 € cada una, con 2 € de comisión, y en ese momento podrías venderlas a 19,96 € cada una. ¿Cuántos euros pierdes al instante, sumando la comisión y la diferencia entre ambos precios?",
+          "unit": "€",
+          "a": 4,
+          "why": "La diferencia de precios es 20,04 € − 19,96 € = 0,08 € × 25 = 2 €; con 2 € de comisión, 4 €.",
+          "guia": "g3"
+        },
+        {
+          "id": "pm2-3",
+          "t": "num",
+          "q": "Tus 25 acciones te costaron 503 € y, al vender, el bróker cobra otros 2 € de comisión. ¿A qué precio por acción tienes que poder vender para no perder? Redondea a 2 decimales.",
+          "unit": "€",
+          "a": 20.2,
+          "why": "503 € + 2 € = 505 €, y 505 € ÷ 25 = 20,20 € por acción.",
+          "tol": 0.01,
+          "guia": "g3"
+        },
+        {
+          "id": "pm2-4",
+          "t": "num",
+          "q": "Tus 25 acciones te costaron 503 € en total. El precio cae un 10 % en el primer mes, de 20,00 € a 18,00 €, y podrías venderlas a ese precio. ¿Cuántos euros pierdes sin haber vendido, sin contar la comisión de venta?",
+          "unit": "€",
+          "a": 53,
+          "why": "25 × 18,00 € = 450 €, y 503 € − 450 € = 53 €: un 10,5 % de lo pagado, algo más que el 10 % por los costes.",
+          "guia": "g4"
+        },
+        {
+          "id": "pm2-5",
+          "t": "choice",
+          "q": "A las dos semanas de tu primera compra, el precio cae un 10 %. Tu plan (aportar cada mes durante 10 años) no ha cambiado. ¿Qué haces?",
+          "opts": [
+            "Vendes todo ya: una caída del 10 % en el primer mes demuestra que te equivocaste",
+            "Compras el triple de golpe para recuperar la pérdida cuanto antes",
+            "Cambias de bróker para que el precio vuelva a subir antes",
+            "Nada: sigues con el plan, porque lo que lo justificaba no ha cambiado"
+          ],
+          "a": 3,
+          "why": "Un 10 % de caída es habitual y no cambia tu objetivo ni tu plazo. Decidir solo por el precio es lo que convierte una caída en pérdida real.",
+          "guia": "g4",
+          "porque": [
+            "Vender todo por una caída del 10 % fija la pérdida sin que haya cambiado tu plan, y una caída así es habitual.",
+            "Comprar el triple de golpe aumenta el riesgo y rompe el plan de aportar cada mes un importe fijo.",
+            "El bróker no influye en el precio de la acción; cambiar de bróker solo añade costes.",
+            null
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

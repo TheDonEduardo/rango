@@ -1462,5 +1462,20 @@
  {
   "termino": "índice de volatilidad",
   "d": "Mide la volatilidad anual que descuentan las opciones sobre un índice bursátil para el próximo mes. Suele subir cuando el mercado cae: el termómetro del miedo."
+ },
+ {
+  "termino": "oráculo",
+  "alias": [
+   "oráculos"
+  ],
+  "d": "Servicio que lleva a la cadena de bloques datos de fuera, como un precio, para que los contratos inteligentes los lean. El contrato se fía de él."
+ },
+ {
+  "termino": "mediana",
+  "d": "El valor central de una lista ordenada. Con 50, 51 y 76 es 51: un dato extremo apenas la mueve."
+ },
+ {
+  "termino": "precio medio",
+  "d": "Lo que te ha costado de media cada acción, comisión incluida: el total pagado entre las acciones compradas."
  }
 ]
