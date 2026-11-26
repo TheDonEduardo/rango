@@ -361,6 +361,8 @@ ul.itin-l{list-style:'✓  '}
 .fig .t-sel{stroke:var(--sel)} .fig text.t-sel{fill:var(--sel);stroke:none}
 .fig .t-acc{stroke:var(--accent-edge)} .fig text.t-acc{fill:var(--ink);stroke:none}
 .fig .t-ink{stroke:var(--ink)} .fig text.t-ink{fill:var(--ink);stroke:none}
+.fig .fb{fill-opacity:.22;stroke-width:1.5} .fig .fb.llena{fill-opacity:.85}
+.fig rect.t-up{fill:var(--up)} .fig rect.t-dn{fill:var(--down)} .fig rect.t-sel{fill:var(--sel)} .fig rect.t-acc{fill:var(--accent)} .fig rect.t-ink{fill:var(--ink)}
 
 .row.copia{display:flex;gap:10px;flex-wrap:wrap}.row.copia .btn{flex:1 1 140px}
 .confirma{margin-top:12px;padding:14px 16px;border-radius:14px;background:var(--surface);border:2px solid var(--accent)}

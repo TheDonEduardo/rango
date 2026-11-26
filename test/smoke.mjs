@@ -47,10 +47,15 @@ for (const u of units) {
       ids.add(c.id);
       if (c.figura) {
         const f = c.figura, w = `${u.id}/${c.id}`;
-        if (!['velas', 'curvas'].includes(f.type) || !f.alt) errs.push(w + ': figura sin tipo válido o sin alt');
-        const n = f.type === 'velas' ? (f.data || []).length : Math.max(0, ...(f.series || []).map(se => se.data.length));
+        if (!['velas', 'curvas', 'barras'].includes(f.type) || !f.alt) errs.push(w + ': figura sin tipo válido o sin alt');
+        const n = f.type === 'barras' ? (f.barras || []).length : f.type === 'velas' ? (f.data || []).length : Math.max(0, ...(f.series || []).map(se => se.data.length));
         if (!n) errs.push(w + ': figura sin datos');
         if (f.type === 'velas' && !f.data.every(v => v === null || v.length === 4 && v[1] >= Math.max(v[0], v[3]) && v[2] <= Math.min(v[0], v[3]))) errs.push(w + ': vela mal formada en la figura');
+        if (f.type === 'barras') {
+          const ok = v => typeof v === 'number' && v >= 0;
+          for (const b of f.barras || []) if (!b.texto || !(b.segmentos ? b.segmentos.length && b.segmentos.every(g => ok(g.valor) && g.valor > 0 && g.texto) : ok(b.valor))) errs.push(w + ': barra mal formada en la figura');
+          for (const l of f.lineas || []) if (!ok(l.y)) errs.push(w + ': línea de referencia mal formada en la figura');
+        }
         if (f.x !== undefined) {
           if (f.type !== 'curvas' || !Array.isArray(f.x) || !f.x.every(v => typeof v === 'number') || (f.series || []).some(se => se.data.length !== f.x.length)) errs.push(w + ': x debe ser numérica, solo en curvas y de la misma longitud que cada serie');
           else if (f.x.some((v, i) => i && v < f.x[i - 1])) errs.push(w + ': x decreciente en la figura');

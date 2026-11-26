@@ -9,6 +9,11 @@
 //   {type:'curvas', series:[{data:[...],texto,tono?,dy?}], alt, h?, lineas, marcas:[{i,y,texto,lado?}], llaves, zonas}
 //     x?: [...] posiciones x (misma longitud que cada serie, no decreciente; repetidas = escalón vertical); sin x, reparto por índice. marcas, llaves y zonas siguen usando el índice del array
 //     dy: desplaza en vertical el nombre de la serie (si dos acaban en el mismo punto)
+//   {type:'barras', barras:[{texto, valor?, tono?, segmentos?:[{valor,texto,tono?}]}], alt, h?, unidad?, lineas?, margen?, ancho?}
+//     barras verticales con escala desde 0 y el nombre (texto) debajo de cada una; el valor va encima (valor:false lo oculta)
+//     segmentos: barra apilada (el primero abajo); su valor total es la suma y cada segmento lleva su texto dentro (con la cifra ya escrita)
+//     unidad: sufijo del valor ('€' por defecto; '' = sin unidad). lineas:[{y,texto?,tono?}]: referencia horizontal (objetivo); su texto va
+//     arriba de la línea, a la derecha; con margen (px a la derecha de las barras, p. ej. 150) cabe sin pisarlas. ancho: ancho máximo de barra
 // lado: 'd' (derecha, por defecto) o 'i' (izquierda). tono: 'up', 'dn', 'sel', 'acc' o 'ink'.
 import {esc} from './util.js';
 
@@ -93,8 +98,36 @@ function curvas(f) {
   });
   return s + anotaciones(f, X, y, 0);
 }
+const miles = v => String(Math.round(v)).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+function barras(f) {
+  const H = f.h || 240, top = 24, bot = 30, pl = 16, pr = 16, mg = f.margen || 0, u = f.unidad === undefined ? ' €' : (f.unidad ? ' ' + f.unidad : '');
+  const tot = b => b.segmentos ? b.segmentos.reduce((a, g) => a + g.valor, 0) : b.valor;
+  const max = Math.max(...f.barras.map(tot), ...(f.lineas || []).map(l => l.y));
+  const y = v => H - bot - v / max * (H - top - bot), n = f.barras.length, area = W - pl - pr - mg, slot = area / n, bw = Math.min(slot * 0.8, f.ancho || 220);
+  let s = `<line class="fl t-ink" style="stroke-dasharray:none;stroke-width:1.2" x1="${pl}" x2="${W - pr - mg}" y1="${y(0)}" y2="${y(0)}"/>`;
+  f.barras.forEach((b, i) => {
+    const cx = pl + slot * i + slot / 2, x = cx - bw / 2;
+    if (b.segmentos) {
+      let acc = 0;
+      b.segmentos.forEach(g => {
+        const a = y(acc + g.valor), c = y(acc);
+        s += `<rect class="fb t-${g.tono || b.tono || 'sel'}" x="${x.toFixed(1)}" y="${a.toFixed(1)}" width="${bw.toFixed(1)}" height="${(c - a).toFixed(1)}"/>`;
+        if (g.texto && c - a >= 15) s += txt(cx, (a + c) / 2 + 4, g.texto, '', 'middle');
+        acc += g.valor;
+      });
+    } else s += `<rect class="fb llena t-${b.tono || 'sel'}" x="${x.toFixed(1)}" y="${y(b.valor).toFixed(1)}" width="${bw.toFixed(1)}" height="${(y(0) - y(b.valor)).toFixed(1)}"/>`;
+    if (b.valor !== false) s += txt(cx, y(tot(b)) - 7, miles(tot(b)) + u, '', 'middle');
+    s += txt(cx, H - 10, b.texto, 'fkt', 'middle');
+  });
+  (f.lineas || []).forEach(l => {
+    const yy = y(l.y).toFixed(1);
+    s += `<line class="fl t-${l.tono || 'ink'}" x1="${pl}" x2="${W - pr}" y1="${yy}" y2="${yy}"/>`;
+    if (l.texto) s += txt(mg ? W - pr - mg + 6 : W - pr, y(l.y) - 5, l.texto, 'fkt', mg ? 'start' : 'end');
+  });
+  return s;
+}
 export function figuraSVG(f) {
-  const H = f.h || (f.type === 'curvas' ? 200 : 220);
-  const cuerpo = f.type === 'curvas' ? curvas(f) : velas(f);
+  const H = f.h || (f.type === 'curvas' ? 200 : f.type === 'barras' ? 240 : 220);
+  const cuerpo = f.type === 'curvas' ? curvas(f) : f.type === 'barras' ? barras(f) : velas(f);
   return `<svg class="svg fig" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(f.alt)}">${cuerpo}</svg>`;
 }

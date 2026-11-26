@@ -58,33 +58,39 @@
       "titulo": "El ahorro previo",
       "texto": "El banco suele financiar hasta el 80 %. Necesitas la entrada del 20 % y cerca de un 10 % más para impuestos y gastos: en torno al 30 % del precio.",
       "figura": {
-        "type": "velas",
-        "h": 290,
-        "alt": "Piso de 200.000 €: la hipoteca cubre 160.000 € (80 %), la entrada son 40.000 € (20 %) y los gastos suman otros 20.000 € (10 %).",
-        "data": [null],
-        "franjas": [
+        "type": "barras",
+        "h": 260,
+        "alt": "Piso de 200.000 €: la hipoteca cubre 160.000 € (80 %) y la entrada son 40.000 € (20 %). Lo que pone el comprador son 60.000 €: la entrada de 40.000 € más 20.000 € de gastos (10 % del precio).",
+        "barras": [
           {
-            "y1": 0,
-            "y2": 160000,
-            "texto": "Hipoteca (80 %): 160.000 €"
+            "texto": "Precio del piso",
+            "segmentos": [
+              {
+                "valor": 160000,
+                "texto": "Hipoteca: 160.000 €",
+                "tono": "ink"
+              },
+              {
+                "valor": 40000,
+                "texto": "Entrada: 40.000 €",
+                "tono": "sel"
+              }
+            ]
           },
           {
-            "y1": 160000,
-            "y2": 200000,
-            "texto": "Entrada (20 %): 40.000 €"
-          },
-          {
-            "y1": 200000,
-            "y2": 220000,
-            "texto": "Gastos (10 %): 20.000 €"
-          }
-        ],
-        "lineas": [
-          {
-            "y": 160000
-          },
-          {
-            "y": 200000
+            "texto": "Lo que pones tú",
+            "segmentos": [
+              {
+                "valor": 40000,
+                "texto": "Entrada: 40.000 €",
+                "tono": "sel"
+              },
+              {
+                "valor": 20000,
+                "texto": "Gastos: 20.000 €",
+                "tono": "acc"
+              }
+            ]
           }
         ]
       },

@@ -11,33 +11,29 @@
       "titulo": "El presupuesto 50/30/20",
       "texto": "Una guía para empezar: un 50 % de tus ingresos a necesidades, un 30 % a deseos y un 20 % a ahorro. Lo importante es que el ahorro tenga su parte fija.",
       "figura": {
-        "type": "velas",
-        "h": 210,
-        "alt": "Reparto de 1.600 € al mes: 800 € a necesidades (50 %), 480 € a deseos (30 %) y 320 € a ahorro (20 %).",
-        "data": [null],
-        "franjas": [
+        "type": "barras",
+        "h": 260,
+        "alt": "Una barra apilada de 1.600 € al mes: 800 € a necesidades (50 %), 480 € a deseos (30 %) y 320 € a ahorro (20 %).",
+        "barras": [
           {
-            "y1": 0,
-            "y2": 800,
-            "texto": "Necesidades: 800 € (50 %)"
-          },
-          {
-            "y1": 800,
-            "y2": 1280,
-            "texto": "Deseos: 480 € (30 %)"
-          },
-          {
-            "y1": 1280,
-            "y2": 1600,
-            "texto": "Ahorro: 320 € (20 %)"
-          }
-        ],
-        "lineas": [
-          {
-            "y": 800
-          },
-          {
-            "y": 1280
+            "texto": "Sueldo mensual",
+            "segmentos": [
+              {
+                "valor": 800,
+                "texto": "Necesidades: 800 € (50 %)",
+                "tono": "sel"
+              },
+              {
+                "valor": 480,
+                "texto": "Deseos: 480 € (30 %)",
+                "tono": "acc"
+              },
+              {
+                "valor": 320,
+                "texto": "Ahorro: 320 € (20 %)",
+                "tono": "up"
+              }
+            ]
           }
         ]
       },
