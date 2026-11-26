@@ -11,6 +11,7 @@ import {CONTACTO} from './config.js';
 import {cuentaActiva,enviarEnlace,leerRetorno,sincronizar,cerrarSesion,borrarCuenta,sesion,fusionar,configurar,subirAlSalir} from './sync.js';
 import {compartirLogro} from './compartir.js';
 import {medir} from './medicion.js';
+import {sonAcierto,sonFallo,sonFin} from './sonido.js';
 import {homeHTML} from './views/home.js';
 import {lessonHTML,resultHTML,failHTML} from './views/lesson.js';
 import {simHTML,simInfo,simValid,simSave,simHist,simulate,SIM_PLACE} from './views/sim.js';
@@ -97,6 +98,7 @@ function check(){
   const run=ses.run,ex=run.queue[0],ok=TIPOS[ex.t].correct(ex,run);
   run.ok=ok;run.checked=true;
   // Solo cuenta el primer intento de cada ejercicio. En el test de nivel no hay vidas ni repaso.
+  run.primero=!run.seen.has(ex);
   if(!run.seen.has(ex)){
     run.seen.add(ex);if(!ok)run.firstWrong++;
     // El test de nivel solo anota su resultado: no entra en el repaso ni en las estadísticas.
@@ -105,6 +107,12 @@ function check(){
     save();
   }
   if(!ok&&!esPrueba(run.L))run.lives--;
+  // Refuerzo: sonido y mensaje de ánimo (en una racha de 3 o más aciertos a la primera, la cuenta).
+  const unaVez=run.primero;
+  if(unaVez){run.racha=ok?(run.racha||0)+1:0}
+  const al=l=>l[Math.floor(Math.random()*l.length)];
+  run.msg=ok?(unaVez&&run.racha>=3?t.animoRacha(run.racha):al(t.animoOk)):al(t.animoFallo);
+  (ok?sonAcierto:sonFallo)();
   try{if(typeof navigator!=='undefined'&&navigator.vibrate)navigator.vibrate(ok?12:[30,50,30])}catch(e){}
   render();
 }
@@ -144,6 +152,7 @@ function finishTest(){
 }
 function finish(){
   const run=ses.run;
+  sonFin();
   if(run.L.kind==='test'){finishTest();return}
   if(run.L.kind==='nivel'){finishNivel();return}
   const right=run.total-run.firstWrong,acc=right/run.total,xp=right*10+(run.firstWrong===0?10:0),hoy=today();
@@ -279,6 +288,7 @@ const ACCIONES={
     ses.borrarArm=false;borrarCuenta().then(()=>{toast(t.cuentaBorrada);render()},()=>{toast(t.cuentaError);render()});
   },
   meta(b){S.meta=+b.dataset.m;save();render()},
+  sonido(){S.sonido=S.sonido===false;save();render();sonAcierto()},
   objetivo(b){S.objetivo=b.dataset.track;S.track=b.dataset.track;save();ses.homeY=0;render()},
   noobjetivo(){S.objetivo='ninguno';save();render()},
   nonivel(b){S.pruebas[b.dataset.track]={saltada:true};save();render()},

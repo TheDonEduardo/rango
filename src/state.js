@@ -5,7 +5,7 @@ import {FLAT,EXBYID,TRACKS,trackOf,libre} from './content.js';
 // Versión del formato guardado. Cada cambio de formato añade un paso a MIGRAR (de la versión n a la n+1),
 // así el progreso de quien ya usa la app se convierte en vez de perderse.
 export const STATE_V=3;
-export const DEF=()=>({v:STATE_V,xp:0,streak:0,last:null,day:null,dayXp:0,done:{},all:false,track:'basico',skipBasics:false,legal:0,srs:{},sim:{},calc:null,itin:null,mercado:null,stats:{ex:{},min:0},guias:{},leidas:{},aprendidos:{},dominadas:{},pruebas:{},meta:40,protector:0,objetivo:null,medir:false,reto:null,mod:0});
+export const DEF=()=>({v:STATE_V,xp:0,streak:0,last:null,day:null,dayXp:0,done:{},all:false,track:'basico',skipBasics:false,legal:0,srs:{},sim:{},calc:null,itin:null,mercado:null,stats:{ex:{},min:0},guias:{},leidas:{},aprendidos:{},dominadas:{},pruebas:{},meta:40,protector:0,objetivo:null,medir:false,sonido:true,reto:null,mod:0});
 // Meta diaria elegible y máximo de protectores (antes de load(), que sanea el estado al leerlo).
 export const META_OPC=[20,40,80], PROTECTOR_MAX=2;
 const MIGRAR={

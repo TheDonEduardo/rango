@@ -434,6 +434,8 @@ ul.itin-l{list-style:'✓  '}
   @keyframes acierto{40%{transform:scale(1.025)}}
   .opt.bad,.num.bad{animation:fallo .34s ease-in-out}
   @keyframes fallo{20%{transform:translateX(-5px)}45%{transform:translateX(5px)}70%{transform:translateX(-3px)}}
+  .prog.pulso{animation:pulso .3s ease-out}
+  @keyframes pulso{from{outline:2px solid var(--up);outline-offset:0}to{outline:2px solid transparent;outline-offset:6px}}
   .res-top .g,.res-top>svg{animation:vela .5s cubic-bezier(.2,.9,.3,1.3)}
   @keyframes vela{from{transform:scale(.6);opacity:0}}
   .res .metrics>div{animation:entra .3s ease-out backwards}

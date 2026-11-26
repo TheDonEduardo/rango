@@ -33,7 +33,7 @@ function tableHTML(ex){
 export function lessonHTML(){
   const run=ses.run,ex=run.queue[0],T=TIPOS[ex.t],pct=Math.round(run.done/run.total*100);
   let hearts='';for(let i=0;i<3;i++)hearts+=`<svg class="heart ${i<run.lives?'on':'off'}" viewBox="0 0 24 24" aria-hidden="true"><path d="${P.heart}" fill="currentColor"/></svg>`;
-  let h=`<div class="lesson"><div class="lbar"><button class="x" data-act="quit" aria-label="${t.salirLeccion}">${icoX}</button><div class="prog" role="progressbar" aria-label="${t.progresoLeccion}" aria-valuemin="0" aria-valuemax="${run.total}" aria-valuenow="${run.done}"><i style="width:${pct}%;--de:${run.pctVisto==null?pct:run.pctVisto}%"></i></div>${run.L.kind==='test'||run.L.kind==='nivel'?'':`<div class="lives" role="img" aria-label="${t.vidas(run.lives)}">${hearts}</div>`}</div>`;
+  let h=`<div class="lesson"><div class="lbar"><button class="x" data-act="quit" aria-label="${t.salirLeccion}">${icoX}</button><div class="prog${run.checked&&run.ok?' pulso':''}" role="progressbar" aria-label="${t.progresoLeccion}" aria-valuemin="0" aria-valuemax="${run.total}" aria-valuenow="${run.done}"><i style="width:${pct}%;--de:${run.pctVisto==null?pct:run.pctVisto}%"></i></div>${run.L.kind==='test'||run.L.kind==='nivel'?'':`<div class="lives" role="img" aria-label="${t.vidas(run.lives)}">${hearts}</div>`}</div>`;
   run.pctVisto=pct;
   h+=`<div class="qwrap${run.checked?'':' entra'}"><p class="kind">${ex.caso?t.casoReal(esc(ex.caso)):''}${t.tipos[ex.t]}</p>${fuenteHTML(ex,run)}<h1 class="q">${glos(tx(ex.q))}</h1>${chartHTML(ex,run)}${tableHTML(ex)}${T.html?T.html(ex,run):''}</div>`;
   if(!run.checked){
@@ -41,7 +41,7 @@ export function lessonHTML(){
   }else{
     const ans=run.ok?'':(T.answerHTML?T.answerHTML(ex):`<p class="ans">${t.respuesta}: ${tx(T.answer(ex))}</p>`)
       +(ex.guia?`<button class="link teoria" data-act="guiarepaso" data-g="${ex.guia}">${t.repasarTeoria}</button>`:'');
-    h+=`<div class="fb ${run.ok?'good':'bad'}" role="status"><div class="fb-h">${run.ok?icoOk:icoX}<span>${run.ok?t.correcto:t.incorrecto}</span></div>${run.ok||!T.fallo?'':T.fallo(ex,run)}<p>${glos(tx(ex.why))}</p>${ans}<button class="btn primary" data-act="next">${t.continuar}</button><button class="link reporte" data-act="reportar">${t.verError}</button></div>`;
+    h+=`<div class="fb ${run.ok?'good':'bad'}" role="status"><div class="fb-h">${run.ok?icoOk:icoX}<span>${run.msg||(run.ok?t.correcto:t.incorrecto)}</span></div>${run.ok||!T.fallo?'':T.fallo(ex,run)}<p>${glos(tx(ex.why))}</p>${ans}<button class="btn primary" data-act="next">${t.continuar}</button><button class="link reporte" data-act="reportar">${t.verError}</button></div>`;
   }
   return h+'</div>';
 }

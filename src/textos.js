@@ -103,7 +103,9 @@ export const t={
 
   // Lección
   salirLeccion:'Salir de la lección', progresoLeccion:'Progreso de la lección', vidas:n=>`${n} ${pl(n,'vida','vidas')}`,
-  casoReal:c=>`Caso real: ${c} · `, comprobar:'Comprobar', correcto:'Correcto', incorrecto:'Incorrecto', respuesta:'Respuesta',
+  casoReal:c=>`Caso real: ${c} · `, comprobar:'Comprobar', correcto:'Correcto', incorrecto:'Incorrecto',
+  animoOk:['¡Bien!','Correcto','Eso es','Muy bien visto','Exacto','Bien resuelto'], animoRacha:n=>`${n} seguidas`,
+  animoFallo:['Casi','Vuelve a intentarlo después','Otra vez será','Así se aprende'], sonidos:'Sonidos', sonidosNota:'Un tono breve al acertar, al fallar y al terminar una lección.', respuesta:'Respuesta',
   tipos:{choice:'Elige una respuesta',num:'Escribe el resultado',tap:'Toca una vela del gráfico',level:'Toca una línea del gráfico',
     order:'Ordena los pasos',match:'Empareja cada uno con su descripción',plan:'Arrastra las líneas del gráfico',slide:'Mueve el deslizador',zone:'Marca la zona: arrastra el techo y el suelo'},
   tuRespuesta:'Tu respuesta', tusParejas:'Tus parejas', tuOrden:'Tu orden', tocaDescripcion:'Toca su descripción', quitar:x=>`Quitar: ${x}`,

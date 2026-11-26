@@ -51,6 +51,7 @@ export function statsHTML(){
   <dl class="simk"><div><dt>${t.xp}</dt><dd>${S.xp}</dd></div><div><dt>${t.rachaM}</dt><dd>${t.dias(streakNow())}</dd></div>
   <div><dt>${t.aciertoPrimera}</dt><dd>${n?fmt((n-f)/n*100,0)+' %':'—'}</dd></div><div><dt>${t.tiempoEstudio}</dt><dd>${t.tiempo(S.stats.min||0)}</dd></div></dl>
   <h2 class="sub">${t.metaDiaria}</h2><div class="meta-opc" role="group" aria-label="${t.metaDiaria}">${META_OPC.map(m=>`<button class="btn ${S.meta===m?'primary':'line'}" data-act="meta" data-m="${m}" aria-pressed="${S.meta===m}">${t.metaXP(m)}</button>`).join('')}</div>
+  <h2 class="sub">${t.sonidos}</h2><p class="note">${t.sonidosNota}</p><button class="btn ${S.sonido!==false?'primary':'line'}" data-act="sonido" aria-pressed="${S.sonido!==false}">${t.sonidos}</button>
   <p class="note">${t.protectores(S.protector,PROTECTOR_MAX)}</p>
   <ul class="st-rutas">${rutas}</ul>
   <p class="note">${(g=>t.guiasLeidasT(g.leidas,g.total))(guiasLeidas())}</p>

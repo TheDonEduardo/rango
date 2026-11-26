@@ -997,6 +997,14 @@ if (caducados.length) console.warn('AVISO: contenido pendiente de revisar (norma
   T.importar(copia); T.configurar({url: '', anon: ''}); globalThis.fetch = fetchAntes;
 }
 
+// Refuerzo y sonido: textos, preferencia por defecto y módulo precargado.
+{
+  const src = fs.readFileSync(path.join(root, 'src/textos.js'), 'utf8');
+  for (const k of ['animoOk', 'animoRacha', 'animoFallo', 'sonidos', 'sonidosNota']) if (!new RegExp('\\b' + k + ':').test(src)) errs.push('textos: falta ' + k);
+  if (T.getState().sonido !== true) errs.push('S.sonido no es true por defecto');
+  if (!pre.includes('src/sonido.js')) errs.push('src/sonido.js no está en PRECACHE');
+}
+
 if (errs.length) { console.error('FALLOS:\n- ' + errs.join('\n- ')); process.exit(1); }
 const nc = casos ? Object.values(casos.ex).reduce((n, l) => n + l.length, 0) : 0;
 console.log(`OK: ${T.FLAT.length} lecciones, ${nc} casos reales, XP total ${T.getState().xp}`);
