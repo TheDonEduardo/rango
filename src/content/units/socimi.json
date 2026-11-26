@@ -1,0 +1,407 @@
+{
+  "n": 13,
+  "id": "socimi",
+  "track": "fundamental",
+  "title": "Inmobiliarias cotizadas",
+  "blurb": "Por qué el PER engaña en una SOCIMI o un REIT y cómo valorarla con FFO, AFFO, NAV y deuda sobre activos.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Por qué el PER engaña",
+      "texto": "En una SOCIMI o un REIT, el neto resta amortizaciones (sin caja) y suma plusvalías por ventas. Con valor razonable no amortiza, pero suma o resta revalorizaciones, tampoco caja. FFO (simplificado): neto + amortizaciones − plusvalías por ventas.",
+      "ejemplo": "Beneficio neto 30 M€, amortizaciones 18 M€ y plusvalías por ventas 14 M€: FFO = 30 + 18 − 14 = 34 M€. Con 600 M€ de capitalización, el PER es 20."
+    },
+    {
+      "id": "g2",
+      "titulo": "AFFO, P/FFO y P/AFFO",
+      "texto": "El AFFO (simplificado) es el FFO menos la inversión de mantenimiento: las obras para conservar los inmuebles alquilables. Se parece más a la caja del accionista. P/FFO y P/AFFO son la capitalización entre FFO y entre AFFO; el segundo es más exigente.",
+      "ejemplo": "Con FFO de 34 M€ y mantenimiento de 6 M€, AFFO = 28 M€. Con 600 M€ de capitalización: P/FFO = 17,6 y P/AFFO = 21,4."
+    },
+    {
+      "id": "g3",
+      "titulo": "NAV: prima o descuento",
+      "texto": "El NAV es el valor de los inmuebles menos la deuda (simplificado, sin caja). Entre las acciones, da el NAV por acción. Si el precio lo supera hay prima; si queda por debajo, descuento.",
+      "ejemplo": "Inmuebles por 900 M€ y deuda de 360 M€: NAV = 540 M€. Con 100 millones de acciones, 5,40 € por acción. A 6,00 € hay una prima del 11,1 %."
+    },
+    {
+      "id": "g4",
+      "titulo": "Deuda y dividendo",
+      "texto": "La deuda sobre activos es la deuda entre el valor de los inmuebles: más deuda, más golpea una caída al NAV. El dividendo se compara con el AFFO.",
+      "ejemplo": "Deuda 360 M€ sobre inmuebles de 900 M€: 40 %. Con un 10 % menos de valor, el NAV baja de 540 a 450 M€ (−16,7 %). Dividendo de 24 M€ sobre un AFFO de 28 M€: 85,7 %."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "sr1",
+      "title": "FFO y AFFO",
+      "ex": [
+        {
+          "id": "sr1-1",
+          "t": "num",
+          "q": "Una inmobiliaria cotizada gana 45 M€ netos, tiene 22 M€ de amortizaciones y 15 M€ de plusvalías por vender un edificio. Con el FFO simplificado, ¿cuántos M€ tiene de FFO?",
+          "unit": "M€",
+          "a": 52,
+          "why": "45 + 22 − 15 = 52 M€: se suman las amortizaciones, que no son salida de caja, y se quitan las plusvalías de ventas, que no se repiten.",
+          "table": {
+            "cols": [
+              "Dato",
+              "Valor"
+            ],
+            "rows": [
+              [
+                "Beneficio neto",
+                "45 M€"
+              ],
+              [
+                "Amortizaciones",
+                "22 M€"
+              ],
+              [
+                "Plusvalías por ventas de inmuebles",
+                "15 M€"
+              ]
+            ],
+            "note": "Empresa ficticia."
+          },
+          "guia": "g1"
+        },
+        {
+          "id": "sr1-2",
+          "t": "choice",
+          "q": "¿Por qué el PER puede dar una imagen engañosa de una inmobiliaria cotizada?",
+          "opts": [
+            "Porque los inmuebles en alquiler no generan ningún beneficio contable en la cuenta de resultados",
+            "Porque estas empresas no pueden calcular un beneficio por acción con las normas contables",
+            "Porque el PER solo se puede aplicar a empresas que no tienen ninguna deuda financiera",
+            "Porque el neto incluye partidas sin caja (amortizaciones o revalorizaciones) y plusvalías puntuales"
+          ],
+          "a": 3,
+          "why": "El beneficio neto incluye partidas sin caja (amortizaciones o revalorizaciones) y plusvalías de ventas, que no se repiten. El FFO las corrige.",
+          "guia": "g1",
+          "porque": [
+            "Sí generan beneficio: los alquileres son ingresos. Lo que distorsiona es lo que se resta (amortizaciones) y lo que se suma (plusvalías).",
+            "Calculan el beneficio por acción como cualquier empresa. El problema no es que no exista, sino lo que contiene.",
+            "El PER se calcula igual con deuda, y es habitual en inmobiliarias con ella. El problema son las amortizaciones y las plusvalías.",
+            null
+          ]
+        },
+        {
+          "id": "sr1-3",
+          "t": "num",
+          "q": "Una inmobiliaria cotizada tiene un FFO de 52 M€ y destina 9 M€ al año a la inversión de mantenimiento de sus inmuebles. ¿Cuántos M€ tiene de AFFO?",
+          "unit": "M€",
+          "a": 43,
+          "why": "52 − 9 = 43 M€: el AFFO resta las obras necesarias para conservar los inmuebles alquilables.",
+          "table": {
+            "cols": [
+              "Dato",
+              "Valor"
+            ],
+            "rows": [
+              [
+                "FFO",
+                "52 M€"
+              ],
+              [
+                "Inversión de mantenimiento",
+                "9 M€"
+              ]
+            ],
+            "note": "Empresa ficticia."
+          },
+          "guia": "g2"
+        },
+        {
+          "id": "sr1-4",
+          "t": "num",
+          "q": "Una inmobiliaria cotizada tiene un AFFO de 43 M€ y una capitalización de 645 M€. ¿Cuál es su P/AFFO, en veces?",
+          "unit": "veces",
+          "a": 15,
+          "why": "645 ÷ 43 = 15 veces el AFFO.",
+          "table": {
+            "cols": [
+              "Dato",
+              "Valor"
+            ],
+            "rows": [
+              [
+                "AFFO",
+                "43 M€"
+              ],
+              [
+                "Capitalización",
+                "645 M€"
+              ]
+            ],
+            "note": "Empresa ficticia."
+          },
+          "guia": "g2"
+        },
+        {
+          "id": "sr1-5",
+          "t": "choice",
+          "q": "Una inmobiliaria cotizada tiene un FFO de 52 M€ y un AFFO de 43 M€, con una capitalización de 645 M€. ¿Qué ratio da el múltiplo mayor?",
+          "opts": [
+            "El P/FFO, porque el FFO es menor al restar la inversión de mantenimiento",
+            "El P/AFFO, porque el AFFO es menor al restar la inversión de mantenimiento",
+            "Los dos son iguales: el FFO y el AFFO miden la misma caja",
+            "El P/FFO, porque el FFO incluye las plusvalías por ventas y se hace mayor"
+          ],
+          "a": 1,
+          "why": "645 ÷ 43 = 15,0 frente a 645 ÷ 52 = 12,4: al ser el AFFO menor, el múltiplo sale mayor. Es la medida más exigente.",
+          "table": {
+            "cols": [
+              "Dato",
+              "Valor"
+            ],
+            "rows": [
+              [
+                "FFO",
+                "52 M€"
+              ],
+              [
+                "AFFO",
+                "43 M€"
+              ],
+              [
+                "Capitalización",
+                "645 M€"
+              ]
+            ],
+            "note": "Empresa ficticia."
+          },
+          "guia": "g2",
+          "porque": [
+            "El FFO es el mayor de los dos: el AFFO es el FFO menos 9 M€. Dividir entre la cifra mayor da el múltiplo menor: 645 ÷ 52 = 12,4.",
+            null,
+            "No miden lo mismo: el AFFO descuenta la inversión de mantenimiento (9 M€). Por eso 645 ÷ 52 = 12,4 y 645 ÷ 43 = 15,0.",
+            "El FFO excluye las plusvalías por ventas, no las incluye. Y es mayor que el AFFO, así que su múltiplo es menor."
+          ]
+        },
+        {
+          "id": "sr1-6",
+          "t": "slide",
+          "q": "Con un AFFO de 43 M€, ¿cuál es la capitalización máxima que acepta quien no quiere pagar más de 14 veces el AFFO?",
+          "label": "Capitalización (M€)",
+          "min": 400,
+          "max": 800,
+          "step": 2,
+          "start": 700,
+          "a": 602,
+          "unit": "M€",
+          "why": "14 × 43 = 602 M€, y 602 ÷ 43 = 14 veces.",
+          "table": {
+            "cols": [
+              "Dato",
+              "Valor"
+            ],
+            "rows": [
+              [
+                "AFFO",
+                "43 M€"
+              ]
+            ],
+            "note": "Empresa ficticia."
+          },
+          "show": [
+            {
+              "label": "P/AFFO",
+              "k": 0.023255813953488372,
+              "b": 0,
+              "unit": "veces",
+              "dec": 1
+            }
+          ],
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 6
+    },
+    {
+      "id": "sr2",
+      "title": "NAV, deuda y dividendo",
+      "ex": [
+        {
+          "id": "sr2-1",
+          "t": "num",
+          "q": "Una inmobiliaria cotizada tiene inmuebles por 800 M€, deuda de 336 M€ y 116 millones de acciones. ¿Cuál es su NAV por acción, en euros?",
+          "unit": "€",
+          "a": 4,
+          "why": "800 − 336 = 464 M€, y 464 ÷ 116 = 4,00 € por acción.",
+          "table": {
+            "cols": [
+              "Dato",
+              "Valor"
+            ],
+            "rows": [
+              [
+                "Inmuebles",
+                "800 M€"
+              ],
+              [
+                "Deuda",
+                "336 M€"
+              ],
+              [
+                "Acciones",
+                "116 millones"
+              ],
+              [
+                "Precio",
+                "3,20 €"
+              ]
+            ],
+            "note": "Empresa ficticia."
+          },
+          "guia": "g3"
+        },
+        {
+          "id": "sr2-2",
+          "t": "num",
+          "q": "Una acción cotiza a 3,20 € y su NAV por acción es de 4,00 €. ¿Qué descuento, en %, tiene sobre el NAV?",
+          "unit": "%",
+          "a": 20,
+          "why": "3,20 ÷ 4,00 = 0,80: cotiza un 20 % por debajo del NAV.",
+          "guia": "g3"
+        },
+        {
+          "id": "sr2-3",
+          "t": "choice",
+          "q": "Una inmobiliaria cotizada cotiza con un descuento del 20 % sobre su NAV. ¿Qué se puede afirmar?",
+          "opts": [
+            "Que su precio subirá hasta igualar el NAV, porque el descuento siempre se corrige",
+            "Que tiene un 20 % más de deuda que de inmuebles",
+            "Que el mercado valora sus inmuebles por debajo de la tasación; no implica que vaya a subir",
+            "Que la empresa pierde un 20 % de su beneficio cada año"
+          ],
+          "a": 2,
+          "why": "Un descuento del 20 % puede reflejar que el mercado descuenta tasaciones altas o alquileres a la baja; puede cerrarse, ampliarse o quedarse igual.",
+          "guia": "g3",
+          "porque": [
+            "Un descuento puede durar años y ampliarse si bajan las tasaciones o los alquileres. Ninguna cifra garantiza que se cierre.",
+            "El NAV ya resta la deuda: el descuento compara el precio con inmuebles menos deuda, y no dice que la deuda supere a los inmuebles.",
+            null,
+            "El descuento sobre el NAV compara el precio con el valor de los inmuebles netos de deuda; no dice nada directo sobre el beneficio."
+          ]
+        },
+        {
+          "id": "sr2-4",
+          "t": "num",
+          "q": "Una inmobiliaria cotizada tiene inmuebles por 800 M€ y deuda de 336 M€. ¿Qué porcentaje es la deuda sobre activos?",
+          "unit": "%",
+          "a": 42,
+          "why": "336 ÷ 800 = 0,42 = 42 %.",
+          "table": {
+            "cols": [
+              "Dato",
+              "Valor"
+            ],
+            "rows": [
+              [
+                "Inmuebles",
+                "800 M€"
+              ],
+              [
+                "Deuda",
+                "336 M€"
+              ],
+              [
+                "Acciones",
+                "116 millones"
+              ],
+              [
+                "Precio",
+                "3,20 €"
+              ]
+            ],
+            "note": "Empresa ficticia."
+          },
+          "guia": "g4"
+        },
+        {
+          "id": "sr2-5",
+          "t": "num",
+          "q": "Una inmobiliaria cotizada tiene inmuebles por 800 M€ y deuda de 336 M€. Si el valor de los inmuebles baja un 10 %, ¿qué porcentaje cae su NAV?",
+          "unit": "%",
+          "a": 17.2,
+          "why": "Inmuebles: 720 M€; NAV: 720 − 336 = 384 M€ frente a 464 M€, un −17,2 %. La deuda amplifica una caída del 10 %.",
+          "tol": 0.06,
+          "table": {
+            "cols": [
+              "Dato",
+              "Valor"
+            ],
+            "rows": [
+              [
+                "Inmuebles",
+                "800 M€"
+              ],
+              [
+                "Deuda",
+                "336 M€"
+              ],
+              [
+                "Acciones",
+                "116 millones"
+              ],
+              [
+                "Precio",
+                "3,20 €"
+              ]
+            ],
+            "note": "Empresa ficticia."
+          },
+          "guia": "g4"
+        },
+        {
+          "id": "sr2-6",
+          "t": "num",
+          "q": "Una inmobiliaria cotizada paga 30 M€ de dividendos y tiene un AFFO de 26 M€. ¿Qué porcentaje del AFFO supone el dividendo?",
+          "unit": "%",
+          "a": 115.4,
+          "why": "30 ÷ 26 = 1,154: el dividendo es el 115,4 % del AFFO.",
+          "tol": 0.06,
+          "table": {
+            "cols": [
+              "Dato",
+              "Valor"
+            ],
+            "rows": [
+              [
+                "Dividendos pagados",
+                "30 M€"
+              ],
+              [
+                "AFFO",
+                "26 M€"
+              ]
+            ],
+            "note": "Empresa ficticia."
+          },
+          "guia": "g4"
+        },
+        {
+          "id": "sr2-7",
+          "t": "choice",
+          "q": "El dividendo de una inmobiliaria cotizada supone el 115 % de su AFFO. ¿Qué implica?",
+          "opts": [
+            "Que paga más de lo que genera y lo cubre con deuda, ventas o caja acumulada",
+            "Que el dividendo es seguro, porque supera la caja generada",
+            "Que el beneficio neto debe ser mayor, porque el dividendo supera al AFFO",
+            "Nada: el dividendo se compara con el NAV, no con el AFFO"
+          ],
+          "a": 0,
+          "why": "30 M€ frente a 26 M€ de AFFO: los 4 M€ de diferencia salen de deuda, ventas o caja acumulada, y eso no se puede repetir sin límite.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Al revés: pagar más de lo que se genera presiona la caja o la deuda; con más del 100 % del AFFO no hay colchón.",
+            "No se deduce: el neto incluye amortizaciones y plusvalías y puede ser menor o mayor. La cobertura del dividendo se mide con el AFFO.",
+            "El dividendo se compara con el AFFO porque se parece más a la caja; el NAV mide el valor de los inmuebles, no lo que se puede repartir."
+          ]
+        }
+      ],
+      "ultimo": 7
+    }
+  ]
+}

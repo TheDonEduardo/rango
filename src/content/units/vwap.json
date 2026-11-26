@@ -1,0 +1,320 @@
+{
+  "n": 11,
+  "id": "vwap",
+  "track": "tecnico",
+  "title": "VWAP y perfil de volumen",
+  "blurb": "El precio medio ponderado por volumen: el del día, el anclado a un evento y dónde se ha negociado de verdad.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "VWAP: el precio medio ponderado",
+      "texto": "El VWAP es el precio medio ponderado por el volumen: VWAP = Σ(precio × volumen) ÷ Σ volumen. Se multiplica el precio de cada tramo por su volumen, se suma y se divide entre el volumen total. Los tramos con más volumen pesan más.",
+      "ejemplo": "200 mil a 40,00 €, 500 mil a 40,40 € y 300 mil a 40,80 €: (8.000 + 20.200 + 12.240) ÷ 1.000 = 40,44 €."
+    },
+    {
+      "id": "g2",
+      "titulo": "VWAP del día y VWAP anclado",
+      "texto": "El VWAP del día se reinicia en cada sesión. El VWAP anclado empieza en un evento que eliges (un hueco de resultados, un mínimo relevante) y sigue acumulando: es el precio medio de todo lo negociado desde ese evento.",
+      "ejemplo": "Anclado al hueco: sesión 1, 600 mil acciones a 52,00 €; sesión 2, 400 mil a 54,00 €. (31.200 + 21.600) ÷ 1.000 = 52,80 €."
+    },
+    {
+      "id": "g3",
+      "titulo": "Comprador medio, resistencia y stop",
+      "texto": "Con el precio sobre el VWAP anclado, el comprador medio desde el evento gana; bajo él, pierde. Quien pierde suele vender al recuperar su precio (resistencia); quien gana puede defender el nivel (soporte). Stop: algo por debajo.",
+      "ejemplo": "VWAP anclado 52,80 € y cierre 54,30 €: gana 1,50 € (2,8 %). Entrada 54,30 €, stop 52,30 €: 2,00 € por acción; con 100 € de riesgo, 50 acciones."
+    },
+    {
+      "id": "g4",
+      "titulo": "Perfil de volumen",
+      "texto": "El punto de control es el precio con más volumen. El área de valor parte de él y añade el tramo vecino con más volumen hasta reunir en torno al 70 % del total (convención). Con poco volumen, el precio pasa rápido.",
+      "ejemplo": "De 1 millón de acciones, 39-40 € suma 450 mil y 40-41 €, 300 mil: 75 %. El tramo 41-42 € tiene 50 mil (5 %)."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "vw1",
+      "title": "Calcular el VWAP",
+      "ex": [
+        {
+          "id": "vw1-1",
+          "t": "num",
+          "q": "En una sesión, una acción negocia 300 mil acciones a 18,00 €, 500 mil a 18,40 € y 200 mil a 18,90 €. ¿Cuál es el VWAP de la sesión?",
+          "unit": "€",
+          "a": 18.38,
+          "why": "(5.400 + 9.200 + 3.780) ÷ 1.000 = 18,38 €. La media simple, 18,43 €, ignora que el tramo de 500 mil pesa más.",
+          "tol": 0.01,
+          "table": {
+            "cols": [
+              "Tramo",
+              "Volumen (miles)",
+              "Precio"
+            ],
+            "rows": [
+              [
+                "1",
+                "300",
+                "18,00 €"
+              ],
+              [
+                "2",
+                "500",
+                "18,40 €"
+              ],
+              [
+                "3",
+                "200",
+                "18,90 €"
+              ]
+            ],
+            "note": "Datos ficticios de una sesión."
+          },
+          "guia": "g1"
+        },
+        {
+          "id": "vw1-2",
+          "t": "choice",
+          "q": "¿En qué se diferencia el VWAP anclado del VWAP del día?",
+          "opts": [
+            "El del día se calcula con cierres y el anclado con máximos y mínimos",
+            "El anclado solo usa el volumen de la primera sesión tras el evento",
+            "El anclado acumula desde un evento elegido; el del día se reinicia en cada sesión",
+            "El del día pondera por tiempo y el anclado, por volumen"
+          ],
+          "a": 2,
+          "why": "El anclado acumula todas las sesiones desde un evento (un hueco de resultados, un mínimo) y el del día empieza de cero cada mañana.",
+          "guia": "g2",
+          "porque": [
+            "Ambos usan precio y volumen de cada tramo: la diferencia no está en qué precios usan, sino en dónde empieza el cálculo.",
+            "El anclado sigue acumulando todas las sesiones desde el evento, no solo la primera: es el precio medio de todo ese periodo.",
+            null,
+            "Los dos se ponderan por volumen. Lo que cambia es el punto de partida: cada sesión en el del día, un evento elegido en el anclado."
+          ]
+        },
+        {
+          "id": "vw1-3",
+          "t": "num",
+          "q": "Anclas el VWAP al hueco de resultados: esa sesión se negocian 400 mil acciones a 61,00 €; la siguiente, 350 mil a 62,40 €, y la tercera, 250 mil a 63,20 €. ¿Cuál es el VWAP anclado tras las tres sesiones?",
+          "unit": "€",
+          "a": 62.04,
+          "why": "(24.400 + 21.840 + 15.800) ÷ 1.000 = 62,04 €: el precio medio de todo lo negociado desde el hueco.",
+          "tol": 0.01,
+          "table": {
+            "cols": [
+              "Sesión",
+              "Volumen (miles)",
+              "Precio medio"
+            ],
+            "rows": [
+              [
+                "1 (hueco)",
+                "400",
+                "61,00 €"
+              ],
+              [
+                "2",
+                "350",
+                "62,40 €"
+              ],
+              [
+                "3",
+                "250",
+                "63,20 €"
+              ]
+            ],
+            "note": "Datos ficticios."
+          },
+          "guia": "g2"
+        },
+        {
+          "id": "vw1-4",
+          "t": "choice",
+          "q": "Se negocian 800 mil acciones a 20,00 € y 200 mil a 22,00 €. ¿Cuál es el VWAP de ambos tramos?",
+          "opts": [
+            "21,00 €",
+            "20,40 €",
+            "20,20 €",
+            "21,20 €"
+          ],
+          "a": 1,
+          "why": "(16.000 + 4.400) ÷ 1.000 = 20,40 €. Queda más cerca de 20,00 €, el precio con más volumen.",
+          "guia": "g1",
+          "porque": [
+            "21,00 € es la media simple de 20 y 22: ignora que el tramo de 800 mil pesa cuatro veces más que el de 200 mil.",
+            null,
+            "20,20 € saldría con 900 mil a 20,00 € y 100 mil a 22,00 €; aquí el segundo tramo tiene 200 mil.",
+            "21,20 € da más peso al tramo de 22,00 €, que tiene menos volumen: el VWAP queda más cerca del precio con más volumen."
+          ]
+        },
+        {
+          "id": "vw1-5",
+          "t": "order",
+          "q": "Ordena los pasos para calcular el VWAP de varios tramos.",
+          "items": [
+            "Multiplicar el precio de cada tramo por su volumen",
+            "Sumar todos esos productos",
+            "Sumar los volúmenes de todos los tramos",
+            "Dividir la suma de productos entre el volumen total"
+          ],
+          "why": "VWAP = Σ(precio × volumen) ÷ Σ volumen: primero los productos y su suma, después el volumen total y, al final, la división.",
+          "guia": "g1"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "vw2",
+      "title": "Comprador medio y perfil de volumen",
+      "ex": [
+        {
+          "id": "vw2-1",
+          "t": "num",
+          "q": "El VWAP anclado a un hueco de resultados está en 41,20 € y la acción cierra a 43,30 €. Tomando el VWAP como el precio medio de los compradores, ¿qué porcentaje gana el comprador medio?",
+          "unit": "%",
+          "a": 5.1,
+          "why": "43,30 − 41,20 = 2,10 €, y 2,10 ÷ 41,20 = 5,1 %: el comprador medio desde el hueco está en ganancias.",
+          "tol": 0.06,
+          "guia": "g3"
+        },
+        {
+          "id": "vw2-2",
+          "t": "choice",
+          "q": "Tras un hueco de resultados, el precio cae por debajo del VWAP anclado de 41,20 € y rebota hasta él sin superarlo. ¿Cómo se puede leer?",
+          "opts": [
+            "Como posible resistencia: quien compró en el evento puede vender al recuperar su precio",
+            "Como soporte garantizado, porque el comprador medio siempre defiende su precio",
+            "Como señal de que el hueco ya se ha rellenado y el VWAP deja de tener valor",
+            "Como un dato inútil, porque el VWAP solo sirve dentro de la misma sesión"
+          ],
+          "a": 0,
+          "why": "Quien compró de media a 41,20 € y estaba en pérdidas suele aprovechar el rebote para salir al empate: el VWAP anclado funciona como resistencia.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Ningún nivel está garantizado: el VWAP anclado marca el precio medio de los compradores, no que vayan a defenderlo; en pérdidas, muchos prefieren salir al empate.",
+            "Un hueco rellenado es otra cosa (el precio vuelve al cierre previo). El VWAP anclado no desaparece por eso: sigue marcando el precio medio desde el evento.",
+            "El del día se reinicia, pero el anclado dura mientras lo mantengas: sirve de referencia durante semanas."
+          ]
+        },
+        {
+          "id": "vw2-3",
+          "t": "num",
+          "q": "El VWAP anclado está en 41,20 €. Entras a 43,30 € y colocas el stop 0,40 € por debajo del VWAP. Arriesgas 200 € en la operación. ¿Cuántas acciones puedes comprar?",
+          "unit": "acc.",
+          "a": 80,
+          "why": "Stop: 41,20 − 0,40 = 40,80 €. Riesgo por acción: 43,30 − 40,80 = 2,50 €. 200 ÷ 2,50 = 80 acciones.",
+          "guia": "g3"
+        },
+        {
+          "id": "vw2-4",
+          "t": "tap",
+          "q": "El VWAP anclado a un hueco de resultados está en 41,20 € (la línea). Toca la primera vela que cierra por debajo del VWAP anclado.",
+          "chart": {
+            "type": "candles",
+            "data": [
+              [41.9,42.3,41.7,42.1],
+              [42.1,42.6,41.9,42.4],
+              [42.4,42.8,42.0,42.2],
+              [42.2,42.5,41.6,41.8],
+              [41.8,42.0,41.3,41.5],
+              [41.5,41.9,41.2,41.6],
+              [41.6,41.7,40.6,40.8],
+              [40.8,41.2,40.5,40.7],
+              [40.7,41.1,40.4,41.0]
+            ],
+            "vol": [500,520,480,560,540,510,900,700,650],
+            "h": 270,
+            "lines": [
+              {
+                "y": 41.2,
+                "label": "VWAP anclado"
+              }
+            ],
+            "alt": "Gráfico de nueve velas con una línea horizontal de VWAP anclado y barras de volumen bajo el precio"
+          },
+          "a": 6,
+          "why": "La 7.ª vela cierra en 40,80 €, bajo 41,20 €, y con 900 de volumen, el mayor de la serie. La 6.ª tocó 41,20 € pero cerró en 41,60 €.",
+          "guia": "g3"
+        },
+        {
+          "id": "vw2-5",
+          "t": "choice",
+          "q": "¿Qué es el punto de control en un perfil de volumen?",
+          "opts": [
+            "El precio medio del periodo ponderado por volumen",
+            "El precio al que el periodo empezó a subir o a bajar",
+            "El precio al que más volumen se ha negociado en el periodo",
+            "El último precio al que cotizó el valor en el periodo"
+          ],
+          "a": 2,
+          "why": "El perfil reparte el volumen por precio; el punto de control es el tramo con más volumen, que puede estar lejos del cierre y del VWAP.",
+          "guia": "g4",
+          "porque": [
+            "Eso es el VWAP: el precio medio ponderado por volumen. El punto de control es el precio con más volumen, que puede estar lejos del VWAP.",
+            "El punto de control no marca cambios de tendencia: solo señala dónde se negoció más volumen.",
+            null,
+            "El último precio es el cierre del periodo. El punto de control es el nivel con más volumen, y no tiene por qué ser el último."
+          ]
+        },
+        {
+          "id": "vw2-6",
+          "t": "num",
+          "q": "La tabla reparte 1 millón de acciones por tramos de precio. ¿Qué porcentaje del volumen total suman el tramo de control y el vecino con más volumen?",
+          "unit": "%",
+          "a": 73,
+          "why": "Control: 39-40 € con 410. El vecino con más volumen es 38-39 € con 320. 410 + 320 = 730, el 73 % de 1.000 mil: el área de valor va de 38 a 40 €.",
+          "table": {
+            "cols": [
+              "Tramo de precio",
+              "Volumen (miles)"
+            ],
+            "rows": [
+              [
+                "37-38 €",
+                "90"
+              ],
+              [
+                "38-39 €",
+                "320"
+              ],
+              [
+                "39-40 €",
+                "410"
+              ],
+              [
+                "40-41 €",
+                "130"
+              ],
+              [
+                "41-42 €",
+                "50"
+              ]
+            ],
+            "note": "Datos ficticios: 1 millón de acciones en total."
+          },
+          "guia": "g4"
+        },
+        {
+          "id": "vw2-7",
+          "t": "choice",
+          "q": "En un perfil de volumen, el precio sale del área de valor y entra en un tramo que solo concentra el 5 % del volumen. ¿Qué suele ocurrir?",
+          "opts": [
+            "Que se frena ahí, porque es donde más compradores esperan",
+            "Que ese tramo pasa a ser el punto de control",
+            "Que el precio vuelve siempre al VWAP del día antes de seguir",
+            "Que lo atraviesa con rapidez, porque ahí casi nadie ha comprado ni vendido"
+          ],
+          "a": 3,
+          "why": "Con el 5 % del volumen, en ese tramo hay pocos compradores y vendedores atrapados: casi nada frena al precio y suele cruzarlo rápido.",
+          "guia": "g4",
+          "porque": [
+            "Es al revés: con tan poco volumen no hay muchos compradores ni vendedores allí, así que no hay nada que frene al precio.",
+            "Un tramo con el 5 % del volumen no es el de más volumen; para serlo tendría que acumular mucho más, y eso lleva tiempo.",
+            "No siempre: un tramo de poco volumen se cruza rápido, pero el precio puede seguir su camino sin volver al VWAP.",
+            null
+          ]
+        }
+      ],
+      "ultimo": 7
+    }
+  ]
+}

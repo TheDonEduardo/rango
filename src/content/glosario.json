@@ -1619,5 +1619,114 @@
  {
   "termino": "volumen proyectado",
   "d": "Estimación del volumen de todo el día a partir del parcial: volumen parcial ÷ fracción de sesión transcurrida."
+ },
+ {
+  "termino": "línea de avance/descenso",
+  "alias": [
+   "línea A/D"
+  ],
+  "d": "Línea que acumula cada día los valores que suben menos los que bajan. Mide cuántos valores participan en el movimiento del índice, sin pesarlos por tamaño."
+ },
+ {
+  "termino": "divergencia",
+  "alias": [
+   "divergencias"
+  ],
+  "d": "Desacuerdo entre el precio (o un índice) y otra lectura que debería acompañarlo, como la amplitud o un indicador: el precio marca un nuevo máximo y la otra no (bajista), o un nuevo mínimo y la otra no (alcista). Avisa de que el movimiento pierde fuerza; no predice el giro."
+ },
+ {
+  "termino": "VWAP",
+  "alias": [
+   "VWAP anclado"
+  ],
+  "d": "Precio medio ponderado por volumen: Σ(precio × volumen) ÷ Σ volumen. El del día se reinicia cada sesión; el anclado empieza en un evento elegido."
+ },
+ {
+  "termino": "punto de control",
+  "d": "En un perfil de volumen, el precio al que se ha negociado más volumen en el periodo."
+ },
+ {
+  "termino": "área de valor",
+  "d": "En un perfil de volumen, el rango que se forma desde el punto de control añadiendo cada vez el tramo vecino con más volumen, hasta reunir en torno al 70 % del total (convención)."
+ },
+ {
+  "termino": "riesgo de ruina",
+  "d": "Probabilidad de que una racha de pérdidas deje la cuenta tan baja que no se pueda recuperar. Crece con lo que se arriesga en cada operación."
+ },
+ {
+  "termino": "FFO",
+  "d": "Fondos procedentes de las operaciones (simplificado): beneficio neto más amortizaciones, menos plusvalías por ventas de inmuebles y revalorizaciones, que no son caja recurrente."
+ },
+ {
+  "termino": "AFFO",
+  "d": "El AFFO (simplificado) es el FFO menos la inversión de mantenimiento de los inmuebles. Se parece más a la caja que queda para el accionista."
+ },
+ {
+  "termino": "NAV",
+  "alias": [
+   "NAV por acción"
+  ],
+  "d": "Valor neto de los activos (simplificado): valor de los inmuebles menos la deuda. Entre las acciones, da el NAV por acción."
+ },
+ {
+  "termino": "deuda sobre activos",
+  "d": "Deuda de una inmobiliaria entre el valor de sus inmuebles, en %. A más deuda, más se amplifica una caída del valor."
+ },
+ {
+  "termino": "ETF apalancado",
+  "alias": [
+   "ETF apalancados"
+  ],
+  "d": "ETF que busca multiplicar (por ejemplo, por dos) el movimiento diario de su índice. Su resultado a largo plazo no es ese múltiplo."
+ },
+ {
+  "termino": "ETF inverso",
+  "alias": [
+   "ETF inversos"
+  ],
+  "d": "ETF que busca el movimiento contrario al de su índice cada día."
+ },
+ {
+  "termino": "decaimiento por volatilidad",
+  "d": "Pérdida de un ETF apalancado por el reajuste diario cuando el índice oscila arriba y abajo, aunque acabe casi igual."
+ },
+ {
+  "termino": "bono ligado a la inflación",
+  "alias": [
+   "bonos ligados a la inflación"
+  ],
+  "d": "Bono cuyo principal se ajusta con el IPC y cuyo cupón real se paga sobre ese principal ajustado."
+ },
+ {
+  "termino": "inflación implícita",
+  "d": "Inflación que descuenta el mercado: rentabilidad de un bono normal menos la real de un ligado del mismo plazo."
+ },
+ {
+  "termino": "futuro perpetuo",
+  "alias": [
+   "futuros perpetuos",
+   "perpetuo"
+  ],
+  "d": "Contrato de futuros sin vencimiento: se mantiene abierto con margen y paga una tasa de financiación periódica."
+ },
+ {
+  "termino": "tasa de financiación",
+  "d": "Pago periódico, normalmente cada 8 horas, entre largos y cortos de un perpetuo para acercar su precio al del mercado al contado."
+ },
+ {
+  "termino": "margen de mantenimiento",
+  "d": "Mínimo de margen que exige la plataforma para mantener abierta una posición: por debajo, la liquida."
+ },
+ {
+  "termino": "margen aislado",
+  "d": "Modalidad en la que cada posición solo arriesga el margen que le asignas."
+ },
+ {
+  "termino": "margen cruzado",
+  "d": "Modalidad en la que todo el saldo de la cuenta respalda las posiciones abiertas."
+ },
+ {
+  "termino": "producto constante",
+  "d": "Regla de un pool de liquidez: el producto de las cantidades de sus dos monedas (x · y = k) no cambia con los intercambios."
  }
 ]

@@ -1,0 +1,240 @@
+{
+  "n": 29,
+  "id": "amplitud",
+  "track": "tecnico",
+  "title": "Amplitud de mercado",
+  "blurb": "Cuántos valores sostienen la subida del índice: línea de avance/descenso, medias, máximos y mínimos, y qué hacer con la divergencia.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Línea de avance/descenso",
+      "texto": "La línea de avance/descenso suma cada día los avances (valores que suben) menos los descensos (valores que bajan). Si sube, la mayoría participa; si baja mientras el índice sube, la subida se estrecha. Cuenta valores, no pesos.",
+      "ejemplo": "Hoy suben 1.100 valores y bajan 700: +400. La línea estaba en 250 y queda en 650."
+    },
+    {
+      "id": "g2",
+      "titulo": "Porcentaje sobre sus medias",
+      "texto": "Se cuenta qué porcentaje de valores cierra sobre su media de 50 sesiones (medio plazo) y sobre la de 200 (largo plazo). Orientativo: sobre el 60 %, mercado amplio; bajo el 40 %, débil por dentro.",
+      "ejemplo": "De 500 valores, 330 cierran sobre su media de 50: 330 ÷ 500 = 66 %. Sobre la de 200 son 240: 48 %, menos de la mitad."
+    },
+    {
+      "id": "g3",
+      "titulo": "Nuevos máximos menos nuevos mínimos",
+      "texto": "Cada día se cuentan los valores que marcan un máximo de 52 semanas y los que marcan un mínimo. Si la diferencia es positiva, lideran muchos valores; si es negativa o casi cero, lideran pocos aunque el índice suba.",
+      "ejemplo": "Hoy hay 85 nuevos máximos y 20 nuevos mínimos: 85 − 20 = +65. Con 30 y 45 sería −15: dominan los mínimos."
+    },
+    {
+      "id": "g4",
+      "titulo": "Divergencia y qué hacer",
+      "texto": "Hay divergencia si el índice ponderado por capitalización sube pero la amplitud empeora: pocas grandes lo sostienen. No predice caídas. Criterio operativo: menos compras, stops más ceñidos y menos riesgo.",
+      "ejemplo": "El índice sube un 3 % y el % sobre la media de 50 baja del 70 % al 52 %. Pasas del 1 % al 0,5 % de riesgo: con 20.000 €, 100 € en vez de 200 €."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "ab1",
+      "title": "Contar valores, no pesos",
+      "ex": [
+        {
+          "id": "ab1-1",
+          "t": "num",
+          "q": "Un índice tiene hoy 950 valores que suben, 600 que bajan y 200 que no cambian. Ayer la línea de avance/descenso estaba en 310. ¿En cuánto queda hoy?",
+          "unit": "",
+          "a": 660,
+          "why": "950 − 600 = +350 y 310 + 350 = 660. Los 200 valores que no cambian no suman ni restan.",
+          "guia": "g1"
+        },
+        {
+          "id": "ab1-2",
+          "t": "choice",
+          "q": "¿Qué indica que un índice suba un 1 % mientras su línea de avance/descenso baja durante tres semanas?",
+          "opts": [
+            "Que la subida es más sólida, porque solo suben los mejores valores",
+            "Que el índice está calculado con datos incorrectos",
+            "Que cada vez menos valores participan en la subida",
+            "Que la mayoría de los valores del índice está subiendo"
+          ],
+          "a": 2,
+          "why": "La línea acumula avances menos descensos: si baja, cada día bajan más valores de los que suben. El índice lo sostienen unas pocas empresas grandes.",
+          "guia": "g1",
+          "porque": [
+            "Una línea que baja significa que bajan más valores de los que suben: la subida se apoya en menos, no en los mejores.",
+            "Ambas series son compatibles: el índice pondera por capitalización y la línea cuenta valores. No hace falta ningún error.",
+            null,
+            "Es lo contrario: si la línea baja, cada día bajan más valores de los que suben."
+          ]
+        },
+        {
+          "id": "ab1-3",
+          "t": "num",
+          "q": "Un índice tiene 400 valores y 252 cierran sobre su media de 50 sesiones. ¿Qué porcentaje de valores cierra sobre su media de 50 sesiones?",
+          "unit": "%",
+          "a": 63,
+          "why": "252 ÷ 400 = 0,63 = 63 %. Está por encima del 60 % orientativo: amplitud buena a medio plazo.",
+          "guia": "g2"
+        },
+        {
+          "id": "ab1-4",
+          "t": "choice",
+          "q": "Solo el 38 % de los valores de un índice cierra sobre su media de 200 sesiones. ¿Qué dice ese dato?",
+          "opts": [
+            "Que menos de la mitad de los valores está en tendencia alcista de largo plazo",
+            "Que la mayoría de los valores cotiza por encima de su tendencia de largo plazo",
+            "Que el 38 % de los valores ha subido hoy",
+            "Que la línea de avance/descenso ha caído un 38 %"
+          ],
+          "a": 0,
+          "why": "Con el 38 %, 62 de cada 100 valores cierran bajo su media de 200 sesiones: menos de la mitad está en tendencia alcista de largo plazo.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "Es lo contrario: con el 38 %, 62 de cada 100 valores cierran bajo su media de 200 sesiones, es decir, bajo su tendencia.",
+            "El porcentaje no mide subidas de un día: cuenta cuántos valores cierran sobre su media, hagan lo que hagan hoy.",
+            "La línea suma avances menos descensos; el porcentaje sobre la media de 200 es otra medida y no dice cuánto ha cambiado la línea."
+          ]
+        },
+        {
+          "id": "ab1-5",
+          "t": "slide",
+          "q": "Un índice tiene 600 valores y quieres que el 60 % cierre sobre su media de 50 sesiones. ¿Cuántos valores deben cerrar sobre ella?",
+          "label": "Valores sobre su media de 50",
+          "min": 0,
+          "max": 600,
+          "step": 10,
+          "start": 240,
+          "a": 360,
+          "unit": "",
+          "why": "60 % de 600 = 0,6 × 600 = 360 valores, y 360 ÷ 600 = 60 %.",
+          "show": [
+            {
+              "label": "Porcentaje sobre la media",
+              "k": 0.16666666666666666,
+              "b": 0,
+              "unit": "%",
+              "dec": 0
+            }
+          ],
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "ab2",
+      "title": "Divergencia y criterio operativo",
+      "ex": [
+        {
+          "id": "ab2-1",
+          "t": "num",
+          "q": "Hoy 72 valores de un índice marcan un máximo de 52 semanas y 27 marcan un mínimo de 52 semanas. ¿Cuánto vale nuevos máximos menos nuevos mínimos?",
+          "unit": "",
+          "a": 45,
+          "why": "72 − 27 = 45. Es positivo: marcan máximo más valores de los que marcan mínimo.",
+          "guia": "g3"
+        },
+        {
+          "id": "ab2-2",
+          "t": "choice",
+          "q": "Un índice marca un máximo de 52 semanas, pero ese día hay 18 valores con nuevo máximo y 54 con nuevo mínimo. ¿Qué indica?",
+          "opts": [
+            "Que la tendencia del índice es sólida, porque hay valores que marcan nuevos máximos",
+            "Que hay un error en los datos, porque con el índice en máximos no puede haber más mínimos que máximos",
+            "Que los máximos y los mínimos se compensan y la amplitud es neutra",
+            "Que dominan los valores débiles y la subida depende de pocas empresas"
+          ],
+          "a": 3,
+          "why": "18 − 54 = −36: los nuevos mínimos dominan. Con el índice en máximos, esa lectura apunta a que la subida la sostienen pocas empresas.",
+          "guia": "g3",
+          "porque": [
+            "Con 18 máximos y 54 mínimos la diferencia es −36: no hay base amplia. Un índice en máximos con esa lectura lo sostienen pocas empresas.",
+            "Sí puede haberlos: un índice ponderado marca máximos con pocas grandes empresas mientras muchas caen. Es justo la divergencia.",
+            "18 − 54 = −36 no es neutral. Una diferencia cercana a cero sí lo sería; esta indica que los mínimos dominan.",
+            null
+          ]
+        },
+        {
+          "id": "ab2-3",
+          "t": "match",
+          "q": "Une cada medida de amplitud con lo que mide.",
+          "pairs": [
+            [
+              "Línea de avance/descenso",
+              "Acumula cada día los avances menos los descensos"
+            ],
+            [
+              "% sobre la media de 200",
+              "Valores en tendencia alcista de largo plazo"
+            ],
+            [
+              "Nuevos máximos − mínimos",
+              "Valores que lideran frente a los que sufren en 52 semanas"
+            ],
+            [
+              "% sobre la media de 50",
+              "Valores con fuerza a medio plazo"
+            ]
+          ],
+          "why": "Todas cuentan valores sin pesarlos por tamaño: la línea acumula, las medias separan medio y largo plazo y máximos − mínimos mira 52 semanas.",
+          "guia": "g1"
+        },
+        {
+          "id": "ab2-4",
+          "t": "choice",
+          "q": "La amplitud empeora mientras el índice sigue subiendo. ¿Qué criterio operativo encaja con eso?",
+          "opts": [
+            "Vender todo, porque una divergencia siempre anticipa una caída en pocas semanas",
+            "Reducir el riesgo por operación y ceñir los stops, sin dar la caída por segura",
+            "Subir el riesgo por operación para compensar que suben menos valores",
+            "Comprar más de las pocas empresas grandes que sostienen el índice"
+          ],
+          "a": 1,
+          "why": "La divergencia no predice una caída: avisa de que la subida es frágil. Se responde con menos riesgo (por ejemplo, del 1 % al 0,5 %) y stops más cerca.",
+          "guia": "g4",
+          "porque": [
+            "Las divergencias pueden durar semanas o meses y no avisan de una caída segura. Vender todo por ellas es predecir, no gestionar el riesgo.",
+            null,
+            "Con menos valores avanzando, las compras tienen menos apoyo: subir el riesgo hace lo contrario de lo que pide la señal.",
+            "Eso concentra el riesgo justo en lo que sostiene la subida; la señal pide lo contrario: menos riesgo y stops más cerca."
+          ]
+        },
+        {
+          "id": "ab2-5",
+          "t": "slide",
+          "q": "Con la amplitud empeorando, reduces el riesgo a 100 € por operación. Tienes una entrada con el stop a 2,50 € por debajo. ¿Cuántas acciones puedes comprar como máximo?",
+          "label": "Acciones",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "start": 80,
+          "a": 40,
+          "unit": "",
+          "why": "100 € ÷ 2,50 € = 40 acciones, y 40 × 2,50 € = 100 €. Con el doble de riesgo (200 €) serían 80.",
+          "show": [
+            {
+              "label": "Pérdida si salta el stop",
+              "k": 2.5,
+              "b": 0,
+              "unit": "€",
+              "dec": 0
+            }
+          ],
+          "guia": "g4"
+        },
+        {
+          "id": "ab2-6",
+          "t": "order",
+          "q": "Ordena los pasos para calcular el porcentaje de valores sobre su media de 50 sesiones.",
+          "items": [
+            "Calcular la media de 50 sesiones de cada valor",
+            "Comparar el cierre de cada valor con su media",
+            "Contar cuántos valores cierran por encima de su media",
+            "Dividir esa cuenta entre el total de valores y multiplicar por 100"
+          ],
+          "why": "Primero se obtiene la media de cada valor, después se compara, se cuenta y por último se convierte en porcentaje del total.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 6
+    }
+  ]
+}

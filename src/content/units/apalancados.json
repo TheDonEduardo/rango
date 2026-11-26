@@ -1,0 +1,203 @@
+{
+  "n": 20,
+  "id": "apalancados",
+  "track": "pasiva",
+  "title": "ETF apalancados e inversos",
+  "blurb": "Multiplican el movimiento de cada día, no el del año: por qué pierden en laterales y no son para mantener.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Multiplican cada día",
+      "texto": "Un ETF apalancado 2x busca el doble del movimiento diario de su índice. Un ETF inverso busca el contrario. La promesa vale para un día, no para semanas o años.",
+      "ejemplo": "El índice sube un 3 % en un día: con 500 €, el 2x sube un 6 % y vale 530 €. Un inverso bajaría un 3 %."
+    },
+    {
+      "id": "g2",
+      "titulo": "Reajuste y decaimiento",
+      "texto": "Cada día el fondo se reajusta al capital que tiene ese día. Si el índice oscila arriba y abajo, el efecto compuesto resta: es el decaimiento por volatilidad.",
+      "ejemplo": "El índice sube un 10 % y baja un 10 %: pasa de 100 a 99 (−1 %). El 2x: 500 × 1,20 × 0,80 = 480 €, un 4 % menos."
+    },
+    {
+      "id": "g3",
+      "titulo": "Tendencia y lateral",
+      "texto": "En una tendencia sostenida el compuesto juega a favor y el 2x gana algo más del doble. Sin tendencia, pierde aunque el índice acabe casi igual.",
+      "ejemplo": "Índice +5 % dos días: +10,25 %; el 2x sube un 10 % dos veces: 500 € → 605 €. Con −5 % y +5 %, el índice pierde un 0,25 % y el 2x un 1 %."
+    },
+    {
+      "id": "g4",
+      "titulo": "Costes y uso",
+      "texto": "Pagan comisión y el coste de financiar el apalancamiento, y su resultado a largo plazo no se puede prever. Sirven para apuestas de un día o pocos días, no para una cartera pasiva.",
+      "ejemplo": "Con 500 €: comisión del 1 % (5 €) más un 4 % por financiar un préstamo igual al capital (20 €) = 25 € al año, un 5 % del capital."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "ap1",
+      "title": "Multiplican cada día",
+      "ex": [
+        {
+          "id": "ap1-1",
+          "t": "choice",
+          "q": "¿Qué multiplica un ETF apalancado 2x?",
+          "opts": [
+            "El movimiento diario del índice que sigue",
+            "El movimiento del índice durante todo el año",
+            "El dividendo que paga cada empresa del índice",
+            "El número de acciones que componen el índice"
+          ],
+          "a": 0,
+          "why": "Su objetivo es el doble del movimiento de cada día, no del periodo que lo mantengas. De ahí salen todas sus rarezas a largo plazo.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Su promesa es diaria: el resultado de un año no es el doble del anual.",
+            "El apalancamiento no tiene relación con los dividendos del índice.",
+            "No multiplica empresas: busca replicar el movimiento diario del índice."
+          ]
+        },
+        {
+          "id": "ap1-2",
+          "t": "num",
+          "q": "Tienes 500 € en un ETF apalancado 2x. El índice que sigue sube un 3 % en un día. ¿Cuántos euros vale tu posición al cierre?",
+          "unit": "€",
+          "a": 530,
+          "why": "El ETF sube el doble: 6 %. 500 € × 1,06 = 530 €.",
+          "guia": "g1"
+        },
+        {
+          "id": "ap1-3",
+          "t": "match",
+          "q": "Empareja cada término de los ETF apalancados con su descripción.",
+          "pairs": [
+            [
+              "ETF apalancado 2x",
+              "Busca el doble del movimiento diario del índice"
+            ],
+            [
+              "ETF inverso",
+              "Busca el movimiento contrario al del índice cada día"
+            ],
+            [
+              "Reajuste diario",
+              "Cada día reajusta su exposición al capital de ese día"
+            ],
+            [
+              "Decaimiento por volatilidad",
+              "Pérdida por oscilar arriba y abajo aunque el índice acabe igual"
+            ]
+          ],
+          "why": "Los cuatro términos salen de lo mismo: la promesa es diaria y el fondo se reajusta cada día, así que el camino importa.",
+          "guia": "g1"
+        },
+        {
+          "id": "ap1-4",
+          "t": "num",
+          "q": "Tienes 500 € en un ETF apalancado 2x. El índice sube un 10 % un día y baja un 10 % al día siguiente. ¿Cuántos euros vale tu posición tras los dos días?",
+          "unit": "€",
+          "a": 480,
+          "why": "Día 1: 500 × 1,20 = 600 €. Día 2: 600 × 0,80 = 480 €. El índice pasó de 100 a 99 (−1 %) y el ETF perdió un 4 %.",
+          "guia": "g2"
+        },
+        {
+          "id": "ap1-5",
+          "t": "slide",
+          "q": "Un ETF apalancado 2x tiene que subir un 12 % en un día. Mueve cuánto debe subir el índice ese día.",
+          "label": "Subida del índice",
+          "min": 0,
+          "max": 10,
+          "step": 0.5,
+          "start": 2,
+          "a": 6,
+          "unit": "%",
+          "why": "Con 2x, el ETF sube el doble que el índice: 12 % ÷ 2 = 6 %.",
+          "show": [
+            {
+              "label": "Subida del ETF 2x",
+              "k": 2,
+              "b": 0,
+              "unit": "%",
+              "dec": 0
+            }
+          ],
+          "guia": "g1"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "ap2",
+      "title": "Por qué no son para mantener",
+      "ex": [
+        {
+          "id": "ap2-1",
+          "t": "num",
+          "q": "Un índice sube un 5 % dos días seguidos. Tienes 500 € en un ETF 2x. ¿Cuántos euros vale tu posición tras los dos días?",
+          "unit": "€",
+          "a": 605,
+          "why": "Cada día el ETF sube un 10 %: 500 × 1,10 × 1,10 = 605 €. El índice sube un 10,25 %; el doble sería un 20,5 % (602,5 €): en tendencia el apalancado gana algo más del doble.",
+          "guia": "g3"
+        },
+        {
+          "id": "ap2-2",
+          "t": "num",
+          "q": "Un índice cae un 5 % un día y sube un 5 % al siguiente. ¿Qué porcentaje pierde un ETF 2x en los dos días? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 1,
+          "why": "El ETF cae un 10 % y sube un 10 %: 0,90 × 1,10 = 0,99, o sea −1 %. El índice pierde solo un 0,25 % (0,95 × 1,05 = 0,9975).",
+          "tol": 0.06,
+          "guia": "g3"
+        },
+        {
+          "id": "ap2-3",
+          "t": "choice",
+          "q": "¿Cuándo le va peor a un ETF apalancado 2x?",
+          "opts": [
+            "Cuando el índice sube de forma constante y con poca oscilación",
+            "Cuando el índice oscila arriba y abajo sin ir a ningún sitio",
+            "Cuando el índice acaba el periodo con una subida clara",
+            "Nunca: siempre rinde justo el doble que el índice"
+          ],
+          "a": 1,
+          "why": "Las oscilaciones sin tendencia le restan por el reajuste diario: el 2x pierde un 4 % con +10 % y −10 % mientras el índice pierde un 1 %.",
+          "guia": "g3",
+          "porque": [
+            "Con tendencia y poca oscilación le va mejor: el compuesto juega a su favor.",
+            null,
+            "Una subida clara del índice favorece al apalancado, no le perjudica.",
+            "Rinde el doble solo cada día; en varios días se aleja de ese doble."
+          ]
+        },
+        {
+          "id": "ap2-4",
+          "t": "num",
+          "q": "Un ETF 2x con 500 € cobra un 1 % anual de comisión y paga un 4 % anual por financiar un préstamo igual al capital. ¿Cuántos euros al año cuesta mantenerlo?",
+          "unit": "€",
+          "a": 25,
+          "why": "Comisión: 500 × 1 % = 5 €. Financiación: 500 × 4 % = 20 €. En total, 25 € al año, un 5 % del capital, aunque el índice no se mueva.",
+          "guia": "g4"
+        },
+        {
+          "id": "ap2-5",
+          "t": "choice",
+          "q": "¿Por qué un ETF apalancado diario no encaja en una cartera pasiva de comprar y mantener?",
+          "opts": [
+            "Porque su resultado a largo plazo no es el doble del índice y cuesta más",
+            "Porque solo se puede comprar en días con el mercado a la baja",
+            "Porque reparte todo su beneficio en forma de dividendos cada día",
+            "Porque sigue el índice con un retraso de varias semanas"
+          ],
+          "a": 0,
+          "why": "Tras muchos días, el efecto del reajuste y los costes (5 % anual en el ejemplo) hacen que el resultado se aleje del doble del índice.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Se puede comprar cualquier día; el problema es el efecto a largo plazo.",
+            "No reparte dividendos diarios: su problema es el reajuste y el coste.",
+            "Sigue el índice a diario y sin retraso: su problema es otro."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

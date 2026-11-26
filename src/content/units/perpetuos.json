@@ -1,0 +1,223 @@
+{
+  "n": 16,
+  "id": "perpetuos",
+  "track": "cripto",
+  "title": "Futuros perpetuos",
+  "blurb": "Posiciones con margen sin vencimiento: financiación, liquidación y por qué el apalancamiento se paga caro.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Margen y apalancamiento",
+      "texto": "Un futuro perpetuo no vence. Abres una posición con margen: el tamaño de la posición es el margen por el apalancamiento. Ganancias y pérdidas se calculan sobre el tamaño.",
+      "ejemplo": "Margen de 100 USDC con 5x: posición de 500 USDC. Si el precio baja un 4 %, pierdes 500 × 4 % = 20 USDC, un 20 % de tu margen. Con 6x serían 600 USDC."
+    },
+    {
+      "id": "g2",
+      "titulo": "Tasa de financiación",
+      "texto": "Para anclar el precio del perpetuo al contado, en muchas plataformas cada 8 horas, los largos pagan a los cortos (o al revés) una tasa sobre el tamaño de la posición. Mantener varios días cuesta.",
+      "ejemplo": "Tasa de 0,03 % cada 8 h sobre 500 USDC: 0,15 USDC por pago, 0,45 al día y 4,5 USDC en 10 días."
+    },
+    {
+      "id": "g3",
+      "titulo": "Precio de liquidación",
+      "texto": "Si las pérdidas consumen el margen hasta el de mantenimiento, la plataforma cierra la posición. Aproximación para un largo: caída ≈ (margen − mantenimiento) ÷ tamaño, sin comisiones ni financiación. Cada plataforma calcula distinto.",
+      "ejemplo": "Margen 100 USDC, mantenimiento 10 y posición de 500: (100 − 10) ÷ 500 = 18 % de caída."
+    },
+    {
+      "id": "g4",
+      "titulo": "Aislado, cruzado y cadenas",
+      "texto": "Margen aislado: solo arriesgas el de esa posición. Cruzado: todo el saldo la respalda. Muchas liquidaciones seguidas venden a mercado, empujan el precio y activan más liquidaciones.",
+      "ejemplo": "Cuenta de 600 USDC y posición de 500 con 100 de margen: pérdida máxima 100 USDC en aislado y 600 en cruzado."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "qp1",
+      "title": "Margen y apalancamiento",
+      "ex": [
+        {
+          "id": "qp1-1",
+          "t": "choice",
+          "q": "¿Qué diferencia a un futuro perpetuo de un futuro normal?",
+          "opts": [
+            "Que no vence y puedes mantenerlo abierto",
+            "Que solo permite apostar al alza",
+            "Que se paga al contado y sin margen",
+            "Que lo garantiza un fondo oficial"
+          ],
+          "a": 0,
+          "why": "El perpetuo no vence: se mantiene mientras haya margen, y a cambio paga una tasa de financiación periódica para seguir el precio al contado.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Un perpetuo permite posiciones largas y cortas, al alza y a la baja.",
+            "Usa margen y apalancamiento: no se paga todo al contado.",
+            "Ningún fondo de garantía cubre estas posiciones."
+          ]
+        },
+        {
+          "id": "qp1-2",
+          "t": "num",
+          "q": "Abres un futuro perpetuo con 60 USDC de margen y un apalancamiento de 8x. ¿Cuántos USDC es el tamaño de la posición?",
+          "unit": "USDC",
+          "a": 480,
+          "why": "Tamaño de la posición = margen × apalancamiento = 60 × 8 = 480 USDC.",
+          "guia": "g1"
+        },
+        {
+          "id": "qp1-3",
+          "t": "num",
+          "q": "Tienes una posición larga de 500 USDC en un perpetuo con 100 USDC de margen. El precio baja un 4 %. ¿Cuántos USDC pierdes?",
+          "unit": "USDC",
+          "a": 20,
+          "why": "La pérdida se calcula sobre el tamaño de la posición: 500 × 4 % = 20 USDC, un 20 % de tu margen.",
+          "guia": "g1"
+        },
+        {
+          "id": "qp1-4",
+          "t": "slide",
+          "q": "Tienes 100 USDC de margen y quieres una posición de 600 USDC. Mueve el apalancamiento que necesitas.",
+          "label": "Apalancamiento",
+          "min": 1,
+          "max": 10,
+          "step": 1,
+          "start": 2,
+          "a": 6,
+          "unit": "x",
+          "why": "Tamaño = margen × apalancamiento: 600 ÷ 100 = 6x. Con 6x, una caída del 4 % ya son 24 USDC de pérdida.",
+          "show": [
+            {
+              "label": "Tamaño de la posición",
+              "k": 100,
+              "b": 0,
+              "unit": "USDC",
+              "dec": 0
+            },
+            {
+              "label": "Pérdida si el precio baja un 4 %",
+              "k": 4,
+              "b": 0,
+              "unit": "USDC",
+              "dec": 0
+            }
+          ],
+          "guia": "g1"
+        },
+        {
+          "id": "qp1-5",
+          "t": "match",
+          "q": "Empareja cada término de los perpetuos con su descripción.",
+          "pairs": [
+            [
+              "Margen",
+              "Dinero propio que dejas como garantía de la posición"
+            ],
+            [
+              "Posición larga",
+              "Gana si el precio sube y pierde si baja"
+            ],
+            [
+              "Posición corta",
+              "Gana si el precio baja y pierde si sube"
+            ],
+            [
+              "Tasa de financiación",
+              "Pago periódico entre largos y cortos"
+            ]
+          ],
+          "why": "Con margen controlas una posición mayor que tu dinero: las ganancias y las pérdidas se calculan sobre el tamaño de la posición, no sobre el margen.",
+          "guia": "g1"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "qp2",
+      "title": "Financiación y liquidación",
+      "ex": [
+        {
+          "id": "qp2-1",
+          "t": "num",
+          "q": "Mantienes una posición larga de 500 USDC. La tasa de financiación es de un 0,03 % cada 8 horas y la pagas las tres veces del día. ¿Cuántos USDC pagas en 10 días?",
+          "unit": "USDC",
+          "a": 4.5,
+          "why": "Cada pago: 500 × 0,03 % = 0,15 USDC. Al día son 3 × 0,15 = 0,45 USDC y en 10 días, 4,5 USDC, aunque el precio no se mueva.",
+          "tol": 0.06,
+          "guia": "g2"
+        },
+        {
+          "id": "qp2-2",
+          "t": "choice",
+          "q": "El perpetuo cotiza por encima del precio al contado y la tasa de financiación es positiva. ¿Quién paga a quién?",
+          "opts": [
+            "Los cortos pagan a los largos para igualar el precio",
+            "Los largos pagan a los cortos para acercar el precio al contado",
+            "La plataforma paga a todos los que tienen posiciones abiertas",
+            "Nadie paga: la tasa solo se cobra al cerrar la posición"
+          ],
+          "a": 1,
+          "why": "Si el perpetuo está caro, los largos pagan a los cortos: eso desincentiva comprar y acerca el precio al contado. Si cotiza por debajo, suele ser al revés.",
+          "guia": "g2",
+          "porque": [
+            "Si cotiza por encima del contado, los cortos no pagan a los largos.",
+            null,
+            "La tasa la pagan los participantes entre sí, no la plataforma.",
+            "Se paga a intervalos regulares (a menudo cada 8 horas), no solo al cerrar."
+          ]
+        },
+        {
+          "id": "qp2-3",
+          "t": "num",
+          "q": "Una posición larga de 500 USDC tiene 100 USDC de margen y la plataforma exige un mínimo de 10 USDC (margen de mantenimiento). Como aproximación, ¿qué porcentaje debe caer el precio para que te liquiden?",
+          "unit": "%",
+          "a": 18,
+          "why": "Caída ≈ (margen − mantenimiento) ÷ tamaño = (100 − 10) ÷ 500 = 18 %. Cada plataforma lo calcula distinto, con comisiones y su propia fórmula.",
+          "guia": "g3"
+        },
+        {
+          "id": "qp2-4",
+          "t": "choice",
+          "q": "Con margen aislado, ¿cuánto puedes perder como máximo en esa posición?",
+          "opts": [
+            "Todo el saldo que tengas en la cuenta",
+            "Solo la tasa de financiación pagada hasta ese momento",
+            "El margen asignado a esa posición",
+            "Nada: la plataforma cubre siempre las pérdidas"
+          ],
+          "a": 2,
+          "why": "El margen aislado limita la pérdida al margen asignado a esa posición; el resto del saldo queda fuera de riesgo.",
+          "guia": "g4",
+          "porque": [
+            "Eso ocurre con margen cruzado, no con aislado.",
+            "La financiación es un coste aparte, no el límite de pérdida.",
+            null,
+            "La plataforma liquida la posición, pero no cubre pérdidas de nadie."
+          ]
+        },
+        {
+          "id": "qp2-5",
+          "t": "num",
+          "q": "Tu cuenta tiene 600 USDC. Abres una posición de 500 USDC con 100 USDC de margen y eliges margen cruzado. ¿Cuántos USDC puedes perder como máximo?",
+          "unit": "USDC",
+          "a": 600,
+          "why": "Con margen cruzado, todo el saldo respalda la posición: puedes perder los 600 USDC. Con margen aislado, el máximo sería de 100 USDC.",
+          "guia": "g4"
+        },
+        {
+          "id": "qp2-6",
+          "t": "order",
+          "q": "Ordena una cascada de liquidaciones en cadena.",
+          "items": [
+            "El precio baja un poco",
+            "Se liquidan las posiciones largas con poco margen",
+            "Las liquidaciones son ventas a mercado que empujan el precio abajo",
+            "Más posiciones llegan a su precio de liquidación"
+          ],
+          "why": "Cada liquidación vende y presiona el precio, lo que activa la siguiente: así una caída pequeña se convierte en una caída brusca.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 6
+    }
+  ]
+}

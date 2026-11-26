@@ -1,0 +1,232 @@
+{
+  "n": 27,
+  "id": "ligados",
+  "track": "pasiva",
+  "title": "Bonos ligados a la inflación",
+  "blurb": "Principal ajustado al IPC, inflación implícita y cuándo gana el ligado frente al bono normal.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Principal ajustado",
+      "texto": "Un bono ligado a la inflación ajusta su principal con el IPC. El cupón real es un porcentaje fijo que se paga sobre ese principal ajustado, así que los cobros suben con los precios.",
+      "ejemplo": "Principal de 500 €, cupón real del 1 % e inflación del 4 %: principal ajustado 520 € y cupón 520 × 1 % = 5,20 €."
+    },
+    {
+      "id": "g2",
+      "titulo": "Inflación implícita",
+      "texto": "La inflación implícita es lo que descuenta el mercado: rentabilidad nominal de un bono normal menos rentabilidad real de un ligado del mismo plazo.",
+      "ejemplo": "Normal al 3,5 % y ligado al 1,0 % real: inflación implícita ≈ 3,5 − 1,0 = 2,5 %."
+    },
+    {
+      "id": "g3",
+      "titulo": "Cuál gana",
+      "texto": "El ligado rinde, aproximadamente, su rentabilidad real más la inflación del periodo. Gana si la inflación supera la implícita; si queda por debajo, gana el bono normal.",
+      "ejemplo": "Con implícita 2,5 %: inflación 4 % → ligado ≈ 5,0 % frente a 3,5 %. Inflación 1 % → ligado ≈ 2,0 %, 1,5 puntos menos que el normal."
+    },
+    {
+      "id": "g4",
+      "titulo": "Riesgos",
+      "texto": "Un ligado sigue bajando de precio si suben los tipos reales: se aproxima con la duración. Con deflación, el principal indexado puede ajustarse a la baja; muchas emisiones garantizan al menos el principal inicial al vencimiento.",
+      "ejemplo": "Duración 8 y tipos reales +1 punto: precio ≈ −8 %; sobre 500 €, −40 €. Con IPC −2 %, 500 € pueden pasar a 490 € durante la vida del bono."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "il1",
+      "title": "Cómo funcionan",
+      "ex": [
+        {
+          "id": "il1-1",
+          "t": "choice",
+          "q": "En un bono ligado a la inflación, ¿qué se ajusta con el IPC?",
+          "opts": [
+            "El principal, y el cupón real se paga sobre él",
+            "Solo el cupón, mientras el principal queda fijo",
+            "El precio de compra que pagas al emisor",
+            "El plazo hasta el vencimiento del bono"
+          ],
+          "a": 0,
+          "why": "El principal sube con el IPC y el cupón (un porcentaje fijo) se aplica sobre el principal ajustado, así que los cobros crecen con los precios.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "El principal es lo que se ajusta; el cupón real se aplica sobre él.",
+            "El precio de compra lo fija el mercado, no el IPC.",
+            "El plazo es fijo y no depende del IPC."
+          ]
+        },
+        {
+          "id": "il1-2",
+          "t": "num",
+          "q": "Un bono ligado de 500 € de principal inicial paga un cupón real del 1 % anual. La inflación del año es del 4 %. ¿Cuántos euros vale el principal ajustado?",
+          "unit": "€",
+          "a": 520,
+          "why": "500 € × 1,04 = 520 €.",
+          "guia": "g1"
+        },
+        {
+          "id": "il1-3",
+          "t": "num",
+          "q": "Un bono ligado de 500 € de principal paga un cupón real del 1 % anual. La inflación del año es del 4 %, que lleva el principal a 520 €. ¿Cuántos euros cobras de cupón?",
+          "unit": "€",
+          "a": 5.2,
+          "why": "El cupón es el 1 % del principal ajustado: 520 € × 1 % = 5,20 €. Sobre el principal original habrían sido 5,00 €.",
+          "tol": 0.06,
+          "guia": "g1"
+        },
+        {
+          "id": "il1-4",
+          "t": "match",
+          "q": "Empareja cada término del bono ligado con su descripción.",
+          "pairs": [
+            [
+              "Principal ajustado",
+              "Principal inicial ajustado por la inflación acumulada"
+            ],
+            [
+              "Cupón real",
+              "Porcentaje fijo que se paga sobre el principal ajustado"
+            ],
+            [
+              "Inflación implícita",
+              "La que descuenta el precio: rentabilidad nominal menos real"
+            ],
+            [
+              "Rentabilidad real",
+              "Lo que rinde el ligado por encima de la inflación"
+            ]
+          ],
+          "why": "El ligado fija la parte real y deja que el IPC mueva el resto; la implícita es la diferencia entre lo que paga un bono normal y uno ligado.",
+          "guia": "g1"
+        },
+        {
+          "id": "il1-5",
+          "t": "slide",
+          "q": "Un bono ligado paga un 1,0 % real y un bono normal paga un 3,5 %. Mueve la inflación del año a la que el ligado (real + inflación, suma aproximada) iguala al bono normal.",
+          "label": "Inflación del año",
+          "min": 0,
+          "max": 6,
+          "step": 0.5,
+          "start": 5,
+          "a": 2.5,
+          "unit": "%",
+          "why": "El ligado rinde 1,0 % + inflación; iguala el 3,5 % cuando la inflación es del 2,5 %, que es la inflación implícita.",
+          "show": [
+            {
+              "label": "Rentabilidad aproximada del ligado",
+              "k": 1,
+              "b": 1,
+              "unit": "%",
+              "dec": 1
+            },
+            {
+              "label": "Diferencia frente al bono normal (3,5 %)",
+              "k": 1,
+              "b": -2.5,
+              "unit": "%",
+              "dec": 1
+            }
+          ],
+          "guia": "g3"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "il2",
+      "title": "Cuál gana y qué riesgos tiene",
+      "ex": [
+        {
+          "id": "il2-1",
+          "t": "num",
+          "q": "Un bono normal a 10 años rinde un 3,5 % y un bono ligado a la inflación del mismo plazo, un 1,0 % real. ¿Cuántos puntos porcentuales es la inflación implícita? Redondea a 1 decimal.",
+          "unit": "puntos",
+          "a": 2.5,
+          "why": "Inflación implícita ≈ rentabilidad nominal − rentabilidad real = 3,5 % − 1,0 % = 2,5 %. Es la inflación anual que descuenta el mercado.",
+          "tol": 0.06,
+          "guia": "g2"
+        },
+        {
+          "id": "il2-2",
+          "t": "choice",
+          "q": "La inflación implícita es del 2,5 % anual y la inflación real acaba siendo del 4 %. ¿Qué bono rinde más?",
+          "opts": [
+            "El bono normal, porque su cupón es fijo",
+            "Los dos rinden exactamente lo mismo",
+            "El bono ligado, porque cobra la inflación real",
+            "Ninguno: con inflación alta ambos pierden"
+          ],
+          "a": 2,
+          "why": "Con un 4 % real el ligado rinde cerca del 5,0 % (1,0 % + 4 %) frente al 3,5 % del normal: gana cuando la inflación supera la implícita.",
+          "guia": "g3",
+          "porque": [
+            "Con inflación por encima de la implícita, el normal se queda atrás.",
+            "Solo coincidirían si la inflación fuese exactamente la implícita (2,5 %).",
+            null,
+            "El ligado sube con la inflación, así que no pierde poder de compra."
+          ]
+        },
+        {
+          "id": "il2-3",
+          "t": "num",
+          "q": "Un bono normal rinde un 3,5 % y un ligado, un 1,0 % real. La inflación del año resulta ser del 1,0 %. ¿Cuántos puntos porcentuales rinde menos el ligado que el normal? Redondea a 1 decimal.",
+          "unit": "puntos",
+          "a": 1.5,
+          "why": "El ligado rinde 1,0 % + 1,0 % = 2,0 % aproximado, frente al 3,5 % del normal: 1,5 puntos menos. Con inflación por debajo de la implícita (2,5 %), gana el normal.",
+          "tol": 0.06,
+          "guia": "g3"
+        },
+        {
+          "id": "il2-4",
+          "t": "choice",
+          "q": "Los tipos de interés reales suben un punto. ¿Qué pasa con el precio de un bono ligado de duración 8?",
+          "opts": [
+            "Sube alrededor de un 8 % por su protección",
+            "Baja alrededor de un 8 %, como cualquier bono",
+            "No cambia, porque el principal se ajusta al IPC",
+            "Baja solo si además sube la inflación"
+          ],
+          "a": 1,
+          "why": "Que se ajuste al IPC no lo protege de los tipos reales: el precio baja ≈ duración × subida = 8 × 1 = 8 %.",
+          "guia": "g4",
+          "porque": [
+            "El ajuste al IPC no evita la caída de precio por tipos reales.",
+            null,
+            "El IPC protege el principal, no el precio de mercado ante tipos reales.",
+            "Los tipos reales bastan: no hace falta que suba la inflación."
+          ]
+        },
+        {
+          "id": "il2-5",
+          "t": "num",
+          "q": "Un bono ligado de duración 8 vale 500 € y los tipos reales suben un punto porcentual. Con la aproximación duración × subida, ¿cuántos euros pierde de precio?",
+          "unit": "€",
+          "a": 40,
+          "why": "Caída aproximada: 8 × 1 % = 8 % del precio. 500 € × 8 % = 40 €.",
+          "guia": "g4"
+        },
+        {
+          "id": "il2-6",
+          "t": "choice",
+          "q": "El IPC cae un 2 % durante un año (deflación). ¿Qué puede ocurrir con el principal de un bono ligado?",
+          "opts": [
+            "Se mantiene siempre fijo y el cupón real sube un 2 %",
+            "Puede ajustarse a la baja, según las condiciones del bono",
+            "Sube igualmente, porque el ajuste solo funciona al alza",
+            "El emisor lo recompra al precio de emisión"
+          ],
+          "a": 1,
+          "why": "En muchos bonos el principal indexado sigue al IPC también a la baja (500 € → 490 € con IPC −2 %), aunque varias emisiones garantizan el inicial al vencimiento. Lee las condiciones de cada emisión.",
+          "guia": "g4",
+          "porque": [
+            "El principal no queda fijo: sigue al IPC, y el cupón real no sube por ello.",
+            null,
+            "Puede bajar también: depende de las condiciones del bono.",
+            "No hay recompra: el bono sigue hasta su vencimiento."
+          ]
+        }
+      ],
+      "ultimo": 6
+    }
+  ]
+}

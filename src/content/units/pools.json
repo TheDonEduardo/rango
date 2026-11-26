@@ -1,0 +1,222 @@
+{
+  "n": 10,
+  "id": "pools",
+  "track": "cripto",
+  "title": "Pools de liquidez al detalle",
+  "blurb": "Producto constante, cantidades tras un cambio de precio y cuánto pierdes frente a mantener.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Producto constante",
+      "texto": "Un pool 50/50 guarda dos monedas por el mismo valor. Con producto constante, x · y = k no cambia con los intercambios y el precio es la proporción entre ambas.",
+      "ejemplo": "Pool de 2 ETH y 4.000 USDC: k = 8.000, precio 2.000 USDC por ETH y valor total 8.000 USDC."
+    },
+    {
+      "id": "g2",
+      "titulo": "Cantidades tras un cambio",
+      "texto": "Cuando el precio P cambia, el pool se recoloca: x = √(k ÷ P) de la primera moneda e y = √(k · P) de la segunda. Su valor es el doble de y.",
+      "ejemplo": "ETH a 4.500 USDC: x = √(8.000 ÷ 4.500) = 1,33 ETH; y = √(8.000 × 4.500) = 6.000 USDC. Valor: 12.000 USDC. Mantener: 2 × 4.500 + 4.000 = 13.000."
+    },
+    {
+      "id": "g3",
+      "titulo": "Pérdida impermanente",
+      "texto": "Es cuánto menos vale el pool que mantener tus monedas, en porcentaje: 2√r ÷ (1 + r) − 1, con r = precio nuevo ÷ inicial. Es simétrica: r y 1 ÷ r dan la misma pérdida.",
+      "ejemplo": "r = 2,25: 12.000 ÷ 13.000 − 1 = −7,7 %. Con r = 2 y con r = 0,5: −5,7 % en ambos casos."
+    },
+    {
+      "id": "g4",
+      "titulo": "Comisiones y estables",
+      "texto": "Las comisiones solo compensan si superan esa pérdida. En pares de monedas estables r queda cerca de 1 y la pérdida es mínima, salvo que una pierda su paridad.",
+      "ejemplo": "La pérdida frente a mantener, 1.000 USDC, equivale al 12,5 % de los 8.000 aportados; con 320 USDC de comisiones sigues 680 por debajo. Con r = 1,02, la pérdida es −0,005 %."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "mb1",
+      "title": "El producto constante",
+      "ex": [
+        {
+          "id": "mb1-1",
+          "t": "num",
+          "q": "Un pool 50/50 tiene 2 ETH y 4.000 USDC. Con producto constante, ¿cuántos mil vale k = x · y?",
+          "unit": "mil",
+          "a": 8,
+          "why": "k = 2 × 4.000 = 8.000, es decir, 8 mil. Mientras nadie aporte ni retire, el producto de las dos cantidades se mantiene en 8.000.",
+          "guia": "g1"
+        },
+        {
+          "id": "mb1-2",
+          "t": "choice",
+          "q": "En un pool de producto constante, ¿qué se mantiene igual cuando alguien intercambia una moneda por otra?",
+          "opts": [
+            "La cantidad de la primera moneda en el pool",
+            "El precio de la moneda en dólares",
+            "La suma de las dos cantidades del pool",
+            "El producto de las dos cantidades (x · y = k)"
+          ],
+          "a": 3,
+          "why": "Cada intercambio cambia las cantidades, pero su producto sigue siendo k. Por eso el precio, que es la proporción entre ellas, cambia con cada compra.",
+          "guia": "g1",
+          "porque": [
+            "La cantidad de cada moneda cambia con cada intercambio.",
+            "El precio es justamente lo que cambia con la proporción.",
+            "Lo que se conserva es el producto, no la suma.",
+            null
+          ]
+        },
+        {
+          "id": "mb1-3",
+          "t": "num",
+          "q": "Un pool 50/50 tiene 2 ETH y 4.000 USDC (k = 8.000). El mercado pasa a valorar el ETH a 4.500 USDC. ¿Cuántos ETH quedan en el pool? Redondea a 2 decimales.",
+          "unit": "ETH",
+          "a": 1.33,
+          "why": "x = √(k ÷ P) = √(8.000 ÷ 4.500) = 1,33 ETH. Los arbitrajistas compran ETH barato hasta que el precio del pool iguala al de mercado.",
+          "tol": 0.01,
+          "guia": "g2"
+        },
+        {
+          "id": "mb1-4",
+          "t": "num",
+          "q": "Un pool 50/50 tiene 2 ETH y 4.000 USDC. Con el ETH a 4.500 USDC quedan 1,33 ETH y 6.000 USDC. ¿Cuántos miles de USDC vale el pool entero? Redondea a 1 decimal.",
+          "unit": "mil USDC",
+          "a": 12,
+          "why": "En un pool 50/50 cada lado vale lo mismo: 1,333… ETH × 4.500 = 6.000 USDC, más 6.000 USDC = 12.000 USDC, es decir, 12 mil (con 1,33 redondeado sale 11.985).",
+          "tol": 0.06,
+          "guia": "g2"
+        },
+        {
+          "id": "mb1-5",
+          "t": "match",
+          "q": "Empareja cada término de los pools de liquidez con su descripción.",
+          "pairs": [
+            [
+              "Producto constante",
+              "Regla x · y = k que fija el precio del pool"
+            ],
+            [
+              "Pool 50/50",
+              "Mantiene la mitad de su valor en cada moneda"
+            ],
+            [
+              "Mantener sin aportar",
+              "Quedarte con tus monedas sin meterlas en el pool"
+            ],
+            [
+              "Comisión del pool",
+              "Parte de cada intercambio que va a quien aporta liquidez"
+            ]
+          ],
+          "why": "El pool reparte su valor a partes iguales y recalcula cantidades con k fijo; la comisión es lo único que puede compensar lo que pierde frente a mantener.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "mb2",
+      "title": "Cuánto pierdes y cómo compensarlo",
+      "ex": [
+        {
+          "id": "mb2-1",
+          "t": "num",
+          "q": "Aportaste 2 ETH y 4.000 USDC a un pool. Con el ETH a 4.500 USDC, tu parte vale 12.000 USDC; mantener tus monedas valdría 13.000 USDC. ¿Qué porcentaje menos vale el pool que mantener? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 7.7,
+          "why": "Pérdida impermanente = 12.000 ÷ 13.000 − 1 = −7,7 %. Mantener valdría 2 × 4.500 + 4.000 = 13.000 USDC. Con la fórmula, r = 2,25: 2√2,25 ÷ (1 + 2,25) − 1 = −7,7 %.",
+          "tol": 0.06,
+          "guia": "g3"
+        },
+        {
+          "id": "mb2-2",
+          "t": "num",
+          "q": "Con la fórmula pérdida impermanente = 2√r ÷ (1 + r) − 1, el precio de un token se duplica (r = 2). ¿Qué porcentaje pierdes frente a mantener? Redondea a 1 decimal.",
+          "unit": "%",
+          "a": 5.7,
+          "why": "2 × √2 ÷ 3 − 1 = 0,9428 − 1 = −5,7 %. Sale de la raíz de r, no de r: la pérdida crece menos que el cambio de precio.",
+          "tol": 0.06,
+          "guia": "g3"
+        },
+        {
+          "id": "mb2-3",
+          "t": "choice",
+          "q": "El precio de un token baja a la mitad (r = 0,5). ¿Cómo es la pérdida impermanente respecto a la de duplicarse (−5,7 %)?",
+          "opts": [
+            "Es la misma, un 5,7 %: la fórmula es simétrica",
+            "Es mayor, porque el valor del pool cae con el precio",
+            "Es cero, porque el precio vuelve hacia su origen",
+            "Es la mitad, un 2,85 %, porque el cambio es menor"
+          ],
+          "a": 0,
+          "why": "2√0,5 ÷ 1,5 − 1 = −5,7 %, igual que con r = 2: importa cuánto se aleja el precio, en cualquier sentido.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "El valor cae, pero también cae lo que valdría mantener: importa la distancia del precio.",
+            "El precio vuelve hacia su origen solo si r = 1; con r = 0,5 hay pérdida.",
+            "La fórmula da el mismo −5,7 %: no depende del sentido."
+          ]
+        },
+        {
+          "id": "mb2-4",
+          "t": "slide",
+          "q": "Aportaste 2 ETH y 4.000 USDC (8.000 USDC). Con el ETH a 4.500 USDC, el pool vale 1.000 USDC menos que mantener. Mueve las comisiones acumuladas (en % de lo aportado) que igualan ambas opciones.",
+          "label": "Comisiones acumuladas",
+          "min": 0,
+          "max": 20,
+          "step": 2.5,
+          "start": 2.5,
+          "a": 12.5,
+          "unit": "%",
+          "why": "1.000 ÷ 8.000 = 12,5 %: con esas comisiones (1.000 USDC) empatas con mantener. Con menos, sigues perdiendo frente a mantener.",
+          "show": [
+            {
+              "label": "Comisiones cobradas",
+              "k": 80,
+              "b": 0,
+              "unit": "USDC",
+              "dec": 0
+            },
+            {
+              "label": "Resultado frente a mantener",
+              "k": 80,
+              "b": -1000,
+              "unit": "USDC",
+              "dec": 0
+            }
+          ],
+          "guia": "g4"
+        },
+        {
+          "id": "mb2-5",
+          "t": "num",
+          "q": "Con el ETH a 4.500 USDC, tu parte del pool vale 1.000 USDC menos que mantener. Has cobrado 320 USDC en comisiones. ¿Cuántos USDC quedas por debajo de mantener?",
+          "unit": "USDC",
+          "a": 680,
+          "why": "1.000 − 320 = 680 USDC por debajo. Las comisiones solo compensan si superan la pérdida impermanente.",
+          "guia": "g4"
+        },
+        {
+          "id": "mb2-6",
+          "t": "choice",
+          "q": "¿Por qué un pool de dos monedas estables tiene muy poca pérdida impermanente?",
+          "opts": [
+            "Porque ese pool no cobra comisiones por intercambio",
+            "Porque las monedas estables suben siempre de precio",
+            "Porque su precio relativo casi no cambia (r ≈ 1)",
+            "Porque la fórmula del pool no se aplica a esos pares"
+          ],
+          "a": 2,
+          "why": "Con r = 1,02 la pérdida es solo de un 0,005 %. El riesgo está en que una pierda su paridad: entonces r se aleja de 1.",
+          "guia": "g4",
+          "porque": [
+            "Sí cobra comisiones, pero no explican la pérdida baja.",
+            "Las estables no suben siempre: su precio se mantiene alrededor de 1 dólar.",
+            null,
+            "La fórmula se aplica igual: simplemente sale casi cero."
+          ]
+        }
+      ],
+      "ultimo": 6
+    }
+  ]
+}

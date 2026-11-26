@@ -1,0 +1,217 @@
+{
+  "n": 25,
+  "id": "ruina",
+  "track": "tecnico",
+  "title": "Esperanza, rachas y riesgo de ruina",
+  "blurb": "Cuánto gana un sistema de media, cuántas pérdidas seguidas son normales y por qué arriesgar demasiado arruina incluso a un sistema que gana.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Esperanza y acierto mínimo",
+      "texto": "La esperanza en R es lo que ganas por operación de media: aciertos × R medio ganado − fallos × 1R. Con ratio R, el acierto mínimo para no perder es 1 ÷ (1 + R).",
+      "ejemplo": "Aciertas el 40 % y ganas 2,5R: 0,4 × 2,5 − 0,6 × 1 = +0,40R por operación. Con ratio 3, el mínimo es 1 ÷ 4 = 25 %."
+    },
+    {
+      "id": "g2",
+      "titulo": "Rachas de pérdidas",
+      "texto": "Con esperanza positiva, las rachas de pérdidas llegan igual. La probabilidad de perder las próximas n operaciones es (1 − p)ⁿ, con p la tasa de acierto. Cada operación es independiente: tras una racha, la siguiente no «toca» ganar.",
+      "ejemplo": "Con p = 40 %, perder las próximas 5: 0,6⁵ = 7,8 %. Perder las próximas 3: 0,6³ = 21,6 %. En 100 operaciones, una racha de 5 aparece casi seguro."
+    },
+    {
+      "id": "g3",
+      "titulo": "Caída tras una racha y recuperación",
+      "texto": "Perder un x % en n operaciones seguidas deja una caída de 1 − (1 − x)ⁿ: cada pérdida se calcula sobre lo que queda. Recuperar una caída c exige subir 1 ÷ (1 − c) − 1.",
+      "ejemplo": "Cinco pérdidas al 2 %: 1 − 0,98⁵ = 9,6 %; recuperar exige un 10,6 %. Cinco al 10 %: 41 %; recuperar exige un 69,4 %."
+    },
+    {
+      "id": "g4",
+      "titulo": "Riesgo de ruina",
+      "texto": "El riesgo de ruina crece con lo que arriesgas por operación: aunque la esperanza sea positiva, una racha normal deja una caída que exige subidas enormes. Arriesgar poco permite que la esperanza se cumpla a largo plazo.",
+      "ejemplo": "Con 40 % de aciertos y +0,40R, una racha de 5 pérdidas (casi segura en 100 operaciones) cuesta un 9,6 % arriesgando el 2 % y un 41 % arriesgando el 10 %."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "rr1",
+      "title": "Esperanza y rachas",
+      "ex": [
+        {
+          "id": "rr1-1",
+          "t": "num",
+          "q": "Un sistema acierta el 45 % de las operaciones. Las ganadoras dan 2R de media y las perdedoras pierden 1R. ¿Cuál es la esperanza por operación, en R?",
+          "unit": "R",
+          "a": 0.35,
+          "why": "0,45 × 2 − 0,55 × 1 = 0,90 − 0,55 = +0,35R por operación.",
+          "guia": "g1"
+        },
+        {
+          "id": "rr1-2",
+          "t": "slide",
+          "q": "Un sistema acierta el 40 % de las veces y pierde 1R en cada fallo. ¿Cuánto debe ganar de media cada acierto, en R, para que la esperanza no sea negativa? Elige el mínimo.",
+          "label": "R medio ganado",
+          "min": 0.5,
+          "max": 4,
+          "step": 0.1,
+          "start": 3,
+          "a": 1.5,
+          "unit": "R",
+          "why": "0,4 × 1,5 − 0,6 × 1 = 0: con 1,5R se queda en equilibrio. Coincide con 1 ÷ (1 + 1,5) = 40 %.",
+          "show": [
+            {
+              "label": "Esperanza por operación",
+              "k": 0.4,
+              "b": -0.6,
+              "unit": "R",
+              "dec": 2
+            }
+          ],
+          "guia": "g1"
+        },
+        {
+          "id": "rr1-3",
+          "t": "num",
+          "q": "Un sistema gana 4R de media en sus operaciones ganadoras y pierde 1R en las perdedoras. ¿Qué porcentaje mínimo de aciertos necesita para no perder?",
+          "unit": "%",
+          "a": 20,
+          "why": "1 ÷ (1 + 4) = 0,20 = 20 %. Comprobación: 0,2 × 4 − 0,8 × 1 = 0.",
+          "guia": "g1"
+        },
+        {
+          "id": "rr1-4",
+          "t": "choice",
+          "q": "Un sistema acierta el 30 % de las veces, con ganadoras de 2R de media y perdedoras de 1R. ¿Qué esperanza tiene?",
+          "opts": [
+            "Positiva: +0,10R por operación, porque con ratio 2 basta el 30 %",
+            "Negativa: −0,10R por operación, porque necesita al menos un 33,3 % de aciertos",
+            "Cero: el 30 % de aciertos compensa exactamente un ratio de 2 a 1",
+            "Positiva: +0,60R por operación, el 30 % multiplicado por 2R"
+          ],
+          "a": 1,
+          "why": "0,3 × 2 − 0,7 × 1 = −0,10R. El acierto mínimo con ratio 2 es 1 ÷ 3 = 33,3 %, y el 30 % queda por debajo.",
+          "guia": "g1",
+          "porque": [
+            "Con ratio 2 hace falta 1 ÷ 3 = 33,3 % de aciertos. El 30 % queda por debajo: 0,3 × 2 − 0,7 × 1 = −0,10R, no positivo.",
+            null,
+            "Para quedar en cero haría falta el 33,3 %. Con el 30 %, los 0,6R que se ganan no compensan los 0,7R que se pierden.",
+            "0,60R es solo la parte ganadora (0,3 × 2). Falta restar las pérdidas, 0,7 × 1 = 0,7R, que dejan −0,10R."
+          ]
+        },
+        {
+          "id": "rr1-5",
+          "t": "num",
+          "q": "Un sistema acierta el 55 % de las operaciones. ¿Qué probabilidad hay de perder las próximas 4 operaciones seguidas, en %?",
+          "unit": "%",
+          "a": 4.1,
+          "why": "0,45⁴ = 0,041 = 4,1 %. Es poco probable en un tramo concreto, pero a lo largo de muchas operaciones ocurrirá más de una vez.",
+          "tol": 0.06,
+          "guia": "g2"
+        },
+        {
+          "id": "rr1-6",
+          "t": "choice",
+          "q": "Un sistema que acierta el 55 % pierde 4 operaciones seguidas. ¿Qué probabilidad tiene de ganar la siguiente?",
+          "opts": [
+            "Más del 55 %, porque tras una racha de pérdidas toca compensarla",
+            "Menos del 55 %, porque las rachas de pérdidas se acumulan: tras 4, la quinta es más probable",
+            "Sigue siendo del 55 %: cada operación es independiente de las anteriores",
+            "El 100 %, porque 4 pérdidas seguidas con un 55 % de aciertos exigen una ganadora"
+          ],
+          "a": 2,
+          "why": "Perder 4 seguidas tenía un 4,1 % de probabilidad, pero ya ocurrido, cada operación conserva su 55 % de acierto: no hay compensación.",
+          "guia": "g2",
+          "porque": [
+            "No existe una ley de compensación: la moneda no tiene memoria. Cada operación mantiene su 55 % sin importar las anteriores.",
+            "Las operaciones son independientes: perder 4 no hace más probable perder la quinta. Sigue en 45 % de perder y 55 % de ganar.",
+            null,
+            "Ninguna probabilidad es del 100 % con un 55 % de aciertos: cada operación conserva su 55 %, aunque 4 pérdidas seguidas sean poco probables."
+          ]
+        }
+      ],
+      "ultimo": 6
+    },
+    {
+      "id": "rr2",
+      "title": "Caídas, recuperación y ruina",
+      "ex": [
+        {
+          "id": "rr2-1",
+          "t": "num",
+          "q": "Pierdes un 3 % de la cuenta en cada una de 6 operaciones seguidas, calculado cada vez sobre lo que queda. ¿Qué porcentaje de la cuenta has perdido en total?",
+          "unit": "%",
+          "a": 16.7,
+          "why": "0,97⁶ = 0,833 y 1 − 0,833 = 16,7 %: algo menos que 6 × 3 = 18 %, porque cada pérdida se calcula sobre lo que queda.",
+          "tol": 0.06,
+          "guia": "g3"
+        },
+        {
+          "id": "rr2-2",
+          "t": "num",
+          "q": "La cuenta ha caído un 20 %. ¿Qué porcentaje de subida necesita para volver al punto de partida?",
+          "unit": "%",
+          "a": 25,
+          "why": "1 ÷ (1 − 0,20) − 1 = 1,25 − 1 = 25 %: sobre el 80 % que queda hace falta un 25 % más.",
+          "guia": "g3"
+        },
+        {
+          "id": "rr2-3",
+          "t": "choice",
+          "q": "Un sistema tiene esperanza positiva. ¿Por qué puede arruinar la cuenta aun así?",
+          "opts": [
+            "Porque la esperanza positiva solo se cumple si se aciertan más de la mitad de las operaciones",
+            "Porque con esperanza positiva no hay rachas de pérdidas y el riesgo no cuenta",
+            "Porque la esperanza se calcula con la cuenta entera y no operación a operación",
+            "Porque con mucho riesgo por operación una racha normal de pérdidas deja una caída que casi no se recupera"
+          ],
+          "a": 3,
+          "why": "Con 40 % de aciertos, 5 pérdidas seguidas en 5 operaciones concretas tienen un 7,8 %, pero en 100 operaciones una racha así aparece casi seguro (≈ 98 %): arriesgando el 10 %, la cuenta cae un 41 % y pide un +69,4 %.",
+          "guia": "g4",
+          "porque": [
+            "Falso: con ratio alto, un 35 % de aciertos puede dar esperanza positiva. El problema no es el acierto, sino cuánto se arriesga en cada operación.",
+            "Las rachas existen siempre: con 40 % de aciertos, en 100 operaciones una racha de 5 pérdidas aparece casi seguro, también con esperanza positiva.",
+            "La esperanza se calcula por operación y eso es correcto. El riesgo de ruina viene del tamaño de lo arriesgado, no de cómo se calcula.",
+            null
+          ]
+        },
+        {
+          "id": "rr2-4",
+          "t": "match",
+          "q": "Une cada concepto con su idea.",
+          "pairs": [
+            [
+              "Esperanza en R",
+              "Lo que se gana por operación de media"
+            ],
+            [
+              "Acierto mínimo",
+              "1 ÷ (1 + R) para no perder"
+            ],
+            [
+              "Próximas n pérdidas seguidas",
+              "(1 − p)ⁿ, con p la tasa de acierto"
+            ],
+            [
+              "Subida para recuperar",
+              "1 ÷ (1 − caída) − 1"
+            ]
+          ],
+          "why": "La esperanza dice si el sistema gana de media; el acierto mínimo, cuánto necesita; la racha, cuántas pérdidas seguidas son normales; y la subida, lo que cuesta recuperar.",
+          "guia": "g1"
+        },
+        {
+          "id": "rr2-5",
+          "t": "order",
+          "q": "Ordena los pasos para dimensionar el riesgo por operación de un sistema.",
+          "items": [
+            "Calcular el porcentaje de aciertos y el R medio ganado de las operaciones pasadas",
+            "Comprobar que la esperanza en R es positiva",
+            "Estimar la racha de pérdidas que puede ocurrir y la caída que dejaría",
+            "Elegir un riesgo por operación con el que esa caída sea soportable"
+          ],
+          "why": "Primero se miden los datos, luego se comprueba la esperanza, después se estima la racha y su caída, y al final se fija el riesgo que se puede soportar.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}
