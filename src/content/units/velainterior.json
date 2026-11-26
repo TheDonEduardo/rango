@@ -1,0 +1,304 @@
+{
+  "n": 18,
+  "id": "velainterior",
+  "track": "tecnico",
+  "title": "Vela interior y rango estrecho",
+  "blurb": "La pausa antes del movimiento: reconocer la vela interior y la NR7, operar su ruptura con stop y tamaño, y saber cuándo descartarla.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "La vela interior",
+      "texto": "El rango es el máximo menos el mínimo de la sesión. Una vela interior tiene su máximo y su mínimo dentro del rango de la anterior, la vela madre. Muestra una pausa: el precio se comprime antes de decidir.",
+      "ejemplo": "Madre: máximo 47,40 € y mínimo 44,90 € (rango 2,50 €). La siguiente, entre 47,10 € y 45,60 €, es interior.",
+      "figura": {
+        "type": "velas",
+        "h": 230,
+        "alt": "Dos velas: una vela madre grande con un máximo y un mínimo marcados, y una vela más pequeña que queda dentro de ese rango",
+        "data": [
+          null,
+          [45.3,47.4,44.9,47.0],
+          [46.8,47.1,45.6,46.0]
+        ],
+        "etiquetas": [
+          null,
+          "Madre",
+          "Interior"
+        ],
+        "lineas": [
+          {
+            "y": 47.4,
+            "texto": "Máx. madre 47,40",
+            "tono": "up",
+            "lado": "i"
+          },
+          {
+            "y": 44.9,
+            "texto": "Mín. madre 44,90",
+            "tono": "dn",
+            "lado": "i"
+          }
+        ]
+      }
+    },
+    {
+      "id": "g2",
+      "titulo": "El rango más estrecho de siete: NR7",
+      "texto": "Una NR7 es la sesión con el menor rango de las últimas siete. Se vigila porque la calma puede preceder a un movimiento mayor, sin decir hacia dónde; una vela interior puede ser también NR7.",
+      "ejemplo": "Rangos de 2,4; 2,1; 3,0; 2,6; 2,2; 2,8 y 1,8 €: la última es NR7 por ser la menor de las siete."
+    },
+    {
+      "id": "g3",
+      "titulo": "Operar la ruptura",
+      "texto": "En tendencia alcista, compras sobre el máximo de la madre y pones el stop bajo su mínimo. El riesgo por acción es la distancia entre ambos y el tamaño sale de lo que arriesgas, dividido por él.",
+      "ejemplo": "Entrada 47,50 €, stop 44,80 €: riesgo 2,70 €. Con 500 € de riesgo, 185 acciones. Objetivo a 2R: 52,90 €.",
+      "figura": {
+        "type": "velas",
+        "h": 230,
+        "alt": "Tres velas: la madre, la interior y una vela de ruptura, con líneas de entrada, stop y objetivo",
+        "data": [
+          [45.3,47.4,44.9,47.0],
+          [46.8,47.1,45.6,46.0],
+          [47.2,49.0,47.0,48.8],
+          null,
+          null
+        ],
+        "lineas": [
+          {
+            "y": 52.9,
+            "texto": "Objetivo 52,90",
+            "tono": "up"
+          },
+          {
+            "y": 47.5,
+            "texto": "Entrada 47,50",
+            "tono": "sel"
+          },
+          {
+            "y": 44.8,
+            "texto": "Stop 44,80",
+            "tono": "dn"
+          }
+        ]
+      }
+    },
+    {
+      "id": "g4",
+      "titulo": "Cuándo descartarla",
+      "texto": "Descarta la señal sin tendencia alcista o con una madre muy ancha: el stop queda lejos y el tamaño se encoge. Como criterio orientativo, mide la madre en ATR y evita las de más de 2,5.",
+      "ejemplo": "ATR de 1,60 € y madre de 5,00 €: 5,00 ÷ 1,60 = 3,1 ATR, descartada. La madre de 2,50 € mide 1,6 ATR."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "vi1",
+      "title": "Reconocer la pausa",
+      "ex": [
+        {
+          "id": "vi1-1",
+          "t": "tap",
+          "q": "Toca la vela interior: la que tiene su máximo y su mínimo dentro del rango de la sesión anterior.",
+          "chart": {
+            "type": "candles",
+            "data": [
+              [40.0,41.2,39.6,40.9],
+              [40.9,42.0,40.5,41.8],
+              [41.8,42.9,41.4,42.6],
+              [42.6,43.4,42.0,42.2],
+              [42.2,43.8,42.0,43.5],
+              [43.5,44.6,43.2,44.4],
+              [44.4,45.6,44.0,45.3],
+              [45.3,47.4,44.9,47.0],
+              [46.8,47.1,45.6,46.0]
+            ],
+            "h": 250,
+            "alt": "Nueve velas diarias de una acción en tendencia alcista"
+          },
+          "a": 8,
+          "why": "La vela 9 (máximo 47,10 € y mínimo 45,60 €) cabe dentro de la 8 (47,40 € y 44,90 €). La 4 tiene un cuerpo pequeño, pero su máximo, 43,40 €, supera el de la anterior, 42,90 €.",
+          "guia": "g1"
+        },
+        {
+          "id": "vi1-2",
+          "t": "choice",
+          "q": "¿Qué define a una vela interior?",
+          "opts": [
+            "Su cuerpo es más pequeño que el cuerpo de la vela anterior",
+            "Cierra por debajo de su apertura tras una subida",
+            "Tiene menos volumen que la media de las últimas diez sesiones",
+            "Su máximo y su mínimo quedan dentro del rango de la vela anterior"
+          ],
+          "a": 3,
+          "why": "Lo que la define es el rango: máximo y mínimo dentro de los de la madre. Un cuerpo pequeño, el color o el volumen no bastan.",
+          "guia": "g1",
+          "porque": [
+            "Un cuerpo pequeño no basta: la vela puede tener un máximo mayor que la anterior y no ser interior.",
+            "El color no la define: una vela interior puede cerrar arriba o abajo de su apertura.",
+            "El volumen no entra en la definición: solo cuenta que su rango quede dentro del de la madre.",
+            null
+          ]
+        },
+        {
+          "id": "vi1-3",
+          "t": "match",
+          "q": "Empareja cada término con su descripción.",
+          "pairs": [
+            [
+              "Rango",
+              "Máximo menos mínimo de la sesión"
+            ],
+            [
+              "Vela madre",
+              "La vela cuyo rango contiene a la siguiente"
+            ],
+            [
+              "Vela interior",
+              "La que queda dentro del rango de la madre"
+            ]
+          ],
+          "why": "El rango mide la sesión; la madre es la grande y la interior queda dentro de ella.",
+          "guia": "g1"
+        },
+        {
+          "id": "vi1-4",
+          "t": "choice",
+          "q": "Los rangos de las seis últimas sesiones fueron 2,0; 1,7; 2,3; 2,9; 2,1 y 2,6 €, y hoy el rango es de 1,9 €. ¿Es hoy una NR7?",
+          "opts": [
+            "Sí: 1,9 € es menor que el rango medio",
+            "Sí: hoy es menor que los de las últimas tres sesiones",
+            "No: hace cinco sesiones hubo un rango menor, de 1,7 €",
+            "No: una NR7 exige un rango de menos de 1,0 €"
+          ],
+          "a": 2,
+          "why": "Una NR7 es la sesión de menor rango de las siete últimas. Como 1,7 € es menor que 1,9 €, hoy no lo es.",
+          "guia": "g2",
+          "porque": [
+            "El criterio es ser la menor de las siete, no estar por debajo de la media; además, hubo una menor.",
+            "Comparar con tres sesiones no basta: una NR7 se mide frente a las seis anteriores.",
+            null,
+            "No existe un umbral fijo de 1,0 €: la NR7 se define por comparación con las sesiones anteriores."
+          ]
+        },
+        {
+          "id": "vi1-5",
+          "t": "num",
+          "q": "Los rangos de las seis sesiones anteriores fueron 2,6; 2,9; 2,3; 2,8; 2,5 y 3,1 €. ¿Cuál es el rango más pequeño de esas seis, en €, el que hoy debe mejorar para ser una NR7?",
+          "unit": "€",
+          "a": 2.3,
+          "why": "El menor de 2,6; 2,9; 2,3; 2,8; 2,5 y 3,1 es 2,3 €. Hoy tiene que quedar por debajo de 2,3 € para ser la sesión más estrecha de las siete.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "vi2",
+      "title": "Operar la ruptura",
+      "ex": [
+        {
+          "id": "vi2-1",
+          "t": "plan",
+          "q": "Acción en tendencia alcista con una vela madre de máximo 47,40 € y mínimo 44,90 €, seguida de una vela interior. Monta la operación: entrada 0,10 € sobre el máximo de la madre, stop 0,10 € bajo su mínimo y objetivo a 2R.",
+          "chart": {
+            "type": "candles",
+            "data": [
+              [40.0,41.2,39.6,40.9],
+              [40.9,42.0,40.5,41.8],
+              [41.8,42.9,41.4,42.6],
+              [42.6,43.4,42.0,42.2],
+              [42.2,43.8,42.0,43.5],
+              [43.5,44.6,43.2,44.4],
+              [44.4,45.6,44.0,45.3],
+              [45.3,47.4,44.9,47.0],
+              [46.8,47.1,45.6,46.0]
+            ],
+            "h": 270,
+            "alt": "Nueve velas en tendencia alcista: una vela grande seguida de otra más pequeña, con tres líneas para colocar"
+          },
+          "place": [
+            {
+              "id": "entry",
+              "label": "Entrada",
+              "a": 47.5,
+              "start": 49.0
+            },
+            {
+              "id": "stop",
+              "label": "Stop",
+              "a": 44.8,
+              "start": 43.0
+            },
+            {
+              "id": "target",
+              "label": "Objetivo",
+              "a": 52.9,
+              "start": 50.4
+            }
+          ],
+          "step": 0.1,
+          "why": "Entrada: 47,40 + 0,10 = 47,50 €. Stop: 44,90 − 0,10 = 44,80 €. Riesgo: 2,70 €. Objetivo a 2R: 47,50 + 2 × 2,70 = 52,90 €.",
+          "guia": "g3"
+        },
+        {
+          "id": "vi2-2",
+          "t": "num",
+          "q": "Compras en la ruptura de una vela interior con entrada en 31,20 € y stop en 29,40 €. Arriesgas 450 € por operación. ¿Cuántas acciones compras?",
+          "unit": "acc.",
+          "a": 250,
+          "why": "Riesgo por acción: 31,20 − 29,40 = 1,80 €. Acciones: 450 ÷ 1,80 = 250.",
+          "guia": "g3"
+        },
+        {
+          "id": "vi2-3",
+          "t": "choice",
+          "q": "Compras la ruptura de una vela interior en tendencia alcista. ¿Dónde pones el stop?",
+          "opts": [
+            "Un poco por encima del máximo de la vela madre",
+            "Un poco por debajo del mínimo de la vela madre",
+            "Justo en el precio de entrada, para no perder nada",
+            "A una distancia fija del 10 % bajo la entrada"
+          ],
+          "a": 1,
+          "why": "Si el precio cae bajo el mínimo de la madre, la compresión se ha resuelto hacia abajo y la señal queda invalidada: ahí va el stop.",
+          "guia": "g3",
+          "porque": [
+            "Ahí va la entrada, no el stop: un stop en ese nivel te sacaría en tu precio de compra, sin margen para que la señal funcione.",
+            null,
+            "Poner el stop en la entrada te saca con el primer ruido, sin mirar la estructura de la señal.",
+            "Un 10 % fijo ignora la estructura: el stop va donde la señal se invalida, no a una distancia arbitraria."
+          ]
+        },
+        {
+          "id": "vi2-4",
+          "t": "choice",
+          "q": "Detectas una vela interior en una acción en tendencia alcista, pero la madre mide 3,1 veces el ATR. ¿Cómo la tratas?",
+          "opts": [
+            "La operas igual, con más acciones para compensar",
+            "La operas a la baja, porque una madre tan ancha agota el precio",
+            "Pones el stop encima de la madre para acortar el riesgo",
+            "La descartas: el stop bajo la madre quedaría demasiado lejos"
+          ],
+          "a": 3,
+          "why": "Con una madre de más de 2,5 ATR, como criterio orientativo, el riesgo por acción es grande y el tamaño se encoge: no compensa.",
+          "guia": "g4",
+          "porque": [
+            "Comprar más acciones no compensa un stop lejano: multiplica la pérdida si el precio cae bajo la madre.",
+            "En una tendencia alcista, una madre ancha no es señal bajista; ir a la baja contra la tendencia es otro riesgo.",
+            "Un stop encima de la madre quedaría por encima del precio de entrada: la orden no tiene sentido en una compra.",
+            null
+          ]
+        },
+        {
+          "id": "vi2-5",
+          "t": "num",
+          "q": "Una acción tiene un ATR de 1,25 € y su vela madre tiene un máximo de 25,40 € y un mínimo de 22,15 €. ¿Cuántos ATR mide la madre?",
+          "unit": "veces",
+          "a": 2.6,
+          "why": "Rango: 25,40 − 22,15 = 3,25 €. En ATR: 3,25 ÷ 1,25 = 2,6, por encima del criterio orientativo de 2,5.",
+          "tol": 0.01,
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

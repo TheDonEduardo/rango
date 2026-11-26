@@ -1,0 +1,235 @@
+{
+  "n": 32,
+  "id": "vender",
+  "track": "basico",
+  "title": "Cuándo vender",
+  "blurb": "Motivos para vender y motivos que no lo son, lo que cuesta vender y cómo sacar solo el dinero que necesitas.",
+  "gate": false,
+  "revisar": "2027-11",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Vender con un motivo",
+      "texto": "Vendes cuando llega la fecha de tu meta, cuando la razón por la que compraste ya no se cumple o para rebalancear si una parte pesa de más. Una caída o un titular, sin más, no son motivos.",
+      "ejemplo": "Objetivo del 60 % en acciones: con 5.000 € y 3.600 € en acciones (72 %), vender 600 € vuelve al 60 %."
+    },
+    {
+      "id": "g2",
+      "titulo": "Las caídas y el miedo",
+      "texto": "Si baja el precio pero tu razón de compra sigue intacta, la caída no es motivo: vender entonces suele ser vender barato por miedo. Antes de vender, pregúntate si la razón de compra sigue siendo cierta.",
+      "ejemplo": "Compraste a 20 € y hoy vale 16 €: ha caído un 20 %. Si tu razón sigue igual, no hay motivo para vender."
+    },
+    {
+      "id": "g3",
+      "titulo": "Lo que cuesta vender",
+      "texto": "Al vender pagas comisiones y tributa la ganancia, no el importe total. Calcula en orden: lo que cobras, la ganancia (venta − compra − comisiones), el impuesto y lo que te queda. Compruébalo con la norma vigente.",
+      "ejemplo": "Compras por 5.000 €, vendes por 6.030 € y pagas 30 € de comisiones: ganancia de 1.000 €. Al 19 %, el tipo del primer tramo, 190 € de impuesto.",
+      "figura": {
+        "type": "barras",
+        "unidad": "€",
+        "h": 240,
+        "alt": "Cuatro barras: venta de 6.030 euros, compra de 5.000, comisiones de 30 y ganancia de 1.000",
+        "barras": [
+          {
+            "texto": "Venta",
+            "valor": 6030,
+            "tono": "sel"
+          },
+          {
+            "texto": "Compra",
+            "valor": 5000,
+            "tono": "ink"
+          },
+          {
+            "texto": "Comisión",
+            "valor": 30,
+            "tono": "acc"
+          },
+          {
+            "texto": "Ganancia",
+            "valor": 1000,
+            "tono": "up"
+          }
+        ]
+      }
+    },
+    {
+      "id": "g4",
+      "titulo": "Vende solo lo que necesitas",
+      "texto": "Si necesitas dinero, vende solo esa cantidad: la ganancia tributa en proporción a lo vendido y el resto sigue invertido. Aquí todo se compró a un mismo precio; si no, Hacienda vende primero lo más antiguo (FIFO).",
+      "ejemplo": "Fondo de 6.000 € con 4.500 € aportados: el 25 % es ganancia. Vender 1.600 € tributa 400 € (76 € al 19 %); vender los 6.000 €, 1.500 € (285 €)."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "vv1",
+      "title": "Vender con motivo",
+      "ex": [
+        {
+          "id": "vv1-1",
+          "t": "choice",
+          "q": "¿Cuál de estas situaciones es un motivo sólido para vender un fondo?",
+          "opts": [
+            "El fondo ha perdido un 10 % este trimestre",
+            "Un titular avisa de turbulencias en la bolsa",
+            "Necesitas el dinero en tres meses para una reforma",
+            "Un compañero de trabajo ha vendido el suyo"
+          ],
+          "a": 2,
+          "why": "Si necesitas el dinero pronto, no puede depender de la bolsa: vender es parte del plan. Una caída, un titular o lo que haga otro no cambian tu objetivo.",
+          "guia": "g1",
+          "porque": [
+            "Una caída del trimestre, sin que cambie tu razón de compra, no basta: vender ahí suele fijar la pérdida.",
+            "Los titulares no cambian tu plan: vender por ellos es reaccionar al ruido y no cumplir un objetivo.",
+            null,
+            "Lo que haga otra persona depende de sus metas; solo las tuyas justifican vender."
+          ]
+        },
+        {
+          "id": "vv1-2",
+          "t": "num",
+          "q": "Compraste una acción a 20,00 € y hoy vale 16,00 €. ¿Cuánto ha caído, en %?",
+          "unit": "%",
+          "a": 20,
+          "why": "(20 − 16) ÷ 20 = 20 %. La caída sola no dice si vender: depende de si tu razón de compra sigue vigente.",
+          "guia": "g2"
+        },
+        {
+          "id": "vv1-3",
+          "t": "match",
+          "q": "Empareja cada situación con lo que implica para vender.",
+          "pairs": [
+            [
+              "Llega la fecha de tu meta",
+              "Vender forma parte del plan"
+            ],
+            [
+              "Tu razón de compra ya no se cumple",
+              "Hay que revisar y, si procede, salir"
+            ],
+            [
+              "Cae un 20 % y nada ha cambiado",
+              "El precio solo no es motivo"
+            ]
+          ],
+          "why": "Se vende por la meta o por una razón rota, no por un precio. Una caída sin cambios en lo que compraste no basta.",
+          "guia": "g1"
+        },
+        {
+          "id": "vv1-4",
+          "t": "choice",
+          "q": "Tu acción ha caído un 20 % desde tu compra, sin ninguna noticia sobre la empresa. ¿Qué pregunta te ayuda más a decidir si vender?",
+          "opts": [
+            "¿Cuánto me falta para recuperar lo que he perdido?",
+            "¿Sigue siendo cierta la razón por la que la compré?",
+            "¿Cuántos otros inversores están vendiendo hoy?",
+            "¿Cuál fue su precio máximo del año pasado?"
+          ],
+          "a": 1,
+          "why": "Lo que justifica vender es que la razón de compra haya dejado de ser cierta. Si sigue vigente, la caída por sí sola no es motivo.",
+          "guia": "g2",
+          "porque": [
+            "Recuperar lo perdido es un deseo, no una razón: al mercado le da igual a qué precio compraste.",
+            null,
+            "Lo que hagan otros no cambia por qué compraste; seguirlos es actuar por contagio.",
+            "Un máximo pasado no dice si hoy sigue vigente tu razón de compra."
+          ]
+        },
+        {
+          "id": "vv1-5",
+          "t": "num",
+          "q": "Tu objetivo es un 60 % en acciones. Tu cartera vale 8.000 € y las acciones valen ya 5.600 €. ¿Cuántos euros de acciones vendes para volver al 60 %?",
+          "unit": "€",
+          "a": 800,
+          "why": "El 60 % de 8.000 € son 4.800 €. Como tienes 5.600 €, vendes 5.600 − 4.800 = 800 € para rebalancear.",
+          "guia": "g1"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "vv2",
+      "title": "Lo que cuesta vender",
+      "ex": [
+        {
+          "id": "vv2-1",
+          "t": "num",
+          "q": "Compras acciones por 4.000 € y las vendes por 4.750 €. Pagas 20 € de comisiones en total. ¿Cuál es la ganancia, en €?",
+          "unit": "€",
+          "a": 730,
+          "why": "Ganancia = venta − compra − comisiones: 4.750 − 4.000 − 20 = 730 €. Tributa la ganancia, no los 4.750 €.",
+          "guia": "g3"
+        },
+        {
+          "id": "vv2-2",
+          "t": "num",
+          "q": "Compras un fondo por 3.000 € y lo vendes por 3.620 €, con 20 € de comisiones en total. Con un tipo simplificado del 19 % sobre la ganancia, ¿cuántos euros de impuesto pagas?",
+          "unit": "€",
+          "a": 114,
+          "why": "Ganancia: 3.620 − 3.000 − 20 = 600 €. Impuesto: 600 × 0,19 = 114 €.",
+          "guia": "g3"
+        },
+        {
+          "id": "vv2-3",
+          "t": "order",
+          "q": "Ordena el cálculo del resultado de una venta.",
+          "items": [
+            "Importe cobrado por la venta",
+            "Ganancia: venta menos compra y comisiones",
+            "Impuesto sobre la ganancia",
+            "Lo que te queda tras impuestos"
+          ],
+          "why": "Primero lo que cobras, luego la ganancia, después el impuesto sobre esa ganancia y al final lo que te queda.",
+          "guia": "g3"
+        },
+        {
+          "id": "vv2-4",
+          "t": "slide",
+          "q": "Tu fondo vale 6.000 € y aportaste 4.500 €; todas las participaciones se compraron de una vez, al mismo precio. El tipo simplificado es del 19 % sobre la ganancia. Este año no quieres pagar más de 95 € de impuesto. ¿Cuánto puedes vender como máximo?",
+          "label": "Importe a vender",
+          "min": 0,
+          "max": 6000,
+          "step": 200,
+          "start": 6000,
+          "a": 2000,
+          "unit": "€",
+          "why": "Vendiendo 2.000 €, la ganancia es de 500 € y el impuesto al 19 %, de 95 €.",
+          "show": [
+            {
+              "label": "Ganancia que tributa",
+              "k": 0.25,
+              "unit": "€"
+            },
+            {
+              "label": "Impuesto al 19 %",
+              "k": 0.0475,
+              "unit": "€"
+            }
+          ],
+          "guia": "g4"
+        },
+        {
+          "id": "vv2-5",
+          "t": "choice",
+          "q": "Necesitas 1.600 € de un fondo de 6.000 € en el que aportaste 4.500 €, todo al mismo precio, y lo vendes entero. ¿Qué pasa con los impuestos?",
+          "opts": [
+            "No cambia nada: la ganancia total es la misma",
+            "Adelantas el pago de impuestos que no necesitabas",
+            "Pagas menos, porque vendes todo de una sola vez",
+            "Se pierde la ganancia que ya tenías acumulada"
+          ],
+          "a": 1,
+          "why": "Vender 1.600 € realiza 400 € de ganancia (76 € de impuesto); vender los 6.000 €, 1.500 € (285 €). Adelantas 209 € de impuestos sin necesitarlos.",
+          "guia": "g4",
+          "porque": [
+            "La ganancia total no cambia, pero vendiendo todo adelantas el impuesto de ganancia que no necesitabas realizar.",
+            null,
+            "Vender todo no rebaja el tipo: realizas más ganancia y pagas más impuesto ahora; con tramos, incluso a un tipo mayor.",
+            "La ganancia no se pierde: sigue existiendo, solo que al vender se realiza y tributa."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

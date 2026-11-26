@@ -1,0 +1,254 @@
+{
+  "n": 35,
+  "id": "politica",
+  "track": "pasiva",
+  "title": "Tu política de inversión",
+  "blurb": "Una página con tus reglas: reparto, banda de rebalanceo, qué harás en una caída y cuándo cambiarla.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Una página con tus reglas",
+      "texto": "Tu política de inversión es una página con cinco reglas: objetivo y plazo, reparto, aportación, banda de rebalanceo (cuánto puede desviarse el reparto) y regla de caída. La escribes con calma para seguirla con miedo.",
+      "ejemplo": "Objetivo a 15 años; 70 % acciones y 30 % bonos; 300 € al mes (210 € a acciones y 90 € a bonos); banda de 5 puntos; en una caída, seguir aportando."
+    },
+    {
+      "id": "g2",
+      "titulo": "La banda decide cuándo rebalancear",
+      "texto": "Rebalanceas solo cuando el peso sale de la banda, no por ánimo. Dentro no haces nada; fuera, devuelves el reparto al objetivo. Así evitas costes e impuestos innecesarios.",
+      "ejemplo": "Objetivo del 70 % en acciones y banda de 5 puntos: de 65 % a 75 %. Con 10.000 € y 7.700 € en acciones (77 %), vendes 700 € para volver a 7.000 €.",
+      "figura": {
+        "type": "curvas",
+        "h": 200,
+        "alt": "Curva del peso de las acciones durante seis años: sube, rebasa un tramo sombreado entre el 65 % y el 75 % y vuelve cerca del 70 %",
+        "series": [
+          {
+            "data": [70,73,77,72,69,68],
+            "texto": "Acciones",
+            "tono": "sel"
+          }
+        ],
+        "franjas": [
+          {
+            "y1": 65,
+            "y2": 75
+          }
+        ],
+        "lineas": [
+          {
+            "y": 75,
+            "texto": "Máximo 75 %",
+            "tono": "ink",
+            "lado": "i"
+          },
+          {
+            "y": 65,
+            "texto": "Mínimo 65 %",
+            "tono": "ink",
+            "lado": "i"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 2,
+            "y": 77,
+            "texto": "Fuera de banda"
+          }
+        ]
+      }
+    },
+    {
+      "id": "g3",
+      "titulo": "Elige el riesgo por la pérdida que aguantas",
+      "texto": "La pérdida de la cartera es el peso de las acciones por lo que caen. Elige el reparto según la pérdida que aguantarías sin vender, no según la rentabilidad que desearías.",
+      "ejemplo": "Con un 70 % en acciones y una caída del 30 % en ellas, la cartera pierde 0,70 × 30 % = 21 %: 6.300 € de 30.000 €. Tu regla de caída: seguir aportando."
+    },
+    {
+      "id": "g4",
+      "titulo": "Cuándo cambiarla",
+      "texto": "La cambias cuando cambia tu vida (objetivo, plazo o ingresos), no cuando cambia el mercado. Entre tanto: aportas cada mes, miras la cartera una vez al año y rebalanceas solo fuera de banda.",
+      "ejemplo": "A 15 años, 70 % en acciones. Si faltan 3 y tu política dice bajar al 40 %, lo haces por el plazo; que la bolsa suba un 25 % no es motivo."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "pn1",
+      "title": "Escribir las reglas",
+      "ex": [
+        {
+          "id": "pn1-1",
+          "t": "choice",
+          "q": "¿Qué debe contener la política de inversión de un inversor pasivo?",
+          "opts": [
+            "Una previsión detallada de la bolsa para el próximo año",
+            "Reglas escritas: reparto, aportación, banda y regla de caída",
+            "El nombre del fondo que más ha subido en el último mes",
+            "Una lista de los titulares que te harían vender"
+          ],
+          "a": 1,
+          "why": "La política fija decisiones tomadas con calma: objetivo, reparto, aportación, banda y regla de caída. No contiene previsiones ni obliga a vender por titulares.",
+          "guia": "g1",
+          "porque": [
+            "Las previsiones no son parte de una política: nadie las acierta de forma fiable, y la política decide sin ellas.",
+            null,
+            "Un fondo que ha subido este mes es dato del pasado; perseguirlo contradice el reparto fijado.",
+            "La política evita vender por titulares: lo que fija es qué hacer ante una caída, no cuándo te asustas."
+          ]
+        },
+        {
+          "id": "pn1-2",
+          "t": "num",
+          "q": "Tu política es 70 % acciones y 30 % bonos, y aportas 300 € al mes. ¿Cuántos euros al mes van a acciones?",
+          "unit": "€",
+          "a": 210,
+          "why": "300 × 0,70 = 210 € a acciones y 90 € a bonos. Aportar según el reparto ya mantiene el peso sin vender.",
+          "guia": "g1"
+        },
+        {
+          "id": "pn1-3",
+          "t": "num",
+          "q": "Tu objetivo es un 70 % en acciones, con banda de 5 puntos. Tu cartera vale 5.000 € y las acciones valen 3.850 € (77 %). ¿Cuántos euros de acciones vendes para volver al 70 %?",
+          "unit": "€",
+          "a": 350,
+          "why": "El 70 % de 5.000 € son 3.500 €. Vendes 3.850 − 3.500 = 350 €. El 77 % está fuera de la banda, que llega al 75 %.",
+          "guia": "g2"
+        },
+        {
+          "id": "pn1-4",
+          "t": "choice",
+          "q": "Tu objetivo es un 60 % en acciones, con banda de 5 puntos. Hoy tienes un 64 %. ¿Qué haces?",
+          "opts": [
+            "Vendes acciones hasta volver al 60 %",
+            "Nada: sigues dentro de la banda, de 55 % a 65 %",
+            "Dejas de aportar a los bonos",
+            "Pasas a un 70 % para aprovechar la subida"
+          ],
+          "a": 1,
+          "why": "La banda va del 55 % al 65 %. Dentro de ella no actúas: rebalancear por una desviación pequeña solo añade costes.",
+          "guia": "g2",
+          "porque": [
+            "Con un 64 % sigues dentro de la banda (55 %-65 %): corregir ahora añade costes sin necesidad.",
+            null,
+            "Dejar de aportar a los bonos cambia el reparto sin motivo: la política fija aportar según el peso.",
+            "Subir el peso por una subida es perseguir el mercado, no seguir la política."
+          ]
+        },
+        {
+          "id": "pn1-5",
+          "t": "match",
+          "q": "Empareja cada parte de la política con lo que fija.",
+          "pairs": [
+            [
+              "Objetivo",
+              "Para qué es el dinero y cuándo lo necesitas"
+            ],
+            [
+              "Reparto",
+              "El porcentaje en acciones y en bonos"
+            ],
+            [
+              "Banda",
+              "Lo que puede desviarse el reparto antes de rebalancear"
+            ],
+            [
+              "Regla de caída",
+              "Lo que harás cuando la bolsa baje con fuerza"
+            ]
+          ],
+          "why": "La política junta cuatro decisiones: para qué, cuánto en cada activo, cuándo corregir y cómo actuar en una caída.",
+          "guia": "g1"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "pn2",
+      "title": "Seguirlas",
+      "ex": [
+        {
+          "id": "pn2-1",
+          "t": "num",
+          "q": "Tienes un 70 % en acciones y un 30 % en bonos. Las acciones caen un 30 % y los bonos no cambian. ¿Cuánto pierde la cartera, en %?",
+          "unit": "%",
+          "a": 21,
+          "why": "La cartera pierde el peso de las acciones por su caída: 0,70 × 30 % = 21 %.",
+          "guia": "g3"
+        },
+        {
+          "id": "pn2-2",
+          "t": "choice",
+          "q": "La bolsa cae un 25 % y tu política escrita dice «aportar cada mes y rebalancear solo fuera de banda». ¿Qué haces?",
+          "opts": [
+            "Pausas las aportaciones hasta que la bolsa se recupere",
+            "Pasas todo a bonos y vuelves a las acciones cuando suba",
+            "Sigues tu política: aportas y rebalanceas fuera de banda",
+            "Vendes las acciones que más han caído para frenar pérdidas"
+          ],
+          "a": 2,
+          "why": "Para eso se escribe la política: decidir con calma lo que harás cuando haya miedo. Aportar en la caída compra más barato.",
+          "guia": "g3",
+          "porque": [
+            "Pausar aportaciones en la caída es justo lo que la política evita: aportar entonces compra más barato.",
+            "Pasar a bonos tras caer vende barato y obliga a acertar cuándo volver; tu política no lo prevé.",
+            null,
+            "Vender lo que más ha caído fija la pérdida y rompe el reparto que decidiste."
+          ]
+        },
+        {
+          "id": "pn2-3",
+          "t": "slide",
+          "q": "Puedes aguantar una pérdida del 20 % de tu cartera sin vender. Si las acciones pueden caer un 40 % y el resto no cae, ¿qué peso máximo en acciones eliges?",
+          "label": "Peso en acciones",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "start": 80,
+          "a": 50,
+          "unit": "%",
+          "why": "La pérdida es el peso por la caída: 0,50 × 40 % = 20 %. Con más peso, la caída superaría lo que aguantas y venderías en el peor momento.",
+          "show": [
+            {
+              "label": "Pérdida de la cartera",
+              "k": 0.4,
+              "unit": "%"
+            }
+          ],
+          "guia": "g3"
+        },
+        {
+          "id": "pn2-4",
+          "t": "choice",
+          "q": "¿Qué cambio justifica revisar tu política de inversión?",
+          "opts": [
+            "Las acciones han subido un 25 % este año",
+            "Tu plazo ha pasado de 15 años a solo 3",
+            "Un analista prevé una caída en la bolsa",
+            "Un fondo nuevo ha superado al tuyo este año"
+          ],
+          "a": 1,
+          "why": "La política se cambia por tu vida (plazo, objetivo, ingresos), no por el mercado. Con 3 años de plazo, el reparto del plan a 15 ya no encaja.",
+          "guia": "g4",
+          "porque": [
+            "Una subida del mercado no cambia tu objetivo, tu plazo ni tus ingresos; no justifica revisar la política.",
+            null,
+            "Una previsión de un analista es una opinión: la política se escribió precisamente para no depender de ellas.",
+            "Que otro fondo gane un año no cambia tu plan; perseguirlo es el error que la política evita."
+          ]
+        },
+        {
+          "id": "pn2-5",
+          "t": "order",
+          "q": "Ordena el seguimiento de una política de inversión.",
+          "items": [
+            "Escribes la política con tu objetivo y plazo",
+            "Aportas cada mes según el reparto",
+            "Miras la cartera una vez al año",
+            "Rebalanceas solo si sales de la banda"
+          ],
+          "why": "Primero se escribe; después se aporta con regularidad, se revisa una vez al año y se corrige solo cuando el peso sale de la banda.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "n": 30,
+  "n": 31,
   "id": "amplitud",
   "track": "tecnico",
   "title": "Amplitud de mercado",
@@ -32,10 +32,7 @@
         "alt": "El porcentaje de valores sobre su media de 50 sesiones baja del 70 % al 52 %; el 60 % marca un mercado amplio y el 40 %, uno débil.",
         "series": [
           {
-            "data": [
-              70,
-              52
-            ],
+            "data": [70,52],
             "texto": "70 → 52 %",
             "tono": "dn"
           }

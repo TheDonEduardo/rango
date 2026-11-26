@@ -1853,5 +1853,37 @@
  {
   "termino": "valor de canje",
   "d": "Lo que te dan al devolver un token al protocolo que lo emitió, frente a su precio de mercado."
+ },
+ {
+  "termino": "vela interior",
+  "alias": [
+   "velas interiores"
+  ],
+  "d": "Vela cuyo máximo y mínimo quedan dentro del rango de la vela anterior (la vela madre). Indica una pausa o compresión antes de un movimiento."
+ },
+ {
+  "termino": "vela madre",
+  "alias": [
+   "velas madre"
+  ],
+  "d": "La vela cuyo rango contiene al de la vela siguiente, que por eso es una vela interior."
+ },
+ {
+  "termino": "NR7",
+  "d": "La sesión con el menor rango (máximo menos mínimo) de las últimas siete. Marca una calma que a veces precede a un movimiento mayor."
+ },
+ {
+  "termino": "política de inversión",
+  "alias": [
+   "políticas de inversión"
+  ],
+  "d": "Página escrita con tus reglas: objetivo, reparto, aportación, banda de rebalanceo y qué harás en una caída. Se escribe con calma para seguirla con miedo."
+ },
+ {
+  "termino": "banda de rebalanceo",
+  "alias": [
+   "bandas de rebalanceo"
+  ],
+  "d": "Desviación que toleras en el reparto antes de rebalancear. Con objetivo del 70 % y banda de 5 puntos, solo actúas fuera del 65 %-75 %."
  }
 ]

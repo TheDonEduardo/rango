@@ -1,0 +1,292 @@
+{
+  "n": 21,
+  "id": "estudios",
+  "track": "personal",
+  "title": "Estudiar: cuánto cuesta y cuánto devuelve",
+  "blurb": "El coste real de un curso o máster, los años que tarda en recuperarse y cómo reducirlo.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "El coste real de estudiar",
+      "texto": "Estudiar cuesta más que la matrícula: suma los gastos del curso y el sueldo que dejas de ganar, tu coste de oportunidad. A tiempo completo, esa última partida suele ser la mayor.",
+      "ejemplo": "Matrícula 6.000 €, gastos 2.000 € y 12 meses sin cobrar 1.000 € netos al mes: 6.000 + 2.000 + 12.000 = 20.000 €.",
+      "figura": {
+        "type": "barras",
+        "h": 240,
+        "unidad": "€",
+        "alt": "Una barra apilada de 20.000 euros: matrícula de 6.000, gastos de 2.000 y sueldo no ganado de 12.000",
+        "barras": [
+          {
+            "texto": "Coste total",
+            "segmentos": [
+              {
+                "valor": 6000,
+                "texto": "Matrícula: 6.000 €",
+                "tono": "sel"
+              },
+              {
+                "valor": 2000,
+                "texto": "Gastos: 2.000 €",
+                "tono": "acc"
+              },
+              {
+                "valor": 12000,
+                "texto": "Sueldo no ganado: 12.000 €",
+                "tono": "ink"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "g2",
+      "titulo": "Cuánto devuelve",
+      "texto": "El título devuelve una mejora anual: lo que sube tu sueldo neto gracias a él. Los años de recuperación son el coste total entre esa mejora anual. Cuantos menos, mejor.",
+      "ejemplo": "Coste de 20.000 € y mejora de 2.400 € al año: 20.000 ÷ 2.400 = 8,3 años."
+    },
+    {
+      "id": "g3",
+      "titulo": "La mejora no está garantizada",
+      "texto": "La subida de sueldo es una promesa, no un dato. Calcula la recuperación con una mejora más baja y comprueba que cabe en los años de carrera que te quedan.",
+      "ejemplo": "Con 1.600 € en lugar de 2.400 €: 20.000 ÷ 1.600 = 12,5 años. Si te quedan 10 de carrera, no compensa."
+    },
+    {
+      "id": "g4",
+      "titulo": "Rebajar el coste",
+      "texto": "Una beca, la ayuda de tu empresa (que suele exigir quedarte un tiempo) o estudiar a tiempo parcial bajan el coste: seguir trabajando reduce el sueldo no ganado en proporción a tu jornada.",
+      "ejemplo": "Trabajas la mitad: dejas de ganar 6.000 € en vez de 12.000 €. Con una beca de 3.000 € en la matrícula: 3.000 + 2.000 + 6.000 = 11.000 €.",
+      "figura": {
+        "type": "barras",
+        "h": 250,
+        "unidad": "€",
+        "alt": "Dos barras apiladas: a tiempo completo suman 20.000 euros y con beca y media jornada, 11.000",
+        "barras": [
+          {
+            "texto": "Tiempo completo",
+            "segmentos": [
+              {
+                "valor": 6000,
+                "texto": "Matrícula 6.000",
+                "tono": "sel"
+              },
+              {
+                "valor": 2000,
+                "texto": "Gastos 2.000",
+                "tono": "acc"
+              },
+              {
+                "valor": 12000,
+                "texto": "Sueldo 12.000",
+                "tono": "ink"
+              }
+            ]
+          },
+          {
+            "texto": "Beca y media jornada",
+            "segmentos": [
+              {
+                "valor": 3000,
+                "texto": "Matrícula 3.000",
+                "tono": "sel"
+              },
+              {
+                "valor": 2000,
+                "texto": "Gastos 2.000",
+                "tono": "acc"
+              },
+              {
+                "valor": 6000,
+                "texto": "Sueldo 6.000",
+                "tono": "ink"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "es1",
+      "title": "El coste real",
+      "ex": [
+        {
+          "id": "es1-1",
+          "t": "num",
+          "q": "Un curso cuesta 5.000 € de matrícula y 1.500 € de gastos. Además, estarás 10 meses sin trabajar con un sueldo neto de 1.200 € al mes. ¿Cuál es el coste total, en miles de euros?",
+          "unit": "mil €",
+          "a": 18.5,
+          "why": "Sueldo no ganado: 10 × 1.200 = 12.000 €. Total: 5.000 + 1.500 + 12.000 = 18.500 €.",
+          "tol": 0.05,
+          "guia": "g1"
+        },
+        {
+          "id": "es1-2",
+          "t": "choice",
+          "q": "¿Qué incluye el coste total de un máster a tiempo completo?",
+          "opts": [
+            "Solo la matrícula, porque es lo que se factura",
+            "La matrícula y el sueldo que ganarás con el título",
+            "Matrícula, gastos del curso y el sueldo que dejas de ganar",
+            "Los gastos del curso, pero no el sueldo, porque no se paga"
+          ],
+          "a": 2,
+          "why": "El coste real suma lo que pagas (matrícula y gastos) y lo que dejas de ganar mientras estudias, el coste de oportunidad.",
+          "guia": "g1",
+          "porque": [
+            "La matrícula es solo una parte: dejas fuera los gastos y el sueldo que no cobras durante el curso.",
+            "El sueldo futuro es el beneficio del título, no su coste: se compara con él después.",
+            null,
+            "Que el sueldo no se pague no significa que no cueste: es dinero que dejas de ganar."
+          ]
+        },
+        {
+          "id": "es1-3",
+          "t": "match",
+          "q": "Empareja cada partida del coste de estudiar con su descripción.",
+          "pairs": [
+            [
+              "Matrícula",
+              "Lo que pagas a la escuela"
+            ],
+            [
+              "Gastos del curso",
+              "Material, desplazamientos o vivienda extra"
+            ],
+            [
+              "Sueldo no ganado",
+              "Coste de oportunidad: lo que dejas de cobrar"
+            ]
+          ],
+          "why": "Dos partidas se pagan de tu bolsillo y la tercera es el sueldo que no entra; las tres cuentan en el coste.",
+          "guia": "g1"
+        },
+        {
+          "id": "es1-4",
+          "t": "num",
+          "q": "Un curso te cuesta en total 18.000 € y tu sueldo neto sube 3.000 € al año gracias a él. ¿En cuántos años lo recuperas?",
+          "unit": "años",
+          "a": 6,
+          "why": "18.000 ÷ 3.000 = 6 años. Son los años de recuperación: coste total entre mejora anual.",
+          "guia": "g2"
+        },
+        {
+          "id": "es1-5",
+          "t": "choice",
+          "q": "Además del coste total, ¿qué dato necesitas para saber en cuántos años se recupera un curso?",
+          "opts": [
+            "El número de años que lleva abierta la escuela",
+            "La rentabilidad media de la bolsa durante el curso",
+            "La mejora anual de tu sueldo neto con el título",
+            "El precio de matrícula de la escuela de la competencia"
+          ],
+          "a": 2,
+          "why": "Los años de recuperación son el coste entre la mejora anual de tu sueldo neto: sin esa mejora no hay cuenta.",
+          "guia": "g2",
+          "porque": [
+            "La antigüedad de la escuela no dice cuánto sube tu sueldo; sin esa mejora no puedes calcular el plazo.",
+            "La bolsa no tiene relación con lo que te devuelve el título: lo que cuenta es tu sueldo neto.",
+            null,
+            "El precio de la competencia sirve para comparar costes, pero no da la mejora anual que necesitas."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "es2",
+      "title": "Decidir y reducir el coste",
+      "ex": [
+        {
+          "id": "es2-1",
+          "t": "num",
+          "q": "Un máster te cuesta 20.000 € en total. La escuela promete subirte el sueldo neto 2.400 € al año, pero lo prudente es contar con solo 1.600 € al año. ¿En cuántos años lo recuperas con la cifra prudente?",
+          "unit": "años",
+          "a": 12.5,
+          "why": "20.000 ÷ 1.600 = 12,5 años, frente a 8,3 con la promesa (20.000 ÷ 2.400). Con una mejora menor, el plazo se alarga mucho.",
+          "tol": 0.05,
+          "guia": "g3"
+        },
+        {
+          "id": "es2-2",
+          "t": "choice",
+          "q": "Una escuela asegura que su máster de 20.000 € de coste total te subirá el sueldo neto 2.400 € al año. ¿Cómo lo evalúas?",
+          "opts": [
+            "Te fías de la cifra: la escuela conoce a sus alumnos",
+            "Comparas solo la matrícula con la de otras escuelas",
+            "Calculas la recuperación con una mejora menor, como 1.600 €",
+            "Das por buena la subida si el título es oficial"
+          ],
+          "a": 2,
+          "why": "La mejora es una promesa, no un dato. Con 1.600 € tardarías 12,5 años: si te quedan pocos de carrera, no compensa.",
+          "guia": "g3",
+          "porque": [
+            "La escuela vende el máster: su cifra es una promesa y conviene contrastarla con una mejora más baja.",
+            "La matrícula es solo una parte del coste: comparar solo ese precio deja fuera el sueldo que no cobras.",
+            null,
+            "Un título oficial no garantiza una subida: el sueldo depende del mercado y de tu puesto."
+          ]
+        },
+        {
+          "id": "es2-3",
+          "t": "slide",
+          "q": "Una escuela tiene 6.000 € de matrícula y 2.000 € de gastos; a tiempo completo dejarías de ganar 12.000 € durante el curso. Cada 10 % de jornada que sigues trabajando recupera 1.200 € de sueldo. ¿Qué porcentaje de jornada trabajas si quieres que el coste total sea de 14.000 €?",
+          "label": "Jornada que sigues trabajando",
+          "min": 0,
+          "max": 100,
+          "step": 10,
+          "start": 0,
+          "a": 50,
+          "unit": "%",
+          "why": "Con el 50 % de jornada ganas 6.000 € y el coste es 6.000 + 2.000 + 6.000 = 14.000 €. Cada 10 % de jornada baja el coste en 1.200 €.",
+          "show": [
+            {
+              "label": "Sueldo que ganas durante el curso",
+              "k": 120,
+              "unit": "€"
+            },
+            {
+              "label": "Coste total",
+              "k": -120,
+              "b": 20000,
+              "unit": "€"
+            }
+          ],
+          "guia": "g4"
+        },
+        {
+          "id": "es2-4",
+          "t": "num",
+          "q": "Un curso tiene 6.000 € de matrícula, de los que una beca cubre 3.000 €, y 2.000 € de gastos. Trabajas media jornada y dejas de ganar 6.000 €. ¿Cuál es el coste total, en miles de euros?",
+          "unit": "mil €",
+          "a": 11,
+          "why": "Matrícula pagada: 6.000 − 3.000 = 3.000 €. Total: 3.000 + 2.000 + 6.000 = 11.000 €.",
+          "tol": 0.05,
+          "guia": "g4"
+        },
+        {
+          "id": "es2-5",
+          "t": "choice",
+          "q": "Tu empresa te paga una matrícula de 6.000 € si te quedas dos años más tras el máster. ¿Qué cambia en tus cuentas?",
+          "opts": [
+            "Nada: el compromiso de permanencia no tiene coste",
+            "Bajas el coste en 6.000 €, pero te atas a la empresa dos años",
+            "El coste sube, porque ahora pagas la empresa con tu tiempo",
+            "Dejas de tener coste de oportunidad durante el curso"
+          ],
+          "a": 1,
+          "why": "La ayuda recorta el coste en 6.000 €, pero a cambio pierdes libertad para cambiar de empleo, y eso también cuenta al decidir.",
+          "guia": "g4",
+          "porque": [
+            "El compromiso tiene un coste: te limita para cambiar de empleo durante esos dos años.",
+            null,
+            "La ayuda no sube el coste: lo baja en 6.000 €, aunque con la condición de quedarte.",
+            "El coste de oportunidad sigue ahí: la ayuda cubre la matrícula, no el sueldo que dejas de cobrar."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}
