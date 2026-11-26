@@ -1577,5 +1577,47 @@
    "comisiones de custodia"
   ],
   "d": "Porcentaje anual que cobra el bróker por guardar tus valores. Muchos ya no la cobran."
+ },
+ {
+  "termino": "ahorro libre",
+  "d": "Lo que tienes ahorrado por encima del colchón de emergencia: lo máximo que podrías prestar o arriesgar sin dañar tu margen."
+ },
+ {
+  "termino": "activo subyacente",
+  "d": "El activo real al que se refiere un instrumento: en el token de un bono, el bono; en una opción, la acción sobre la que se firma."
+ },
+ {
+  "termino": "custodio",
+  "alias": [
+   "custodios"
+  ],
+  "d": "Entidad que guarda un activo por cuenta de su dueño y responde de él."
+ },
+ {
+  "termino": "tokenizar",
+  "alias": [
+   "tokenización",
+   "tokenizado"
+  ],
+  "d": "Crear en una cadena de bloques un token que representa un activo que sigue fuera de ella."
+ },
+ {
+  "termino": "intangible",
+  "alias": [
+   "intangibles"
+  ],
+  "d": "Activo sin forma física, como marca, patentes, software o clientes. Solo figura en el balance si se compró."
+ },
+ {
+  "termino": "patrimonio tangible",
+  "d": "Patrimonio neto sin el fondo de comercio ni los demás intangibles."
+ },
+ {
+  "termino": "volumen relativo",
+  "d": "Volumen del día dividido entre la media de volumen de la misma acción en las últimas 50 sesiones."
+ },
+ {
+  "termino": "volumen proyectado",
+  "d": "Estimación del volumen de todo el día a partir del parcial: volumen parcial ÷ fracción de sesión transcurrida."
  }
 ]

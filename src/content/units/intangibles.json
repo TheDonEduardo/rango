@@ -1,0 +1,194 @@
+{
+  "n": 28,
+  "id": "intangibles",
+  "track": "fundamental",
+  "title": "Intangibles y fondo de comercio",
+  "blurb": "Qué recoge el fondo de comercio, cuándo se deteriora y por qué el balance deja fuera la marca y la tecnología creadas dentro.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Fondo de comercio",
+      "texto": "Al comprar una empresa, el fondo de comercio es el precio pagado menos sus activos netos: los activos menos las deudas, a valor razonable. Recoge lo pagado por encima de todo lo identificable: sinergias, plantilla y expectativas.",
+      "ejemplo": "Se pagan 750 M€ por una empresa con activos de 900 M€ y deudas de 400 M€: activos netos de 500 M€ y fondo de comercio de 250 M€."
+    },
+    {
+      "id": "g2",
+      "titulo": "Deterioro",
+      "texto": "Si lo comprado rinde menos de lo previsto, se anota un deterioro: se rebaja el fondo de comercio como gasto. El beneficio contable baja, pero no sale caja: se gastó al comprar. Un deterioro grande suele indicar que se pagó de más.",
+      "ejemplo": "Fondo de comercio de 250 M€ que solo se justifica en 100 M€: deterioro de 150 M€; el beneficio cae 150 M€ (sin impuestos), la caja no."
+    },
+    {
+      "id": "g3",
+      "titulo": "Intangibles creados dentro",
+      "texto": "La marca, la tecnología y los clientes que una empresa crea por su cuenta casi no figuran como activo: el gasto en I+D o publicidad pasa por la cuenta de resultados. Solo aparecen los intangibles comprados.",
+      "ejemplo": "Gasta 80 M€ al año en I+D durante 5 años: en el balance, casi nada de esa tecnología. Si la hubiera comprado, figurarían 400 M€ antes de amortizar."
+    },
+    {
+      "id": "g4",
+      "titulo": "Valor contable y patrimonio tangible",
+      "texto": "Por eso el valor contable subestima a empresas de software o de marca. El patrimonio tangible es el patrimonio neto sin el fondo de comercio ni los demás intangibles: muestra lo que queda sin ellos.",
+      "ejemplo": "Patrimonio de 1.000 M€, fondo de comercio de 250 M€ y otros intangibles de 150 M€: tangible de 600 M€. Con 100 M de acciones, 6 € frente a 10 € de valor contable."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "it1",
+      "title": "Fondo de comercio y deterioro",
+      "ex": [
+        {
+          "id": "it1-1",
+          "t": "num",
+          "q": "Una empresa paga 750 M€ por otra con activos de 900 M€ y deudas de 400 M€, a valor razonable. ¿Cuántos M€ de fondo de comercio registra?",
+          "unit": "",
+          "a": 250,
+          "why": "Activos netos: 900 − 400 = 500 M€. Fondo de comercio: 750 − 500 = 250 M€, lo pagado por encima de ellos.",
+          "guia": "g1"
+        },
+        {
+          "id": "it1-2",
+          "t": "choice",
+          "q": "¿Qué recoge el fondo de comercio de una compra de empresa?",
+          "opts": [
+            "La caja que tenía la empresa adquirida antes de la compra",
+            "El valor de las deudas que asume el comprador al cerrar la compra",
+            "Lo pagado por encima del valor de los activos netos adquiridos",
+            "La prima que la bolsa añade al precio de la acción de la compradora"
+          ],
+          "a": 2,
+          "why": "Es el precio pagado menos los activos netos: en el ejemplo, 750 − 500 = 250 M€ por sinergias y expectativas.",
+          "guia": "g1",
+          "porque": [
+            "La caja de la adquirida es un activo más: forma parte de los activos netos, no del exceso pagado.",
+            "Las deudas se restan de los activos para calcular los activos netos; no son el fondo de comercio.",
+            null,
+            "El fondo de comercio sale del precio pagado y de los activos netos, no de la cotización de la compradora."
+          ]
+        },
+        {
+          "id": "it1-3",
+          "t": "num",
+          "q": "Una empresa registró 250 M€ de fondo de comercio al comprar otra. Ahora estima que la compra solo justifica 100 M€ de fondo de comercio. ¿Cuántos M€ de deterioro anota?",
+          "unit": "",
+          "a": 150,
+          "why": "250 − 100 = 150 M€ de deterioro: se rebaja el fondo de comercio y se anota como gasto.",
+          "guia": "g2"
+        },
+        {
+          "id": "it1-4",
+          "t": "choice",
+          "q": "Una empresa anota un deterioro de 150 M€ de su fondo de comercio. Ignorando impuestos, ¿qué ocurre?",
+          "opts": [
+            "El beneficio contable baja 150 M€ y no sale caja en ese momento",
+            "La caja baja 150 M€ porque hay que pagar otra vez a los vendedores",
+            "El beneficio contable sube porque el balance queda más limpio",
+            "No cambia la cuenta de resultados: solo se modifica el balance"
+          ],
+          "a": 0,
+          "why": "El deterioro es un gasto contable: el beneficio baja 150 M€, pero el dinero ya salió al comprar y la caja no cambia.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "El dinero salió al comprar: el deterioro es un ajuste contable, no un pago nuevo.",
+            "El deterioro se registra como gasto, así que el beneficio baja, no sube.",
+            "El deterioro pasa por la cuenta de resultados como gasto, no solo por el balance."
+          ]
+        },
+        {
+          "id": "it1-5",
+          "t": "choice",
+          "q": "¿Qué sugiere un deterioro grande del fondo de comercio poco después de una compra?",
+          "opts": [
+            "Que la empresa se ha quedado sin caja para seguir comprando",
+            "Que los activos tangibles de la adquirida han subido de valor",
+            "Que la compra generará más sinergias de las previstas",
+            "Que se pagó de más o la empresa comprada rinde menos de lo previsto"
+          ],
+          "a": 3,
+          "why": "Se rebaja el fondo de comercio cuando lo comprado ya no justifica lo pagado: suele indicar que se pagó de más.",
+          "guia": "g2",
+          "porque": [
+            "El deterioro no consume caja: la caja se gastó al comprar.",
+            "Si los activos valieran más, no habría deterioro del fondo de comercio.",
+            "Más sinergias sostendrían el fondo de comercio; el deterioro apunta a lo contrario.",
+            null
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "it2",
+      "title": "Intangibles creados dentro y valor contable",
+      "ex": [
+        {
+          "id": "it2-1",
+          "t": "choice",
+          "q": "Una empresa gasta 80 M€ al año en I+D y, como es habitual, lo registra como gasto. ¿Qué refleja su balance de esa tecnología creada dentro?",
+          "opts": [
+            "Todo lo gastado, sumado año a año como un activo",
+            "Un fondo de comercio por el total gastado",
+            "Caja equivalente a lo gastado, porque el gasto es una inversión",
+            "Muy poco o nada: lo creado dentro casi no se activa"
+          ],
+          "a": 3,
+          "why": "El gasto en I+D pasa por la cuenta de resultados y, en general, no se acumula como activo: la tecnología propia casi no figura.",
+          "guia": "g3",
+          "porque": [
+            "El gasto de I+D pasa por la cuenta de resultados; no se acumula como activo en el balance.",
+            "El fondo de comercio solo aparece al comprar otra empresa, no al crear tecnología propia.",
+            "El gasto sale de caja: la caja baja, no sube.",
+            null
+          ]
+        },
+        {
+          "id": "it2-2",
+          "t": "num",
+          "q": "Una empresa gasta 80 M€ al año en I+D durante 5 años y lo registra todo como gasto. Si hubiera comprado esa tecnología a otra empresa por lo mismo, ¿cuántos M€ de intangible, antes de amortizaciones, figurarían en su balance?",
+          "unit": "",
+          "a": 400,
+          "why": "80 × 5 = 400 M€. Comprada, aparecería como intangible; creada dentro, casi no aparece.",
+          "guia": "g3"
+        },
+        {
+          "id": "it2-3",
+          "t": "num",
+          "q": "Una empresa tiene un patrimonio neto de 1.000 M€, fondo de comercio de 250 M€ y otros intangibles de 150 M€. ¿Cuántos M€ de patrimonio tangible tiene?",
+          "unit": "",
+          "a": 600,
+          "why": "1.000 − 250 − 150 = 600 M€: el patrimonio que queda sin fondo de comercio ni intangibles.",
+          "guia": "g4"
+        },
+        {
+          "id": "it2-4",
+          "t": "num",
+          "q": "Una empresa tiene un patrimonio neto de 1.000 M€, fondo de comercio de 250 M€, otros intangibles de 150 M€ y 100 M de acciones. ¿Cuántos euros de patrimonio tangible por acción tiene?",
+          "unit": "€",
+          "a": 6,
+          "why": "(1.000 − 250 − 150) ÷ 100 = 6 € por acción, frente a 10 € de valor contable por acción.",
+          "guia": "g4"
+        },
+        {
+          "id": "it2-5",
+          "t": "choice",
+          "q": "¿Por qué el valor contable suele subestimar a una empresa de software?",
+          "opts": [
+            "Porque el software no tiene valor y por eso el balance no lo anota",
+            "Porque su marca, tecnología y clientes, creadas dentro, casi no figuran",
+            "Porque las empresas de software siempre tienen más deudas que activos",
+            "Porque el valor contable solo cuenta la caja y el resto lo ignora"
+          ],
+          "a": 1,
+          "why": "Lo que más vale en una empresa de software lo ha creado ella misma y casi no se activa, así que el patrimonio queda corto.",
+          "guia": "g4",
+          "porque": [
+            "El software sí puede venderse y tiene valor; lo que ocurre es que lo creado dentro casi no se activa.",
+            null,
+            "No es cuestión de deudas: lo que falta en el balance es el valor de lo creado dentro.",
+            "El patrimonio incluye activos de todo tipo, no solo caja; lo que falta es lo creado dentro."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

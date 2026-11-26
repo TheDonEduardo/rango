@@ -1,0 +1,225 @@
+{
+  "n": 10,
+  "id": "volrelativo",
+  "track": "tecnico",
+  "title": "Volumen relativo en la ruptura",
+  "blurb": "Volumen del día entre su media de 50 sesiones: cuándo confirma una ruptura, cuándo avisa en una caída y cómo leerlo antes del cierre.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Volumen relativo",
+      "texto": "El volumen relativo es el volumen del día dividido entre el volumen medio de la misma acción en las últimas 50 sesiones. 1 es un día normal; 2, el doble de lo habitual. Cada acción se mide contra su propio historial.",
+      "ejemplo": "Hoy se negocian 1.200.000 acciones y la media de 50 sesiones es de 800.000: 1,2 M ÷ 0,8 M = 1,5 veces."
+    },
+    {
+      "id": "g2",
+      "titulo": "Confirmar una ruptura",
+      "texto": "Como criterio orientativo, una ruptura del pivote se considera confirmada con un volumen relativo de 1,4 a 1,5 veces o más. Con menos de 1, las rupturas fallan más: suelen volver a la base. Son umbrales de método, no leyes.",
+      "ejemplo": "Media de 500.000: una ruptura con 800.000 son 1,6 veces (cumple); con 350.000, 0,7 veces (sin confirmar)."
+    },
+    {
+      "id": "g3",
+      "titulo": "Caídas con volumen alto",
+      "texto": "Un día de caída con volumen relativo alto, por ejemplo 1,5 veces o más, tras una subida puede ser distribución: grandes tenedores venden. Varios así cerca de máximos piden cautela. Es una pista orientativa que se lee con el contexto del precio.",
+      "ejemplo": "Cae un 2,5 % con 900.000 acciones y media de 500.000: 1,8 veces."
+    },
+    {
+      "id": "g4",
+      "titulo": "Volumen proyectado",
+      "texto": "Antes del cierre, el volumen del día no está completo. El volumen proyectado lo estima: volumen parcial ÷ fracción de sesión transcurrida. Es una estimación lineal y gruesa: el inicio concentra más volumen y puede exagerarla.",
+      "ejemplo": "Al 40 % de la sesión, 300.000 acciones: 300.000 ÷ 0,4 = 750.000, que son 1,5 veces la media de 500.000."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "vr1",
+      "title": "Medir y confirmar la ruptura",
+      "ex": [
+        {
+          "id": "vr1-1",
+          "t": "choice",
+          "q": "¿Con qué se compara el volumen de un día para calcular el volumen relativo?",
+          "opts": [
+            "Con el volumen medio de esa misma acción en las últimas 50 sesiones",
+            "Con el volumen que negocia hoy el resto de acciones del índice",
+            "Con el volumen del mayor día de toda la historia de la acción",
+            "Con el volumen total del mercado en la misma sesión"
+          ],
+          "a": 0,
+          "why": "Se divide entre la media de 50 sesiones de la propia acción: así 1,5 significa un 50 % más de lo que ella suele negociar.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "El resto de acciones tiene otra media: el volumen relativo compara cada acción con su propio historial.",
+            "Un máximo histórico es un día excepcional; no sirve como referencia de lo habitual.",
+            "El volumen del mercado entero no dice nada de lo que es normal para esa acción."
+          ]
+        },
+        {
+          "id": "vr1-2",
+          "t": "num",
+          "q": "Una acción negocia hoy 1.200.000 acciones y su volumen medio de las últimas 50 sesiones es de 800.000. ¿Cuántas veces su media es el volumen de hoy? Un decimal.",
+          "unit": "",
+          "a": 1.5,
+          "why": "1.200.000 ÷ 800.000 = 1,5 veces: el volumen relativo de hoy.",
+          "tol": 0.06,
+          "guia": "g1"
+        },
+        {
+          "id": "vr1-3",
+          "t": "num",
+          "q": "Una acción tiene un volumen medio de 50 sesiones de 500.000 acciones. Para que una ruptura tenga un volumen relativo de 1,5 veces, ¿cuántos miles de acciones tiene que negociar como mínimo? Responde en miles de acciones.",
+          "unit": "",
+          "a": 750,
+          "why": "1,5 × 500.000 = 750.000 acciones, es decir, 750 mil.",
+          "guia": "g2"
+        },
+        {
+          "id": "vr1-4",
+          "t": "choice",
+          "q": "Una acción rompe su pivote con 350.000 acciones y su volumen medio de 50 sesiones es de 500.000. Con el criterio orientativo de 1,4 a 1,5 veces, ¿qué dice el volumen de esa ruptura?",
+          "opts": [
+            "Que está confirmada, porque 350.000 acciones es una cifra alta",
+            "Que no importa, porque el volumen solo cuenta en las caídas",
+            "Que no está confirmada: es 0,7 veces la media, muy por debajo del umbral",
+            "Que es una señal clara de que conviene vender de inmediato"
+          ],
+          "a": 2,
+          "why": "350.000 ÷ 500.000 = 0,7 veces: no llega a 1,4-1,5, así que la ruptura carece de confirmación y suele fallar más.",
+          "guia": "g2",
+          "porque": [
+            "350.000 es menos que la media de 500.000: una cifra absoluta no confirma nada sin compararla.",
+            "El volumen cuenta en rupturas y en caídas: una ruptura con poco volumen suele fallar más.",
+            null,
+            "Un volumen bajo en la ruptura resta confirmación; no es una señal de venta."
+          ]
+        },
+        {
+          "id": "vr1-5",
+          "t": "tap",
+          "q": "Una acción tiene su resistencia en 41,00 € y un volumen medio de 50 sesiones de 500 (miles de acciones). Toca la vela que cierra por encima de 41,00 € con un volumen de al menos 1,4 veces esa media.",
+          "chart": {
+            "type": "candles",
+            "data": [
+              [40.2,40.8,39.9,40.5],
+              [40.5,41.0,40.3,40.7],
+              [40.7,40.9,40.0,40.1],
+              [40.1,40.5,39.6,39.8],
+              [39.8,40.2,39.5,40.0],
+              [40.0,40.6,39.9,40.4],
+              [40.4,40.7,40.2,40.5],
+              [40.5,40.8,40.3,40.6],
+              [40.6,41.4,40.5,41.2],
+              [41.2,41.3,40.4,40.6],
+              [40.6,40.9,40.3,40.7],
+              [40.7,40.9,40.4,40.5],
+              [40.5,40.8,40.4,40.7],
+              [40.7,41.8,40.6,41.6],
+              [41.6,42.1,41.3,41.9]
+            ],
+            "vol": [480,520,450,430,400,460,420,380,300,410,360,340,330,820,600],
+            "h": 270,
+            "lines": [
+              {
+                "y": 41.0,
+                "label": "Resistencia"
+              }
+            ],
+            "alt": "Gráfico de quince velas con una resistencia horizontal y barras de volumen bajo el precio"
+          },
+          "a": 13,
+          "why": "Vela 14: cierra en 41,60 € con 820 mil acciones, 820 ÷ 500 = 1,64 veces la media. La 9.ª también cerró sobre 41,00 €, pero con 300 (0,6 veces) y volvió a la base; la 15.ª, con 600, son 1,2 veces.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "vr2",
+      "title": "Caídas con volumen y volumen proyectado",
+      "ex": [
+        {
+          "id": "vr2-1",
+          "t": "num",
+          "q": "Una acción cae un 2,5 % con 900.000 acciones negociadas y su volumen medio de 50 sesiones es de 500.000. ¿Cuántas veces su media es el volumen del día? Un decimal.",
+          "unit": "",
+          "a": 1.8,
+          "why": "900.000 ÷ 500.000 = 1,8 veces: una caída con volumen alto.",
+          "tol": 0.06,
+          "guia": "g3"
+        },
+        {
+          "id": "vr2-2",
+          "t": "choice",
+          "q": "Una acción lleva semanas subiendo y, cerca de sus máximos, cae tres veces en 10 sesiones con volumen relativo de 1,6, 1,8 y 2,0. ¿Qué señal orientativa puede ser?",
+          "opts": [
+            "Que la caída carece de información, porque solo cuenta el volumen de los días alcistas",
+            "Que los grandes compradores acumulan y la subida está asegurada",
+            "Una posible distribución: grandes tenedores vendiendo cerca de máximos",
+            "Que el volumen alto solo ocurre en acciones con poca liquidez"
+          ],
+          "a": 2,
+          "why": "Varios días de caída con volumen de 1,6 a 2,0 veces la media, cerca de máximos, pueden indicar distribución; es una pista, no una certeza.",
+          "guia": "g3",
+          "porque": [
+            "Los días bajistas con volumen alto sí informan: son la pista de la distribución.",
+            "Un volumen alto en caídas cerca de máximos no asegura nada: apunta más bien a ventas grandes.",
+            null,
+            "El volumen alto ocurre en acciones muy líquidas; no es una señal de falta de liquidez."
+          ]
+        },
+        {
+          "id": "vr2-3",
+          "t": "num",
+          "q": "Pasado el 40 % de la sesión, una acción lleva 300.000 acciones negociadas y su volumen medio de 50 sesiones es de 500.000. Proyectando de forma lineal al día entero, ¿cuántas veces su media sería el volumen? Un decimal.",
+          "unit": "",
+          "a": 1.5,
+          "why": "300.000 ÷ 0,4 = 750.000 acciones proyectadas; 750.000 ÷ 500.000 = 1,5 veces.",
+          "tol": 0.06,
+          "guia": "g4"
+        },
+        {
+          "id": "vr2-4",
+          "t": "choice",
+          "q": "A media sesión, una acción rompe su pivote con un volumen parcial de 250.000 acciones y su media de 50 sesiones es de 500.000. ¿Por qué no basta comparar esos 250.000 con la media entera?",
+          "opts": [
+            "Porque el volumen parcial no cuenta nunca para valorar las rupturas",
+            "Porque la media de 50 sesiones solo es válida al cierre de la semana",
+            "Porque el volumen parcial se mide en euros y la media en acciones",
+            "Porque la sesión no ha terminado: hay que proyectar el volumen al día entero"
+          ],
+          "a": 3,
+          "why": "A media sesión 250.000 son solo la mitad del día: proyectados, 250.000 ÷ 0,5 = 500.000, 1,0 veces la media.",
+          "guia": "g4",
+          "porque": [
+            "El parcial sí cuenta: solo hay que ponerlo en la misma escala que la media.",
+            "La media de 50 sesiones es un dato diario de volumen; no depende del cierre de la semana.",
+            "Volumen parcial y media se miden en acciones; no cambia la unidad.",
+            null
+          ]
+        },
+        {
+          "id": "vr2-5",
+          "t": "choice",
+          "q": "¿Qué limitación tiene proyectar de forma lineal el volumen antes del cierre?",
+          "opts": [
+            "Que el inicio de la sesión suele concentrar más volumen y la proyección puede exagerar",
+            "Que el volumen proyectado sale siempre exacto si la acción es muy líquida",
+            "Que obliga a usar la media de 200 sesiones en lugar de la de 50",
+            "Que solo se puede calcular después del cierre de la sesión"
+          ],
+          "a": 0,
+          "why": "La proyección lineal supone un ritmo constante, pero la apertura concentra más volumen, así que a primera hora tiende a exagerar.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "La proyección lineal es solo una estimación gruesa; no es exacta por mucha liquidez que haya.",
+            "La media de 50 sesiones sigue valiendo; el problema es el ritmo del volumen durante el día.",
+            "Se puede calcular durante la sesión: para eso se proyecta el volumen."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

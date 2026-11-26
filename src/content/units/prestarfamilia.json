@@ -1,0 +1,211 @@
+{
+  "n": 22,
+  "id": "prestarfamilia",
+  "track": "personal",
+  "title": "Prestar dinero a familia y amigos",
+  "blurb": "Cuánto puedes prestar sin dañar tu colchón, préstamo o regalo, dejarlo por escrito y qué hacer si no vuelve.",
+  "revisar": "2027-11",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Presta solo lo que puedas perder",
+      "texto": "Un préstamo se espera cobrar. Tu colchón (fondo de emergencia) no se presta. Tu ahorro libre es lo que tienes por encima de él: presta como mucho esa cantidad y asume que puede no volver.",
+      "ejemplo": "Colchón de 3.000 € y 3.800 € ahorrados: ahorro libre de 800 €. Si te piden 1.500 €, prestas como mucho 800 €. Prestar 600 € es el 75 % de lo libre."
+    },
+    {
+      "id": "g2",
+      "titulo": "Préstamo o regalo",
+      "texto": "Un préstamo se espera cobrar; un regalo, no. Si te piden más de lo que puedes perder, ofrece como regalo lo que sí puedas y di que no al resto: es más sano que una deuda que quizá nunca vuelva.",
+      "ejemplo": "Te piden 2.000 € y solo puedes perder 500 €: regala 500 € en vez de prestar 2.000 €."
+    },
+    {
+      "id": "g3",
+      "titulo": "Ponerlo por escrito",
+      "texto": "Un papel con importe, fecha de entrega, número de cuotas, fecha de cada pago y firma de los dos. No es desconfianza: evita malentendidos. Sin intereses, cada cuota es el importe entre el número de cuotas. Puede tener efectos fiscales; compruébalo con la norma vigente.",
+      "ejemplo": "1.200 € en 12 cuotas: 1.200 ÷ 12 = 100 € el día 5 de cada mes."
+    },
+    {
+      "id": "g4",
+      "titulo": "Si no te devuelven",
+      "texto": "Habla pronto y propón, por escrito, una cuota menor o un plazo más largo. No prestes más hasta cobrar lo anterior y asume como perdido lo que no vuelva. Callarte enfría la relación más que hablar.",
+      "ejemplo": "Prestaste 1.200 €, pagó 3 cuotas de 100 € y paró: te debe 900 €."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "pl1",
+      "title": "Cuánto prestar y cómo llamarlo",
+      "ex": [
+        {
+          "id": "pl1-1",
+          "t": "num",
+          "q": "Tienes un colchón de 3.000 € y 3.800 € ahorrados en total. Un amigo te pide 1.500 €. Si solo prestas lo que tienes por encima del colchón, ¿cuántos euros es lo máximo que podrías prestarle?",
+          "unit": "€",
+          "a": 800,
+          "why": "3.800 − 3.000 = 800 €. Prestar los 1.500 € te dejaría con 2.300 €, 700 € por debajo del colchón.",
+          "guia": "g1"
+        },
+        {
+          "id": "pl1-2",
+          "t": "choice",
+          "q": "Tienes un colchón de 3.000 € y 3.800 € ahorrados en total. Un familiar te pide 1.500 € y aplicas el criterio de prestar solo lo que puedes perder sin tocar el colchón. ¿Qué respuesta encaja con ese criterio?",
+          "opts": [
+            "Prestarle los 1.500 € y rehacer el colchón con las próximas nóminas",
+            "Ofrecerle como mucho 800 € y decirle con claridad que no puedes más",
+            "Pedir un préstamo al banco para poder prestarle los 1.500 €",
+            "Prestarle los 1.500 € porque, siendo familia, seguro que los devuelve"
+          ],
+          "a": 1,
+          "why": "Tu ahorro libre es 3.800 − 3.000 = 800 €. Por encima de eso tocarías el colchón y, si el dinero no vuelve, te faltaría para tus imprevistos.",
+          "guia": "g1",
+          "porque": [
+            "Tocarías el colchón: te quedarían 2.300 € y tus imprevistos no estarían cubiertos.",
+            null,
+            "Te endeudarías para prestar dinero que puede no volver: el riesgo sería el mismo y además pagarías intereses.",
+            "Que sea familia no garantiza que pueda devolverlo: el criterio es poder perder el dinero sin dañarte."
+          ]
+        },
+        {
+          "id": "pl1-3",
+          "t": "choice",
+          "q": "Te piden 2.000 € y solo puedes permitirte perder 500 € sin dañar tu colchón. ¿Qué opción protege mejor tu dinero y la relación?",
+          "opts": [
+            "Prestar los 2.000 € con una cuota mensual pequeña para no notar el esfuerzo",
+            "Prestar los 2.000 € sin papel para que no parezca que desconfías",
+            "Decir que no a todo, porque cualquier ayuda con dinero acaba estropeando la relación",
+            "Regalar 500 € sin esperar que vuelvan y decir que no a lo demás"
+          ],
+          "a": 3,
+          "why": "Si solo puedes perder 500 €, da 500 € como regalo: no queda deuda pendiente y no pones en riesgo los otros 1.500 €.",
+          "guia": "g2",
+          "porque": [
+            "Una cuota pequeña no reduce lo que puedes perder: sigues expuesto a 2.000 € que no puedes permitirte perder.",
+            "Sin papel el riesgo sigue siendo de 2.000 € y, además, no queda claro cuánto ni cuándo se devuelve.",
+            "No siempre es así: dar lo que puedes perder, dicho claramente como regalo, suele cuidar mejor la relación.",
+            null
+          ]
+        },
+        {
+          "id": "pl1-4",
+          "t": "num",
+          "q": "Tienes un colchón de 3.000 € y 3.800 € ahorrados en total. Si prestas 600 €, ¿qué porcentaje de tu ahorro libre (lo que tienes por encima del colchón) supone ese préstamo?",
+          "unit": "%",
+          "a": 75,
+          "why": "Ahorro libre: 3.800 − 3.000 = 800 €. 600 ÷ 800 = 75 %: casi todo lo que podrías perder sin tocar el colchón.",
+          "guia": "g1"
+        },
+        {
+          "id": "pl1-5",
+          "t": "match",
+          "q": "Empareja cada concepto con su significado al decidir si prestas dinero a alguien cercano.",
+          "pairs": [
+            [
+              "Préstamo",
+              "Se espera que vuelva, con importe y plazo"
+            ],
+            [
+              "Regalo",
+              "No se espera que vuelva: das lo que puedes perder"
+            ],
+            [
+              "Ahorro libre",
+              "Lo que tienes por encima del fondo de emergencia"
+            ],
+            [
+              "Colchón",
+              "Reserva para tus imprevistos que no se presta"
+            ]
+          ],
+          "why": "Lo que no esperas cobrar es un regalo; lo que esperas cobrar es un préstamo. Y solo se da o se presta el ahorro libre, nunca el colchón.",
+          "guia": "g1"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "pl2",
+      "title": "Por escrito y si no devuelven",
+      "ex": [
+        {
+          "id": "pl2-1",
+          "t": "num",
+          "q": "Prestas 900 € a un familiar sin intereses y acordáis que los devuelva en 6 cuotas mensuales iguales. ¿Cuántos euros es cada cuota?",
+          "unit": "€",
+          "a": 150,
+          "why": "900 ÷ 6 = 150 €. Sin intereses, la suma de las cuotas es exactamente el importe prestado.",
+          "guia": "g3"
+        },
+        {
+          "id": "pl2-2",
+          "t": "choice",
+          "q": "Vas a prestar 1.200 € a un amigo y quieres dejarlo por escrito. ¿Qué debe recoger el papel?",
+          "opts": [
+            "Solo el importe prestado, para no dar sensación de desconfianza al amigo",
+            "Importe, fecha de entrega, cuotas con sus fechas y firma de los dos",
+            "El importe y la promesa de devolverlo cuando él pueda, sin fecha alguna",
+            "Las cuotas y sus fechas, pero sin firmas para no complicar el trato"
+          ],
+          "a": 1,
+          "why": "Con importe, entrega, cuotas, fechas y firmas de ambos, los dos saben qué se acordó y cuándo falla un pago.",
+          "guia": "g3",
+          "porque": [
+            "Con solo el importe no se fija cuándo ni cómo se devuelve, que es donde surgen los malentendidos.",
+            null,
+            "Sin fechas no sabrás si hay retraso: «cuando pueda» puede acabar siendo nunca.",
+            "Sin la firma de los dos, el papel no recoge que ambos aceptan las condiciones."
+          ]
+        },
+        {
+          "id": "pl2-3",
+          "t": "choice",
+          "q": "Un amigo te pide 1.200 € y te propone devolverlos «cuando pueda». ¿Por qué conviene más fijar cuotas y fechas?",
+          "opts": [
+            "Porque con fechas fijas la deuda genera intereses automáticamente",
+            "Porque pagar en cuotas reduce el importe total que tu amigo tiene que devolver",
+            "Porque un plazo concreto permite ver pronto si falla un pago y hablarlo",
+            "Porque con fechas tu amigo queda obligado a no pedirte más dinero"
+          ],
+          "a": 2,
+          "why": "Si pactáis, por ejemplo, 12 cuotas de 100 € el día 5 y el día 6 no ha llegado una, lo ves y lo habláis ya; con «cuando pueda» no hay fecha que incumplir.",
+          "guia": "g3",
+          "porque": [
+            "Las cuotas y fechas no añaden intereses: sin intereses pactados, se devuelve solo lo prestado.",
+            "Pagar en cuotas reparte la devolución, pero la suma sigue siendo 1.200 €.",
+            null,
+            "Las fechas fijan cuándo se devuelve; no limitan lo que te pida ni lo que tú decidas prestar."
+          ]
+        },
+        {
+          "id": "pl2-4",
+          "t": "num",
+          "q": "Prestaste 1.200 € para devolver en 12 cuotas mensuales de 100 €. Tu amigo ha pagado 4 cuotas y ha dejado de pagar. ¿Cuántos euros te debe todavía?",
+          "unit": "€",
+          "a": 800,
+          "why": "4 × 100 = 400 € devueltos; 1.200 − 400 = 800 €. Tiene pendientes las 8 cuotas restantes.",
+          "guia": "g4"
+        },
+        {
+          "id": "pl2-5",
+          "t": "choice",
+          "q": "Prestaste 1.200 € para devolver en 12 cuotas de 100 €. Tu amigo pagó 3 y lleva dos meses sin pagar, así que te debe 900 €. ¿Qué es lo más sensato hacer primero?",
+          "opts": [
+            "Reclamarle los 900 € por vía judicial sin hablarlo antes con él",
+            "Prestarle 300 € más para que se ponga al día con las cuotas",
+            "Dar la deuda por perdida y no decirle nada, para no incomodarlo",
+            "Hablar con él ya y proponer por escrito una cuota menor o más plazo"
+          ],
+          "a": 3,
+          "why": "Hablar pronto y renegociar por escrito suele recuperar más y cuidar la relación; prestar más aumenta lo que puedes perder.",
+          "guia": "g4",
+          "porque": [
+            "Reclamar sin hablar antes es costoso y rompe la relación; hablar suele resolverlo antes.",
+            "Prestar más aumenta lo que puedes perder: no se presta más hasta cobrar lo anterior.",
+            "Callarte enfría la relación: tu amigo no sabe que sigues esperando el pago.",
+            null
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

@@ -1,0 +1,216 @@
+{
+  "n": 13,
+  "id": "crrwa",
+  "track": "cripto",
+  "title": "Tokenización de activos reales",
+  "blurb": "Un token que representa un bono, un fondo o un inmueble: quién guarda el activo, qué derechos da, qué ventajas tiene y qué riesgos.",
+  "revisar": "2027-11",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Qué es tokenizar",
+      "texto": "Tokenizar es crear en una cadena de bloques un token que representa un activo que sigue fuera de ella (el activo subyacente): un bono, un fondo monetario, un inmueble. El token no es el activo: es el registro de quién tiene derecho a él.",
+      "ejemplo": "Un bono de 1.000 € dividido en 1.000 tokens iguales: cada uno representa 1 €. Con 250 tokens tienes el 25 %."
+    },
+    {
+      "id": "g2",
+      "titulo": "Custodio y derechos",
+      "texto": "El activo lo guarda un custodio, y las condiciones del token fijan qué derecho da: cobros, reembolso o una participación. Los intereses los paga el emisor, no la cadena. Si el custodio quiebra o no cumple, el token puede valer poco.",
+      "ejemplo": "Fondo monetario de 20.000 € al 3,6 %: rinde 720 € al año. Un token por el 5 % da derecho a 36 €, si las condiciones lo dicen."
+    },
+    {
+      "id": "g3",
+      "titulo": "Ventajas",
+      "texto": "Dos ventajas: liquidación rápida, porque el token se transfiere en minutos y a cualquier hora, y fracciones, porque puedes comprar una parte pequeña. No eliminan los riesgos del activo ni garantizan que haya compradores.",
+      "ejemplo": "Bono de 1.000 € en tokens de 10 €: con 50 € compras 5 tokens, el 5 % del bono."
+    },
+    {
+      "id": "g4",
+      "titulo": "Riesgos",
+      "texto": "Riesgo de custodia: el custodio quiebra. Riesgo regulatorio: las normas cambian según el país y pueden limitar quién compra o vende; compruébalo con la norma vigente. Riesgo de liquidez: pocos compradores. Y el token puede cotizar con descuento: 1 − precio del token ÷ valor del activo.",
+      "ejemplo": "Token de 10 € de activo que cotiza a 9,40 €: 1 − 9,40 ÷ 10 = 6 % de descuento."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "rw1",
+      "title": "Qué es y qué derechos da",
+      "ex": [
+        {
+          "id": "rw1-1",
+          "t": "choice",
+          "q": "¿Qué es un token que representa un bono de una empresa?",
+          "opts": [
+            "El propio bono, que pasa a existir solo dentro de la cadena de bloques",
+            "Un registro en la cadena que indica quién tiene derecho a ese bono",
+            "Una criptomoneda sin relación con el bono, aunque lleve su nombre",
+            "Un contrato que obliga a la cadena a pagar los intereses del bono"
+          ],
+          "a": 1,
+          "why": "El bono sigue fuera de la cadena (es el activo subyacente); el token es el registro de quién tiene derecho a él.",
+          "guia": "g1",
+          "porque": [
+            "El bono sigue existiendo fuera de la cadena; el token solo lo representa.",
+            null,
+            "El token está ligado al bono y a sus derechos según las condiciones; no es una moneda independiente.",
+            "Los intereses los paga el emisor del bono, no la cadena de bloques."
+          ]
+        },
+        {
+          "id": "rw1-2",
+          "t": "num",
+          "q": "Un bono de 1.000 € se divide en 1.000 tokens iguales y cada token da derecho a la misma parte del bono. Compras 250 tokens. ¿Qué porcentaje del bono te corresponde?",
+          "unit": "%",
+          "a": 25,
+          "why": "250 ÷ 1.000 = 25 %. Cada token representa 1 € del bono.",
+          "guia": "g1"
+        },
+        {
+          "id": "rw1-3",
+          "t": "choice",
+          "q": "Vas a comprar un token que representa un fondo monetario guardado por una entidad. ¿Qué debes comprobar antes de nada?",
+          "opts": [
+            "Que la cadena de bloques sea la más rápida, porque eso protege el fondo",
+            "Que el precio del token haya subido más que el de otras criptomonedas",
+            "Quién guarda el fondo y qué derecho te da el token si esa entidad falla",
+            "Que el nombre del token incluya palabras como «seguro» o «garantizado»"
+          ],
+          "a": 2,
+          "why": "El token vale lo que valga el activo y lo que cumpla el custodio: hay que saber quién lo guarda y qué derechos fijan las condiciones.",
+          "guia": "g2",
+          "porque": [
+            "La velocidad no protege el activo: lo protege quien lo guarda y lo que digan las condiciones.",
+            "Una subida de precio no dice nada de quién guarda el fondo ni de tus derechos.",
+            null,
+            "Un nombre no es una garantía: lo que cuenta son las condiciones y el custodio."
+          ]
+        },
+        {
+          "id": "rw1-4",
+          "t": "num",
+          "q": "Un fondo monetario de 20.000 € rinde un 3,6 % al año y su token da derecho a esos rendimientos. Si tienes tokens por el 5 % del fondo, ¿cuántos euros de rendimiento te corresponden al año?",
+          "unit": "€",
+          "a": 36,
+          "why": "20.000 × 3,6 % = 720 € al año el fondo; el 5 % son 720 × 0,05 = 36 €, siempre que las condiciones del token lo digan.",
+          "guia": "g2"
+        },
+        {
+          "id": "rw1-5",
+          "t": "match",
+          "q": "Empareja cada término de un token de activo real con su significado.",
+          "pairs": [
+            [
+              "Activo subyacente",
+              "El bono, el fondo o el inmueble que sigue fuera de la cadena"
+            ],
+            [
+              "Custodio",
+              "La entidad que lo guarda y responde ante su titular"
+            ],
+            [
+              "Condiciones del token",
+              "Lo que fija si da cobros, reembolso o solo una participación"
+            ],
+            [
+              "Tokenizar",
+              "Crear en la cadena un registro que representa algo de fuera"
+            ]
+          ],
+          "why": "El activo está fuera de la cadena, alguien lo guarda y las condiciones dicen qué te da el registro que lo representa.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "rw2",
+      "title": "Ventajas y riesgos",
+      "ex": [
+        {
+          "id": "rw2-1",
+          "t": "num",
+          "q": "Un bono de 1.000 € está dividido en tokens iguales de 10 € cada uno. Con 50 € compras tokens de ese bono. ¿Qué porcentaje del bono tienes?",
+          "unit": "%",
+          "a": 5,
+          "why": "50 ÷ 10 = 5 tokens de los 100 que hay; 50 ÷ 1.000 = 5 %. Es la ventaja de las fracciones: una parte pequeña.",
+          "guia": "g3"
+        },
+        {
+          "id": "rw2-2",
+          "t": "choice",
+          "q": "¿Qué ventaja ofrece de verdad un token de un activo real?",
+          "opts": [
+            "Se transfiere en minutos, a cualquier hora, y se divide en fracciones",
+            "Elimina el riesgo de que el emisor del activo deje de pagar sus deudas",
+            "Asegura que siempre habrá un comprador dispuesto a pagar el precio del activo",
+            "Hace que el activo rinda más que si no estuviera tokenizado en la cadena"
+          ],
+          "a": 0,
+          "why": "La rapidez de transferencia y las fracciones son las ventajas reales; el riesgo y el rendimiento del activo no cambian.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "El token no cambia al emisor: si este no paga, el activo y el token pierden valor.",
+            "Que haya o no compradores es la liquidez, y tokenizar no la garantiza.",
+            "El rendimiento lo da el activo; tokenizarlo cambia cómo se transfiere, no lo que rinde."
+          ]
+        },
+        {
+          "id": "rw2-3",
+          "t": "num",
+          "q": "Un token representa 10 € de un bono y cotiza a 9,40 €. ¿Qué porcentaje por debajo del valor del activo cotiza?",
+          "unit": "%",
+          "a": 6,
+          "why": "1 − 9,40 ÷ 10 = 0,06: un descuento del 6 %. Si vendes hoy cobras 9,40 € por cada 10 € de activo.",
+          "guia": "g4"
+        },
+        {
+          "id": "rw2-4",
+          "t": "choice",
+          "q": "¿Cuál es un riesgo propio de tokenizar un activo real, además del riesgo del propio activo?",
+          "opts": [
+            "Que la cadena de bloques reduzca el valor del activo al emitir el token",
+            "Que el token no pueda dividirse en partes más pequeñas que el activo",
+            "Que el activo real deje de existir en cuanto se emite su token",
+            "Que la entidad que guarda el activo no cumpla o quiebre"
+          ],
+          "a": 3,
+          "why": "El token depende de que el custodio mantenga el activo y respete tus derechos; si falla, el token puede valer poco.",
+          "guia": "g4",
+          "porque": [
+            "Emitir un token no cambia el valor del activo: sigue valiendo lo que valga fuera de la cadena.",
+            "Dividir en fracciones es justo una de las ventajas de tokenizar.",
+            "El activo sigue existiendo fuera de la cadena; el token solo lo representa.",
+            null
+          ]
+        },
+        {
+          "id": "rw2-5",
+          "t": "match",
+          "q": "Empareja cada riesgo de un token de activo real con su ejemplo.",
+          "pairs": [
+            [
+              "Riesgo de custodia",
+              "La entidad que guarda el activo quiebra o no cumple"
+            ],
+            [
+              "Riesgo regulatorio",
+              "Una norma cambia quién puede comprar o vender el token"
+            ],
+            [
+              "Riesgo de liquidez",
+              "Hay pocos compradores y vender obliga a rebajar el precio"
+            ],
+            [
+              "Descuento del token",
+              "Cotiza a 9,40 € un token que representa 10 € de activo"
+            ]
+          ],
+          "why": "Cuatro fuentes de pérdida distintas: quien guarda, la norma, el mercado de compradores y la diferencia entre precio y valor.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}
