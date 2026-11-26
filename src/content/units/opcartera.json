@@ -1,0 +1,207 @@
+{
+  "n": 23,
+  "id": "opcartera",
+  "track": "derivados",
+  "title": "El riesgo de varias opciones a la vez",
+  "blurb": "Cómo sumar la delta, la theta y la vega de una cartera de opciones y ponerle un límite.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Delta de una posición",
+      "texto": "Delta × 100 × contratos son las acciones equivalentes. Comprar calls suma; comprar puts resta; vender invierte el signo.",
+      "ejemplo": "3 calls compradas con delta 0,40: +120. 2 puts vendidas con delta −0,30: +60."
+    },
+    {
+      "id": "g2",
+      "titulo": "Sumar la cartera",
+      "texto": "La delta total suma todas las posiciones; cada acción cuenta como una acción equivalente.",
+      "ejemplo": "200 acciones, 3 calls compradas (+120) y 2 puts vendidas (+60): +380 acciones equivalentes."
+    },
+    {
+      "id": "g3",
+      "titulo": "Exposición y límite",
+      "texto": "Multiplica la delta total por el precio para ver la exposición en euros y ponle un tope. Para un movimiento pequeño, pérdida ≈ delta total × lo que se mueve la acción (sin gamma).",
+      "ejemplo": "Acción a 50 €: 380 × 50 = 19.000 €. Si cae 2 €: pérdida de unos 380 × 2 = 760 €."
+    },
+    {
+      "id": "g4",
+      "titulo": "Theta y vega totales",
+      "texto": "También se suman, por 100 × contratos. Comprar opciones paga theta y suma vega; venderlas cobra theta y resta vega.",
+      "ejemplo": "3 calls compradas (theta −0,05, vega 0,10) y 2 puts vendidas (theta −0,04, vega 0,08): theta −15 + 8 = −7 € al día; vega +30 − 16 = +14 € por punto."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "op47",
+      "title": "Sumar la delta",
+      "ex": [
+        {
+          "id": "op47-1",
+          "t": "num",
+          "q": "Compras 4 calls con delta 0,35 sobre una acción (contratos de 100 acciones). ¿Cuántas acciones equivalentes añades?",
+          "unit": "",
+          "a": 140,
+          "why": "0,35 × 100 × 4 = 140 acciones equivalentes: ganas o pierdes como si tuvieras 140 acciones, mientras la delta no cambie.",
+          "guia": "g1"
+        },
+        {
+          "id": "op47-2",
+          "t": "choice",
+          "q": "Vendes 2 puts con delta −0,30 sobre una acción (contratos de 100 acciones). ¿Qué posición en acciones equivalentes añades?",
+          "opts": [
+            "−60, como si hubieras vendido 60 acciones",
+            "+60, como si hubieras comprado 60 acciones",
+            "+30, como si hubieras comprado 30 acciones",
+            "0, porque vender una put no se mueve con la acción"
+          ],
+          "a": 1,
+          "why": "La put comprada tendría −0,30 × 100 × 2 = −60; al venderla, el signo se invierte: +60. Ganas si la acción sube.",
+          "guia": "g1",
+          "porque": [
+            "Vender una put no da delta negativa: el signo de la delta de la posición se invierte al vender.",
+            null,
+            "La delta de cada put es −0,30 y hay 2 contratos de 100: son 60 acciones, no 30.",
+            "La put vendida sí se mueve con la acción: pierde valor si sube y lo gana si baja."
+          ]
+        },
+        {
+          "id": "op47-3",
+          "t": "num",
+          "q": "Tienes 200 acciones, 3 calls compradas con delta 0,40 y 2 puts vendidas con delta −0,30 (contratos de 100 acciones). ¿Cuántas acciones equivalentes suma tu cartera en total?",
+          "unit": "",
+          "a": 380,
+          "why": "200 + 0,40 × 100 × 3 + 0,30 × 100 × 2 = 200 + 120 + 60 = 380 acciones equivalentes.",
+          "guia": "g2"
+        },
+        {
+          "id": "op47-4",
+          "t": "match",
+          "q": "Empareja cada posición (contratos de 100 acciones) con su delta en acciones equivalentes.",
+          "pairs": [
+            [
+              "3 calls compradas, delta 0,40",
+              "+120"
+            ],
+            [
+              "2 puts compradas, delta −0,30",
+              "−60"
+            ],
+            [
+              "2 puts vendidas, delta −0,30",
+              "+60"
+            ],
+            [
+              "2 calls vendidas, delta 0,40",
+              "−80"
+            ]
+          ],
+          "why": "0,40 × 100 × 3 = 120; −0,30 × 100 × 2 = −60; vender una put da +60 y vender 2 calls, −80: vender invierte el signo.",
+          "guia": "g1"
+        },
+        {
+          "id": "op47-5",
+          "t": "slide",
+          "q": "Tu cartera tiene 200 acciones y 2 puts vendidas con delta −0,30 (+260 acciones equivalentes). La acción cotiza a 50 € y tu límite de exposición es 19.000 € (380 acciones equivalentes). ¿Cuántas calls compradas con delta 0,40 puedes añadir sin pasar el límite?",
+          "label": "Calls compradas",
+          "min": 0,
+          "max": 8,
+          "step": 1,
+          "start": 6,
+          "a": 3,
+          "unit": "",
+          "why": "Cada call añade 0,40 × 100 = 40 acciones equivalentes: 260 + 3 × 40 = 380, que a 50 € son 19.000 €. Con 4 pasarías el límite.",
+          "show": [
+            {
+              "label": "Acciones equivalentes",
+              "k": 40,
+              "b": 260,
+              "unit": ""
+            },
+            {
+              "label": "Exposición",
+              "k": 2000,
+              "b": 13000,
+              "unit": "€"
+            }
+          ],
+          "guia": "g3"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "op48",
+      "title": "Theta, vega y límites",
+      "ex": [
+        {
+          "id": "op48-1",
+          "t": "num",
+          "q": "Compras 3 calls con theta −0,05 por acción y día (contratos de 100 acciones). ¿Cuántos euros pierdes al día por el paso del tiempo?",
+          "unit": "€",
+          "a": 15,
+          "why": "0,05 × 100 × 3 = 15 € al día de valor temporal, con todo lo demás igual.",
+          "guia": "g4"
+        },
+        {
+          "id": "op48-2",
+          "t": "num",
+          "q": "Tu cartera tiene 3 calls compradas (vega 0,10) y 2 puts vendidas (vega 0,08), con contratos de 100 acciones. Si la volatilidad implícita sube un punto, ¿cuántos euros cambia el valor de la cartera?",
+          "unit": "€",
+          "a": 14,
+          "why": "Calls: +0,10 × 100 × 3 = +30 €. Puts vendidas: −0,08 × 100 × 2 = −16 €. Total: +14 €.",
+          "guia": "g4"
+        },
+        {
+          "id": "op48-3",
+          "t": "choice",
+          "q": "Tus 3 calls compradas pierden 15 € al día por theta y tus 2 puts vendidas ganan 8 € al día. ¿Qué significa el total?",
+          "opts": [
+            "Que la cartera gana unos 7 € al día por el paso del tiempo",
+            "Que la cartera pierde unos 23 € al día porque ambas restan",
+            "Que la cartera pierde unos 7 € al día por el paso del tiempo",
+            "Que la cartera pierde 15 € al día porque la vendida no cuenta"
+          ],
+          "a": 2,
+          "why": "Se suman con su signo: −15 + 8 = −7 € al día. Comprar opciones paga theta y venderlas la cobra.",
+          "guia": "g4",
+          "porque": [
+            "El total es negativo: la theta de las calls compradas pesa más que la de las puts vendidas.",
+            "No se suman los dos en negativo: las puts vendidas cobran theta, no la pagan.",
+            null,
+            "La theta de las puts vendidas sí cuenta: +8 € compensan una parte de los −15 €."
+          ]
+        },
+        {
+          "id": "op48-4",
+          "t": "choice",
+          "q": "Tu cartera suma +380 acciones equivalentes, la acción cotiza a 50 € y tu límite es 20.000 €. La acción sube a 55 € sin que cambies nada. ¿Qué ocurre, sin contar los cambios de la delta?",
+          "opts": [
+            "Sigues dentro: el límite se fija con el precio de apertura",
+            "Sigues dentro: solo cuenta la prima que pagaste",
+            "Superas el límite solo si la acción llega a 60 €",
+            "Superas el límite: 380 × 55 € = 20.900 €"
+          ],
+          "a": 3,
+          "why": "La exposición en euros es delta total × precio actual: 380 × 55 = 20.900 €, por encima de 20.000 €. Hay que vigilarla cuando se mueve el precio.",
+          "guia": "g3",
+          "porque": [
+            "El límite se mide con el precio actual: si sube, la exposición en euros sube.",
+            "La prima pagada no es la exposición; esta se calcula con la delta y el precio.",
+            "Ya lo superas a 55 €, antes de llegar a 60 €: 380 × 55 = 20.900 €.",
+            null
+          ]
+        },
+        {
+          "id": "op48-5",
+          "t": "num",
+          "q": "Tu cartera suma +380 acciones equivalentes y la acción cotiza a 50 €. Si cae un 4 % (2 € por acción), ¿cuántos euros pierde aproximadamente, sin contar la gamma?",
+          "unit": "€",
+          "a": 760,
+          "why": "380 × 2 € = 760 €. Es una aproximación: al caer la acción, la delta cambia y la pérdida real difiere un poco.",
+          "guia": "g3"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

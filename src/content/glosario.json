@@ -1728,5 +1728,30 @@
  {
   "termino": "producto constante",
   "d": "Regla de un pool de liquidez: el producto de las cantidades de sus dos monedas (x · y = k) no cambia con los intercambios."
+ },
+ {
+  "termino": "split",
+  "alias": [
+   "splits"
+  ],
+  "d": "División de cada acción en varias, con un precio proporcionalmente menor: el valor de la empresa no cambia."
+ },
+ {
+  "termino": "contrasplit",
+  "alias": [
+   "contrasplits"
+  ],
+  "d": "Agrupación de varias acciones en una, con un precio proporcionalmente mayor: el valor de la empresa no cambia."
+ },
+ {
+  "termino": "acciones equivalentes",
+  "d": "La delta de una posición de opciones expresada en acciones: delta × 100 × contratos."
+ },
+ {
+  "termino": "arrendamiento",
+  "alias": [
+   "arrendamientos"
+  ],
+  "d": "Contrato por el que se usa un activo (un local, un avión) a cambio de pagos periódicos. Con las NIIF se registra como activo y pasivo."
  }
 ]

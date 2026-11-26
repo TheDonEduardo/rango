@@ -1,0 +1,210 @@
+{
+  "n": 12,
+  "id": "tasaahorro",
+  "track": "personal",
+  "title": "Tu tasa de ahorro y los años que faltan",
+  "blurb": "Qué parte de tus ingresos ahorras, cuánto necesitas y cuántos años tardarás con una cuenta sencilla.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "La tasa de ahorro",
+      "texto": "Es la parte de tus ingresos netos que no gastas. Importa más que el sueldo: dice cuánto de lo que entra se convierte en patrimonio.",
+      "ejemplo": "Cobras 2.400 € netos al mes y ahorras 600 €: tu tasa de ahorro es 600 ÷ 2.400 = 25 %."
+    },
+    {
+      "id": "g2",
+      "titulo": "Tu gasto fija la meta",
+      "texto": "La regla del 4 % supone retirar cada año el 4 % de la cartera: tu meta de independencia es unas 25 veces el gasto anual (1 ÷ 0,04). Cada euro que recortas lo ahorras y rebaja la meta 25 euros.",
+      "ejemplo": "Gastas 1.500 € al mes (18.000 € al año): meta de 450.000 €. Si recortas 100 € al mes, 1.200 € al año, la meta baja 30.000 €."
+    },
+    {
+      "id": "g3",
+      "titulo": "Años hasta la meta",
+      "texto": "Partiendo de cero, con ahorro constante a final de año y rentabilidad real constante del 4 %, el tiempo solo depende de la tasa de ahorro, no del sueldo. Cuanto más ahorras, antes llegas.",
+      "ejemplo": "Ahorrando el 10 %: unos 59 años. El 25 %: unos 35. El 50 %: unos 18. El 75 %: unos 7."
+    },
+    {
+      "id": "g4",
+      "titulo": "Úsalo como orientación",
+      "texto": "Es un modelo simple: la rentabilidad real cambia cada año y hay impuestos e imprevistos. Pruébalo con supuestos prudentes y revísalo cada año.",
+      "ejemplo": "Con un 3 % real en vez de un 4 %, ahorrar el 25 % tarda unos 40 años y no 35."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "ae1",
+      "title": "Tasa de ahorro y meta",
+      "ex": [
+        {
+          "id": "ae1-1",
+          "t": "num",
+          "q": "Cobras 2.400 € netos al mes y ahorras 600 €. ¿Qué tasa de ahorro tienes, en porcentaje?",
+          "unit": "%",
+          "a": 25,
+          "why": "600 ÷ 2.400 = 25 %. La tasa de ahorro es la parte de tus ingresos netos que no gastas.",
+          "guia": "g1"
+        },
+        {
+          "id": "ae1-2",
+          "t": "num",
+          "q": "Gastas 1.200 € al mes y quieres una cartera de 25 veces tu gasto anual. ¿Cuántos miles de euros necesitas?",
+          "unit": "mil €",
+          "a": 360,
+          "why": "1.200 × 12 = 14.400 € al año; × 25 = 360.000 €, es decir, 360 mil €.",
+          "guia": "g2"
+        },
+        {
+          "id": "ae1-3",
+          "t": "choice",
+          "q": "Recortas 100 € de tu gasto mensual fijo. ¿Por qué ese recorte ayuda por partida doble?",
+          "opts": [
+            "Porque ahorras 100 € más y la meta de 25 veces el gasto baja 30.000 €",
+            "Porque ahorras 100 € más y además cobras 100 € de intereses",
+            "Porque la meta baja 1.200 €, igual que lo que ahorras al año",
+            "Porque con menos gasto la bolsa rinde un 4 % más"
+          ],
+          "a": 0,
+          "why": "100 × 12 = 1.200 € menos de gasto al año; × 25 = 30.000 € menos de meta. Y esos 100 € mensuales se ahorran.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "El recorte no genera intereses: lo que cambia es el gasto y, con él, la meta.",
+            "La meta baja 100 × 12 × 25 = 30.000 €, no 1.200 €: el recorte se multiplica por 25.",
+            "La rentabilidad no depende de lo que gastes: el efecto doble está en ahorrar más y necesitar menos."
+          ]
+        },
+        {
+          "id": "ae1-4",
+          "t": "match",
+          "q": "Empareja cada idea del ahorro con su significado.",
+          "pairs": [
+            [
+              "Tasa de ahorro",
+              "Parte de tus ingresos netos que no gastas"
+            ],
+            [
+              "Meta de independencia",
+              "Unas 25 veces tu gasto anual"
+            ],
+            [
+              "Regla del 4 %",
+              "Retirar cada año ese porcentaje de la cartera"
+            ]
+          ],
+          "why": "La meta sale de tu gasto, no de tu sueldo: con la regla del 4 %, 1 ÷ 0,04 = 25 veces el gasto anual.",
+          "guia": "g2"
+        },
+        {
+          "id": "ae1-5",
+          "t": "num",
+          "q": "Gastas 1.500 € al mes y recortas 200 €. ¿Cuántos miles de euros baja la meta de 25 veces el gasto anual?",
+          "unit": "mil €",
+          "a": 60,
+          "why": "200 × 12 = 2.400 € al año; × 25 = 60.000 €, es decir, 60 mil €.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "ae2",
+      "title": "Años hasta la meta",
+      "ex": [
+        {
+          "id": "ae2-1",
+          "t": "choice",
+          "q": "Dos personas ahorran el 25 % de sus ingresos netos: una gana 1.500 € al mes y la otra 4.000 €. ¿Cuánto tardan en llegar a 25 veces su gasto anual, con el mismo modelo?",
+          "opts": [
+            "Más la que gana 1.500 €, porque ahorra menos euros",
+            "Menos la que gana 4.000 €, porque ahorra más euros",
+            "Depende de la empresa en la que trabaje cada una",
+            "Lo mismo: el tiempo solo depende de la tasa de ahorro"
+          ],
+          "a": 3,
+          "why": "Con un 25 % de ahorro, la meta (25 veces el gasto) es proporcional al sueldo, igual que lo ahorrado. El sueldo se cancela y solo cuenta la tasa de ahorro.",
+          "guia": "g3",
+          "porque": [
+            "Con la misma tasa, ahorra menos euros pero también necesita una meta más pequeña.",
+            "Ahorra más euros, pero su meta es proporcionalmente mayor: llegan a la vez.",
+            "En el modelo no influye la empresa: solo cuentan la tasa de ahorro y la rentabilidad.",
+            null
+          ]
+        },
+        {
+          "id": "ae2-2",
+          "t": "num",
+          "q": "Supón que partes de cero, ahorro constante, rentabilidad real constante del 4 %, aportaciones a final de año y sin impuestos. Según el modelo, con un 10 % de ahorro tardas unos 59 años y con un 25 %, unos 35. ¿Cuántos años te ahorras al subir del 10 % al 25 %?",
+          "unit": "",
+          "a": 24,
+          "why": "59 − 35 = 24 años. Subir la tasa de ahorro acorta el camino mucho más que ganar un poco más de rentabilidad.",
+          "tol": 0.5,
+          "guia": "g3"
+        },
+        {
+          "id": "ae2-3",
+          "t": "slide",
+          "q": "Ingresos de 2.000 € netos al mes. Con el modelo de la guía (rentabilidad real del 4 %), con un 25 % de ahorro tardas unos 35 años, con un 50 %, unos 18 y con un 75 %, unos 7. Quieres tardar unos 18 años. ¿Qué tasa de ahorro eliges?",
+          "label": "Tasa de ahorro",
+          "min": 10,
+          "max": 80,
+          "step": 5,
+          "start": 25,
+          "a": 50,
+          "unit": "%",
+          "why": "Con un 50 % ahorras 1.000 € al mes, gastas 1.000 € y la meta es 25 × 12.000 = 300 mil €: unos 18 años según el modelo.",
+          "show": [
+            {
+              "label": "Ahorras al mes",
+              "k": 20,
+              "b": 0,
+              "unit": "€"
+            },
+            {
+              "label": "Gastas al mes",
+              "k": -20,
+              "b": 2000,
+              "unit": "€"
+            },
+            {
+              "label": "Meta (25 × gasto anual)",
+              "k": -6,
+              "b": 600,
+              "unit": "mil €"
+            }
+          ],
+          "guia": "g3"
+        },
+        {
+          "id": "ae2-4",
+          "t": "choice",
+          "q": "El modelo usa una rentabilidad real constante del 4 %. ¿Cómo debes tomar los años que te da?",
+          "opts": [
+            "Como una fecha segura para dejar de trabajar",
+            "Como un mínimo, porque la bolsa siempre rinde más",
+            "Como un orden de magnitud que revisas cada año",
+            "Como un máximo, porque los impuestos no cuentan"
+          ],
+          "a": 2,
+          "why": "La rentabilidad real varía de un año a otro y hay impuestos e imprevistos. El resultado orienta, y conviene revisarlo cada año con los datos reales.",
+          "guia": "g4",
+          "porque": [
+            "No hay fecha segura: la rentabilidad real no es constante.",
+            "La bolsa no siempre rinde más del 4 % real; puede rendir menos durante años.",
+            null,
+            "Los impuestos y los imprevistos tampoco cuentan en el modelo: no es un máximo."
+          ]
+        },
+        {
+          "id": "ae2-5",
+          "t": "num",
+          "q": "Con una rentabilidad real del 3 % en vez del 4 %, ahorrar el 25 % tarda unos 40 años, y con el 4 % tardaba unos 35. ¿Cuántos años más tarda?",
+          "unit": "",
+          "a": 5,
+          "why": "40 − 35 = 5 años más: una rentabilidad algo menor alarga el plazo, por eso conviene probar escenarios prudentes.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

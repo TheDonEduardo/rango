@@ -1,0 +1,199 @@
+{
+  "n": 40,
+  "id": "arrendamientos",
+  "track": "fundamental",
+  "title": "Arrendamientos y deuda escondida",
+  "blurb": "Cómo las NIIF cambian el EBITDA y la deuda de quien alquila, y cómo comparar con quien compra.",
+  "revisar": "2027-11",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "El alquiler en el balance",
+      "texto": "Con las NIIF, un arrendamiento largo se registra como activo (derecho de uso) y pasivo (pagos futuros). El gasto de alquiler deja de restar en el EBITDA y pasa a amortización e intereses. Las cuentas en normas de EE. UU. siguen restando el alquiler en el EBITDA.",
+      "ejemplo": "Una cadena con EBITDA de 400 mill. € y alquileres de 100 pasa a tener un EBITDA de 500."
+    },
+    {
+      "id": "g2",
+      "titulo": "Deuda ajustada",
+      "texto": "Con las NIIF, el EBITDA ya no resta el alquiler: incluye también el pasivo por arrendamientos en la deuda. Mezclarlos da un ratio falsamente bajo. Compruébalo con la norma vigente.",
+      "ejemplo": "Deuda neta 800, arrendamientos 600, EBITDA 500: (800 + 600) ÷ 500 = 2,8; solo 800 ÷ 500 = 1,6. Sin NIIF: 800 ÷ 400 = 2,0."
+    },
+    {
+      "id": "g3",
+      "titulo": "La caja no se olvida",
+      "texto": "Los pagos del alquiler son salidas de caja reales. Aunque vayan a financiación, réstalos del flujo para saber cuánto queda.",
+      "ejemplo": "Flujo de caja libre declarado: 150 mill. €. Pagos de arrendamientos: 100. Tras alquileres quedan 50."
+    },
+    {
+      "id": "g4",
+      "titulo": "Alquilar o comprar",
+      "texto": "Quien alquila sus locales y quien los compra con deuda tienen un riesgo parecido. Compara las dos con deuda neta más arrendamientos.",
+      "ejemplo": "A alquila (deuda 800 + arrendamientos 600) y B compra (deuda 1.400), con EBITDA 500: solo deuda, 1,6 y 2,8; ajustado, ambas 2,8."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "ar1",
+      "title": "EBITDA y deuda con alquileres",
+      "ex": [
+        {
+          "id": "ar1-1",
+          "t": "num",
+          "q": "Una cadena tiene un EBITDA de 400 mill. € y paga 100 mill. € de alquileres, que antes se contaban como gasto operativo. Con las NIIF, esos alquileres dejan de restar en el EBITDA. ¿Cuál es su nuevo EBITDA, en millones de euros?",
+          "unit": "mill. €",
+          "a": 500,
+          "why": "400 + 100 = 500 mill. €. El alquiler pasa a amortización e intereses, que están por debajo del EBITDA; el negocio es el mismo.",
+          "guia": "g1"
+        },
+        {
+          "id": "ar1-2",
+          "t": "choice",
+          "q": "Con las NIIF, ¿qué cambia en el balance de una cadena que alquila 200 tiendas a 10 años?",
+          "opts": [
+            "Nada: el alquiler sigue siendo solo un gasto del año",
+            "Las tiendas pasan a ser propiedad de la cadena",
+            "Un activo por el derecho de uso y un pasivo por los pagos",
+            "Desaparece la deuda porque la sustituye el alquiler"
+          ],
+          "a": 2,
+          "why": "El contrato se registra como un derecho de uso (activo) y una obligación de pagos futuros (pasivo), parecida a una deuda.",
+          "guia": "g1",
+          "porque": [
+            "El alquiler largo sí se registra en el balance con las NIIF, como activo y pasivo.",
+            "Las tiendas siguen siendo del propietario; la cadena solo tiene derecho a usarlas.",
+            null,
+            "La deuda no desaparece: se añade un pasivo por arrendamientos, parecido a una deuda."
+          ]
+        },
+        {
+          "id": "ar1-3",
+          "t": "num",
+          "q": "Una cadena tiene deuda financiera neta de 800, pasivo por arrendamientos de 600 y EBITDA con las NIIF de 500 (millones de euros). ¿Cuánto es la deuda neta ajustada, con los arrendamientos, entre el EBITDA, en veces?",
+          "unit": "",
+          "a": 2.8,
+          "why": "(800 + 600) ÷ 500 = 2,8 veces: incluye los arrendamientos en la deuda y el EBITDA que ya no resta el alquiler.",
+          "tol": 0.05,
+          "guia": "g2"
+        },
+        {
+          "id": "ar1-4",
+          "t": "choice",
+          "q": "Un analista divide la deuda financiera neta (800) entre el EBITDA con las NIIF (500) y obtiene 1,6 veces. ¿Qué error comete?",
+          "opts": [
+            "Usa un EBITDA demasiado bajo porque incluye amortizaciones",
+            "Resta dos veces la caja de la empresa",
+            "Mezcla un EBITDA sin alquileres con una deuda que no los incluye",
+            "Debería dividir entre las ventas, no entre el EBITDA"
+          ],
+          "a": 2,
+          "why": "El EBITDA de 500 ya no resta el alquiler, pero la deuda de 800 tampoco incluye el pasivo por arrendamientos (600): el ratio sale artificialmente bajo.",
+          "guia": "g2",
+          "porque": [
+            "El EBITDA no incluye amortizaciones: las excluye. Ese no es el error.",
+            "La caja ya está restada una vez en la deuda neta: no hay doble resta.",
+            null,
+            "El ratio de deuda con el EBITDA es válido; el error es mezclar bases distintas."
+          ]
+        },
+        {
+          "id": "ar1-5",
+          "t": "num",
+          "q": "Con un EBITDA de 400 (alquileres restados como gasto) y deuda financiera neta de 800 (millones de euros), ¿cuánto sale la deuda neta entre EBITDA, en veces, sin contar los arrendamientos?",
+          "unit": "",
+          "a": 2,
+          "why": "800 ÷ 400 = 2,0 veces. Es coherente: ni el EBITDA ni la deuda incluyen el alquiler.",
+          "tol": 0.05,
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "ar2",
+      "title": "Caja y comparación",
+      "ex": [
+        {
+          "id": "ar2-1",
+          "t": "num",
+          "q": "El flujo de caja libre declarado es 150 mill. € y los pagos de arrendamientos, que van a financiación, son 100. ¿Cuántos millones de euros quedan tras pagar los alquileres?",
+          "unit": "mill. €",
+          "a": 50,
+          "why": "150 − 100 = 50 mill. €. Los pagos del alquiler son una salida de caja real aunque no salgan en el flujo operativo.",
+          "guia": "g3"
+        },
+        {
+          "id": "ar2-2",
+          "t": "match",
+          "q": "Empareja cada concepto de los arrendamientos con su significado.",
+          "pairs": [
+            [
+              "EBITDA con las NIIF",
+              "No resta el alquiler de los arrendamientos"
+            ],
+            [
+              "Pagos de arrendamientos",
+              "Salida de caja real que no aparece en el EBITDA"
+            ],
+            [
+              "Pasivo por arrendamientos",
+              "Pagos futuros del contrato, parecidos a una deuda"
+            ]
+          ],
+          "why": "El alquiler sigue existiendo: deja de restar en el EBITDA pero queda en la caja y en el pasivo.",
+          "guia": "g3"
+        },
+        {
+          "id": "ar2-3",
+          "t": "choice",
+          "q": "Dos empresas tienen un EBITDA con las NIIF de 500 mill. €. La A paga 100 de alquileres al año y la B no alquila nada. Con todo lo demás igual, ¿cuál deja más caja antes de inversiones?",
+          "opts": [
+            "La A, porque el alquiler sale del EBITDA",
+            "La B, porque no tiene que pagar 100 de alquileres",
+            "Las dos igual, porque el EBITDA es el mismo",
+            "La A, porque sus alquileres son deducibles"
+          ],
+          "a": 1,
+          "why": "El EBITDA de la A no refleja los 100 de alquileres que paga, así que le quedan 400 frente a 500 de la B.",
+          "guia": "g3",
+          "porque": [
+            "Que el alquiler ya no reste en el EBITDA no ahorra caja: la A sigue pagando 100 al año.",
+            null,
+            "El EBITDA es el mismo, pero la A además paga 100 de alquileres que la B no paga.",
+            "La deducibilidad no cambia la caja que sale: la A sigue pagando 100."
+          ]
+        },
+        {
+          "id": "ar2-4",
+          "t": "num",
+          "q": "La empresa A alquila sus locales (deuda financiera neta de 800 y arrendamientos de 600) y la B los compró con deuda (deuda neta de 1.400). Ambas tienen EBITDA de 500 mill. €. Si solo cuentas la deuda financiera, ¿cuál es la diferencia, en veces, entre la deuda neta entre EBITDA de B y la de A?",
+          "unit": "",
+          "a": 1.2,
+          "why": "A: 800 ÷ 500 = 1,6 y B: 1.400 ÷ 500 = 2,8; la diferencia es 1,2. Con los arrendamientos, A también sale en 2,8.",
+          "tol": 0.05,
+          "guia": "g4"
+        },
+        {
+          "id": "ar2-5",
+          "t": "choice",
+          "q": "¿Cómo comparas el endeudamiento de una empresa que alquila sus locales con otra que los compró?",
+          "opts": [
+            "Con la deuda neta más arrendamientos entre el EBITDA con las NIIF, en las dos",
+            "Solo con la deuda financiera neta, porque el alquiler no es deuda",
+            "Con el EBITDA de una y con la deuda neta de la otra",
+            "Con el precio de la acción de cada una"
+          ],
+          "a": 0,
+          "why": "Hay que comparar igual con igual: la que alquila tiene un pasivo equivalente a la deuda de la que compró.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "La deuda financiera sola ignora el pasivo por alquileres: la que alquila parece menos endeudada sin serlo.",
+            "Mezclar bases distintas da un ratio falso: la deuda y el EBITDA deben ir en la misma base.",
+            "El precio de la acción no mide el endeudamiento: depende de cuántas acciones haya."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

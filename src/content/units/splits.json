@@ -1,0 +1,185 @@
+{
+  "n": 32,
+  "id": "splits",
+  "track": "basico",
+  "title": "Splits y acciones fraccionadas",
+  "blurb": "Por qué el precio de una acción no dice si es cara y qué pasa cuando se divide.",
+  "gate": false,
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Qué es un split",
+      "texto": "La empresa multiplica sus acciones y divide el precio, sin cambiar su valor. En un split 4 por 1, cada acción pasa a ser cuatro.",
+      "ejemplo": "Tienes 100 acciones a 80 € (8.000 €). Tras un split 4 por 1: 400 acciones a 20 €, otra vez 8.000 €."
+    },
+    {
+      "id": "g2",
+      "titulo": "Contrasplit y gráficos",
+      "texto": "El contrasplit agrupa acciones y sube el precio; tampoco crea valor. Los gráficos ajustan los precios pasados a cada split; si no, verías una caída falsa.",
+      "ejemplo": "Contrasplit 1 por 10: 1.000 acciones a 2 € pasan a 100 a 20 €. Un split 4 por 1 sin ajustar mostraría 80 € → 20 €: un −75 % falso."
+    },
+    {
+      "id": "g3",
+      "titulo": "El precio no es valor",
+      "texto": "Lo que pesa es la capitalización: precio por número de acciones. Un precio alto no significa empresa cara ni grande.",
+      "ejemplo": "A cotiza a 200 € con 10 millones de acciones: 2.000 millones. B, a 20 € con 500 millones: 10.000 millones. B es 5 veces mayor."
+    },
+    {
+      "id": "g4",
+      "titulo": "Acciones fraccionadas",
+      "texto": "Algunos brókeres venden una parte de acción por un importe. Pagas el mismo precio y cobras el dividendo en proporción. Mira la comisión: si es fija, pesa más en importes pequeños.",
+      "ejemplo": "100 € en una acción de 400 € son 0,25 acciones. Con 1 € de comisión sobre 50 €, la comisión es un 2 %."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "sp1",
+      "title": "Split y contrasplit",
+      "ex": [
+        {
+          "id": "sp1-1",
+          "t": "num",
+          "q": "Tienes 60 acciones a 50 € y la empresa hace un split 5 por 1. ¿Cuántas acciones tienes después?",
+          "unit": "",
+          "a": 300,
+          "why": "60 × 5 = 300 acciones. Cada una pasa a valer 50 ÷ 5 = 10 €, así que sigues con 3.000 €: el split no cambia el valor.",
+          "guia": "g1"
+        },
+        {
+          "id": "sp1-2",
+          "t": "choice",
+          "q": "Una empresa hace un split 2 por 1. Sin otros cambios, ¿qué ocurre ese día con el valor total de tu inversión?",
+          "opts": [
+            "Se duplica porque tienes el doble de acciones",
+            "No cambia: tienes más acciones a menor precio",
+            "Se reduce a la mitad porque el precio baja",
+            "Depende de cuántas acciones tuvieras antes"
+          ],
+          "a": 1,
+          "why": "Tienes el doble de acciones y cada una vale la mitad: 2 × 0,5 = 1. El split reparte la empresa en más trozos, no la hace más grande.",
+          "guia": "g1",
+          "porque": [
+            "Tienes el doble de acciones, pero cada una vale la mitad: el valor total no se duplica.",
+            null,
+            "El precio baja, pero tienes más acciones: la pérdida de valor no existe.",
+            "No depende de cuántas tuvieras: con cualquier cantidad el valor total no cambia."
+          ]
+        },
+        {
+          "id": "sp1-3",
+          "t": "match",
+          "q": "Empareja cada término con lo que significa.",
+          "pairs": [
+            [
+              "Split 4 por 1",
+              "Cada acción pasa a ser cuatro, con un cuarto del precio"
+            ],
+            [
+              "Contrasplit 1 por 10",
+              "Diez acciones pasan a ser una, con diez veces el precio"
+            ],
+            [
+              "Precio ajustado",
+              "Precio pasado recalculado para que el gráfico no muestre un salto falso"
+            ]
+          ],
+          "why": "Split y contrasplit cambian el número de acciones y su precio en sentidos opuestos; el precio ajustado corrige el histórico para que el gráfico sea comparable.",
+          "guia": "g2"
+        },
+        {
+          "id": "sp1-4",
+          "t": "num",
+          "q": "Una acción cotizaba a 80 € y, tras un split 4 por 1, abre a 20 €. Un gráfico sin ajustar mostraría una caída. ¿De cuánto, en porcentaje?",
+          "unit": "%",
+          "a": 75,
+          "why": "(80 − 20) ÷ 80 = 75 %. Es una caída falsa: el valor de tu inversión no ha cambiado. Por eso los gráficos usan precios ajustados.",
+          "guia": "g2"
+        },
+        {
+          "id": "sp1-5",
+          "t": "num",
+          "q": "Tienes 500 acciones a 3 € y la empresa hace un contrasplit 1 por 10. ¿A qué precio, en euros, cotiza cada acción justo después, sin otros cambios?",
+          "unit": "€",
+          "a": 30,
+          "why": "500 ÷ 10 = 50 acciones y 3 × 10 = 30 € cada una. Antes y después tienes 1.500 €.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "sp2",
+      "title": "El precio no es valor",
+      "ex": [
+        {
+          "id": "sp2-1",
+          "t": "choice",
+          "q": "Una acción cuesta 15 € y otra 450 €. ¿Qué dice ese dato, por sí solo, sobre cuál es más cara?",
+          "opts": [
+            "Que la de 450 € es más cara porque cuesta más",
+            "Que la de 15 € es más cara porque se ha dividido",
+            "Nada: hay que compararlo con el valor de la empresa",
+            "Que la de 15 € es mejor porque compras más títulos"
+          ],
+          "a": 2,
+          "why": "El precio depende de cuántas acciones haya. Para saber si una empresa es cara hay que mirar su capitalización, su beneficio o su PER.",
+          "guia": "g3",
+          "porque": [
+            "Un precio alto no dice nada por sí solo: hay que ver cuántas acciones hay y cuánto gana la empresa.",
+            "Un precio bajo tampoco indica que sea cara, y un split no cambia su valor.",
+            null,
+            "Comprar más títulos no hace mejor la inversión: lo que importa es lo que valen en conjunto."
+          ]
+        },
+        {
+          "id": "sp2-2",
+          "t": "num",
+          "q": "Una empresa cotiza a 18 € y tiene 30 millones de acciones. ¿Cuál es su capitalización, en millones de euros?",
+          "unit": "mill. €",
+          "a": 540,
+          "why": "18 × 30 = 540 millones de euros: precio por número de acciones.",
+          "guia": "g3"
+        },
+        {
+          "id": "sp2-3",
+          "t": "num",
+          "q": "La empresa A cotiza a 200 € y tiene 10 millones de acciones; la B cotiza a 20 € y tiene 500 millones. ¿Cuántas veces mayor es la capitalización de B que la de A?",
+          "unit": "",
+          "a": 5,
+          "why": "A vale 200 × 10 = 2.000 millones y B, 20 × 500 = 10.000 millones: 10.000 ÷ 2.000 = 5. B es 5 veces mayor aunque su acción cueste diez veces menos.",
+          "guia": "g3"
+        },
+        {
+          "id": "sp2-4",
+          "t": "num",
+          "q": "Tu bróker cobra 1 € por orden y compras una fracción de acción por 50 €. ¿Qué porcentaje del importe es la comisión?",
+          "unit": "%",
+          "a": 2,
+          "why": "1 ÷ 50 = 2 %. Con importes pequeños, una comisión fija pesa mucho: conviene juntar aportaciones.",
+          "guia": "g4"
+        },
+        {
+          "id": "sp2-5",
+          "t": "choice",
+          "q": "Quieres una acción de 400 € pero solo inviertes 100 € al mes. ¿Qué te permite la compra fraccionada?",
+          "opts": [
+            "Comprar 0,25 acciones con 100 €, sin esperar a juntar 400 €",
+            "Pagar menos por acción que quien compra una entera",
+            "Cobrar el dividendo de una acción entera",
+            "Comprar a un precio inferior al del mercado"
+          ],
+          "a": 0,
+          "why": "100 ÷ 400 = 0,25 acciones. Pagas el mismo precio por acción y cobras el dividendo en proporción a lo que tienes.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Pagas el mismo precio por acción que quien compra una entera.",
+            "El dividendo llega en proporción: con 0,25 acciones cobras la cuarta parte.",
+            "El precio es el del mercado; la fracción solo permite comprar una parte."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}
