@@ -1,0 +1,252 @@
+{
+  "n": 6,
+  "id": "opivrank",
+  "track": "derivados",
+  "title": "IV rank y percentil de IV",
+  "blurb": "Situar la volatilidad implícita de hoy dentro de su propio historial del último año.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "El nivel solo no basta",
+      "texto": "Una implícita del 30 % es alta para una acción tranquila y baja para una nerviosa. Para juzgarla hay que compararla con el historial del propio valor en el último año.",
+      "ejemplo": "En 52 semanas, la implícita de una acción ha oscilado entre un 20 % y un 45 %. Hoy está en el 30 %."
+    },
+    {
+      "id": "g2",
+      "titulo": "IV rank",
+      "texto": "IV rank = (implícita de hoy − mínimo) ÷ (máximo − mínimo) × 100, con los extremos de 52 semanas. 0 es el mínimo del año; 100, el máximo.",
+      "ejemplo": "(30 − 20) ÷ (45 − 20) × 100 = 40. Con mínimo del 15 %, máximo del 35 % y rank 75, hoy está en el 30 %.",
+      "figura": {
+        "type": "curvas",
+        "h": 210,
+        "alt": "Implícita mensual de una acción en un año, entre un mínimo del 18 % y un máximo del 42 %. Hoy está en el 30 %, a mitad del rango.",
+        "series": [
+          {
+            "data": [22,19,18,24,28,33,42,36,31,27,29,30],
+            "tono": "sel"
+          }
+        ],
+        "lineas": [
+          {
+            "y": 42,
+            "texto": "Máximo 42 %",
+            "tono": "dn",
+            "lado": "i"
+          },
+          {
+            "y": 18,
+            "texto": "Mínimo 18 %",
+            "tono": "up"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 11,
+            "y": 30,
+            "texto": "Hoy 30 %: rank 50",
+            "lado": "i"
+          }
+        ]
+      }
+    },
+    {
+      "id": "g3",
+      "titulo": "Percentil de IV",
+      "texto": "El percentil de IV es el % de días del año con la implícita por debajo de la de hoy. El rank usa los extremos y el percentil cuenta días: un pico aislado rebaja el rank y casi no toca el percentil.",
+      "ejemplo": "190 de 250 sesiones por debajo: percentil 76. Con un pico de 60 %, mínimo 20 % y hoy 30 %, el rank es 25."
+    },
+    {
+      "id": "g4",
+      "titulo": "Qué hacer con ellos",
+      "texto": "Un rank alto indica primas caras frente a su historial: favorece vender prima con riesgo definido (spread vertical de crédito); uno bajo, pagarla. No predice la dirección. Antes de resultados es alto por un motivo: si la implícita cae, la prima pierde puntos × vega.",
+      "ejemplo": "Cae 20 puntos con vega de 0,08 € por punto y acción: 20 × 0,08 = 1,60 €, 160 € por contrato."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "op51",
+      "title": "Calcular el IV rank",
+      "ex": [
+        {
+          "id": "op51-1",
+          "t": "choice",
+          "q": "¿Por qué no basta con mirar el nivel de la volatilidad implícita, por ejemplo un 30 %?",
+          "opts": [
+            "Porque un 30 % es alto o bajo según el historial de cada valor",
+            "Porque la implícita solo es válida por encima del 40 %",
+            "Porque un 30 % siempre significa que las opciones están caras",
+            "Porque la implícita no cambia con el tiempo y no informa de nada"
+          ],
+          "a": 0,
+          "why": "Una acción tranquila con un 30 % tiene opciones caras; una nerviosa, baratas. Hay que compararla con su propio rango.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "No hay un umbral universal: depende del valor y de su historial.",
+            "Un 30 % puede ser caro o barato según el valor: no hay una lectura fija.",
+            "La implícita cambia cada día con el precio de las opciones."
+          ]
+        },
+        {
+          "id": "op51-2",
+          "t": "num",
+          "q": "En las últimas 52 semanas, la volatilidad implícita de una acción ha oscilado entre un 20 % y un 45 %. Hoy está en el 30 %. IV rank = (hoy − mínimo) ÷ (máximo − mínimo) × 100. ¿Cuánto vale su IV rank?",
+          "unit": "",
+          "a": 40,
+          "why": "(30 − 20) ÷ (45 − 20) × 100 = 10 ÷ 25 × 100 = 40.",
+          "guia": "g2"
+        },
+        {
+          "id": "op51-3",
+          "t": "num",
+          "q": "Una acción tiene una implícita mínima del 15 % y máxima del 35 % en 52 semanas, y su IV rank hoy es 75. ¿Cuál es su volatilidad implícita de hoy, en %?",
+          "unit": "%",
+          "a": 30,
+          "why": "Mínimo + 0,75 × (35 − 15) = 15 + 15 = 30 %. El rank 75 está a tres cuartos del camino entre el mínimo y el máximo.",
+          "guia": "g2"
+        },
+        {
+          "id": "op51-4",
+          "t": "slide",
+          "q": "En el último año, la implícita de una acción osciló entre un 20 % y un 40 %. Elige la implícita de hoy para que su IV rank sea 60.",
+          "label": "Implícita de hoy",
+          "min": 20,
+          "max": 40,
+          "step": 2,
+          "start": 24,
+          "a": 32,
+          "unit": "%",
+          "why": "IV rank = (32 − 20) ÷ (40 − 20) × 100 = 60.",
+          "show": [
+            {
+              "label": "IV rank",
+              "k": 5,
+              "b": -100,
+              "unit": ""
+            }
+          ],
+          "guia": "g2"
+        },
+        {
+          "id": "op51-5",
+          "t": "choice",
+          "q": "¿Qué indica un IV rank de 0?",
+          "opts": [
+            "Que la implícita está hoy en su mínimo de las últimas 52 semanas",
+            "Que la acción no se ha movido nada en el último año",
+            "Que las opciones de esa acción no tienen ningún valor",
+            "Que la volatilidad histórica de la acción es cero"
+          ],
+          "a": 0,
+          "why": "Con rank 0, hoy − mínimo = 0: la implícita iguala su valor más bajo del año. Sigue habiendo prima y la acción se mueve.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "Con rank 0 la acción se mueve igual: el rank no mide su movimiento real.",
+            "La prima nunca es cero mientras quede tiempo y haya volatilidad.",
+            "El rank se calcula con la implícita, no con la volatilidad histórica."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "op52",
+      "title": "Percentil y uso",
+      "ex": [
+        {
+          "id": "op52-1",
+          "t": "num",
+          "q": "En las últimas 250 sesiones, la volatilidad implícita de una acción estuvo por debajo de la de hoy en 190. ¿Cuál es el percentil de IV de hoy?",
+          "unit": "",
+          "a": 76,
+          "why": "190 ÷ 250 × 100 = 76. El percentil cuenta el porcentaje de días del año en los que la implícita estuvo por debajo.",
+          "guia": "g3"
+        },
+        {
+          "id": "op52-2",
+          "t": "choice",
+          "q": "Un día aislado del último año, la implícita llegó a un 60 % por un susto. El resto del año osciló entre un 20 % y un 35 %. ¿Qué efecto tiene ese pico sobre las dos medidas?",
+          "opts": [
+            "Sube el IV rank, porque el pico indica mucho nerviosismo",
+            "Baja el IV rank, porque el máximo queda más lejos, y apenas cambia el percentil",
+            "No afecta a ninguna, porque las dos ignoran los valores extremos",
+            "Baja el percentil, porque cuenta el valor máximo del año entero"
+          ],
+          "a": 1,
+          "why": "El rank usa el máximo: con 60 % en vez de 35 %, una implícita de hoy del 30 % da 25 en vez de 67. El percentil solo cuenta ese día como uno más.",
+          "guia": "g3",
+          "porque": [
+            "Al contrario: el pico aleja el máximo y por eso baja el rank.",
+            null,
+            "El percentil sí ignora los extremos, pero el rank los usa directamente.",
+            "El percentil cuenta días, no mira el valor máximo."
+          ]
+        },
+        {
+          "id": "op52-3",
+          "t": "choice",
+          "q": "Una acción tiene un IV rank de 85 y no hay ningún evento antes del vencimiento. ¿Qué lectura es razonable?",
+          "opts": [
+            "La acción va a caer, porque una implícita alta anticipa bajadas",
+            "Las primas están baratas y conviene pagarlas antes de que suban más",
+            "Las primas están caras frente a su historial: favorece vender prima con riesgo definido",
+            "La implícita no sirve de nada, porque no se puede predecir ni comparar"
+          ],
+          "a": 2,
+          "why": "Un rank alto compara las primas con su propia historia: favorece estrategias que cobran prima, con pérdida máxima definida. No predice la dirección.",
+          "guia": "g4",
+          "porque": [
+            "La implícita no anticipa la dirección: mide el tamaño esperado del movimiento.",
+            "Rank 85 es cercano al máximo del año: son caras, no baratas.",
+            null,
+            "Compararla con su historial es justo lo que permite usarla."
+          ]
+        },
+        {
+          "id": "op52-4",
+          "t": "slide",
+          "q": "Una opción tiene una vega de 0,08 € por punto de volatilidad y por acción, es decir, 8 € por contrato. Tras unos resultados, la implícita cae. Elige cuántos puntos debe caer para que la prima pierda 120 € por contrato.",
+          "label": "Caída de la implícita",
+          "min": 0,
+          "max": 30,
+          "step": 5,
+          "start": 25,
+          "a": 15,
+          "unit": "puntos",
+          "why": "120 € ÷ 8 € por punto = 15 puntos. Una implícita alta antes de resultados tiene motivo: al caer, la prima se encoge aunque el precio no se mueva.",
+          "show": [
+            {
+              "label": "Pérdida de prima por contrato",
+              "k": 8,
+              "unit": "€"
+            }
+          ],
+          "guia": "g4"
+        },
+        {
+          "id": "op52-5",
+          "t": "match",
+          "q": "Empareja cada concepto con lo que mide o provoca.",
+          "pairs": [
+            [
+              "IV rank",
+              "Posición de hoy entre el mínimo y el máximo del año"
+            ],
+            [
+              "Percentil de IV",
+              "Porcentaje de días del año con implícita por debajo de hoy"
+            ],
+            [
+              "Pico aislado",
+              "Estira el máximo y rebaja el IV rank, no el percentil"
+            ]
+          ],
+          "why": "El rank depende de los extremos y el percentil cuenta días: por eso un pico aislado distorsiona el primero y casi no toca el segundo.",
+          "guia": "g3"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

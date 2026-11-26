@@ -1,0 +1,239 @@
+{
+  "n": 35,
+  "id": "tamano",
+  "track": "basico",
+  "title": "Empresas grandes y pequeñas",
+  "blurb": "Capitalización, riesgo y liquidez: por qué comprar un valor pequeño no es como comprar uno grande.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Capitalización",
+      "texto": "Capitalización = precio × acciones. Se agrupa en grande (más de 10.000 M€), mediana (entre 2.000 y 10.000 M€) y pequeña (menos de 2.000 M€). Son límites orientativos que cambian según la fuente.",
+      "ejemplo": "20 € × 50 millones de acciones = 1.000 M€: una empresa pequeña."
+    },
+    {
+      "id": "g2",
+      "titulo": "Más pequeña, más movimiento",
+      "texto": "Las empresas pequeñas suelen tener menos analistas, menos información, menos recursos ante una mala racha y mayor riesgo de quiebra, por lo que oscilan más. Las grandes suelen ser más estables, aunque también caen. Más riesgo no garantiza más rentabilidad.",
+      "ejemplo": "Con 8 € × 120 millones de acciones = 960 M€, una pequeña puede moverse mucho más que una de 14.000 M€."
+    },
+    {
+      "id": "g3",
+      "titulo": "Liquidez: volumen y horquilla",
+      "texto": "Liquidez es operar sin mover el precio. Se mide con el volumen diario en euros y la horquilla (diferencia entre el precio de compra y el de venta) en % del precio. Ir y volver cuesta la horquilla entera.",
+      "ejemplo": "A: 100 M€ al día, horquilla 0,02 %. B: 20.000 acciones a 5 € = 100.000 € al día, horquilla 2 %. Con 2.000 €: 0,40 € frente a 40 €.",
+      "figura": {
+        "type": "barras",
+        "unidad": " €",
+        "h": 190,
+        "alt": "Coste de comprar y vender enseguida 2.000 € solo por la horquilla: 0,40 € en el valor A, líquido, y 40 € en el valor B, poco líquido.",
+        "barras": [
+          {
+            "texto": "A: 0,40 €",
+            "valor": false,
+            "segmentos": [
+              {
+                "valor": 0.4,
+                "texto": "0,40",
+                "tono": "up"
+              }
+            ]
+          },
+          {
+            "texto": "B: 40 €",
+            "valor": false,
+            "segmentos": [
+              {
+                "valor": 40,
+                "texto": "40",
+                "tono": "dn"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "g4",
+      "titulo": "Tu orden frente al volumen",
+      "texto": "Si tu orden es una parte grande del volumen diario, empuja el precio contra ti. Usa órdenes limitadas y, en valores poco líquidos, mantén cada orden en torno al 1 o 2 % del volumen (referencia orientativa) y divide las grandes en varios días.",
+      "ejemplo": "Una orden de 5.000 € es el 5 % del volumen diario de B (100.000 €) y el 0,005 % del de A (100 M€)."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "tm1",
+      "title": "Tamaño de la empresa",
+      "ex": [
+        {
+          "id": "tm1-1",
+          "t": "num",
+          "q": "Una empresa cotiza a 8 € y tiene 120 millones de acciones. ¿Cuál es su capitalización, en millones de euros?",
+          "unit": "M€",
+          "a": 960,
+          "why": "Capitalización = precio × acciones = 8 € × 120 M = 960 M€. Con los límites orientativos, es una empresa pequeña.",
+          "guia": "g1"
+        },
+        {
+          "id": "tm1-2",
+          "t": "choice",
+          "q": "Una empresa tiene una capitalización de 14.000 M€. Con los límites orientativos de la guía, ¿cómo se clasifica?",
+          "opts": [
+            "Pequeña: menos de 2.000 M€",
+            "Mediana: entre 2.000 y 10.000 M€",
+            "Grande: más de 10.000 M€",
+            "No se puede saber sin conocer el precio por acción"
+          ],
+          "a": 2,
+          "why": "Supera los 10.000 M€: es de gran capitalización. La capitalización ya incluye el precio y el número de acciones.",
+          "guia": "g1",
+          "porque": [
+            "Con 14.000 M€ supera de largo los 2.000 M€: no es pequeña.",
+            "La mediana llega hasta 10.000 M€: 14.000 M€ queda por encima.",
+            null,
+            "La capitalización ya es precio × acciones: el dato basta para clasificarla."
+          ]
+        },
+        {
+          "id": "tm1-3",
+          "t": "choice",
+          "q": "¿Qué suele ocurrir con las empresas pequeñas frente a las grandes?",
+          "opts": [
+            "Suelen oscilar menos, porque tienen menos accionistas",
+            "Siempre rinden más que las grandes, para compensar su riesgo",
+            "Tienen el mismo riesgo, porque el tamaño no influye en su estabilidad",
+            "Suelen tener menos analistas y oscilar más, con más riesgo de quiebra"
+          ],
+          "a": 3,
+          "why": "Con menos información, negocios menos diversificados y menos recursos, una mala racha las afecta más. Eso no garantiza una rentabilidad mayor.",
+          "guia": "g2",
+          "porque": [
+            "Al contrario: con menos información y recursos, suelen oscilar más.",
+            "No hay garantía: más riesgo no asegura más rentabilidad, y muchas pequeñas pierden.",
+            "El tamaño sí influye: menos recursos y menos diversificación las hacen más frágiles.",
+            null
+          ]
+        },
+        {
+          "id": "tm1-4",
+          "t": "num",
+          "q": "Una empresa tiene 40 millones de acciones. ¿A qué precio por acción, en euros, alcanzaría los 2.000 M€ de capitalización, el límite inferior de una mediana?",
+          "unit": "€",
+          "a": 50,
+          "why": "2.000 M€ ÷ 40 M de acciones = 50 € por acción.",
+          "guia": "g1"
+        },
+        {
+          "id": "tm1-5",
+          "t": "match",
+          "q": "Empareja cada tamaño de empresa con su capitalización orientativa.",
+          "pairs": [
+            [
+              "Gran capitalización",
+              "Más de 10.000 M€"
+            ],
+            [
+              "Mediana capitalización",
+              "Entre 2.000 y 10.000 M€"
+            ],
+            [
+              "Pequeña capitalización",
+              "Menos de 2.000 M€"
+            ]
+          ],
+          "why": "Son límites orientativos que cambian según la fuente: sirven para saber con qué tipo de empresa se trata, no como regla exacta.",
+          "guia": "g1"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "tm2",
+      "title": "Liquidez y volumen",
+      "ex": [
+        {
+          "id": "tm2-1",
+          "t": "num",
+          "q": "Un valor negocia 25.000 acciones al día a 6 € cada una. ¿Cuál es su volumen diario, en miles de euros?",
+          "unit": "mil €",
+          "a": 150,
+          "why": "Volumen diario en euros = acciones negociadas × precio = 25.000 × 6 € = 150.000 €, es decir, 150 mil €.",
+          "guia": "g3"
+        },
+        {
+          "id": "tm2-2",
+          "t": "choice",
+          "q": "El valor X mueve 90.000 € al día con una horquilla del 1,8 %. El valor Y mueve 40 M€ al día con una horquilla del 0,05 %. ¿Cuál es más líquido y por qué?",
+          "opts": [
+            "X, porque su horquilla ancha deja más margen de ganancia al comprador",
+            "Son igual de líquidos, porque ambos cotizan en bolsa",
+            "No se pueden comparar sin saber el precio por acción de cada uno",
+            "Y: mueve mucho más dinero al día y su horquilla es mucho menor"
+          ],
+          "a": 3,
+          "why": "Más volumen y menos horquilla significan que puedes comprar y vender rápido sin mover el precio ni pagar un sobrecoste.",
+          "guia": "g3",
+          "porque": [
+            "Una horquilla ancha es un coste que pagas, no un margen a tu favor.",
+            "Cotizar no basta: la liquidez depende del dinero que se negocia y de la horquilla.",
+            "El volumen en euros y la horquilla ya permiten compararlos sin el precio por acción.",
+            null
+          ]
+        },
+        {
+          "id": "tm2-3",
+          "t": "num",
+          "q": "Un valor tiene una horquilla del 2 % entre el precio de compra y el de venta. Compras y vendes enseguida 2.000 € a mercado, sin que el precio se mueva. ¿Cuánto pierdes solo por la horquilla, en euros?",
+          "unit": "€",
+          "a": 40,
+          "why": "Comprar al precio alto y vender al bajo cuesta la horquilla completa: 2 % × 2.000 € = 40 €.",
+          "guia": "g3"
+        },
+        {
+          "id": "tm2-4",
+          "t": "choice",
+          "q": "Quieres comprar 20.000 € de un valor que mueve unos 100.000 € al día. ¿Qué enfoque es más razonable?",
+          "opts": [
+            "Enviarla a mercado: se ejecuta rápido y no mueve el precio",
+            "Ponerla de golpe con un límite muy alto para asegurar la compra",
+            "Dividirla en varias órdenes limitadas a lo largo de varios días",
+            "Comprar más acciones, porque más volumen siempre abarata la horquilla"
+          ],
+          "a": 2,
+          "why": "Una orden que es el 20 % del volumen diario empuja el precio contra ti; repartirla con límites reduce ese impacto.",
+          "guia": "g4",
+          "porque": [
+            "Una orden a mercado del 20 % del volumen diario empuja el precio contra ti.",
+            "Un límite muy alto te hace pagar más y no evita mover el precio.",
+            null,
+            "El volumen no abarata la horquilla de un valor concreto en el que tú compras."
+          ]
+        },
+        {
+          "id": "tm2-5",
+          "t": "slide",
+          "q": "Un valor mueve 150.000 € al día y quieres que cada orden no pase del 2 % de ese volumen. Elige el importe máximo de la orden.",
+          "label": "Importe de la orden",
+          "min": 0,
+          "max": 10000,
+          "step": 500,
+          "start": 8000,
+          "a": 3000,
+          "unit": "€",
+          "why": "2 % de 150.000 € = 3.000 €. Más allá, tu orden pesa lo bastante como para mover el precio.",
+          "show": [
+            {
+              "label": "% del volumen diario",
+              "k": 0.00066667,
+              "unit": "%",
+              "dec": 1
+            }
+          ],
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ],
+  "gate": false
+}

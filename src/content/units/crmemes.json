@@ -1,0 +1,256 @@
+{
+  "n": 24,
+  "id": "crmemes",
+  "track": "cripto",
+  "title": "Memecoins y tokens de moda",
+  "blurb": "Qué sostiene su precio, quién tiene los tokens, cuánto cuesta salir y cuánto arriesgar.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Qué es un memecoin",
+      "texto": "Es un token cuyo valor depende de la atención y no de un uso, unos ingresos o un respaldo. Crearlo cuesta casi nada. Si deja de hablarse de él, no queda nada que sostenga el precio.",
+      "ejemplo": "Un token sube 50 veces por una moda: ese precio solo mide cuánta gente quiere comprarlo hoy."
+    },
+    {
+      "id": "g2",
+      "titulo": "Quién tiene los tokens",
+      "texto": "Mira en el explorador de bloques cómo se reparte el suministro. Si pocos monederos acumulan casi todo, una sola venta hunde el precio; si compraron a la vez, pueden estar coordinados. Un reparto entre miles de monederos reduce ese riesgo.",
+      "ejemplo": "1.000 M de tokens: creador y allegados 40 %, diez monederos 30 %. 700 M en pocas manos y 300 M entre el público.",
+      "figura": {
+        "type": "barras",
+        "unidad": " %",
+        "h": 220,
+        "ancho": 90,
+        "alt": "Dos repartos del suministro: en el token A, creador y allegados tienen el 40 %, diez monederos el 30 % y el público el 30 %; en el token B, el 5 %, el 15 % y el 80 %.",
+        "barras": [
+          {
+            "texto": "Token A",
+            "segmentos": [
+              {
+                "valor": 40,
+                "texto": "Creador 40",
+                "tono": "dn"
+              },
+              {
+                "valor": 30,
+                "texto": "Diez monederos 30",
+                "tono": "acc"
+              },
+              {
+                "valor": 30,
+                "texto": "Público 30",
+                "tono": "sel"
+              }
+            ]
+          },
+          {
+            "texto": "Token B",
+            "segmentos": [
+              {
+                "valor": 5,
+                "texto": "5",
+                "tono": "dn"
+              },
+              {
+                "valor": 15,
+                "texto": "15",
+                "tono": "acc"
+              },
+              {
+                "valor": 80,
+                "texto": "Público 80",
+                "tono": "sel"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "g3",
+      "titulo": "Salir cuesta",
+      "texto": "Con poca liquidez, tu venta mueve el precio. En un pool de producto constante, tokens × dólares no cambia: al vender, los tokens suben y los dólares del pool bajan. Y si el creador retira la liquidez, no hay con quién vender.",
+      "ejemplo": "40.000 tokens y 2.000 $: vendes 10.000, el pool queda en 50.000 tokens y 1.600 $. Recibes 400 $, no los 500 $ del precio inicial."
+    },
+    {
+      "id": "g4",
+      "titulo": "Pérdidas y tamaño",
+      "texto": "Una caída del 90 % exige subir un 900 % para volver. Por eso, si alguien se expone, fija antes un tope que pueda perder entero y no lo amplíes para recuperar.",
+      "ejemplo": "De 100 € a 10 €: hace falta +900 %. Con 30.000 € y un tope del 1 %, el máximo en juego son 300 €."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "mc1",
+      "title": "Qué sostiene el precio",
+      "ex": [
+        {
+          "id": "mc1-1",
+          "t": "choice",
+          "q": "¿Qué sostiene el precio de un memecoin?",
+          "opts": [
+            "La atención y las ganas de comprar que haya cada día",
+            "Los ingresos de la red, que reparte entre sus tenedores",
+            "Un respaldo en dólares que garantiza un precio mínimo",
+            "Un contrato que obliga al creador a recomprar los tokens"
+          ],
+          "a": 0,
+          "why": "Sin uso, ingresos ni respaldo, el precio refleja solo cuánta gente quiere comprarlo hoy. Si la atención se va, no queda nada que lo sujete.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Un memecoin no genera ingresos ni los reparte: no hay red que pague a sus tenedores.",
+            "No hay ningún respaldo ni precio mínimo: nada impide que el precio caiga a casi cero.",
+            "Nadie obliga al creador a recomprar nada: no existe esa garantía."
+          ]
+        },
+        {
+          "id": "mc1-2",
+          "t": "choice",
+          "q": "Un token sin utilidad conocida sube 50 veces en dos días por una moda en redes. ¿Qué dice ese precio?",
+          "opts": [
+            "Que la red tiene ya muchos usuarios que pagan por usarla",
+            "Que mucha gente quiere comprar ahora; no mide ningún uso ni ingreso",
+            "Que el creador garantiza que el valor se mantendrá en el tiempo",
+            "Que el token es seguro, porque nadie ha podido venderlo todavía"
+          ],
+          "a": 1,
+          "why": "Una subida rápida solo prueba que hay más compradores que vendedores hoy. Con la misma rapidez, la atención puede irse.",
+          "guia": "g1",
+          "porque": [
+            "Una subida de precio no prueba uso: un memecoin puede subir sin que nadie lo utilice.",
+            null,
+            "Nadie garantiza el valor: el precio puede caer tan rápido como subió.",
+            "Que suba no prueba seguridad; mucho suministro concentrado puede vender cuando quiera."
+          ]
+        },
+        {
+          "id": "mc1-3",
+          "t": "num",
+          "q": "Un token tiene 1.000 millones de unidades. El creador y sus allegados tienen el 40 % y diez monederos más tienen el 30 %. ¿Cuántos millones de unidades están en manos del resto del mercado?",
+          "unit": "",
+          "a": 300,
+          "why": "1.000 − 400 − 300 = 300 millones, un 30 %. El 70 % está en pocas manos.",
+          "guia": "g2"
+        },
+        {
+          "id": "mc1-4",
+          "t": "choice",
+          "q": "El 70 % del suministro de un token está en unos pocos monederos. ¿Cuál es el riesgo principal?",
+          "opts": [
+            "Que un solo monedero que venda pueda hundir el precio de golpe",
+            "Que el token deje de poder transferirse entre monederos",
+            "Que la red se detenga cuando alguno de ellos venda",
+            "Que esos monederos estén obligados a vender a la vez"
+          ],
+          "a": 0,
+          "why": "Con tanto suministro concentrado, una venta grande supera lo que el mercado puede absorber y el precio cae con fuerza.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "Los tokens se siguen pudiendo transferir; el problema es el precio al vender.",
+            "La red no se detiene por una venta: sigue funcionando con normalidad.",
+            "Nadie está obligado a vender a la vez: el riesgo es que alguien decida hacerlo."
+          ]
+        },
+        {
+          "id": "mc1-5",
+          "t": "match",
+          "q": "Empareja cada señal del reparto de tokens con lo que implica.",
+          "pairs": [
+            [
+              "Muchos tokens en pocos monederos",
+              "Una sola venta puede hundir el precio"
+            ],
+            [
+              "Monederos que compraron a la vez en el lanzamiento",
+              "Pueden estar coordinados"
+            ],
+            [
+              "Suministro repartido entre miles de monederos",
+              "Menos riesgo de una venta concentrada"
+            ]
+          ],
+          "why": "Quién tiene los tokens importa tanto como el precio: el reparto dice cuánta presión de venta puede aparecer de golpe.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "mc2",
+      "title": "Salir y tamaño",
+      "ex": [
+        {
+          "id": "mc2-1",
+          "t": "num",
+          "q": "Un pool tiene 30.000 tokens y 1.500 $ y su producto no cambia al operar. Vendes 15.000 tokens: el pool pasa a 45.000 tokens. ¿Cuántos dólares recibes?",
+          "unit": "$",
+          "a": 500,
+          "why": "Producto: 30.000 × 1.500 = 45.000.000. Con 45.000 tokens, el pool queda en 1.000 $: recibes 1.500 − 1.000 = 500 $ (al precio inicial, 0,05 $, serían 750 $).",
+          "guia": "g3"
+        },
+        {
+          "id": "mc2-2",
+          "t": "num",
+          "q": "Un pool tiene 100.000 tokens y 5.000 $ (0,05 $ por token) y su producto no cambia al operar. Vendes 25.000 tokens y recibes 1.000 $. Al precio inicial habrías recibido 1.250 $. ¿Cuánto menos recibes, en %?",
+          "unit": "%",
+          "a": 20,
+          "why": "(1.250 − 1.000) ÷ 1.250 = 20 %. Con un pool pequeño, tu propia venta baja el precio que obtienes.",
+          "guia": "g3"
+        },
+        {
+          "id": "mc2-3",
+          "t": "choice",
+          "q": "El creador de un token puede retirar toda la liquidez del pool cuando quiera. ¿Qué riesgo supone?",
+          "opts": [
+            "Que el precio suba demasiado y nadie pueda comprar",
+            "Que nadie pueda comprarte los tokens y te quedes sin forma de vender",
+            "Que el token deje de pagar rentas a sus tenedores",
+            "Que la red cobre comisiones más altas por cada transferencia"
+          ],
+          "a": 1,
+          "why": "Sin liquidez en el pool no hay contrapartida: puedes conservar los tokens, pero ya no hay a quién venderlos.",
+          "guia": "g3",
+          "porque": [
+            "Al retirar liquidez no sube el precio; desaparece el mercado donde vender.",
+            null,
+            "Un memecoin no paga rentas, y retirar liquidez no tiene que ver con eso.",
+            "Las comisiones de red no dependen de que el creador retire liquidez."
+          ]
+        },
+        {
+          "id": "mc2-4",
+          "t": "num",
+          "q": "Un token cae de 0,50 $ a 0,05 $. ¿Cuánto tiene que subir después, en %, para volver a 0,50 $?",
+          "unit": "%",
+          "a": 900,
+          "why": "Pasa de 0,05 $ a 0,50 $: ×10, es decir, +900 %. Una caída del 90 % exige multiplicar por diez.",
+          "guia": "g4"
+        },
+        {
+          "id": "mc2-5",
+          "t": "slide",
+          "q": "Tienes una cartera de 20.000 € y decides que, si compras un memecoin, solo arriesgarás lo que puedas perder entero. Elige el porcentaje de la cartera que pones para perder como máximo 200 € si el token cae a cero.",
+          "label": "Peso del token",
+          "min": 0,
+          "max": 5,
+          "step": 0.5,
+          "start": 3,
+          "a": 1,
+          "unit": "%",
+          "why": "1 % de 20.000 € = 200 €. Fijar el tope antes evita ampliarlo para recuperar pérdidas.",
+          "show": [
+            {
+              "label": "Pérdida máxima",
+              "k": 200,
+              "unit": "€"
+            }
+          ],
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

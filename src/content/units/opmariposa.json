@@ -1,5 +1,5 @@
 {
-  "n": 20,
+  "n": 21,
   "id": "opmariposa",
   "track": "derivados",
   "title": "Mariposa con calls",
@@ -20,29 +20,7 @@
         "alt": "Resultado al vencimiento de una mariposa con calls de 95, 100 y 105 $ pagada 1 $: pierde 100 $ por debajo de 95 $ y por encima de 105 $, tiene los equilibrios en 96 $ y 104 $ y gana como máximo 400 $ si la acción acaba en 100 $.",
         "series": [
           {
-            "data": [
-              -100,
-              -100,
-              -100,
-              -100,
-              -100,
-              -100,
-              0,
-              100,
-              200,
-              300,
-              400,
-              300,
-              200,
-              100,
-              0,
-              -100,
-              -100,
-              -100,
-              -100,
-              -100,
-              -100
-            ],
+            "data": [-100,-100,-100,-100,-100,-100,0,100,200,300,400,300,200,100,0,-100,-100,-100,-100,-100,-100],
             "tono": "ink"
           }
         ],

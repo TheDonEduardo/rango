@@ -1,0 +1,253 @@
+{
+  "n": 24,
+  "id": "wacc",
+  "track": "fundamental",
+  "title": "Coste medio del capital (WACC)",
+  "blurb": "Cuánto le cuesta a una empresa financiarse y por qué ese coste es el listón de sus inversiones.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Dos fuentes, dos costes",
+      "texto": "Una empresa se financia con deuda y con capital propio. La deuda cuesta su interés. El capital propio cuesta lo que exigen los accionistas, siempre más: cobran después que los acreedores y asumen más riesgo.",
+      "ejemplo": "Deuda al 5 %; accionistas que exigen un 11 %."
+    },
+    {
+      "id": "g2",
+      "titulo": "La fórmula",
+      "texto": "WACC = peso de la deuda × su coste tras impuestos + peso del capital propio × su coste. Coste tras impuestos = interés × (1 − tipo). Peso = valor de cada fuente ÷ total, a precios de mercado (capital propio = capitalización).",
+      "ejemplo": "Acciones 600 M€, deuda 400 M€, tipo 25 %: 0,4 × 5 % × 0,75 + 0,6 × 11 % = 8,1 %.",
+      "figura": {
+        "type": "barras",
+        "unidad": " %",
+        "h": 210,
+        "alt": "Tres barras: coste de la deuda tras impuestos 3,75 %, coste del capital propio 11 % y WACC 8,1 %, formado por 1,5 puntos de la deuda y 6,6 del capital propio.",
+        "barras": [
+          {
+            "texto": "Deuda 3,75 %",
+            "valor": false,
+            "segmentos": [
+              {
+                "valor": 3.75,
+                "texto": "3,75",
+                "tono": "dn"
+              }
+            ]
+          },
+          {
+            "texto": "Propio 11 %",
+            "valor": false,
+            "segmentos": [
+              {
+                "valor": 11,
+                "texto": "11",
+                "tono": "sel"
+              }
+            ]
+          },
+          {
+            "texto": "WACC 8,1 %",
+            "valor": false,
+            "segmentos": [
+              {
+                "valor": 1.5,
+                "texto": "1,5",
+                "tono": "dn"
+              },
+              {
+                "valor": 6.6,
+                "texto": "6,6",
+                "tono": "sel"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "g3",
+      "titulo": "Rentabilidad frente al WACC",
+      "texto": "El WACC es el listón de las inversiones: una empresa crea valor cuando su ROIC lo supera. Valor creado al año = (ROIC − WACC) × capital invertido. Si el ROIC queda por debajo, crecer destruye valor.",
+      "ejemplo": "ROIC 10 %, WACC 8,1 %, capital 400 M€: 1,9 % × 400 = 7,6 M€ al año."
+    },
+    {
+      "id": "g4",
+      "titulo": "Descontar con el WACC",
+      "texto": "Los flujos libres de la empresa se descuentan al WACC: valor = flujo ÷ (WACC − g). Es una estimación y un punto de más pesa mucho. Más deuda abarata el WACC solo al principio: después el riesgo encarece la deuda y el capital propio.",
+      "ejemplo": "40 M€ creciendo un 3 %: con un WACC del 8 %, 800 M€; con el 9 %, 667 M€ (−17 %)."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "wc1",
+      "title": "Calcular el WACC",
+      "ex": [
+        {
+          "id": "wc1-1",
+          "t": "choice",
+          "q": "¿Por qué el capital propio cuesta más que la deuda para una empresa?",
+          "opts": [
+            "Porque los accionistas cobran un interés fijo más alto que el banco",
+            "Porque cobran después que los acreedores y asumen más riesgo, así que exigen más",
+            "Porque la deuda se emite siempre sin coste alguno para la empresa",
+            "Porque el capital propio solo se paga cuando la empresa tiene pérdidas"
+          ],
+          "a": 1,
+          "why": "Los acreedores cobran antes y tienen derechos fijos; los accionistas se quedan con lo que sobra y por eso exigen una rentabilidad mayor.",
+          "guia": "g1",
+          "porque": [
+            "No: el banco cobra un interés fijo y el accionista no tiene ningún pago garantizado.",
+            null,
+            "La deuda siempre tiene un coste: el interés que se paga al acreedor.",
+            "El capital propio se remunera con beneficios y revalorización, no solo con pérdidas."
+          ]
+        },
+        {
+          "id": "wc1-2",
+          "t": "num",
+          "q": "Una empresa paga un 6 % por su deuda y su tipo impositivo es del 25 %. Los intereses reducen los impuestos que paga. ¿Cuánto le cuesta la deuda después de impuestos, en %?",
+          "unit": "%",
+          "a": 4.5,
+          "why": "6 % × (1 − 0,25) = 4,5 %. Cada euro de interés ahorra 25 céntimos de impuestos.",
+          "tol": 0.06,
+          "guia": "g2"
+        },
+        {
+          "id": "wc1-3",
+          "t": "num",
+          "q": "Una empresa vale 700 M€ en bolsa y debe 300 M€. Sus accionistas exigen un 10 % y su deuda cuesta un 5 % antes de impuestos, con un tipo impositivo del 25 %. Usa valores de mercado. ¿Cuál es su WACC, en %?",
+          "unit": "%",
+          "a": 8.1,
+          "why": "Deuda tras impuestos: 5 % × 0,75 = 3,75 %. WACC = 0,7 × 10 % + 0,3 × 3,75 % = 7 % + 1,125 % = 8,125 %, unos 8,1 %.",
+          "tol": 0.06,
+          "guia": "g2"
+        },
+        {
+          "id": "wc1-4",
+          "t": "match",
+          "q": "Empareja cada pieza del WACC con su descripción.",
+          "pairs": [
+            [
+              "Coste de la deuda tras impuestos",
+              "Interés × (1 − tipo impositivo)"
+            ],
+            [
+              "Peso del capital propio",
+              "Capitalización bursátil ÷ valor total"
+            ],
+            [
+              "Peso de la deuda",
+              "Deuda ÷ valor total (deuda + capitalización)"
+            ],
+            [
+              "WACC",
+              "Cada coste por su peso, sumados"
+            ]
+          ],
+          "why": "El WACC mezcla lo que cuesta cada fuente de dinero según lo que pesa a valor de mercado, con la deuda ya descontando el ahorro de impuestos.",
+          "guia": "g2"
+        },
+        {
+          "id": "wc1-5",
+          "t": "slide",
+          "q": "El capital propio de una empresa cuesta un 10 % y su deuda, tras impuestos, un 4 %. Los pesos son a valor de mercado. Elige qué porcentaje del valor total es deuda para que el WACC sea del 7,0 %.",
+          "label": "Peso de la deuda",
+          "min": 0,
+          "max": 100,
+          "step": 10,
+          "start": 20,
+          "a": 50,
+          "unit": "%",
+          "why": "WACC = 10 % − 6 puntos × peso de la deuda. Con un 50 % de deuda: 0,5 × 4 % + 0,5 × 10 % = 7,0 %.",
+          "show": [
+            {
+              "label": "WACC",
+              "k": -0.06,
+              "b": 10,
+              "unit": "%",
+              "dec": 1
+            }
+          ],
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "wc2",
+      "title": "Usar el WACC",
+      "ex": [
+        {
+          "id": "wc2-1",
+          "t": "num",
+          "q": "Una empresa tiene un WACC del 8 % y un ROIC del 12 %. Invierte 250 M€ en el mismo negocio. Valor creado al año = (ROIC − WACC) × capital invertido. ¿Cuánto crea, en M€ al año?",
+          "unit": "M€",
+          "a": 10,
+          "why": "(12 % − 8 %) × 250 M€ = 10 M€ al año. Es lo que queda por encima del coste de financiar ese capital.",
+          "tol": 0.1,
+          "guia": "g3"
+        },
+        {
+          "id": "wc2-2",
+          "t": "choice",
+          "q": "Una empresa tiene un ROIC del 7 % y un WACC del 8,5 %. Anuncia que invertirá 300 M€ más en el mismo negocio. ¿Qué efecto tiene crecer así?",
+          "opts": [
+            "Crea valor, porque la empresa será más grande y sus ventas subirán",
+            "Es neutro, porque el ROIC es positivo y la empresa sigue ganando",
+            "Destruye valor: cada euro nuevo rinde un 7 % y cuesta un 8,5 %",
+            "Depende solo de cuánto suban las ventas, no del ROIC ni del WACC"
+          ],
+          "a": 2,
+          "why": "Rinde 1,5 puntos menos de lo que cuesta financiarse: (7 % − 8,5 %) × 300 M€ = −4,5 M€ al año.",
+          "guia": "g3",
+          "porque": [
+            "Crecer con un ROIC por debajo del coste de financiarse no crea valor, aunque suban las ventas.",
+            "Ganar algo no basta: lo que importa es si rinde más de lo que cuesta el capital.",
+            null,
+            "Sí depende del ROIC y del WACC: es justo la comparación que decide si crea valor."
+          ]
+        },
+        {
+          "id": "wc2-3",
+          "t": "num",
+          "q": "Una empresa generará un flujo libre de 30 M€ el próximo año y crecerá un 3 % anual para siempre. Se descuenta al WACC, que es del 9 %. Valor de la empresa = flujo ÷ (WACC − g). ¿Cuánto vale, en M€?",
+          "unit": "M€",
+          "a": 500,
+          "why": "30 ÷ (0,09 − 0,03) = 30 ÷ 0,06 = 500 M€.",
+          "tol": 0.5,
+          "guia": "g4"
+        },
+        {
+          "id": "wc2-4",
+          "t": "num",
+          "q": "Una empresa generará un flujo libre de 30 M€ el próximo año y crecerá un 3 % anual para siempre. Su valor es flujo ÷ (WACC − g). Si el WACC sube del 9 % al 10 %, ¿cuánto cae su valor, en %?",
+          "unit": "%",
+          "a": 14.3,
+          "why": "Con el 9 %: 30 ÷ 0,06 = 500 M€. Con el 10 %: 30 ÷ 0,07 = 428,6 M€. Cae (500 − 428,6) ÷ 500 = 14,3 %. Un punto de WACC pesa mucho.",
+          "tol": 0.06,
+          "guia": "g4"
+        },
+        {
+          "id": "wc2-5",
+          "t": "choice",
+          "q": "Una empresa pide mucha deuda para bajar su WACC. ¿Por qué no puede bajarlo sin límite?",
+          "opts": [
+            "Porque la deuda siempre cuesta más que el capital propio",
+            "Porque los intereses dejan de desgravar en cuanto se pide deuda",
+            "Porque más deuda sube el riesgo y encarece deuda y capital propio",
+            "Porque el WACC no depende de los pesos de cada fuente de dinero"
+          ],
+          "a": 2,
+          "why": "La deuda barata abarata el WACC al principio, pero con más deuda los acreedores y los accionistas exigen más, y el ahorro se agota.",
+          "guia": "g4",
+          "porque": [
+            "Al contrario: la deuda suele costar menos que el capital propio, por eso el WACC baja al principio.",
+            "Pedir deuda no hace que los intereses dejen de desgravar; el límite viene del riesgo.",
+            null,
+            "Sí depende: el WACC es la media de los costes según el peso de cada fuente."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

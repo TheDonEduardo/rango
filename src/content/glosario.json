@@ -1885,5 +1885,30 @@
    "bandas de rebalanceo"
   ],
   "d": "Desviación que toleras en el reparto antes de rebalancear. Con objetivo del 70 % y banda de 5 puntos, solo actúas fuera del 65 %-75 %."
+ },
+ {
+  "termino": "WACC",
+  "alias": [
+   "coste medio ponderado del capital"
+  ],
+  "d": "Coste medio ponderado del capital: media de lo que cuesta la deuda (tras impuestos) y el capital propio, cada uno según su peso a valor de mercado. Es la tasa para descontar los flujos de la empresa y el listón que debe superar su ROIC."
+ },
+ {
+  "termino": "IV rank",
+  "alias": [
+   "rank de la volatilidad implícita"
+  ],
+  "d": "Posición de la volatilidad implícita de hoy entre su mínimo y su máximo de las últimas 52 semanas: (hoy − mínimo) ÷ (máximo − mínimo) × 100. 0 es el mínimo del año y 100, el máximo."
+ },
+ {
+  "termino": "percentil de IV",
+  "d": "Porcentaje de días del último año en los que la volatilidad implícita estuvo por debajo de la de hoy. A diferencia del IV rank, no depende de los extremos."
+ },
+ {
+  "termino": "memecoin",
+  "alias": [
+   "memecoins"
+  ],
+  "d": "Token cuyo valor depende de la atención y la moda en redes, sin uso, ingresos ni respaldo detrás. Es muy volátil y suele estar concentrado en pocos monederos."
  }
 ]
