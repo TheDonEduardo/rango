@@ -19,7 +19,7 @@ export const sesion=()=>cuentaActiva()?leerSesion():null;
 
 async function pedir(ruta,{method='GET',body,token,headers={}}={}){
   const r=await fetch(cfg.url+ruta,{method,headers:Object.assign({apikey:cfg.anon,'Content-Type':'application/json'},token?{Authorization:'Bearer '+token}:{},headers),body:body==null?undefined:JSON.stringify(body)});
-  if(!r.ok)throw new Error(ruta+': '+r.status);
+  if(!r.ok){const e=new Error(ruta+': '+r.status);e.status=r.status;throw e}
   const txt=await r.text();return txt?JSON.parse(txt):null;
 }
 
@@ -44,15 +44,27 @@ export async function leerRetorno(hash,limpiar,confirmar){
   if(!marca||marca>ahora+60000||ahora-marca>VALIDEZ)return 'rechazado';
   const token=p.get('access_token'),u=await pedir('/auth/v1/user',{token});
   const previa=leerSesion();
-  if(previa&&previa.user&&previa.user.id!==u.id&&!(confirmar&&confirmar(t.cuentaCambiar(previa.user.email,u.email))))return 'rechazado';
+  if(previa&&previa.user&&previa.user.id!==u.id){
+    if(!(confirmar&&confirmar(t.cuentaCambiar(previa.user.email,u.email))))return 'rechazado';
+    limpiarSync();  // otra cuenta: nada de lo pendiente ni de lo fusionado de la anterior vale para esta
+  }
   guardarSesion({access_token:token,refresh_token:p.get('refresh_token'),expires_at:ahora+(+p.get('expires_in')||3600)*1000,user:{id:u.id,email:u.email}});
   return true;
 }
 // Token válido, renovándolo si caduca en menos de un minuto.
+// El refresco es único aunque lo pidan varios a la vez (el refresh_token rota: el segundo fallaría). Si el servidor
+// lo rechaza (400/401/403: caducado o revocado), se cierra la sesión local, sin tocar el progreso, y devuelve null.
+let renovando=null;
 async function token(){
   const s=leerSesion();if(!s)return null;
   if(s.expires_at-Date.now()>60000)return s;
-  const r=await pedir('/auth/v1/token?grant_type=refresh_token',{method:'POST',body:{refresh_token:s.refresh_token}});
+  if(!renovando)renovando=renovar(s).finally(()=>{renovando=null});
+  return renovando;
+}
+async function renovar(s){
+  let r;
+  try{r=await pedir('/auth/v1/token?grant_type=refresh_token',{method:'POST',body:{refresh_token:s.refresh_token}})}
+  catch(e){if([400,401,403].includes(e.status)){guardarSesion(null);estadoCuenta.ultima=null;limpiarSync();return null}throw e}
   const n=Object.assign(s,{access_token:r.access_token,refresh_token:r.refresh_token,expires_at:Date.now()+(r.expires_in||3600)*1000});
   guardarSesion(n);return n;
 }
@@ -88,6 +100,9 @@ export function fusionar(a,b){
 // Baja el estado guardado, lo fusiona con el local, lo aplica y sube el resultado. Devuelve true si cambió algo.
 // Solo hay una a la vez: si llega otra petición mientras tanto, se repite al terminar (para no perder cambios).
 let enCurso=null, repetir=false, fusionado=false, version=0;
+// Al cerrar sesión, borrar la cuenta o cambiar de usuario: nada pendiente de la sesión anterior debe subirse a la nueva.
+function limpiarSync(){clearTimeout(temporizador);temporizador=null;fusionado=false;repetir=false;version++;marcar(false)}
+const canon=o=>JSON.stringify(o,(k,v)=>v&&typeof v==='object'&&!Array.isArray(v)?Object.fromEntries(Object.entries(v).sort(([a],[b])=>a<b?-1:a>b?1:0)):v);
 export function sincronizar(){
   if(enCurso){repetir=true;return enCurso}
   enCurso=(async()=>{
@@ -107,9 +122,12 @@ async function sincronizarUna(){
     if(remoto&&(remoto.v||1)>STATE_V){estadoCuenta.error=true;return false}  // copia de una versión más nueva: no tocar
     const antes=JSON.stringify(S),nuevo=remoto?fusionar(S,completar(remoto)):S;
     const cambio=JSON.stringify(nuevo)!==antes;
+    const actual=leerSesion();if(!actual||actual.user.id!==s.user.id)return false;  // se cerró la sesión mientras bajaba
     if(cambio)reemplazar(nuevo);  // conserva `mod` (el máximo de ambos) y no programa otra subida
     fusionado=true;
-    await subir(s);
+    // Solo se sube si hace falta: sin remoto, con cambios locales pendientes o si lo fusionado difiere de lo guardado.
+    if(!remoto||pendiente()||canon(S)!==canon(remoto))await subir(s);
+    else{estadoCuenta.ultima=new Date();estadoCuenta.error=false}
     return cambio;
   }catch(e){estadoCuenta.error=true;throw e}
 }
@@ -145,12 +163,13 @@ function programar(){
 alGuardar.add(programar);
 
 export async function cerrarSesion(){
-  const s=leerSesion();guardarSesion(null);estadoCuenta.ultima=null;
+  const s=leerSesion();guardarSesion(null);estadoCuenta.ultima=null;limpiarSync();
   if(s)try{await pedir('/auth/v1/logout',{method:'POST',token:s.access_token})}catch(e){}
 }
 // Borra la cuenta y su progreso en el servidor (función borrar_cuenta de docs/supabase.sql). El progreso local se queda.
 export async function borrarCuenta(){
+  limpiarSync();
   const s=await token();if(!s)return;
   await pedir('/rest/v1/rpc/borrar_cuenta',{method:'POST',token:s.access_token,body:{}});
-  guardarSesion(null);estadoCuenta.ultima=null;
+  guardarSesion(null);estadoCuenta.ultima=null;limpiarSync();
 }

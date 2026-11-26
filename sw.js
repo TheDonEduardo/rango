@@ -85,7 +85,17 @@ self.addEventListener('fetch', e => {
   // Página, código y contenido: red primero (siempre la misma versión de todo); sin conexión, la copia guardada.
   // no-cache: revalida con el servidor (ETag) en vez de usar la caché HTTP, que podría mezclar versiones.
   e.respondWith(fetch(req, {cache: 'no-cache'})
-    .then(res => { if (res.ok) { const copia = res.clone(); caches.open(CACHE).then(c => c.put(req, copia)); } return res; })
+    .then(res => {
+      // Caída del servidor (5xx): fetch no rechaza, así que se sirve la copia si la hay.
+      if (res.status >= 500) {
+        return caches.match(req, {ignoreSearch: true})
+          .then(m => m || (req.mode === 'navigate' ? caches.match('./') : null))
+          .then(m => m || res);
+      }
+      // Solo se guarda un 200 completo (put lanza con 206) y se espera a que termine de escribirse.
+      if (res.status === 200) { const copia = res.clone(); e.waitUntil(caches.open(CACHE).then(c => c.put(req, copia)).catch(() => {})); }
+      return res;
+    })
     .catch(() => caches.match(req, {ignoreSearch: true})
       .then(m => m || (req.mode === 'navigate' ? caches.match('./') : Response.error()))));
 });

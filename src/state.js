@@ -17,8 +17,8 @@ const MIGRAR={
   2:j=>{const sim={};if(j.sim&&typeof j.sim==='object'&&!Array.isArray(j.sim))for(const k in j.sim){const g=j.sim[k];if(g&&typeof g==='object'&&g.res)sim[k]=g}j.sim=sim;return j},
 };
 export function migrar(j){
-  let v=j.v||1;
-  while(v<STATE_V){j=MIGRAR[v](j);v++}
+  let v=Number.isInteger(j.v)&&j.v>=1?j.v:1;  // un v corrupto (1.5, -1, "abc") se trata como la versión 1
+  while(v<STATE_V){if(!MIGRAR[v])break;j=MIGRAR[v](j);v++}
   j.v=STATE_V;return j;
 }
 // Estado completo a partir de lo guardado (cualquier versión): rellena lo que falte con los valores por defecto.
@@ -102,10 +102,10 @@ export function leerCopia(texto){
 export function importar(estado){soloLect=false;S=estado;save()}
 
 // Racha: sigue viva si practicaste hoy o ayer, o anteayer con un protector disponible (se gastará al practicar).
-export const streakNow=()=>(S.last===today()||S.last===yest()||(S.last===addDays(-2)&&S.protector>0))?S.streak:0;
+export const streakNow=()=>(S.last===today()||S.last===addDays(1)||S.last===yest()||(S.last===addDays(-2)&&S.protector>0))?S.streak:0;
 // Protectores de racha: uno por cada 7 días seguidos, como mucho PROTECTOR_MAX guardados.
 export function sumarRacha(){
-  const hoy=today();if(S.last===hoy)return {};
+  const hoy=today();if(S.last===hoy||S.last===addDays(1))return {};  // addDays(1): el último día es «mañana» (otro huso): ya cuenta
   let usado=false,ganado=false;
   if(S.last===yest())S.streak++;
   else if(S.last===addDays(-2)&&S.protector>0){S.protector--;S.streak++;usado=true}

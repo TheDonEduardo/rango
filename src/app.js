@@ -306,11 +306,13 @@ $app.addEventListener('click',e=>{
 });
 const COPIA_MAX=5*1024*1024;  // una copia de seguridad real pesa unos KB: más de 5 MB no es de Rango
 $app.addEventListener('change',e=>{
-  if(e.target.dataset&&e.target.dataset.calc&&ses.view==='calc'){save();return}
+  if(e.target.dataset&&e.target.dataset.calc&&e.target.type!=='checkbox'&&ses.view==='calc'){save();return}  // las casillas ya guardan en `input`
   if(e.target.id!=='imp-file'||!e.target.files||!e.target.files[0])return;
   if(e.target.files[0].size>COPIA_MAX){toast(t.copiaGrande);e.target.value='';return}
   const r=new FileReader();
-  r.onload=()=>{const c=leerCopia(String(r.result));if(c==='nueva'){toast(t.copiaNueva);return}if(!c){toast(t.copiaMala);return}ses.copia=c;render();const b=$app.querySelector('[data-act=impok]');if(b)b.focus({preventScroll:true})};
+  const campo=e.target;
+  r.onerror=()=>{campo.value='';toast(t.copiaMala)};
+  r.onload=()=>{const c=leerCopia(String(r.result));if(c==='nueva'||!c){campo.value='';toast(c==='nueva'?t.copiaNueva:t.copiaMala);return}ses.copia=c;render();const b=$app.querySelector('[data-act=impok]');if(b)b.focus({preventScroll:true})};
   r.readAsText(e.target.files[0]);
 });
 $app.addEventListener('input',e=>{
@@ -336,7 +338,7 @@ document.addEventListener('keydown',e=>{
     else if(e.key==='ArrowLeft'&&g.i>0){e.preventDefault();ACCIONES.guiaprev()}
     return;
   }
-  if(ses.view!=='lesson')return;
+  if(ses.view!=='lesson'||$app.querySelector('.glos'))return;
   const el=e.target,run=ses.run,T=TIPOS[run.queue[0].t];
   // Teclas 1-9: eligen la opción en esa posición (preguntas de elegir), sin estar escribiendo en un campo.
   if(/^[1-9]$/.test(e.key)&&!run.checked&&!e.ctrlKey&&!e.metaKey&&!e.altKey&&!(el.closest&&el.closest('input,textarea'))){
@@ -372,7 +374,7 @@ render();
 
 // Cuenta: al volver del enlace del correo se guarda la sesión; con sesión, se fusiona con lo guardado en el servidor.
 // Solo se vuelve a dibujar si cambió algo y no hay una lección en curso.
-const redibujar=c=>{if(c&&['home','stats'].includes(ses.view))render()};
+const redibujar=c=>{if(c&&['home','stats'].includes(ses.view)){if(ses.view==='home')ses.homeY=window.scrollY;render()}};
 if(cuentaActiva()&&typeof location!=='undefined'){
   leerRetorno(location.hash,()=>history.replaceState(null,'',location.pathname+location.search),m=>confirm(m))
     .then(nueva=>{if(nueva==='rechazado')toast(t.cuentaAjena);else if(nueva)toast(t.cuentaHecha);return sesion()?sincronizar():false})

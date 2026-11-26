@@ -517,6 +517,17 @@ if (fs.existsSync(semPath)) {
   r = T.sumarRacha(); if (st.streak !== 7 || st.protector !== 2 || r.ganado) errs.push('se gana un protector por encima del máximo');
   Object.assign(st, {last: dia(-1), streak: 13, protector: 0});
   r = T.sumarRacha(); if (!r.ganado || st.protector !== 1) errs.push('7 días seguidos no dan un protector');
+  // Último día = mañana (otro huso): la racha no se pierde, no suma dos veces y no gasta protectores.
+  { const {streakNow} = await import(pathToFileURL(path.join(root, 'src/state.js')).href);
+    Object.assign(st, {last: dia(1), streak: 5, protector: 1});
+    if (streakNow() !== 5) errs.push('racha: con last = mañana, streakNow devuelve ' + streakNow());
+    r = T.sumarRacha(); if (st.streak !== 5 || st.protector !== 1 || st.last !== dia(1) || r.usado || r.ganado) errs.push('racha: con last = mañana, sumarRacha suma, gasta protector o cambia last');
+    Object.assign(st, {last: dia(2), streak: 5, protector: 1});
+    if (streakNow() !== 0) errs.push('racha: last dos días por delante no se descarta'); }
+  // migrar con v corrupto: no lanza y deja la versión actual.
+  for (const v of [1.5, -1, true, 'abc', NaN, null]) {
+    try { const m = T.migrar({v, xp: 3}); if (m.v !== 3 || m.xp !== 3) errs.push('migrar: v corrupto ' + String(v) + ' no se normaliza'); }
+    catch (e) { errs.push('migrar lanza con v = ' + String(v) + ': ' + e.message); } }
   st.meta = 80; if (!T.homeHTML().includes('/ 80 XP')) errs.push('la meta diaria elegida no se usa en el inicio');
   T.openStats(); if (!app.innerHTML.includes('data-act="meta"') || !app.innerHTML.includes('Protectores de racha')) errs.push('las estadísticas no permiten elegir la meta ni muestran los protectores'); T.goHome();
   const done = st.done; st.done = {}; st.objetivo = null;
@@ -915,6 +926,65 @@ if (caducados.length) console.warn('AVISO: contenido pendiente de revisar (norma
   if (!T.getState().done.remoto1) errs.push('cuenta: lo bajado no se aplica en local');
   if (store['rango.subirPendiente']) errs.push('cuenta: la marca de subida pendiente no se borra tras subir');
   delete store['rango.sesion']; delete store['rango.subirPendiente'];
+  T.importar(copia); T.configurar({url: '', anon: ''}); globalThis.fetch = fetchAntes;
+}
+
+// Sincronización: limpieza al cerrar sesión o cambiar de cuenta, refresco de token (único y con fallo) y subida solo si hace falta.
+{
+  const st = T.getState(), copia = JSON.parse(JSON.stringify(st));
+  let guardado = null, posts = 0, refrescos = 0, refrescoEstado = 200, fusion = 0;
+  const fetchAntes = globalThis.fetch;
+  globalThis.fetch = async (url, o = {}) => {
+    const ok = (d, s = 200) => ({ok: s < 300, status: s, text: async () => d == null ? '' : JSON.stringify(d)});
+    if (url.includes('grant_type=refresh_token')) { refrescos++; await new Promise(r => setTimeout(r, 20)); return refrescoEstado === 200 ? ok({access_token: 'T2', refresh_token: 'R2', expires_in: 3600}) : ok(null, refrescoEstado); }
+    if (url.includes('/rest/v1/progreso?select')) { fusion++; return ok(guardado ? [{estado: guardado}] : []); }
+    if (url.endsWith('/rest/v1/progreso')) { posts++; guardado = JSON.parse(o.body).estado; return ok(null, 201); }
+    if (url.includes('/auth/v1/logout')) return ok(null, 204);
+    if (url.includes('/rpc/borrar_cuenta')) return ok(null, 204);
+    return ok(null, 404);
+  };
+  const sesionDe = (id, expira) => JSON.stringify({access_token: 'T1', refresh_token: 'R1', expires_at: expira, user: {id, email: id + '@b.es'}});
+  T.configurar({url: 'https://x.supabase.co/', anon: 'ANON', espera: 60000});
+  store['rango.sesion'] = sesionDe('u1', Date.now() + 3600000);
+  // Sin cambios no se vuelve a subir: la primera sincronización sube (no hay remoto); la segunda no.
+  await T.sincronizar(); const p1 = posts;
+  await T.sincronizar();
+  if (p1 !== 1 || posts !== 1) errs.push('cuenta: se sube sin cambios (POST ' + posts + ')');
+  // Un cambio local pendiente sí sube.
+  st.xp += 1; T.importar(st);
+  await T.sincronizar(); if (posts !== 2) errs.push('cuenta: un cambio local pendiente no se sube');
+  // Cerrar sesión limpia lo pendiente: el temporizador no sube nada después y no queda marca.
+  st.xp += 1; T.importar(st);
+  if (store['rango.subirPendiente'] !== '1') errs.push('cuenta: no queda marca pendiente antes de cerrar');
+  await T.cerrarSesion();
+  if (store['rango.subirPendiente'] || T.sesion()) errs.push('cuenta: cerrar sesión deja la marca de subida pendiente o la sesión');
+  // Tras cerrar, una subida al salir no sube (no está fusionado ni hay sesión).
+  const antesP = posts; T.subirAlSalir?.(); await new Promise(r => setTimeout(r, 30));
+  if (posts !== antesP) errs.push('cuenta: se sube tras cerrar sesión');
+  // Cambio de cuenta confirmado: se reinicia lo fusionado y la marca pendiente.
+  store['rango.sesion'] = sesionDe('u1', Date.now() + 3600000);
+  await T.sincronizar(); st.xp += 1; T.importar(st);
+  store['rango.pendiente'] = String(Date.now());
+  const antesU = globalThis.fetch;
+  globalThis.fetch = async (url, o = {}) => url.includes('/auth/v1/user') ? {ok: true, status: 200, text: async () => JSON.stringify({id: 'u9', email: 'u9@b.es'})} : antesU(url, o);
+  await T.leerRetorno('#access_token=T9&refresh_token=R9&expires_in=3600', null, () => true);
+  globalThis.fetch = antesU;
+  if (T.sesion().user.id !== 'u9' || store['rango.subirPendiente']) errs.push('cuenta: cambiar de cuenta no limpia la marca de subida pendiente');
+  // Refresco concurrente: una sola petición aunque varias llamadas lo pidan a la vez.
+  store['rango.sesion'] = sesionDe('u1', Date.now() + 1000);
+  refrescos = 0;
+  await Promise.all([T.sincronizar(), T.sincronizar().catch(() => {}), T.borrarCuenta()]);
+  if (refrescos !== 1) errs.push('cuenta: refresco concurrente lanzó ' + refrescos + ' peticiones');
+  // Refresco rechazado (401): se cierra la sesión local sin tocar el progreso.
+  store['rango.sesion'] = sesionDe('u1', Date.now() + 1000); refrescoEstado = 401;
+  const xpAntes = T.getState().xp;
+  let fallo = null; try { await T.sincronizar(); } catch (e) { fallo = e; }
+  if (T.sesion() || fallo || T.getState().xp !== xpAntes) errs.push('cuenta: un refresco rechazado no cierra la sesión local o toca el progreso');
+  // Un fallo de red (500) en el refresco NO cierra la sesión.
+  store['rango.sesion'] = sesionDe('u1', Date.now() + 1000); refrescoEstado = 500;
+  try { await T.sincronizar(); } catch (e) {}
+  if (!T.sesion()) errs.push('cuenta: un fallo 500 del refresco cierra la sesión');
+  delete store['rango.sesion']; delete store['rango.subirPendiente']; delete store['rango.pendiente'];
   T.importar(copia); T.configurar({url: '', anon: ''}); globalThis.fetch = fetchAntes;
 }
 
