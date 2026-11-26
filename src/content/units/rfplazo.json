@@ -9,6 +9,37 @@
       "id": "g1",
       "titulo": "Duración baja y alta",
       "texto": "Un fondo a corto plazo tiene duración baja (1-2) y su precio cambia poco con los tipos; uno a largo plazo tiene duración alta (7-10) y cambia mucho. Pérdida ≈ duración × subida de tipos. El corto cae poco, pero no es cero. Horizonte: cuándo necesitarás el dinero.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Caída del precio al subir los tipos de 0 a 2 puntos: con duración 2 cae un 2 % con +1 punto; con duración 8, un 8 %.",
+        "series": [
+          {
+            "data": [0,-1.0,-2,-3.0,-4],
+            "texto": "Duración 2",
+            "tono": "sel"
+          },
+          {
+            "data": [0,-4.0,-8,-12.0,-16],
+            "texto": "Duración 8",
+            "tono": "dn"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 2,
+            "y": -2,
+            "texto": "−2 %",
+            "lado": "i"
+          },
+          {
+            "i": 2,
+            "y": -8,
+            "texto": "−8 %",
+            "lado": "i"
+          }
+        ],
+        "h": 200
+      },
       "ejemplo": "Tipos +1 punto: duración 2, el precio cae un 2 %; duración 8, un 8 %: 6 puntos más."
     },
     {

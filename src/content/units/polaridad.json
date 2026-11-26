@@ -1,5 +1,5 @@
 {
-  "n": 14,
+  "n": 15,
   "id": "polaridad",
   "track": "tecnico",
   "title": "Cambio de polaridad",
@@ -9,6 +9,46 @@
       "id": "g1",
       "titulo": "Techo roto, suelo nuevo",
       "texto": "Cuando el precio rompe con claridad un techo, ese nivel suele convertirse en soporte al volver a él: es el cambio de polaridad. Al revés, un soporte que se pierde suele pasar a ser resistencia.",
+      "figura": {
+        "type": "velas",
+        "alt": "Un precio frena tres veces en 50 €, rompe hasta 54 €, vuelve a 50 € y rebota desde ese nivel, que ahora actúa como suelo.",
+        "data": [
+          [47,50,46.5,49],
+          [49,50,48,49.5],
+          [49.5,50.2,48.8,49.4],
+          [49.4,54.2,49.2,54],
+          [54,54.6,52,52.5],
+          [52.5,52.8,50.1,50.4],
+          [50.4,53,50,52.6],
+          null,
+          null
+        ],
+        "lineas": [
+          {
+            "y": 50,
+            "texto": "Nivel 50 €",
+            "tono": "sel"
+          }
+        ],
+        "zonas": [
+          {
+            "i1": 0,
+            "i2": 2,
+            "texto": "Techo"
+          },
+          {
+            "i1": 3,
+            "i2": 4,
+            "texto": "Ruptura"
+          },
+          {
+            "i1": 5,
+            "i2": 6,
+            "texto": "Rebote"
+          }
+        ],
+        "h": 230
+      },
       "ejemplo": "Techo en 50 € roto hasta 54 €: al volver, 50 € suele actuar como suelo. Suelo de 40 € perdido hasta 36 €: en el rebote, 40 € puede frenar."
     },
     {

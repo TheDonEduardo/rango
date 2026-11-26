@@ -1,0 +1,201 @@
+{
+  "n": 15,
+  "id": "crdao",
+  "track": "cripto",
+  "title": "DAO y gobernanza",
+  "blurb": "Votar con tokens, quórum, poder concentrado y los riesgos de la tesorería común.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Qué es una DAO",
+      "texto": "Una DAO es una organización cuyas reglas viven en contratos inteligentes. Sus miembros deciden votando con tokens de gobernanza: normalmente, un token es un voto.",
+      "ejemplo": "Una DAO con 1.000.000 de tokens: quien tiene 50.000 controla el 5 % de los votos."
+    },
+    {
+      "id": "g2",
+      "titulo": "Votar: quórum y ciclo",
+      "texto": "Una propuesta pasa por debate, votación y, si se aprueba, una espera (timelock) antes de ejecutarse. Vale si alcanza el quórum, los votos mínimos, y la mayoría.",
+      "ejemplo": "Quórum de 40.000 votos: 30.000 a favor y 5.000 en contra suman 35.000, no vale. Con 36.000 y 4.000 suman 40.000: vale y gana el sí."
+    },
+    {
+      "id": "g3",
+      "titulo": "Poder concentrado",
+      "texto": "Quien reúne muchos tokens manda. Con poca participación y un quórum bajo, pocos monederos deciden por todos, y también se pueden comprar o alquilar votos.",
+      "ejemplo": "Tres monederos con el 20 %, el 15 % y el 12 % suman el 47 % de los tokens. Si vota el 60 %, controlan 47 ÷ 60 = 78,3 % de los votos emitidos."
+    },
+    {
+      "id": "g4",
+      "titulo": "Tesorería y riesgos",
+      "texto": "La tesorería es el dinero común y se gasta por votación. Riesgos: propuestas con código opaco, prisa y pagos grandes. Lee el código y exige una espera antes de ejecutar.",
+      "ejemplo": "Tesorería de 2.000.000 $ y propuesta de pagar 500.000 $: el 25 %. Una espera de 48 horas da tiempo a reaccionar."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "dg1",
+      "title": "Votar y quórum",
+      "ex": [
+        {
+          "id": "dg1-1",
+          "t": "choice",
+          "q": "En una DAO típica, ¿qué da derecho a votar las propuestas?",
+          "opts": [
+            "Haber enviado un mensaje al equipo fundador",
+            "Tener una cuenta verificada con tu documento de identidad",
+            "Tener tokens de gobernanza: cada token suele ser un voto",
+            "Haber comprado el primer token que se emitió"
+          ],
+          "a": 2,
+          "why": "El voto se reparte por tokens de gobernanza: normalmente un token, un voto. No hace falta ser fundador ni identificarse.",
+          "guia": "g1",
+          "porque": [
+            "Escribir al equipo no da votos: el voto depende de los tokens de gobernanza.",
+            "Las DAO no suelen pedir identidad: el voto lo da el token.",
+            null,
+            "Haber comprado pronto no da más derechos: cuentan los tokens que tienes ahora."
+          ]
+        },
+        {
+          "id": "dg1-2",
+          "t": "num",
+          "q": "Una DAO tiene 1.000.000 de tokens de gobernanza, un token es un voto y tú tienes 50.000. ¿Qué porcentaje de los votos totales posees?",
+          "unit": "%",
+          "a": 5,
+          "why": "50.000 ÷ 1.000.000 = 0,05 = 5 %.",
+          "guia": "g1"
+        },
+        {
+          "id": "dg1-3",
+          "t": "choice",
+          "q": "Una DAO exige un quórum de 40.000 votos. En una propuesta votan 30.000 a favor y 5.000 en contra. ¿Qué ocurre?",
+          "opts": [
+            "Se aprueba: el 85,7 % de los votos emitidos son a favor",
+            "No se aprueba: con 35.000 votos no llega al quórum de 40.000",
+            "Se aprueba: hay más votos a favor que en contra",
+            "Se aprueba tras una espera de 48 horas, porque el sí gana"
+          ],
+          "a": 1,
+          "why": "Sin quórum la votación no vale, gane quien gane. 30.000 + 5.000 = 35.000 votos, menos de 40.000.",
+          "guia": "g2",
+          "porque": [
+            "Sin quórum la votación no vale, aunque el 85,7 % esté a favor.",
+            null,
+            "Que gane el sí no basta: primero hay que alcanzar el quórum.",
+            "La espera llega solo tras aprobar, y aquí no se alcanza el quórum."
+          ]
+        },
+        {
+          "id": "dg1-4",
+          "t": "num",
+          "q": "Una DAO tiene 1.000.000 de tokens de gobernanza y exige un quórum del 4 % de ellos. ¿Cuántos votos, en miles, hacen falta como mínimo?",
+          "unit": "mil votos",
+          "a": 40,
+          "why": "1.000.000 × 0,04 = 40.000 votos, es decir, 40 mil.",
+          "guia": "g2"
+        },
+        {
+          "id": "dg1-5",
+          "t": "match",
+          "q": "Empareja cada término de la gobernanza de una DAO con su significado.",
+          "pairs": [
+            [
+              "Quórum",
+              "Votos mínimos para que una votación valga"
+            ],
+            [
+              "Timelock",
+              "Espera entre aprobar una propuesta y ejecutarla"
+            ],
+            [
+              "Mayoría",
+              "Más votos a favor que en contra entre los emitidos"
+            ]
+          ],
+          "why": "El quórum valida la votación, la mayoría decide el resultado y el timelock da tiempo a reaccionar.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "dg2",
+      "title": "Concentración y riesgos",
+      "ex": [
+        {
+          "id": "dg2-1",
+          "t": "num",
+          "q": "Tres monederos tienen el 20 %, el 15 % y el 12 % de los tokens de una DAO y votan juntos. Si en total vota el 60 % de los tokens, ¿qué porcentaje de los votos emitidos controlan? Redondea a un decimal.",
+          "unit": "%",
+          "a": 78.3,
+          "why": "20 + 15 + 12 = 47 % de los tokens. 47 ÷ 60 = 78,3 % de los votos emitidos: deciden casi solos.",
+          "tol": 0.06,
+          "guia": "g3"
+        },
+        {
+          "id": "dg2-2",
+          "t": "choice",
+          "q": "¿Qué riesgo crea un quórum muy bajo en una DAO?",
+          "opts": [
+            "Que las propuestas tarden más en llegar a aprobarse",
+            "Que los tokens pierdan su derecho de voto con el tiempo",
+            "Que pocos votos bastan para aprobar propuestas importantes",
+            "Que la tesorería se bloquee automáticamente"
+          ],
+          "a": 2,
+          "why": "Con un quórum bajo bastan pocos votos: un grupo pequeño, o alguien con muchos tokens, puede decidir mientras los demás no votan.",
+          "guia": "g3",
+          "porque": [
+            "Un quórum bajo agiliza las votaciones: el riesgo es lo contrario.",
+            "Los tokens conservan su voto; el problema es quién lo usa.",
+            null,
+            "Un quórum bajo no bloquea nada: facilita aprobar y gastar."
+          ]
+        },
+        {
+          "id": "dg2-3",
+          "t": "num",
+          "q": "La tesorería de una DAO tiene 2.000.000 $ y una propuesta pide pagar 500.000 $ a un monedero. ¿Qué porcentaje de la tesorería supone?",
+          "unit": "%",
+          "a": 25,
+          "why": "500.000 ÷ 2.000.000 = 0,25 = 25 %.",
+          "guia": "g4"
+        },
+        {
+          "id": "dg2-4",
+          "t": "order",
+          "q": "Ordena el recorrido de una propuesta en una DAO, desde que se publica hasta que se ejecuta.",
+          "items": [
+            "Se publica la propuesta",
+            "Se debate",
+            "Se vota",
+            "Se aprueba si hay quórum y mayoría",
+            "Espera de seguridad (timelock) y ejecución"
+          ],
+          "why": "Primero se publica y debate, luego se vota; si hay quórum y mayoría se aprueba y, tras la espera, se ejecuta.",
+          "guia": "g2"
+        },
+        {
+          "id": "dg2-5",
+          "t": "choice",
+          "q": "Una propuesta pide pagar el 25 % de la tesorería a un monedero desconocido, con código sin explicar y votación de 24 horas. ¿Qué es lo más prudente?",
+          "opts": [
+            "Votar a favor: si hay quórum, será seguro",
+            "Votar a favor rápido para no perder la ocasión",
+            "No votar a favor hasta leer el código y pedir más tiempo",
+            "Prestar tus tokens a quien los pida para repartir el riesgo"
+          ],
+          "a": 2,
+          "why": "Un pago grande a un destino desconocido, con código opaco y prisa, tiene señales de riesgo. Lo prudente es leer, pedir tiempo y no votar a ciegas.",
+          "guia": "g4",
+          "porque": [
+            "Que haya quórum no garantiza que sea seguro: los votos pueden estar concentrados.",
+            "La prisa es una señal de alerta, no un motivo para votar.",
+            null,
+            "Prestar tokens da tu voto a otros y no reparte riesgo: lo cede."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

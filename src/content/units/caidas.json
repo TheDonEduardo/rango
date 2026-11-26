@@ -1,5 +1,5 @@
 {
-  "n": 30,
+  "n": 31,
   "id": "caidas",
   "track": "basico",
   "title": "Cuando la bolsa cae",
@@ -16,6 +16,30 @@
       "id": "g2",
       "titulo": "Recuperar cuesta más",
       "texto": "Si pierdes un porcentaje, recuperarlo exige una subida mayor, porque partes de una base más pequeña. Cuanto más profunda es la caída, más desproporcionada es la subida.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Subida necesaria para recuperar una caída: un 25 % tras caer un 20 % y un 100 % tras caer un 50 %.",
+        "series": [
+          {
+            "data": [11.1,25.0,42.9,66.7,100.0,150.0,233.3],
+            "tono": "dn"
+          }
+        ],
+        "margen": 20,
+        "marcas": [
+          {
+            "i": 1,
+            "y": 25,
+            "texto": "−20 %: +25 %"
+          },
+          {
+            "i": 4,
+            "y": 100,
+            "texto": "−50 %: +100 %",
+            "lado": "i"
+          }
+        ]
+      },
       "ejemplo": "Con 500 € que caen un 20 % hasta 400 €, hay que subir 25 % para volver a 500 €. Tras un −50 %, hace falta +100 %."
     },
     {

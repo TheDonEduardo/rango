@@ -21,6 +21,30 @@
       "id": "g3",
       "titulo": "Sensibilidad",
       "texto": "Como r − g suele ser pequeño, un punto cambia mucho el valor. Pide margen de seguridad.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Valor de una acción con D1 de 2 € y crecimiento del 3 % según la rentabilidad exigida: 50 € con el 7 % y 40 € con el 8 %.",
+        "series": [
+          {
+            "data": [100.0,66.7,50.0,40.0,33.3,28.6,25.0,22.2],
+            "tono": "sel"
+          }
+        ],
+        "margen": 20,
+        "marcas": [
+          {
+            "i": 2,
+            "y": 50,
+            "texto": "r 7 %: 50 €"
+          },
+          {
+            "i": 3,
+            "y": 40,
+            "texto": "r 8 %: 40 €"
+          }
+        ],
+        "h": 200
+      },
       "ejemplo": "Con D1 = 2 € y g = 3 %: r del 7 % da 50 €; r del 8 %, 40 €: un 20 % menos. Con r del 10 %, pasar g de 3 % a 4 % sube el valor un 16,7 %."
     },
     {

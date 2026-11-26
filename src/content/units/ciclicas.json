@@ -21,6 +21,36 @@
       "id": "g3",
       "titulo": "Beneficio normalizado",
       "texto": "Valora una cíclica con el beneficio medio de un ciclo completo, no con el del último año.",
+      "figura": {
+        "type": "curvas",
+        "alt": "BPA de una cíclica en cinco años: 8, 2, 1, 5 y 4 €, con su media de 4 €.",
+        "series": [
+          {
+            "data": [8,2,1,5,4],
+            "tono": "sel"
+          }
+        ],
+        "lineas": [
+          {
+            "y": 4,
+            "texto": "Media 4 €",
+            "tono": "acc"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 0,
+            "y": 8,
+            "texto": "8 €"
+          },
+          {
+            "i": 2,
+            "y": 1,
+            "texto": "1 €"
+          }
+        ],
+        "margen": 60
+      },
       "ejemplo": "BPA de 8, 2, 1, 5 y 4 € en cinco años: media de 4 €. A 40 €, PER normalizado de 10."
     },
     {

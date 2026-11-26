@@ -1,0 +1,218 @@
+{
+  "n": 25,
+  "id": "seguridad",
+  "track": "basico",
+  "title": "Proteger tu cuenta del bróker",
+  "blurb": "Contraseñas, doble factor, mensajes falsos, móvil y redes, y qué hacer si algo falla.",
+  "gate": false,
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Contraseña y doble factor",
+      "texto": "Usa una contraseña larga y distinta en cada servicio, guardada en un gestor de contraseñas, y activa el doble factor: un segundo código además de la clave.",
+      "ejemplo": "Misma contraseña en 6 servicios: si se filtra una, quedan expuestos 6. Con seis distintas, solo uno."
+    },
+    {
+      "id": "g2",
+      "titulo": "Mensajes falsos",
+      "texto": "El phishing suplanta a tu bróker con urgencia y un enlace. Tu bróker no te pide la contraseña por mensaje: entra tú escribiendo la dirección o con la app oficial.",
+      "ejemplo": "«Se bloqueará en 2 horas, entra aquí y confirma tu contraseña»: urgencia, enlace y petición de la contraseña, tres señales."
+    },
+    {
+      "id": "g3",
+      "titulo": "Móvil y redes",
+      "texto": "Bloquea la pantalla, actualiza el sistema y las apps, instala solo desde la tienda oficial y evita las Wi-Fi abiertas para entrar a tu cuenta: usa tus datos móviles.",
+      "ejemplo": "En un café, con Wi-Fi abierta, entra con los datos de tu móvil y no con la red del local."
+    },
+    {
+      "id": "g4",
+      "titulo": "Si algo falla",
+      "texto": "Ante una operación que no reconoces, cambia la contraseña desde un dispositivo seguro y avisa al bróker por su canal oficial. Activa alertas de cada movimiento.",
+      "ejemplo": "Si un atacante vende 2.000 € por hora y avisas a las 3 horas, se han vendido 6.000 €."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "sg1",
+      "title": "Claves y mensajes falsos",
+      "ex": [
+        {
+          "id": "sg1-1",
+          "t": "choice",
+          "q": "¿Qué combinación protege mejor tu cuenta del bróker?",
+          "opts": [
+            "Una contraseña larga y exclusiva, más doble factor",
+            "Una contraseña corta y fácil de recordar en todos tus servicios",
+            "Una contraseña larga, la misma en todos tus servicios",
+            "Tu fecha de nacimiento con una mayúscula al principio"
+          ],
+          "a": 0,
+          "why": "Una contraseña larga y que no uses en otro sitio, más un segundo código, deja poco margen al que la robe.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Una contraseña corta y repetida es de las más fáciles de adivinar o reutilizar.",
+            "Larga, pero repetida: si se filtra en un sitio, abre todos los demás.",
+            "La fecha de nacimiento es fácil de averiguar y no es una contraseña larga."
+          ]
+        },
+        {
+          "id": "sg1-2",
+          "t": "num",
+          "q": "Usas la misma contraseña en 6 servicios y se filtra en uno de ellos. ¿En cuántos servicios pueden entrar con ella?",
+          "unit": "",
+          "a": 6,
+          "why": "Con la misma contraseña quedan expuestos los 6. Con una distinta en cada servicio, solo uno.",
+          "guia": "g1"
+        },
+        {
+          "id": "sg1-3",
+          "t": "choice",
+          "q": "¿Qué ocurre con el doble factor si alguien consigue tu contraseña?",
+          "opts": [
+            "Entra igual: el segundo código solo sirve para recuperar la cuenta",
+            "Entra igual, porque la contraseña es suficiente",
+            "Necesita además el segundo código, y sin él no entra",
+            "El bróker bloquea tu cuenta para siempre"
+          ],
+          "a": 2,
+          "why": "El doble factor pide un segundo código, que llega a tu móvil o aplicación. Con solo la contraseña no entra.",
+          "guia": "g1",
+          "porque": [
+            "No: el segundo código se pide para entrar, no solo para recuperar la cuenta.",
+            "Con doble factor la contraseña sola no basta.",
+            null,
+            "El doble factor no bloquea la cuenta: solo pide el segundo código."
+          ]
+        },
+        {
+          "id": "sg1-4",
+          "t": "choice",
+          "q": "Te llega un SMS: «Tu cuenta se bloqueará en 2 horas. Entra aquí y confirma tu contraseña». ¿Qué haces?",
+          "opts": [
+            "Pulsas el enlace, pero no escribes la contraseña",
+            "No pulsas: entras tú con la app oficial o la dirección",
+            "Pulsas el enlace: si es urgente, es de fiar",
+            "Respondes con tu contraseña para evitar el bloqueo"
+          ],
+          "a": 1,
+          "why": "Urgencia, enlace y petición de la contraseña son señales de fraude. Entra siempre por tu cuenta, no desde el mensaje.",
+          "guia": "g2",
+          "porque": [
+            "Aunque no escribas la contraseña, el enlace puede instalar algo o robar otros datos.",
+            null,
+            "La urgencia es una señal de fraude, no de fiabilidad.",
+            "Tu bróker no te pide la contraseña por mensaje; responder se la da al estafador."
+          ]
+        },
+        {
+          "id": "sg1-5",
+          "t": "num",
+          "q": "Un mensaje dice: «Se bloqueará en 2 horas, entra aquí y confirma tu contraseña». ¿Cuántas señales de fraude de las que conoces tiene?",
+          "unit": "",
+          "a": 3,
+          "why": "Tiene las tres: la urgencia (2 horas), un enlace en el mensaje y la petición de tu contraseña.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "sg2",
+      "title": "Dispositivos y sospechas",
+      "ex": [
+        {
+          "id": "sg2-1",
+          "t": "match",
+          "q": "Empareja cada término de seguridad con su significado.",
+          "pairs": [
+            [
+              "Phishing",
+              "Suplantar a tu bróker con un mensaje para robar datos"
+            ],
+            [
+              "Urgencia",
+              "Plazo corto que empuja a actuar sin comprobar"
+            ],
+            [
+              "Entrada segura",
+              "Escribir tú la dirección o usar la app oficial, no el enlace"
+            ]
+          ],
+          "why": "El phishing engaña, la urgencia presiona y la entrada segura evita el enlace falso.",
+          "guia": "g2"
+        },
+        {
+          "id": "sg2-2",
+          "t": "choice",
+          "q": "Estás en un café y quieres entrar a tu bróker. ¿Qué es lo más prudente?",
+          "opts": [
+            "Usar la Wi-Fi abierta del café, que es gratuita y rápida",
+            "Usar tus datos móviles en lugar de la Wi-Fi abierta",
+            "Instalar una app desconocida que acelera la conexión",
+            "Pedir el móvil a otra persona para entrar más rápido"
+          ],
+          "a": 1,
+          "why": "Una red abierta la comparte cualquiera. Con tus datos móviles evitas depender de una red que no controlas.",
+          "guia": "g3",
+          "porque": [
+            "Una red abierta la comparte cualquiera, y no sabes quién la controla.",
+            null,
+            "Una app desconocida puede espiar o robar tus claves.",
+            "Entrar desde otro móvil expone tus claves a quien no debe."
+          ]
+        },
+        {
+          "id": "sg2-3",
+          "t": "choice",
+          "q": "¿Qué hábito protege mejor tu móvil si lo usas para operar?",
+          "opts": [
+            "Instalar apps de fuera de la tienda oficial porque son gratis",
+            "Dejarlo sin bloqueo para entrar más rápido",
+            "Bloqueo de pantalla y actualizaciones al día",
+            "Guardar la contraseña del bróker en una foto"
+          ],
+          "a": 2,
+          "why": "Bloquear la pantalla y actualizar corrige fallos de seguridad y frena a quien se haga con tu móvil.",
+          "guia": "g3",
+          "porque": [
+            "Las apps de fuera de la tienda oficial pueden esconder programas maliciosos.",
+            "Sin bloqueo, quien encuentre tu móvil entra en tu cuenta.",
+            null,
+            "Una foto de la contraseña queda en el móvil y a la vista de quien lo vea."
+          ]
+        },
+        {
+          "id": "sg2-4",
+          "t": "num",
+          "q": "Alguien con acceso a tu cuenta vende 2.000 € de tu cartera cada hora. Si tardas 3 horas en avisar al bróker, ¿cuántos miles de euros se han vendido?",
+          "unit": "mil €",
+          "a": 6,
+          "why": "2.000 € por hora × 3 horas = 6.000 €, es decir, 6 mil €. Avisar antes reduce la pérdida.",
+          "guia": "g4"
+        },
+        {
+          "id": "sg2-5",
+          "t": "choice",
+          "q": "Ves en tu cuenta una orden que no has hecho. ¿Qué haces primero?",
+          "opts": [
+            "Esperar a mañana por si es un error y se corrige solo",
+            "Llamar al número que viene en un mensaje reciente sobre la orden",
+            "Borrar la app del móvil y no volver a entrar en la cuenta",
+            "Cambiar la contraseña y avisar ya al bróker por su canal oficial"
+          ],
+          "a": 3,
+          "why": "Cada hora cuenta. Cambia la contraseña desde un dispositivo seguro y avisa al bróker por su canal oficial, no por un mensaje.",
+          "guia": "g4",
+          "porque": [
+            "Esperar da tiempo a quien tiene tu cuenta para seguir operando.",
+            "Un mensaje reciente puede ser del estafador: usa el canal oficial del bróker.",
+            "Borrar la app no cierra el acceso: siguen teniendo tu contraseña.",
+            null
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

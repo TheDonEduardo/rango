@@ -15,6 +15,44 @@
       "id": "g2",
       "titulo": "Ganancia y pérdida máximas",
       "texto": "La ganancia máxima es el crédito cobrado. La pérdida máxima es el ancho de un spread vertical menos el crédito, por 100 acciones: solo un lado puede perder.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Resultado al vencimiento de un iron condor con ejercicios 85, 90, 110 y 115 y crédito de 2 $: gana 200 $ entre 90 y 110, pierde 300 $ por debajo de 85 y por encima de 115, y los equilibrios están en 88 y 112.",
+        "series": [
+          {
+            "data": [-300,-300,-300,-300,-300,-300,-200,-100,0,100,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,100,0,-100,-200,-300,-300,-300,-300,-300,-300],
+            "tono": "ink"
+          }
+        ],
+        "margen": 90,
+        "lineas": [
+          {
+            "y": 200,
+            "texto": "Ganancia máx.: 200 $",
+            "tono": "up",
+            "lado": "i"
+          },
+          {
+            "y": -300,
+            "texto": "Máx.: −300 $",
+            "tono": "dn"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 8,
+            "y": 0,
+            "texto": "88 $",
+            "lado": "i"
+          },
+          {
+            "i": 32,
+            "y": 0,
+            "texto": "112 $"
+          }
+        ],
+        "h": 210
+      },
       "ejemplo": "Ancho de 5 $ y crédito de 2 $: ganas como mucho 200 $ y pierdes como mucho 300 $."
     },
     {

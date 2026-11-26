@@ -1,5 +1,5 @@
 {
-  "n": 19,
+  "n": 20,
   "id": "stopmovil",
   "track": "tecnico",
   "title": "Mover el stop",
@@ -27,6 +27,37 @@
       "id": "g4",
       "titulo": "Bajo una media o un mínimo",
       "texto": "En tendencia, el stop puede seguir una media de 10 o 50 sesiones o el último mínimo relevante. Cuanto más lenta la referencia, más ganancia devuelves y menos salidas falsas sufres.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Subida de 40 a 52 € con dos stops posibles: uno en 49 € conserva el 75 % de la subida y otro en 45 €, el 41,7 %.",
+        "series": [
+          {
+            "data": [40,43,46,49,52],
+            "texto": "52 €",
+            "tono": "up"
+          }
+        ],
+        "lineas": [
+          {
+            "y": 49,
+            "texto": "Stop 49 €: 75 %",
+            "tono": "sel",
+            "lado": "i"
+          },
+          {
+            "y": 45,
+            "texto": "Stop 45 €: 41,7 %",
+            "tono": "dn",
+            "lado": "i"
+          },
+          {
+            "y": 40,
+            "texto": "Entrada 40 €",
+            "tono": "ink"
+          }
+        ],
+        "h": 210
+      },
       "ejemplo": "De 40 € a 52 €: con stop en 49 € conservas el 75 % de la subida; en 45 €, el 41,7 %."
     }
   ],

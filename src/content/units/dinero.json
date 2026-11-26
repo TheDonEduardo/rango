@@ -32,6 +32,36 @@
       "id": "g2",
       "titulo": "La regla del 72",
       "texto": "Para saber cuántos años tarda en duplicarse tu dinero, divide 72 entre la rentabilidad anual. Sirve igual para ver cómo la inflación reduce lo que puedes comprar.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Capital de 1 a 4 veces el inicial: al 6 % anual se duplica en unos 12 años y al 3 %, en unos 24.",
+        "series": [
+          {
+            "data": [1.0,1.26,1.59,2.01,2.54,3.21,4.05],
+            "texto": "6 %",
+            "tono": "up"
+          },
+          {
+            "data": [1.0,1.13,1.27,1.43,1.6,1.81,2.03],
+            "texto": "3 %",
+            "tono": "sel"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 3,
+            "y": 2.01,
+            "texto": "12 años",
+            "lado": "i"
+          },
+          {
+            "i": 6,
+            "y": 2.03,
+            "texto": "24 años",
+            "lado": "i"
+          }
+        ]
+      },
       "ejemplo": "Al 6 % anual, tu dinero se duplica en unos 12 años; al 3 %, en 24."
     },
     {

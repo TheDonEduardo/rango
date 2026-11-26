@@ -15,6 +15,66 @@
       "id": "g2",
       "titulo": "Ganancia y pérdida máximas",
       "texto": "La pérdida máxima es lo pagado por 100 acciones. La ganancia máxima es la distancia entre ejercicios menos lo pagado, y solo llega si la acción acaba justo en el centro.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Resultado al vencimiento de una mariposa con calls de 95, 100 y 105 $ pagada 1 $: pierde 100 $ por debajo de 95 $ y por encima de 105 $, tiene los equilibrios en 96 $ y 104 $ y gana como máximo 400 $ si la acción acaba en 100 $.",
+        "series": [
+          {
+            "data": [
+              -100,
+              -100,
+              -100,
+              -100,
+              -100,
+              -100,
+              0,
+              100,
+              200,
+              300,
+              400,
+              300,
+              200,
+              100,
+              0,
+              -100,
+              -100,
+              -100,
+              -100,
+              -100,
+              -100
+            ],
+            "tono": "ink"
+          }
+        ],
+        "margen": 90,
+        "lineas": [
+          {
+            "y": -100,
+            "texto": "Máx.: −100 $",
+            "tono": "dn"
+          },
+          {
+            "y": 400,
+            "texto": "Ganancia máx.: 400 $",
+            "tono": "up",
+            "lado": "i"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 6,
+            "y": 0,
+            "texto": "96 $",
+            "lado": "i"
+          },
+          {
+            "i": 14,
+            "y": 0,
+            "texto": "104 $"
+          }
+        ],
+        "h": 210
+      },
       "ejemplo": "Pierdes como mucho 1 × 100 = 100 $ y ganas como mucho (5 − 1) × 100 = 400 $."
     },
     {

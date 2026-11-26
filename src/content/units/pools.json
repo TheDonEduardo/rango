@@ -21,6 +21,36 @@
       "id": "g3",
       "titulo": "Pérdida impermanente",
       "texto": "Es cuánto menos vale el pool que mantener tus monedas, en porcentaje: 2√r ÷ (1 + r) − 1, con r = precio nuevo ÷ inicial. Es simétrica: r y 1 ÷ r dan la misma pérdida.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Pérdida impermanente según el cambio de precio: simétrica y de −5,7 % cuando el precio se duplica o se reduce a la mitad.",
+        "series": [
+          {
+            "data": [-20.0,-12.14,-5.72,-1.48,0.0,-1.48,-5.72,-12.14,-20.0],
+            "tono": "dn"
+          }
+        ],
+        "margen": 20,
+        "marcas": [
+          {
+            "i": 2,
+            "y": -5.72,
+            "texto": "0,5: −5,7 %",
+            "lado": "i"
+          },
+          {
+            "i": 6,
+            "y": -5.72,
+            "texto": "2: −5,7 %"
+          },
+          {
+            "i": 4,
+            "y": 0,
+            "texto": "r = 1: 0 %"
+          }
+        ],
+        "h": 200
+      },
       "ejemplo": "r = 2,25: 12.000 ÷ 13.000 − 1 = −7,7 %. Con r = 2 y con r = 0,5: −5,7 % en ambos casos."
     },
     {

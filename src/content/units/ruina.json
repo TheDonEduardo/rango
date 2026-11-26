@@ -1,5 +1,5 @@
 {
-  "n": 25,
+  "n": 26,
   "id": "ruina",
   "track": "tecnico",
   "title": "Esperanza, rachas y riesgo de ruina",
@@ -21,6 +21,23 @@
       "id": "g3",
       "titulo": "Caída tras una racha y recuperación",
       "texto": "Perder un x % en n operaciones seguidas deja una caída de 1 − (1 − x)ⁿ: cada pérdida se calcula sobre lo que queda. Recuperar una caída c exige subir 1 ÷ (1 − c) − 1.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Caída de la cuenta tras de 0 a 5 pérdidas seguidas: arriesgando el 2 % llega al 9,6 % y arriesgando el 10 %, al 41 %.",
+        "series": [
+          {
+            "data": [0.0,2.0,4.0,5.9,7.8,9.6],
+            "texto": "2 %: 9,6 %",
+            "tono": "sel"
+          },
+          {
+            "data": [0.0,10.0,19.0,27.1,34.4,41.0],
+            "texto": "10 %: 41 %",
+            "tono": "dn"
+          }
+        ],
+        "h": 200
+      },
       "ejemplo": "Cinco pérdidas al 2 %: 1 − 0,98⁵ = 9,6 %; recuperar exige un 10,6 %. Cinco al 10 %: 41 %; recuperar exige un 69,4 %."
     },
     {

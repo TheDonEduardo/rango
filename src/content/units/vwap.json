@@ -1,5 +1,5 @@
 {
-  "n": 11,
+  "n": 12,
   "id": "vwap",
   "track": "tecnico",
   "title": "VWAP y perfil de volumen",
@@ -21,6 +21,37 @@
       "id": "g3",
       "titulo": "Comprador medio, resistencia y stop",
       "texto": "Con el precio sobre el VWAP anclado, el comprador medio desde el evento gana; bajo él, pierde. Quien pierde suele vender al recuperar su precio (resistencia); quien gana puede defender el nivel (soporte). Stop: algo por debajo.",
+      "figura": {
+        "type": "velas",
+        "alt": "Velas sobre el VWAP anclado de 52,80 €: cierre en 54,30 €, que se toma como entrada, con el stop en 52,30 €.",
+        "data": [
+          [52,53,51.8,52.8],
+          [52.8,54.2,52.4,54],
+          [54,54.6,53,53.2],
+          [53.2,54.5,52.9,54.3],
+          null,
+          null,
+          null
+        ],
+        "lineas": [
+          {
+            "y": 54.3,
+            "texto": "Entrada 54,30 €",
+            "tono": "acc"
+          },
+          {
+            "y": 52.8,
+            "texto": "VWAP 52,80 €",
+            "tono": "sel"
+          },
+          {
+            "y": 52.3,
+            "texto": "Stop 52,30 €",
+            "tono": "dn"
+          }
+        ],
+        "h": 230
+      },
       "ejemplo": "VWAP anclado 52,80 € y cierre 54,30 €: gana 1,50 € (2,8 %). Entrada 54,30 €, stop 52,30 €: 2,00 € por acción; con 100 € de riesgo, 50 acciones."
     },
     {

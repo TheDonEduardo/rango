@@ -1,0 +1,199 @@
+{
+  "n": 13,
+  "id": "nucleo",
+  "track": "pasiva",
+  "title": "Núcleo y satélite",
+  "blurb": "Una base indexada y apuestas pequeñas con tope: reparto, coste y rebalanceo.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Núcleo y satélite",
+      "texto": "El núcleo es la mayor parte: fondos indexados baratos y diversificados. Los satélites son apuestas pequeñas (un sector, un tema, acciones sueltas) con un tope fijado de antemano.",
+      "ejemplo": "Cartera de 8.000 €: núcleo del 90 %, 7.200 €, y satélite del 10 %, 800 €."
+    },
+    {
+      "id": "g2",
+      "titulo": "El tope del satélite",
+      "texto": "El tope sale de lo que puedes perder: pérdida de la cartera = peso del satélite × caída del satélite. Decídelo antes de comprar, no después.",
+      "ejemplo": "Satélite del 10 % que cae un 50 %: la cartera pierde 0,10 × 50 % = 5 %, o 400 € de 8.000 €."
+    },
+    {
+      "id": "g3",
+      "titulo": "El coste",
+      "texto": "El coste de la cartera es la media ponderada de los TER: cada coste por su peso. Un satélite caro pesa poco, así que el total sube poco.",
+      "ejemplo": "90 % al 0,10 % y 10 % al 0,60 %: 0,09 % + 0,06 % = 0,15 %."
+    },
+    {
+      "id": "g4",
+      "titulo": "Cuando el satélite crece",
+      "texto": "Si el satélite sube, su peso supera el tope. Rebalancea: vende lo que sobra y llévalo al núcleo, sin dejar que una apuesta crezca hasta mandar.",
+      "ejemplo": "Satélite de 800 € que llega a 1.600 € con núcleo de 7.200 €: 8.800 €, peso 18,2 %. Con tope del 10 % (880 €), vendes 720 €."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "nc1",
+      "title": "Reparto y tope",
+      "ex": [
+        {
+          "id": "nc1-1",
+          "t": "choice",
+          "q": "En una cartera de núcleo y satélite, ¿qué función tiene el núcleo?",
+          "opts": [
+            "Apuestas pequeñas con el máximo potencial de ganancia",
+            "La base diversificada y barata que lleva la mayor parte",
+            "Una reserva en efectivo para las emergencias",
+            "Las posiciones que se venden en cuanto suben mucho"
+          ],
+          "a": 1,
+          "why": "El núcleo es la base: fondos indexados diversificados y baratos que llevan la mayor parte de la cartera. Las apuestas van en el satélite.",
+          "guia": "g1",
+          "porque": [
+            "Eso es el satélite: apuestas pequeñas. El núcleo es la base, no la parte arriesgada.",
+            null,
+            "El efectivo de emergencias va aparte; el núcleo se invierte en fondos diversificados.",
+            "Lo que crece demasiado se rebalancea, pero eso no define al núcleo."
+          ]
+        },
+        {
+          "id": "nc1-2",
+          "t": "num",
+          "q": "Tu cartera de núcleo y satélite vale 6.000 € y fijas un tope del 15 % para el satélite. ¿Cuántos euros como máximo puedes tener en el satélite?",
+          "unit": "€",
+          "a": 900,
+          "why": "6.000 × 0,15 = 900 €. El resto, 5.100 €, va al núcleo.",
+          "guia": "g1"
+        },
+        {
+          "id": "nc1-3",
+          "t": "slide",
+          "q": "Tu cartera vale 8.000 € y aceptas perder como máximo 320 € (un 4 % de la cartera) si el satélite cae un 50 % y el núcleo no se mueve. Ajusta el peso del satélite hasta que la pérdida sea justo esa.",
+          "label": "Peso del satélite",
+          "min": 0,
+          "max": 20,
+          "step": 1,
+          "start": 16,
+          "a": 8,
+          "unit": "%",
+          "why": "Pérdida = peso × 50 % × 8.000 €. Con un 8 %: 0,08 × 0,50 = 4 % de la cartera, 320 €.",
+          "show": [
+            {
+              "label": "Euros en el satélite",
+              "k": 80,
+              "b": 0,
+              "unit": "€"
+            },
+            {
+              "label": "Pérdida si cae un 50 %",
+              "k": 40,
+              "b": 0,
+              "unit": "€"
+            }
+          ],
+          "guia": "g2"
+        },
+        {
+          "id": "nc1-4",
+          "t": "num",
+          "q": "Un satélite pesa el 10 % de tu cartera y cae un 50 %, mientras el núcleo no se mueve. ¿Cuánto pierde la cartera entera, en %?",
+          "unit": "%",
+          "a": 5,
+          "why": "0,10 × 50 % = 5 %. Por eso el tope del satélite limita lo que puede dañar a la cartera.",
+          "guia": "g2"
+        },
+        {
+          "id": "nc1-5",
+          "t": "match",
+          "q": "Empareja cada término de la cartera de núcleo y satélite con su significado.",
+          "pairs": [
+            [
+              "Núcleo",
+              "Fondos indexados diversificados que llevan la mayor parte"
+            ],
+            [
+              "Satélite",
+              "Apuesta pequeña en un sector, un tema o acciones sueltas"
+            ],
+            [
+              "Tope del satélite",
+              "Peso máximo fijado antes de comprar"
+            ]
+          ],
+          "why": "El núcleo da la base; el satélite es la apuesta pequeña, y su tope se decide antes de comprar.",
+          "guia": "g1"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "nc2",
+      "title": "Coste y rebalanceo",
+      "ex": [
+        {
+          "id": "nc2-1",
+          "t": "num",
+          "q": "Tu núcleo, un 90 % de la cartera, tiene un TER del 0,10 % y tu satélite, el 10 %, un TER del 0,60 %. ¿Cuál es el coste medio de la cartera, en %? Redondea a dos decimales.",
+          "unit": "%",
+          "a": 0.15,
+          "why": "0,90 × 0,10 % + 0,10 × 0,60 % = 0,09 % + 0,06 % = 0,15 %. El satélite caro pesa poco y encarece poco el total.",
+          "tol": 0.01,
+          "guia": "g3"
+        },
+        {
+          "id": "nc2-2",
+          "t": "choice",
+          "q": "Una cartera tiene dos partes con distinto TER. ¿Cómo se calcula su coste total?",
+          "opts": [
+            "Con la media simple: se suman los dos TER y se divide entre dos",
+            "Con el TER del satélite, que es la parte más cara",
+            "Con la media ponderada: cada TER multiplicado por su peso",
+            "Con el TER del núcleo, porque es la parte más grande"
+          ],
+          "a": 2,
+          "why": "Cada TER cuenta según el peso de su parte en la cartera: es una media ponderada, no una simple.",
+          "guia": "g3",
+          "porque": [
+            "La media simple ignora el peso: un satélite del 10 % no cuenta igual que un núcleo del 90 %.",
+            "Solo ese TER sobrestima el coste: el satélite pesa poco en la cartera.",
+            null,
+            "Solo ese TER lo subestima: el satélite, aunque pese poco, también suma coste."
+          ]
+        },
+        {
+          "id": "nc2-3",
+          "t": "num",
+          "q": "Tu cartera de 8.000 € tiene un núcleo de 7.200 € y un satélite de 800 €. El satélite se duplica hasta 1.600 € y el núcleo no cambia. ¿Qué peso tiene ahora el satélite, en %? Redondea a un decimal.",
+          "unit": "%",
+          "a": 18.2,
+          "why": "Total: 7.200 + 1.600 = 8.800 €. Peso: 1.600 ÷ 8.800 = 18,2 %, casi el doble del 10 % inicial.",
+          "tol": 0.06,
+          "guia": "g4"
+        },
+        {
+          "id": "nc2-4",
+          "t": "num",
+          "q": "Tu núcleo vale 7.200 € y tu satélite 1.600 €, en total 8.800 €. Tu tope del satélite es el 10 %. ¿Cuántos euros vendes del satélite para volver al tope?",
+          "unit": "€",
+          "a": 720,
+          "why": "Tope: 8.800 × 0,10 = 880 €. Sobran 1.600 − 880 = 720 €, que pasas al núcleo.",
+          "guia": "g4"
+        },
+        {
+          "id": "nc2-5",
+          "t": "order",
+          "q": "Ordena los pasos para devolver un satélite que ha crecido a su tope.",
+          "items": [
+            "Calcular el peso actual del satélite",
+            "Compararlo con el tope fijado",
+            "Calcular los euros que sobran",
+            "Vender ese importe del satélite",
+            "Comprar con ese dinero fondos del núcleo"
+          ],
+          "why": "Primero mides y comparas con el tope, luego calculas el exceso, lo vendes y lo llevas al núcleo.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

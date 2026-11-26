@@ -1753,5 +1753,66 @@
    "arrendamientos"
   ],
   "d": "Contrato por el que se usa un activo (un local, un avión) a cambio de pagos periódicos. Con las NIIF se registra como activo y pasivo."
+ },
+ {
+  "termino": "núcleo y satélite",
+  "d": "Cartera con una base indexada y diversificada (núcleo) y apuestas pequeñas con un peso máximo fijado de antemano (satélites)."
+ },
+ {
+  "termino": "canal de tendencia",
+  "alias": [
+   "canal alcista",
+   "canal de tendencia alcista"
+  ],
+  "d": "Zona entre la línea de tendencia y su paralela por el extremo opuesto: el precio oscila entre ambas."
+ },
+ {
+  "termino": "línea de tendencia",
+  "alias": [
+   "líneas de tendencia",
+   "línea de tendencia alcista",
+   "línea de tendencia bajista"
+  ],
+  "d": "Recta que une mínimos crecientes (tendencia alcista) o máximos decrecientes (bajista). Se rompe con un cierre fuera de ella."
+ },
+ {
+  "termino": "DAO",
+  "alias": [
+   "DAOs"
+  ],
+  "d": "Organización autónoma descentralizada: sus reglas viven en contratos inteligentes y sus miembros votan con tokens."
+ },
+ {
+  "termino": "token de gobernanza",
+  "alias": [
+   "tokens de gobernanza"
+  ],
+  "d": "Token que da derecho a votar las decisiones de un proyecto o una DAO, normalmente un voto por token."
+ },
+ {
+  "termino": "quórum",
+  "d": "Número mínimo de votos que necesita una votación para ser válida, gane quien gane."
+ },
+ {
+  "termino": "timelock",
+  "d": "Espera obligatoria entre aprobar una propuesta y ejecutarla, que da tiempo a detectar y frenar un ataque."
+ },
+ {
+  "termino": "phishing",
+  "d": "Mensaje o web falsos que suplantan a tu banco o bróker para robarte contraseñas o dinero."
+ },
+ {
+  "termino": "doble factor",
+  "alias": [
+   "autenticación en dos pasos"
+  ],
+  "d": "Protección que pide un segundo código, además de la contraseña, para entrar en una cuenta."
+ },
+ {
+  "termino": "gestor de contraseñas",
+  "alias": [
+   "gestores de contraseñas"
+  ],
+  "d": "Aplicación que guarda contraseñas largas y distintas para cada servicio, protegidas con una clave maestra."
  }
 ]

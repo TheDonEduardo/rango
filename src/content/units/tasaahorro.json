@@ -21,6 +21,40 @@
       "id": "g3",
       "titulo": "Años hasta la meta",
       "texto": "Partiendo de cero, con ahorro constante a final de año y rentabilidad real constante del 4 %, el tiempo solo depende de la tasa de ahorro, no del sueldo. Cuanto más ahorras, antes llegas.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Años hasta la meta según la tasa de ahorro, con rentabilidad real del 4 %: unos 59 con el 10 %, 35 con el 25 %, 18 con el 50 % y 7 con el 75 %.",
+        "series": [
+          {
+            "data": [58.7,48.4,41.0,35.3,30.7,26.8,23.4,20.4,17.7,15.2,13.0,11.0,9.1,7.3],
+            "tono": "sel"
+          }
+        ],
+        "margen": 20,
+        "marcas": [
+          {
+            "i": 0,
+            "y": 58.7,
+            "texto": "10 %: 59 años"
+          },
+          {
+            "i": 3,
+            "y": 35.3,
+            "texto": "25 %: 35"
+          },
+          {
+            "i": 8,
+            "y": 17.7,
+            "texto": "50 %: 18"
+          },
+          {
+            "i": 13,
+            "y": 7.3,
+            "texto": "75 %: 7",
+            "lado": "i"
+          }
+        ]
+      },
       "ejemplo": "Ahorrando el 10 %: unos 59 años. El 25 %: unos 35. El 50 %: unos 18. El 75 %: unos 7."
     },
     {

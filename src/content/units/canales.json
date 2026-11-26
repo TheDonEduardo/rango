@@ -1,0 +1,504 @@
+{
+  "n": 3,
+  "id": "canales",
+  "track": "tecnico",
+  "title": "Líneas de tendencia y canales",
+  "blurb": "Trazar la línea, ver el canal, distinguir mecha de ruptura y operar entre sus bordes.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Trazar la línea",
+      "texto": "En tendencia alcista la línea une mínimos crecientes, por debajo del precio; en bajista, máximos decrecientes, por encima. Dos puntos la trazan y el tercero la confirma.",
+      "ejemplo": "Mínimos de 40,00 € y, ocho sesiones después, de 44,00 €: sube 0,50 € por sesión. Cuatro más tarde vale 46,00 €."
+    },
+    {
+      "id": "g2",
+      "titulo": "El canal",
+      "texto": "Una paralela por el otro extremo forma el canal. Los bordes dan zonas de entrada (la inferior) y de toma de beneficios (la superior), con el stop bajo la línea.",
+      "ejemplo": "Línea inferior en 44,00 € y superior en 50,00 €: entrada en 44,50 €, stop en 43,50 € y objetivo en 49,50 €. Riesgo de 1,00 € y ganancia de 5,00 €: 5R.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Un precio que oscila dentro de dos líneas paralelas ascendentes, el canal, con un valor en cada borde",
+        "series": [
+          {
+            "data": [
+              44.5,
+              45.0,
+              45.5,
+              46.0,
+              46.5,
+              47.0,
+              47.5,
+              48.0,
+              48.5,
+              49.0,
+              49.5,
+              50.0
+            ],
+            "texto": "Superior: 50 €",
+            "tono": "dn",
+            "dy": -4
+          },
+          {
+            "data": [
+              41.5,
+              40.2,
+              39.6,
+              41.8,
+              43.3,
+              42.4,
+              42.0,
+              44.5,
+              46.3,
+              48.8,
+              45.8,
+              44.6
+            ],
+            "texto": "Precio",
+            "tono": "sel",
+            "dy": 0
+          },
+          {
+            "data": [
+              38.5,
+              39.0,
+              39.5,
+              40.0,
+              40.5,
+              41.0,
+              41.5,
+              42.0,
+              42.5,
+              43.0,
+              43.5,
+              44.0
+            ],
+            "texto": "Inferior: 44 €",
+            "tono": "up",
+            "dy": 10
+          }
+        ]
+      }
+    },
+    {
+      "id": "g3",
+      "titulo": "Mecha o ruptura",
+      "texto": "Una ruptura exige un cierre fuera de la línea, mejor con volumen alto. Una mecha que la cruza y cierra dentro no cuenta. Al romperse, la tendencia puede haber terminado.",
+      "ejemplo": "Línea en 46,00 €: mínimo de 45,60 € y cierre en 46,40 €, no hay ruptura. Cierre en 44,80 € con el doble de volumen: sí."
+    },
+    {
+      "id": "g4",
+      "titulo": "Fiabilidad y pendiente",
+      "texto": "Cuantos más toques y más sesiones entre ellos, más fiable es la línea. Si es muy empinada, es difícil de sostener: se rompe pronto y se traza otra.",
+      "ejemplo": "Línea con 4 toques en 30 sesiones pesa más que una de 2 toques en 5. Subir 2 € por sesión en un valor de 40 € es un 5 % cada día."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "lt1",
+      "title": "Trazar y leer la línea",
+      "ex": [
+        {
+          "id": "lt1-1",
+          "t": "choice",
+          "q": "En una tendencia alcista, ¿qué puntos une la línea de tendencia?",
+          "opts": [
+            "Los máximos decrecientes, por encima del precio",
+            "Los mínimos crecientes, por debajo del precio",
+            "Las aperturas de todas las velas verdes del gráfico",
+            "El punto medio de cada vela, sea cual sea su orientación"
+          ],
+          "a": 1,
+          "why": "En una tendencia alcista cada mínimo queda más arriba que el anterior: la línea los une por debajo del precio.",
+          "guia": "g1",
+          "porque": [
+            "Eso describe una línea bajista, que va por encima del precio.",
+            null,
+            "Las aperturas de las velas verdes no marcan los mínimos del movimiento.",
+            "El punto medio de cada vela no define mínimos ni máximos: la línea usa los extremos."
+          ]
+        },
+        {
+          "id": "lt1-2",
+          "t": "num",
+          "q": "Trazas una línea alcista por dos mínimos: 40,00 € y, ocho sesiones después, 44,00 €. Si la línea sigue con la misma pendiente, ¿cuánto vale 4 sesiones después del segundo mínimo?",
+          "unit": "€",
+          "a": 46,
+          "why": "Pendiente: (44 − 40) ÷ 8 = 0,50 € por sesión. Cuatro sesiones más: 44 + 4 × 0,50 = 46,00 €.",
+          "guia": "g1"
+        },
+        {
+          "id": "lt1-3",
+          "t": "tap",
+          "q": "Una línea de tendencia alcista sube 0,50 € por sesión y vale 40,00 € en la primera vela. ¿Cuál es la primera vela que cierra por debajo de la línea?",
+          "chart": {
+            "type": "candles",
+            "data": [
+              [
+                40.6,
+                41.4,
+                40.2,
+                41.2
+              ],
+              [
+                41.2,
+                41.8,
+                40.9,
+                41.6
+              ],
+              [
+                41.6,
+                42.3,
+                41.4,
+                42.1
+              ],
+              [
+                42.1,
+                42.2,
+                41.4,
+                41.7
+              ],
+              [
+                41.7,
+                42.6,
+                41.6,
+                42.4
+              ],
+              [
+                42.4,
+                43.2,
+                42.3,
+                43.0
+              ],
+              [
+                43.0,
+                43.6,
+                42.8,
+                43.4
+              ],
+              [
+                43.4,
+                44.2,
+                43.3,
+                44.0
+              ],
+              [
+                44.2,
+                44.9,
+                44.1,
+                44.7
+              ],
+              [
+                44.7,
+                45.3,
+                44.6,
+                45.1
+              ],
+              [
+                45.1,
+                45.6,
+                44.9,
+                45.4
+              ],
+              [
+                45.4,
+                45.5,
+                44.8,
+                45.0
+              ],
+              [
+                45.0,
+                45.2,
+                44.2,
+                44.4
+              ],
+              [
+                44.4,
+                44.9,
+                43.8,
+                44.0
+              ]
+            ],
+            "h": 250,
+            "alt": "Catorce velas con una subida sostenida y un tramo final a la baja"
+          },
+          "a": 11,
+          "why": "En la duodécima vela la línea vale 40 + 11 × 0,50 = 45,50 € y cierra en 45,00 €. Antes, varias velas la cruzaron con la mecha (la cuarta: mínimo 41,40 € con la línea en 41,50 €), pero cerraron encima.",
+          "guia": "g3"
+        },
+        {
+          "id": "lt1-4",
+          "t": "choice",
+          "q": "La línea de tendencia alcista vale hoy 46,00 €. La acción baja hasta un mínimo de 45,60 € y cierra en 46,40 €. ¿Qué conclusión es correcta?",
+          "opts": [
+            "La línea se ha roto, porque el mínimo quedó 0,40 € por debajo",
+            "La tendencia ha pasado a bajista desde hoy",
+            "Sigue intacta: la mecha la cruzó, pero el cierre quedó encima",
+            "La línea ya no sirve y hay que borrarla del gráfico"
+          ],
+          "a": 2,
+          "why": "Una ruptura exige un cierre fuera de la línea. Aquí solo la cruzó la mecha y el cierre, 46,40 €, quedó por encima.",
+          "guia": "g3",
+          "porque": [
+            "Una ruptura exige un cierre fuera de la línea, no solo que la cruce una mecha.",
+            "Un cierre por encima de la línea no cambia la tendencia, y menos en un solo día.",
+            null,
+            "Sigue sirviendo: la mecha no la invalida y el cierre quedó encima."
+          ]
+        },
+        {
+          "id": "lt1-5",
+          "t": "match",
+          "q": "Empareja cada término de las líneas de tendencia con su significado.",
+          "pairs": [
+            [
+              "Línea de tendencia alcista",
+              "Une mínimos crecientes, por debajo del precio"
+            ],
+            [
+              "Línea de tendencia bajista",
+              "Une máximos decrecientes, por encima del precio"
+            ],
+            [
+              "Puntos de trazado",
+              "Dos la dibujan y un tercero la confirma"
+            ]
+          ],
+          "why": "La línea alcista va por debajo y la bajista por encima; dos puntos la trazan y el tercero la confirma.",
+          "guia": "g1"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "lt2",
+      "title": "Canal, plan y fiabilidad",
+      "ex": [
+        {
+          "id": "lt2-1",
+          "t": "num",
+          "q": "Compras cerca de la línea inferior de un canal alcista: entrada en 44,50 €, stop en 43,50 € y objetivo en 49,50 €, junto a la línea superior. ¿Cuántas R ganas si llega al objetivo?",
+          "unit": "R",
+          "a": 5,
+          "why": "Riesgo: 44,50 − 43,50 = 1,00 €. Ganancia: 49,50 − 44,50 = 5,00 € = 5R.",
+          "guia": "g2"
+        },
+        {
+          "id": "lt2-2",
+          "t": "plan",
+          "q": "Un canal alcista tiene hoy la línea inferior en 44,00 € y la superior en 50,00 €. Monta la operación: entrada en 44,50 €, stop 0,50 € bajo la línea inferior y objetivo 0,50 € bajo la superior.",
+          "chart": {
+            "type": "candles",
+            "data": [
+              [
+                37.0,
+                39.6,
+                36.6,
+                39.2
+              ],
+              [
+                39.2,
+                39.6,
+                37.6,
+                38.0
+              ],
+              [
+                38.0,
+                38.4,
+                36.4,
+                36.8
+              ],
+              [
+                36.8,
+                37.2,
+                36.2,
+                36.6
+              ],
+              [
+                36.6,
+                38.2,
+                36.6,
+                37.8
+              ],
+              [
+                37.8,
+                40.4,
+                37.4,
+                40.0
+              ],
+              [
+                40.0,
+                42.6,
+                39.6,
+                42.2
+              ],
+              [
+                42.2,
+                43.8,
+                41.8,
+                43.4
+              ],
+              [
+                43.4,
+                43.8,
+                42.8,
+                43.2
+              ],
+              [
+                43.2,
+                43.6,
+                41.6,
+                42.0
+              ],
+              [
+                42.0,
+                42.4,
+                40.4,
+                40.8
+              ],
+              [
+                40.8,
+                41.2,
+                40.2,
+                40.6
+              ],
+              [
+                40.6,
+                42.2,
+                40.6,
+                41.8
+              ],
+              [
+                41.8,
+                44.4,
+                41.4,
+                44.0
+              ],
+              [
+                44.0,
+                46.6,
+                43.6,
+                46.2
+              ],
+              [
+                46.2,
+                47.8,
+                45.8,
+                47.4
+              ],
+              [
+                47.4,
+                47.8,
+                46.8,
+                47.2
+              ],
+              [
+                47.2,
+                47.6,
+                45.6,
+                46.0
+              ],
+              [
+                46.0,
+                46.4,
+                44.4,
+                44.8
+              ],
+              [
+                44.8,
+                45.2,
+                44.2,
+                44.6
+              ]
+            ],
+            "h": 270,
+            "alt": "Gráfico de velas que oscilan dentro de un canal ascendente, con tres líneas para colocar"
+          },
+          "place": [
+            {
+              "id": "entry",
+              "label": "Entrada",
+              "a": 44.5,
+              "start": 46.0
+            },
+            {
+              "id": "stop",
+              "label": "Stop",
+              "a": 43.5,
+              "start": 41.8
+            },
+            {
+              "id": "target",
+              "label": "Objetivo",
+              "a": 49.5,
+              "start": 47.0
+            }
+          ],
+          "why": "Stop: 44,00 − 0,50 = 43,50 €. Objetivo: 50,00 − 0,50 = 49,50 €. Riesgo de 1,00 € y ganancia de 5,00 €: 5R.",
+          "guia": "g2"
+        },
+        {
+          "id": "lt2-3",
+          "t": "choice",
+          "q": "Tienes una posición en una tendencia alcista. La línea vale 46,00 €, el precio cierra en 44,80 € y el volumen dobla al medio. ¿Qué es lo más coherente?",
+          "opts": [
+            "Esperar a que vuelva sin poner ningún límite a la pérdida",
+            "Comprar más para promediar el precio a la baja",
+            "Ignorarlo: un solo cierre nunca cuenta",
+            "Que la tendencia puede haber terminado: aplicar tu plan de salida"
+          ],
+          "a": 3,
+          "why": "Un cierre fuera de la línea con mucho volumen avisa de que la tendencia puede haber terminado. Lo coherente es ejecutar el plan.",
+          "guia": "g3",
+          "porque": [
+            "Sin límite de pérdida, una ruptura puede convertirse en una caída grande.",
+            "Promediar a la baja añade riesgo justo cuando la tendencia puede haber terminado.",
+            "Un cierre con el doble de volumen fuera de la línea sí es una señal a tener en cuenta.",
+            null
+          ]
+        },
+        {
+          "id": "lt2-4",
+          "t": "choice",
+          "q": "Tienes dos líneas de tendencia alcista del mismo valor. La A toca el precio 4 veces en 30 sesiones; la B, 2 veces en 5 sesiones. ¿Cuál es más fiable?",
+          "opts": [
+            "La A: más toques y más tiempo la confirman",
+            "La B: al ser reciente refleja mejor el precio actual",
+            "Las dos igual: solo importa que sea alcista",
+            "La B: con dos puntos ya queda confirmada"
+          ],
+          "a": 0,
+          "why": "Dos puntos solo trazan la línea; el tercero y los siguientes la confirman. Cuantos más toques y más sesiones, más fiable.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Una línea reciente con dos toques apenas está trazada, no confirmada.",
+            "No: la fiabilidad depende de los toques y del tiempo, no solo de su dirección.",
+            "Dos puntos solo trazan la línea; se confirma con un tercero."
+          ]
+        },
+        {
+          "id": "lt2-5",
+          "t": "choice",
+          "q": "Una línea de tendencia alcista sube 2 € por sesión en un valor de 40 €. ¿Qué es lo más probable?",
+          "opts": [
+            "Que sea la más fiable, porque sube más rápido",
+            "Que se rompa pronto y haya que trazar otra línea",
+            "Que el precio nunca llegue a romperla",
+            "Que el canal sea el doble de ancho"
+          ],
+          "a": 1,
+          "why": "Una pendiente así, un 5 % por sesión, es difícil de mantener. Lo normal es que se rompa pronto y haya que trazar una línea nueva.",
+          "guia": "g4",
+          "porque": [
+            "Al contrario: las pendientes muy fuertes se rompen antes y son menos fiables.",
+            null,
+            "Cualquier línea se puede romper, y una tan empinada lo hace antes.",
+            "La pendiente no determina el ancho del canal, que sale de la paralela."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

@@ -9,6 +9,23 @@
       "id": "g1",
       "titulo": "La cuota por dentro",
       "texto": "Cada cuota suma los intereses de lo que debes ese mes y una parte de capital. La cuota no cambia, pero al principio es casi toda intereses y al final, casi toda capital.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Cuota fija de 711 € al mes en 300 meses: el primer mes son 375 € de intereses y 336 € de capital; con los años los intereses bajan y el capital sube.",
+        "series": [
+          {
+            "data": [375,322,259,185,100,2],
+            "texto": "Intereses",
+            "tono": "dn"
+          },
+          {
+            "data": [336,390,453,526,611,710],
+            "texto": "Capital",
+            "tono": "up"
+          }
+        ],
+        "h": 210
+      },
       "ejemplo": "150.000 € al 3 %: el primer mes, 375 € de intereses y 336 € de capital."
     },
     {

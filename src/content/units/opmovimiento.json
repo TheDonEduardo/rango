@@ -9,6 +9,38 @@
       "id": "g1",
       "titulo": "Straddle",
       "texto": "Comprar una call y una put del mismo ejercicio. Gana si la acción se mueve mucho en cualquier dirección y pierde lo pagado si se queda quieta.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Resultado al vencimiento de un straddle de 100 $ comprado por 7,50 $ por acción: pierde 7,50 $ si acaba en 100 $ y gana por debajo de 92,50 $ y por encima de 107,50 $.",
+        "series": [
+          {
+            "data": [7.5,5.0,2.5,0.0,-2.5,-5.0,-7.5,-5.0,-2.5,0.0,2.5,5.0,7.5],
+            "tono": "ink"
+          }
+        ],
+        "margen": 20,
+        "lineas": [
+          {
+            "y": -7.5,
+            "texto": "Pérdida máx.: −7,50 $",
+            "tono": "dn"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 3,
+            "y": 0,
+            "texto": "92,50 $",
+            "lado": "i"
+          },
+          {
+            "i": 9,
+            "y": 0,
+            "texto": "107,50 $"
+          }
+        ],
+        "h": 200
+      },
       "ejemplo": "Call y put de 100 $ por 7,50 $: equilibrios en 92,50 $ y 107,50 $."
     },
     {

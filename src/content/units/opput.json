@@ -15,6 +15,34 @@
       "id": "g2",
       "titulo": "Prima y coste real",
       "texto": "Si la acción queda por encima del ejercicio, ganas la prima y nada más. Si te ejercen, tu coste real es el ejercicio menos la prima cobrada.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Resultado al vencimiento de una put vendida con ejercicio de 45 $ y prima de 1,50 $: gana 1,50 $ por encima de 45 $ y pierde por debajo del equilibrio de 43,50 $.",
+        "series": [
+          {
+            "data": [-13.5,-12.0,-10.5,-9.0,-7.5,-6.0,-4.5,-3.0,-1.5,0.0,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5],
+            "tono": "ink"
+          }
+        ],
+        "margen": 20,
+        "lineas": [
+          {
+            "y": 1.5,
+            "texto": "Ganancia máx.: 1,50 $",
+            "tono": "up",
+            "lado": "i"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 9,
+            "y": 0,
+            "texto": "43,50 $",
+            "lado": "i"
+          }
+        ],
+        "h": 200
+      },
       "ejemplo": "Ejercicio 45 $ y prima 1,50 $: compras a 43,50 $, o ganas un 3,3 %."
     },
     {

@@ -1,5 +1,5 @@
 {
-  "n": 20,
+  "n": 21,
   "id": "apalancados",
   "track": "pasiva",
   "title": "ETF apalancados e inversos",
@@ -15,6 +15,37 @@
       "id": "g2",
       "titulo": "Reajuste y decaimiento",
       "texto": "Cada día el fondo se reajusta al capital que tiene ese día. Si el índice oscila arriba y abajo, el efecto compuesto resta: es el decaimiento por volatilidad.",
+      "figura": {
+        "type": "curvas",
+        "alt": "Un índice que sube un 10 % y baja un 10 % pasa de 100 a 99; un ETF 2x pasa de 100 a 120 y a 96 (en base 100: −4 %, como 500 € que acaban en 480 €).",
+        "series": [
+          {
+            "data": [
+              100,
+              110,
+              99
+            ],
+            "texto": "Índice 99",
+            "tono": "sel"
+          },
+          {
+            "data": [
+              100,
+              120,
+              96
+            ],
+            "texto": "2x 96 (−4 %)",
+            "tono": "dn"
+          }
+        ],
+        "lineas": [
+          {
+            "y": 100,
+            "tono": "ink"
+          }
+        ],
+        "h": 190
+      },
       "ejemplo": "El índice sube un 10 % y baja un 10 %: pasa de 100 a 99 (−1 %). El 2x: 500 × 1,20 × 0,80 = 480 €, un 4 % menos."
     },
     {

@@ -1,5 +1,5 @@
 {
-  "n": 29,
+  "n": 30,
   "id": "amplitud",
   "track": "tecnico",
   "title": "Amplitud de mercado",
@@ -27,6 +27,36 @@
       "id": "g4",
       "titulo": "Divergencia y qué hacer",
       "texto": "Hay divergencia si el índice ponderado por capitalización sube pero la amplitud empeora: pocas grandes lo sostienen. No predice caídas. Criterio operativo: menos compras, stops más ceñidos y menos riesgo.",
+      "figura": {
+        "type": "curvas",
+        "alt": "El porcentaje de valores sobre su media de 50 sesiones baja del 70 % al 52 %; el 60 % marca un mercado amplio y el 40 %, uno débil.",
+        "series": [
+          {
+            "data": [
+              70,
+              52
+            ],
+            "texto": "70 → 52 %",
+            "tono": "dn"
+          }
+        ],
+        "margen": 90,
+        "lineas": [
+          {
+            "y": 60,
+            "texto": "Amplio: 60 %",
+            "tono": "up",
+            "lado": "i"
+          },
+          {
+            "y": 40,
+            "texto": "Débil: 40 %",
+            "tono": "ink",
+            "lado": "i"
+          }
+        ],
+        "h": 190
+      },
       "ejemplo": "El índice sube un 3 % y el % sobre la media de 50 baja del 70 % al 52 %. Pasas del 1 % al 0,5 % de riesgo: con 20.000 €, 100 € en vez de 200 €."
     }
   ],
