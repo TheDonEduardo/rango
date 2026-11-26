@@ -69,12 +69,10 @@ button{font:inherit;color:inherit;cursor:pointer}
 .hoy-row .btn{width:auto;padding:10px 18px;flex:none}
 .goal-h{display:flex;justify-content:space-between;align-items:baseline;font-weight:600}
 .goal-h span:last-child{font-variant-numeric:tabular-nums;color:var(--ink-2);font-weight:500}
-.tracks{margin:16px 0 0;display:flex;gap:4px;padding:4px;background:var(--surface);border:1px solid var(--line);border-radius:999px;overflow-x:auto;scrollbar-width:none;scroll-padding:0 4px}
-.tracks::-webkit-scrollbar{display:none}
-/* Cuatro rutas: cada botón ocupa según su texto, para que «Fundamental» quepa entero en móvil. */
-.tracks button{flex:1 0 auto;background:none;border:0;padding:9px 12px;border-radius:999px;font-weight:600;font-size:15px;color:var(--ink-2);white-space:nowrap}
+.tracks{margin:16px 0 0;display:flex;flex-wrap:wrap;gap:4px;padding:4px;background:var(--surface);border:1px solid var(--line);border-radius:26px}
+/* Siete rutas: pasan a varias líneas, todas a la vista sin desplazamiento. */
+.tracks button{flex:1 1 auto;min-height:44px;background:none;border:0;padding:9px 12px;border-radius:999px;font-weight:600;font-size:15px;color:var(--ink-2);white-space:nowrap}
 @media (max-width:400px){.tracks button{font-size:14px;padding:9px 10px}}
-@media (max-width:340px){.tracks button{font-size:13px;padding:8px 8px}}
 .tracks button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
 .src{margin:24px 0 0;font-size:13px;color:var(--ink-2)}
 .qwrap>.src.caso{margin:-6px 0 8px}
