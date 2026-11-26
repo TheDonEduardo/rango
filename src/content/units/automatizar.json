@@ -22,6 +22,43 @@
       "id": "g3",
       "titulo": "El tiempo hace el trabajo",
       "texto": "Con una aportación fija, parte de lo que acabas teniendo son ganancias, y pesan más cuanto más dura el plan. Supone una rentabilidad constante, que en la realidad no existe.",
+      "figura": {
+        "type": "curvas",
+        "h": 210,
+        "alt": "Aportación de 100 € al mes con un 5 % anual constante: a 10 años el valor es de unos 15.500 € sobre 12.000 € aportados y a 20 años, de unos 41.100 € sobre 24.000 €.",
+        "series": [
+          {
+            "data": [0,6801,15528,26729,41103],
+            "texto": "Valor",
+            "tono": "up"
+          },
+          {
+            "data": [0,6000,12000,18000,24000],
+            "texto": "Aportado",
+            "tono": "sel"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 2,
+            "y": 15528,
+            "texto": "15.500 €",
+            "lado": "i"
+          },
+          {
+            "i": 4,
+            "y": 41103,
+            "texto": "41.100 €",
+            "lado": "i"
+          },
+          {
+            "i": 4,
+            "y": 24000,
+            "texto": "24.000 €",
+            "lado": "i"
+          }
+        ]
+      },
       "ejemplo": "Con 100 € al mes (5 % anual, con interés mensual) tienes unos 15.500 € a 10 años (3.500 € de ganancia) y unos 41.100 € a 20 años (17.100 €)."
     },
     {

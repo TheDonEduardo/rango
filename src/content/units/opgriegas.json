@@ -27,6 +27,46 @@
       "id": "g4",
       "titulo": "Gamma y el vencimiento",
       "texto": "La gamma mide cuánto cambia la delta. Cerca del vencimiento, gamma y theta se disparan: la opción reacciona mucho al precio y pierde valor muy deprisa si no llega.",
+      "figura": {
+        "type": "curvas",
+        "h": 200,
+        "alt": "Valor temporal relativo de una opción en el dinero según los días que faltan: cae despacio al principio y cada vez más deprisa al acercarse el vencimiento.",
+        "series": [
+          {
+            "data": [
+              100.0,
+              91.0,
+              82.0,
+              71.0,
+              58.0,
+              41.0,
+              0.0
+            ],
+            "tono": "dn"
+          }
+        ],
+        "margen": 20,
+        "marcas": [
+          {
+            "i": 0,
+            "y": 100,
+            "texto": "60 días"
+          },
+          {
+            "i": 6,
+            "y": 0,
+            "texto": "Vence",
+            "lado": "i"
+          }
+        ],
+        "zonas": [
+          {
+            "i1": 5,
+            "i2": 6,
+            "texto": "Se hunde"
+          }
+        ]
+      },
       "ejemplo": "Call barata a 3 días del vencimiento: o se mueve ya, o vence sin valor."
     }
   ],

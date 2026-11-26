@@ -10,6 +10,31 @@
       "id": "g1",
       "titulo": "Una sola empresa",
       "texto": "Si todo tu dinero está en una acción, su mala noticia es tu pérdida entera. Repartirlo en muchas reduce el daño de cada tropiezo.",
+      "figura": {
+        "type": "curvas",
+        "h": 200,
+        "alt": "Pérdida de la cartera cuando una acción cae un 50 %, según el peso que tiene: un 2,5 % si pesa un 5 % y un 50 % si lo es todo.",
+        "series": [
+          {
+            "data": [0.0,2.5,5.0,7.5,10.0,12.5,15.0,17.5,20.0,22.5,25.0,27.5,30.0,32.5,35.0,37.5,40.0,42.5,45.0,47.5,50.0],
+            "tono": "dn"
+          }
+        ],
+        "margen": 20,
+        "marcas": [
+          {
+            "i": 1,
+            "y": 2.5,
+            "texto": "Pesa un 5 %: pierdes 2,5 %"
+          },
+          {
+            "i": 20,
+            "y": 50,
+            "texto": "Pesa un 100 %: pierdes 50 %",
+            "lado": "i"
+          }
+        ]
+      },
       "ejemplo": "Una acción cae un 50 %: con todo en ella pierdes un 50 %; si pesa un 5 % de la cartera, un 2,5 %."
     },
     {

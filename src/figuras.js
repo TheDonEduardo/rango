@@ -7,6 +7,7 @@
 //     zonas:[{i1,i2,texto}]           tramo de velas con título arriba (fase, contracción…)
 //     etiquetas:[texto|null,...]      nombre bajo cada vela (martillo, peonza…)}
 //   {type:'curvas', series:[{data:[...],texto,tono?,dy?}], alt, h?, lineas, marcas:[{i,y,texto,lado?}], llaves, zonas}
+//     x?: [...] posiciones x (misma longitud que cada serie, no decreciente; repetidas = escalón vertical); sin x, reparto por índice. marcas, llaves y zonas siguen usando el índice del array
 //     dy: desplaza en vertical el nombre de la serie (si dos acaban en el mismo punto)
 // lado: 'd' (derecha, por defecto) o 'i' (izquierda). tono: 'up', 'dn', 'sel', 'acc' o 'ink'.
 import {esc} from './util.js';
@@ -76,7 +77,14 @@ function curvas(f) {
   const H = f.h || 200, top = f.zonas ? 30 : 14, bot = 14, pl = 12, pr = f.margen == null ? Math.max(40, ...f.series.map(se => (se.texto || '').length * 7 + 14)) : f.margen;
   const vals = []; f.series.forEach(se => vals.push(...se.data)); (f.lineas || []).forEach(l => vals.push(l.y));
   const y = escala(vals, top, bot, H), n = Math.max(...f.series.map(se => se.data.length));
-  const paso = (W - pl - pr) / (n - 1), X = i => pl + paso * i; X.paso = paso;
+  const paso = (W - pl - pr) / (n - 1);
+  let X = i => pl + paso * i;
+  if (Array.isArray(f.x) && f.x.length === n) {
+    // x explícitas: posiciones escaladas entre el mínimo y el máximo; las anotaciones siguen usando el índice del array.
+    const x0 = f.x[0], x1 = f.x[n - 1];
+    X = i => pl + (f.x[i] - x0) / ((x1 - x0) || 1) * (W - pl - pr);
+  }
+  X.paso = paso;
   let s = capas(f, X, y, H, top, bot, pl, 12);
   f.series.forEach(se => {
     s += `<polyline class="fc t-${se.tono || 'sel'}" points="${se.data.map((v, i) => `${X(i).toFixed(1)},${y(v).toFixed(1)}`).join(' ')}"/>`;

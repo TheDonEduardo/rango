@@ -15,6 +15,37 @@
       "id": "g2",
       "titulo": "Tipos y valoración",
       "texto": "El valor de una empresa es el de sus beneficios futuros descontados. Con tipos más altos, los beneficios lejanos valen menos: las empresas de crecimiento sufren más.",
+      "figura": {
+        "type": "curvas",
+        "h": 200,
+        "alt": "Valor hoy de 100 € que se cobran dentro de 10 años: 74 € con un tipo del 3 % y 56 € con un 6 %.",
+        "series": [
+          {
+            "data": [100.0,97.1,94.3,91.5,88.8,86.3,83.7,81.3,78.9,76.6,74.4],
+            "texto": "3 %",
+            "tono": "sel"
+          },
+          {
+            "data": [100.0,94.3,89.0,84.0,79.2,74.7,70.5,66.5,62.7,59.2,55.8],
+            "texto": "6 %",
+            "tono": "dn"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 10,
+            "y": 74.4,
+            "texto": "74 €",
+            "lado": "i"
+          },
+          {
+            "i": 10,
+            "y": 55.8,
+            "texto": "56 €",
+            "lado": "i"
+          }
+        ]
+      },
       "ejemplo": "100 € dentro de 10 años valen 74 € al 3 % y 56 € al 6 %: un 25 % menos."
     },
     {

@@ -45,6 +45,31 @@
       "id": "g3",
       "titulo": "Lo que cedes",
       "texto": "Si la acción se dispara, vendes al ejercicio y el resto de la subida es de quien compró la call. Cambias una ganancia incierta y grande por una pequeña y segura.",
+      "figura": {
+        "type": "curvas",
+        "h": 210,
+        "alt": "Resultado por acción al vencimiento con compra a 50 $, ejercicio 55 $ y prima de 2 $, frente a solo tener la acción: con la call el máximo es 7 $; sin ella, a 70 $ se ganan 20 $.",
+        "series": [
+          {
+            "data": [-10,-5,0,5,10,15,20,25,30],
+            "texto": "Solo acción",
+            "tono": "sel"
+          },
+          {
+            "data": [-8,-3,2,7,7,7,7,7,7],
+            "texto": "Con call: máx. 7 $",
+            "tono": "up"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 6,
+            "y": 20,
+            "texto": "70 $: +20 $",
+            "lado": "i"
+          }
+        ]
+      },
       "ejemplo": "La acción sube a 70 $: ganas 7 $ en lugar de 20 $."
     },
     {

@@ -21,6 +21,33 @@
       "id": "g3",
       "titulo": "Tres órdenes básicas",
       "texto": "A mercado compra al momento, al precio que haya. Limitada fija tu precio: si no se alcanza, no se ejecuta. Stop vende sola si el precio cae hasta un nivel.",
+      "figura": {
+        "type": "velas",
+        "h": 200,
+        "alt": "Compra a 30 € con un stop en 27 €: el precio baja de vela en vela hasta tocar el stop, y la pérdida queda en un 10 %.",
+        "data": [
+          [30.4,30.8,29.8,30.0],
+          [30.0,30.2,28.9,29.1],
+          [29.1,29.3,27.9,28.2],
+          [28.2,28.4,26.9,27.1],
+          null,
+          null,
+          null,
+          null
+        ],
+        "lineas": [
+          {
+            "y": 30,
+            "texto": "Compra: 30 €",
+            "tono": "sel"
+          },
+          {
+            "y": 27,
+            "texto": "Stop: 27 € (−10 %)",
+            "tono": "dn"
+          }
+        ]
+      },
       "ejemplo": "Compraste a 30 € y pones un stop en 27 €: si el precio toca 27 €, vende y tu pérdida se queda en un 10 %."
     },
     {

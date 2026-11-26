@@ -46,6 +46,40 @@
       "id": "g2",
       "titulo": "Qué ganas a cambio",
       "texto": "Normalmente el fondo largo rinde más por año: es su compensación. Años para compensar ≈ puntos de pérdida de más ÷ ventaja anual de rentabilidad, sin contar que, tras subir los tipos, los fondos rinden más.",
+      "figura": {
+        "type": "curvas",
+        "h": 200,
+        "alt": "Diferencia acumulada entre un fondo largo y uno corto tras subir los tipos un punto: empieza 6 puntos por debajo y gana 1 punto más por año, así que se iguala a los 6 años.",
+        "series": [
+          {
+            "data": [-6,-5,-4,-3,-2,-1,0,1,2],
+            "tono": "sel"
+          }
+        ],
+        "margen": 20,
+        "lineas": [
+          {
+            "y": 0,
+            "texto": "Empate",
+            "tono": "ink",
+            "lado": "i"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 0,
+            "y": -6,
+            "texto": "−6 puntos"
+          }
+        ],
+        "zonas": [
+          {
+            "i1": 6,
+            "i2": 6,
+            "texto": "6 años"
+          }
+        ]
+      },
       "ejemplo": "A: 2,5 %, duración 2. B: 3,5 %, duración 8. Tipos +1 punto: B pierde 6 puntos más y gana 1 más al año: 6 ÷ 1 = 6 años."
     },
     {

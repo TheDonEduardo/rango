@@ -10,12 +10,94 @@
       "id": "g1",
       "titulo": "Escala lineal",
       "texto": "Cada tramo vertical vale los mismos puntos o euros. Sirve para periodos cortos, pero en décadas exagera los movimientos recientes y aplasta los antiguos.",
+      "figura": {
+        "type": "curvas",
+        "h": 200,
+        "alt": "Una serie que se duplica tres veces (100, 200, 400, 800) en escala lineal: el primer tramo apenas sube y el último ocupa más de la mitad de la altura, aunque todos son duplicar.",
+        "series": [
+          {
+            "data": [
+              100,
+              200,
+              400,
+              800
+            ],
+            "tono": "sel"
+          }
+        ],
+        "margen": 20,
+        "marcas": [
+          {
+            "i": 0,
+            "y": 100,
+            "texto": "100"
+          },
+          {
+            "i": 1,
+            "y": 200,
+            "texto": "200"
+          },
+          {
+            "i": 2,
+            "y": 400,
+            "texto": "400",
+            "lado": "i"
+          },
+          {
+            "i": 3,
+            "y": 800,
+            "texto": "800",
+            "lado": "i"
+          }
+        ]
+      },
       "ejemplo": "50 puntos son un 50 % desde 100 y solo un 5 % desde 1.000."
     },
     {
       "id": "g2",
       "titulo": "Escala logarítmica",
       "texto": "Cada tramo vertical vale el mismo porcentaje. Pasar de 100 a 200 ocupa lo mismo que pasar de 500 a 1.000: las dos cosas son duplicar.",
+      "figura": {
+        "type": "curvas",
+        "h": 200,
+        "alt": "La misma serie (100, 200, 400, 800) en escala logarítmica: cada duplicación sube la misma altura y queda una línea recta.",
+        "series": [
+          {
+            "data": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "tono": "sel"
+          }
+        ],
+        "margen": 20,
+        "marcas": [
+          {
+            "i": 0,
+            "y": 0,
+            "texto": "100"
+          },
+          {
+            "i": 1,
+            "y": 1,
+            "texto": "200"
+          },
+          {
+            "i": 2,
+            "y": 2,
+            "texto": "400",
+            "lado": "i"
+          },
+          {
+            "i": 3,
+            "y": 3,
+            "texto": "800",
+            "lado": "i"
+          }
+        ]
+      },
       "ejemplo": "100 → 200 → 400 → 800: tres tramos de la misma altura."
     },
     {

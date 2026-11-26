@@ -27,6 +27,33 @@
       "id": "g4",
       "titulo": "El horizonte manda",
       "texto": "Comprar y vender cuesta entre un 10 y un 15 % del precio. Esos gastos solo se compensan si te quedas bastantes años. Si puedes mudarte pronto, alquila.",
+      "figura": {
+        "type": "curvas",
+        "h": 210,
+        "alt": "Ahorro acumulado de 4.000 € al año frente a unos gastos de compraventa de 28.000 €: se igualan a los 7 años.",
+        "series": [
+          {
+            "data": [0,4000,8000,12000,16000,20000,24000,28000,32000,36000,40000],
+            "texto": "Ahorro",
+            "tono": "up"
+          }
+        ],
+        "lineas": [
+          {
+            "y": 28000,
+            "texto": "Gastos: 28.000 €",
+            "tono": "dn",
+            "lado": "i"
+          }
+        ],
+        "zonas": [
+          {
+            "i1": 7,
+            "i2": 7,
+            "texto": "7 años"
+          }
+        ]
+      },
       "ejemplo": "Gastos de 28.000 € y un ahorro de 4.000 € al año: 7 años para compensar."
     }
   ],

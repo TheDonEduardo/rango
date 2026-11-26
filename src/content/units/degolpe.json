@@ -21,6 +21,45 @@
       "id": "g3",
       "titulo": "Misma cantidad, precio medio más bajo",
       "texto": "Con la misma cantidad cada mes compras más participaciones cuando el precio baja. Tu precio medio queda por debajo de la media de los precios.",
+      "figura": {
+        "type": "curvas",
+        "h": 200,
+        "alt": "Compras de 100 € cuando el precio es 10 € y cuando baja a 5 €: 30 participaciones a un precio medio de 6,67 €, por debajo de la media de precios, 7,50 €.",
+        "series": [
+          {
+            "data": [10,5],
+            "tono": "ink"
+          }
+        ],
+        "lineas": [
+          {
+            "y": 7.5,
+            "texto": "Media de precios: 7,50 €",
+            "tono": "acc",
+            "lado": "d"
+          },
+          {
+            "y": 6.67,
+            "texto": "Precio medio: 6,67 €",
+            "tono": "up",
+            "lado": "d"
+          }
+        ],
+        "margen": 20,
+        "marcas": [
+          {
+            "i": 0,
+            "y": 10,
+            "texto": "10 €"
+          },
+          {
+            "i": 1,
+            "y": 5,
+            "texto": "5 €",
+            "lado": "i"
+          }
+        ]
+      },
       "ejemplo": "100 € a 10 € y 100 € a 5 €: 30 participaciones a 6,67 €, no a 7,50 €."
     },
     {

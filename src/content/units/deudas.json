@@ -22,6 +22,39 @@
       "id": "g3",
       "titulo": "La trampa del revolving",
       "texto": "Con una tarjeta revolving pagas una cuota baja, pero casi toda se va en intereses y la deuda apenas baja. Puede superar el 20 % anual.",
+      "figura": {
+        "type": "curvas",
+        "h": 200,
+        "alt": "Deuda de 3.000 € al 2 % mensual pagando 70 € al mes: baja muy despacio al principio y cada vez más deprisa; tras cinco años, después de pagar 4.200 €, aún quedan 1.859 €.",
+        "series": [
+          {
+            "data": [
+              3000,
+              2866,
+              2696,
+              2480,
+              2206,
+              1859
+            ],
+            "texto": "Deuda",
+            "tono": "dn"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 0,
+            "y": 3000,
+            "texto": "3.000 €",
+            "lado": "d"
+          },
+          {
+            "i": 5,
+            "y": 1859,
+            "texto": "1.859 €",
+            "lado": "i"
+          }
+        ]
+      },
       "ejemplo": "Debes 3.000 € al 2 % mensual: 60 € de intereses. Con una cuota de 70 €, la deuda solo baja 10 €."
     },
     {

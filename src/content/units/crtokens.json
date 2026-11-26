@@ -21,6 +21,40 @@
       "id": "g3",
       "titulo": "Desbloqueos",
       "texto": "Los tokens del equipo y de los primeros inversores se liberan por fases. Cada desbloqueo aumenta la oferta, y muchos de quienes los reciben venden porque los obtuvieron muy baratos.",
+      "figura": {
+        "type": "curvas",
+        "h": 200,
+        "alt": "Oferta en circulación: 2.000 millones de tokens que pasan a 2.500 millones tras desbloquear 500 millones, un 25 % más.",
+        "series": [
+          {
+            "data": [2000,2000,2500,2500],
+            "tono": "dn"
+          }
+        ],
+        "margen": 40,
+        "lineas": [
+          {
+            "y": 2000,
+            "texto": "Antes: 2.000 M",
+            "tono": "ink",
+            "lado": "i"
+          },
+          {
+            "y": 2500,
+            "texto": "Después: 2.500 M",
+            "tono": "dn",
+            "lado": "i"
+          }
+        ],
+        "llaves": [
+          {
+            "i": 2,
+            "y1": 2000,
+            "y2": 2500,
+            "texto": "+25 %"
+          }
+        ]
+      },
       "ejemplo": "500 millones desbloqueados sobre 2.000 en circulación: un 25 % más de oferta."
     },
     {

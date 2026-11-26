@@ -15,6 +15,31 @@
       "id": "g2",
       "titulo": "Cuánto cambia la cuota",
       "texto": "Antes de firmar una variable, calcula la cuota con dos puntos más de tipo. Si no podrías pagarla, no es para ti.",
+      "figura": {
+        "type": "curvas",
+        "h": 200,
+        "alt": "Cuota mensual de una hipoteca de 150.000 € a 25 años según el tipo: 711 € al 3 % y 877 € al 5 %.",
+        "series": [
+          {
+            "data": [635.8,711.3,791.8,876.9,966.5],
+            "tono": "sel"
+          }
+        ],
+        "margen": 20,
+        "marcas": [
+          {
+            "i": 1,
+            "y": 711.3,
+            "texto": "3 %: 711 €"
+          },
+          {
+            "i": 3,
+            "y": 876.9,
+            "texto": "5 %: 877 €",
+            "lado": "i"
+          }
+        ]
+      },
       "ejemplo": "150.000 € a 25 años: 711 € al 3 % y 877 € al 5 %."
     },
     {

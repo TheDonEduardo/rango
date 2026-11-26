@@ -51,6 +51,30 @@
       "id": "g4",
       "titulo": "Sensibilidad y margen de seguridad",
       "texto": "Un punto más de tipo o de crecimiento cambia el valor un 17-25 %. Por eso se compra con margen de seguridad: un descuento sobre tu estimación.",
+      "figura": {
+        "type": "curvas",
+        "h": 200,
+        "alt": "Valor de una empresa con flujo de 40 M$ que crece un 3 %, según el tipo de descuento: 800 M$ al 8 % y 667 M$ al 9 %.",
+        "series": [
+          {
+            "data": [1000.0,800.0,667.0,571.0,500.0],
+            "tono": "sel"
+          }
+        ],
+        "margen": 20,
+        "marcas": [
+          {
+            "i": 1,
+            "y": 800,
+            "texto": "8 %: 800 M$"
+          },
+          {
+            "i": 2,
+            "y": 667,
+            "texto": "9 %: 667 M$"
+          }
+        ]
+      },
       "ejemplo": "Con un 9 % en vez del 8 %, el valor baja de 800 a 667 M$. Valor de 12 $ y precio de 9 $: margen del 25 %."
     }
   ],

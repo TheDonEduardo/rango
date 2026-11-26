@@ -22,6 +22,37 @@
       "id": "g3",
       "titulo": "Tramos, marginal y medio",
       "texto": "El IRPF se paga por tramos: cada tipo se aplica solo a la parte de renta de su tramo. El marginal es el tipo del último euro; el medio, el impuesto total entre la renta.",
+      "figura": {
+        "type": "curvas",
+        "h": 210,
+        "alt": "Tipo marginal y tipo medio del IRPF según la renta, con la escala general orientativa: con 20.200 € el marginal es del 24 % y el medio, del 20,9 %.",
+        "x": [0,12450,12450,16000,20200,20200,28000,35200,35200,40000],
+        "series": [
+          {
+            "data": [19,19,24,24,24,30,30,30,37,37],
+            "texto": "Marginal",
+            "tono": "dn"
+          },
+          {
+            "data": [19,19,19,20.1,20.9,20.9,23.4,24.8,24.8,26.3],
+            "texto": "Medio",
+            "tono": "sel"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 4,
+            "y": 24,
+            "texto": "24 %"
+          },
+          {
+            "i": 4,
+            "y": 20.9,
+            "texto": "20,9 %",
+            "lado": "d"
+          }
+        ]
+      },
       "ejemplo": "Base de 20.200 €: tipo medio del 20,9 % y marginal del 24 %."
     },
     {

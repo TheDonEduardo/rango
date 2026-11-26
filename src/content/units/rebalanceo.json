@@ -33,6 +33,35 @@
       "id": "g2",
       "titulo": "Volver al objetivo",
       "texto": "Rebalancear es vender lo que ha subido y comprar lo que ha bajado hasta volver al reparto elegido. Te obliga a comprar barato y vender caro.",
+      "figura": {
+        "type": "velas",
+        "h": 230,
+        "alt": "Cartera de 11.800 €: acciones 7.800 € y bonos 4.000 €. Al 60/40 los bonos deberían tener 4.720 €, así que se venden 720 € de acciones.",
+        "data": [null],
+        "franjas": [
+          {
+            "y1": 0,
+            "y2": 4000,
+            "texto": "Bonos: 4.000 €"
+          },
+          {
+            "y1": 4000,
+            "y2": 11800,
+            "texto": "Acciones: 7.800 €"
+          }
+        ],
+        "lineas": [
+          {
+            "y": 4000
+          },
+          {
+            "y": 4720,
+            "texto": "Bonos al 40 %: 4.720 €",
+            "tono": "acc",
+            "lado": "i"
+          }
+        ]
+      },
       "ejemplo": "Con 11.800 €, el 60 % son 7.080 € en acciones: vendes 720 € y los pasas a bonos."
     },
     {

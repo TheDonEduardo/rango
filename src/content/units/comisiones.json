@@ -10,6 +10,23 @@
       "id": "g1",
       "titulo": "Un punto de más",
       "texto": "El coste se cobra cada año sobre todo lo acumulado, y ese dinero ya no rinde. Por el interés compuesto, 1 punto de coste de más pesa mucho a 30 años.",
+      "figura": {
+        "type": "curvas",
+        "h": 210,
+        "alt": "Cartera con 200 € al mes durante 30 años: con un 6 % anual llega a unos 200,9 mil € y con un 5 %, a unos 166,5 mil €, un 17,1 % menos.",
+        "series": [
+          {
+            "data": [0,14.0,32.8,58.2,92.4,138.6,200.9],
+            "texto": "6 %: 200,9 mil €",
+            "tono": "up"
+          },
+          {
+            "data": [0,13.6,31.1,53.5,82.2,119.1,166.5],
+            "texto": "5 %: 166,5 mil €",
+            "tono": "dn"
+          }
+        ]
+      },
       "ejemplo": "200 € al mes durante 30 años, con rentabilidad constante y capitalización mensual: al 6 % acabas con unos 200,9 mil €; al 5 %, 166,5 mil €. Son 34,4 mil € menos, un 17,1 %."
     },
     {

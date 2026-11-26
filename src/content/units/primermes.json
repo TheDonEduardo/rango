@@ -22,6 +22,46 @@
       "id": "g3",
       "titulo": "Por qué empieza en rojo",
       "texto": "Hay dos costes de entrada: la comisión y la horquilla (compras más caro de lo que te darían por vender). Por eso empiezas en rojo sin que el precio se mueva. Al vender hay otra comisión.",
+      "figura": {
+        "type": "velas",
+        "h": 200,
+        "alt": "Compras a 20,04 € y podrías vender a 19,96 €; hasta que puedas vender a 20,20 € no recuperas la comisión y la horquilla.",
+        "data": [
+          [
+            19.99,
+            20.03,
+            19.97,
+            20.02
+          ],
+          [
+            20.02,
+            20.03,
+            19.98,
+            19.99
+          ],
+          null,
+          null,
+          null,
+          null
+        ],
+        "lineas": [
+          {
+            "y": 20.2,
+            "texto": "Sin perder: 20,20 €",
+            "tono": "up"
+          },
+          {
+            "y": 20.04,
+            "texto": "Compras: 20,04 €",
+            "tono": "sel"
+          },
+          {
+            "y": 19.96,
+            "texto": "Venta ahora: 19,96 €",
+            "tono": "dn"
+          }
+        ]
+      },
       "ejemplo": "Compras a 20,04 € y podrías vender a 19,96 €: 25 × 0,08 € = 2 €, más 2 € de comisión: −4 €. Vender sin perder: 20,20 € (505 ÷ 25)."
     },
     {

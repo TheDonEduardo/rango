@@ -15,12 +15,88 @@
       "id": "g2",
       "titulo": "Al punto de equilibrio, con calma",
       "texto": "Subir el stop a la entrada demasiado pronto hace que el ruido normal te saque. Espera a ganar al menos 1R o a que el precio supere una resistencia.",
+      "figura": {
+        "type": "velas",
+        "h": 220,
+        "alt": "Entrada a 50 € con stop en 47 € y ATR de 1,50 €: cuando el precio llega a 53 € (+1R) el stop puede subir a la entrada.",
+        "data": [
+          null,
+          null,
+          null,
+          [50.0,50.8,49.2,50.5],
+          [50.5,52.0,50.2,51.8],
+          [51.8,53.3,51.5,53.0]
+        ],
+        "lineas": [
+          {
+            "y": 53,
+            "texto": "+1R: 53 €",
+            "tono": "up",
+            "lado": "i"
+          },
+          {
+            "y": 50,
+            "texto": "Entrada: 50 €",
+            "tono": "sel",
+            "lado": "i"
+          },
+          {
+            "y": 47,
+            "texto": "Stop: 47 €",
+            "tono": "dn",
+            "lado": "i"
+          }
+        ],
+        "llaves": [
+          {
+            "i": 5,
+            "y1": 47,
+            "y2": 50,
+            "texto": "1R: 3 €"
+          }
+        ]
+      },
       "ejemplo": "Entrada a 50 €, stop en 47 € y ATR de 1,50 €: con el precio en 53 € (+1R) ya puedes subirlo a 50 €."
     },
     {
       "id": "g3",
       "titulo": "Stop por ATR desde el máximo",
       "texto": "Coloca el stop a un múltiplo del ATR por debajo del máximo más alto desde la entrada. Cuando el ATR crece, el stop no baja: solo sube.",
+      "figura": {
+        "type": "velas",
+        "h": 220,
+        "alt": "Máximo de 60 € y ATR de 2 €: el stop a 3 ATR queda 6 € por debajo, en 54 €.",
+        "data": [
+          null,
+          null,
+          null,
+          [56.0,58.0,55.5,57.5],
+          [57.5,60.0,57.0,59.0],
+          [59.0,59.5,57.5,58.0]
+        ],
+        "lineas": [
+          {
+            "y": 60,
+            "texto": "Máximo: 60 €",
+            "tono": "up",
+            "lado": "i"
+          },
+          {
+            "y": 54,
+            "texto": "Stop: 54 €",
+            "tono": "dn",
+            "lado": "i"
+          }
+        ],
+        "llaves": [
+          {
+            "i": 5,
+            "y1": 54,
+            "y2": 60,
+            "texto": "3 ATR: 6 €"
+          }
+        ]
+      },
       "ejemplo": "Máximo de 60 € y ATR de 2 €, a 3 ATR: stop en 54 €."
     },
     {

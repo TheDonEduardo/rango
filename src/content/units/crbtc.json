@@ -16,6 +16,49 @@
       "id": "g2",
       "titulo": "El halving",
       "texto": "Cada 210.000 bloques, unos cuatro años, la recompensa de los mineros se reduce a la mitad. La emisión se frena sola hasta agotarse hacia 2140.",
+      "figura": {
+        "type": "curvas",
+        "h": 200,
+        "alt": "Bitcoin en circulación tras cada halving: 10,5 millones en 2012 y 19,69 millones en 2024, acercándose al tope de 21 millones.",
+        "series": [
+          {
+            "data": [
+              0,
+              10.5,
+              15.75,
+              18.38,
+              19.69,
+              20.34,
+              20.67
+            ],
+            "tono": "acc"
+          }
+        ],
+        "margen": 20,
+        "lineas": [
+          {
+            "y": 21,
+            "texto": "Tope: 21 M",
+            "tono": "ink",
+            "lado": "i"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 1,
+            "y": 10.5,
+            "texto": "2012: 10,5 M"
+          }
+        ],
+        "llaves": [
+          {
+            "i": 4,
+            "y1": 18.4,
+            "y2": 19.69,
+            "texto": "2024: 19,69 M"
+          }
+        ]
+      },
       "ejemplo": "3,125 BTC por bloque desde 2024: 450 BTC nuevos al día. En 2028, 1,5625 BTC."
     },
     {

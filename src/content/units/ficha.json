@@ -16,6 +16,38 @@
       "id": "g2",
       "titulo": "El rango de 52 semanas",
       "texto": "El máximo y el mínimo del último año sitúan el precio: cerca de máximos, la acción viene subiendo; cerca de mínimos, cayendo. Lo usarás después en los filtros de tendencia.",
+      "figura": {
+        "type": "curvas",
+        "h": 200,
+        "alt": "Precio de una acción en 52 semanas con máximo de 30 € y mínimo de 20 €: ahora cotiza a 24,50 €, un 18,3 % por debajo del máximo.",
+        "series": [
+          {
+            "data": [22,20,23,26,30,28,27,25,24.5],
+            "tono": "sel"
+          }
+        ],
+        "margen": 90,
+        "lineas": [
+          {
+            "y": 30,
+            "texto": "Máximo: 30 €",
+            "tono": "up",
+            "lado": "i"
+          },
+          {
+            "y": 20,
+            "texto": "Mínimo: 20 €",
+            "tono": "dn"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 8,
+            "y": 24.5,
+            "texto": "24,50 €"
+          }
+        ]
+      },
       "ejemplo": "Máximo de 30 €, mínimo de 20 € y precio de 24,50 €: un 18,3 % por debajo del máximo."
     },
     {
