@@ -1,0 +1,264 @@
+{
+  "n": 11,
+  "id": "costecompra",
+  "track": "personal",
+  "title": "Cuánto cuesta de verdad una compra",
+  "blurb": "Mide una compra en horas de trabajo y en coste por uso, y frena el gasto impulsivo con una regla de espera.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Tu hora de trabajo",
+      "texto": "Divide tu sueldo neto mensual entre las horas que trabajas: es lo que ganas por hora. El precio de una compra entre esa cifra son las horas de tu vida que cuesta.",
+      "ejemplo": "1.600 € netos entre 160 horas son 10 € por hora. Unas botas de 130 € cuestan 13 horas de trabajo."
+    },
+    {
+      "id": "g2",
+      "titulo": "Coste por uso",
+      "texto": "Reparte el precio entre las veces que lo usarás: es el coste por uso. Lo caro que se usa mucho puede salir más barato que lo barato que se usa poco. Si lo revendes, resta lo recuperado.",
+      "ejemplo": "Patinete de 300 €: con 10 usos, 30 € cada uno; con 100, 3 €. Cámara de 300 € revendida a 75 € tras 45 usos: 225 ÷ 45 = 5 €.",
+      "figura": {
+        "type": "curvas",
+        "h": 200,
+        "x": [10,20,50,100],
+        "alt": "Coste por uso de un patinete de 300 €: 30 € con 10 usos, 15 € con 20, 6 € con 50 y 3 € con 100; baja cuanto más se usa.",
+        "series": [
+          {
+            "data": [30,15,6,3],
+            "texto": "Coste por uso",
+            "tono": "sel"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 0,
+            "y": 30,
+            "texto": "10 usos: 30 €",
+            "lado": "d"
+          },
+          {
+            "i": 3,
+            "y": 3,
+            "texto": "100 usos",
+            "lado": "i"
+          }
+        ]
+      }
+    },
+    {
+      "id": "g3",
+      "titulo": "Regla de espera",
+      "texto": "La compra impulsiva es la que decides en el momento. Apúntala en una lista de espera y aplica un plazo: 48 horas, o 30 días si pasa de 100 €. Pasado el plazo, compra solo lo que sigues queriendo.",
+      "ejemplo": "Cinco compras apuntadas suman 250 €. Tras 30 días solo quieres una, de 70 €: no gastas 180 €."
+    },
+    {
+      "id": "g4",
+      "titulo": "Partida de caprichos",
+      "texto": "Fija cada mes una cantidad para gastos libres, por ejemplo el 5 % del neto. Si un capricho la supera, aparta varios meses; no uses el colchón ni pagues a plazos.",
+      "ejemplo": "5 % de 1.600 € son 80 € al mes: un capricho de 240 € se alcanza en 3 meses.",
+      "figura": {
+        "type": "curvas",
+        "h": 200,
+        "alt": "Ahorro acumulado de 80 € al mes: 0 €, 80 €, 160 € y 240 € al cabo de 0, 1, 2 y 3 meses, alcanzando la línea del capricho de 240 €.",
+        "series": [
+          {
+            "data": [0,80,160,240],
+            "texto": "Ahorrado",
+            "tono": "up",
+            "dy": 16
+          }
+        ],
+        "lineas": [
+          {
+            "y": 240,
+            "texto": "Capricho: 240 €",
+            "tono": "acc",
+            "lado": "i"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 1,
+            "y": 80,
+            "texto": "Mes 1: 80 €",
+            "lado": "d"
+          }
+        ]
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "ov1",
+      "title": "Horas de trabajo y coste por uso",
+      "ex": [
+        {
+          "id": "ov1-1",
+          "t": "num",
+          "q": "Cobras 1.440 € netos al mes y trabajas 160 horas. Unas zapatillas cuestan 135 €. ¿Cuántas horas de trabajo cuestan?",
+          "unit": "",
+          "a": 15,
+          "why": "1.440 ÷ 160 = 9 € netos por hora; 135 ÷ 9 = 15 horas de trabajo.",
+          "guia": "g1"
+        },
+        {
+          "id": "ov1-2",
+          "t": "choice",
+          "q": "Ana gana 10 € netos por hora y Luis, 20 €. Un abrigo cuesta 120 €. ¿Qué es cierto?",
+          "opts": [
+            "Le cuesta 6 horas a Ana y 12 a Luis",
+            "Le cuesta 12 horas a los dos",
+            "Le cuesta 12 horas a Ana y 6 a Luis",
+            "Le cuesta lo mismo a los dos en horas"
+          ],
+          "a": 2,
+          "why": "120 ÷ 10 = 12 horas para Ana y 120 ÷ 20 = 6 para Luis: el mismo precio pesa más con menos ingresos por hora.",
+          "guia": "g1",
+          "porque": [
+            "Al revés: Ana gana menos por hora y le cuesta más horas.",
+            "Luis, con el doble por hora, necesita la mitad de horas.",
+            null,
+            "El mismo precio no cuesta lo mismo en horas con ingresos distintos."
+          ]
+        },
+        {
+          "id": "ov1-3",
+          "t": "num",
+          "q": "Una bici cuesta 480 € y la usarás 80 veces. ¿Cuántos euros cuesta cada salida?",
+          "unit": "€",
+          "a": 6,
+          "why": "480 ÷ 80 = 6 € por salida. Cuantos más usos, menos pesa el precio de compra.",
+          "guia": "g2"
+        },
+        {
+          "id": "ov1-4",
+          "t": "choice",
+          "q": "Un abrigo cuesta 90 € y lo usarás 30 veces; otro, 240 € y lo usarás 120 veces. ¿Cuál sale más barato por uso?",
+          "opts": [
+            "El de 90 €, porque cuesta menos",
+            "El de 240 €, por 2 € frente a 3 € por uso",
+            "Salen igual de baratos por uso",
+            "No se pueden comparar sin saber la calidad"
+          ],
+          "a": 1,
+          "why": "90 ÷ 30 = 3 € por uso y 240 ÷ 120 = 2 € por uso: lo caro que se usa mucho sale más barato.",
+          "guia": "g2",
+          "porque": [
+            "Lo barato que se usa poco puede salir más caro: 3 € por uso.",
+            null,
+            "Los dos precios y usos son distintos: por uso, 3 € y 2 €.",
+            "Con los datos dados sí se pueden comparar: precio ÷ usos."
+          ]
+        },
+        {
+          "id": "ov1-5",
+          "t": "num",
+          "q": "Compras una cámara por 360 €, la usas 45 veces y la revendes por 90 €. ¿Cuántos euros cuesta cada uso?",
+          "unit": "€",
+          "a": 6,
+          "why": "(360 − 90) ÷ 45 = 270 ÷ 45 = 6 € por uso: al revender, solo cuenta lo que pierdes.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "ov2",
+      "title": "Regla de espera y partida",
+      "ex": [
+        {
+          "id": "ov2-1",
+          "t": "match",
+          "q": "Empareja cada concepto de la regla de espera con su significado.",
+          "pairs": [
+            [
+              "Compra impulsiva",
+              "La decides en el momento, sin haberla planeado"
+            ],
+            [
+              "Lista de espera",
+              "Donde apuntas lo que quieres antes de comprarlo"
+            ],
+            [
+              "Plazo de espera",
+              "48 horas, o 30 días si pasa de 100 €"
+            ]
+          ],
+          "why": "La compra impulsiva se frena apuntándola en la lista y esperando el plazo: 48 horas, o 30 días si pasa de 100 €.",
+          "guia": "g3"
+        },
+        {
+          "id": "ov2-2",
+          "t": "choice",
+          "q": "Ves una chaqueta de 180 € que no tenías prevista. Según la regla de espera, ¿qué haces?",
+          "opts": [
+            "La compras hoy antes de que suba el precio",
+            "La apuntas y decides a los 30 días si sigues queriéndola",
+            "La compras a plazos para notar menos el gasto",
+            "La compras y la devuelves si luego te arrepientes"
+          ],
+          "a": 1,
+          "why": "Pasa de 100 €: se apunta y se espera 30 días. Si sigues queriéndola, la compras; si no, te ahorras los 180 €.",
+          "guia": "g3",
+          "porque": [
+            "Esperar al plazo evita la compra impulsiva; ese precio puede no cambiar.",
+            null,
+            "Pagar a plazos no cambia el coste total ni evita decidir deprisa.",
+            "Devolver no es la regla: antes hay que esperar y decidir."
+          ]
+        },
+        {
+          "id": "ov2-3",
+          "t": "num",
+          "q": "Apuntaste 6 compras no planificadas: 25, 40, 35, 60, 90 y 80 €. Tras el plazo de espera, solo sigues queriendo las de 60 y 80 €. ¿Cuántos euros no gastas?",
+          "unit": "€",
+          "a": 190,
+          "why": "Las seis suman 330 € y las dos que mantienes, 140 €: 330 − 140 = 190 € que no gastas.",
+          "guia": "g3"
+        },
+        {
+          "id": "ov2-4",
+          "t": "slide",
+          "q": "Quieres un capricho de 180 € dentro de 3 meses y lo pagas con tu partida de caprichos, sin usar el colchón. ¿Cuántos euros apartas cada mes?",
+          "label": "Aparto al mes",
+          "min": 10,
+          "max": 100,
+          "step": 10,
+          "start": 30,
+          "a": 60,
+          "unit": "€",
+          "why": "180 ÷ 3 = 60 € al mes: así llegas justo, sin tocar el colchón ni pagar a plazos.",
+          "tol": 0.5,
+          "show": [
+            {
+              "label": "Ahorrado en 3 meses",
+              "k": 3,
+              "unit": "€"
+            }
+          ],
+          "guia": "g4"
+        },
+        {
+          "id": "ov2-5",
+          "t": "choice",
+          "q": "Este mes ya has gastado toda tu partida de caprichos y aparece algo que quieres por 40 €. ¿Qué es lo más coherente?",
+          "opts": [
+            "Pagarlo con el colchón de emergencia",
+            "Pagarlo a plazos para que no cuente este mes",
+            "Esperar al mes siguiente o recortar otro capricho",
+            "Subir la partida solo este mes"
+          ],
+          "a": 2,
+          "why": "La partida es un tope fijo: si se agota, esperas al mes siguiente o cambias un capricho por otro.",
+          "guia": "g4",
+          "porque": [
+            "El colchón es para emergencias, no para caprichos.",
+            "A plazos sigues gastando más de lo fijado y sumas cuotas futuras.",
+            null,
+            "Subir la partida a mitad de mes la vuelve un tope sin sentido."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

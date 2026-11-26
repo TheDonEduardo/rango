@@ -1814,5 +1814,44 @@
    "gestores de contraseñas"
   ],
   "d": "Aplicación que guarda contraseñas largas y distintas para cada servicio, protegidas con una clave maestra."
+ },
+ {
+  "termino": "coste por uso",
+  "d": "Precio de algo dividido entre las veces que lo usas (restando lo que te den si lo revendes)."
+ },
+ {
+  "termino": "compra impulsiva",
+  "d": "La que decides en el momento, sin haberla planeado."
+ },
+ {
+  "termino": "lock-up",
+  "alias": [
+   "bloqueo de venta"
+  ],
+  "d": "Plazo tras la salida a bolsa en el que los accionistas previos se comprometen a no vender."
+ },
+ {
+  "termino": "capital flotante",
+  "d": "Porcentaje de las acciones de una empresa que está disponible para el público en bolsa."
+ },
+ {
+  "termino": "interés abierto",
+  "d": "Número de contratos de opciones vivos que aún no se han cerrado ni vencido."
+ },
+ {
+  "termino": "bid",
+  "d": "Mejor precio al que alguien compra: lo que te pagan si vendes."
+ },
+ {
+  "termino": "ask",
+  "d": "Mejor precio al que alguien vende: lo que pagas si compras."
+ },
+ {
+  "termino": "staking líquido",
+  "d": "Depositar monedas en un protocolo que hace el staking y te da un token que las representa y se puede usar o vender."
+ },
+ {
+  "termino": "valor de canje",
+  "d": "Lo que te dan al devolver un token al protocolo que lo emitió, frente a su precio de mercado."
  }
 ]

@@ -1,0 +1,271 @@
+{
+  "n": 6,
+  "id": "crliquido",
+  "track": "cripto",
+  "title": "Staking líquido",
+  "blurb": "Un token que representa tus monedas en staking: qué ventaja da, qué descuento puede sufrir y qué riesgos suma.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Qué es el staking líquido",
+      "texto": "Con el staking normal tus monedas quedan bloqueadas. En el líquido las depositas en un protocolo y recibes un token que representa tu depósito: puedes usarlo o venderlo mientras las monedas siguen en staking.",
+      "ejemplo": "Depositas 10 monedas y recibes 10 tokens. Si cada token se revaloriza un 4 % al año, valen 10 × 1,04 = 10,4 monedas."
+    },
+    {
+      "id": "g2",
+      "titulo": "El descuento del token",
+      "texto": "El token tiene un valor de canje, lo que te dan al devolverlo, y un precio de mercado. Si el mercado paga menos, el descuento es 1 − precio ÷ canje. Suele aparecer porque quien compra el token asume sus riesgos y la espera del canje.",
+      "ejemplo": "Canje de 1,00 y mercado de 0,94: descuento del 6 %. Vender 10 tokens así te cuesta 0,6 monedas.",
+      "figura": {
+        "type": "curvas",
+        "h": 200,
+        "margen": 60,
+        "alt": "Valor de canje constante de 1,00 monedas y precio de mercado que baja de 1,00 a 0,94 y se recupera a 0,97 en cuatro momentos.",
+        "series": [
+          {
+            "data": [1.0,1.0,1.0,1.0],
+            "texto": "Canje",
+            "tono": "sel"
+          },
+          {
+            "data": [1.0,0.96,0.94,0.97],
+            "texto": "Mercado",
+            "tono": "dn",
+            "dy": 6
+          }
+        ],
+        "marcas": [
+          {
+            "i": 2,
+            "y": 0.94,
+            "texto": "0,94",
+            "lado": "d"
+          }
+        ]
+      }
+    },
+    {
+      "id": "g3",
+      "titulo": "Riesgos que se apilan",
+      "texto": "Además del precio de la moneda, suma el riesgo del contrato inteligente que emite el token y del validador, cuyo recorte (slashing) se reparte entre los depositantes. Cada capa puede restar a la recompensa.",
+      "ejemplo": "100 monedas con un 4 % de recompensa dan 4 al año. Un recorte del 1 % es 1 moneda: se pierde el 25 % de la recompensa."
+    },
+    {
+      "id": "g4",
+      "titulo": "El token como garantía",
+      "texto": "Si usas el token como garantía, el protocolo lo valora a precio de mercado y liquida si la deuda supera un porcentaje de la garantía, por ejemplo el 80 %. Un descuento puede liquidarte aunque el staking vaya bien.",
+      "ejemplo": "100 tokens a 1,00 y 70 de deuda: 70 %. Si el token baja a 0,85, la garantía vale 85 y la deuda es el 82,4 %: liquidación.",
+      "figura": {
+        "type": "curvas",
+        "h": 210,
+        "margen": 20,
+        "alt": "Deuda sobre garantía de 70 monedas según el precio del token: 70 %, 77,8 %, 82,4 % y 87,5 % con el token a 1,00, 0,90, 0,85 y 0,80; la línea del 80 % marca la liquidación.",
+        "series": [
+          {
+            "data": [70,77.8,82.4,87.5],
+            "texto": "",
+            "tono": "dn"
+          }
+        ],
+        "lineas": [
+          {
+            "y": 80,
+            "texto": "Liquidación: 80 %",
+            "tono": "acc",
+            "lado": "i"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 0,
+            "y": 70,
+            "texto": "Token a 1,00",
+            "lado": "d"
+          },
+          {
+            "i": 3,
+            "y": 87.5,
+            "texto": "Token a 0,80",
+            "lado": "i"
+          }
+        ]
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "sk1",
+      "title": "El token y su descuento",
+      "ex": [
+        {
+          "id": "sk1-1",
+          "t": "num",
+          "q": "Depositas 20 monedas en un protocolo de staking líquido y recibes 20 tokens. Con las recompensas, cada token vale un 5 % más tras un año. ¿Cuántas monedas valen tus tokens?",
+          "unit": "",
+          "a": 21,
+          "why": "Cada token vale 1,05 monedas: 20 × 1,05 = 21 monedas, 1 más que depositaste.",
+          "guia": "g1"
+        },
+        {
+          "id": "sk1-2",
+          "t": "choice",
+          "q": "¿Qué ventaja busca el staking líquido frente al staking normal?",
+          "opts": [
+            "Seguir usando el valor depositado sin esperar al desbloqueo",
+            "Eliminar el riesgo de perder monedas",
+            "Cobrar el doble de recompensa por el mismo depósito",
+            "Evitar el riesgo de precio de la moneda"
+          ],
+          "a": 0,
+          "why": "El token se puede vender o usar mientras las monedas siguen en staking. El riesgo y la recompensa no cambian por eso.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "El staking líquido no quita el riesgo: añade el del contrato.",
+            "La recompensa es la misma: el token no la duplica.",
+            "La moneda sigue cotizando: su precio sigue afectando a tu depósito."
+          ]
+        },
+        {
+          "id": "sk1-3",
+          "t": "num",
+          "q": "Un token de staking líquido se canjea por 1,25 monedas, pero en el mercado cotiza a 1,20. ¿Qué descuento tiene, en %?",
+          "unit": "%",
+          "a": 4,
+          "why": "1,20 ÷ 1,25 = 0,96: cotiza un 4 % por debajo de su valor de canje.",
+          "guia": "g2"
+        },
+        {
+          "id": "sk1-4",
+          "t": "choice",
+          "q": "Un token de staking líquido cotiza a 0,94 monedas y su valor de canje es 1,00. ¿Qué explica mejor ese descuento?",
+          "opts": [
+            "El protocolo ya ha cobrado el 6 % del depósito en comisiones",
+            "La moneda subyacente ha bajado un 6 % en el mercado",
+            "Los compradores piden menos precio por el riesgo y la espera",
+            "Las recompensas se han pagado por adelantado a todos"
+          ],
+          "a": 2,
+          "why": "Quien compra el token asume riesgos y espera para canjearlo; por eso paga menos que el valor de canje.",
+          "guia": "g2",
+          "porque": [
+            "Una comisión ya cobrada ya está en el valor de canje: no abre diferencia con el mercado.",
+            "Si la moneda baja, el token baja con ella, pero el canje en monedas no cambia.",
+            null,
+            "Las recompensas ya figuran en el valor de canje: no abren un descuento."
+          ]
+        },
+        {
+          "id": "sk1-5",
+          "t": "match",
+          "q": "Empareja cada concepto del staking líquido con su significado.",
+          "pairs": [
+            [
+              "Valor de canje",
+              "Monedas que te dan al devolver el token al protocolo"
+            ],
+            [
+              "Precio de mercado",
+              "Lo que pagan hoy al comprar el token en un intercambio"
+            ],
+            [
+              "Descuento",
+              "Cuánto menos vale en el mercado que en el canje, en %"
+            ]
+          ],
+          "why": "El descuento compara el precio de mercado con el valor de canje; si el mercado paga menos, hay descuento.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "sk2",
+      "title": "Riesgos y garantía",
+      "ex": [
+        {
+          "id": "sk2-1",
+          "t": "num",
+          "q": "Depositas 200 monedas en un protocolo de staking líquido con una recompensa del 5 % anual. Un fallo del validador recorta un 2 % de los depósitos. ¿Qué porcentaje de la recompensa anual se pierde?",
+          "unit": "%",
+          "a": 40,
+          "why": "Recompensa: 200 × 5 % = 10 monedas. Recorte: 200 × 2 % = 4 monedas. 4 ÷ 10 = 40 %.",
+          "guia": "g3"
+        },
+        {
+          "id": "sk2-2",
+          "t": "choice",
+          "q": "¿Qué riesgo añade el staking líquido respecto a hacer staking sin recibir ningún token?",
+          "opts": [
+            "Que el protocolo no pueda recibir recompensas por ser líquido",
+            "Que tengas que custodiar tú las claves del validador",
+            "Que el token pase a ser propiedad de la cadena",
+            "Que un fallo del contrato inteligente deje el token sin respaldo"
+          ],
+          "a": 3,
+          "why": "El contrato que emite y canjea el token es una capa nueva de riesgo; si falla, el token puede quedarse sin respaldo.",
+          "guia": "g3",
+          "porque": [
+            "Las recompensas llegan igual: el token no las impide.",
+            "No custodias las claves del validador: lo hace el protocolo.",
+            "El token sigue siendo tuyo: no pasa a ser de la cadena.",
+            null
+          ]
+        },
+        {
+          "id": "sk2-3",
+          "t": "slide",
+          "q": "Depositas 100 tokens de staking líquido como garantía de un préstamo. Valen 1,00 monedas cada uno y se liquidan si la deuda supera el 80 % de la garantía. Elige la mayor deuda, en monedas, que aguanta una caída del token a 0,85.",
+          "label": "Deuda",
+          "min": 40,
+          "max": 90,
+          "step": 2,
+          "start": 80,
+          "a": 68,
+          "unit": "",
+          "why": "Con el token a 0,85, la garantía vale 85 monedas; el 80 % son 68 monedas. Con más deuda, te liquidan.",
+          "tol": 0.5,
+          "show": [
+            {
+              "label": "Deuda sobre garantía con el token a 0,85",
+              "k": 1.1764705882352942,
+              "unit": "%",
+              "dec": 1
+            }
+          ],
+          "guia": "g4"
+        },
+        {
+          "id": "sk2-4",
+          "t": "num",
+          "q": "Pones 100 tokens como garantía de una deuda de 54 monedas. El token baja a 0,60 monedas. ¿Qué porcentaje de la garantía es la deuda?",
+          "unit": "%",
+          "a": 90,
+          "why": "La garantía vale 100 × 0,60 = 60 monedas. 54 ÷ 60 = 0,90: la deuda es el 90 %.",
+          "guia": "g4"
+        },
+        {
+          "id": "sk2-5",
+          "t": "choice",
+          "q": "La garantía de tu préstamo se valora a precio de mercado y se liquida por encima del 80 %. ¿Qué ocurre si el token cae a descuento, aunque su valor de canje no cambie?",
+          "opts": [
+            "No pasa nada, porque el canje sigue igual",
+            "El protocolo repone la diferencia de su caja",
+            "Pueden liquidarte aunque el staking siga bien",
+            "Solo se ve afectado quien venda el token"
+          ],
+          "a": 2,
+          "why": "La garantía vale lo que dice el mercado: si el token cae a descuento, la deuda pesa más y puede dispararse la liquidación.",
+          "guia": "g4",
+          "porque": [
+            "El canje no vale aquí: la garantía se valora a precio de mercado.",
+            "El protocolo no repone nada: liquida la garantía.",
+            null,
+            "También afecta a quien lo usa como garantía de un préstamo."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

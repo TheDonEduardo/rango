@@ -1,0 +1,255 @@
+{
+  "n": 24,
+  "id": "opliquidez",
+  "track": "derivados",
+  "title": "Liquidez y horquilla en opciones",
+  "blurb": "Cuánto cuesta entrar y salir de una opción, cómo ponerle precio y qué contratos conviene evitar.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "La horquilla de una opción",
+      "texto": "El bid es lo que te pagan si vendes; el ask, lo que pagas si compras. La horquilla es su diferencia y, como las primas son pequeñas, se mide como porcentaje del punto medio, la media de ambos.",
+      "ejemplo": "Bid 1,10 € y ask 1,30 €: horquilla 0,20 €. Punto medio 1,20 €: la horquilla es el 16,7 %. Por contrato, 20 €."
+    },
+    {
+      "id": "g2",
+      "titulo": "Poner precio con orden limitada",
+      "texto": "A mercado pagas el ask. Con una orden limitada cerca del punto medio ahorras parte de la horquilla; si no se ejecuta, sube el límite poco a poco. Cada céntimo vale 100 acciones por contrato.",
+      "ejemplo": "Bid 0,70 € y ask 0,90 €: medio 0,80 €. En 3 contratos ahorras 0,10 × 100 × 3 = 30 € frente al ask."
+    },
+    {
+      "id": "g3",
+      "titulo": "Volumen e interés abierto",
+      "texto": "El volumen son los contratos negociados hoy. El interés abierto, los contratos vivos que nadie ha cerrado. Con ambos altos suele haber más compradores y vendedores y una horquilla estrecha; con volumen cero, salir cuesta caro.",
+      "ejemplo": "A: interés abierto 4.200, volumen 800, horquilla 0,05 €. B: 15, 0 y 0,40 €. El A se negocia con facilidad; el B, no."
+    },
+    {
+      "id": "g4",
+      "titulo": "Coste de ida y vuelta",
+      "texto": "Comprar al ask y vender al bid cuesta la horquilla entera por 100 acciones y contrato. Elige ejercicios y vencimientos con mercado (la horquilla crece al alejarse del precio) y fija un límite, por ejemplo una horquilla máxima del 10 % del punto medio.",
+      "ejemplo": "3 contratos con horquilla de 0,20 €: 3 × 100 × 0,20 = 60 € de ida y vuelta.",
+      "figura": {
+        "type": "curvas",
+        "h": 210,
+        "margen": 20,
+        "alt": "Horquilla ilustrativa en euros según lo lejos que está el ejercicio del precio actual: 0,05, 0,05, 0,10, 0,25 y 0,60; crece al alejarse.",
+        "series": [
+          {
+            "data": [0.05,0.05,0.1,0.25,0.6],
+            "texto": "",
+            "tono": "dn"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 1,
+            "y": 0.05,
+            "texto": "Cerca del precio",
+            "lado": "d"
+          },
+          {
+            "i": 4,
+            "y": 0.6,
+            "texto": "Lejos",
+            "lado": "i"
+          }
+        ]
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "op49",
+      "title": "Medir y negociar la horquilla",
+      "ex": [
+        {
+          "id": "op49-1",
+          "t": "num",
+          "q": "Una opción cotiza con un bid de 2,40 € y un ask de 2,60 €. ¿Qué porcentaje del punto medio supone la horquilla?",
+          "unit": "%",
+          "a": 8,
+          "why": "Horquilla: 2,60 − 2,40 = 0,20 €. Punto medio: 2,50 €. 0,20 ÷ 2,50 = 8 %.",
+          "guia": "g1"
+        },
+        {
+          "id": "op49-2",
+          "t": "num",
+          "q": "La horquilla de una call es de 0,15 €. Compras 4 contratos al ask y los vendes enseguida al bid, sin que cambie el mercado. Un contrato son 100 acciones. ¿Cuántos euros pierdes?",
+          "unit": "€",
+          "a": 60,
+          "why": "0,15 × 100 acciones × 4 contratos = 60 €: pagas la horquilla entera en la ida y vuelta.",
+          "guia": "g1"
+        },
+        {
+          "id": "op49-3",
+          "t": "choice",
+          "q": "Quieres comprar una call con un bid de 0,80 € y un ask de 1,00 €. ¿Qué orden controla mejor lo que pagas?",
+          "opts": [
+            "Una orden limitada cerca del punto medio, a 0,90 €",
+            "Una orden a mercado, para entrar enseguida",
+            "Una orden limitada a 1,00 €, para que se ejecute seguro",
+            "Esperar a que el bid suba hasta el ask"
+          ],
+          "a": 0,
+          "why": "El punto medio, 0,90 €, ahorra la mitad de la horquilla; si no se ejecuta, se sube el límite poco a poco.",
+          "guia": "g2",
+          "porque": [
+            null,
+            "A mercado pagas el ask entero, o más si el mercado se mueve.",
+            "Con límite en el ask pagas toda la horquilla; no ahorras nada.",
+            "El bid no sube hasta el ask: el ask es siempre mayor que el bid."
+          ]
+        },
+        {
+          "id": "op49-4",
+          "t": "num",
+          "q": "Quieres comprar 5 contratos de una call con un bid de 1,40 € y un ask de 1,60 €. Pones el límite en el punto medio y se ejecuta. Un contrato son 100 acciones. ¿Cuántos euros ahorras frente a pagar el ask?",
+          "unit": "€",
+          "a": 50,
+          "why": "Punto medio: 1,50 €; ahorras 0,10 € por acción: 0,10 × 100 × 5 = 50 €.",
+          "guia": "g2"
+        },
+        {
+          "id": "op49-5",
+          "t": "slide",
+          "q": "Quieres comprar 2 contratos de una call con un bid de 3,00 € y un ask de 3,40 €. Coloca el límite de compra en el punto medio.",
+          "label": "Límite de compra",
+          "min": 3.0,
+          "max": 3.4,
+          "step": 0.1,
+          "start": 3.4,
+          "a": 3.2,
+          "unit": "€",
+          "why": "Punto medio: (3,00 + 3,40) ÷ 2 = 3,20 €. Ahorras 0,20 × 100 × 2 = 40 € frente al ask.",
+          "show": [
+            {
+              "label": "Coste de los 2 contratos",
+              "k": 200,
+              "unit": "€"
+            },
+            {
+              "label": "Ahorro frente al ask",
+              "k": -200,
+              "b": 680,
+              "unit": "€"
+            }
+          ],
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "op50",
+      "title": "Elegir contratos líquidos",
+      "ex": [
+        {
+          "id": "op50-1",
+          "t": "match",
+          "q": "Empareja cada dato de liquidez con su significado.",
+          "pairs": [
+            [
+              "Volumen",
+              "Contratos negociados en el día"
+            ],
+            [
+              "Interés abierto",
+              "Contratos vivos que aún no se han cerrado"
+            ],
+            [
+              "Horquilla estrecha",
+              "Poca diferencia entre bid y ask: señal de buen mercado"
+            ]
+          ],
+          "why": "El volumen mide la actividad del día; el interés abierto, los contratos vivos; y una horquilla estrecha suele acompañar a ambos altos.",
+          "guia": "g4"
+        },
+        {
+          "id": "op50-2",
+          "t": "choice",
+          "q": "El contrato A tiene un interés abierto de 4.200, un volumen de 800, un bid de 2,05 € y un ask de 2,10 €. El B, un interés abierto de 15, un volumen de 0, un bid de 1,80 € y un ask de 2,20 €. ¿Cuál es más fácil de comprar y vender sin perder precio?",
+          "opts": [
+            "El B, porque deja más margen para negociar",
+            "El A, por su mayor volumen y su horquilla más estrecha",
+            "Los dos igual, porque el precio medio es parecido",
+            "El B, porque su prima es más barata"
+          ],
+          "a": 1,
+          "why": "El A tiene mucha actividad y una horquilla de 0,05 €; el B, sin volumen, tiene una de 0,40 €: salir te costaría mucho.",
+          "guia": "g3",
+          "porque": [
+            "La horquilla ancha es un coste, no un margen a tu favor.",
+            null,
+            "El precio medio parecido no basta: la horquilla de B es ocho veces la de A.",
+            "Tampoco es más barato de comprar: su ask, 2,20 €, supera al de A, 2,10 €, y su horquilla es de 0,40 €."
+          ]
+        },
+        {
+          "id": "op50-3",
+          "t": "num",
+          "q": "Dos precios de ejercicio del mismo vencimiento tienen una horquilla de 0,05 € el primero y de 0,25 € el segundo. Con 4 contratos de 100 acciones, ¿cuántos euros más cuesta la ida y vuelta en el segundo?",
+          "unit": "€",
+          "a": 80,
+          "why": "(0,25 − 0,05) × 100 × 4 = 80 € más: los precios de ejercicio lejanos suelen tener la horquilla más ancha.",
+          "guia": "g4"
+        },
+        {
+          "id": "op50-4",
+          "t": "num",
+          "q": "Tu límite es que la horquilla no supere el 10 % del punto medio. Una opción tiene un punto medio de 2,50 €. ¿Cuál es la horquilla máxima que aceptas, en euros?",
+          "unit": "€",
+          "a": 0.25,
+          "why": "10 % de 2,50 € = 0,25 €: con más horquilla, descartas el contrato.",
+          "tol": 0.005,
+          "guia": "g4"
+        },
+        {
+          "id": "op50-5",
+          "t": "choice",
+          "q": "Con tu regla (horquilla máxima del 10 % del punto medio), ¿qué contratos de la tabla descartas?",
+          "opts": [
+            "Solo el B",
+            "El A y el B",
+            "Solo el C",
+            "Los tres"
+          ],
+          "a": 0,
+          "why": "A: 0,10 ÷ 2,00 = 5 %. B: 0,20 ÷ 1,00 = 20 %. C: 0,20 ÷ 3,10 = 6,5 %. Solo el B pasa del 10 %.",
+          "table": {
+            "cols": [
+              "Contrato",
+              "Bid",
+              "Ask"
+            ],
+            "rows": [
+              [
+                "A",
+                "1,95 €",
+                "2,05 €"
+              ],
+              [
+                "B",
+                "0,90 €",
+                "1,10 €"
+              ],
+              [
+                "C",
+                "3,00 €",
+                "3,20 €"
+              ]
+            ],
+            "note": "Datos ficticios."
+          },
+          "guia": "g4",
+          "porque": [
+            null,
+            "El A también pasa: su horquilla es el 5 %, no más del 10 %.",
+            "El C pasa: su horquilla es el 6,5 % del punto medio, bajo el 10 %.",
+            "Solo uno supera el 10 %; el A y el C cumplen tu regla."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

@@ -1,0 +1,220 @@
+{
+  "n": 41,
+  "id": "opv",
+  "track": "fundamental",
+  "title": "Analizar una salida a bolsa",
+  "blurb": "Quién recibe el dinero, qué valor se pide, cuántas acciones cotizan y cuándo llegan más.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Quién recibe el dinero",
+      "texto": "En una salida a bolsa hay acciones nuevas, cuyo dinero va a la empresa y diluyen a los actuales, y acciones vendidas por accionistas actuales, cuyo dinero va a ellos.",
+      "ejemplo": "Se ofrecen 15 millones de acciones nuevas y 5 vendidas a 10 €: la empresa recibe 150 mill. € y los vendedores, 50."
+    },
+    {
+      "id": "g2",
+      "titulo": "Qué valor se pide",
+      "texto": "La capitalización es el precio por todas las acciones. El valor de empresa suma la deuda y resta la caja. Dividido entre las ventas da un múltiplo que se compara con el de empresas parecidas: la diferencia es la prima.",
+      "ejemplo": "95 millones de acciones a 10 € son 950 mill. €; con deuda 100 y caja 180, 870: 3,0 veces ventas de 290. Comparables a 2,4: prima del 25 %."
+    },
+    {
+      "id": "g3",
+      "titulo": "Bloqueo y capital flotante",
+      "texto": "Los accionistas previos suelen firmar un bloqueo de venta (lock-up): meses sin vender. El capital flotante es el porcentaje de acciones que cotizan. Al acabar el bloqueo pueden llegar muchas más al mercado.",
+      "ejemplo": "De 95 millones de acciones, 20 se ofrecen al público: flotante del 21 %. Al acabar el bloqueo, otras 75 millones podrían venderse.",
+      "figura": {
+        "type": "curvas",
+        "h": 200,
+        "x": [0,180,180,360],
+        "margen": 80,
+        "alt": "Acciones disponibles en bolsa en millones: 20 durante el bloqueo de venta y, al acabar, un salto hasta 95, que es el total de acciones.",
+        "series": [
+          {
+            "data": [20,20,95,95],
+            "texto": "En bolsa",
+            "tono": "sel",
+            "dy": 16
+          }
+        ],
+        "lineas": [
+          {
+            "y": 95,
+            "texto": "Total: 95 millones",
+            "tono": "ink",
+            "lado": "i"
+          }
+        ]
+      }
+    },
+    {
+      "id": "g4",
+      "titulo": "Leer el folleto",
+      "texto": "Mira para qué se usa el dinero: cuánto recibe la empresa y cuánto va a crecer, a pagar deuda o a costes, y cuánto se lo llevan los vendedores. Si casi todo es venta de accionistas, no financia crecimiento.",
+      "ejemplo": "Recauda 150 mill. €: 90 a crecer (60 %), 40 a deuda y 20 a costes de la operación."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "lk1",
+      "title": "Quién cobra y cuánto vale",
+      "ex": [
+        {
+          "id": "lk1-1",
+          "t": "num",
+          "q": "En una salida a bolsa el precio es de 12 € y se ofrecen 10 millones de acciones nuevas y 8 millones vendidas por accionistas actuales. Sin contar comisiones, ¿cuántos millones de euros recibe la empresa?",
+          "unit": "mill. €",
+          "a": 120,
+          "why": "Solo las acciones nuevas dan dinero a la empresa: 10 × 12 = 120 mill. €. Las 8 millones vendidas (96 mill. €) van a los vendedores.",
+          "guia": "g1"
+        },
+        {
+          "id": "lk1-2",
+          "t": "choice",
+          "q": "En una salida a bolsa se ofrecen acciones nuevas y acciones de los accionistas actuales. ¿Cuáles aumentan el número total de acciones?",
+          "opts": [
+            "Solo las acciones nuevas",
+            "Solo las vendidas por accionistas actuales",
+            "Ambas por igual",
+            "Ninguna: el total no cambia"
+          ],
+          "a": 0,
+          "why": "Las nuevas se crean y diluyen a los actuales; las vendidas solo cambian de dueño y no cambian el total.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "Las vendidas no crean acciones: solo cambian de manos.",
+            "Las nuevas sí aumentan el total, así que no son iguales.",
+            "Las nuevas aumentan el total: las acciones nuevas se crean."
+          ]
+        },
+        {
+          "id": "lk1-3",
+          "t": "match",
+          "q": "Empareja cada medida de una salida a bolsa con su cálculo.",
+          "pairs": [
+            [
+              "Capitalización",
+              "Precio × acciones totales tras la salida"
+            ],
+            [
+              "Valor de empresa",
+              "Capitalización + deuda − caja"
+            ],
+            [
+              "Valor de empresa entre ventas",
+              "Valor de empresa ÷ ventas anuales"
+            ]
+          ],
+          "why": "La capitalización usa todas las acciones; el valor de empresa suma deuda y resta caja; dividido entre ventas da el múltiplo para comparar.",
+          "guia": "g2"
+        },
+        {
+          "id": "lk1-4",
+          "t": "num",
+          "q": "Tras una salida a bolsa, una empresa vale 840 mill. € en bolsa, tiene 90 mill. € de deuda y 150 mill. € de caja (ya con el dinero recaudado), y vende 300 mill. € al año. ¿Cuántas veces sus ventas es su valor de empresa?",
+          "unit": "",
+          "a": 2.6,
+          "why": "Valor de empresa: 840 + 90 − 150 = 780 mill. €. 780 ÷ 300 = 2,6 veces las ventas.",
+          "tol": 0.06,
+          "guia": "g2"
+        },
+        {
+          "id": "lk1-5",
+          "t": "num",
+          "q": "Una empresa sale a bolsa a 2,6 veces sus ventas, mientras que las comparables que ya cotizan valen 2,0 veces. ¿Qué prima pide sobre ellas, en %?",
+          "unit": "%",
+          "a": 30,
+          "why": "2,6 ÷ 2,0 = 1,3: pide un 30 % más que las comparables. Hay que ver si su crecimiento lo justifica.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "lk2",
+      "title": "Bloqueo, flotante y folleto",
+      "ex": [
+        {
+          "id": "lk2-1",
+          "t": "num",
+          "q": "Una empresa tiene 90 millones de acciones tras salir a bolsa y ofrece 18 millones al público. ¿Qué porcentaje es su capital flotante?",
+          "unit": "%",
+          "a": 20,
+          "why": "18 ÷ 90 = 0,20: el capital flotante es el 20 %. El resto está en manos de accionistas que aún no pueden vender.",
+          "guia": "g3"
+        },
+        {
+          "id": "lk2-2",
+          "t": "choice",
+          "q": "Termina el bloqueo de venta de los accionistas previos, que tienen muchas más acciones que las que cotizan. ¿Qué riesgo aparece?",
+          "opts": [
+            "La empresa debe devolver el dinero recaudado",
+            "Las acciones pasan a valer cero automáticamente",
+            "Pueden llegar muchas acciones al mercado y presionar el precio",
+            "Los nuevos accionistas pierden sus derechos de voto"
+          ],
+          "a": 2,
+          "why": "Al acabar el bloqueo, quienes tenían la mayoría pueden vender: más oferta de acciones y posible presión sobre el precio.",
+          "guia": "g3",
+          "porque": [
+            "El dinero recaudado no se devuelve por acabar un bloqueo.",
+            "El bloqueo no afecta al valor mínimo de la acción.",
+            null,
+            "Los derechos de voto no dependen del bloqueo."
+          ]
+        },
+        {
+          "id": "lk2-3",
+          "t": "match",
+          "q": "Empareja cada concepto del bloqueo de venta con su significado.",
+          "pairs": [
+            [
+              "Bloqueo de venta (lock-up)",
+              "Plazo en que los accionistas previos no pueden vender"
+            ],
+            [
+              "Capital flotante",
+              "Acciones disponibles para el público ÷ acciones totales"
+            ],
+            [
+              "Fin del bloqueo",
+              "Pueden llegar más acciones al mercado y presionar el precio"
+            ]
+          ],
+          "why": "El bloqueo limita la oferta al principio; el capital flotante mide cuántas acciones cotizan; al acabar el bloqueo, la oferta puede crecer de golpe.",
+          "guia": "g3"
+        },
+        {
+          "id": "lk2-4",
+          "t": "num",
+          "q": "El folleto de una salida a bolsa dice que la empresa recauda 160 mill. €: 96 irán a crecer, 40 a pagar deuda y 24 a los costes de la operación. ¿Qué porcentaje de lo recaudado va a crecer?",
+          "unit": "%",
+          "a": 60,
+          "why": "96 ÷ 160 = 0,60: el 60 % financia crecimiento; el resto es deuda y costes.",
+          "guia": "g4"
+        },
+        {
+          "id": "lk2-5",
+          "t": "choice",
+          "q": "Un folleto dice que el 80 % de lo que se ofrece son acciones de los accionistas actuales. ¿Qué conclusión es más sólida?",
+          "opts": [
+            "La empresa recibirá el 80 % del dinero",
+            "El precio de salida será necesariamente bajo",
+            "La empresa recibirá solo una parte pequeña del dinero",
+            "La salida es mala y no merece mirarse"
+          ],
+          "a": 2,
+          "why": "Solo el 20 % son acciones nuevas: la mayor parte del dinero va a los vendedores y la empresa recibe poco para crecer.",
+          "guia": "g4",
+          "porque": [
+            "Solo recibe el 20 %, no el 80 %: el 80 % son acciones vendidas.",
+            "El folleto no dice nada del nivel del precio de salida.",
+            null,
+            "Una venta alta de accionistas no basta para descartarla: pide mirar el resto."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}
