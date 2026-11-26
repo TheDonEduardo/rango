@@ -122,6 +122,9 @@ async function auditar(b, url) {
     ['glosario', {...base, track: 'basico'}, async p => { await p.click('[data-act=glosario]'); }],
     ['privacidad', {...base, track: 'basico'}, async p => { await p.click('[data-act=privacidad]'); }],
     ['guía con figura', {...base, track: 'tecnico'}, async p => { await p.click('[data-act=guia][data-id=velas]'); }],
+    ['inicio con teoría pendiente en Hoy', {...base, track: 'basico', xp: 50, guias: {}}, null],
+    ['inicio con teoría leída', {...base, track: 'basico', xp: 50, leidas: Object.fromEntries(units.filter(u => u.guia).map(u => [u.id, '2026-01-01']))}, null],
+    ['guía última tarjeta con XP', {...base, guias: {}, xp: 50, track: 'basico'}, async p => { await p.click('[data-act=open][data-id=ba1]'); while (!(await p.locator('.gleida').count())) await p.click('.guia [data-act=guianext]'); }],
     ['test de nivel', {legal: 99, track: 'basico', done: {}, srs: {}, objetivo: 'basico'}, async p => { await p.click('[data-act=test]'); }],
   ];
   const resumen = {};
@@ -171,6 +174,59 @@ async function guiaNavegacion(b, url) {
   await desliza(-20); if (await pos() !== '1') errs.push('un toque corto cambia de tarjeta');
   console.log('  ' + (errs.length ? errs.join('\n  ') : 'bien'));
   await p.close(); return errs.length;
+}
+
+// Teoría: leer la guía entera da +10 XP una sola vez (toast, aviso en la última tarjeta, marca en la unidad, recuento en
+// estadísticas), la fila de «Hoy» desaparece al leerla y «Ver teoría» abre la tarjeta desde un ejercicio sin perder lo elegido.
+async function teoria(b, url, dir) {
+  const errs = [], U = units.find(u => u.track === 'basico' && u.guia), L1 = U.lessons[0].id, n = U.guia.length;
+  const estado = {legal: 99, track: 'basico', xp: 50, done: {}, srs: {}, objetivo: 'basico', placement: {skipped: true}, guias: Object.fromEntries(units.filter(u => u.guia && u !== U).map(u => [u.id, 1]))};
+  const sd = dir ? path.join(dir, 'teoria') : null; if (sd) fs.mkdirSync(sd, {recursive: true});
+  const xp = p => p.locator('.chip.xp b').innerText();
+  for (const scheme of ['light', 'dark']) {
+    const p = await b.newPage({viewport: {width: 390, height: 844}, colorScheme: scheme, reducedMotion: 'reduce'});
+    p.on('pageerror', e => errs.push(scheme + ': ' + e.message)); p.on('console', m => m.type() === 'error' && errs.push(scheme + ': ' + m.text()));
+    await p.goto(url); await p.evaluate(s => localStorage.setItem('rango.v1', JSON.stringify(s)), estado); await p.reload(); await p.waitForSelector('.hoy');
+    if (!(await p.locator('.hoy-row.teo').count())) errs.push(scheme + ': «Hoy» no recuerda la teoría de la unidad');
+    else if (sd) await p.locator('.hoy').screenshot({path: `${sd}/hoy-${scheme}.png`});
+    await p.click('.hoy-row.teo [data-act=guiahoy]');
+    for (let i = 1; i < n; i++) { if ((await p.locator('.gleida').count())) errs.push(scheme + ': el aviso de XP sale antes de la última tarjeta'); await p.click('.guia [data-act=guianext]'); }
+    if (!(await p.locator('.gleida').count())) errs.push(scheme + ': la última tarjeta no avisa del XP');
+    if (!(await p.locator('#toast').innerText()).includes('+10 XP')) errs.push(scheme + ': falta el aviso «+10 XP por leer la teoría»');
+    if (sd) await p.screenshot({path: `${sd}/ultima-tarjeta-${scheme}.png`});
+    await p.click('.gnav [data-act=guiafin]'); await p.waitForSelector('.top');
+    if (await xp(p) !== '60') errs.push(`${scheme}: XP tras leer la teoría = ${await xp(p)}, debería ser 60`);
+    if (!(await p.locator('.unit .leida').first().count())) errs.push(scheme + ': falta la marca «Teoría leída» en la unidad');
+    else if (sd) await p.locator('.unit').first().screenshot({path: `${sd}/marca-unidad-${scheme}.png`});
+    if (await p.locator('.hoy-row.teo').count()) errs.push(scheme + ': «Hoy» sigue recordando una teoría leída');
+    // Leerla otra vez (también tras recargar) no suma
+    await p.reload(); await p.waitForSelector('.top');
+    await p.click(`[data-act=guia][data-id=${U.id}]`); for (let i = 1; i < n; i++) await p.click('.guia [data-act=guianext]');
+    await p.click('.gnav [data-act=guiafin]'); await p.waitForSelector('.top');
+    if (await xp(p) !== '60') errs.push(scheme + ': la teoría da XP más de una vez');
+    await p.click('[data-act=stats]'); await p.waitForSelector('.estad');
+    if (!(await p.locator('.estad').innerText()).includes('Guías leídas: 1 de')) errs.push(scheme + ': estadísticas sin el recuento de guías leídas');
+    await p.click('.estad [data-act=home]'); await p.waitForSelector('.top');
+    // «Ver teoría» desde un ejercicio, sin responder: se vuelve a la misma pregunta con lo elegido
+    await p.click(`[data-act=open][data-id="${L1}"]`);
+    for (let k = 0; k < 8 && !(await p.locator('.teoria.previa').count()); k++) { await responder(p); await p.click('[data-act=next]'); }
+    if (!(await p.locator('.teoria.previa').count())) errs.push(scheme + ': ningún ejercicio ofrece «Ver teoría»');
+    else {
+      const q = await p.locator('.q').innerText(), choice = await p.locator('[data-act=pick]').count(), num = await p.locator('#numIn').count();
+      if (choice) await p.locator('[data-act=pick]').nth(1).click(); else if (num) await p.fill('#numIn', '7');
+      if (sd) await p.screenshot({path: `${sd}/ver-teoria-${scheme}.png`});
+      await p.click('.teoria.previa'); await p.waitForSelector('.guia');
+      await p.click('.gnav .btn.primary'); while (await p.locator('.guia').count()) await p.click('.gnav .btn.primary');
+      await p.waitForSelector('.lesson .q');
+      if (await p.locator('.q').innerText() !== q) errs.push(scheme + ': «Ver teoría» no vuelve a la misma pregunta');
+      if (choice && !(await p.locator('.opt.sel').count())) errs.push(scheme + ': «Ver teoría» pierde la opción elegida');
+      if (num && await p.inputValue('#numIn') !== '7') errs.push(scheme + ': «Ver teoría» pierde la cifra escrita');
+      if (await p.locator('.heart.on').count() !== 3) errs.push(scheme + ': «Ver teoría» quita una vida');
+    }
+    await p.close();
+  }
+  console.log('  ' + (errs.length ? errs.join('\n  ') : 'bien'));
+  return errs.length;
 }
 
 // Enlace directo a la política (desde bienvenida.html): «./?privacidad» la abre sin aviso legal previo y «Volver» lleva al aviso.
@@ -246,6 +302,7 @@ async function cargaFallida(b, url) {
   console.log(`Recorrido de ${ids.length} lecciones en ${modos.length} modo(s):`);
   let fallos = await recorrer(b, url, ids, modos, dir);
   if (!has('--lecciones') && !has('--todas')) { console.log('Guía (teclado y dedo):'); fallos += await guiaNavegacion(b, url); }
+  if (!has('--lecciones') && !has('--todas')) { console.log('Teoría (XP, «Ver teoría», fila de «Hoy»):'); fallos += await teoria(b, url, dir); }
   if (!has('--lecciones') && !has('--todas')) { console.log('Política de privacidad directa:'); fallos += await privacidadDirecta(b, url); }
   if (!has('--lecciones') && !has('--todas')) { console.log('Bienvenida: privacidad de la lista de espera:'); fallos += await bienvenidaPrivacidad(b, url); }
   if (!has('--lecciones') && !has('--todas')) { console.log('Carga y fallo de carga:'); fallos += await cargaFallida(b, url); }

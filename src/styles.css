@@ -343,6 +343,9 @@ ul.itin-l{list-style:'✓  '}
 .guia .saltar{width:auto;padding:6px 12px;font-size:14px;margin-left:4px}
 .ban .unfold+.unfold{margin-left:6px}
 .fb .teoria{display:block;margin:0 0 12px;font-weight:600}
+.teoria.previa{display:block;margin:12px auto 0;font-size:14px}
+.ban .leida{display:inline-flex;align-items:center;gap:4px;margin-left:10px;font-size:13px;font-weight:600;opacity:.9;vertical-align:middle}.ban .leida .ico{width:14px;height:14px}
+.guia .gleida{margin:0 0 10px;font-weight:600;color:var(--up-ink)}
 .ban .btn.unfold{color:inherit;border-color:currentColor}
 
 .gfig{margin:0 0 14px}

@@ -5,7 +5,7 @@ import {FLAT,EXBYID,TRACKS,trackOf,libre} from './content.js';
 // Versión del formato guardado. Cada cambio de formato añade un paso a MIGRAR (de la versión n a la n+1),
 // así el progreso de quien ya usa la app se convierte en vez de perderse.
 export const STATE_V=3;
-export const DEF=()=>({v:STATE_V,xp:0,streak:0,last:null,day:null,dayXp:0,done:{},all:false,track:'basico',skipBasics:false,legal:0,srs:{},sim:{},calc:null,itin:null,mercado:null,stats:{ex:{},min:0},guias:{},aprendidos:{},dominadas:{},pruebas:{},meta:40,protector:0,objetivo:null,medir:false,reto:null,mod:0});
+export const DEF=()=>({v:STATE_V,xp:0,streak:0,last:null,day:null,dayXp:0,done:{},all:false,track:'basico',skipBasics:false,legal:0,srs:{},sim:{},calc:null,itin:null,mercado:null,stats:{ex:{},min:0},guias:{},leidas:{},aprendidos:{},dominadas:{},pruebas:{},meta:40,protector:0,objetivo:null,medir:false,reto:null,mod:0});
 // Meta diaria elegible y máximo de protectores (antes de load(), que sanea el estado al leerlo).
 export const META_OPC=[20,40,80], PROTECTOR_MAX=2;
 const MIGRAR={
@@ -54,7 +54,7 @@ export function leerCopia(texto){
     const j=JSON.parse(texto),e=j&&j.estado,obj=v=>!!v&&typeof v==='object'&&!Array.isArray(v);
     if(!j||j.app!=='rango'||!obj(e)||typeof e.xp!=='number'||!obj(e.done))return null;
     // Los campos que sean colecciones tienen que serlo (una copia retocada con null rompería la app).
-    if(['srs','sim','stats','guias','aprendidos','dominadas','pruebas'].some(k=>k in e&&!obj(e[k]))||(obj(e.stats)&&'ex' in e.stats&&!obj(e.stats.ex)))return null;
+    if(['srs','sim','stats','guias','leidas','aprendidos','dominadas','pruebas'].some(k=>k in e&&!obj(e[k]))||(obj(e.stats)&&'ex' in e.stats&&!obj(e.stats.ex)))return null;
     // Copia hecha con una versión más nueva de Rango: no se puede convertir hacia atrás.
     if((e.v||1)>STATE_V)return 'nueva';
     const estado=completar(JSON.parse(JSON.stringify(j.estado)));

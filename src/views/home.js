@@ -1,6 +1,6 @@
 // Inicio: cabecera, selector de ruta, un aviso como mucho, «Hoy» (meta, siguiente lección y repaso), la herramienta de la ruta y el camino.
 import {RH,OFFS,esc} from '../util.js';
-import {ico,LOGO} from '../icons.js';
+import {ico,LOGO,icoOk} from '../icons.js';
 import {glyph} from '../charts.js';
 import {UNITS,FLAT,CASOS,SEMANA,MERCADO,TRACKS,PLACEMENT,trackOf,exCount,libre} from '../content.js';
 import {S,streakNow,dayXpNow,advancedOpen,statuses,srsDue,srsResumen,retoHoy,retoHecho} from '../state.js';
@@ -8,6 +8,7 @@ import {ses} from '../ui.js';
 import {simCardHTML} from './sim.js';
 import {t} from '../textos.js';
 import {itinActual} from '../itinerarios.js';
+import {guiaSinLeer,guiaLeida,LEER_XP} from './guia.js';
 
 // Herramientas de desarrollo (desbloquear todo, reiniciar): solo con ?dev en la dirección.
 const DEV=typeof location!=='undefined'&&/[?&]dev\b/.test(location.search||'');
@@ -27,7 +28,7 @@ export function homeHTML(){
     }
     const items=FLAT.filter(l=>l.unit===u),doneN=items.filter(l=>S.done[l.id]).length,completa=doneN===items.length,abierta=ses.abiertas.has(u.id);
     const pliegue=completa?`<button class="btn ghost unfold" data-act="unfold" data-id="${u.id}" aria-expanded="${abierta}">${abierta?t.plegar:t.verLecciones}</button>`:'';
-    h+=`<section class="unit${completa?' hecha':''}${u.caso?' final':''}" aria-label="${t.unidadN(u.n)}: ${u.title}"><div class="ban"><div><div class="u">${u.caso?`<span class="fin">${t.casoFinal}</span> · `:''}${t.unidadN(u.n)}</div><h2>${u.title}</h2><p>${u.blurb}</p>${u.guia?`<button class="btn ghost unfold" data-act="guia" data-id="${u.id}" aria-label="${t.verGuia(esc(u.title))}">${t.guia}</button>`:''}${pliegue}</div><span class="cnt">${S.dominadas[u.id]?`<span class="dom">${ico('star')} ${t.dominada}</span>`:completa?t.completada:`${doneN} / ${items.length}`}</span>${completa?'':`<i class="uprog" aria-hidden="true" style="--p:${Math.round(doneN/items.length*100)}%"></i>`}</div>`;
+    h+=`<section class="unit${completa?' hecha':''}${u.caso?' final':''}" aria-label="${t.unidadN(u.n)}: ${u.title}"><div class="ban"><div><div class="u">${u.caso?`<span class="fin">${t.casoFinal}</span> · `:''}${t.unidadN(u.n)}</div><h2>${u.title}</h2><p>${u.blurb}</p>${u.guia?`<button class="btn ghost unfold" data-act="guia" data-id="${u.id}" aria-label="${t.verGuia(esc(u.title))}">${t.guia}</button>${guiaLeida(u)?`<span class="leida">${icoOk}${t.teoriaMarca}</span>`:''}`:''}${pliegue}</div><span class="cnt">${S.dominadas[u.id]?`<span class="dom">${ico('star')} ${t.dominada}</span>`:completa?t.completada:`${doneN} / ${items.length}`}</span>${completa?'':`<i class="uprog" aria-hidden="true" style="--p:${Math.round(doneN/items.length*100)}%"></i>`}</div>`;
     if(completa&&!abierta){h+='</section>';return}
     h+=`<div class="path" style="--n:${items.length}"><svg class="route" viewBox="0 0 100 ${items.length*RH}" preserveAspectRatio="none" aria-hidden="true">`;
     for(let k=0;k<items.length-1;k++){
@@ -79,6 +80,8 @@ function hoyHTML(st,TF,dx){
     h+=m?`<div class="hoy-row merc"><div><b>${t.mercadoTitulo}</b><span>${t.mercadoHecho(m.ok,m.total)}</span></div></div>`
       :`<div class="hoy-row merc"><div><b>${t.mercadoTitulo}</b><span>${t.mercadoExplica(MERCADO.ex.length,esc(MERCADO.hasta))}</span></div><button class="btn line" data-act="mercado">${t.empezar}</button></div>`;
   }
+  const teoria=cur&&advancedOpenFor(S.track)&&guiaSinLeer(cur.unit)&&S.xp>0?cur.unit:null;
+  if(teoria)h+=`<div class="hoy-row teo"><div><b>${t.teoriaFila(esc(teoria.title),LEER_XP)}</b><span>${t.teoriaFilaNota}</span></div><button class="btn line" data-act="guiahoy" data-id="${esc(teoria.id)}" aria-label="${t.verGuia(esc(teoria.title))}">${t.leerTeoria}</button></div>`;
   if(due)h+=`<div class="hoy-row srs"><div><b>${t.repasoDia}</b><span>${t.repasoPendiente(due)}${(n=>n?` · ${t.aprendidos(n)}`:'')(srsResumen().aprendidos)}</span></div><button class="btn ${sigue||(iti&&iti.sig)||(reto&&!hecho)?'line':'primary'}" data-act="srs">${t.repasar}</button></div>`;
   return h+'</section>';
 }

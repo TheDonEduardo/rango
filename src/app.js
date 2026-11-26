@@ -17,7 +17,7 @@ import {simHTML,simInfo,simValid,simSave,simHist,simulate,SIM_PLACE} from './vie
 import {calcHTML,calcOutHTML,histOutHTML,historia,CALC_CTRL,aportaciones} from './views/calc.js';
 import {legalHTML,privacidadHTML,LEGAL_V} from './views/legal.js';
 import {statsHTML,statRecord,STATS_L,flojos} from './views/stats.js';
-import {guiaHTML,abrirGuia,guiaPendiente} from './views/guia.js';
+import {guiaHTML,abrirGuia,guiaPendiente,guiaVista} from './views/guia.js';
 import {glosarioHTML,listaGlosario} from './views/glosario.js';
 import {itinerariosHTML} from './views/itinerarios.js';
 import {ITINERARIOS,itinActual} from './itinerarios.js';
@@ -217,6 +217,8 @@ const ACCIONES={
   stats(){ir('stats')},
   // Guía de la unidad: desde el inicio (consulta) o desde una pregunta fallada (repaso, vuelve a la lección).
   guia(b){const u=UNITS.find(x=>x.id===b.dataset.id);abrirGuia(u,'consulta');ir('guia')},
+  // «Teoría de la unidad» en «Hoy»: abre la guía de la lección actual (consulta: al cerrar vuelve al inicio).
+  guiahoy(b){const u=UNITS.find(x=>x.id===b.dataset.id);if(!u||!u.guia)return;ses.homeY=window.scrollY;abrirGuia(u,'consulta');ses.view='guia';render()},
   guiarepaso(b){const ex=ses.run.queue[0],u=FLAT.find(l=>l.id===ex.lesson).unit;abrirGuia(u,'repaso',{tarjeta:b.dataset.g});ses.view='guia';render()},
   // Glosario: definición en una hoja inferior sin redibujar la pantalla (no se pierde la respuesta en curso).
   term(b){
@@ -253,9 +255,9 @@ const ACCIONES={
   importar(){const i=$app.querySelector('#imp-file');if(i)i.click()},
   impok(){if(!ses.copia)return;importar(ses.copia.estado);ses.copia=null;render();toast(t.copiaHecha)},
   impno(){ses.copia=null;render()},
-  guianext(){ses.guia.i++;render()},
-  guiaprev(){ses.guia.i--;render()},
-  guiafin(){const g=ses.guia;if(g.modo==='inicio')medir('guia',{unidad:g.unit.id,tarjeta:g.i+1,de:g.unit.guia.length});ses.guia=null;if(g.modo==='inicio')startRun(g.L);else if(g.modo==='repaso'){ses.view='lesson';render();const b=$app.querySelector('[data-act=next]');if(b&&b.focus)b.focus({preventScroll:true})}else{ses.view='home';render()}},
+  guianext(){ses.guia.i++;guiaVista();render()},
+  guiaprev(){ses.guia.i--;guiaVista();render()},
+  guiafin(){const g=ses.guia;if(g.modo==='inicio'||g.ganado)medir('guia',{unidad:g.unit.id,tarjeta:g.i+1,de:g.unit.guia.length,completa:g.vistas.size===g.unit.guia.length});ses.guia=null;if(g.modo==='inicio')startRun(g.L);else if(g.modo==='repaso'){ses.view='lesson';render();const b=$app.querySelector('[data-act=next],[data-act=guiarepaso]');if(b&&b.focus)b.focus({preventScroll:true})}else{ses.view='home';render()}},
   weak(){ses.homeY=0;startRun(STATS_L)},
   simsave(){if(ses.simDraft&&simValid(ses.simDraft)){simSave();ses.simDraft=null;ses.view='sim';render()}},
   unfold(b){const id=b.dataset.id,ab=ses.abiertas;ab.has(id)?ab.delete(id):ab.add(id);ses.homeY=window.scrollY;render();const nb=$app.querySelector(`[data-act=unfold][data-id="${id}"]`);if(nb)nb.focus({preventScroll:true})},

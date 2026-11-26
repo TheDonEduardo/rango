@@ -68,7 +68,7 @@ export function fusionar(a,b){
   for(const k in r.aprendidos)delete r.srs[k];
   r.stats={ex:{},min:Math.max(a.stats&&a.stats.min||0,b.stats&&b.stats.min||0)};
   for(const x of [a.stats&&a.stats.ex,b.stats&&b.stats.ex])for(const k in x||{})if(!r.stats.ex[k]||x[k].n>r.stats.ex[k].n)r.stats.ex[k]=x[k];
-  for(const c of ['guias','dominadas','pruebas','sim'])r[c]=Object.assign({},otro[c],r[c]);
+  for(const c of ['guias','leidas','dominadas','pruebas','sim'])r[c]=Object.assign({},otro[c],r[c]);
   // Racha: la del dispositivo que practicó más recientemente.
   const ra=(a.last||'')>(b.last||'')||((a.last||'')===(b.last||'')&&(a.streak||0)>=(b.streak||0))?a:b;
   for(const c of ['streak','last','day','dayXp','protector'])r[c]=ra[c];

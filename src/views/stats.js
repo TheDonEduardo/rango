@@ -8,6 +8,7 @@ import {S,streakNow,SRS_MAX,srsResumen,META_OPC,PROTECTOR_MAX} from '../state.js
 import {ses} from '../ui.js';
 import {medicionDisponible} from '../medicion.js';
 import {cuentaActiva,sesion,estadoCuenta} from '../sync.js';
+import {guiasLeidas} from './guia.js';
 import {t} from '../textos.js';
 
 export const STATS_L={id:'weak',title:t.debilesTitulo,kind:'weak'};
@@ -52,6 +53,7 @@ export function statsHTML(){
   <h2 class="sub">${t.metaDiaria}</h2><div class="meta-opc" role="group" aria-label="${t.metaDiaria}">${META_OPC.map(m=>`<button class="btn ${S.meta===m?'primary':'line'}" data-act="meta" data-m="${m}" aria-pressed="${S.meta===m}">${t.metaXP(m)}</button>`).join('')}</div>
   <p class="note">${t.protectores(S.protector,PROTECTOR_MAX)}</p>
   <ul class="st-rutas">${rutas}</ul>
+  <p class="note">${(g=>t.guiasLeidasT(g.leidas,g.total))(guiasLeidas())}</p>
   <h2 class="sub">${t.repasoTitulo}</h2><dl class="simk"><div><dt>${t.enRepaso}</dt><dd>${sr.enRepaso}</dd></div><div><dt>${t.aprendidosT}</dt><dd>${sr.aprendidos}</dd></div></dl><p class="note">${t.repasoNota}</p>
   <h2 class="sub">${t.puntosDebiles}</h2>${debiles}
   ${medicionDisponible()?`<h2 class="sub">${t.medicionTitulo}</h2><p class="note">${t.medicionNota}</p><button class="btn line" data-act="medir" data-v="${S.medir?0:1}" aria-pressed="${S.medir}">${S.medir?t.medicionQuitar:t.medicionActivar}</button>`:''}

@@ -37,7 +37,7 @@ export function lessonHTML(){
   run.pctVisto=pct;
   h+=`<div class="qwrap${run.checked?'':' entra'}"><p class="kind">${ex.caso?t.casoReal(esc(ex.caso)):''}${t.tipos[ex.t]}</p>${fuenteHTML(ex,run)}<h1 class="q">${glos(tx(ex.q))}</h1>${chartHTML(ex,run)}${tableHTML(ex)}${T.html?T.html(ex,run):''}</div>`;
   if(!run.checked){
-    h+=`<div><button class="btn primary" data-act="check"${T.ready(ex,run)?'':' disabled'}>${t.comprobar}</button></div>`;
+    h+=`<div><button class="btn primary" data-act="check"${T.ready(ex,run)?'':' disabled'}>${t.comprobar}</button>${ex.guia?`<button class="link teoria previa" data-act="guiarepaso" data-g="${ex.guia}">${t.verTeoria}</button>`:''}</div>`;
   }else{
     const ans=run.ok?'':(T.answerHTML?T.answerHTML(ex):`<p class="ans">${t.respuesta}: ${tx(T.answer(ex))}</p>`)
       +(ex.guia?`<button class="link teoria" data-act="guiarepaso" data-g="${ex.guia}">${t.repasarTeoria}</button>`:'');

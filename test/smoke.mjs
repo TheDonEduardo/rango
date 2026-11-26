@@ -408,6 +408,69 @@ if (fs.existsSync(semPath)) {
   st.guias = guias; st.all = all;
 }
 
+// 10b) Leer la teoría da XP: 10 por unidad y una sola vez, solo pasando por todas las tarjetas (no con «Saltar»);
+// «Ver teoría» durante la lección, fila en «Hoy», marca en la unidad y recuento en estadísticas.
+{
+  const st = T.getState(), guias = st.guias, leidas = st.leidas, all = st.all, xp0 = st.xp, done = st.done, track = st.track, day = st.day, dayXp = st.dayXp;
+  st.guias = {}; st.leidas = {}; st.all = true; st.done = {}; st.track = 'basico'; st.skipBasics = st.skipBasics || false;
+  const conGuia = units.filter(u => u.guia), U = conGuia[0], U2 = conGuia[1], n = U.guia.length, L1 = U.lessons[0];
+  if (!('leidas' in T.leerCopia(JSON.stringify({app: 'rango', v: st.v, fecha: '2026-01-01', estado: (({leidas: _, ...r}) => r)(st)})).estado)) errs.push('una copia sin «leidas» no se completa con el valor por defecto');
+  if (T.leerCopia(JSON.stringify({app: 'rango', v: st.v, fecha: '2026-01-01', estado: {...st, leidas: null}})) !== null) errs.push('una copia con «leidas» inválido se acepta');
+  // «Saltar» no da XP
+  st.xp = 100; st.dayXp = 0; st.day = null;
+  T.act('open', {id: L1.id}); T.act('guianext'); T.act('guiafin');
+  if (st.xp !== 100 || st.leidas[U.id]) errs.push('saltar la guía da XP o la marca como leída');
+  T.goHome();
+  // Pasar por todas las tarjetas: +10 XP, meta diaria y racha; la marca sale en la unidad
+  T.act('guia', {id: U.id}); for (let i = 1; i < n; i++) { if (st.xp !== 100) errs.push('la teoría da XP antes de llegar a la última tarjeta'); T.act('guianext'); }
+  if (st.xp !== 110 || st.dayXp !== 10 || !st.leidas[U.id] || !st.last) errs.push(`leer la guía entera no suma 10 XP (xp ${st.xp}, dayXp ${st.dayXp})`);
+  if (!app.innerHTML.includes('Teoría leída')) errs.push('la última tarjeta no avisa de los XP de la teoría');
+  T.act('guiafin');
+  if (!T.homeHTML().includes('class="leida"')) errs.push('la unidad con la teoría leída no lleva su marca');
+  // Una sola vez: volver a leerla (o ir y venir) no suma
+  T.act('guia', {id: U.id}); for (let i = 1; i < n; i++) T.act('guianext'); T.act('guiaprev'); T.act('guianext'); T.act('guiafin');
+  if (st.xp !== 110) errs.push('la teoría da XP más de una vez por unidad');
+  // Desde «Repasar la teoría» empezando en una tarjeta intermedia: hay que ver también la primera
+  T.act('open', {id: U2.lessons[0].id}); T.act('guiafin');
+  const run = T.getRun(), ex = run.queue[0];
+  const gid = U2.guia[1].id;
+  T.act('guiarepaso', {g: gid}); for (let i = 2; i < U2.guia.length; i++) T.act('guianext');
+  if (st.xp !== 110 || st.leidas[U2.id]) errs.push('la teoría da XP sin haber visto todas las tarjetas');
+  for (let i = 0; i < U2.guia.length - 1; i++) T.act('guiaprev'); T.act('guiafin');
+  if (st.xp !== 120 || !st.leidas[U2.id]) errs.push('la teoría leída desde una pregunta no da XP');
+  // «Ver teoría» antes de responder: sin perder la selección
+  T.goHome(); st.leidas = {}; st.xp = 100;
+  const conL = T.FLAT.find(l => l.kind === 'lesson' && l.unit.id === U.id && l.ex.some(e => e.guia && e.t === 'choice')), con = conL && conL.ex.find(e => e.guia && e.t === 'choice');
+  if (con) {
+    T.startRun(conL);
+    const r2 = T.getRun(); r2.queue.unshift(con); r2.sel = null;
+    T.render();
+    if (!app.innerHTML.includes('class="link teoria previa" data-act="guiarepaso"')) errs.push('un ejercicio con teoría no ofrece «Ver teoría» antes de responder');
+    T.setSel(con.a); T.act('guiarepaso', {g: con.guia});
+    if (T.getView() !== 'guia') errs.push('«Ver teoría» no abre la guía');
+    T.act('guiafin');
+    if (T.getView() !== 'lesson' || T.getRun() !== r2 || r2.sel !== con.a || r2.checked || r2.lives !== 3) errs.push('«Ver teoría» pierde la selección o penaliza');
+  }
+  const sin = units.flatMap(u => (u.lessons || []).flatMap(l => l.ex)).find(e => !e.guia && e.t === 'choice');
+  if (sin) { const r3 = T.getRun(); r3.queue.unshift(sin); T.render(); if (app.innerHTML.includes('teoria previa')) errs.push('«Ver teoría» sale en un ejercicio sin teoría'); }
+  // Fila de «Hoy»: con la guía de la unidad actual sin leer y con XP; sin ella cuando está leída
+  T.goHome(); st.done = {}; st.track = 'basico'; st.xp = 100; st.leidas = {}; st.all = false;
+  const cur = T.FLAT.find(l => l.unit.track === 'basico'), uc = cur.unit;
+  if (!T.homeHTML().includes('data-act="guiahoy"') || !T.homeHTML().includes('Teoría de ' + uc.title)) errs.push('«Hoy» no recuerda la teoría de la unidad actual');
+  st.leidas[uc.id] = '2026-01-01';
+  if (T.homeHTML().includes('data-act="guiahoy"')) errs.push('«Hoy» recuerda una teoría ya leída');
+  st.leidas = {}; st.xp = 0;
+  if (T.homeHTML().includes('data-act="guiahoy"')) errs.push('«Hoy» recuerda la teoría a quien aún no tiene XP');
+  st.xp = 100; T.act('guiahoy', {id: uc.id});
+  if (T.getView() !== 'guia') errs.push('la fila de «Hoy» no abre la guía');
+  T.act('guiafin'); if (T.getView() !== 'home') errs.push('la guía abierta desde «Hoy» no vuelve al inicio');
+  // Estadísticas
+  st.leidas = {[U.id]: '2026-01-01'}; T.openStats();
+  if (!app.innerHTML.includes(`Guías leídas: 1 de ${conGuia.length}`)) errs.push('estadísticas: falta el recuento de guías leídas');
+  T.goHome();
+  st.guias = guias; st.leidas = leidas; st.all = all; st.xp = xp0; st.done = done; st.track = track; st.day = day; st.dayXp = dayXp;
+}
+
 // Examen de la unidad: 8 ejercicios; sin fallos marca la unidad como dominada.
 {
   const st = T.getState(), R = T.FLAT.find(l => l.kind === 'review');
@@ -715,16 +778,17 @@ if (caducados.length) console.warn('AVISO: contenido pendiente de revisar (norma
 {
   T.openStats(); if (app.innerHTML.includes('cuenta-email')) errs.push('se ofrece la cuenta sin Supabase configurado'); T.goHome();
   const a = {xp: 300, mod: 2, done: {x1: {acc: 0.5}, x2: {acc: 1}}, srs: {e1: {step: 1, due: '2026-11-20'}, e2: {step: 0, due: '2026-11-12'}},
-    aprendidos: {e3: '2026-10-01'}, stats: {ex: {e1: {n: 3, f: 1, u: 1}}, min: 10}, guias: {g: 1}, dominadas: {}, pruebas: {}, sim: {},
+    aprendidos: {e3: '2026-10-01'}, stats: {ex: {e1: {n: 3, f: 1, u: 1}}, min: 10}, guias: {g: 1}, leidas: {u1: '2026-11-01'}, dominadas: {}, pruebas: {}, sim: {},
     streak: 4, last: '2026-11-10', meta: 80, track: 'tecnico'};
   const b = {xp: 500, mod: 1, done: {x1: {acc: 1}, x3: {acc: 0.75}}, srs: {e1: {step: 2, due: '2026-11-25'}, e3: {step: 0, due: '2026-11-12'}},
-    aprendidos: {}, stats: {ex: {e1: {n: 5, f: 2, u: 1}, e9: {n: 1, f: 1, u: 0}}, min: 30}, guias: {h: 1}, dominadas: {u: '2026-11-01'}, pruebas: {}, sim: {},
+    aprendidos: {}, stats: {ex: {e1: {n: 5, f: 2, u: 1}, e9: {n: 1, f: 1, u: 0}}, min: 30}, guias: {h: 1}, leidas: {u2: '2026-11-02'}, dominadas: {u: '2026-11-01'}, pruebas: {}, sim: {},
     streak: 9, last: '2026-11-09', meta: 20, track: 'basico', skipBasics: true};
   const f = T.fusionar(a, b);
   if (f.xp !== 500 || f.done.x1.acc !== 1 || !f.done.x2 || !f.done.x3) errs.push('fusión: se pierden lecciones o XP');
   if (f.srs.e1.step !== 2 || !f.srs.e2 || f.srs.e3) errs.push('fusión: repaso mal combinado (o un aprendido vuelve al repaso)');
   if (f.stats.ex.e1.n !== 5 || !f.stats.ex.e9 || f.stats.min !== 30) errs.push('fusión: estadísticas mal combinadas');
   if (!f.guias.g || !f.guias.h || !f.dominadas.u || !f.skipBasics) errs.push('fusión: se pierden guías, unidades dominadas o el salto de básicos');
+  if (!f.leidas || !f.leidas.u1 || !f.leidas.u2) errs.push('fusión: se pierden guías leídas');
   if (f.streak !== 4 || f.last !== '2026-11-10' || f.meta !== 80 || f.track !== 'tecnico') errs.push('fusión: racha o preferencias del dispositivo equivocado');
   const canon = o => JSON.stringify(o, (k, v) => v && typeof v === 'object' && !Array.isArray(v) ? Object.fromEntries(Object.entries(v).sort()) : v);
   if (canon(T.fusionar(b, a)) !== canon(f)) errs.push('fusión: el resultado depende del orden');
