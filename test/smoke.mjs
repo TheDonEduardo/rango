@@ -729,6 +729,78 @@ if (!app.innerHTML.includes('class="cv-b"') || !app.innerHTML.includes('menos qu
   if (app.innerHTML.includes('id="inyectado"')) errs.push('el simulador pinta valores del estado sin limpiar');
   if (T.getState().calc.mensual !== 200 || T.getState().calc.cmp !== false) errs.push('el simulador no restablece los valores no válidos');
 }
+// 7b) Calculadora de tamaño de posición y curva de pago de opciones: valores de referencia calculados a mano.
+{
+  const H = await import(pathToFileURL(path.join(root, 'src/herramientas.js')).href);
+  const casi = (a, b) => Math.abs(a - b) < 1e-6;
+  const base = {capital: 20000, riesgo: 1, entrada: 25, stop: 23, atr: 2, mult: 2, usarAtr: false, objetivoR: 2, tope: 25};
+  // 20.000 € al 1 % = 200 €; 2 € por acción = 100 acciones (12,5 % de la cuenta, bajo el tope del 25 %); objetivo 2R = 29 €, ganancia 400 €.
+  const a = T.tamanoPosicion(base);
+  if (!a.ok || a.acciones !== 100 || a.manda !== 'riesgo' || !casi(a.importe, 2500) || !casi(a.peso, 12.5) || !casi(a.objetivo, 29) || !casi(a.ganancia, 400) || !casi(a.riesgoReal, 200)) errs.push('tamanoPosicion (riesgo): ' + JSON.stringify(a));
+  // Tope del 8 %: 1.600 € / 25 = 64 acciones; manda el peso y el riesgo real baja a 128 € (como en la unidad planejecucion).
+  const b = T.tamanoPosicion({...base, tope: 8});
+  if (b.acciones !== 64 || b.manda !== 'peso' || b.porRiesgo !== 100 || !casi(b.riesgoReal, 128) || !casi(b.pesoRiesgo, 12.5) || !casi(b.ganancia, 256)) errs.push('tamanoPosicion (peso): ' + JSON.stringify(b));
+  // Redondeo hacia abajo: 100 € de riesgo / 1,70 € = 58,8 → 58 acciones.
+  const c = T.tamanoPosicion({...base, capital: 10000, entrada: 30, stop: 28.3});
+  if (c.acciones !== 58) errs.push('tamanoPosicion no redondea hacia abajo: ' + c.acciones);
+  // Cociente exacto: 75 € / 3 € = 25 (sin perder una acción por decimales); con el ATR, stop = 50 − 2 × 1,5 = 47.
+  const d = T.tamanoPosicion({...base, capital: 15000, riesgo: 0.5, entrada: 50, atr: 1.5, mult: 2, usarAtr: true});
+  if (d.acciones !== 25 || !casi(d.stop, 47) || !casi(d.porAccion, 3) || !casi(d.importe, 1250)) errs.push('tamanoPosicion con ATR: ' + JSON.stringify(d));
+  // Con 0,1 € de diferencia no caben acciones enteras de más: 200 € / 0,1 = 2.000 (sin 1.999 por coma flotante).
+  if (T.tamanoPosicion({...base, capital: 100000, entrada: 10.1, stop: 10, tope: 100}).porRiesgo !== 10000) errs.push('tamanoPosicion pierde una acción por coma flotante');
+  // Ni una acción: 1.000 € al 0,25 % = 2,50 € de riesgo con 4 € por acción.
+  if (T.tamanoPosicion({...base, capital: 1000, riesgo: 0.25, entrada: 50, stop: 46}).acciones !== 0) errs.push('tamanoPosicion: debería salir 0 acciones');
+  // Stop inválido: en la entrada, por encima, o a 0 o menos con el ATR.
+  if (T.tamanoPosicion({...base, stop: 25}).ok || T.tamanoPosicion({...base, stop: 30}).motivo !== 'stop' || T.tamanoPosicion({...base, usarAtr: true, atr: 20, mult: 2}).motivo !== 'cero') errs.push('tamanoPosicion acepta un stop inválido');
+  // Saneado del estado: números fuera de rango, texto y booleanos.
+  const tl = H.tamanoLimpio({capital: 1e12, riesgo: -4, entrada: '5', stop: NaN, atr: 99, mult: 0, objetivoR: 50, tope: 3, usarAtr: 'sí'});
+  if (tl.capital !== 200000 || tl.riesgo !== 0.25 || tl.entrada !== 50 || tl.stop !== 46 || tl.atr !== 25 || tl.mult !== 0.5 || tl.objetivoR !== 5 || tl.tope !== 5 || tl.usarAtr !== false) errs.push('tamanoLimpio no acota los valores: ' + JSON.stringify(tl));
+  // Curva de pago, por contrato de 100 acciones (acción a 100 $).
+  const P = est => T.pagoEstrategia(est, H.pagoPreset(est));
+  const ref = {  // estrategia: [pérdida máx., ganancia máx., equilibrios, resultado con la acción a 100]
+    callc: [400, Infinity, [104], -400], putc: [350, 9650, [96.5], -350], cubierta: [9800, 700, [98], 200], putv: [9300, 200, [93], 200],
+    spread: [300, 700, [103], -300], collar: [1050, 950, [100.5], -50], condor: [300, 200, [88, 112], 200]
+  };
+  for (const [est, [per, gan, eq, hoy]] of Object.entries(ref)) {
+    const r = P(est);
+    if (!r.ok || !casi(r.perdidaMax, per) || r.gananciaMax !== gan && !casi(r.gananciaMax, gan) || r.equilibrios.length !== eq.length || eq.some((e, i) => !casi(r.equilibrios[i], e)) || !casi(r.alPrecio, hoy))
+      errs.push(`pagoEstrategia(${est}): ${JSON.stringify({per: r.perdidaMax, gan: r.gananciaMax, eq: r.equilibrios, hoy: r.alPrecio})}`);
+  }
+  if (T.pagoEstrategia('callc', H.pagoPreset('callc')).f(130) !== 2600 || P('condor').f(60) !== -300 || P('condor').f(100) !== 200) errs.push('pagoEstrategia: resultado f(s) incorrecto');
+  // Casos que no forman la estrategia.
+  if (T.pagoEstrategia('spread', {...H.pagoPreset('spread'), k1: 110, k2: 100}).motivo !== 'orden' || T.pagoEstrategia('spread', {...H.pagoPreset('spread'), p1: 1, p2: 2}).motivo !== 'debito'
+    || T.pagoEstrategia('condor', {...H.pagoPreset('condor'), k2: 80}).motivo !== 'orden' || T.pagoEstrategia('collar', {...H.pagoPreset('collar'), k1: 120}).motivo !== 'orden') errs.push('pagoEstrategia acepta cifras que no forman la estrategia');
+  const pl = H.pagoLimpio({est: '<b>', precio: 1e9, k1: 'x', p1: -3});
+  if (pl.est !== 'callc' || pl.precio !== 300 || pl.k1 !== 100 || pl.p1 !== 0) errs.push('pagoLimpio no sanea: ' + JSON.stringify(pl));
+  if (H.pagoCambiar({precio: 120}, 'collar').precio !== 120 || H.pagoCambiar({precio: 120}, 'x').est !== 'callc') errs.push('pagoCambiar');
+  // Vistas: sin NaN, con su h1, su gráfico accesible y sin inyección por el estado.
+  const stH = T.getState();
+  T.openTamano();
+  if (!app.innerHTML.includes('¿Cuántas acciones?') || !app.innerHTML.includes('role="img"') || !app.innerHTML.includes('Formación: comprueba siempre comisiones y liquidez') || /NaN|undefined/.test(app.innerHTML)) errs.push('la calculadora de tamaño no se dibuja bien');
+  stH.tamano.stop = 60; T.openTamano();
+  if (!app.innerHTML.includes('por debajo de la entrada') || /NaN|undefined/.test(app.innerHTML)) errs.push('la calculadora de tamaño no avisa de un stop inválido');
+  stH.tamano.stop = 46; stH.tamano.tope = 5; T.openTamano();
+  if (!app.innerHTML.includes('el límite de peso manda')) errs.push('la calculadora de tamaño no avisa del tope de peso');
+  stH.tamano = {capital: '"><b id="inyectado">x</b>', usarAtr: 'sí'}; T.openTamano();
+  if (app.innerHTML.includes('id="inyectado"') || T.getState().tamano.capital !== 20000) errs.push('la calculadora pinta valores del estado sin limpiar');
+  for (const est of H.PAGO_EST) {
+    stH.pago = H.pagoPreset(est); T.openPago();
+    if (!app.innerHTML.includes('¿Cuánto ganas o pierdes al vencimiento?') || !app.innerHTML.includes('pg-curva') || !app.innerHTML.includes('no recomendación') || /NaN|undefined|nominal/.test(app.innerHTML)) errs.push('la curva de pago no se dibuja bien: ' + est);
+  }
+  stH.pago = H.pagoPreset('spread'); stH.pago.k1 = 120; T.openPago();
+  if (!app.innerHTML.includes('tiene que ser menor') || app.innerHTML.includes('pg-curva')) errs.push('la curva de pago no avisa de ejercicios desordenados');
+  stH.pago = {est: '"><b id="inyectado">x</b>', p1: '"><i id="inyectado2">'}; T.openPago();
+  if (app.innerHTML.includes('id="inyectado') || T.getState().pago.est !== 'callc') errs.push('la curva de pago pinta valores del estado sin limpiar');
+  stH.tamano = H.tamanoLimpio(null); stH.pago = H.pagoLimpio(null);
+  // Acceso desde el inicio: Técnico (en la tarjeta de la Operación de la semana, sin botón principal nuevo) y Opciones.
+  T.goHome(); T.setTrack('tecnico');
+  const hT = T.homeHTML();
+  if (!hT.includes('data-act="tamano"') || hT.includes('class="btn primary" data-act="tamano"')) errs.push('Técnico no ofrece la calculadora de tamaño (o la ofrece como botón principal)');
+  T.setTrack('derivados');
+  const hD = T.homeHTML();
+  if (!hD.includes('data-act="pago"') || hD.includes('class="btn primary" data-act="pago"')) errs.push('Opciones no ofrece la curva de pago');
+  T.setTrack('pasiva');
+}
 T.goHome(); T.setTrack('tecnico');
 
 // 5) Test de nivel: todo bien abre las rutas y marca Básico; solo una unidad bien marca solo esa unidad.

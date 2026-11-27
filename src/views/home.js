@@ -91,10 +91,15 @@ function hoyHTML(st,TF,dx){
 }
 const advancedOpenFor=r=>libre(r)||advancedOpen();
 
-// Herramienta propia de la ruta: Operación de la semana (Técnico) o simulador de aportaciones (Pasiva).
+// Herramienta propia de la ruta: Operación de la semana y calculadora de tamaño (Técnico), simulador de aportaciones (Pasiva) o curva de pago (Opciones).
 function herramientaHTML(){
   if(!advancedOpen())return '';
-  if(S.track==='tecnico'&&SEMANA)return simCardHTML();
+  if(S.track==='tecnico'){
+    // La calculadora va como segunda acción discreta dentro de la tarjeta de la Operación de la semana (o sola, sin ella).
+    const fila=`<div class="simrow"><span>${t.tamExplica}</span><button class="btn ghost" data-act="tamano" aria-label="${t.tamTitulo}">${t.abrir}</button></div>`;
+    return SEMANA?simCardHTML(fila):`<section class="sim" aria-label="${t.tamTitulo}"><b>${t.tamTitulo}</b>${fila}</section>`;
+  }
+  if(S.track==='derivados')return `<section class="sim" aria-label="${t.pagoTitulo}"><b>${t.pagoTitulo}</b><div class="simrow"><span>${t.pagoExplica}</span><button class="btn line" data-act="pago">${t.abrir}</button></div></section>`;
   if(S.track==='pasiva')return `<section class="sim" aria-label="${t.calcTitulo}"><b>${t.calcTitulo}</b><div class="simrow"><span>${t.calcExplica}</span><button class="btn line" data-act="calc">${t.abrir}</button></div></section>`;
   return '';
 }

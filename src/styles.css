@@ -216,6 +216,30 @@ button{font:inherit;color:inherit;cursor:pointer}
 .ccheck{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600}
 .ccheck input{width:20px;height:20px;accent-color:var(--up)}
 .cmpres{margin:12px 0 0;font-size:15px}
+/* Herramientas formativas: calculadora de tamaño y curva de pago */
+.cs{display:grid;gap:6px}
+.cs .sl-h{font-size:14px}
+.cs .sl-h output{font:700 16px var(--font-body)}
+.sel{width:100%;min-height:44px;padding:8px 12px;border-radius:12px;border:2px solid var(--line);background:var(--bg);color:var(--ink);font:500 16px var(--font-body)}
+.pg-desc{margin:0}
+.aviso-h{margin:12px 0 0;font-size:15px;font-weight:600;color:var(--down-ink)}
+.calcsvg .tm-zup{fill:var(--up-bg)}
+.calcsvg .tm-zdn{fill:var(--down-bg)}
+.calcsvg .tm-obj{stroke:var(--up);stroke-width:2.5}
+.calcsvg .tm-ent{stroke:var(--ink);stroke-width:2.5}
+.calcsvg .tm-stop{stroke:var(--down);stroke-width:2.5}
+.svg text.tm-tup{fill:var(--up-ink);font-weight:600}
+.svg text.tm-tdn{fill:var(--down-ink);font-weight:600}
+.svg text.tm-tink{fill:var(--ink);font-weight:600}
+.calcsvg .pg-up{fill:var(--up-bg)}
+.calcsvg .pg-dn{fill:var(--down-bg)}
+.calcsvg .pg-curva{fill:none;stroke:var(--ink);stroke-width:2.5;stroke-linejoin:round}
+.calcsvg .pg-cero{stroke:var(--ink-2);stroke-width:1}
+.calcsvg .pg-k{stroke:var(--ink-2);stroke-width:1;stroke-dasharray:3 4}
+.calcsvg .pg-hoy{stroke:var(--sel);stroke-width:2}
+.svg text.pg-thoy{fill:var(--ink);font-weight:600}
+.calcsvg .pg-eq{fill:var(--bg);stroke:var(--ink);stroke-width:2}
+.leyenda .lv-c::before{border-top-color:var(--ink)}
 .itin{margin-top:16px;padding:16px;border-radius:16px;background:var(--surface);border:1px solid var(--line)}
 .itin.activo{border:2px solid var(--up)}
 .itin h2{margin:0 0 4px;font:700 20px/1.2 var(--font-display)}

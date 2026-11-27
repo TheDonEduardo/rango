@@ -4,6 +4,7 @@
 //   node test/e2e.cjs --todas              todas las lecciones, solo en móvil claro
 //   node test/e2e.cjs --lecciones r2,bb2   esas lecciones en 4 modos
 //   --capturas DIR                         guarda capturas de cada ejercicio (móvil)
+//   --herramientas                         solo las herramientas (tamaño de posición y curva de pago)
 //   --sin-axe                              omite la auditoría de accesibilidad
 // Requiere playwright (y axe-core para la auditoría). En CI se instalan sin tocar package.json.
 const http = require('http'), fs = require('fs'), path = require('path');
@@ -136,6 +137,10 @@ async function auditar(b, url) {
     ['simulador semana', {...base, track: 'tecnico'}, async p => { await p.click('[data-act=sim]'); }],
     ['simulador semana resultado', {...base, track: 'tecnico'}, async p => { await p.click('[data-act=sim]'); await p.click('[data-act=simsave]'); }],
     ['simulador aportaciones', {...base, track: 'pasiva', calc: {cmp: true}}, async p => { await p.click('[data-act=calc]'); }],
+    ['calculadora de tamaño', {...base, track: 'tecnico'}, async p => { await p.click('[data-act=tamano]'); }],
+    ['calculadora de tamaño con ATR y aviso', {...base, track: 'tecnico', tamano: {usarAtr: true, tope: 5}}, async p => { await p.click('[data-act=tamano]'); }],
+    ['curva de pago', {...base, track: 'derivados'}, async p => { await p.click('[data-act=pago]'); }],
+    ['curva de pago iron condor', {...base, track: 'derivados', pago: {est: 'condor', k1: 85, k2: 90, k3: 110, k4: 115, p1: 2, precio: 100}}, async p => { await p.click('[data-act=pago]'); }],
     ['estadísticas', {...base, track: 'tecnico'}, async p => { if (await p.locator('[data-act=stats]').count()) await p.click('[data-act=stats]'); }],
     ['estadísticas con destrezas y recordatorio', {...base, track: 'tecnico', stats: {ex: ESTAT, min: 20}}, async p => {
       if (await p.locator('[data-act=stats]').count()) await p.click('[data-act=stats]');
@@ -264,6 +269,73 @@ async function teoria(b, url, dir) {
   return errs.length;
 }
 
+
+// Herramientas formativas: calculadora de tamaño (Técnico) y curva de pago (Opciones), en móvil y escritorio, claro y oscuro.
+// Se abre desde el inicio, se mueve un control (deslizador y botón +) y cambia un resultado; el teclado y «Volver» funcionan.
+async function herramientas(b, url, dir) {
+  const errs = [], base = {legal: 99, all: true, skipBasics: true, done: {}, srs: {}, placement: {skipped: true}, objetivo: 'tecnico'};
+  const sd = dir ? path.join(dir, 'herramientas') : null; if (sd) fs.mkdirSync(sd, {recursive: true});
+  const modos = [['m-light', {width: 390, height: 844}, 'light'], ['m-dark', {width: 390, height: 844}, 'dark'], ['d-light', {width: 1280, height: 900}, 'light'], ['d-dark', {width: 1280, height: 900}, 'dark']];
+  const dd = (p, id) => p.locator('#' + id).innerText();
+  for (const [tag, vp, scheme] of modos) {
+    const p = await b.newPage({viewport: vp, colorScheme: scheme, reducedMotion: 'reduce'});
+    p.on('pageerror', e => errs.push(tag + ': ' + e.message)); p.on('console', m => m.type() === 'error' && errs.push(tag + ': ' + m.text()));
+    await p.goto(url);
+    const abrir = async (track, act, extra) => { await p.evaluate(s => localStorage.setItem('rango.v1', JSON.stringify(s)), {...base, track, ...extra}); await p.reload(); await p.waitForSelector('.home'); await p.click(`[data-act=${act}]`); await p.waitForSelector('#app h1'); };
+    // Calculadora de tamaño
+    await abrir('tecnico', 'tamano');
+    if (await p.locator('.btn.primary:visible').count() !== 1) errs.push(tag + ': tamaño: debería haber un único botón principal');
+    const acc = async () => +(await p.locator('#tamOut .simk dd').nth(2).innerText()).replace(/\./g, '');
+    const a0 = await acc();   // 20.000 € al 1 % con 4 € por acción: 50 acciones
+    if (a0 !== 50) errs.push(`${tag}: tamaño inicial ${a0}, debería ser 50`);
+    await p.click('[data-act=ctlstep][data-k=riesgo][data-d="1"]');   // 1,25 %: 250 € / 4 = 62
+    if (await acc() !== 62) errs.push(`${tag}: el botón + del riesgo no cambia el tamaño (${await acc()})`);
+    await p.focus('#ctl-tamano-stop'); await p.keyboard.press('ArrowRight');   // stop 46,5: 250 / 3,5 = 71
+    if (await acc() !== 71) errs.push(`${tag}: la flecha del teclado no mueve el stop (${await acc()})`);
+    await p.evaluate(() => { const i = document.getElementById('ctl-tamano-tope'); i.value = 5; i.dispatchEvent(new Event('input', {bubbles: true})); });
+    if (!(await p.locator('#tamOut').innerText()).includes('el límite de peso manda') || await acc() !== 20) errs.push(tag + ': el tope de peso del 5 % no limita a 20 acciones');
+    await p.evaluate(() => { const i = document.getElementById('ctl-tamano-stop'); i.value = 60; i.dispatchEvent(new Event('input', {bubbles: true})); });
+    if (!(await p.locator('#tamOut').innerText()).includes('por debajo de la entrada')) errs.push(tag + ': no avisa de un stop por encima de la entrada');
+    await p.check('#chk-tamano-usarAtr');
+    if (!(await p.locator('#ctl-tamano-atr').count()) || await p.locator('#ctl-tamano-stop').count()) errs.push(tag + ': el conmutador del ATR no cambia los controles');
+    if (sd && tag.startsWith('m')) await p.screenshot({path: `${sd}/tamano-atr-${tag}.png`, fullPage: true});
+    await p.reload(); await p.waitForSelector('.home'); await p.click('[data-act=tamano]');
+    if (!(await p.locator('#chk-tamano-usarAtr').isChecked())) errs.push(tag + ': la calculadora no recuerda sus valores al recargar');
+    await p.evaluate(() => localStorage.clear());
+    await abrir('tecnico', 'tamano');
+    if (sd && tag.startsWith('m')) await p.screenshot({path: `${sd}/tamano-${tag}.png`, fullPage: true});
+    await p.click('.btn.primary'); await p.waitForSelector('.home');
+    // Curva de pago
+    await abrir('derivados', 'pago');
+    if (await p.locator('.btn.primary:visible').count() !== 1) errs.push(tag + ': pago: debería haber un único botón principal');
+    const per = () => dd(p, 'pagoOut').then(x => x.split('\n').slice(0, 2).join(' '));
+    if (!(await p.locator('#pagoOut .simk').innerText()).includes('Ilimitada')) errs.push(tag + ': la call comprada no muestra ganancia ilimitada');
+    await p.click('[data-act=ctlstep][data-k=p1][data-d="1"]');   // prima 4,05: pérdida 405 $
+    if (!(await p.locator('#pagoOut .simk').innerText()).includes('−405 $')) errs.push(`${tag}: la prima no cambia la pérdida máxima (${await per()})`);
+    await p.selectOption('#pago-est', 'condor'); await p.waitForSelector('#ctl-pago-k4');
+    if (!(await p.locator('#pagoOut .simk').innerText()).includes('88 $ y 112 $')) errs.push(tag + ': el iron condor no muestra sus dos equilibrios');
+    if (sd && tag.startsWith('m')) await p.screenshot({path: `${sd}/pago-condor-${tag}.png`, fullPage: true});
+    await p.selectOption('#pago-est', 'collar'); await p.waitForSelector('#ctl-pago-k2');
+    await p.evaluate(() => { const i = document.getElementById('ctl-pago-k1'); i.value = 120; i.dispatchEvent(new Event('input', {bubbles: true})); });
+    if (!(await p.locator('#pagoOut').innerText()).includes('tiene que ser menor')) errs.push(tag + ': no avisa de ejercicios desordenados');
+    await p.reload(); await p.waitForSelector('.home'); await p.click('[data-act=pago]');
+    if (await p.inputValue('#pago-est') !== 'collar') errs.push(tag + ': la curva de pago no recuerda la estrategia al recargar');
+    await p.evaluate(() => localStorage.clear());
+    await abrir('derivados', 'pago');
+    await p.selectOption('#pago-est', 'spread'); await p.waitForSelector('#ctl-pago-k2');
+    if (sd && tag.startsWith('m')) await p.screenshot({path: `${sd}/pago-spread-${tag}.png`, fullPage: true});
+    await p.selectOption('#pago-est', 'callc'); await p.waitForSelector('#pagoOut .simk');
+    if (sd && tag.startsWith('m')) await p.screenshot({path: `${sd}/pago-call-${tag}.png`, fullPage: true});
+    await p.click('.btn.primary'); await p.waitForSelector('.home');
+    // Desbordamiento horizontal
+    await abrir('derivados', 'pago');
+    if (await p.evaluate(() => document.documentElement.scrollWidth > window.innerWidth)) errs.push(tag + ': la curva de pago desborda horizontalmente');
+    await p.close();
+  }
+  console.log('  ' + (errs.length ? errs.join('\n  ') : 'bien'));
+  return errs.length;
+}
+
 // Enlace directo a la política (desde bienvenida.html): «./?privacidad» la abre sin aviso legal previo y «Volver» lleva al aviso.
 async function privacidadDirecta(b, url) {
   const p = await b.newPage({viewport: {width: 390, height: 844}}), errs = [];
@@ -360,11 +432,13 @@ async function cargaFallida(b, url) {
     for (const t of new Set(exs.map(e => e.t))) { const l = lecciones.find(l => l.tipos.has(t)); if (l) set.add(l.id); }
     ids = [...set];
   }
+  if (has('--herramientas')) { console.log('Herramientas:'); const f = await herramientas(b, url, dir); await b.close(); s.close(); console.log(f ? `FALLOS: ${f}` : 'OK'); process.exit(f ? 1 : 0); }
   console.log(`Recorrido de ${ids.length} lecciones en ${modos.length} modo(s):`);
   let fallos = await recorrer(b, url, ids, modos, dir);
   if (!has('--lecciones') && !has('--todas')) { console.log('Guía (teclado y dedo):'); fallos += await guiaNavegacion(b, url); }
   if (!has('--lecciones') && !has('--todas')) { console.log('Teoría (XP, «Ver teoría», fila de «Hoy»):'); fallos += await teoria(b, url, dir); }
   if (!has('--lecciones') && !has('--todas')) { console.log('Estadísticas (destrezas y recordatorio):'); fallos += await estadisticas(b, url, dir); }
+  if (!has('--lecciones') && !has('--todas')) { console.log('Herramientas (tamaño de posición y curva de pago):'); fallos += await herramientas(b, url, dir); }
   if (!has('--lecciones') && !has('--todas')) { console.log('Política de privacidad directa:'); fallos += await privacidadDirecta(b, url); }
   if (!has('--lecciones') && !has('--todas')) { console.log('Bienvenida: privacidad de la lista de espera:'); fallos += await bienvenidaPrivacidad(b, url); }
   if (!has('--lecciones') && !has('--todas')) { console.log('Carga y fallo de carga:'); fallos += await cargaFallida(b, url); }

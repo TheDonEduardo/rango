@@ -15,6 +15,9 @@ import {sonAcierto,sonFallo,sonFin,suspenderSonido} from './sonido.js';
 import {homeHTML} from './views/home.js';
 import {lessonHTML,resultHTML,failHTML,veredictoTxt} from './views/lesson.js';
 import {simHTML,simInfo,simValid,simSave,simHist,simulate,SIM_PLACE} from './views/sim.js';
+import {tamanoHTML,tamanoOutHTML,tamanoCtrl} from './views/tamano.js';
+import {pagoHTML,pagoOutHTML,pagoCtrl} from './views/pago.js';
+import {tamanoPosicion,pagoEstrategia,pagoCambiar} from './herramientas.js';
 import {calcHTML,calcOutHTML,histOutHTML,historia,CALC_CTRL,aportaciones} from './views/calc.js';
 import {legalHTML,privacidadHTML,LEGAL_V} from './views/legal.js';
 import {statsHTML,statRecord,STATS_L,flojos,icsRecordatorio} from './views/stats.js';
@@ -34,7 +37,7 @@ const MERCADO_L={id:'mercado',title:t.mercadoTitulo,kind:'mercado'};
 const TEST_L={id:'test',title:t.testNivel,kind:'test'};
 const TEST_PASS=10;
 
-const VISTAS={home:homeHTML,legal:()=>legalHTML(false),sim:simHTML,calc:calcHTML,lesson:lessonHTML,result:resultHTML,fail:failHTML,stats:statsHTML,guia:guiaHTML,glosario:glosarioHTML,itinerarios:itinerariosHTML,privacidad:privacidadHTML};
+const VISTAS={home:homeHTML,legal:()=>legalHTML(false),sim:simHTML,calc:calcHTML,tamano:tamanoHTML,pago:pagoHTML,lesson:lessonHTML,result:resultHTML,fail:failHTML,stats:statsHTML,guia:guiaHTML,glosario:glosarioHTML,itinerarios:itinerariosHTML,privacidad:privacidadHTML};
 function render(){
   termOrigen=null;
   if(ses.view==='home'&&S.legal<LEGAL_V){$app.innerHTML=legalHTML(true);window.scrollTo(0,0);return}
@@ -225,9 +228,13 @@ const ACCIONES={
   next,
   retry(){startRun(ses.run.L)},
   quit(){const r=ses.run;if(ses.view==='lesson'&&r)medir('abandono',{id:r.L.id,tipo:r.L.kind,hecho:r.done,total:r.total});ses.simDraft=null;ses.view='home';ses.goCur=false;render()},
-  home(){const deSim=['sim','calc','stats','guia','glosario','itinerarios'].includes(ses.view);ses.simDraft=null;ses.view='home';ses.goCur=!deSim;render()},
+  home(){const deSim=['sim','calc','tamano','pago','stats','guia','glosario','itinerarios'].includes(ses.view);ses.simDraft=null;ses.view='home';ses.goCur=!deSim;render()},
   sim(){ses.simDraft=null;ir('sim')},
   calc(){ir('calc')},
+  tamano(){ir('tamano')},
+  pago(){ir('pago')},
+  // − / + de un control de las herramientas (tamaño y curva de pago).
+  ctlstep(b){const H=HERR[b.dataset.ns];if(!H||b.dataset.ns!==ses.view)return;const c=H.ctrl().find(x=>x[0]===b.dataset.k);if(c){herrSet(b.dataset.ns,c[0],S[b.dataset.ns][c[0]]+(+b.dataset.d)*c[4]);save();$app.querySelector(`#ctl-${b.dataset.ns}-${c[0]}`).focus({preventScroll:true})}},
   stats(){ir('stats')},
   // Guía de la unidad: desde el inicio (consulta) o desde una pregunta fallada (repaso, vuelve a la lección).
   guia(b){const u=UNITS.find(x=>x.id===b.dataset.id);abrirGuia(u,'consulta');ir('guia')},
@@ -330,10 +337,22 @@ $app.addEventListener('click',e=>{
   if(accionEjercicio(a,b))return;
   if(ACCIONES[a])ACCIONES[a](b);
 });
+// Calculadora de tamaño y curva de pago: cada control actualiza su cifra y los resultados sin redibujar (no se pierde el foco).
+const HERR={tamano:{ctrl:tamanoCtrl,out:tamanoOutHTML,id:'tamOut'},pago:{ctrl:pagoCtrl,out:pagoOutHTML,id:'pagoOut'}};
+function herrSet(ns,k,v){
+  const c=HERR[ns].ctrl().find(x=>x[0]===k);if(!c)return;
+  v=Math.round((Math.min(c[3],Math.max(c[2],v))-c[2])/c[4])*c[4]+c[2];v=Math.round(Math.min(c[3],v)*1e6)/1e6;
+  S[ns][k]=v;
+  const inp=$app.querySelector(`#ctl-${ns}-${k}`),out=$app.querySelector(`#out-${ns}-${k}`);
+  if(inp){inp.value=v;inp.setAttribute('aria-valuetext',c[5](v))}
+  if(out)out.textContent=c[5](v);
+  $app.querySelector('#'+HERR[ns].id).innerHTML=HERR[ns].out();
+}
 const COPIA_MAX=5*1024*1024;  // una copia de seguridad real pesa unos KB: más de 5 MB no es de Rango
 $app.addEventListener('change',e=>{
   if(e.target.id==='rec-hora'&&/^([01]\d|2[0-3]):[0-5]\d$/.test(e.target.value)){S.recordatorio.hora=e.target.value;save();return}
   if(e.target.id==='rec-dias'){S.recordatorio.laborables=e.target.value==='1';save();return}
+  if(e.target.dataset&&e.target.dataset.ctl){save();return}  // herramientas: se guarda al soltar
   if(e.target.dataset&&e.target.dataset.calc&&e.target.type!=='checkbox'&&ses.view==='calc'){save();return}  // las casillas ya guardan en `input`
   if(e.target.id!=='imp-file'||!e.target.files||!e.target.files[0])return;
   if(e.target.files[0].size>COPIA_MAX){toast(t.copiaGrande);e.target.value='';return}
@@ -354,6 +373,10 @@ $app.addEventListener('input',e=>{
     if(k==='peso'){$app.querySelector('#histOut').innerHTML=histOutHTML();return}
     $app.querySelector('#calcOut').innerHTML=calcOutHTML();return;
   }
+  const d=e.target.dataset||{};
+  if(d.ctl){const [ns,kk]=d.ctl.split(':');if(ns===ses.view&&HERR[ns])herrSet(ns,kk,+e.target.value);return}
+  if(d.chk==='tamano:usarAtr'&&ses.view==='tamano'){S.tamano.usarAtr=e.target.checked;save();render();const c=$app.querySelector('#chk-tamano-usarAtr');if(c)c.focus({preventScroll:true});return}
+  if(d.pagoest&&ses.view==='pago'){S.pago=pagoCambiar(S.pago,e.target.value);save();render();const c=$app.querySelector('#pago-est');if(c)c.focus({preventScroll:true});return}
   const run=ses.run;
   if(ses.view==='lesson'&&run&&!run.checked){const ex=run.queue[0],T=TIPOS[ex.t];if(T.input)T.input(e,run,ex)}
 });
@@ -432,7 +455,7 @@ if(typeof navigator!=='undefined'&&'serviceWorker' in navigator&&typeof location
 
 // API mínima para tests (test/smoke.mjs)
 export const api={icsRecordatorio,sumarRacha,glos,openGlosario:()=>{ses.view='glosario';render()},migrar,exportar,leerCopia,importar,siguientePaso,FLAT,CASOS,SEMANA,MERCADO,PLACEMENT,simulate,simHist,aportaciones,historia,ITINERARIOS,itinActual,
-  openCalc:()=>{ses.view='calc';render()},openSim:()=>{ses.simDraft=null;ses.view='sim';render()},
+  openCalc:()=>{ses.view='calc';render()},openTamano:()=>{ses.view='tamano';render()},openPago:()=>{ses.view='pago';render()},tamanoPosicion,pagoEstrategia,herrSet,openSim:()=>{ses.simDraft=null;ses.view='sim';render()},
   openStats:()=>{ses.view='stats';render()},act:(a,ds={})=>ACCIONES[a]({dataset:ds}),getView:()=>ses.view,startWeak:()=>startRun(STATS_L),
   simDraftSet:p=>{ses.simDraft=p},simSave,goHome:()=>{ses.view='home';render()},startTest:()=>startRun(TEST_L),startNivel:tr=>startRun({id:'nivel-'+tr,title:t.pruebaNivel,kind:'nivel',track:tr}),srsDue,
   acceptLegal:()=>{S.legal=LEGAL_V},startSrs:()=>startRun(SRS_L),startReto:()=>startRun(RETO_L),retoHoy,ordenFijo,fusionar,configurar,enviarEnlace,leerRetorno,sincronizar,cerrarSesion,borrarCuenta,sesion,setTrack:id=>{S.track=id},skipBasics:()=>{S.skipBasics=true},

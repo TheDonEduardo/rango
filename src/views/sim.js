@@ -69,12 +69,12 @@ function simHistHTML(full){
   if(full)h+=`<ul class="histl">${hs.slice().reverse().map(x=>`<li><span>${esc(t.semanaN(...x.semana.split('-W')))} · ${esc(x.nombre)}</span><b class="${x.r>0?'up':x.r<0?'dn':''}">${x.estado==='sin entrada'?t.sinEntrada:fR(x.r)}</b></li>`).join('')}</ul>`;
   return h;
 }
-export function simCardHTML(){
+export function simCardHTML(extra=''){
   const mio=S.sim[SEMANA.semana];
   let h=`<section class="sim" aria-label="${t.simTitulo}"><b>${t.simTitulo}</b>`;
   if(mio){const r=simulate(mio.plan,SEMANA.despues);h+=`<div class="simrow"><span>${t.simHecha(esc(SEMANA.nombre))}<b class="${r.r>0?'up':r.r<0?'dn':''}">${r.estado==='sin entrada'?t.sinEntrada:fR(r.r)}</b></span><button class="btn ghost" data-act="sim">${t.verResultado}</button></div>`}
   else h+=`<div class="simrow"><span>${t.practica(esc(SEMANA.nombre),esc(SEMANA.ticker),fechaES(SEMANA.hasta))}</span><button class="btn line" data-act="sim">${t.empezar}</button></div>`;
-  return h+simHistHTML(false)+'</section>';
+  return h+simHistHTML(false)+extra+'</section>';
 }
 export function simHTML(){
   const W=SEMANA;
