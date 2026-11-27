@@ -1963,5 +1963,60 @@
  {
   "termino": "cuota de mercado",
   "d": "Parte del mercado que factura una empresa: ingresos ÷ mercado."
+ },
+ {
+  "termino": "prima de crédito",
+  "d": "Rentabilidad extra que paga un bono de empresa sobre el del Estado por el riesgo de que no pague."
+ },
+ {
+  "termino": "calificación crediticia",
+  "alias": [
+   "calificación",
+   "calificaciones crediticias"
+  ],
+  "d": "Nota (AAA, BBB-, BB+…) que mide el riesgo de que un emisor no pague su deuda."
+ },
+ {
+  "termino": "grado de inversión",
+  "d": "Calificación de BBB- o más en la escala habitual: riesgo de impago más bajo."
+ },
+ {
+  "termino": "alto rendimiento",
+  "d": "Bonos de empresa con calificación por debajo de BBB-: pagan más prima porque el riesgo de impago es mayor."
+ },
+ {
+  "termino": "tasa de recuperación",
+  "d": "Parte de la deuda que se cobra después de un impago, en %."
+ },
+ {
+  "termino": "pérdida esperada",
+  "d": "Probabilidad de impago × (1 − tasa de recuperación): la parte de la rentabilidad que cubre los impagos."
+ },
+ {
+  "termino": "beneficio neto",
+  "d": "Lo que queda a una empresa tras restar todos los gastos e impuestos a sus ingresos."
+ },
+ {
+  "termino": "margen neto",
+  "d": "Beneficio neto entre ingresos: cuánto beneficio queda de cada 100 € vendidos."
+ },
+ {
+  "termino": "interanual",
+  "d": "Comparación con el mismo periodo del año anterior, para evitar el efecto de la temporada."
+ },
+ {
+  "termino": "riesgo de contraparte",
+  "d": "Que la entidad a la que has confiado tu dinero no pueda devolvértelo."
+ },
+ {
+  "termino": "acreedor",
+  "alias": [
+   "acreedores"
+  ],
+  "d": "Quien reclama lo que le deben; en una quiebra cobra según un orden y, a veces, solo una parte."
+ },
+ {
+  "termino": "prueba de reservas",
+  "d": "Auditoría que muestra que una plataforma tiene fondos suficientes en una fecha. Es una señal, no una garantía."
  }
 ]

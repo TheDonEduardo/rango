@@ -1,0 +1,266 @@
+{
+  "n": 7,
+  "id": "bonoscorp",
+  "track": "pasiva",
+  "title": "Bonos de empresa y alto rendimiento",
+  "blurb": "Cuánto extra pagan, cuánto se lleva el riesgo de impago y qué peso darles.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Prima de crédito y calificación",
+      "texto": "Una empresa paga más que el Estado porque puede fallar. Ese extra de rentabilidad es la prima de crédito. La calificación crediticia es una nota de ese riesgo: con BBB- o más (escala habitual) hay grado de inversión; por debajo, alto rendimiento, con más prima.",
+      "ejemplo": "Estado 3 %; empresa BBB 4,5 % (prima 1,5 puntos); alto rendimiento 8 % (5 puntos). BB+ ya es alto rendimiento.",
+      "figura": {
+        "type": "barras",
+        "unidad": " %",
+        "h": 220,
+        "ancho": 80,
+        "alt": "Rentabilidad en %: el Estado rinde 3; una empresa con grado de inversión, 4,5 (1,5 de prima); una de alto rendimiento, 8 (5 de prima).",
+        "barras": [
+          {
+            "texto": "Estado",
+            "valor": false,
+            "segmentos": [
+              {
+                "valor": 3,
+                "texto": "Estado 3",
+                "tono": "sel"
+              }
+            ]
+          },
+          {
+            "texto": "Grado inversión",
+            "valor": false,
+            "segmentos": [
+              {
+                "valor": 3,
+                "texto": "Estado 3",
+                "tono": "sel"
+              },
+              {
+                "valor": 1.5,
+                "texto": "Prima 1,5",
+                "tono": "acc"
+              }
+            ]
+          },
+          {
+            "texto": "Alto rendimiento",
+            "valor": false,
+            "segmentos": [
+              {
+                "valor": 3,
+                "texto": "Estado 3",
+                "tono": "sel"
+              },
+              {
+                "valor": 5,
+                "texto": "Prima 5",
+                "tono": "dn"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "g2",
+      "titulo": "Pérdida esperada",
+      "texto": "Parte del extra cubre impagos. Pérdida esperada ≈ probabilidad de impago × (1 − tasa de recuperación). La tasa de recuperación es la parte de la deuda que se cobra tras el impago. Neta ≈ prometida − pérdida esperada.",
+      "ejemplo": "Al 8 %, impago 4 %, recuperación 40 %: pérdida 4 × 0,6 = 2,4 %; neta ≈ 5,6 %, 2,6 puntos sobre el 3 % del Estado."
+    },
+    {
+      "id": "g3",
+      "titulo": "Caen con la bolsa en las crisis",
+      "texto": "En una recesión suben los impagos y el mercado exige más prima: el precio de esos bonos baja. Caída ≈ duración × subida de la prima. Por eso se parecen a las acciones; el bono del Estado suele amortiguar.",
+      "ejemplo": "Duración 4 y prima de 5 a 8 puntos (+3): precio ≈ −4 × 3 = −12 %."
+    },
+    {
+      "id": "g4",
+      "titulo": "Cuánto poner",
+      "texto": "Pérdida de la cartera = peso × caída. Fija antes cuánto aceptas perder en una crisis y de ahí sale el peso máximo del alto rendimiento. Un fondo reparte el impago entre cientos de emisores; un bono suelto lo concentra.",
+      "ejemplo": "Cartera de 100.000 €: 10.000 € (10 %) en alto rendimiento que cae un 12 %: pérdida 1.200 €, el 1,2 % de la cartera."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "ag1",
+      "title": "Prima y calificación",
+      "ex": [
+        {
+          "id": "ag1-1",
+          "t": "num",
+          "q": "Un bono del Estado rinde un 3 % y el de una empresa, un 7,5 %. ¿Cuántos puntos porcentuales de prima de crédito paga la empresa?",
+          "unit": "%",
+          "a": 4.5,
+          "why": "7,5 − 3 = 4,5 puntos: es el extra que cobras por asumir que la empresa pueda fallar.",
+          "guia": "g1"
+        },
+        {
+          "id": "ag1-2",
+          "t": "choice",
+          "q": "¿Por qué un bono de alto rendimiento paga más que uno del Estado?",
+          "opts": [
+            "Porque la ley obliga a las empresas a pagar más que el Estado",
+            "Porque compensa un mayor riesgo de que la empresa no pague",
+            "Porque el Estado cobra una comisión a quien compra sus bonos",
+            "Porque los bonos de empresa no tributan por sus cupones"
+          ],
+          "a": 1,
+          "why": "La prima de crédito es el precio del mayor riesgo de impago: a más riesgo, más rentabilidad exigida.",
+          "guia": "g1",
+          "porque": [
+            "Ninguna ley fija una rentabilidad mínima para los bonos de empresa: la fija el mercado según el riesgo.",
+            null,
+            "La diferencia no viene de ninguna comisión del Estado, sino del riesgo de crédito de la empresa.",
+            "La diferencia de rentabilidad no se explica por los impuestos, sino por el riesgo de impago."
+          ]
+        },
+        {
+          "id": "ag1-3",
+          "t": "match",
+          "q": "Empareja cada término de los bonos de empresa con su significado.",
+          "pairs": [
+            [
+              "Calificación crediticia",
+              "Nota que mide el riesgo de que una empresa no pague"
+            ],
+            [
+              "Grado de inversión",
+              "Calificación de BBB- o más, con riesgo de impago más bajo"
+            ],
+            [
+              "Alto rendimiento",
+              "Calificación por debajo de BBB-, con más prima y más riesgo"
+            ],
+            [
+              "Prima de crédito",
+              "Rentabilidad extra sobre el bono del Estado por el riesgo de impago"
+            ]
+          ],
+          "why": "La calificación mide el riesgo; el grado de inversión y el alto rendimiento son sus dos zonas, y la prima es el pago por el riesgo.",
+          "guia": "g1"
+        },
+        {
+          "id": "ag1-4",
+          "t": "choice",
+          "q": "Un bono de empresa pasa de la calificación BBB- a BB+. ¿Qué cambia según la convención habitual?",
+          "opts": [
+            "Pasa de grado de inversión a alto rendimiento",
+            "Pasa de alto rendimiento a grado de inversión",
+            "Sigue siendo grado de inversión y solo cambia el nombre",
+            "Deja de tener ningún riesgo de impago a partir de ese momento"
+          ],
+          "a": 0,
+          "why": "BBB- es el último escalón del grado de inversión; BB+ ya está por debajo y se considera alto rendimiento.",
+          "guia": "g1",
+          "porque": [
+            null,
+            "El paso de BBB- a BB+ es hacia un riesgo mayor, no menor: se cruza de grado de inversión a alto rendimiento.",
+            "El nombre refleja el escalón: BBB- es el último del grado de inversión y BB+ queda por debajo.",
+            "Ningún bono de empresa elimina el riesgo de impago; uno de alto rendimiento tiene más que uno de grado de inversión."
+          ]
+        },
+        {
+          "id": "ag1-5",
+          "t": "order",
+          "q": "Ordena de menor a mayor riesgo de impago habitual.",
+          "items": [
+            "Bono de un Estado solvente",
+            "Bono de empresa con grado de inversión",
+            "Bono de empresa de alto rendimiento"
+          ],
+          "why": "La rentabilidad exigida crece con el riesgo: 3 % del Estado, 4,5 % en grado de inversión y 8 % en alto rendimiento (primas de 1,5 y 5 puntos).",
+          "guia": "g1"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "ag2",
+      "title": "Pérdida esperada y crisis",
+      "ex": [
+        {
+          "id": "ag2-1",
+          "t": "num",
+          "q": "Un bono de alto rendimiento tiene una probabilidad de impago del 4 % al año y, si falla, se recupera el 40 % de la deuda. ¿Cuál es su pérdida esperada anual, en %?",
+          "unit": "%",
+          "a": 2.4,
+          "why": "4 % × (1 − 0,4) = 2,4 %: esa parte de la rentabilidad prometida no es ganancia, cubre los impagos.",
+          "tol": 0.05,
+          "guia": "g2"
+        },
+        {
+          "id": "ag2-2",
+          "t": "num",
+          "q": "Un bono de alto rendimiento promete un 9 %. Su probabilidad de impago anual es del 5 % y, si falla, se recupera el 50 %. El Estado rinde un 3 %. Con pérdida esperada ≈ probabilidad × (1 − recuperación), ¿cuántos puntos de rentabilidad neta tiene de más sobre el Estado?",
+          "unit": "%",
+          "a": 3.5,
+          "why": "Pérdida esperada: 5 % × 0,5 = 2,5 %. Neta: 9 − 2,5 = 6,5 %. Sobre el 3 % del Estado: 3,5 puntos.",
+          "tol": 0.05,
+          "guia": "g2"
+        },
+        {
+          "id": "ag2-3",
+          "t": "choice",
+          "q": "¿Qué suele pasar con los precios de los bonos de alto rendimiento en una recesión?",
+          "opts": [
+            "Suben porque pagan cupones más altos",
+            "Caen por más impagos y más prima exigida",
+            "No cambian mientras la empresa pague el cupón",
+            "Pasan a ser más seguros que los del Estado"
+          ],
+          "a": 1,
+          "why": "En una recesión suben los impagos y la prima que se exige, y el precio baja: se comportan en parte como acciones.",
+          "guia": "g3",
+          "porque": [
+            "Un cupón alto no impide la bajada: el precio cae cuando el mercado exige más prima y aumentan los impagos.",
+            null,
+            "El precio de mercado se mueve aunque se pague el cupón: si suben la prima y los impagos, baja.",
+            "En una recesión el riesgo de impago de las empresas sube, así que no se vuelven más seguros que el Estado."
+          ]
+        },
+        {
+          "id": "ag2-4",
+          "t": "num",
+          "q": "Un bono de alto rendimiento tiene duración 4. Si su prima de crédito sube de 5 a 8 puntos, ¿cuánto cae su precio, en %, con la aproximación duración × subida de la prima?",
+          "unit": "%",
+          "a": 12,
+          "why": "La prima sube 3 puntos: 4 × 3 = 12 %.",
+          "guia": "g3"
+        },
+        {
+          "id": "ag2-5",
+          "t": "slide",
+          "q": "Tu cartera es de 100 mil € y no quieres perder más de 1,5 mil € si el alto rendimiento cae un 12 % en una crisis. ¿Cuántos mil € puedes poner en esos bonos?",
+          "label": "Mil € en alto rendimiento",
+          "min": 0,
+          "max": 30,
+          "step": 2.5,
+          "start": 25,
+          "a": 12.5,
+          "unit": "mil €",
+          "why": "Pérdida = peso × caída: 12,5 × 0,12 = 1,5 mil €, un 12,5 % de la cartera. Con más, la pérdida supera tu límite.",
+          "show": [
+            {
+              "label": "Pérdida si cae un 12 %",
+              "k": 0.12,
+              "b": 0,
+              "unit": "mil €",
+              "dec": 2
+            },
+            {
+              "label": "Peso en la cartera",
+              "k": 1,
+              "b": 0,
+              "unit": "%",
+              "dec": 1
+            }
+          ],
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

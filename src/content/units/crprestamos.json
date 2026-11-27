@@ -1,0 +1,234 @@
+{
+  "n": 7,
+  "id": "crprestamos",
+  "track": "cripto",
+  "title": "Prestar cripto a cambio de interés",
+  "blurb": "De dónde sale el rendimiento, qué pasa si la plataforma quiebra y cuánto compensa el riesgo.",
+  "revisar": "2027-11",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "De dónde sale el interés",
+      "texto": "Al depositar cripto, la plataforma lo presta y te paga solo una parte. Ya no tienes tus claves: tienes un derecho de cobro contra ella. El interés es el precio del riesgo.",
+      "ejemplo": "Los prestatarios pagan un 9 % y recibes un 6 %: la plataforma se queda 3 puntos, un tercio (3 ÷ 9 ≈ 33 %). 5.000 $ al 6 %: 300 $ al año.",
+      "figura": {
+        "type": "barras",
+        "unidad": " %",
+        "h": 210,
+        "ancho": 90,
+        "alt": "Los prestatarios pagan un 9 %: 6 son para quien depositó y 3 para la plataforma. Quien depositó recibe un 6 %.",
+        "barras": [
+          {
+            "texto": "Pagan ellos",
+            "segmentos": [
+              {
+                "valor": 6,
+                "texto": "Tú 6",
+                "tono": "up"
+              },
+              {
+                "valor": 3,
+                "texto": "Plataf. 3",
+                "tono": "acc"
+              }
+            ]
+          },
+          {
+            "texto": "Tú recibes",
+            "valor": 6,
+            "tono": "up"
+          }
+        ]
+      }
+    },
+    {
+      "id": "g2",
+      "titulo": "El riesgo de contraparte",
+      "texto": "La plataforma es tu deudora: ese es el riesgo de contraparte. Si quiebra, eres acreedor y quizá cobres solo una parte. Las retiradas pueden congelarse. En general no hay garantía de depósitos como en un banco. Compruébalo con la norma vigente y en las condiciones.",
+      "ejemplo": "Prestas 10.000 $ y recuperas el 40 %: pierdes 6.000 $, 10 años de intereses al 6 % (600 $ al año)."
+    },
+    {
+      "id": "g3",
+      "titulo": "Interés alto, riesgo alto",
+      "texto": "Lo que rinde de más sobre un activo sin riesgo es la prima. Si al quebrar pierdes una fracción L, la prima P compensa en media una probabilidad anual de quiebra de P ÷ L. Pregunta quién paga el interés y con qué garantía.",
+      "ejemplo": "Rendimiento 12 % y Estado 3 %: prima de 9 puntos. Si al quebrar pierdes el 60 %: 9 ÷ 60 = 15 % anual."
+    },
+    {
+      "id": "g4",
+      "titulo": "Reducir el daño",
+      "texto": "Presta solo lo que puedas perder entero y fija el límite antes. Pérdida = importe prestado × fracción perdida. Repartir entre plataformas ayuda, pero no elimina el riesgo. Una prueba de reservas auditada es buena señal, no una garantía.",
+      "ejemplo": "De 10.000 $ en cripto prestas 2.000 $ y recuperas el 40 %: pierdes 1.200 $, el 12 %."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "ai1",
+      "title": "Dónde está tu cripto",
+      "ex": [
+        {
+          "id": "ai1-1",
+          "t": "num",
+          "q": "Los prestatarios pagan a una plataforma un 8 % por la cripto prestada y la plataforma paga a quien depositó un 6 %. ¿Qué porcentaje del interés cobrado se queda la plataforma?",
+          "unit": "%",
+          "a": 25,
+          "why": "8 − 6 = 2 puntos; 2 ÷ 8 = 25 % del interés cobrado.",
+          "guia": "g1"
+        },
+        {
+          "id": "ai1-2",
+          "t": "choice",
+          "q": "Depositas cripto en una plataforma centralizada que ofrece interés. ¿Qué suele ocurrir con ella?",
+          "opts": [
+            "Sigue en un monedero solo tuyo y nadie más puede usarla",
+            "Se queda bloqueada en la red y no genera nada para nadie",
+            "Se convierte en euros y queda cubierta por la garantía bancaria",
+            "La plataforma la presta o la usa, y tú solo tienes un derecho de cobro"
+          ],
+          "a": 3,
+          "why": "Para pagarte interés, la plataforma necesita usar o prestar tu cripto: dejas de tener tus claves y pasas a ser su acreedor.",
+          "guia": "g1",
+          "porque": [
+            "Si la cripto estuviera inmóvil en tu monedero no podría generar interés: este viene de usarla o prestarla.",
+            "Para pagar interés alguien tiene que usarla o pagar por ella; no queda bloqueada sin generar nada.",
+            "Depositar cripto no la convierte en euros ni la pone bajo una garantía bancaria.",
+            null
+          ]
+        },
+        {
+          "id": "ai1-3",
+          "t": "num",
+          "q": "Depositas 5.000 $ en cripto en una plataforma que paga un 6 % anual. ¿Cuántos dólares de interés recibes en un año?",
+          "unit": "$",
+          "a": 300,
+          "why": "5.000 × 0,06 = 300 $.",
+          "guia": "g1"
+        },
+        {
+          "id": "ai1-4",
+          "t": "match",
+          "q": "Empareja cada término del riesgo de prestar cripto con su significado.",
+          "pairs": [
+            [
+              "Riesgo de contraparte",
+              "Que la plataforma no pueda devolverte lo que depositaste"
+            ],
+            [
+              "Acreedor",
+              "Quien reclama lo que le deben en una quiebra"
+            ],
+            [
+              "Retirada congelada",
+              "La plataforma suspende que saques tu dinero"
+            ]
+          ],
+          "why": "Tu cripto depositada es una deuda de la plataforma: si falla, eres acreedor y quizá no puedas retirar.",
+          "guia": "g2"
+        },
+        {
+          "id": "ai1-5",
+          "t": "num",
+          "q": "Prestas 10.000 $ a una plataforma que quiebra y recuperas el 40 %. Si cobrabas un 6 % anual, ¿a cuántos años de intereses equivale lo que pierdes?",
+          "unit": "",
+          "a": 10,
+          "why": "Pierdes 6.000 $; los intereses son 600 $ al año; 6.000 ÷ 600 = 10 años.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "ai2",
+      "title": "Cuánto riesgo compensa",
+      "ex": [
+        {
+          "id": "ai2-1",
+          "t": "num",
+          "q": "Una plataforma ofrece un 12 % y el Estado, un 3 %. Si quiebra, pierdes el 60 % de lo prestado. Con la aproximación prima ÷ pérdida, ¿qué probabilidad anual de quiebra compensa en media esa prima, en %?",
+          "unit": "%",
+          "a": 15,
+          "why": "Prima: 12 − 3 = 9 puntos; 9 ÷ 60 = 15 %. Si la quiebra es más probable, el extra no compensa.",
+          "guia": "g3"
+        },
+        {
+          "id": "ai2-2",
+          "t": "choice",
+          "q": "Una plataforma ofrece un rendimiento muy superior al de las demás. ¿Qué haces primero?",
+          "opts": [
+            "Depositar cuanto antes, porque este tipo de ofertas duran poco",
+            "Preguntarte de dónde sale el interés, quién lo paga y con qué garantía",
+            "Fiarte del rendimiento porque otros usuarios lo muestran en redes",
+            "Comparar solo el rendimiento y elegir siempre el más alto"
+          ],
+          "a": 1,
+          "why": "Un interés sin origen claro es la señal de alarma: sin saber quién paga y qué lo garantiza, no puedes medir el riesgo.",
+          "guia": "g3",
+          "porque": [
+            "La prisa es una táctica habitual de las ofertas dudosas: no sustituye a comprender el riesgo.",
+            null,
+            "Que otros muestren su rendimiento en redes no prueba de dónde sale el interés ni que se pueda retirar.",
+            "Elegir solo por el rendimiento más alto es elegir el mayor riesgo sin haberlo medido."
+          ]
+        },
+        {
+          "id": "ai2-3",
+          "t": "slide",
+          "q": "Tienes 10.000 $ en cripto y no quieres perder más de 300 $ si la plataforma quiebra y recuperas solo el 40 %. ¿Cuántos dólares puedes prestar?",
+          "label": "Dólares prestados",
+          "min": 0,
+          "max": 2000,
+          "step": 100,
+          "start": 1500,
+          "a": 500,
+          "unit": "$",
+          "why": "Pérdida = importe × 0,6; con 500 $ pierdes 300 $, el 5 % de tu cripto. Con más, superas tu límite.",
+          "show": [
+            {
+              "label": "Pérdida si quiebra",
+              "k": 0.6,
+              "b": 0,
+              "unit": "$"
+            },
+            {
+              "label": "Peso sobre tu cripto",
+              "k": 0.01,
+              "b": 0,
+              "unit": "%",
+              "dec": 1
+            }
+          ],
+          "guia": "g4"
+        },
+        {
+          "id": "ai2-4",
+          "t": "num",
+          "q": "Tienes 10.000 $ en cripto y prestas 2.000 $ a una plataforma. Quiebra y recuperas el 40 %. ¿Qué porcentaje de tu cripto pierdes?",
+          "unit": "%",
+          "a": 12,
+          "why": "Pierdes 2.000 × 0,6 = 1.200 $, el 12 % de 10.000 $.",
+          "guia": "g4"
+        },
+        {
+          "id": "ai2-5",
+          "t": "choice",
+          "q": "Una plataforma publica una prueba de reservas auditada. ¿Qué significa para ti?",
+          "opts": [
+            "Que si quebrara recuperarías todo lo depositado sin pérdidas",
+            "Que el riesgo de contraparte desaparece mientras tengas saldo",
+            "Que el rendimiento que ofrece queda garantizado por la auditoría",
+            "Una buena señal, pero no garantiza que pueda devolverte todo"
+          ],
+          "a": 3,
+          "why": "Muestra que tiene fondos en una fecha, pero no elimina el riesgo: no prueba que no deba más ni que mantenga lo mismo mañana.",
+          "guia": "g4",
+          "porque": [
+            "Una auditoría de reservas no cubre pérdidas futuras: no asegura recuperar todo si quiebra.",
+            "El riesgo de contraparte sigue ahí: la plataforma es deudora tuya aunque pruebe tener reservas.",
+            "Una auditoría de reservas no garantiza ningún rendimiento; este depende del uso que se haga del dinero.",
+            null
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

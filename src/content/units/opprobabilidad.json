@@ -1,0 +1,235 @@
+{
+  "n": 18,
+  "id": "opprobabilidad",
+  "track": "derivados",
+  "title": "Delta y probabilidad",
+  "blurb": "Leer la delta como probabilidad aproximada y no confundirla con ganar dinero.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Delta como probabilidad",
+      "texto": "La delta absoluta (en una put, sin el signo menos) aproxima la probabilidad de que la opción acabe dentro del dinero al vencimiento. La de vencer sin valor es, aproximadamente, 1 menos la delta. Es una estimación del modelo.",
+      "ejemplo": "Acción a 100 €: calls con ejercicio 95, 100, 105, 110 y 115 tienen deltas de 0,75, 0,50, 0,30, 0,15 y 0,05.",
+      "figura": {
+        "type": "barras",
+        "unidad": " %",
+        "h": 220,
+        "ancho": 44,
+        "alt": "Probabilidad aproximada de acabar dentro del dinero de cinco calls sobre una acción a 100 €: ejercicio 95, 75 %; 100, 50 %; 105, 30 %; 110, 15 %; 115, 5 %.",
+        "barras": [
+          {
+            "texto": "95",
+            "valor": 75,
+            "tono": "sel"
+          },
+          {
+            "texto": "100",
+            "valor": 50,
+            "tono": "sel"
+          },
+          {
+            "texto": "105",
+            "valor": 30,
+            "tono": "sel"
+          },
+          {
+            "texto": "110",
+            "valor": 15,
+            "tono": "sel"
+          },
+          {
+            "texto": "115",
+            "valor": 5,
+            "tono": "sel"
+          }
+        ]
+      }
+    },
+    {
+      "id": "g2",
+      "titulo": "Comprador y vendedor",
+      "texto": "Con delta baja, el comprador pierde la prima casi siempre, pero si acierta gana mucho. El vendedor cobra la prima casi siempre, pero si falla pierde mucho más. Cada contrato cubre 100 acciones: prima × 100.",
+      "ejemplo": "Call con delta 0,15 y prima de 0,60 €: ~85 % de vencer sin valor. Vender 3 contratos cobra 3 × 100 × 0,60 = 180 €."
+    },
+    {
+      "id": "g3",
+      "titulo": "Probabilidad no es ganancia",
+      "texto": "Una probabilidad alta no basta: compara lo que ganas con lo que pierdes. Esperanza simplificada = prob. de ganar × ganancia − prob. de perder × pérdida, si solo hay esos dos resultados.",
+      "ejemplo": "Spread vertical de crédito: cobras 100 € y pierdes como máximo 400 € (ancho 5 € − prima 1 €). Con 85 % de ganar: 85 − 60 = +25 €. Con 80 %: 0 €."
+    },
+    {
+      "id": "g4",
+      "titulo": "Lo que la delta no dice",
+      "texto": "La delta cambia con el precio y el tiempo, y depende de un modelo. Acabar dentro del dinero no es ganar: el comprador debe superar su equilibrio (en una call, ejercicio + prima). Tampoco es la probabilidad de tocar el ejercicio antes del vencimiento, que es mayor.",
+      "ejemplo": "Call con ejercicio 110 €, prima 3 €, delta 0,25: equilibrio 113 €. Acabar sobre 110 € tiene ~25 %; ganar, menos."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "op53",
+      "title": "La delta como probabilidad",
+      "ex": [
+        {
+          "id": "op53-1",
+          "t": "num",
+          "q": "Una put tiene delta −0,30. Como aproximación, ¿qué probabilidad tiene de acabar dentro del dinero al vencimiento, en %?",
+          "unit": "%",
+          "a": 30,
+          "why": "La delta sin signo, 0,30, se lee como un 30 % aproximado. Es una estimación del modelo, no una promesa.",
+          "guia": "g1"
+        },
+        {
+          "id": "op53-2",
+          "t": "match",
+          "q": "Empareja cada opción con su lectura aproximada.",
+          "pairs": [
+            [
+              "Call con delta 0,85",
+              "Probable que acabe dentro del dinero: cerca del 85 %"
+            ],
+            [
+              "Call con delta 0,50",
+              "Casi una moneda al aire: cerca del 50 %"
+            ],
+            [
+              "Call con delta 0,10",
+              "Poco probable: cerca del 10 %, suele vencer sin valor"
+            ],
+            [
+              "Probabilidad de vencer sin valor",
+              "Aproximadamente 1 menos la delta"
+            ]
+          ],
+          "why": "La delta sin signo aproxima la probabilidad de acabar dentro del dinero; su complemento, la de vencer sin valor.",
+          "guia": "g1"
+        },
+        {
+          "id": "op53-3",
+          "t": "num",
+          "q": "Vendes una call con delta 0,15. Como aproximación, ¿en cuántos casos de cada 100 vence sin valor?",
+          "unit": "",
+          "a": 85,
+          "why": "1 − 0,15 = 0,85: unos 85 de cada 100, según la aproximación.",
+          "guia": "g1"
+        },
+        {
+          "id": "op53-4",
+          "t": "num",
+          "q": "Vendes 3 contratos de put con una prima de 0,60 € por acción. Cada contrato cubre 100 acciones. ¿Cuántos euros cobras en total?",
+          "unit": "€",
+          "a": 180,
+          "why": "3 × 100 × 0,60 = 180 €.",
+          "guia": "g2"
+        },
+        {
+          "id": "op53-5",
+          "t": "choice",
+          "q": "Compras una call con delta 0,10. ¿Qué es lo más razonable esperar?",
+          "opts": [
+            "Ganar casi siempre, porque la prima es pequeña",
+            "Perder solo una parte de la prima, nunca toda",
+            "Perder la prima casi siempre y ganar mucho alguna vez",
+            "Cobrar la prima casi siempre y perder mucho alguna vez"
+          ],
+          "a": 2,
+          "why": "Con delta 0,10 lo habitual (~90 %) es vencer sin valor y perder la prima; la ganancia, cuando llega, puede ser grande.",
+          "guia": "g2",
+          "porque": [
+            "Con delta 0,10 lo habitual es vencer sin valor, así que lo habitual es perder la prima, no ganar.",
+            "Si vence sin valor se pierde la prima entera, y con delta 0,10 eso es lo habitual.",
+            null,
+            "Esa es la posición del vendedor: cobra la prima casi siempre y asume una pérdida grande a veces."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "op54",
+      "title": "Probabilidad no es ganancia",
+      "ex": [
+        {
+          "id": "op54-1",
+          "t": "num",
+          "q": "Un spread vertical de crédito cobra 100 € por contrato y su pérdida máxima es 400 €. Supón solo dos resultados: ganar los 100 € con un 85 % de probabilidad o perder los 400 € con un 15 %. ¿Cuál es la esperanza por contrato, en euros?",
+          "unit": "€",
+          "a": 25,
+          "why": "0,85 × 100 − 0,15 × 400 = 85 − 60 = 25 €.",
+          "guia": "g3"
+        },
+        {
+          "id": "op54-2",
+          "t": "slide",
+          "q": "Un spread vertical de crédito cobra 100 € y su pérdida máxima es 400 €. Supón solo dos resultados. ¿Qué probabilidad de ganar necesitas para que la esperanza sea cero?",
+          "label": "Probabilidad de ganar",
+          "min": 50,
+          "max": 95,
+          "step": 5,
+          "start": 60,
+          "a": 80,
+          "unit": "%",
+          "why": "Esperanza = p × 100 − (1 − p) × 400 = 500p − 400; vale 0 con p = 0,80. Con menos del 80 %, pierdes de media.",
+          "show": [
+            {
+              "label": "Esperanza por contrato",
+              "k": 5,
+              "b": -400,
+              "unit": "€"
+            }
+          ],
+          "guia": "g3"
+        },
+        {
+          "id": "op54-3",
+          "t": "choice",
+          "q": "Una operación con opciones gana en el 90 % de los casos. ¿Qué conclusión es correcta?",
+          "opts": [
+            "Es rentable, porque gana casi siempre",
+            "Hay que mirar también cuánto se pierde en el 10 % restante",
+            "Es segura, porque la probabilidad de perder es pequeña",
+            "Es mala, porque la probabilidad nunca importa"
+          ],
+          "a": 1,
+          "why": "La probabilidad no basta: una pérdida grande en el 10 % restante puede superar las ganancias pequeñas del 90 %.",
+          "guia": "g3",
+          "porque": [
+            "Ganar a menudo no es ganar dinero: si cada pérdida es mucho mayor que cada ganancia, la esperanza puede ser negativa.",
+            null,
+            "Una probabilidad pequeña de perder no es seguridad: si ocurre, la pérdida puede ser mayor que lo ganado antes.",
+            "La probabilidad sí importa; lo que falla es mirarla sola, sin comparar ganancia y pérdida."
+          ]
+        },
+        {
+          "id": "op54-4",
+          "t": "num",
+          "q": "Compras una call con ejercicio 110 € y una prima de 3 € por acción. ¿Cuál es su precio de equilibrio al vencimiento, en euros?",
+          "unit": "€",
+          "a": 113,
+          "why": "110 + 3 = 113 €: por debajo de ese precio, al vencimiento no recuperas la prima.",
+          "guia": "g4"
+        },
+        {
+          "id": "op54-5",
+          "t": "choice",
+          "q": "Una call con ejercicio 110 € y prima de 3 € tiene delta 0,25. ¿Qué se puede decir de la probabilidad de ganar dinero al vencimiento?",
+          "opts": [
+            "Es del 25 %, porque la delta ya incluye la prima pagada",
+            "Es mayor del 25 %, porque la prima es de solo 3 €",
+            "Es del 75 %, porque 1 menos la delta es la de ganar",
+            "Menor del 25 %: hay que superar 113 € y no solo 110 €"
+          ],
+          "a": 3,
+          "why": "El 25 % aproxima acabar sobre 110 €; para ganar dinero hace falta superar 113 €, algo menos probable.",
+          "guia": "g4",
+          "porque": [
+            "La delta aproxima acabar sobre el ejercicio, no sobre el equilibrio: la prima pagada no entra en ella.",
+            "La prima pequeña no la hace más probable: el equilibrio 113 € queda por encima del ejercicio 110 €.",
+            "El 75 % es la probabilidad de vencer sin valor, no la de ganar dinero con la call comprada.",
+            null
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

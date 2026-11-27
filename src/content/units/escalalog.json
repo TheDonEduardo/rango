@@ -1,5 +1,5 @@
 {
-  "n": 30,
+  "n": 31,
   "id": "escalalog",
   "track": "basico",
   "title": "Gráficos a largo plazo",
@@ -16,12 +16,7 @@
         "alt": "Una serie que se duplica tres veces (100, 200, 400, 800) en escala lineal: el primer tramo apenas sube y el último ocupa más de la mitad de la altura, aunque todos son duplicar.",
         "series": [
           {
-            "data": [
-              100,
-              200,
-              400,
-              800
-            ],
+            "data": [100,200,400,800],
             "tono": "sel"
           }
         ],
@@ -63,12 +58,7 @@
         "alt": "La misma serie (100, 200, 400, 800) en escala logarítmica: cada duplicación sube la misma altura y queda una línea recta.",
         "series": [
           {
-            "data": [
-              0,
-              1,
-              2,
-              3
-            ],
+            "data": [0,1,2,3],
             "tono": "sel"
           }
         ],

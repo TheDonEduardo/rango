@@ -1,0 +1,240 @@
+{
+  "n": 13,
+  "id": "resbasico",
+  "track": "basico",
+  "title": "Cuando una empresa publica resultados",
+  "blurb": "Ingresos, beneficio y BPA: qué dicen las cifras del trimestre y por qué el precio puede caer aunque mejoren.",
+  "gate": false,
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Qué se publica",
+      "texto": "Cada trimestre (tres meses) las cotizadas publican resultados. Los ingresos son lo que venden. El beneficio neto es lo que queda tras todos los gastos e impuestos. El BPA es ese beneficio dividido entre el número de acciones.",
+      "ejemplo": "Ingresos 500 M€, beneficio neto 60 M€ y 100 millones de acciones: BPA = 60 ÷ 100 = 0,60 €."
+    },
+    {
+      "id": "g2",
+      "titulo": "Margen y crecimiento interanual",
+      "texto": "El margen neto es el beneficio entre los ingresos. El crecimiento interanual compara con el mismo trimestre del año anterior, para que la temporada no distorsione: (ahora ÷ antes − 1) × 100.",
+      "ejemplo": "Hace un año: ingresos 400 y beneficio 40 M€. Ahora: 500 y 60. Ingresos +25 %, beneficio +50 %, margen del 10 % al 12 %.",
+      "figura": {
+        "type": "barras",
+        "unidad": " M€",
+        "h": 320,
+        "ancho": 110,
+        "alt": "Hace un año: ingresos de 400 M€, de ellos 360 de gastos e impuestos y 40 de beneficio. Ahora: 500 M€, de ellos 440 y 60 de beneficio.",
+        "barras": [
+          {
+            "texto": "Hace un año",
+            "segmentos": [
+              {
+                "valor": 360,
+                "texto": "Gastos 360",
+                "tono": "sel"
+              },
+              {
+                "valor": 40,
+                "texto": "Beneficio 40",
+                "tono": "up"
+              }
+            ]
+          },
+          {
+            "texto": "Ahora",
+            "segmentos": [
+              {
+                "valor": 440,
+                "texto": "Gastos 440",
+                "tono": "sel"
+              },
+              {
+                "valor": 60,
+                "texto": "Beneficio 60",
+                "tono": "up"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "g3",
+      "titulo": "Frente a lo esperado",
+      "texto": "El precio ya descuenta lo que esperan los analistas: el consenso. Se «bate» si el resultado lo supera. La empresa da además su guía, una previsión futura. Si el resultado queda bajo el consenso o la guía decepciona, el precio puede caer aunque el beneficio crezca.",
+      "ejemplo": "Consenso de BPA 0,65 €; publica 0,60 €: 0,05 € menos, un 7,7 % por debajo."
+    },
+    {
+      "id": "g4",
+      "titulo": "Un trimestre es una foto",
+      "texto": "Un trimestre aislado puede ser ruido: mira la tendencia de varios. El PER de 12 meses divide el precio entre la suma del BPA de los últimos cuatro trimestres.",
+      "ejemplo": "BPA de 0,50, 0,55, 0,60 y 0,65 €: suma 2,30 €, un +30 % del primero al último. Con la acción a 34,50 €: PER = 34,50 ÷ 2,30 = 15."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "ah1",
+      "title": "Leer las cifras",
+      "ex": [
+        {
+          "id": "ah1-1",
+          "t": "num",
+          "q": "Una empresa tuvo ingresos de 800 M€ y un beneficio neto de 64 M€ en el trimestre. Tiene 80 millones de acciones. ¿Cuál es su BPA, en euros?",
+          "unit": "€",
+          "a": 0.8,
+          "why": "64 ÷ 80 = 0,80 €: es el beneficio que corresponde a cada acción en ese trimestre.",
+          "guia": "g1"
+        },
+        {
+          "id": "ah1-2",
+          "t": "match",
+          "q": "Empareja cada término de los resultados con su significado.",
+          "pairs": [
+            [
+              "Ingresos",
+              "Lo que la empresa vende en el trimestre"
+            ],
+            [
+              "Beneficio neto",
+              "Lo que queda tras todos los gastos e impuestos"
+            ],
+            [
+              "BPA",
+              "Beneficio neto dividido entre el número de acciones"
+            ],
+            [
+              "Trimestre",
+              "Cada periodo de tres meses con el que se publican los resultados"
+            ]
+          ],
+          "why": "Los ingresos son lo vendido; el beneficio neto, lo que queda; el BPA lo reparte por acción; y los resultados llegan cada trimestre.",
+          "guia": "g1"
+        },
+        {
+          "id": "ah1-3",
+          "t": "num",
+          "q": "Una empresa ingresó 250 M€ en el trimestre y su beneficio neto fue de 30 M€. ¿Cuál es su margen neto, en %?",
+          "unit": "%",
+          "a": 12,
+          "why": "30 ÷ 250 = 0,12: un 12 %. De cada 100 € vendidos, 12 € se quedan como beneficio.",
+          "guia": "g2"
+        },
+        {
+          "id": "ah1-4",
+          "t": "num",
+          "q": "El beneficio neto del trimestre fue de 100 M€ y el del mismo trimestre del año anterior, de 80 M€. ¿Cuánto creció de forma interanual, en %?",
+          "unit": "%",
+          "a": 25,
+          "why": "100 ÷ 80 = 1,25: un 25 % más que hace un año.",
+          "guia": "g2"
+        },
+        {
+          "id": "ah1-5",
+          "t": "choice",
+          "q": "Hace un año una empresa tuvo ingresos de 200 M€ y beneficio neto de 20 M€. Ahora tiene 220 M€ y 26 M€. ¿Qué ha pasado con su margen neto?",
+          "opts": [
+            "Ha bajado, porque los ingresos han crecido",
+            "Se ha mantenido igual, porque ambos han subido",
+            "Ha subido, porque el beneficio ha crecido más que los ingresos",
+            "No se puede saber sin conocer el número de acciones"
+          ],
+          "a": 2,
+          "why": "Antes: 20 ÷ 200 = 10 %. Ahora: 26 ÷ 220 ≈ 11,8 %. El beneficio crece un 30 % y los ingresos, un 10 %.",
+          "guia": "g2",
+          "porque": [
+            "El margen baja solo si el beneficio crece menos que los ingresos; aquí crece más (+30 % frente a +10 %).",
+            "Que ambos suban no los iguala: el margen depende de cuál crece más deprisa.",
+            null,
+            "El margen neto solo usa beneficio e ingresos; el número de acciones no interviene."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "ah2",
+      "title": "Frente a lo esperado",
+      "ex": [
+        {
+          "id": "ah2-1",
+          "t": "num",
+          "q": "Los analistas esperaban un BPA de 0,80 € y la empresa publica 0,76 €. ¿Cuánto por debajo del consenso queda, en %?",
+          "unit": "%",
+          "a": 5,
+          "why": "0,80 − 0,76 = 0,04 €; 0,04 ÷ 0,80 = 0,05: un 5 % por debajo.",
+          "guia": "g3"
+        },
+        {
+          "id": "ah2-2",
+          "t": "choice",
+          "q": "El beneficio de una empresa crece un 30 % interanual, pero su acción cae el día que publica resultados. ¿Cuál es una explicación posible?",
+          "opts": [
+            "Que el precio ya descontaba un crecimiento mayor que el publicado",
+            "Que el beneficio crezca obliga al precio a subir ese día",
+            "Que el BPA solo se publica para los accionistas grandes",
+            "Que los resultados trimestrales no influyen en el precio"
+          ],
+          "a": 0,
+          "why": "El precio refleja lo esperado: si el consenso pedía más del 30 %, la cifra decepciona aunque crezca.",
+          "guia": "g3",
+          "porque": [
+            null,
+            "Un beneficio que sube no obliga al precio a subir: se compara con lo que ya estaba descontado.",
+            "El BPA se publica para todo el mercado, no solo para accionistas grandes.",
+            "Los resultados sí influyen en el precio; la reacción depende de cómo queden frente a lo esperado."
+          ]
+        },
+        {
+          "id": "ah2-3",
+          "t": "match",
+          "q": "Empareja cada término sobre lo que espera el mercado con su significado.",
+          "pairs": [
+            [
+              "Consenso",
+              "Media de lo que esperan los analistas"
+            ],
+            [
+              "Batir",
+              "Publicar un resultado por encima del consenso"
+            ],
+            [
+              "Guía",
+              "Previsión de la propia empresa para los próximos trimestres"
+            ]
+          ],
+          "why": "El consenso es la referencia; batirlo es superarlo, y la guía mira hacia delante.",
+          "guia": "g3"
+        },
+        {
+          "id": "ah2-4",
+          "t": "num",
+          "q": "Una acción cotiza a 34,50 € y su BPA de los últimos cuatro trimestres fue de 0,50, 0,55, 0,60 y 0,65 €. ¿Cuál es su PER de 12 meses?",
+          "unit": "",
+          "a": 15,
+          "why": "0,50 + 0,55 + 0,60 + 0,65 = 2,30 €; 34,50 ÷ 2,30 = 15.",
+          "guia": "g4"
+        },
+        {
+          "id": "ah2-5",
+          "t": "choice",
+          "q": "Una empresa publica un BPA de 0,65 € frente a 0,67 € del consenso, tras 0,50, 0,55 y 0,60 € en los tres trimestres anteriores. ¿Qué lectura es más completa?",
+          "opts": [
+            "Es un mal resultado y la tendencia creciente anterior queda anulada",
+            "Es un buen resultado, porque el BPA es positivo y eso basta",
+            "Algo por debajo de lo esperado, dentro de una tendencia creciente del 30 %",
+            "No dice nada, porque un solo trimestre nunca influye en nada"
+          ],
+          "a": 2,
+          "why": "Queda 0,02 € (3 %) bajo el consenso, pero de 0,50 a 0,65 € el BPA sube un 30 %: una foto no anula la tendencia.",
+          "guia": "g4",
+          "porque": [
+            "Un trimestre algo por debajo no borra la tendencia: de 0,50 a 0,65 € hay un 30 % de crecimiento.",
+            "Un BPA positivo no basta: hay que mirarlo frente al consenso y la tendencia.",
+            null,
+            "Un trimestre sí influye, pero solo cobra sentido junto con los anteriores y con lo esperado."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

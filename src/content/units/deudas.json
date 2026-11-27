@@ -1,5 +1,5 @@
 {
-  "n": 16,
+  "n": 17,
   "id": "deudas",
   "track": "basico",
   "title": "Deudas y tarjetas",
@@ -28,14 +28,7 @@
         "alt": "Deuda de 3.000 € al 2 % mensual pagando 70 € al mes: baja muy despacio al principio y cada vez más deprisa; tras cinco años, después de pagar 4.200 €, aún quedan 1.859 €.",
         "series": [
           {
-            "data": [
-              3000,
-              2866,
-              2696,
-              2480,
-              2206,
-              1859
-            ],
+            "data": [3000,2866,2696,2480,2206,1859],
             "texto": "Deuda",
             "tono": "dn"
           }
