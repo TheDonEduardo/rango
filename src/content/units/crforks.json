@@ -1,0 +1,253 @@
+{
+  "n": 30,
+  "id": "crforks",
+  "track": "cripto",
+  "title": "Bifurcaciones y actualizaciones de la red",
+  "blurb": "Qué pasa con tus monedas cuando una red cambia sus reglas o se divide en dos, y cómo evitar las estafas.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Qué es una bifurcación",
+      "texto": "Las redes cambian sus reglas con actualizaciones. En una bifurcación blanda, los nodos antiguos siguen aceptando los bloques nuevos. En una dura, no: si parte de la comunidad no actualiza, la cadena se divide en dos que comparten el pasado hasta ese bloque.",
+      "ejemplo": "Hasta el bloque 1.000 la historia es común. Desde el 1.001 hay una cadena A, con reglas nuevas, y una B, con las antiguas."
+    },
+    {
+      "id": "g2",
+      "titulo": "Tus monedas en las dos cadenas",
+      "texto": "Si tus monedas están en un monedero con tus claves antes de la bifurcación, tendrás el mismo saldo en las dos cadenas. Si están en una plataforma, solo las recibes si ella decide acreditarlas, según sus condiciones.",
+      "ejemplo": "Con 4 monedas en tu monedero antes de dividirse la cadena, tienes 4 en A y 4 en B."
+    },
+    {
+      "id": "g3",
+      "titulo": "El valor no se duplica",
+      "texto": "Saldo en dos cadenas no es doble valor: cada una cotiza según su uso y su apoyo, y el total puede subir o bajar. Valor total = saldo × precio de A + saldo × precio de B.",
+      "ejemplo": "2 monedas a 400 $ antes. Después, A a 340 $ y B a 60 $: 2 × 340 + 2 × 60 = 800 $, igual que antes aquí.",
+      "figura": {
+        "type": "barras",
+        "h": 230,
+        "unidad": "$",
+        "ancho": 90,
+        "alt": "Precio de una moneda: antes de la bifurcación, 400 $; después, la cadena A a 340 $ y la B a 60 $, que suman 400 $.",
+        "barras": [
+          {
+            "texto": "Antes",
+            "segmentos": [
+              {
+                "valor": 400,
+                "texto": "Cadena 400",
+                "tono": "sel"
+              }
+            ]
+          },
+          {
+            "texto": "Después",
+            "segmentos": [
+              {
+                "valor": 340,
+                "texto": "A: 340",
+                "tono": "sel"
+              },
+              {
+                "valor": 60,
+                "texto": "B: 60",
+                "tono": "acc"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "g4",
+      "titulo": "Riesgos tras la división",
+      "texto": "Sin protección, una transacción firmada en una cadena puede copiarse en la otra: es un ataque de repetición. Infórmate en tu monedero o plataforma y usa solo software oficial. Nunca des tu frase semilla para «reclamar» la moneda nueva: es una estafa habitual.",
+      "ejemplo": "Envías 1 moneda desde A; sin protección, la misma orden se ejecuta en B y también sale 1 moneda de B."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "jv1",
+      "title": "Qué es y qué pasa con tus monedas",
+      "ex": [
+        {
+          "id": "jv1-1",
+          "t": "choice",
+          "q": "¿Qué distingue a una bifurcación dura de una blanda?",
+          "opts": [
+            "La blanda solo puede proponerla el equipo fundador de la red",
+            "En la dura, los nodos sin actualizar quedan en otra cadena",
+            "La dura crea siempre una moneda nueva con valor propio",
+            "En la blanda, los usuarios deben vender sus monedas antes"
+          ],
+          "a": 1,
+          "why": "En la dura, los nodos antiguos rechazan los bloques nuevos y, si parte de la comunidad no actualiza, la cadena se divide; en la blanda los aceptan.",
+          "guia": "g1",
+          "porque": [
+            "Quién la propone no distingue una de otra: lo que cambia es si los nodos antiguos aceptan los bloques nuevos.",
+            null,
+            "Una dura puede acabar en dos monedas, pero solo si parte de la comunidad sigue la cadena antigua: no siempre hay moneda nueva.",
+            "Vender antes no es un requisito: las monedas siguen en la cadena y los nodos antiguos aceptan una blanda."
+          ]
+        },
+        {
+          "id": "jv1-2",
+          "t": "num",
+          "q": "Tienes 4 monedas en tu propio monedero, con tus claves, y la cadena se divide en dos. ¿Cuántas monedas tienes en la cadena B?",
+          "unit": "monedas",
+          "a": 4,
+          "why": "Las monedas que tenías antes de la división aparecen también en la otra cadena: 4 en A y 4 en B, aunque no valen lo mismo.",
+          "guia": "g2"
+        },
+        {
+          "id": "jv1-3",
+          "t": "choice",
+          "q": "Tienes tus monedas en una plataforma cuando la cadena se divide. ¿De qué depende que recibas las de la cadena nueva?",
+          "opts": [
+            "De que la propia red las reparta a todas las cuentas",
+            "De que pidas la moneda nueva en un monedero propio",
+            "De que vendas tus monedas antes de la fecha",
+            "De que la plataforma decida acreditarlas, según sus condiciones"
+          ],
+          "a": 3,
+          "why": "Las claves las tiene la plataforma: solo recibes la moneda nueva si ella decide acreditarla.",
+          "guia": "g2",
+          "porque": [
+            "La red no reparte a las cuentas de una plataforma: las claves las tiene la plataforma.",
+            "Un monedero propio no sirve: tus monedas están en la plataforma, que controla las claves.",
+            "Vender antes te deja sin saldo en el momento de la división: no recibirías nada.",
+            null
+          ]
+        },
+        {
+          "id": "jv1-4",
+          "t": "match",
+          "q": "Empareja cada término de las bifurcaciones con su descripción.",
+          "pairs": [
+            [
+              "Bifurcación blanda",
+              "Los nodos antiguos aceptan los bloques nuevos"
+            ],
+            [
+              "Bifurcación dura",
+              "Los nodos sin actualizar quedan en otra cadena"
+            ],
+            [
+              "Historia común",
+              "Bloques anteriores a la división, iguales en las dos cadenas"
+            ]
+          ],
+          "why": "La blanda es compatible con los nodos antiguos, la dura no y las dos cadenas comparten todos los bloques anteriores a la división.",
+          "guia": "g1"
+        },
+        {
+          "id": "jv1-5",
+          "t": "num",
+          "q": "Antes de una bifurcación una moneda valía 300 $ y tienes 2. Después, una cadena cotiza a 250 $ y la otra a 20 $. ¿Cuántos $ valen en total tus monedas tras la bifurcación? Valor = saldo × precio en cada cadena, sumado.",
+          "unit": "$",
+          "a": 540,
+          "why": "2 × 250 + 2 × 20 = 500 + 40 = 540 $: menos que los 600 $ de antes, aunque tengas saldo en dos cadenas.",
+          "guia": "g3"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "jv2",
+      "title": "Riesgos y cómo actuar",
+      "ex": [
+        {
+          "id": "jv2-1",
+          "t": "choice",
+          "q": "¿Qué es un ataque de repetición tras una bifurcación?",
+          "opts": [
+            "Enviar muchas transacciones a la vez para saturar la red",
+            "Copiar en una cadena una transacción firmada para la otra",
+            "Repetir la actualización hasta que los nodos la acepten",
+            "Crear saldo duplicado en la cadena nueva sin tener monedas"
+          ],
+          "a": 1,
+          "why": "Si no hay protección, una transacción válida en las dos cadenas puede ejecutarse en ambas, y mueve también las monedas de la otra.",
+          "guia": "g4",
+          "porque": [
+            "Eso es un ataque de saturación, no de repetición: busca bloquear la red, no copiar transacciones.",
+            null,
+            "Las actualizaciones no se repiten hasta que los nodos las acepten: cada nodo decide si actualiza.",
+            "No se crea saldo de la nada: lo que ocurre es que una transacción válida se ejecuta en las dos cadenas."
+          ]
+        },
+        {
+          "id": "jv2-2",
+          "t": "choice",
+          "q": "Una web ofrece que reclames la moneda de la cadena nueva introduciendo tu frase semilla. ¿Qué haces?",
+          "opts": [
+            "La introduces solo si la web tiene candado en la dirección",
+            "La introduces en un monedero nuevo para no arriesgar el actual",
+            "Cierras la web: nadie necesita tu frase semilla para darte monedas",
+            "Pides a la web una prueba de que es legítima antes de introducirla"
+          ],
+          "a": 2,
+          "why": "La frase semilla da acceso a todos tus fondos: se entrega solo al propio monedero y nunca a una web.",
+          "guia": "g4",
+          "porque": [
+            "El candado solo cifra la conexión; no demuestra que la web sea honesta.",
+            "La frase semilla abre todos tus fondos, estén en el monedero que estén: no hay monedero nuevo que lo evite.",
+            null,
+            "Cualquier prueba que dé la web puede ser falsa: la frase semilla no se entrega nunca."
+          ]
+        },
+        {
+          "id": "jv2-3",
+          "t": "num",
+          "q": "Tienes 0,8 monedas. Tras una bifurcación, la cadena A cotiza a 560 $ y la B a 40 $. ¿Cuántos $ valen en total tus monedas? Valor = saldo × precio en cada cadena, sumado.",
+          "unit": "$",
+          "a": 480,
+          "why": "0,8 × 560 + 0,8 × 40 = 448 + 32 = 480 $.",
+          "guia": "g3"
+        },
+        {
+          "id": "jv2-4",
+          "t": "slide",
+          "q": "Antes de una bifurcación una moneda valía 800 $ y tienes 2. Tras ella, la cadena A cotiza a 740 $. ¿A qué precio de la cadena B tus monedas valdrían en total lo mismo que antes?",
+          "label": "Precio de la cadena B",
+          "min": 0,
+          "max": 200,
+          "step": 10,
+          "start": 20,
+          "a": 60,
+          "unit": "$",
+          "why": "Valor antes: 2 × 800 = 1.600 $. Con A a 740 $ y B a 60 $: 2 × 740 + 2 × 60 = 1.600 $.",
+          "show": [
+            {
+              "label": "Valor total de tus monedas",
+              "k": 2,
+              "b": 1480,
+              "unit": "$"
+            }
+          ],
+          "guia": "g3"
+        },
+        {
+          "id": "jv2-5",
+          "t": "choice",
+          "q": "Se anuncia una bifurcación dura de una red en la que tienes monedas en una plataforma. ¿Qué es lo más prudente?",
+          "opts": [
+            "Mover tus monedas a otra plataforma a toda prisa",
+            "Comprar más monedas para tener más saldo después",
+            "Leer el aviso de la plataforma antes de mover nada",
+            "Instalar la primera aplicación que anuncie la cadena nueva"
+          ],
+          "a": 2,
+          "why": "La plataforma explica si acreditará la moneda nueva y cuándo conviene operar; actuar sin ese aviso multiplica el riesgo de errores y estafas.",
+          "guia": "g4",
+          "porque": [
+            "Moverlas con prisa durante la división aumenta el riesgo de errores y de transacciones repetidas.",
+            "Más saldo no es más valor: el precio se reparte entre las cadenas y comprar antes añade riesgo.",
+            null,
+            "Una aplicación desconocida puede ser una estafa o robarte las claves."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

@@ -1,0 +1,243 @@
+{
+  "n": 44,
+  "id": "puntoequilibrio",
+  "track": "fundamental",
+  "title": "Costes fijos y punto de equilibrio",
+  "blurb": "Cuántas unidades hay que vender para no perder y cómo amplifican los costes fijos un cambio de ventas.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Costes fijos y variables",
+      "texto": "Un coste fijo no cambia con las unidades vendidas (alquiler, plantilla); uno variable crece con cada unidad (materiales, comisiones). El margen de contribución por unidad es el precio menos el coste variable: lo que cada venta deja para cubrir los fijos y, después, ganar.",
+      "ejemplo": "Precio 50 €, coste variable 30 €: margen de contribución de 20 € por unidad, el 40 % del precio."
+    },
+    {
+      "id": "g2",
+      "titulo": "El punto de equilibrio",
+      "texto": "El punto de equilibrio es la venta con beneficio operativo cero: unidades = costes fijos ÷ margen de contribución por unidad. Para un beneficio objetivo, suma ese objetivo a los costes fijos antes de dividir. Por encima, cada unidad añade su contribución al beneficio.",
+      "ejemplo": "Costes fijos 16.000 €, contribución 20 €: 16.000 ÷ 20 = 800 unidades. Para ganar 4.000 €: (16.000 + 4.000) ÷ 20 = 1.000.",
+      "figura": {
+        "type": "curvas",
+        "h": 210,
+        "x": [
+          0,
+          800,
+          1200
+        ],
+        "margen": 70,
+        "alt": "Ingresos y costes totales según las unidades vendidas: los costes parten de 16.000 € por los fijos y los ingresos de cero; se cruzan en 800 unidades, con 40.000 € cada uno.",
+        "series": [
+          {
+            "data": [
+              0,
+              40000,
+              60000
+            ],
+            "texto": "Ingresos",
+            "tono": "up",
+            "dy": -8
+          },
+          {
+            "data": [
+              16000,
+              40000,
+              52000
+            ],
+            "texto": "Costes",
+            "tono": "dn",
+            "dy": 8
+          }
+        ],
+        "marcas": [
+          {
+            "i": 1,
+            "y": 40000,
+            "texto": "Equilibrio: 800 uds.",
+            "lado": "i"
+          }
+        ]
+      }
+    },
+    {
+      "id": "g3",
+      "titulo": "Holgura de ventas",
+      "texto": "La holgura de ventas dice cuánto pueden caer las ventas antes de entrar en pérdidas: (ventas − equilibrio) ÷ ventas, en unidades. Cuanto menor es, más cerca de perder está la empresa: con poca holgura, una caída pequeña ya borra el beneficio.",
+      "ejemplo": "Vende 1.000 unidades con equilibrio en 800: (1.000 − 800) ÷ 1.000 = 20 %. Beneficio: 200 unidades × 20 € = 4.000 €."
+    },
+    {
+      "id": "g4",
+      "titulo": "Apalancamiento operativo",
+      "texto": "El grado de apalancamiento operativo es la contribución total ÷ el beneficio operativo. Indica cuántas veces se amplifica en el beneficio una variación de ventas, mientras los costes fijos no cambien. A más costes fijos y menos holgura, mayor grado: más ganancia y más caída.",
+      "ejemplo": "Contribución 20.000 € y beneficio 4.000 €: grado 5. Ventas +10 %: beneficio +50 %; ventas −10 %: −50 %."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "pu1",
+      "title": "Contribución y equilibrio",
+      "ex": [
+        {
+          "id": "pu1-1",
+          "t": "num",
+          "q": "Una empresa vende un producto a 75 € y su coste variable es de 45 € por unidad. ¿Cuál es el margen de contribución por unidad?",
+          "unit": "€",
+          "a": 30,
+          "why": "75 − 45 = 30 €: cada unidad vendida deja 30 € para cubrir los costes fijos y, después, dar beneficio.",
+          "guia": "g1"
+        },
+        {
+          "id": "pu1-2",
+          "t": "choice",
+          "q": "Una empresa de reparto paga el alquiler de su almacén, un sueldo fijo a su plantilla y 2 € de combustible por cada entrega. ¿Cuál de esos costes es variable?",
+          "opts": [
+            "El alquiler del almacén",
+            "El combustible de cada entrega",
+            "El sueldo fijo de la plantilla",
+            "Ninguno: en el corto plazo todos son fijos"
+          ],
+          "a": 1,
+          "why": "El combustible crece con cada entrega; el alquiler y el sueldo fijo se pagan igual con pocas o con muchas entregas.",
+          "guia": "g1",
+          "porque": [
+            "Se paga igual con pocas que con muchas entregas: es un coste fijo.",
+            null,
+            "Según el enunciado no cambia con el número de entregas: es fijo.",
+            "El combustible sube con cada entrega, así que sí es variable."
+          ]
+        },
+        {
+          "id": "pu1-3",
+          "t": "num",
+          "q": "Una empresa tiene costes fijos de 9.000 € al mes, vende a 40 € la unidad y su coste variable es de 25 € por unidad. ¿Cuántas unidades debe vender al mes para no ganar ni perder?",
+          "unit": "uds",
+          "a": 600,
+          "why": "Margen de contribución: 40 − 25 = 15 €. Equilibrio: 9.000 ÷ 15 = 600 unidades.",
+          "guia": "g2"
+        },
+        {
+          "id": "pu1-4",
+          "t": "match",
+          "q": "Empareja cada tipo de coste con su descripción.",
+          "pairs": [
+            [
+              "Coste fijo",
+              "No cambia con las unidades vendidas"
+            ],
+            [
+              "Coste variable",
+              "Crece con cada unidad vendida"
+            ],
+            [
+              "Margen de contribución",
+              "Precio menos coste variable de una unidad"
+            ]
+          ],
+          "why": "Los fijos se pagan vendas lo que vendas, los variables siguen a las unidades y la contribución es lo que cada unidad deja para cubrir los fijos.",
+          "guia": "g1"
+        },
+        {
+          "id": "pu1-5",
+          "t": "slide",
+          "q": "Una empresa tiene costes fijos de 9.000 € al mes y gana 15 € por unidad vendida tras los costes variables. ¿Cuántas unidades debe vender al mes para un beneficio operativo de 3.000 €?",
+          "label": "Unidades vendidas",
+          "min": 0,
+          "max": 1600,
+          "step": 100,
+          "start": 300,
+          "a": 800,
+          "unit": "uds",
+          "why": "Para ganar 3.000 € hay que cubrir 9.000 € de fijos más ese objetivo: (9.000 + 3.000) ÷ 15 = 800 unidades.",
+          "show": [
+            {
+              "label": "Contribución total",
+              "k": 15,
+              "unit": "€"
+            },
+            {
+              "label": "Beneficio operativo",
+              "k": 15,
+              "b": -9000,
+              "unit": "€"
+            }
+          ],
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "pu2",
+      "title": "Holgura y apalancamiento",
+      "ex": [
+        {
+          "id": "pu2-1",
+          "t": "num",
+          "q": "Una empresa vende 800 unidades al año y su punto de equilibrio está en 600 unidades. ¿Cuál es su holgura de ventas, en %? Holgura = (ventas − equilibrio) ÷ ventas, en unidades.",
+          "unit": "%",
+          "a": 25,
+          "why": "(800 − 600) ÷ 800 = 25 %: las ventas pueden caer un 25 % antes de entrar en pérdidas.",
+          "guia": "g3"
+        },
+        {
+          "id": "pu2-2",
+          "t": "choice",
+          "q": "Dos empresas venden 1.000 unidades al año. El equilibrio de A está en 650 unidades y el de B, en 920. Si las ventas de ambas caen un 15 %, ¿qué ocurre?",
+          "opts": [
+            "Las dos pasan a pérdidas, porque venden menos que antes",
+            "B aguanta mejor, porque su equilibrio está más cerca de sus ventas",
+            "A sigue ganando y B pasa a pérdidas con 850 unidades",
+            "Las dos siguen ganando, porque la caída es menor del 20 %"
+          ],
+          "a": 2,
+          "why": "Con una caída del 15 %, ambas venden 850. A queda sobre su equilibrio de 650 y B bajo el de 920: holgura del 35 % frente a la del 8 %.",
+          "guia": "g3",
+          "porque": [
+            "A aún vende 850 unidades, por encima de su equilibrio de 650: sigue con beneficio.",
+            "Al revés: B está más cerca de su equilibrio, así que tiene menos holgura, no más.",
+            null,
+            "B vende 850, por debajo de su equilibrio de 920: pierde dinero aunque la caída sea moderada."
+          ]
+        },
+        {
+          "id": "pu2-3",
+          "t": "num",
+          "q": "Una empresa tiene un margen de contribución total de 36.000 € y un beneficio operativo de 9.000 €. ¿Cuál es su grado de apalancamiento operativo? Grado = contribución total ÷ beneficio operativo.",
+          "unit": "veces",
+          "a": 4,
+          "why": "36.000 ÷ 9.000 = 4: una variación de las ventas se multiplica por 4 en el beneficio operativo.",
+          "guia": "g4"
+        },
+        {
+          "id": "pu2-4",
+          "t": "num",
+          "q": "Una empresa tiene un grado de apalancamiento operativo de 4 y sus costes fijos no cambian. Si sus unidades vendidas suben un 5 %, ¿cuánto sube su beneficio operativo, en %?",
+          "unit": "%",
+          "a": 20,
+          "why": "Variación del beneficio = grado × variación de las ventas = 4 × 5 % = 20 %.",
+          "guia": "g4"
+        },
+        {
+          "id": "pu2-5",
+          "t": "choice",
+          "q": "Dos empresas ganan lo mismo hoy: A tiene un grado de apalancamiento operativo de 2 y B, de 6. Sus ventas caen un 20 % con los costes fijos iguales. ¿Qué pasa con su beneficio operativo?",
+          "opts": [
+            "Los dos caen un 20 %, igual que las ventas",
+            "El de B cae menos, porque su grado más alto lo protege",
+            "El de A cae un 12 % y el de B, un 20 %, según su grado",
+            "El de A cae un 40 % y el de B, un 120 %: B pasa a pérdidas"
+          ],
+          "a": 3,
+          "why": "Caída del beneficio = grado × caída de ventas: A, 2 × 20 % = 40 %; B, 6 × 20 % = 120 %, es decir, pérdidas.",
+          "guia": "g4",
+          "porque": [
+            "Con costes fijos, el beneficio cae más que las ventas: el grado multiplica la caída.",
+            "Al revés: un grado alto amplifica la caída, no la amortigua.",
+            "El grado multiplica la caída de ventas: 2 × 20 % = 40 % para A, no 12 %.",
+            null
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

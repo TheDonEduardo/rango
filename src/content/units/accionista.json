@@ -1,0 +1,242 @@
+{
+  "n": 37,
+  "id": "accionista",
+  "track": "basico",
+  "title": "Ser accionista: tus derechos",
+  "blurb": "Qué te da una acción: tu porcentaje de la empresa, el voto en la junta, las series de acciones y el dividendo.",
+  "gate": false,
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Ser accionista",
+      "texto": "Una acción es una parte de la empresa: quien la tiene es accionista. Tu porcentaje de propiedad = tus acciones ÷ acciones totales en circulación. Te da derechos: votar en la junta, cobrar dividendo (la parte del beneficio que se reparte) y, en general, suscribir antes que nadie las ampliaciones.",
+      "ejemplo": "1.000 acciones de 50.000.000 en circulación: 1.000 ÷ 50.000.000 = 0,002 % de la empresa."
+    },
+    {
+      "id": "g2",
+      "titulo": "La junta y el voto",
+      "texto": "La junta general decide las cuentas, el dividendo y el consejo. Se puede asistir, delegar o votar a distancia, si la empresa lo permite. Normalmente una acción vale un voto y un acuerdo necesita más de la mitad de los votos emitidos.",
+      "ejemplo": "Votan fundador 30 %, fondos 45 % y minoristas 25 %: fundador y minoristas suman 55 % y ganan.",
+      "figura": {
+        "type": "barras",
+        "h": 270,
+        "unidad": "%",
+        "ancho": 80,
+        "alt": "Tres accionistas con el 30 %, el 45 % y el 25 % de los votos y una línea en el 50 %: ninguno la supera solo, pero el fundador y los minoristas juntos suman el 55 %.",
+        "barras": [
+          {
+            "texto": "Fundador",
+            "valor": 30,
+            "tono": "sel"
+          },
+          {
+            "texto": "Fondos",
+            "valor": 45,
+            "tono": "acc"
+          },
+          {
+            "texto": "Minoristas",
+            "valor": 25,
+            "tono": "up"
+          }
+        ],
+        "lineas": [
+          {
+            "y": 50,
+            "texto": "Mayoría: más del 50 %",
+            "tono": "dn"
+          }
+        ]
+      }
+    },
+    {
+      "id": "g3",
+      "titulo": "Series de acciones",
+      "texto": "Una empresa puede tener varias series. La ordinaria da un voto por acción. Una acción sin voto no vota y suele cobrar un dividendo mínimo a cambio. Las acciones preferentes cobran su dividendo antes que las ordinarias.",
+      "ejemplo": "Serie con voto a 25 € y serie sin voto a 22,50 €: la segunda cuesta un 10 % menos, (25 − 22,50) ÷ 25."
+    },
+    {
+      "id": "g4",
+      "titulo": "Dividendo y ampliaciones",
+      "texto": "Dividendo total = dividendo por acción × tus acciones; cada acción de la misma clase cobra lo mismo. En una ampliación, el derecho de suscripción preferente te deja comprar antes que nadie acciones nuevas en proporción a las que tienes.",
+      "ejemplo": "Dividendo de 0,40 € por acción y 1.000 acciones: 400 €. Ampliación de 1 nueva por cada 5: 1.000 ÷ 5 = 200 acciones."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "ju1",
+      "title": "Tu parte de la empresa",
+      "ex": [
+        {
+          "id": "ju1-1",
+          "t": "num",
+          "q": "Una empresa tiene 1.600.000 acciones en circulación y tienes 4.000. ¿Qué porcentaje de la empresa posees, en %? Porcentaje = tus acciones ÷ acciones totales.",
+          "unit": "%",
+          "a": 0.25,
+          "why": "4.000 ÷ 1.600.000 = 0,0025, es decir, un 0,25 % de la empresa.",
+          "tol": 0.005,
+          "guia": "g1"
+        },
+        {
+          "id": "ju1-2",
+          "t": "choice",
+          "q": "¿Qué te da, en general, una acción ordinaria?",
+          "opts": [
+            "Un dividendo fijo garantizado cada año",
+            "El derecho a pedir a la empresa que te devuelva tu parte",
+            "Derecho a votar en la junta y a cobrar dividendo si se reparte",
+            "Un puesto en el consejo de administración"
+          ],
+          "a": 2,
+          "why": "La acción ordinaria da voto en la junta y dividendo si la empresa decide repartirlo; ni uno ni otro están garantizados por sí solos.",
+          "guia": "g1",
+          "porque": [
+            "Ningún dividendo está garantizado: la empresa decide repartirlo según sus resultados.",
+            "No puedes pedir la devolución de tu parte: si quieres salir, vendes las acciones en bolsa a otro inversor.",
+            null,
+            "Ser accionista no da por sí solo un puesto en el consejo: lo eligen los accionistas en la junta."
+          ]
+        },
+        {
+          "id": "ju1-3",
+          "t": "match",
+          "q": "Empareja cada término de la propiedad de una empresa con su descripción.",
+          "pairs": [
+            [
+              "Accionista",
+              "Propietario de una parte de la empresa"
+            ],
+            [
+              "Porcentaje de propiedad",
+              "Tus acciones entre las acciones totales"
+            ],
+            [
+              "Dividendo",
+              "Parte del beneficio que se reparte entre accionistas"
+            ]
+          ],
+          "why": "Eres accionista por tener acciones, tu porcentaje sale de dividir tus acciones entre las totales y el dividendo es lo que la empresa reparte del beneficio.",
+          "guia": "g1"
+        },
+        {
+          "id": "ju1-4",
+          "t": "slide",
+          "q": "Una empresa tiene 1.600.000 acciones en circulación. ¿Cuántas acciones necesitas para poseer el 0,5 % de la empresa?",
+          "label": "Acciones que tienes",
+          "min": 0,
+          "max": 12000,
+          "step": 1000,
+          "start": 2000,
+          "a": 8000,
+          "unit": "acc.",
+          "why": "El 0,5 % de 1.600.000 es 0,005 × 1.600.000 = 8.000 acciones.",
+          "show": [
+            {
+              "label": "Tu porcentaje",
+              "k": 6.25e-05,
+              "unit": "%",
+              "dec": 3
+            }
+          ],
+          "guia": "g1"
+        },
+        {
+          "id": "ju1-5",
+          "t": "num",
+          "q": "Una empresa reparte un dividendo de 0,35 € por acción y tienes 800 acciones. ¿Cuántos euros cobras, antes de impuestos?",
+          "unit": "€",
+          "a": 280,
+          "why": "Dividendo total = 0,35 × 800 = 280 €: todas las acciones de una clase cobran lo mismo.",
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "ju2",
+      "title": "Voto y series de acciones",
+      "ex": [
+        {
+          "id": "ju2-1",
+          "t": "num",
+          "q": "En una junta votan tres accionistas con el 32 %, el 41 % y el 27 % de los votos. Los de 32 % y 27 % se ponen de acuerdo. ¿Qué porcentaje de votos suman?",
+          "unit": "%",
+          "a": 59,
+          "why": "32 + 27 = 59 %, más de la mitad: aprueban el acuerdo aunque el accionista del 41 % vote en contra.",
+          "guia": "g2"
+        },
+        {
+          "id": "ju2-2",
+          "t": "choice",
+          "q": "No puedes asistir a la junta de una empresa de la que eres accionista. ¿Qué puedes hacer?",
+          "opts": [
+            "Nada: tu voto solo cuenta si asistes en persona",
+            "Dejar que tu bróker vote por ti sin pedírselo",
+            "Delegar el voto o votar a distancia, si la empresa lo permite",
+            "Vender las acciones tras la junta para recuperar el voto"
+          ],
+          "a": 2,
+          "why": "La junta admite delegar el voto o votar a distancia cuando la empresa lo permite: no hace falta asistir.",
+          "guia": "g2",
+          "porque": [
+            "Se puede delegar o votar a distancia cuando la empresa lo permite: no hace falta asistir.",
+            "Si no delegas ni das instrucciones, nadie vota en tu nombre.",
+            null,
+            "Vender las acciones te quita el voto, no lo recupera."
+          ]
+        },
+        {
+          "id": "ju2-3",
+          "t": "choice",
+          "q": "Una empresa tiene acciones con voto y acciones sin voto. ¿Qué suele ofrecer la serie sin voto a cambio?",
+          "opts": [
+            "Más votos en la siguiente junta que las acciones con voto",
+            "Un dividendo mínimo o prioritario, o un precio menor",
+            "Un puesto asegurado en el consejo de administración",
+            "El derecho a vetar los acuerdos de la junta"
+          ],
+          "a": 1,
+          "why": "No votar se compensa con ventajas económicas: un dividendo mínimo o prioritario y, a menudo, un precio algo menor.",
+          "guia": "g3",
+          "porque": [
+            "Es al revés: la serie sin voto no tiene más votos, tiene menos.",
+            null,
+            "Sin voto no hay puesto asegurado en el consejo: el voto es lo que elige al consejo.",
+            "Sin voto no se puede vetar nada: no se vota en la junta."
+          ]
+        },
+        {
+          "id": "ju2-4",
+          "t": "num",
+          "q": "Una empresa tiene acciones con voto a 25 € y acciones sin voto a 22,50 €. ¿Cuánto más barata, en %, es la serie sin voto? Descuento = (precio con voto − precio sin voto) ÷ precio con voto.",
+          "unit": "%",
+          "a": 10,
+          "why": "(25 − 22,50) ÷ 25 = 0,10, es decir, un 10 % más barata.",
+          "guia": "g3"
+        },
+        {
+          "id": "ju2-5",
+          "t": "match",
+          "q": "Empareja cada serie de acciones con lo que ofrece.",
+          "pairs": [
+            [
+              "Acción con voto",
+              "Cada acción da un voto en la junta"
+            ],
+            [
+              "Acción sin voto",
+              "No vota y suele cobrar un dividendo mínimo"
+            ],
+            [
+              "Acciones preferentes",
+              "Cobran su dividendo antes que las ordinarias"
+            ]
+          ],
+          "why": "La acción con voto decide en la junta, la que no vota suele compensarlo con dividendo y las preferentes cobran antes que las ordinarias.",
+          "guia": "g3"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

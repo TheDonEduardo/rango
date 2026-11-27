@@ -1,0 +1,264 @@
+{
+  "n": 21,
+  "id": "estilovida",
+  "track": "personal",
+  "title": "Cuando ganas más: que la subida no se vaya en gasto",
+  "blurb": "Repartir cada subida de sueldo entre ahorrar y disfrutar, y por qué un gasto fijo nuevo se queda.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Cuando el gasto sube con el sueldo",
+      "texto": "La inflación del estilo de vida es subir el gasto cada vez que sube el sueldo, hasta ahorrar lo mismo que antes. Suele entrar como gasto fijo: más alquiler, cuotas, suscripciones. La tasa de ahorro es el ahorro ÷ los ingresos netos.",
+      "ejemplo": "Ingresos 1.800 €, gasto 1.440 €: ahorro 360 €, 20 %. Con 2.100 € de ingresos y 1.740 € de gasto sigues ahorrando 360 €: 17,1 %."
+    },
+    {
+      "id": "g2",
+      "titulo": "Repartir la subida",
+      "texto": "Decide antes de cobrar cómo repartes la subida y programa la transferencia de ahorro el día de cobro. Ahorro nuevo = ahorro anterior + parte de la subida que ahorras; tasa = ahorro nuevo ÷ ingresos nuevos. El resto lo gastas.",
+      "ejemplo": "Subida de 300 €, mitad y mitad: ahorro 360 + 150 = 510 € y gasto 1.590 €. Tasa: 510 ÷ 2.100 = 24,3 %.",
+      "figura": {
+        "type": "barras",
+        "h": 260,
+        "ancho": 90,
+        "alt": "Tres barras de ingresos mensuales: antes, 1.800 € con 1.440 de gasto y 360 de ahorro; gastando la subida, 2.100 € con 1.740 de gasto y 360 de ahorro; repartiéndola a la mitad, 2.100 € con 1.590 de gasto y 510 de ahorro.",
+        "barras": [
+          {
+            "texto": "Antes",
+            "segmentos": [
+              {
+                "valor": 1440,
+                "texto": "Gasto 1.440",
+                "tono": "sel"
+              },
+              {
+                "valor": 360,
+                "texto": "Ahorro 360",
+                "tono": "up"
+              }
+            ]
+          },
+          {
+            "texto": "Todo a gasto",
+            "segmentos": [
+              {
+                "valor": 1740,
+                "texto": "Gasto 1.740",
+                "tono": "sel"
+              },
+              {
+                "valor": 360,
+                "texto": "Ahorro 360",
+                "tono": "up"
+              }
+            ]
+          },
+          {
+            "texto": "Mitad y mitad",
+            "segmentos": [
+              {
+                "valor": 1590,
+                "texto": "Gasto 1.590",
+                "tono": "sel"
+              },
+              {
+                "valor": 510,
+                "texto": "Ahorro 510",
+                "tono": "up"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "g3",
+      "titulo": "El gasto fijo se queda",
+      "texto": "Un gasto fijo nuevo se paga todos los meses y cuesta más recortarlo que haberlo evitado. Además sube el colchón: colchón = meses de cobertura × gasto mensual. Un gasto puntual, como un viaje, se puede dejar de repetir; una cuota, no.",
+      "ejemplo": "Si el gasto pasa de 1.440 a 1.590 €, el colchón de 6 meses sube de 8.640 € a 9.540 €."
+    },
+    {
+      "id": "g4",
+      "titulo": "Repetir la regla",
+      "texto": "Aplicar la misma regla en cada subida sube la tasa de ahorro sin recortar nada, porque solo repartes dinero nuevo. Sin regla, cada subida se va casi entera al gasto.",
+      "ejemplo": "Dos subidas de 300 € a mitad y mitad: ahorro 360 → 510 → 660 € sobre 2.400 € de ingresos: 27,5 %. Gastándolas enteras: 360 ÷ 2.400 = 15 %."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "ev1",
+      "title": "Qué pasa con la subida",
+      "ex": [
+        {
+          "id": "ev1-1",
+          "t": "num",
+          "q": "Ingresas 2.400 € netos al mes y gastas 2.040 €. ¿Cuál es tu tasa de ahorro, en %? Tasa de ahorro = ahorro ÷ ingresos netos.",
+          "unit": "%",
+          "a": 15,
+          "why": "Ahorro: 2.400 − 2.040 = 360 €. Tasa: 360 ÷ 2.400 = 15 %.",
+          "guia": "g1"
+        },
+        {
+          "id": "ev1-2",
+          "t": "choice",
+          "q": "Marta ingresa 2.000 € netos y ahorra 300 € al mes. Le suben a 2.400 €, se muda a un piso 250 € más caro, cambia de coche con una cuota de 150 € al mes y sigue ahorrando 300 €. ¿Qué describe su caso?",
+          "opts": [
+            "Una mejora del ahorro, porque sigue ahorrando 300 € al mes",
+            "Inflación del estilo de vida: la subida se fue en gasto fijo",
+            "Una pérdida de ingresos reales, porque los precios han subido",
+            "Un reparto equilibrado de la subida entre ahorro y gasto"
+          ],
+          "a": 1,
+          "why": "Los 400 € de subida se han ido enteros a gasto fijo (250 + 150): su tasa de ahorro baja del 15 % (300 ÷ 2.000) al 12,5 % (300 ÷ 2.400).",
+          "guia": "g1",
+          "porque": [
+            "Ahorra lo mismo con más ingresos: su tasa baja del 15 % al 12,5 %, no mejora.",
+            null,
+            "Su gasto sube por decisiones propias (piso y coche), no por una subida general de precios.",
+            "No ha repartido: el 100 % de la subida ha ido a gasto y el ahorro no ha subido."
+          ]
+        },
+        {
+          "id": "ev1-3",
+          "t": "num",
+          "q": "Ingresas 2.000 € netos y gastas 1.600 €. Te suben a 2.400 € y pasas a gastar 2.000 €. ¿Cuál es ahora tu tasa de ahorro, en %, con un decimal?",
+          "unit": "%",
+          "a": 16.7,
+          "why": "Ahorro: 2.400 − 2.000 = 400 €. Tasa: 400 ÷ 2.400 = 16,7 %, frente al 20 % de antes (400 ÷ 2.000).",
+          "tol": 0.06,
+          "guia": "g1"
+        },
+        {
+          "id": "ev1-4",
+          "t": "slide",
+          "q": "Hoy ingresas 1.800 € netos al mes y gastas 1.440 €. Te suben el sueldo 300 € netos, hasta 2.100 €. ¿Cuántos euros de la subida debes ahorrar para que tu tasa de ahorro sea del 30 %? El resto lo gastas.",
+          "label": "Euros de la subida que ahorras",
+          "min": 0,
+          "max": 300,
+          "step": 10,
+          "start": 100,
+          "a": 270,
+          "unit": "€",
+          "why": "El 30 % de 2.100 € son 630 € de ahorro. Ya ahorrabas 360 €, así que de la subida ahorras 630 − 360 = 270 €.",
+          "show": [
+            {
+              "label": "Ahorro mensual",
+              "k": 1,
+              "b": 360,
+              "unit": "€"
+            },
+            {
+              "label": "Gasto mensual",
+              "k": -1,
+              "b": 1740,
+              "unit": "€"
+            },
+            {
+              "label": "Tasa de ahorro",
+              "k": 0.047619047619047616,
+              "b": 17.142857142857142,
+              "unit": "%",
+              "dec": 1
+            }
+          ],
+          "guia": "g2"
+        },
+        {
+          "id": "ev1-5",
+          "t": "match",
+          "q": "Empareja cada término del ahorro con su descripción.",
+          "pairs": [
+            [
+              "Tasa de ahorro",
+              "Ahorro dividido entre ingresos netos"
+            ],
+            [
+              "Gasto fijo",
+              "Alquiler, cuotas o suscripciones que se pagan cada mes"
+            ],
+            [
+              "Inflación del estilo de vida",
+              "Gastar cada subida hasta ahorrar lo mismo"
+            ]
+          ],
+          "why": "La tasa mide cuánto de lo que ingresas ahorras; el gasto fijo es el que entra sin querer y se queda; y la inflación del estilo de vida es gastar cada subida.",
+          "guia": "g1"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "ev2",
+      "title": "Repartir y que dure",
+      "ex": [
+        {
+          "id": "ev2-1",
+          "t": "num",
+          "q": "Ahorras 420 € al mes. Te suben el sueldo 400 € netos y decides ahorrar la mitad de la subida. ¿Cuánto ahorras ahora al mes, en €? Ahorro nuevo = ahorro anterior + parte de la subida que ahorras.",
+          "unit": "€",
+          "a": 620,
+          "why": "Mitad de la subida: 400 × 0,5 = 200 €. Ahorro nuevo: 420 + 200 = 620 €.",
+          "guia": "g2"
+        },
+        {
+          "id": "ev2-2",
+          "t": "choice",
+          "q": "Te suben el sueldo y has decidido ahorrar la mitad de la subida. ¿Cuál es la forma más fiable de cumplirlo?",
+          "opts": [
+            "Esperar a fin de mes y ahorrar lo que sobre",
+            "Programar la transferencia el día de cobro, antes de gastar",
+            "Ahorrar la mitad solo los meses sin gastos extra",
+            "Dejar la subida en la cuenta corriente por si hace falta"
+          ],
+          "a": 1,
+          "why": "Si el ahorro sale el día de cobro, el gasto se ajusta a lo que queda; lo que sobra a fin de mes suele ser poco.",
+          "guia": "g2",
+          "porque": [
+            "Lo que sobra a fin de mes suele ser poco, porque el gasto se ajusta a lo disponible.",
+            null,
+            "Condicionarlo a meses sin extras lo deja a la suerte: el ahorro sale irregular.",
+            "En la cuenta corriente el dinero se gasta con más facilidad que si ya está apartado."
+          ]
+        },
+        {
+          "id": "ev2-3",
+          "t": "num",
+          "q": "Tu gasto mensual sube de 1.500 € a 1.700 € y quieres mantener un colchón de emergencia de 4 meses de gasto. ¿Cuántos euros más necesita ese colchón? Colchón = meses × gasto mensual.",
+          "unit": "€",
+          "a": 800,
+          "why": "Colchón antes: 4 × 1.500 = 6.000 €. Ahora: 4 × 1.700 = 6.800 €. Diferencia: 800 €.",
+          "guia": "g3"
+        },
+        {
+          "id": "ev2-4",
+          "t": "num",
+          "q": "Ahorras 400 € al mes con ingresos de 2.000 € netos. Tienes dos subidas seguidas de 200 € netos y en cada una ahorras la mitad. ¿Cuál es tu tasa de ahorro final, en %?",
+          "unit": "%",
+          "a": 25,
+          "why": "Ahorro: 400 + 100 + 100 = 600 €. Ingresos: 2.000 + 200 + 200 = 2.400 €. Tasa: 600 ÷ 2.400 = 25 %.",
+          "guia": "g4"
+        },
+        {
+          "id": "ev2-5",
+          "t": "choice",
+          "q": "Quieres disfrutar de tu última subida sin añadir gasto fijo. ¿Qué opción encaja mejor?",
+          "opts": [
+            "Cambiar a un coche mejor con una cuota mensual de 150 €",
+            "Mudarte a un piso un 20 % más caro, con alquiler nuevo",
+            "Contratar tres suscripciones más, con cuota cada mes",
+            "Un viaje puntual pagado con la parte para disfrutar"
+          ],
+          "a": 3,
+          "why": "Un viaje se paga una vez y puedes dejar de repetirlo; una cuota, un alquiler o una suscripción se pagan cada mes y suben el gasto fijo.",
+          "guia": "g3",
+          "porque": [
+            "Una cuota de 150 € al mes son 1.800 € al año de gasto fijo nuevo.",
+            "Un alquiler más alto se paga cada mes y es difícil de recortar después.",
+            "Tres suscripciones suman cuotas mensuales nuevas, que se quedan si no las cancelas.",
+            null
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

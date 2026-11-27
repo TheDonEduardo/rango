@@ -1,0 +1,258 @@
+{
+  "n": 9,
+  "id": "oprueda",
+  "track": "derivados",
+  "title": "La rueda: put vendida y call cubierta",
+  "blurb": "Encadenar una put vendida con garantía y una call cubierta sobre una acción que aceptarías tener.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Paso 1: vender la put",
+      "texto": "La rueda encadena dos ventas sobre una acción que aceptarías tener. Primero vendes una put con garantía: reservas ejercicio × 100 en efectivo y cobras la prima. Si vence sin valor, repites. Si te asignan, compras 100 acciones: coste por acción = ejercicio − prima.",
+      "ejemplo": "Put de ejercicio 50 $ y prima 1,20 $: reservas 5.000 $ y cobras 120 $. Asignado: coste 50 − 1,20 = 48,80 $."
+    },
+    {
+      "id": "g2",
+      "titulo": "Paso 2: la call cubierta",
+      "texto": "Con las acciones, vendes una call cubierta con ejercicio por encima de tu coste. Su prima rebaja ese coste. Si te ejercen, vendes al ejercicio y ganas (ejercicio − coste) × 100 por contrato.",
+      "ejemplo": "Coste 48,80 $; call de ejercicio 52 $ y prima 0,90 $: coste 47,90 $. Si te ejercen: (52 − 47,90) × 100 = 410 $."
+    },
+    {
+      "id": "g3",
+      "titulo": "El riesgo: que el valor caiga",
+      "texto": "La rueda no elimina la pérdida: si la acción cae mucho tras la asignación, la prima solo la reduce. Pérdida latente = (coste − precio) × 100. Úsala solo con valores que aceptarías tener al precio de ejercicio.",
+      "ejemplo": "Coste 48,80 $ y acción a 40 $: (48,80 − 40) × 100 = 880 $. Con la acción a 0, la pérdida máxima de la put es 4.880 $."
+    },
+    {
+      "id": "g4",
+      "titulo": "Rendimiento y techo",
+      "texto": "Rendimiento de un ciclo de put = prima ÷ ejercicio, sin anualizar: nada garantiza repetirlo. Con la call vendida la ganancia tiene techo: cedes la subida por encima de su ejercicio.",
+      "ejemplo": "Prima 1,20 $ sobre ejercicio 50 $: 2,4 % del ciclo. Máximo del ciclo completo: (52 − 50 + 1,20 + 0,90) × 100 = 410 $.",
+      "figura": {
+        "type": "curvas",
+        "h": 210,
+        "x": [
+          40,
+          47.9,
+          52,
+          60
+        ],
+        "margen": 80,
+        "alt": "Resultado por acción de la posición con la call vendida, según el precio al vencimiento: pérdida de 7,90 $ con la acción a 40 $, equilibrio en 47,90 $ y una ganancia máxima de 4,10 $ desde 52 $.",
+        "series": [
+          {
+            "data": [
+              -7.9,
+              0,
+              4.1,
+              4.1
+            ],
+            "texto": "Resultado",
+            "tono": "sel"
+          }
+        ],
+        "lineas": [
+          {
+            "y": 0,
+            "texto": "Resultado 0: equilibrio en 47,90",
+            "tono": "ink",
+            "lado": "d"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 2,
+            "y": 4.1,
+            "texto": "Techo +4,10",
+            "lado": "i"
+          }
+        ]
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "op55",
+      "title": "Los dos pasos",
+      "ex": [
+        {
+          "id": "op55-1",
+          "t": "num",
+          "q": "Vendes una put con ejercicio de 40 $ y cobras una prima de 0,85 $ por acción. Si te asignan, ¿cuál es tu coste por acción, en $? Coste por acción = ejercicio − prima cobrada.",
+          "unit": "$",
+          "a": 39.15,
+          "why": "40 − 0,85 = 39,15 $ por acción: compras a 40 $ y la prima cobrada rebaja el coste.",
+          "tol": 0.01,
+          "guia": "g1"
+        },
+        {
+          "id": "op55-2",
+          "t": "choice",
+          "q": "Has vendido una put de la rueda con ejercicio de 50 $ y el día del vencimiento la acción cierra a 53 $. ¿Qué ocurre?",
+          "opts": [
+            "Te asignan y compras 100 acciones a 50 $",
+            "Vence sin valor: te quedas la prima y no compras nada",
+            "Pierdes la prima, porque la acción ha subido",
+            "Compras las acciones a 53 $, el precio de mercado"
+          ],
+          "a": 1,
+          "why": "Con la acción a 53 $, nadie ejerce una put de 50 $: la prima cobrada es tuya y puedes vender otra put.",
+          "guia": "g1",
+          "porque": [
+            "Con la acción a 53 $, nadie ejerce una put de 50 $: vendería por 50 lo que vale 53.",
+            null,
+            "La prima ya la cobraste al vender y es tuya; la subida es justo lo que hace que la put venza sin valor.",
+            "Si hubiera asignación sería al ejercicio, 50 $, no al precio de mercado; y aquí no hay asignación."
+          ]
+        },
+        {
+          "id": "op55-3",
+          "t": "num",
+          "q": "Vendes una put con ejercicio de 60 $ y cobras una prima de 1,50 $. ¿Qué rendimiento tiene ese ciclo sobre el ejercicio, en %, sin anualizar? Rendimiento = prima ÷ ejercicio.",
+          "unit": "%",
+          "a": 2.5,
+          "why": "1,50 ÷ 60 = 0,025, es decir, un 2,5 % del ciclo. No se repite con seguridad en el siguiente.",
+          "tol": 0.01,
+          "guia": "g4"
+        },
+        {
+          "id": "op55-4",
+          "t": "match",
+          "q": "Empareja cada término de la rueda con su descripción.",
+          "pairs": [
+            [
+              "Garantía de la put",
+              "Efectivo reservado: ejercicio × 100"
+            ],
+            [
+              "Asignación",
+              "Te toca comprar 100 acciones al ejercicio"
+            ],
+            [
+              "Coste por acción",
+              "Ejercicio menos prima cobrada"
+            ]
+          ],
+          "why": "Reservas el efectivo para poder comprar, la asignación te obliga a hacerlo al ejercicio y la prima cobrada rebaja lo que te cuesta cada acción.",
+          "guia": "g1"
+        },
+        {
+          "id": "op55-5",
+          "t": "choice",
+          "q": "¿Para qué valores tiene sentido empezar una rueda?",
+          "opts": [
+            "Para el que parezca más barato, aunque no lo conozcas",
+            "Para uno muy volátil, porque cobra más prima y el riesgo es el mismo",
+            "Para uno que aceptarías tener en cartera al precio de ejercicio",
+            "Para cualquiera, porque la prima cubre siempre la caída"
+          ],
+          "a": 2,
+          "why": "Si te asignan, te quedas con 100 acciones por contrato: solo tiene sentido con valores que ya querrías tener a ese precio.",
+          "guia": "g3",
+          "porque": [
+            "No conocerlo es el riesgo: si te asignan, te quedas con 100 acciones de algo que no querías.",
+            "Más prima viene de más riesgo de caída: no es el mismo riesgo.",
+            null,
+            "La prima es pequeña frente al precio: solo cubre una caída pequeña, no una fuerte."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "op56",
+      "title": "Call cubierta, riesgo y techo",
+      "ex": [
+        {
+          "id": "op56-1",
+          "t": "num",
+          "q": "Te asignaron una put y tu coste por acción es de 39,15 $. Vendes una call cubierta y cobras 0,60 $ por acción. ¿Cuál es ahora tu coste por acción, en $?",
+          "unit": "$",
+          "a": 38.55,
+          "why": "39,15 − 0,60 = 38,55 $: la prima de la call rebaja otra vez tu coste.",
+          "tol": 0.01,
+          "guia": "g2"
+        },
+        {
+          "id": "op56-2",
+          "t": "choice",
+          "q": "Tu coste por acción es de 38,55 $ y la acción cotiza a 39,00 $. Quieres vender una call cubierta sin vender con pérdida si te ejercen. ¿Qué ejercicio eliges?",
+          "opts": [
+            "36,00 $, para cobrar mucha más prima",
+            "38,00 $, algo bajo tu coste, para que te ejerzan pronto",
+            "40,00 $, por encima de tu coste de 38,55 $",
+            "37,50 $, para quedar cerca del precio de hoy"
+          ],
+          "a": 2,
+          "why": "Con ejercicio de 40,00 $, si te ejercen ganas 40,00 − 38,55 = 1,45 $ por acción; con ejercicios bajo 38,55 $ venderías con pérdida.",
+          "guia": "g2",
+          "porque": [
+            "Con ejercicio de 36,00 $ venderías 2,55 $ por acción bajo tu coste: pérdida segura si te ejercen.",
+            "Con 38,00 $ venderías 0,55 $ por acción bajo tu coste: pérdida si te ejercen.",
+            null,
+            "Con 37,50 $ venderías 1,05 $ por acción bajo tu coste: pérdida si te ejercen."
+          ]
+        },
+        {
+          "id": "op56-3",
+          "t": "slide",
+          "q": "Tras vender la put y la call cubierta, tu coste por acción es de 47,90 $. Si te ejercen la call, vendes al ejercicio. Supón la misma prima en cualquier ejercicio. ¿Qué ejercicio de la call da una ganancia de 410 $ por contrato (100 acciones)?",
+          "label": "Ejercicio de la call",
+          "min": 46,
+          "max": 56,
+          "step": 0.5,
+          "start": 49,
+          "a": 52,
+          "unit": "$",
+          "why": "Ganancia por contrato = (ejercicio − coste) × 100. Con 52 $: (52 − 47,90) × 100 = 410 $.",
+          "show": [
+            {
+              "label": "Ganancia por acción si te ejercen",
+              "k": 1,
+              "b": -47.9,
+              "unit": "$",
+              "dec": 2
+            },
+            {
+              "label": "Ganancia por contrato",
+              "k": 100,
+              "b": -4790,
+              "unit": "$"
+            }
+          ],
+          "guia": "g2"
+        },
+        {
+          "id": "op56-4",
+          "t": "num",
+          "q": "Tras una asignación, tu coste por acción es de 39,15 $ y la acción baja a 31 $. ¿Cuál es tu pérdida latente por contrato, en $? Pérdida latente = (coste − precio) × 100, sin contar ninguna call.",
+          "unit": "$",
+          "a": 815,
+          "why": "(39,15 − 31) × 100 = 815 $: la prima cobrada solo reduce la pérdida, no la evita.",
+          "guia": "g3"
+        },
+        {
+          "id": "op56-5",
+          "t": "choice",
+          "q": "Tienes una call cubierta con ejercicio de 52 $ y la acción sube hasta 60 $ en el vencimiento. ¿Qué ocurre con tu ganancia?",
+          "opts": [
+            "Sigue subiendo con la acción, porque tienes las 100 acciones",
+            "Se duplica, porque cobras la prima y además la subida",
+            "Desaparece, porque la call vendida se revaloriza",
+            "Queda limitada: no participas de la subida sobre 52 $"
+          ],
+          "a": 3,
+          "why": "Te ejercen y vendes a 52 $: ganas hasta ese ejercicio más las primas, pero cedes la subida de 52 $ a 60 $.",
+          "guia": "g4",
+          "porque": [
+            "Con la call vendida, por encima de 52 $ no sigues la acción: te ejercen y entregas.",
+            "No se duplica: la prima ya está en tu coste y la subida sobre 52 $ no es tuya.",
+            "No desaparece: ganas hasta el ejercicio más la prima; pierdes la subida por encima.",
+            null
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

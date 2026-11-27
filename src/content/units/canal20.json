@@ -1,0 +1,603 @@
+{
+  "n": 45,
+  "id": "canal20",
+  "track": "tecnico",
+  "title": "Ruptura del canal de 20 sesiones",
+  "blurb": "Un sistema con reglas medibles: entrada sobre el máximo de 20 sesiones, stop en el mínimo de 10 y salida por el canal.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "El canal de ruptura",
+      "texto": "Un sistema mecánico: compras cuando el máximo de hoy supera el máximo de las 20 sesiones anteriores, sin contar la de hoy. Es una ruptura medida con números, no a ojo. El mismo método vale con otro número de sesiones; 20 es una elección habitual.",
+      "ejemplo": "Máximo de las 20 sesiones previas: 52,40 €. Hoy llega a 53,40 €: hay ruptura.",
+      "figura": {
+        "type": "velas",
+        "h": 230,
+        "margen": 0,
+        "alt": "Ocho velas diarias: el precio se mueve bajo una línea que marca el máximo de las 20 sesiones anteriores y la última vela la supera",
+        "data": [
+          [
+            50.2,
+            50.9,
+            48.8,
+            49.3
+          ],
+          [
+            49.3,
+            50.0,
+            47.8,
+            48.5
+          ],
+          [
+            48.5,
+            49.6,
+            48.2,
+            49.4
+          ],
+          [
+            49.4,
+            50.7,
+            49.1,
+            50.5
+          ],
+          [
+            50.5,
+            51.6,
+            50.2,
+            51.3
+          ],
+          [
+            51.3,
+            52.3,
+            50.9,
+            51.8
+          ],
+          [
+            51.8,
+            52.1,
+            51.0,
+            51.4
+          ],
+          [
+            51.4,
+            53.4,
+            51.2,
+            53.1
+          ]
+        ],
+        "lineas": [
+          {
+            "y": 52.4,
+            "texto": "Máx. 20 sesiones: 52,40",
+            "tono": "up",
+            "lado": "i"
+          }
+        ]
+      }
+    },
+    {
+      "id": "g2",
+      "titulo": "Entrada, stop y tamaño",
+      "texto": "Entras 0,10 € por encima de ese máximo. El stop inicial va en el mínimo de las últimas 10 sesiones. Riesgo por acción = entrada − stop; acciones = riesgo asumido ÷ riesgo por acción; objetivo a 2R = entrada + 2 × riesgo.",
+      "ejemplo": "Entrada 52,50 €, stop 47,80 €: riesgo 4,70 €. Con 400 € de riesgo: 85 acciones. Objetivo a 2R: 61,90 €.",
+      "figura": {
+        "type": "velas",
+        "h": 230,
+        "alt": "Tres velas y tres líneas: objetivo a 61,90 €, entrada a 52,50 € y stop a 47,80 €",
+        "data": [
+          [
+            51.3,
+            52.3,
+            50.9,
+            51.8
+          ],
+          [
+            51.8,
+            52.1,
+            51.0,
+            51.4
+          ],
+          [
+            51.4,
+            53.4,
+            51.2,
+            53.1
+          ],
+          null,
+          null
+        ],
+        "lineas": [
+          {
+            "y": 61.9,
+            "texto": "Objetivo 61,90",
+            "tono": "up"
+          },
+          {
+            "y": 52.5,
+            "texto": "Entrada 52,50",
+            "tono": "sel"
+          },
+          {
+            "y": 47.8,
+            "texto": "Stop 47,80",
+            "tono": "dn"
+          }
+        ]
+      }
+    },
+    {
+      "id": "g3",
+      "titulo": "Salir por el canal",
+      "texto": "La salida es simétrica: si el precio pierde el mínimo de las últimas 10 sesiones, sales. Ese mínimo sube cuando salen sesiones bajas de la ventana, así que el stop sube con él y no baja. Resultado en R = (salida − entrada) ÷ riesgo.",
+      "ejemplo": "Entrada 52,50 €, riesgo 4,70 €. El mínimo de 10 sesiones sube a 55,20 €: sales ahí con 2,70 ÷ 4,70 = 0,57 R."
+    },
+    {
+      "id": "g4",
+      "titulo": "Pocas ganancias grandes",
+      "texto": "Este sistema pierde a menudo, sobre todo en laterales, y gana con pocas operaciones largas. Esperanza por operación = acierto × ganancia media − fallo × pérdida media, en R. Corta las pérdidas en 1R.",
+      "ejemplo": "35 % de aciertos con +3R y 65 % de fallos con −1R: 0,35 × 3 − 0,65 × 1 = +0,40 R por operación."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "ax1",
+      "title": "Leer el canal",
+      "ex": [
+        {
+          "id": "ax1-1",
+          "t": "tap",
+          "q": "El máximo de las 20 primeras velas es 52,40 €. Toca la primera vela posterior cuyo máximo supera el máximo de las 20 sesiones anteriores.",
+          "chart": {
+            "type": "candles",
+            "data": [
+              [
+                49.5,
+                50.3,
+                49.1,
+                50.0
+              ],
+              [
+                50.0,
+                50.6,
+                49.4,
+                49.7
+              ],
+              [
+                49.7,
+                50.2,
+                48.9,
+                49.1
+              ],
+              [
+                49.1,
+                49.8,
+                48.6,
+                49.5
+              ],
+              [
+                49.5,
+                50.4,
+                49.3,
+                50.2
+              ],
+              [
+                50.2,
+                51.0,
+                49.9,
+                50.8
+              ],
+              [
+                50.8,
+                51.3,
+                50.1,
+                50.3
+              ],
+              [
+                50.3,
+                50.7,
+                49.5,
+                49.8
+              ],
+              [
+                49.8,
+                50.5,
+                49.4,
+                50.4
+              ],
+              [
+                50.4,
+                51.2,
+                50.0,
+                51.0
+              ],
+              [
+                51.0,
+                51.8,
+                50.6,
+                51.5
+              ],
+              [
+                51.5,
+                52.0,
+                50.9,
+                51.1
+              ],
+              [
+                51.1,
+                52.4,
+                50.8,
+                52.0
+              ],
+              [
+                52.0,
+                52.2,
+                50.7,
+                51.0
+              ],
+              [
+                51.0,
+                51.4,
+                49.9,
+                50.2
+              ],
+              [
+                50.2,
+                50.9,
+                48.8,
+                49.3
+              ],
+              [
+                49.3,
+                50.0,
+                47.8,
+                48.5
+              ],
+              [
+                48.5,
+                49.6,
+                48.2,
+                49.4
+              ],
+              [
+                49.4,
+                50.7,
+                49.1,
+                50.5
+              ],
+              [
+                50.5,
+                51.6,
+                50.2,
+                51.3
+              ],
+              [
+                51.3,
+                52.3,
+                50.9,
+                51.8
+              ],
+              [
+                51.8,
+                52.1,
+                51.0,
+                51.4
+              ],
+              [
+                51.4,
+                53.4,
+                51.2,
+                53.1
+              ],
+              [
+                53.1,
+                54.2,
+                52.8,
+                53.9
+              ],
+              [
+                53.9,
+                55.0,
+                53.5,
+                54.6
+              ]
+            ],
+            "h": 270,
+            "alt": "Veinticinco velas diarias: un rango durante casi todo el gráfico y una subida al final"
+          },
+          "a": 22,
+          "why": "La vela 23 llega a 53,40 €, por encima de 52,40 €, el máximo de las 20 sesiones anteriores (vela 13). Las velas 21 y 22 se quedaron en 52,30 y 52,10 €.",
+          "guia": "g1"
+        },
+        {
+          "id": "ax1-2",
+          "t": "choice",
+          "q": "Un sistema de canal de 20 sesiones da la señal de compra. ¿Con qué compara el máximo de hoy?",
+          "opts": [
+            "Con el cierre de ayer, porque ya es un nivel conocido",
+            "Con la media de los máximos de las últimas 20 sesiones",
+            "Con el máximo de las 20 sesiones anteriores, sin contar la de hoy",
+            "Con el máximo de las 20 sesiones, incluida la de hoy"
+          ],
+          "a": 2,
+          "why": "La ruptura se mide contra el máximo de las 20 sesiones previas; hoy solo puede superarlo si no forma parte de la comparación.",
+          "guia": "g1",
+          "porque": [
+            "El cierre de ayer no mide ninguna ruptura: puede estar a mitad del rango de las 20 sesiones.",
+            "La media de los máximos queda por debajo del máximo: daría señal con el precio aún dentro del rango.",
+            null,
+            "Incluir hoy hace imposible la ruptura: su máximo nunca supera un máximo que ya lo contiene."
+          ]
+        },
+        {
+          "id": "ax1-3",
+          "t": "num",
+          "q": "Sistema de canal: entras 0,10 € por encima del máximo de las 20 sesiones anteriores y pones el stop en el mínimo de las últimas 10 sesiones. El máximo de 20 sesiones es 36,40 € y el mínimo de 10 sesiones, 33,60 €. ¿Cuál es el riesgo por acción, en €?",
+          "unit": "€",
+          "a": 2.9,
+          "why": "Entrada: 36,40 + 0,10 = 36,50 €. Riesgo por acción: 36,50 − 33,60 = 2,90 €.",
+          "tol": 0.01,
+          "guia": "g2"
+        },
+        {
+          "id": "ax1-4",
+          "t": "num",
+          "q": "Entras en una ruptura a 18,60 € con el stop en 17,40 € y asumes un riesgo de 480 € en la operación. ¿Cuántas acciones compras?",
+          "unit": "acc.",
+          "a": 400,
+          "why": "Riesgo por acción: 18,60 − 17,40 = 1,20 €. Acciones: 480 ÷ 1,20 = 400.",
+          "guia": "g2"
+        },
+        {
+          "id": "ax1-5",
+          "t": "match",
+          "q": "Empareja cada elemento del sistema de canal con su regla.",
+          "pairs": [
+            [
+              "Entrada",
+              "0,10 € por encima del máximo de 20 sesiones"
+            ],
+            [
+              "Stop inicial",
+              "En el mínimo de las últimas 10 sesiones"
+            ],
+            [
+              "Riesgo por acción",
+              "Entrada menos stop"
+            ]
+          ],
+          "why": "La entrada se coloca justo sobre el máximo del canal, el stop en el mínimo de 10 sesiones y su distancia es el riesgo por acción.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "ax2",
+      "title": "Salida y expectativa",
+      "ex": [
+        {
+          "id": "ax2-1",
+          "t": "plan",
+          "q": "Una acción cierra a 51,80 € con un máximo de 20 sesiones de 52,40 € y un mínimo de 10 sesiones de 47,80 €. Monta el plan del canal: entrada 0,10 € sobre el máximo, stop en el mínimo de 10 sesiones y objetivo a 2R.",
+          "chart": {
+            "type": "candles",
+            "data": [
+              [
+                49.5,
+                50.3,
+                49.1,
+                50.0
+              ],
+              [
+                50.0,
+                50.6,
+                49.4,
+                49.7
+              ],
+              [
+                49.7,
+                50.2,
+                48.9,
+                49.1
+              ],
+              [
+                49.1,
+                49.8,
+                48.6,
+                49.5
+              ],
+              [
+                49.5,
+                50.4,
+                49.3,
+                50.2
+              ],
+              [
+                50.2,
+                51.0,
+                49.9,
+                50.8
+              ],
+              [
+                50.8,
+                51.3,
+                50.1,
+                50.3
+              ],
+              [
+                50.3,
+                50.7,
+                49.5,
+                49.8
+              ],
+              [
+                49.8,
+                50.5,
+                49.4,
+                50.4
+              ],
+              [
+                50.4,
+                51.2,
+                50.0,
+                51.0
+              ],
+              [
+                51.0,
+                51.8,
+                50.6,
+                51.5
+              ],
+              [
+                51.5,
+                52.0,
+                50.9,
+                51.1
+              ],
+              [
+                51.1,
+                52.4,
+                50.8,
+                52.0
+              ],
+              [
+                52.0,
+                52.2,
+                50.7,
+                51.0
+              ],
+              [
+                51.0,
+                51.4,
+                49.9,
+                50.2
+              ],
+              [
+                50.2,
+                50.9,
+                48.8,
+                49.3
+              ],
+              [
+                49.3,
+                50.0,
+                47.8,
+                48.5
+              ],
+              [
+                48.5,
+                49.6,
+                48.2,
+                49.4
+              ],
+              [
+                49.4,
+                50.7,
+                49.1,
+                50.5
+              ],
+              [
+                50.5,
+                51.6,
+                50.2,
+                51.3
+              ],
+              [
+                51.3,
+                52.3,
+                50.9,
+                51.8
+              ]
+            ],
+            "h": 270,
+            "alt": "Veintiuna velas diarias en un rango, con tres líneas para colocar"
+          },
+          "place": [
+            {
+              "id": "entry",
+              "label": "Entrada",
+              "a": 52.5,
+              "start": 54.0
+            },
+            {
+              "id": "stop",
+              "label": "Stop",
+              "a": 47.8,
+              "start": 45.0
+            },
+            {
+              "id": "target",
+              "label": "Objetivo",
+              "a": 61.9,
+              "start": 57.0
+            }
+          ],
+          "step": 0.1,
+          "why": "Entrada: 52,40 + 0,10 = 52,50 €. Stop: 47,80 €. Riesgo: 4,70 €. Objetivo a 2R: 52,50 + 2 × 4,70 = 61,90 €.",
+          "guia": "g2"
+        },
+        {
+          "id": "ax2-2",
+          "t": "num",
+          "q": "Entraste a 52,50 € con el stop en 47,80 €. El precio sube y el mínimo de las últimas 10 sesiones llega a 55,20 €; sales ahí al perderlo. ¿Cuántos R ganas? R = (salida − entrada) ÷ riesgo por acción. Redondea a dos decimales.",
+          "unit": "R",
+          "a": 0.57,
+          "why": "Riesgo: 52,50 − 47,80 = 4,70 €. Ganancia: 55,20 − 52,50 = 2,70 €. En R: 2,70 ÷ 4,70 = 0,57.",
+          "tol": 0.01,
+          "guia": "g3"
+        },
+        {
+          "id": "ax2-3",
+          "t": "choice",
+          "q": "Operas con el canal de 20 sesiones y tu stop sigue el mínimo de las últimas 10. Entraste a 52,50 € con el stop en 47,80 €, y ese mínimo sube a 49,90 €. ¿Qué haces con el stop?",
+          "opts": [
+            "Lo dejas en 47,80 € para no salir por ruido",
+            "Lo subes a 49,90 €, el nuevo mínimo de 10 sesiones",
+            "Lo bajas a 45,00 € para dar más margen",
+            "Lo cambias por un objetivo fijo en 61,90 € y no pones stop"
+          ],
+          "a": 1,
+          "why": "La salida sigue al mínimo de 10 sesiones y solo sube: con 49,90 € arriesgas 2,10 € menos por acción que con el stop inicial.",
+          "guia": "g3",
+          "porque": [
+            "La regla pide seguir el mínimo de 10 sesiones: con 49,90 € la pérdida máxima baja de 4,70 a 2,60 € por acción.",
+            null,
+            "Bajar el stop aumenta el riesgo y rompe la regla: el stop solo sube.",
+            "Un objetivo fijo no protege si el precio da la vuelta antes: sin stop, la pérdida puede ser mucho mayor que 1R."
+          ]
+        },
+        {
+          "id": "ax2-4",
+          "t": "choice",
+          "q": "Un sistema que compra rupturas de máximos de 20 sesiones, ¿en qué entorno suele funcionar peor?",
+          "opts": [
+            "Una tendencia larga con pocos retrocesos",
+            "Un mercado que sube con volumen creciente",
+            "Una acción que sale de una base larga",
+            "Un lateral donde el precio rebota entre dos niveles"
+          ],
+          "a": 3,
+          "why": "En un lateral el precio supera el techo y vuelve al rango: las rupturas fallan más y se encadenan pérdidas de 1R.",
+          "guia": "g4",
+          "porque": [
+            "Es donde este sistema gana: pocas señales falsas y mucho recorrido.",
+            "El volumen creciente acompaña a las rupturas fiables: es un entorno favorable, no desfavorable.",
+            "Salir de una base larga es el escenario típico de una ruptura, aunque ninguna señal es segura.",
+            null
+          ]
+        },
+        {
+          "id": "ax2-5",
+          "t": "num",
+          "q": "Un sistema de rupturas acierta el 35 % de las veces con +3R de ganancia media y falla el 65 % con −1R. ¿Cuál es su esperanza por operación, en R? Esperanza = acierto × ganancia media − fallo × pérdida media.",
+          "unit": "R",
+          "a": 0.4,
+          "why": "0,35 × 3 − 0,65 × 1 = 1,05 − 0,65 = +0,40 R por operación: pierde a menudo, pero las ganancias compensan.",
+          "tol": 0.01,
+          "guia": "g4"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

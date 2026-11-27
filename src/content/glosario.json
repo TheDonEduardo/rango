@@ -1407,14 +1407,14 @@
   "alias": [
    "costes fijos"
   ],
-  "d": "Gasto que pagas igual uses o no el coche (o el servicio): seguro, impuestos, plaza de garaje."
+  "d": "Gasto que no cambia con el uso o con las unidades vendidas: el seguro o la plaza de garaje de un coche; el alquiler o la plantilla de una empresa."
  },
  {
   "termino": "coste variable",
   "alias": [
    "costes variables"
   ],
-  "d": "Gasto que crece con el uso: en un coche, el combustible y parte del mantenimiento, según los kilómetros."
+  "d": "Gasto que crece con el uso o con las unidades vendidas: en un coche, el combustible; en una empresa, los materiales o las comisiones por venta."
  },
  {
   "termino": "coste marginal",
@@ -2018,5 +2018,59 @@
  {
   "termino": "prueba de reservas",
   "d": "Auditoría que muestra que una plataforma tiene fondos suficientes en una fecha. Es una señal, no una garantía."
+ },
+ {
+  "termino": "margen de contribución",
+  "d": "Precio de una unidad menos su coste variable: lo que cada venta deja para cubrir los costes fijos y, después, dar beneficio."
+ },
+ {
+  "termino": "apalancamiento operativo",
+  "alias": [
+   "grado de apalancamiento operativo"
+  ],
+  "d": "Efecto de los costes fijos: una variación de las ventas se amplifica en el beneficio operativo. Grado = contribución total ÷ beneficio operativo."
+ },
+ {
+  "termino": "tasa de ahorro",
+  "d": "Parte de tus ingresos netos que ahorras: ahorro ÷ ingresos netos."
+ },
+ {
+  "termino": "inflación del estilo de vida",
+  "d": "Subir el gasto cada vez que sube el sueldo, hasta ahorrar lo mismo que antes."
+ },
+ {
+  "termino": "rueda",
+  "d": "Estrategia con opciones: vender una put con garantía y, si te asignan, vender calls cubiertas sobre las acciones; después se repite."
+ },
+ {
+  "termino": "pérdida latente",
+  "d": "Pérdida que tienes sobre el papel mientras no vendes: (coste − precio) × acciones."
+ },
+ {
+  "termino": "accionista",
+  "alias": [
+   "accionistas"
+  ],
+  "d": "Propietario de una o más acciones de una empresa, con voto en la junta y derecho al dividendo."
+ },
+ {
+  "termino": "junta general",
+  "alias": [
+   "junta"
+  ],
+  "d": "Reunión de los accionistas que vota las cuentas, el dividendo y el consejo. Normalmente, una acción es un voto."
+ },
+ {
+  "termino": "bifurcación",
+  "alias": [
+   "bifurcaciones",
+   "bifurcación dura",
+   "bifurcación blanda"
+  ],
+  "d": "Cambio de las reglas de una red. En la blanda, los nodos antiguos siguen aceptando los bloques nuevos; en la dura, no, y la cadena puede dividirse en dos."
+ },
+ {
+  "termino": "ataque de repetición",
+  "d": "Tras una bifurcación, copiar en una cadena una transacción firmada para la otra."
  }
 ]
