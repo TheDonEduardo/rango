@@ -1,0 +1,733 @@
+{
+  "n": 44,
+  "id": "figurastecho",
+  "track": "tecnico",
+  "title": "Hombro-cabeza-hombro y doble techo",
+  "blurb": "Dos figuras de giro: línea del cuello, confirmación con cierre, objetivo medido y cuándo fallan.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Hombro-cabeza-hombro",
+      "texto": "Tras una subida, tres máximos: dos hombros parecidos y una cabeza más alta en medio. La línea del cuello une los mínimos entre ellos. Se confirma al cerrar por debajo. Objetivo medido: el cuello menos la altura de la cabeza sobre él.",
+      "ejemplo": "Hombros en 52 €, cabeza en 56 € y cuello en 46 €: altura 10 €. Objetivo: 46 − 10 = 36 €.",
+      "figura": {
+        "type": "curvas",
+        "h": 220,
+        "margen": 24,
+        "alt": "Línea de precio con tres máximos, el central más alto, y una línea horizontal que une los dos mínimos entre ellos",
+        "series": [
+          {
+            "data": [
+              40,
+              40,
+              52,
+              46,
+              56,
+              46,
+              52,
+              42
+            ],
+            "tono": "sel"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 2,
+            "y": 52,
+            "texto": "Hombro",
+            "lado": "i"
+          },
+          {
+            "i": 4,
+            "y": 56,
+            "texto": "Cabeza"
+          },
+          {
+            "i": 6,
+            "y": 52,
+            "texto": "Hombro"
+          }
+        ],
+        "lineas": [
+          {
+            "y": 46,
+            "texto": "Cuello",
+            "tono": "dn",
+            "lado": "i"
+          }
+        ]
+      }
+    },
+    {
+      "id": "g2",
+      "titulo": "Doble techo",
+      "texto": "Tras una subida, el precio toca un máximo, cae hasta un mínimo intermedio y vuelve a un máximo parecido sin superarlo. Ese mínimo hace de cuello: se confirma al cerrar por debajo. Objetivo medido: cuello menos la distancia del techo al cuello.",
+      "ejemplo": "Techos en 60 €, cuello en 54 €: altura 6 €. Objetivo: 54 − 6 = 48 €.",
+      "figura": {
+        "type": "curvas",
+        "h": 210,
+        "margen": 24,
+        "alt": "Línea de precio con dos máximos casi iguales separados por un mínimo, con una línea horizontal en ese mínimo",
+        "series": [
+          {
+            "data": [
+              48,
+              48,
+              60,
+              54,
+              60,
+              50
+            ],
+            "tono": "sel"
+          }
+        ],
+        "marcas": [
+          {
+            "i": 2,
+            "y": 60,
+            "texto": "Techo",
+            "lado": "i"
+          },
+          {
+            "i": 4,
+            "y": 60,
+            "texto": "Techo"
+          }
+        ],
+        "lineas": [
+          {
+            "y": 54,
+            "texto": "Cuello",
+            "tono": "dn",
+            "lado": "i"
+          }
+        ]
+      }
+    },
+    {
+      "id": "g3",
+      "titulo": "Operar la figura",
+      "texto": "En corto: entrada algo por debajo del cuello tras un cierre bajo él, stop sobre el hombro derecho o el segundo techo, y objetivo medido. Quien tiene la acción puede tomar ese cierre como señal de reducir. Cociente beneficio ÷ riesgo, en R.",
+      "ejemplo": "Entrada 45,90 €, stop 52,10 €: riesgo 6,20 €. Objetivo 36,00 €: 9,90 ÷ 6,20 ≈ 1,6R."
+    },
+    {
+      "id": "g4",
+      "titulo": "Cuando falla",
+      "texto": "Si el precio vuelve a superar el techo o el hombro derecho, la figura queda anulada. Un techo exige una subida previa, y cuanto más claras las tendencias, mejor. Las figuras son subjetivas: el objetivo medido es una referencia, no una garantía.",
+      "ejemplo": "Cierre a 61,50 € con techos en 60,00 €: supera el techo, el doble techo ya no vale."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "fg1",
+      "title": "Hombro-cabeza-hombro",
+      "ex": [
+        {
+          "id": "fg1-1",
+          "t": "tap",
+          "q": "Toca la vela que confirma la figura: tras el hombro derecho, la primera que cierra por debajo de la línea del cuello, en 46,00 €.",
+          "chart": {
+            "type": "candles",
+            "data": [
+              [
+                40.0,
+                41.3,
+                39.7,
+                41
+              ],
+              [
+                41,
+                43.3,
+                40.7,
+                43
+              ],
+              [
+                43,
+                45.3,
+                42.7,
+                45
+              ],
+              [
+                45,
+                47.3,
+                44.7,
+                47
+              ],
+              [
+                47,
+                49.3,
+                46.7,
+                49
+              ],
+              [
+                49,
+                52.0,
+                48.7,
+                51.4
+              ],
+              [
+                51.4,
+                51.7,
+                49.2,
+                49.5
+              ],
+              [
+                49.5,
+                49.8,
+                47.5,
+                47.8
+              ],
+              [
+                47.8,
+                48.1,
+                46.0,
+                46.5
+              ],
+              [
+                46.5,
+                48.3,
+                46.2,
+                48.0
+              ],
+              [
+                48.0,
+                50.8,
+                47.7,
+                50.5
+              ],
+              [
+                50.5,
+                53.8,
+                50.2,
+                53.5
+              ],
+              [
+                53.5,
+                56.0,
+                53.2,
+                55.3
+              ],
+              [
+                55.3,
+                55.6,
+                53.2,
+                53.5
+              ],
+              [
+                53.5,
+                53.8,
+                50.2,
+                50.5
+              ],
+              [
+                50.5,
+                50.8,
+                47.7,
+                48.0
+              ],
+              [
+                48.0,
+                48.3,
+                46.0,
+                46.4
+              ],
+              [
+                46.4,
+                48.3,
+                46.1,
+                48.0
+              ],
+              [
+                48.0,
+                50.3,
+                47.7,
+                50.0
+              ],
+              [
+                50.0,
+                52.0,
+                49.7,
+                51.3
+              ],
+              [
+                51.3,
+                51.6,
+                49.7,
+                50.0
+              ],
+              [
+                50.0,
+                50.3,
+                47.9,
+                48.2
+              ],
+              [
+                48.2,
+                48.5,
+                46.0,
+                46.5
+              ],
+              [
+                46.5,
+                46.8,
+                44.8,
+                45.2
+              ],
+              [
+                45.2,
+                45.5,
+                43.7,
+                44.0
+              ]
+            ],
+            "h": 250,
+            "alt": "Veinticinco velas diarias: una subida, tres máximos con el central más alto y una caída posterior"
+          },
+          "a": 23,
+          "why": "La vela 24 cierra en 45,20 €, la primera por debajo de 46,00 €. Antes, los mínimos de 46,00 € solo tocaron el cuello y los cierres se quedaron por encima.",
+          "guia": "g1"
+        },
+        {
+          "id": "fg1-2",
+          "t": "num",
+          "q": "Una figura de hombro-cabeza-hombro tiene hombros en 52,00 €, cabeza en 56,00 € y línea del cuello en 46,00 €. ¿Cuál es el objetivo medido, en €?",
+          "unit": "€",
+          "a": 36,
+          "why": "Altura: 56 − 46 = 10 €. Objetivo: 46 − 10 = 36 €.",
+          "tol": 0.05,
+          "guia": "g1"
+        },
+        {
+          "id": "fg1-3",
+          "t": "choice",
+          "q": "En un hombro-cabeza-hombro, ¿qué define la línea del cuello?",
+          "opts": [
+            "El máximo de la cabeza, que el precio debe volver a superar",
+            "La media de los tres máximos de la figura",
+            "Los mínimos que separan los hombros de la cabeza",
+            "El máximo del hombro izquierdo, trazado hacia delante"
+          ],
+          "a": 2,
+          "why": "El cuello une los mínimos entre los hombros y la cabeza; su pérdida con un cierre confirma la figura.",
+          "guia": "g1",
+          "porque": [
+            "La cabeza es un máximo; la línea del cuello une mínimos, y su pérdida es lo que confirma la figura.",
+            "El cuello no se calcula con medias: une los mínimos entre los máximos.",
+            null,
+            "Del hombro izquierdo solo sale un máximo: el cuello une mínimos, no máximos."
+          ]
+        },
+        {
+          "id": "fg1-4",
+          "t": "match",
+          "q": "Empareja cada parte del hombro-cabeza-hombro con su descripción.",
+          "pairs": [
+            [
+              "Hombros",
+              "Dos máximos parecidos a cada lado"
+            ],
+            [
+              "Cabeza",
+              "El máximo más alto, en el centro"
+            ],
+            [
+              "Línea del cuello",
+              "Une los mínimos entre los máximos"
+            ],
+            [
+              "Objetivo medido",
+              "El cuello menos la altura de la cabeza"
+            ]
+          ],
+          "why": "Los hombros flanquean la cabeza; el cuello une sus mínimos y mide el objetivo.",
+          "guia": "g1"
+        },
+        {
+          "id": "fg1-5",
+          "t": "choice",
+          "q": "Tras subir de 40 € a 56 €, el precio dibuja un doble techo en 56 € con cuello en 50 €. ¿Qué cierre lo confirma?",
+          "opts": [
+            "Uno por encima de 56 €, el máximo de los dos techos",
+            "El segundo toque de 56 €, aunque no baje después",
+            "Una mecha que roce los 50 € durante la sesión",
+            "Uno por debajo de 50 €, el mínimo intermedio"
+          ],
+          "a": 3,
+          "why": "Se confirma al cerrar bajo el cuello, 50 €. El segundo toque, una mecha o un cierre sobre 56 € no lo confirman.",
+          "guia": "g2",
+          "porque": [
+            "Superar 56 € va contra la figura: un doble techo se confirma cuando cae, no cuando sube.",
+            "Tocar otra vez el techo es parte de la figura, no su confirmación.",
+            "Una mecha no confirma nada: hace falta un cierre bajo el cuello.",
+            null
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "fg2",
+      "title": "Doble techo y cómo operarlo",
+      "ex": [
+        {
+          "id": "fg2-1",
+          "t": "zone",
+          "q": "Tras una subida, el precio forma dos máximos parecidos con un mínimo entre ellos. Marca el techo en los dos máximos y el suelo en el mínimo intermedio, que hace de línea del cuello.",
+          "chart": {
+            "type": "candles",
+            "data": [
+              [
+                46.0,
+                47.3,
+                45.7,
+                47
+              ],
+              [
+                47,
+                49.3,
+                46.7,
+                49
+              ],
+              [
+                49,
+                51.3,
+                48.7,
+                51
+              ],
+              [
+                51,
+                53.3,
+                50.7,
+                53
+              ],
+              [
+                53,
+                55.3,
+                52.7,
+                55
+              ],
+              [
+                55,
+                57.3,
+                54.7,
+                57
+              ],
+              [
+                57,
+                60.0,
+                56.7,
+                58.6
+              ],
+              [
+                58.6,
+                58.9,
+                56.7,
+                57
+              ],
+              [
+                57,
+                57.3,
+                55.2,
+                55.5
+              ],
+              [
+                55.5,
+                55.8,
+                54.0,
+                54.6
+              ],
+              [
+                54.6,
+                55.8,
+                54.3,
+                55.5
+              ],
+              [
+                55.5,
+                57.3,
+                55.2,
+                57
+              ],
+              [
+                57,
+                58.7,
+                56.7,
+                58.4
+              ],
+              [
+                58.4,
+                59.9,
+                58.1,
+                59.0
+              ],
+              [
+                59.0,
+                59.3,
+                57.2,
+                57.5
+              ],
+              [
+                57.5,
+                57.8,
+                55.5,
+                55.8
+              ],
+              [
+                55.8,
+                56.1,
+                54.1,
+                54.4
+              ],
+              [
+                54.4,
+                54.7,
+                53.0,
+                53.3
+              ],
+              [
+                53.3,
+                53.6,
+                52.2,
+                52.5
+              ]
+            ],
+            "h": 250,
+            "alt": "Diecinueve velas diarias: una subida, dos máximos parecidos con una caída intermedia y un descenso posterior"
+          },
+          "place": [
+            {
+              "id": "top",
+              "label": "Techo",
+              "a": 60.0,
+              "start": 62.0,
+              "tol": 0.3
+            },
+            {
+              "id": "bottom",
+              "label": "Cuello",
+              "a": 54.0,
+              "start": 51.5,
+              "tol": 0.3
+            }
+          ],
+          "why": "Los dos máximos llegan a 60,00 € y 59,90 € y el mínimo entre ellos es 54,00 €. Esa franja es el doble techo; el cuello es 54,00 €.",
+          "guia": "g2"
+        },
+        {
+          "id": "fg2-2",
+          "t": "plan",
+          "q": "Hombro-cabeza-hombro con hombro derecho en 52,00 €, cuello en 46,00 € y cabeza en 56,00 €. Monta la venta en corto: entrada 0,10 € bajo el cuello, stop 0,10 € sobre el hombro derecho y objetivo medido.",
+          "chart": {
+            "type": "candles",
+            "data": [
+              [
+                40.0,
+                41.3,
+                39.7,
+                41
+              ],
+              [
+                41,
+                43.3,
+                40.7,
+                43
+              ],
+              [
+                43,
+                45.3,
+                42.7,
+                45
+              ],
+              [
+                45,
+                47.3,
+                44.7,
+                47
+              ],
+              [
+                47,
+                49.3,
+                46.7,
+                49
+              ],
+              [
+                49,
+                52.0,
+                48.7,
+                51.4
+              ],
+              [
+                51.4,
+                51.7,
+                49.2,
+                49.5
+              ],
+              [
+                49.5,
+                49.8,
+                47.5,
+                47.8
+              ],
+              [
+                47.8,
+                48.1,
+                46.0,
+                46.5
+              ],
+              [
+                46.5,
+                48.3,
+                46.2,
+                48.0
+              ],
+              [
+                48.0,
+                50.8,
+                47.7,
+                50.5
+              ],
+              [
+                50.5,
+                53.8,
+                50.2,
+                53.5
+              ],
+              [
+                53.5,
+                56.0,
+                53.2,
+                55.3
+              ],
+              [
+                55.3,
+                55.6,
+                53.2,
+                53.5
+              ],
+              [
+                53.5,
+                53.8,
+                50.2,
+                50.5
+              ],
+              [
+                50.5,
+                50.8,
+                47.7,
+                48.0
+              ],
+              [
+                48.0,
+                48.3,
+                46.0,
+                46.4
+              ],
+              [
+                46.4,
+                48.3,
+                46.1,
+                48.0
+              ],
+              [
+                48.0,
+                50.3,
+                47.7,
+                50.0
+              ],
+              [
+                50.0,
+                52.0,
+                49.7,
+                51.3
+              ],
+              [
+                51.3,
+                51.6,
+                49.7,
+                50.0
+              ],
+              [
+                50.0,
+                50.3,
+                47.9,
+                48.2
+              ],
+              [
+                48.2,
+                48.5,
+                46.0,
+                46.5
+              ]
+            ],
+            "h": 270,
+            "alt": "Veintitrés velas diarias con una subida y tres máximos con el central más alto, y tres líneas para colocar"
+          },
+          "place": [
+            {
+              "id": "entry",
+              "label": "Entrada",
+              "a": 45.9,
+              "start": 48.0
+            },
+            {
+              "id": "stop",
+              "label": "Stop",
+              "a": 52.1,
+              "start": 54.5
+            },
+            {
+              "id": "target",
+              "label": "Objetivo",
+              "a": 36.0,
+              "start": 40.0
+            }
+          ],
+          "step": 0.1,
+          "why": "Entrada: 46,00 − 0,10 = 45,90 €. Stop: 52,00 + 0,10 = 52,10 €. Objetivo: 46 − (56 − 46) = 36,00 €. Riesgo: 6,20 €.",
+          "guia": "g3"
+        },
+        {
+          "id": "fg2-3",
+          "t": "num",
+          "q": "Venta en corto con entrada en 45,90 €, stop en 52,10 € y objetivo medido en 36,00 €. ¿Cuántos R ofrece el objetivo?",
+          "unit": "R",
+          "a": 1.6,
+          "why": "Beneficio: 45,90 − 36,00 = 9,90 €. Riesgo: 52,10 − 45,90 = 6,20 €. 9,90 ÷ 6,20 ≈ 1,6R.",
+          "tol": 0.06,
+          "guia": "g3"
+        },
+        {
+          "id": "fg2-4",
+          "t": "num",
+          "q": "Un doble techo tiene los techos en 80,00 € y el cuello en 72,00 €. ¿Cuál es su objetivo medido, en €?",
+          "unit": "€",
+          "a": 64,
+          "why": "Altura: 80 − 72 = 8 €. Objetivo: 72 − 8 = 64 €.",
+          "tol": 0.05,
+          "guia": "g2"
+        },
+        {
+          "id": "fg2-5",
+          "t": "choice",
+          "q": "En un doble techo con techos en 60,00 € y cuello en 54,00 €, el precio cierra a 61,50 € tras el segundo máximo. ¿Qué indica?",
+          "opts": [
+            "Que la figura se ha confirmado, porque ya hay dos máximos seguidos",
+            "Que la figura queda anulada: supera el techo sin romper el cuello",
+            "Que el objetivo medido pasa a 66 € para operar la subida del precio",
+            "Que hay que esperar un nuevo techo para poder confirmarla"
+          ],
+          "a": 1,
+          "why": "La figura exige que los techos no se superen. Un cierre sobre 60,00 € la anula, y con ella su objetivo.",
+          "guia": "g4",
+          "porque": [
+            "Con un cierre sobre el techo no hay confirmación: la figura exige no superar los máximos.",
+            null,
+            "Un objetivo a 66 € mide un movimiento alcista que esta figura no describe.",
+            "No hay que esperar otro techo: superar el máximo ya la anula, no la retrasa."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

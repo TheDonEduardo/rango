@@ -1,0 +1,254 @@
+{
+  "n": 36,
+  "id": "esperada",
+  "track": "pasiva",
+  "title": "Qué rentabilidad esperar",
+  "blurb": "Bono más prima de riesgo, rentabilidad por beneficios y rentabilidad real: ajusta tus expectativas sin predecir el mercado.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "La prima de riesgo",
+      "texto": "Un bono del Estado paga una rentabilidad casi segura. Las acciones son más inciertas y deben ofrecer algo más: la prima de riesgo. Rentabilidad esperada de la bolsa = rentabilidad del bono + prima. Es una estimación a largo plazo, no una promesa.",
+      "ejemplo": "Bono al 3 % y prima del 4 %: se espera un 7 % anual. Con una prima de 2 puntos, un 5 %.",
+      "figura": {
+        "type": "barras",
+        "unidad": "%",
+        "alt": "Dos barras apiladas: bono del 3 % más prima de 4 puntos suma un 7 %; bono del 3 % más prima de 2 puntos suma un 5 %",
+        "barras": [
+          {
+            "texto": "Prima de 4",
+            "segmentos": [
+              {
+                "valor": 3,
+                "texto": "Bono 3 %",
+                "tono": "sel"
+              },
+              {
+                "valor": 4,
+                "texto": "Prima 4 %",
+                "tono": "acc"
+              }
+            ]
+          },
+          {
+            "texto": "Prima de 2",
+            "segmentos": [
+              {
+                "valor": 3,
+                "texto": "Bono 3 %",
+                "tono": "sel"
+              },
+              {
+                "valor": 2,
+                "texto": "Prima 2 %",
+                "tono": "acc"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "g2",
+      "titulo": "Rentabilidad por beneficios",
+      "texto": "Dividir 1 entre el PER da la rentabilidad por beneficios: el beneficio anual que genera cada euro pagado. A más PER, menos. Si le restas la rentabilidad del bono, obtienes una prima aproximada.",
+      "ejemplo": "PER 20: 1 ÷ 20 = 5 %. PER 25: 4 %. Con el bono al 3 %, la prima aproximada baja de 2 puntos a 1.",
+      "figura": {
+        "type": "barras",
+        "unidad": "%",
+        "margen": 90,
+        "ancho": 70,
+        "alt": "Dos barras: rentabilidad por beneficios del 5 % con PER 20 y del 4 % con PER 25, con una línea de referencia en el 3 % del bono",
+        "barras": [
+          {
+            "texto": "PER 20",
+            "valor": 5
+          },
+          {
+            "texto": "PER 25",
+            "valor": 4
+          }
+        ],
+        "lineas": [
+          {
+            "y": 3,
+            "texto": "Bono 3 %",
+            "tono": "dn"
+          }
+        ]
+      }
+    },
+    {
+      "id": "g3",
+      "titulo": "Descontar la inflación",
+      "texto": "La rentabilidad real es lo que ganas en poder de compra: la nominal menos la inflación. Restando es una buena aproximación cuando las cifras son pequeñas.",
+      "ejemplo": "Un 7 % nominal con una inflación del 2,5 %: unos 4,5 % reales."
+    },
+    {
+      "id": "g4",
+      "titulo": "Cómo usarlo",
+      "texto": "Sirve para fijar expectativas, no para acertar cuándo entrar: históricamente, un PER alto se ha asociado a menor rentabilidad en los diez años siguientes, aunque con mucha dispersión y sin decir cuándo. Pasos: bono, prima, menos inflación y compara con tu objetivo. Usa un rango.",
+      "ejemplo": "Capital × (1 + rentabilidad)^años: 500 € a 10 años son 984 € al 7 % y 740 € al 4 %."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "ex1",
+      "title": "Prima y rentabilidad por beneficios",
+      "ex": [
+        {
+          "id": "ex1-1",
+          "t": "num",
+          "q": "El bono del Estado a 10 años rinde un 3 % y supones una prima de riesgo de 3,5 puntos para las acciones. ¿Qué rentabilidad anual esperas de la bolsa, en %?",
+          "unit": "%",
+          "a": 6.5,
+          "why": "3 + 3,5 = 6,5 % anual. Es una estimación a largo plazo, no una promesa.",
+          "tol": 0.05,
+          "guia": "g1"
+        },
+        {
+          "id": "ex1-2",
+          "t": "choice",
+          "q": "¿Qué es la prima de riesgo de las acciones?",
+          "opts": [
+            "La comisión que cobra el bróker por cada compra de acciones",
+            "El extra que se exige a las acciones sobre un bono casi seguro",
+            "La rentabilidad mínima que el mercado garantiza cada año",
+            "La parte del dividendo que se cobra por adelantado"
+          ],
+          "a": 1,
+          "why": "Las acciones son más inciertas que un bono casi seguro, así que se les exige un extra: la prima de riesgo.",
+          "guia": "g1",
+          "porque": [
+            "La comisión del bróker es un coste de operar y no tiene que ver con lo que el mercado paga por asumir riesgo.",
+            null,
+            "Ningún mercado garantiza una rentabilidad: la prima es lo que se espera, no lo asegurado.",
+            "El dividendo no se cobra por adelantado, y no es esto lo que se llama prima de riesgo."
+          ]
+        },
+        {
+          "id": "ex1-3",
+          "t": "num",
+          "q": "Una acción tiene un PER de 25. ¿Cuál es su rentabilidad por beneficios, en %?",
+          "unit": "%",
+          "a": 4,
+          "why": "1 ÷ 25 = 0,04, es decir, un 4 %: el beneficio anual por cada euro pagado.",
+          "tol": 0.05,
+          "guia": "g2"
+        },
+        {
+          "id": "ex1-4",
+          "t": "match",
+          "q": "Empareja cada término de la rentabilidad esperada con su descripción.",
+          "pairs": [
+            [
+              "Bono a 10 años",
+              "Rentabilidad base, casi segura"
+            ],
+            [
+              "Prima de riesgo",
+              "Extra exigido a las acciones sobre el bono"
+            ],
+            [
+              "Rentabilidad esperada",
+              "Bono más prima: una estimación, no una promesa"
+            ]
+          ],
+          "why": "La rentabilidad esperada es el bono más la prima, y es solo una estimación.",
+          "guia": "g1"
+        },
+        {
+          "id": "ex1-5",
+          "t": "choice",
+          "q": "El beneficio por acción de una empresa no cambia, pero su PER sube de 20 a 25 porque el precio sube. ¿Qué le pasa a su rentabilidad por beneficios?",
+          "opts": [
+            "Se queda en el 5 %, porque el beneficio es el mismo",
+            "Sube del 4 % al 5 %",
+            "Baja del 5 % al 4 %",
+            "Baja del 5 % al 2 %"
+          ],
+          "a": 2,
+          "why": "Con PER 20 era 1 ÷ 20 = 5 %; con PER 25 es 1 ÷ 25 = 4 %. Pagas más por el mismo beneficio.",
+          "guia": "g2",
+          "porque": [
+            "El beneficio es el mismo, pero pagas más por él: 1 ÷ 25 no es 1 ÷ 20.",
+            "Al revés: con un precio más alto, cada euro pagado rinde menos beneficio.",
+            null,
+            "1 ÷ 25 es un 4 %, no un 2 %."
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "ex2",
+      "title": "Rentabilidad real y cómo usarla",
+      "ex": [
+        {
+          "id": "ex2-1",
+          "t": "num",
+          "q": "Esperas un 7 % anual nominal de la bolsa y una inflación media del 2,5 %. Restando, ¿qué rentabilidad real aproximada esperas, en %?",
+          "unit": "%",
+          "a": 4.5,
+          "why": "7 − 2,5 = 4,5 % real, como aproximación.",
+          "tol": 0.05,
+          "guia": "g3"
+        },
+        {
+          "id": "ex2-2",
+          "t": "num",
+          "q": "Inviertes 600 € a 10 años con una rentabilidad constante del 5 % anual compuesta, sin impuestos ni comisiones. ¿Cuántos euros tendrás al final?",
+          "unit": "€",
+          "a": 977.3,
+          "why": "600 × 1,05¹⁰ = 600 × 1,6289 ≈ 977,3 €.",
+          "tol": 1,
+          "guia": "g4"
+        },
+        {
+          "id": "ex2-3",
+          "t": "order",
+          "q": "Ordena los pasos para estimar la rentabilidad real que puedes esperar.",
+          "items": [
+            "Mira la rentabilidad del bono a 10 años",
+            "Suma la prima de riesgo que supones",
+            "Resta la inflación esperada",
+            "Compara el resultado con lo que necesita tu objetivo"
+          ],
+          "why": "Primero la base sin riesgo, luego la prima, después la inflación y, al final, el contraste con tu meta.",
+          "guia": "g4"
+        },
+        {
+          "id": "ex2-4",
+          "t": "choice",
+          "q": "El PER del mercado lleva años por encima de su media y un amigo dice que la bolsa va a caer este año. ¿Qué es defendible?",
+          "opts": [
+            "Que la bolsa caerá seguro este año, porque el PER es alto",
+            "Que a largo plazo la rentabilidad esperada suele ser algo menor, sin saber cuándo",
+            "Que conviene vender todo y volver cuando el PER baje a su media",
+            "Que el PER no tiene ninguna relación con las rentabilidades futuras"
+          ],
+          "a": 1,
+          "why": "Un PER alto se asocia a menor rentabilidad futura a largo plazo, pero no fija cuándo ni cuánto: sirve para ajustar expectativas, no para acertar el momento.",
+          "guia": "g4",
+          "porque": [
+            "Un PER alto no permite asegurar una caída este año: no dice cuándo ni si ocurrirá.",
+            null,
+            "Nadie sabe cuándo bajará el PER, y salir de la bolsa por eso es intentar acertar el momento.",
+            "Históricamente sí ha habido relación a largo plazo, aunque débil a corto: por eso sirve para ajustar expectativas, no el momento."
+          ]
+        },
+        {
+          "id": "ex2-5",
+          "t": "num",
+          "q": "Un índice cotiza a PER 20 y el bono a 10 años rinde un 3,5 %. Con la rentabilidad por beneficios, ¿qué prima aproximada ofrecen las acciones, en puntos?",
+          "unit": "puntos",
+          "a": 1.5,
+          "why": "1 ÷ 20 = 5 %; 5 − 3,5 = 1,5 puntos de prima aproximada.",
+          "tol": 0.05,
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

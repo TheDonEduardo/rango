@@ -1,0 +1,243 @@
+{
+  "n": 30,
+  "id": "pagardeudas",
+  "track": "personal",
+  "title": "Qué deuda pagar primero",
+  "blurb": "Avalancha frente a bola de nieve: por TAE o por saldo, y la letra pequeña antes de adelantar pagos.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Cuánto cuesta cada deuda",
+      "texto": "El saldo es lo que debes hoy. Su coste es la TAE: el interés anual total, con comisiones. Intereses al año ≈ saldo × TAE. La más cara no es la mayor, sino la de mayor TAE: cada euro que debes cuesta esa TAE al año.",
+      "ejemplo": "Tarjeta: 2.500 € al 24 % → 600 € de intereses al año. Préstamo: 800 € al 8 % → 64 €.",
+      "figura": {
+        "type": "barras",
+        "alt": "Dos barras: la tarjeta con saldo de 2.500 euros al 24 por ciento paga 600 euros al año de intereses y el préstamo de 800 euros al 8 por ciento paga 64 euros",
+        "barras": [
+          {
+            "texto": "Tarjeta 24 %",
+            "valor": 600,
+            "tono": "dn"
+          },
+          {
+            "texto": "Préstamo 8 %",
+            "valor": 64,
+            "tono": "sel"
+          }
+        ]
+      }
+    },
+    {
+      "id": "g2",
+      "titulo": "Método avalancha",
+      "texto": "Apunta saldo, TAE y cuota mínima (lo menos que debes pagar al mes) de cada deuda. Paga la mínima de todas y manda todo el extra a la de mayor TAE. Al liquidarla, su cuota pasa a la siguiente. Es lo que menos intereses cuesta.",
+      "ejemplo": "100 € devueltos hoy ahorran 24 € al año en la tarjeta (24 %) y 8 € en el préstamo (8 %).",
+      "figura": {
+        "type": "barras",
+        "alt": "Dos barras: devolver 100 euros de la tarjeta al 24 por ciento ahorra 24 euros al año de intereses y devolverlos del préstamo al 8 por ciento ahorra 8 euros",
+        "barras": [
+          {
+            "texto": "Tarjeta 24 %",
+            "valor": 24,
+            "tono": "up"
+          },
+          {
+            "texto": "Préstamo 8 %",
+            "valor": 8,
+            "tono": "sel"
+          }
+        ]
+      }
+    },
+    {
+      "id": "g3",
+      "titulo": "Método bola de nieve",
+      "texto": "Pagas primero la deuda de menor saldo, sea cual sea su TAE. Liquidas una pronto y su cuota pasa a la siguiente: la motivación ayuda a no abandonar. Suele costar más intereses que la avalancha.",
+      "ejemplo": "Con 800 € extra: liquidar el préstamo ahorra 64 € al año; llevarlos a la tarjeta, 192 €. La bola de nieve cuesta 128 € más al año."
+    },
+    {
+      "id": "g4",
+      "titulo": "Antes de adelantar pagos",
+      "texto": "Mira la comisión por cancelación anticipada de cada préstamo: puede anular el ahorro. Conserva un colchón para imprevistos y no pidas una deuda nueva más cara para pagar la antigua.",
+      "ejemplo": "Adelantar 800 € a un préstamo al 8 % ahorra 64 € al año; con una comisión del 1 % (8 €) compensa."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "dq1",
+      "title": "Qué deuda cuesta más",
+      "ex": [
+        {
+          "id": "dq1-1",
+          "t": "num",
+          "q": "Una tarjeta tiene un saldo de 1.500 € y una TAE del 18 %. ¿Cuántos euros de intereses cuesta al año si no devuelves nada?",
+          "unit": "€",
+          "a": 270,
+          "why": "1.500 × 0,18 = 270 € al año.",
+          "tol": 1,
+          "guia": "g1"
+        },
+        {
+          "id": "dq1-2",
+          "t": "choice",
+          "q": "Tienes una deuda de 5.000 € al 6 % y otra de 1.000 € al 20 %. ¿Cuál cuesta más por cada euro que debes?",
+          "opts": [
+            "La de 5.000 €, porque su saldo es mayor",
+            "Las dos cuestan lo mismo por euro, porque se pagan en cuotas",
+            "La de 5.000 €, porque genera más euros de intereses al año",
+            "La de 1.000 €, porque cada euro debido cuesta un 20 % al año"
+          ],
+          "a": 3,
+          "why": "Por euro debido, la de 1.000 € cuesta un 20 % al año frente al 6 %. En total la grande genera 300 € y la pequeña 200 €, pero esa no es la pregunta.",
+          "guia": "g1",
+          "porque": [
+            "Mayor saldo no es mayor coste por euro: la de 5.000 € cuesta un 6 % por euro, no más.",
+            "Las cuotas no igualan el coste: cada euro debido cuesta su propia TAE, un 6 % y un 20 %.",
+            "Genera más euros porque debes más, pero por euro debido cuesta un 6 %, menos que el 20 % de la otra.",
+            null
+          ]
+        },
+        {
+          "id": "dq1-3",
+          "t": "num",
+          "q": "Una tarjeta cobra un 24 % y un préstamo un 8 %. Si devuelves hoy 500 € de la tarjeta, ¿cuántos euros de intereses te ahorras al año?",
+          "unit": "€",
+          "a": 120,
+          "why": "500 × 0,24 = 120 € al año; en el préstamo habrían sido 40 €.",
+          "tol": 1,
+          "guia": "g2"
+        },
+        {
+          "id": "dq1-4",
+          "t": "match",
+          "q": "Empareja cada término de pagar deudas con su descripción.",
+          "pairs": [
+            [
+              "Cuota mínima",
+              "Lo menos que debes pagar al mes por una deuda"
+            ],
+            [
+              "Avalancha",
+              "Todo el extra va a la deuda de mayor TAE"
+            ],
+            [
+              "Cuota liberada",
+              "La de una deuda liquidada, que pasa a la siguiente"
+            ]
+          ],
+          "why": "En la avalancha, la cuota de cada deuda liquidada se suma al extra de la siguiente.",
+          "guia": "g2"
+        },
+        {
+          "id": "dq1-5",
+          "t": "order",
+          "q": "Ordena los pasos de la avalancha.",
+          "items": [
+            "Apunta saldo, TAE y cuota mínima de cada deuda",
+            "Paga la cuota mínima de todas",
+            "Manda todo el extra a la deuda de mayor TAE",
+            "Al liquidarla, suma su cuota al extra de la siguiente"
+          ],
+          "why": "Primero se ordena la información, luego se cubren las mínimas, el extra va a la más cara y se repite con la siguiente.",
+          "guia": "g2"
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "dq2",
+      "title": "Avalancha, bola de nieve y letra pequeña",
+      "ex": [
+        {
+          "id": "dq2-1",
+          "t": "slide",
+          "q": "Dedicas 300 € al mes a tus dos deudas. Las cuotas mínimas son 45 € (tarjeta al 24 %) y 80 € (préstamo al 8 %). Con la avalancha, ¿cuántos euros del total van a la tarjeta este mes?",
+          "label": "A la tarjeta",
+          "min": 45,
+          "max": 300,
+          "step": 5,
+          "start": 120,
+          "a": 220,
+          "unit": "€",
+          "why": "Las mínimas suman 45 + 80 = 125 €. Quedan 300 − 125 = 175 € de extra, todo a la tarjeta: 45 + 175 = 220 €. El préstamo recibe solo sus 80 €.",
+          "show": [
+            {
+              "label": "Al préstamo",
+              "k": -1,
+              "b": 300,
+              "unit": "€"
+            },
+            {
+              "label": "Extra sobre las mínimas, a la tarjeta",
+              "k": 1,
+              "b": -45,
+              "unit": "€"
+            }
+          ],
+          "guia": "g2"
+        },
+        {
+          "id": "dq2-2",
+          "t": "num",
+          "q": "Tienes 500 € extra para adelantar deuda durante un año: una tarjeta de 2.000 € al 20 % y un préstamo de 500 € al 6 %. Si sigues la bola de nieve en vez de la avalancha, ¿cuántos euros más pagas de intereses al año? (Ignora las cuotas.)",
+          "unit": "€",
+          "a": 70,
+          "why": "Avalancha: 500 × 0,20 = 100 € ahorrados. Bola de nieve: 500 × 0,06 = 30 €. Diferencia: 100 − 30 = 70 € más de intereses.",
+          "tol": 1,
+          "guia": "g3"
+        },
+        {
+          "id": "dq2-3",
+          "t": "choice",
+          "q": "¿Cuándo tiene más sentido la bola de nieve?",
+          "opts": [
+            "Cuando quieres pagar el mínimo posible de intereses en total",
+            "Siempre, porque la deuda pequeña es la que más intereses genera",
+            "Cuando necesitas liquidar pronto una deuda para mantener la motivación",
+            "Nunca: ordenar por saldo no aporta nada frente a ordenar por TAE"
+          ],
+          "a": 2,
+          "why": "Liquidar una deuda pronto ayuda a no abandonar el plan, aunque suele costar más intereses que la avalancha.",
+          "guia": "g3",
+          "porque": [
+            "La bola de nieve suele pagar más intereses que la avalancha; la que minimiza intereses es la otra.",
+            "No es siempre así: la deuda pequeña puede tener una TAE baja y generar pocos intereses.",
+            null,
+            "Sí aporta algo: la motivación de liquidar pronto una deuda, aunque cueste más intereses."
+          ]
+        },
+        {
+          "id": "dq2-4",
+          "t": "num",
+          "q": "Adelantas 1.500 € a un préstamo al 7 % que cobra un 0,5 % de comisión por cancelación anticipada. Simplificando, ahorras los intereses de un año sobre ese importe. ¿Cuántos euros netos ahorras?",
+          "unit": "€",
+          "a": 97.5,
+          "why": "Intereses ahorrados: 1.500 × 0,07 = 105 €. Comisión: 1.500 × 0,005 = 7,50 €. Neto: 105 − 7,50 = 97,50 €.",
+          "tol": 0.5,
+          "guia": "g4"
+        },
+        {
+          "id": "dq2-5",
+          "t": "choice",
+          "q": "Tienes una tarjeta al 22 % y 3.000 € ahorrados, tu único colchón para imprevistos. ¿Qué es más prudente?",
+          "opts": [
+            "Pagar parte de la tarjeta y conservar un colchón para imprevistos",
+            "Pagar toda la tarjeta con el colchón entero, porque el 22 % es muy caro",
+            "Mantener todo el ahorro y pagar solo la cuota mínima",
+            "Pedir un préstamo nuevo al 25 % para pagar la tarjeta"
+          ],
+          "a": 0,
+          "why": "Un colchón evita endeudarte de nuevo ante un imprevisto, y pagar parte de la tarjeta ya reduce intereses.",
+          "guia": "g4",
+          "porque": [
+            null,
+            "Gastar el colchón entero te deja sin margen: ante un imprevisto tendrías que endeudarte otra vez.",
+            "Pagar solo la mínima mantiene una deuda al 22 % y sus intereses sin necesidad.",
+            "Un préstamo al 25 % cuesta más que la tarjeta al 22 %: empeora la situación."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

@@ -1,0 +1,274 @@
+{
+  "n": 43,
+  "id": "tamanomercado",
+  "track": "fundamental",
+  "title": "Tamaño de mercado y cuota",
+  "blurb": "TAM, cuota de mercado y qué cuota exige una tesis: separa crecer con el mercado de quitar clientes a los rivales.",
+  "guia": [
+    {
+      "id": "g1",
+      "titulo": "Mercado total",
+      "texto": "El mercado total (TAM) es lo que facturaría el sector si compraran todos los clientes posibles: clientes posibles × gasto anual por cliente. Estímalo de abajo arriba y con datos, no como «el 1 % de un sector enorme», ni sumando mercados vecinos.",
+      "ejemplo": "2 millones de clientes posibles × 600 € al año = 1.200 M€ de mercado."
+    },
+    {
+      "id": "g2",
+      "titulo": "Cuota de mercado",
+      "texto": "La cuota de mercado es la parte del mercado que factura la empresa: ingresos ÷ mercado. Despejando, ingresos = mercado × cuota. Así separas cuánto crece el sector de cuánto le quita la empresa a los rivales.",
+      "ejemplo": "Ingresos de 120 M€ en un mercado de 1.200 M€: cuota del 10 %.",
+      "figura": {
+        "type": "barras",
+        "unidad": "M€",
+        "ancho": 120,
+        "alt": "Una barra apilada de 1.200 millones de euros: 120 millones de la empresa y 1.080 millones del resto del mercado",
+        "barras": [
+          {
+            "texto": "Mercado hoy",
+            "segmentos": [
+              {
+                "valor": 120,
+                "texto": "Empresa 120",
+                "tono": "acc"
+              },
+              {
+                "valor": 1080,
+                "texto": "Resto 1.080",
+                "tono": "sel"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "g3",
+      "titulo": "Qué cuota hace falta",
+      "texto": "Si la tesis exige unos ingresos, divídelos entre el mercado esperado para ese año: es la cuota necesaria. Compárala con la actual: si hay que duplicarla, pregunta a qué rivales se quitarán clientes y por qué cambiarán.",
+      "ejemplo": "360 M€ en un mercado de 1.800 M€: cuota del 20 %, el doble que el 10 % de hoy.",
+      "figura": {
+        "type": "barras",
+        "unidad": "M€",
+        "ancho": 110,
+        "alt": "Dos barras apiladas: hoy, mercado de 1.200 millones con 120 de la empresa; dentro de cinco años, mercado de 1.800 millones con 360 de la empresa",
+        "barras": [
+          {
+            "texto": "Hoy",
+            "segmentos": [
+              {
+                "valor": 120,
+                "texto": "Empresa 120",
+                "tono": "acc"
+              },
+              {
+                "valor": 1080,
+                "texto": "Resto 1.080",
+                "tono": "sel"
+              }
+            ]
+          },
+          {
+            "texto": "Año 5",
+            "segmentos": [
+              {
+                "valor": 360,
+                "texto": "Empresa 360",
+                "tono": "acc"
+              },
+              {
+                "valor": 1440,
+                "texto": "Resto 1.440",
+                "tono": "sel"
+              }
+            ]
+          }
+        ],
+        "h": 300
+      }
+    },
+    {
+      "id": "g4",
+      "titulo": "Mercado y cuota a la vez",
+      "texto": "Los ingresos crecen con el mercado y con la cuota: (1 + crecimiento del mercado) × (1 + variación de la cuota) − 1. Crecer con el mercado no quita clientes a nadie; ganar cuota exige superar a los rivales y tiene un límite.",
+      "ejemplo": "Mercado +10 % y cuota de 10 % a 11 % (+10 %): 1,10 × 1,10 = 1,21, ingresos +21 %."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "mk1",
+      "title": "Mercado y cuota",
+      "ex": [
+        {
+          "id": "mk1-1",
+          "t": "num",
+          "q": "Una empresa de software de nóminas estima 2,5 millones de pymes como clientes posibles, con un gasto de 320 € al año cada una. ¿Cuál es el mercado total, en M€?",
+          "unit": "M€",
+          "a": 800,
+          "why": "2,5 millones × 320 € = 800 M€ al año.",
+          "tol": 1,
+          "guia": "g1"
+        },
+        {
+          "id": "mk1-2",
+          "t": "choice",
+          "q": "Para estimar el mercado de una empresa, ¿qué método es más sólido?",
+          "opts": [
+            "Tomar un sector enorme y suponer que la empresa captará un 1 %",
+            "Clientes posibles por gasto anual de cada uno, con datos contrastados",
+            "Sumar también todos los mercados vecinos donde algún día podría entrar",
+            "Copiar la cifra de mercado de la presentación de la propia empresa"
+          ],
+          "a": 1,
+          "why": "El cálculo de abajo arriba se puede comprobar. Los otros se apoyan en suposiciones o en cifras que conviene contrastar.",
+          "guia": "g1",
+          "porque": [
+            "Es la menos sólida: parte de un porcentaje inventado sin datos de clientes ni de gasto.",
+            null,
+            "Inflar el mercado con zonas donde aún no vende exagera el potencial.",
+            "Esa cifra la da una parte interesada: puede servir de punto de partida, pero hay que contrastarla."
+          ]
+        },
+        {
+          "id": "mk1-3",
+          "t": "num",
+          "q": "Una empresa factura 150 M€ en un mercado de 1.200 M€. ¿Cuál es su cuota de mercado, en %?",
+          "unit": "%",
+          "a": 12.5,
+          "why": "150 ÷ 1.200 = 0,125, es decir, un 12,5 %.",
+          "tol": 0.05,
+          "guia": "g2"
+        },
+        {
+          "id": "mk1-4",
+          "t": "match",
+          "q": "Empareja cada término del tamaño de mercado con su descripción.",
+          "pairs": [
+            [
+              "Clientes posibles",
+              "Pymes que podrían comprar el producto"
+            ],
+            [
+              "Gasto anual por cliente",
+              "Lo que paga cada uno al año"
+            ],
+            [
+              "Mercado total (TAM)",
+              "Clientes posibles × gasto anual por cliente"
+            ]
+          ],
+          "why": "El mercado total se estima multiplicando clientes posibles por lo que gasta cada uno al año.",
+          "guia": "g1"
+        },
+        {
+          "id": "mk1-5",
+          "t": "choice",
+          "q": "Una empresa factura 90 M€ y sigue facturando lo mismo mientras su mercado pasa de 900 a 1.200 M€. ¿Qué ocurre con su cuota?",
+          "opts": [
+            "Sube del 10 % al 13,3 %",
+            "Se queda en el 10 %, porque los ingresos son los mismos",
+            "Baja del 10 % al 4,5 %",
+            "Baja del 10 % al 7,5 %: el mercado crece más que la empresa"
+          ],
+          "a": 3,
+          "why": "Antes: 90 ÷ 900 = 10 %. Ahora: 90 ÷ 1.200 = 7,5 %. Con ingresos quietos, un mercado mayor reduce la cuota.",
+          "guia": "g2",
+          "porque": [
+            "Con ingresos iguales y un mercado mayor, la cuota no puede subir.",
+            "Ingresos iguales no significan cuota igual: el mercado ha crecido.",
+            "Un 4,5 % saldría con un mercado de 2.000 M€, no de 1.200 M€.",
+            null
+          ]
+        }
+      ],
+      "ultimo": 5
+    },
+    {
+      "id": "mk2",
+      "title": "Qué cuota exige una tesis",
+      "ex": [
+        {
+          "id": "mk2-1",
+          "t": "num",
+          "q": "Hoy una empresa tiene el 9 % de su mercado. La tesis necesita 270 M€ de ingresos dentro de 5 años, cuando el mercado será de 1.500 M€. ¿Qué cuota hará falta, en %?",
+          "unit": "%",
+          "a": 18,
+          "why": "270 ÷ 1.500 = 0,18, es decir, un 18 %: el doble que el 9 % actual.",
+          "tol": 0.05,
+          "guia": "g3"
+        },
+        {
+          "id": "mk2-2",
+          "t": "slide",
+          "q": "Una tesis necesita 300 M€ de ingresos dentro de 5 años y se espera un mercado de 2.000 M€. Ajusta la cuota de mercado que hace falta.",
+          "label": "Cuota de mercado",
+          "min": 5,
+          "max": 30,
+          "step": 1,
+          "start": 8,
+          "a": 15,
+          "unit": "%",
+          "why": "300 ÷ 2.000 = 0,15, es decir, el 15 %: con esa cuota, 2.000 × 0,15 = 300 M€.",
+          "show": [
+            {
+              "label": "Ingresos con esa cuota",
+              "k": 20,
+              "b": 0,
+              "unit": "M€"
+            }
+          ],
+          "guia": "g3"
+        },
+        {
+          "id": "mk2-3",
+          "t": "choice",
+          "q": "La tesis exige pasar del 9 % al 18 % de cuota en 5 años (270 M€ en un mercado que será de 1.500 M€), con varios rivales mayores. ¿Qué pregunta es la clave?",
+          "opts": [
+            "Si el PER actual es más bajo que el de los rivales",
+            "A qué rivales se quitarán clientes y por qué cambiarán de proveedor",
+            "Si el 18 % es una cifra redonda y fácil de recordar",
+            "Si el mercado crecerá, porque eso basta aunque la cuota no cambie"
+          ],
+          "a": 1,
+          "why": "Duplicar la cuota exige ganar clientes a otros. Que el mercado crezca ayuda, pero los 270 M€ de la tesis dependen de la cuota.",
+          "guia": "g3",
+          "porque": [
+            "El PER dice cuánto se paga por el beneficio, no cómo se ganarán los clientes que exige la tesis.",
+            null,
+            "Que sea redonda no la hace más ni menos creíble: lo importante es de dónde saldrán los clientes.",
+            "El crecimiento del mercado ya está en los 1.500 M€; con la cuota actual, los ingresos no llegarían a 270 M€."
+          ]
+        },
+        {
+          "id": "mk2-4",
+          "t": "num",
+          "q": "Un mercado de 1.000 M€ pasa a 1.050 M€ y la cuota de una empresa sube del 20 % al 22 %. ¿Cuánto crecen sus ingresos, en %?",
+          "unit": "%",
+          "a": 15.5,
+          "why": "Antes: 1.000 × 0,20 = 200 M€. Ahora: 1.050 × 0,22 = 231 M€. 231 ÷ 200 = 1,155: ingresos +15,5 %.",
+          "tol": 0.06,
+          "guia": "g4"
+        },
+        {
+          "id": "mk2-5",
+          "t": "choice",
+          "q": "Los ingresos de una empresa crecen un 12 % y su mercado, también un 12 %. ¿Qué ha pasado con su cuota?",
+          "opts": [
+            "Sube, porque ha crecido un 12 %",
+            "Baja, porque el mercado también ha crecido un 12 %",
+            "Se mantiene: crece al ritmo del mercado, sin ganar cuota",
+            "No se puede saber sin conocer su beneficio"
+          ],
+          "a": 2,
+          "why": "Cuota = ingresos ÷ mercado. Si ambos se multiplican por 1,12, el cociente no cambia.",
+          "guia": "g4",
+          "porque": [
+            "Un 12 % de crecimiento no basta: depende de cuánto crezca el mercado.",
+            "Si ambos crecen igual, la cuota no baja: se queda como estaba.",
+            null,
+            "El beneficio no interviene: la cuota se calcula con ingresos y mercado."
+          ]
+        }
+      ],
+      "ultimo": 5
+    }
+  ]
+}

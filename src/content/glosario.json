@@ -1910,5 +1910,58 @@
    "memecoins"
   ],
   "d": "Token cuyo valor depende de la atención y la moda en redes, sin uso, ingresos ni respaldo detrás. Es muy volátil y suele estar concentrado en pocos monederos."
+ },
+ {
+  "termino": "prima de riesgo",
+  "alias": [
+   "prima de riesgo de las acciones"
+  ],
+  "d": "Rentabilidad extra que se exige a las acciones sobre un bono casi seguro. Rentabilidad esperada ≈ bono + prima."
+ },
+ {
+  "termino": "rentabilidad por beneficios",
+  "d": "Beneficio anual por acción dividido entre el precio: 1 ÷ PER. A más PER, menos rentabilidad por beneficios."
+ },
+ {
+  "termino": "hombro-cabeza-hombro",
+  "d": "Figura de techo: tres máximos, el central más alto, y una línea del cuello por los mínimos entre ellos. Se confirma al cerrar bajo el cuello."
+ },
+ {
+  "termino": "doble techo",
+  "d": "Figura de techo: dos máximos parecidos separados por un mínimo intermedio. Se confirma al cerrar por debajo de ese mínimo."
+ },
+ {
+  "termino": "línea del cuello",
+  "alias": [
+   "cuello"
+  ],
+  "d": "En una figura de giro, la línea que une los mínimos (o el mínimo) entre los máximos. Su ruptura con un cierre confirma la figura."
+ },
+ {
+  "termino": "objetivo medido",
+  "d": "Objetivo de una figura: la altura de la figura (del techo al cuello) proyectada desde el cuello. Es una referencia, no una garantía."
+ },
+ {
+  "termino": "avalancha",
+  "d": "Método para pagar deudas: mínimas en todas y todo el extra a la de mayor TAE. Es el que menos intereses cuesta."
+ },
+ {
+  "termino": "bola de nieve",
+  "d": "Método para pagar deudas: todo el extra a la de menor saldo. Liquidas pronto una deuda, aunque suele costar más intereses que la avalancha."
+ },
+ {
+  "termino": "cuota mínima",
+  "d": "Lo menos que debes pagar cada mes por una deuda."
+ },
+ {
+  "termino": "TAM",
+  "alias": [
+   "mercado total"
+  ],
+  "d": "Mercado total direccionable: lo que facturaría un sector si compraran todos los clientes posibles (clientes × gasto anual por cliente)."
+ },
+ {
+  "termino": "cuota de mercado",
+  "d": "Parte del mercado que factura una empresa: ingresos ÷ mercado."
  }
 ]
