@@ -3,7 +3,7 @@
 import {today,yest,shuffle,esc} from './util.js';
 import {UNITS,FLAT,CASOS,SEMANA,MERCADO,EXBYID,PLACEMENT,EXAMEN_N,trackOf,libre} from './content.js';
 import {S,save,resetState,migrar,advancedOpen,statuses,srsDue,srsRecord,SRS_MAX,exportar,leerCopia,importar,sumarRacha,retoHoy} from './state.js';
-import {$app,toast,ses} from './ui.js';
+import {$app,toast,ses,anunciar} from './ui.js';
 import {setPlanCtx} from './drag.js';
 import {TIPOS} from './exercises/index.js';
 import {ordenFijo} from './exercises/choice.js';
@@ -11,9 +11,9 @@ import {CONTACTO} from './config.js';
 import {cuentaActiva,enviarEnlace,leerRetorno,sincronizar,cerrarSesion,borrarCuenta,sesion,fusionar,configurar,subirAlSalir} from './sync.js';
 import {compartirLogro} from './compartir.js';
 import {medir} from './medicion.js';
-import {sonAcierto,sonFallo,sonFin} from './sonido.js';
+import {sonAcierto,sonFallo,sonFin,suspenderSonido} from './sonido.js';
 import {homeHTML} from './views/home.js';
-import {lessonHTML,resultHTML,failHTML} from './views/lesson.js';
+import {lessonHTML,resultHTML,failHTML,veredictoTxt} from './views/lesson.js';
 import {simHTML,simInfo,simValid,simSave,simHist,simulate,SIM_PLACE} from './views/sim.js';
 import {calcHTML,calcOutHTML,histOutHTML,historia,CALC_CTRL,aportaciones} from './views/calc.js';
 import {legalHTML,privacidadHTML,LEGAL_V} from './views/legal.js';
@@ -48,6 +48,11 @@ function render(){
   if(ses.view==='lesson'&&!run.checked){const T=TIPOS[run.queue[0].t];if(T.focus)T.focus()}
   // Guía: el foco va al botón principal, así el teclado y los lectores de pantalla siguen la tarjeta nueva.
   if(ses.view==='guia'){const b=$app.querySelector('.gnav .btn.primary');if(b&&b.focus)b.focus({preventScroll:true})}
+}
+// Redibuja la misma vista conservando el scroll y devolviendo el foco al botón pulsado (data-act), para ajustes en estadísticas.
+function renderAqui(act){
+  const y=window.scrollY;render();window.scrollTo(0,y);
+  const b=$app.querySelector(`[data-act=${act}]${act==='meta'?`[data-m="${S.meta}"]`:''}`);if(b&&b.focus)b.focus({preventScroll:true});
 }
 // Resultado: los XP ganados suben de 0 a su valor en medio segundo (no con «reducir movimiento»).
 function contar(el){
@@ -113,6 +118,7 @@ function check(){
   const al=l=>l[Math.floor(Math.random()*l.length)];
   run.msg=ok?(unaVez&&run.racha>=3?t.animoRacha(run.racha):al(t.animoOk)):al(t.animoFallo);
   (ok?sonAcierto:sonFallo)();
+  anunciar(veredictoTxt(run));
   try{if(typeof navigator!=='undefined'&&navigator.vibrate)navigator.vibrate(ok?12:[30,50,30])}catch(e){}
   render();
 }
@@ -287,8 +293,8 @@ const ACCIONES={
     if(!ses.borrarArm){ses.borrarArm=true;render();setTimeout(()=>{if(ses.borrarArm){ses.borrarArm=false;if(ses.view==='stats')render()}},4000);return}
     ses.borrarArm=false;borrarCuenta().then(()=>{toast(t.cuentaBorrada);render()},()=>{toast(t.cuentaError);render()});
   },
-  meta(b){S.meta=+b.dataset.m;save();render()},
-  sonido(){S.sonido=S.sonido===false;save();render();sonAcierto()},
+  meta(b){S.meta=+b.dataset.m;save();renderAqui('meta')},
+  sonido(){S.sonido=S.sonido===false;save();renderAqui('sonido');if(S.sonido===false)suspenderSonido();else sonAcierto()},
   objetivo(b){S.objetivo=b.dataset.track;S.track=b.dataset.track;save();ses.homeY=0;render()},
   noobjetivo(){S.objetivo='ninguno';save();render()},
   nonivel(b){S.pruebas[b.dataset.track]={saltada:true};save();render()},
@@ -392,6 +398,12 @@ if(cuentaActiva()&&typeof location!=='undefined'){
     else subirAlSalir();
   });
   if(typeof window.addEventListener==='function')window.addEventListener('pagehide',subirAlSalir);
+}
+
+// El audio se suspende al ocultar la app (no depende de la cuenta).
+if(typeof document.addEventListener==='function'){
+  document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')suspenderSonido()});
+  if(typeof window.addEventListener==='function')window.addEventListener('pagehide',suspenderSonido);
 }
 
 // PWA: el service worker solo se registra servido por http(s) (no en file:// ni en los tests).

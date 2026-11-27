@@ -45,6 +45,7 @@ export function limpiarEscalares(s){
   for(const k of ['last','day'])if(s[k]!==null&&!fechaValida(s[k]))s[k]=d[k];
   if(!TRACKS.some(r=>r.id===s.track))s.track=d.track;
   if(!META_OPC.includes(s.meta))s.meta=d.meta;
+  if(typeof s.sonido!=='boolean')s.sonido=d.sonido;
   limpiarColecciones(s);
   return s;
 }
