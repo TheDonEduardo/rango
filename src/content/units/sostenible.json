@@ -68,7 +68,7 @@
           "q": "Un fondo usa criterios ESG (ambientales, sociales y de gobierno) para elegir sus empresas. ¿Qué papel tienen esos criterios?",
           "opts": [
             "Garantizan que ninguna empresa del fondo tendrá problemas ambientales",
-            "Son información adicional sobre la empresa, junto con el análisis financiero",
+            "Son información adicional, junto con el análisis financiero",
             "Sustituyen al análisis financiero, que ya no hace falta",
             "Aseguran una rentabilidad superior a la del índice tradicional"
           ],
@@ -134,7 +134,7 @@
           "q": "En la Unión Europea, el reglamento de divulgación de finanzas sostenibles (SFDR) clasifica los fondos. ¿Qué distingue a un fondo «artículo 9» de uno «artículo 8»?",
           "opts": [
             "El 9 cobra por ley una comisión menor, porque el regulador la limita para esos fondos",
-            "El 9 tiene un objetivo de inversión sostenible; el 8 promueve características ambientales o sociales",
+            "El 9 tiene un objetivo sostenible; el 8 promueve rasgos ambientales o sociales",
             "El 9 garantiza una rentabilidad mínima, y el 8 solo informa del riesgo",
             "El 8 invierte únicamente en empresas con cero emisiones, y el 9 en cualquiera"
           ],

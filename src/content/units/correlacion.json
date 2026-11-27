@@ -43,7 +43,7 @@
             "Una eléctrica regulada con un dividendo estable",
             "Una cadena de supermercados de alimentación",
             "Una distribuidora de agua con tarifa regulada",
-            "Otra fabricante de chips que vende a los mismos clientes"
+            "Otra de chips que vende a los mismos clientes"
           ],
           "a": 3,
           "why": "Las empresas del mismo sector comparten clientes, ciclo y noticias, así que suben y bajan juntas.",
@@ -70,7 +70,7 @@
           "q": "En una caída fuerte del mercado, ¿qué suele ocurrir con la correlación entre acciones de sectores distintos?",
           "opts": [
             "Baja a cero: cada acción cae por su cuenta",
-            "Sube: casi todas caen a la vez y diversificar protege menos",
+            "Sube: caen a la vez y diversificar protege menos",
             "Se vuelve negativa: lo que cae un sector lo sube otro",
             "No cambia: es una constante fija de cada acción"
           ],
@@ -170,7 +170,7 @@
           "opts": [
             "Doblas el tamaño de la segunda, porque confirma la tesis de la primera",
             "Mantienes los dos tamaños: el riesgo se reparte solo entre las dos",
-            "Reduces el riesgo de cada una para que juntas no pasen el límite del sector",
+            "Reduces el riesgo de cada una para no pasar el límite del sector",
             "Quitas los stops de ambas: con dos posiciones ya estás diversificado"
           ],
           "a": 2,

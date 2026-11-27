@@ -228,8 +228,8 @@
           "t": "choice",
           "q": "Los datos macro empeoran, pero tu acción está en Fase 2 con los beneficios acelerando. ¿Qué haces?",
           "opts": [
-            "Vender todo por la mala macro",
-            "Mantener con su stop y vigilar",
+            "Vender toda la posición por los datos macro",
+            "Mantenerla con su stop y vigilar",
             "Doblar la posición ahora",
             "Quitar también el stop"
           ],

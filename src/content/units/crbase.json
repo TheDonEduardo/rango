@@ -41,7 +41,7 @@
           "q": "¿Qué es una cadena de bloques (blockchain)?",
           "opts": [
             "Un registro de transacciones compartido por miles de ordenadores",
-            "Una base de datos privada que gestiona un banco central",
+            "Una base de datos privada que gestiona un banco central y sus filiales",
             "Un programa para comprar acciones desde el móvil",
             "Una moneda digital emitida por una empresa"
           ],
@@ -115,7 +115,7 @@
           "q": "Envías fondos a una dirección equivocada y la transacción se confirma. ¿Qué puedes hacer?",
           "opts": [
             "Nada: las transacciones confirmadas no se deshacen",
-            "Reclamar la devolución al servicio de atención",
+            "Reclamar la devolución al servicio de atención al cliente",
             "Cancelarla durante las 24 horas siguientes",
             "Pedir a tu banco que anule la operación"
           ],
@@ -143,7 +143,7 @@
           "opts": [
             "El control de los fondos de esa dirección",
             "Solo permiso para consultar el saldo",
-            "Un descuento en las comisiones de la red",
+            "Un descuento fijo en las comisiones de la red",
             "Acceso a la cuenta de tu banco"
           ],
           "a": 0,
@@ -182,7 +182,7 @@
           "q": "¿Qué es la frase semilla de un monedero?",
           "opts": [
             "Una lista de palabras que permite recuperar tus claves",
-            "La contraseña con la que entras en la plataforma",
+            "La contraseña con la que entras en la plataforma de compra",
             "Un código que caduca cada treinta segundos",
             "El nombre público con el que se ve tu monedero"
           ],

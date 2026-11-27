@@ -91,7 +91,7 @@
           "t": "choice",
           "q": "Le pides un presupuesto y te propone ahorrar el 40 % de tu sueldo, cuando ahora ahorras un 5 %. ¿Qué haces?",
           "opts": [
-            "Ajustarlo a algo que puedas cumplir, como un 10 %",
+            "Ajustarlo a algo realista, como un 10 %",
             "Aplicarlo tal cual desde el mes que viene",
             "Descartar la IA para siempre por el error",
             "Pedir un préstamo para poder cumplirlo"
@@ -127,7 +127,7 @@
           "t": "choice",
           "q": "Una app con IA quiere acceso a tu cuenta bancaria para clasificar tus gastos. ¿Qué compruebas?",
           "opts": [
-            "Que esté autorizada y solo pueda leer datos",
+            "Que esté autorizada y solo lea datos",
             "Que tenga muchas descargas en la tienda",
             "Que el diseño de la app sea moderno",
             "Que prometa hacerte ganar dinero"
@@ -156,7 +156,7 @@
           "t": "choice",
           "q": "La IA te sugiere pasar 3.000 € de la cuenta corriente a una cuenta remunerada al 2 %. ¿Qué compruebas antes?",
           "opts": [
-            "La TAE real, las condiciones y la garantía de depósitos",
+            "La TAE, las condiciones y la garantía",
             "Solo que la IA lo haya sugerido con seguridad",
             "Que el banco tenga muchos anuncios",
             "Que el 2 % sea mensual y no anual"

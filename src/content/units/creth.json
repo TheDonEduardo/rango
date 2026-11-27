@@ -43,7 +43,7 @@
           "opts": [
             "Un programa en la cadena que se ejecuta solo",
             "Un documento legal firmado ante notario",
-            "Un acuerdo privado entre dos plataformas",
+            "Un acuerdo privado entre dos plataformas de compra",
             "Una orden de compra con precio límite"
           ],
           "a": 0,
@@ -62,7 +62,7 @@
           "q": "¿Cuál es la diferencia principal entre Ethereum y Bitcoin?",
           "opts": [
             "Ethereum es una plataforma para ejecutar aplicaciones",
-            "Ethereum tiene un límite de 21 millones de monedas",
+            "Ethereum tiene un límite de 21 millones de monedas en total",
             "Ethereum no tiene una moneda propia",
             "Ethereum funciona sin comisiones"
           ],
@@ -101,7 +101,7 @@
           "q": "La red está congestionada porque mucha gente quiere operar a la vez. ¿Qué pasa con las comisiones?",
           "opts": [
             "Suben: el precio del gas aumenta con la demanda",
-            "Bajan: la red reparte el coste entre más gente",
+            "Bajan: la red reparte el coste entre más usuarios a la vez",
             "No cambian: el gas tiene un precio fijo",
             "Desaparecen hasta que pasa la congestión"
           ],
@@ -128,7 +128,7 @@
           "q": "¿Cómo se protege Ethereum con la prueba de participación?",
           "opts": [
             "Los validadores bloquean ETH y lo pierden si hacen trampas",
-            "Los mineros gastan energía para resolver cálculos",
+            "Los mineros gastan energía para resolver cálculos antes de cada bloque",
             "Una fundación aprueba a mano cada bloque",
             "Los usuarios votan cada transacción con su móvil"
           ],
@@ -168,7 +168,7 @@
           "q": "¿Qué es una red de capa 2 sobre Ethereum?",
           "opts": [
             "Una red que agrupa transacciones para abaratarlas",
-            "Una copia de Ethereum con otra moneda distinta",
+            "Una copia de Ethereum con otra moneda distinta y otro equipo",
             "El segundo monedero que abre un usuario",
             "Una versión privada para grandes empresas"
           ],
@@ -189,8 +189,8 @@
           "opts": [
             "No: se emite a los validadores y se quema parte de las comisiones",
             "Sí: tiene el mismo límite de 21 millones que Bitcoin",
-            "Sí: el límite lo decide cada año la fundación Ethereum",
-            "No: cada usuario puede crear sus propios ETH cuando quiera"
+            "Sí: el límite lo decide cada año la fundación Ethereum según la demanda",
+            "No: cada usuario puede emitir nuevos ETH desde su monedero"
           ],
           "a": 0,
           "why": "No hay tope fijo. Se crean ETH nuevos para pagar a los validadores y se destruye una parte de cada comisión: con mucha actividad, la oferta puede incluso reducirse.",

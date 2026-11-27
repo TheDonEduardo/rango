@@ -142,7 +142,7 @@
           "q": "Collar sobre acciones a 80 $: put de 72 $ comprada, call de 90 $ vendida y 0,50 $ de coste neto. La acción sube a 110 $. ¿Qué ocurre?",
           "opts": [
             "Vendes a 90 $ y ganas 9,50 $ por acción",
-            "Vendes a 110 $ y ganas 30 $ por acción",
+            "Vendes a 110 $ y ganas 30 $ por acción en total",
             "La put te obliga a vender a 72 $",
             "El collar se anula y no ganas nada"
           ],
@@ -162,7 +162,7 @@
           "q": "¿Cuándo tiene más sentido un collar?",
           "opts": [
             "Posición grande con ganancias que no quieres vender aún",
-            "Acción que acabas de comprar y esperas que se dispare",
+            "Acción que acabas de comprar y esperas que se dispare pronto",
             "Cartera diversificada de fondos indexados",
             "Acción que piensas vender mañana mismo"
           ],
@@ -182,7 +182,7 @@
           "q": "¿Qué ventaja tiene la put del collar frente a una orden stop?",
           "opts": [
             "Garantiza el precio aunque la acción abra con hueco",
-            "No cuesta nada y protege la posición para siempre",
+            "No cuesta nada y protege la posición durante todo el año",
             "Se ejecuta siempre antes que cualquier orden stop",
             "Permite ganar dinero cuando la acción cae mucho"
           ],

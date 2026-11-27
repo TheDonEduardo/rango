@@ -69,7 +69,7 @@
           "t": "choice",
           "q": "Una DAO exige un quórum de 40.000 votos. En una propuesta votan 30.000 a favor y 5.000 en contra. ¿Qué ocurre?",
           "opts": [
-            "Se aprueba: el 85,7 % de los votos emitidos son a favor",
+            "Se aprueba: el 85,7 % de los votos emitidos son a favor de la propuesta",
             "No se aprueba: con 35.000 votos no llega al quórum de 40.000",
             "Se aprueba: hay más votos a favor que en contra",
             "Se aprueba tras una espera de 48 horas, porque el sí gana"
@@ -137,7 +137,7 @@
           "q": "¿Qué riesgo crea un quórum muy bajo en una DAO?",
           "opts": [
             "Que las propuestas tarden más en llegar a aprobarse",
-            "Que los tokens pierdan su derecho de voto con el tiempo",
+            "Que los tokens pierdan su derecho de voto con el paso del tiempo",
             "Que pocos votos bastan para aprobar propuestas importantes",
             "Que la tesorería se bloquee automáticamente"
           ],

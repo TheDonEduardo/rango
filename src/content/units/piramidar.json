@@ -40,7 +40,7 @@
           "t": "choice",
           "q": "¿Cuándo se añade a una posición según el método de O'Neil y Minervini?",
           "opts": [
-            "Cuando ya va en ganancias y confirma la tendencia",
+            "Cuando va en ganancias y confirma tendencia",
             "Cuando cae y se puede promediar a la baja",
             "Al día siguiente de entrar, pase lo que pase",
             "Solo cuando llega a su objetivo final"
@@ -177,8 +177,8 @@
           "t": "choice",
           "q": "¿En qué se diferencia aportar cada mes a un fondo indexado de promediar a la baja una acción?",
           "opts": [
-            "Un índice diversificado; una acción puede hundirse",
-            "No hay ninguna diferencia entre ambas cosas",
+            "Un índice diversifica; una acción puede hundirse",
+            "No hay diferencia: en ambos casos se promedia el precio de compra",
             "Promediar una acción es siempre más seguro",
             "El fondo indexado nunca baja de precio"
           ],

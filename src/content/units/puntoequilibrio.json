@@ -224,7 +224,7 @@
             "Los dos caen un 20 %, igual que las ventas",
             "El de B cae menos, porque su grado más alto lo protege",
             "El de A cae un 12 % y el de B, un 20 %, según su grado",
-            "El de A cae un 40 % y el de B, un 120 %: B pasa a pérdidas"
+            "A cae un 40 % y B un 120 %: B pasa a pérdidas"
           ],
           "a": 3,
           "why": "Caída del beneficio = grado × caída de ventas: A, 2 × 20 % = 40 %; B, 6 × 20 % = 120 %, es decir, pérdidas.",

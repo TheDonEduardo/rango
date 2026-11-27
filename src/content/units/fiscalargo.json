@@ -52,7 +52,7 @@
           "t": "choice",
           "q": "Con un ETF de distribución, los dividendos tributan cada año. ¿Y con uno de acumulación?",
           "opts": [
-            "Se difiere el impuesto hasta vender",
+            "Impuesto diferido hasta vender",
             "No se paga nunca ningún impuesto",
             "Se paga el doble al final",
             "Se paga cada mes, por adelantado"
@@ -137,7 +137,7 @@
           "opts": [
             "No puede invertir en acciones",
             "Tributa cada año aunque no rescates",
-            "Liquidez limitada hasta la jubilación",
+            "Poca liquidez hasta la jubilación",
             "No admite aportaciones periódicas"
           ],
           "a": 2,

@@ -163,9 +163,9 @@
           "q": "Esa incoherencia deja 150 $ por contrato antes de costes. ¿Por qué a un particular no le suele compensar aprovecharla?",
           "opts": [
             "Porque la paridad no se cumple nunca en el mercado",
-            "Porque la ley prohíbe operar con la acción y sus opciones a la vez",
+            "Porque la ley prohíbe operar con la acción y con sus opciones a la vez",
             "Porque los precios de call y put los fija el regulador",
-            "Porque comisiones y horquilla de tres operaciones se comen casi todo el margen"
+            "Porque los costes de tres operaciones dejan un margen mínimo"
           ],
           "a": 3,
           "why": "Si cada una de las tres operaciones cuesta 45 $ entre comisión y horquilla, se van 135 $ de 150 y quedan 15 $ (150 − 3 × 45). No se lo comen todo, pero el margen es mínimo y los profesionales, con costes bajísimos, lo cierran en segundos.",

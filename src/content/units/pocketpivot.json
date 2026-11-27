@@ -191,7 +191,7 @@
           "q": "Una acción cierra a 56,00 € tras una subida larga y su media de 10 sesiones está en 50,00 €. Hoy sube con más volumen que cualquier día bajista de las 10 sesiones anteriores. ¿Cuenta como pivote de bolsillo?",
           "opts": [
             "Sí: cuanto más lejos de la media, más fuerte es la señal",
-            "No: está extendida, un 12 % por encima de su media de 10 sesiones",
+            "No: está extendida, un 12 % sobre su media de 10 sesiones",
             "Sí: cumple el volumen y eso basta",
             "Sí, pero solo si cierra bajo su media de 50 sesiones"
           ],

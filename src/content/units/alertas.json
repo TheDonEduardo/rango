@@ -125,7 +125,7 @@
           "t": "choice",
           "q": "Tras muchas compras de empresas, el fondo de comercio supone el 60 % de los activos. ¿Qué riesgo tiene?",
           "opts": [
-            "Deterioros que hundan el beneficio",
+            "Deterioros que hundan el BPA",
             "Ninguno: es dinero en caja",
             "Que tenga que subir el dividendo",
             "Que le bajen los impuestos"
@@ -172,7 +172,7 @@
           "opts": [
             "Comprar más: nadie lo ha visto",
             "Ignorarlas si el gráfico es bueno",
-            "Investigar antes, o reducir el tamaño",
+            "Investigar o reducir el tamaño",
             "Esperar a que lo publique la prensa"
           ],
           "a": 2,

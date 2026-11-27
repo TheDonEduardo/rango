@@ -204,7 +204,7 @@
           "t": "choice",
           "q": "¿Por qué un ETF apalancado diario no encaja en una cartera pasiva de comprar y mantener?",
           "opts": [
-            "Porque su resultado a largo plazo no es el doble del índice y cuesta más",
+            "Porque a largo plazo no rinde el doble del índice y cuesta más",
             "Porque solo se puede comprar en días con el mercado a la baja",
             "Porque reparte todo su beneficio en forma de dividendos cada día",
             "Porque sigue el índice con un retraso de varias semanas"

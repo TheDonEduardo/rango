@@ -43,7 +43,7 @@
             "La volatilidad futura que descuenta el precio de la opción",
             "La volatilidad que tuvo la acción el último año",
             "La diferencia entre el máximo y el mínimo del día",
-            "La comisión que cobra el mercado por cada contrato"
+            "La comisión que cobra el mercado por cada contrato negociado"
           ],
           "a": 0,
           "why": "Es la volatilidad que hace cuadrar la prima con su precio de mercado: lo que el mercado espera que se mueva la acción hasta el vencimiento.",
@@ -107,7 +107,7 @@
           "q": "Compras una call antes de resultados. La empresa bate y la acción sube un 3 %, pero tu call vale menos que ayer. ¿Por qué?",
           "opts": [
             "La volatilidad implícita se desplomó tras el dato",
-            "El bróker ajusta las calls después de resultados",
+            "El bróker ajusta las calls después de los resultados",
             "La delta de la call se volvió negativa",
             "Las calls no pueden subir el día de resultados"
           ],

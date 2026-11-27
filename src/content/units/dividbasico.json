@@ -73,7 +73,7 @@
           "opts": [
             "Comprando el día 12 o después, hasta la fecha de pago",
             "Basta con tenerla el día del pago, aunque la compres ese mismo día",
-            "Antes del día 12: comprando en la sesión anterior (el 11, si es hábil) ya cobras",
+            "Antes del día 12: comprando el 11, si es hábil, ya cobras",
             "Solo si ya eras accionista un año antes del reparto"
           ],
           "a": 2,
@@ -105,7 +105,7 @@
           "q": "Compras una acción a 40,00 € el día antes de la fecha ex-dividendo, con un dividendo de 1,00 € por acción. Si nada más cambia y sin contar impuestos, ¿qué pasa con tu patrimonio?",
           "opts": [
             "Sube 1,00 € por acción: cobras y el precio no se mueve",
-            "No cambia en esencia: la acción baja a unos 39,00 € y tú cobras 1,00 €",
+            "No cambia: la acción baja a 39,00 € y cobras 1,00 €",
             "Baja 1,00 € por acción, porque cobrar el dividendo te resta valor",
             "Sube 2,00 € por acción: el dividendo se cobra dos veces"
           ],

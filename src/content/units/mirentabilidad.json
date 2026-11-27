@@ -42,7 +42,7 @@
           "q": "¿Qué mide la rentabilidad ponderada por tiempo?",
           "opts": [
             "Lo que ganas tú en euros, según cuándo aportaste",
-            "Lo que rinde la inversión, sin contar tus aportaciones",
+            "Lo que rinde la inversión, no tus aportaciones",
             "Solo lo ganado durante el último año",
             "La rentabilidad después de impuestos"
           ],
@@ -118,7 +118,7 @@
           "opts": [
             "La ponderada por tiempo, porque cuenta tus aportaciones",
             "La rentabilidad del índice, sin más",
-            "La ponderada por dinero (TIR), que tiene en cuenta cuándo aportaste",
+            "La ponderada por dinero (TIR), según cuándo aportaste",
             "La del último mes"
           ],
           "a": 2,
@@ -147,7 +147,7 @@
           "q": "Tu cartera es solo de acciones de todo el mundo, con los dividendos reinvertidos. ¿Con qué índice la comparas?",
           "opts": [
             "Con un índice de bonos del Tesoro",
-            "Con un índice mundial de acciones de rentabilidad total",
+            "Con uno mundial de acciones de rentabilidad total",
             "Con el IBEX 35, aunque no tengas empresas españolas",
             "Con el índice que más haya subido este año"
           ],

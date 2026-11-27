@@ -148,7 +148,7 @@
           "q": "Acabas de ver un spring. ¿Cuál es la entrada de menor riesgo?",
           "opts": [
             "Comprar con orden limitada justo en el mínimo del spring",
-            "Comprar al superar el máximo de una prueba con menos volumen",
+            "Comprar sobre el máximo de una prueba con menos volumen",
             "Esperar a que supere el máximo de las 52 semanas",
             "Vender en corto la perforación del soporte"
           ],

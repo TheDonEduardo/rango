@@ -40,7 +40,7 @@
           "t": "choice",
           "q": "¿Qué ocurre en la subasta de apertura de la bolsa?",
           "opts": [
-            "Se casan órdenes para fijar el precio de apertura",
+            "Se casan órdenes para fijar la apertura",
             "La bolsa cierra para reponer liquidez",
             "Solo pueden operar los bancos centrales",
             "Se cancelan todas las órdenes del día anterior"
@@ -114,7 +114,7 @@
           "t": "choice",
           "q": "Quieres comprar una acción poco líquida con una horquilla amplia. ¿Qué orden usas?",
           "opts": [
-            "Orden limitada para controlar el precio",
+            "Orden limitada: precio controlado",
             "Orden a mercado para entrar rápido",
             "Orden stop a mercado sin límite",
             "Comprar todo de golpe al abrir"

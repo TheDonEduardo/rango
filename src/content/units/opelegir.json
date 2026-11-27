@@ -43,7 +43,7 @@
             "Uno con margen, de dos o tres meses",
             "El que vence esta misma semana",
             "El más lejano posible, a dos años",
-            "Da igual el vencimiento que elijas"
+            "Da igual el vencimiento que elijas: el resultado no cambia"
           ],
           "a": 0,
           "why": "Darte más tiempo que tu previsión evita que la opción venza justo antes de que ocurra el movimiento. Demasiado lejano encarece la prima sin necesidad.",
@@ -81,7 +81,7 @@
           "q": "¿Por qué la call a 90 días cuesta menos por cada día que la de 30?",
           "opts": [
             "El valor temporal se pierde más deprisa al final",
-            "Porque tiene menos volatilidad implícita",
+            "Porque tiene menos volatilidad implícita que las demás",
             "Porque el bróker la subvenciona",
             "Porque vence en un día festivo"
           ],
@@ -118,7 +118,7 @@
           "opts": [
             "La muy dentro del dinero, con delta alta",
             "La muy fuera del dinero, más barata",
-            "La que tiene el vencimiento más cercano",
+            "La que tiene el vencimiento más cercano posible",
             "Todas se mueven exactamente igual"
           ],
           "a": 0,
@@ -166,7 +166,7 @@
           "q": "¿Qué riesgo tiene preferir siempre las calls muy fuera del dinero?",
           "opts": [
             "Que muchas vencen sin ningún valor",
-            "Que su delta es demasiado alta",
+            "Que su delta es demasiado alta para operarlas",
             "Que cuestan demasiado dinero",
             "Que no se pueden vender antes"
           ],

@@ -165,7 +165,7 @@
           "q": "Compraste a 50 $ y vendiste la call de 55 $ por 2 $. La acción se dispara a 70 $ por una oferta de compra. ¿Qué pasa?",
           "opts": [
             "Vendes a 55 $ y renuncias al resto de la subida",
-            "Vendes a 70 $ y además conservas la prima",
+            "Vendes a 70 $ y además conservas la prima cobrada",
             "La call se anula al haber una oferta de compra",
             "Pierdes las acciones sin cobrar nada por ellas"
           ],

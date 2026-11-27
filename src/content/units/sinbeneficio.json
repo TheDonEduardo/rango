@@ -103,7 +103,7 @@
           "t": "choice",
           "q": "Una empresa con caja para 4 trimestres anuncia una ampliación de capital. ¿Qué suele pasar?",
           "opts": [
-            "Diluye a los accionistas y la acción suele caer",
+            "Diluye a los accionistas y suele caer",
             "Sube la acción porque entra dinero nuevo",
             "No afecta a los accionistas actuales",
             "La empresa deja de cotizar en bolsa"
@@ -162,7 +162,7 @@
           "t": "choice",
           "q": "¿Cuándo corre más riesgo de quedarse sin financiación una empresa de alto crecimiento sin beneficios?",
           "opts": [
-            "Cuando suben los tipos y se cierra la financiación",
+            "Con tipos al alza y financiación cerrada",
             "Cuando el mercado está en máximos y hay euforia",
             "Cuando sus ventas crecen más de lo previsto",
             "Cuando anuncia un nuevo producto"

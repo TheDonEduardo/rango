@@ -83,7 +83,7 @@
           "t": "choice",
           "q": "¿Qué diferencia hay entre el sueldo bruto y el neto?",
           "opts": [
-            "El neto es el bruto menos cotizaciones y retención",
+            "El neto es el bruto menos descuentos",
             "El neto incluye las pagas extra y el bruto no",
             "El bruto es lo que cobras tras pagar impuestos",
             "Ninguna: son dos nombres para la misma cifra"
@@ -159,7 +159,7 @@
           "t": "choice",
           "q": "Te suben el sueldo y parte de tu renta pasa al tramo siguiente. ¿Qué ocurre?",
           "opts": [
-            "Solo el exceso sobre el tramo paga el tipo más alto",
+            "Solo el exceso paga el tipo más alto",
             "Todo tu sueldo pasa a pagar el tipo más alto",
             "Cobras menos neto que antes de la subida",
             "Dejas de cotizar a la Seguridad Social"

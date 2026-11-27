@@ -71,7 +71,7 @@
             "Porque la empresa ha anunciado pérdidas",
             "Porque el mercado castiga toda ampliación",
             "Porque se reparte un dividendo extra",
-            "Entran acciones nuevas a un precio más bajo"
+            "Entran acciones nuevas más baratas"
           ],
           "a": 3,
           "why": "El precio se ajusta a la media entre las antiguas a 10 € y las nuevas a 6 €. Ese ajuste es técnico: el valor del derecho lo compensa.",
@@ -124,7 +124,7 @@
           "opts": [
             "No pasa nada: el patrimonio no cambia",
             "Ganas porque la acción vale menos",
-            "Pierdes el valor de los derechos: 320 €",
+            "Pierdes 320 € en valor de derechos",
             "La empresa te devuelve el dinero"
           ],
           "a": 2,

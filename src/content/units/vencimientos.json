@@ -41,7 +41,7 @@
           "q": "Dos empresas tienen 900 M€ de deuda. En A todo vence dentro de 1 año; en B vence una décima parte cada año durante 10 años. ¿Cuál tiene menos riesgo de refinanciación?",
           "opts": [
             "La A, porque salda toda la deuda de una sola vez",
-            "La B, porque cada año solo tiene que devolver o refinanciar 90 M€",
+            "La B: cada año solo devuelve o refinancia 90 M€",
             "Las dos igual, porque la deuda total es la misma",
             "Ninguna: el riesgo de refinanciación solo depende del PER"
           ],
@@ -145,7 +145,7 @@
             "Suben 3 puntos desde mañana, como los de mercado",
             "Bajan, porque la deuda fija pierde valor cuando suben los tipos",
             "Desaparecen hasta el vencimiento de cada préstamo",
-            "Se mantienen, y el problema llegará al refinanciar a tipos más altos"
+            "Se mantienen; el problema llega al refinanciar más caro"
           ],
           "a": 3,
           "why": "El tipo fijo protege hasta el vencimiento. Al refinanciar, la empresa pagará el tipo nuevo: la protección es un aplazamiento, no una exención.",
@@ -173,7 +173,7 @@
           "opts": [
             "La mayor parte de su deuda vence dentro de más de 8 años",
             "Sus intereses son una parte pequeña del beneficio operativo",
-            "Los vencimientos de 2 años superan su caja más su flujo de caja libre",
+            "Los vencimientos a 2 años superan su caja y flujo libre",
             "Tiene más caja que la deuda que vence en los próximos 2 años"
           ],
           "a": 2,

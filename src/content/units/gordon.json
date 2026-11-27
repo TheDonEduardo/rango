@@ -74,7 +74,7 @@
           "q": "En el modelo de Gordon, ¿por qué el crecimiento del dividendo (g) tiene que ser menor que la rentabilidad exigida (r)?",
           "opts": [
             "Porque r es el crecimiento de la economía y g el de la empresa",
-            "Si g alcanza o supera a r, el denominador es cero o negativo y no hay valor",
+            "Si g iguala o supera a r, el denominador no es positivo",
             "Porque el dividendo no puede crecer más de un 3 %",
             "Porque r es un importe en euros y g, un porcentaje"
           ],
@@ -180,8 +180,8 @@
           "t": "choice",
           "q": "Una acción da un 5 % de dividendo sobre su precio (D1 ÷ P). Con g = 3 % la rentabilidad implícita es del 8 % y con g = 6 %, del 11 %. ¿Qué indica?",
           "opts": [
-            "Que el resultado depende sobre todo del crecimiento que supones",
-            "Que el dividendo del próximo año ha cambiado",
+            "Que la rentabilidad depende sobre todo del crecimiento supuesto",
+            "Que el dividendo del próximo año ha cambiado entre los dos cálculos",
             "Que el modelo da siempre el mismo valor con cualquier g",
             "Que con g = 6 % la empresa es siempre más barata"
           ],

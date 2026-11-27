@@ -115,7 +115,7 @@
           "q": "¿Cuándo suele ser mejor momento para comprar una empresa cíclica?",
           "opts": [
             "Con el PER muy bajo y beneficios récord",
-            "Con beneficios hundidos y el ciclo girando",
+            "Con beneficios bajos y ciclo girando",
             "Cuando todo el mundo habla de su sector",
             "Nunca: las cíclicas hay que evitarlas"
           ],
@@ -195,7 +195,7 @@
           "opts": [
             "El banco está más barato, sin más que decir",
             "El software está en burbuja, eso es seguro",
-            "Compara cada una con su sector y su crecimiento",
+            "Compararlas con su sector y crecimiento",
             "El PER no sirve para nada en ningún sector"
           ],
           "a": 2,

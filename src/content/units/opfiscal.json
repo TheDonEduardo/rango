@@ -89,7 +89,7 @@
           "q": "¿Te retiene el bróker impuestos sobre las ganancias con opciones?",
           "opts": [
             "No: las pagas tú en la declaración del año siguiente",
-            "Sí: un 19 % en cada operación con ganancia",
+            "Sí: un 19 % en cada operación con ganancia que cierres",
             "Sí, pero solo si el bróker es español",
             "No, y además están exentas hasta 6.000 €"
           ],
@@ -151,7 +151,7 @@
           "q": "Este año pierdes 3.000 € netos con opciones y no tienes otras ganancias. ¿Qué pasa con esa pérdida?",
           "opts": [
             "Puedes compensarla en los cuatro años siguientes",
-            "Se pierde: solo vale en el año en que ocurre",
+            "Se pierde: solo vale en el mismo año en que ocurre",
             "Hacienda te la devuelve en la declaración",
             "Se resta directamente de tu nómina del año"
           ],
@@ -171,7 +171,7 @@
           "q": "Operas opciones en dólares con un bróker extranjero. ¿Qué tienes que hacer para declararlas?",
           "opts": [
             "Pasar cada operación a euros con el cambio de su fecha",
-            "Declarar solo el saldo final en dólares del año",
+            "Declarar solo el saldo final en dólares al acabar el año",
             "Nada: el bróker extranjero informa a Hacienda",
             "Esperar a traer el dinero a un banco español"
           ],

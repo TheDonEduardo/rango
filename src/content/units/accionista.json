@@ -84,7 +84,7 @@
           "opts": [
             "Un dividendo fijo garantizado cada año",
             "El derecho a pedir a la empresa que te devuelva tu parte",
-            "Derecho a votar en la junta y a cobrar dividendo si se reparte",
+            "Voto en la junta y dividendo, si se reparte",
             "Un puesto en el consejo de administración"
           ],
           "a": 2,
@@ -172,7 +172,7 @@
           "opts": [
             "Nada: tu voto solo cuenta si asistes en persona",
             "Dejar que tu bróker vote por ti sin pedírselo",
-            "Delegar el voto o votar a distancia, si la empresa lo permite",
+            "Delegar el voto o votar a distancia",
             "Vender las acciones tras la junta para recuperar el voto"
           ],
           "a": 2,

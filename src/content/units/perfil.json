@@ -43,7 +43,7 @@
           "q": "Necesitarás 20.000 € dentro de 2 años para la entrada de un piso. ¿Cómo encaja ese dinero en tu perfil de inversor?",
           "opts": [
             "Horizonte largo: puedes ponerlo entero en bolsa y esperar a que se recupere",
-            "Horizonte corto: casi nada en bolsa, porque una caída te pillaría necesitándolo",
+            "Horizonte corto: casi nada en bolsa, por si cae justo cuando lo necesites",
             "El horizonte no cuenta: solo importa cuánto subió la bolsa el año pasado",
             "Da igual: ese dinero está a salvo en cualquier inversión"
           ],
@@ -155,7 +155,7 @@
             "Ninguno: es un trámite y no cambia lo que puedes contratar",
             "Que Hacienda te cobre un impuesto extra por declarar mal tu experiencia",
             "Ninguno: si pierdes, la entidad te devolverá el dinero igualmente",
-            "Que te dejen contratar algo que no entiendes y pierdas más de lo que aguantas"
+            "Contratar algo que no entiendes y perder más de lo que aguantas"
           ],
           "a": 3,
           "why": "El cuestionario existe para frenarte ante lo que no entiendes. Si lo falseas, el aviso no salta y la pérdida es tuya.",

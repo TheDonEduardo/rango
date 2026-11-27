@@ -44,7 +44,7 @@
             "Fijar de antemano un peso pequeño, p. ej. entre el 1 % y el 5 %",
             "Poner más cuanto más haya subido el último mes",
             "Poner todo lo que se pueda perder para ganar más",
-            "Dejar que el peso lo decida el último consejo que leas"
+            "Dejar que el peso lo decida el último consejo que leas en redes sociales"
           ],
           "a": 0,
           "why": "Decide el peso antes de comprar, con una cantidad que puedas perder sin cambiar tus planes. El rango del 1 % al 5 % es solo ilustrativo, no una recomendación.",
@@ -80,7 +80,7 @@
           "q": "Con un 4 % del dinero, la cripto aporta un 20 % de la oscilación total. ¿Qué indica?",
           "opts": [
             "Que pesa lo mismo en riesgo que en euros",
-            "Que su riesgo es menor que el del resto de la cartera",
+            "Que su riesgo es menor que el del resto de la cartera en conjunto",
             "Que no puede afectar al resultado de la cartera",
             "Que su peso en el riesgo es mucho mayor que su peso en euros"
           ],
@@ -154,7 +154,7 @@
           "opts": [
             "Que vender para rebalancear nunca tributa",
             "Que puede tributar en España: calculas el impuesto",
-            "Que solo tributa si reinviertes en más cripto",
+            "Que solo tributa si reinviertes en más cripto después",
             "Que solo tributa lo que dejas sin reinvertir"
           ],
           "a": 1,
@@ -173,7 +173,7 @@
           "q": "Cuando la bolsa cae con fuerza, ¿qué suele pasar con la cripto?",
           "opts": [
             "Suele caer también, a veces más, justo cuando buscabas diversificar",
-            "Sube con tanta fuerza que compensa la caída de la bolsa",
+            "Sube con tanta fuerza que compensa la caída de la bolsa en esos meses",
             "No se mueve, porque no depende de la bolsa",
             "Se mueve al revés que la bolsa en cada caída"
           ],

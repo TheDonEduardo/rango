@@ -73,7 +73,7 @@
           "q": "Una acción lleva 14 meses subiendo. Esta semana sube un 22 %, el doble que su mejor semana anterior (11 %), con 8 de las últimas 10 sesiones al alza y el mayor volumen de toda la tendencia. ¿Cómo se lee según las señales orientativas de la guía?",
           "opts": [
             "Como el inicio de la tendencia: conviene comprar más acciones",
-            "Como posible agotamiento: es momento de plantearse vender una parte",
+            "Como posible agotamiento: conviene vender una parte",
             "Como una ruptura temprana de una base recién formada",
             "Como una señal sin valor porque solo cubre una semana"
           ],
@@ -161,7 +161,7 @@
           "q": "¿Qué ventaja da vender una parte en la subida climática frente a esperar solo al stop?",
           "opts": [
             "Garantiza vender en el máximo de la tendencia",
-            "Asegura ganancia antes de que un giro brusco la devuelva",
+            "Asegura ganancia antes de que un giro la devuelva",
             "Evita perderse cualquier subida posterior del precio",
             "Hace innecesario poner stop a lo que queda"
           ],
@@ -202,7 +202,7 @@
           "opts": [
             "La dejas sin stop, porque ya has asegurado parte de la ganancia",
             "Compras más acciones en la subida para recuperar lo vendido",
-            "Subes el stop para que siga al precio y la dejas correr hasta que salte",
+            "Subes el stop para que siga al precio y la dejas correr",
             "La vendes entera al día siguiente sea cual sea el precio"
           ],
           "a": 2,

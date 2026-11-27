@@ -51,7 +51,7 @@
           "q": "¿Cuál es un rasgo de un airdrop legítimo?",
           "opts": [
             "Te avisa un mensaje privado de alguien que no conoces, con un enlace urgente",
-            "Lo anuncia el proyecto en sus canales oficiales y se reclama sin dar tu frase semilla",
+            "Lo anuncia el proyecto en sus canales oficiales; no pide la frase semilla",
             "Exige un pequeño pago previo para liberar los tokens",
             "Te pide la frase semilla para comprobar que eres el titular"
           ],
@@ -179,7 +179,7 @@
             "El proyecto ha quemado todos los tokens repartidos",
             "Muchos receptores venden de golpe tokens que les han salido gratis",
             "Los tokens repartidos quedan bloqueados para siempre",
-            "La ley obliga a mantener el token un año tras el reparto"
+            "La ley obliga a mantener el token un año completo tras recibir el reparto"
           ],
           "a": 1,
           "why": "Quien recibe gratis tiene poco que perder al vender; si muchos lo hacen a la vez, la oferta supera a la demanda.",
@@ -196,9 +196,9 @@
           "t": "choice",
           "q": "Eres residente fiscal en España y recibes un airdrop. ¿Qué frase sobre impuestos es correcta?",
           "opts": [
-            "Al ser gratis, nunca tributa y no hay que declararlo ante Hacienda",
-            "Tributa un 50 % del valor en todos los casos, tengas lo que tengas",
-            "Puede tributar: guarda fecha y valor al recibirlo y comprueba la norma vigente",
+            "Al ser gratis, nunca tributa ni al recibirlo ni al vender lo recibido después",
+            "Tributa un 50 % del valor al recibirlo, sea cual sea tu renta anual",
+            "Puede tributar: guarda fecha y valor al recibirlo y revisa la norma",
             "Solo tributa si su valor supera un millón de euros en un año"
           ],
           "a": 2,

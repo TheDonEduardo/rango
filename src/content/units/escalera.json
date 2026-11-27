@@ -88,8 +88,8 @@
           "t": "choice",
           "q": "¿Qué ventaja tiene la escalera frente a meterlo todo a 5 años?",
           "opts": [
-            "Cada año vence un tramo y tienes liquidez",
-            "Siempre rinde más que el plazo largo",
+            "Cada año vence un tramo y te da liquidez",
+            "Rinde más que el plazo largo porque reinvierte cada año",
             "Elimina el riesgo de impago del emisor",
             "No paga impuestos por los intereses"
           ],
@@ -174,7 +174,7 @@
           "q": "¿En qué se diferencia una escalera de bonos de un fondo de renta fija?",
           "opts": [
             "El fondo no tiene riesgo de tipos de interés",
-            "En la escalera los bonos vencen; el fondo nunca",
+            "Los bonos de la escalera vencen; el fondo no",
             "La escalera no puede sufrir ningún impago",
             "El fondo siempre rinde más que la escalera"
           ],

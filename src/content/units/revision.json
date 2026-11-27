@@ -42,7 +42,7 @@
           "t": "choice",
           "q": "¿Cada cuánto tiempo conviene revisar una cartera indexada?",
           "opts": [
-            "Una vez al año, con una lista fija",
+            "Cada año, con una lista fija",
             "Cada día, al cierre del mercado",
             "Cada vez que salen noticias",
             "Nunca, ni para rebalancear"
@@ -133,7 +133,7 @@
           "t": "choice",
           "q": "Encuentras un ETF del mismo índice con un 0,10 % menos de comisión, pero tienes plusvalías en el actual. ¿Qué haces?",
           "opts": [
-            "Calcular antes lo que te costará tributar",
+            "Calcular antes lo que costará tributar",
             "Venderlo ya: siempre compensa el cambio",
             "No mirar nunca otros fondos",
             "Comprar los dos a medias"

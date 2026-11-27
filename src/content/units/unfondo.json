@@ -93,7 +93,7 @@
             "Mantiene el mismo reparto durante los 30 años",
             "Aumenta la renta variable según se acerca la fecha",
             "Pasa todo a renta variable en el último año",
-            "Reduce poco a poco la renta variable y sube la renta fija"
+            "Reduce poco a poco la renta variable, sube la fija"
           ],
           "a": 3,
           "why": "Al acercarse la fecha en que necesitas el dinero, baja la renta variable para reducir el riesgo y sube la renta fija.",
@@ -200,7 +200,7 @@
           "opts": [
             "Solo puedes aportar mientras falten más de 10 años para la fecha",
             "No admite reembolsos: el dinero queda bloqueado hasta la fecha objetivo",
-            "Su ritmo es genérico: puede no encajar con tu riesgo ni con tu fecha real",
+            "Su ritmo es genérico: puede no encajar con tu riesgo ni tu fecha",
             "Aumenta el riesgo cada año, porque envejece junto con tu cartera"
           ],
           "a": 2,

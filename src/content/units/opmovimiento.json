@@ -75,7 +75,7 @@
             "Comprar una call y una put del mismo ejercicio",
             "Comprar una call y vender otra más arriba",
             "Vender una put y guardar el efectivo",
-            "Comprar acciones y una put para protegerlas"
+            "Comprar acciones y una put para protegerlas del riesgo"
           ],
           "a": 0,
           "why": "Ganas si la acción se mueve mucho en cualquier dirección: la call gana si sube y la put si baja. Pierdes si apenas se mueve.",
@@ -182,7 +182,7 @@
             "Si el movimiento es menor que lo pagado",
             "Si la acción sube más de un 20 %",
             "Si la acción cae con mucha fuerza",
-            "Nunca: siempre gana con movimiento"
+            "Nunca: siempre gana si el activo se mueve mucho"
           ],
           "a": 0,
           "why": "No basta con que se mueva: tiene que moverse más de lo que costaron las opciones. Antes de resultados, esas primas suelen estar caras.",

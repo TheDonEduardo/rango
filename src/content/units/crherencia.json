@@ -61,7 +61,7 @@
           "t": "choice",
           "q": "Para que tu familia pueda acceder, guardas la frase semilla de tu monedero en una nota del móvil que se sincroniza en la nube. ¿Qué riesgo tiene?",
           "opts": [
-            "Ninguno, porque las notas de la nube nunca se pueden robar",
+            "Ninguno, porque las notas de la nube están cifradas y nadie ajeno las lee",
             "Que la frase semilla caduque al sincronizarse",
             "Que el monedero se bloquee al copiar la frase",
             "Quien entre en esa cuenta o en esa nube puede vaciar tu monedero"
@@ -151,7 +151,7 @@
           "t": "choice",
           "q": "Tienes un monedero multifirma 2 de 3 y un ladrón consigue una sola de las tres claves. ¿Qué puede hacer con ella?",
           "opts": [
-            "Vaciar el monedero, porque una firma basta",
+            "Vaciar el monedero, porque una sola firma basta para moverlo",
             "Cambiar las reglas a 1 de 3 sin permiso del resto",
             "Deducir las otras dos claves a partir de la suya",
             "No puede mover los fondos: necesita una segunda clave"
@@ -180,7 +180,7 @@
           "t": "choice",
           "q": "Tus criptomonedas están en una plataforma autorizada en la UE. ¿Qué ventaja tiene para la herencia frente a un monedero propio sin plan?",
           "opts": [
-            "La plataforma entrega las claves a cualquier familiar que las pida",
+            "La plataforma entrega las claves a cualquier familiar que las pida por escrito",
             "Tus herederos pueden reclamar acreditando el fallecimiento y la herencia",
             "Tus herederos no necesitan acreditar nada ante la plataforma",
             "La plataforma devuelve el 100 % como un banco con garantía de depósitos"

@@ -232,7 +232,7 @@
           "t": "choice",
           "q": "Una acción en Fase 2 sigue subiendo, pero su línea RS lleva meses bajando. ¿Qué haces?",
           "opts": [
-            "Buscar otra con la línea RS al alza",
+            "Buscar otra con RS al alza",
             "Comprarla: estar en Fase 2 basta",
             "Venderla en corto de inmediato",
             "Esperar a que caiga un 50 %"

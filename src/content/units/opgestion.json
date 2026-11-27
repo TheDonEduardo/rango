@@ -43,7 +43,7 @@
             "Recomprarla: queda poco que ganar y todo el riesgo",
             "Esperar al vencimiento para ganar los 0,40 $",
             "Vender otra put igual para cobrar el doble",
-            "Nada: una put vendida no se puede cerrar antes"
+            "Nada: una put vendida no se puede cerrar antes de vencer"
           ],
           "a": 0,
           "why": "Ya has ganado 1,60 $ de los 2,00 $ posibles. Mantenerla tres semanas más arriesga una caída fuerte a cambio de 0,40 $: cerrar libera el riesgo y el efectivo.",
@@ -80,7 +80,7 @@
           "q": "Tu call comprada vale el doble a dos semanas del vencimiento. ¿Qué es lo más sensato?",
           "opts": [
             "Vender al menos una parte y asegurar la ganancia",
-            "Mantener todo: aún puede valer el triple",
+            "Mantener todo: aún puede valer el triple en el futuro",
             "Comprar más contratos al precio actual",
             "Esperar al último día para decidir qué hacer"
           ],
@@ -116,9 +116,9 @@
           "q": "¿Qué es rolar una opción?",
           "opts": [
             "Cerrarla y abrir otra con un vencimiento posterior",
-            "Ejercerla antes de la fecha de vencimiento",
+            "Ejercerla antes de la fecha de vencimiento fijada",
             "Comprar el doble de contratos de la misma",
-            "Cambiarla por acciones de la misma empresa"
+            "Cambiarla por acciones de la misma empresa sin coste"
           ],
           "a": 0,
           "why": "Rolar es cerrar la posición actual y abrir otra parecida más adelante en el tiempo, a veces con otro ejercicio. Se usa para prolongar una estrategia o para ganar tiempo.",
@@ -146,7 +146,7 @@
           "q": "Llevas tres meses rolando una put vendida que va en pérdidas. ¿Qué riesgo corres?",
           "opts": [
             "Aplazar la pérdida mientras sigue creciendo",
-            "Ninguno: rolando nunca se llega a perder",
+            "Ninguno: al rolar se cobra más prima y la pérdida desaparece",
             "Que el bróker te cobre impuestos de más",
             "Que la put se convierta en una call"
           ],
@@ -166,7 +166,7 @@
           "q": "¿Cuándo es más probable que te ejerzan antes de tiempo una call vendida?",
           "opts": [
             "Dentro del dinero y justo antes de un dividendo",
-            "Fuera del dinero y a meses del vencimiento",
+            "Fuera del dinero y a muchos meses del vencimiento",
             "El mismo día en que la vendes",
             "Cuando la acción lleva días sin moverse"
           ],

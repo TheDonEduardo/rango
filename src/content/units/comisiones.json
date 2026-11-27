@@ -81,7 +81,7 @@
             "Porque el coste solo se cobra al final, sobre el total",
             "Porque el coste sube un punto más cada año",
             "Porque solo afecta a los años en que la bolsa sube",
-            "Se cobra cada año sobre todo el saldo y ese dinero ya no rinde"
+            "Se cobra cada año y ese dinero deja de rendir"
           ],
           "a": 3,
           "why": "El coste se cobra cada año sobre todo el saldo. Lo que se lleva deja de generar rentabilidad en los años siguientes: es el interés compuesto al revés.",

@@ -80,7 +80,7 @@
           "t": "choice",
           "q": "Con 18 años de plazo para pagar la universidad, ¿qué reparto encaja mejor?",
           "opts": [
-            "Más acciones al principio y menos al acercarse",
+            "Más acciones al inicio, menos al final",
             "Todo en depósitos desde el primer día",
             "Todo en una sola acción tecnológica",
             "Todo en bolsa hasta el último día"
@@ -117,7 +117,7 @@
           "t": "choice",
           "q": "¿Cuál es una buena forma de enseñar a invertir a un adolescente?",
           "opts": [
-            "Invertir juntos una cantidad pequeña y revisarla",
+            "Invertir juntos una cantidad pequeña",
             "Darle acceso a operar con apalancamiento",
             "Prohibirle hablar de dinero hasta los 18",
             "Comprarle la acción que esté de moda"
@@ -156,7 +156,7 @@
           "t": "choice",
           "q": "¿Qué es lo más valioso que puedes dejarle en lo económico?",
           "opts": [
-            "El hábito de ahorrar y saber manejarlo",
+            "El hábito de ahorrar y manejarlo",
             "Una cifra grande sin saber manejarla",
             "Una lista de acciones para comprar",
             "Una tarjeta de crédito sin límite"

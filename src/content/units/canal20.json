@@ -315,7 +315,7 @@
           "opts": [
             "Con el cierre de ayer, porque ya es un nivel conocido",
             "Con la media de los máximos de las últimas 20 sesiones",
-            "Con el máximo de las 20 sesiones anteriores, sin contar la de hoy",
+            "Con el máximo de las 20 previas, sin contar la de hoy",
             "Con el máximo de las 20 sesiones, incluida la de hoy"
           ],
           "a": 2,
@@ -574,7 +574,7 @@
             "Una tendencia larga con pocos retrocesos",
             "Un mercado que sube con volumen creciente",
             "Una acción que sale de una base larga",
-            "Un lateral donde el precio rebota entre dos niveles"
+            "Un lateral con rebotes entre dos niveles"
           ],
           "a": 3,
           "why": "En un lateral el precio supera el techo y vuelve al rango: las rupturas fallan más y se encadenan pérdidas de 1R.",

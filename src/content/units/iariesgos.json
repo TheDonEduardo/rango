@@ -60,7 +60,7 @@
           "t": "choice",
           "q": "Recibes un audio con la voz de tu hermano pidiendo 800 € urgentes por Bizum. ¿Qué haces?",
           "opts": [
-            "Llamarle a su número de siempre antes de pagar",
+            "Llamarle a su número habitual",
             "Pagar: es su voz, no hay duda",
             "Pagar solo la mitad por si acaso",
             "Responder al audio pidiendo más datos"
@@ -142,7 +142,7 @@
           "t": "choice",
           "q": "¿Qué diferencia a un asesor financiero autorizado de un chat de IA genérico?",
           "opts": [
-            "Responde legalmente de su consejo y te conoce",
+            "Responde de su consejo y te conoce",
             "Siempre acierta qué acciones van a subir",
             "Cobra menos que cualquier aplicación",
             "No necesita conocer tu situación"

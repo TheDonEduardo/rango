@@ -96,7 +96,7 @@
           "opts": [
             "La recompensa por bloque se reduce a la mitad",
             "El precio del bitcoin se divide entre dos",
-            "Cada bitcoin se parte en dos monedas nuevas",
+            "Cada bitcoin se parte en dos monedas nuevas iguales",
             "Las comisiones de la red bajan a la mitad"
           ],
           "a": 0,
@@ -159,7 +159,7 @@
           "q": "¿Qué hacen los mineros en la prueba de trabajo?",
           "opts": [
             "Gastan energía compitiendo por añadir cada bloque",
-            "Bloquean sus monedas como garantía de la red",
+            "Bloquean sus monedas como garantía de la red entera",
             "Votan qué transacciones consideran válidas",
             "Guardan las claves privadas de los usuarios"
           ],
@@ -187,7 +187,7 @@
           "opts": [
             "Solo de que otro pague más por él en el futuro",
             "De los intereses que paga cada trimestre",
-            "De los beneficios de la empresa que lo emite",
+            "De los beneficios de la empresa que lo emite cada año",
             "De un dividendo anual en bitcoin"
           ],
           "a": 0,
@@ -226,7 +226,7 @@
           "q": "A Bitcoin se le llama «oro digital». ¿En qué se diferencia del oro?",
           "opts": [
             "Tiene pocos años de historia y es mucho más volátil",
-            "No es escaso: puede emitirse sin ningún límite",
+            "No es escaso: puede emitirse sin ningún límite ni regla",
             "Paga intereses a quien lo mantiene en cartera",
             "Solo pueden comprarlo los bancos centrales"
           ],

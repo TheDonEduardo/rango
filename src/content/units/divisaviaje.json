@@ -89,7 +89,7 @@
           "t": "choice",
           "q": "¿Qué tarjeta conviene para viajar fuera de la zona euro?",
           "opts": [
-            "Una sin comisión por pagar en otra divisa",
+            "Una sin comisión por cambio de divisa",
             "La que dé más puntos de fidelidad",
             "La de crédito con el límite más alto",
             "Cualquiera: todas cobran lo mismo"

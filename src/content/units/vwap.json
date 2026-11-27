@@ -108,7 +108,7 @@
           "opts": [
             "El del día se calcula con cierres y el anclado con máximos y mínimos",
             "El anclado solo usa el volumen de la primera sesión tras el evento",
-            "El anclado acumula desde un evento elegido; el del día se reinicia en cada sesión",
+            "El anclado acumula desde un evento; el del día se reinicia cada sesión",
             "El del día pondera por tiempo y el anclado, por volumen"
           ],
           "a": 2,
@@ -211,7 +211,7 @@
           "t": "choice",
           "q": "Tras un hueco de resultados, el precio cae por debajo del VWAP anclado de 41,20 € y rebota hasta él sin superarlo. ¿Cómo se puede leer?",
           "opts": [
-            "Como posible resistencia: quien compró en el evento puede vender al recuperar su precio",
+            "Como posible resistencia: quien compró en el evento puede vender al empatar",
             "Como soporte garantizado, porque el comprador medio siempre defiende su precio",
             "Como señal de que el hueco ya se ha rellenado y el VWAP deja de tener valor",
             "Como un dato inútil, porque el VWAP solo sirve dentro de la misma sesión"
@@ -273,7 +273,7 @@
           "opts": [
             "El precio medio del periodo ponderado por volumen",
             "El precio al que el periodo empezó a subir o a bajar",
-            "El precio al que más volumen se ha negociado en el periodo",
+            "El precio con más volumen negociado en el periodo",
             "El último precio al que cotizó el valor en el periodo"
           ],
           "a": 2,
@@ -332,7 +332,7 @@
             "Que se frena ahí, porque es donde más compradores esperan",
             "Que ese tramo pasa a ser el punto de control",
             "Que el precio vuelve siempre al VWAP del día antes de seguir",
-            "Que lo atraviesa con rapidez, porque ahí casi nadie ha comprado ni vendido"
+            "Que lo cruza rápido, porque ahí casi nadie ha negociado"
           ],
           "a": 3,
           "why": "Con el 5 % del volumen, en ese tramo hay pocos compradores y vendedores atrapados: casi nada frena al precio y suele cruzarlo rápido.",

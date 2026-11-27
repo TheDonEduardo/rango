@@ -43,7 +43,7 @@
           "opts": [
             "La IA es el futuro y esta empresa vende chips para IA, así que sus ventas crecerán durante muchos años y el precio acabará reflejándolo sin duda",
             "Cotiza a un PER de 12 frente a 20 de su sector, así que está barata y tarde o temprano el mercado corregirá ese descuento",
-            "Las ventas de centros de datos crecen un 40 % y la planta del 2T subirá el margen bruto del 55 % al 60 %; si en el 2T no supera el 56 %, la tesis falla",
+            "Los centros de datos crecen un 40 % y la planta del 2T subirá el margen bruto del 55 % al 60 %; si en el 2T no pasa del 56 %, falla",
             "El gráfico está en Fase 2 con volumen creciente y medias alineadas, así que el mercado ya reconoce que el negocio va bien"
           ],
           "a": 2,
@@ -97,7 +97,7 @@
           "q": "Tu tesis depende de un contrato que se decide dentro de 18 meses y operas a 2-8 semanas. ¿Qué haces?",
           "opts": [
             "Comprar ya: el catalizador llegará antes o después",
-            "Esperar a que confirme el precio o se acerque la fecha",
+            "Esperar la confirmación del precio o la fecha",
             "Comprar opciones a un mes vista",
             "Comprar ahora y promediar a la baja mientras tanto"
           ],
@@ -150,7 +150,7 @@
             "Mantienes: el precio te está dando la razón",
             "Compras más aprovechando la subida",
             "Esperas al siguiente trimestre para decidir",
-            "Sales o reduces: la tesis está rota aunque suba"
+            "Sales o reduces: tesis rota aunque suba"
           ],
           "a": 3,
           "why": "Fijaste la invalidación antes de comprar precisamente para no reinterpretarla después. Si te quedas, ya no operas tu tesis sino el precio, y sin criterio de salida.",
@@ -167,7 +167,7 @@
           "t": "choice",
           "q": "La tesis sigue intacta, pero el precio pierde tu stop técnico. ¿Qué haces?",
           "opts": [
-            "Ejecutas el stop: la tesis no te protege del precio",
+            "Ejecutas el stop: la tesis no es un seguro",
             "Bajas el stop para darle más margen a la tesis",
             "Compras más porque la tesis sigue viva",
             "Esperas a los próximos resultados sin hacer nada"

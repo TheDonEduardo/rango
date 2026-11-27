@@ -42,7 +42,7 @@
           "q": "¿Qué es un ETP de bitcoin?",
           "opts": [
             "Un producto cotizado que sigue su precio",
-            "Un monedero frío fabricado por un banco",
+            "Un monedero frío fabricado por un gran banco",
             "Una moneda nueva basada en bitcoin",
             "Un préstamo garantizado con bitcoin"
           ],
@@ -62,7 +62,7 @@
           "q": "¿Qué ventaja tiene un ETP de bitcoin frente a comprar bitcoin directamente?",
           "opts": [
             "No gestionas claves ni plataformas cripto",
-            "Rinde siempre más que el propio bitcoin",
+            "Rinde siempre más que comprar el propio bitcoin",
             "No tiene ningún riesgo de caída",
             "No tiene ninguna comisión anual"
           ],
@@ -153,7 +153,7 @@
           "q": "¿Qué compruebas en un ETP de cripto antes de comprarlo?",
           "opts": [
             "Que tenga cripto real detrás y quién la custodia",
-            "Que el precio de cada participación sea bajo",
+            "Que el precio de cada participación sea bajo en euros",
             "Que su logotipo se parezca al de Bitcoin",
             "Que tenga muchos seguidores en las redes"
           ],

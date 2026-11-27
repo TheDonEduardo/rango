@@ -59,7 +59,7 @@
           "t": "choice",
           "q": "¿Cuándo es buen momento para renegociar un seguro?",
           "opts": [
-            "Antes de la renovación, con otras ofertas en la mano",
+            "Antes de la renovación, con otras ofertas",
             "El día después de que te lo hayan renovado",
             "Nunca: el precio de un seguro no se negocia",
             "Solo si has tenido un accidente ese año"
@@ -121,7 +121,7 @@
           "t": "choice",
           "q": "Una tienda ofrece «paga en 3 plazos sin intereses». ¿Qué compruebas?",
           "opts": [
-            "Comisiones, recargos por retraso y si lo necesitas",
+            "Comisiones, recargos y si lo necesitas",
             "Solo que no haya intereses en el anuncio",
             "Que el plazo sea lo más largo posible",
             "Que la tienda tenga buenas opiniones"

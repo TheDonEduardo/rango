@@ -113,7 +113,7 @@
           "t": "choice",
           "q": "Pones toda tu cartera en la empresa en la que trabajas. ¿Qué riesgo corres?",
           "opts": [
-            "Si va mal, pierdes el sueldo y el ahorro a la vez",
+            "Si va mal, pierdes sueldo y ahorro a la vez",
             "Ninguno: conoces la empresa mejor que nadie",
             "Que su acción no reparta dividendos ese año",
             "Pagar más comisiones que con otros valores"

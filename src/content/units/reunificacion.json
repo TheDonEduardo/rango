@@ -108,7 +108,7 @@
           "opts": [
             "Solo la cuota mensual, porque es lo que sale de tu cuenta cada mes",
             "Solo el tipo de interés, sin sumar comisiones ni gastos",
-            "El total que pagarás con comisiones y gastos, frente a lo que pagas hoy",
+            "El total con comisiones y gastos, frente a lo que pagas hoy",
             "Que la oferta caduque pronto, porque así decides sin dudar"
           ],
           "a": 2,
@@ -172,7 +172,7 @@
           "q": "¿Cuándo tiene más sentido reunificar deudas?",
           "opts": [
             "Cuando el nuevo tipo es más alto, pero tendrás un solo recibo",
-            "Cuando el tipo baja mucho, el plazo casi no se alarga y dejas de usar las tarjetas",
+            "Si baja mucho el tipo, el plazo casi no crece y dejas las tarjetas",
             "Cuando así liberas las tarjetas y puedes volver a gastar con ellas",
             "Cuando la comisión de apertura es mayor que lo que ahorras en intereses"
           ],

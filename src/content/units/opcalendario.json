@@ -50,7 +50,7 @@
           "q": "¿Por qué la call a 30 días pierde valor más deprisa que la de 90 días?",
           "opts": [
             "Porque tiene un ejercicio distinto",
-            "Porque es una put y la otra una call",
+            "Porque la corta es una put y la larga una call",
             "La theta se acelera cerca del vencimiento",
             "Porque la de 90 días no tiene theta"
           ],
@@ -90,7 +90,7 @@
             "Que el precio se quede cerca del ejercicio",
             "Una subida muy fuerte de la acción",
             "Una caída muy fuerte de la acción",
-            "Que la volatilidad implícita se hunda"
+            "Que la volatilidad implícita caiga a la vez en las dos calls"
           ],
           "a": 0,
           "why": "Con el precio en el ejercicio, la opción vendida vence sin valor y la comprada conserva la mayor parte de su valor temporal.",

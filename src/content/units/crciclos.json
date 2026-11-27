@@ -81,7 +81,7 @@
             "Hay pocos ciclos y cada uno fue distinto",
             "Porque los ciclos están prohibidos",
             "Porque bitcoin ya no tiene halving",
-            "Porque los ciclos siempre son iguales"
+            "Porque el precio ya no depende de ningún ciclo"
           ],
           "a": 0,
           "why": "Con tan pocos ejemplos, cualquier patrón puede ser casualidad. Además, cuando muchos esperan el mismo ciclo, el mercado se adelanta.",
@@ -90,7 +90,7 @@
             null,
             "No están prohibidos: simplemente no son una ley.",
             "El halving sigue existiendo cada unos cuatro años.",
-            "Han sido distintos en duración y tamaño."
+            "Los ciclos existen, pero han sido distintos en duración y tamaño."
           ]
         },
         {
@@ -182,7 +182,7 @@
           "opts": [
             "Un peso máximo y rebalancear con reglas",
             "Mirar el precio cada hora del día",
-            "Seguir a los influencers del sector",
+            "Seguir a los influencers del sector cada día",
             "Usar un apalancamiento moderado"
           ],
           "a": 0,

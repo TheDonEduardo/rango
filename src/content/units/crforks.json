@@ -103,7 +103,7 @@
           "t": "choice",
           "q": "Tienes tus monedas en una plataforma cuando la cadena se divide. ¿De qué depende que recibas las de la cadena nueva?",
           "opts": [
-            "De que la propia red las reparta a todas las cuentas",
+            "De que la propia red las reparta automáticamente a todas las cuentas",
             "De que pidas la moneda nueva en un monedero propio",
             "De que vendas tus monedas antes de la fecha",
             "De que la plataforma decida acreditarlas, según sus condiciones"

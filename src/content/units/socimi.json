@@ -73,7 +73,7 @@
             "Porque los inmuebles en alquiler no generan ningún beneficio contable en la cuenta de resultados",
             "Porque estas empresas no pueden calcular un beneficio por acción con las normas contables",
             "Porque el PER solo se puede aplicar a empresas que no tienen ninguna deuda financiera",
-            "Porque el neto incluye partidas sin caja (amortizaciones o revalorizaciones) y plusvalías puntuales"
+            "Porque el neto incluye partidas sin caja (amortizaciones, revalorizaciones) y plusvalías"
           ],
           "a": 3,
           "why": "El beneficio neto incluye partidas sin caja (amortizaciones o revalorizaciones) y plusvalías de ventas, que no se repiten. El FFO las corrige.",
@@ -271,7 +271,7 @@
           "opts": [
             "Que su precio subirá hasta igualar el NAV, porque el descuento siempre se corrige",
             "Que tiene un 20 % más de deuda que de inmuebles",
-            "Que el mercado valora sus inmuebles por debajo de la tasación; no implica que vaya a subir",
+            "Que el mercado ve sus inmuebles por debajo de la tasación, sin garantía de subida",
             "Que la empresa pierde un 20 % de su beneficio cada año"
           ],
           "a": 2,
@@ -385,7 +385,7 @@
           "t": "choice",
           "q": "El dividendo de una inmobiliaria cotizada supone el 115 % de su AFFO. ¿Qué implica?",
           "opts": [
-            "Que paga más de lo que genera y lo cubre con deuda, ventas o caja acumulada",
+            "Que paga más de lo que genera y lo cubre con deuda, ventas o caja previa",
             "Que el dividendo es seguro, porque supera la caja generada",
             "Que el beneficio neto debe ser mayor, porque el dividendo supera al AFFO",
             "Nada: el dividendo se compara con el NAV, no con el AFFO"

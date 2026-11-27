@@ -44,7 +44,7 @@
             "Sí: es una permuta y se calcula la ganancia",
             "No: solo tributa cuando pasas a euros",
             "Solo si el cambio supera los 1.000 €",
-            "No: entre criptomonedas no hay impuestos"
+            "No: entre criptomonedas no hay ningún impuesto"
           ],
           "a": 0,
           "why": "Cambiar una criptomoneda por otra es una permuta: la ganancia o la pérdida se calcula ese día y se declara en la base del ahorro, aunque no veas un euro.",
@@ -134,7 +134,7 @@
           "opts": [
             "Como rendimiento del capital mobiliario al recibirlas",
             "No tributan hasta que vendas la moneda principal",
-            "Como rendimiento del trabajo, igual que un sueldo",
+            "Como rendimiento del trabajo, igual que un sueldo normal",
             "Están exentas si son menos de 1.000 € al año"
           ],
           "a": 0,
@@ -173,7 +173,7 @@
             "Con más de 50.000 € en plataformas extranjeras",
             "Siempre que compres cualquier criptomoneda",
             "Solo si vendes con ganancias en el año",
-            "Cada trimestre en que hagas alguna operación"
+            "Cada trimestre en que hagas alguna operación nueva"
           ],
           "a": 0,
           "why": "Es una declaración informativa, sin pago, para quien tiene más de 50.000 € en criptomonedas custodiadas en el extranjero a 31 de diciembre. No presentarla se sanciona.",
@@ -191,7 +191,7 @@
           "q": "Una plataforma extranjera no te da ningún informe fiscal. ¿Qué haces?",
           "opts": [
             "Guardar tú el registro de cada operación",
-            "Declarar solo lo que pasaste a tu banco",
+            "Declarar solo lo que pasaste a tu banco en euros",
             "No declarar nada: Hacienda no lo sabe",
             "Esperar a que la plataforma lo envíe"
           ],

@@ -96,7 +96,7 @@
           "q": "Recibe pedidos por 1.100 M$ y factura 1.000 M$ en el trimestre (book-to-bill de 1,1). ¿Qué indica?",
           "opts": [
             "Que la empresa pierde clientes",
-            "Entran más pedidos de los que factura",
+            "Los pedidos superan lo que factura",
             "Que las ventas caerán con seguridad",
             "Nada sobre su demanda"
           ],
@@ -142,7 +142,7 @@
           "q": "¿Cuándo suelen tocar fondo las acciones de chips en un ciclo bajista?",
           "opts": [
             "Cuando los beneficios marcan récord",
-            "Con beneficios cayendo e inventario bajando",
+            "Con beneficio cayendo y menos inventario",
             "Cuando todos los analistas son optimistas",
             "Cuando los pedidos están en máximos"
           ],

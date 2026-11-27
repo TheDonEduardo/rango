@@ -135,7 +135,7 @@
           "t": "choice",
           "q": "Al salir, el casero quiere quedarse la fianza porque la pintura está algo gastada tras tres años. ¿Puede?",
           "opts": [
-            "No: el desgaste normal por el uso no se descuenta",
+            "No: el desgaste normal no se descuenta",
             "Sí: la fianza es suya al terminar",
             "Sí: puede quedársela sin explicar por qué",
             "No: la fianza nunca se puede descontar"

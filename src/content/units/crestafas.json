@@ -61,7 +61,7 @@
           "q": "Una web idéntica a tu plataforma te pide la frase semilla para «verificar» tu cuenta. ¿Qué haces?",
           "opts": [
             "No darla nunca: ninguna plataforma la pide",
-            "Darla solo si la web tiene candado",
+            "Darla solo si la web muestra un candado en la barra",
             "Darla si el correo parece oficial",
             "Darla y cambiar la contraseña después"
           ],
@@ -81,7 +81,7 @@
           "q": "Un proyecto nuevo sube un 500 % en una semana y sus creadores lo venden todo de golpe. ¿Cómo se llama?",
           "opts": [
             "Un rug pull: los creadores se llevan el dinero",
-            "Un halving programado de la moneda nueva",
+            "Un halving programado de la moneda nueva del proyecto",
             "Una recompensa de staking a los fundadores",
             "La pérdida de paridad de una moneda estable"
           ],
@@ -143,7 +143,7 @@
           "q": "¿Qué es una estafa de «pump and dump»?",
           "opts": [
             "Inflar una moneda pequeña y vender a quien llega",
-            "Una moneda que pierde su paridad con el dólar",
+            "Una moneda estable que pierde su paridad con el dólar",
             "Un fallo de código en un contrato inteligente",
             "Un robo de claves mediante una web falsa"
           ],
@@ -172,7 +172,7 @@
           "q": "Te han robado cripto con una web falsa. ¿Qué haces primero?",
           "opts": [
             "Denunciar y avisar a la plataforma de destino, si la hay",
-            "Pagar a quien promete recuperarlo por una comisión",
+            "Pagar a quien promete recuperarlo a cambio de una comisión",
             "Enviar más fondos para «desbloquear» los anteriores",
             "Borrarlo todo para no dejar ningún rastro"
           ],

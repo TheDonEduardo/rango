@@ -41,7 +41,7 @@
           "t": "choice",
           "q": "Para vivir de la cartera, ¿mejor cobrar dividendos o vender participaciones?",
           "opts": [
-            "Da igual en lo económico: importan el total y los impuestos",
+            "Da igual en lo económico: importan total e impuestos",
             "Los dividendos son dinero gratis que no reduce la cartera",
             "Vender participaciones siempre destruye la cartera",
             "Solo los dividendos son una renta de verdad"
@@ -116,7 +116,7 @@
           "q": "¿Qué es la estrategia de cubos para la jubilación?",
           "opts": [
             "Dos años de gastos en liquidez y el resto invertido",
-            "Invertirlo todo en bolsa y vender cuando suba",
+            "Invertirlo todo en bolsa y vender cuando suba mucho",
             "Tenerlo todo en depósitos por seguridad",
             "Retirar solo cuando la bolsa marque máximos"
           ],

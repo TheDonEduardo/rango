@@ -96,7 +96,7 @@
           "t": "choice",
           "q": "¿De dónde sale la regla del 4 %?",
           "opts": [
-            "De datos históricos de EE. UU. a 30 años",
+            "De la historia de EE. UU. a 30 años",
             "De una ley española de pensiones",
             "De lo que garantizan los bonos",
             "De la media de los fondos de pensiones"
@@ -173,10 +173,10 @@
           "t": "choice",
           "q": "¿Qué ayuda a reducir el riesgo de secuencia?",
           "opts": [
-            "Pasar toda la cartera a acciones",
+            "Pasar toda la cartera a acciones de crecimiento",
             "Tener 1-2 años de gastos en liquidez",
             "Retirar más en los años malos",
-            "Concentrar la cartera en un sector"
+            "Concentrar la cartera en el sector que mejor va"
           ],
           "a": 1,
           "why": "Con un colchón en liquidez puedes no vender acciones en los años malos y reponerlo en los buenos. Retirar algo menos tras una caída también ayuda.",

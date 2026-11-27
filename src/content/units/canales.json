@@ -483,7 +483,7 @@
           "q": "Una línea de tendencia alcista sube 2 € por sesión en un valor de 40 €. ¿Qué es lo más probable?",
           "opts": [
             "Que sea la más fiable, porque sube más rápido",
-            "Que se rompa pronto y haya que trazar otra línea",
+            "Que se rompa pronto y haya que trazar otra",
             "Que el precio nunca llegue a romperla",
             "Que el canal sea el doble de ancho"
           ],

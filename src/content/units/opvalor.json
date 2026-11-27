@@ -113,7 +113,7 @@
             "Baja, y cada vez más deprisa al acercarse el fin",
             "Se mantiene hasta el día del vencimiento",
             "Sube, porque queda menos tiempo de espera",
-            "Baja lo mismo cada día hasta llegar a cero"
+            "Baja lo mismo cada día hasta llegar a cero al vencer"
           ],
           "a": 0,
           "why": "El valor temporal se pierde poco a poco al principio y muy deprisa en las últimas semanas. Si compras una opción, el tiempo juega en tu contra.",

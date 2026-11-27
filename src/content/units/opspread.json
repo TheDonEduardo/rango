@@ -65,7 +65,7 @@
           "q": "¿Qué es un spread vertical alcista con calls?",
           "opts": [
             "Comprar una call y vender otra de ejercicio más alto",
-            "Comprar dos calls del mismo precio de ejercicio",
+            "Comprar dos calls del mismo precio de ejercicio y plazo",
             "Vender una call y comprar las acciones a la vez",
             "Comprar una call y una put del mismo ejercicio"
           ],
@@ -148,7 +148,7 @@
           "q": "Vendes la put de 50 $ y compras la de 45 $ por 0,80 $ en un spread de crédito. ¿Para qué sirve la put de 45 $?",
           "opts": [
             "Limita la pérdida si la acción se hunde",
-            "Aumenta la prima que cobras al abrirlo",
+            "Aumenta la prima que cobras al abrir la posición",
             "Te da derecho a cobrar los dividendos",
             "Evita que te ejerzan la put vendida"
           ],

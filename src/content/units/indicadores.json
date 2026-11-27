@@ -71,7 +71,7 @@
           "opts": [
             "Vender: la sobrecompra anuncia el techo",
             "Venderla en corto de inmediato",
-            "Nada por eso solo: puede seguir alto semanas",
+            "Nada por sí solo: puede seguir alto",
             "Comprar más: cuanto más alto, mejor"
           ],
           "a": 2,
@@ -89,7 +89,7 @@
           "t": "choice",
           "q": "El precio marca un nuevo máximo, pero el RSI se queda por debajo de su máximo anterior. ¿Cómo lo usas?",
           "opts": [
-            "Aviso de pérdida de fuerza: sube los stops",
+            "Pierde fuerza: conviene subir los stops",
             "Señal de venta inmediata de todo",
             "Señal de compra: el RSI tiene recorrido",
             "No significa nada en ningún caso"
@@ -194,7 +194,7 @@
           "t": "choice",
           "q": "Las bandas de Bollinger se estrechan hasta su mínimo de seis meses. ¿Qué indica?",
           "opts": [
-            "La tendencia se ha agotado: toca vender",
+            "La tendencia se ha agotado: toca vender antes de la próxima caída",
             "Volatilidad muy baja: suele llegar un movimiento",
             "Una señal de compra garantizada",
             "Un fallo en el cálculo del indicador"
@@ -225,7 +225,7 @@
           "opts": [
             "La única señal de entrada y de salida",
             "Usar diez a la vez para confirmar",
-            "Un filtro, después de tendencia y riesgo",
+            "Un filtro, tras tendencia y riesgo",
             "Solo sirven en gráficos de un minuto"
           ],
           "a": 2,

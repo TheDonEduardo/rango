@@ -115,7 +115,7 @@
           "q": "La acción A rinde un 8 % por dividendo y no lo sube. La B rinde un 3 % y lo sube un 10 % al año. A 15 años, ¿cuál paga más sobre tu coste?",
           "opts": [
             "La A, porque empieza más alta",
-            "La B, por el crecimiento compuesto",
+            "La B: crece de forma compuesta",
             "Las dos pagan igual siempre",
             "No se puede saber con estos datos"
           ],

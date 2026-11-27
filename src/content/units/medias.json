@@ -60,7 +60,7 @@
           "q": "Una acción sube con su media de 50 sesiones ascendente y retrocede hasta tocarla con volumen bajo. ¿Cómo se lee según el método?",
           "opts": [
             "Como un soporte garantizado: el precio no puede cerrar por debajo",
-            "Como una zona donde pueden aparecer compradores: se vigila si rebota, sin darlo por hecho",
+            "Como una zona donde pueden entrar compradores, sin darlo por hecho",
             "Como el final de la tendencia, porque un precio sano nunca toca su media",
             "Como una orden de venta inmediata, porque el precio ha bajado"
           ],
@@ -105,7 +105,7 @@
             "Que la media sigue siendo un soporte válido, porque lo fue otras veces",
             "Que el rebote del día siguiente es seguro",
             "Que la media está mal calculada",
-            "Que la media puede dejar de funcionar como soporte: toca revisar el stop y la tendencia"
+            "Que la media puede dejar de ser soporte: revisa stop y tendencia"
           ],
           "a": 3,
           "why": "Un cierre claro bajo la media con volumen la invalida como soporte. Que lo fuera antes no garantiza que lo siga siendo.",
@@ -160,7 +160,7 @@
           "q": "En un rango lateral entre 48,00 € y 52,00 €, el precio cruza una y otra vez su media de 20 sesiones, que está plana. ¿Qué significan esos cruces?",
           "opts": [
             "Cada cruce es una señal fiable de nueva tendencia",
-            "Ruido: con la media plana, los cruces dan muchas señales falsas",
+            "Ruido: con la media plana, los cruces dan señales falsas",
             "Que el volumen va a subir seguro en los próximos días",
             "Que la media está mal calculada y hay que cambiarla por otra"
           ],

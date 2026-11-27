@@ -265,7 +265,7 @@
           "q": "La empresa bate en un 15 % el BPA esperado del trimestre, pero rebaja su previsión para el año. ¿Qué pesa más en el precio?",
           "opts": [
             "La sorpresa positiva del trimestre",
-            "La rebaja de las previsiones del año",
+            "La rebaja de previsiones del año",
             "Ninguna: se compensan entre sí",
             "El volumen de la sesión"
           ],

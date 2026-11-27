@@ -40,7 +40,7 @@
           "t": "choice",
           "q": "¿Qué es la prima de una OPA?",
           "opts": [
-            "Lo que se paga por encima del precio de mercado",
+            "Lo pagado por encima del precio de mercado",
             "La comisión del banco que asesora la compra",
             "El dividendo extra que paga la compradora",
             "La caída de la acción compradora ese día"
@@ -90,7 +90,7 @@
           "t": "choice",
           "q": "Si la compradora paga con acciones nuevas, ¿qué les pasa a sus accionistas?",
           "opts": [
-            "Se diluyen: el negocio se reparte entre más acciones",
+            "Se diluyen: toca menos negocio por acción",
             "Cobran un dividendo especial por la compra",
             "No les afecta: solo cambia la empresa comprada",
             "Reciben acciones gratis de la empresa comprada"
@@ -165,7 +165,7 @@
           "t": "choice",
           "q": "Una empresa compra otras cada año y su BPA sube, pero su flujo de caja libre por acción no. ¿Cómo lo lees?",
           "opts": [
-            "Desconfiar: el crecimiento puede ser solo comprado",
+            "Desconfiar: puede ser crecimiento comprado",
             "Buena señal: el BPA es lo único que cuenta",
             "Señal de que pronto pagará más dividendos",
             "Es imposible: BPA y caja siempre van juntos"

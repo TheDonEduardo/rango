@@ -205,7 +205,7 @@
             "La distancia al stop que tienes puesto",
             "Dos veces el ATR(14) del valor",
             "El 1 % del precio de entrada",
-            "La caída plausible si el evento sale mal"
+            "La caída posible si el evento sale mal"
           ],
           "a": 3,
           "why": "El precio puede abrir muy por debajo del stop, así que la pérdida real la fija el gap, no la orden. Dimensiona como si el stop no existiera.",

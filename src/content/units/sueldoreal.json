@@ -132,7 +132,7 @@
           "t": "choice",
           "q": "Tienes una hipoteca a tipo fijo y llega una etapa de inflación alta. ¿Qué pasa con el peso real de la deuda?",
           "opts": [
-            "Baja: la cuota fija vale menos en términos reales",
+            "Baja: la cuota fija pesa menos",
             "Sube: la cuota aumenta con los precios",
             "No cambia: la deuda es exactamente la misma",
             "Sube porque el banco revisa el tipo fijo"

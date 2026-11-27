@@ -91,7 +91,7 @@
           "q": "Te llega un SMS: «Tu cuenta se bloqueará en 2 horas. Entra aquí y confirma tu contraseña». ¿Qué haces?",
           "opts": [
             "Pulsas el enlace, pero no escribes la contraseña",
-            "No pulsas: entras tú con la app oficial o la dirección",
+            "No pulsas: entras tú con la app oficial",
             "Pulsas el enlace: si es urgente, es de fiar",
             "Respondes con tu contraseña para evitar el bloqueo"
           ],

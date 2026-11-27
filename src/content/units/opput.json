@@ -71,7 +71,7 @@
             "La obligación de comprar al ejercicio si te ejercen",
             "El derecho a vender tus acciones al ejercicio",
             "La obligación de vender al ejercicio si sube",
-            "El derecho a comprar más barato si la acción cae"
+            "El derecho a comprar más barato si la acción cae mucho"
           ],
           "a": 0,
           "why": "Quien vende una put cobra la prima y queda obligado a comprar las acciones al precio de ejercicio si el comprador decide ejercer, cosa que hará si la acción cae por debajo.",
@@ -175,7 +175,7 @@
           "opts": [
             "Las que querrías tener en cartera a ese precio",
             "Las que pagan la prima más alta del mercado",
-            "Las que esperas que caigan con fuerza pronto",
+            "Las que esperas que caigan con fuerza muy pronto",
             "Las que publican resultados esa misma semana"
           ],
           "a": 0,

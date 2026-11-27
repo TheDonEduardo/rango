@@ -73,7 +73,7 @@
           "opts": [
             "Abrir la app cada hora y vender si el precio baja más de un 1 %, para no perder dinero",
             "Mirar solo la cotización y no leer nunca el extracto, porque la comisión no se ve en él",
-            "Comprobar la orden ejecutada y leer el extracto a fin de mes, sin vigilar el precio a diario",
+            "Comprobar la orden ejecutada y leer el extracto a fin de mes",
             "Cambiar de acción cada semana, para que la compra del primer mes no acabe en rojo"
           ],
           "a": 2,
@@ -137,7 +137,7 @@
           "q": "Compras una acción y, un minuto después, tu posición aparece en rojo aunque el precio de mercado no se ha movido. ¿Cuál es la causa más probable?",
           "opts": [
             "El bróker cobra una comisión por cada minuto que la posición está abierta",
-            "Pagaste una comisión y la horquilla: compras algo más caro de lo que te darían por venderla",
+            "Comisión y horquilla: pagas más de lo que te darían por vender",
             "La bolsa corrige siempre a la baja justo después de cada compra pequeña",
             "Tu orden se ha ejecutado dos veces por error y el extracto lo corregirá solo"
           ],

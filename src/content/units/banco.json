@@ -43,7 +43,7 @@
           "opts": [
             "Tener la cuenta abierta desde hace más de un año",
             "Sacar siempre el dinero en ventanilla, en efectivo",
-            "Domiciliar la nómina y recibos, si la entidad lo exige",
+            "Domiciliar la nómina y los recibos",
             "Que el Banco de España fije una comisión única"
           ],
           "a": 2,
@@ -82,7 +82,7 @@
             "Como un regalo del banco hasta fin de mes",
             "Como un ahorro que rinde un interés alto",
             "Como un depósito cubierto por el fondo de garantía",
-            "Como un préstamo muy caro, con intereses por cada día en rojo"
+            "Como un préstamo caro, con intereses diarios"
           ],
           "a": 3,
           "why": "Gastar más de lo que hay es pedir dinero prestado, y los intereses del descubierto son de los más altos. Si te falta liquidez, suele salir mejor un préstamo pactado o ajustar gastos.",
@@ -132,7 +132,7 @@
           "q": "¿Qué cifra usas para comparar dos cuentas remuneradas?",
           "opts": [
             "El TIN, porque ya incluye todas las comisiones",
-            "La TAE, que incluye comisiones y la frecuencia de pago",
+            "La TAE, que incluye las comisiones",
             "Los años que lleva abierta la entidad",
             "El número de oficinas de la entidad"
           ],
@@ -179,7 +179,7 @@
           "t": "choice",
           "q": "Tienes 120.000 € en cuentas de un solo banco. ¿Qué hace que todo ese dinero esté cubierto por el fondo de garantía?",
           "opts": [
-            "Repartirlo entre entidades distintas, cada una con su límite",
+            "Repartirlo entre varias entidades",
             "Abrir una segunda cuenta a tu nombre en el mismo banco",
             "Pasarlo a un fondo de inversión del mismo banco",
             "Nada: el fondo cubre todo si el banco quiebra"

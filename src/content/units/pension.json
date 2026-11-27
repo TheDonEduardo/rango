@@ -153,7 +153,7 @@
           "t": "choice",
           "q": "Has tenido varios años sin cotizar. ¿Cómo afecta a tu pensión?",
           "opts": [
-            "La reduce: bajan los años y las bases que cuentan",
+            "La reduce: cuentan menos años cotizados",
             "No afecta: solo importa el último sueldo",
             "La aumenta, porque se cuentan menos años",
             "Impide para siempre cobrar una pensión"

@@ -89,7 +89,7 @@
           "t": "choice",
           "q": "¿Qué dibuja una taza con asa?",
           "opts": [
-            "Dos mínimos iguales separados por un rebote",
+            "Dos mínimos iguales separados por un rebote de cierta altura",
             "Caída redondeada, recuperación y un retroceso corto",
             "Un rango estrecho tras una subida fuerte",
             "Tres máximos con el central más alto"
@@ -202,7 +202,7 @@
           "opts": [
             "En el segundo mínimo de la W",
             "En el primer mínimo de la W",
-            "Al superar el máximo intermedio de la W",
+            "Sobre el máximo central de la W",
             "En el máximo anterior a la caída"
           ],
           "a": 2,

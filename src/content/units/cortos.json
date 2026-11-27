@@ -97,7 +97,7 @@
           "q": "¿Cuál es la pérdida máxima teórica de un corto?",
           "opts": [
             "Lo invertido, como en una compra",
-            "Ilimitada: el precio no tiene techo",
+            "Ilimitada, porque no hay techo",
             "La mitad del precio de venta",
             "Ninguna, si el bróker lo cubre"
           ],
@@ -128,7 +128,7 @@
             "No afecta en nada a la posición en corto",
             "Lo cobras tú, como si fueras accionista",
             "Lo paga el bróker en tu nombre",
-            "Lo pagas tú a quien te prestó las acciones"
+            "Lo pagas tú a quien te las prestó"
           ],
           "a": 3,
           "why": "Has vendido acciones prestadas, y su dueño tiene derecho al dividendo: lo pagas tú. Súmale lo que cuesta el préstamo de las acciones mientras dure el corto.",

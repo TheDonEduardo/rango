@@ -93,7 +93,7 @@
             "Te asignan y compras 100 acciones a 50 $",
             "Vence sin valor: te quedas la prima y no compras nada",
             "Pierdes la prima, porque la acción ha subido",
-            "Compras las acciones a 53 $, el precio de mercado"
+            "Compras las acciones a 53 $, el precio de mercado actual"
           ],
           "a": 1,
           "why": "Con la acción a 53 $, nadie ejerce una put de 50 $: la prima cobrada es tuya y puedes vender otra put.",

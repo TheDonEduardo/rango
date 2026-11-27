@@ -177,7 +177,7 @@
           "t": "choice",
           "q": "¿Cuál es el punto de compra clave según Weinstein?",
           "opts": [
-            "Ruptura de la base con volumen, al entrar en Fase 2",
+            "Ruptura de la base con volumen, en Fase 2",
             "Un rebote a mitad de la Fase 4 bajista",
             "Cualquier retroceso durante la Fase 3",
             "El mínimo de la Fase 4, sin esperar confirmación"
@@ -280,7 +280,7 @@
           "q": "¿Qué orden de medias exige una tendencia sana?",
           "opts": [
             "200 > 150 > 50 > precio",
-            "Precio > 50 > 150 > 200, con la de 200 al alza",
+            "Precio > 50 > 150 > 200, 200 al alza",
             "Precio < 50 < 150, con la de 200 a la baja",
             "50 < 200 < 150, con la de 200 plana"
           ],

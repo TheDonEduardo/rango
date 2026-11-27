@@ -168,7 +168,7 @@
           "q": "¿Qué mide la vega de una opción?",
           "opts": [
             "Cuánto cambia su precio si sube la volatilidad implícita",
-            "Cuánto pierde cada día por el paso del tiempo",
+            "Cuánto valor pierde cada día únicamente por el paso del tiempo",
             "Cuánto cambia su precio si la acción sube 1 $",
             "Cuánto cambia su delta si la acción sube 1 $"
           ],

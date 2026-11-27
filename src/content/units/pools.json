@@ -81,7 +81,7 @@
           "opts": [
             "La cantidad de la primera moneda en el pool",
             "El precio de la moneda en dólares",
-            "La suma de las dos cantidades del pool",
+            "La suma de las dos cantidades que hay en el pool",
             "El producto de las dos cantidades (x · y = k)"
           ],
           "a": 3,

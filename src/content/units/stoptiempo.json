@@ -40,7 +40,7 @@
           "t": "choice",
           "q": "¿Qué hace un stop por tiempo?",
           "opts": [
-            "Cierra la operación si no ha avanzado lo exigido en un número fijo de sesiones",
+            "Cierra si no avanza lo exigido en un número fijo de sesiones",
             "Sube el stop de precio un poco cada sesión hasta que el precio lo toca",
             "Impide abrir operaciones nuevas durante un número fijo de sesiones",
             "Cierra todas las operaciones abiertas cuando termina cada semana"
@@ -178,7 +178,7 @@
           "opts": [
             "Cerrar ya, porque todavía no ha llegado a +1R y el tiempo corre",
             "Subir el objetivo para compensar la falta de avance de la operación",
-            "Mantener: aún no han pasado las 10 sesiones ni se ha tocado ningún nivel",
+            "Mantener: faltan sesiones y no ha saltado ningún nivel",
             "Bajar el stop para darle más margen a la operación y que respire"
           ],
           "a": 2,

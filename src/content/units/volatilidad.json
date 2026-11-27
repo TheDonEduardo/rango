@@ -125,7 +125,7 @@
           "q": "¿Por qué fallan más rupturas cuando el mercado está nervioso?",
           "opts": [
             "Porque las bases solo se forman cuando el mercado está en calma",
-            "Las oscilaciones grandes devuelven el precio a la base y saltan stops cercanos",
+            "Las oscilaciones grandes devuelven el precio a la base y saltan stops",
             "Porque el volumen sube tanto que impide cualquier ruptura",
             "Porque en mercados nerviosos las acciones dejan de tener resistencias"
           ],

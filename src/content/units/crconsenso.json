@@ -104,9 +104,9 @@
           "t": "choice",
           "q": "¿Por qué atacar una red de prueba de participación puede salir caro aunque se logre comprar la mayoría de las monedas?",
           "opts": [
-            "Porque las monedas depositadas no se pueden comprar en ninguna plataforma",
-            "Porque comprar tantas monedas sube su precio y, si se detecta el ataque, el depósito puede perderse",
-            "Porque los validadores honestos cobran el doble por cada bloque durante el ataque",
+            "Porque las monedas depositadas no se pueden comprar en ninguna plataforma de intercambio",
+            "Porque comprar tantas monedas sube su precio y, si se detecta, el depósito puede perderse",
+            "Porque los validadores honestos cobran el doble por cada bloque mientras dura todo el ataque",
             "Porque la red desactiva automáticamente las monedas de quien tenga más del 10 %"
           ],
           "a": 1,
@@ -134,7 +134,7 @@
             "Que los bloques dejen de tener recompensa",
             "Que podrían coordinarse y controlar la mayoría de la red",
             "Que la red pase sola a prueba de participación",
-            "Ninguno: un grupo de minería no puede coordinarse"
+            "Ninguno: un grupo de minería no puede coordinarse con otros grupos"
           ],
           "a": 1,
           "why": "Con más de la mitad de la potencia, dos grupos coordinados podrían falsear la cadena: la concentración es un riesgo.",
@@ -160,7 +160,7 @@
           "t": "choice",
           "q": "¿Qué afirmación sobre el consumo de energía de las dos pruebas es correcta?",
           "opts": [
-            "La prueba de participación consume tanta electricidad como la de trabajo",
+            "La prueba de participación consume tanta electricidad como la de trabajo, o incluso más",
             "La prueba de trabajo no consume energía: solo usa memoria",
             "El consumo de las redes de cadena de bloques no se puede medir",
             "La de trabajo se protege gastando energía y la de participación gasta mucho menos"

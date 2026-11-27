@@ -74,7 +74,7 @@
             "El derecho a comprar a un precio fijado hasta una fecha",
             "La obligación de comprar a un precio fijado",
             "El derecho a vender a un precio fijado hasta una fecha",
-            "Una parte de los dividendos hasta el vencimiento"
+            "Una parte de los dividendos de la empresa hasta el vencimiento"
           ],
           "a": 0,
           "why": "La call da el derecho, no la obligación, a comprar al precio de ejercicio hasta el vencimiento. Si no te conviene, no la ejerces y solo pierdes lo que pagaste.",

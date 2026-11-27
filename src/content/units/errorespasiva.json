@@ -40,7 +40,7 @@
           "t": "choice",
           "q": "Tienes 9 fondos indexados globales distintos. ¿Qué problema hay?",
           "opts": [
-            "Se solapan: casi todos tienen lo mismo",
+            "Se solapan: tienen casi lo mismo",
             "Estás muy bien diversificado así",
             "Pagas menos comisiones así",
             "Ninguno: más fondos, menos riesgo"
@@ -150,7 +150,7 @@
           "t": "choice",
           "q": "¿Qué protege mejor tu plan de tus propias emociones?",
           "opts": [
-            "Aportaciones automáticas y reglas escritas",
+            "Aportaciones automáticas y reglas fijas",
             "Revisar la cartera varias veces al día",
             "Seguir las noticias económicas a diario",
             "Cambiar de estrategia cada trimestre"

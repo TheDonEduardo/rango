@@ -42,7 +42,7 @@
           "q": "¿Qué intenta resolver Solana?",
           "opts": [
             "Muchas transacciones rápidas y casi gratis en una sola cadena",
-            "Un dinero escaso con una oferta fija de 21 millones",
+            "Un dinero escaso con una oferta fija de 21 millones de unidades",
             "Una red privada pensada para uso de los bancos",
             "Una moneda con precio estable frente al dólar"
           ],
@@ -107,7 +107,7 @@
           "opts": [
             "Un reloj que ordena las transacciones antes de validarlas",
             "Un límite al número total de monedas emitidas",
-            "Una copia de seguridad de las claves del usuario",
+            "Una copia de seguridad de las claves del usuario en la red",
             "Un seguro que cubre los fondos robados"
           ],
           "a": 0,
@@ -126,7 +126,7 @@
           "q": "¿Para qué usos encaja mejor una red rápida y con comisiones mínimas?",
           "opts": [
             "Pagos pequeños y aplicaciones con muchas operaciones",
-            "Guardar ahorros durante décadas sin moverlos",
+            "Guardar ahorros durante décadas sin moverlos de sitio",
             "Sustituir al notario en una compraventa",
             "Emitir deuda pública de un país"
           ],
@@ -154,7 +154,7 @@
           "opts": [
             "Seguridad, descentralización y capacidad compiten entre sí",
             "Toda red acaba teniendo tres monedas propias",
-            "Solo pueden existir tres grandes redes a la vez",
+            "Solo pueden existir tres grandes redes a la vez en el mundo",
             "Hacen falta tres claves para firmar cada envío"
           ],
           "a": 0,
@@ -173,7 +173,7 @@
           "q": "Validar en Solana exige ordenadores muy potentes. ¿Qué consecuencia tiene?",
           "opts": [
             "Menos gente puede validar: la red se concentra más",
-            "La red se vuelve más lenta con el tiempo",
+            "La red se vuelve mucho más lenta con el paso del tiempo",
             "Las comisiones se multiplican por diez",
             "Cualquier móvil puede ser validador"
           ],
@@ -193,7 +193,7 @@
           "q": "Solana ha sufrido varias interrupciones de red de horas de duración. ¿Qué riesgo ilustra?",
           "opts": [
             "El operativo: durante la parada no puedes mover tus fondos",
-            "El de inflación: se emiten monedas nuevas sin control",
+            "El de inflación: se emiten monedas nuevas sin ningún control",
             "El fiscal: Hacienda bloquea todas las operaciones",
             "El de divisa: el dólar pierde valor durante esos días"
           ],

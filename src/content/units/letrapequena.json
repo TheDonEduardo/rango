@@ -42,7 +42,7 @@
           "opts": [
             "Pre-ingresos: aún no vende nada y depende de permisos",
             "Crecimiento consolidado: márgenes positivos y estables",
-            "Escalado industrial temprano: ventas iniciales con margen bruto negativo",
+            "Escalado temprano: primeras ventas con margen bruto negativo",
             "Turnaround: negocio que fue rentable y ahora se reestructura"
           ],
           "a": 2,
@@ -103,7 +103,7 @@
             "Que sus compras no puedan contabilizarse como ingresos de la empresa",
             "Que el cliente quede obligado a seguir comprando aunque suba el precio",
             "Que la empresa deba repartir dividendos preferentes a ese cliente",
-            "Que sus pedidos dependan de la relación financiera, no de una demanda independiente"
+            "Que sus pedidos dependan del vínculo financiero y no de la demanda"
           ],
           "a": 3,
           "why": "Una parte vinculada puede comprar por su relación con la empresa, no por la demanda real del mercado. Si esa relación cambia, los pedidos pueden desaparecer.",
@@ -158,7 +158,7 @@
           "q": "Ordanis tiene abierto un programa ATM de 200 mill. $. ¿Cómo afecta a sus accionistas?",
           "opts": [
             "Recompra acciones en el mercado y reduce el número de acciones",
-            "Vende acciones nuevas en el mercado poco a poco: diluye de forma continua",
+            "Vende acciones nuevas en el mercado poco a poco y diluye",
             "Reparte warrants gratis a los accionistas, sin diluir a nadie",
             "Emite deuda a tipo fijo, así que el número de acciones no cambia"
           ],

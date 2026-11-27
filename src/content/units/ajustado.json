@@ -49,7 +49,7 @@
           "t": "choice",
           "q": "¿Cuál de estas partidas suele excluir una empresa del beneficio ajustado por considerarla no recurrente?",
           "opts": [
-            "Los costes de cerrar una fábrica y despedir a su plantilla",
+            "Cerrar una fábrica y despedir a la plantilla",
             "El coste de las materias primas que usa cada año",
             "Los sueldos de la plantilla fija",
             "Las ventas de su producto principal"
@@ -79,7 +79,7 @@
           "q": "El beneficio contable de una empresa incluye una plusvalía puntual por vender un edificio. ¿Por qué conviene quitarla para proyectar el beneficio futuro?",
           "opts": [
             "Porque las plusvalías no se cobran en dinero",
-            "Porque no se repetirá y proyectarla inflaría el beneficio esperado",
+            "Porque no se repetirá y inflaría el beneficio esperado",
             "Porque la ley obliga a excluirlas del beneficio contable",
             "Porque el beneficio ajustado siempre sale menor que el contable"
           ],
@@ -169,7 +169,7 @@
           "t": "choice",
           "q": "Una empresa excluye de su beneficio ajustado una «reestructuración extraordinaria» de importe parecido cuatro años seguidos. ¿Qué lectura es más razonable?",
           "opts": [
-            "Es un coste normal: lo restas para ver el beneficio que de verdad se repite",
+            "Es un coste normal: se resta para ver el beneficio que se repite",
             "Es extraordinaria por definición: lo correcto es ignorarla siempre",
             "Es una buena señal, porque demuestra que la empresa se reorganiza",
             "Prueba que el beneficio contable es el que está maquillado"
@@ -201,7 +201,7 @@
             "Porque se paga en efectivo al empleado un año después",
             "Porque la ley obliga a contarlo siempre en el beneficio ajustado",
             "Porque reduce el número de acciones en circulación",
-            "Porque se paga con más acciones y diluye a los accionistas actuales"
+            "Porque se paga con más acciones y diluye a los accionistas"
           ],
           "a": 3,
           "why": "No sale de caja, pero entrega acciones nuevas: cada accionista pasa a tener una parte menor de la empresa.",

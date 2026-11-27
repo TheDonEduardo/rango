@@ -42,7 +42,7 @@
           "t": "choice",
           "q": "¿Qué es el KID de un fondo o ETF?",
           "opts": [
-            "Un documento breve con riesgo, costes y objetivo",
+            "Una ficha breve de riesgo y costes",
             "El contrato que firmas con el banco",
             "La lista de todas las acciones del fondo",
             "El informe anual de la gestora"
@@ -100,7 +100,7 @@
           "t": "choice",
           "q": "¿Qué son los escenarios de rentabilidad del KID?",
           "opts": [
-            "Estimaciones de lo que podría pasar, no promesas",
+            "Estimaciones de lo que podría pasar",
             "La rentabilidad garantizada por la gestora",
             "Lo que ganó el fondo el año pasado",
             "Solo aparecen en los fondos sin riesgo"

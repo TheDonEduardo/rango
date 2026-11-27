@@ -49,7 +49,7 @@
           "t": "choice",
           "q": "Una acción tiene el 25 % de su float vendido en corto. ¿Cómo lo interpretas?",
           "opts": [
-            "Hay mucho escepticismo, pero no es una señal de compra ni de caída segura",
+            "Hay escepticismo, pero ni es señal de compra ni de caída",
             "Que va a subir: los cortos tendrán que recomprar y la impulsarán",
             "Que va a quebrar: los cortos siempre acaban acertando",
             "Que no puede caer más: ya hay demasiados cortos para que baje"
@@ -91,7 +91,7 @@
             "En A: el porcentaje del float es más alto, y eso decide",
             "En ambos igual: solo importa el número de acciones vendidas",
             "En ninguno: el interés en corto no afecta a la recompra",
-            "En B: aunque tiene menos porcentaje, necesitaría 12 días de volumen"
+            "En B: menos porcentaje, pero necesitaría 12 días de volumen"
           ],
           "a": 3,
           "why": "Los días para cubrir miden la dificultad de salir: B necesita 12 sesiones de volumen; A, solo 1,5. El porcentaje solo no basta.",
@@ -116,7 +116,7 @@
           "q": "Una acción con mucho interés en corto sube un 30 % en tres sesiones tras una noticia. ¿Por qué puede seguir subiendo?",
           "opts": [
             "Los cortos cobran el dividendo de las acciones que recompran",
-            "Los cortos recompran para cortar pérdidas y esas compras empujan el precio",
+            "Los cortos recompran para cortar pérdidas y empujan el precio",
             "Los cortos ganan con la subida y por eso compran más acciones",
             "Una subida del 30 % nunca puede continuar: ya ha ido demasiado lejos"
           ],
@@ -164,7 +164,7 @@
           "t": "choice",
           "q": "Hoy consultas el interés en corto de una acción en un informe publicado hace diez días. ¿Cómo usas ese dato?",
           "opts": [
-            "Como una foto antigua: los cortos pueden haber cambiado desde entonces",
+            "Como una foto antigua: los cortos pueden haber cambiado",
             "Como el dato de hoy: los informes se actualizan cada sesión",
             "Como una señal de compra puntual si el porcentaje es alto",
             "No lo usas: un dato con retraso nunca aporta contexto"

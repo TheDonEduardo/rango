@@ -40,7 +40,7 @@
           "t": "choice",
           "q": "Le preguntas a un asistente de IA el precio actual de una acción. ¿Qué debes tener en cuenta?",
           "opts": [
-            "Puede darte un dato antiguo o inventado: compruébalo",
+            "Puede ser falso o antiguo: compruébalo",
             "Siempre consulta la bolsa en tiempo real",
             "Solo se equivoca con acciones extranjeras",
             "Es más fiable que la web de la propia bolsa"
@@ -142,7 +142,7 @@
           "t": "choice",
           "q": "¿Cómo pides ayuda a la IA para decidir dónde invertir?",
           "opts": [
-            "Dar contexto y pedir opciones con sus riesgos",
+            "Dar contexto y pedir opciones y riesgos",
             "Solo «¿qué compro?», para que decida ella",
             "Pedirle la inversión que más va a subir",
             "Preguntarle cuál es la mejor del mundo"

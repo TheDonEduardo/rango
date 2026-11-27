@@ -185,9 +185,9 @@
           "q": "Una operación con opciones gana en el 90 % de los casos. ¿Qué conclusión es correcta?",
           "opts": [
             "Es rentable, porque gana casi siempre",
-            "Hay que mirar también cuánto se pierde en el 10 % restante",
+            "Hay que mirar cuánto se pierde en el 10 % restante",
             "Es segura, porque la probabilidad de perder es pequeña",
-            "Es mala, porque la probabilidad nunca importa"
+            "Es mala, porque la probabilidad nunca importa en opciones"
           ],
           "a": 1,
           "why": "La probabilidad no basta: una pérdida grande en el 10 % restante puede superar las ganancias pequeñas del 90 %.",

@@ -114,7 +114,7 @@
           "t": "choice",
           "q": "Vas a enviar fondos a una dirección de tu historial que coincide en los 4 primeros y los 4 últimos caracteres. ¿Qué haces?",
           "opts": [
-            "Enviar: si coinciden los extremos, es la buena",
+            "Enviar: si coinciden el principio y el final, es la buena",
             "Copiarla del historial, que es más cómodo",
             "Enviar todo de una vez para ahorrar comisión",
             "Copiarla de la fuente original y compararla entera"

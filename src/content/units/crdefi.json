@@ -43,7 +43,7 @@
             "Servicios financieros hechos con contratos inteligentes",
             "Un banco tradicional que acepta criptomonedas",
             "Una regulación europea de los mercados cripto",
-            "Una plataforma para comprar acciones con cripto"
+            "Una plataforma para comprar acciones con cripto o con euros"
           ],
           "a": 0,
           "why": "Intercambiar, prestar o pedir prestado sin un banco en medio: lo hacen contratos que cualquiera puede usar. La contrapartida es que no hay nadie a quien reclamar.",
@@ -116,7 +116,7 @@
           "q": "Un contrato DeFi tiene un fallo y un atacante lo vacía. ¿Quién te devuelve el dinero?",
           "opts": [
             "Normalmente nadie: no hay garantía de depósitos",
-            "El fondo de garantía de depósitos de tu país",
+            "El fondo de garantía de depósitos de tu país de residencia",
             "El banco central de la red donde estaba",
             "La plataforma, porque la ley la obliga"
           ],
@@ -138,7 +138,7 @@
             "Lo que pierdes frente a mantener las monedas si cambian de precio",
             "La comisión que cobra la red por cada intercambio que haces",
             "La caída del precio de una moneda en un solo día de mercado",
-            "El dinero que pierdes al enviar fondos a una dirección errónea"
+            "El dinero que pierdes al enviar fondos a una dirección errónea o falsa"
           ],
           "a": 0,
           "why": "Al aportar dos monedas a un fondo de liquidez, si una sube mucho acabas con menos de ella de la que tenías. Las comisiones cobradas pueden compensarlo o no.",
@@ -166,7 +166,7 @@
           "q": "Antes de usar un protocolo DeFi, ¿qué comprobación tiene más sentido?",
           "opts": [
             "Si tiene auditorías y lleva tiempo sin incidentes",
-            "Si su rentabilidad es la más alta del mercado",
+            "Si su rentabilidad es la más alta del mercado entero",
             "Si su web tiene un diseño moderno y cuidado",
             "Si tiene muchos seguidores en redes sociales"
           ],

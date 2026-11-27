@@ -62,9 +62,9 @@
           "q": "Los directivos venden acciones de forma escalonada cada trimestre. ¿Cómo lo interpretas?",
           "opts": [
             "Señal grave: todos saben algo malo",
-            "Normal: suelen ser planes programados",
+            "Normal: suelen ser ventas programadas",
             "Una señal clara de compra para ti",
-            "Algo prohibido por la ley de valores"
+            "Algo prohibido por la ley del mercado de valores"
           ],
           "a": 1,
           "why": "Muchos directivos cobran en acciones y venden con planes fijados de antemano para diversificar. Preocupan las ventas grandes, repentinas o de varios a la vez.",

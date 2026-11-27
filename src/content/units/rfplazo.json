@@ -170,7 +170,7 @@
           "opts": [
             "La garantía de recuperar siempre todo el capital invertido",
             "Un precio que sube cuando suben los tipos de interés",
-            "Una rentabilidad por año normalmente mayor que la del corto plazo",
+            "Una rentabilidad anual normalmente mayor que la del corto",
             "La ausencia total de riesgo de impago de los emisores"
           ],
           "a": 2,
@@ -189,7 +189,7 @@
           "q": "Un amigo dice que un fondo de renta fija de duración 1 es una inversión sin ningún riesgo. ¿Qué le respondes?",
           "opts": [
             "Que tiene razón: con duración 1 el precio no puede bajar nunca",
-            "Que su precio puede caer algo si suben los tipos o un emisor no paga",
+            "Que puede caer algo si suben los tipos o un emisor no paga",
             "Que solo se arriesga con fondos de duración superior a 10",
             "Que el riesgo depende solo del banco donde lo compre"
           ],
@@ -289,7 +289,7 @@
             "Un fondo de duración 10, para que rinda más cada año",
             "Un fondo de duración 6, porque el colchón dura varios años",
             "Un fondo de duración 8, mientras los tipos estén bajando",
-            "Liquidez o un fondo de duración muy baja, aunque rinda menos"
+            "Liquidez o un fondo de duración baja, aunque rinda menos"
           ],
           "a": 3,
           "why": "Si necesitas el dinero sin avisar, no puedes esperar a que se compense una caída de precio: prima la estabilidad sobre la rentabilidad.",

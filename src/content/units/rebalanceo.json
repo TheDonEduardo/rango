@@ -236,7 +236,7 @@
           "q": "¿Con qué frecuencia suele bastar rebalancear?",
           "opts": [
             "Cada día, al cierre del mercado",
-            "Una vez al año o al superar un margen",
+            "Cada año o al superar un margen",
             "Cada vez que la bolsa cae un poco",
             "Nunca: la cartera se equilibra sola"
           ],

@@ -42,7 +42,7 @@
           "t": "choice",
           "q": "¿Qué es el IBEX 35?",
           "opts": [
-            "Un índice de 35 valores de la bolsa española",
+            "Un índice de 35 valores españoles",
             "Las 35 empresas más grandes de Europa",
             "Un fondo de inversión del Estado",
             "El tipo de interés de referencia"
@@ -71,7 +71,7 @@
           "t": "choice",
           "q": "¿Por qué el IBEX 35 engaña cuando se mira su evolución a largo plazo?",
           "opts": [
-            "Sus empresas reparten mucho y el índice no lo suma",
+            "Reparten mucho y el índice no lo suma",
             "Porque no incluye a las empresas más grandes",
             "Porque solo cuenta los días en que sube",
             "Porque se calcula en dólares"
@@ -154,7 +154,7 @@
           "t": "choice",
           "q": "¿Por qué no basta con elegir las acciones que más dividendo pagan?",
           "opts": [
-            "Un dividendo muy alto puede anticipar un recorte",
+            "Un dividendo muy alto puede acabar recortado",
             "Porque los dividendos no tributan en España",
             "Porque las que más pagan siempre suben más",
             "Porque el dividendo está prohibido en España"

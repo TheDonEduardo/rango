@@ -41,7 +41,7 @@
           "q": "¿Por qué un contrato inteligente no puede consultar por sí mismo el precio de una moneda en una página web?",
           "opts": [
             "Porque la cadena no admite ningún dato numérico en sus contratos",
-            "Porque todos los nodos deben coincidir y una web puede dar datos distintos a cada uno",
+            "Porque todos los nodos deben coincidir y una web puede dar datos distintos",
             "Porque las webs de precios cobran en criptomonedas y el contrato no tiene fondos",
             "Porque los contratos solo se ejecutan una vez al año, en una fecha fija"
           ],
@@ -98,8 +98,8 @@
           "t": "choice",
           "q": "El oráculo de un préstamo da un precio de la garantía mucho más bajo que el real. ¿Qué puede ocurrir?",
           "opts": [
-            "El contrato corrige solo el precio porque conoce el valor real",
-            "El contrato ignora el dato, porque solo acepta precios correctos",
+            "El contrato corrige solo el precio porque conoce el valor real de mercado",
+            "El contrato ignora el dato, porque solo acepta precios que sean correctos",
             "El contrato liquida una garantía que, con el precio real, estaría a salvo",
             "El contrato devuelve al usuario la diferencia sin que haga nada"
           ],
@@ -145,7 +145,7 @@
           "q": "¿Por qué es más fácil manipular el precio de un oráculo que lee un solo mercado donde casi no se negocia?",
           "opts": [
             "Porque en esos mercados el precio no puede cambiar sin permiso del oráculo",
-            "Porque una compra pequeña basta para mover el precio de ese mercado y el oráculo lo copia",
+            "Porque una compra pequeña basta para mover el precio y el oráculo lo copia",
             "Porque los mercados con poca liquidez no registran las compras que se hacen en ellos",
             "Porque el oráculo cobra más comisión cuanto menos se negocia en el mercado"
           ],

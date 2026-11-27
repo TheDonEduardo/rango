@@ -197,7 +197,7 @@
             "Solo sirve para valorar bancos",
             "No tiene en cuenta la deuda",
             "Ignora el flujo de caja libre",
-            "Es muy sensible a los supuestos"
+            "Es sensible a los supuestos"
           ],
           "a": 3,
           "why": "Un punto más de tipo o de crecimiento cambia el valor un 17-25 %. Úsalo para entender qué tiene que pasar para justificar el precio, no como una cifra exacta.",

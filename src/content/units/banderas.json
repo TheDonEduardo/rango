@@ -40,7 +40,7 @@
           "t": "choice",
           "q": "¿Qué forma una bandera alcista?",
           "opts": [
-            "Una subida rápida y un retroceso corto y ordenado",
+            "Subida rápida y retroceso corto y ordenado",
             "Una caída larga seguida de un rebote débil",
             "Dos máximos iguales separados por una caída",
             "Un rango ancho con mucho volumen en ambos lados"
@@ -115,7 +115,7 @@
           "t": "choice",
           "q": "¿Qué es un triángulo ascendente?",
           "opts": [
-            "Resistencia plana y mínimos cada vez más altos",
+            "Techo plano y mínimos cada vez más altos",
             "Soporte plano y máximos cada vez más bajos",
             "Máximos y mínimos que se separan",
             "Un rango con techo y suelo paralelos"

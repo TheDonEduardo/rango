@@ -42,8 +42,8 @@
           "opts": [
             "El fondo devuelve el nominal en una fecha fija",
             "El bono se renueva solo al vencer y sigue indefinidamente",
-            "El bono vence y devuelve su nominal si no hay impago; el fondo no vence",
-            "Los dos devuelven el nominal al vencimiento si el emisor paga"
+            "El bono vence y devuelve el nominal, salvo impago; el fondo no",
+            "Los dos devuelven el nominal en una fecha fija si el emisor paga"
           ],
           "a": 2,
           "why": "El bono tiene fecha y devuelve el nominal si el emisor paga. El fondo repone los bonos que vencen: su duración se mantiene y no hay fecha de devolución.",
@@ -72,7 +72,7 @@
             "Los dos son más sensibles porque pasa el tiempo",
             "El fondo, menos; el bono, igual que el primer día",
             "Ninguno: los dos pierden toda sensibilidad a los tipos",
-            "El bono, menos, porque le quedan 3 años; el fondo, igual"
+            "El bono, menos: le quedan 3 años; el fondo, igual"
           ],
           "a": 3,
           "why": "Al bono le quedan 3 años y su duración baja; el fondo sigue comprando bonos largos y mantiene la suya.",
@@ -184,7 +184,7 @@
           "opts": [
             "Uno que garantiza devolver a esa fecha todo lo invertido",
             "Uno cuya duración se mantiene constante hasta esa fecha",
-            "Uno con bonos que vencen hacia esa fecha y que se liquida entonces",
+            "Uno con bonos que vencen hacia esa fecha y se liquida",
             "Uno sin riesgo de tipos de interés porque vence"
           ],
           "a": 2,

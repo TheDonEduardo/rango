@@ -101,7 +101,7 @@
             "Los dos, solo cuando se venden",
             "Los dos, cada año, aunque no cobres nada",
             "El de acumulación, cada año; el de distribución, al vender",
-            "El de distribución, al cobrar los repartos; el de acumulación, al vender"
+            "Distribución, al cobrar repartos; acumulación, al vender"
           ],
           "a": 3,
           "why": "Los repartos de un ETF de distribución tributan en el año en que los cobras; en uno de acumulación, la ganancia no tributa hasta que vendes. Compruébalo con la norma vigente.",
@@ -170,7 +170,7 @@
           "t": "choice",
           "q": "Inviertes 10.000 € a un 6 % anual, con un 2 % de reparto y un 19 % de impuesto sobre cada reparto. ¿Qué pasa con la ventaja de la acumulación si el plazo pasa de 20 a 40 años?",
           "opts": [
-            "Crece en ambos casos: el impuesto no pagado rinde más años",
+            "Crece en ambos: el impuesto no pagado sigue rindiendo",
             "Desaparece, porque al vender se paga todo lo diferido",
             "Se mantiene igual, porque no depende del plazo",
             "Se invierte: con más años gana la distribución"
@@ -192,7 +192,7 @@
           "opts": [
             "Si quieres que lo que cobras no tribute en ningún caso",
             "Si buscas dividendos extra que no reducen el valor del fondo",
-            "Si necesitas una renta periódica sin tener que vender participaciones",
+            "Si necesitas una renta periódica sin vender participaciones",
             "Si el fondo te asegura un reparto fijo todos los años"
           ],
           "a": 2,

@@ -74,7 +74,7 @@
           "opts": [
             "Que no vence y puedes mantenerlo abierto",
             "Que solo permite apostar al alza",
-            "Que se paga al contado y sin margen",
+            "Que se paga al contado y sin ningún margen",
             "Que lo garantiza un fondo oficial"
           ],
           "a": 0,
@@ -184,7 +184,7 @@
           "opts": [
             "Los cortos pagan a los largos para igualar el precio",
             "Los largos pagan a los cortos para acercar el precio al contado",
-            "La plataforma paga a todos los que tienen posiciones abiertas",
+            "La plataforma paga la financiación a quienes tienen posiciones abiertas",
             "Nadie paga: la tasa solo se cobra al cerrar la posición"
           ],
           "a": 1,

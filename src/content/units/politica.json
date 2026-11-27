@@ -118,7 +118,7 @@
           "q": "Tu objetivo es un 60 % en acciones, con banda de 5 puntos. Hoy tienes un 64 %. ¿Qué haces?",
           "opts": [
             "Vendes acciones hasta volver al 60 %",
-            "Nada: sigues dentro de la banda, de 55 % a 65 %",
+            "Nada: sigues en la banda de 55 % a 65 %",
             "Dejas de aportar a los bonos",
             "Pasas a un 70 % para aprovechar la subida"
           ],

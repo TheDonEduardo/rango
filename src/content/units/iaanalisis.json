@@ -40,7 +40,7 @@
           "t": "choice",
           "q": "Pides a la IA que resuma los resultados de una empresa. ¿Qué compruebas?",
           "opts": [
-            "Las cifras clave en el informe original",
+            "Las cifras clave del informe",
             "Que el resumen sea corto y claro",
             "Que use muchos términos técnicos",
             "Que coincida con lo que esperabas"
@@ -79,7 +79,7 @@
           "t": "choice",
           "q": "Le preguntas «¿por qué va a subir esta acción?». ¿Qué problema tiene la pregunta?",
           "opts": [
-            "Da por hecho que subirá y la IA buscará razones",
+            "Da por hecho que subirá y busca razones",
             "Ninguno: es la forma correcta de preguntar",
             "Que la IA no sabe qué es una acción",
             "Que solo funciona con acciones españolas"
@@ -99,7 +99,7 @@
           "t": "choice",
           "q": "¿Qué pregunta ayuda más a evitar el sesgo de confirmación?",
           "opts": [
-            "¿Qué tendría que pasar para que esta tesis falle?",
+            "¿Qué haría fallar esta tesis?",
             "¿Por qué esta empresa es la mejor del sector?",
             "¿Cuánto puede llegar a subir la acción?",
             "¿Qué opinan los que la recomiendan?"
@@ -151,7 +151,7 @@
           "t": "choice",
           "q": "La IA recomienda un fondo «por su rentabilidad del 30 % el año pasado». ¿Qué falla?",
           "opts": [
-            "La rentabilidad pasada no garantiza la futura",
+            "La rentabilidad pasada no se repite siempre",
             "Nada: un 30 % es una gran rentabilidad",
             "Que debería haber dicho un 40 %",
             "Que no ha mencionado el logotipo"

@@ -99,7 +99,7 @@
           "q": "Un sistema acierta el 30 % de las veces, con ganadoras de 2R de media y perdedoras de 1R. ¿Qué esperanza tiene?",
           "opts": [
             "Positiva: +0,10R por operación, porque con ratio 2 basta el 30 %",
-            "Negativa: −0,10R por operación, porque necesita al menos un 33,3 % de aciertos",
+            "Negativa: −0,10R, porque exige al menos un 33,3 % de aciertos",
             "Cero: el 30 % de aciertos compensa exactamente un ratio de 2 a 1",
             "Positiva: +0,60R por operación, el 30 % multiplicado por 2R"
           ],
@@ -177,7 +177,7 @@
             "Porque la esperanza positiva solo se cumple si se aciertan más de la mitad de las operaciones",
             "Porque con esperanza positiva no hay rachas de pérdidas y el riesgo no cuenta",
             "Porque la esperanza se calcula con la cuenta entera y no operación a operación",
-            "Porque con mucho riesgo por operación una racha normal de pérdidas deja una caída que casi no se recupera"
+            "Porque con mucho riesgo por operación una racha normal deja una caída que casi no se recupera"
           ],
           "a": 3,
           "why": "Con 40 % de aciertos, 5 pérdidas seguidas en 5 operaciones concretas tienen un 7,8 %, pero en 100 operaciones una racha así aparece casi seguro (≈ 98 %): arriesgando el 10 %, la cuenta cae un 41 % y pide un +69,4 %.",

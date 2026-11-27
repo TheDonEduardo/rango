@@ -40,9 +40,9 @@
           "t": "choice",
           "q": "¿Qué es el sesgo de volatilidad en las opciones de un mismo vencimiento?",
           "opts": [
-            "Que la volatilidad implícita de cualquier opción sube cada día hasta el vencimiento",
-            "Que una call y una put con el mismo ejercicio y vencimiento tienen siempre la misma prima",
-            "Que las puts fuera del dinero suelen tener más volatilidad implícita que las calls a su misma distancia",
+            "Que la volatilidad implícita de una opción sube cada día hasta el vencimiento, y por eso se encarece",
+            "Que una call y una put con el mismo ejercicio y vencimiento tienen la misma prima porque su delta es la misma",
+            "Que las puts fuera del dinero suelen tener más volatilidad implícita que las calls equidistantes",
             "Que el comprador de una opción elige qué volatilidad implícita paga"
           ],
           "a": 2,
@@ -70,9 +70,9 @@
           "q": "¿Por qué suelen tener más volatilidad implícita las puts fuera del dinero que las calls a su misma distancia?",
           "opts": [
             "Porque una put vence siempre antes que una call del mismo ejercicio",
-            "Porque hay mucha demanda de puts para cubrirse y quien las vende cobra el riesgo de caídas bruscas",
+            "Porque hay mucha demanda de puts para cubrirse y el vendedor cobra el riesgo de caídas bruscas",
             "Porque las calls fuera del dinero no se pueden negociar en el mercado",
-            "Porque la volatilidad implícita de una put se mide con más días que la de una call"
+            "Porque la volatilidad implícita de una put se mide con más días que la de una call del mismo ejercicio"
           ],
           "a": 1,
           "why": "La demanda de cobertura encarece las puts y la bolsa suele caer de golpe más que subir de golpe: quien vende puts pide más por ese riesgo.",
@@ -125,9 +125,9 @@
           "t": "choice",
           "q": "Compras la put de 90 $ y vendes la call de 110 $ sobre acciones a 100 $, ambas a 3 meses y a un 10 % de distancia. ¿Por qué ese collar tiene un coste en vez de darte un pequeño crédito?",
           "opts": [
-            "Porque las calls fuera del dinero no tienen valor temporal",
+            "Porque las calls fuera del dinero no tienen ningún valor temporal",
             "Porque la put vence antes que la call del collar",
-            "Porque una put cuesta siempre el doble que una call",
+            "Porque una put cuesta siempre el doble que una call del mismo ejercicio",
             "Porque la put lleva más volatilidad implícita que la call que cobras"
           ],
           "a": 3,

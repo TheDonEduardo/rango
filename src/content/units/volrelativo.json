@@ -40,7 +40,7 @@
           "t": "choice",
           "q": "¿Con qué se compara el volumen de un día para calcular el volumen relativo?",
           "opts": [
-            "Con el volumen medio de esa misma acción en las últimas 50 sesiones",
+            "Con el volumen medio de esa acción en las últimas 50 sesiones",
             "Con el volumen que negocia hoy el resto de acciones del índice",
             "Con el volumen del mayor día de toda la historia de la acción",
             "Con el volumen total del mercado en la misma sesión"
@@ -81,7 +81,7 @@
           "opts": [
             "Que está confirmada, porque 350.000 acciones es una cifra alta",
             "Que no importa, porque el volumen solo cuenta en las caídas",
-            "Que no está confirmada: es 0,7 veces la media, muy por debajo del umbral",
+            "Que no está confirmada: es 0,7 veces la media, bajo el umbral",
             "Que es una señal clara de que conviene vender de inmediato"
           ],
           "a": 2,
@@ -186,7 +186,7 @@
             "Porque el volumen parcial no cuenta nunca para valorar las rupturas",
             "Porque la media de 50 sesiones solo es válida al cierre de la semana",
             "Porque el volumen parcial se mide en euros y la media en acciones",
-            "Porque la sesión no ha terminado: hay que proyectar el volumen al día entero"
+            "Porque la sesión sigue abierta: hay que proyectar el volumen del día"
           ],
           "a": 3,
           "why": "A media sesión 250.000 son solo la mitad del día: proyectados, 250.000 ÷ 0,5 = 500.000, 1,0 veces la media.",
@@ -203,7 +203,7 @@
           "t": "choice",
           "q": "¿Qué limitación tiene proyectar de forma lineal el volumen antes del cierre?",
           "opts": [
-            "Que el inicio de la sesión suele concentrar más volumen y la proyección puede exagerar",
+            "Que el inicio suele concentrar más volumen y la proyección puede exagerar",
             "Que el volumen proyectado sale siempre exacto si la acción es muy líquida",
             "Que obliga a usar la media de 200 sesiones en lugar de la de 50",
             "Que solo se puede calcular después del cierre de la sesión"

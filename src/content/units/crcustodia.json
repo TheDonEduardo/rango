@@ -43,7 +43,7 @@
           "opts": [
             "Si una plataforma guarda tus claves, dependes de ella",
             "Que nadie puede perder sus criptomonedas nunca",
-            "Que hay que compartir las claves con la plataforma",
+            "Que debes compartir tus claves con la plataforma de custodia",
             "Que las criptomonedas solo existen en papel"
           ],
           "a": 0,
@@ -130,7 +130,7 @@
           "opts": [
             "Si pierdes la frase semilla, nadie te la recupera",
             "Que la plataforma pueda congelar tus fondos",
-            "Que el banco te cobre comisiones por custodia",
+            "Que el banco te cobre comisiones por custodia mensual",
             "Ninguno: es la forma más segura en todo caso"
           ],
           "a": 0,
@@ -158,7 +158,7 @@
             "Que esté autorizada para operar en la UE",
             "Que ofrezca la rentabilidad más alta",
             "Que tenga anuncios en redes sociales",
-            "Que admita registros sin identificación"
+            "Que admita registros sin identificación previa"
           ],
           "a": 0,
           "why": "Con el reglamento europeo MiCA, las plataformas necesitan autorización para operar en la UE. La CNMV publica qué entidades están autorizadas y cuáles están en su lista de advertencias.",

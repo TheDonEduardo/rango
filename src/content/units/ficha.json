@@ -260,7 +260,7 @@
           "q": "Una acción cotiza a 29,50 € con un máximo de 52 semanas de 30 € y un mínimo de 20 €. ¿Qué indica?",
           "opts": [
             "Que está barata porque bajará pronto",
-            "Que viene subiendo: está cerca de máximos",
+            "Que está cerca de su máximo anual",
             "Que está en mínimos del año",
             "Que hoy ha subido mucho"
           ],

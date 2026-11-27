@@ -101,7 +101,7 @@
             "Que la empresa se ha quedado sin caja para seguir comprando",
             "Que los activos tangibles de la adquirida han subido de valor",
             "Que la compra generará más sinergias de las previstas",
-            "Que se pagó de más o la empresa comprada rinde menos de lo previsto"
+            "Que se pagó de más o la adquirida rinde menos de lo previsto"
           ],
           "a": 3,
           "why": "Se rebaja el fondo de comercio cuando lo comprado ya no justifica lo pagado: suele indicar que se pagó de más.",
@@ -173,7 +173,7 @@
           "q": "¿Por qué el valor contable suele subestimar a una empresa de software?",
           "opts": [
             "Porque el software no tiene valor y por eso el balance no lo anota",
-            "Porque su marca, tecnología y clientes, creadas dentro, casi no figuran",
+            "Porque marca, tecnología y clientes creados dentro casi no figuran",
             "Porque las empresas de software siempre tienen más deudas que activos",
             "Porque el valor contable solo cuenta la caja y el resto lo ignora"
           ],

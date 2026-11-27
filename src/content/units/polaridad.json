@@ -150,7 +150,7 @@
           "q": "Un precio rompe un techo y, al volver a él, rebota. ¿Por qué suele frenar la caída ese nivel?",
           "opts": [
             "Porque la bolsa obliga a rebotar en cualquier nivel roto",
-            "Quienes no entraron esperan comprar ahí y quienes entraron defienden su entrada",
+            "Quien no entró espera comprar ahí y quien entró defiende su entrada",
             "Porque todas las órdenes de venta de esa zona se anulan al romperla",
             "Porque en el retroceso el volumen es siempre bajo"
           ],
@@ -280,7 +280,7 @@
             "Que la zona está confirmada como soporte",
             "Que conviene bajar el stop para aguantar más",
             "Que el volumen no aporta nada a la señal",
-            "Que la ruptura ha fallado y el nivel no aguantó"
+            "Que la ruptura falló y el nivel no aguantó"
           ],
           "a": 3,
           "why": "Un cierre bajo la zona con volumen alto es lo que se espera de vendedores con fuerza: la ruptura ha fallado y el stop te saca con 1R de pérdida.",

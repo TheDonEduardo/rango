@@ -73,7 +73,7 @@
           "opts": [
             "Salir si toca 50 € durante la sesión",
             "Esperar siempre al stop inicial",
-            "Salir si cierra de nuevo por debajo de 50 €",
+            "Salir si cierra de nuevo bajo 50 €",
             "Salir si un día cierra en negativo"
           ],
           "a": 2,

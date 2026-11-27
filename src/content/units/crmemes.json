@@ -109,7 +109,7 @@
           "t": "choice",
           "q": "Un token sin utilidad conocida sube 50 veces en dos días por una moda en redes. ¿Qué dice ese precio?",
           "opts": [
-            "Que la red tiene ya muchos usuarios que pagan por usarla",
+            "Que la red tiene ya muchos usuarios que pagan por usarla cada semana",
             "Que mucha gente quiere comprar ahora; no mide ningún uso ni ingreso",
             "Que el creador garantiza que el valor se mantendrá en el tiempo",
             "Que el token es seguro, porque nadie ha podido venderlo todavía"
@@ -139,7 +139,7 @@
           "q": "El 70 % del suministro de un token está en unos pocos monederos. ¿Cuál es el riesgo principal?",
           "opts": [
             "Que un solo monedero que venda pueda hundir el precio de golpe",
-            "Que el token deje de poder transferirse entre monederos",
+            "Que el token deje de poder transferirse fuera de su plataforma de origen",
             "Que la red se detenga cuando alguno de ellos venda",
             "Que esos monederos estén obligados a vender a la vez"
           ],

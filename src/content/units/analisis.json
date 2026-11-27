@@ -93,7 +93,7 @@
           "q": "El 95 % de sus ingresos son suscripciones y la retención neta es del 118 %. ¿Qué te dice?",
           "opts": [
             "Pierde un 18 % de sus clientes cada año",
-            "Los clientes se quedan y gastan más cada año",
+            "Los clientes se quedan y gastan más",
             "Sus ingresos dependen de un solo cliente",
             "Crece únicamente gracias a subir precios"
           ],
@@ -113,7 +113,7 @@
           "q": "Nébula tiene 100 M€ de caja neta y genera flujo de caja libre positivo. ¿Cómo valoras su balance?",
           "opts": [
             "Frágil: necesita ampliar capital pronto",
-            "Sólido: puede financiar su crecimiento sola",
+            "Sólido: financia su crecimiento sola",
             "Arriesgado: tener caja destruye valor",
             "Imposible de valorar sin ver el dividendo"
           ],
@@ -209,8 +209,8 @@
           "t": "choice",
           "q": "Tu tesis sobre Nébula se apoya en clientes que se quedan y gastan más. ¿Qué dato la invalidaría y te haría vender?",
           "opts": [
-            "Que la acción caiga un 10 % en una semana",
-            "Que la retención neta baje de 100 % y el crecimiento se frene",
+            "Que la acción caiga un 10 % en una semana por la volatilidad del mercado",
+            "Que la retención neta caiga del 100 % y se frene el crecimiento",
             "Que un analista rebaje su recomendación",
             "Que el índice de referencia marque nuevos máximos"
           ],

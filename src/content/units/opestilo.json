@@ -78,7 +78,7 @@
           "t": "choice",
           "q": "Una call americana dentro del dinero sobre una acción que no paga dividendos. ¿Por qué casi nunca conviene ejercerla antes del vencimiento?",
           "opts": [
-            "Porque el ejercicio anticipado está prohibido en las opciones americanas",
+            "Porque las opciones americanas solo se pueden ejercer el último día de negociación",
             "Porque el valor temporal de una call dentro del dinero es negativo",
             "Porque al ejercer se pierde el valor temporal que todavía tiene la opción",
             "Porque las acciones recibidas no se pueden vender el mismo día"
@@ -140,9 +140,9 @@
           "q": "¿En qué caso puede convenir ejercer antes del vencimiento una call americana dentro del dinero?",
           "opts": [
             "Cuando falta mucho para el vencimiento y su valor temporal es alto",
-            "Después de la fecha ex-dividendo, para cobrar el dividendo ya pagado",
+            "Después de la fecha ex-dividendo, para cobrar el dividendo que ya se pagó",
             "Cuando el dividendo es menor que el valor temporal que se pierde",
-            "Justo antes de la fecha ex-dividendo, si el dividendo supera su valor temporal"
+            "Justo antes de la ex-dividendo, si el dividendo supera su valor temporal"
           ],
           "a": 3,
           "why": "Solo antes de la fecha ex-dividendo y si el dividendo supera el valor temporal que pierdes al ejercer.",
@@ -182,7 +182,7 @@
           "q": "Has vendido una call americana dentro del dinero sobre una acción que va a pagar dividendo mañana (fecha ex-dividendo). ¿Qué riesgo corres?",
           "opts": [
             "Ninguno: una call vendida solo se asigna el día del vencimiento",
-            "Que te asignen antes de vencer y tengas que entregar 100 acciones por contrato",
+            "Que te asignen antes de vencer y entregues 100 acciones por contrato",
             "Que te asignen y recibas 100 acciones, pagando el precio de ejercicio",
             "Que el comprador no ejerza y te devuelva la prima"
           ],

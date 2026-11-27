@@ -74,7 +74,7 @@
           "t": "choice",
           "q": "Caso práctico: cuenta de 20.000 € y riesgo del 1 % por operación. El índice cotiza sobre su media de 200 sesiones, que sube, y casi no hay días de distribución. ¿Qué haces?",
           "opts": [
-            "Buscar compras: el mercado acompaña",
+            "Buscar compras: el mercado ayuda",
             "Abrir cortos: está demasiado alto",
             "Quedarte fuera hasta que corrija",
             "Comprar con el doble de riesgo"
@@ -230,7 +230,7 @@
           "t": "choice",
           "q": "El precio llega a 44,80 €, que son 2R. ¿Qué haces?",
           "opts": [
-            "Vender una parte y subir el stop a la entrada",
+            "Vender parte y subir el stop a la entrada",
             "Comprar más y bajar el stop para darle aire",
             "Venderlo todo: 2R es el máximo posible",
             "Quitar el stop: ya va en ganancias"

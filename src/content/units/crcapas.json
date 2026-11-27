@@ -41,7 +41,7 @@
           "q": "¿Por qué existen las capas 2 sobre Ethereum?",
           "opts": [
             "Para sustituir a Ethereum y que ninguna aplicación dependa de ella",
-            "Para que las operaciones sean anónimas y nadie pueda rastrearlas jamás",
+            "Para que las operaciones sean anónimas y nadie pueda rastrearlas jamás en la red",
             "Para procesar más operaciones con menos comisión sin saturar la red principal",
             "Para que la red principal no necesite validadores ni nodos"
           ],
@@ -78,8 +78,8 @@
           "t": "choice",
           "q": "¿Qué hace un rollup?",
           "opts": [
-            "Envía cada operación por separado a la red principal pagando su comisión completa",
-            "Agrupa muchas operaciones en un lote y publica en la red principal lo necesario para comprobarlas",
+            "Envía cada operación por separado a la red principal y paga su comisión completa cada vez que lo hace",
+            "Agrupa operaciones en un lote y publica en la red principal lo necesario para comprobarlas",
             "Copia entera la red principal en cada una de las operaciones",
             "Crea monedas nuevas para pagar las comisiones del lote"
           ],
@@ -128,7 +128,7 @@
           "t": "choice",
           "q": "¿Qué diferencia a un rollup optimista de uno de conocimiento cero?",
           "opts": [
-            "El optimista adjunta una prueba matemática y el de conocimiento cero espera impugnaciones",
+            "El optimista adjunta una prueba matemática y el de conocimiento cero espera impugnaciones de la comunidad",
             "El de conocimiento cero no publica nada en la red principal",
             "El optimista da el lote por válido salvo impugnación en un plazo; el otro adjunta una prueba",
             "El optimista funciona sin la red principal y el otro depende de ella"
@@ -169,7 +169,7 @@
             "El minero o validador que confirma los bloques de la red principal",
             "El operador único que ordena las operaciones y puede detenerlas o retrasarlas",
             "La clave secreta que protege la frase semilla de tu monedero",
-            "Un puente automático que mueve tus fondos entre dos redes distintas"
+            "Un puente automático que mueve tus fondos entre dos redes distintas de cadena de bloques"
           ],
           "a": 1,
           "why": "Muchas capas 2 usan un único operador para ordenar las operaciones. Si se cae, se detiene la red; si las retrasa o censura, tu operación espera, aunque tus fondos sigan en la capa 2.",
@@ -187,7 +187,7 @@
           "q": "Quieres llevar 2.000 € a una capa 2 por un puente. ¿Cuál es un riesgo real?",
           "opts": [
             "Que la red principal borre tu saldo al enviarlo",
-            "Que el puente tenga derecho a quedarse con la mitad",
+            "Que el puente tenga derecho a quedarse con la mitad de tus fondos",
             "Que un fallo o un ataque al puente bloquee o pierda esos fondos",
             "Que tengas que entregar tu frase semilla para usarlo"
           ],

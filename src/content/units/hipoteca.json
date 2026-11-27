@@ -173,7 +173,7 @@
           "t": "choice",
           "q": "¿Cuándo ahorra más intereses una amortización anticipada?",
           "opts": [
-            "En los primeros años, cuando más capital debes",
+            "En los primeros años, con más deuda",
             "En los últimos años, cuando ya debes poco",
             "Da igual: siempre ahorra lo mismo",
             "Solo si coincide con una bajada de tipos"

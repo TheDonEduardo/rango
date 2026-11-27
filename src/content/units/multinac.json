@@ -69,7 +69,7 @@
           "t": "choice",
           "q": "¿Qué es el crecimiento «a tipo de cambio constante»?",
           "opts": [
-            "El crecimiento sin el efecto de la divisa",
+            "El crecimiento sin efecto de la divisa",
             "El crecimiento solo en el país de origen",
             "El crecimiento de la propia moneda",
             "El crecimiento previsto por la empresa"
@@ -125,7 +125,7 @@
           "t": "choice",
           "q": "¿Qué es la cobertura de divisa en una empresa?",
           "opts": [
-            "Fijar hoy el cambio de cobros o pagos futuros",
+            "Fijar hoy el cambio de cobros futuros",
             "Cambiar de moneda la sede de la empresa",
             "Pagar los dividendos en dólares",
             "Comprar oro con la caja sobrante"
@@ -164,7 +164,7 @@
           "t": "choice",
           "q": "Al analizar una multinacional, ¿qué compruebas en sus resultados?",
           "opts": [
-            "El crecimiento a tipo de cambio constante",
+            "El crecimiento a cambio constante",
             "Solo el titular con el beneficio total",
             "El color corporativo del informe",
             "El número de páginas del informe"

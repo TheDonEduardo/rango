@@ -60,7 +60,7 @@
           "q": "¿Qué problema tiene concentrar la cartera en la bolsa de tu propio país?",
           "opts": [
             "Que tributa más que la bolsa extranjera",
-            "El riesgo se suma al de tu sueldo y tu casa",
+            "Suma riesgo al de tu sueldo y tu casa",
             "Que no se puede comprar en euros",
             "Que no paga nunca dividendos"
           ],
@@ -106,7 +106,7 @@
           "opts": [
             "Cambiar de país cada vez que uno lo hace mejor",
             "Vender todo lo de EE. UU. tras una mala semana",
-            "Fijar un reparto propio y mantenerlo con disciplina",
+            "Fijar un reparto propio y mantenerlo",
             "Elegir el país que más subió el año pasado"
           ],
           "a": 2,

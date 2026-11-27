@@ -70,7 +70,7 @@
           "t": "choice",
           "q": "¿Por qué se suman las amortizaciones al beneficio para llegar a la caja?",
           "opts": [
-            "Restan beneficio pero no salen de la caja ese año",
+            "Restan beneficio pero no salen de caja ese año",
             "Porque son un ingreso extraordinario del año",
             "Porque las paga otra empresa distinta del grupo",
             "Porque Hacienda las devuelve al final del año"

@@ -106,7 +106,7 @@
           "t": "choice",
           "q": "Cuenta de 20.000 €, riesgo del 1 % por operación y peso máximo del 8 %. Entrada a 25 € y stop a 24,50 €. ¿Qué límite fija el tamaño de la posición?",
           "opts": [
-            "El peso máximo: el riesgo permitiría 400 acciones, 10.000 € de posición",
+            "El peso máximo: el riesgo daría 400 acciones, 10.000 €",
             "El riesgo del 1 %: con 64 acciones arriesgarías más de 200 €",
             "Ninguno de los dos: con un stop tan cerca no hace falta límite",
             "Los dos a la vez: coinciden en el mismo número de acciones"
@@ -144,7 +144,7 @@
           "q": "Tienes 30 acciones compradas a 25 € por tesis de largo plazo. Tu stop de salida total está en 21 € y tu nivel de «no añadir más», en 23 €. El precio cae a 22,80 €. ¿Qué haces?",
           "opts": [
             "Vendes todo ahora, porque ya has perdido el nivel de 23 €",
-            "No compras más, pero mantienes las 30 acciones mientras no toque 21 €",
+            "No compras más, pero mantienes las 30 mientras no toque 21 €",
             "Compras más para bajar el precio medio, porque aún no llegó a 21 €",
             "Vendes la mitad ahora y dejas la otra mitad sin stop"
           ],

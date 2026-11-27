@@ -96,7 +96,7 @@
           "q": "El banco central sube los tipos. ¿Qué suele pasar con el margen de intereses a corto plazo?",
           "opts": [
             "Baja siempre: paga más por los depósitos",
-            "Suele subir: los préstamos se encarecen antes",
+            "Suele subir: los préstamos suben antes",
             "No cambia: los tipos no afectan a un banco",
             "Desaparece: nadie pide ya préstamos"
           ],
@@ -166,7 +166,7 @@
           "q": "Un banco cotiza a 0,8 veces su valor contable, su ROE es del 5 % y sus accionistas exigen un 10 %. ¿Cómo lo lees?",
           "opts": [
             "Ganga segura: cotiza por debajo de su valor en libros",
-            "Puede ser justo: gana menos de lo que cuesta su capital",
+            "Puede ser justo: rinde menos que su coste de capital",
             "Un error del mercado que se corregirá en poco tiempo",
             "Señal de quiebra inminente"
           ],

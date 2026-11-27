@@ -50,9 +50,9 @@
           "q": "¿Qué compras y qué vendes en un spread diagonal con calls?",
           "opts": [
             "Compras 100 acciones y vendes una call a 30 días",
-            "Compras una call a 30 días y vendes una call a 18 meses con el mismo ejercicio",
-            "Compras una call y una put con el mismo ejercicio y vencimiento",
-            "Compras una call a 1-2 años muy dentro del dinero y vendes una call fuera del dinero a 30-45 días"
+            "Compras una call a 30 días y vendes una call a 18 meses con el mismo precio de ejercicio y cantidad",
+            "Compras una call y una put con el mismo ejercicio y el mismo vencimiento",
+            "Compras una call a 1-2 años muy dentro del dinero y vendes otra fuera del dinero a 30-45 días"
           ],
           "a": 3,
           "why": "La call larga hace de sustituta de las acciones y la corta, más alta y cercana, cobra una prima cada mes.",
@@ -87,9 +87,9 @@
           "t": "choice",
           "q": "¿Qué tiene que ocurrir para que un spread diagonal rinda cada mes?",
           "opts": [
-            "Que la call vendida valga cada vez más durante el mes",
+            "Que la call vendida valga cada vez más durante todo el mes siguiente",
             "Que la acción baje con fuerza durante el mes",
-            "Que la prima cobrada supere lo que pierde la call larga por theta",
+            "Que la prima cobrada supere la theta que pierde la call larga",
             "Que las dos calls tengan el mismo vencimiento"
           ],
           "a": 2,
@@ -133,7 +133,7 @@
           "q": "Con la acción en 45 $ al vencer la call vendida de 33 $, la larga de 24 $ vale 22 $ (simplificación: el valor temporal de la larga se queda en 1 $) y la corta, 12 $: el spread diagonal vale 10 $, igual que con la acción en 39 $. ¿Qué indica?",
           "opts": [
             "Que la call larga ha dejado de subir con la acción",
-            "Que por encima del ejercicio vendido la ganancia deja de crecer: hay un techo",
+            "Que por encima del ejercicio vendido la ganancia no crece: hay un techo",
             "Que la call vendida no puede ejercerse sobre ti",
             "Que la ganancia sigue creciendo un dólar por cada dólar que sube la acción"
           ],
@@ -173,9 +173,9 @@
           "q": "La acción ha subido a 40 $ y tu call vendida de 33 $ vale mucho a pocos días de vencer. ¿Qué es rolarla para seguir con el spread diagonal?",
           "opts": [
             "Vender la call larga y quedarte solo con la corta",
-            "Esperar a que la acción baje hasta el ejercicio sin tocar nada",
+            "Esperar a que la acción baje hasta el ejercicio sin tocar nada más",
             "Ejercer la call larga para cobrar la prima de la corta",
-            "Recomprar la call de 33 $ y vender otra posterior, normalmente más alta"
+            "Recomprar la de 33 $ y vender otra posterior, normalmente más alta"
           ],
           "a": 3,
           "why": "Rolar es cerrar la corta y abrir otra posterior; con la acción arriba, un ejercicio más alto sube el techo, aunque recomprar cuesta dinero.",

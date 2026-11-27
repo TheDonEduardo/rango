@@ -78,7 +78,7 @@
           "t": "choice",
           "q": "¿Qué esperas que pase cuando abres un iron condor?",
           "opts": [
-            "Que la acción suba con fuerza en pocos días",
+            "Que la acción suba con fuerza en pocos días seguidos",
             "Que la acción se mueva poco hasta el vencimiento",
             "Que la acción caiga mucho tras resultados",
             "Que la volatilidad implícita se dispare"

@@ -167,7 +167,7 @@
           "t": "choice",
           "q": "Tienes dos objetivos: un colchón de 6 meses de gastos y la jubilación a 30 años. ¿Qué es más sensato?",
           "opts": [
-            "Colchón en liquidez y jubilación indexada",
+            "Colchón líquido y jubilación indexada",
             "Todo en la misma cartera indexada",
             "Todo en un depósito a plazo",
             "Todo en acciones y vender si hace falta"

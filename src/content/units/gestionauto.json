@@ -68,7 +68,7 @@
             "Elige cada mes las acciones que más subirán y te garantiza ganar",
             "Te asegura una rentabilidad mínima al año aunque la bolsa caiga",
             "Compra y vende a diario para batir al mercado con tu dinero",
-            "Invierte tus aportaciones en fondos indexados y rebalancea según tu perfil"
+            "Invierte en fondos indexados y rebalancea según tu perfil"
           ],
           "a": 3,
           "why": "Su trabajo es mecánico: reparte tu dinero en fondos indexados según tu perfil y lo devuelve a ese reparto. No garantiza nada.",
@@ -106,7 +106,7 @@
           "opts": [
             "Un porcentaje de las ganancias, que todos los gestores cobran siempre",
             "El impuesto sobre tus ganancias, que el gestor paga siempre por ti",
-            "El TER de los fondos en los que invierte y la custodia, si se cobra aparte",
+            "El TER de los fondos que usa y la custodia, si va aparte",
             "Nada: la comisión de un gestor siempre incluye todos los costes"
           ],
           "a": 2,
@@ -151,7 +151,7 @@
           "q": "Piensas en pagar un gestor automatizado en lugar de gestionar tú tus fondos. ¿Cuándo tiene más sentido?",
           "opts": [
             "Cuando quieres que bata al mercado todos los años con tu dinero",
-            "Cuando su coste extra te evita errores caros, como vender en pánico",
+            "Cuando su coste te evita errores caros, como vender en pánico",
             "Cuando necesitas una rentabilidad garantizada que un fondo no da",
             "Siempre: pagar más garantiza una cartera mejor"
           ],
@@ -195,7 +195,7 @@
             "Solo la rentabilidad que anuncian para el último año",
             "Cuántas veces sale su publicidad en las redes sociales",
             "Que prometan batir al índice todos los años",
-            "Coste total, fondos que usa y si está autorizado por un supervisor"
+            "Coste total, fondos que usa y si tiene autorización"
           ],
           "a": 3,
           "why": "Lo que controlas es el coste, los fondos y la autorización. La rentabilidad pasada y las promesas no predicen nada.",

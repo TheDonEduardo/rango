@@ -88,7 +88,7 @@
             "Que el sector del almacenamiento de energía siga existiendo dentro de 24 meses",
             "Que la acción no baje durante los próximos 24 meses",
             "Que la empresa publique sus resultados cada trimestre",
-            "Que consiga financiar los 10 meses restantes sin una dilución que arruine la tesis"
+            "Que financie los 10 meses restantes sin una dilución que arruine la tesis"
           ],
           "a": 3,
           "why": "Faltan 24 − 14 = 10 meses de caja. Si la financiación no llega o llega muy diluida, caen los demás pilares aunque el producto funcione.",
@@ -115,7 +115,7 @@
           "q": "Según la tabla de hitos de Ordanis, el 2.º trimestre publica un margen bruto del −14 %. ¿Qué haces con la tesis?",
           "opts": [
             "Se valida: el margen sigue siendo negativo, como se esperaba",
-            "Se invalida el primer hito: reduces o sales, aunque el precio no haya caído",
+            "Se invalida el primer hito: reduces o sales aunque no caiga",
             "Queda en suspenso hasta el cierre de financiación del 3.º T",
             "Se valida si el cliente principal renueva en el 4.º T"
           ],
@@ -186,7 +186,7 @@
           "t": "choice",
           "q": "Ordanis tiene escenarios de 2 $ (40 %), 14 $ (40 %) y 36 $ (20 %), con un valor esperado de 13,6 $. ¿Cómo lo interpretas?",
           "opts": [
-            "Como una media ponderada, no como un precio al que llegará",
+            "Como media ponderada, no como un precio al que llegará",
             "Como el precio al que llegará la acción dentro de un año",
             "Como el valor del escenario más probable",
             "Como el mínimo que garantiza el escenario pesimista"

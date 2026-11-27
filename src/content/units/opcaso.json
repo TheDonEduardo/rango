@@ -52,7 +52,7 @@
           "q": "Marta tiene 200 acciones de Atlas, que publica resultados en tres semanas. No quiere vender, porque tributaría por la ganancia, ni pagar mucho por protegerse. ¿Qué estrategia encaja?",
           "opts": [
             "Un collar: comprar una put y vender una call",
-            "Comprar calls para ganar más si sube",
+            "Comprar calls para ganar más si la acción sube",
             "Vender puts sobre la misma acción",
             "Una call cubierta, sin comprar la put"
           ],
@@ -126,7 +126,7 @@
           "q": "Tras la caída, la call de 66 $ que vendió vale 0,05 $. ¿Qué hace Marta con ella?",
           "opts": [
             "Recomprarla por casi nada y quitar el techo",
-            "Dejarla abierta hasta el vencimiento",
+            "Dejarla abierta hasta el vencimiento sin hacer nada",
             "Vender otra call igual por 0,05 $",
             "Ejercerla para vender a 66 $"
           ],

@@ -245,7 +245,7 @@
           "opts": [
             "Lo bajas a 52,50 € por el nuevo ATR",
             "Lo subes a 57 €, al precio actual",
-            "Lo mantienes en 54 €: el stop no baja",
+            "Lo mantienes en 54 €: no baja",
             "Lo quitas hasta que vuelva a 60 €"
           ],
           "a": 2,

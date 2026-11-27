@@ -61,7 +61,7 @@
           "q": "¿De qué depende el valor de un token envuelto?",
           "opts": [
             "De que el puente guarde las monedas de respaldo",
-            "De la cotización de la red de destino",
+            "De la cotización de la red de destino en cada momento",
             "De cuántas personas lo tengan en su monedero",
             "Del precio que fije cada día la plataforma"
           ],
@@ -179,7 +179,7 @@
           "t": "choice",
           "q": "En la red de destino aparecen dos tokens con el mismo nombre y el mismo logotipo. ¿Cómo sabes cuál es el envuelto oficial?",
           "opts": [
-            "Elijo el que tenga el precio más bajo",
+            "Elijo el que tenga el precio de entrada más bajo",
             "Comparo su contrato con el del puente oficial",
             "Elijo el que tenga más mensajes en redes",
             "Da igual: con el mismo nombre son iguales"

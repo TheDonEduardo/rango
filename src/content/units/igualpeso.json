@@ -75,7 +75,7 @@
           "q": "¿Qué determina el peso de cada empresa en un índice ponderado por capitalización?",
           "opts": [
             "El número de empleados que tiene la empresa",
-            "Lo que vale la empresa en bolsa respecto al total del índice",
+            "Lo que vale en bolsa respecto al total del índice",
             "Un porcentaje igual para todas, sea cual sea su tamaño",
             "Los dividendos que reparte cada año"
           ],
@@ -262,7 +262,7 @@
           "q": "Durante diez años, el índice ponderado por capitalización ha rendido más que el de igual ponderación. ¿Qué conclusión es razonable?",
           "opts": [
             "Que el de igual ponderación está mal diseñado y conviene descartarlo",
-            "Solo describe ese periodo: con las pequeñas por delante, podría pasar al revés",
+            "Solo describe ese periodo: con las pequeñas delante, podría invertirse",
             "Que el ponderado por capitalización ganará también los próximos diez años",
             "Que el de igual ponderación no puede volver a superarlo en el futuro"
           ],

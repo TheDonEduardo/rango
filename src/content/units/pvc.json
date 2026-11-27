@@ -72,7 +72,7 @@
             "Barata, porque cotiza por debajo de 1 vez su valor contable",
             "Barata, porque un P/VC bajo siempre indica una ganga",
             "No se puede valorar, porque el P/VC no tiene relación con el ROE",
-            "Cara, porque el P/VC que justifica su ROE sería de 0,4 y cotiza a 0,6"
+            "Cara: su ROE justifica un P/VC de 0,4 y cotiza a 0,6"
           ],
           "a": 3,
           "why": "P/VC justificado ≈ 4 ÷ 10 = 0,4. Cotiza a 0,6, un 50 % por encima: bajo no significa barato si el ROE es bajo.",
@@ -159,7 +159,7 @@
           "q": "Una empresa con 1.000 M€ de patrimonio y 100 M de acciones cotiza a 15 € (P/VC de 1,5). Recompra 20 M de acciones por 300 M€ y su patrimonio baja a 700 M€. Si el precio sigue en 15 € y el negocio no cambia, ¿qué ha pasado con su P/VC?",
           "opts": [
             "Su negocio ha mejorado, porque el P/VC ha subido de 1,5 a 1,7 veces",
-            "El P/VC sube porque baja el patrimonio por acción, no por un mejor negocio",
+            "El P/VC sube por menos patrimonio por acción, no por mejor negocio",
             "Ha perdido valor, porque tiene menos acciones en circulación",
             "Nada: la recompra no cambia el valor contable por acción"
           ],

@@ -40,9 +40,9 @@
           "t": "choice",
           "q": "¿Qué es comprar en un retroceso?",
           "opts": [
-            "Comprar en la corrección de una tendencia alcista",
+            "Comprar la corrección dentro de una tendencia alcista",
             "Comprar lo que más ha caído en el año",
-            "Comprar después de cada caída de un 10 %",
+            "Comprar después de cada caída de un 10 %, con tendencia o sin ella",
             "Vender cuando el precio vuelve a subir"
           ],
           "a": 0,
@@ -156,7 +156,7 @@
           "t": "choice",
           "q": "¿Qué ventaja tiene comprar en el retroceso frente a comprar en la ruptura?",
           "opts": [
-            "Un stop más cercano y mejor relación riesgo",
+            "Stop más cercano y mejor relación riesgo",
             "Que nunca falla si el mercado acompaña",
             "Que no hace falta poner ningún stop",
             "Que siempre se compra en el mínimo exacto"

@@ -136,8 +136,8 @@
           "q": "Antes de resultados, la volatilidad implícita de una acción es del 45 % y su histórica, del 25 %. ¿Qué lectura es más razonable?",
           "opts": [
             "Las opciones están baratas porque la implícita es la mayor",
-            "Es lógico: el precio descuenta un salto por el dato que la histórica aún no incluye",
-            "La acción tiene que caer, porque una implícita alta anticipa caídas",
+            "Es lógico: el precio descuenta un salto por el dato que la histórica no recoge",
+            "La acción tiene que caer, porque una implícita alta siempre anticipa caídas fuertes",
             "La histórica está mal calculada y hay que ignorarla"
           ],
           "a": 1,
@@ -176,7 +176,7 @@
           "q": "¿Por qué la volatilidad implícita suele ser algo mayor que la que luego se mueve de verdad?",
           "opts": [
             "Quien vende opciones cobra un extra por asumir saltos, como un seguro",
-            "Porque la histórica siempre se calcula con errores a la baja",
+            "Porque la histórica se calcula con datos antiguos que subestiman el riesgo",
             "Porque la ley fija las primas un 20 % por encima",
             "Porque quien compra opciones nunca acierta"
           ],

@@ -79,7 +79,7 @@
           "opts": [
             "Porque la put a 12 meses no tiene valor temporal, solo intrínseco",
             "Porque el bróker cobra una comisión diaria por mantener las puts cortas",
-            "Porque su valor temporal se evapora más deprisa cuanto menos plazo queda",
+            "Porque su valor temporal se evapora más deprisa al acercarse el final",
             "Porque la put a 1 mes tiene siempre un ejercicio más bajo que la larga"
           ],
           "a": 2,

@@ -134,7 +134,7 @@
           "t": "choice",
           "q": "Vencen 2.000 M$ de deuda en 12 meses, la empresa tiene 300 M$ de caja y el tipo de interés para refinanciar ha pasado del 3 % al 7 %. ¿Qué riesgo es inmediato?",
           "opts": [
-            "Refinanciar mucho más caro o ampliar capital, con dilución",
+            "Refinanciar más caro o ampliar capital, diluyendo",
             "Ninguno: esa deuda no vence hasta dentro de doce meses",
             "Que tenga que subir el dividendo",
             "Que salga de su índice bursátil de referencia este año"

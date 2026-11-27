@@ -166,7 +166,7 @@
             "Sube del 10 % al 13,3 %",
             "Se queda en el 10 %, porque los ingresos son los mismos",
             "Baja del 10 % al 4,5 %",
-            "Baja del 10 % al 7,5 %: el mercado crece más que la empresa"
+            "Baja del 10 % al 7,5 %: el mercado crece más"
           ],
           "a": 3,
           "why": "Antes: 90 ÷ 900 = 10 %. Ahora: 90 ÷ 1.200 = 7,5 %. Con ingresos quietos, un mercado mayor reduce la cuota.",
@@ -223,7 +223,7 @@
           "q": "La tesis exige pasar del 9 % al 18 % de cuota en 5 años (270 M€ en un mercado que será de 1.500 M€), con varios rivales mayores. ¿Qué pregunta es la clave?",
           "opts": [
             "Si el PER actual es más bajo que el de los rivales",
-            "A qué rivales se quitarán clientes y por qué cambiarán de proveedor",
+            "A qué rivales quitará clientes y por qué cambiarán de proveedor",
             "Si el 18 % es una cifra redonda y fácil de recordar",
             "Si el mercado crecerá, porque eso basta aunque la cuota no cambie"
           ],

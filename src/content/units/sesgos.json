@@ -97,7 +97,7 @@
           "q": "Todo el mundo habla de una acción que ha subido un 80 % este año y un conocido presume de sus ganancias. ¿Qué haces?",
           "opts": [
             "Comprar ya, antes de que suba más",
-            "Comprobar si encaja en tu plan antes de comprar",
+            "Comprobar si encaja en tu plan",
             "Pedir un préstamo para no quedarte fuera",
             "Vender tus fondos para entrar con todo"
           ],
@@ -194,7 +194,7 @@
           "q": "Aciertas tres compras seguidas y decides doblar el tamaño de la siguiente. ¿Qué te está pasando?",
           "opts": [
             "Has demostrado que tu método funciona siempre",
-            "Confundes una racha con habilidad: exceso de confianza",
+            "Exceso de confianza por una simple racha",
             "Estás gestionando bien el riesgo de la cartera",
             "Aplicas correctamente el interés compuesto"
           ],

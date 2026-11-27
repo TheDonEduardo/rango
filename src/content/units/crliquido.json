@@ -250,7 +250,7 @@
           "q": "La garantía de tu préstamo se valora a precio de mercado y se liquida por encima del 80 %. ¿Qué ocurre si el token cae a descuento, aunque su valor de canje no cambie?",
           "opts": [
             "No pasa nada, porque el canje sigue igual",
-            "El protocolo repone la diferencia de su caja",
+            "El protocolo repone la diferencia con su propia caja",
             "Pueden liquidarte aunque el staking siga bien",
             "Solo se ve afectado quien venda el token"
           ],

@@ -61,7 +61,7 @@
           "q": "Vas a enviar una moneda estable que existe en varias redes. ¿Qué compruebas además de la dirección?",
           "opts": [
             "Que la red de envío sea la que admite el destino",
-            "Que el envío se haga en horario de mercado",
+            "Que el envío se haga en horario de mercado en tu país",
             "Que el importe sea un número redondo",
             "Que el destino tenga el mismo logotipo"
           ],
@@ -126,7 +126,7 @@
             "Un monedero que guarda tus claves",
             "Una plataforma para comprar y vender",
             "Una web pública que muestra transacciones",
-            "Un programa que mina bloques nuevos"
+            "Un programa que mina bloques nuevos de la red"
           ],
           "a": 2,
           "why": "Cualquiera puede buscar una dirección o una transacción y ver su importe, su comisión y sus confirmaciones. Por eso las cadenas públicas no son anónimas.",

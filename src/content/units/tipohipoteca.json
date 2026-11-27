@@ -65,7 +65,7 @@
           "t": "choice",
           "q": "¿Cómo se calcula el tipo de una hipoteca variable?",
           "opts": [
-            "Euríbor más un diferencial fijo, revisado cada cierto tiempo",
+            "Euríbor más un diferencial fijo, con revisiones",
             "Un tipo fijo que el banco puede cambiar cuando quiera",
             "La inflación del año anterior más un punto",
             "El tipo oficial del BCE, sin nada más"
