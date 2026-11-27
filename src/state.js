@@ -5,7 +5,7 @@ import {FLAT,EXBYID,TRACKS,trackOf,libre} from './content.js';
 // Versión del formato guardado. Cada cambio de formato añade un paso a MIGRAR (de la versión n a la n+1),
 // así el progreso de quien ya usa la app se convierte en vez de perderse.
 export const STATE_V=3;
-export const DEF=()=>({v:STATE_V,xp:0,streak:0,last:null,day:null,dayXp:0,done:{},all:false,track:'basico',skipBasics:false,legal:0,srs:{},sim:{},calc:null,itin:null,mercado:null,stats:{ex:{},min:0},guias:{},leidas:{},aprendidos:{},dominadas:{},pruebas:{},meta:40,protector:0,objetivo:null,medir:false,sonido:true,reto:null,respaldo:{fecha:null,n:0,oculto:null},mod:0});
+export const DEF=()=>({v:STATE_V,xp:0,streak:0,last:null,day:null,dayXp:0,done:{},all:false,track:'basico',skipBasics:false,legal:0,srs:{},sim:{},calc:null,itin:null,mercado:null,stats:{ex:{},min:0},guias:{},leidas:{},aprendidos:{},dominadas:{},pruebas:{},meta:40,protector:0,objetivo:null,medir:false,sonido:true,reto:null,respaldo:{fecha:null,n:0,oculto:null},mod:0,recordatorio:{hora:'20:00',laborables:false}});
 // Meta diaria elegible y máximo de protectores (antes de load(), que sanea el estado al leerlo).
 export const META_OPC=[20,40,80], PROTECTOR_MAX=2;
 const MIGRAR={
@@ -48,6 +48,8 @@ export function limpiarEscalares(s){
   if(typeof s.sonido!=='boolean')s.sonido=d.sonido;
   const rp=obj(s.respaldo)?s.respaldo:{};
   s.respaldo={fecha:fechaValida(rp.fecha)?rp.fecha:null,n:ent(rp.n)?rp.n:0,oculto:fechaValida(rp.oculto)?rp.oculto:null};
+  const rc=obj(s.recordatorio)?s.recordatorio:{};
+  s.recordatorio={hora:typeof rc.hora==='string'&&/^([01]\d|2[0-3]):[0-5]\d$/.test(rc.hora)?rc.hora:d.recordatorio.hora,laborables:rc.laborables===true};
   limpiarColecciones(s);
   return s;
 }

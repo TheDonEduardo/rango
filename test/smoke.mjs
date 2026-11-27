@@ -1151,6 +1151,52 @@ if (caducados.length) console.warn('AVISO: contenido pendiente de revisar (norma
   if (limpiarEscalares({...DEF(), sonido: false}).sonido !== false) errs.push('limpiarEscalares cambia sonido = false');
 }
 
+// Destrezas en estadísticas y recordatorio .ics.
+{
+  const {destrezasStats, flojos, icsRecordatorio, DESTREZAS} = await import(pathToFileURL(path.join(root, 'src/views/stats.js')).href);
+  const {EXBYID} = await import(pathToFileURL(path.join(root, 'src/content.js')).href);
+  const {limpiarEscalares, DEF} = await import(pathToFileURL(path.join(root, 'src/state.js')).href);
+  const de = (tipo, k) => [...EXBYID.values()].filter(e => e.t === tipo)[k].id;
+  const reg = {[de('num', 0)]: {n: 10, f: 5, u: 0}, [de('slide', 0)]: {n: 5, f: 0, u: 1}, [de('tap', 0)]: {n: 12, f: 1, u: 1}, [de('choice', 0)]: {n: 20, f: 2, u: 1}, [de('order', 0)]: {n: 5, f: 1, u: 0}};
+  const d = Object.fromEntries(destrezasStats(reg, EXBYID).map(o => [o.id, o]));
+  if (d.calculo.n !== 15 || d.calculo.ejercicios !== 2 || d.calculo.pct !== 67) errs.push('destrezas: cálculo mal agrupado ' + JSON.stringify(d.calculo));
+  if (d.graficos.pct !== 92 || d.criterio.pct !== 88 || d.criterio.ejercicios !== 2) errs.push('destrezas: % de gráficos o criterio mal');
+  if (!d.calculo.floja || d.graficos.floja || d.criterio.floja) errs.push('destrezas: la más floja no es cálculo');
+  const poco = Object.fromEntries(destrezasStats({[de('num', 0)]: {n: 9, f: 9, u: 0}, [de('choice', 0)]: {n: 20, f: 0, u: 1}}, EXBYID).map(o => [o.id, o]));
+  if (Object.values(poco).some(o => o.floja)) errs.push('destrezas: marca la más floja sin datos suficientes');
+  if (destrezasStats({}, EXBYID).some(o => o.pct !== null || o.floja)) errs.push('destrezas: sin datos debe quedar vacío');
+  const st = T.getState(), antes = st.stats.ex;
+  st.stats.ex = reg;
+  const fc = flojos(Infinity, 'calculo').map(e => e.id), fk = flojos(Infinity, 'criterio').map(e => e.id);
+  if (fc.join() !== de('num', 0) || fk.join() !== de('order', 0) || flojos(Infinity, 'graficos').length) errs.push('flojos: el filtro por destreza no separa los tipos');
+  if (flojos(Infinity).length !== 2) errs.push('flojos: sin filtro devuelve todos');
+  T.openStats();
+  if (!app.innerHTML.includes('Tus destrezas') || !app.innerHTML.includes('data-d="calculo"') || !app.innerHTML.includes('data-d="criterio"') || app.innerHTML.includes('data-d="graficos"')) errs.push('estadísticas: destrezas o botones de práctica mal dibujados');
+  T.act('weakd', {d: 'criterio'});
+  if (T.getRun().queue.map(e => e.id).join() !== de('order', 0)) errs.push('práctica por destreza: no usa solo los ejercicios de esa destreza');
+  T.goHome(); st.stats.ex = antes;
+  // .ics
+  const hoy = new Date(2026, 10, 27, 9, 30);  // viernes
+  const ics = icsRecordatorio({hora: '20:00', laborables: false, url: 'https://x.es/rango/', hoy});
+  const ls = ics.split('\r\n');
+  if (ls.length < 12 || ls.pop() !== '' || /[^\r]\n/.test(ics.replace(/\r\n/g, ''))) errs.push('ics: no usa CRLF');
+  for (const l of ['BEGIN:VCALENDAR', 'VERSION:2.0', 'BEGIN:VEVENT', 'DTSTART:20261128T200000', 'DTEND:20261128T201000', 'RRULE:FREQ=DAILY', 'SUMMARY:Rango: 5 minutos de práctica', 'BEGIN:VALARM', 'TRIGGER:-PT0M', 'END:VALARM', 'END:VEVENT', 'END:VCALENDAR']) if (!ls.includes(l)) errs.push('ics: falta ' + l);
+  if (!ls.some(l => /^UID:\S+@rango$/.test(l)) || !ls.some(l => /^DTSTAMP:\d{8}T\d{6}Z$/.test(l))) errs.push('ics: UID o DTSTAMP');
+  if (!ics.includes('https://x.es/rango/')) errs.push('ics: sin la URL');
+  const lv = icsRecordatorio({hora: '07:05', laborables: true, url: '', hoy}).split('\r\n');
+  if (!lv.includes('RRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR') || !lv.includes('DTSTART:20261130T070500')) errs.push('ics: modo lunes a viernes (el sábado pasa al lunes) mal: ' + lv.filter(l => /DTSTART|RRULE/.test(l)).join('|'));
+  const esc = icsRecordatorio({hora: '20:00', url: 'https://x.es/a,b;c', hoy}).replace(/\r\n /g, '');
+  if (!esc.includes('a\\,b\\;c')) errs.push('ics: no escapa comas y punto y coma en la descripción');
+  if (icsRecordatorio({hora: 'zz', hoy}).indexOf('DTSTART:20261128T200000') < 0) errs.push('ics: hora inválida no vuelve a las 20:00');
+  if (icsRecordatorio({hora: '23:55', hoy}).indexOf('DTEND:20261129T000500') < 0) errs.push('ics: el fin no cruza la medianoche');
+  if (ics.split('\r\n').some(l => new TextEncoder().encode(l).length > 75)) errs.push('ics: líneas de más de 75 octetos sin plegar');
+  // estado
+  if (DEF().recordatorio.hora !== '20:00' || DEF().recordatorio.laborables !== false) errs.push('DEF sin recordatorio');
+  for (const v of [null, 'x', [], {hora: '25:99', laborables: 'sí'}]) { const r = limpiarEscalares({...DEF(), recordatorio: v}).recordatorio; if (r.hora !== '20:00' || r.laborables !== false) errs.push('limpiarEscalares no sanea recordatorio = ' + JSON.stringify(v)); }
+  const ok = limpiarEscalares({...DEF(), recordatorio: {hora: '08:15', laborables: true}}).recordatorio;
+  if (ok.hora !== '08:15' || ok.laborables !== true) errs.push('limpiarEscalares cambia un recordatorio válido');
+}
+
 if (errs.length) { console.error('FALLOS:\n- ' + errs.join('\n- ')); process.exit(1); }
 const nc = casos ? Object.values(casos.ex).reduce((n, l) => n + l.length, 0) : 0;
 console.log(`OK: ${T.FLAT.length} lecciones, ${nc} casos reales, XP total ${T.getState().xp}`);

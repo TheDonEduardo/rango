@@ -17,7 +17,7 @@ import {lessonHTML,resultHTML,failHTML,veredictoTxt} from './views/lesson.js';
 import {simHTML,simInfo,simValid,simSave,simHist,simulate,SIM_PLACE} from './views/sim.js';
 import {calcHTML,calcOutHTML,histOutHTML,historia,CALC_CTRL,aportaciones} from './views/calc.js';
 import {legalHTML,privacidadHTML,LEGAL_V} from './views/legal.js';
-import {statsHTML,statRecord,STATS_L,flojos} from './views/stats.js';
+import {statsHTML,statRecord,STATS_L,flojos,icsRecordatorio} from './views/stats.js';
 import {guiaHTML,abrirGuia,guiaPendiente,guiaVista} from './views/guia.js';
 import {glosarioHTML,listaGlosario} from './views/glosario.js';
 import {itinerariosHTML} from './views/itinerarios.js';
@@ -92,7 +92,7 @@ function startRun(L){
     :L.kind==='srs'?shuffle(srsDue()).slice(0,SRS_MAX).map(conVariante)
     :L.kind==='reto'?[retoHoy()].filter(Boolean)
     :L.kind==='mercado'?(MERCADO?MERCADO.ex.slice():[])
-    :L.kind==='weak'?shuffle(flojos(SRS_MAX)).map(conVariante)
+    :L.kind==='weak'?shuffle(flojos(SRS_MAX,L.destreza)).map(conVariante)
     :L.kind==='review'?shuffle(L.unit.lessons.flatMap(l=>l.ex)).slice(0,EXAMEN_N).map(conVariante)
     :shuffle(L.ex).concat(shuffle(L.casos).slice(0,1));
   if(!ex.length){ses.view='home';render();return}
@@ -277,6 +277,13 @@ const ACCIONES={
   guiaprev(){ses.guia.i--;guiaVista();render()},
   guiafin(){const g=ses.guia;if(g.modo==='inicio'||g.ganado)medir('guia',{unidad:g.unit.id,tarjeta:g.i+1,de:g.unit.guia.length,completa:g.vistas.size===g.unit.guia.length});ses.guia=null;if(g.modo==='inicio')startRun(g.L);else if(g.modo==='repaso'){ses.view='lesson';render();const b=$app.querySelector('[data-act=next],[data-act=guiarepaso]');if(b&&b.focus)b.focus({preventScroll:true})}else{ses.view='home';render()}},
   weak(){ses.homeY=0;startRun(STATS_L)},
+  weakd(b){ses.homeY=0;startRun(Object.assign({},STATS_L,{destreza:b.dataset.d}))},
+  // Recordatorio: archivo .ics con un evento recurrente; se descarga en el dispositivo y no se envía nada.
+  recordatorio(){
+    const ics=icsRecordatorio({hora:S.recordatorio.hora,laborables:S.recordatorio.laborables,url:location.origin+location.pathname,hoy:new Date()});
+    const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([ics],{type:'text/calendar;charset=utf-8'}));
+    a.download='rango-recordatorio.ics';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1000);toast(t.recDescargado);
+  },
   simsave(){if(ses.simDraft&&simValid(ses.simDraft)){simSave();ses.simDraft=null;ses.view='sim';render()}},
   unfold(b){const id=b.dataset.id,ab=ses.abiertas;ab.has(id)?ab.delete(id):ab.add(id);ses.homeY=window.scrollY;render();const nb=$app.querySelector(`[data-act=unfold][data-id="${id}"]`);if(nb)nb.focus({preventScroll:true})},
   legal(){ir('legal')},
@@ -325,6 +332,8 @@ $app.addEventListener('click',e=>{
 });
 const COPIA_MAX=5*1024*1024;  // una copia de seguridad real pesa unos KB: más de 5 MB no es de Rango
 $app.addEventListener('change',e=>{
+  if(e.target.id==='rec-hora'&&/^([01]\d|2[0-3]):[0-5]\d$/.test(e.target.value)){S.recordatorio.hora=e.target.value;save();return}
+  if(e.target.id==='rec-dias'){S.recordatorio.laborables=e.target.value==='1';save();return}
   if(e.target.dataset&&e.target.dataset.calc&&e.target.type!=='checkbox'&&ses.view==='calc'){save();return}  // las casillas ya guardan en `input`
   if(e.target.id!=='imp-file'||!e.target.files||!e.target.files[0])return;
   if(e.target.files[0].size>COPIA_MAX){toast(t.copiaGrande);e.target.value='';return}
@@ -422,7 +431,7 @@ if(typeof navigator!=='undefined'&&'serviceWorker' in navigator&&typeof location
 }
 
 // API mínima para tests (test/smoke.mjs)
-export const api={sumarRacha,glos,openGlosario:()=>{ses.view='glosario';render()},migrar,exportar,leerCopia,importar,siguientePaso,FLAT,CASOS,SEMANA,MERCADO,PLACEMENT,simulate,simHist,aportaciones,historia,ITINERARIOS,itinActual,
+export const api={icsRecordatorio,sumarRacha,glos,openGlosario:()=>{ses.view='glosario';render()},migrar,exportar,leerCopia,importar,siguientePaso,FLAT,CASOS,SEMANA,MERCADO,PLACEMENT,simulate,simHist,aportaciones,historia,ITINERARIOS,itinActual,
   openCalc:()=>{ses.view='calc';render()},openSim:()=>{ses.simDraft=null;ses.view='sim';render()},
   openStats:()=>{ses.view='stats';render()},act:(a,ds={})=>ACCIONES[a]({dataset:ds}),getView:()=>ses.view,startWeak:()=>startRun(STATS_L),
   simDraftSet:p=>{ses.simDraft=p},simSave,goHome:()=>{ses.view='home';render()},startTest:()=>startRun(TEST_L),startNivel:tr=>startRun({id:'nivel-'+tr,title:t.pruebaNivel,kind:'nivel',track:tr}),srsDue,

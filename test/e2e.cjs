@@ -18,6 +18,16 @@ const units = unidades(ROOT), CASOS = casos(ROOT);
 const exs = units.flatMap(u => (u.lessons || []).flatMap(l => l.ex)).concat(Object.values(CASOS.ex || {}).flat());
 const lecciones = units.flatMap(u => (u.lessons || []).map(l => ({id: l.id, track: u.track || 'tecnico', tipos: new Set(l.ex.map(e => e.t))})));
 
+// Estadísticas con datos simulados: ids reales de cada tipo de ejercicio (fijos, con id) y puntos débiles en cálculo.
+const ESTAT = (() => {
+  const fijos = units.flatMap(u => (u.lessons || []).flatMap(l => l.ex)).filter(e => e.id);
+  const de = (...ts) => fijos.filter(e => ts.includes(e.t));
+  const ex = {};
+  de('num').slice(0, 6).forEach((e, i) => { ex[e.id] = {n: 4, f: i < 3 ? 3 : 1, u: i < 3 ? 0 : 1}; });
+  de('tap', 'level', 'plan').slice(0, 4).forEach(e => { ex[e.id] = {n: 4, f: 1, u: 1}; });
+  de('choice').slice(0, 8).forEach(e => { ex[e.id] = {n: 4, f: 0, u: 1}; });
+  return ex;
+})();
 const TYPES = {'.html': 'text/html', '.js': 'text/javascript', '.mjs': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.webmanifest': 'application/manifest+json', '.png': 'image/png', '.svg': 'image/svg+xml'};
 function servidor() {
   return new Promise(res => {
@@ -127,6 +137,10 @@ async function auditar(b, url) {
     ['simulador semana resultado', {...base, track: 'tecnico'}, async p => { await p.click('[data-act=sim]'); await p.click('[data-act=simsave]'); }],
     ['simulador aportaciones', {...base, track: 'pasiva', calc: {cmp: true}}, async p => { await p.click('[data-act=calc]'); }],
     ['estadísticas', {...base, track: 'tecnico'}, async p => { if (await p.locator('[data-act=stats]').count()) await p.click('[data-act=stats]'); }],
+    ['estadísticas con destrezas y recordatorio', {...base, track: 'tecnico', stats: {ex: ESTAT, min: 20}}, async p => {
+      if (await p.locator('[data-act=stats]').count()) await p.click('[data-act=stats]');
+      await p.waitForSelector('.destrezas');
+    }],
     ['guía', {...base, guias: {}, track: 'basico'}, async p => { await p.click('[data-act=open][data-id=ba1]'); await p.click('[data-act=guianext]'); }],
     ['guía consulta', {...base, track: 'basico'}, async p => { await p.click('[data-act=guia][data-id=acciones]'); }],
     ['definición del glosario', {...base, track: 'tecnico'}, async p => { await p.click('[data-act=guia][data-id=riesgo]'); await p.locator('.term').first().click(); }],
@@ -262,6 +276,32 @@ async function privacidadDirecta(b, url) {
   await p.close(); return errs.length;
 }
 
+// Estadísticas: destrezas con datos simulados, práctica de una destreza y recordatorio (.ics) descargado sin errores.
+async function estadisticas(b, url, dir) {
+  const errs = [], p = await b.newPage({viewport: {width: 390, height: 844}, acceptDownloads: true});
+  p.on('pageerror', e => errs.push('error de página: ' + e.message));
+  await p.goto(url);
+  await p.evaluate(e => localStorage.setItem('rango.v1', JSON.stringify({legal: 99, track: 'tecnico', all: true, skipBasics: true, xp: 50, done: {}, srs: {}, placement: {skipped: true}, stats: {ex: e, min: 20}})), ESTAT);
+  await p.reload(); await p.waitForSelector('#app h1');
+  await p.click('[data-act=stats]'); await p.waitForSelector('.destrezas');
+  const txt = await p.locator('.destrezas').innerText();
+  for (const d of ['Cálculo', 'Gráficos', 'Criterio']) if (!txt.includes(d)) errs.push('falta la destreza ' + d);
+  if (!txt.includes('la más floja')) errs.push('no marca la destreza más floja');
+  if (await p.locator('[data-act=weakd][data-d=calculo]').count() !== 1 || await p.locator('[data-act=weakd][data-d=criterio]').count() !== 0) errs.push('botones «Practicar» por destreza mal');
+  await p.fill('#rec-hora', '07:30'); await p.selectOption('#rec-dias', '1');
+  const [dl] = await Promise.all([p.waitForEvent('download', {timeout: 5000}), p.click('[data-act=recordatorio]')]);
+  const f = await dl.createReadStream(), chunks = []; for await (const c of f) chunks.push(c);
+  const ics = Buffer.concat(chunks).toString('utf8');
+  if (dl.suggestedFilename() !== 'rango-recordatorio.ics') errs.push('nombre de descarga: ' + dl.suggestedFilename());
+  if (!ics.includes('BEGIN:VCALENDAR\r\n') || !ics.includes('RRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR') || !/DTSTART:\d{8}T073000\r\n/.test(ics) || !ics.includes('BEGIN:VALARM')) errs.push('el .ics descargado no es el esperado');
+  const g = JSON.parse(await p.evaluate(() => localStorage.getItem('rango.v1')));
+  if (!g.recordatorio || g.recordatorio.hora !== '07:30' || g.recordatorio.laborables !== true) errs.push('no se guarda la preferencia del recordatorio');
+  if (dir) await p.screenshot({path: `${dir}/estadisticas-movil.png`, fullPage: true});
+  await p.click('[data-act=weakd][data-d=calculo]'); await p.waitForSelector('.lesson');
+  console.log('  ' + (errs.length ? errs.join('\n  ') : 'bien'));
+  await p.close(); return errs.length;
+}
+
 // Bienvenida: la línea de privacidad de la lista de espera se ve solo cuando la lista está activa (con y sin LISTA_ESPERA/CONTACTO).
 async function bienvenidaPrivacidad(b, url) {
   const errs = [];
@@ -324,6 +364,7 @@ async function cargaFallida(b, url) {
   let fallos = await recorrer(b, url, ids, modos, dir);
   if (!has('--lecciones') && !has('--todas')) { console.log('Guía (teclado y dedo):'); fallos += await guiaNavegacion(b, url); }
   if (!has('--lecciones') && !has('--todas')) { console.log('Teoría (XP, «Ver teoría», fila de «Hoy»):'); fallos += await teoria(b, url, dir); }
+  if (!has('--lecciones') && !has('--todas')) { console.log('Estadísticas (destrezas y recordatorio):'); fallos += await estadisticas(b, url, dir); }
   if (!has('--lecciones') && !has('--todas')) { console.log('Política de privacidad directa:'); fallos += await privacidadDirecta(b, url); }
   if (!has('--lecciones') && !has('--todas')) { console.log('Bienvenida: privacidad de la lista de espera:'); fallos += await bienvenidaPrivacidad(b, url); }
   if (!has('--lecciones') && !has('--todas')) { console.log('Carga y fallo de carga:'); fallos += await cargaFallida(b, url); }

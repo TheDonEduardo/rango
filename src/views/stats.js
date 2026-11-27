@@ -19,9 +19,48 @@ export function statRecord(ex,ok){
   S.stats.ex[ex.id]=r;
 }
 // Los n ejercicios más fallados entre los que fallaste la última vez.
-export function flojos(n){
-  return Object.entries(S.stats.ex).filter(([id,r])=>!r.u&&EXBYID.has(id))
+export function flojos(n,destreza){
+  const tipos=destreza?DESTREZAS.find(d=>d.id===destreza)?.tipos:null;
+  return Object.entries(S.stats.ex).filter(([id,r])=>!r.u&&EXBYID.has(id)&&(!tipos||tipos.includes(EXBYID.get(id).t)))
     .sort((a,b)=>b[1].f-a[1].f||b[1].f/b[1].n-a[1].f/a[1].n).slice(0,n).map(([id])=>EXBYID.get(id));
+}
+// Destrezas: tipos de ejercicio agrupados. Acierto = 1 − fallos a la primera ÷ veces respondido (mismo dato que el
+// «Acierto a la primera» global, así que suma los intentos y no promedia ejercicios). La más floja solo se marca con
+// DESTREZA_MIN respuestas en al menos dos destrezas, para comparar con datos y no con ruido.
+export const DESTREZAS=[{id:'calculo',tipos:['num','slide']},{id:'graficos',tipos:['tap','level','plan','zone']},{id:'criterio',tipos:['choice','order','match']}];
+export const DESTREZA_MIN=10;
+export function destrezasStats(reg,byId){
+  const out=DESTREZAS.map(d=>({id:d.id,n:0,f:0,ejercicios:0,pct:null,floja:false}));
+  for(const [id,r] of Object.entries(reg)){
+    const ex=byId.get(id);if(!ex)continue;
+    const o=out[DESTREZAS.findIndex(d=>d.tipos.includes(ex.t))];if(!o)continue;
+    o.n+=r.n;o.f+=r.f;o.ejercicios++;
+  }
+  for(const o of out)if(o.n)o.pct=Math.round((1-o.f/o.n)*100);
+  const ok=out.filter(o=>o.n>=DESTREZA_MIN);
+  if(ok.length>=2){const m=Math.min(...ok.map(o=>1-o.f/o.n));const w=ok.filter(o=>1-o.f/o.n===m);if(w.length===1)w[0].floja=true}
+  return out;
+}
+// Recordatorio diario para el calendario del dispositivo (archivo .ics): no se envía nada a ningún servidor.
+const icsEsc=v=>String(v).replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\r?\n/g,'\\n');
+const icsPlegar=l=>{const r=[];let x=Array.from(l);let cur='';for(const c of x){if(new TextEncoder().encode(cur+c).length>(r.length?74:75)){r.push(cur);cur=c}else cur+=c}r.push(cur);return r.map((z,i)=>i?' '+z:z).join('\r\n')};
+const d2=n=>String(n).padStart(2,'0');
+const icsLocal=d=>`${d.getFullYear()}${d2(d.getMonth()+1)}${d2(d.getDate())}T${d2(d.getHours())}${d2(d.getMinutes())}00`;
+const icsUtc=d=>`${d.getUTCFullYear()}${d2(d.getUTCMonth()+1)}${d2(d.getUTCDate())}T${d2(d.getUTCHours())}${d2(d.getUTCMinutes())}${d2(d.getUTCSeconds())}Z`;
+export function icsRecordatorio({hora='20:00',laborables=false,url='',hoy=new Date()}={}){
+  const m=/^([01]\d|2[0-3]):([0-5]\d)$/.exec(hora)||['','20','00'];
+  const ini=new Date(hoy.getFullYear(),hoy.getMonth(),hoy.getDate()+1,+m[1],+m[2]);
+  // Con «lunes a viernes», si mañana es fin de semana el primer evento se mueve al lunes (DTSTART debe cumplir la regla).
+  while(laborables&&(ini.getDay()===0||ini.getDay()===6))ini.setDate(ini.getDate()+1);
+  const fin=new Date(ini.getTime()+10*60000);
+  const L=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Rango//Recordatorio//ES','CALSCALE:GREGORIAN','BEGIN:VEVENT',
+    `UID:rango-${hoy.getTime()}-${m[1]}${m[2]}-${laborables?'lv':'td'}@rango`,`DTSTAMP:${icsUtc(hoy)}`,
+    `DTSTART:${icsLocal(ini)}`,`DTEND:${icsLocal(fin)}`,
+    laborables?'RRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR':'RRULE:FREQ=DAILY',
+    `SUMMARY:${icsEsc(t.recTitulo)}`,`DESCRIPTION:${icsEsc(url?t.recDescripcion(url):t.recDescripcion(''))}`,
+    ...(url?[`URL:${url}`]:[]),
+    'BEGIN:VALARM','ACTION:DISPLAY',`DESCRIPTION:${icsEsc(t.recTitulo)}`,'TRIGGER:-PT0M','END:VALARM','END:VEVENT','END:VCALENDAR'];
+  return L.map(icsPlegar).join('\r\n')+'\r\n';
 }
 const dom=r=>UNITS.filter(u=>trackOf(u)===r&&S.dominadas[u.id]).length;
 // Cuenta (solo si config.js trae el proyecto de Supabase): acceso por enlace mágico, estado y baja.
@@ -46,6 +85,14 @@ export function statsHTML(){
   const debiles=fl.length?`<ul class="weak">${fl.map(ex=>`<li><span>${tx(ex.q.length>90?ex.q.slice(0,88)+'…':ex.q)}</span><small>${esc(lecDe(ex).title)} · ${t.fallado(S.stats.ex[ex.id].f)}</small></li>`).join('')}</ul>
     <button class="btn primary" data-act="weak">${t.practicar(Math.min(total,SRS_MAX))}</button>`
     :`<p class="note">${t.sinDebiles}</p>`;
+  const dz=destrezasStats(S.stats.ex,EXBYID);
+  const destrezas=dz.some(o=>o.n)?`<h2 class="sub">${t.destrezasTitulo}</h2><ul class="st-rutas destrezas">${dz.map(o=>{
+    const nom=t.destrezas[o.id],hay=flojos(Infinity,o.id).length;
+    return `<li><div class="st-h"><b>${nom}</b><span>${o.n?`${o.pct} % · ${t.nEjercicios(o.ejercicios)}`:t.sinDatos}${o.floja?` · <strong class="floja">${t.masFloja}</strong>`:''}</span></div><div class="bar" role="progressbar" aria-label="${t.aciertoDe(nom)}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${o.pct||0}"><i style="width:${o.pct||0}%"></i></div>${hay?`<button class="btn line dz-btn" data-act="weakd" data-d="${o.id}">${t.practicarDestreza(nom)}</button>`:''}</li>`}).join('')}</ul>`:'';
+  const rec=S.recordatorio;
+  const recordatorio=`<h2 class="sub">${t.recTituloSec}</h2><p class="note">${t.recNota}</p>
+  <div class="row rec"><label>${t.recHora}<input type="time" id="rec-hora" value="${rec.hora}" required></label><label>${t.recDias}<select id="rec-dias"><option value="0"${rec.laborables?'':' selected'}>${t.recTodos}</option><option value="1"${rec.laborables?' selected':''}>${t.recLaborables}</option></select></label></div>
+  <button class="btn line" data-act="recordatorio">${t.recBoton}</button><p class="src">${t.recAviso}</p>`;
   return `<div class="lesson sim-view estad"><div class="lbar"><button class="x" data-act="home" aria-label="${t.volverInicio}">${icoX}</button><p class="kind">${t.estadisticas}</p></div>
   <div class="qwrap"><h1 class="q">${t.tuProgreso}</h1>
   <dl class="simk"><div><dt>${t.xp}</dt><dd>${S.xp}</dd></div><div><dt>${t.rachaM}</dt><dd>${t.dias(streakNow())}</dd></div>
@@ -56,7 +103,9 @@ export function statsHTML(){
   <ul class="st-rutas">${rutas}</ul>
   <p class="note">${(g=>t.guiasLeidasT(g.leidas,g.total))(guiasLeidas())}</p>
   <h2 class="sub">${t.repasoTitulo}</h2><dl class="simk"><div><dt>${t.enRepaso}</dt><dd>${sr.enRepaso}</dd></div><div><dt>${t.aprendidosT}</dt><dd>${sr.aprendidos}</dd></div></dl><p class="note">${t.repasoNota}</p>
+  ${destrezas}
   <h2 class="sub">${t.puntosDebiles}</h2>${debiles}
+  ${recordatorio}
   ${medicionDisponible()?`<h2 class="sub">${t.medicionTitulo}</h2><p class="note">${t.medicionNota}</p><button class="btn line" data-act="medir" data-v="${S.medir?0:1}" aria-pressed="${S.medir}">${S.medir?t.medicionQuitar:t.medicionActivar}</button>`:''}
   ${cuentaHTML()}
   <h2 class="sub">${t.copiaTitulo}</h2><p class="note">${sesion()?t.copiaNotaCuenta:t.copiaNota}</p>
