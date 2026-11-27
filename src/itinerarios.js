@@ -1,7 +1,7 @@
 // Itinerarios: recorridos guiados que encadenan lecciones de varias rutas con un objetivo concreto.
 // Cada paso es el id de una lección; el orden es el del itinerario, no el de las rutas (no aplica sus bloqueos).
-import {FLAT} from './content.js';
-import {S} from './state.js';
+import {FLAT,trackOf} from './content.js';
+import {S,statuses} from './state.js';
 
 export const ITINERARIOS=[
   {id:'cartera',pasos:['ba1','bb1','bd1','bd2','bn1','bg1','bg2','pr1','ix1','rb1','zb1','zb2','zp1','zp2']},
@@ -21,3 +21,20 @@ export function progreso(it){
   return {L,hechas,total:L.length,sig:L.find(l=>!S.done[l.id])||null};
 }
 export const itinActual=()=>{const it=ITINERARIOS.find(x=>x.id===S.itin);return it?Object.assign({it},progreso(it)):null};
+
+// Siguiente paso tras completar una lección normal: el del itinerario activo si la lección es uno de sus pasos;
+// si no, la siguiente lección (o el examen de la unidad) de la misma ruta, solo si ya está desbloqueada.
+// Devuelve {id, examen} o null (volver al inicio: caso final, sin siguiente o bloqueada).
+export function siguientePaso(L){
+  if(!L||L.kind!=='lesson'||L.unit.caso)return null;
+  const a=itinActual();
+  if(a&&a.it.pasos.includes(L.id))return a.sig&&a.sig.id!==L.id?{id:a.sig.id,examen:false}:null;
+  const i=FLAT.indexOf(L),r=trackOf(L.unit),st=statuses();
+  for(let k=i+1;k<FLAT.length;k++){
+    const n=FLAT[k];if(trackOf(n.unit)!==r)break;
+    if(n.unit.caso)return null;
+    if(S.done[n.id])continue;
+    return st[n.id]==='locked'?null:{id:n.id,examen:n.kind==='review'};
+  }
+  return null;
+}

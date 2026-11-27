@@ -5,7 +5,7 @@ import {FLAT,EXBYID,TRACKS,trackOf,libre} from './content.js';
 // Versión del formato guardado. Cada cambio de formato añade un paso a MIGRAR (de la versión n a la n+1),
 // así el progreso de quien ya usa la app se convierte en vez de perderse.
 export const STATE_V=3;
-export const DEF=()=>({v:STATE_V,xp:0,streak:0,last:null,day:null,dayXp:0,done:{},all:false,track:'basico',skipBasics:false,legal:0,srs:{},sim:{},calc:null,itin:null,mercado:null,stats:{ex:{},min:0},guias:{},leidas:{},aprendidos:{},dominadas:{},pruebas:{},meta:40,protector:0,objetivo:null,medir:false,sonido:true,reto:null,mod:0});
+export const DEF=()=>({v:STATE_V,xp:0,streak:0,last:null,day:null,dayXp:0,done:{},all:false,track:'basico',skipBasics:false,legal:0,srs:{},sim:{},calc:null,itin:null,mercado:null,stats:{ex:{},min:0},guias:{},leidas:{},aprendidos:{},dominadas:{},pruebas:{},meta:40,protector:0,objetivo:null,medir:false,sonido:true,reto:null,respaldo:{fecha:null,n:0,oculto:null},mod:0});
 // Meta diaria elegible y máximo de protectores (antes de load(), que sanea el estado al leerlo).
 export const META_OPC=[20,40,80], PROTECTOR_MAX=2;
 const MIGRAR={
@@ -46,6 +46,8 @@ export function limpiarEscalares(s){
   if(!TRACKS.some(r=>r.id===s.track))s.track=d.track;
   if(!META_OPC.includes(s.meta))s.meta=d.meta;
   if(typeof s.sonido!=='boolean')s.sonido=d.sonido;
+  const rp=obj(s.respaldo)?s.respaldo:{};
+  s.respaldo={fecha:fechaValida(rp.fecha)?rp.fecha:null,n:ent(rp.n)?rp.n:0,oculto:fechaValida(rp.oculto)?rp.oculto:null};
   limpiarColecciones(s);
   return s;
 }
@@ -114,6 +116,18 @@ export function sumarRacha(){
   S.last=hoy;
   if(S.streak%7===0&&S.protector<PROTECTOR_MAX){S.protector++;ganado=true}
   return {usado,ganado};
+}
+// Aviso para guardar el progreso (inicio): con 3 lecciones o más, sin cuenta y sin copia reciente. «Ahora no» lo oculta 30 días;
+// una copia hecha se vuelve a pedir pasados 60 días si hay lecciones nuevas desde entonces.
+export const RESPALDO_MIN=3, RESPALDO_OCULTO=30, RESPALDO_CADUCA=60;
+const diasEntre=(a,b)=>Math.round((Date.parse(b+'T00:00:00Z')-Date.parse(a+'T00:00:00Z'))/864e5);
+export function respaldoPendiente(hayCuenta){
+  const n=Object.keys(S.done).length,r=S.respaldo||{};
+  if(hayCuenta||n<RESPALDO_MIN)return false;
+  const hoy=today();
+  if(r.oculto&&diasEntre(r.oculto,hoy)<RESPALDO_OCULTO)return false;
+  if(r.fecha)return diasEntre(r.fecha,hoy)>RESPALDO_CADUCA&&n>(r.n||0);
+  return true;
 }
 export const dayXpNow=()=>S.day===today()?S.dayXp:0;
 

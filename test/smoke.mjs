@@ -997,6 +997,134 @@ if (caducados.length) console.warn('AVISO: contenido pendiente de revisar (norma
   T.importar(copia); T.configurar({url: '', anon: ''}); globalThis.fetch = fetchAntes;
 }
 
+// Resultado con siguiente paso: destino del botón principal en varios casos.
+{
+  const st = T.getState(), guarda = {done: st.done, itin: st.itin, all: st.all, skip: st.skipBasics, track: st.track, guias: st.guias, xp: st.xp, objetivo: st.objetivo};
+  st.done = {}; st.itin = null; st.all = false; st.skipBasics = false; st.track = 'basico'; st.objetivo = 'basico';
+  const F = T.FLAT, normal = l => l.kind === 'lesson' && !l.unit.caso;
+  const L0 = F.find(l => normal(l) && (l.unit.track || 'tecnico') === 'basico');
+  const i0 = F.indexOf(L0), N = F[i0 + 1];
+  st.done[L0.id] = {acc: 1};
+  let r = T.siguientePaso(L0);
+  if (!r || r.id !== N.id || r.examen !== (N.kind === 'review')) errs.push('siguiente paso: no apunta a la lección siguiente de la ruta: ' + JSON.stringify(r));
+  // Última lección de una unidad: el siguiente es el examen.
+  const Lu = F.find((l, i) => normal(l) && F[i + 1] && F[i + 1].kind === 'review' && F[i + 1].unit === l.unit && (l.unit.track || 'tecnico') === 'basico');
+  const hechasU = F.filter(l => l.unit === Lu.unit && l.kind === 'lesson'); hechasU.forEach(l => { st.done[l.id] = {acc: 1}; });
+  r = T.siguientePaso(Lu);
+  if (!r || !r.examen || r.id !== Lu.unit.id + '-rev') errs.push('siguiente paso: tras la última lección de la unidad no propone el examen: ' + JSON.stringify(r));
+  // Examen, caso final y siguiente bloqueada: vuelta al inicio.
+  if (T.siguientePaso(F.find(l => l.kind === 'review')) !== null) errs.push('siguiente paso: un examen no debe proponer siguiente');
+  const Lc = F.filter(l => l.unit.caso && l.kind === 'lesson')[0];
+  if (T.siguientePaso(Lc) !== null) errs.push('siguiente paso: un caso final no debe proponer siguiente');
+  // Siguiente bloqueada (la lección no está hecha, así que la siguiente sigue cerrada).
+  st.done = {};
+  if (T.siguientePaso(L0) !== null) errs.push('siguiente paso: propone una lección bloqueada');
+  // Ruta avanzada cerrada: la siguiente está bloqueada y no se propone.
+  const A = F.find(l => normal(l) && (l.unit.track || 'tecnico') === 'tecnico');
+  st.done = {};
+  if (T.siguientePaso(A) !== null) errs.push('siguiente paso: propone una lección de una ruta cerrada o bloqueada');
+  // Itinerario activo: el siguiente paso es el del itinerario.
+  st.done = {f1a: {acc: 1}}; st.itin = 'compra';
+  r = T.siguientePaso(F.find(l => l.id === 'f1a'));
+  if (!r || r.id !== 'f2a') errs.push('siguiente paso: no sigue el itinerario activo: ' + JSON.stringify(r));
+  for (const id of T.ITINERARIOS.find(x => x.id === 'compra').pasos) st.done[id] = {acc: 1};
+  if (T.siguientePaso(F.find(l => l.id === 'zt2')) !== null) errs.push('siguiente paso: itinerario terminado debe volver al inicio');
+  // Resultado real: botón principal «Siguiente lección», «Volver al inicio» aparte, y el botón abre la lección.
+  st.itin = null; st.done = {}; st.track = 'basico';
+  T.startRun(L0);
+  let g = 0; while (g++ < 30 && T.getView() === 'lesson') { const ex = T.getRun().queue[0]; give(ex, right(ex)); T.check(); T.next(); }
+  const h = T.resultHTML();
+  if (T.getView() !== 'result' || !/data-act="siguiente" data-id="[^"]+">(Siguiente lección|Examen de la unidad)</.test(h) || !h.includes('btn ghost" data-act="home">Volver al inicio') || (h.match(/btn primary/g) || []).length !== 1) errs.push('el resultado no ofrece «Siguiente lección» como único botón principal');
+  T.act('siguiente', {id: N.id});
+  if (!['lesson', 'guia'].includes(T.getView())) errs.push('«Siguiente lección» no abre la lección siguiente');
+  // Repaso del día y reto: «Continuar» al inicio.
+  st.done = {[L0.id]: {acc: 1}}; st.srs = {}; T.startReto();
+  g = 0; while (g++ < 5 && T.getView() === 'lesson') { const ex = T.getRun().queue[0]; give(ex, right(ex)); T.check(); T.next(); }
+  if (T.getView() === 'result' && (!T.resultHTML().includes('data-act="home">Continuar') || T.resultHTML().includes('data-act="siguiente"'))) errs.push('el reto no termina con «Continuar» al inicio');
+  Object.assign(st, {done: guarda.done, itin: guarda.itin, all: guarda.all, skipBasics: guarda.skip, track: guarda.track, guias: guarda.guias, xp: guarda.xp, objetivo: guarda.objetivo});
+  T.act('home');
+}
+// Pista al fallar un cálculo: heurísticas y casos sin pista.
+{
+  const {pista} = await import(pathToFileURL(path.join(root, 'src/exercises/num.js')).href);
+  const {t} = await import(pathToFileURL(path.join(root, 'src/textos.js')).href);
+  const caso = (ex, val, esperada, nombre) => { const p = pista(ex, val); if (p !== esperada) errs.push(`pista (${nombre}): «${val}» da «${p}»`); };
+  caso({a: 5, tol: 0.05}, '0,05', t.pistaDecimal, '5 % escrito como 0,05');
+  caso({a: 0.05, tol: 0.0005}, '5', t.pistaDecimal, '0,05 escrito como 5');
+  caso({a: 7.36, tol: 0.005}, '7,4', t.pistaRedondeo, 'redondeo');
+  caso({a: 7.36, tol: 0.005}, '7,32', t.pistaRedondeo, 'decimales');
+  caso({a: 1.06, tol: 0.005}, '1060', t.pistaMiles, 'factor 1000');
+  caso({a: 1060, tol: 0.5}, '1,06', t.pistaMiles, 'factor 1000 al revés');
+  caso({a: 7.36, tol: 0.005}, '42', '', 'sin pista');
+  caso({a: 7.36}, 'abc', '', 'texto no numérico');
+  caso({a: 7.36}, '', '', 'vacío');
+  caso({a: 0, tol: 0.005}, '3', '', 'respuesta 0');
+  caso({a: 4, tol: 0.5}, '4,3', '', 'dentro de la tolerancia no se pide pista (la comprueba correct)');
+  for (const k of ['pistaDecimal', 'pistaRedondeo', 'pistaMiles']) if (/\b7,36\b|\b4\b/.test(t[k])) errs.push('la pista revela la respuesta: ' + k);
+  // En la pantalla: antes del «why».
+  const ex = {id: 'x-1', t: 'num', q: 'Pregunta de prueba', unit: '%', a: 5, tol: 0.05, why: 'PORQUE-XYZ'};
+  T.startRun({id: 'p', kind: 'lesson', title: 'p', unit: {n: 1, id: 'p', title: 'p'}, ex: [ex], casos: []});
+  T.setVal('0,05'); T.check();
+  const h = app.innerHTML;
+  if (!h.includes('0,05 es un 5 %') || h.indexOf('0,05 es un 5 %') > h.indexOf('PORQUE-XYZ')) errs.push('la pista no se muestra antes de la explicación');
+  T.act('quit');
+}
+// Aviso para guardar el progreso: condiciones y efectos.
+{
+  const {respaldoPendiente, limpiarEscalares, DEF} = await import(pathToFileURL(path.join(root, 'src/state.js')).href);
+  const {addDays} = await import(pathToFileURL(path.join(root, 'src/util.js')).href);
+  const st = T.getState(), guarda = {done: st.done, respaldo: st.respaldo, track: st.track, objetivo: st.objetivo, itin: st.itin};
+  const lec = n => Object.fromEntries(T.FLAT.slice(0, n).map(l => [l.id, {acc: 1}]));
+  st.track = 'basico'; st.objetivo = 'basico'; st.itin = null;
+  const aviso = () => T.homeHTML().includes('data-act="norespaldo"');
+  st.done = lec(2); st.respaldo = {fecha: null, n: 0, oculto: null};
+  if (respaldoPendiente(false) || aviso()) errs.push('aviso de copia con menos de 3 lecciones');
+  st.done = lec(3);
+  if (!respaldoPendiente(false) || !aviso()) errs.push('no hay aviso de copia con 3 lecciones, sin cuenta ni copia');
+  const hh = T.homeHTML();
+  if (!hh.includes('Guarda tu progreso') || !hh.includes('data-act="exportar">Descargar copia') || !hh.includes('Ahora no')) errs.push('el aviso de copia no tiene sus textos y botones');
+  if (hh.includes('Crear cuenta')) errs.push('el aviso de copia ofrece crear cuenta con las cuentas desactivadas');
+  if (respaldoPendiente(true)) errs.push('aviso de copia con sesión de cuenta');
+  // Un solo botón principal: con algo en «Hoy» que ya lo lleva (reto pendiente), el aviso usa `line`; sin nada en «Hoy», `primary`.
+  { const xp = st.xp, reto = st.reto, hechas = st.done; st.reto = null;
+    // Lecciones de la primera unidad de Básico más una de otra ruta: la lección actual sigue en esa unidad, así que «Hoy» no añade «Continuar».
+    const u0 = T.FLAT.find(l => l.kind === 'lesson'), otra = T.FLAT.find(l => l.kind === 'lesson' && l.unit.track === 'personal');
+    st.done = Object.fromEntries([...T.FLAT.filter(l => l.kind === 'lesson' && l.unit === u0.unit), otra].map(l => [l.id, {acc: 1}]));
+    st.xp = 0; st.srs = {}; const solo = T.homeHTML();
+    if (!/class="btn primary" data-act="exportar"/.test(solo)) errs.push('el aviso de copia no es el botón principal cuando «Hoy» no lo es');
+    st.xp = 50; const con = T.homeHTML();
+    if (!con.includes('data-act="reto"') || !/class="btn line" data-act="exportar"/.test(con) || (con.match(/class="btn primary"/g) || []).length !== 1) errs.push('con el reto pendiente, el inicio no tiene exactamente un botón principal');
+    st.xp = xp; st.reto = reto; st.done = hechas; }
+  T.act('norespaldo');
+  if (st.respaldo.oculto !== addDays(0) || respaldoPendiente(false) || aviso()) errs.push('«Ahora no» no oculta el aviso');
+  st.respaldo = {fecha: null, n: 0, oculto: addDays(-31)};
+  if (!respaldoPendiente(false)) errs.push('el aviso no vuelve a los 30 días de «Ahora no»');
+  // Descargar copia (exportar) cuenta como copia hecha.
+  st.respaldo = {fecha: null, n: 0, oculto: null};
+  const lastDoc = globalThis.document; globalThis.URL.createObjectURL ??= () => 'blob:x'; globalThis.URL.revokeObjectURL ??= () => {};
+  const mk = () => ({href: '', download: '', click(){}, remove(){}});
+  def('document', {...lastDoc, createElement: mk, body: {appendChild(){}}});
+  T.act('exportar');
+  def('document', lastDoc);
+  if (st.respaldo.fecha !== addDays(0) || st.respaldo.n !== 3 || respaldoPendiente(false)) errs.push('exportar no cuenta como copia hecha');
+  // Copia antigua: vuelve si pasaron más de 60 días y hay lecciones nuevas.
+  st.respaldo = {fecha: addDays(-61), n: 3, oculto: null};
+  if (respaldoPendiente(false)) errs.push('el aviso vuelve sin lecciones nuevas');
+  st.done = lec(4);
+  if (!respaldoPendiente(false)) errs.push('el aviso no vuelve con copia de más de 60 días y lecciones nuevas');
+  st.respaldo = {fecha: addDays(-30), n: 3, oculto: null};
+  if (respaldoPendiente(false)) errs.push('el aviso vuelve con una copia de menos de 60 días');
+  // Prioridad más baja: la pantalla de objetivo y la prueba de nivel van antes.
+  st.respaldo = {fecha: null, n: 0, oculto: null}; st.objetivo = null; st.done = {};
+  if (aviso()) errs.push('el aviso de copia aparece sin lecciones');
+  // Saneado.
+  const bien = limpiarEscalares({...DEF(), respaldo: {fecha: '2026-01-02', n: 4, oculto: '2026-02-03'}}).respaldo;
+  if (bien.fecha !== '2026-01-02' || bien.n !== 4 || bien.oculto !== '2026-02-03') errs.push('limpiarEscalares estropea respaldo válido');
+  for (const v of [null, 'x', [], {fecha: '<b>', n: -1, oculto: 5}]) { const r = limpiarEscalares({...DEF(), respaldo: v}).respaldo; if (r.fecha !== null || r.n !== 0 || r.oculto !== null) errs.push('limpiarEscalares no sanea respaldo = ' + JSON.stringify(v)); }
+  if (!DEF().respaldo || DEF().respaldo.fecha !== null) errs.push('DEF() sin respaldo');
+  Object.assign(st, guarda); T.act('home');
+}
+
 // Refuerzo y sonido: textos, preferencia por defecto y módulo precargado.
 {
   const src = fs.readFileSync(path.join(root, 'src/textos.js'), 'utf8');

@@ -21,7 +21,7 @@ import {statsHTML,statRecord,STATS_L,flojos} from './views/stats.js';
 import {guiaHTML,abrirGuia,guiaPendiente,guiaVista} from './views/guia.js';
 import {glosarioHTML,listaGlosario} from './views/glosario.js';
 import {itinerariosHTML} from './views/itinerarios.js';
-import {ITINERARIOS,itinActual} from './itinerarios.js';
+import {ITINERARIOS,itinActual,siguientePaso} from './itinerarios.js';
 import {termino,glos} from './glosario.js';
 import {t} from './textos.js';
 
@@ -177,7 +177,7 @@ function finish(){
   // Tiempo dedicado (minutos, para las estadísticas): se cuenta como mucho media hora por sesión.
   S.stats.min=(S.stats.min||0)+Math.min(30,(Date.now()-run.t0)/60000);
   save();
-  ses.lastRes={xp,acc,title:run.L.title,srs:!lec,kind:run.L.kind,dominada};
+  ses.lastRes={xp,acc,title:run.L.title,srs:!lec,kind:run.L.kind,dominada,sig:siguientePaso(run.L)};
   ses.view='result';render();
 }
 
@@ -219,6 +219,8 @@ const ACCIONES={
     if(guiaPendiente(a.sig)){abrirGuia(a.sig.unit,'inicio',{L:a.sig});ses.view='guia';render();return}
     startRun(a.sig);
   },
+  // «Siguiente lección» del resultado: abre el destino calculado al terminar (con su guía pendiente, como desde el inicio).
+  siguiente(b){const r=ses.lastRes;if(!r||!r.sig||b.dataset.id!==r.sig.id)return ACCIONES.home();ACCIONES.open({dataset:{id:r.sig.id}})},
   check(b){if(!b.disabled)check()},
   next,
   retry(){startRun(ses.run.L)},
@@ -263,7 +265,11 @@ const ACCIONES={
   exportar(){
     const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([exportar()],{type:'application/json'}));
     a.download=`rango-progreso-${today()}.json`;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1000);toast(t.copiaDescargada);
+    S.respaldo={fecha:today(),n:Object.keys(S.done).length,oculto:null};save();
+    if(ses.view==='home'){ses.homeY=window.scrollY;render()}
   },
+  // «Ahora no» del aviso de copia: se oculta 30 días.
+  norespaldo(){S.respaldo=Object.assign({},S.respaldo,{oculto:today()});save();ses.homeY=window.scrollY;render()},
   importar(){const i=$app.querySelector('#imp-file');if(i)i.click()},
   impok(){if(!ses.copia)return;importar(ses.copia.estado);ses.copia=null;render();toast(t.copiaHecha)},
   impno(){ses.copia=null;render()},
@@ -416,7 +422,7 @@ if(typeof navigator!=='undefined'&&'serviceWorker' in navigator&&typeof location
 }
 
 // API mínima para tests (test/smoke.mjs)
-export const api={sumarRacha,glos,openGlosario:()=>{ses.view='glosario';render()},migrar,exportar,leerCopia,importar,FLAT,CASOS,SEMANA,MERCADO,PLACEMENT,simulate,simHist,aportaciones,historia,ITINERARIOS,itinActual,
+export const api={sumarRacha,glos,openGlosario:()=>{ses.view='glosario';render()},migrar,exportar,leerCopia,importar,siguientePaso,FLAT,CASOS,SEMANA,MERCADO,PLACEMENT,simulate,simHist,aportaciones,historia,ITINERARIOS,itinActual,
   openCalc:()=>{ses.view='calc';render()},openSim:()=>{ses.simDraft=null;ses.view='sim';render()},
   openStats:()=>{ses.view='stats';render()},act:(a,ds={})=>ACCIONES[a]({dataset:ds}),getView:()=>ses.view,startWeak:()=>startRun(STATS_L),
   simDraftSet:p=>{ses.simDraft=p},simSave,goHome:()=>{ses.view='home';render()},startTest:()=>startRun(TEST_L),startNivel:tr=>startRun({id:'nivel-'+tr,title:t.pruebaNivel,kind:'nivel',track:tr}),srsDue,

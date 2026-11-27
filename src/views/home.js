@@ -3,7 +3,8 @@ import {RH,OFFS,esc} from '../util.js';
 import {ico,LOGO,icoOk} from '../icons.js';
 import {glyph} from '../charts.js';
 import {UNITS,FLAT,CASOS,SEMANA,MERCADO,TRACKS,PLACEMENT,trackOf,exCount,libre} from '../content.js';
-import {S,streakNow,dayXpNow,advancedOpen,statuses,srsDue,srsResumen,retoHoy,retoHecho} from '../state.js';
+import {S,streakNow,dayXpNow,advancedOpen,statuses,srsDue,srsResumen,retoHoy,retoHecho,respaldoPendiente} from '../state.js';
+import {cuentaActiva,sesion} from '../sync.js';
 import {ses} from '../ui.js';
 import {simCardHTML} from './sim.js';
 import {t} from '../textos.js';
@@ -20,7 +21,8 @@ export function homeHTML(){
   const TF=FLAT.filter(l=>trackOf(l.unit)===S.track);
   // Orden fijo: como mucho un aviso (objetivo, ruta cerrada, test o prueba de nivel), después «Hoy» y la herramienta de la ruta.
   // En escritorio, «lado» queda fijo a la izquierda y «camino» (las unidades) a la derecha; en móvil van seguidos.
-  h+=avisoHTML(TF)+hoyHTML(st,TF,dx)+herramientaHTML()+'</div><div class="camino">';
+  const hoy=hoyHTML(st,TF,dx);  // se dibuja antes que el aviso: este sabe si «Hoy» ya lleva el botón principal
+  h+=avisoHTML(TF,/class="btn primary"/.test(hoy))+hoy+herramientaHTML()+'</div><div class="camino">';
   UNITS.filter(u=>trackOf(u)===S.track).forEach(u=>{
     if(!u.lessons){
       h+=`<section class="unit soon"><div class="ban"><div><div class="u">${t.unidadN(u.n)}</div><h2>${u.title}</h2><p>${u.blurb}</p></div><span class="cnt">${t.proximamente}</span></div></section>`;
@@ -51,12 +53,14 @@ export function homeHTML(){
 }
 
 // Decisiones de quien empieza: solo la primera que aplique, para no apilar tarjetas.
-function avisoHTML(TF){
+function avisoHTML(TF,hoyPrimary){
   if(!S.objetivo&&!Object.keys(S.done).length)return `<section class="objetivo" aria-label="${t.objetivoTitulo}"><b>${t.objetivoTitulo}</b><div class="obj-opc">${['basico','personal','pasiva','fundamental','tecnico','derivados','cripto'].map(r=>`<button class="btn line" data-act="objetivo" data-track="${r}"><b>${t.objetivos[r][0]}</b><span>${t.objetivos[r][1]}</span></button>`).join('')}</div><div class="row"><button class="btn ghost" data-act="itinerarios">${t.itinVer}</button><button class="btn ghost" data-act="noobjetivo">${t.ahoraNo}</button></div></section>`;
   if(!libre(S.track)&&!advancedOpen())return `<section class="gate"><p>${t.bloqueoRuta}</p><div class="row"><button class="btn line" data-act="track" data-track="basico">${t.irBasicos}</button>${S.placement?'':`<button class="btn line" data-act="test">${t.hacerTest}</button>`}<button class="btn ghost" data-act="skipbasics">${t.saltarBasicos}</button></div></section>`;
   if(S.track==='basico'&&!S.placement&&!Object.keys(S.done).length)return `<section class="test" aria-label="${t.testNivel}"><div><b>${t.testPregunta}</b><span>${t.testExplica(PLACEMENT.length)}</span></div><div class="row"><button class="btn primary" data-act="test">${t.hacerTest}</button><button class="btn ghost" data-act="notest">${t.desdeCero}</button></div></section>`;
   // Prueba de nivel de las rutas avanzadas: para quien aún no ha hecho ninguna lección de la ruta.
   if(S.track!=='basico'&&!S.pruebas[S.track]&&!TF.some(l=>S.done[l.id]))return `<section class="test" aria-label="${t.pruebaNivel}"><div><b>${t.nivelPregunta}</b><span>${t.nivelExplica}</span></div><div class="row"><button class="btn primary" data-act="nivel" data-track="${esc(S.track)}">${t.hacerPrueba}</button><button class="btn ghost" data-act="nonivel" data-track="${esc(S.track)}">${t.desdeCero}</button></div></section>`;
+  // El más discreto: guardar el progreso (solo si no hay cuenta ni copia reciente).
+  if(respaldoPendiente(!!sesion()))return `<section class="test respaldo" aria-label="${t.respaldoTitulo}"><div><b>${t.respaldoTitulo}</b><span>${t.respaldoExplica}</span></div><div class="row"><button class="btn ${hoyPrimary?'line':'primary'}" data-act="exportar">${t.copiaGuardar}</button>${cuentaActiva()?`<button class="btn line" data-act="stats">${t.crearCuenta}</button>`:''}<button class="btn ghost" data-act="norespaldo">${t.ahoraNo}</button></div></section>`;
   return '';
 }
 

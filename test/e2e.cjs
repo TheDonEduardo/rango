@@ -83,6 +83,17 @@ async function recorrer(b, url, ids, modos, dir) {
         await p.click('[data-act=next]');
       }
       if (!(await p.locator('text=Lección completada').count())) errs.push('no se completa ' + id);
+      else {
+        // El resultado propone el siguiente paso (si lo hay y está abierto) y su botón abre esa lección; Enter activa el principal.
+        const sig = p.locator('.res [data-act=siguiente]');
+        if (dir && tag.startsWith('m')) await p.screenshot({path: `${dir}/${tag}-${id}-resultado.png`, fullPage: true});
+        if (await sig.count()) {
+          if ((await p.locator('.res .btn.primary').count()) !== 1) errs.push(id + ': el resultado no tiene un único botón principal');
+          const sid = await sig.getAttribute('data-id');
+          await sig.click();
+          if (!(await p.locator('.lesson, .guia').count())) errs.push(`${id}: «Siguiente lección» (${sid}) no abre nada`);
+        } else if (!(await p.locator('.res [data-act=home].primary').count())) errs.push(id + ': el resultado no ofrece ni siguiente ni «Continuar»');
+      }
     }
     console.log(`  ${tag}: ${errs.length ? errs.join('\n    ') : 'bien'}`);
     fallos += errs.length; await p.close();
@@ -125,6 +136,16 @@ async function auditar(b, url) {
     ['inicio con teoría pendiente en Hoy', {...base, track: 'basico', xp: 50, guias: {}}, null],
     ['inicio con teoría leída', {...base, track: 'basico', xp: 50, leidas: Object.fromEntries(units.filter(u => u.guia).map(u => [u.id, '2026-01-01']))}, null],
     ['guía última tarjeta con XP', {...base, guias: {}, xp: 50, track: 'basico'}, async p => { await p.click('[data-act=open][data-id=ba1]'); while (!(await p.locator('.gleida').count())) await p.click('.guia [data-act=guianext]'); }],
+    ['inicio con aviso de copia', {...base, track: 'basico', objetivo: 'basico', xp: 60, done: {ba1: {acc: 1}, ba2: {acc: 1}, bb1: {acc: 1}}}, async p => {
+      if (!(await p.locator('.respaldo').count())) throw new Error('no sale el aviso de copia');
+      const n = await p.locator('.btn.primary:visible').count();
+      if (n !== 1) throw new Error('el inicio con aviso de copia tiene ' + n + ' botones principales visibles, no 1');
+    }],
+    ['resultado con siguiente lección', {...base, track: 'basico', objetivo: 'basico'}, async p => {
+      await p.click('[data-act=open][data-id=ba1]');
+      for (let k = 0; k < 14 && !(await p.locator('.res').count()); k++) { await responder(p); await p.click('[data-act=next]'); }
+      if (!(await p.locator('.res [data-act=siguiente]').count())) throw new Error('el resultado no ofrece «Siguiente lección»');
+    }],
     ['test de nivel', {legal: 99, track: 'basico', done: {}, srs: {}, objetivo: 'basico'}, async p => { await p.click('[data-act=test]'); }],
   ];
   const resumen = {};
