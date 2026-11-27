@@ -92,7 +92,7 @@
           "t": "choice",
           "q": "Recortas 100 € de tu gasto mensual fijo. ¿Por qué ese recorte ayuda por partida doble?",
           "opts": [
-            "Porque ahorras 100 € más y la meta de 25 veces el gasto baja 30.000 €",
+            "Porque ahorras 100 € más y la meta de 25 veces baja 30.000 €",
             "Porque ahorras 100 € más y además cobras 100 € de intereses",
             "Porque la meta baja 1.200 €, igual que lo que ahorras al año",
             "Porque con menos gasto la bolsa rinde un 4 % más"

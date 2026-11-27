@@ -50,7 +50,7 @@
           "t": "choice",
           "q": "Con las NIIF, ¿qué cambia en el balance de una cadena que alquila 200 tiendas a 10 años?",
           "opts": [
-            "Nada: el alquiler sigue siendo solo un gasto del año",
+            "Nada: el alquiler sigue siendo solo un gasto de cada año en la cuenta",
             "Las tiendas pasan a ser propiedad de la cadena",
             "Un activo por el derecho de uso y un pasivo por los pagos",
             "Desaparece la deuda porque la sustituye el alquiler"
@@ -80,7 +80,7 @@
           "t": "choice",
           "q": "Un analista divide la deuda financiera neta (800) entre el EBITDA con las NIIF (500) y obtiene 1,6 veces. ¿Qué error comete?",
           "opts": [
-            "Usa un EBITDA demasiado bajo porque incluye amortizaciones",
+            "Usa un EBITDA demasiado bajo porque incluye amortizaciones del año",
             "Resta dos veces la caja de la empresa",
             "Mezcla un EBITDA sin alquileres con una deuda que no los incluye",
             "Debería dividir entre las ventas, no entre el EBITDA"
@@ -149,7 +149,7 @@
           "opts": [
             "La A, porque el alquiler sale del EBITDA",
             "La B, porque no tiene que pagar 100 de alquileres",
-            "Las dos igual, porque el EBITDA es el mismo",
+            "Las dos igual, porque el EBITDA es el mismo en ambas empresas",
             "La A, porque sus alquileres son deducibles"
           ],
           "a": 1,
@@ -177,8 +177,8 @@
           "t": "choice",
           "q": "¿Cómo comparas el endeudamiento de una empresa que alquila sus locales con otra que los compró?",
           "opts": [
-            "Con la deuda neta más arrendamientos entre el EBITDA con las NIIF, en las dos",
-            "Solo con la deuda financiera neta, porque el alquiler no es deuda",
+            "Con deuda neta más arrendamientos entre el EBITDA con NIIF, en las dos",
+            "Solo con la deuda financiera neta, porque el alquiler no se considera deuda",
             "Con el EBITDA de una y con la deuda neta de la otra",
             "Con el precio de la acción de cada una"
           ],

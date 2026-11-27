@@ -253,7 +253,7 @@
           "q": "Los ingresos de una empresa crecen un 12 % y su mercado, también un 12 %. ¿Qué ha pasado con su cuota?",
           "opts": [
             "Sube, porque ha crecido un 12 %",
-            "Baja, porque el mercado también ha crecido un 12 %",
+            "Baja, porque el mercado también ha crecido un 12 % en ese periodo",
             "Se mantiene: crece al ritmo del mercado, sin ganar cuota",
             "No se puede saber sin conocer su beneficio"
           ],

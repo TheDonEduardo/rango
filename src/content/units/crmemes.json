@@ -205,7 +205,7 @@
           "q": "El creador de un token puede retirar toda la liquidez del pool cuando quiera. ¿Qué riesgo supone?",
           "opts": [
             "Que el precio suba demasiado y nadie pueda comprar",
-            "Que nadie pueda comprarte los tokens y te quedes sin forma de vender",
+            "Que nadie te compre los tokens y te quedes sin poder vender",
             "Que el token deje de pagar rentas a sus tenedores",
             "Que la red cobre comisiones más altas por cada transferencia"
           ],

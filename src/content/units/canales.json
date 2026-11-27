@@ -442,7 +442,7 @@
           "t": "choice",
           "q": "Tienes una posición en una tendencia alcista. La línea vale 46,00 €, el precio cierra en 44,80 € y el volumen dobla al medio. ¿Qué es lo más coherente?",
           "opts": [
-            "Esperar a que vuelva sin poner ningún límite a la pérdida",
+            "Esperar a que vuelva sin poner ningún límite a la pérdida que puedas asumir",
             "Comprar más para promediar el precio a la baja",
             "Ignorarlo: un solo cierre nunca cuenta",
             "Que la tendencia puede haber terminado: aplicar tu plan de salida"

@@ -164,7 +164,7 @@
           "q": "Quieres una acción de 400 € pero solo inviertes 100 € al mes. ¿Qué te permite la compra fraccionada?",
           "opts": [
             "Comprar 0,25 acciones con 100 €, sin esperar a juntar 400 €",
-            "Pagar menos por acción que quien compra una entera",
+            "Pagar menos por cada acción que quien compra una acción entera",
             "Cobrar el dividendo de una acción entera",
             "Comprar a un precio inferior al del mercado"
           ],

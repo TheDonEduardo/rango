@@ -134,8 +134,8 @@
           "opts": [
             "Ha bajado, porque los ingresos han crecido",
             "Se ha mantenido igual, porque ambos han subido",
-            "Ha subido, porque el beneficio ha crecido más que los ingresos",
-            "No se puede saber sin conocer el número de acciones"
+            "Ha subido, porque el beneficio crece más que los ingresos",
+            "No se puede saber sin conocer el número de acciones de la empresa"
           ],
           "a": 2,
           "why": "Antes: 20 ÷ 200 = 10 %. Ahora: 26 ÷ 220 ≈ 11,8 %. El beneficio crece un 30 % y los ingresos, un 10 %.",
@@ -168,8 +168,8 @@
           "t": "choice",
           "q": "El beneficio de una empresa crece un 30 % interanual, pero su acción cae el día que publica resultados. ¿Cuál es una explicación posible?",
           "opts": [
-            "Que el precio ya descontaba un crecimiento mayor que el publicado",
-            "Que el beneficio crezca obliga al precio a subir ese día",
+            "Que el precio descontaba más crecimiento del que se publicó",
+            "Que el beneficio crezca obliga al precio a subir ese mismo día",
             "Que el BPA solo se publica para los accionistas grandes",
             "Que los resultados trimestrales no influyen en el precio"
           ],
@@ -220,7 +220,7 @@
           "opts": [
             "Es un mal resultado y la tendencia creciente anterior queda anulada",
             "Es un buen resultado, porque el BPA es positivo y eso basta",
-            "Algo por debajo de lo esperado, dentro de una tendencia creciente del 30 %",
+            "Algo por debajo de lo esperado, en una tendencia creciente del 30 %",
             "No dice nada, porque un solo trimestre nunca influye en nada"
           ],
           "a": 2,

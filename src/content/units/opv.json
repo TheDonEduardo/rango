@@ -21,7 +21,7 @@
       "id": "g3",
       "titulo": "Bloqueo y capital flotante",
       "texto": "Los accionistas previos suelen firmar un bloqueo de venta (lock-up): meses sin vender. El capital flotante es el porcentaje de acciones que cotizan. Al acabar el bloqueo pueden llegar muchas más al mercado.",
-      "ejemplo": "De 95 millones de acciones, 20 se ofrecen al público: flotante del 21 %. Al acabar el bloqueo, otras 75 millones podrían venderse.",
+      "ejemplo": "De 95 millones de acciones, 20 se ofrecen al público: flotante del 21 %. Al acabar el bloqueo, otros 75 millones podrían venderse.",
       "figura": {
         "type": "curvas",
         "h": 200,
@@ -64,7 +64,7 @@
           "q": "En una salida a bolsa el precio es de 12 € y se ofrecen 10 millones de acciones nuevas y 8 millones vendidas por accionistas actuales. Sin contar comisiones, ¿cuántos millones de euros recibe la empresa?",
           "unit": "mill. €",
           "a": 120,
-          "why": "Solo las acciones nuevas dan dinero a la empresa: 10 × 12 = 120 mill. €. Las 8 millones vendidas (96 mill. €) van a los vendedores.",
+          "why": "Solo las acciones nuevas dan dinero a la empresa: 10 × 12 = 120 mill. €. Los 8 millones de acciones vendidas (96 mill. €) van a los vendedores.",
           "guia": "g1"
         },
         {
@@ -151,7 +151,7 @@
             "La empresa debe devolver el dinero recaudado",
             "Las acciones pasan a valer cero automáticamente",
             "Pueden llegar muchas acciones al mercado y presionar el precio",
-            "Los nuevos accionistas pierden sus derechos de voto"
+            "Los nuevos accionistas pierden sus derechos de voto en la empresa"
           ],
           "a": 2,
           "why": "Al acabar el bloqueo, quienes tenían la mayoría pueden vender: más oferta de acciones y posible presión sobre el precio.",
@@ -199,7 +199,7 @@
           "q": "Un folleto dice que el 80 % de lo que se ofrece son acciones de los accionistas actuales. ¿Qué conclusión es más sólida?",
           "opts": [
             "La empresa recibirá el 80 % del dinero",
-            "El precio de salida será necesariamente bajo",
+            "El precio de salida será necesariamente bajo para los nuevos accionistas",
             "La empresa recibirá solo una parte pequeña del dinero",
             "La salida es mala y no merece mirarse"
           ],
