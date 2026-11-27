@@ -1005,6 +1005,24 @@ if (caducados.length) console.warn('AVISO: contenido pendiente de revisar (norma
   if (!pre.includes('src/sonido.js')) errs.push('src/sonido.js no está en PRECACHE');
 }
 
+// Figuras con datos degenerados y saneado de S.sonido.
+{
+  const {figuraSVG} = await import(pathToFileURL(path.join(root, 'src/figuras.js')));
+  const malo = svg => /NaN|Infinity|height="-/.test(svg);
+  const casosFig = {
+    'barras vacías': {type: 'barras', barras: [], alt: 'x'},
+    'barras a cero': {type: 'barras', barras: [{texto: 'a', valor: 0}, {texto: 'b', segmentos: [{valor: 0}]}], alt: 'x'},
+    'barras negativas': {type: 'barras', barras: [{texto: 'a', valor: -5}, {texto: 'b', valor: 10}], alt: 'x'},
+    'curvas con un punto': {type: 'curvas', series: [{data: [5], texto: 's'}], zonas: [{i1: 0, i2: 0, texto: 'z'}], alt: 'x'},
+    'curvas con x irregular': {type: 'curvas', series: [{data: [1, 2, 3, 4]}], x: [0, 0, 1, 10], zonas: [{i1: 1, i2: 2, texto: 'z'}], alt: 'x'},
+    'curvas con x iguales': {type: 'curvas', series: [{data: [1, 2]}], x: [3, 3], alt: 'x'},
+  };
+  for (const [k, f] of Object.entries(casosFig)) { let svg; try { svg = figuraSVG(f); } catch (e) { errs.push('figura ' + k + ': lanza ' + e.message); continue; } if (malo(svg)) errs.push('figura ' + k + ': SVG con NaN, Infinity o alturas negativas'); }
+  const {limpiarEscalares, DEF} = await import(pathToFileURL(path.join(root, 'src/state.js')).href);
+  for (const v of ['false', 0, null, undefined]) if (limpiarEscalares({...DEF(), sonido: v}).sonido !== true) errs.push('limpiarEscalares no sanea sonido = ' + String(v));
+  if (limpiarEscalares({...DEF(), sonido: false}).sonido !== false) errs.push('limpiarEscalares cambia sonido = false');
+}
+
 if (errs.length) { console.error('FALLOS:\n- ' + errs.join('\n- ')); process.exit(1); }
 const nc = casos ? Object.values(casos.ex).reduce((n, l) => n + l.length, 0) : 0;
 console.log(`OK: ${T.FLAT.length} lecciones, ${nc} casos reales, XP total ${T.getState().xp}`);

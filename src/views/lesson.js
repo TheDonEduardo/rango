@@ -30,6 +30,9 @@ function tableHTML(ex){
   if(tb.note)h+=`<figcaption>${esc(tb.note)}</figcaption>`;
   return h+'</figure>';
 }
+// Texto del veredicto: siempre dice «Correcto» o «Incorrecto» (no solo color e icono); el ánimo va detrás.
+export const veredictoTxt=run=>{const v=run.ok?t.correcto:t.incorrecto;return !run.msg||run.msg===v?v:`${v}. ${run.msg}`};
+const veredicto=run=>{const v=run.ok?t.correcto:t.incorrecto;return !run.msg||run.msg===v?esc(v):`<span class="sr-only">${esc(v)}. </span>${esc(run.msg)}`};
 export function lessonHTML(){
   const run=ses.run,ex=run.queue[0],T=TIPOS[ex.t],pct=Math.round(run.done/run.total*100);
   let hearts='';for(let i=0;i<3;i++)hearts+=`<svg class="heart ${i<run.lives?'on':'off'}" viewBox="0 0 24 24" aria-hidden="true"><path d="${P.heart}" fill="currentColor"/></svg>`;
@@ -41,7 +44,7 @@ export function lessonHTML(){
   }else{
     const ans=run.ok?'':(T.answerHTML?T.answerHTML(ex):`<p class="ans">${t.respuesta}: ${tx(T.answer(ex))}</p>`)
       +(ex.guia?`<button class="link teoria" data-act="guiarepaso" data-g="${ex.guia}">${t.repasarTeoria}</button>`:'');
-    h+=`<div class="fb ${run.ok?'good':'bad'}" role="status"><div class="fb-h">${run.ok?icoOk:icoX}<span>${run.msg||(run.ok?t.correcto:t.incorrecto)}</span></div>${run.ok||!T.fallo?'':T.fallo(ex,run)}<p>${glos(tx(ex.why))}</p>${ans}<button class="btn primary" data-act="next">${t.continuar}</button><button class="link reporte" data-act="reportar">${t.verError}</button></div>`;
+    h+=`<div class="fb ${run.ok?'good':'bad'}"><div class="fb-h">${run.ok?icoOk:icoX}<span>${veredicto(run)}</span></div>${run.ok||!T.fallo?'':T.fallo(ex,run)}<p>${glos(tx(ex.why))}</p>${ans}<button class="btn primary" data-act="next">${t.continuar}</button><button class="link reporte" data-act="reportar">${t.verError}</button></div>`;
   }
   return h+'</div>';
 }

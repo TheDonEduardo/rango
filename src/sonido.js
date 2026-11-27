@@ -8,7 +8,6 @@ function audio(){
   if(roto||S.sonido===false)return null;
   try{
     if(!ctx){const A=typeof window!=='undefined'&&(window.AudioContext||window.webkitAudioContext);if(!A){roto=true;return null}ctx=new A()}
-    if(ctx.state==='suspended'&&ctx.resume)ctx.resume().catch(()=>{});
     return ctx;
   }catch(e){roto=true;return null}
 }
@@ -24,8 +23,18 @@ function nota(c,f,t0,dur,vol,tipo='sine',arm=0){
     const o2=c.createOscillator();o2.type='sine';o2.frequency.setValueAtTime(f*2.01,t0);o2.connect(g2);o2.start(t0);o2.stop(t0+dur+0.02);
   }
 }
+// Las notas se programan solo con el contexto en marcha: si está suspendido (autoplay, segundo plano) o «interrupted»
+// (iOS), se reanuda primero y se espera; si no se puede, no suena nada (así no se acumulan notas en un reloj parado).
 function tocar(fn){
-  try{const c=audio();if(c)fn(c,c.currentTime+0.01)}catch(e){}
+  try{
+    const c=audio();if(!c)return;
+    if(c.state==='running'){fn(c,c.currentTime+0.01);return}
+    if(c.resume)c.resume().then(()=>{if(c.state==='running'&&S.sonido!==false)fn(c,c.currentTime+0.01)}).catch(()=>{});
+  }catch(e){}
+}
+// Suspende el audio (al ocultar la app o desactivar los sonidos) para no mantener el hardware activo.
+export function suspenderSonido(){
+  try{if(ctx&&ctx.state==='running'&&ctx.suspend)ctx.suspend().catch(()=>{})}catch(e){}
 }
 // Acierto: dos notas ascendentes (Mi6 y La6), unos 220 ms.
 export const sonAcierto=()=>tocar((c,t)=>{nota(c,659.25,t,0.14,0.16,'sine',0.25);nota(c,880,t+0.08,0.16,0.16,'sine',0.25)});

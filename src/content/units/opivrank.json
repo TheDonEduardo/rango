@@ -132,9 +132,9 @@
           "t": "choice",
           "q": "¿Qué indica un IV rank de 0?",
           "opts": [
-            "Que la implícita está hoy en su mínimo de las últimas 52 semanas",
+            "Que la implícita está en su mínimo de las últimas 52 semanas",
             "Que la acción no se ha movido nada en el último año",
-            "Que las opciones de esa acción no tienen ningún valor",
+            "Que las opciones de esa acción no tienen ningún valor ni prima alguna",
             "Que la volatilidad histórica de la acción es cero"
           ],
           "a": 0,
@@ -168,8 +168,8 @@
           "t": "choice",
           "q": "Un día aislado del último año, la implícita llegó a un 60 % por un susto. El resto del año osciló entre un 20 % y un 35 %. ¿Qué efecto tiene ese pico sobre las dos medidas?",
           "opts": [
-            "Sube el IV rank, porque el pico indica mucho nerviosismo",
-            "Baja el IV rank, porque el máximo queda más lejos, y apenas cambia el percentil",
+            "Sube el IV rank, porque el pico indica mucho nerviosismo en el mercado ese día",
+            "Baja el IV rank, porque el máximo queda más lejos; el percentil apenas cambia",
             "No afecta a ninguna, porque las dos ignoran los valores extremos",
             "Baja el percentil, porque cuenta el valor máximo del año entero"
           ],
@@ -190,8 +190,8 @@
           "opts": [
             "La acción va a caer, porque una implícita alta anticipa bajadas",
             "Las primas están baratas y conviene pagarlas antes de que suban más",
-            "Las primas están caras frente a su historial: favorece vender prima con riesgo definido",
-            "La implícita no sirve de nada, porque no se puede predecir ni comparar"
+            "Primas caras frente a su historial: favorece vender con riesgo definido",
+            "La implícita no sirve de nada, porque no se puede predecir ni comparar nunca"
           ],
           "a": 2,
           "why": "Un rank alto compara las primas con su propia historia: favorece estrategias que cobran prima, con pérdida máxima definida. No predice la dirección.",

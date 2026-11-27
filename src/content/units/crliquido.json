@@ -112,7 +112,7 @@
           "q": "¿Qué ventaja busca el staking líquido frente al staking normal?",
           "opts": [
             "Seguir usando el valor depositado sin esperar al desbloqueo",
-            "Eliminar el riesgo de perder monedas",
+            "Eliminar por completo el riesgo de perder monedas en el contrato",
             "Cobrar el doble de recompensa por el mismo depósito",
             "Evitar el riesgo de precio de la moneda"
           ],
@@ -200,7 +200,7 @@
             "Que el protocolo no pueda recibir recompensas por ser líquido",
             "Que tengas que custodiar tú las claves del validador",
             "Que el token pase a ser propiedad de la cadena",
-            "Que un fallo del contrato inteligente deje el token sin respaldo"
+            "Que un fallo del contrato deje el token sin respaldo"
           ],
           "a": 3,
           "why": "El contrato que emite y canjea el token es una capa nueva de riesgo; si falla, el token puede quedarse sin respaldo.",

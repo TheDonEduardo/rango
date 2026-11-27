@@ -125,7 +125,7 @@
             "Su cuerpo es más pequeño que el cuerpo de la vela anterior",
             "Cierra por debajo de su apertura tras una subida",
             "Tiene menos volumen que la media de las últimas diez sesiones",
-            "Su máximo y su mínimo quedan dentro del rango de la vela anterior"
+            "Su máximo y su mínimo quedan dentro del rango de la anterior"
           ],
           "a": 3,
           "why": "Lo que la define es el rango: máximo y mínimo dentro de los de la madre. Un cuerpo pequeño, el color o el volumen no bastan.",
